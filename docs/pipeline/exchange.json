@@ -685,6 +685,14 @@
       "added": "2026-10-31",
       "spiked": "2026-10-31",
       "updated": "2026-10-31"
+    },
+    {
+      "id": "creative-fabrica-spreadsheet-shelf",
+      "title": "Creative Fabrica as a second marketplace shelf for the UK sole-trader tax workbook — a subscription-and-store design marketplace that lists Excel and Google Sheets templates, opens a store to a designer with 'another online store' (the Etsy shop) rather than a design portfolio, and pays 50 % on marketplace-referred sales plus a per-download share of its All Access subscription",
+      "status": "parked",
+      "why": "Pre-research 2026-11-01 (burn-down, WebSearch restricted to creativefabrica.com; the host does not resolve from the sandbox — the spike reads it through the relay, host added). Creative Market (parked 10-24) failed on a design-portfolio gate and an empty spreadsheet shelf; Creative Fabrica's own tag pages count 115 'budget spreadsheet', 96 'Excel template', 53 'Google Sheets budget' and 998 'budget tracker' listings, and the designer SpreadsheetsHub sells a 'Budget Planner Excel' at US$13.99 (Excel + Google Sheets, commercial licence, 2026 reviews), so spreadsheets are an accepted, selling product type. Its store guidelines accept Designer Requests only from designers with another online store (a portfolio link is not enough), shown by the account email or ID on that store page — the owner's Etsy shop (live 10-29) and Payhip store meet it; reviews take a few working days and a quality rejection blocks a reapply for 2 months. The open-store page quotes 75 % on designer-referred and 50 % on marketplace-referred sales, no exclusivity, payouts at any time within 7 days (PayPal, Payoneer, bank). Unread: the designer terms (identity document, tax form, VAT), the uploader's file types and preview set, and whether any UK tax or self-employed spreadsheet there has a rating. STRATEGY §1: the existing workbook on a shelf that supplies its own buyers.",
+      "trigger": "the spike spike-creative-fabrica-spreadsheet-shelf (promote / park call); on promote, a tax-workbook item writes the listing copy and reuses the Etsy/Payhip preview set and the owner files the store request (~10 min, with the Etsy About page carrying the account email); park if the designer terms need an identity document or a company, if spreadsheets are not an uploader product type, if no UK tax or self-employed spreadsheet shows a rating, or if the net per sale at a rival-matching price is under £3",
+      "added": "2026-11-01"
     }
   ]
 }

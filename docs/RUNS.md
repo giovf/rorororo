@@ -2236,3 +2236,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-01 09:25 | build | weekly-report.md §4 and SCHEDULERS carry the shelf ask; etsy-day-60-read cites the rows; first run next slot
 - 2026-11-01 12:08 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-11-01 15:08 | triage | notify owner dispatched: last run started 12:09 UTC, 3 h ago
+- 2026-11-01 17:22 | burn-down | Main green at STEP 0; no new owner notes; pipeline starved and cooled (next null, empty []); pass unspent
+- 2026-11-01 17:22 | burn-down | notify-owner.yml first run: success (run 479, dispatched 12:09 on the installer commit; cron run 481 ok)
+- 2026-11-01 17:22 | burn-down | owner-notes.yml first run: success (run 610, dispatched 17:11 UTC, 13 s; dispatch-only by design)
+- 2026-11-01 17:22 | burn-down | Exchange pre-research: Creative Fabrica shelf for the tax workbook — spike seeded (5); 0 spikes were open
+- 2026-11-01 17:22 | burn-down | WebSearch (creativefabrica.com only): 115 budget-spreadsheet, 96 Excel-template listings; US$13.99 rival
+- 2026-11-01 17:22 | burn-down | Store gate is 'another online store' (the Etsy shop qualifies), 75/50 % split, PayPal payout; relay host added
+- 2026-11-01 17:22 | burn-down | Skipped: ChatGPT Instant Checkout (US-only, merchant approval) and Telegram Stars (cash-out only via TON)
+- 2026-11-01 17:22 | burn-down | Dependabot majors: no open Dependabot PR (only the 2025 Develop PR); nothing to review
+- 2026-11-01 17:22 | burn-down | Stopping: first runs recorded, spike seeded; nothing buildable, every queue cooling or dated
