@@ -2255,3 +2255,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-01 17:36 | burn-down | Primary: Etsy counts as the existing store; 'insufficient number of designs' locks a reapply for 2 months
 - 2026-11-01 17:36 | burn-down | Index: Designer Terms V1.3 reserve Sumsub ID verification; payouts from US$100; no tax spreadsheet on the shelf
 - 2026-11-01 17:36 | burn-down | Stopping at ~25 min: pass spent, spike done; nothing buildable, every queue cooling or dated
+- 2026-11-01 18:07 | triage | notify owner dispatched: last run started 15:25 UTC, 2 h 41 min ago
