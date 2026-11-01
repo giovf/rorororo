@@ -1,0 +1,278 @@
+{
+  "request": "creative-fabrica-2026-11-01",
+  "fetched_at": "2026-11-01T17:20:44.135Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/open-store/",
+      "fetched_at": "2026-11-01T17:20:35.725Z",
+      "status": 403,
+      "elapsed_ms": 188,
+      "final_url": "https://www.creativefabrica.com/open-store/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5820
+    },
+    {
+      "method": "GET",
+      "url": "https://help.creativefabrica.com/hc/en-us/articles/360015099500-How-can-I-open-a-store",
+      "fetched_at": "2026-11-01T17:20:35.927Z",
+      "status": 403,
+      "elapsed_ms": 158,
+      "final_url": "https://help.creativefabrica.com/hc/en-us/articles/360015099500-How-can-I-open-a-store",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5925
+    },
+    {
+      "method": "GET",
+      "url": "https://help.creativefabrica.com/hc/en-us/articles/360014596379-What-are-the-guidelines-for-setting-up-a-store",
+      "fetched_at": "2026-11-01T17:20:36.588Z",
+      "status": 403,
+      "elapsed_ms": 135,
+      "final_url": "https://help.creativefabrica.com/hc/en-us/articles/360014596379-What-are-the-guidelines-for-setting-up-a-store",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "3.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 6040
+    },
+    {
+      "method": "GET",
+      "url": "https://help.creativefabrica.com/hc/en-us/articles/4411193014674-Adding-your-email-or-account-ID-to-your-portfolio",
+      "fetched_at": "2026-11-01T17:20:37.224Z",
+      "status": 403,
+      "elapsed_ms": 90,
+      "final_url": "https://help.creativefabrica.com/hc/en-us/articles/4411193014674-Adding-your-email-or-account-ID-to-your-portfolio",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 6052
+    },
+    {
+      "method": "GET",
+      "url": "https://help.creativefabrica.com/hc/en-us/articles/360030260091-When-will-my-uploaded-products-be-approved",
+      "fetched_at": "2026-11-01T17:20:37.816Z",
+      "status": 403,
+      "elapsed_ms": 118,
+      "final_url": "https://help.creativefabrica.com/hc/en-us/articles/360030260091-When-will-my-uploaded-products-be-approved",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "5.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 6028
+    },
+    {
+      "method": "GET",
+      "url": "https://help.creativefabrica.com/hc/en-us/articles/360029930872-How-do-I-make-a-payout-of-my-earnings",
+      "fetched_at": "2026-11-01T17:20:38.436Z",
+      "status": 403,
+      "elapsed_ms": 77,
+      "final_url": "https://help.creativefabrica.com/hc/en-us/articles/360029930872-How-do-I-make-a-payout-of-my-earnings",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "6.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5992
+    },
+    {
+      "method": "GET",
+      "url": "https://help.creativefabrica.com/hc/en-us",
+      "fetched_at": "2026-11-01T17:20:39.015Z",
+      "status": 403,
+      "elapsed_ms": 98,
+      "final_url": "https://help.creativefabrica.com/hc/en-us",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "7.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5726
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/tag/budget-spreadsheet/",
+      "fetched_at": "2026-11-01T17:20:39.116Z",
+      "status": 403,
+      "elapsed_ms": 55,
+      "final_url": "https://www.creativefabrica.com/tag/budget-spreadsheet/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5877
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/tag/excel-template/",
+      "fetched_at": "2026-11-01T17:20:39.673Z",
+      "status": 403,
+      "elapsed_ms": 48,
+      "final_url": "https://www.creativefabrica.com/tag/excel-template/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5865
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/designer/spreadsheetshub/",
+      "fetched_at": "2026-11-01T17:20:40.223Z",
+      "status": 403,
+      "elapsed_ms": 52,
+      "final_url": "https://www.creativefabrica.com/designer/spreadsheetshub/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "10.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5883
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/product/budget-planner-excel-rainbow-theme/",
+      "fetched_at": "2026-11-01T17:20:40.777Z",
+      "status": 403,
+      "elapsed_ms": 41,
+      "final_url": "https://www.creativefabrica.com/product/budget-planner-excel-rainbow-theme/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "11.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5958
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/product/60-20-20-monthly-budget-spreadsheet/",
+      "fetched_at": "2026-11-01T17:20:41.320Z",
+      "status": 403,
+      "elapsed_ms": 43,
+      "final_url": "https://www.creativefabrica.com/product/60-20-20-monthly-budget-spreadsheet/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "12.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5961
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/tag/tax-tracker/",
+      "fetched_at": "2026-11-01T17:20:41.864Z",
+      "status": 403,
+      "elapsed_ms": 45,
+      "final_url": "https://www.creativefabrica.com/tag/tax-tracker/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "13.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5856
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/tag/self-employed/",
+      "fetched_at": "2026-11-01T17:20:42.410Z",
+      "status": 403,
+      "elapsed_ms": 47,
+      "final_url": "https://www.creativefabrica.com/tag/self-employed/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "14.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5862
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/tag/sole-trader/",
+      "fetched_at": "2026-11-01T17:20:42.959Z",
+      "status": 403,
+      "elapsed_ms": 52,
+      "final_url": "https://www.creativefabrica.com/tag/sole-trader/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "15.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5856
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/the-artistry/designer-stories/how-to-open-a-store-on-creative-fabrica/",
+      "fetched_at": "2026-11-01T17:20:43.519Z",
+      "status": 403,
+      "elapsed_ms": 55,
+      "final_url": "https://www.creativefabrica.com/the-artistry/designer-stories/how-to-open-a-store-on-creative-fabrica/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "16.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 6082
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/the-artistry/designer-stories/how-to-upload-products-on-creative-fabrica/",
+      "fetched_at": "2026-11-01T17:20:44.075Z",
+      "status": 403,
+      "elapsed_ms": 59,
+      "final_url": "https://www.creativefabrica.com/the-artistry/designer-stories/how-to-upload-products-on-creative-fabrica/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "17.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 6091
+    }
+  ]
+}
