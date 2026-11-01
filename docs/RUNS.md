@@ -2250,3 +2250,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-01 17:25 | build | owner-notes.yml first run: success (dispatch run 610 at 17:11, 13 s; after the 09:28 installer)
 - 2026-11-01 17:25 | build | gankdat refresh-uk-planning-reread: origin still empty (entity-count 0, no replacement); re-read 11-08
 - 2026-11-01 17:25 | build | uk-planning §7 clock unchanged: actor 27 runs/30d for outside users, REST external 0; nothing retires
+- 2026-11-01 17:36 | burn-down | Spike spike-creative-fabrica-spreadsheet-shelf done: park, dated 12-28 — identity check, 2-month lockout, 1–6 reviews
+- 2026-11-01 17:36 | burn-down | Relay: 17 raw + 7 rendered lines; every www page a Cloudflare challenge, the two help articles rendered in full
+- 2026-11-01 17:36 | burn-down | Primary: Etsy counts as the existing store; 'insufficient number of designs' locks a reapply for 2 months
+- 2026-11-01 17:36 | burn-down | Index: Designer Terms V1.3 reserve Sumsub ID verification; payouts from US$100; no tax spreadsheet on the shelf
+- 2026-11-01 17:36 | burn-down | Stopping at ~25 min: pass spent, spike done; nothing buildable, every queue cooling or dated
