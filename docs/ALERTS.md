@@ -347,3 +347,4 @@ closed entries older than 30 days (git keeps the history).
 - 2026-10-29 owner: sell the tax workbook from our own page too — create one Stripe Payment Link, ~3 min, £0 — docs/for-owner/actions/034-stripe-payment-link-tax-workbook.md
 - 2026-10-30 owner: Claude directory: read gankdat's status + 4 numbers, ~3 min — docs/for-owner/actions/035-claude-directory-read.md
 - 2026-10-31 tax-workbook: KDP mail (14:32 UTC) says the Kindle guide is live and enrolled in KDP Select; kdp-listing-live can fill ASIN/URL, google-play-listing unblocks 90 d after 2026-10-31
+- 2026-11-01 owner: Etsy could not charge your card for a £2.98 bill; pay it or update the card in Etsy billing before 22 Nov

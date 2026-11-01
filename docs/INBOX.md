@@ -265,3 +265,4 @@
 - 2026-10-31 15:05 | notification | amazon.com | Welcome to Amazon: Shopping just got easier | account welcome promo | logged
 - 2026-11-01 13:59 | notification | github.com | [giovf/rorororo] build(deps): bump the minor-and-patch group with 12 updates (PR #10) | Dependabot PR opened | logged
 - 2026-11-01 14:03 | notification | github.com | Re: [giovf/rorororo] build(deps): bump the minor-and-patch group (PR #10) | PR #10 merged into main | logged
+- 2026-11-01 18:36 | store | etsy.com | IMPORTANT: Your payment failed | Etsy could not charge the card for a £2.98 bill (ledger carries £14.20 Etsy costs, no £2.98 row); pay by the 22nd or shop is suspended | needs owner
