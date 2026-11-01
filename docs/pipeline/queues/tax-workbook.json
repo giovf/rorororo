@@ -2,7 +2,7 @@
   "venture": "tax-workbook",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-30",
+  "updated": "2026-11-01",
   "researched": "2026-10-26",
   "weight": 2,
   "items": [
@@ -190,6 +190,16 @@
       "status": "blocked",
       "blocked_on": "kdp-listing-live: KDP reviews a title's formats together and the Kindle edition (submitted 2026-10-29) is still in review with a title-vs-cover fix pending; build the day the 'is now live' mail lands (inbox triage, SELF-CAUSED kdp row)",
       "added": "2026-10-30"
+    },
+    {
+      "id": "shelf-stats-owner-note",
+      "title": "Ask the owner once a month for the two shelf readings only they can see — Etsy Shop Manager listing views per day and KDP Reports' copies sold — as one Telegram note (`etsy views N/day kindle N sold`, ≤ 1 minute) through the Monday report's owner digest line (first ask the report of 2026-11-30, then monthly), and have the owner-notes reader write each figure as a RESEARCH §7 row (`Etsy views`, `Kindle sold`) so etsy-day-60-read (2026-12-28) and the Kindle proof clock (§6) have their numbers",
+      "why": "Review 2026-W44 gap: RESEARCH §6's kill rule needs '≥ 5 listing views a day in Shop Manager' and the Kindle proof and kill need the owner's monthly `kindle: N sold` note, but nothing asks for either — Etsy forbids automated reads, the sandbox never opens kdp.amazon.com, and sale mail counts sales, not views. Without the ask, the day-60 read on 12-28 would have sales but no views and could neither apply the kill nor rule it out.",
+      "effort_days": 0.15,
+      "proof": "the Monday report's digest line carries the ask on its dated weeks; a `etsy views … kindle …` note becomes two RESEARCH §7 rows the hour it arrives (tested on a sample note); the 12-28 read cites them",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-01"
     }
   ],
   "research_after": "2026-11-03"

@@ -2208,3 +2208,22 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-01 02:07 | triage | notify owner dispatched: last run started 23:38 UTC, 2 h 29 min ago
 - 2026-11-01 02:07 | watchdog | ci-minutes: 568 billed min/7d (~2434/mo; cap 2000) top: notify owner 118, fetch relay 87, gankdat metrics 87
 - 2026-11-01 05:07 | triage | notify owner dispatched: last run started 02:06 UTC, 3 h ago
+- 2026-11-01 08:35 | review | Scorecard W44: every money row still 0; tax workbook live on Etsy (10-29) and Kindle (10-31), 0 sales yet
+- 2026-11-01 08:35 | review | Cash: spent £58.60 (Etsy £14.20 added), planned £8, headroom £33.40 ≈ 9.0 months; no Cloudflare overage
+- 2026-11-01 08:35 | review | gankdat: keep — 4 accounts, 0 paid; x402 buyers 11 calls / 5 clients, no repeat; change feeds back to 0
+- 2026-11-01 08:35 | review | Variables Toolkit: keep — 19 views, 6 runs, 0 installs; untouched to the 12-20 verdict
+- 2026-11-01 08:35 | review | ReadFocus: keep — 2 Chrome users, 20 impressions/7d, 0 keys; day-30 read done 10-30, verdict 12-21
+- 2026-11-01 08:35 | review | Highlight Keep: keep — 0 users, 14 impressions/7d, 0 keys; day-30 read done 10-30, verdict 12-21
+- 2026-11-01 08:35 | review | Hackathons: keep — Meta entry built, key blocked by Meta's sign-in loop; deadline 4 Nov 21:00 ET
+- 2026-11-01 08:35 | review | tax-workbook: keep — Etsy day 3, Kindle day 1, Payhip and own checkout wait on 033/034; weight 2
+- 2026-11-01 08:35 | review | oss-bounties: stays killed — board 10-26 holds no free, funded, escrowed code row at US$25+
+- 2026-11-01 08:35 | review | foundry: keep — second usage-limit week, week budget built 10-29; CI ≈ 2,434 min/mo vs 2,000 cap
+- 2026-11-01 08:35 | review | Queue weights unchanged; cadence criterion not met (W44 Built % 21 is an under-count, fixed 10-31)
+- 2026-11-01 08:35 | review | Decision: Meta entry is submitted by 4 Nov with or without the live run; fallback item queued (6)
+- 2026-11-01 08:35 | review | Decision: usaspending exchange trigger tightened to a repeat x402 payer; first-call trigger met, not promoted
+- 2026-11-01 08:35 | review | Decision: W46 review brings the gankdat reposition forward if the 11-06/11-07/11-14 reads are all zero
+- 2026-11-01 08:35 | review | Gap queued: tax-workbook shelf-stats-owner-note (4) — monthly Etsy views + Kindle sold note to §7 rows
+- 2026-11-01 08:35 | review | Gap closed: hackathons Metrics rows added for the Meta approval, build and key block (10-21..10-29)
+- 2026-11-01 08:35 | review | STRATEGY §4 Now column refreshed from the 11-01 rows; §2 Etsy, directories, Bazaar rows; §8 five lines
+- 2026-11-01 08:35 | review | Owner: Meta key still needed by 4 Nov (action 032, open since 10-26); no new ALERTS line, notify sent
+- 2026-11-01 08:35 | notify | Meta hackathon closes Wednesday: retry the key, or the entry goes in without a live demo

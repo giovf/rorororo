@@ -3,6 +3,8 @@
 - **Date:** 2026-10-26
 - **Status:** waiting on Meta — dev.meta.ai logs you out when creating a key (2026-10-29); the credit claim is in and
   Meta issues it within a few days. Try step 1 again once the "credits issued" mail arrives.
+  *Review 2026-W44 (2026-11-01):* the entry goes in by 4 Nov either way — if the key is still missing on 3 Nov, the
+  routines prepare an honest submission without the live demo and step 3 below is the same ~15-minute paste.
 - **Your time:** ~10 minutes now (step 1), ~15 minutes by 4 Nov (step 3)
 - **Cost:** £0.00 expected. *Corrected 2026-10-29 from the Credit Terms you saved:* Meta requires a card on file for any
   Model API account and charges it at standard prices once the US$150 credit is used up, with no cap on their side. The
