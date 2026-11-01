@@ -2234,3 +2234,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-01 09:25 | build | scripts/shelf-note.ts: `etsy views N/day kindle N sold` → `Etsy views`/`Kindle sold` §7 rows; 12 tests
 - 2026-11-01 09:25 | build | owner-notes.mjs calls the reader; notify-owner.yml and owner-notes.yml now commit RESEARCH.md (docs/ci)
 - 2026-11-01 09:25 | build | weekly-report.md §4 and SCHEDULERS carry the shelf ask; etsy-day-60-read cites the rows; first run next slot
+- 2026-11-01 12:08 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
