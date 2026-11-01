@@ -2236,3 +2236,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-01 09:25 | build | weekly-report.md §4 and SCHEDULERS carry the shelf ask; etsy-day-60-read cites the rows; first run next slot
 - 2026-11-01 12:08 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-11-01 15:08 | triage | notify owner dispatched: last run started 12:09 UTC, 3 h ago
+- 2026-11-01 17:25 | build | Main green at STEP 0; no new owner notes; item gankdat refresh-uk-planning-reread (claimed 17:10)
+- 2026-11-01 17:25 | build | notify-owner.yml first run: success (dispatch run 479 at 12:09, 83 s; after the 09:28 installer)
+- 2026-11-01 17:25 | build | owner-notes.yml first run: success (dispatch run 610 at 17:11, 13 s; after the 09:28 installer)
+- 2026-11-01 17:25 | build | gankdat refresh-uk-planning-reread: origin still empty (entity-count 0, no replacement); re-read 11-08
+- 2026-11-01 17:25 | build | uk-planning §7 clock unchanged: actor 27 runs/30d for outside users, REST external 0; nothing retires
