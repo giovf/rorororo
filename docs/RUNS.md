@@ -2207,3 +2207,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 21:07 | notify | 2 jobs for your next Claude Code session, oldest 27 days: sign and upload ReadFocus 0.3.0
 - 2026-11-01 02:07 | triage | notify owner dispatched: last run started 23:38 UTC, 2 h 29 min ago
 - 2026-11-01 02:07 | watchdog | ci-minutes: 568 billed min/7d (~2434/mo; cap 2000) top: notify owner 118, fetch relay 87, gankdat metrics 87
+- 2026-11-01 05:07 | triage | notify owner dispatched: last run started 02:06 UTC, 3 h ago
