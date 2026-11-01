@@ -102,7 +102,8 @@ jobs:
         run: |
           git config user.name "foundry-notify[bot]"
           git config user.email "info@gankdat.com"
-          git add docs/ops/NOTIFIED.md docs/OWNER-NOTES.md
+          # ventures/tax-workbook/RESEARCH.md: the §7 rows a shelf-readings note yields (scripts/shelf-note.ts, 2026-11-01)
+          git add docs/ops/NOTIFIED.md docs/OWNER-NOTES.md ventures/tax-workbook/RESEARCH.md
           if git diff --cached --quiet; then
             echo "cursor unchanged, no new notes"
           else

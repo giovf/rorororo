@@ -42,7 +42,8 @@ jobs:
         run: |
           git config user.name "foundry-notes[bot]"
           git config user.email "info@gankdat.com"
-          git add docs/OWNER-NOTES.md
+          # ventures/tax-workbook/RESEARCH.md: the §7 rows a shelf-readings note yields (scripts/shelf-note.ts, 2026-11-01)
+          git add docs/OWNER-NOTES.md ventures/tax-workbook/RESEARCH.md
           git diff --cached --quiet && { echo "no change"; exit 0; }
           git commit -m "notes: owner notes from Telegram"
           # Retried: a routine's push in the same second rejected the one-shot push (relay run 143, 2026-10-22;
