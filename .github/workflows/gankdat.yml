@@ -63,3 +63,16 @@ jobs:
           age=$(( $(date -u +%s) - $(date -u -d "$latest" +%s) ))
           echo "age: ${age}s"
           [ "$age" -lt 900 ]
+
+      - name: Push the public mirror (giovf/gankdat)
+        # 2026-11-02 (foundry mirror-as-gankdat-step): mirror-gankdat.yml used to run on every push
+        # touching the venture — 31 runs, 33 billed minutes in the week to 11-02, a billed minute each for one
+        # snapshot and push — on a second runner that checked out the same tree this job already holds. The mirror now rides
+        # here, after a verified deploy, for seconds inside a job that bills anyway; mirror-gankdat.yml keeps
+        # a daily cron (plus dispatch) for the files this job's path filter leaves out (README.md, apify/).
+        # PR_TOKEN (classic, public_repo) pushes to the owner's public repository.
+        if: success() && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        run: node --disable-warning=ExperimentalWarning scripts/mirror-gankdat.ts
+        env:
+          MIRROR_PUSH: '1'
+          MIRROR_TOKEN: ${{ secrets.PR_TOKEN }}
