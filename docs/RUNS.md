@@ -2257,3 +2257,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-01 17:36 | burn-down | Stopping at ~25 min: pass spent, spike done; nothing buildable, every queue cooling or dated
 - 2026-11-01 18:07 | triage | notify owner dispatched: last run started 15:25 UTC, 2 h 41 min ago
 - 2026-11-02 00:07 | triage | notify owner dispatched: last run started 20:47 UTC, 3 h ago
+- 2026-11-02 00:08 | watchdog | ci-minutes: 576 billed min/7d (~2469/mo; cap 2000) top: notify owner 131, gankdat metrics 88, fetch relay 87
