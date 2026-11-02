@@ -2336,3 +2336,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 18:30 | interactive | 035 noted (directory listing in review); 036 A: repo stays public, actions-minutes dropped
 - 2026-11-02 18:30 | notify | Tax workbook now also sells from our own page, and on Payhip
 - 2026-11-02 18:23 | interactive | Meta hackathon entry submitted by the owner (indie track); results item dated 11-10
+- 2026-11-02 19:00 | burn-down | Exchange pre-research: UK street-level crime by postcode as a gankdat lookup — spike seeded (4); 0 spikes were open
+- 2026-11-02 19:00 | burn-down | Index reads: police.uk API keyless, 15 rps; UKCrimeStats £10–96/mo API; PropertyData 1 credit a call; 3 relay hosts
+- 2026-11-02 19:00 | burn-down | Stopping at ~45 min: 1 item built, 1 first run recorded, 1 spike seeded; pipeline starved and cooled
