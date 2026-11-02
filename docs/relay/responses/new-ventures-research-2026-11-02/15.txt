@@ -1,0 +1,222 @@
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Explore AI Bots on Poe","description":"Chat with GPT-5.5, Claude-Opus-4.7, Gemini-3.5-Flash, Nano-Banana-Pro, Veo-3.1, and thousands of other AI models. Browse official bots, image generators, and more.","url":"https://poe.com/explore","mainEntity":{"@type":"ItemList","numberOfItems":35,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"Assistant","description":"General-purpose assistant. Write, code, ask for real-time information, create images, and more.","url":"https://poe.com/Assistant","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-3002-200-vcmrcgoloaktppabmdfsgeczaixswmxt.jpeg"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"GPT-6-Astra","description":"GPT-6 Astra is OpenAI's most capable model, built for the hardest end-to-end work: complex reasoning, agentic coding, computer use, research, and professional document creation. It runs multi-step workflows with less guidance, asks focused questions only when the answer changes the outcome, and shows strong visual judgment on screenshots and documents. Supports a 1M-token context window, native vision, adjustable reasoning effort, and web search.","url":"https://poe.com/GPT-6-Astra","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7114372-200-fiqxdrrybpvcnhbtxesunwdyrfwwsqaw.jpeg"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"Claude-Opus-5.5","description":"Anthropic’s Claude Opus 5.5 for demanding coding and professional knowledge work, with a 1M-token context window, image understanding, and clearer communication.","url":"https://poe.com/Claude-Opus-5.5","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7139410-200-mmylztmsvgktgazozxbokrfhxscbtwos.jpeg"}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"Claude-Fable-5.1","description":"Anthropic's Claude Fable 5.1 is built for demanding reasoning and long-horizon agentic work, extending Claude Fable 5 with stronger long-running agentic coding, multistep research, and document, spreadsheet, and slide work.","url":"https://poe.com/Claude-Fable-5.1","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7112046-200-zpqcjyvhepceamvstqwagfbjaaptegdf.jpeg"}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"Gemini-4-Argon","description":"Google’s Gemini 4 Argon for complex coding, reasoning, and document analysis.","url":"https://poe.com/Gemini-4-Argon","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7161851-200-qmnsjsgbehprftofddowtjkhjephxaok.jpeg"}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"Grok-4.7","description":"Grok 4.7 is xAI’s frontier model for coding and professional knowledge work, built to handle longer, harder tasks and check its work more carefully. In xAI’s xhigh evaluations, it scored 46.3% on CursorBench 4.0 and 1,695 Elo on GDPval.","url":"https://poe.com/Grok-4.7","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7137951-200-iustawktcftkprbulrpaelkoiazoflwj.jpeg"}},{"@type":"ListItem","position":7,"item":{"@type":"SoftwareApplication","name":"Kimi-K3.1-Pro","description":"Moonshot AI’s Kimi K3.1 Pro for complex reasoning, coding, and long-context work. Supports image input and a 1M-token context window.","url":"https://poe.com/Kimi-K3.1-Pro","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7171953-200-tceodsmbnjauyucufuebpcftiocyrnje.jpeg"}},{"@type":"ListItem","position":8,"item":{"@type":"SoftwareApplication","name":"Mistral-Large-4","description":"Mistral AI’s open-weight multimodal model for reasoning, coding, and image understanding, with a 524K-token context window. Available in public preview.","url":"https://poe.com/Mistral-Large-4","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7154697-200-bftrqsaodraqtjhmnclqjkngoqgbgmmi.jpeg"}},{"@type":"ListItem","position":9,"item":{"@type":"SoftwareApplication","name":"Claude-Sonnet-5.5","description":"Anthropic's Claude Sonnet 5.5 for fast everyday work, coding, and document creation, with a 1M-token context window, image understanding, adjustable reasoning effort, and web search.","url":"https://poe.com/Claude-Sonnet-5.5","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7145685-200-wvcpjjjdsdzgsnphmojfvckpfumfxcld.jpeg"}},{"@type":"ListItem","position":10,"item":{"@type":"SoftwareApplication","name":"GPT-6.1-Sol","description":"OpenAI’s GPT-6.1 Sol for complex coding, reasoning, and professional work.","url":"https://poe.com/GPT-6.1-Sol","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7146605-200-yreghvlymqhmuarudhzfzjvvhapfrlyq.jpeg"}},{"@type":"ListItem","position":11,"item":{"@type":"SoftwareApplication","name":"Gemini-3.8-Flash","description":"Google’s fast, cost-efficient workhorse model for coding and agents. Gemini 3.8 Flash delivers strong reasoning at Flash speed, with a 1M-token context window, web search, and adjustable thinking levels.","url":"https://poe.com/Gemini-3.8-Flash","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7112974-200-qamczzaemdczbtnfqorkkhvrjrspbrtv.jpeg"}},{"@type":"ListItem","position":12,"item":{"@type":"SoftwareApplication","name":"Gemini-Omni-1.1-Flash","description":"Google's Gemini Omni 1.1 Flash brings Gemini's multimodal reasoning to controllable video generation. Generate from text, images, or video, then extend scenes with coherent motion, or interpolate between start and end frames for smooth, deliberate camera movement. Natural-language editing and multimodal referencing keep your scene consistent as it grows.","url":"https://poe.com/Gemini-Omni-1.1-Flash","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7107184-200-ffhtjgnlvkulzzqadvcgstwdrtuortcr.jpeg"}},{"@type":"ListItem","position":13,"item":{"@type":"SoftwareApplication","name":"GPT-Image-2.5-Flare","description":"OpenAI's fast image generation and editing model, designed for high-quality results with lower latency and rapid creative iteration.","url":"https://poe.com/GPT-Image-2.5-Flare","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7119678-200-tibwyubmtbyzdoiwgstwfttyxiunvqwu.jpeg"}},{"@type":"ListItem","position":14,"item":{"@type":"SoftwareApplication","name":"GPT-Image-2.5-Sunburst","description":"OpenAI's premium image generation and editing model, designed for precise instruction following and high-quality results on complex prompts.","url":"https://poe.com/GPT-Image-2.5-Sunburst","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7119679-200-hxglaikrfozikdrdrezoizzgverbbiof.jpeg"}},{"@type":"ListItem","position":15,"item":{"@type":"SoftwareApplication","name":"Nano-Banana-2-Lite","description":"Google's fastest, most efficient Gemini Image model, delivering high-speed generation and editing at the lowest cost yet. It maintains strong character consistency, precise visual editing, and real-world knowledge—accelerated for rapid-fire creative exploration with dramatically reduced latency.","url":"https://poe.com/Nano-Banana-2-Lite","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7046903-200-oiuxpwxhwyjabxheodktfgnptfspizcv.jpeg"}},{"@type":"ListItem","position":16,"item":{"@type":"SoftwareApplication","name":"Claude-Fable-5","description":"Anthropic's previous flagship model, a Mythos-class system made safe for general use. Claude Fable 5 is state-of-the-art on nearly all tested benchmarks, with exceptional performance in software engineering, knowledge work, vision, and scientific research—and its lead widens the longer and more complex the task. It excels at codebase-wide migrations, long-horizon agentic coding, finance-grade analysis, and vision-only tasks, while staying focused across millions of tokens and improving its own work using persistent memory. Released with conservatively tuned safeguards that fall back to Claude Opus 4.8 on a small fraction of sensitive queries (cybersecurity, biology and chemistry, and distillation), Fable 5 pairs frontier capability with elite reasoning, alignment, and reliability.","url":"https://poe.com/Claude-Fable-5","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-1045-200-ogfikbncdxjvztzzkpxnznqsahbebjqw.jpeg"}},{"@type":"ListItem","position":17,"item":{"@type":"SoftwareApplication","name":"Gemini-3.5-Flash-Lite","description":"Google’s fastest, most cost-efficient Gemini 3.5 model, built for high-volume work. Analyze text, images, audio, and video, adjust reasoning effort, search the web for current information, and work with up to 1M tokens of context.","url":"https://poe.com/Gemini-3.5-Flash-Lite","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7069678-200-uzbusfcmycqeyihzanyognuaurjtupvr.jpeg"}},{"@type":"ListItem","position":18,"item":{"@type":"SoftwareApplication","name":"GPT-6.1-Terra","description":"OpenAI's GPT-6.1 Terra, a fast, efficient model for visual reasoning, computer use, and clear, natural writing, with a 1M-token context window.","url":"https://poe.com/GPT-6.1-Terra","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7174567-200-cmrrebqvkduvyesthtjmacwlgqtvslnr.jpeg"}},{"@type":"ListItem","position":19,"item":{"@type":"SoftwareApplication","name":"GPT-6-Luna","description":"OpenAI’s GPT-6 Luna for fast, efficient work on focused tasks.","url":"https://poe.com/GPT-6-Luna","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7139557-200-fmwfkeonpwptrzdxywgsmoqujxolrovs.jpeg"}},{"@type":"ListItem","position":20,"item":{"@type":"SoftwareApplication","name":"GPT-5.5-Pro","description":"A smarter, more precise version of GPT-5.5 that leverages additional compute to think harder and provide consistently better answers. Designed to tackle your toughest problems, this model operates with the highest reasoning capability to ensure maximum accuracy on complex agentic, coding, and research tasks.","url":"https://poe.com/GPT-5.5-Pro","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-3066-200-ckrtuqgcziyimoymmlwjluxdoyqbzkvv.jpeg"}},{"@type":"ListItem","position":21,"item":{"@type":"SoftwareApplication","name":"Claude-Opus-5","description":"Anthropic’s Claude Opus 5 for coding and professional knowledge work. For the newer model, use Claude-Opus-5.5.","url":"https://poe.com/Claude-Opus-5","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7072723-200-rotavpzjsirdhtdkfrbdjhrmajnapukv.jpeg"}},{"@type":"ListItem","position":22,"item":{"@type":"SoftwareApplication","name":"Claude-Opus-4.8","description":"Anthropic's flagship model for enterprise-grade knowledge work, now with sharper judgment and significantly improved honesty. Powered by Dynamic Workflows and effort control, Opus 4.8 excels at codebase-scale migrations, multi-agent coordination, and long-running autonomous tasks with hundreds of parallel subagents. It leverages a massive 1M-token context window and best-in-class computer-use capabilities to seamlessly execute intricate workflows with elite reasoning, safety, and reliability.","url":"https://poe.com/Claude-Opus-4.8","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-1044-200-rsqutialttghdgtplrvwcewbmdnyacsu.jpeg"}},{"@type":"ListItem","position":23,"item":{"@type":"SoftwareApplication","name":"Claude-Sonnet-5","description":"Claude Sonnet 5 is Anthropic's previous-generation Sonnet model for coding, tool use, and knowledge work. For the newer model, try Claude Sonnet 5.5: https://poe.com/Claude-Sonnet-5.5.","url":"https://poe.com/Claude-Sonnet-5","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7046949-200-smsserpzdgerkbwcnkclpkmtumetzjjk.jpeg"}},{"@type":"ListItem","position":24,"item":{"@type":"SoftwareApplication","name":"Gemini-3.7-Flash","description":"Google’s most intelligent workhorse model for coding and agents. Gemini 3.7 Flash delivers fast, powerful reasoning for complex tasks.","url":"https://poe.com/Gemini-3.7-Flash","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7092622-200-zyhendlxpqruyjfddpjgxbvwplrbbhqq.jpeg"}},{"@type":"ListItem","position":25,"item":{"@type":"SoftwareApplication","name":"Inkling","description":"Inkling is Thinking Machines’ multimodal reasoning model, built for deep analysis, coding, and tool-driven work across text, images, and documents. It uses a 975B-parameter mixture-of-experts architecture with 41B active parameters and a 256K-token context window.","url":"https://poe.com/Inkling","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7064184-200-vkhazeipyiyvgqamsijmhfhwyctfrmui.jpeg"}},{"@type":"ListItem","position":26,"item":{"@type":"SoftwareApplication","name":"Muse-Wonder-1.0","description":"Muse Wonder 1.0 is Meta’s model for advanced coding, reasoning, and complex tasks, with a 1M-token context window and image and document understanding.","url":"https://poe.com/Muse-Wonder-1.0","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7160905-200-ovlpmcmhtfrgboccwljkrftyoamueyzy.jpeg"}},{"@type":"ListItem","position":27,"item":{"@type":"SoftwareApplication","name":"Muse-Spark-Open","description":"Meta’s open-weight reasoning model for coding and agentic workflows, served through Vercel AI Gateway. Supports text and image input with a 1M-token context window.","url":"https://poe.com/Muse-Spark-Open","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7164202-200-onxyqpgykkjhmysjdhxqumuwkctegoho.jpeg"}},{"@type":"ListItem","position":28,"item":{"@type":"SoftwareApplication","name":"Grok-4.6","description":"xAI’s Grok 4.6 model for coding, agents, and knowledge work. For the newer model, use Grok-4.7.","url":"https://poe.com/Grok-4.6","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7091299-200-dvbecevvtqywpfkhdtjbnhjnszxzppxo.jpeg"}},{"@type":"ListItem","position":29,"item":{"@type":"SoftwareApplication","name":"Kimi-K3","description":"For the newer model, try [Kimi-K3.1-Pro](https://poe.com/Kimi-K3.1-Pro). Kimi K3 supports long-horizon coding and end-to-end knowledge work with a 1M-token context window.","url":"https://poe.com/Kimi-K3","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7065999-200-jyxydakqlewteavdxmjrflwlicrnwlng.jpeg"}},{"@type":"ListItem","position":30,"item":{"@type":"SoftwareApplication","name":"Grok-4.5","description":"xAI's prior smartest model (before Grok-4.6) with frontier performance on coding, knowledge work, and STEM.","url":"https://poe.com/Grok-4.5","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7055656-200-bovefbbszqkzrytlszlttfhianrfhyxm.jpeg"}},{"@type":"ListItem","position":31,"item":{"@type":"SoftwareApplication","name":"GPT-6-Sol","description":"OpenAI’s GPT-6 Sol for complex coding and agentic workflows. For the newer model, try GPT-6.1-Sol: https://poe.com/GPT-6.1-Sol","url":"https://poe.com/GPT-6-Sol","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7139556-200-chquoddktgbocjoilepjylmuqixghiok.jpeg"}},{"@type":"ListItem","position":32,"item":{"@type":"SoftwareApplication","name":"GPT-5.6-Sol","description":"OpenAI’s GPT-5.6 Sol for complex professional work. For the newer model, use GPT-6-Sol.","url":"https://poe.com/GPT-5.6-Sol","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7049737-200-shgbigagomprucxmncrrkmergnugiwlx.jpeg"}},{"@type":"ListItem","position":33,"item":{"@type":"SoftwareApplication","name":"GPT-5.6-Terra","description":"OpenAI's GPT-5.6 Terra, a balanced previous-generation model for everyday work, coding, analysis, and research. For the newer model, try GPT-6.1-Terra: https://poe.com/GPT-6.1-Terra","url":"https://poe.com/GPT-5.6-Terra","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7049738-200-pvqaemcbljargioguxvkdkgzygnlmfhx.jpeg"}},{"@type":"ListItem","position":34,"item":{"@type":"SoftwareApplication","name":"GPT-5.5","description":"GPT-5.5 is OpenAI's smartest and most intuitive model, built for agentic coding, computer use, knowledge work, and early scientific research. It handles complex multi-step tasks with less guidance, figures out what needs to happen next on unclear problems, and matches GPT-5.4 per-token latency while delivering a much higher level of intelligence. Achieves state-of-the-art accuracy on Terminal-Bench 2.0 and SWE-Bench Pro, solving more tasks end-to-end in a single pass than previous models. Supports 400k tokens of input context and native vision.","url":"https://poe.com/GPT-5.5","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-3065-200-aauhdsfaafikakpehttkeyjzvgbtgsea.jpeg"}},{"@type":"ListItem","position":35,"item":{"@type":"SoftwareApplication","name":"Gemini-3.6-Flash","description":"Google’s token-efficient workhorse model for coding, knowledge work, and multimodal tasks. Get advanced reasoning at Flash speed, analyze text, images, audio, and video, and work with up to 1M tokens of context.","url":"https://poe.com/Gemini-3.6-Flash","applicationCategory":"AI Chatbot","image":"https://qph.cf2.poecdn.net/main-thumb-pb-7069681-200-npdnkkdjzlnoexpzropiebakuyfqhpzi.jpeg"}}]}}
+meta description: Chat with GPT-5.5, Claude-Opus-4.7, Gemini-3.5-Flash, Nano-Banana-Pro, Veo-3.1, and thousands of other AI models. Browse official bots, image generators, and more.
+meta twitter:card: summary_large_image
+meta twitter:site: @poe_platform
+meta twitter:url: https://poe.com/explore
+meta twitter:title: Explore AI Bots on Poe
+meta twitter:description: Chat with GPT-5.5, Claude-Opus-4.7, Gemini-3.5-Flash, Nano-Banana-Pro, Veo-3.1, and thousands of other AI models. Browse official bots, image generators, and more.
+meta twitter:image: https://poe.com/ogImageExplore.png
+meta og:type: website
+meta og:url: https://poe.com/explore
+meta og:title: Explore AI Bots on Poe
+meta og:description: Chat with GPT-5.5, Claude-Opus-4.7, Gemini-3.5-Flash, Nano-Banana-Pro, Veo-3.1, and thousands of other AI models. Browse official bots, image generators, and more.
+meta og:image: https://poe.com/ogImageExplore.png
+meta og:site_name: Poe
+meta description: Chat with GPT-5.5, Claude-Opus-4.7, Gemini-3.5-Flash, Nano-Banana-Pro, Veo-3.1, and thousands of other AI models. Browse official bots, image generators, and more.
+Explore - Poe
+/
+Get more points
+Explore (/explore)
+Leaderboard (/leaderboard)
+Send feedback (https://help.poe.com/hc/en-us/requests/new?ticket_form_id=16988793943060&tf_subject=Feedback%20(user-agent%3A%20Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F128.0%20Safari%2F537.36%20gankdat-relay))
+Download app (https://poe.com/pages/get-poe)
+Poe - Fast AI Chat
+Chat with the best AI, privately or in a group chat. Explore GPT-6-Astra, Claude-Opus-5.5, Claude-Fable-5.1, Gemini-4-Argon, Grok-4.7, and thousands of others, all on Poe.
+Download app (https://poe.com/pages/get-poe)
+Follow us on X (https://twitter.com/poe_platform)
+Careers (https://www.careers.quora.com) · Help center (https://help.poe.com/hc) · Privacy policy (/privacy) · Terms of service (/tos)
+0
+Explore
+Official
+Budget
+Search
+Image
+Video
+Audio
+Programming
+[Bot image for Assistant]
+Assistant
+General-purpose assistant. Write, code, ask for real-time information, create images, and more.
+Queries are automatically routed based on the task and subscription status.
+For subscribers:
+- General queries: @GPT-6.1-Sol
+- Image generation: @Nano-Banana-2
+- Video-input tasks: @Gemini-3.1-Pro
+For non-subscribers:
+- General queries: @GPT-6-Luna
+- Image generation: @Nano-Banana-2
+- Video-input tasks: @Gemini-3-Flash
+OFFICIAL
+[Bot image for GPT-6-Astra]
+GPT-6-Astra
+GPT-6 Astra is OpenAI's most capable model, built for the hardest end-to-end work: complex reasoning, agentic coding, computer use, research, and professional document creation. It runs multi-step workflows with less guidance, asks focused questions only when the answer changes the outcome, and shows strong visual judgment on screenshots and documents. Supports a 1M-token context window, native vision, adjustable reasoning effort, and web search.
+OFFICIAL
+[Bot image for Claude-Opus-5.5]
+Claude-Opus-5.5
+Anthropic’s Claude Opus 5.5 for demanding coding and professional knowledge work, with a 1M-token context window, image understanding, and clearer communication.
+OFFICIAL
+[Bot image for Claude-Fable-5.1]
+Claude-Fable-5.1
+Anthropic's Claude Fable 5.1 is built for demanding reasoning and long-horizon agentic work, extending Claude Fable 5 with stronger long-running agentic coding, multistep research, and document, spreadsheet, and slide work.
+Its 1M-token context window and image understanding suit large codebases, extensive documents, and multimodal analysis. Adaptive thinking is always on, steerable from low to max effort.
+OFFICIAL
+[Bot image for Gemini-4-Argon]
+Gemini-4-Argon
+Google’s Gemini 4 Argon for complex coding, reasoning, and document analysis.
+OFFICIAL
+[Bot image for Grok-4.7]
+Grok-4.7
+Grok 4.7 is xAI’s frontier model for coding and professional knowledge work, built to handle longer, harder tasks and check its work more carefully. In xAI’s xhigh evaluations, it scored 46.3% on CursorBench 4.0 and 1,695 Elo on GDPval.
+OFFICIAL
+[Bot image for Kimi-K3.1-Pro]
+Kimi-K3.1-Pro
+Moonshot AI’s Kimi K3.1 Pro for complex reasoning, coding, and long-context work. Supports image input and a 1M-token context window.
+OFFICIAL
+[Bot image for Mistral-Large-4]
+Mistral-Large-4
+Mistral AI’s open-weight multimodal model for reasoning, coding, and image understanding, with a 524K-token context window. Available in public preview.
+OFFICIAL
+[Bot image for Claude-Sonnet-5.5]
+Claude-Sonnet-5.5
+Anthropic's Claude Sonnet 5.5 for fast everyday work, coding, and document creation, with a 1M-token context window, image understanding, adjustable reasoning effort, and web search.
+OFFICIAL
+[Bot image for GPT-6.1-Sol]
+GPT-6.1-Sol
+OpenAI’s GPT-6.1 Sol for complex coding, reasoning, and professional work.
+OFFICIAL
+[Bot image for Gemini-3.8-Flash]
+Gemini-3.8-Flash
+Google’s fast, cost-efficient workhorse model for coding and agents. Gemini 3.8 Flash delivers strong reasoning at Flash speed, with a 1M-token context window, web search, and adjustable thinking levels.
+OFFICIAL
+[Bot image for Gemini-Omni-1.1-Flash]
+Gemini-Omni-1.1-Flash
+Google's Gemini Omni 1.1 Flash brings Gemini's multimodal reasoning to controllable video generation. Generate from text, images, or video, then extend scenes with coherent motion, or interpolate between start and end frames for smooth, deliberate camera movement. Natural-language editing and multimodal referencing keep your scene consistent as it grows.
+OFFICIAL
+[Bot image for GPT-Image-2.5-Flare]
+GPT-Image-2.5-Flare
+OpenAI's fast image generation and editing model, designed for high-quality results with lower latency and rapid creative iteration.
+OFFICIAL
+[Bot image for GPT-Image-2.5-Sunburst]
+GPT-Image-2.5-Sunburst
+OpenAI's premium image generation and editing model, designed for precise instruction following and high-quality results on complex prompts.
+OFFICIAL
+[Bot image for Nano-Banana-2-Lite]
+Nano-Banana-2-Lite
+Google's fastest, most efficient Gemini Image model, delivering high-speed generation and editing at the lowest cost yet. It maintains strong character consistency, precise visual editing, and real-world knowledge—accelerated for rapid-fire creative exploration with dramatically reduced latency.
+This bot supports optional parameters for additional customization.
+OFFICIAL
+[Bot image for Claude-Fable-5]
+Claude-Fable-5
+Anthropic's previous flagship model, a Mythos-class system made safe for general use. Claude Fable 5 is state-of-the-art on nearly all tested benchmarks, with exceptional performance in software engineering, knowledge work, vision, and scientific research—and its lead widens the longer and more complex the task. It excels at codebase-wide migrations, long-horizon agentic coding, finance-grade analysis, and vision-only tasks, while staying focused across millions of tokens and improving its own work using persistent memory. Released with conservatively tuned safeguards that fall back to Claude Opus 4.8 on a small fraction of sensitive queries (cybersecurity, biology and chemistry, and distillation), Fable 5 pairs frontier capability with elite reasoning, alignment, and reliability.
+This bot supports optional parameters for advanced customization.
+OFFICIAL
+[Bot image for Gemini-3.5-Flash-Lite]
+Gemini-3.5-Flash-Lite
+Google’s fastest, most cost-efficient Gemini 3.5 model, built for high-volume work. Analyze text, images, audio, and video, adjust reasoning effort, search the web for current information, and work with up to 1M tokens of context.
+OFFICIAL
+[Bot image for GPT-6.1-Terra]
+GPT-6.1-Terra
+OpenAI's GPT-6.1 Terra, a fast, efficient model for visual reasoning, computer use, and clear, natural writing, with a 1M-token context window.
+OFFICIAL
+NEW
+[Bot image for GPT-6-Luna]
+GPT-6-Luna
+OpenAI’s GPT-6 Luna for fast, efficient work on focused tasks.
+OFFICIAL
+[Bot image for GPT-5.5-Pro]
+GPT-5.5-Pro
+A smarter, more precise version of GPT-5.5 that leverages additional compute to think harder and provide consistently better answers. Designed to tackle your toughest problems, this model operates with the highest reasoning capability to ensure maximum accuracy on complex agentic, coding, and research tasks.
+OFFICIAL
+[Bot image for Claude-Opus-5]
+Claude-Opus-5
+Anthropic’s Claude Opus 5 for coding and professional knowledge work. For the newer model, use Claude-Opus-5.5.
+OFFICIAL
+[Bot image for Claude-Opus-4.8]
+Claude-Opus-4.8
+Anthropic's flagship model for enterprise-grade knowledge work, now with sharper judgment and significantly improved honesty. Powered by Dynamic Workflows and effort control, Opus 4.8 excels at codebase-scale migrations, multi-agent coordination, and long-running autonomous tasks with hundreds of parallel subagents. It leverages a massive 1M-token context window and best-in-class computer-use capabilities to seamlessly execute intricate workflows with elite reasoning, safety, and reliability.
+This bot supports optional parameters for advanced customization.
+OFFICIAL
+[Bot image for Claude-Sonnet-5]
+Claude-Sonnet-5
+Claude Sonnet 5 is Anthropic's previous-generation Sonnet model for coding, tool use, and knowledge work. For the newer model, try Claude Sonnet 5.5: https://poe.com/Claude-Sonnet-5.5.
+This bot supports optional parameters for advanced customization.
+OFFICIAL
+[Bot image for Gemini-3.7-Flash]
+Gemini-3.7-Flash
+Google’s most intelligent workhorse model for coding and agents. Gemini 3.7 Flash delivers fast, powerful reasoning for complex tasks.
+OFFICIAL
+[Bot image for Inkling]
+Inkling
+Inkling is Thinking Machines’ multimodal reasoning model, built for deep analysis, coding, and tool-driven work across text, images, and documents. It uses a 975B-parameter mixture-of-experts architecture with 41B active parameters and a 256K-token context window.
+OFFICIAL
+[Bot image for Muse-Wonder-1.0]
+Muse-Wonder-1.0
+Muse Wonder 1.0 is Meta’s model for advanced coding, reasoning, and complex tasks, with a 1M-token context window and image and document understanding.
+OFFICIAL
+[Bot image for Muse-Spark-Open]
+Muse-Spark-Open
+Meta’s open-weight reasoning model for coding and agentic workflows, served through Vercel AI Gateway. Supports text and image input with a 1M-token context window.
+OFFICIAL
+[Bot image for Grok-4.6]
+Grok-4.6
+xAI’s Grok 4.6 model for coding, agents, and knowledge work. For the newer model, use Grok-4.7.
+OFFICIAL
+[Bot image for Kimi-K3]
+Kimi-K3
+For the newer model, try [Kimi-K3.1-Pro](https://poe.com/Kimi-K3.1-Pro). Kimi K3 supports long-horizon coding and end-to-end knowledge work with a 1M-token context window.
+OFFICIAL
+[Bot image for Grok-4.5]
+Grok-4.5
+xAI's prior smartest model (before Grok-4.6) with frontier performance on coding, knowledge work, and STEM.
+OFFICIAL
+[Bot image for GPT-6-Sol]
+GPT-6-Sol
+OpenAI’s GPT-6 Sol for complex coding and agentic workflows. For the newer model, try GPT-6.1-Sol: https://poe.com/GPT-6.1-Sol
+OFFICIAL
+[Bot image for GPT-5.6-Sol]
+GPT-5.6-Sol
+OpenAI’s GPT-5.6 Sol for complex professional work. For the newer model, use GPT-6-Sol.
+OFFICIAL
+[Bot image for GPT-5.6-Terra]
+GPT-5.6-Terra
+OpenAI's GPT-5.6 Terra, a balanced previous-generation model for everyday work, coding, analysis, and research. For the newer model, try GPT-6.1-Terra: https://poe.com/GPT-6.1-Terra
+OFFICIAL
+[Bot image for GPT-5.5]
+GPT-5.5
+GPT-5.5 is OpenAI's smartest and most intuitive model, built for agentic coding, computer use, knowledge work, and early scientific research. It handles complex multi-step tasks with less guidance, figures out what needs to happen next on unclear problems, and matches GPT-5.4 per-token latency while delivering a much higher level of intelligence. Achieves state-of-the-art accuracy on Terminal-Bench 2.0 and SWE-Bench Pro, solving more tasks end-to-end in a single pass than previous models. Supports 400k tokens of input context and native vision.
+OFFICIAL
+[Bot image for Gemini-3.6-Flash]
+Gemini-3.6-Flash
+Google’s token-efficient workhorse model for coding, knowledge work, and multimodal tasks. Get advanced reasoning at Flash speed, analyze text, images, audio, and video, and work with up to 1M tokens of context.
+OFFICIAL
+Explore - Poe
+[Poe]
+Privacy Preference Center
+When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.
+Allow All
+Manage Consent Preferences
+Strictly Necessary Cookies
+Always Active
+These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information.
+Functional Cookies
+Always Active
+These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly.
+Targeting Cookies
+Always Active
+These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites. They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.
+Cookie List
+Clear
+checkbox label
+label
+Apply
+Cancel
+Consent Leg.Interest
+checkbox label
+label
+checkbox label
+label
+checkbox label
+label
+Reject All
+Confirm My Choices
+https://www.onetrust.com/products/cookie-consent/

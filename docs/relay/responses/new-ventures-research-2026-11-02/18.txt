@@ -1,0 +1,170 @@
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://docs.zapier.com/#organization","name":"Zapier","url":"https://docs.zapier.com","logo":{"@type":"ImageObject","url":"https://mintcdn.com/zapier-82f0e938/uPbDC0jSuXgHCaWD/logo/light.svg?fit=max&auto=format&n=uPbDC0jSuXgHCaWD&q=85&s=b6a37289cb22ac1a9681572651874765"}},{"@type":"WebSite","@id":"https://docs.zapier.com#website","name":"Zapier","url":"https://docs.zapier.com","publisher":{"@id":"https://docs.zapier.com/#organization"}},{"@type":"WebPage","@id":"https://docs.zapier.com/integrations/manage/sharing#webpage","url":"https://docs.zapier.com/integrations/manage/sharing","name":"Zapier integration sharing: public links and email invites","description":"How to share private Zapier integrations via public invite links or email to up to 200 users. Covers version-specific access control and revocation.","dateModified":"2026-10-22T11:56:13.000Z","isPartOf":{"@id":"https://docs.zapier.com#website"},"breadcrumb":{"@id":"https://docs.zapier.com/integrations/manage/sharing#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://docs.zapier.com/integrations/manage/sharing#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Manage","item":"https://docs.zapier.com/integrations/manage/add-team"},{"@type":"ListItem","position":2,"name":"Zapier integration sharing: public links and email invites","item":"https://docs.zapier.com/integrations/manage/sharing"}]},{"@type":["Article","TechArticle"],"@id":"https://docs.zapier.com/integrations/manage/sharing#article","headline":"Zapier integration sharing: public links and email invites","name":"Zapier integration sharing: public links and email invites","description":"How to share private Zapier integrations via public invite links or email to up to 200 users. Covers version-specific access control and revocation.","url":"https://docs.zapier.com/integrations/manage/sharing","mainEntityOfPage":{"@id":"https://docs.zapier.com/integrations/manage/sharing#webpage"},"dateModified":"2026-10-22T11:56:13.000Z","publisher":{"@id":"https://docs.zapier.com/#organization"},"isPartOf":{"@id":"https://docs.zapier.com#website"}}]}
+meta description: How to share private Zapier integrations via public invite links or email to up to 200 users. Covers version-specific access control and revocation.
+meta og:title: Zapier integration sharing: public links and email invites
+meta og:description: How to share private Zapier integrations via public invite links or email to up to 200 users. Covers version-specific access control and revocation.
+meta og:site_name: Zapier
+meta og:url: https://docs.zapier.com/integrations/manage/sharing
+meta og:type: website
+meta og:image: https://zapier-82f0e938.mintlify.app/_mintlify/api/og/v2?division=Sharing&title=Zapier+integration+sharing%3A+public+links+and+email+invites&description=How+to+share+private+Zapier+integrations+via+public+invite+links+or+email+to+up+to+200+users.+Covers+version-specific+access+control+and+revocation.&theme=d7e460cb9cc5ba95e728a619&signature=4920e31d6affe8ff06d75bf4ad235246fd41a9997c998c4d97163a368a8937d7
+meta og:image:width: 1200
+meta og:image:height: 630
+meta twitter:card: summary_large_image
+meta twitter:title: Zapier integration sharing: public links and email invites
+meta twitter:description: How to share private Zapier integrations via public invite links or email to up to 200 users. Covers version-specific access control and revocation.
+meta twitter:image: https://zapier-82f0e938.mintlify.app/_mintlify/api/og/v2?division=Sharing&title=Zapier+integration+sharing%3A+public+links+and+email+invites&description=How+to+share+private+Zapier+integrations+via+public+invite+links+or+email+to+up+to+200+users.+Covers+version-specific+access+control+and+revocation.&theme=d7e460cb9cc5ba95e728a619&signature=4920e31d6affe8ff06d75bf4ad235246fd41a9997c998c4d97163a368a8937d7
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+Zapier integration sharing: public links and email invites
+Documentation Index
+Fetch the complete documentation index at: /llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content (#content-area)
+Assistant
+Responses are generated using AI and may contain mistakes.
+Suggestions
+How do I build a public Zapier integration?
+What's the difference between the SDK and Platform CLI?
+How do I connect Zapier MCP to my MCP client?
+Zapier home page (https://zapier.com)
+Search...
+⌘K
+Ask Assistant ⌘I
+Sign Up (https://zapier.com/sign-up)
+Sign Up (https://zapier.com/sign-up)
+Search...
+Navigation
+Sharing
+Zapier integration sharing: public links and email invites
+Use Zapier in your tools
+Build a Zapier integration
+Embed Zapier
+API reference (/api-reference/overview)
+Community (https://community.zapier.com/)
+Changelog (/white-label/changelog)
+Contact Us (https://developer.zapier.com/contact)
+Welcome (/integrations)
+Integration platform login (https://zapier.com/platform/login)
+Platform News (/integrations/news)
+Quick start
+Introduction (/integrations/quickstart/build-integration)
+Developer tools
+Glossary
+How it works
+Recommended triggers and actions (/integrations/quickstart/recommended-triggers-and-actions)
+App Developer Services (/integrations/quickstart/app-developer-services)
+Build with UI
+Platform UI tutorial (/integrations/quickstart/ui-tutorial)
+Actions
+Advanced features
+Authentication
+Input fields
+Output fields
+Testing
+Triggers
+Troubleshooting
+Use form mode to setup your API calls (/integrations/build/form-mode)
+Build with CLI
+Platform CLI tutorial (/integrations/quickstart/cli-tutorial)
+Overview (/integrations/build-cli/overview)
+Input fields
+Making HTTP requests (/integrations/build-cli/making-http-requests)
+Testing and debugging (/integrations/build-cli/testing-and-debugging)
+Hydration (/integrations/build-cli/hydration)
+TypeScript integrations (/integrations/build-cli/typescript-integrations)
+Advanced topics
+FAQs (/integrations/build-cli/faqs)
+Core reference (/integrations/build-cli/core)
+CLI command reference (https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md)
+Schema reference (https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md)
+Manage
+Account and team
+Integration changes
+Integration performance
+Sharing
+Share your integration (/integrations/manage/sharing)
+Versions
+Manage integration maintenance preferences (/integrations/manage/manage-integration-maintenance-preference)
+Publish
+Branding
+Launch process
+Partner program
+Validation checks
+Embed
+Powered by Zapier (/integrations/embed/powered-by-zapier)
+Reference
+Use cases
+Video tutorials
+Custom Actions and API requests (/integrations/reference/custom-actions-api-requests)
+Scripting in converted legacy Web Builder integrations (/integrations/reference/legacy-scripting)
+CLI command reference (https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md)
+Schema reference (https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md)
+On this page
+Back to top
+1. Invite users with a public link (#1-invite-users-with-a-public-link)
+2. Invite users by email (#2-invite-users-by-email)
+Revoke invites sent by email (#revoke-invites-sent-by-email)
+Revoke public link invite (#revoke-public-link-invite)
+Revoke email invite (#revoke-email-invite)
+Zapier Platform UI (#zapier-platform-ui)
+Zapier Platform CLI (#zapier-platform-cli)
+Sharing
+Zapier integration sharing: public links and email invites
+Copy page Copy page
+How to share private Zapier integrations via public invite links or email to up to 200 users. Covers version-specific access control and revocation.
+Copy page Copy page
+For private integrations, there are two ways to share access with users:
+​ (#1-invite-users-with-a-public-link)
+1. Invite users with a public link
+You can share a link with users to all versions of your integration.
+You can’t view a list of users that have accessed the public link.
+You can’t revoke a link invite, once shared. If you require control over who accesses your integration, we recommend inviting users by email.
+Log into the Platform UI (https://zapier.com/app/developer)
+Select My Integration .
+In the Integrations section, select your integration .
+In the left sidebar, under Manage click Sharing .
+Click
+to copy the invite public link.
+You can access the public link in this way for integrations built in the Platform UI or the Platform CLI.
+Generating a public sharing link for one specific version only is available in the Platform CLI (https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#sharing-an-app-version) , but not the Platform UI.
+Share the invite link with users via your website or other method. The link will take users to your integration landing page where they can follow the on-screen instructions to accept your invite to all versions of the integration.
+​ (#2-invite-users-by-email)
+2. Invite users by email
+Inviting users by email gives you the option to select which version of your integration they can access. All users invited by email are tracked in the Sharing tab, allowing you to view and control who has access to your integration.
+You can only invite 200 users by email.
+Log into the Platform UI (https://zapier.com/app/developer) or refer to the Platform CLI documentation (https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#sharing-an-app-version) .
+Select My Integration .
+In the Integrations section, select your integration .
+In the left sidebar, under Manage click Sharing .
+In the Email field, insert the user’s email .
+(Optional) In the Versions dropdown menu, select which version of your integration you want your user to access.
+Click Invite . This will instantly send the user an email from notifications@mail.zapier.com (mailto:notifications@mail.zapier.com) .
+You can send invitations in this way for integrations built in the Platform UI or the Platform CLI.
+The user’s email will be added to the table in your Sharing settings. From there, you can track the status of their invite. They will need to accept the email invite in order to be able to access the integration.
+​ (#revoke-invites-sent-by-email)
+Revoke invites sent by email
+Revoking invites will remove a user’s access from that integration version, and all Zap workflows will immediately be paused. The user won’t be able to use your app again until they’re re-invited or it has gone public. In practice, this is not used often as it’s very disruptive to users.
+​ (#revoke-public-link-invite)
+Revoke public link invite
+It’s not possible to revoke a user’s access to or change a public link invite once it has been shared.
+​ (#revoke-email-invite)
+Revoke email invite
+There are two ways to revoke email invites using either the Platform UI or Platform CLI.
+​ (#zapier-platform-ui)
+Zapier Platform UI
+Log into the Platform UI (https://zapier.com/app/developer)
+Select My Integration .
+In the Integrations section, select your integration .
+In the left sidebar, under Manage click Sharing .
+In the row for your user, click Delete .
+Click Really? to revoke the access for that user.
+​ (#zapier-platform-cli)
+Zapier Platform CLI
+Note : This method will remove users from all versions of your integration.
+In your terminal, navigate to the directory of your integration (the directory with the .zapierapprc file).
+Run zapier users:remove user@example.com . Replace user@example.com with the email address that you’d like to revoke access for.
+The CLI will prompt you to confirm your revocation, type Y and click Enter .
+Last modified on October 22, 2026
+Was this page helpful?
+Yes
+No
+Embed activation rates (/integrations/manage/embed-activation) Versions (/integrations/manage/versions)
