@@ -2313,3 +2313,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 09:50 | build | Scratch copy without the day's line still measured the rolling week (597 per job) and wrote it; proof 11-09
 - 2026-11-02 12:10 | triage | notify owner dispatched: last run started 09:53 UTC, 2 h 17 min ago
 - 2026-11-02 15:13 | triage | notify owner dispatched: last run started 12:10 UTC, 3 h ago
+- 2026-11-02 17:38 | triage | notify owner dispatched: last run started 15:13 UTC, 2 h 24 min ago
