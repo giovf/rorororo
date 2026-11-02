@@ -703,6 +703,15 @@
       "status": "parked",
       "trigger": "the kit sells ≥ 10 copies on Leanpub or Etsy within 60 days of listing and the owner volunteers the Persona identity check; then a spike prices a 30-minute screen-recorded course (ffmpeg pipeline from the demo-video workflow) against the 37 % organic share",
       "added": "2026-11-02"
+    },
+    {
+      "id": "etsy-claude-code-kit-listing",
+      "title": "The owner's Etsy shop as the second shelf for the Claude Code operations kit (exchange idea `ai-setup-course`; Leanpub promoted 2026-10-31)",
+      "why": "new-ventures research and spike 2026-11-02 (burn-down, docs/exchange/spikes/etsy-claude-code-kit-listing.md). Etsy's index sells Claude Code guides and prompt packs at US$2–35 with single-digit review counts, and the shop is open without a new identity step — but help.etsy.com, read in full through the relay, lists 'AI-generated functional instructions, such as craft patterns, recipes, and instructions', 'bot-generated content' and 'AI prompt bundles' among the content not allowed, and the Seller Handbook's October 2026 update names 'instruction or assembly manuals, and instructional e-books'. The kit is an instructional e-book drafted here; a disclosed listing is barred and an owner rewrite breaks the owner-time rule.",
+      "status": "declined",
+      "trigger": "help.etsy.com drops 'AI-generated functional instructions' from the not-allowed list, or the owner volunteers to write the guide in their own words; then re-score with the spike's §2 numbers",
+      "added": "2026-11-02",
+      "spiked": "2026-11-02"
     }
   ]
 }

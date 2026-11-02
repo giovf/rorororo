@@ -2265,3 +2265,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 00:20 | burn-down | WebSearch (zapier.com): public listing needs 3 live-Zap users; no Companies House app in the directory
 - 2026-11-02 00:20 | burn-down | Udemy read and parked in the exchange: 37 % organic share, 30 min of video, Persona ID check first
 - 2026-11-02 00:20 | burn-down | Relay hosts added: .etsy.com, .poe.com, .zapier.com; tax-workbook and gankdat RESEARCH.md carry the notes
+- 2026-11-02 00:40 | burn-down | Spike spike-etsy-claude-code-kit-listing done: decline — Etsy bars AI-generated instructions
+- 2026-11-02 00:40 | burn-down | Relay: www.etsy.com 403 raw and rendered (8 lines); help.etsy.com article read in full
+- 2026-11-02 00:40 | burn-down | Primary: 'AI-generated functional instructions', 'bot-generated content', 'AI prompt bundles' not allowed
+- 2026-11-02 00:40 | burn-down | Index: Claude Code guides on Etsy at US$2–15, single-digit reviews; net £8.24 of £9.99 had it been allowed
+- 2026-11-02 00:40 | burn-down | tax-workbook etsy-ai-instructions-rule-review queued (3): the workbook's README sheet vs the new rule
+- 2026-11-02 00:40 | burn-down | Relay round also holds the Poe and Zapier pages for the two spikes left (next slot)

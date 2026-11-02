@@ -226,3 +226,12 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   on a new account. Queued `new-ventures/spike-poe-creator-bot-uk-tax` (5). **Udemy** read and parked in the exchange
   (`udemy-claude-code-course`): 37 % on organic sales, 30 minutes of video and a Persona identity check before the first
   course. This queue is unchanged (`research_after` 2026-11-03).
+- **2026-11-02 00:40 (burn-down, new-ventures spike `etsy-claude-code-kit-listing` → decline):** help.etsy.com "What Can I
+  Sell on Etsy?", read in full through the relay (www.etsy.com answers 403 raw and rendered), now lists among the content
+  not allowed "Bot-generated content", "AI-generated functional instructions, such as craft patterns, recipes, and
+  instructions" and "AI prompt bundles"; the Seller Handbook's October 2026 update (index) names "instruction or assembly
+  manuals, and instructional e-books" and warns that failing listings "will be removed and may also result in your shop
+  being removed". The Claude Code kit cannot be listed here. **For this line:** the workbook is a disclosed spreadsheet tool
+  ("designed by a seller", allowed), but its README sheet reads as instructions — queued
+  `etsy-ai-instructions-rule-review` (3) to settle it before the day-60 read; the Kindle guide is never listed on Etsy.
+  `research_after` 2026-11-03 unchanged. Details: `docs/exchange/spikes/etsy-claude-code-kit-listing.md`.
