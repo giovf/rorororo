@@ -2311,3 +2311,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 09:50 | build | Built foundry ci-minutes-guard-once-a-day: the guard exits before any API call once the day's line exists
 - 2026-11-02 09:50 | build | warnedToday() in actions-minutes-line.ts, 3 tests; dry run on the repo: 'already warned today; no API call'
 - 2026-11-02 09:50 | build | Scratch copy without the day's line still measured the rolling week (597 per job) and wrote it; proof 11-09
+- 2026-11-02 12:10 | triage | notify owner dispatched: last run started 09:53 UTC, 2 h 17 min ago
