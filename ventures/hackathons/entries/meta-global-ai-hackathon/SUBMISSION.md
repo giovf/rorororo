@@ -101,3 +101,50 @@ re-runs the check when a register changes for a counterparty.
 ## Team
 
 Solo (indie developer track). Built with Claude Code under the owner's direction.
+
+## Portal form, field by field (the form as the owner saw it, 2026-11-02)
+
+The portal's questions differ from the sections above; this is the paste order. Survey answers are drafts in the
+owner's voice from what actually happened — change any rating you disagree with.
+
+- **Team Name:** gankdat
+- **Track:** Indie developer
+- **Problem statement:** the option closest to "Build for Your World" (real-world tools for people / small business).
+- **Most Viral (X post link):** leave empty.
+- **Project Description:** Counterparty check: type a UK company name and an agent on Muse Spark 1.3 (Meta Model API)
+  reads seven official UK registers — Companies House, insolvency notices, the sanctions list, licensed visa sponsors,
+  the charity register and public contract awards — through gankdat's MCP server, then writes a one-page risk report
+  (Identity, Red flags, Public money, a LOW/MEDIUM/HIGH verdict) in which every line names the register it came from.
+  It is the check every UK business is supposed to run on a new supplier or client and usually skips, because the data
+  sits in seven places in seven formats. Live, no sign-in: https://apps.gankdat.com/diligence
+- **Public GitHub Repository:** https://github.com/giovf/rorororo (just the URL — the agent is
+  `packages/landing/src/diligence-core.ts`)
+- **3-Minute Demo Video:** https://apps.gankdat.com/demo/meta-diligence.mp4
+- **Use of Meta products:** the two bullets of "Use of Meta AI tooling" above, plus: "A live run on Tesco PLC took 4
+  model calls, 14 register reads, about 31k tokens and 23.5 seconds — about five US cents."
+- **Why are Meta's models important:** Muse Spark does the analyst's work here: it decides which registers to read,
+  issues several tool calls per turn, retries with a broader name or the company number when a search comes back empty,
+  and writes a report that cites every source — in four or five calls at a few cents, which makes a free public check
+  affordable. Open weights matter as much: a due-diligence query reveals who a firm is about to do business with, so a
+  firm that cannot send that to a third party can run the same loop on Muse Spark Open on its own infrastructure by
+  changing a base URL.
+- **Feedback on partner technologies:** "Not used in this build — the entry calls Meta Model API directly. The code
+  supports Baseten, Modal and Fireworks by configuration (base URL and model id), but I did not deploy to them."
+- **How likely to build with Meta Model API:** Likely.
+- **Overall opinion of Meta Model API:** Positive (the API itself was good: OpenAI-compatible, reliable tool calls; the
+  developer-site sign-in was the problem).
+- **Recommend Meta Model API (0–10):** 7
+- **Recommend Muse Code:** "Did not use Muse Code" if offered; otherwise the middle of the scale.
+- **Biggest obstacle:** "Getting an API key: dev.meta.ai kept redirecting to the home page and signing me out whenever I
+  tried to create a key (any browser, incognito, blockers off), so the live run waited several days until the account
+  was fully set up. On the build side: company names are ambiguous, so the agent must pin the company number before any
+  verdict — a report that cannot is labelled 'unconfirmed — name match only' and never graded HIGH."
+- **Compared with other models:** "Comparable to the frontier models we use for agentic tool work: it planned the
+  register reads well, used parallel tool calls and kept to sourced statements, at a lower cost per run. It sometimes
+  repeats a search with a slightly different name where one call would do."
+- **What matters most when choosing:** reliable tool calling, cost per run, and clear data-handling terms.
+- **Hardest to switch:** "Not the API — an OpenAI-compatible endpoint is a base-URL change. The cost is re-checking
+  behaviour: prompts, the verdict rules and our tests have to be re-validated on a new model."
+- **What would stop us using Meta's models in production:** "No hard spending cap on the account — usage past the
+  credit is charged automatically, so we had to build our own cap — and the terms being a limited preview with Meta
+  retaining submitted content, which matters when the content is who a firm is about to do business with."
