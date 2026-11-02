@@ -2282,3 +2282,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 00:45 | burn-down | Directory: Companies House, OpenCorporates and Charity Commission pages 404; Clearbit, Hunter listed
 - 2026-11-02 00:45 | burn-down | new-ventures emptied (3 spikes done today): needs_research set, cooling until 11-04
 - 2026-11-02 00:45 | burn-down | Stopping at ~37 min: 4 items done (research, 3 spikes: 1 declined, 2 parked); nothing buildable
+- 2026-11-02 00:50 | burn-down | tax-workbook etsy-ai-instructions-rule-review done: listing stays — a disclosed tool, not a guide
+- 2026-11-02 00:50 | burn-down | Rule targets functional guides and asks for a real result; workbook previews are real, Example hand-checked
+- 2026-11-02 00:50 | burn-down | README tab is the one strict-reading risk: no owner time now; owner's words if Etsy flags it (~10 min)
+- 2026-11-02 00:50 | burn-down | Stopping at ~40 min: 5 items done (research, 3 spikes, 1 listing review); nothing buildable

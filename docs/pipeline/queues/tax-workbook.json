@@ -206,13 +206,14 @@
     {
       "id": "etsy-ai-instructions-rule-review",
       "title": "Settle whether the live Etsy workbook listing (4605571079) meets Etsy's October 2026 AI rule — read the Seller Handbook article 'Important updates to AI use on Etsy' (1522733284810) and 'What is Etsy's stance on AI creations?' (1275449912004) in full (WebSearch restricted to etsy.com; www.etsy.com answers 403 to the relay), decide whether the workbook's README sheet counts as 'information buyers rely on to … use your item' that 'must be your own work', and either record in LISTING.md that a disclosed spreadsheet tool is a 'designed by a seller' item with no change, or draft a ≤ 15-minute owner note replacing the README sheet's text with the owner's own words (an `owner:` ALERTS line and action file); update LISTING.md §Status and RESEARCH §9 either way",
-      "why": "Found by the 2026-11-02 new-ventures spike etsy-claude-code-kit-listing: help.etsy.com now lists 'AI-generated functional instructions' and 'bot-generated content' among the content not allowed, and the handbook says listings that fail may be removed with the shop. The workbook is a tool, disclosed 'made by me with the help of AI tools', which the help centre allows under 'designed by a seller'; its README sheet is the one part that reads as instructions. A shop removal would end the line's only live shelf, so a 0.1-day read before the 12-28 day-60 reading is cheap insurance. Evidence 3 × reach 1 ÷ (0.1 + ≤ 15 owner min) ≈ 3.",
+      "why": "Found by the 2026-11-02 new-ventures spike etsy-claude-code-kit-listing: help.etsy.com now lists 'AI-generated functional instructions' and 'bot-generated content' among the content not allowed, and the handbook says listings that fail may be removed with the shop. The workbook is a tool, disclosed 'made by me with the help of AI tools', which the help centre allows under 'designed by a seller'; its README sheet is the one part that reads as instructions. A shop removal would end the line's only live shelf, so a 0.1-day read before the 12-28 day-60 reading is cheap insurance. Evidence 3 × reach 1 ÷ (0.1 + ≤ 15 owner min) ≈ 3. — Done 2026-11-02 (burn-down): the listing stays. The rule targets functional guides (patterns, recipes, instructions, manuals, instructional e-books) and asks them to show an actual result; the workbook is a disclosed spreadsheet tool with real preview screenshots and a hand-checked Example tab, typed into Etsy by the owner. The README tab is the one part a strict reading could call instructions: no owner time now; if Etsy flags the listing, its text is replaced with the owner's own words (~10 min, rebuild, re-upload). LISTING.md §Status row dated 2026-11-02.",
       "effort_days": 0.1,
       "proof": "LISTING.md §Status row dated with the decision and the quoted rule; RESEARCH §9 line; an owner action file only if the README sheet must change",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-02",
-      "doing_since": "2026-11-02"
+      "doing_since": "2026-11-02",
+      "done_at": "2026-11-02"
     }
   ],
   "research_after": "2026-11-03"

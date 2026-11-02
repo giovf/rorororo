@@ -242,3 +242,9 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   visible count has 2 followers, and 1,000 messages a month nets US$5–20, so a new Stripe identity step is not asked
   (owner-time rule). The rates in `src/kindle` serve whichever shelf comes first. Details:
   `docs/exchange/spikes/poe-creator-bot-uk-tax.md`. `research_after` 2026-11-03 unchanged.
+- **2026-11-02 00:50 (burn-down, `etsy-ai-instructions-rule-review` done):** the listing stays. Etsy's not-allowed list (help
+  centre, read in full) targets functional guides — patterns, recipes, instructions, manuals, instructional e-books — and the
+  handbook asks such guides to show "an actual result made using your instructions"; the workbook is a disclosed spreadsheet
+  tool with real preview screenshots and a hand-checked Example tab, typed into Etsy by the owner. The README tab is the one
+  part a strict reading could call instructions: no change now, and if Etsy flags the listing the tab's text is replaced with
+  the owner's own words (~10 min, a rebuild, a re-upload). The Kindle guide is never listed on Etsy. LISTING.md §Status row.
