@@ -2324,18 +2324,20 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 17:50 | build | Next slot: first-run check on the installed gankdat-metrics.yml — dispatch it once with probe true, read the log
 - 2026-11-02 17:53 | interactive | tax-workbook: Payhip twin live (payhip.com/b/4stMN), pages link it, webhook key set
 - 2026-11-02 18:04 | interactive | Meta submission: portal fields drafted field by field in SUBMISSION.md for the owner's paste
-- 2026-11-02 18:46 | burn-down | Main green at STEP 0; item foundry mirror-as-gankdat-step (claimed 18:17); no new owner notes
-- 2026-11-02 18:46 | burn-down | gankdat-metrics.yml first run: success (probe dispatch 18:17, 30 s: MCP probe 200, error lines; no install/row/commit)
-- 2026-11-02 18:46 | burn-down | Probe read: 5 worker errors in 24 h — uk-planning 503 ×3 (origin still empty, re-read dated 11-08), 1 lost connection
-- 2026-11-02 18:46 | burn-down | Built foundry mirror-as-gankdat-step: the mirror is pushed as gankdat.yml's last step after a verified deploy
-- 2026-11-02 18:46 | burn-down | mirror-gankdat.yml: push trigger dropped; daily 04:23 UTC cron + dispatch kept for README/apify-only changes
-- 2026-11-02 18:46 | burn-down | Mirror built after a full check holds only tracked files + LICENSE: no build output leaks to the public snapshot
-- 2026-11-02 18:46 | burn-down | Expected −26 billed min a week (7 cron runs for 31 push runs); proof is the 11-16 actions-minutes reading
-- 2026-11-02 18:46 | burn-down | Next slot: first runs of the installed gankdat.yml (fires on its own install) and the 04:23 mirror cron, not dispatched
+- 2026-11-02 18:26 | burn-down | Main green at STEP 0; item foundry mirror-as-gankdat-step (claimed 18:17); no new owner notes
+- 2026-11-02 18:26 | burn-down | gankdat-metrics.yml first run: success (probe dispatch 18:17, 30 s: MCP probe 200, error lines; no install/row/commit)
+- 2026-11-02 18:26 | burn-down | Probe read: 5 worker errors in 24 h — uk-planning 503 ×3 (origin still empty, re-read dated 11-08), 1 lost connection
+- 2026-11-02 18:26 | burn-down | Built foundry mirror-as-gankdat-step: the mirror is pushed as gankdat.yml's last step after a verified deploy
+- 2026-11-02 18:26 | burn-down | mirror-gankdat.yml: push trigger dropped; daily 04:23 UTC cron + dispatch kept for README/apify-only changes
+- 2026-11-02 18:26 | burn-down | Mirror built after a full check holds only tracked files + LICENSE: no build output leaks to the public snapshot
+- 2026-11-02 18:26 | burn-down | Expected −26 billed min a week (7 cron runs for 31 push runs); proof is the 11-16 actions-minutes reading
+- 2026-11-02 18:26 | burn-down | Next slot: first runs of the installed gankdat.yml (fires on its own install) and the 04:23 mirror cron, not dispatched
 - 2026-11-02 18:30 | interactive | tax-workbook: own checkout live, £0 test mail + file verified end to end (action 034)
 - 2026-11-02 18:30 | interactive | 035 noted (directory listing in review); 036 A: repo stays public, actions-minutes dropped
 - 2026-11-02 18:30 | notify | Tax workbook now also sells from our own page, and on Payhip
 - 2026-11-02 18:23 | interactive | Meta hackathon entry submitted by the owner (indie track); results item dated 11-10
-- 2026-11-02 19:00 | burn-down | Exchange pre-research: UK street-level crime by postcode as a gankdat lookup — spike seeded (4); 0 spikes were open
-- 2026-11-02 19:00 | burn-down | Index reads: police.uk API keyless, 15 rps; UKCrimeStats £10–96/mo API; PropertyData 1 credit a call; 3 relay hosts
-- 2026-11-02 19:00 | burn-down | Stopping at ~45 min: 1 item built, 1 first run recorded, 1 spike seeded; pipeline starved and cooled
+- 2026-11-02 18:28 | burn-down | Exchange pre-research: UK street-level crime by postcode as a gankdat lookup — spike seeded (4); 0 spikes were open
+- 2026-11-02 18:28 | burn-down | Index reads: police.uk API keyless, 15 rps; UKCrimeStats £10–96/mo API; PropertyData 1 credit a call; 3 relay hosts
+- 2026-11-02 18:28 | burn-down | Stopping at ~15 min: 1 item built, 1 first run recorded, 1 spike seeded; pipeline starved and cooled
+- 2026-11-02 18:31 | burn-down | gankdat.yml first run: success (installer push 18:27; mirror step 3 s after the verified deploy, job 1 m 51 s)
+- 2026-11-02 18:31 | burn-down | Run-log stamps of this slot corrected (written ahead of the clock); mirror-gankdat.yml's 04:23 cron is read next
