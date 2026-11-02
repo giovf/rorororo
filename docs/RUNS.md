@@ -2363,3 +2363,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 20:18 | burn-down | Fix: .prettierignore keeps docs/* and re-includes docs/ci/, so format, check and the hook cover drop-zone files
 - 2026-11-02 20:18 | burn-down | docs/ci/README.md and the build and burn-down prompts say: npm run format after writing a workflow there
 - 2026-11-02 20:21 | burn-down | Stopping at ~30 min: 1 item done (ci-check-failing); pipeline starved and cooled, pre-research spent at 18:28
+- 2026-11-02 23:07 | triage | notify owner dispatched: last run started 20:28 UTC, 2 h 38 min ago
