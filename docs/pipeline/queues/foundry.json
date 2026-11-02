@@ -1303,8 +1303,9 @@
       "effort_days": 0.1,
       "proof": "notify owner's billed minutes approach its run count in the 11-09 ci-minutes lines (≈ 71, from 137); the daily line still lands once a day",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-02"
+      "status": "doing",
+      "added": "2026-11-02",
+      "doing_since": "2026-11-02"
     },
     {
       "id": "metrics-probe-dispatch",
