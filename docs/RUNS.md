@@ -2298,3 +2298,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 07:45 | report | Open owner actions: 032 Meta key, 033 Payhip, 034 Stripe link, 035 Claude directory read
 - 2026-11-02 07:45 | report | Next: owner does 033 and 034 (about 16 min); pay Etsy £2.98 before 22 Nov
 - 2026-11-02 07:45 | notify | Quick usage note please: reply like "usage 62% fable 71%" (last one was 4 Oct)
+- 2026-11-02 09:40 | build | Main green at STEP 0; first-runs owed nothing; no new owner notes; item foundry actions-minutes (claimed 09:17)
+- 2026-11-02 09:40 | build | actions-minutes 11-02 reading: 574 billed min/7d per job (617 per run; 340 runs, 428 wall; to 09:00)
+- 2026-11-02 09:40 | build | Per job by workflow: notify owner 137, gankdat metrics 91, fetch relay 82, gankdat 74, check 52, landing 35
+- 2026-11-02 09:40 | build | By event: push 183 runs/266, dispatch 76/188, schedule 77/109; 10-29 alone 102 runs/154 billed
+- 2026-11-02 09:40 | build | Notify owner bills 2 min a run (job 83 s): 44 triage dispatches 87 + 27 crons 50; metrics 19 dispatches 84
+- 2026-11-02 09:40 | build | No flip: 574 is 107 over the cap's weekly share (467) and 115 over the 10-26 week; proof's second week fails
+- 2026-11-02 09:40 | build | actions-minutes blocked on owner action 036: GitHub Pro US$4/month (B) or stay public behind the mirror (A)
+- 2026-11-02 09:40 | build | Foundry research pass from the reading: 3 CI levers queued (guard once a day 4, probe dispatch 3, mirror step 3)
+- 2026-11-02 09:40 | notify | A 2-minute choice: pay about £3 a month to make the code private, or keep it public? Reply A or B
