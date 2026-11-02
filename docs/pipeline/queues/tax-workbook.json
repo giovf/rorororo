@@ -172,13 +172,13 @@
     {
       "id": "own-checkout-live",
       "title": "Put the own checkout live: paste the owner's Stripe Payment Link into tax-workbook.html (replace the placeholder and remove `hidden`; the page test ties the two), check the licence Worker's first CI run deployed and loaded the file (GET /v1/downloads/x → 403, not 404; the deploy log's KV put), make one £0 test purchase with a 100 %-off coupon so the download mail and the file arrive end to end, then the RESEARCH §7 `Listed` row, LISTING.md/PAYHIP.md cross-reference, venture.json channel and a notify line (new shelf live)",
-      "why": "The Payment Link is a live-mode Stripe object, so it is the owner's (action 034, 2026-10-29, ~3 min). Everything else — the Worker branch, the deploy, the page block — is built and tested against a placeholder by own-checkout-listing; this item is the switch, with the end-to-end proof the parent item's proof column asks for (the download mail delivers the file).",
+      "why": "The Payment Link is a live-mode Stripe object, so it is the owner's (action 034, 2026-10-29, ~3 min). Everything else — the Worker branch, the deploy, the page block — is built and tested against a placeholder by own-checkout-listing; this item is the switch, with the end-to-end proof the parent item's proof column asks for (the download mail delivers the file). — Built 2026-11-02 (interactive): owner's Payment Link https://buy.stripe.com/3cI9AM5yB5m1f0adKSefC04 (prod_VYWikM18xJVd2W, £6.99, redirect to thanks-tax-workbook.html) had no metadata; `venture=tax-workbook` set via the API. Buy block un-hidden. End to end: Stripe Checkout rejects the 100 %-off coupon's promotion codes on this link ('This code is invalid', OWNERTEST and a fresh single-use code alike), so a live £0 session was created through the API (same price, coupon as a discount, same metadata) and completed headless: webhook → licence Worker → download mail to the owner's inbox in seconds; the link served the release .xlsx byte-identical. Day-60 read with Etsy's (2026-12-28).",
       "effort_days": 0.1,
       "proof": "tax-workbook.html shows the Buy button with a buy.stripe.com link; a test purchase's mail carried a link that downloaded the .xlsx; RESEARCH §7 has the `Listed (own checkout)` row; the day-60 read (etsy-day-60-read) counts this shelf too",
       "score": 5,
-      "status": "blocked",
-      "blocked_on": "Owner action 034: one Stripe Payment Link (£6.99, metadata venture=tax-workbook, redirect to thanks-tax-workbook.html) — docs/for-owner/actions/034-stripe-payment-link-tax-workbook.md; unblocked by the owner's '034 done <url>' note",
-      "added": "2026-10-29"
+      "status": "done",
+      "added": "2026-10-29",
+      "done_at": "2026-11-02"
     },
     {
       "id": "kdp-paperback-edition",

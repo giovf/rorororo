@@ -179,13 +179,23 @@
     {
       "id": "meta-global-ai-hackathon-submit-fallback",
       "title": "Meta Global AI Developer Hackathon: submit without the live run if META_MODEL_API_KEY is still absent at the 2026-11-03 17:00 build — finish SUBMISSION.md honestly (the page and CLI as built, the fixture-replay walkthrough labelled as a replay, no claim of a live Meta Model API call, the key step named as what the live demo needs), link the repo, the /diligence page and gankdat.com, and point the owner's existing action 032 step 3 (the ~15-minute portal paste before 2026-11-04 9:00 PM ET) at it; the URL goes in RESEARCH.md",
-      "why": "Review 2026-W44 (2026-11-01): the entry is built and ranks 18, the only missing piece is a key dev.meta.ai refused to issue on 10-29 (sign-in loop; credits applied for), and the deadline is three days away. A submitted entry without a live demo scores low on Demo (25 %) and Meta tooling (25 %) but counts as one of the three entries the line's proof and kill rules read, can draw judge feedback, and costs 0.2 days; a lost deadline counts nothing. If the key lands first, meta-global-ai-hackathon-live-run runs instead and this item is dropped.",
+      "why": "Review 2026-W44 (2026-11-01): the entry is built and ranks 18, the only missing piece is a key dev.meta.ai refused to issue on 10-29 (sign-in loop; credits applied for), and the deadline is three days away. A submitted entry without a live demo scores low on Demo (25 %) and Meta tooling (25 %) but counts as one of the three entries the line's proof and kill rules read, can draw judge feedback, and costs 0.2 days; a lost deadline counts nothing. If the key lands first, meta-global-ai-hackathon-live-run runs instead and this item is dropped. Dropped 2026-11-02: the live run happened (meta-global-ai-hackathon-live-run done) and the owner submitted the full entry the same day.",
       "effort_days": 0.2,
       "proof": "SUBMISSION.md complete and honest about the missing live run; the owner's submission URL in RESEARCH.md before 2026-11-04 9:00 PM ET, or the live-run item done instead and this item dropped",
       "score": 6,
-      "status": "todo",
-      "not_before": "2026-11-03",
+      "status": "dropped",
       "added": "2026-11-01"
+    },
+    {
+      "id": "meta-global-ai-hackathon-results",
+      "title": "Meta Global AI Developer Hackathon results (winners announced ~9 Nov, bonus prizes ~10 Nov): read the winners mail / event page through inbox triage or the relay, record the outcome in RESEARCH.md Metrics; if placed, raise one short owner line for the W-8BEN and payout (and a LEDGER revenue row when paid); either way set the /diligence page's DILIGENCE_STOP once judging is over unless it is drawing real use",
+      "why": "The entry was submitted 2026-11-02 (owner, indie track); judging runs to 8 Nov. The outcome is the line's proof reading, a prize needs the owner's tax form, and the public page keeps spending Meta credit (capped at ≈ US$85) after judging unless stopped.",
+      "effort_days": 0.05,
+      "proof": "RESEARCH.md Metrics row with the result; page stopped or kept with a reason",
+      "score": 5,
+      "status": "todo",
+      "not_before": "2026-11-10",
+      "added": "2026-11-02"
     }
   ],
   "research_after": "2026-11-05"

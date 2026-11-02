@@ -2332,3 +2332,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 18:46 | burn-down | Mirror built after a full check holds only tracked files + LICENSE: no build output leaks to the public snapshot
 - 2026-11-02 18:46 | burn-down | Expected −26 billed min a week (7 cron runs for 31 push runs); proof is the 11-16 actions-minutes reading
 - 2026-11-02 18:46 | burn-down | Next slot: first runs of the installed gankdat.yml (fires on its own install) and the 04:23 mirror cron, not dispatched
+- 2026-11-02 18:30 | interactive | tax-workbook: own checkout live, £0 test mail + file verified end to end (action 034)
+- 2026-11-02 18:30 | interactive | 035 noted (directory listing in review); 036 A: repo stays public, actions-minutes dropped
+- 2026-11-02 18:30 | notify | Tax workbook now also sells from our own page, and on Payhip
+- 2026-11-02 18:23 | interactive | Meta hackathon entry submitted by the owner (indie track); results item dated 11-10

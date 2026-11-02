@@ -1,7 +1,7 @@
 # Owner action request #035 — Claude directory: read gankdat's listing status and four numbers (~3 min)
 
 - **Date:** 2026-10-30
-- **Status:** open
+- **Status:** done 2026-11-02 — owner: the listing shows "in review" (no usage numbers yet)
 - **Your time:** ~3 minutes
 - **Cost:** £0
 - **Blocks:** nothing today; it decides `gankdat/claude-directory-day-60` (2026-11-29) and whether the n8n node
