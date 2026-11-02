@@ -159,9 +159,9 @@
       "effort_days": 0.3,
       "proof": "the page returns a live report for a real company; one mp4 under 3 minutes and transcript.md in the demo video artifact; the owner's submission accepted on the portal before 2026-11-04 9:00 PM ET",
       "score": 9,
-      "status": "blocked",
-      "blocked_on": "owner action 032 step 1: META_MODEL_API_KEY repository secret (Meta Model API key from dev.meta.ai)",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-11-02"
     },
     {
       "id": "diligence-name-only-unconfirmed",
