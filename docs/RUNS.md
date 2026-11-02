@@ -2276,3 +2276,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 00:40 | burn-down | Primary: price per message in USD via Stripe as Payment Agent, US$10 floor, paid 30–45 days after
 - 2026-11-02 00:40 | burn-down | Index: no UK tax bot on Poe; TaxBot-pro has 2 followers; rendered searches answer 'No results'
 - 2026-11-02 00:40 | burn-down | Stopping at ~32 min: 3 items done (research, 2 spikes parked); Zapier spike waits for the next slot
+- 2026-11-02 00:45 | burn-down | Zapier spike taken after all: its pages were already in the first relay round
+- 2026-11-02 00:45 | burn-down | Spike spike-zapier-integration-shelf done: park — delivers data to a key nobody pays for yet
+- 2026-11-02 00:45 | burn-down | Primary: free to build, 3 live-Zap users then a 90-day Beta tag; 100 calls/min pooled while private
+- 2026-11-02 00:45 | burn-down | Directory: Companies House, OpenCorporates and Charity Commission pages 404; Clearbit, Hunter listed
+- 2026-11-02 00:45 | burn-down | new-ventures emptied (3 spikes done today): needs_research set, cooling until 11-04
+- 2026-11-02 00:45 | burn-down | Stopping at ~37 min: 4 items done (research, 3 spikes: 1 declined, 2 parked); nothing buildable

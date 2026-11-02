@@ -721,6 +721,15 @@
       "trigger": "the Kindle guide's KDP reads show ≥ 20 copies a month and the owner volunteers the Stripe onboarding (a new identity verification, allowed only at score ≥ 10), or a UK tax or self-assessment bot appears in Poe's index with ≥ 100 followers",
       "added": "2026-11-02",
       "spiked": "2026-11-02"
+    },
+    {
+      "id": "zapier-integration-shelf",
+      "title": "A Zapier integration (Make.com as the twin) as the no-code shelf for gankdat's change feeds and lookups — polling triggers on the change cursors, searches on the registers, the user's own gankdat key",
+      "why": "new-ventures research and spike 2026-11-02 (burn-down, docs/exchange/spikes/zapier-integration-shelf.md). Zapier's own docs: free to build, no fees to the partner, users pay their own Zapier plans; a private integration is shared by an uncapped public link or 100 email invites under the owner's plan limit (100 calls a minute pooled); public listing needs 3 users with live Zaps and one live Zap per trigger/search/action, an admin on the app's domain, then 90 days with a Beta tag; 3 million+ users on the other side. The directory has no Companies House, OpenCorporates or Charity Commission app. The integration sells nothing by itself — it delivers a key's data to a user who already pays gankdat — and no gankdat shelf has a paying account; ≈ 2 × 2 ÷ 1.5 days ≈ 2.7.",
+      "status": "parked",
+      "trigger": "a gankdat shelf converts (a first paying account or ≥ 20 paid Apify runs a month — the customer's own tools decide Zapier or Make first), or an inbound request names Zapier or Make; then a gankdat item builds the private integration (≈ 1.5 days, Platform CLI), shares the public link from the docs and submits for Beta at the third live user",
+      "added": "2026-11-02",
+      "spiked": "2026-11-02"
     }
   ]
 }

@@ -1115,3 +1115,15 @@ needs 3 users with a live Zap, every trigger, search and action tested in a Zap 
 one public integration per app; all users' calls count against the owner's plan limits (100 calls / 60 s on Free and
 Professional). The 11-02 directory search finds no 'Companies House' integration. Queued as
 `new-ventures/spike-zapier-integration-shelf` (4); nothing added to this queue (`research_after` 2026-11-06).
+
+## Spike 2026-11-02 — Zapier integration shelf → park (burn-down, new-ventures spike)
+
+Every docs.zapier.com page in the relay round read in full (`new-ventures-research-2026-11-02`, lines 17–27). The platform
+is free to the developer and users pay their own Zapier plans; a private integration is shared by an uncapped public link
+(irrevocable) or 100 email invites and runs under the owner's plan limit — 100 calls a minute pooled across every user on
+the Free plan — while public listing needs 3 users with live Zaps, one live Zap per trigger/search/action, an admin on
+gankdat.com mail and a 256-px logo, then a Beta tag for 90 days. The directory answers 404 for Companies House,
+OpenCorporates and Charity Commission; Clearbit and Hunter are the nearest listed data apps. An integration delivers a
+key's data to a user who already pays gankdat, and no shelf has a paying account, so it scores ≈ 2.7 as a line and is
+parked in the exchange (`zapier-integration-shelf`): reopen on a converting shelf or an inbound Zapier/Make request, then
+≈ 1.5 days with the Platform CLI. Details: `docs/exchange/spikes/zapier-integration-shelf.md`. `research_after` unchanged.
