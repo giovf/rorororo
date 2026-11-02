@@ -1459,13 +1459,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-30T18:21:44.060Z"
+      },
+      {
+        "id": "45",
+        "title": "foundry: gankdat-metrics.yml probe dispatch input (scripts/error-lines.mjs)",
+        "description": "A probe: true workflow_dispatch runs only the live MCP probe and the Worker's error lines of the last 24 h (≤ 1 min, no install, no row, nothing committed); foundry metrics-probe-dispatch, 2026-11-02",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "low",
+        "subtasks": [],
+        "updatedAt": "2026-11-02T17:42:38.740Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-30T18:21:44.060Z",
-      "taskCount": 44,
-      "completedCount": 37,
+      "lastModified": "2026-11-02T17:42:38.740Z",
+      "taskCount": 45,
+      "completedCount": 38,
       "tags": [
         "master"
       ]

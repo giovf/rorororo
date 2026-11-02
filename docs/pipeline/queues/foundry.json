@@ -1310,13 +1310,13 @@
     {
       "id": "metrics-probe-dispatch",
       "title": "gankdat-metrics.yml gets a `probe` dispatch input that runs only the live probe and the error-line read (≤ 1 min), so a routine reading today's logs after a push no longer bills the full 4–5 min Daily numbers pass",
-      "why": "Research 2026-11-02 (build, the actions-minutes reading): gankdat metrics billed 91 of the week's 574 minutes over 26 runs, 84 of them in 19 workflow_dispatch runs at ≈ 4.4 min each; the 7 cron fires billed 7 (the short-circuit). RUNS.md shows what the dispatches are for: live probes and log reads after a push (10-26 18:39 `for a live probe`, 10-27 `4 metrics dispatches` for one item, 10-29 19:35 `to read today's error lines`, re-dispatched 19:36, 10-30 one), not a numbers row. A `probe` input (default false) that skips the RESEARCH.md row and the D1/KV reads and runs only the probe and scripts/error-lines.ts would bill 1 a run; the routines' prompts name the input in the sentence that dispatches the job.",
+      "why": "Research 2026-11-02 (build, the actions-minutes reading): gankdat metrics billed 91 of the week's 574 minutes over 26 runs, 84 of them in 19 workflow_dispatch runs at ≈ 4.4 min each; the 7 cron fires billed 7 (the short-circuit). RUNS.md shows what the dispatches are for: live probes and log reads after a push (10-26 18:39 `for a live probe`, 10-27 `4 metrics dispatches` for one item, 10-29 19:35 `to read today's error lines`, re-dispatched 19:36, 10-30 one), not a numbers row. A `probe` input (default false) that skips the RESEARCH.md row and the D1/KV reads and runs only the probe and scripts/error-lines.ts would bill 1 a run; the routines' prompts name the input in the sentence that dispatches the job. 2026-11-02 17:50 build: built — `probe` boolean input on gankdat-metrics.yml (docs/ci/, the installer moves it): a true dispatch sets the short-circuit output and runs only the self-heal, scripts/mcp-probe.ts and the new ventures/gankdat/scripts/error-lines.mjs (the same Query Builder read and `worker error ×N:` / `worker request ×N:` lines the Daily numbers step prints, shared as errorLinesReport in lib/error-lines.ts, tested); no npm ci, no row, no commit. build.md, burn-down.md and metrics.md name the input; the next slot's first-run check reads the installed file's first run (dispatch it with probe: true).",
       "effort_days": 0.2,
       "proof": "gankdat metrics dispatch runs bill ≤ 1 min each in the 11-16 reading; the daily row is unchanged",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-02",
-      "doing_since": "2026-11-02"
+      "done_at": "2026-11-02"
     },
     {
       "id": "mirror-as-gankdat-step",
