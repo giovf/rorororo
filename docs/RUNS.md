@@ -2324,3 +2324,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 17:50 | build | Next slot: first-run check on the installed gankdat-metrics.yml — dispatch it once with probe true, read the log
 - 2026-11-02 17:53 | interactive | tax-workbook: Payhip twin live (payhip.com/b/4stMN), pages link it, webhook key set
 - 2026-11-02 18:04 | interactive | Meta submission: portal fields drafted field by field in SUBMISSION.md for the owner's paste
+- 2026-11-02 18:46 | burn-down | Main green at STEP 0; item foundry mirror-as-gankdat-step (claimed 18:17); no new owner notes
+- 2026-11-02 18:46 | burn-down | gankdat-metrics.yml first run: success (probe dispatch 18:17, 30 s: MCP probe 200, error lines; no install/row/commit)
+- 2026-11-02 18:46 | burn-down | Probe read: 5 worker errors in 24 h — uk-planning 503 ×3 (origin still empty, re-read dated 11-08), 1 lost connection
+- 2026-11-02 18:46 | burn-down | Built foundry mirror-as-gankdat-step: the mirror is pushed as gankdat.yml's last step after a verified deploy
+- 2026-11-02 18:46 | burn-down | mirror-gankdat.yml: push trigger dropped; daily 04:23 UTC cron + dispatch kept for README/apify-only changes
+- 2026-11-02 18:46 | burn-down | Mirror built after a full check holds only tracked files + LICENSE: no build output leaks to the public snapshot
+- 2026-11-02 18:46 | burn-down | Expected −26 billed min a week (7 cron runs for 31 push runs); proof is the 11-16 actions-minutes reading
+- 2026-11-02 18:46 | burn-down | Next slot: first runs of the installed gankdat.yml (fires on its own install) and the 04:23 mirror cron, not dispatched

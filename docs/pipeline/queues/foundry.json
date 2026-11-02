@@ -1325,9 +1325,9 @@
       "effort_days": 0.2,
       "proof": "no `mirror gankdat` push runs in the 11-16 reading; the mirror's HEAD follows a gankdat deploy within the same run",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-02",
-      "doing_since": "2026-11-02"
+      "done_at": "2026-11-02"
     }
   ]
 }
