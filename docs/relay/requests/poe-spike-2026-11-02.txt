@@ -1,0 +1,11 @@
+RENDER https://help.poe.com/hc/en-us/articles/21921312368020-Poe-Creator-Monetization-FAQs
+GET https://help.poe.com/hc/en-us/articles/21921312368020
+GET https://creator.poe.com/docs/server-bots/poe-bot-monetization-api-documentation
+GET https://creator.poe.com/docs/resources/creator-monetization-program
+RENDER https://poe.com/creators
+GET https://poe.com/creators
+RENDER https://poe.com/search?q=self%20assessment
+RENDER https://poe.com/search?q=accountant
+RENDER https://poe.com/search?q=tax
+GET https://poe.com/pages/tos
+GET https://help.poe.com/hc/en-us/articles/19945140063636-Poe-Purchases-FAQs
