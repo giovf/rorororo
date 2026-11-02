@@ -2286,3 +2286,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 00:50 | burn-down | Rule targets functional guides and asks for a real result; workbook previews are real, Example hand-checked
 - 2026-11-02 00:50 | burn-down | README tab is the one strict-reading risk: no owner time now; owner's words if Etsy flags it (~10 min)
 - 2026-11-02 00:50 | burn-down | Stopping at ~40 min: 5 items done (research, 3 spikes, 1 listing review); nothing buildable
+- 2026-11-02 04:08 | triage | notify owner dispatched: last run started 01:45 UTC, 2 h 22 min ago
