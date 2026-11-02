@@ -2354,3 +2354,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 19:18 | burn-down | Lesson: a seed's claim about what gankdat already has is grep-checked before it sets the build count
 - 2026-11-02 19:19 | burn-down | Stopping at ~10 min: 1 spike done (parked); pipeline starved and cooled, pre-research spent at 18:28
 - 2026-11-02 20:06 | triage | notify owner dispatched: last run started 17:37 UTC, 2 h 29 m ago
+- 2026-11-02 20:06 | watchdog | ci-failed: check.yml run 432 17:52 — step Run npm run check:root; later run 433 ok
