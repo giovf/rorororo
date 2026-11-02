@@ -5,13 +5,10 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (2)
+## Requests (1)
 
 1. **Etsy could not charge your card for a £2.98 bill; pay it or…** — time not stated, since 2026-11-01; nothing queued waits on it.
    Etsy could not charge your card for a £2.98 bill; pay it or update the card in Etsy billing before 22 Nov
-
-2. **Meta hackathon entry is ready** — ~15 min, since 2026-11-02; nothing queued waits on it. Steps: [032](actions/032-meta-model-api-key.md).
-   Meta hackathon entry is ready — paste it into the submission form by Wed 4 Nov 9pm US time (2am Thu UK), ~15 min — docs/for-owner/actions/032-meta-model-api-key.md step 3
 
 ## Waiting on an attended Claude session, not you (2)
 

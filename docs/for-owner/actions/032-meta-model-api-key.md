@@ -1,8 +1,7 @@
 # Owner action request #032 — Meta hackathon: the model key, then the submission
 
 - **Date:** 2026-10-26
-- **Status:** step 1 done 2026-11-02 (key + GANKDAT_DEMO_API_KEY secrets, spending alert set; the page runs live). **Step 3
-  is ready — submit by 4 Nov 2026, 9:00 PM ET — that is 02:00 on Thursday 5 Nov, UK time.**
+- **Status:** done 2026-11-02 — key and spending alert set, live run recorded, entry submitted on the portal (indie track).
 - **Your time:** ~10 minutes now (step 1), ~15 minutes by 4 Nov (step 3)
 - **Cost:** £0.00 expected. *Corrected 2026-10-29 from the Credit Terms you saved:* Meta requires a card on file for any
   Model API account and charges it at standard prices once the US$150 credit is used up, with no cap on their side. The

@@ -2327,3 +2327,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 18:30 | interactive | tax-workbook: own checkout live, £0 test mail + file verified end to end (action 034)
 - 2026-11-02 18:30 | interactive | 035 noted (directory listing in review); 036 A: repo stays public, actions-minutes dropped
 - 2026-11-02 18:30 | notify | Tax workbook now also sells from our own page, and on Payhip
+- 2026-11-02 18:23 | interactive | Meta hackathon entry submitted by the owner (indie track); results item dated 11-10
