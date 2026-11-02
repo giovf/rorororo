@@ -1,0 +1,5 @@
+RENDER https://www.ukcrimestats.com/api/signup.php
+GET https://postcodes.io/docs/licences
+GET https://postcodes.io/docs/self-host
+GET https://api.postcodes.io/postcodes/SW1A1AA
+GET https://www.nomisweb.co.uk/sources/census_2021_pc
