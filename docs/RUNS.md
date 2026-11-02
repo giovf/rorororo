@@ -2355,3 +2355,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 19:19 | burn-down | Stopping at ~10 min: 1 spike done (parked); pipeline starved and cooled, pre-research spent at 18:28
 - 2026-11-02 20:06 | triage | notify owner dispatched: last run started 17:37 UTC, 2 h 29 m ago
 - 2026-11-02 20:06 | watchdog | ci-failed: check.yml run 432 17:52 — step Run npm run check:root; later run 433 ok
+- 2026-11-02 20:18 | burn-down | Main green at STEP 0; item foundry ci-check-failing (claimed 20:14); no new owner notes
+- 2026-11-02 20:18 | burn-down | mirror-gankdat.yml first run: none yet after its 18:27 install (cron 04:23 UTC, never dispatched); next slot
+- 2026-11-02 20:18 | burn-down | Built foundry ci-check-failing: check run 432 failed on Prettier for the installed gankdat-metrics.yml
+- 2026-11-02 20:18 | burn-down | Cause: docs/ is Prettier-ignored, so a double-quoted step name in docs/ci passed the gate and the hook
+- 2026-11-02 20:18 | burn-down | Run 433 was green because the 17:57 interactive commit reformatted the installed file by hand
+- 2026-11-02 20:18 | burn-down | Fix: .prettierignore keeps docs/* and re-includes docs/ci/, so format, check and the hook cover drop-zone files
+- 2026-11-02 20:18 | burn-down | docs/ci/README.md and the build and burn-down prompts say: npm run format after writing a workflow there
+- 2026-11-02 20:21 | burn-down | Stopping at ~30 min: 1 item done (ci-check-failing); pipeline starved and cooled, pre-research spent at 18:28

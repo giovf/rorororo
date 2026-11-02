@@ -25,3 +25,10 @@ that same run by dropping the corrected file here again. Routines never dispatch
 step name with an unquoted colon (`… (private: served only …)`) reached main through the installer: GitHub refused
 the file with "No jobs were run" on all seven pushes until it was quoted — an unparsable file has no path filters.
 Quote any value that holds `: ` or ` #`.
+
+**Formatted before it is pushed (2026-11-02, foundry `ci-check-failing`).** Prettier ignores `docs/` except this
+directory (`docs/*` + `!docs/ci/` in `.prettierignore`), so `npm run format`, `npm run check` and the pre-push hook
+format and check a workflow here exactly as they will once it sits in `.github/workflows/` (single quotes, 100
+columns). On 2026-11-02 the build slot dropped `gankdat-metrics.yml` here with a double-quoted step name; nothing
+checked it until the installer moved it, and the next push (`check` run 432, 17:52) failed on Prettier until an
+interactive session reformatted the installed file by hand at 17:57. Run `npm run format` after writing a file here.

@@ -16,7 +16,11 @@ data/
 .devcontainer/
 .taskmaster/
 .mcp.json
-docs/
+# docs/ is prose and data the routines own; docs/ci/ is the exception (2026-11-02, foundry ci-check-failing):
+# a workflow dropped there is moved verbatim into .github/workflows, where Prettier does check it — check
+# run 432 went red on a double-quoted step name this gate and the pre-push hook had never seen.
+docs/*
+!docs/ci/
 *.md
 docs/for-owner/actions/plugin/
 dist-release
