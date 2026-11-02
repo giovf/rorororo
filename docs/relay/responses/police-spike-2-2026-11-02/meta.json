@@ -1,0 +1,187 @@
+{
+  "request": "police-spike-2-2026-11-02",
+  "fetched_at": "2026-11-02T19:15:23.383Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.ukcrimestats.com/api/signup.php",
+      "fetched_at": "2026-11-02T19:15:17.621Z",
+      "status": 200,
+      "elapsed_ms": 588,
+      "final_url": "https://www.ukcrimestats.com/api/signup.php",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "474",
+        "last-modified": "Mon, 02 Nov 2026 17:36:25 GMT",
+        "etag": "\"37e-65f4e95ca2129-gzip\""
+      },
+      "file": "1.txt",
+      "bytes": 170,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 894
+    },
+    {
+      "method": "GET",
+      "url": "https://ukcrimestats.com/blog/?p=2875",
+      "fetched_at": "2026-11-02T19:15:18.213Z",
+      "status": 200,
+      "elapsed_ms": 966,
+      "final_url": "https://www.ukcrimestats.com/blog/2025/01/28/all-of-the-crime-by-postcode-resources-on-ukcrimestats/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "16887"
+      },
+      "file": "2.txt",
+      "bytes": 24992,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 77702
+    },
+    {
+      "method": "GET",
+      "url": "https://www.ukcrimestats.com/Disclaimer/",
+      "fetched_at": "2026-11-02T19:15:19.283Z",
+      "status": 200,
+      "elapsed_ms": 126,
+      "final_url": "https://www.ukcrimestats.com/Disclaimer/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "12299"
+      },
+      "file": "3.txt",
+      "bytes": 6731,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 50658
+    },
+    {
+      "method": "GET",
+      "url": "https://postcodes.io/",
+      "fetched_at": "2026-11-02T19:15:19.412Z",
+      "status": 200,
+      "elapsed_ms": 114,
+      "final_url": "https://postcodes.io/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Mon, 14 Sep 2026 10:53:21 GMT"
+      },
+      "file": "4.txt",
+      "bytes": 3202,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 16926
+    },
+    {
+      "method": "GET",
+      "url": "https://postcodes.io/docs",
+      "fetched_at": "2026-11-02T19:15:20.028Z",
+      "status": 404,
+      "elapsed_ms": 117,
+      "final_url": "https://postcodes.io/docs/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "43",
+        "etag": "W/\"2b-rD27OrVJ9vKemDNFJ1N8ArOvLVo\""
+      },
+      "file": "5.json",
+      "bytes": 43,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://postcodes.io/about",
+      "fetched_at": "2026-11-02T19:15:20.675Z",
+      "status": 404,
+      "elapsed_ms": 163,
+      "final_url": "https://postcodes.io/about",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "43",
+        "etag": "W/\"2b-rD27OrVJ9vKemDNFJ1N8ArOvLVo\""
+      },
+      "file": "6.json",
+      "bytes": 43,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.postcodes.io/postcodes/LE11RH",
+      "fetched_at": "2026-11-02T19:15:20.839Z",
+      "status": 404,
+      "elapsed_ms": 237,
+      "final_url": "https://api.postcodes.io/postcodes/LE11RH",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"a7-xIxUCyeD9KglJdNJ9tKqt955jnM\""
+      },
+      "file": "7.json",
+      "bytes": 167,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.postcodes.io/postcodes?lon=-0.1278&lat=51.5074&limit=1",
+      "fetched_at": "2026-11-02T19:15:21.577Z",
+      "status": 200,
+      "elapsed_ms": 161,
+      "final_url": "https://api.postcodes.io/postcodes?lon=-0.1278&lat=51.5074&limit=1",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"7b7-3zmK2dLBKhaDe8/4vDMcsaIF6eA\""
+      },
+      "file": "8.json",
+      "bytes": 1975,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.ons.gov.uk/methodology/geography/licences",
+      "fetched_at": "2026-11-02T19:15:21.739Z",
+      "status": 200,
+      "elapsed_ms": 605,
+      "final_url": "https://www.ons.gov.uk/methodology/geography/licences",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 8992,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 35418
+    },
+    {
+      "method": "GET",
+      "url": "https://www.ons.gov.uk/releases/postcodedataenglandandwalescensus2021",
+      "fetched_at": "2026-11-02T19:15:22.846Z",
+      "status": 200,
+      "elapsed_ms": 221,
+      "final_url": "https://www.ons.gov.uk/releases/postcodedataenglandandwalescensus2021",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "10.txt",
+      "bytes": 6769,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44466
+    },
+    {
+      "method": "GET",
+      "url": "https://geoportal.statistics.gov.uk/search?q=ONSPD",
+      "fetched_at": "2026-11-02T19:15:23.070Z",
+      "status": 200,
+      "elapsed_ms": 293,
+      "final_url": "https://geoportal.statistics.gov.uk/search?q=ONSPD",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"56f01-e98WBNhadjNOLuklLG7CwOylvSI\""
+      },
+      "file": "11.txt",
+      "bytes": 818,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 356097
+    }
+  ]
+}
