@@ -1314,8 +1314,9 @@
       "effort_days": 0.2,
       "proof": "gankdat metrics dispatch runs bill ≤ 1 min each in the 11-16 reading; the daily row is unchanged",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-02"
+      "status": "doing",
+      "added": "2026-11-02",
+      "doing_since": "2026-11-02"
     },
     {
       "id": "mirror-as-gankdat-step",
