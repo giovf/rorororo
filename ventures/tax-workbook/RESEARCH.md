@@ -235,3 +235,10 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   ("designed by a seller", allowed), but its README sheet reads as instructions — queued
   `etsy-ai-instructions-rule-review` (3) to settle it before the day-60 read; the Kindle guide is never listed on Etsy.
   `research_after` 2026-11-03 unchanged. Details: `docs/exchange/spikes/etsy-claude-code-kit-listing.md`.
+- **2026-11-02 00:40 (burn-down, new-ventures spike `poe-creator-bot-uk-tax` → park):** Poe's Earnings Terms (2026-08-21,
+  read in full through the relay) pay a creator-set price per message in USD through Stripe as Payment Agent — an account
+  created for Poe's programme within 90 days, tax forms, a US$10 floor, 30–45 days after month end; the FAQ (walled to the
+  runner, index) marks the UK eligible and prices per 1,000 messages. The shelf shows no UK tax bot, the one tax bot with a
+  visible count has 2 followers, and 1,000 messages a month nets US$5–20, so a new Stripe identity step is not asked
+  (owner-time rule). The rates in `src/kindle` serve whichever shelf comes first. Details:
+  `docs/exchange/spikes/poe-creator-bot-uk-tax.md`. `research_after` 2026-11-03 unchanged.

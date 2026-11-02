@@ -712,6 +712,15 @@
       "trigger": "help.etsy.com drops 'AI-generated functional instructions' from the not-allowed list, or the owner volunteers to write the guide in their own words; then re-score with the spike's §2 numbers",
       "added": "2026-11-02",
       "spiked": "2026-11-02"
+    },
+    {
+      "id": "poe-creator-bot-uk-tax",
+      "title": "Poe (Quora) creator monetisation — a 'UK Sole Trader Tax 2026/27' prompt bot built from the Kindle guide's rates, paid per message from Poe's subscription revenue",
+      "why": "new-ventures research and spike 2026-11-02 (burn-down, docs/exchange/spikes/poe-creator-bot-uk-tax.md). Poe's Earnings Terms (2026-08-21) pay creators a price they set in USD per 1,000 messages, the UK is an eligible region, the model cost is Poe's and the build is a system prompt from rates already written — but payment needs a Stripe account created for Poe's programme within 90 days with tax forms (the owner's existing Stripe account does not count), the shelf shows no UK tax bot and the one tax bot with a visible count has 2 followers, and 1,000 messages a month nets US$5–20.",
+      "status": "parked",
+      "trigger": "the Kindle guide's KDP reads show ≥ 20 copies a month and the owner volunteers the Stripe onboarding (a new identity verification, allowed only at score ≥ 10), or a UK tax or self-assessment bot appears in Poe's index with ≥ 100 followers",
+      "added": "2026-11-02",
+      "spiked": "2026-11-02"
     }
   ]
 }

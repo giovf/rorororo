@@ -1996,7 +1996,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 17:52 | burn-down | Spike envato-codecanyon-shelf: help centre read via its search API (3 relay rounds); codecanyon.net walled
 - 2026-10-29 17:52 | burn-down | Park: Envato paused new authors (no date, no waitlist), 50 % author fee, AI-generated items barred for all types
 - 2026-10-29 17:52 | burn-down | Sales bar unproven: category pages behind a Cloudflare challenge; snippets show 12–3,500 lifetime sales
-- 2026-10-29 17:53 | burn-down | Stopping at ~42 min: 3 items done (2 new-ventures spikes parked, tax-workbook Payhip twin); next slot continues
+- 2026-10-29 17:53 | burn-down | Stopping at ~32 min: 3 items done (2 new-ventures spikes parked, tax-workbook Payhip twin); next slot continues
 - 2026-10-29 18:26 | burn-down | Built tax-workbook own-checkout-listing (5): the workbook on our own Stripe checkout, one owner link away
 - 2026-10-29 18:26 | burn-down | licence Worker downloads.ts: signed 30-day link, file from private KV, refund revokes, resend re-mints; 7 tests
 - 2026-10-29 18:26 | burn-down | docs/ci/license-worker.yml: first CI deploy of foundry-licenses (build, KV put of the .xlsx, deploy, smoke)
@@ -2192,7 +2192,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 18:48 | burn-down | apify-outcomes: flaggedNotice, flaggedActors, suffix "flagged X", parser safe with the comma; 3 tests
 - 2026-10-31 18:48 | burn-down | metrics.mjs reads notice from the actor detail, logs flagged actors, merges refresh errors
 - 2026-10-31 18:48 | burn-down | Took the 0.1 d item over relay-bodies-cap-in-history (5, 0.3 d) for the slot's last 25 min
-- 2026-10-31 18:52 | burn-down | Stopping at ~42 min: 3 items done (QA repair proof, foundry research, notice row); next: relay bodies
+- 2026-10-31 18:52 | burn-down | Stopping at ~32 min: 3 items done (QA repair proof, foundry research, notice row); next: relay bodies
 - 2026-10-31 19:16 | burn-down | Built foundry relay-bodies-cap-in-history: HTML bodies land as text, saved bodies capped at 2 MB
 - 2026-10-31 19:16 | burn-down | htmlToText keeps links as text (href), alt, JSON-LD, description metas; 12 real pages 20.4 MB → 0.2 MB
 - 2026-10-31 19:16 | burn-down | RAW line token (GET/RENDER only) keeps markup; meta.json gains extracted, raw_bytes; 5 new tests
@@ -2271,3 +2271,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 00:40 | burn-down | Index: Claude Code guides on Etsy at US$2–15, single-digit reviews; net £8.24 of £9.99 had it been allowed
 - 2026-11-02 00:40 | burn-down | tax-workbook etsy-ai-instructions-rule-review queued (3): the workbook's README sheet vs the new rule
 - 2026-11-02 00:40 | burn-down | Relay round also holds the Poe and Zapier pages for the two spikes left (next slot)
+- 2026-11-02 00:40 | burn-down | Spike spike-poe-creator-bot-uk-tax done: park — Stripe identity step for US$5–20 a month
+- 2026-11-02 00:40 | burn-down | Relay: earnings terms and creator docs read in full; help.poe.com 403, creators page a login wall
+- 2026-11-02 00:40 | burn-down | Primary: price per message in USD via Stripe as Payment Agent, US$10 floor, paid 30–45 days after
+- 2026-11-02 00:40 | burn-down | Index: no UK tax bot on Poe; TaxBot-pro has 2 followers; rendered searches answer 'No results'
+- 2026-11-02 00:40 | burn-down | Stopping at ~32 min: 3 items done (research, 2 spikes parked); Zapier spike waits for the next slot
