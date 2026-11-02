@@ -495,8 +495,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/uk-police-crime-postcode-lookup.md with the licence and attribution quotes from data.police.uk, the API limits, the rival price table (UKCrimeStats plans, PropertyData credit price, the Apify actor's users / runs / price), the proposed route shape and serving cost under the rate limit, and a promote / park call",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-02"
+      "status": "doing",
+      "added": "2026-11-02",
+      "doing_since": "2026-11-02"
     }
   ]
 }
