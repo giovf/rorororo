@@ -2341,3 +2341,15 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 18:28 | burn-down | Stopping at ~15 min: 1 item built, 1 first run recorded, 1 spike seeded; pipeline starved and cooled
 - 2026-11-02 18:31 | burn-down | gankdat.yml first run: success (installer push 18:27; mirror step 3 s after the verified deploy, job 1 m 51 s)
 - 2026-11-02 18:31 | burn-down | Run-log stamps of this slot corrected (written ahead of the clock); mirror-gankdat.yml's 04:23 cron is read next
+- 2026-11-02 19:18 | burn-down | Main green at STEP 0; item new-ventures spike-uk-police-crime-postcode-lookup (claimed 19:12); no new owner notes
+- 2026-11-02 19:18 | burn-down | mirror-gankdat.yml first run: none yet after its 18:27 install (cron 04:23, never dispatched); read next slot
+- 2026-11-02 19:18 | burn-down | Spike spike-uk-police-crime-postcode-lookup done: park — bundled rivals, a saturated shelf, a 1.5-day build
+- 2026-11-02 19:18 | burn-down | Relay: 3 rounds, 42 lines; police.uk about, limits, 4 method docs, changelog and 5 API calls read in full
+- 2026-11-02 19:18 | burn-down | Primary: OGL v3, keyless, 15 r/s burst 30; newest month 2026-08 on 11-02; Greater Manchester absent
+- 2026-11-02 19:18 | burn-down | Measured: a 1-mile all-crime month is 1,772 crimes / 686 kB to 4,160 / 1.6 MB — 8–20 MB per cold postcode
+- 2026-11-02 19:18 | burn-down | Seed premise wrong: no gankdat source geocodes or holds population; postcodes.io or ONSPD + Census ingest needed
+- 2026-11-02 19:18 | burn-down | Rivals: UKCrimeStats API £10–128/mo (rendered page), PropertyData 1 credit on £30–800/mo plans, 324 reviews
+- 2026-11-02 19:18 | burn-down | Apify: 13 crime actors share ~33 users; devon_gtme 2 users / 104 runs, best 12 users; 1 active each in 30 d
+- 2026-11-02 19:18 | burn-down | Relay hosts added: postcodes.io, api.postcodes.io, geoportal.statistics.gov.uk, www.nomisweb.co.uk
+- 2026-11-02 19:18 | burn-down | Lesson: a seed's claim about what gankdat already has is grep-checked before it sets the build count
+- 2026-11-02 19:19 | burn-down | Stopping at ~10 min: 1 spike done (parked); pipeline starved and cooled, pre-research spent at 18:28
