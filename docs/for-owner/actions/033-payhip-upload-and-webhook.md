@@ -1,7 +1,7 @@
 # Owner action request #033 — Payhip: upload the workbook and switch on the sale webhook
 
 - **Date:** 2026-10-29
-- **Status:** open
+- **Status:** done 2026-11-02 (product https://payhip.com/b/4stMN; webhook + PAYHIP_API_KEY secret set)
 - **Your time:** ~13 minutes (upload ~8, webhook + secret ~5)
 - **Cost:** £0 (Free Forever plan; Payhip takes 5 % + Stripe's fee per sale, nothing up front)
 - **Blocks:** `tax-workbook/payhip-listing-live` (the twin listing live and linked), `tax-workbook/payhip-marketplace-submission`

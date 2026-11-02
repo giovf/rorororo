@@ -150,13 +150,13 @@
     {
       "id": "payhip-listing-live",
       "title": "Record the Payhip twin listing live: switch the product page and index card from the store link to the product permalink the owner gives back, a RESEARCH.md §7 Metrics row, confirm the webhook secret is on the Worker (the summary endpoint answers 200 and the next Daily numbers row reads `payhip 30d:` without n/a), and date the day-60 read with the Etsy one",
-      "why": "The upload and the Developer-tab webhook are the owner's hands (action 033, 2026-10-29; payhip.com cannot be opened from the sandbox). When the owner gives back the product link and 'Payhip webhook set', this item records the listing and checks the reading end to end; the proof clock of payhip-twin-listing (first Payhip sale within 60 days or the twin is delisted at the Etsy day-60 read, 2026-12-28) starts at the live date.",
+      "why": "The upload and the Developer-tab webhook are the owner's hands (action 033, 2026-10-29; payhip.com cannot be opened from the sandbox). When the owner gives back the product link and 'Payhip webhook set', this item records the listing and checks the reading end to end; the proof clock of payhip-twin-listing (first Payhip sale within 60 days or the twin is delisted at the Etsy day-60 read, 2026-12-28) starts at the live date. — Built 2026-11-02 (interactive): product https://payhip.com/b/4stMN linked from tax-workbook.html and the index card; RESEARCH.md §7 `Payhip live` row; owner set the webhook and the PAYHIP_API_KEY secret (17:54 UTC), stored on the Worker by this commit's landing deploy; day-60 read with Etsy's (2026-12-28).",
       "effort_days": 0.1,
       "proof": "tax-workbook.html links payhip.com/b/<key>; a Metrics row `Payhip live` exists; the Daily numbers row carries `payhip 30d: 0 sales` (not n/a) the day after",
       "score": 5,
-      "status": "blocked",
-      "blocked_on": "Owner action 033: the product upload on payhip.com/gankdat and the webhook URL + PAYHIP_API_KEY repository secret (docs/for-owner/actions/033-payhip-upload-and-webhook.md); unblocked by the owner's '033 done' note with the product link",
-      "added": "2026-10-29"
+      "status": "done",
+      "added": "2026-10-29",
+      "done_at": "2026-11-02"
     },
     {
       "id": "payhip-marketplace-submission",

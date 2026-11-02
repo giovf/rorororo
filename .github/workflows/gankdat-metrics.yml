@@ -111,7 +111,7 @@ jobs:
         env:
           GANKDAT_PROBE_KEY: ${{ secrets.GANKDAT_PROBE_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      - name: "Worker error lines of the last 24 h (probe dispatch only: the job log is the reading)"
+      - name: 'Worker error lines of the last 24 h (probe dispatch only: the job log is the reading)'
         if: inputs.probe == true
         # ventures/gankdat/scripts/error-lines.mjs (foundry metrics-probe-dispatch, 2026-11-02): the same
         # Query Builder read and the same plain lines the Daily numbers step prints before its

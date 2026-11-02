@@ -2322,3 +2322,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 17:50 | build | Probe path: no npm ci, no Daily numbers row, nothing committed; docs/ci/ carries the file for the installer
 - 2026-11-02 17:50 | build | build.md, burn-down.md, metrics.md name the input; SCHEDULERS and gankdat ARCHITECTURE note it; Taskmaster row 45
 - 2026-11-02 17:50 | build | Next slot: first-run check on the installed gankdat-metrics.yml — dispatch it once with probe true, read the log
+- 2026-11-02 17:53 | interactive | tax-workbook: Payhip twin live (payhip.com/b/4stMN), pages link it, webhook key set
