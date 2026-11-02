@@ -3,10 +3,16 @@ name: mirror gankdat
 # Keeps the public mirror github.com/giovf/gankdat equal to ventures/gankdat minus internal files
 # (scripts/mirror-gankdat.ts; owner 2026-10-16: the monorepo goes private, only the service is
 # public). PR_TOKEN (classic, public_repo) pushes to the owner's public repository.
+#
+# No push trigger since 2026-11-02 (foundry mirror-as-gankdat-step): the push-driven sync is the last step
+# of gankdat.yml's deploy job, inside a run that bills anyway — this file ran 31 times (33 billed minutes)
+# in the week to 11-02 for the same checkout. The daily cron below catches what gankdat.yml's path filter
+# leaves out (README.md, apify/, scripts/mirror-gankdat.ts, LICENSE): the script pushes nothing when the
+# snapshot is unchanged (`mirror: no change`). Odd minute: GitHub delays crons on busy minutes most.
+# Routines never dispatch this workflow (docs/ci/README.md); the first-run check reads the cron run.
 on:
-  push:
-    branches: [main]
-    paths: ['ventures/gankdat/**', 'scripts/mirror-gankdat.ts', 'LICENSE']
+  schedule:
+    - cron: '23 4 * * *' # daily, after the night's burn-down slots
   workflow_dispatch:
 
 permissions:
