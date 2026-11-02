@@ -1,0 +1,218 @@
+Street-level crimes
+| data.police.uk
+Skip to main content (#content)
+data.police.uk uses cookies to make the site simpler. Find out more about cookies (https://www.police.uk/pu/cookies/)
+/
+Menu (#navigation)
+Home (/)
+Data (/data/)
+API (/docs/)
+Changelog (/changelog/)
+Contact (/contact/)
+About (/about/)
+Cymraeg (/cy/docs/method/crime-street/)
+Home (/) >
+Police API Documentation (/docs/) >
+Street-level crimes
+Crimes at street-level; either within a 1 mile radius of a single point, or within a custom area.
+The street-level crimes returned in the API are only an approximation of where the actual crimes occurred, they are not the exact locations.
+See the about page (/about/#location-anonymisation) for more information about location anonymisation.
+If you're allowing users to search for locations in Scotland, please make it clear that, since only the British Transport Police provide data for Scotland, crime levels may appear much lower than they really are.
+Request parameters
+Specific point
+lat
+Latitude of the requested crime area
+lng
+Longitude of the requested crime area
+date
+Optional . (YYYY-MM) Limit results to a specific month.
+The latest month will be shown by default
+Custom area
+poly
+The lat/lng pairs which define the boundary of the custom area
+date
+Optional . (YYYY-MM) Limit results to a specific month.
+The latest month will be shown by default
+If a custom area contains more than 10,000 crimes, the API will return a 503 status code.
+The poly parameter is formatted in lat/lng pairs, separated by colons:
+[lat],[lng]:[lat],[lng]:[lat],[lng]
+The first and last coordinates need not be the same — they will be joined by a straight line once the request is made.
+The API will return a 400 status code in response to a GET request longer than 4094 characters. For submitting particularly complex poly parameters, consider using POST instead.
+Crime category
+You can provide any crime category (/docs/method/crime-categories/) as part of the request URL. In the examples below, we use all-crime .
+Example request
+Specific point
+https://data.police.uk/api/crimes-street/all-crime? date =2024-01& lat =52.629729& lng =-1.131592
+Custom area
+https://data.police.uk/api/crimes-street/all-crime? date =2024-01& poly =52.268,0.543:52.794,0.238:52.130,0.478
+Example response
+[
+{
+"category": "anti-social-behaviour",
+"persistent_id": "",
+"location_subtype": "",
+"id": 116208998,
+"location": {
+"latitude": "52.632805",
+"street": {
+"id": 1738842,
+"name": "On or near Campbell Street"
+},
+"longitude": "-1.124819"
+},
+"context": "",
+"month": "2024-01",
+"location_type": "Force",
+"outcome_status": null
+},
+{
+"category": "bicycle-theft",
+"persistent_id": "fef00968b9b066ad38660e64f6e746eb1dfc27b22af4a023924daebfcea2ad39",
+"location_subtype": "",
+"id": 116201252,
+"location": {
+"latitude": "52.629043",
+"street": {
+"id": 1737492,
+"name": "On or near Roman Street"
+},
+"longitude": "-1.148962"
+},
+"context": "",
+"month": "2024-01",
+"location_type": "Force",
+"outcome_status": {
+"category": "Investigation complete; no suspect identified",
+"date": "2024-01"
+}
+},
+...
+]
+Response description
+Tag
+Description
+category
+Category of the crime (/docs/method/crime-categories/)
+persistent_id
+64-character unique identifier for that crime. (This is different to the existing 'id' attribute, which is not guaranteed to always stay the same for each crime.)
+month
+Month of the crime
+location
+Approximate (/about/#location-anonymisation) location of the incident
+latitude
+Latitude
+street
+The approximate street the crime occurred
+id
+Unique identifier for the street
+name
+Name of the location.
+This is only an approximation of where the crime happened
+longitude
+Longitude
+context
+Extra information about the crime (if applicable)
+id
+ID of the crime.
+This ID only relates to the API, it is NOT a police identifier
+location_type
+The type of the location. Either Force or BTP : Force indicates a normal police force location; BTP indicates a British Transport Police location. BTP locations fall within normal police force boundaries.
+location_subtype
+For BTP locations, the type of location at which this crime was recorded.
+outcome_status
+The category and date of the latest recorded outcome for the crime
+category
+Category of the outcome
+The full category name is returned
+IMPORTANT NOTE: This element may not be present for all crimes
+Code
+Name
+awaiting-court-result
+Awaiting court outcome
+court-result-unavailable
+Court result unavailable
+unable-to-proceed
+Court case unable to proceed
+local-resolution
+Local resolution
+no-further-action
+Investigation complete; no suspect identified
+deprived-of-property
+Offender deprived of property
+fined
+Offender fined
+absolute-discharge
+Offender given absolute discharge
+cautioned
+Offender given a caution
+drugs-possession-warning
+Offender given a drugs possession warning
+penalty-notice-issued
+Offender given a penalty notice
+community-penalty
+Offender given community sentence
+conditional-discharge
+Offender given conditional discharge
+suspended-sentence
+Offender given suspended prison sentence
+imprisoned
+Offender sent to prison
+other-court-disposal
+Offender otherwise dealt with
+compensation
+Offender ordered to pay compensation
+sentenced-in-another-case
+Suspect charged as part of another case
+charged
+Suspect charged
+not-guilty
+Defendant found not guilty
+sent-to-crown-court
+Defendant sent to Crown Court
+unable-to-prosecute
+Unable to prosecute suspect
+formal-action-not-in-public-interest
+Formal action is not in the public interest
+action-taken-by-another-organisation
+Action to be taken by another organisation
+further-investigation-not-in-public-interest
+Further investigation is not in the public interest
+further-action-not-in-public-interest
+Further action is not in the public interest
+under-investigation
+Under investigation
+status-update-unavailable
+Status update unavailable
+date
+Date of the outcome
+API Methods
+Authentication (/docs/authentication/)
+API call limits (/docs/api-call-limits/)
+Methods
+Availability (/docs/method/crimes-street-dates/)
+Force related
+Forces (/docs/method/forces/)
+Specific force (/docs/method/force/)
+Force senior officers (/docs/method/senior-officers/)
+Crime related
+Street level crimes (/docs/method/crime-street/)
+Street level outcomes (/docs/method/outcomes-at-location/)
+Crimes at location (/docs/method/crimes-at-location/)
+Crimes with no location (/docs/method/crimes-no-location/)
+Crime categories (/docs/method/crime-categories/)
+Last updated (/docs/method/crime-last-updated/)
+Outcomes for a specific crime (/docs/method/outcomes-for-crime/)
+Neighbourhood related
+Neighbourhoods (/docs/method/neighbourhoods/)
+Specific neighbourhood (/docs/method/neighbourhood/)
+Neighbourhood boundary (/docs/method/neighbourhood-boundary/)
+Neighbourhood team (/docs/method/neighbourhood-team/)
+Neighbourhood events (/docs/method/neighbourhood-events/)
+Neighbourhood priorities (/docs/method/neighbourhood-priorities/)
+Locate neighbourhood (/docs/method/neighbourhood-locate/)
+Stop and search related
+Stop and searches by area (/docs/method/stops-street/)
+Stop and searches by location (/docs/method/stops-at-location/)
+Stop and searches with no location (/docs/method/stops-no-location/)
+Stop and searches by force (/docs/method/stops-force/)
+Cookies (https://www.police.uk/pu/cookies/)

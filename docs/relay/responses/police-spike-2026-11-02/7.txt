@@ -1,0 +1,73 @@
+Crime categories
+| data.police.uk
+Skip to main content (#content)
+data.police.uk uses cookies to make the site simpler. Find out more about cookies (https://www.police.uk/pu/cookies/)
+/
+Menu (#navigation)
+Home (/)
+Data (/data/)
+API (/docs/)
+Changelog (/changelog/)
+Contact (/contact/)
+About (/about/)
+Cymraeg (/cy/docs/method/crime-categories/)
+Home (/) >
+Police API Documentation (/docs/) >
+Crime categories
+Returns a list of valid categories for a given data set date.
+Example request
+https://data.police.uk/api/crime-categories? date =2024-01
+Example response
+[
+{
+"url": "all-crime",
+"name": "All crime and ASB"
+},
+{
+"url": "burglary",
+"name": "Burglary"
+},
+{
+"url": "anti-social-behaviour",
+"name": "Anti-social behaviour"
+},
+...
+]
+Response description
+Tag
+Description
+url
+Unique identifier
+name
+Name of the crime category
+API Methods
+Authentication (/docs/authentication/)
+API call limits (/docs/api-call-limits/)
+Methods
+Availability (/docs/method/crimes-street-dates/)
+Force related
+Forces (/docs/method/forces/)
+Specific force (/docs/method/force/)
+Force senior officers (/docs/method/senior-officers/)
+Crime related
+Street level crimes (/docs/method/crime-street/)
+Street level outcomes (/docs/method/outcomes-at-location/)
+Crimes at location (/docs/method/crimes-at-location/)
+Crimes with no location (/docs/method/crimes-no-location/)
+Crime categories (/docs/method/crime-categories/)
+Last updated (/docs/method/crime-last-updated/)
+Outcomes for a specific crime (/docs/method/outcomes-for-crime/)
+Neighbourhood related
+Neighbourhoods (/docs/method/neighbourhoods/)
+Specific neighbourhood (/docs/method/neighbourhood/)
+Neighbourhood boundary (/docs/method/neighbourhood-boundary/)
+Neighbourhood team (/docs/method/neighbourhood-team/)
+Neighbourhood events (/docs/method/neighbourhood-events/)
+Neighbourhood priorities (/docs/method/neighbourhood-priorities/)
+Locate neighbourhood (/docs/method/neighbourhood-locate/)
+Stop and search related
+Stop and searches by area (/docs/method/stops-street/)
+Stop and searches by location (/docs/method/stops-at-location/)
+Stop and searches with no location (/docs/method/stops-no-location/)
+Stop and searches by force (/docs/method/stops-force/)
+Cookies (https://www.police.uk/pu/cookies/)
