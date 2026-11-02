@@ -1,7 +1,7 @@
 # Owner action request #036 — Pay for GitHub Pro to make the code private, or keep it public? (~2 min)
 
 - **Date:** 2026-11-02
-- **Status:** open
+- **Status:** done 2026-11-02 — owner chose A (stay public behind the mirror, £0)
 - **Your time:** ~2 minutes (a yes/no reply; the "yes" path adds ~5 minutes on GitHub)
 - **Cost:** £0 for "no"; US$4/month (≈ £3.10, before VAT) for "yes" — a second standing cost next to Cloudflare's US$5
 - **Blocks:** foundry `actions-minutes` (the private flip you asked for on 2026-10-16)

@@ -150,6 +150,7 @@ rows written from Etsy's deposit mail. The day-60 kill clock (§6) starts at the
 | 2026-10-29 | Payhip twin built | — | — | 0 | PAYHIP.md copy, product page apps.gankdat.com/tax-workbook.html, webhook receiver /hooks/payhip live on the landing Worker (counts only, no buyer data), Daily numbers reads `payhip 30d:`; the upload and the webhook switch are action 033 |
 | 2026-10-29 | Own checkout built | — | — | 0 | the Buy block on tax-workbook.html (hidden until the link exists), thanks-tax-workbook.html, the licence Worker's download branch (signed 30-day link, file served from private KV, refund revokes it, re-send mints a fresh link; 7 tests) and its CI deploy; `Listed` for this shelf is written by `own-checkout-live` when action 034 (one Payment Link, ~3 min) is done |
 | 2026-11-02 | Payhip live | — | — | 0 | twin listing live at https://payhip.com/b/4stMN (£6.99, owner action 033 step 1); product page and index card link it; same day-60 read as Etsy (2026-12-28). sale webhook set and `PAYHIP_API_KEY` saved the same day; the landing deploy stores it on the Worker |
+| 2026-11-02 | Listed (own checkout) | — | — | 0 | Buy button live on apps.gankdat.com/tax-workbook.html (Stripe Payment Link, £6.99, owner action 034); £0 end-to-end test (API session with the 100 %-off coupon) delivered the download mail and the file; same day-60 read as Etsy (2026-12-28) |
 
 ## 8. Owner steps (batched, raised by the build that finishes the workbook, never before)
 

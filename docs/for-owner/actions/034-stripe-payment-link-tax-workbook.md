@@ -1,7 +1,7 @@
 # Owner action request #034 — Stripe: one Payment Link for the tax workbook (~3 min)
 
 - **Date:** 2026-10-29
-- **Status:** open
+- **Status:** done 2026-11-02 (link https://buy.stripe.com/3cI9AM5yB5m1f0adKSefC04; metadata venture=tax-workbook added by Claude via the API)
 - **Your time:** ~3 minutes
 - **Cost:** £0 (Stripe's fee per sale only; nothing up front)
 - **Blocks:** `tax-workbook/own-checkout-live` (the Buy button on https://apps.gankdat.com/tax-workbook.html)
