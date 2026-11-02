@@ -1299,13 +1299,13 @@
     {
       "id": "ci-minutes-guard-once-a-day",
       "title": "actions-minutes.mjs exits before any API call when docs/RUNS.md already carries today's ci-minutes line, so 70 of the 71 weekly notify-owner runs skip ≈ 170 GitHub calls",
-      "why": "Research 2026-11-02 (build, the actions-minutes reading): notify owner is the week's top workflow at 71 runs/137 billed because every run bills 2 minutes (the job takes ≈ 83 s), and its first step runs scripts/actions-minutes.mjs on each of them — ten run pages plus one jobs call per run over a minute (166 in the week to 11-02), per job since 10-26 — although the script writes at most one `| watchdog | ci-minutes:` line a day (30 lines since 10-26, one per day at 00:01–02:07) and dedupes only after the fetch. Moving the day check before the fetch costs nothing the line needs: the 00:40 fire still measures and writes, every later fire prints `already warned today` and exits. Whether that alone takes the job under 60 s (one billed minute, −66 a week) is the proof; the 11-09 ci-minutes lines show it.",
+      "why": "Research 2026-11-02 (build, the actions-minutes reading): notify owner is the week's top workflow at 71 runs/137 billed because every run bills 2 minutes (the job takes ≈ 83 s), and its first step runs scripts/actions-minutes.mjs on each of them — ten run pages plus one jobs call per run over a minute (166 in the week to 11-02), per job since 10-26 — although the script writes at most one `| watchdog | ci-minutes:` line a day (30 lines since 10-26, one per day at 00:01–02:07) and dedupes only after the fetch. Moving the day check before the fetch costs nothing the line needs: the 00:40 fire still measures and writes, every later fire prints `already warned today` and exits. Whether that alone takes the job under 60 s (one billed minute, −66 a week) is the proof; the 11-09 ci-minutes lines show it. 2026-11-02 09:50 build: built — `warnedToday(runsMd, today)` in scripts/actions-minutes-line.ts (3 tests), called before the first API call and again before the append (the watchdog step may have written lines meanwhile); the dry run on the repo printed `already warned today; no API call`, and a scratch copy without the day's line measured the rolling week (597 billed/7d per job at 09:27, the window being 7 days to now rather than to 09:00) and wrote its line. The 11-09 ci-minutes lines show whether notify owner's billed minutes fall toward its run count.",
       "effort_days": 0.1,
       "proof": "notify owner's billed minutes approach its run count in the 11-09 ci-minutes lines (≈ 71, from 137); the daily line still lands once a day",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-02",
-      "doing_since": "2026-11-02"
+      "done_at": "2026-11-02"
     },
     {
       "id": "metrics-probe-dispatch",

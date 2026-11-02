@@ -40,3 +40,15 @@ export function ciMinutesLine(f: CiMinutesFigures): string {
   }
   return `${head} top: ${parts.join(', ')}`;
 }
+
+/**
+ * True when `runsMd` already carries a `| watchdog | ci-minutes:` line dated `today` (YYYY-MM-DD).
+ * The guard writes at most one line a day, so a run that finds it has nothing to measure: it exits
+ * before the run pages and the per-run jobs calls (≈ 170 a run in the week to 2026-11-02, on every
+ * one of notify owner's 71 runs; foundry `ci-minutes-guard-once-a-day`).
+ */
+export function warnedToday(runsMd: string, today: string): boolean {
+  return runsMd
+    .split('\n')
+    .some((l) => l.startsWith(`- ${today}`) && l.includes('| watchdog | ci-minutes:'));
+}

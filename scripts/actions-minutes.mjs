@@ -17,13 +17,24 @@
 // week), and a run concluded `skipped` (the installer's own push) bills 0. The week to 10-26 09:00
 // read 521 per run but 459 per job; the wall sum stays in the log for comparison.
 import { appendFileSync, readFileSync } from 'node:fs';
-import { ciMinutesLine } from './actions-minutes-line.ts';
+import { ciMinutesLine, warnedToday } from './actions-minutes-line.ts';
 
 const repo = process.env.GITHUB_REPOSITORY ?? 'giovf/rorororo';
 const token = process.env.GITHUB_TOKEN;
 const WARN_MINUTES = Number(process.env.CI_WARN_MINUTES ?? 1700);
 const since = new Date(Date.now() - 7 * 86_400_000).toISOString();
 const headers = { Authorization: `Bearer ${token}`, accept: 'application/vnd.github+json' };
+
+// Once a day is the whole output (2026-11-02, foundry ci-minutes-guard-once-a-day): the line is
+// deduped per day, yet every notify-owner run — 71 a week, 44 of them triage dispatches — paged
+// the week's runs and fetched the jobs of each run over a minute before finding today's line.
+// The day's first run measures and writes; every later run stops here, before any API call.
+const RUNS_MD = 'docs/RUNS.md';
+const today = new Date().toISOString().slice(0, 10);
+if (warnedToday(readFileSync(RUNS_MD, 'utf8'), today)) {
+  console.log('actions-minutes: already warned today; no API call');
+  process.exit(0);
+}
 
 /** Billed minutes of one run from its jobs: each non-skipped job rounded up to a whole minute. */
 async function billedJobs(run) {
@@ -87,17 +98,11 @@ if (projection > WARN_MINUTES) {
   // now built to fit with whole entries, and the wall figure and warn threshold live in the log above.
   const text = ciMinutesLine({ billed, projection, top: topEntries });
   const line = `- ${stamp} | watchdog | ${text}`;
-  const runsMd = readFileSync('docs/RUNS.md', 'utf8');
-  const today = stamp.slice(0, 10);
-  if (!runsMd.includes(`${today}`) || !runsMd.includes('| watchdog | ci-minutes:')) {
-    appendFileSync('docs/RUNS.md', line + '\n');
-    console.log('warned in docs/RUNS.md');
-  } else if (
-    !runsMd.split('\n').some((l) => l.startsWith(`- ${today}`) && l.includes('ci-minutes:'))
-  ) {
-    appendFileSync('docs/RUNS.md', line + '\n');
-    console.log('warned in docs/RUNS.md');
-  } else {
+  // Re-read: the watchdog step before this one may have appended lines since the check above.
+  if (warnedToday(readFileSync(RUNS_MD, 'utf8'), today)) {
     console.log('already warned today');
+  } else {
+    appendFileSync(RUNS_MD, line + '\n');
+    console.log('warned in docs/RUNS.md');
   }
 }

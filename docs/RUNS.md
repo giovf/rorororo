@@ -2307,3 +2307,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 09:40 | build | actions-minutes blocked on owner action 036: GitHub Pro US$4/month (B) or stay public behind the mirror (A)
 - 2026-11-02 09:40 | build | Foundry research pass from the reading: 3 CI levers queued (guard once a day 4, probe dispatch 3, mirror step 3)
 - 2026-11-02 09:40 | notify | A 2-minute choice: pay about £3 a month to make the code private, or keep it public? Reply A or B
+- 2026-11-02 09:50 | build | Next candidate after the block: foundry ci-minutes-guard-once-a-day (claimed 09:45)
+- 2026-11-02 09:50 | build | Built foundry ci-minutes-guard-once-a-day: the guard exits before any API call once the day's line exists
+- 2026-11-02 09:50 | build | warnedToday() in actions-minutes-line.ts, 3 tests; dry run on the repo: 'already warned today; no API call'
+- 2026-11-02 09:50 | build | Scratch copy without the day's line still measured the rolling week (597 per job) and wrote it; proof 11-09

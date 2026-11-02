@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { RUN_LINE_CAP, ciMinutesLine } from './actions-minutes-line.ts';
+import { RUN_LINE_CAP, ciMinutesLine, warnedToday } from './actions-minutes-line.ts';
 
 const top = [
   ['fetch relay', 139],
@@ -72,5 +72,31 @@ describe('ciMinutesLine', () => {
     expect(ciMinutesLine({ billed: 0, projection: 0, top: [] })).toBe(
       'ci-minutes: 0 billed min/7d (~0/mo; cap 2000)',
     );
+  });
+});
+
+describe('warnedToday', () => {
+  const runs = [
+    '- 2026-11-01 02:07 | watchdog | ci-minutes: 568 billed min/7d (~2434/mo; cap 2000) top: notify owner 118',
+    '- 2026-11-02 00:07 | triage | notify owner dispatched: last run started 20:47 UTC, 3 h ago',
+    '- 2026-11-02 00:08 | watchdog | ci-minutes: 576 billed min/7d (~2469/mo; cap 2000) top: notify owner 131',
+    '',
+  ].join('\n');
+
+  it('is true once the day has its ci-minutes line', () => {
+    expect(warnedToday(runs, '2026-11-02')).toBe(true);
+  });
+
+  it('is false for a day without one, even when the day has other watchdog lines', () => {
+    expect(warnedToday(runs, '2026-11-03')).toBe(false);
+    expect(
+      warnedToday('- 2026-11-03 00:10 | watchdog | ci-failed: check run 410\n', '2026-11-03'),
+    ).toBe(false);
+  });
+
+  it('does not count a line that only mentions ci-minutes in another tag', () => {
+    expect(
+      warnedToday('- 2026-11-03 09:40 | build | ci-minutes: guard exits early now\n', '2026-11-03'),
+    ).toBe(false);
   });
 });
