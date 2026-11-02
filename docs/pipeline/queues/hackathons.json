@@ -2,7 +2,7 @@
   "venture": "hackathons",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "researched": "2026-10-26",
   "weight": 2,
   "items": [
@@ -155,13 +155,14 @@
     {
       "id": "meta-global-ai-hackathon-live-run",
       "title": "Meta Global AI Developer Hackathon entry, part 2 (submissions close 2026-11-04 9:00 PM ET): once META_MODEL_API_KEY exists (action 032 step 1), dispatch the landing workflow so the Worker gets DILIGENCE_API_KEY, check https://apps.gankdat.com/diligence runs a real company live (read the SSE stream from the sandbox or the demo run's transcript), dispatch the demo video workflow (entry meta-global-ai-hackathon, company input) and read its artifact (mp4 under 3 min, transcript.md), replace WALKTHROUGH.md's dry run with the live transcript, finish SUBMISSION.md (video link, the live figures) and write the owner: line for action 032 step 3; the owner submits on the Cerebral Valley portal and the URL goes in RESEARCH.md",
-      "why": "Part 1 (meta-global-ai-hackathon-entry, 2026-10-26) built the page, the CLI, the recorder and the text; everything that spends the hackathon's US$150 of Meta Model API credits needs the key only the owner's Meta account can create (RESEARCH §2c: a check is a few cents, the guard bounds a run under US$1.50, the page caps 150 checks a day). The rules (RESEARCH §2, read 2026-10-26) weight Demo at 25 % and want a demo that 'holds up live', so the live page and the video are the entry's second half; the owner submits because the portal is their identity (as for actions 023 and 027). Credits are valid for the ten-day window, so the live run happens the slot after the key lands, not at the deadline.",
+      "why": "Part 1 (meta-global-ai-hackathon-entry, 2026-10-26) built the page, the CLI, the recorder and the text; everything that spends the hackathon's US$150 of Meta Model API credits needs the key only the owner's Meta account can create (RESEARCH §2c: a check is a few cents, the guard bounds a run under US$1.50, the page caps 150 checks a day). The rules (RESEARCH §2, read 2026-10-26) weight Demo at 25 % and want a demo that 'holds up live', so the live page and the video are the entry's second half; the owner submits because the portal is their identity (as for actions 023 and 027). Credits are valid for the ten-day window, so the live run happens the slot after the key lands, not at the deadline. Done 2026-11-02 (interactive): key verified (20-token call), landing redeployed (run 41493481210), live page checked Tesco PLC (5 model calls, 37k tokens, 25 s, pinned 00445790, LOW), demo video run 41493781120 (150 s mp4, served at apps.gankdat.com/demo/meta-diligence.mp4), WALKTHROUGH.md live, SUBMISSION.md links and figures; owner line for step 3.",
       "effort_days": 0.3,
       "proof": "the page returns a live report for a real company; one mp4 under 3 minutes and transcript.md in the demo video artifact; the owner's submission accepted on the portal before 2026-11-04 9:00 PM ET",
       "score": 9,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-26",
-      "doing_since": "2026-11-02"
+      "doing_since": "2026-11-02",
+      "done_at": "2026-11-02"
     },
     {
       "id": "diligence-name-only-unconfirmed",

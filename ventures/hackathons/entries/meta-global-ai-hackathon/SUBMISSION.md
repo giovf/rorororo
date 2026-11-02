@@ -3,9 +3,8 @@
 Prepared 2026-10-26 by the build routine (hackathons `meta-global-ai-hackathon-entry`); the owner
 pastes these fields into the submission portal
 (https://cerebralvalley.ai/e/meta-ai-developer-hackathon/hackathon/submit, due **4 Nov 2026,
-9:00 PM ET**) — action 032 step 3. Edit freely — the voice is the owner's. The live transcript and the
-demo video link are added by `meta-global-ai-hackathon-live-run` once the model key exists (action
-032 step 1). Track: **Indie developer**. Theme: **Build for Your World**.
+9:00 PM ET**) — action 032 step 3. Edit freely — the voice is the owner's. Live figures, the transcript
+(`WALKTHROUGH.md`) and the video link were added 2026-11-02 from a live run on Meta Model API. Track: **Indie developer**. Theme: **Build for Your World**.
 
 The Official Rules (read 2026-10-26, `ventures/hackathons/RESEARCH.md` §2) judge on Impact 30 %, Use
 of Meta AI Tooling 25 %, Technical Depth & Execution 20 % and Demo 25 %; the sections below are
@@ -25,7 +24,7 @@ Type a UK company name; Muse Spark reads seven official registers over MCP and w
 - Source: https://github.com/giovf/rorororo — `packages/landing/src/diligence-core.ts` (the agent),
   `packages/landing/src/diligence.ts` (the page and its event stream), `scripts/meta-diligence-agent.ts` (CLI)
 - The data product it runs on: https://gankdat.com (API, MCP server, 17 UK/EU register datasets)
-- Demo video: _added by the live-run item (the `demo video` workflow's artifact)_
+- Demo video (2 min 30 s): https://apps.gankdat.com/demo/meta-diligence.mp4
 
 ## The problem (Impact)
 
@@ -51,7 +50,7 @@ the same loop is a 300-line file any firm can run behind its own key.
   no match says so; every line cites the tool it came from. The page tells the reader it is a
   demonstration of what the registers return for the typed name, not advice.
 - **Spend guard.** At most 40 model calls and 300k tokens per run, abort beyond; Muse Wonder is refused
-  by the guard on Meta Model API. A normal run is three model calls and a few cents; the page adds a
+  by the guard on Meta Model API. A live run on Tesco PLC (2026-11-02) took 4 model calls, 14 register reads, ≈ 31k tokens and 23.5 s — about five US cents; the page adds a
   per-visitor hourly cap and a daily cap so the hackathon credits last the judging.
 
 ## Use of Meta AI tooling
@@ -86,7 +85,8 @@ the same loop is a 300-line file any firm can run behind its own key.
 ## Demo
 
 - Live: https://apps.gankdat.com/diligence — type a name, watch the registers come in, read the report.
-- Video (≤ 3 min): the live page checking a real company, then the CLI and the source.
+- Video (2 min 30 s): https://apps.gankdat.com/demo/meta-diligence.mp4 — the live page checking Tesco PLC (pinned to
+  company number 00445790, LOW risk, every line sourced), then the CLI and the source. Transcript: `WALKTHROUGH.md`.
 - CLI: `META_MODEL_API_KEY=… node scripts/meta-diligence-agent.ts "Acme Widgets Ltd"`, or
   `--dry-run` for the fixture story without a key.
 

@@ -2314,3 +2314,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 12:10 | triage | notify owner dispatched: last run started 09:53 UTC, 2 h 17 min ago
 - 2026-11-02 15:13 | triage | notify owner dispatched: last run started 12:10 UTC, 3 h ago
 - 2026-11-02 17:38 | triage | notify owner dispatched: last run started 15:13 UTC, 2 h 24 min ago
+- 2026-11-02 17:48 | notify | Meta hackathon entry is ready: paste it into the form by Wed 4 Nov, 9pm US time (~15 min)
+- 2026-11-02 17:48 | interactive | Meta entry live: key verified, page ran Tesco PLC live, 2.5-min demo video recorded and hosted

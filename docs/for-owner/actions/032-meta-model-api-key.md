@@ -1,10 +1,8 @@
 # Owner action request #032 — Meta hackathon: the model key, then the submission
 
 - **Date:** 2026-10-26
-- **Status:** waiting on Meta — dev.meta.ai logs you out when creating a key (2026-10-29); the credit claim is in and
-  Meta issues it within a few days. Try step 1 again once the "credits issued" mail arrives.
-  *Review 2026-W44 (2026-11-01):* the entry goes in by 4 Nov either way — if the key is still missing on 3 Nov, the
-  routines prepare an honest submission without the live demo and step 3 below is the same ~15-minute paste.
+- **Status:** step 1 done 2026-11-02 (key + GANKDAT_DEMO_API_KEY secrets, spending alert set; the page runs live). **Step 3
+  is ready — submit by 4 Nov 2026, 9:00 PM ET — that is 02:00 on Thursday 5 Nov, UK time.**
 - **Your time:** ~10 minutes now (step 1), ~15 minutes by 4 Nov (step 3)
 - **Cost:** £0.00 expected. *Corrected 2026-10-29 from the Credit Terms you saved:* Meta requires a card on file for any
   Model API account and charges it at standard prices once the US$150 credit is used up, with no cap on their side. The
@@ -48,11 +46,13 @@ US$150k / 100k / 75k / 50k / 25k) sign a W-8BEN; submissions close **4 Nov 2026,
 - The rules are the event waiver (https://cerebralvalley.ai/e/meta-ai-developer-hackathon/waiver);
   the routines read them 2026-10-26. Nothing to decide — accept if prompted.
 
-### 3. Submit the entry by 4 Nov 2026, 9:00 PM ET (~15 min, after the live-run item says "ready")
+### 3. Submit the entry by 4 Nov 2026, 9:00 PM ET (~15 min) — READY since 2026-11-02
 - **Where:** https://cerebralvalley.ai/e/meta-ai-developer-hackathon/hackathon/submit
 - **Steps:** paste the fields from `ventures/hackathons/entries/meta-global-ai-hackathon/SUBMISSION.md`
   (track: indie developer; theme: Build for Your World), the links (live page, repo, gankdat.com) and
-  the demo video (download it from the `demo video` workflow run the live-run item names in ALERTS).
+  the demo video link **https://apps.gankdat.com/demo/meta-diligence.mp4** (2 min 30 s, a live run on Tesco PLC; if the
+  form wants a file upload instead of a link, download it from that address). Live page:
+  https://apps.gankdat.com/diligence. Repo: https://github.com/giovf/rorororo.
 - **Give back:** the submission URL or "submitted" (and the date); it goes in RESEARCH.md.
 - **Cost:** £0.00
 
