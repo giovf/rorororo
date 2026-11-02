@@ -10,6 +10,12 @@ name: gankdat metrics
 # Odd minute (foundry metrics-crons-off-the-half-hour, 2026-10-09): on `30 6` the scheduled run
 # started 11:51–15:04 UTC every day 10-03..10-08 — GitHub delays crons on busy minutes most — so
 # the runner-fed refresh, IndexNow, the MCP probe and the error filer landed ~7 h after the waves.
+# `probe` dispatch (foundry metrics-probe-dispatch, 2026-11-02): 19 of this job's 26 runs in the week
+# to 11-02 were dispatches made for a live probe or a log read after a push, each billing the full
+# 4–5 min pass (84 of its 91 minutes) and appending a RESEARCH.md row nobody asked for. With
+# `probe: true` the run does only the live MCP probe and the Worker's error lines of the last 24 h
+# (both node builtins: no install, no row, nothing committed — ≤ 1 billed minute) and a routine
+# reads the job log with `get_job_logs`. The 07:00 routine's row dispatch leaves the input false.
 on:
   schedule:
     - cron: '37 6 * * *' # daily, before the 07:00 UTC ops routine
@@ -17,6 +23,10 @@ on:
     inputs:
       x402_probe:
         description: 'Pay the half-cent x402 probe on every route today whatever the spacing rule says (a re-screen after a metadata change, ≤ US$0.085; needs X402_PROBE_KEY)'
+        type: boolean
+        default: false
+      probe:
+        description: 'Only the live MCP probe and the Worker error lines of the last 24 h, printed to the log (≤ 1 min; no install, no Daily numbers row, nothing committed)'
         type: boolean
         default: false
 
@@ -45,16 +55,21 @@ jobs:
         # leaves an existing row alone. A SCHEDULED run that finds today's row already on main ends
         # here (every later step is skipped on `steps.row.outputs.skip`); a dispatched run always does
         # the work, and the schedule stays the fallback for a morning nothing dispatched.
+        # A `probe: true` dispatch (2026-11-02) sets the same output: everything but the self-heal, the
+        # MCP probe and the error-lines step below is skipped, and nothing is written or committed.
         id: row
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || inputs.probe == true
         run: |
           today=$(date -u +%F)
-          if grep -q "^| $today | Daily numbers |" ventures/gankdat/RESEARCH.md; then
+          if [ "${{ inputs.probe }}" = "true" ]; then
+            echo "::notice::probe dispatch: the live MCP probe and the Worker's error lines only; no row, nothing committed"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          elif grep -q "^| $today | Daily numbers |" ventures/gankdat/RESEARCH.md; then
             echo "::notice::today's Daily numbers row ($today) is already on main; the late scheduled run has nothing to write"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
       - uses: actions/setup-node@v7
-        if: steps.row.outputs.skip != 'true'
+        if: steps.row.outputs.skip != 'true' || inputs.probe == true
         with:
           node-version: 24
           cache: npm
@@ -80,7 +95,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: Probe the live MCP endpoint the way a directory's health check does
-        if: steps.row.outputs.skip != 'true'
+        if: steps.row.outputs.skip != 'true' || inputs.probe == true
         # scripts/mcp-probe.ts (gankdat mcp-live-probe, 2026-10-08): initialize, tools/list and one
         # preview tools/call against https://gankdat.com/mcp from the runner — the edge as Glama,
         # Smithery and the Claude directory see it (Glama mailed "HTTP 500 – Error connecting to
@@ -95,6 +110,17 @@ jobs:
         continue-on-error: true
         env:
           GANKDAT_PROBE_KEY: ${{ secrets.GANKDAT_PROBE_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: "Worker error lines of the last 24 h (probe dispatch only: the job log is the reading)"
+        if: inputs.probe == true
+        # ventures/gankdat/scripts/error-lines.mjs (foundry metrics-probe-dispatch, 2026-11-02): the same
+        # Query Builder read and the same plain lines the Daily numbers step prints before its
+        # `worker errors 24h:` clause — one `worker error ×N:` line per message with its request paths,
+        # one `worker request ×N:` line per 5xx route — only node builtins, nothing written. Exit 1 only
+        # when the token is missing or the API refuses; a refusal is the reading, so the job stays green.
+        run: node --disable-warning=ExperimentalWarning ventures/gankdat/scripts/error-lines.mjs
+        continue-on-error: true
+        env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: x402 probe payments (half a cent per route due, from the probe wallet)
         if: steps.row.outputs.skip != 'true'
