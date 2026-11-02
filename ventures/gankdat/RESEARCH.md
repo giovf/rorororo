@@ -1102,3 +1102,16 @@ anyone buys a data lookup — is behind a login wall and client-side tabs (raw, 
 will stall"), which neither this Worker nor an Actions cron can hold; Virtuals' hosted `acp serve deploy` exists with its
 terms unread. Net on a 2¢ job would be US$0.019. Re-open on a readable data offering with ≥ 100 jobs in 30 days or an
 x402 reading past 50 paid buyer calls in 30 days; `research_after` unchanged.
+
+## Research 2026-11-02 — Zapier as the no-code shelf for the change feeds (burn-down, new-ventures research)
+
+Read by WebSearch restricted to zapier.com (the host does not resolve from the sandbox; the spike reads the pages through the
+relay, `.zapier.com` added). The change feeds still have no delivery path into the tools small firms pay for (2026-10-05 note:
+feed readers, Slack, Teams); the Power Platform connector was withdrawn with Partner Center under the owner-time rule and n8n
+is parked on the MCP-caller reading. Zapier's own pages: 9,000+ apps in the directory; a developer account is free and the
+admin's email must be on the app's domain (gankdat.com mail exists); a private integration can be shared by a public invite
+link with no user cap (irrevocable once accepted) or by email invite (100 or 200 users, the docs disagree); public listing
+needs 3 users with a live Zap, every trigger, search and action tested in a Zap with a successful run, HTTPS, English copy,
+one public integration per app; all users' calls count against the owner's plan limits (100 calls / 60 s on Free and
+Professional). The 11-02 directory search finds no 'Companies House' integration. Queued as
+`new-ventures/spike-zapier-integration-shelf` (4); nothing added to this queue (`research_after` 2026-11-06).

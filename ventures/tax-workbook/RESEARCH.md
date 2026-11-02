@@ -210,3 +210,19 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   the Kindle enrolled in KDP Select today, the Play ebook cannot go up before 2027-01-29, and the Play ebook's day-30 sales decide
   whether a £5.99 spoken edition follows. `research_after` 2026-11-03 unchanged.
 - 2026-11-01 (build, `shelf-stats-owner-note`): the §6 kill rule and the Kindle proof had no source for listing views a day or copies sold (Etsy forbids automated reads, the sandbox never opens KDP, sale mail counts sales). Built the monthly ask — `npm run handoffs` prints a `shelf-ask:` sentence in the week of each month's last Monday from 2026-11-30, deduped on the words `shelf note` in RUNS.md for 21 days, the Monday report appends it to its digest line like the usage ask — and the reader: `scripts/shelf-note.ts` (12 tests across its own and the handoffs suite) parses `etsy views N/day` / `kindle N sold` (also `kindle: N sold`, `N views a day`) from each new owner note and appends §7 rows; the notes poll calls it and both workflows that commit the notes (`notify owner`, `owner notes`) now add RESEARCH.md to the commit (full files dropped in `docs/ci/`, installed by CI; first run checked at the next slot). First ask 2026-11-30, second 2026-12-28.
+- **2026-11-02 00:20 (burn-down, new-ventures research):** two shelves the open Etsy shop and the Kindle guide's rates can feed,
+  read by WebSearch restricted to each shelf's own host (neither resolves from the sandbox; the spikes read them through the
+  relay, hosts added). **Etsy for the Claude Code kit** (exchange idea `ai-setup-course`, Leanpub promoted 10-31): Etsy's index
+  holds category pages 'claude prompts', 'claude prompts packs', 'ai agent template' and 'claude guide' and listings such as
+  'Agentic Coding with Claude Code PDF', 'Claude Code Advanced Guide' (10 chapters, CLAUDE.md examples), a 72-commands ebook,
+  a US$24.99 agent bundle and prompt PDFs at US$1.51–4.99 — buyers already pay here for Claude Code guides, and the shop
+  needs no new account or identity step. Etsy's Creativity Standards: 'designed by a seller' is 'original content created by
+  the seller, such as a … text document', AI tools are allowed with the seller's own creative input and a disclosure in the
+  listing, and prompt packs / bundles of others' work are named as excluded — so the kit is sold as the guide plus our own
+  files. Queued `new-ventures/spike-etsy-claude-code-kit-listing` (6). **Poe creator monetisation** for a 'UK Sole Trader Tax
+  2026/27' prompt bot built from the Kindle guide's rates: Poe's FAQ marks the United Kingdom 'Yes' for price per message
+  (added with 16 other countries on 2023-12-20), earnings are set per message from the bot and the launch-era referral paid
+  up to US$20 a new subscriber; unknown whether any tax bot there has users and whether the payout is a Stripe identity check
+  on a new account. Queued `new-ventures/spike-poe-creator-bot-uk-tax` (5). **Udemy** read and parked in the exchange
+  (`udemy-claude-code-course`): 37 % on organic sales, 30 minutes of video and a Persona identity check before the first
+  course. This queue is unchanged (`research_after` 2026-11-03).

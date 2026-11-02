@@ -695,6 +695,14 @@
       "added": "2026-11-01",
       "spiked": "2026-11-01",
       "updated": "2026-11-01"
+    },
+    {
+      "id": "udemy-claude-code-course",
+      "title": "Udemy as a course shelf for the Claude Code operations kit (exchange idea `ai-setup-course`) — a video course sold by Udemy's own marketplace search",
+      "why": "new-ventures research 2026-11-02 (burn-down, WebSearch restricted to udemy.com). Demand is already measured: the beginner Claude course read on 10-19 shows 17,760 students. Udemy's own pages set the price of the shelf: a paid course needs a Premium instructor registration, at least 30 minutes of video and five lectures; organic marketplace sales pay the instructor 37 % (97 % through the instructor's own coupon or link), subscription-plan revenue pays 15 % from January 2026 and Udemy Business a share of a 15 % pool by minutes watched; payouts via PayPal or Payoneer from US$25 with a W-8BEN on file; and every instructor passes an identity check with Persona (national ID or passport) before the first course goes on the marketplace. Not spiked: the identity check is a new verification on a line scoring under 10 (owner-time rule 2026-10-29), and a 30-minute narrated video course is a production the operation has no voice or screen-recording pipeline for; the text kit goes to Leanpub (promoted 10-31) and the Etsy spike (11-02) first.",
+      "status": "parked",
+      "trigger": "the kit sells ≥ 10 copies on Leanpub or Etsy within 60 days of listing and the owner volunteers the Persona identity check; then a spike prices a 30-minute screen-recorded course (ffmpeg pipeline from the demo-video workflow) against the 37 % organic share",
+      "added": "2026-11-02"
     }
   ]
 }

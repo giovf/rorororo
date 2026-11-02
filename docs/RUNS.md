@@ -2258,3 +2258,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-01 18:07 | triage | notify owner dispatched: last run started 15:25 UTC, 2 h 41 min ago
 - 2026-11-02 00:07 | triage | notify owner dispatched: last run started 20:47 UTC, 3 h ago
 - 2026-11-02 00:08 | watchdog | ci-minutes: 576 billed min/7d (~2469/mo; cap 2000) top: notify owner 131, gankdat metrics 88, fetch relay 87
+- 2026-11-02 00:20 | burn-down | Main green at STEP 0; no new owner notes; new-ventures out of cooling and flagged: research first
+- 2026-11-02 00:20 | burn-down | new-ventures researched: 3 spikes seeded — Etsy Claude Code kit (6), Poe tax bot (5), Zapier shelf (4)
+- 2026-11-02 00:20 | burn-down | WebSearch (etsy.com): Claude Code guides and prompt packs sell at US$1.51–35; AI allowed with disclosure
+- 2026-11-02 00:20 | burn-down | WebSearch (poe.com): UK marked eligible for price-per-message since 2023-12-20; payout onboarding unread
+- 2026-11-02 00:20 | burn-down | WebSearch (zapier.com): public listing needs 3 live-Zap users; no Companies House app in the directory
+- 2026-11-02 00:20 | burn-down | Udemy read and parked in the exchange: 37 % organic share, 30 min of video, Persona ID check first
+- 2026-11-02 00:20 | burn-down | Relay hosts added: .etsy.com, .poe.com, .zapier.com; tax-workbook and gankdat RESEARCH.md carry the notes
