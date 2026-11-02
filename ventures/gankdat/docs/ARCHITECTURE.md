@@ -637,6 +637,13 @@ runs `check:root`.
   a `$metadata.requestId` and/or a level, and prints them — folded lines, then the raw events — to the job log in under
   a minute, committing nothing; a routine dispatches it with `actions_run_trigger` and reads `get_job_logs`. Nine Daily
   numbers dispatches on 10-27 and 10-29 each read one such line at two minutes and a RESEARCH.md commit apiece.
+  **The metrics job's `probe` dispatch** (2026-11-02, foundry `metrics-probe-dispatch`): 19 of the job's 26 runs in the
+  week to 11-02 were dispatches made for a live /mcp probe or an error-line read after a push, each the full 4–5 min
+  pass. `gankdat-metrics.yml` now takes a boolean `probe` input: a true dispatch sets the short-circuit output at once
+  and runs only the self-heal, `scripts/mcp-probe.ts` and `scripts/error-lines.mjs` — the same Query Builder read and
+  the same `worker error ×N:` / `worker request ×N:` lines the Daily numbers step prints (`errorLinesReport`,
+  `lib/error-lines.ts`, tested) — node builtins only, no install, no row, nothing committed, read with `get_job_logs`;
+  the 07:00 routine's row dispatch leaves it false and the schedule never sees it.
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
   after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
   stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in

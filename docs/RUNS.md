@@ -2314,3 +2314,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 12:10 | triage | notify owner dispatched: last run started 09:53 UTC, 2 h 17 min ago
 - 2026-11-02 15:13 | triage | notify owner dispatched: last run started 12:10 UTC, 3 h ago
 - 2026-11-02 17:38 | triage | notify owner dispatched: last run started 15:13 UTC, 2 h 24 min ago
+- 2026-11-02 17:50 | build | Main green at STEP 0; first-runs owed nothing; no new owner notes; item foundry metrics-probe-dispatch (claimed 17:38)
+- 2026-11-02 17:50 | build | Built foundry metrics-probe-dispatch: gankdat-metrics.yml `probe` input runs only the MCP probe and error lines
+- 2026-11-02 17:50 | build | New scripts/error-lines.mjs prints the day's Worker error lines; errorLinesReport shared with metrics.mjs, 1 test
+- 2026-11-02 17:50 | build | Probe path: no npm ci, no Daily numbers row, nothing committed; docs/ci/ carries the file for the installer
+- 2026-11-02 17:50 | build | build.md, burn-down.md, metrics.md name the input; SCHEDULERS and gankdat ARCHITECTURE note it; Taskmaster row 45
+- 2026-11-02 17:50 | build | Next slot: first-run check on the installed gankdat-metrics.yml — dispatch it once with probe true, read the log
