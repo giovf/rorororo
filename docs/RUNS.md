@@ -2288,3 +2288,13 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-02 00:50 | burn-down | Stopping at ~40 min: 5 items done (research, 3 spikes, 1 listing review); nothing buildable
 - 2026-11-02 04:08 | triage | notify owner dispatched: last run started 01:45 UTC, 2 h 22 min ago
 - 2026-11-02 07:10 | triage | notify owner dispatched: last run started 04:06 UTC, 3 h ago
+- 2026-11-02 07:45 | report | W45 money: spent £58.60, revenue £0, net −£58.60, headroom £33.40 (≈9 months)
+- 2026-11-02 07:45 | report | Variables Toolkit: views 18→19, runs 5→6, 0 sales
+- 2026-11-02 07:45 | report | ReadFocus: Chrome users 1→2, 20 search impressions, 0 clicks, 0 sales
+- 2026-11-02 07:45 | report | Highlight Keep: 0 users, 6 search impressions this week, 0 sales
+- 2026-11-02 07:45 | report | gankdat: 4 accounts (+0), 0 paid, 15 x402 payments, 66 paywall hits, no money yet
+- 2026-11-02 07:45 | report | Tax workbook: Etsy listed 10-29 and Kindle live 10-31, no sale yet
+- 2026-11-02 07:45 | report | Alert: Etsy could not charge £2.98 on 11-01; owner to pay before 22 Nov
+- 2026-11-02 07:45 | report | Open owner actions: 032 Meta key, 033 Payhip, 034 Stripe link, 035 Claude directory read
+- 2026-11-02 07:45 | report | Next: owner does 033 and 034 (about 16 min); pay Etsy £2.98 before 22 Nov
+- 2026-11-02 07:45 | notify | Quick usage note please: reply like "usage 62% fable 71%" (last one was 4 Oct)
