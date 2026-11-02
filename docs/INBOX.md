@@ -269,3 +269,5 @@
 - 2026-11-02 07:25 | notification | zohocorp.com | Your Zoho CRM trial: improve your ROI with Zoho CRM | trial marketing newsletter | logged
 - 2026-11-02 17:03 | notification | devpost.com | Lights, camera, PayPal! Video tips and how judging works - PayPal AI Hackathon | hackathon organiser newsletter | logged
 - 2026-11-02 17:53 | notification | github.com | [giovf/rorororo] Run failed: check - main (4c3cc13) | check.yml run 41495183373 failed after 50 s, a step in our gate is red; watchdog line pending | logged
+- 2026-11-02 18:20 | store | gankdat.com | Your UK Sole Trader Tax Workbook 2026/27 download | own-checkout licence Worker's download mail (matches the £0 end-to-end test of 2026-11-02 in RESEARCH §7; price not stated, no Sale row) | logged (self-caused: Stripe Payment Link, action 034)
+- 2026-11-02 18:22 | store | cerebralvalley.ai | Hackathon Project "Foundry" Submitted! | Meta hackathon submission confirmed (indie track, team 506); ALERTS already records it done | logged (self-caused: hackathon application, action 032)
