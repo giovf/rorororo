@@ -236,8 +236,9 @@
       "effort_days": 0.2,
       "proof": "Search Console (the gankdat property covers apps.gankdat.com) shows the page as a Product rich result and ≥ 1 impression for a sole-trader-tax query within 30 days; a day-30 read item dated from the deploy",
       "score": 6,
-      "status": "todo",
-      "added": "2026-11-03"
+      "status": "doing",
+      "added": "2026-11-03",
+      "doing_since": "2026-11-03"
     },
     {
       "id": "free-tax-estimate-calculator-page",
