@@ -201,8 +201,9 @@
       "effort_days": 0.5,
       "proof": "paperback live beside the Kindle edition on amazon.co.uk within 7 days of the owner's upload (ASIN in KINDLE.md); first paperback sale ≤ 60 days in the owner's monthly `kindle: N sold` note; Kindle sales not lower in the month after than the month before",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-30"
+      "status": "doing",
+      "added": "2026-10-30",
+      "doing_since": "2026-11-03"
     },
     {
       "id": "shelf-stats-owner-note",
