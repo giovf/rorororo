@@ -1347,8 +1347,9 @@
       "effort_days": 0.3,
       "proof": "claim-research pushes the marker and is tested with claim's suite; empty/cold/starved skip a queue claimed within 2 h; the abort path is tested; both prompts carry the step; no duplicate research commit in 30 days of slots",
       "score": 5,
-      "status": "todo",
-      "added": "2026-11-03"
+      "status": "doing",
+      "added": "2026-11-03",
+      "doing_since": "2026-11-03"
     }
   ]
 }
