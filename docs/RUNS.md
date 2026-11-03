@@ -2378,3 +2378,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 09:24 | notify | Second tax spreadsheet ready: publish the Reseller workbook on Etsy, about 10 minutes
 - 2026-11-03 09:28 | build | first runs: mirror-gankdat.yml none since the 18:27 install (04:23 cron did not fire); read only
 - 2026-11-03 12:08 | triage | notify owner dispatched: last run started 09:58 UTC, 2 h 10 min ago
+- 2026-11-03 15:08 | triage | notify owner dispatched: last run started 12:09 UTC, 3 h ago
