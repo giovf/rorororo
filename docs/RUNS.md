@@ -2379,3 +2379,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 09:28 | build | first runs: mirror-gankdat.yml none since the 18:27 install (04:23 cron did not fire); read only
 - 2026-11-03 12:08 | triage | notify owner dispatched: last run started 09:58 UTC, 2 h 10 min ago
 - 2026-11-03 15:08 | triage | notify owner dispatched: last run started 12:09 UTC, 3 h ago
+- 2026-11-03 17:30 | burn-down | tax-workbook research: shelves live 1–5 days, 0 sales; three distribution items queued, no new product
+- 2026-11-03 17:30 | burn-down | Queued free-tax-estimate-calculator-page (7): Google shows hobby .pages.dev calculators ranking
+- 2026-11-03 17:30 | burn-down | Queued product-page-structured-data-faq (6): tax-workbook.html has no JSON-LD and no FAQ
+- 2026-11-03 17:30 | burn-down | Queued cross-sell-links-guide-and-workbook (4): guide and workbook never name each other
+- 2026-11-03 17:30 | burn-down | Unblocked kdp-listing-live: the live mail landed 10-31, no slot moved it; URL from the 11-30 note
+- 2026-11-03 17:30 | burn-down | mirror-gankdat.yml first run: success (04:23 cron slipped; schedule run 67 at 12:04 UTC, 25 s)

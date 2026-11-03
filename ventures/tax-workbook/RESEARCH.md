@@ -266,3 +266,21 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   records. Not built: a Payhip twin of the reseller file (the first twin has no sale yet to justify a second), MTD quarterly totals (the
   companion workbook has them; a reseller over £50,000 is rare). Follow-ups queued: `reseller-listing-live` (blocked on action 037). The §6
   proof and kill clocks for this listing start at its `Listed` row.
+- **2026-11-03 17:30 (burn-down, queue starved — research pass):** the first pass with every shelf live: Etsy 10-29, Kindle 10-31, Payhip and
+  the own checkout 11-02, the reseller file built 11-03 (action 037 open), 0 sales on all of them (§7), so STRATEGY §6 says distribution, not a
+  fifth product. Three levers we control without the owner, each queued (STRATEGY §5 score): **`free-tax-estimate-calculator-page` (7)** — the
+  buyer's query is "sole trader tax calculator 2026/27" and the shelf for it is Google: a WebSearch for `sole trader tax calculator 2026/27 UK
+  free` (2026-11-03) returned Bytestart, SparkReceipt, UK Net Pay, itcontracting and smallbusinessguide, three hobby Cloudflare Pages sites
+  (calks-uk, uk-tax, poundlogic `.pages.dev`), three Payhip product pages and an Etsy listing — a new domain can rank, and product pages rank
+  beside the calculators. The maths exists and is tested (`src/tax.ts`, `src/rates.ts`), so the page is a client bundle and copy on the landing
+  Worker, with the workbook as the next step under the result. **`product-page-structured-data-faq` (6)** — `tax-workbook.html` has no JSON-LD
+  and no question-shaped headings (checked: 0 `ld+json`, h2s "Where to buy", "What you get", "At a glance", "Please read before buying",
+  "Refunds"); Product + Offer markup and a FAQ block aimed at the long-tail queries. **`cross-sell-links-guide-and-workbook` (4)** —
+  `src/kindle/content.ts` carries no link to the workbook and `src/workbook.ts` never names the guide; a back-matter "Also by" page (our own
+  site, KDP-allowed) and a README row, rebuilt into `release/` for the own checkout now and riding the next owner upload later. **Unblocked**
+  `kdp-listing-live` (8): its trigger, the "available in the Kindle Store" mail, landed 2026-10-31 14:32 (KINDLE.md Status) and no slot had
+  moved the item; the ASIN is not in the mail and amazon.co.uk is never read (Conditions of Use forbid automated access; two WebSearches did
+  not surface the title), so the record carries the live date and takes the URL from the owner's 2026-11-30 shelf note; `kdp-paperback-edition`
+  (7) follows it and `google-play-listing` dates to 2027-01-29. Not queued: a Payhip twin or own checkout for the reseller file (the first twin
+  has no sale; the 09:24 build's rule stands), the landlord workbook and the MTD Kindle title (10-26 list: after the first shelf sells), a KDP
+  free-promotion week (owner clicks; action 037 is open and never gains steps). Nothing fetched; `research_after` removed, `researched` today.

@@ -3,7 +3,7 @@
   "status": "open",
   "needs_research": false,
   "updated": "2026-11-03",
-  "researched": "2026-10-26",
+  "researched": "2026-11-03",
   "weight": 2,
   "items": [
     {
@@ -129,12 +129,11 @@
     {
       "id": "kdp-listing-live",
       "title": "Record the Kindle guide going live: ASIN and URL in KINDLE.md, Metrics row, SELF-CAUSED check, the proof clock (first sale ≤ 30 days, ≥ 10 ≤ 60 from the owner's monthly `kindle: N sold` note) and a day-60 read item",
-      "why": "The KDP account and the upload are the owner's hands (action 029 step 5, 2026-10-26; the sandbox never reads amazon.co.uk or kdp.amazon.com). When the owner says '029 kindle done' with the URL, this item records the listing (KINDLE.md Status row, RESEARCH.md §7 Metrics row 'Kindle live'), confirms the Countdown Deal dates were a true launch price, and queues the day-60 read (not_before = live date + 60) with RESEARCH.md §6's kill rule; the monthly `kindle: N sold` notes become Metrics rows from then on.",
+      "why": "The KDP account and the upload are the owner's hands (action 029 step 5, 2026-10-26; the sandbox never reads amazon.co.uk or kdp.amazon.com). When the owner says '029 kindle done' with the URL, this item records the listing (KINDLE.md Status row, RESEARCH.md §7 Metrics row 'Kindle live'), confirms the Countdown Deal dates were a true launch price, and queues the day-60 read (not_before = live date + 60) with RESEARCH.md §6's kill rule; the monthly `kindle: N sold` notes become Metrics rows from then on. Unblocked 2026-11-03 (burn-down research): the 'available in the Kindle Store' mail landed 2026-10-31 14:32 UTC (INBOX, KINDLE.md Status: live, KDP Select 90-day term from 2026-10-31), so the live date is known; the ASIN/URL is not in the mail and the sandbox never reads amazon.co.uk (its Conditions of Use forbid automated access; two WebSearches on 2026-11-03 did not surface the title) — record the live date now, leave the URL cell 'from the owner's 2026-11-30 shelf note' (the shelf-ask sentence asks for the Kindle URL alongside the sold count, no new request), and set `google-play-listing` not_before 2027-01-29 and `kdp-paperback-edition` buildable.",
       "effort_days": 0.1,
       "proof": "KINDLE.md carries the live URL and date; a Metrics row exists; a dated day-60 item is queued",
       "score": 8,
-      "status": "blocked",
-      "blocked_on": "KDP review: submitted by the owner 2026-10-29 (action 029 step 5) under the title 'The UK Sole Trader - A guide for the self employed & side hustlers'; unblocks on the 'is now live' mail in inbox triage (SELF-CAUSED kdp row, a `store` line) or the owner's URL. A review flag on title vs cover is fixed by setting the KDP title to the cover's 'UK Sole Trader Tax 2026/27' (KINDLE.md Status)",
+      "status": "todo",
       "added": "2026-10-26"
     },
     {
@@ -228,7 +227,36 @@
       "added": "2026-11-02",
       "doing_since": "2026-11-02",
       "done_at": "2026-11-02"
+    },
+    {
+      "id": "product-page-structured-data-faq",
+      "title": "Product page as a search result: Product + Offer (GBP 6.99, three sellers) and FAQPage JSON-LD on apps.gankdat.com/tax-workbook.html, a FAQ block answering the queries buyers type (sole trader tax calculator 2026/27, SA103 boxes spreadsheet, MTD quarterly updates spreadsheet, Google Sheets), the same on thanks-tax-workbook.html excluded (noindex), tests that the JSON-LD parses and matches the page price, and the reseller page when it exists",
+      "why": "Distribution before features (STRATEGY §6): three shelves and the own page have been live 1–5 days with 0 sales, and the only reach we control is the product page. A Google search for 'sole trader tax calculator 2026/27 UK free' (WebSearch 2026-11-03) returns three Payhip product pages and an Etsy listing among the free calculators, so product pages do rank for the buyer's query; ours has no structured data, no FAQ and no question-shaped headings (checked 2026-11-03: 0 ld+json blocks, h2s 'Where to buy', 'What you get', 'At a glance', 'Please read before buying', 'Refunds'). Product/Offer markup is what Google's free product listings and rich results read; FAQPage markup is still read for rich results on government and health sites only, but the FAQ text itself targets the long-tail queries. Zero owner minutes, zero spend, one deploy (the landing CI).",
+      "effort_days": 0.2,
+      "proof": "Search Console (the gankdat property covers apps.gankdat.com) shows the page as a Product rich result and ≥ 1 impression for a sole-trader-tax query within 30 days; a day-30 read item dated from the deploy",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-11-03"
+    },
+    {
+      "id": "free-tax-estimate-calculator-page",
+      "title": "Free UK sole trader tax estimate 2026/27 on apps.gankdat.com/sole-trader-tax-calculator.html: profit (or income − expenses) in, Income Tax by band (rUK and Scottish toggle), Class 4 NI, the trading allowance choice and the MTD threshold line out, computed in the browser from the workbook's own `src/tax.ts` and `RATES_2026_27` (bundled by the landing build, tests reuse tax.test.ts cases), with the workbook as the next step under the result (Etsy, Payhip, own checkout) and a WebPage/SoftwareApplication JSON-LD; sitemap row; no tracking",
+      "why": "The buyer's query is 'sole trader tax calculator 2026/27' and the shelf that serves it is Google: WebSearch 2026-11-03 shows the first page held by Bytestart, SparkReceipt, UK Net Pay, itcontracting, smallbusinessguide and — the evidence that a new domain can rank — three hobby Cloudflare Pages sites (calks-uk.pages.dev, uk-tax.pages.dev, poundlogic.pages.dev) plus Payhip and Etsy product pages. A calculator is the standard lead magnet for the paid workbook (SparkReceipt and GoSimpleTax use the same page to sell software). The maths already exists and is tested (src/tax.ts, rates.ts: bands, Class 4, trading allowance, MTD thresholds), so the build is a page, a small client bundle and copy; the landing Worker serves static files, so no new infrastructure. £0, zero owner minutes. Risk: Google is slow for a new page — the day-30 read decides whether to keep the page.",
+      "effort_days": 0.5,
+      "proof": "≥ 20 Search Console impressions or ≥ 5 clicks for calculator queries in the first 30 days, and the page named in a RESEARCH §7 Sale row's source within 60 days; kill the page (keep the maths) at 0 impressions after 60 days",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-11-03"
+    },
+    {
+      "id": "cross-sell-links-guide-and-workbook",
+      "title": "Cross-sell between the line's two products: the Kindle guide's back matter gains an 'Also by' page naming the workbook with the product page URL (apps.gankdat.com/tax-workbook.html, KDP-allowed: our own site, not a retailer), the workbook's README tab gains one row naming the Kindle guide (title, 'search the Kindle Store' — no Amazon URL until the owner sends it), both workbook listings' copy (LISTING.md, PAYHIP.md, the product page) mention the guide; rebuilt files land in release/ for the own-checkout KV (CI) and ride the owner's next upload (the Kindle re-upload is batched with the April 2027 refresh or the next KDP sitting, never a new request)",
+      "why": "Checked 2026-11-03: src/kindle/content.ts carries no Etsy, Payhip or gankdat link and src/workbook.ts never names the guide, so a buyer of one product never learns the other exists. The guide (£4.99) and the workbook (£6.99) sell to the same person for the same tax year; a back-matter page is the standard Kindle cross-sell and KDP's guidelines allow links to the author's own site. Cost: 0.1 day, zero owner minutes now — the own-checkout file updates on deploy, the Kindle and Etsy copies when they are next re-uploaded anyway. Worth doing before the first re-upload so the April refresh carries it.",
+      "effort_days": 0.1,
+      "proof": "A §7 Sale row whose Notes name the other product as the referrer (own checkout: a `?from=guide` query on the Buy link counted by the thanks page) within 90 days",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-03"
     }
-  ],
-  "research_after": "2026-11-03"
+  ]
 }
