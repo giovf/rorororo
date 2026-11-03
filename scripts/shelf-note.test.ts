@@ -4,13 +4,27 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   appendMetricsRows,
+  kindleStatusRow,
   lastSales,
   metricsRows,
   parseNoteLine,
   parseShelfNote,
   recordShelfNotes,
   shelfRows,
+  tableRows,
+  STATUS_HEADING,
 } from './shelf-note.ts';
+
+const kindlePack = `# Kindle guide
+
+## Status
+
+| Date | Event |
+| --- | --- |
+| 2026-10-31 | KDP mail: live |
+
+## After
+`;
 
 const research = `# UK Sole Trader Tax Workbook
 
@@ -52,6 +66,27 @@ describe('parseShelfNote', () => {
       etsyViews: 7,
       kindleSold: 1,
     });
+  });
+
+  it('reads the Kindle page from an Amazon link or a bare ASIN (kdp-listing-live)', () => {
+    expect(
+      parseShelfNote(
+        'kindle 2 sold https://www.amazon.co.uk/UK-Sole-Trader-Tax-2026/dp/B0ABCDEFGH/ref=sr_1_1',
+      ),
+    ).toEqual({
+      kindleSold: 2,
+      asin: 'B0ABCDEFGH',
+      kindleUrl: 'https://www.amazon.co.uk/dp/B0ABCDEFGH',
+    });
+    expect(parseShelfNote('amazon.com page: https://amazon.com/gp/product/B0ABCDEFGH')).toEqual({
+      asin: 'B0ABCDEFGH',
+      kindleUrl: 'https://www.amazon.co.uk/dp/B0ABCDEFGH',
+    });
+    expect(parseShelfNote('kindle asin: b0abcdefgh')).toEqual({
+      asin: 'B0ABCDEFGH',
+      kindleUrl: 'https://www.amazon.co.uk/dp/B0ABCDEFGH',
+    });
+    expect(parseShelfNote('bought on amazon.co.uk today')).toBeUndefined();
   });
 
   it('ignores notes that name neither reading', () => {
@@ -129,6 +164,39 @@ describe('recordShelfNotes', () => {
     expect(recordShelfNotes(['- 2026-12-01 09:00 | hello'], file)).toEqual([]);
     expect(
       recordShelfNotes(['- 2026-12-01 09:00 | kindle 1 sold'], path.join(dir, 'none.md')),
+    ).toEqual([]);
+  });
+});
+
+describe('kindleStatusRow / KINDLE.md (kdp-listing-live, 2026-11-03)', () => {
+  it('yields a Status row only for a note that names the book page', () => {
+    const note = parseNoteLine(
+      '- 2026-11-30 10:12 | kindle 2 sold https://www.amazon.co.uk/dp/B0ABCDEFGH',
+    );
+    expect(note && kindleStatusRow(note)).toContain('https://www.amazon.co.uk/dp/B0ABCDEFGH');
+    const plain = parseNoteLine('- 2026-11-30 10:12 | kindle 2 sold');
+    expect(plain && kindleStatusRow(plain)).toBeUndefined();
+  });
+
+  it('appends the row to the Status table and the sold figure to §7 in one call', () => {
+    const dir = mkdtempSync(path.join(tmpdir(), 'kindle-'));
+    const researchFile = path.join(dir, 'RESEARCH.md');
+    const kindle = path.join(dir, 'KINDLE.md');
+    writeFileSync(researchFile, research);
+    writeFileSync(kindle, kindlePack);
+    const written = recordShelfNotes(
+      ['- 2026-11-30 10:12 | kindle 1 sold, ASIN B0ABCDEFGH'],
+      researchFile,
+      kindle,
+    );
+    expect(written).toHaveLength(2);
+    const status = tableRows(readFileSync(kindle, 'utf8'), STATUS_HEADING);
+    expect(status).toHaveLength(2);
+    expect(status[1]?.line).toContain('ASIN B0ABCDEFGH');
+    expect(readFileSync(researchFile, 'utf8')).toContain('| 2026-11-30 | Kindle sold |');
+    // a note without a figure or a link writes nothing
+    expect(
+      recordShelfNotes(['- 2026-11-30 10:12 | nothing to read'], researchFile, kindle),
     ).toEqual([]);
   });
 });

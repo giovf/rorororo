@@ -2385,3 +2385,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 17:30 | burn-down | Queued cross-sell-links-guide-and-workbook (4): guide and workbook never name each other
 - 2026-11-03 17:30 | burn-down | Unblocked kdp-listing-live: the live mail landed 10-31, no slot moved it; URL from the 11-30 note
 - 2026-11-03 17:30 | burn-down | mirror-gankdat.yml first run: success (04:23 cron slipped; schedule run 67 at 12:04 UTC, 25 s)
+- 2026-11-03 17:25 | burn-down | tax-workbook kdp-listing-live done: Kindle guide recorded live from 10-31; §7 row, KINDLE.md
+- 2026-11-03 17:25 | burn-down | shelf-note.ts reads an Amazon /dp/ link or ASIN from owner notes into KINDLE.md Status (4 tests)
+- 2026-11-03 17:25 | burn-down | Monthly shelf ask adds "+ the Kindle book's Amazon link" until KINDLE.md carries it
+- 2026-11-03 17:25 | burn-down | Queued kindle-day-60-read (12-30); google-play-listing dated 2027-01-29; paperback now todo

@@ -6,7 +6,8 @@
 // dashboard idea is acknowledged on the Worker (`POST /ops/api/ideas/ack`) only after the file
 // is written, so a failed run leaves it to be collected next hour.
 // A note with the two monthly shelf readings (`etsy views 4/day kindle 2 sold`, asked by the Monday
-// report, 2026-11-01) also lands as rows of ventures/tax-workbook/RESEARCH.md §7 (scripts/shelf-note.ts).
+// report, 2026-11-01) also lands as rows of ventures/tax-workbook/RESEARCH.md §7 (scripts/shelf-note.ts);
+// one naming the Kindle book's Amazon page (`/dp/B0…` or `ASIN B0…`) adds a KINDLE.md Status row (2026-11-03).
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { recordShelfNotes } from './shelf-note.ts';
 

@@ -437,12 +437,29 @@ export function notifyLines(runsText: string): { at: number; text: string }[] {
  * when RUNS.md already carries a `| notify |` line with SHELF_ASK_MARK from the last
  * SHELF_ASK_DEDUPE_DAYS days. ≤ DIGEST_MAX_CHARS: it rides the Monday report's digest line.
  */
-export function shelfAsk(today: Date, runsText: string): string | undefined {
+export function shelfAsk(
+  today: Date,
+  runsText: string,
+  kindleLinkKnown = true,
+): string | undefined {
   if (!isShelfAskWeek(today)) return undefined;
   const floor = today.getTime() - SHELF_ASK_DEDUPE_DAYS * 86_400_000;
   const asked = notifyLines(runsText).some((l) => l.text.includes(SHELF_ASK_MARK) && l.at >= floor);
   if (asked) return undefined;
-  return `Monthly ${SHELF_ASK_MARK}: "etsy views 4/day kindle 2 sold" from Etsy stats and KDP Reports`;
+  // Until KINDLE.md carries the book's page (kdp-listing-live, 2026-11-03: the live mail names no
+  // ASIN and amazon.co.uk is never read), the same note brings the Amazon link once.
+  return kindleLinkKnown
+    ? `Monthly ${SHELF_ASK_MARK}: "etsy views 4/day kindle 2 sold" from Etsy stats and KDP Reports`
+    : `Monthly ${SHELF_ASK_MARK}: "etsy views 4/day kindle 2 sold" + the Kindle book's Amazon link`;
+}
+
+/** The Kindle guide's listing pack (its Status table takes the book's page from the owner's note). */
+export const KINDLE_FILE = path.join('ventures', 'tax-workbook', 'KINDLE.md');
+
+/** True once KINDLE.md names the book's Amazon page (a `/dp/` link in its Status table). */
+export function kindleLinkKnown(kindleFile = path.resolve(KINDLE_FILE)): boolean {
+  if (!existsSync(kindleFile)) return true; // no pack, nothing to ask for
+  return /amazon\.[a-z.]+\/dp\/B0[A-Z0-9]{8}/i.test(readFileSync(kindleFile, 'utf8'));
 }
 
 /** Every queue under docs/pipeline/queues (venture + items); unreadable files are skipped. */
@@ -535,7 +552,11 @@ function main(): void {
       const handoffDigest = handoffDigestLine(handoffs, today);
       if (handoffDigest) console.log(`handoffs (the watchdog sends this one): ${handoffDigest}`);
       const runsFile = path.resolve(RUNS_FILE);
-      const ask = shelfAsk(today, existsSync(runsFile) ? readFileSync(runsFile, 'utf8') : '');
+      const ask = shelfAsk(
+        today,
+        existsSync(runsFile) ? readFileSync(runsFile, 'utf8') : '',
+        kindleLinkKnown(),
+      );
       if (ask) console.log(`shelf-ask: ${ask}`);
       if (!flags['no-write']) {
         const content = renderOpen(asks, handoffs, loadActionFiles(path.resolve(ACTIONS_DIR)));
