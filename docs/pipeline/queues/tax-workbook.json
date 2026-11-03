@@ -232,13 +232,13 @@
     {
       "id": "product-page-structured-data-faq",
       "title": "Product page as a search result: Product + Offer (GBP 6.99, three sellers) and FAQPage JSON-LD on apps.gankdat.com/tax-workbook.html, a FAQ block answering the queries buyers type (sole trader tax calculator 2026/27, SA103 boxes spreadsheet, MTD quarterly updates spreadsheet, Google Sheets), the same on thanks-tax-workbook.html excluded (noindex), tests that the JSON-LD parses and matches the page price, and the reseller page when it exists",
-      "why": "Distribution before features (STRATEGY §6): three shelves and the own page have been live 1–5 days with 0 sales, and the only reach we control is the product page. A Google search for 'sole trader tax calculator 2026/27 UK free' (WebSearch 2026-11-03) returns three Payhip product pages and an Etsy listing among the free calculators, so product pages do rank for the buyer's query; ours has no structured data, no FAQ and no question-shaped headings (checked 2026-11-03: 0 ld+json blocks, h2s 'Where to buy', 'What you get', 'At a glance', 'Please read before buying', 'Refunds'). Product/Offer markup is what Google's free product listings and rich results read; FAQPage markup is still read for rich results on government and health sites only, but the FAQ text itself targets the long-tail queries. Zero owner minutes, zero spend, one deploy (the landing CI).",
+      "why": "Distribution before features (STRATEGY §6): three shelves and the own page have been live 1–5 days with 0 sales, and the only reach we control is the product page. A Google search for 'sole trader tax calculator 2026/27 UK free' (WebSearch 2026-11-03) returns three Payhip product pages and an Etsy listing among the free calculators, so product pages do rank for the buyer's query; ours has no structured data, no FAQ and no question-shaped headings (checked 2026-11-03: 0 ld+json blocks, h2s 'Where to buy', 'What you get', 'At a glance', 'Please read before buying', 'Refunds'). Product/Offer markup is what Google's free product listings and rich results read; FAQPage markup is still read for rich results on government and health sites only, but the FAQ text itself targets the long-tail queries. Zero owner minutes, zero spend, one deploy (the landing CI). Built 2026-11-03: Product with three Offers (own checkout, Etsy, Payhip; priceValidUntil 2026-11-30, the launch price's end) and FAQPage mirroring five visible questions; the hero listing image served as tax-workbook-hero.png; thanks page was already noindex; the reseller page does not exist yet (its listing is Etsy-only). The calculator-page-day-30-read (2026-12-03) reads this page's Search Console rich-result status too.",
       "effort_days": 0.2,
-      "proof": "Search Console (the gankdat property covers apps.gankdat.com) shows the page as a Product rich result and ≥ 1 impression for a sole-trader-tax query within 30 days; a day-30 read item dated from the deploy",
+      "proof": "Search Console (the gankdat property covers apps.gankdat.com) shows the page as a Product rich result and ≥ 1 impression for a sole-trader-tax query within 30 days; read by calculator-page-day-30-read (2026-12-03)",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-03",
-      "doing_since": "2026-11-03"
+      "done_at": "2026-11-03"
     },
     {
       "id": "free-tax-estimate-calculator-page",

@@ -318,3 +318,9 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   sandbox's Chromium with the Example year (£42,000, £10,100 deducted): £3,866.00 tax, £1,159.80 Class 4, £5,025.80 total, £2,512.90 payments
   on account — the hand-worked figures. No Scottish toggle (rates.ts has no Scottish bands; the page says so). `calculator-page-day-30-read`
   (5, 2026-12-03) reads Search Console. Nothing fetched.
+- **2026-11-03 17:50 (burn-down, `product-page-structured-data-faq` done):** `tax-workbook.html` carries Product + three Offer
+  objects (own checkout, Etsy, Payhip at £6.99, `priceValidUntil` 2026-11-30 — the launch price's true end) with the hero listing image
+  served from the site, and a FAQPage whose five questions mirror a new "Questions buyers ask" block word for word (Google Sheets, the SA103
+  boxes, MTD quarters, how the estimate works — linking the free calculator — and the one-off price); `scripts/landing-tax-workbook-page.test.ts`
+  parses both blocks and ties each Offer's price to the page's own price and the FAQ names to the h3s. The thanks page was already
+  `noindex`. The day-30 read of the calculator page (2026-12-03) reads this page's rich-result status with it. Nothing fetched.

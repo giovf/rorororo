@@ -2401,3 +2401,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 17:45 | burn-down | tax-workbook free-tax-estimate-calculator-page done: free 2026/27 estimate page on apps.gankdat.com
 - 2026-11-03 17:45 | burn-down | calculator-core/entry bundled by esbuild (4.8 kB, no tracking); 4 tests incl. bundle-drift; page driven in Chromium
 - 2026-11-03 17:45 | burn-down | Sitemap, index card and product page link the calculator; calculator-page-day-30-read queued (12-03)
+- 2026-11-03 17:50 | burn-down | tax-workbook product-page-structured-data-faq done: Product + 3 Offers and FAQPage JSON-LD on the page
+- 2026-11-03 17:50 | burn-down | "Questions buyers ask" block (5 FAQs, links the calculator); hero image served; 3 page tests added
