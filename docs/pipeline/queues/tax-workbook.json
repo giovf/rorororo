@@ -3,7 +3,7 @@
   "status": "open",
   "needs_research": false,
   "updated": "2026-11-03",
-  "researched": "2026-10-26",
+  "researched": "2026-11-03",
   "weight": 2,
   "items": [
     {
@@ -129,24 +129,23 @@
     {
       "id": "kdp-listing-live",
       "title": "Record the Kindle guide going live: ASIN and URL in KINDLE.md, Metrics row, SELF-CAUSED check, the proof clock (first sale ≤ 30 days, ≥ 10 ≤ 60 from the owner's monthly `kindle: N sold` note) and a day-60 read item",
-      "why": "The KDP account and the upload are the owner's hands (action 029 step 5, 2026-10-26; the sandbox never reads amazon.co.uk or kdp.amazon.com). When the owner says '029 kindle done' with the URL, this item records the listing (KINDLE.md Status row, RESEARCH.md §7 Metrics row 'Kindle live'), confirms the Countdown Deal dates were a true launch price, and queues the day-60 read (not_before = live date + 60) with RESEARCH.md §6's kill rule; the monthly `kindle: N sold` notes become Metrics rows from then on.",
+      "why": "The KDP account and the upload are the owner's hands (action 029 step 5, 2026-10-26; the sandbox never reads amazon.co.uk or kdp.amazon.com). When the owner says '029 kindle done' with the URL, this item records the listing (KINDLE.md Status row, RESEARCH.md §7 Metrics row 'Kindle live'), confirms the Countdown Deal dates were a true launch price, and queues the day-60 read (not_before = live date + 60) with RESEARCH.md §6's kill rule; the monthly `kindle: N sold` notes become Metrics rows from then on. Unblocked 2026-11-03 (build, research pass): KDP's 'Your book is available in the Kindle Store!' mail landed 2026-10-31 14:32 UTC under the submitted title 'The UK Sole Trader - A guide for the self employed & side hustlers', enrolled in KDP Select (first 90-day term to 2027-01-29). The mail carries no ASIN or URL and the search index holds no amazon.co.uk page for the title yet (one WebSearch restricted to amazon.co.uk on 2026-11-03), so this item records the live date now — KINDLE.md Status row, RESEARCH.md §7 'Kindle live' row, a `kindle-day-60-read` item (not_before 2026-12-30, the §6 proof ≥ 10 copies and kill rule on the owner's `kindle N sold` note), the Countdown Deal check — and the ASIN/URL is filled the day a dated read's one index search returns the page or the owner's shelf note names it; no new owner step (owner-time rule, action 037 open). google-play-listing is dated 2027-01-29 and kdp-paperback-edition set free in the same pass.",
       "effort_days": 0.1,
-      "proof": "KINDLE.md carries the live URL and date; a Metrics row exists; a dated day-60 item is queued",
+      "proof": "KINDLE.md carries the live date (and the URL once the index or the owner gives it); a §7 'Kindle live' row exists; a dated day-60 item is queued",
       "score": 8,
-      "status": "blocked",
-      "blocked_on": "KDP review: submitted by the owner 2026-10-29 (action 029 step 5) under the title 'The UK Sole Trader - A guide for the self employed & side hustlers'; unblocks on the 'is now live' mail in inbox triage (SELF-CAUSED kdp row, a `store` line) or the owner's URL. A review flag on title vs cover is fixed by setting the KDP title to the cover's 'UK Sole Trader Tax 2026/27' (KINDLE.md Status)",
+      "status": "todo",
       "added": "2026-10-26"
     },
     {
       "id": "google-play-listing",
       "title": "List the Kindle guide EPUB on Google Play Books after the KDP Select term: `src/kindle/google-play.ts` exporting the Play listing (title, description with the AI-authorship line, categories, £4.99 GBP for territory GB, Google Books preview setting) with form-limit tests beside kdp.ts, a 'Paste into Partner Centre' section in KINDLE.md, and action 029 step 6 for the owner (open the Partner Centre with the Foundry Google account, payments profile, upload the same EPUB and cover, ~10 min, £0); then a `google-play-listing-live` record item on the owner's URL",
-      "why": "Spike google-play-books-tax-guide-shelf 2026-10-26 (docs/exchange/spikes/google-play-books-tax-guide-shelf.md). Google's own pages: the United Kingdom is ticked for seller sign-ups and GBP payments; 70 % of the list price with no fees and no price band; the content policies carry no rule on AI-written text. Seven priced UK tax guides for 2026 sell on the GB shelf at £2.29–19.99 (two at five stars). Zero build beyond the metadata export — the EPUB, cover and copy exist. Blocked on KDP Select: kdp.ts enrols the guide (the Countdown Deal needs it) and Select forbids selling the ebook on any other shelf during each 90-day term; on Amazon's ~88 % UK share the launch price on the big shelf outweighs an early listing on the small one. `kdp-listing-live` sets this item's not_before to the live date + 90 days (and the owner is told not to renew Select unless Kindle Unlimited reads are paying); the owner declining Select unblocks it at once. Evidence 1.5 × reach 2 ÷ 0.3 days + 10 owner minutes ≈ 6.",
+      "why": "Spike google-play-books-tax-guide-shelf 2026-10-26 (docs/exchange/spikes/google-play-books-tax-guide-shelf.md). Google's own pages: the United Kingdom is ticked for seller sign-ups and GBP payments; 70 % of the list price with no fees and no price band; the content policies carry no rule on AI-written text. Seven priced UK tax guides for 2026 sell on the GB shelf at £2.29–19.99 (two at five stars). Zero build beyond the metadata export — the EPUB, cover and copy exist. Blocked on KDP Select: kdp.ts enrols the guide (the Countdown Deal needs it) and Select forbids selling the ebook on any other shelf during each 90-day term; on Amazon's ~88 % UK share the launch price on the big shelf outweighs an early listing on the small one. `kdp-listing-live` sets this item's not_before to the live date + 90 days (and the owner is told not to renew Select unless Kindle Unlimited reads are paying); the owner declining Select unblocks it at once. Evidence 1.5 × reach 2 ÷ 0.3 days + 10 owner minutes ≈ 6. Dated 2026-11-03 (build, research pass): the Kindle edition enrolled in KDP Select on 2026-10-31 (KDP mail), so the first exclusivity term ends 2027-01-29; not_before set to that day, the owner declining renewal keeps it, a renewal re-dates it +90.",
       "effort_days": 0.3,
       "proof": "google-play.ts exports the listing and its tests pass; KINDLE.md carries the Partner Centre paste section; action 029 step 6 written; the live URL recorded by the follow-up item",
       "score": 6,
-      "status": "blocked",
-      "blocked_on": "KDP Select 90-day exclusivity: the Kindle listing enrols for its Countdown Deal, so the ebook may not be sold elsewhere until the first term ends — kdp-listing-live sets not_before = live + 90 days; the owner declining Select unblocks it at once",
-      "added": "2026-10-26"
+      "status": "todo",
+      "added": "2026-10-26",
+      "not_before": "2027-01-29"
     },
     {
       "id": "own-checkout-listing",
@@ -197,12 +196,11 @@
     {
       "id": "kdp-paperback-edition",
       "title": "KDP paperback of 'UK Sole Trader Tax 2026/27' as a second format of the live Kindle title: interior PDF printed with Chromium from src/kindle/content.ts at 6\" × 9\" (0.375\" gutter, 0.5\" outside, 11 pt serif, chapters on a new page, running heads, page numbers, the chapter-2 and chapter-13 tables as tables, fonts embedded), wrap cover PDF from the cover SVG at (0.125 + 6 + spine + 6 + 0.125)\" × 9.25\" with spine = pages × 0.002252\" and no spine text; a build check asserting 24 ≤ pages ≤ 110 and the cover width against the page count; KINDLE.md gains a Paperback section (white paper, no bleed, £9.99, free KDP ISBN) and the owner's ~10-minute add-a-format step appended to action 029's done list as a follow-up, no new request",
-      "why": "Spike kdp-paperback-tax-guide (burn-down 2026-10-30, docs/exchange/spikes/kdp-paperback-tax-guide.md; KDP pages read through the relay): black-ink paperbacks of 24–110 pages cost a fixed £1.93 on amazon.co.uk and the royalty is 60 % of list from £7.99 (50 % below), so the 9,102-word guide (≈ 42–56 pages at 6×9) nets £4.06 a copy at £9.99 — over the £3 park line, and the price the MTD rival asks for its Kindle edition. Nothing new from the owner: the paperback is a format added to the same KDP title on the account whose tax interview and bank are done; print books are zero-rated in the UK so the list price is the buyer's price. The shelf sells annual UK tax guides in print every year (Taxcafe's 299-page sole-trader guide, 13th edition; the self-assessment annual series on Amazon since 2017). The print premium over the Kindle is £0.59–1.36 a copy, so the case is the second buyer (a print reader does not buy the e-book), not margin. Evidence 2 × reach 2 ÷ (0.5 d + 10 owner min) ≈ 7 at weight 2.",
+      "why": "Spike kdp-paperback-tax-guide (burn-down 2026-10-30, docs/exchange/spikes/kdp-paperback-tax-guide.md; KDP pages read through the relay): black-ink paperbacks of 24–110 pages cost a fixed £1.93 on amazon.co.uk and the royalty is 60 % of list from £7.99 (50 % below), so the 9,102-word guide (≈ 42–56 pages at 6×9) nets £4.06 a copy at £9.99 — over the £3 park line, and the price the MTD rival asks for its Kindle edition. Nothing new from the owner: the paperback is a format added to the same KDP title on the account whose tax interview and bank are done; print books are zero-rated in the UK so the list price is the buyer's price. The shelf sells annual UK tax guides in print every year (Taxcafe's 299-page sole-trader guide, 13th edition; the self-assessment annual series on Amazon since 2017). The print premium over the Kindle is £0.59–1.36 a copy, so the case is the second buyer (a print reader does not buy the e-book), not margin. Evidence 2 × reach 2 ÷ (0.5 d + 10 owner min) ≈ 7 at weight 2. Unblocked 2026-11-03 (build, research pass): the Kindle edition went live 2026-10-31 (KDP mail), so the title's second format can be added; the owner's ~10-minute add-a-format step is filed as a follow-up on the next owner sitting, never appended to open action 037.",
       "effort_days": 0.5,
       "proof": "paperback live beside the Kindle edition on amazon.co.uk within 7 days of the owner's upload (ASIN in KINDLE.md); first paperback sale ≤ 60 days in the owner's monthly `kindle: N sold` note; Kindle sales not lower in the month after than the month before",
       "score": 7,
-      "status": "blocked",
-      "blocked_on": "kdp-listing-live: KDP reviews a title's formats together and the Kindle edition (submitted 2026-10-29) is still in review with a title-vs-cover fix pending; build the day the 'is now live' mail lands (inbox triage, SELF-CAUSED kdp row)",
+      "status": "todo",
       "added": "2026-10-30"
     },
     {
@@ -228,6 +226,39 @@
       "added": "2026-11-02",
       "doing_since": "2026-11-02",
       "done_at": "2026-11-02"
+    },
+    {
+      "id": "landlord-property-workbook",
+      "title": "Third listing for the same Etsy shop: UK Landlord Property Income & SA105 Workbook 2026/27 (`src/landlord.ts` reusing the Setup/Tax export of workbook.ts): property and tenancy register, rent and expense logs mapped to the SA105 boxes, the £1,000 property allowance check, the finance-cost (Section 24) 20 % credit, MTD quarterly totals on property income, a hand-worked Example tab, LISTING.md pack at £5.99 and four images; recalculated in LibreOffice to 0 errors",
+      "why": "The same recurring job on the shelf the owner already opened, the third candidate the 2026-10-26 pass held back until the first two listings sell. Etsy's index (2026-11-03, WebSearch restricted to etsy.com; never fetched) shows a live 2026/27 landlord-tracker niche — sheets selling SA105 box mapping, a Section 24 finance-cost calculation, MTD quarterly summaries with update deadlines, and multi-property support at about US$4–28, one at £11.99–19.99 — but the snapshot shows no sales counts, so demand is read from the niche's depth, not a rival's number (evidence 1.5). Dated 2026-11-30, the first shelf note (`etsy views N/day`, any Sale row): build only if the two workbook listings show ≥ 1 sale or ≥ 5 views a day between them by then; otherwise re-date to the day-60 read (2026-12-28) and let that reading decide. A third listing triples the shop's search presence for 0.5 day and £0.16. Reach 2 (the shop's own buyers) ÷ 0.5 day ≈ 6.",
+      "effort_days": 0.5,
+      "proof": "landlord.ts builds the file with 0 formula errors in LibreOffice and an Example tab matching a hand-worked 2026/27 landlord case (finance-cost credit included); LISTING.md third-listing pack and four images exist; the owner's publish step is one action (~10 min)",
+      "score": 6,
+      "status": "todo",
+      "not_before": "2026-11-30",
+      "added": "2026-11-03"
+    },
+    {
+      "id": "mtd-quarterly-kindle-title",
+      "title": "Second Kindle title from the same rates: 'Making Tax Digital for Sole Traders 2026/27: quarter by quarter' — a short EPUB (≈ 6,000 words) built from chapter 11's material in src/kindle (the £50,000 / £30,000 / £20,000 thresholds and dates, the four quarterly updates and the final declaration, what software and a spreadsheet each need, the penalty points), its cover, a KINDLE.md section with the £2.99 listing copy and the AI disclosure, and the owner's ~10-minute upload as a follow-up step",
+      "why": "The shelf's best-selling shape in this niche is the MTD playbook (the £3.99 title with 245 ratings in two months in the W43 spike; Sharon Lane's 'Making Tax Digital 2026 for Sole Traders', 120 pages at £9.99, published 2025-10-19, and three cheaper Kindle MTD guides at £0.77–0.99 in the index on 2026-11-03), and the first guide's chapter 11 already carries the computed thresholds and dates. Held by the 2026-10-26 pass until the first book's day-30 read: dated 2026-11-30 (live 2026-10-31); build only if the owner's `kindle N sold` note or KDP Select page reads show ≥ 1 copy by then, otherwise re-date to the day-60 read (2026-12-30). A second title on the same KDP account costs £0 and no new identity step. Evidence 2 × reach 2 ÷ (0.5 day + 10 owner min) ≈ 6 at a 0-copy first book; 8 once it sells.",
+      "effort_days": 0.5,
+      "proof": "npm run kindle builds the second EPUB (epubcheck 0 errors) and cover; every figure computed from rates.ts; KINDLE.md carries the listing copy; the owner's upload step is one action",
+      "score": 6,
+      "status": "todo",
+      "not_before": "2026-11-30",
+      "added": "2026-11-03"
+    },
+    {
+      "id": "etsy-bill-ledger-row",
+      "title": "Reconcile Etsy's £2.98 bill of 2026-11-01 (payment failed mail) with the ledger: when the triage reads Etsy's 'payment received' or statement mail, write the `cost` row with what the bill was (set-up VAT, listing renewal or Offsite Ads) and note the gap in LISTING.md Status",
+      "why": "Etsy's 2026-11-01 mail bills £2.98 that the ledger does not carry (its Etsy cost rows total £14.20: the £14 set-up fee and the £0.20 listing fee), and the owner was asked to pay or update the card before 22 Nov (ALERTS 2026-11-01). The ledger rule (CLAUDE.md: every pound in and out the day it happens) needs the row the day the charge clears, and knowing what Etsy bills monthly sets the shop's running cost against the £100 cap (STRATEGY §7). Blocked on the owner's payment; the row is written from the mail, never from a read of etsy.com.",
+      "effort_days": 0.05,
+      "proof": "docs/LEDGER.md carries a dated tax-workbook `cost` row for the bill with its reason; LISTING.md Status notes what Etsy charges monthly",
+      "score": 3,
+      "status": "blocked",
+      "blocked_on": "the owner paying the £2.98 Etsy bill (ALERTS 2026-11-01 owner line, due before 22 Nov) and Etsy's payment-received mail reaching the inbox triage",
+      "added": "2026-11-03"
     }
   ],
   "research_after": "2026-11-03"

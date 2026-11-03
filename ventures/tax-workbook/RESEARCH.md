@@ -266,3 +266,19 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   records. Not built: a Payhip twin of the reseller file (the first twin has no sale yet to justify a second), MTD quarterly totals (the
   companion workbook has them; a reseller over £50,000 is rare). Follow-ups queued: `reseller-listing-live` (blocked on action 037). The §6
   proof and kill clocks for this listing start at its `Listed` row.
+- **2026-11-03 17:17 (build, queue starved → research pass):** the morning build emptied the buildable list (`reseller-workbook-second-listing`
+  done; every other open item blocked on the owner or dated), so this pass read the signals since the 10-26 pass. **What changed:** all three
+  shelves of the first workbook are live (Etsy 10-29, Payhip and the own checkout 11-02) with 0 `Sale` rows after 1–5 days — too early for the
+  §6 clocks — and KDP's "Your book is available in the Kindle Store!" mail landed 2026-10-31 14:32 UTC (enrolled in KDP Select, first term to
+  2027-01-29). That mail is the signal `kdp-listing-live` waited on, so it is `todo` again (next buildable, 8 × 2); the mail carries no ASIN
+  or URL and one WebSearch restricted to amazon.co.uk finds no page for the title yet, so the record item writes the live date and the day-60
+  read now and fills the URL the day a dated read's index search or the owner's shelf note gives it — no new owner step while action 037 is open.
+  `kdp-paperback-edition` (its own condition: "build the day the 'is now live' mail lands") is `todo`; `google-play-listing` is dated
+  2027-01-29 (Select term end). **Added, dated 2026-11-30** (the first shelf note and the Kindle's day 30): `landlord-property-workbook` (6) —
+  Etsy's index shows a 2026/27 landlord-tracker niche (SA105 box mapping, Section 24 finance-cost calculation, MTD quarterly summaries,
+  multi-property, about US$4–28, one at £11.99–19.99; no sales counts in the snapshot) as the shop's third listing, built only if the two
+  workbook listings show a sale or ≥ 5 views a day by then; `mtd-quarterly-kindle-title` (6) — the MTD playbook shape (the £3.99 title with 245
+  ratings from the W43 spike; Sharon Lane's £9.99, 120-page MTD 2026 guide of 2025-10-19 and three £0.77–0.99 Kindle MTD guides in the index)
+  from chapter 11's material, built only if the first book has sold a copy. **Added, blocked:** `etsy-bill-ledger-row` (3) — Etsy's 11-01 mail
+  bills £2.98 the ledger does not carry (its Etsy rows total £14.20); the `cost` row is written from the payment mail once the owner pays.
+  The old `research_after` (2026-11-03) is spent; the queue cools 48 h. Nothing fetched: two index searches (etsy.com, amazon.co.uk hosts only).

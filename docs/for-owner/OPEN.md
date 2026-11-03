@@ -13,7 +13,8 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 2. **Etsy could not charge your card for a £2.98 bill; pay it or…** — time not stated, since 2026-11-01; nothing queued waits on it.
    Etsy could not charge your card for a £2.98 bill; pay it or update the card in Etsy billing before 22 Nov
 
-## Waiting on an attended Claude session, not you (2)
+## Waiting on an attended Claude session, not you (3)
 
 - since 2026-10-04 — sign and upload ReadFocus 0.3.0 (ruler colour / height / opacity / lock-in-place controls, plus 0.2.1's Firefox for Android: `gecko_android`, phone-width popup, tap-to-place ruler) once 0.2.0 clears…
 - since 2026-10-05 — sign and upload Highlight Keep 0.4.0 (imports from Weava/Glasp .csv and Hypothesis exports, the "On for every site" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the…
+- since 2026-11-03 — versions check (docs/ops/VERSIONS.md): workflows pin Node 24 while the active LTS is 26 — an attended session tests the newer ids on one routine, updates the routine configs and the register, or reco…

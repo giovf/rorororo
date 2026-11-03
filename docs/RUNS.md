@@ -2379,3 +2379,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 09:28 | build | first runs: mirror-gankdat.yml none since the 18:27 install (04:23 cron did not fire); read only
 - 2026-11-03 12:08 | triage | notify owner dispatched: last run started 09:58 UTC, 2 h 10 min ago
 - 2026-11-03 15:08 | triage | notify owner dispatched: last run started 12:09 UTC, 3 h ago
+- 2026-11-03 17:17 | build | Main green at STEP 0; next null, tax-workbook starved: research pass, nothing claimed; no new owner notes
+- 2026-11-03 17:17 | build | mirror-gankdat.yml first run: success (schedule run 67 at 12:04 UTC, 25 s; the 04:23 cron fired late)
+- 2026-11-03 17:17 | build | Research tax-workbook: KDP 'book is live' mail (10-31) unblocks kdp-listing-live; no ASIN in mail or index
+- 2026-11-03 17:17 | build | kdp-paperback-edition set todo (its mail condition met); google-play-listing dated 2027-01-29 (Select term)
+- 2026-11-03 17:17 | build | Added landlord-property-workbook (6) and mtd-quarterly-kindle-title (6), both dated 2026-11-30 on a sale
+- 2026-11-03 17:17 | build | Added etsy-bill-ledger-row (3): Etsy's £2.98 bill of 11-01 is not in the ledger; row on the owner's payment
+- 2026-11-03 17:17 | build | Three shelves live with 0 sales after 1–5 days; §6 clocks run (Etsy/Payhip/own 12-28, Kindle 12-30)
