@@ -2368,3 +2368,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 02:08 | watchdog | ci-minutes: 547 billed min/7d (~2344/mo; cap 2000) top: notify owner 139, gankdat metrics 84, gankdat 75
 - 2026-11-03 05:06 | triage | notify owner dispatched: last run started 02:36 UTC, 2 h 30 min ago
 - 2026-11-03 08:07 | triage | notify owner dispatched: last run started 05:06 UTC, 3 h ago
+- 2026-11-03 09:24 | build | Built tax-workbook reseller-workbook-second-listing: UK Reseller Profit & Tax Workbook 2026/27 (src/reseller.ts)
+- 2026-11-03 09:24 | build | Reseller workbook: 11 tabs, 10,159 formulas, LibreOffice recalc 0 errors, 20 checks pass (Example £945.00)
+- 2026-11-03 09:24 | build | Platform fees read from eBay, Vinted, Depop help pages (WebSearch; hosts unresolvable); HMRC 30 sales / £1,700
+- 2026-11-03 09:24 | build | Shared Setup/Expenses/Mileage/Allowance/Tax tabs exported from workbook.ts; SetupExtra rows+lists; svg.ts split
+- 2026-11-03 09:24 | build | Reseller listing pack in LISTING.md (title, description, 13 tags, £5.99) and 4 images in listing/reseller/
+- 2026-11-03 09:24 | build | Owner action 037 raised: publish the second Etsy listing (~10 min, £0.16 planned); reseller-listing-live queued
+- 2026-11-03 09:24 | build | Sources: Sole Trader workbook unchanged (recalc 13/13 ok); new tests reseller.test.ts (6, incl. recalc)
+- 2026-11-03 09:24 | notify | Second tax spreadsheet ready: publish the Reseller workbook on Etsy, about 10 minutes

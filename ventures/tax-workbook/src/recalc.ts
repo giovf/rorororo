@@ -2,7 +2,7 @@
 // recalculate every formula through a Basic macro (the same route the xlsx skill's recalc.py
 // takes), reads the result back with ExcelJS, counts error cells (#NAME?, #REF!, #VALUE!, …)
 // and checks the Example tab and the chain Income → SA103 → Tax against src/tax.ts.
-// Usage: node src/recalc.ts [path-to-xlsx]   (default: release/<FILE_NAME>). Exit 1 on any failure.
+// Usage: node src/recalc.ts [path-to-xlsx]   (default: both release files). Exit 1 on any failure.
 import { execFileSync } from 'node:child_process';
 import { copyFileSync, existsSync, mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -10,7 +10,8 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import ExcelJS from 'exceljs';
 import { RATES_2026_27 } from './rates.ts';
-import { EXAMPLE_EXPECTED, mileageClaim, taxableProfit, useTradingAllowance } from './tax.ts';
+import { RESELLER_FILE_NAME } from './reseller.ts';
+import { EXAMPLE_EXPECTED, mileageClaim, RESELLER_EXPECTED, taxableProfit, useTradingAllowance } from './tax.ts';
 import { FILE_NAME } from './workbook.ts';
 
 const MACRO = `<?xml version="1.0" encoding="UTF-8"?>
@@ -47,6 +48,61 @@ async function load(file: string): Promise<ExcelJS.Workbook> {
   return wb;
 }
 
+type Check = (name: string, sheet: string, address: string, expected: number) => void;
+
+/** The Sole Trader workbook: the Example tab and the sample rows (£1,250 income, £30 × 60 % phone, 64 car miles). */
+function soleTraderChecks(check: Check): void {
+  const r = RATES_2026_27;
+  const sampleMileage = mileageClaim(64, 0, 0, r);
+  const sampleDeductions = 18 + sampleMileage;
+  const sampleAllowance = useTradingAllowance(1250, sampleDeductions, r);
+  check('Example: mileage claim', 'Example', 'B16', EXAMPLE_EXPECTED.mileage);
+  check('Example: taxable profit', 'Example', 'B19', EXAMPLE_EXPECTED.profit);
+  check('Example: income tax', 'Example', 'B28', EXAMPLE_EXPECTED.incomeTax);
+  check('Example: Class 4', 'Example', 'B33', EXAMPLE_EXPECTED.class4);
+  check('Example: total due', 'Example', 'B36', EXAMPLE_EXPECTED.totalDue);
+  check('Example: payment on account', 'Example', 'B39', EXAMPLE_EXPECTED.paymentOnAccountEach);
+  check('Sample rows: Mileage!G3 claim', 'Mileage', 'G3', sampleMileage);
+  check('Sample rows: Expenses!F3 allowable', 'Expenses', 'F3', 18);
+  check('Sample rows: SA103 box 9', 'SA103', 'C5', 1250);
+  check('Sample rows: Allowance in use', 'Allowance', 'B12', sampleAllowance ? 1 : 0);
+  check('Sample rows: SA103 box 31', 'SA103', 'C21', taxableProfit(1250, sampleDeductions, sampleAllowance, r));
+  check('Sample rows: Quarterly Q1 income', 'Quarterly', 'D6', 1250);
+  check('Sample rows: Tax total due', 'Tax', 'B33', 0);
+}
+
+/**
+ * The Reseller workbook: the Example tab and the sample rows — item 001 bought for £8 on 10 April,
+ * sold on Vinted on 20 April for £25 + £3.50 postage charged, £3.20 postage paid (no Vinted fee);
+ * the shared Expenses (£18) and Mileage (64 miles) sample rows. Cash basis: box 11 is the £8 paid.
+ */
+function resellerChecks(check: Check): void {
+  const r = RATES_2026_27;
+  const sampleMileage = mileageClaim(64, 0, 0, r);
+  const gross = 28.5;
+  const deductions = 8 + 18 + 3.2 + sampleMileage;
+  check('Example: mileage claim', 'Example', 'B16', RESELLER_EXPECTED.mileage);
+  check('Example: deductions', 'Example', 'B17', RESELLER_EXPECTED.deductions);
+  check('Example: taxable profit', 'Example', 'B19', RESELLER_EXPECTED.profit);
+  check('Example: income tax', 'Example', 'B29', RESELLER_EXPECTED.incomeTax);
+  check('Example: Class 4', 'Example', 'B34', RESELLER_EXPECTED.class4);
+  check('Example: total due', 'Example', 'B37', RESELLER_EXPECTED.totalDue);
+  check('Example: payment on account', 'Example', 'B39', RESELLER_EXPECTED.paymentOnAccountEach);
+  check('Sample rows: Inventory total cost', 'Inventory', 'G6', 8);
+  check('Sample rows: Inventory sale price by ID', 'Inventory', 'J6', gross);
+  check('Sample rows: Sales gross', 'Sales', 'G6', gross);
+  check('Sample rows: Sales fee (Vinted, none)', 'Sales', 'H6', 0);
+  check('Sample rows: Sales cost of item by ID', 'Sales', 'K6', 8);
+  check('Sample rows: Sales profit', 'Sales', 'L6', gross - 3.2 - 8);
+  check('Sample rows: Platforms Vinted count', 'Platforms', 'B6', 1);
+  check('Sample rows: SA103 box 9', 'SA103', 'C5', gross);
+  check('Sample rows: SA103 box 11 (stock paid, cash basis)', 'SA103', 'C8', 8);
+  check('Sample rows: SA103 box 16 (postage + phone)', 'SA103', 'C13', 18 + 3.2);
+  check('Sample rows: SA103 box 20', 'SA103', 'C17', deductions);
+  check('Sample rows: SA103 box 22 loss', 'SA103', 'C19', deductions - gross);
+  check('Sample rows: Tax total due', 'Tax', 'B33', 0);
+}
+
 export async function readBackAsync(file: string): Promise<RecalcResult> {
   const wb = await load(file);
   const errors: RecalcResult['errors'] = [];
@@ -68,29 +124,13 @@ export async function readBackAsync(file: string): Promise<RecalcResult> {
       });
     });
   }
-  const r = RATES_2026_27;
-  // The sample rows left in the logs: £1,250 income, £30 × 60 % phone, 64 car miles.
-  const sampleMileage = mileageClaim(64, 0, 0, r);
-  const sampleDeductions = 18 + sampleMileage;
-  const sampleAllowance = useTradingAllowance(1250, sampleDeductions, r);
   const checks: RecalcResult['checks'] = [];
   const check = (name: string, sheet: string, address: string, expected: number): void => {
     const actual = cellNumber(wb, sheet, address);
     checks.push({ name, expected, actual, ok: actual !== null && Math.abs(actual - expected) < 0.005 });
   };
-  check('Example: mileage claim', 'Example', 'B16', EXAMPLE_EXPECTED.mileage);
-  check('Example: taxable profit', 'Example', 'B19', EXAMPLE_EXPECTED.profit);
-  check('Example: income tax', 'Example', 'B28', EXAMPLE_EXPECTED.incomeTax);
-  check('Example: Class 4', 'Example', 'B33', EXAMPLE_EXPECTED.class4);
-  check('Example: total due', 'Example', 'B36', EXAMPLE_EXPECTED.totalDue);
-  check('Example: payment on account', 'Example', 'B39', EXAMPLE_EXPECTED.paymentOnAccountEach);
-  check('Sample rows: Mileage!G3 claim', 'Mileage', 'G3', sampleMileage);
-  check('Sample rows: Expenses!F3 allowable', 'Expenses', 'F3', 18);
-  check('Sample rows: SA103 box 9', 'SA103', 'C5', 1250);
-  check('Sample rows: Allowance in use', 'Allowance', 'B12', sampleAllowance ? 1 : 0);
-  check('Sample rows: SA103 box 31', 'SA103', 'C21', taxableProfit(1250, sampleDeductions, sampleAllowance, r));
-  check('Sample rows: Quarterly Q1 income', 'Quarterly', 'D6', 1250);
-  check('Sample rows: Tax total due', 'Tax', 'B33', 0);
+  if (path.basename(file) === RESELLER_FILE_NAME) resellerChecks(check);
+  else soleTraderChecks(check);
   return { file, formulas, errors, checks, ok: errors.length === 0 && checks.every((c) => c.ok) };
 }
 
@@ -123,8 +163,13 @@ export async function recalcAsync(source: string): Promise<RecalcResult> {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(import.meta.filename)) {
-  const source = process.argv[2] ?? path.resolve(import.meta.dirname, '..', 'release', FILE_NAME);
-  const result = await recalcAsync(source);
-  console.log(JSON.stringify(result, null, 2));
-  process.exit(result.ok ? 0 : 1);
+  const releaseDir = path.resolve(import.meta.dirname, '..', 'release');
+  const sources = process.argv[2] ? [process.argv[2]] : [path.join(releaseDir, FILE_NAME), path.join(releaseDir, RESELLER_FILE_NAME)];
+  let ok = true;
+  for (const source of sources) {
+    const result = await recalcAsync(source);
+    console.log(JSON.stringify(result, null, 2));
+    ok &&= result.ok;
+  }
+  process.exit(ok ? 0 : 1);
 }

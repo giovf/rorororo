@@ -46,7 +46,9 @@ ventures/oss-bounties    paid open-source issues on bounty boards (opened 2026-1
 ventures/tax-workbook    UK Sole Trader Tax Workbook 2026/27 — an .xlsx built from TypeScript (ExcelJS), recalculated in
                          LibreOffice before release, sold as an Etsy digital download (opened 2026-10-24, validated the same day;
                          the owner opens the shop — action 029); plus its Kindle sibling, a standalone 2026/27 tax guide built as an
-                         EPUB from the same rates (`src/kindle/`, 2026-10-26; the owner's KDP upload is action 029 step 5)
+                         EPUB from the same rates (`src/kindle/`, 2026-10-26; the owner's KDP upload is action 029 step 5); plus the shop's second
+                         listing, the UK Reseller Profit & Tax Workbook 2026/27 (`src/reseller.ts`, 2026-11-03: inventory + sales logs,
+                         platform fees from Setup rates, HMRC platform-reporting check; reuses the first workbook's tax tabs)
 docs/LEDGER.md           every pound in and out, per venture (£100 cap enforced)
 docs/launch/             per-channel launch checklists
 docs/for-owner/actions/      batched requests that need the owner's identity/wallet

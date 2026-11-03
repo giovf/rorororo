@@ -151,6 +151,7 @@ rows written from Etsy's deposit mail. The day-60 kill clock (§6) starts at the
 | 2026-10-29 | Own checkout built | — | — | 0 | the Buy block on tax-workbook.html (hidden until the link exists), thanks-tax-workbook.html, the licence Worker's download branch (signed 30-day link, file served from private KV, refund revokes it, re-send mints a fresh link; 7 tests) and its CI deploy; `Listed` for this shelf is written by `own-checkout-live` when action 034 (one Payment Link, ~3 min) is done |
 | 2026-11-02 | Payhip live | — | — | 0 | twin listing live at https://payhip.com/b/4stMN (£6.99, owner action 033 step 1); product page and index card link it; same day-60 read as Etsy (2026-12-28). sale webhook set and `PAYHIP_API_KEY` saved the same day; the landing deploy stores it on the Worker |
 | 2026-11-02 | Listed (own checkout) | — | — | 0 | Buy button live on apps.gankdat.com/tax-workbook.html (Stripe Payment Link, £6.99, owner action 034); £0 end-to-end test (API session with the 100 %-off coupon) delivered the download mail and the file; same day-60 read as Etsy (2026-12-28) |
+| 2026-11-03 | Reseller built | — | — | 0 | second listing for the same shop: UK Reseller Profit & Tax Workbook 2026/27 (11 tabs, 10,159 formulas, 0 errors, Example = £945.00); LISTING.md second-listing pack (£5.99) + 4 images; owner action 037 (~10 min, £0.16); `reseller-listing-live` records the listing when it is live |
 
 ## 8. Owner steps (batched, raised by the build that finishes the workbook, never before)
 
@@ -250,3 +251,18 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   tool with real preview screenshots and a hand-checked Example tab, typed into Etsy by the owner. The README tab is the one
   part a strict reading could call instructions: no change now, and if Etsy flags the listing the tab's text is replaced with
   the owner's own words (~10 min, a rebuild, a re-upload). The Kindle guide is never listed on Etsy. LISTING.md §Status row.
+- **2026-11-03 09:24 (build, `reseller-workbook-second-listing`):** built the second listing (`src/reseller.ts`), dated today by the W43 exchange behind the
+  first workbook. Fee rates read from each platform's own help pages through WebSearch restricted to the host (none of gov.uk, ebay.co.uk,
+  vinted.co.uk, depop.com resolves from the sandbox; nothing fetched): **eBay** business final value fee by category (Clothes 11.9 %, Books 9.9 %,
+  Business & Office 12.5 %, Crafts 12.9 %; help 4809, updated 2026-09-30) on the total including postage, plus 30p an order up to £10 and 40p
+  over (from 2026-02-12); private accounts pay no final value fee but a trader needs a business account; **Vinted** no seller fee, Pro included,
+  the buyer pays the Vinted fee (3–8 % + £0.30–0.80; help 373 / 908); **Depop** no selling fee for UK sellers, Depop Payments 2.9 % + £0.30 on
+  price plus postage, Boosted Listings 8 % on sale (12 % before 2026-03-23); **Etsy** from §3 (6.5 % + 4 % + 0.48 % + £0.20 + US$0.20 renewal).
+  **HMRC** (gov.uk "Selling goods or services on a digital platform", via the index): a platform reports a seller unless fewer than 30 sales of
+  goods AND no more than €2,000 (≈ £1,700) in the calendar year; HMRC's own line that selling unwanted possessions is not trading is in the
+  README and the listing. Design choices: stock deducted when paid (cash basis, HMRC's default since 2024/25) or when sold (Setup switch), since
+  the per-item profit resellers want to see and the tax deduction differ; fees to box 19, postage paid to box 16, mileage to box 12, as the
+  SA103S notes group them; the reporting check per calendar year inside the tax year with a note to add January–April sales from last year's
+  records. Not built: a Payhip twin of the reseller file (the first twin has no sale yet to justify a second), MTD quarterly totals (the
+  companion workbook has them; a reseller over £50,000 is rare). Follow-ups queued: `reseller-listing-live` (blocked on action 037). The §6
+  proof and kill clocks for this listing start at its `Listed` row.

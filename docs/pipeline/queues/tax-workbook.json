@@ -2,7 +2,7 @@
   "venture": "tax-workbook",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "researched": "2026-10-26",
   "weight": 2,
   "items": [
@@ -67,14 +67,27 @@
     {
       "id": "reseller-workbook-second-listing",
       "title": "Second listing for the same shop: a UK reseller (eBay / Vinted / Depop) P&L workbook with platform fees, inventory, Trading Allowance check and the £1,700 platform-reporting threshold",
-      "why": "The niche's best-reviewed cheap sheet is a reseller P&L at £3.99 with 35 five-star reviews in 293 days (spike §3); a second listing in the same shop doubles the shelf presence for one more half-day and shares the Setup tab, the tax estimate and the Trading Allowance logic of the first workbook. Priced £5.99, same listing rules (what the buyer gains, no invented scarcity). Dated after the first workbook so the slots build the winner and raise the owner request first.",
+      "why": "The niche's best-reviewed cheap sheet is a reseller P&L at £3.99 with 35 five-star reviews in 293 days (spike §3); a second listing in the same shop doubles the shelf presence for one more half-day and shares the Setup tab, the tax estimate and the Trading Allowance logic of the first workbook. Priced £5.99, same listing rules (what the buyer gains, no invented scarcity). Dated after the first workbook so the slots build the winner and raise the owner request first. Done 2026-11-03 (build): src/reseller.ts, 11 tabs, 10,159 formulas, 0 errors after LibreOffice recalc, Example = hand-worked £945.00; LISTING.md second-listing pack at £5.99 with 13 tags and four images; platform fees and the HMRC threshold are Setup cells with sources; owner action 037 raised.",
       "effort_days": 0.4,
       "proof": "A second .xlsx recalculates with 0 formula errors and its LISTING.md section exists; listed by the owner in the same shop",
       "score": 7,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-11-03",
       "added": "2026-10-24",
-      "doing_since": "2026-11-03"
+      "doing_since": "2026-11-03",
+      "done_at": "2026-11-03",
+      "doing_by": "build"
+    },
+    {
+      "id": "reseller-listing-live",
+      "title": "Record the second Etsy listing going live: URL and date in LISTING.md, the £0.16 listing fee to `cost`, a Metrics row, the notify line, a day-60 read item",
+      "why": "Publishing is the owner's hands (action 037; the sandbox never reads etsy.com). When the owner's `037 done <url>` note lands this item records the listing: its URL and date in LISTING.md, the ledger's planned £0.16 row moved to cost, a RESEARCH.md §7 `Listed` row, the notify line \"UK Reseller Profit & Tax Workbook is live on Etsy: …\" and a `reseller-day-60-read` item (not_before = listing date + 60) with the §6 kill rule. If a buyer message disputes a platform rate, the first relay read of that platform's fee page (hosts to add to docs/relay/hosts.txt) is done in the same run and the Setup default corrected in a rebuild.",
+      "effort_days": 0.1,
+      "proof": "LISTING.md carries the live URL and date; the ledger row is `cost`; a dated day-60 item is queued",
+      "score": 8,
+      "status": "blocked",
+      "blocked_on": "owner action 037 (docs/for-owner/actions/037-etsy-reseller-listing.md): the owner publishes the listing and sends `037 done <url>`",
+      "added": "2026-11-03"
     },
     {
       "id": "april-2027-refresh",

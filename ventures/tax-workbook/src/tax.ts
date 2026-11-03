@@ -123,3 +123,36 @@ export const EXAMPLE_EXPECTED = {
   totalDue: 5_025.8,
   paymentOnAccountEach: 2_512.9,
 } as const;
+
+/**
+ * The reseller workbook's hand-worked case (its Example tab): a side-hustle reseller with a job.
+ * Cash basis, so the stock bought in the year is the deduction; every figure is checked by hand in
+ * RESELLER_EXPECTED and by `yearEnd` in tax.test.ts.
+ */
+export const EXAMPLE_RESELLER = {
+  grossSales: 12_000,
+  platformFees: 900,
+  postagePaid: 1_100,
+  stockBought: 4_200,
+  otherExpenses: 400,
+  carMiles: 1_500,
+  otherTaxableIncome: 22_000,
+  taxDeductedAtSource: 1_886,
+  paymentsOnAccountMade: 0,
+} as const;
+
+/**
+ * Hand-worked 2026/27: mileage 1,500 × 45p = £675; deductions 4,200 + 900 + 1,100 + 400 + 675 =
+ * £7,275; profit £4,725 (the allowance would leave £11,000, so actual costs win); total income
+ * £26,725, taxable £14,155 at 20 % = £2,831.00; Class 4 nil under £12,570; less £1,886 PAYE =
+ * £945.00, at or under £1,000 so no payments on account.
+ */
+export const RESELLER_EXPECTED = {
+  mileage: 675,
+  deductions: 7_275,
+  profit: 4_725,
+  incomeTax: 2_831,
+  class4: 0,
+  totalDue: 945,
+  paymentOnAccountEach: 0,
+} as const;

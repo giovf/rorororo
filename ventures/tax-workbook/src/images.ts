@@ -1,43 +1,10 @@
-// Renders the five Etsy listing images (2000 × 1500, 4:3) from SVG templates with @resvg/resvg-js
-// and the sandbox's system fonts. Run: npm run images -w @foundry/tax-workbook → listing/*.png
+// Renders the five Etsy listing images (2000 × 1500, 4:3) for the Sole Trader workbook from SVG
+// templates (primitives in svg.ts). Run: npm run images -w @foundry/tax-workbook → listing/*.png
 // (the SVG sources are written next to them so the images can be edited by hand).
-import { Resvg } from '@resvg/resvg-js';
-import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { EXPENSE_CATEGORIES, RATES_2026_27 as R } from './rates.ts';
+import { AMBER, card, frame, gbp, GREEN, H, INK, MUTED, NAVY, PALE, renderAll, text, W } from './svg.ts';
 import { EXAMPLE_EXPECTED as E } from './tax.ts';
-
-const W = 2000;
-const H = 1500;
-const NAVY = '#1F3A5F';
-const PALE = '#F4F7FB';
-const GREEN = '#2E7D4F';
-const AMBER = '#B8860B';
-const INK = '#1A1A1A';
-const MUTED = '#5A6675';
-const FONT = 'DejaVu Sans, Liberation Sans, Arial, sans-serif';
-
-const esc = (s: string): string => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const gbp = (n: number): string => `£${n.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-
-function frame(body: string, bg = PALE): string {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="${FONT}">
-<rect width="${W}" height="${H}" fill="${bg}"/>
-${body}
-</svg>`;
-}
-
-function text(x: number, y: number, s: string, size: number, opts: { fill?: string; weight?: string; anchor?: string } = {}): string {
-  return `<text x="${x}" y="${y}" font-size="${size}" fill="${opts.fill ?? INK}" font-weight="${opts.weight ?? 'normal'}" text-anchor="${opts.anchor ?? 'start'}">${esc(s)}</text>`;
-}
-
-function card(x: number, y: number, w: number, h: number, titleText: string, lines: string[], accent = NAVY): string {
-  const body = lines.map((l, i) => text(x + 32, y + 118 + i * 44, l, 30, { fill: MUTED })).join('\n');
-  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
-<rect x="${x}" y="${y}" width="16" height="${h}" rx="8" fill="${accent}"/>
-${text(x + 32, y + 64, titleText, 38, { weight: 'bold', fill: accent })}
-${body}`;
-}
 
 function hero(): string {
   return frame(
@@ -150,22 +117,10 @@ ${text(160, 1270, 'Refund policy: a replacement file or a full refund within 14 
 ${text(160, 1325, 'One purchase, one licence for your own business records.', 32, { fill: MUTED })}`);
 }
 
-const images: Array<[string, () => string]> = [
+await renderAll(path.resolve(import.meta.dirname, '..', 'listing'), [
   ['1-hero', hero],
   ['2-tabs', tabs],
   ['3-tax-estimate', estimate],
   ['4-mtd-sa103', mtd],
   ['5-fit-and-refund', fit],
-];
-
-const out = path.resolve(import.meta.dirname, '..', 'listing');
-await mkdir(out, { recursive: true });
-for (const [stem, make] of images) {
-  const svg = make();
-  await writeFile(path.join(out, `${stem}.svg`), svg);
-  const png = new Resvg(svg, { font: { loadSystemFonts: true, defaultFontFamily: 'DejaVu Sans' }, fitTo: { mode: 'width', value: W } })
-    .render()
-    .asPng();
-  await writeFile(path.join(out, `${stem}.png`), png);
-  console.log(`${stem}.png ${Math.round(png.length / 1024)} KB`);
-}
+]);

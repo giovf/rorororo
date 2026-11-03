@@ -350,3 +350,4 @@ closed entries older than 30 days (git keeps the history).
 - 2026-11-01 owner: Etsy could not charge your card for a £2.98 bill; pay it or update the card in Etsy billing before 22 Nov
 - 2026-11-02 owner: GitHub Pro (US$4/month) to make the code private, or stay public? Reply A or B, ~2 min — docs/for-owner/actions/036-github-pro-or-public.md — Done 2026-11-02 (interactive): owner chose A: stay public behind the mirror; foundry actions-minutes dropped
 - 2026-11-02 owner: Meta hackathon entry is ready — paste it into the submission form by Wed 4 Nov 9pm US time (2am Thu UK), ~15 min — docs/for-owner/actions/032-meta-model-api-key.md step 3 — Done 2026-11-02 (interactive): owner submitted on the Cerebral Valley portal 2026-11-02 (indie track)
+- 2026-11-03 owner: second tax spreadsheet is ready for your Etsy shop — publish the Reseller workbook listing, ~10 min, £0.16 — docs/for-owner/actions/037-etsy-reseller-listing.md

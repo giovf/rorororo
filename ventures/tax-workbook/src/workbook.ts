@@ -33,14 +33,14 @@ export const SHEETS = [
 export const INCOME_ROWS = 500;
 export const EXPENSE_ROWS = 1000;
 export const MILEAGE_ROWS = 500;
-const LOG_FIRST_ROW = 6;
+export const LOG_FIRST_ROW = 6;
 
-const FONT = 'Arial';
-const GBP = '£#,##0.00;[Red]-£#,##0.00;-';
-const GBP0 = '£#,##0;[Red]-£#,##0;-';
-const PCT = '0.0%';
-const DATE = 'dd/mm/yyyy';
-const NUM0 = '#,##0';
+export const FONT = 'Arial';
+export const GBP = '£#,##0.00;[Red]-£#,##0.00;-';
+export const GBP0 = '£#,##0;[Red]-£#,##0;-';
+export const PCT = '0.0%';
+export const DATE = 'dd/mm/yyyy';
+export const NUM0 = '#,##0';
 
 const INPUT_FONT: Partial<ExcelJS.Font> = { name: FONT, size: 10, color: { argb: 'FF0000FF' } };
 const INPUT_FILL: ExcelJS.Fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFFF8DC' } };
@@ -53,7 +53,7 @@ const THIN: Partial<ExcelJS.Borders> = {
   right: { style: 'thin', color: { argb: 'FFBFBFBF' } },
 };
 
-type Sheet = ExcelJS.Worksheet;
+export type Sheet = ExcelJS.Worksheet;
 
 /** ExcelJS implements sheet-level data validations but its typings omit them. */
 export interface SheetValidations {
@@ -65,7 +65,7 @@ export function validations(ws: Sheet): SheetValidations {
   return (ws as unknown as { dataValidations: SheetValidations }).dataValidations;
 }
 
-function baseFont(ws: Sheet): void {
+export function baseFont(ws: Sheet): void {
   ws.eachRow((row) => {
     row.eachCell((cell) => {
       cell.font = { name: FONT, size: 10, ...cell.font };
@@ -73,7 +73,7 @@ function baseFont(ws: Sheet): void {
   });
 }
 
-function title(ws: Sheet, text: string, subtitle?: string): void {
+export function title(ws: Sheet, text: string, subtitle?: string): void {
   ws.getCell('A1').value = text;
   ws.getCell('A1').font = { name: FONT, size: 16, bold: true, color: { argb: 'FF1F3A5F' } };
   ws.getRow(1).height = 24;
@@ -83,7 +83,7 @@ function title(ws: Sheet, text: string, subtitle?: string): void {
   }
 }
 
-function header(ws: Sheet, row: number, labels: string[]): void {
+export function header(ws: Sheet, row: number, labels: string[]): void {
   labels.forEach((label, i) => {
     const cell = ws.getCell(row, i + 1);
     cell.value = label;
@@ -95,42 +95,42 @@ function header(ws: Sheet, row: number, labels: string[]): void {
   ws.getRow(row).height = 30;
 }
 
-function input(cell: ExcelJS.Cell, numFmt?: string): void {
+export function input(cell: ExcelJS.Cell, numFmt?: string): void {
   cell.font = INPUT_FONT;
   cell.fill = INPUT_FILL;
   cell.border = THIN;
   if (numFmt) cell.numFmt = numFmt;
 }
 
-function formula(cell: ExcelJS.Cell, f: string, numFmt?: string): void {
+export function formula(cell: ExcelJS.Cell, f: string, numFmt?: string): void {
   cell.value = { formula: f };
   cell.font = { name: FONT, size: 10 };
   cell.border = THIN;
   if (numFmt) cell.numFmt = numFmt;
 }
 
-function label(cell: ExcelJS.Cell, text: string, bold = false): void {
+export function label(cell: ExcelJS.Cell, text: string, bold = false): void {
   cell.value = text;
   cell.font = { name: FONT, size: 10, bold };
   cell.alignment = { vertical: 'middle', wrapText: true };
 }
 
-function note(cell: ExcelJS.Cell, text: string): void {
+export function note(cell: ExcelJS.Cell, text: string): void {
   cell.value = text;
   cell.font = { name: FONT, size: 9, italic: true, color: { argb: 'FF595959' } };
   cell.alignment = { vertical: 'middle', wrapText: true };
 }
 
-function total(cell: ExcelJS.Cell): void {
+export function total(cell: ExcelJS.Cell): void {
   cell.font = { name: FONT, size: 10, bold: true };
   cell.fill = TOTAL_FILL;
 }
 
-function name(wb: ExcelJS.Workbook, ref: string, n: string): void {
+export function name(wb: ExcelJS.Workbook, ref: string, n: string): void {
   wb.definedNames.add(ref, n);
 }
 
-function listValidation(ws: Sheet, range: string, source: string): void {
+export function listValidation(ws: Sheet, range: string, source: string): void {
   validations(ws).add(range, {
     type: 'list',
     allowBlank: true,
@@ -183,7 +183,7 @@ function buildReadme(ws: Sheet, r: TaxYearRates): void {
 
 /* ------------------------------------------------------------------ Setup */
 
-interface SetupRow {
+export interface SetupRow {
   key: keyof TaxYearRates | null;
   label: string;
   value?: number | string;
@@ -192,7 +192,13 @@ interface SetupRow {
   source: string;
 }
 
-function buildSetup(wb: ExcelJS.Workbook, ws: Sheet, r: TaxYearRates): void {
+/** Extra Setup rows (after the shared rates) and drop-down lists a sibling workbook adds. */
+export interface SetupExtra {
+  rows?: SetupRow[];
+  lists?: Array<{ name: string; items: readonly string[]; note: string }>;
+}
+
+export function buildSetup(wb: ExcelJS.Workbook, ws: Sheet, r: TaxYearRates, extra: SetupExtra = {}): void {
   ws.getColumn(1).width = 46;
   ws.getColumn(2).width = 18;
   ws.getColumn(3).width = 90;
@@ -231,6 +237,7 @@ function buildSetup(wb: ExcelJS.Workbook, ws: Sheet, r: TaxYearRates): void {
     { key: 'paymentsOnAccountMin', label: 'Payments on account: not needed if bill at or under', fmt: GBP0, name: 'POAMin', source: 'gov.uk Understand your Self Assessment tax bill: payments on account.' },
     { key: 'paymentsOnAccountSourceShare', label: 'Payments on account: not needed if this share was paid at source', fmt: PCT, name: 'POASourceShare', source: '80 % or more of your tax deducted at source (PAYE) means no payments on account.' },
     { key: 'mtdThreshold', label: 'Making Tax Digital applies above (qualifying income)', fmt: GBP0, name: 'MTDThreshold', source: 'From 6 April 2026 (over £50,000); over £30,000 from April 2027; over £20,000 from April 2028. Qualifying income is gross self-employment plus property income.' },
+    ...(extra.rows?.length ? [{ key: null, label: '', source: '' } as SetupRow, ...extra.rows] : []),
   ];
 
   let row = 5;
@@ -251,7 +258,7 @@ function buildSetup(wb: ExcelJS.Workbook, ws: Sheet, r: TaxYearRates): void {
       input(cell, s.fmt);
     } else if (s.value !== undefined) {
       cell.value = s.value;
-      input(cell);
+      input(cell, s.fmt);
     }
     if (s.name) name(wb, `Setup!$B$${row}`, s.name);
     note(ws.getCell(row, 3), s.source);
@@ -303,6 +310,16 @@ function buildSetup(wb: ExcelJS.Workbook, ws: Sheet, r: TaxYearRates): void {
     lr += 1;
   }
   name(wb, `Setup!$A$${pmFirst}:$A$${lr - 1}`, 'ProfitMethods');
+  for (const list of extra.lists ?? []) {
+    lr += 1;
+    const first = lr;
+    for (const item of list.items) {
+      label(ws.getCell(lr, 1), item);
+      note(ws.getCell(lr, 3), list.note);
+      lr += 1;
+    }
+    name(wb, `Setup!$A$${first}:$A$${lr - 1}`, list.name);
+  }
   ws.views = [{ state: 'frozen', ySplit: 4 }];
 }
 
@@ -343,7 +360,7 @@ function buildIncome(wb: ExcelJS.Workbook, ws: Sheet): void {
   ws.autoFilter = `A5:E${last}`;
 }
 
-function buildExpenses(wb: ExcelJS.Workbook, ws: Sheet): void {
+export function buildExpenses(wb: ExcelJS.Workbook, ws: Sheet): void {
   title(ws, 'Expense log', 'One row per business cost. Pick the SA103S category; for a cost that is partly private, enter the business share (blank = 100 %). Keep the receipt.');
   [14, 36, 44, 14, 12, 14, 32].forEach((w, i) => (ws.getColumn(i + 1).width = w));
   header(ws, 5, ['Date', 'Supplier / description', 'SA103S category', 'Amount paid £', 'Business share', 'Allowable £', 'Receipt / notes']);
@@ -389,7 +406,7 @@ function buildExpenses(wb: ExcelJS.Workbook, ws: Sheet): void {
   ws.autoFilter = `A5:G${last}`;
 }
 
-function buildMileage(wb: ExcelJS.Workbook, ws: Sheet): void {
+export function buildMileage(wb: ExcelJS.Workbook, ws: Sheet): void {
   title(ws, 'Mileage log', 'One row per business journey. The claim uses HMRC approved rates from Setup; cars and vans step down after 10,000 business miles in the year. Commuting to a regular workplace is not business mileage.');
   [14, 36, 28, 16, 10, 14, 14].forEach((w, i) => (ws.getColumn(i + 1).width = w));
   header(ws, 5, ['Date', 'Journey (from – to)', 'Purpose', 'Vehicle', 'Miles', 'Car/van miles to date', 'Claim £']);
@@ -468,7 +485,7 @@ function buildQuarterly(wb: ExcelJS.Workbook, ws: Sheet): void {
 
 /* -------------------------------------------------------------- Allowance */
 
-function buildAllowance(wb: ExcelJS.Workbook, ws: Sheet): void {
+export function buildAllowance(wb: ExcelJS.Workbook, ws: Sheet): void {
   title(ws, 'Trading Allowance check', 'You may deduct the £1,000 Trading Allowance instead of your actual expenses and capital allowances — never both. This tab shows which is better; Setup → Profit method applies it.');
   ws.getColumn(1).width = 52;
   ws.getColumn(2).width = 18;
@@ -549,7 +566,7 @@ function buildSA103(wb: ExcelJS.Workbook, ws: Sheet): void {
 
 /* -------------------------------------------------------------------- Tax */
 
-function buildTax(wb: ExcelJS.Workbook, ws: Sheet): void {
+export function buildTax(wb: ExcelJS.Workbook, ws: Sheet): void {
   title(ws, 'Tax and Class 4 NI estimate', 'An estimate for a sole trader with one business. Fill the blue cells; the rest comes from your logs and the Setup rates. Check against HMRC\'s calculation before paying.');
   ws.getColumn(1).width = 56;
   ws.getColumn(2).width = 18;

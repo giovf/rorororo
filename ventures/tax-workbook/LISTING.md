@@ -146,6 +146,80 @@ four and add the full versions below (items 7, 10, 11 and 12):
 
 Then **Publish**, or **Preview** first to check the description's line breaks.
 
+## Second listing — UK Reseller Profit & Tax Workbook 2026/27 (2026-11-03, owner action 037)
+
+The same shop's second product, for people who buy items to sell on eBay, Vinted, Depop and Etsy. File:
+`release/UK-Reseller-Profit-and-Tax-Workbook-2026-27.xlsx` (built by `npm run build -w @foundry/tax-workbook`, recalculated
+with zero formula errors by `npm run recalc`); four images `listing/reseller/1-hero.png` … `4-fit-and-refund.png`
+(2000 × 1500, `npm run images:reseller`). Everything not listed here is the same as the first listing (§1–§8): Digital
+item type first, category Bookkeeping Templates, the same attributes, the same "How it's made" answers, GPSR not applicable.
+
+**Title** (99 characters, 14 words):
+
+```
+UK Reseller Profit & Tax Spreadsheet 2026/27 – eBay Vinted Depop Sales, Stock, Fees, Self Assessment
+```
+
+**Description** (plain text; copy the whole block):
+
+```
+Buy to sell on eBay, Vinted, Depop or Etsy? Keep your stock, sales and fees for the 2026/27 tax year in one spreadsheet, see the profit on every item and every platform, and know what you will owe HMRC before January.
+
+This workbook links an inventory to a sales log by item ID, works out each platform's fees from its published rates, checks whether a platform will report your sales to HMRC this year, maps the year to the SA103S self-employment boxes, checks the £1,000 Trading Allowance against your real costs, and estimates your Income Tax and Class 4 National Insurance, with room for a job or pension so the bands are right.
+
+AT A GLANCE
+• File format: one .xlsx spreadsheet (about 0.3 MB), instant digital download. Nothing physical is sent.
+• Works in: Microsoft Excel 2010 or later, Google Sheets (File → Import), LibreOffice Calc and Apple Numbers. No account or subscription needed.
+• Editable: every blue cell is yours to type in; everything else is calculated. Formulas only: no macros, nothing to enable.
+• Region and year: UK, tax year 6 April 2026 to 5 April 2027. Income Tax bands for England, Wales and Northern Ireland.
+• For: sole traders and side-hustle resellers with one business, not VAT-registered, on the cash basis or traditional accounting.
+• Licence: for your own business records.
+
+WHAT YOU GET (11 TABS)
+• Setup: every 2026/27 tax rate and threshold with its gov.uk source, plus the fee rate and fixed fee of each platform (eBay, Vinted, Depop, Etsy, other) with its source. Change a figure once and every formula follows.
+• Inventory: one row per item bought to resell: ID, date, description, where from, cost, extra costs. The tab shows whether each item has sold, when and for how much.
+• Sales: one row per sale: date, platform, item ID, price, postage charged, postage paid. The fees, the item's cost and the profit on the sale appear beside it; type the real fee if the platform charged something different.
+• Expenses: packaging, Bumps and promoted listings, phone and internet share, storage, software, with the SA103S category from a drop-down.
+• Mileage log at HMRC approved rates for car boots, collections and post-office runs.
+• Platforms: the year by platform (sales, takings, fees, postage, cost, profit) and the HMRC platform-reporting check: 30 sales or £1,700 in a calendar year.
+• Allowance: whether the £1,000 Trading Allowance or your actual costs leaves you the lower profit.
+• SA103: your year-end figures box by box: stock in box 11 (when paid, or when sold), postage in 16, platform fees in 19.
+• Tax: Income Tax, Class 4 NI, the balancing payment due 31 January and the two payments on account, with your salary and PAYE netted off.
+• Example: a filled, hand-checked year for a part-time reseller with a job.
+• README: how to use it, trading versus clearing out your own things, what it covers and what it does not.
+
+PLEASE READ BEFORE BUYING
+• Selling your own unwanted possessions is not trading and is not taxed. This workbook is for items bought to sell on.
+• It is a record-keeping and estimating spreadsheet, not MTD-recognised filing software and not tax advice. The tax return is still sent through HMRC's online service or filing software; this workbook gives you the numbers.
+• Platform fees change often. The rates are each platform's published figures read in November 2026, and every one is a cell you can change; or type the actual fee on any sale.
+• Scottish Income Tax bands differ and are not included. Not for partnerships or limited companies.
+• Not covered: Making Tax Digital quarterly totals (see my UK Sole Trader Tax Workbook), student loan repayments, savings and dividend income, Marriage Allowance, pension and Gift Aid relief, losses brought forward. Check the final figures against HMRC's own calculation.
+• Made by me with the help of AI tools. Every formula is tested, and the example year is checked by hand.
+
+DELIVERY AND REFUNDS
+The file downloads instantly from your Etsy purchases page after checkout. If the file does not open on your device, message me within 14 days for a replacement file or a full refund. One purchase is one licence for your own business records; please do not share or resell the file.
+```
+
+**Tags (13, each 20 characters or fewer, typed one at a time):**
+
+1. reseller spreadsheet
+2. vinted seller
+3. ebay seller uk
+4. depop seller
+5. inventory tracker
+6. profit tracker
+7. self assessment uk
+8. sole trader tax
+9. hmrc side hustle
+10. platform fees
+11. resell bookkeeping
+12. tax return 2026 27
+13. trading allowance
+
+**Price: £5.99**, quantity 999, no variations, no personalisation, no sale or launch-price claim (none is true for this
+listing). **Shop section:** once there are two listings, create one section, `Tax & bookkeeping spreadsheets`, and put
+both in it. **Feature this listing:** on.
+
 ## Status
 
 | Date | Event |
@@ -156,3 +230,4 @@ Then **Publish**, or **Preview** first to check the description's line breaks.
 | 2026-10-29 | Payhip store open (https://payhip.com/gankdat); twin listing to be written by `payhip-twin-listing`. |
 | 2026-11-02 | Twin shelves live: Payhip https://payhip.com/b/4stMN (`PAYHIP.md`) and the own checkout https://buy.stripe.com/3cI9AM5yB5m1f0adKSefC04 on apps.gankdat.com/tax-workbook.html; same £6.99, same copy. |
 | 2026-11-02 | **Etsy's October 2026 AI rule read against this listing** (`etsy-ai-instructions-rule-review`, burn-down): help.etsy.com "What Can I Sell on Etsy?" (read in full through the relay) lists "AI-generated functional instructions, such as craft patterns, recipes, and instructions", "bot-generated content" and "AI prompt bundles" as not allowed; the Seller Handbook update 1522733284810 (2026-10-22, www is walled to the runner, quoted from etsy.com's index) says "the information buyers rely on to create or use your item must be your own work", names patterns, recipes, project plans, manuals and instructional e-books, and requires "an actual result made using your instructions, not an AI-generated or simulated result" for such guides. **Decision: the listing stays as it is.** The product is a spreadsheet tool — a "designed by a seller" digital download with AI use disclosed in the description and the attributes (§6) — not a functional guide; its preview images are real screenshots of the workbook and the Example tab is a hand-checked year (the "actual result"); the listing was typed in by the owner (§Status 10-29), not bot-generated. The README tab is how-to-use text for the tool, ancillary to it, and is the one part a strict reading could call instructions. Mitigation without owner time: none now; **if Etsy flags the listing**, the README tab's text is replaced with the owner's own words (an action file with the ≤ 10 lines to approve, a rebuild, the owner re-uploads the file — ≈ 10 min) and the Example tab is kept as the shown result. **Never list the Kindle guide (an instructional e-book) on Etsy.** |
+| 2026-11-03 | **Second listing built** (`reseller-workbook-second-listing`): UK Reseller Profit & Tax Workbook 2026/27, 11 tabs, 10,159 formulas, 0 errors after LibreOffice recalculation; Example tab matches the hand-worked case £945.00. Copy above, four images in `listing/reseller/`. Owner request 037 raised (~10 min, £0.16). |
