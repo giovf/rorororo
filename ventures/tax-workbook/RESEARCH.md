@@ -266,19 +266,28 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   records. Not built: a Payhip twin of the reseller file (the first twin has no sale yet to justify a second), MTD quarterly totals (the
   companion workbook has them; a reseller over £50,000 is rare). Follow-ups queued: `reseller-listing-live` (blocked on action 037). The §6
   proof and kill clocks for this listing start at its `Listed` row.
-- **2026-11-03 17:17 (build, queue starved → research pass):** the morning build emptied the buildable list (`reseller-workbook-second-listing`
-  done; every other open item blocked on the owner or dated), so this pass read the signals since the 10-26 pass. **What changed:** all three
-  shelves of the first workbook are live (Etsy 10-29, Payhip and the own checkout 11-02) with 0 `Sale` rows after 1–5 days — too early for the
-  §6 clocks — and KDP's "Your book is available in the Kindle Store!" mail landed 2026-10-31 14:32 UTC (enrolled in KDP Select, first term to
-  2027-01-29). That mail is the signal `kdp-listing-live` waited on, so it is `todo` again (next buildable, 8 × 2); the mail carries no ASIN
-  or URL and one WebSearch restricted to amazon.co.uk finds no page for the title yet, so the record item writes the live date and the day-60
-  read now and fills the URL the day a dated read's index search or the owner's shelf note gives it — no new owner step while action 037 is open.
-  `kdp-paperback-edition` (its own condition: "build the day the 'is now live' mail lands") is `todo`; `google-play-listing` is dated
-  2027-01-29 (Select term end). **Added, dated 2026-11-30** (the first shelf note and the Kindle's day 30): `landlord-property-workbook` (6) —
-  Etsy's index shows a 2026/27 landlord-tracker niche (SA105 box mapping, Section 24 finance-cost calculation, MTD quarterly summaries,
-  multi-property, about US$4–28, one at £11.99–19.99; no sales counts in the snapshot) as the shop's third listing, built only if the two
-  workbook listings show a sale or ≥ 5 views a day by then; `mtd-quarterly-kindle-title` (6) — the MTD playbook shape (the £3.99 title with 245
-  ratings from the W43 spike; Sharon Lane's £9.99, 120-page MTD 2026 guide of 2025-10-19 and three £0.77–0.99 Kindle MTD guides in the index)
-  from chapter 11's material, built only if the first book has sold a copy. **Added, blocked:** `etsy-bill-ledger-row` (3) — Etsy's 11-01 mail
-  bills £2.98 the ledger does not carry (its Etsy rows total £14.20); the `cost` row is written from the payment mail once the owner pays.
-  The old `research_after` (2026-11-03) is spent; the queue cools 48 h. Nothing fetched: two index searches (etsy.com, amazon.co.uk hosts only).
+- **2026-11-03 17:30 (burn-down, queue starved — research pass):** the first pass with every shelf live: Etsy 10-29, Kindle 10-31, Payhip and
+  the own checkout 11-02, the reseller file built 11-03 (action 037 open), 0 sales on all of them (§7), so STRATEGY §6 says distribution, not a
+  fifth product. Three levers we control without the owner, each queued (STRATEGY §5 score): **`free-tax-estimate-calculator-page` (7)** — the
+  buyer's query is "sole trader tax calculator 2026/27" and the shelf for it is Google: a WebSearch for `sole trader tax calculator 2026/27 UK
+  free` (2026-11-03) returned Bytestart, SparkReceipt, UK Net Pay, itcontracting and smallbusinessguide, three hobby Cloudflare Pages sites
+  (calks-uk, uk-tax, poundlogic `.pages.dev`), three Payhip product pages and an Etsy listing — a new domain can rank, and product pages rank
+  beside the calculators. The maths exists and is tested (`src/tax.ts`, `src/rates.ts`), so the page is a client bundle and copy on the landing
+  Worker, with the workbook as the next step under the result. **`product-page-structured-data-faq` (6)** — `tax-workbook.html` has no JSON-LD
+  and no question-shaped headings (checked: 0 `ld+json`, h2s "Where to buy", "What you get", "At a glance", "Please read before buying",
+  "Refunds"); Product + Offer markup and a FAQ block aimed at the long-tail queries. **`cross-sell-links-guide-and-workbook` (4)** —
+  `src/kindle/content.ts` carries no link to the workbook and `src/workbook.ts` never names the guide; a back-matter "Also by" page (our own
+  site, KDP-allowed) and a README row, rebuilt into `release/` for the own checkout now and riding the next owner upload later. **Unblocked**
+  `kdp-listing-live` (8): its trigger, the "available in the Kindle Store" mail, landed 2026-10-31 14:32 (KINDLE.md Status) and no slot had
+  moved the item; the ASIN is not in the mail and amazon.co.uk is never read (Conditions of Use forbid automated access; two WebSearches did
+  not surface the title), so the record carries the live date and takes the URL from the owner's 2026-11-30 shelf note; `kdp-paperback-edition`
+  (7) follows it and `google-play-listing` dates to 2027-01-29. Not queued: a Payhip twin or own checkout for the reseller file (the first twin
+  has no sale; the 09:24 build's rule stands), the landlord workbook and the MTD Kindle title (10-26 list: after the first shelf sells), a KDP
+  free-promotion week (owner clicks; action 037 is open and never gains steps). Nothing fetched; `research_after` removed, `researched` today.
+- **2026-11-03 17:17 (build, same slot):** the 17:00 build slot ran the same starved-queue pass in parallel (its marker landed 17:13, after the
+  burn-down's pull) and reached the same reading — the 10-31 KDP mail frees `kdp-listing-live`; the index has no amazon.co.uk page for the title
+  (one WebSearch on the host); three shelves live 1–5 days with 0 sales. The burn-down's entry above is the record; the build's two dated product
+  items (a landlord SA105 workbook as the shop's third listing — Etsy's index shows a 2026/27 landlord-tracker niche with Section 24 and MTD
+  quarters, no sales counts; an MTD quarter-by-quarter Kindle title) were discarded in the merge, the 10-26 rule standing: after the first shelf
+  sells. Kept: `etsy-bill-ledger-row` (3), the ledger row for Etsy's unexplained £2.98 bill of 11-01, written from the payment mail once the
+  owner pays. The collision is queued as foundry `research-claim-marker`.
