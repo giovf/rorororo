@@ -13,6 +13,7 @@ import {
   pacedStop,
   preResearchSpent,
   reportStale,
+  researchClaimActive,
   datedWithinDay,
   learntWeekSlots,
   weekBudgetStop,
@@ -24,6 +25,18 @@ const pass =
 const stopping =
   '- 2026-10-07 18:25 | burn-down | Stopping: 2 items built; pipeline starved-and-cooled, pre-research spent';
 const runs = (...lines: string[]): string => `# Runs\n\n${lines.join('\n')}\n`;
+
+describe('researchClaimActive', () => {
+  it('is true for two hours after the claimed minute, with a minute of skew, else false', () => {
+    const since = '2026-11-03T17:01Z';
+    expect(researchClaimActive(since, new Date('2026-11-03T17:00:30Z'))).toBe(true);
+    expect(researchClaimActive(since, new Date('2026-11-03T18:59:00Z'))).toBe(true);
+    expect(researchClaimActive(since, new Date('2026-11-03T19:01:00Z'))).toBe(false);
+    expect(researchClaimActive(since, new Date('2026-11-03T16:50:00Z'))).toBe(false);
+    expect(researchClaimActive(undefined, new Date('2026-11-03T17:05:00Z'))).toBe(false);
+    expect(researchClaimActive('yesterday', new Date('2026-11-03T17:05:00Z'))).toBe(false);
+  });
+});
 
 describe('nightStart', () => {
   it('is today 17:00 from 17:00 on', () => {

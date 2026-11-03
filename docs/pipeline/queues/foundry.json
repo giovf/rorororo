@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "researched": "2026-11-02",
   "items": [
     {
@@ -1343,13 +1343,13 @@
     {
       "id": "research-claim-marker",
       "title": "Research claim marker: a research pass claims its queue the way an item is claimed — `npm run pipeline claim-research <venture> -- --by=<routine>` pushes `researching_since`/`researching_by` on the queue within a minute of the slot (plain Node, before `npm ci`); `empty`, `cold` and `starved()` treat a queue claimed within 2 h as cooling; a research commit first does `git fetch` and aborts (merge theirs, one run-log line) when a research commit for that venture landed since the slot; the build and burn-down prompts name the step",
-      "why": "Repeat of the 2026-10-22 collision that `research-defers-to-build-slot` only narrowed: on 2026-11-03 the 17:00 build slot (marker 17:13, the sandbox clone and unshallow took the first 13 minutes) and the 17:00 burn-down both researched the starved tax-workbook queue and pushed at 17:17 — the burn-down's `cold` had pulled before the marker landed (the limit its own README paragraph records), so both passes unblocked kdp-listing-live, both stamped the mirror first run, and the build's duplicate pass (two dated product items the burn-down had explicitly not queued) was discarded in a conflict merge. A research claim is the same one-line push the item claim already makes (`build-claim-marker`), so it lands within a minute of the slot instead of after the install and the pass, which is what fixed the 10-07 and 10-10 item collisions (`claim-before-install`); the fetch-and-abort step catches the race the marker cannot (both claims in the same minute). Evidence 2 (two collisions in twelve days, each a wasted slot) × reach 1 ÷ 0.3 day ≈ 5; proof is no two `research` commits on one venture in a slot for 30 days (`npm run slots`).",
+      "why": "Repeat of the 2026-10-22 collision that `research-defers-to-build-slot` only narrowed: on 2026-11-03 the 17:00 build slot (marker 17:13, the sandbox clone and unshallow took the first 13 minutes) and the 17:00 burn-down both researched the starved tax-workbook queue and pushed at 17:17 — the burn-down's `cold` had pulled before the marker landed (the limit its own README paragraph records), so both passes unblocked kdp-listing-live, both stamped the mirror first run, and the build's duplicate pass (two dated product items the burn-down had explicitly not queued) was discarded in a conflict merge. A research claim is the same one-line push the item claim already makes (`build-claim-marker`), so it lands within a minute of the slot instead of after the install and the pass, which is what fixed the 10-07 and 10-10 item collisions (`claim-before-install`); the fetch-and-abort step catches the race the marker cannot (both claims in the same minute). Evidence 2 (two collisions in twelve days, each a wasted slot) × reach 1 ÷ 0.3 day ≈ 5; proof is no two `research` commits on one venture in a slot for 30 days (`npm run slots`). Done 2026-11-03 (burn-down): `claim-research <venture>` in scripts/pipeline-claim.ts pushes `researching_since` (the minute) + `researching_by` (refused while another claim is under 2 h old or the queue is cooling anyway; takes over an older one); core `isResearchClaimed` folds into `isCooling`, so `next`, `empty`, `starved()` and the plain-Node `cold` skip a claimed queue for 2 h and the status shows `research claimed HH:MM UTC by <routine>`; `research-landed <venture> --since=<slot>` fetches origin/main and exits 1 on a `<venture>: research …` subject (the abort path); `claimMarkerRoutine` excludes the new subject from watchdog and slot-table traces; both prompts, the pipeline README and SCHEDULERS carry the step; 15 new test cases.",
       "effort_days": 0.3,
       "proof": "claim-research pushes the marker and is tested with claim's suite; empty/cold/starved skip a queue claimed within 2 h; the abort path is tested; both prompts carry the step; no duplicate research commit in 30 days of slots",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-03",
-      "doing_since": "2026-11-03"
+      "done_at": "2026-11-03"
     }
   ]
 }

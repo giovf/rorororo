@@ -14,6 +14,7 @@ import {
   starved,
   cooling,
   isCooling,
+  isResearchClaimed,
   type VentureQueue,
 } from './pipeline.js';
 
@@ -266,6 +267,50 @@ describe('scheduling', () => {
     expect(text).toContain('researched within 48 h');
     expect(text).toContain('cooling: gankdat (researched 2026-10-05), toolkit (researched 2026-10-06)');
     expect(() => parseQueue(queue('t', [], { researched: '5 Oct' }))).toThrow(/researched/);
+  });
+
+  it('treats a queue claimed for research within 2 h as cooling (research-claim-marker)', () => {
+    // 2026-11-03: the 17:00 build and the 17:00 burn-down both researched the starved
+    // tax-workbook queue and pushed at 17:17 — research had no marker for `next`/`empty` to see.
+    const claimed = parseQueue(
+      queue('tax-workbook', [item('sc', 'blocked', 4)], {
+        updated: '2026-11-03',
+        researching_since: '2026-11-03T17:01Z',
+        researching_by: 'build',
+      }),
+    );
+    expect(claimed.researching_since).toBe('2026-11-03T17:01Z');
+    expect(claimed.researching_by).toBe('build');
+    const during = new Date('2026-11-03T17:17:00Z');
+    const after = new Date('2026-11-03T19:02:00Z');
+    expect(isResearchClaimed(claimed, during)).toBe(true);
+    expect(isResearchClaimed(claimed, new Date('2026-11-03T17:00:30Z'))).toBe(true); // a minute of skew
+    expect(isResearchClaimed(claimed, after)).toBe(false);
+    expect(isCooling(claimed, '2026-11-03', during)).toBe(true);
+    expect(isCooling(claimed, '2026-11-03', after)).toBe(false);
+    // Starved: the other slot's `empty` leaves it out while the claim is live, lists it after.
+    expect(starved([claimed], { now: during })).toEqual([]);
+    expect(needsResearch([claimed], { now: during })).toEqual([]);
+    expect(needsResearch([claimed], { now: after }).map((q) => q.venture)).toEqual(['tax-workbook']);
+    // Flagged or empty: the same — and `next` then offers the best item elsewhere.
+    const flagged = parseQueue(
+      queue('new-ventures', [], { needs_research: true, researching_since: '2026-11-03T17:01Z', researching_by: 'burn-down' }),
+    );
+    const buildable = parseQueue(queue('foundry', [item('fix', 'todo', 4)]));
+    expect(researchFirst([flagged, buildable], { now: during })).toEqual([]);
+    expect(nextItem([flagged, buildable], { now: during })?.item.id).toBe('fix');
+    expect(nextItem([flagged, buildable], { now: after })).toBeUndefined();
+    expect(formatPipeline({ exchange: { ideas: [] }, queues: [claimed, flagged] }, { now: during })).toContain(
+      'cooling: new-ventures (research claimed 17:01 UTC by burn-down), tax-workbook (research claimed 17:01 UTC by build)',
+    );
+    // Both fields together, the minute shape, a routine name.
+    expect(() => parseQueue(queue('t', [], { researching_since: '2026-11-03T17:01Z' }))).toThrow(/go together/);
+    expect(() => parseQueue(queue('t', [], { researching_since: '2026-11-03', researching_by: 'build' }))).toThrow(
+      /YYYY-MM-DDTHH:MMZ/,
+    );
+    expect(() => parseQueue(queue('t', [], { researching_since: '2026-11-03T17:01Z', researching_by: 'Build 1' }))).toThrow(
+      /routine name/,
+    );
   });
 
   it('skips a queue whose research run set research_after until that date', () => {

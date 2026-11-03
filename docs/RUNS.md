@@ -2403,3 +2403,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 17:45 | burn-down | Sitemap, index card and product page link the calculator; calculator-page-day-30-read queued (12-03)
 - 2026-11-03 17:50 | burn-down | tax-workbook product-page-structured-data-faq done: Product + 3 Offers and FAQPage JSON-LD on the page
 - 2026-11-03 17:50 | burn-down | "Questions buyers ask" block (5 FAQs, links the calculator); hero image served; 3 page tests added
+- 2026-11-03 19:22 | burn-down | Built foundry research-claim-marker: claim-research pushes researching_since/by, 2 h cooling
+- 2026-11-03 19:22 | burn-down | research-landed fetches origin/main and exits 1 on a research commit since the slot (abort path)
+- 2026-11-03 19:22 | burn-down | next, empty, starved(), cold skip a claimed queue; watchdog and slot table ignore the claim commit
+- 2026-11-03 19:22 | burn-down | Build and burn-down prompts, pipeline README and SCHEDULERS carry the step; 15 new tests

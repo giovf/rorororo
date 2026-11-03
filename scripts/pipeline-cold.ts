@@ -21,6 +21,20 @@ export const PRE_RESEARCH_PREFIX = 'Exchange pre-research:';
 /** Same as @foundry/core's DATED_READY_HOUR_UTC (the gate runs before any dist exists). */
 export const DATED_READY_HOUR_UTC = 7;
 
+/** Hours a research claim holds a queue as cooling — same as @foundry/core's RESEARCH_CLAIM_HOURS (no dist import). */
+export const RESEARCH_CLAIM_HOURS = 2;
+
+/**
+ * True while a `researching_since` minute (YYYY-MM-DDTHH:MMZ, pushed by `claim-research`) is under
+ * RESEARCH_CLAIM_HOURS old at `now` (2026-11-03, foundry `research-claim-marker`): `cold` then treats
+ * the queue as cooling — the other slot is researching it. Older, absent or unparsable: not a claim.
+ */
+export function researchClaimActive(since: string | undefined, now: Date): boolean {
+  if (since === undefined) return false;
+  const age = now.getTime() - Date.parse(since);
+  return age > -300_000 && age < RESEARCH_CLAIM_HOURS * 3_600_000;
+}
+
 /** A `not_before` date has arrived at `now`: an earlier day, or today from 07:00 UTC (foundry `dated-items-wait-for-row`). */
 export function datedArrived(not_before: string | undefined, now: Date): boolean {
   if (not_before === undefined) return true;

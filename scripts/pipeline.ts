@@ -1,5 +1,6 @@
 // Reads the work pipeline (docs/pipeline/) and prints it; fails on any invalid file.
-// Run: npm run pipeline [status|next|empty|cold [--routine=build]|claim <venture>/<id> [--by=<routine>]]
+// Run: npm run pipeline [status|next|empty|cold [--routine=build]|claim <venture>/<id> [--by=<routine>]
+//                        |claim-research <venture> [--by=<routine>]|research-landed <venture> --since=<ISO>]
 // `cold -- --routine=build` also prints `exchange missed: <Wednesday> — run docs/routines/exchange.md`
 // first, Thursday to Saturday, when the Wednesday 08:00 exchange left no trace (2026-10-24).
 // A plain `cold` (the burn-down) prints `paced: <why>` alone and nothing else when the owner's usage
@@ -31,10 +32,19 @@ const dir = path.resolve(import.meta.dirname, '..', 'docs', 'pipeline');
 // of every slot, so the 17:00 burn-down and the 17:10 build claimed their items after their own
 // install and gate and still collided (10-07 duplicate build, 10-10 dropped build). The routines
 // now run `next` + `claim` right after the GATE, before `npm ci`.
-if (process.argv[2] === 'claim') {
-  const { main } = await import('./pipeline-claim.ts');
+// `claim-research` and `research-landed` (2026-11-03, foundry research-claim-marker): the same
+// one-line push for a research pass (`researching_since`/`researching_by` on the queue, cooling
+// for 2 h), and the fetch-and-abort a research commit runs first — both in pipeline-claim.ts.
+if (
+  process.argv[2] === 'claim' ||
+  process.argv[2] === 'claim-research' ||
+  process.argv[2] === 'research-landed'
+) {
+  const { main, mainClaimResearch, mainResearchLanded } = await import('./pipeline-claim.ts');
   try {
-    main(process.argv.slice(3));
+    if (process.argv[2] === 'claim') main(process.argv.slice(3));
+    else if (process.argv[2] === 'claim-research') mainClaimResearch(process.argv.slice(3));
+    else process.exit(mainResearchLanded(process.argv.slice(3)));
   } catch (err) {
     console.error(err instanceof Error ? err.message : String(err));
     process.exit(2);
@@ -54,6 +64,7 @@ if (process.argv[2] === 'cold') {
     missedExchange,
     pacedStop,
     preResearchSpent,
+    researchClaimActive,
   } = await import('./pipeline-cold.ts');
   type ColdItem = { status: string; not_before?: string; doing_since?: string; added: string };
   type ColdQueue = {
@@ -62,6 +73,7 @@ if (process.argv[2] === 'cold') {
     needs_research: boolean;
     researched?: string;
     research_after?: string;
+    researching_since?: string;
     items: ColdItem[];
   };
   const cold = readdirSync(path.join(dir, 'queues'))
@@ -75,9 +87,12 @@ if (process.argv[2] === 'cold') {
         Date.parse(today) - Date.parse(it.doing_since ?? it.added) > dayMs));
   const open = (it: ColdItem): boolean =>
     it.status === 'todo' || it.status === 'doing' || it.status === 'blocked';
+  // A research claim under 2 h old is cooling too (2026-11-03, foundry research-claim-marker):
+  // the other slot pushed `researching_since` with `claim-research` and is researching now.
   const cooling = (q: ColdQueue): boolean =>
     (q.researched !== undefined && Date.parse(today) - Date.parse(q.researched) < 2 * dayMs) ||
-    (q.research_after !== undefined && q.research_after > today);
+    (q.research_after !== undefined && q.research_after > today) ||
+    researchClaimActive(q.researching_since, now);
   // Research reasons first (2026-10-22, foundry claim-only-when-buildable): a flagged queue out of
   // cooling is what the slot does before any build, and `next` is null while one exists.
   const research: string[] = [];

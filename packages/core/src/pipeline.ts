@@ -72,6 +72,16 @@ export interface VentureQueue {
    */
   research_after?: string;
   /**
+   * The research claim (2026-11-03, foundry `research-claim-marker`): `npm run pipeline claim-research
+   * <venture> -- --by=<routine>` pushes this minute (`YYYY-MM-DDTHH:MMZ`) and the routine before the
+   * pass, the way an item claim pushes `doing`. For RESEARCH_CLAIM_HOURS after it the queue is cooling
+   * (`isCooling`), so the other slot's `next`, `empty` and `cold` leave the venture alone; the research
+   * commit removes both fields when it sets `researched`. The 17:00 build and the 17:00 burn-down each
+   * researched tax-workbook on 2026-11-03 (and 2026-10-22) because research had no marker.
+   */
+  researching_since?: string;
+  researching_by?: string;
+  /**
    * Multiplier on every item's score when the build routines rank work across queues (owner,
    * 2026-10-11: a new income line outweighs improvements to a product that has not earned). Set by
    * the Sunday review from STRATEGY §5's table: 2 for a line in its first 30 days or one that
@@ -106,6 +116,8 @@ export interface Pipeline {
 const ITEM_STATUSES: ItemStatus[] = ['todo', 'doing', 'done', 'dropped', 'blocked'];
 const IDEA_STATUSES: IdeaStatus[] = ['parked', 'promoted', 'declined'];
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+const ISO_MINUTE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z$/;
+const ROUTINE = /^[a-z-]+$/;
 const SLUG = /^[a-z0-9][a-z0-9-]*$/;
 
 function fail(where: string, message: string): never {
@@ -137,6 +149,11 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
   if (researched !== '' && !ISO_DATE.test(researched)) fail(where, 'researched must be YYYY-MM-DD');
   const research_after = str(where, o, 'research_after', true);
   if (research_after !== '' && !ISO_DATE.test(research_after)) fail(where, 'research_after must be YYYY-MM-DD');
+  const researching_since = str(where, o, 'researching_since', true);
+  if (researching_since !== '' && !ISO_MINUTE.test(researching_since)) fail(where, 'researching_since must be YYYY-MM-DDTHH:MMZ');
+  const researching_by = str(where, o, 'researching_by', true);
+  if (researching_by !== '' && !ROUTINE.test(researching_by)) fail(where, 'researching_by must be a routine name');
+  if ((researching_since === '') !== (researching_by === '')) fail(where, 'researching_since and researching_by go together');
   const weight = o.weight === undefined ? 1 : o.weight;
   if (typeof weight !== 'number' || !Number.isFinite(weight) || weight <= 0) fail(where, 'weight must be a positive number');
   if (!Array.isArray(o.items)) fail(where, 'items must be an array');
@@ -182,6 +199,10 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
   if (finished_reason !== '') queue.finished_reason = finished_reason;
   if (researched !== '') queue.researched = researched;
   if (research_after !== '') queue.research_after = research_after;
+  if (researching_since !== '') {
+    queue.researching_since = researching_since;
+    queue.researching_by = researching_by;
+  }
   if (weight !== 1) queue.weight = weight;
   return queue;
 }
@@ -298,8 +319,9 @@ export function candidates(
  * consult it without the recursion.
  */
 export function researchFirst(queues: VentureQueue[], options: ClockOptions = {}): VentureQueue[] {
-  const today = utcToday(clock(options));
-  return queues.filter((q) => q.status === 'open' && (q.needs_research || isEmpty(q)) && !isCooling(q, today));
+  const now = clock(options);
+  const today = utcToday(now);
+  return queues.filter((q) => q.status === 'open' && (q.needs_research || isEmpty(q)) && !isCooling(q, today, now));
 }
 
 /**
@@ -329,19 +351,36 @@ export function isEmpty(queue: VentureQueue): boolean {
  * starvation fallback does not offer it again. 2026-10-05 had five research runs and the next
  * morning's build was offered the same venture eleven hours later because nothing recorded it.
  */
-export function isCooling(queue: VentureQueue, today: string = utcToday()): boolean {
+export function isCooling(queue: VentureQueue, today: string = utcToday(), now?: Date): boolean {
   return (
     (queue.researched !== undefined && Date.parse(today) - Date.parse(queue.researched) < 2 * DAY_MS) ||
-    (queue.research_after !== undefined && queue.research_after > today)
+    (queue.research_after !== undefined && queue.research_after > today) ||
+    isResearchClaimed(queue, now ?? new Date(`${today}T12:00:00Z`))
   );
+}
+
+/** Hours a research claim (`researching_since`) holds a queue as cooling for the other slots. */
+export const RESEARCH_CLAIM_HOURS = 2;
+
+/**
+ * A queue another session claimed for research less than RESEARCH_CLAIM_HOURS ago (2026-11-03,
+ * foundry `research-claim-marker`): cooling for `next`, `empty`, `cold` and `starved()`, so the
+ * 17:00 build slot and the 17:00 burn-down no longer research the same starved venture. A claim
+ * older than that is a cut-off session's leftover and holds nothing.
+ */
+export function isResearchClaimed(queue: VentureQueue, now: Date): boolean {
+  if (queue.researching_since === undefined) return false;
+  const age = now.getTime() - Date.parse(queue.researching_since);
+  return age > -300_000 && age < RESEARCH_CLAIM_HOURS * 3_600_000; // a minute of skew is a live claim
 }
 
 /** The `cooling:` line's reason for one queue. */
 function coolingReason(queue: VentureQueue, today: string): string {
   const waiting = queue.research_after !== undefined && queue.research_after > today;
-  return waiting
-    ? `researched ${queue.researched ?? '—'}, waiting until ${queue.research_after!}`
-    : `researched ${queue.researched!}`;
+  if (waiting) return `researched ${queue.researched ?? '—'}, waiting until ${queue.research_after!}`;
+  if (queue.researched !== undefined && Date.parse(today) - Date.parse(queue.researched) < 2 * DAY_MS)
+    return `researched ${queue.researched}`;
+  return `research claimed ${queue.researching_since!.slice(11, 16)} UTC by ${queue.researching_by!}`;
 }
 
 /**
@@ -374,7 +413,7 @@ export function starved(queues: VentureQueue[], options: ClockOptions = {}): Ven
       (q) =>
         q.status === 'open' &&
         candidates([q], options).length === 0 &&
-        !isCooling(q, today) &&
+        !isCooling(q, today, now) &&
         !awaitsDatedItem(q, now),
     )
     .sort((a, b) => a.updated.localeCompare(b.updated) || a.venture.localeCompare(b.venture));
@@ -382,9 +421,10 @@ export function starved(queues: VentureQueue[], options: ClockOptions = {}): Ven
 
 /** Open queues researched within 48 h or waiting on `research_after`, oldest research first. */
 export function cooling(queues: VentureQueue[], options: ClockOptions = {}): VentureQueue[] {
-  const today = utcToday(clock(options));
+  const now = clock(options);
+  const today = utcToday(now);
   return queues
-    .filter((q) => q.status === 'open' && isCooling(q, today))
+    .filter((q) => q.status === 'open' && isCooling(q, today, now))
     .sort((a, b) => (a.researched ?? '').localeCompare(b.researched ?? '') || a.venture.localeCompare(b.venture));
 }
 
