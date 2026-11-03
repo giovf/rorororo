@@ -5,7 +5,7 @@
 import JSZip from 'jszip';
 import { BOOK, chapters, type Chapter } from './content.ts';
 
-const xmlEsc = (s: string): string => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+export const xmlEsc = (s: string): string => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 export const STYLESHEET = `body { font-family: serif; line-height: 1.5; margin: 0 1em; }
 h1 { font-size: 1.8em; text-align: center; margin: 2em 0 0.5em; }
@@ -53,15 +53,24 @@ export function titlePage(): string {
   );
 }
 
+/** The copyright page's paragraphs (plain text), shared by the EPUB and the paperback interior. */
+export function copyrightParagraphs(): string[] {
+  return [
+    `${BOOK.title}: ${BOOK.subtitle}`,
+    `${BOOK.edition}. Published by ${BOOK.publisher}.`,
+    `Copyright © 2026 ${BOOK.publisher}. All rights reserved. No part of this publication may be reproduced, stored or transmitted without the publisher's prior written permission, except for brief quotations in a review.`,
+    "This book is general information about United Kingdom tax for the 2026/27 tax year, drawn from HM Revenue and Customs' published rates and guidance as read in October 2026. It is not legal, tax or financial advice and does not take account of your personal circumstances. Tax law and HMRC guidance change; check gov.uk or take professional advice before acting. The publisher accepts no liability for loss arising from reliance on this book.",
+    'The text was drafted with the help of AI writing tools and edited against HMRC\'s published guidance; the figures in the examples were computed and checked by software from the rates listed in the Sources chapter.',
+  ];
+}
+
 export function copyrightPage(): string {
   return xhtml(
     'Copyright',
     `<section epub:type="copyright-page">
-<p>${xmlEsc(BOOK.title)}: ${xmlEsc(BOOK.subtitle)}</p>
-<p>${xmlEsc(BOOK.edition)}. Published by ${xmlEsc(BOOK.publisher)}.</p>
-<p>Copyright © 2026 ${xmlEsc(BOOK.publisher)}. All rights reserved. No part of this publication may be reproduced, stored or transmitted without the publisher's prior written permission, except for brief quotations in a review.</p>
-<p>This book is general information about United Kingdom tax for the 2026/27 tax year, drawn from HM Revenue and Customs' published rates and guidance as read in October 2026. It is not legal, tax or financial advice and does not take account of your personal circumstances. Tax law and HMRC guidance change; check gov.uk or take professional advice before acting. The publisher accepts no liability for loss arising from reliance on this book.</p>
-<p>The text was drafted with the help of AI writing tools and edited against HMRC's published guidance; the figures in the examples were computed and checked by software from the rates listed in the Sources chapter.</p>
+${copyrightParagraphs()
+  .map((t) => `<p>${xmlEsc(t)}</p>`)
+  .join('\n')}
 </section>`,
   );
 }

@@ -201,9 +201,9 @@
       "effort_days": 0.5,
       "proof": "paperback live beside the Kindle edition on amazon.co.uk within 7 days of the owner's upload (ASIN in KINDLE.md); first paperback sale ≤ 60 days in the owner's monthly `kindle: N sold` note; Kindle sales not lower in the month after than the month before",
       "score": 7,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-30",
-      "doing_since": "2026-11-03"
+      "done_at": "2026-11-03"
     },
     {
       "id": "shelf-stats-owner-note",
@@ -279,6 +279,17 @@
       "score": 3,
       "status": "blocked",
       "blocked_on": "the owner paying the £2.98 Etsy bill (ALERTS 2026-11-01 owner line, due before 22 Nov) and Etsy's payment-received mail reaching the inbox triage",
+      "added": "2026-11-03"
+    },
+    {
+      "id": "kdp-paperback-live",
+      "title": "Record the paperback going live: page link and date in KINDLE.md Status, a RESEARCH §7 `Paperback live` row, the notify line \"Your UK tax guide is now also a paperback on Amazon\"; from then on the `kindle N sold` note counts both formats",
+      "why": "The add-a-format step is the owner's hands on the next KDP sitting (action 029 follow-up 6, 2026-11-03; never a new request under the owner-time rule). The owner's \"paperback live\" note or KDP's 'paperback is live' mail (SELF-CAUSED kdp row, a `store` line) triggers this record; the kindle-day-60-read then judges both formats on one count.",
+      "effort_days": 0.05,
+      "proof": "KINDLE.md Status carries the paperback's page link and date; a §7 row exists; the notify line was sent once",
+      "score": 5,
+      "status": "blocked",
+      "blocked_on": "the owner's add-a-format step on the next KDP sitting (action 029 follow-up 6): a 'paperback live' note or KDP's live mail",
       "added": "2026-11-03"
     }
   ]

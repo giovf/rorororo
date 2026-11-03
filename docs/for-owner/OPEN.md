@@ -10,7 +10,7 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 1. **second tax spreadsheet is ready for your Etsy shop** — ~10 min, since 2026-11-03; unblocks tax-workbook `reseller-listing-live` (8). Steps: [037](actions/037-etsy-reseller-listing.md).
    second tax spreadsheet is ready for your Etsy shop — publish the Reseller workbook listing, ~10 min, £0.16 — docs/for-owner/actions/037-etsy-reseller-listing.md
 
-2. **Etsy could not charge your card for a £2.98 bill; pay it or…** — time not stated, since 2026-11-01; nothing queued waits on it.
+2. **Etsy could not charge your card for a £2.98 bill; pay it or…** — time not stated, since 2026-11-01; unblocks tax-workbook `etsy-bill-ledger-row` (3).
    Etsy could not charge your card for a £2.98 bill; pay it or update the card in Etsy billing before 22 Nov
 
 ## Waiting on an attended Claude session, not you (3)

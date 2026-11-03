@@ -121,3 +121,9 @@ listing in `ventures/tax-workbook/LISTING.md`.
 4. Payhip: https://payhip.com/gankdat.
 5. KDP: submitted, in review. Differences: KDP asked for the IBAN rather than sort code + account number (step corrected);
    the title was entered as "The UK Sole Trader - A guide for the self employed & side hustlers" (see `KINDLE.md` Status).
+
+## Follow-up (2026-11-03, burn-down — on your next KDP sitting, not a new request)
+
+6. Paperback of the live Kindle title (~10 min, £0): KDP Bookshelf → **Create paperback** on the title's row, 6 × 9 in,
+   black & white on white paper, no bleed, free KDP ISBN, upload `ventures/tax-workbook/kindle/paperback/` interior and
+   cover PDFs, £9.99. Details in `ventures/tax-workbook/KINDLE.md` → Paperback. Say "paperback live" with the page link.

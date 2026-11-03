@@ -153,6 +153,7 @@ rows written from Etsy's deposit mail. The day-60 kill clock (§6) starts at the
 | 2026-11-02 | Payhip live | — | — | 0 | twin listing live at https://payhip.com/b/4stMN (£6.99, owner action 033 step 1); product page and index card link it; same day-60 read as Etsy (2026-12-28). sale webhook set and `PAYHIP_API_KEY` saved the same day; the landing deploy stores it on the Worker |
 | 2026-11-02 | Listed (own checkout) | — | — | 0 | Buy button live on apps.gankdat.com/tax-workbook.html (Stripe Payment Link, £6.99, owner action 034); £0 end-to-end test (API session with the 100 %-off coupon) delivered the download mail and the file; same day-60 read as Etsy (2026-12-28) |
 | 2026-11-03 | Reseller built | — | — | 0 | second listing for the same shop: UK Reseller Profit & Tax Workbook 2026/27 (11 tabs, 10,159 formulas, 0 errors, Example = £945.00); LISTING.md second-listing pack (£5.99) + 4 images; owner action 037 (~10 min, £0.16); `reseller-listing-live` records the listing when it is live |
+| 2026-11-03 | Paperback built | — | — | 0 | KDP paperback of the Kindle guide as a second format: 6 × 9 in interior PDF (49 pages, Chromium print, fonts embedded) and the wrap cover sized from the count (12.3603 × 9.25 in, spine 0.1103 in); £9.99 nets ≈ £4.06; the owner's ~10-min add-a-format step is action 029 follow-up 6; `kdp-paperback-live` records it |
 
 ## 8. Owner steps (batched, raised by the build that finishes the workbook, never before)
 
@@ -299,3 +300,11 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   "+ the Kindle book's Amazon link" until that row exists (`kindleLinkKnown` in `scripts/handoffs.ts`; 4 new tests). Queued
   `kindle-day-60-read` (8, 2026-12-30) with §6's proof and kill; `google-play-listing` dated 2027-01-29 (the Select term's end);
   `kdp-paperback-edition` (7) is buildable. The SELF-CAUSED kdp row already covers the live mail and the royalty mail. Nothing fetched.
+- **2026-11-03 17:40 (burn-down, `kdp-paperback-edition` done):** `src/kindle/paperback.ts` prints the EPUB's chapters as a 6 × 9 in
+  interior with Chromium (Playwright, the sandbox's browser; 11 pt DejaVu Serif embedded, 0.5 in side margins — KDP's ≥ 0.375 in inside and
+  ≥ 0.25 in outside up to 150 pages without mirrored margins — running head and page numbers from the print templates, each chapter on a new
+  page, tables kept as tables) and reads the page count from the PDF (49) to size the wrap cover (spine 49 × 0.002252 in white paper, no spine
+  text under 79 pages, the barcode corner left white); the build refuses a count outside 24–110 so the fixed £1.93 print cost and the cover
+  always hold. `copyrightParagraphs()` moved out of `epub.ts` so both editions print the same copyright page. Four tests (cover maths, the
+  page-count parser, the interior's structure, the wrap SVG); the PDFs are committed under `kindle/paperback/`. The owner's add-a-format step
+  (~10 min, £0, £9.99 list) is KINDLE.md "Paperback" and action 029 follow-up 6; `kdp-paperback-live` (5) records the page link. Nothing fetched.

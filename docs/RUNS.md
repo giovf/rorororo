@@ -2395,3 +2395,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 17:17 | build | Kept: etsy-bill-ledger-row (3) — Etsy's £2.98 bill of 11-01 is not in the ledger; row on the owner's payment
 - 2026-11-03 17:17 | build | Dropped: landlord workbook and MTD Kindle title dated 11-30 — the burn-down's pass holds them until a sale
 - 2026-11-03 17:17 | build | Queued foundry research-claim-marker (5): a research pass claims its queue like an item, second collision in 12 days
+- 2026-11-03 17:40 | burn-down | tax-workbook kdp-paperback-edition done: 6×9 interior PDF (49 pages) + wrap cover sized from the count
+- 2026-11-03 17:40 | burn-down | paperback.ts prints with Chromium, embeds fonts, refuses 24–110 page misses; 4 tests; PDFs in kindle/paperback
+- 2026-11-03 17:40 | burn-down | KINDLE.md Paperback section + action 029 follow-up 6 (~10 min, £9.99); kdp-paperback-live queued

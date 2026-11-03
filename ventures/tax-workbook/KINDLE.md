@@ -107,6 +107,25 @@ What it is not: tax advice, or a substitute for HMRC's own calculation. It uses 
 - Royalties are paid by EFT in GBP about 60 days after the month's end, no minimum; each payment is a `revenue` row in
   `docs/LEDGER.md` from the "payment" mail.
 
+## Paperback (second format of the live title, `kdp-paperback-edition`, 2026-11-03)
+
+`npm run paperback -w @foundry/tax-workbook` prints `kindle/paperback/UK-Sole-Trader-Tax-2026-27-paperback-interior.pdf`
+(6" × 9", 49 pages, DejaVu Serif embedded, running head and page numbers, every chapter on a new page, the same text as
+the EPUB plus a "Paperback edition" line) and `…-paperback-cover.pdf` (one page, 12.3603" × 9.25": 0.125" bleed + 6" back
++ 0.1103" spine + 6" front + 0.125" bleed, spine = 49 × 0.002252" for white paper, no spine text — KDP allows it only from
+79 pages; the bottom-right 2" × 1.2" of the back cover is left white for KDP's barcode). The build refuses a page count
+outside 24–110 (KDP's fixed £1.93 print cost holds to 110 pages) and the cover is sized from the count the same run, so
+the two always match. Spike: `docs/exchange/spikes/kdp-paperback-tax-guide.md`.
+
+**The owner's add-a-format step (~10 min, £0, a follow-up on the next KDP sitting — never a new request):** KDP
+Bookshelf → the live title's row → **Create paperback**. Book details copy across from the Kindle edition (keep the AI
+disclosure ticked). Content: trim size **6 × 9 in (15.24 × 22.86 cm)**, **black & white interior on white paper**,
+**no bleed**, cover finish matte; upload the interior PDF, then "Upload a cover you already have (PDF)" with the cover PDF;
+**free KDP ISBN**. Use the previewer once (KDP flags a cover that does not match the page count; ours is computed from
+it). Pricing: **£9.99** on amazon.co.uk (60 % royalty above £7.99: £9.99 × 0.6 − £1.93 ≈ **£4.06** a copy; print books are
+zero-rated for UK VAT); other marketplaces at KDP's converted price. Say "paperback live" with the page link when the
+mail lands (the `kindle N sold` note covers both formats from then on).
+
 ## Status
 
 | Date | Event |
@@ -116,3 +135,4 @@ What it is not: tax advice, or a substitute for HMRC's own calculation. It uses 
 | 2026-10-29 | Submitted on KDP by the owner (action 029 step 5), in review. The owner entered the title **"The UK Sole Trader - A guide for the self employed & side hustlers"** instead of the pack's "UK Sole Trader Tax 2026/27"; the cover and title page still carry the pack's title, which KDP's review may flag as a metadata mismatch — if it does, set the KDP title back to the cover's (no rebuild needed). |
 | 2026-10-31 | KDP mail 14:32 UTC: the book is live in the Kindle Store and enrolled in KDP Select (90-day term from 2026-10-31). ASIN and URL still to be filled by `kdp-listing-live`. |
 | 2026-11-03 | Recorded live from 2026-10-31 (`kdp-listing-live`, burn-down): RESEARCH.md §7 `Kindle live` row; the §6 proof clock runs from 10-31 (first sale by 2026-11-30, ten by 2026-12-30 — `kindle-day-60-read`); the Select term ends 2027-01-29 (`google-play-listing` dated); the paperback (`kdp-paperback-edition`) is buildable. The mail names no ASIN and amazon.co.uk is never read (Conditions of Use), so the page link comes from the owner's 2026-11-30 shelf note — the monthly ask says "+ the Kindle book's Amazon link" until a row here carries a `/dp/` link (`scripts/shelf-note.ts` writes it from `kindle … https://www.amazon.co.uk/dp/B0…` or `ASIN B0…`). Whether the £2.99 Countdown Deal was started is unknown until that note; our copy makes no launch-price claim outside KDP's own deal page. |
+| 2026-11-03 | Paperback built (`kdp-paperback-edition`, burn-down): interior 49 pages and the matching wrap cover in `kindle/paperback/`; the owner's add-a-format step is written above and waits for the next KDP sitting. |
