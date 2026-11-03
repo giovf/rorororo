@@ -71,9 +71,10 @@
       "effort_days": 0.4,
       "proof": "A second .xlsx recalculates with 0 formula errors and its LISTING.md section exists; listed by the owner in the same shop",
       "score": 7,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-11-03",
-      "added": "2026-10-24"
+      "added": "2026-10-24",
+      "doing_since": "2026-11-03"
     },
     {
       "id": "april-2027-refresh",
