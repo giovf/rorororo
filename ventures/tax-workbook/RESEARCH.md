@@ -285,6 +285,13 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   (7) follows it and `google-play-listing` dates to 2027-01-29. Not queued: a Payhip twin or own checkout for the reseller file (the first twin
   has no sale; the 09:24 build's rule stands), the landlord workbook and the MTD Kindle title (10-26 list: after the first shelf sells), a KDP
   free-promotion week (owner clicks; action 037 is open and never gains steps). Nothing fetched; `research_after` removed, `researched` today.
+- **2026-11-03 17:17 (build, same slot):** the 17:00 build slot ran the same starved-queue pass in parallel (its marker landed 17:13, after the
+  burn-down's pull) and reached the same reading — the 10-31 KDP mail frees `kdp-listing-live`; the index has no amazon.co.uk page for the title
+  (one WebSearch on the host); three shelves live 1–5 days with 0 sales. The burn-down's entry above is the record; the build's two dated product
+  items (a landlord SA105 workbook as the shop's third listing — Etsy's index shows a 2026/27 landlord-tracker niche with Section 24 and MTD
+  quarters, no sales counts; an MTD quarter-by-quarter Kindle title) were discarded in the merge, the 10-26 rule standing: after the first shelf
+  sells. Kept: `etsy-bill-ledger-row` (3), the ledger row for Etsy's unexplained £2.98 bill of 11-01, written from the payment mail once the
+  owner pays. The collision is queued as foundry `research-claim-marker`.
 - **2026-11-03 17:25 (burn-down, `kdp-listing-live` done):** the Kindle guide recorded live from 2026-10-31 (§7 `Kindle live` row,
   KINDLE.md Status): the live mail names no ASIN and the sandbox never reads amazon.co.uk (its Conditions of Use forbid automated access;
   two WebSearches did not surface the title), so the page link comes from the owner's 2026-11-30 shelf note — `scripts/shelf-note.ts` now

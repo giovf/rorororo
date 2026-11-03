@@ -268,6 +268,17 @@
       "status": "todo",
       "not_before": "2026-12-30",
       "added": "2026-11-03"
+    },
+    {
+      "id": "etsy-bill-ledger-row",
+      "title": "Reconcile Etsy's £2.98 bill of 2026-11-01 (payment failed mail) with the ledger: when the triage reads Etsy's 'payment received' or statement mail, write the `cost` row with what the bill was (set-up VAT, listing renewal or Offsite Ads) and note the gap in LISTING.md Status",
+      "why": "Etsy's 2026-11-01 mail bills £2.98 that the ledger does not carry (its Etsy cost rows total £14.20: the £14 set-up fee and the £0.20 listing fee), and the owner was asked to pay or update the card before 22 Nov (ALERTS 2026-11-01). The ledger rule (CLAUDE.md: every pound in and out the day it happens) needs the row the day the charge clears, and knowing what Etsy bills monthly sets the shop's running cost against the £100 cap (STRATEGY §7). Blocked on the owner's payment; the row is written from the mail, never from a read of etsy.com. Added by the 17:13 build slot's research pass (2026-11-03), merged behind the burn-down's pass of the same minute.",
+      "effort_days": 0.05,
+      "proof": "docs/LEDGER.md carries a dated tax-workbook `cost` row for the bill with its reason; LISTING.md Status notes what Etsy charges monthly",
+      "score": 3,
+      "status": "blocked",
+      "blocked_on": "the owner paying the £2.98 Etsy bill (ALERTS 2026-11-01 owner line, due before 22 Nov) and Etsy's payment-received mail reaching the inbox triage",
+      "added": "2026-11-03"
     }
   ]
 }

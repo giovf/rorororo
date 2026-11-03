@@ -2389,3 +2389,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 17:25 | burn-down | shelf-note.ts reads an Amazon /dp/ link or ASIN from owner notes into KINDLE.md Status (4 tests)
 - 2026-11-03 17:25 | burn-down | Monthly shelf ask adds "+ the Kindle book's Amazon link" until KINDLE.md carries it
 - 2026-11-03 17:25 | burn-down | Queued kindle-day-60-read (12-30); google-play-listing dated 2027-01-29; paperback now todo
+- 2026-11-03 17:17 | build | Main green at STEP 0; next null, tax-workbook starved: research pass, nothing claimed; no new owner notes
+- 2026-11-03 17:17 | build | Research collided: the 17:00 burn-down pushed the same tax-workbook pass at 17:17 (pulled before the 17:13 marker)
+- 2026-11-03 17:17 | build | Its pass is the record (three distribution items, kdp-listing-live claimed); this slot's duplicate merged behind it
+- 2026-11-03 17:17 | build | Kept: etsy-bill-ledger-row (3) — Etsy's £2.98 bill of 11-01 is not in the ledger; row on the owner's payment
+- 2026-11-03 17:17 | build | Dropped: landlord workbook and MTD Kindle title dated 11-30 — the burn-down's pass holds them until a sale
+- 2026-11-03 17:17 | build | Queued foundry research-claim-marker (5): a research pass claims its queue like an item, second collision in 12 days
