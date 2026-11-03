@@ -44,4 +44,4 @@ also publish with Figma's default cover; the title is what search matches.
 ## Live listing
 - Plugin id: _(set by Figma when the owner creates the plugin — also goes into `manifest.free.json`)_
 - URL: _(pending)_
-- Published: _(pending)_
+- Published: approved by Figma, live on Community per Figma's mail of 2026-11-03 19:11 UTC (the mail names no URL; owner/next session adds it)
