@@ -258,8 +258,9 @@
       "effort_days": 0.1,
       "proof": "A §7 Sale row whose Notes name the other product as the referrer (own checkout: a `?from=guide` query on the Buy link counted by the thanks page) within 90 days",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-03"
+      "status": "doing",
+      "added": "2026-11-03",
+      "doing_since": "2026-11-03"
     },
     {
       "id": "kindle-day-60-read",
