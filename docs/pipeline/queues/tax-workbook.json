@@ -133,8 +133,9 @@
       "effort_days": 0.1,
       "proof": "KINDLE.md carries the live URL and date; a Metrics row exists; a dated day-60 item is queued",
       "score": 8,
-      "status": "todo",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-11-03"
     },
     {
       "id": "google-play-listing",
