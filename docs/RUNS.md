@@ -2407,3 +2407,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 19:22 | burn-down | research-landed fetches origin/main and exits 1 on a research commit since the slot (abort path)
 - 2026-11-03 19:22 | burn-down | next, empty, starved(), cold skip a claimed queue; watchdog and slot table ignore the claim commit
 - 2026-11-03 19:22 | burn-down | Build and burn-down prompts, pipeline README and SCHEDULERS carry the step; 15 new tests
+- 2026-11-03 19:28 | burn-down | Stopping: 1 item done; starved-and-cooled; week budget 30 of 30 slots spent, pre-research left for W45
