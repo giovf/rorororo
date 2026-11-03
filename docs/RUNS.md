@@ -2398,3 +2398,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 17:40 | burn-down | tax-workbook kdp-paperback-edition done: 6×9 interior PDF (49 pages) + wrap cover sized from the count
 - 2026-11-03 17:40 | burn-down | paperback.ts prints with Chromium, embeds fonts, refuses 24–110 page misses; 4 tests; PDFs in kindle/paperback
 - 2026-11-03 17:40 | burn-down | KINDLE.md Paperback section + action 029 follow-up 6 (~10 min, £9.99); kdp-paperback-live queued
+- 2026-11-03 17:45 | burn-down | tax-workbook free-tax-estimate-calculator-page done: free 2026/27 estimate page on apps.gankdat.com
+- 2026-11-03 17:45 | burn-down | calculator-core/entry bundled by esbuild (4.8 kB, no tracking); 4 tests incl. bundle-drift; page driven in Chromium
+- 2026-11-03 17:45 | burn-down | Sitemap, index card and product page link the calculator; calculator-page-day-30-read queued (12-03)

@@ -154,6 +154,7 @@ rows written from Etsy's deposit mail. The day-60 kill clock (§6) starts at the
 | 2026-11-02 | Listed (own checkout) | — | — | 0 | Buy button live on apps.gankdat.com/tax-workbook.html (Stripe Payment Link, £6.99, owner action 034); £0 end-to-end test (API session with the 100 %-off coupon) delivered the download mail and the file; same day-60 read as Etsy (2026-12-28) |
 | 2026-11-03 | Reseller built | — | — | 0 | second listing for the same shop: UK Reseller Profit & Tax Workbook 2026/27 (11 tabs, 10,159 formulas, 0 errors, Example = £945.00); LISTING.md second-listing pack (£5.99) + 4 images; owner action 037 (~10 min, £0.16); `reseller-listing-live` records the listing when it is live |
 | 2026-11-03 | Paperback built | — | — | 0 | KDP paperback of the Kindle guide as a second format: 6 × 9 in interior PDF (49 pages, Chromium print, fonts embedded) and the wrap cover sized from the count (12.3603 × 9.25 in, spine 0.1103 in); £9.99 nets ≈ £4.06; the owner's ~10-min add-a-format step is action 029 follow-up 6; `kdp-paperback-live` records it |
+| 2026-11-03 | Calculator page | — | — | 0 | free 2026/27 sole trader tax estimate at apps.gankdat.com/sole-trader-tax-calculator.html, computed in the browser from `src/tax.ts` (bundle 4.8 kB, no tracking), the workbook as the next step; sitemap row, index card and product page link it; `calculator-page-day-30-read` on 2026-12-03 |
 
 ## 8. Owner steps (batched, raised by the build that finishes the workbook, never before)
 
@@ -308,3 +309,12 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   always hold. `copyrightParagraphs()` moved out of `epub.ts` so both editions print the same copyright page. Four tests (cover maths, the
   page-count parser, the interior's structure, the wrap SVG); the PDFs are committed under `kindle/paperback/`. The owner's add-a-format step
   (~10 min, £0, £9.99 list) is KINDLE.md "Paperback" and action 029 follow-up 6; `kdp-paperback-live` (5) records the page link. Nothing fetched.
+- **2026-11-03 17:45 (burn-down, `free-tax-estimate-calculator-page` done):** `src/calculator-core.ts` (the estimate: trading
+  allowance versus expenses, `yearEnd`, the MTD phase from turnover — £50,000 April 2026, £30,000 April 2027, £20,000 April 2028) and
+  `src/calculator-entry.ts` (the form wiring) are bundled by `src/calculator.ts` with esbuild into `packages/landing/site/sole-trader-tax-calculator.js`
+  (4.8 kB, committed; the landing Worker serves static files, so nothing builds at deploy) and `calculator.test.ts` fails when the committed
+  bundle drifts from the sources. The page carries WebApplication JSON-LD (price 0), the rates table filled by the script from `rates.ts`, the
+  workbook block under the result and the "how it works" notes; the sitemap, the index card and the product page link it. Driven once in the
+  sandbox's Chromium with the Example year (£42,000, £10,100 deducted): £3,866.00 tax, £1,159.80 Class 4, £5,025.80 total, £2,512.90 payments
+  on account — the hand-worked figures. No Scottish toggle (rates.ts has no Scottish bands; the page says so). `calculator-page-day-30-read`
+  (5, 2026-12-03) reads Search Console. Nothing fetched.

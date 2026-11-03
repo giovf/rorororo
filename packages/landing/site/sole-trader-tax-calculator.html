@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Free UK Sole Trader Tax Calculator 2026/27 — Income Tax, Class 4 NI, payments on account
+    </title>
+    <meta
+      name="description"
+      content="Free 2026/27 sole trader tax estimate for the UK: enter your income and expenses to see Income Tax, Class 4 National Insurance, the trading allowance check, payments on account and whether Making Tax Digital applies to you. No sign-up, nothing stored."
+    />
+    <link rel="canonical" href="https://apps.gankdat.com/sole-trader-tax-calculator.html" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      form.calc {
+        display: grid;
+        gap: 0.9rem;
+        max-width: 34rem;
+        margin: 1.2rem 0 1.6rem;
+      }
+      form.calc label {
+        display: grid;
+        gap: 0.25rem;
+        font-weight: 600;
+      }
+      form.calc label span.help {
+        font-weight: 400;
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+      form.calc input[type='number'] {
+        font: inherit;
+        padding: 0.5rem 0.6rem;
+        border: 1px solid #9aa4b1;
+        border-radius: 6px;
+        max-width: 14rem;
+      }
+      form.calc label.check {
+        grid-template-columns: auto 1fr;
+        align-items: start;
+        font-weight: 400;
+      }
+      .results th {
+        width: 55%;
+      }
+      .next {
+        border: 1px solid #c9d6e8;
+        border-radius: 10px;
+        padding: 1rem 1.2rem;
+        margin: 1.6rem 0;
+        background: #f4f7fb;
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "UK Sole Trader Tax Calculator 2026/27",
+        "url": "https://apps.gankdat.com/sole-trader-tax-calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "inLanguage": "en-GB",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+        "description": "Free estimate of a UK sole trader's Income Tax, Class 4 National Insurance, trading allowance, payments on account and Making Tax Digital status for the 2026/27 tax year.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Foundry",
+          "url": "https://apps.gankdat.com/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./">Foundry</a>
+      <nav>
+        <a href="./#products">Products</a><a href="privacy.html">Privacy</a
+        ><a href="terms.html">Terms</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Free UK sole trader tax calculator 2026/27</h1>
+      <p class="lead">
+        An estimate of what a self-employed sole trader owes for the tax year 6 April 2026 to 5
+        April 2027: Income Tax, Class 4 National Insurance, whether the £1,000 trading allowance
+        beats your expenses, the 31 January balancing payment, payments on account, and whether
+        Making Tax Digital quarterly updates apply to you. Nothing you type leaves this page.
+      </p>
+
+      <form class="calc" id="calc" autocomplete="off">
+        <label
+          >Trading income for the year (£)
+          <span class="help">Everything your business was paid, before any expenses.</span>
+          <input
+            type="number"
+            id="income"
+            min="0"
+            step="1"
+            inputmode="decimal"
+            placeholder="e.g. 32000"
+          />
+        </label>
+        <label
+          >Allowable expenses (£)
+          <span class="help"
+            >Including mileage at HMRC rates and the working-from-home flat rate.</span
+          >
+          <input
+            type="number"
+            id="expenses"
+            min="0"
+            step="1"
+            inputmode="decimal"
+            placeholder="e.g. 4500"
+          />
+        </label>
+        <label
+          >Other taxable income (£)
+          <span class="help">A job's salary or a pension. Leave savings and dividends out.</span>
+          <input type="number" id="other" min="0" step="1" inputmode="decimal" placeholder="0" />
+        </label>
+        <label
+          >Tax already paid on that income through PAYE (£)
+          <input type="number" id="paye" min="0" step="1" inputmode="decimal" placeholder="0" />
+        </label>
+        <label
+          >Payments on account already made for 2026/27 (£)
+          <input type="number" id="poa" min="0" step="1" inputmode="decimal" placeholder="0" />
+        </label>
+        <label class="check"
+          ><input type="checkbox" id="class2" />
+          <span
+            >Pay Class 2 National Insurance voluntarily if my profit is under the small profits
+            threshold (keeps the year counting towards the State Pension)</span
+          >
+        </label>
+        <p><button class="button" type="submit">Estimate my tax</button></p>
+      </form>
+
+      <section id="results" hidden>
+        <h2>Your 2026/27 estimate</h2>
+        <div class="table-wrap">
+          <table class="compare results">
+            <tbody>
+              <tr>
+                <th scope="row">Deducted from income</th>
+                <td id="r-deduction"></td>
+              </tr>
+              <tr>
+                <th scope="row">Taxable trading profit</th>
+                <td id="r-profit"></td>
+              </tr>
+              <tr>
+                <th scope="row">Total taxable income</th>
+                <td id="r-income"></td>
+              </tr>
+              <tr>
+                <th scope="row">Personal Allowance (after any taper)</th>
+                <td id="r-pa"></td>
+              </tr>
+              <tr>
+                <th scope="row">Income Tax</th>
+                <td id="r-tax"></td>
+              </tr>
+              <tr>
+                <th scope="row">Class 4 National Insurance</th>
+                <td id="r-class4"></td>
+              </tr>
+              <tr>
+                <th scope="row">Class 2 National Insurance (voluntary)</th>
+                <td id="r-class2"></td>
+              </tr>
+              <tr>
+                <th scope="row">Total for the year, less PAYE already paid</th>
+                <td id="r-total"></td>
+              </tr>
+              <tr>
+                <th scope="row">Balancing payment due 31 January 2028</th>
+                <td id="r-balance"></td>
+              </tr>
+              <tr>
+                <th scope="row">Payments on account for 2027/28</th>
+                <td id="r-poa"></td>
+              </tr>
+              <tr>
+                <th scope="row">Making Tax Digital</th>
+                <td id="r-mtd"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">
+          Estimate only, from the 2026/27 rates on gov.uk for England, Wales and Northern Ireland
+          (Scottish Income Tax bands differ). It leaves out student loan repayments, savings and
+          dividend income, pension and Gift Aid relief, Marriage Allowance, losses and the High
+          Income Child Benefit Charge. HMRC's own calculation is the one you pay.
+        </p>
+      </section>
+
+      <div class="next">
+        <h2>Keep the records that produce these numbers</h2>
+        <p>
+          The <a href="tax-workbook.html">UK Sole Trader Tax Workbook 2026/27</a> is the spreadsheet
+          behind this estimate: income, expense and mileage logs that fill in the SA103 boxes and
+          the Making Tax Digital quarters, with the same tax estimate updating as you go. £6.99, one
+          .xlsx, on <a href="https://www.etsy.com/listing/4605571079">Etsy</a>,
+          <a href="https://payhip.com/b/4stMN">Payhip</a> or
+          <a href="tax-workbook.html#buy">this site</a>.
+        </p>
+      </div>
+
+      <h2>The 2026/27 rates used</h2>
+      <div class="table-wrap">
+        <table class="compare">
+          <tbody>
+            <tr>
+              <th scope="row">Personal Allowance</th>
+              <td id="rate-pa"></td>
+            </tr>
+            <tr>
+              <th scope="row">Basic rate</th>
+              <td id="rate-basic"></td>
+            </tr>
+            <tr>
+              <th scope="row">Higher rate</th>
+              <td id="rate-higher"></td>
+            </tr>
+            <tr>
+              <th scope="row">Additional rate</th>
+              <td id="rate-additional"></td>
+            </tr>
+            <tr>
+              <th scope="row">Class 4 National Insurance</th>
+              <td id="rate-class4"></td>
+            </tr>
+            <tr>
+              <th scope="row">Class 2 National Insurance</th>
+              <td id="rate-class2"></td>
+            </tr>
+            <tr>
+              <th scope="row">Trading allowance</th>
+              <td>£1,000, instead of expenses, when it gives the lower profit</td>
+            </tr>
+            <tr>
+              <th scope="row">Payments on account</th>
+              <td>
+                Two, when the year's tax and Class 4 are over £1,000 and under 80% was paid at
+                source
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Making Tax Digital for Income Tax</th>
+              <td>
+                Turnover £50,000+ from April 2026, £30,000+ from April 2027, £20,000+ from April
+                2028
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How the estimate works</h2>
+      <ul class="legal">
+        <li>
+          <strong>Trading allowance or expenses.</strong> HMRC lets a sole trader deduct £1,000
+          instead of actual expenses; the estimate picks whichever leaves the lower profit, as the
+          workbook does.
+        </li>
+        <li>
+          <strong>Income Tax</strong> is charged on your trading profit plus other taxable income
+          after the Personal Allowance, which tapers away above £100,000.
+        </li>
+        <li>
+          <strong>Class 4 National Insurance</strong> is charged on trading profit alone. Class 2 is
+          treated as paid for profits above the small profits threshold; below it you can pay
+          voluntarily.
+        </li>
+        <li>
+          <strong>Payments on account</strong> are two advance payments towards next year, each half
+          of this year's tax and Class 4, when that is over £1,000 and less than 80% was deducted at
+          source.
+        </li>
+        <li>
+          Rates read from gov.uk in October 2026. Made with the help of AI tools; the arithmetic is
+          the workbook's, tested against a hand-worked year.
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <a href="./">Home</a><a href="privacy.html">Privacy</a
+      ><a href="terms.html">Terms &amp; refunds</a><span>© 2026 Foundry · info@gankdat.com</span>
+    </footer>
+    <script src="sole-trader-tax-calculator.js" defer></script>
+  </body>
+</html>

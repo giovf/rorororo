@@ -32,3 +32,5 @@ dist-firefox
 ventures/gankdat/
 docs/relay/responses/
 packages/landing/worker-configuration.d.ts
+# generated browser bundle (npm run calculator -w @foundry/tax-workbook)
+packages/landing/site/sole-trader-tax-calculator.js

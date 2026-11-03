@@ -18,6 +18,7 @@ export default tseslint.config(
       'environment/**',
       'data/**',
       'docs/for-owner/actions/plugin/**',
+      'packages/landing/site/*.js', // generated bundles (ventures/tax-workbook/src/calculator.ts)
       'ventures/gankdat/**', // own eslint config + gates (Workers runtime)
     ],
   },

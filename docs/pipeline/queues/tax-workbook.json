@@ -242,13 +242,13 @@
     {
       "id": "free-tax-estimate-calculator-page",
       "title": "Free UK sole trader tax estimate 2026/27 on apps.gankdat.com/sole-trader-tax-calculator.html: profit (or income − expenses) in, Income Tax by band (rUK and Scottish toggle), Class 4 NI, the trading allowance choice and the MTD threshold line out, computed in the browser from the workbook's own `src/tax.ts` and `RATES_2026_27` (bundled by the landing build, tests reuse tax.test.ts cases), with the workbook as the next step under the result (Etsy, Payhip, own checkout) and a WebPage/SoftwareApplication JSON-LD; sitemap row; no tracking",
-      "why": "The buyer's query is 'sole trader tax calculator 2026/27' and the shelf that serves it is Google: WebSearch 2026-11-03 shows the first page held by Bytestart, SparkReceipt, UK Net Pay, itcontracting, smallbusinessguide and — the evidence that a new domain can rank — three hobby Cloudflare Pages sites (calks-uk.pages.dev, uk-tax.pages.dev, poundlogic.pages.dev) plus Payhip and Etsy product pages. A calculator is the standard lead magnet for the paid workbook (SparkReceipt and GoSimpleTax use the same page to sell software). The maths already exists and is tested (src/tax.ts, rates.ts: bands, Class 4, trading allowance, MTD thresholds), so the build is a page, a small client bundle and copy; the landing Worker serves static files, so no new infrastructure. £0, zero owner minutes. Risk: Google is slow for a new page — the day-30 read decides whether to keep the page.",
+      "why": "The buyer's query is 'sole trader tax calculator 2026/27' and the shelf that serves it is Google: WebSearch 2026-11-03 shows the first page held by Bytestart, SparkReceipt, UK Net Pay, itcontracting, smallbusinessguide and — the evidence that a new domain can rank — three hobby Cloudflare Pages sites (calks-uk.pages.dev, uk-tax.pages.dev, poundlogic.pages.dev) plus Payhip and Etsy product pages. A calculator is the standard lead magnet for the paid workbook (SparkReceipt and GoSimpleTax use the same page to sell software). The maths already exists and is tested (src/tax.ts, rates.ts: bands, Class 4, trading allowance, MTD thresholds), so the build is a page, a small client bundle and copy; the landing Worker serves static files, so no new infrastructure. £0, zero owner minutes. Risk: Google is slow for a new page — the day-30 read decides whether to keep the page. Built 2026-11-03 without the Scottish toggle: rates.ts carries only the England, Wales and Northern Ireland bands (the workbook excludes Scottish bands too), and the page says so.",
       "effort_days": 0.5,
       "proof": "≥ 20 Search Console impressions or ≥ 5 clicks for calculator queries in the first 30 days, and the page named in a RESEARCH §7 Sale row's source within 60 days; kill the page (keep the maths) at 0 impressions after 60 days",
       "score": 7,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-03",
-      "doing_since": "2026-11-03"
+      "done_at": "2026-11-03"
     },
     {
       "id": "cross-sell-links-guide-and-workbook",
@@ -291,6 +291,17 @@
       "score": 5,
       "status": "blocked",
       "blocked_on": "the owner's add-a-format step on the next KDP sitting (action 029 follow-up 6): a 'paperback live' note or KDP's live mail",
+      "added": "2026-11-03"
+    },
+    {
+      "id": "calculator-page-day-30-read",
+      "title": "Day-30 read of the free tax estimate page (live from the 2026-11-03 deploy): Search Console impressions and clicks for calculator queries on apps.gankdat.com/sole-trader-tax-calculator.html, whether the page is indexed, and any §7 Sale row naming it; keep, retitle for the queries seen, or (at 0 impressions after 60 days) drop the sitemap row and keep the maths",
+      "why": "The page is a distribution bet (free-tax-estimate-calculator-page, 2026-11-03): Google's first page for 'sole trader tax calculator 2026/27' holds hobby .pages.dev sites, so a new page can rank, but how fast is unknown. The reading is Search Console (the gankdat property), read by the metrics job's `search console` lines or a relay request — no owner minutes.",
+      "effort_days": 0.1,
+      "proof": "A RESEARCH §7 `Calculator day 30` row with impressions, clicks and the decision",
+      "score": 5,
+      "status": "todo",
+      "not_before": "2026-12-03",
       "added": "2026-11-03"
     }
   ]

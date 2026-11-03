@@ -12,11 +12,15 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "kindle": "node --disable-warning=ExperimentalWarning src/kindle/build.ts",
     "images:reseller": "node --disable-warning=ExperimentalWarning src/reseller-images.ts",
-    "paperback": "node --disable-warning=ExperimentalWarning src/kindle/paperback.ts"
+    "paperback": "node --disable-warning=ExperimentalWarning src/kindle/paperback.ts",
+    "calculator": "node --disable-warning=ExperimentalWarning src/calculator.ts"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
     "jszip": "^3.10.2",
     "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
   }
 }
