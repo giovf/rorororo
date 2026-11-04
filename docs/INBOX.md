@@ -277,3 +277,4 @@
 - 2026-11-04 02:00 | notification | cerebralvalley.ai | New Notification for Meta Global AI Developer Hackathon | organiser reminder: submissions due Nov 4 21:00 ET; ours already submitted 11-02 | logged
 - 2026-11-04 07:42 | notification | eu.zohocorp.com | Your Zoho CRM trial: why 1 million+ businesses trust Zoho | vendor marketing to a different address (gio@1402celsius.com) | logged
 - 2026-11-04 12:07 | notification | eu.zohocorp.com | Halfway through your Zoho CRM trial | vendor marketing to a different address (gio@1402celsius.com) | logged
+- 2026-11-04 14:09 | notification | trycoinstancy.com | a place for gankdat | cold partnership pitch: agent-wallet launch catalog, asks for a call; no action owed | logged
