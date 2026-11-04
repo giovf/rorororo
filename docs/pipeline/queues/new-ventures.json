@@ -519,8 +519,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/jetbrains-open-reads.md with the commercial price table, the address and floor findings quoted from the pages, the toolchain commands and their results, and a promote / park call",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-04"
+      "status": "doing",
+      "added": "2026-11-04",
+      "doing_since": "2026-11-04"
     },
     {
       "id": "spike-pay-per-crawl-reread",
