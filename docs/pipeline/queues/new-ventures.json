@@ -507,8 +507,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/agent-payment-rails.md with the per-rail table quoted from each rail's own pages, buyer counts with their source, and a promote / park call",
       "score": 5,
-      "status": "todo",
-      "added": "2026-11-04"
+      "status": "doing",
+      "added": "2026-11-04",
+      "doing_since": "2026-11-04"
     },
     {
       "id": "spike-jetbrains-open-reads",
