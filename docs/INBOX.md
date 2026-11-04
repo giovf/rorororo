@@ -275,3 +275,4 @@
 - 2026-11-03 07:27 (backlog) | notification | eu.zohocorp.com | Your Zoho CRM trial: bring your business into one view with Zoho CRM | vendor marketing to a different address (gio@1402celsius.com) | logged
 - 2026-11-03 19:11 | store | figma.com | Figma has approved your resource "Unused Variables Finder & Cleaner" | free companion plugin approved and live on Community; LISTING-FREE.md + ALERTS updated | logged (self-caused: free plugin publish)
 - 2026-11-04 02:00 | notification | cerebralvalley.ai | New Notification for Meta Global AI Developer Hackathon | organiser reminder: submissions due Nov 4 21:00 ET; ours already submitted 11-02 | logged
+- 2026-11-04 07:42 | notification | eu.zohocorp.com | Your Zoho CRM trial: why 1 million+ businesses trust Zoho | vendor marketing to a different address (gio@1402celsius.com) | logged
