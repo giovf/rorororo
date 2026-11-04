@@ -279,3 +279,4 @@
 - 2026-11-04 12:07 | notification | eu.zohocorp.com | Halfway through your Zoho CRM trial | vendor marketing to a different address (gio@1402celsius.com) | logged
 - 2026-11-04 14:09 | notification | trycoinstancy.com | a place for gankdat | cold partnership pitch: agent-wallet launch catalog, asks for a call; no action owed | logged
 - 2026-11-04 17:00 | notification | cerebralvalley.ai | New Notification for Meta Global AI Developer Hackathon | event blast: viral-project bonus prize reminder (X post link, due Nov 8); not a spending alert | logged
+- 2026-11-04 18:00 | notification | cerebralvalley.ai | New Notification for Meta Global AI Developer Hackathon | event blast: submissions due 21:00 ET today; ours already submitted 11-02 | logged
