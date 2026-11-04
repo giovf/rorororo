@@ -2441,3 +2441,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-04 18:05 | build | Relay hosts added: .gradle.org, .jetbrains.team; three relay rounds (14 + 48 + 12 lines)
 - 2026-11-04 18:20 | build | Vendor addresses and phones seen in the relay bodies are not copied into the spike (third-party personal data)
 - 2026-11-04 19:07 | triage | notify owner dispatched: last run started 16:30 UTC, 2 h 37 min ago
+- 2026-11-04 19:07 | watchdog | missed: burn-down slot 2026-11-04 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
