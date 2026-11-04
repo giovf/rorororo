@@ -1,9 +1,9 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": true,
-  "updated": "2026-11-02",
-  "researched": "2026-11-02",
+  "needs_research": false,
+  "updated": "2026-11-04",
+  "researched": "2026-11-04",
   "weight": 2,
   "items": [
     {
@@ -499,6 +499,37 @@
       "added": "2026-11-02",
       "doing_since": "2026-11-02",
       "done_at": "2026-11-02"
+    },
+    {
+      "id": "spike-agent-payment-rails",
+      "title": "Research spike: a second agent-payment rail beside x402 for gankdat's per-call routes — through the relay read each rail's own seller terms and catalogue (Skyfire: KYA/seller onboarding, fee, payout, individual sellers; Nevermined: payment plans, fee, who may sell; Google AP2 / Agent Payments and Stripe's agentic payments: whether a merchant of record other than Stripe's own account is needed and what an individual needs; the non-CDP x402 facilitators the Bazaar names — PayAI, x402.rs, others — their fee and whether a listing reaches a buyer pool CDP's Bazaar does not), count buyers from each rail's public catalogue or on-chain index the way the 10-17 Bazaar spike did, check a Worker can serve it (no 24/7 process, no spending wallet beyond the x402 one), and write docs/exchange/spikes/agent-payment-rails.md with a per-rail table (identity, fee, payout, buyers, Worker fit) and a promote / park call (promote = one ≤ 1-day gankdat listing item at 0 owner identity steps; park on KYC/KYB, a card, or an empty catalogue)",
+      "why": "Exchange 2026-W45 (docs/exchange/2026-W45.md §Scoring 5): x402 is the one shelf where strangers pay gankdat and it widened all week (buyers 11 → 17 calls, 5 → 7 clients, the first repeat payer on 11-03) — a cut of money already flowing, the owner's first-ranked kind of line (STRATEGY §1). The question is whether a second rail brings a different buyer pool or only the same agents: every rail above publishes seller terms and most publish a catalogue, so the answer is a read, not a build. Evidence 2–3 (x402 pays; rival rails unread) × reach 3 ÷ 0.3 spike day ≈ 5.",
+      "effort_days": 0.3,
+      "proof": "docs/exchange/spikes/agent-payment-rails.md with the per-rail table quoted from each rail's own pages, buyer counts with their source, and a promote / park call",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-11-04"
+    },
+    {
+      "id": "spike-jetbrains-open-reads",
+      "title": "Research spike: the JetBrains Marketplace line's three open reads and a toolchain check — through the relay (plugins.jetbrains.com is on hosts.txt) read, rendered, the pricing tab of the §3 plugins of docs/exchange/spikes/jetbrains-marketplace-paid-plugins.md with the \"For organizations\" toggle (commercial per-user prices), the vendor page of one individual vendor as an EU buyer sees it (is the residential address displayed?), and the Marketplace paid-plugin docs for the minimum price (is US$1/month a floor?); then check the build path from here: does `gradle` with the IntelliJ Platform Gradle plugin resolve its dependencies from the sandbox or a GitHub runner (plugins.gradle.org, cache-redirector.jetbrains.com, Maven Central on hosts.txt?), can the plugin verifier and a sandbox IDE run headless in CI, and what the smallest ≤ 1-week utility from the §3 shapes (ANSI/log renderer, comment renderer, diagram-from-text, theme) needs; write docs/exchange/spikes/jetbrains-open-reads.md with the price table, the address finding, the floor, the toolchain verdict with the exact commands tried, and a promote / park call (promote = open a `jetbrains-plugins` venture queue — venture.json idea, RESEARCH.md from the two spikes — with one utility item ≤ 1 week; park if the toolchain cannot build from CI, if commercial prices show the US$10/user/year floor is the ceiling too, or if the address is displayed and the owner has not said yes to that)",
+      "why": "Exchange 2026-W45 (docs/exchange/2026-W45.md §3): the W44 exchange's starvation trigger fired — report W44 burn-down Built % 21 %, report W45 36 % (the first fully counted reading), 51 idle burn-down hours in the week — so the exchange honours it with the spike W44 named as the queue's first item rather than opening a queue for a line scoring 1.8 (0.9 × 2: evidence 2 — 10 of 14 §3 plugins at ≥ US$10/user/year — × reach 2 ÷ 4 build days + 20 owner min). The toolchain question is new and decisive: the operation has never run Kotlin/Gradle and most hosts are unreachable from the sandbox. Spike score 4 (evidence 2 × reach 2 ÷ 0.3 + the open reads), weight 2.",
+      "effort_days": 0.3,
+      "proof": "docs/exchange/spikes/jetbrains-open-reads.md with the commercial price table, the address and floor findings quoted from the pages, the toolchain commands and their results, and a promote / park call",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-04"
+    },
+    {
+      "id": "spike-pay-per-crawl-reread",
+      "title": "Research spike (monthly, dated): re-read Cloudflare's Pay Per Crawl status — two relay lines, developers.cloudflare.com ai-crawl-control/features/pay-per-crawl/what-is-pay-per-crawl/ (still closed/private beta?) and ai-crawl-control/features/analyze-ai-traffic/ (does the plan table list charging on Free or Pro plans?); record the two readings and the Daily numbers `stats crawlers: zone` AI count against the ≥ 3,000/30 d threshold in docs/exchange/spikes/pay-per-crawl.md (append a dated section) and update the `ai-crawler-paywall-stats-pages` trigger in docs/pipeline/exchange.json",
+      "why": "Exchange 2026-W45: the parked idea's trigger (1) asks for a relay read at the monthly exchange; the last read was the 10-17 spike (closed beta, Enterprise-only charging). Trigger (2) is far from met (zone AI fetches 830/30 d for the whole domain on 11-04, /stats a fraction of that), so this is a dated 0.1-day read, not a decision. Score 3 (a cut of money already flowing if it ever opens; no build; weight 2).",
+      "effort_days": 0.1,
+      "proof": "the two pages quoted in pay-per-crawl.md with the date; the exchange.json trigger updated with the reading",
+      "score": 3,
+      "status": "todo",
+      "not_before": "2026-11-17",
+      "added": "2026-11-04"
     }
   ]
 }

@@ -49,6 +49,9 @@ ventures/tax-workbook    UK Sole Trader Tax Workbook 2026/27 — an .xlsx built 
                          EPUB from the same rates (`src/kindle/`, 2026-10-26; the owner's KDP upload is action 029 step 5); plus the shop's second
                          listing, the UK Reseller Profit & Tax Workbook 2026/27 (`src/reseller.ts`, 2026-11-03: inventory + sales logs,
                          platform fees from Setup rates, HMRC platform-reporting check; reuses the first workbook's tax tabs)
+ventures/claude-code-kit Claude Code operations kit — a 20–30k-word handbook of how this operation runs unattended (EPUB + PDF from a
+                         content module) plus an MIT Extras zip of its files, sold as a Leanpub Package at US$19/29, 80 % royalty; the owner
+                         holds the Leanpub account (its terms bar AI agents) and publishes by hand (opened by exchange 2026-W45, 2026-11-04)
 docs/LEDGER.md           every pound in and out, per venture (£100 cap enforced)
 docs/launch/             per-channel launch checklists
 docs/for-owner/actions/      batched requests that need the owner's identity/wallet

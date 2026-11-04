@@ -2412,3 +2412,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-04 02:07 | triage | notify owner dispatched: last run started 23:36 UTC, 2.5 h ago
 - 2026-11-04 02:08 | watchdog | ci-minutes: 515 billed min/7d (~2207/mo; cap 2000) top: notify owner 132, gankdat 65, gankdat metrics 64
 - 2026-11-04 05:07 | triage | notify owner dispatched: last run started 02:06 UTC, 3 h ago
+- 2026-11-04 08:45 | exchange | Winner: Claude Code operations kit on Leanpub — new venture claude-code-kit (3 × 2 = 6)
+- 2026-11-04 08:45 | exchange | Queued claude-code-kit: handbook manuscript 3, extras zip 3, listing pack 2.5, listing-live 3
+- 2026-11-04 08:45 | exchange | Queued gankdat x402-change-feed-route (6): price get_changes per call on x402, list in the Bazaar
+- 2026-11-04 08:45 | exchange | Refilled new-ventures: agent payment rails 5, JetBrains open reads 4, pay-per-crawl re-read 3 (11-17)
+- 2026-11-04 08:45 | exchange | Parked: JetBrains/Atlassian/Framer behind the spike; Topcoder; Apify challenge (over); x402 hackathons
+- 2026-11-04 08:45 | exchange | Declined: nothing new; 13 spike files read since W44, their 11 parks and 1 decline stand
+- 2026-11-04 08:45 | exchange | Exchange file docs/exchange/2026-W45.md; relay round exchange-w45-2026-11-04 (7 lines, 30 s)
+- 2026-11-04 08:45 | exchange | Owner later: one ≤ 15-min Leanpub sign-up and upload, raised by the listing-pack build, not now

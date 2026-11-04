@@ -1,0 +1,51 @@
+{
+  "venture": "claude-code-kit",
+  "status": "open",
+  "needs_research": false,
+  "updated": "2026-11-04",
+  "researched": "2026-11-04",
+  "weight": 2,
+  "items": [
+    {
+      "id": "kit-handbook-manuscript",
+      "title": "Build the handbook 'Running Claude Code unattended' (20–30k words) as a content module → EPUB + PDF, with the disclosure preface and a cover",
+      "why": "Exchange 2026-W45 winner (docs/exchange/2026-W45.md, 3 × 2 = 6): Leanpub's shelf carried 11–13 paying readers to each of four Claude Code operations handbooks of this shape and 81–530 to the general guides (ventures/claude-code-kit/RESEARCH.md §2). Shape: a content module (chapters as data, like ventures/tax-workbook/src/kindle/content.ts) built into EPUB 3 (epubcheck clean) and a PDF at Leanpub's technical trim, 150–200 pages, under ventures/claude-code-kit/src; chapters from the operation's own documents and history — what CLAUDE.md does and why each rule exists (with the incident that made it), how a routine prompt is written and changed (docs/routines/README), the pipeline (queues, scores, weights, claims, research claims, cooling, starvation), the slot markers and the watchdog, the fetch relay, the pre-push gate and the three times main went red, the usage-week budget, the owner-request rules, the ledger and the £100 cap, what the first six weeks earned (honestly: £0 by 11-04) and what each week's exchange decided. HARD REQUIREMENT: a preface 'How this book was written' that states the real process (drafted by the operation it describes from its own logs and documents; what the owner did is filled in at publish time by the listing item) and a reader-facing line that a Claude subscription, a terminal and judgement are still needed. No venture-specific secrets, no owner identity, no third-party names beyond public products. A MANUSCRIPT-REVIEW.md for the owner: chapter list with the claims a reader relies on marked for checking, so a read-through is a real curation.",
+      "effort_days": 1,
+      "proof": "ventures/claude-code-kit/release/ holds the EPUB (epubcheck 0 errors) and the PDF; word count 20–30k; the preface and the needs-line are present (tests); MANUSCRIPT-REVIEW.md lists every chapter",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-04"
+    },
+    {
+      "id": "kit-extras-zip",
+      "title": "Build the MIT-licensed Extras zip: the operation's files assembled from the repo by a script with a scrub test",
+      "why": "The Package tier (book + kit at the suggested US$29) is what no rival on the shelf has: six weeks of a real unattended operation's files. Leanpub's terms allow Extras as 'source files, code samples, apps, templates, worksheets' and forbid services or licences in them. Contents: CLAUDE.md, docs/routines/*.md (the prompts), scripts/pipeline*.ts and packages/core/src/pipeline.ts, the slot and watchdog scripts, the fetch-relay workflow and script, .githooks/pre-push, a docs/ops starter (SLOTS, SELF-CAUSED, BURN templates), a README that says what each file is for and that the reader adapts it; LICENSE MIT. A build script (ventures/claude-code-kit/src/extras.ts) copies, rewrites venture-specific names to placeholders and refuses to zip when the scrub test finds a secret-shaped string, an email address, a trigger id, a domain of ours or a venture slug.",
+      "effort_days": 0.3,
+      "proof": "release/claude-code-kit-extras.zip builds reproducibly; the scrub test passes and fails on a planted secret; the README lists every file",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-04"
+    },
+    {
+      "id": "leanpub-listing-pack-and-owner-step",
+      "title": "Listing pack (LISTING.md: title, subtitle, blurb, categories, the AI Usage page text, Package pricing US$19/29, sale-newsletter opt-in), SELF-CAUSED row, and the one ≤ 15-minute owner request",
+      "why": "Built after kit-handbook-manuscript and kit-extras-zip (the build that takes this item checks both are done, else takes the next item). The owner holds the account — Leanpub's terms bar AI agents from the service — so the request (docs/for-owner/actions/<next number>-leanpub-kit.md) is the mechanical steps only: email sign-up, upload the EPUB/PDF and the Extras zip, set the Package at US$19 minimum / US$29 suggested, paste the AI Usage page text, choose PayPal for royalties, opt into the sale newsletters, publish, send 'leanpub done <url>'. It states in plain words that Leanpub's human-curated rule means the book should be the owner's to have read before it goes live (about two hours, MANUSCRIPT-REVIEW.md as the guide) — the operation does not ask for that time under the 15-minute rule (STRATEGY §3); if the owner would rather not read it, leave it unpublished and say so. One `owner:` ALERTS line + one `notify` line (owner must do something). A docs/ops/SELF-CAUSED.md row for Leanpub's sign-up, sale, royalty and newsletter mail. Set venture.json to validated in the same commit.",
+      "effort_days": 0.2,
+      "proof": "LISTING.md complete; the action file exists with ≤ 15 min of steps and the read-before-publish paragraph; ALERTS owner line and notify line written; SELF-CAUSED row; venture.json validated",
+      "score": 2.5,
+      "status": "todo",
+      "added": "2026-11-04"
+    },
+    {
+      "id": "leanpub-listing-live",
+      "title": "Record the Leanpub listing going live: URL and date in LISTING.md and RESEARCH §7, venture.json launched, notify line, day-60 read queued",
+      "why": "The upload is the owner's hands. On the owner's 'leanpub done <url>' note (or Leanpub's published mail in the inbox) this item records the listing, fills the preface's 'what the owner did' line from the owner's note if it says, writes the notify line 'Claude Code operations kit is live on Leanpub: …', and queues `leanpub-day-60-read` (not_before = live date + 60) with RESEARCH §6's proof (≥ 5 copies) and kill (< 5 → retire) — the book page's public `totalCopiesSold` is the reading, relay-read without a login.",
+      "effort_days": 0.1,
+      "proof": "LISTING.md carries the live URL and date; venture.json reads launched; a dated day-60 item is queued",
+      "score": 3,
+      "status": "blocked",
+      "blocked_on": "the owner's 'leanpub done <url>' note after the listing-pack request (leanpub-listing-pack-and-owner-step)",
+      "added": "2026-11-04"
+    }
+  ]
+}

@@ -11,7 +11,8 @@ export type Channel =
   | 'api-marketplace'
   | 'hackathon' // cash-prize competitions (Devpost and the sponsors' own portals)
   | 'bounty-board' // paid open-source issues (Algora-style boards on GitHub)
-  | 'etsy'; // seller-designed digital downloads sold through Etsy's own checkout (exchange 2026-W43)
+  | 'etsy' // seller-designed digital downloads sold through Etsy's own checkout (exchange 2026-W43)
+  | 'leanpub'; // books and file packages sold through Leanpub's own checkout at an 80 % royalty (exchange 2026-W45)
 
 export type VentureStatus =
   | 'idea' // named, not yet validated

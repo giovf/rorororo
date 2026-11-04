@@ -51,6 +51,7 @@ export function groupOf(channel: string): Group {
     case 'bounty-board':
       return 'Bounties';
     case 'etsy':
+    case 'leanpub':
       return 'Digital downloads';
     default:
       return 'Other';
