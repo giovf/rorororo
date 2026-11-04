@@ -1,0 +1,126 @@
+meta description: Browse the challenges currently available on Topcoder. Search by type of challenge, then find those of interest to register for and compete in today.
+meta twitter:card: summary_large_image
+meta twitter:title: [] - Marathon Match Practice: SnakeCharmer
+meta twitter:description: Browse the challenges currently available on Topcoder. Search by type of challenge, then find those of interest to register for and compete in today.
+meta twitter:image: http://www.topcoder.com/community-app-assets/images/7548eab67bb6177efa2f8a1ab3149155.png
+meta twitter:site: @Topcoder
+meta og:title: [] - Marathon Match Practice: SnakeCharmer
+meta og:image: http://www.topcoder.com/community-app-assets/images/7548eab67bb6177efa2f8a1ab3149155.png
+meta og:image:alt: [] - Marathon Match Practice: SnakeCharmer
+meta og:description: Browse the challenges currently available on Topcoder. Search by type of challenge, then find those of interest to register for and compete in today.
+meta og:sitename: Topcoder
+Topcoder Challenge | Topcoder Community | Topcoder
+[Topcoder]
+Opportunities
+[Topcoder]
+/challenges
+Marathon Match Practice: SnakeCharmer
+Algorithm (/challenges?search=Algorithm) Marathon Match (/challenges?search=Marathon%20Match)
+1 st
+$0
+2 nd
+$0
+Register
+Submit a solution
+Status: ‌ Cancelled client request
+Details
+Challenge Overview
+Welcome to the Practice Marathon Match !
+This match is designed to help you learn, practice and get started with Marathon Matches (MM) at Topcoder. In this problem you work as a Snake Charmer and you have to impress the crowd with your skilful control of the snake.
+Marathon Matches are challenges where your submission is automatically scored according to the scoring details mentioned in the match specification. These matches are mainly divided into two categories:
+Algorithm Optimization Matches - These matches are hosted by Topcoder for practice and fun. The problems are usually NP-Hard, so no optimal solution is known. The matches usually run for one week, in which you write a program to score as well as possible against the problem's scoring system. They are generally named as Marathon Match followed by a sequence number. Example: Marathon Match 118 (https://www.topcoder.com/challenges/30125537)
+Machine Learning / Data Analytics / Image Processing / Predictive Analytics etc .. - These matches are designed with the help of our customers. They involve tasks with real-world applications and datasets. Example: CDC Text Classification - Marathon Match (https://www.topcoder.com/challenges/30103825)
+Other Data Science Challenges which are research(ideation), visualization, task or sprint-based are run under Code Challenges.
+In this practice challenge, we bring a very interesting Algorithm Optimization Match for you so that you can adapt and get accustomed to the Marathon Match process.
+MMs (as they are popularly known) provide a way to compare yourself against competitors from around the world while solving a puzzle that nobody knows how to solve optimally. They also greatly improve your programming and solution-finding skills.
+In a MM you are provided with a sample solution/submission to help you get started. The sample solution will give you a clear idea about the expected input/output format. In most of the matches, you are also provided with a Visualizer to help you visualize your solutions and test them locally.
+Each MM goes through the following phases:
+Registration – Period in which you can register for the challenge
+Provisional (Submission) – Period in which you can submit to the challenge and your code is run against provisional test cases or on training data.
+F inal/System Testing – Period in which your submission is run against the final test cases or on test data. You are not allowed to submit during this phase.
+For more help, we have a detailed guide (https://www.topcoder.com/thrive/articles/How%20To%20Compete%20in%20a%20Marathon%20Match) about how to compete in a Marathon Match.
+Make sure you register for the challenge and then read more details below and let us know if you have any doubts or questions in the Challenge Forum (https://apps.topcoder.com/forums/?module=Category&categoryID=108747) !
+The SnakeCharmer problem was written by dimkadimon (http://topcoder.com/members/dimkadimon) and was originally hosted as Marathon Match 114 (https://www.topcoder.com/challenges/30112653?tab=details) . Here are the links to results (https://www.topcoder.com/challenges/30112653?tab=submissions) and forums (https://apps.topcoder.com/forums/?module=ThreadList&forumID=719022) discussions to read about the approaches used by members during the live contest.
+Important Links
+Submission-Review (https://submission-review.topcoder.com/challenges/30129332) You can find your submissions artifacts here. Artifacts will contain output.txt for both example test cases and provisional test cases with stdout/stderr and individual test case scores.
+Other Details (https://docs.google.com/document/d/1jfWwGEhmA5k99LhZM31_ogTUvwvdhajDJMcwkn4Wf5c/edit?usp=sharing) For other details like Processing Server Specifications, Submission Queue, Example Test Cases Execution
+Sample Submissions / Tester / Source Files are now also available in the Download Section on the top right. This section will only be visible once you have registered for the match.
+Problem Statement
+You work as a snake charmer and you want to impress the crowd with your skilful control of the snake. The snake comes out from the middle cell of a NxN grid. At each step, you can make its head move into any of the four adjacent (horizontally and vertically) cells. The snake cannot leave the grid or run into itself. The snake is divided into sections containing numbers, where each section is one grid cell in length. You get points based on the patterns that you make with the snake's sections. In particular, you get v^(m+1) points for each section, where v is the section's value and m is the number of adjacent (horizontally and vertically) cells with value v.
+Here is an example solution for seed=1, N =7, V =3, Snake="3444433322344332432434424422324243233232232424424". This solution obtains a raw score of 3339. The black line shows the path that the snake travelled. The colour of a cell indicates the number of its matching neighbours. The head and the tail of the snake are shown inside a black square. Note that the entire snake does not need to come out.
+Implementation
+Your code will receive as input the following values, each on a separate line:
+N , the grid size.
+V , the number of different section values.
+Snake , a string of characters indicating the value of each section. The first number corresponds to the head, while the last number corresponds to the tail.
+Your code should write to output the following:
+On the first line, the number of steps S taken by the snake.
+S lines, where the n-th line describes the n-th step taken by the snake: 'L' (left), 'U' (up), 'R' (right) or 'D' (down).
+Scoring
+Your raw score for a test case is the sum of points obtained by each section of the snake. If your return was invalid then your raw score on this test case will be -1. Possible reasons include:
+Using more than N*N-1 steps.
+Snake leaving the grid or colliding with itself.
+Using unrecognised directions.
+If your raw score for a test case is negative then your normalized score for that test case is 0. Otherwise, your normalized score for each test case is YOUR/MAX, where YOUR is your raw score and MAX is the largest positive raw score currently obtained on this test case (considering only the last submission from each competitor). Finally, the sum of all your test scores is normalised to 100.
+Test Case Generation
+Please look at the visualizer source code for the exact details about test case generation. Each test case is generated as follows:
+Generate the grid size N , randomly chosen odd number between 7 and 49, inclusive.
+Generate the number of section values V , randomly chosen between 2 and 8, inclusive.
+Generate the Snake string of N*N characters representing the value of each section. Each value is randomly chosen between 2 and V+1 , inclusive.
+Notes
+The time limit is 10 seconds per test case (this includes only the time spent in your code). The memory limit is 1024 megabytes.
+The compilation time limit is 30 seconds.
+There are 10 example test cases and 100 (provisional) test cases.
+The provisional phase will be open forever for pracising. There will be no Final Testing .
+This match is not rated .
+Languages Supported
+C#, Java, C++ and Python
+Submission Format
+Your submission must be a single ZIP file not larger than 500 MB, with your source code only .
+Please Note: Please zip only the file. Do not put it inside a folder before zipping, you should directly zip the file.
+Make sure you name your Source Code file as SnakeCharmer. <appropriate extension>
+SnakeCharmer.cpp
+SnakeCharmer.cs
+SnakeCharmer.java
+SnakeCharmer.py
+Sample Submissions
+Here are sample submissions for different languages, to get give you a quick-start.
+Java (https://www.topcoder.com/direct/launch/downloadDocument?documentId=27530967)
+C# (https://www.topcoder.com/direct/launch/downloadDocument?documentId=27530962)
+Cpp (https://www.topcoder.com/direct/launch/downloadDocument?documentId=27530969)
+Python3.6 (https://www.topcoder.com/direct/launch/downloadDocument?documentId=27530968)
+Please Note: These submissions will be accessible only after you have registered for the match.
+Offline Tester / Visualizer
+An offline tester is available below. You can use it to test/debug your solution locally. You can also check its source code for an exact implementation of test case generation and score calculation.
+Visualizer Source Code (http://www.topcoder.com/direct/launch/downloadDocument?documentId=27530971)
+SnakeCharmer.jar (https://www.topcoder.com/direct/launch/downloadDocument?documentId=27530964)
+Here are example solutions for different languages, modified to be executed with the visualizer.
+SnakeCharmer.cpp (https://www.topcoder.com/direct/launch/downloadDocument?documentId=27530966)
+SnakeCharmer.java (https://www.topcoder.com/direct/launch/downloadDocument?documentId=27530963)
+SnakeCharmer.py (https://www.topcoder.com/direct/launch/downloadDocument?documentId=27530970)
+SnakeCharmer.cs (http://www.topcoder.com/direct/launch/downloadDocument?documentId=27530965)
+You may modify and submit these example solutions.
+Please Note: These files all the files given above will be accessible only after you have registered for the match.
+In order to use the offline tester/visualizer tool for testing your solution locally, you'll have to include in your solution the main method that interacts with the tester/visualizer via reading data from standard input and writing data to standard output. To run the tester with your solution, you should run:
+java -jar SnakeCharmer.jar -exec "<command>" -seed <seed>
+Here, <command> is the command to execute your program, and <seed> is seed for test case generation. If your compiled solution is an executable file, the command will be the full path to it, for example, "C:\TopCoder\SnakeCharmer.exe" or "~/topcoder/snakecharmer". In case your compiled solution is to be run with the help of an interpreter, for example, if you program in Java, the command will be something like "java -cp C:\TopCoder SnakeCharmer".
+Additionally, you can use the following options:
+-seed <seed> Sets the seed used for test case generation, default is seed 1.
+- novis Turn off visualization.
+-debug Print debug information.
+-size <cell size> Use custom cell size, default is 30 pixels. If the size is set to 0 then it will fit the visualizer window into the screen area.
+-N <N> Sets a custom size of the grid.
+-V <V> Sets a custom number section values.
+Custom parameters also accept ranges. For example -N 20,30 makes the grid size to be randomly chosen between 20 and 30 inclusive. Finally, you can print any debug information of your solution to standard error, and it will be forwarded to the standard out of the tester.
+Marathon local testers have other options, including running a range of seeds with a single command, running more than one seed at time (multiple threads), controlling time limit, saving input/output/error and loading solution from a file. The usage of these and other options is described here (https://docs.google.com/document/d/100JX1dgENRlrxt3tZfVWQ70PxoOQjyl1LfxlvnWxRG8/edit?usp=sharing) .
+What Next?
+Visit Topcoder Challenge Listing Page (https://www.topcoder.com/challenges) and filter by track Data Science (https://www.topcoder.com/challenges/?filter[tracks][data_science]=true) (https://www.topcoder.com/challenges?filter[tracks][develop]=true) to see all the available Data Science Challenges and Marathon Matches.
+Participate in future Marathon Matches, gather TCO points towards Marathon Track (https://tco20.topcoder.com/competition-overview/marathon) and stand a chance to win the ‘TCO20 Marathon Champion’ Title and a whopping $10,000 cash prize.
+Learn
+Topcoder Challenges Explained (/thrive/articles/all-about-topcoder-challenges-tasks-and-gig-work-opportunities)
+Challenge links
+How To Compete in a Marathon Match (https://www.topcoder.com/thrive/articles/How%20To%20Compete%20in%20a%20Marathon%20Match)
+Toolbox
+Topcoder Extension for VSCode (https://marketplace.visualstudio.com/items?itemName=Topcoder.topcoder-workflow&ssr=false#overview)
+Topcoder Templates repository (https://github.com/topcoder-platform-templates)
+ID: 30129332

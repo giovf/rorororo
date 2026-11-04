@@ -1,0 +1,126 @@
+{
+  "request": "exchange-w45-2026-11-04",
+  "fetched_at": "2026-11-04T08:12:34.827Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://solana.com/x402/hackathon",
+      "fetched_at": "2026-11-04T08:12:21.208Z",
+      "retries": 3,
+      "status": 429,
+      "elapsed_ms": 7703,
+      "final_url": "https://solana.com/x402/hackathon",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "10536"
+      },
+      "file": "1.txt",
+      "bytes": 210,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 24732
+    },
+    {
+      "method": "GET",
+      "url": "https://build.avax.network/hackathons",
+      "fetched_at": "2026-11-04T08:12:28.915Z",
+      "status": 200,
+      "elapsed_ms": 472,
+      "final_url": "https://build.avax.network/events",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 3377,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 146254
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/challenge",
+      "fetched_at": "2026-11-04T08:12:29.392Z",
+      "status": 200,
+      "elapsed_ms": 143,
+      "final_url": "https://apify.com/challenge",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"yu4m2vz1iq7t5g\""
+      },
+      "file": "3.txt",
+      "bytes": 11563,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 364424
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/challenge/spotlight",
+      "fetched_at": "2026-11-04T08:12:30.046Z",
+      "status": 200,
+      "elapsed_ms": 517,
+      "final_url": "https://apify.com/challenge/spotlight",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"crqyv74bb080hz\""
+      },
+      "file": "4.txt",
+      "bytes": 10004,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 373943
+    },
+    {
+      "method": "GET",
+      "url": "https://www.topcoder.com/marathon-match-tournament/overview",
+      "fetched_at": "2026-11-04T08:12:30.575Z",
+      "status": 200,
+      "elapsed_ms": 434,
+      "final_url": "https://www.topcoder.com/marathon-match-tournament/overview",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 12:15:20 GMT",
+        "etag": "W/\"8753de68cf5ece7d24b73bb85cba8f30\""
+      },
+      "file": "5.txt",
+      "bytes": 2339,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 114457
+    },
+    {
+      "method": "GET",
+      "url": "https://www.topcoder.com/community/events/",
+      "fetched_at": "2026-11-04T08:12:31.656Z",
+      "status": 200,
+      "elapsed_ms": 1459,
+      "final_url": "https://www.topcoder.com/community/events/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"50732-sR9swOHi2ZP6Y0RiU2aaoFNKYmw\""
+      },
+      "file": "6.txt",
+      "bytes": 7553,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 329522
+    },
+    {
+      "method": "GET",
+      "url": "https://www.topcoder.com/challenges/30129332",
+      "fetched_at": "2026-11-04T08:12:33.833Z",
+      "status": 200,
+      "elapsed_ms": 774,
+      "final_url": "https://www.topcoder.com/challenges/30129332",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"69c11-NoBwHbGJp3gZFMZTMTMtL1KBJkA\""
+      },
+      "file": "7.txt",
+      "bytes": 13502,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 433169
+    }
+  ]
+}
