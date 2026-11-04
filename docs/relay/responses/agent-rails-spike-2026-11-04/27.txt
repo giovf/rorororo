@@ -1,0 +1,560 @@
+{"@context":"https://schema.org","@type":["Article","BlogPosting"],"headline":"Introducing the Machine Payments Protocol","image":["https://images.stripeassets.com/fzn2n1nzq965/1Ch34TLSZjLk5MQukNj6E5/ded24adc6bdd260e608f844fb4842e59/MPP-social.png"],"datePublished":"2026-03-18T00:00-07:00","author":[{"@type":"Person","name":"Jeff Weinstein","url":"https://www.linkedin.com/in/jeffwweinstein/"},{"@type":"Person","name":"Steve Kaliski","url":"https://www.linkedin.com/in/steve-kaliski-079a7710/"}]}
+meta description: We’re launching the Machine Payments Protocol (MPP), an open standard, internet-native way for agents to pay—co-authored by Tempo and Stripe. Businesses on Stripe can accept payments over MPP in a few lines of code using our PaymentIntents API.
+meta og:title: Introducing the Machine Payments Protocol
+meta og:description: We’re launching the Machine Payments Protocol (MPP), an open standard, internet-native way for agents to pay—co-authored by Tempo and Stripe. Businesses on Stripe can accept payments over MPP in a few lines of code using our PaymentIntents API.
+meta og:image: https://images.stripeassets.com/fzn2n1nzq965/1Ch34TLSZjLk5MQukNj6E5/ded24adc6bdd260e608f844fb4842e59/MPP-social.png?q=80
+meta og:url: https://stripe.com/blog/machine-payments-protocol
+meta twitter:site: @stripe
+meta twitter:image: https://images.stripeassets.com/fzn2n1nzq965/1Ch34TLSZjLk5MQukNj6E5/ded24adc6bdd260e608f844fb4842e59/MPP-social.png?q=80
+meta twitter:card: summary_large_image
+meta twitter:title: Introducing the Machine Payments Protocol
+meta twitter:description: We’re launching the Machine Payments Protocol (MPP), an open standard, internet-native way for agents to pay—co-authored by Tempo and Stripe. Businesses on Stripe can accept payments over MPP in a few lines of code using our PaymentIntents API.
+Introducing the Machine Payments Protocol
+/
+Products
+Solutions
+Developers
+Resources
+Pricing (/pricing)
+Contact sales (/contact/sales)
+/
+Back
+Products
+Solutions
+Developers
+Resources
+Pricing (/pricing)
+See all products Explore our full product catalog (/products)
+Payments
+Payments Online payments (/payments)
+Managed Payments Merchant of record solution (/managed-payments)
+Payment links No-code payments (/payments/payment-links)
+Checkout Prebuilt payment UIs (/payments/checkout)
+Elements Flexible UI components (/payments/elements)
+Payment methods Access to 125+ (/payments/payment-methods)
+Terminal In-person payments (/terminal)
+Authorization Boost Acceptance optimizations (/authorization-boost)
+Link Accelerated checkout (/payments/link)
+Financial Connections Linked financial account data (/financial-connections)
+Revenue
+Billing Recurring revenue (/billing)
+Metronome Usage-based billing (/billing/usage-based-billing)
+Subscriptions Subscription management (/billing/subscriptions)
+Invoicing One-time or recurring (/invoicing)
+Tax Sales tax & VAT automation (/tax)
+Revenue Recognition Accounting automation (/revenue-recognition)
+Stripe Sigma Custom reports (/sigma)
+Data Pipeline Data sync (/data-pipeline)
+Money management
+Treasury Business finances (/treasury)
+Global Payouts Payouts to third parties (/payouts)
+Capital Business financing (/capital)
+Crypto Wallet, stablecoin issuing, and card infrastructure (/use-cases/crypto)
+Crypto Onramp Embeddable crypto purchases (/crypto-onramp)
+Embedded Finance
+Connect Payments for platforms (/connect)
+Capital for platforms Customer financing (/capital/platforms)
+Treasury for platforms Embedded financial services (/treasury/platforms)
+Issuing Physical and virtual cards (/issuing)
+More
+Product roadmap See what’s ahead (/roadmap)
+Radar Fraud prevention (/radar)
+Atlas Startup incorporation (/atlas)
+Climate Carbon removal (/climate)
+Identity Online identity verification (/identity)
+Stripe Sessions 2026
+See how Stripe is building the economic infrastructure for AI.
+Watch now (https://stripe.com/sessions/2026?utm_medium=owned-surfaces&utm_source=9cb9&utm_campaign=GLOBAL_4301&utm_content=8a70&utm_term=5a728d3d167c)
+[Sessions Background]
+By stage
+Enterprises (/enterprise)
+Startups (/startups)
+By use case
+Agentic commerce (/use-cases/agentic-commerce)
+Crypto (/use-cases/crypto)
+Ecommerce (/use-cases/ecommerce)
+Embedded finance (/use-cases/embedded-finance)
+Finance automation (/use-cases/finance-automation)
+Global businesses (/use-cases/global-businesses)
+In-app payments (/use-cases/in-app-payments)
+Marketplaces (/use-cases/marketplaces)
+Money management (/money-management/availability)
+Platforms (/use-cases/platforms)
+SaaS (/use-cases/saas)
+By industry
+AI companies (/use-cases/ai)
+Creator economy (/use-cases/creator-economy)
+Fintech (/industries/fintech)
+Gaming (/industries/gaming)
+Hospitality, travel, and leisure (/industries/travel)
+Insurance (/industries/insurance)
+Media and entertainment (/industries/media-entertainment)
+Nonprofits (/industries/nonprofits)
+Professional services (/industries/professional-services)
+Retail (/industries/retail)
+Ecosystem
+Partners (/partners)
+Stripe App Marketplace (https://marketplace.stripe.com/)
+Documentation
+Stripe docs (https://docs.stripe.com)
+API reference (https://docs.stripe.com/api)
+Libraries and SDKs (https://docs.stripe.com/development)
+Stripe Apps (https://docs.stripe.com/stripe-apps)
+Guides
+Accept online payments (https://docs.stripe.com/payments)
+Implement a prebuilt checkout (https://docs.stripe.com/payments/checkout)
+Build a platform or marketplace (https://docs.stripe.com/connect)
+Manage subscriptions (https://docs.stripe.com/billing)
+Offer usage-based billing (https://docs.stripe.com/billing/subscriptions/usage-based)
+Issue stablecoin-backed cards (https://docs.stripe.com/treasury/stablecoins)
+Provision and manage services with agents (https://docs.stripe.com/projects)
+Resources
+App integrations (/apps)
+Code samples (https://github.com/stripe-samples)
+Developers blog (https://stripe.dev/)
+API status (https://status.stripe.com/)
+Learn
+Blog (/blog)
+Customer stories (/customers)
+Guides (https://stripe.com/guides)
+Support
+Get support (https://support.stripe.com/?referrerLocale=en-us)
+Managed support plans (/support-plans)
+Professional services (/professional-services)
+Company
+Product roadmap (/roadmap)
+Sessions annual conference (/sessions)
+Careers (/careers)
+Newsroom (/newsroom)
+Stripe Press (https://press.stripe.com/)
+About (/about)
+Contact
+Contact sales (/contact/sales)
+Become a partner (/partners/become-a-partner)
+Start now (https://dashboard.stripe.com/register)
+Contact sales (/contact/sales)
+Payments
+Payments Online payments (/payments)
+Managed Payments Merchant of record solution (/managed-payments)
+Payment links No-code payments (/payments/payment-links)
+Checkout Prebuilt payment UIs (/payments/checkout)
+Elements Flexible UI components (/payments/elements)
+Payment methods Access to 125+ (/payments/payment-methods)
+Terminal In-person payments (/terminal)
+Authorization Boost Acceptance optimizations (/authorization-boost)
+Link Accelerated checkout (/payments/link)
+Financial Connections Linked financial account data (/financial-connections)
+Revenue
+Billing Recurring revenue (/billing)
+Metronome Usage-based billing (/billing/usage-based-billing)
+Subscriptions Subscription management (/billing/subscriptions)
+Invoicing One-time or recurring (/invoicing)
+Tax Sales tax & VAT automation (/tax)
+Revenue Recognition Accounting automation (/revenue-recognition)
+Stripe Sigma Custom reports (/sigma)
+Data Pipeline Data sync (/data-pipeline)
+Money management
+Treasury Business finances (/treasury)
+Global Payouts Payouts to third parties (/payouts)
+Capital Business financing (/capital)
+Crypto Wallet, stablecoin issuing, and card infrastructure (/use-cases/crypto)
+Crypto Onramp Embeddable crypto purchases (/crypto-onramp)
+Embedded Finance
+Connect Payments for platforms (/connect)
+Capital for platforms Customer financing (/capital/platforms)
+Treasury for platforms Embedded financial services (/treasury/platforms)
+Issuing Physical and virtual cards (/issuing)
+See all products (/products)
+More
+Product roadmap See what’s ahead (/roadmap)
+Radar Fraud prevention (/radar)
+Atlas Startup incorporation (/atlas)
+Climate Carbon removal (/climate)
+Identity Online identity verification (/identity)
+Stripe Sessions 2026
+See how Stripe is building the economic infrastructure for AI.
+Watch now (https://stripe.com/sessions/2026?utm_medium=owned-surfaces&utm_source=9cb9&utm_campaign=GLOBAL_4301&utm_content=8a70&utm_term=5a728d3d167c)
+[Sessions Background]
+By stage
+Enterprises (/enterprise)
+Startups (/startups)
+By use case
+Agentic commerce (/use-cases/agentic-commerce)
+Crypto (/use-cases/crypto)
+Ecommerce (/use-cases/ecommerce)
+Embedded finance (/use-cases/embedded-finance)
+Finance automation (/use-cases/finance-automation)
+Global businesses (/use-cases/global-businesses)
+In-app payments (/use-cases/in-app-payments)
+Marketplaces (/use-cases/marketplaces)
+Money management (/money-management/availability)
+Platforms (/use-cases/platforms)
+SaaS (/use-cases/saas)
+By industry
+AI companies (/use-cases/ai)
+Creator economy (/use-cases/creator-economy)
+Fintech (/industries/fintech)
+Gaming (/industries/gaming)
+Hospitality, travel, and leisure (/industries/travel)
+Insurance (/industries/insurance)
+Media and entertainment (/industries/media-entertainment)
+Nonprofits (/industries/nonprofits)
+Professional services (/industries/professional-services)
+Public sector (/industries/public-sector)
+Retail (/industries/retail)
+Ecosystem
+Partners (/partners)
+Stripe App Marketplace (https://marketplace.stripe.com/)
+Documentation
+Stripe docs (https://docs.stripe.com)
+API reference (https://docs.stripe.com/api)
+Libraries and SDKs (https://docs.stripe.com/development)
+Stripe Apps (https://docs.stripe.com/stripe-apps)
+Guides
+Accept online payments (https://docs.stripe.com/payments)
+Implement a prebuilt checkout (https://docs.stripe.com/payments/checkout)
+Build a platform or marketplace (https://docs.stripe.com/connect)
+Manage subscriptions (https://docs.stripe.com/billing)
+Offer usage-based billing (https://docs.stripe.com/billing/subscriptions/usage-based)
+Issue stablecoin-backed cards (https://docs.stripe.com/treasury/stablecoins)
+Provision and manage services with agents (https://docs.stripe.com/projects)
+Resources
+App integrations (/apps)
+Code samples (https://github.com/stripe-samples)
+Developers blog (https://stripe.dev/)
+API status (https://status.stripe.com/)
+Learn
+Blog (/blog)
+Customer stories (/customers)
+Guides (https://stripe.com/guides)
+Support
+Get support (https://support.stripe.com/?referrerLocale=en-us)
+Managed support plans (/support-plans)
+Professional services (/professional-services)
+Company
+Product roadmap (/roadmap)
+Sessions annual conference (/sessions)
+Careers (/careers)
+Newsroom (/newsroom)
+Stripe Press (https://press.stripe.com/)
+About (/about)
+Contact
+Contact sales (/contact/sales)
+Become a partner (/partners/become-a-partner)
+Blog (/blog)
+Product (/blog/product)
+Stripe on X (https://x.com/stripe)
+Introducing the Machine Payments Protocol (/blog/machine-payments-protocol)
+March 18, 2026 (/blog/machine-payments-protocol)
+https://www.linkedin.com/in/jeffwweinstein/
+Jeff Weinstein (https://www.linkedin.com/in/jeffwweinstein/)
+Product Lead, Agentic Commerce
+https://www.linkedin.com/in/steve-kaliski-079a7710/
+Steve Kaliski (https://www.linkedin.com/in/steve-kaliski-079a7710/)
+Engineering Lead, Agentic Commerce
+AI is evolving from question-and-answer chatbots to autonomous agents that can make comprehensive plans, execute actions, and evaluate outcomes. We believe agents will become an integral part of the internet economy, and they need the ability to transact with businesses and one another.
+However, the tools of the current financial system were built for humans, so agents struggle to use them. Making a purchase today can require an agent to create an account, navigate a pricing page, choose between subscription tiers, enter payment details, and set up billing—steps that often require human intervention.
+To help eliminate these challenges, we’re launching the Machine Payments Protocol (https://mpp.dev/) (MPP), an open standard, internet-native way for agents to pay—co-authored by Tempo (https://tempo.xyz/) and Stripe. MPP provides a specification for agents and services to coordinate payments programmatically, enabling microtransactions, recurring payments, and more.
+Stripe users can accept payments over MPP (https://docs.stripe.com/payments/machine/mpp) in a few lines of code using our PaymentIntents API. Businesses can then accept payments directly from agents, in stablecoins as well as fiat with cards and buy now, pay later payment methods via Shared Payment Tokens (https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens) (SPTs).
+MPP is already powering new agentic business models on Stripe. Browserbase, a browser infrastructure provider, now lets agents spin up headless browsers and pay per session. PostalForm helps agents pay to print and send physical mail. Prospect Butcher Co. lets agents order sandwiches for human pickup or delivery to anywhere in New York City. And agents can now programmatically contribute to Stripe Climate (https://climate.stripe.dev/) .
+“Parallel is built for a world where agents are the primary users of the web. We integrated machine payments with Stripe in just a few lines of code, and now agents can autonomously pay per API call for web access. This allows us to reach any agent developer in the world on the same Stripe stack we already run on,” said Parag Agrawal, founder of Parallel Web Systems.
+How MPP works
+An agent can request a resource from a service, API, Model Context Protocol (MCP), or any HTTP addressable endpoint, and the service responds with a payment request. The agent authorizes the payment, and the resource is delivered to the agent.
+For Stripe businesses, these payments appear in the Stripe API and Dashboard like any other transaction; the funds settle into a business’s existing balance, in their default currency, and on their standard payout schedule. The same Stripe infrastructure businesses rely on for human payments can work for agents, including tax calculation, fraud protection, reporting, accounting integrations, and refunds.
+const paymentIntent = await stripe.paymentIntents.create({
+amount: 1,
+currency: 'usd',
+payment_method_types: ['crypto'],
+payment_method_data: {
+type: 'crypto',
+},
+payment_method_options: {
+crypto: {
+mode: 'deposit',
+deposit_options: {
+networks: ['tempo'],
+},
+},
+},
+confirm: true,
+});
+~
+Building for the agent economy
+Agents represent an entirely new category of users to build for—and increasingly, sell to. Stripe is building a broad set of agentic financial infrastructure to enable these important new patterns, via our Agentic Commerce Suite (https://stripe.com/blog/agentic-commerce-suite) , Agentic Commerce Protocol (https://www.agenticcommerce.dev/) (ACP), MCP integrations (https://docs.stripe.com/mcp) , and payment support for both MPP and x402.
+To start accepting payments via MPP using Stripe, read our docs (https://docs.stripe.com/payments/machine) .
+Subscribe to the Stripe Blog
+Stay connected with Stripe and receive new blog posts in your inbox.
+Something went wrong on our end. Sorry about that. You can still contact us at sales@stripe.com (mailto:sales@stripe.com) .
+We're sorry, but we're unable to serve your request.
+Subscribe
+Stripe will handle your data pursuant to its Privacy Policy (/privacy)
+By submitting this form, you acknowledge and consent that your personal data will be processed in accordance with Stripe's Privacy Policy (/privacy) and that your information will be stored outside of mainland China, including in the United States and other countries or regions where Stripe or its partners operate.
+Thank you for subscribing.
+You'll receive blog updates in your inbox soon.
+Like this post? Join our team.
+Stripe builds financial tools and economic infrastructure for the internet.
+View roles (/careers/search)
+Have any feedback or questions?
+We’d love to hear from you.
+Contact us (https://stripe.com/contact)
+/
+United States (English)
+[AU]
+Australia
+English (https://stripe.com/au/blog/machine-payments-protocol)
+[AT]
+Austria
+Deutsch (https://stripe.com/at/blog/machine-payments-protocol)
+English (https://stripe.com/en-at/blog/machine-payments-protocol)
+[BE]
+Belgium
+Nederlands (https://stripe.com/nl-be/blog/machine-payments-protocol)
+Français (https://stripe.com/fr-be/blog/machine-payments-protocol)
+Deutsch (https://stripe.com/de-be/blog/machine-payments-protocol)
+English (https://stripe.com/en-be/blog/machine-payments-protocol)
+[BR]
+Brazil
+Português (https://stripe.com/br/blog/machine-payments-protocol)
+English (https://stripe.com/en-br/blog/machine-payments-protocol)
+[BG]
+Bulgaria
+English (https://stripe.com/en-bg/blog/machine-payments-protocol)
+[CA]
+Canada
+English (https://stripe.com/en-ca/blog/machine-payments-protocol)
+Français (https://stripe.com/fr-ca/blog/machine-payments-protocol)
+[HR]
+Croatia
+English (https://stripe.com/en-hr/blog/machine-payments-protocol)
+Italiano (https://stripe.com/it-hr/blog/machine-payments-protocol)
+[CY]
+Cyprus
+English (https://stripe.com/en-cy/blog/machine-payments-protocol)
+[CZ]
+Czech Republic
+English (https://stripe.com/en-cz/blog/machine-payments-protocol)
+[DK]
+Denmark
+English (https://stripe.com/en-dk/blog/machine-payments-protocol)
+[EE]
+Estonia
+English (https://stripe.com/en-ee/blog/machine-payments-protocol)
+[FI]
+Finland
+English (https://stripe.com/en-fi/blog/machine-payments-protocol)
+Svenska (https://stripe.com/sv-fi/blog/machine-payments-protocol)
+[FR]
+France
+Français (https://stripe.com/fr/blog/machine-payments-protocol)
+English (https://stripe.com/en-fr/blog/machine-payments-protocol)
+[DE]
+Germany
+Deutsch (https://stripe.com/de/blog/machine-payments-protocol)
+English (https://stripe.com/en-de/blog/machine-payments-protocol)
+[GI]
+Gibraltar
+English (https://stripe.com/en-gi/blog/machine-payments-protocol)
+[GR]
+Greece
+English (https://stripe.com/en-gr/blog/machine-payments-protocol)
+[HK]
+Hong Kong SAR, China
+English (https://stripe.com/en-hk/blog/machine-payments-protocol)
+简体中文 (https://stripe.com/zh-hk/blog/machine-payments-protocol)
+[HU]
+Hungary
+English (https://stripe.com/en-hu/blog/machine-payments-protocol)
+[IN]
+India
+English (https://stripe.com/in/blog/machine-payments-protocol)
+[IE]
+Ireland
+English (https://stripe.com/ie/blog/machine-payments-protocol)
+[IT]
+Italy
+Italiano (https://stripe.com/it/blog/machine-payments-protocol)
+English (https://stripe.com/en-it/blog/machine-payments-protocol)
+[JP]
+Japan
+日本語 (https://stripe.com/jp/blog/machine-payments-protocol)
+English (https://stripe.com/en-jp/blog/machine-payments-protocol)
+[LV]
+Latvia
+English (https://stripe.com/en-lv/blog/machine-payments-protocol)
+[LI]
+Liechtenstein
+Deutsch (https://stripe.com/de-li/blog/machine-payments-protocol)
+English (https://stripe.com/en-li/blog/machine-payments-protocol)
+[LT]
+Lithuania
+English (https://stripe.com/en-lt/blog/machine-payments-protocol)
+[LU]
+Luxembourg
+Français (https://stripe.com/fr-lu/blog/machine-payments-protocol)
+Deutsch (https://stripe.com/de-lu/blog/machine-payments-protocol)
+English (https://stripe.com/en-lu/blog/machine-payments-protocol)
+[CN]
+Mainland China
+简体中文 (https://stripe.com/cn/blog/machine-payments-protocol)
+English (https://stripe.com/en-cn/blog/machine-payments-protocol)
+[MY]
+Malaysia
+English (https://stripe.com/en-my/blog/machine-payments-protocol)
+简体中文 (https://stripe.com/zh-my/blog/machine-payments-protocol)
+[MT]
+Malta
+English (https://stripe.com/en-mt/blog/machine-payments-protocol)
+[MX]
+Mexico
+Español (https://stripe.com/mx/blog/machine-payments-protocol)
+English (https://stripe.com/en-mx/blog/machine-payments-protocol)
+[NL]
+Netherlands
+Nederlands (https://stripe.com/nl/blog/machine-payments-protocol)
+English (https://stripe.com/en-nl/blog/machine-payments-protocol)
+[NZ]
+New Zealand
+English (https://stripe.com/nz/blog/machine-payments-protocol)
+[NO]
+Norway
+English (https://stripe.com/en-no/blog/machine-payments-protocol)
+[PL]
+Poland
+English (https://stripe.com/en-pl/blog/machine-payments-protocol)
+[PT]
+Portugal
+Português (https://stripe.com/pt-pt/blog/machine-payments-protocol)
+English (https://stripe.com/en-pt/blog/machine-payments-protocol)
+[RO]
+Romania
+English (https://stripe.com/en-ro/blog/machine-payments-protocol)
+[SG]
+Singapore
+English (https://stripe.com/en-sg/blog/machine-payments-protocol)
+简体中文 (https://stripe.com/zh-sg/blog/machine-payments-protocol)
+[SK]
+Slovakia
+English (https://stripe.com/en-sk/blog/machine-payments-protocol)
+[SI]
+Slovenia
+English (https://stripe.com/en-si/blog/machine-payments-protocol)
+Italiano (https://stripe.com/it-si/blog/machine-payments-protocol)
+[ES]
+Spain
+Español (https://stripe.com/es/blog/machine-payments-protocol)
+English (https://stripe.com/en-es/blog/machine-payments-protocol)
+[SE]
+Sweden
+Svenska (https://stripe.com/se/blog/machine-payments-protocol)
+English (https://stripe.com/en-se/blog/machine-payments-protocol)
+[CH]
+Switzerland
+Deutsch (https://stripe.com/de-ch/blog/machine-payments-protocol)
+Français (https://stripe.com/fr-ch/blog/machine-payments-protocol)
+Italiano (https://stripe.com/it-ch/blog/machine-payments-protocol)
+English (https://stripe.com/en-ch/blog/machine-payments-protocol)
+[TH]
+Thailand
+ไทย (https://stripe.com/th/blog/machine-payments-protocol)
+English (https://stripe.com/en-th/blog/machine-payments-protocol)
+[AE]
+United Arab Emirates
+English (https://stripe.com/ae/blog/machine-payments-protocol)
+[GB]
+United Kingdom
+English (https://stripe.com/gb/blog/machine-payments-protocol)
+United States
+English (https://stripe.com/us/blog/machine-payments-protocol)
+Español (https://stripe.com/es-us/blog/machine-payments-protocol)
+简体中文 (https://stripe.com/zh-us/blog/machine-payments-protocol)
+Products & pricing
+Pricing (https://stripe.com/pricing)
+Atlas (/atlas)
+Authorization Boost (/authorization-boost)
+Billing (/billing)
+Capital (/capital/platforms)
+Checkout (/payments/checkout)
+Climate (/climate)
+Connect (/connect)
+Crypto (/use-cases/crypto)
+Data Pipeline (/data-pipeline)
+Elements (/payments/elements)
+Financial Connections (/financial-connections)
+Identity (/identity)
+Invoicing (/invoicing)
+Issuing (https://stripe.com/issuing)
+Link (/payments/link)
+Managed Payments (/managed-payments)
+Payment links (/payments/payment-links)
+Payments (/payments)
+Payouts (/connect/payouts)
+Radar (https://stripe.com/radar)
+Revenue Recognition (/revenue-recognition)
+Stripe Sigma (https://stripe.com/sigma)
+Tax (/tax)
+Terminal (/terminal)
+Treasury (/treasury)
+Solutions
+Enterprises (/enterprise)
+Startups (/startups)
+Agentic commerce (/use-cases/agentic-commerce)
+Crypto (/use-cases/crypto)
+Ecommerce (/use-cases/ecommerce)
+Embedded finance (/use-cases/embedded-finance)
+Finance automation (/use-cases/finance-automation)
+Global businesses (/use-cases/global-businesses)
+In-app payments (/use-cases/in-app-payments)
+Marketplaces (/use-cases/marketplaces)
+Money management (/money-management/availability)
+Platforms (/use-cases/platforms)
+SaaS (/use-cases/saas)
+AI companies (/use-cases/ai)
+Creator economy (/use-cases/creator-economy)
+Fintech (/industries/fintech)
+Gaming (/industries/gaming)
+Hospitality, travel, and leisure (/industries/travel)
+Insurance (/industries/insurance)
+Media and entertainment (/industries/media-entertainment)
+Nonprofits (/industries/nonprofits)
+Professional services (/industries/professional-services)
+Public sector (/industries/public-sector)
+Retail (/industries/retail)
+Integrations & custom solutions
+Stripe App Marketplace (https://marketplace.stripe.com/)
+Stripe Partner ecosystem (/partners)
+Professional services (/professional-services)
+Developers
+Documentation (https://docs.stripe.com/)
+API reference (https://docs.stripe.com/api)
+API status (https://status.stripe.com/)
+API changelog (https://docs.stripe.com/changelog)
+Libraries and SDKs (https://docs.stripe.com/development)
+Stripe Projects (https://docs.stripe.com/projects)
+Developer blog (https://stripe.dev/)
+Resources
+Guides (https://stripe.com/guides)
+Customer stories (/customers)
+Blog (/blog)
+Community (https://stripecommunity.com/)
+Sessions annual conference (/sessions)
+Privacy & terms (https://stripe.com/privacy)
+Prohibited & restricted businesses (/legal/restricted-businesses)
+Licenses (https://stripe.com/spc/licenses)
+Sitemap (/sitemap)
+Cookie settings (/cookie-settings)
+Your privacy choices (https://privacy.stripe.com/)
+More resources (https://stripe.com/resources/more)
+Company
+About (/about)
+Product roadmap (/roadmap)
+Careers (/careers)
+Newsroom (/newsroom)
+Stripe Press (https://press.stripe.com/)
+Contact sales (/contact/sales)
+Support
+Get support (https://support.stripe.com/?referrerLocale=en-us)
+Managed support plans (/support-plans)
+CA residents:
++1 888 926 2289
+Sign in (https://dashboard.stripe.com/login)
+© 2026 Stripe, LLC

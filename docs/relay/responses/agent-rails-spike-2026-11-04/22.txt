@@ -1,0 +1,107 @@
+meta og:type: website
+meta og:title: Agentic commerce
+meta og:description: Enable commerce between buyers and sellers through agents.
+meta og:image: https://d37ugbyn3rpeym.cloudfront.net/docs/og-image/agentic-commerce.ogimage.png
+meta twitter:card: summary_large_image
+meta twitter:title: Agentic commerce
+meta twitter:description: Enable commerce between buyers and sellers through agents.
+meta twitter:image: https://d37ugbyn3rpeym.cloudfront.net/docs/og-image/agentic-commerce.ogimage.png
+meta description: Enable commerce between buyers and sellers through agents.
+Agentic commerce | Stripe Documentation
+Skip to content (#main-content)
+Agentic commerce
+Create account (https://dashboard.stripe.com/register) or Sign in (https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2Fagentic-commerce)
+/
+Search / Ask AI
+Create account (https://dashboard.stripe.com/register) Sign in (https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2Fagentic-commerce)
+Get started (/get-started)
+Payments (/payments)
+Revenue (/revenue)
+Risk (/risk)
+Data (/data)
+Money management (/money-management)
+Stablecoins (/stablecoins)
+Embedded finance (/connect)
+Developer resources (/development)
+More
+APIs & SDKs
+Help
+Overview (/payments) Accept a payment (/payments/accept-a-payment)
+Online payments
+Overview (/payments/online-payments) Find your use case (/payments/use-cases/get-started)
+Use Payment Links (/payment-links)
+Build a payments page (/payments/checkout)
+Build a custom integration with Elements (/payments/advanced)
+Build an in-app integration (/payments/mobile)
+Use Managed Payments (/payments/managed-payments)
+Recurring payments (/recurring-payments) Migrate legacy integrations (/payments/migrations)
+In-person payments
+Overview (/terminal) How Terminal works (/terminal/overview) Availability (/terminal/payments/collect-card-payment/supported-card-brands)
+Readers (/terminal/payments/setup-reader)
+Ready-made apps (/terminal/payments/ready-made-apps)
+Custom integration
+Payment methods
+Add payment methods (/payments/payment-methods/overview)
+Manage payment methods
+Faster checkout with Link (/payments/link)
+Payment operations
+Analytics (/payments/analytics)
+Balances and settlement time (/payments/balances)
+Compliance and security
+Currencies (/currencies)
+Declines (/declines)
+Disputes (/disputes)
+Payouts
+Receipts (/receipts) Refunds and cancellations (/refunds)
+Advanced integrations
+Custom payment flows (/payments/more-payment-scenarios)
+Flexible acquiring (/payments/flexible-payments)
+Off-Session Payments (/payments/off-session-payments)
+Multiprocessor orchestration (/payments/orchestration)
+Beyond payments
+Incorporate your company (/atlas)
+Agentic commerce
+Build an agent
+Sell to agents
+Concepts and references
+Financial Connections (/financial-connections)
+Climate (/climate)
+United States
+English (United States)
+Home (/) /
+Payments (/payments)
+Agentic commerce
+Build agents that pay, or sell products, services, and APIs to agents.
+Ask about this page
+Copy for LLM
+View as Markdown
+Set up agent
+Agentic commerce lets AI agents transact for the people they serve. Buyers can browse products, get recommendations, and complete purchases without leaving the conversation. Agents can pay with a customer-controlled wallet and retrieve financial insights from the accounts customers choose to share.
+Stripe provides integrations for agent builders and sellers. If you build agents, you can add payments and commerce to them. If you sell products, services, or APIs, you can make them available to agents. Availability, launch stage, and supported countries vary by integration. See each integration’s guide for details.
+Build an agent
+You can give your agent a wallet to pay online, embed commerce into your AI interface, or complete payments in a browser with WebMCP.
+Link Agent Wallet Let your agent pay online and access your customer’s financial data. (/agentic-commerce/agents/link-agent-wallet)
+Embed commerce into your AI interface Let your AI interface browse seller catalogs, collect payment information, and complete purchases for buyers. (/agentic-commerce/agents/embedded)
+Use WebMCP to complete Stripe payments in a browser Build browser agents that discover and use structured tools in Stripe payment UIs. (/agentic-commerce/agents/webmcp)
+Sell to agents
+You can sell products by letting Stripe manage checkout or building your own, accept service bookings and payments, or charge for tool calls and HTTP requests with machine payments.
+Retail and e-commerce Sell products through agents. Let Stripe manage checkout, or build your own. (/agentic-commerce/sellers/use-cases/retail)
+Service bookings Let agents find, book, and pay for your services. (/agentic-commerce/sellers/use-cases/booking)
+Tool calls and HTTP requests Charge for tool calls and HTTP requests with machine payments, such as the Machine Payments Protocol (MPP) and x402. (/payments/machine)
+Concepts and references
+Learn how the building blocks of agentic commerce work.
+Shared Payment Tokens Grant and receive scoped payment credentials for agent-initiated purchases. (/agentic-commerce/concepts/shared-payment-tokens)
+Catalog feed Share structured product and inventory data with Stripe for AI agent discovery. (/agentic-commerce/concepts/catalog-feed)
+Universal Commerce Protocol Universal Commerce Protocol (UCP) enables agentic commerce across platforms. (/agentic-commerce/protocols/ucp)
+See also
+Agents and AI on Stripe (/agents)
+How agents work with Stripe (/agents/how-it-works)
+Was this page helpful?
+Yes
+No
+Need help? Contact Support (https://support.stripe.com/) .
+Chat with Stripe developers on Discord (https://stripe.com/go/developer-chat) .
+Check out our changelog (/changelog) .
+Questions? Contact Sales (https://stripe.com/contact/sales) .
+LLM? Read llms.txt (/llms.txt) .
+Powered by Markdoc (https://markdoc.dev)

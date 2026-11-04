@@ -1,0 +1,137 @@
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Platform Structure","dateModified":"2026-11-03T19:59:52.000Z"}
+meta description: How Skyfire is organized: users, agents, wallets, and seller services.
+meta og:title: Platform Structure
+meta og:description: How Skyfire is organized: users, agents, wallets, and seller services.
+meta og:site_name: Skyfire Developer Portal
+meta twitter:title: Platform Structure
+meta twitter:description: How Skyfire is organized: users, agents, wallets, and seller services.
+meta twitter:card: summary_large_image
+meta og:image: https://cdn.readme.io/og-image/create?type=docs&title=Platform%20Structure&projectTitle=Skyfire%20Developer%20Portal&description=How%20Skyfire%20is%20organized%3A%20users%2C%20agents%2C%20wallets%2C%20and%20seller%20services.&logoUrl=https%3A%2F%2Ffiles.readme.io%2F74cda49-small-Skyfire_Black_Logo.png&color=%23018ef5&variant=light
+meta twitter:image: https://cdn.readme.io/og-image/create?type=docs&title=Platform%20Structure&projectTitle=Skyfire%20Developer%20Portal&description=How%20Skyfire%20is%20organized%3A%20users%2C%20agents%2C%20wallets%2C%20and%20seller%20services.&logoUrl=https%3A%2F%2Ffiles.readme.io%2F74cda49-small-Skyfire_Black_Logo.png&color=%23018ef5&variant=light
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:updated_time: 2026-11-03T19:59:52.000Z
+Platform Structure
+For AI agents: the docs index is at https://docs.skyfire.xyz/llms.txt. Append .md to any documentation page URL to get its markdown version.
+Jump to Content (#content)
+/docs Home (/)
+Home (/) Guides (/docs) API Reference (/reference)
+Home (/) Log In (/login?redirect_uri=/docs/platform-structure) /docs
+Guides
+Log In (/login?redirect_uri=/docs/platform-structure)
+Home (/) Guides (/docs) API Reference (/reference)
+Platform Structure
+Overview
+Introduction to Skyfire (/docs/introduction-to-skyfire)
+Quickstart (/docs/quickstart)
+Core Concepts
+Platform Structure (/docs/platform-structure)
+Know Your Agent (KYA) (/docs/kya)
+KYAPay Tokens (/docs/kyapay-tokens)
+Common Token Claims (/docs/common-token-claims)
+KYA Token (/docs/kya-token)
+Example KYA Token (/docs/example-kya-token)
+PAY Token (/docs/pay-token)
+Example PAY Token (/docs/example-pay-token)
+KYA-PAY Token (/docs/token-schemas)
+Example KYA-PAY Token (/docs/example-kya-pay-token)
+Payment Cards (/docs/payment-cards)
+Agentic Commerce with Payment Cards (/docs/agentic-commerce-with-payment-cards)
+Payments & Settlement (/docs/payments-settlement)
+Token Interaction Flows (/docs/token-interaction-flows)
+For Buyers
+Buyer Guide (/docs/buyer-guide)
+Funding Your Wallet (/docs/wallet-funding)
+Using the Skyfire MCP Server (/docs/using-the-skyfire-mcp-server)
+For Sellers
+Seller Guide (/docs/seller-guide)
+Enforce KYA-based access control (/docs/enforce-kya-based-access-control)
+AWS (/docs/aws)
+Cloudflare (/docs/cloudflare)
+How Seller Services Work (/docs/seller-services)
+OpenAPI Specs (/docs/api-specs)
+MCP Servers (/docs/mcp-servers)
+Verify and Extract Data from Tokens (/docs/verify-and-extract-data-from-tokens)
+Handling Missing or Invalid Tokens (/docs/handling-missing-or-invalid-tokens)
+Security Brief for Sellers and Bot Managers (/docs/security-brief-for-sellers)
+For Organizations
+Organization Guide (/docs/organization-guide)
+Agent Provider (/docs/agent-provider)
+Resource Provider (/docs/resource-provider)
+Sell to Your Customers' Agents (/docs/sell-to-your-customers-agents)
+Coin Wallet Embed SDK (/docs/coin-wallet-embed-sdk)
+For Service Providers
+Service Provider Guide (/docs/service-provider-guide)
+Originate Tokens (/docs/originate-tokens)
+Skyfire Directory
+Service Discovery (/docs/service-discovery)
+Verified Service Guarantee (/docs/verified-service-guarantee)
+Examples & Demos
+Live Implementations (/docs/live-implementations)
+Dappier.com (/docs/dappier-implementation)
+BuildShip.tools (/docs/buildship-implementation)
+Apify.com (/docs/apify-implementation)
+Reference Implementations (/docs/reference-implementations)
+Building an Agentic Checkout (/docs/building-an-agentic-checkout)
+Smart News Crawler (/docs/smart-news-crawler)
+Discovery and Purchase of Premium Financial Data by an Agent (/docs/agent-data-purchase)
+Access to Premium Web Content by a Paying Web Crawler (/docs/crawler-access-protected-content)
+Powered by https://readme.com?ref_src=hub&project=skyfire-developer-portal
+Platform Structure
+How Skyfire is organized: users, agents, wallets, and seller services.
+Skyfire follows the hierarchy:
+A User owns one or more agent accounts
+Each agent has its own wallet
+Seller agents publish Seller Services that buyers pay for with tokens
+Users
+#users
+A User is the top-level entity on Skyfire, representing a person or an organization. A user maintains a single verified identity and controls everything beneath it: agent accounts, API keys, and wallet access.
+That verified identity can be reused by the user's agents for account creation, authentication, and access to seller services.
+Agent Accounts
+#agent-accounts
+Agent accounts are the operational entities that call the Skyfire APIs. Each agent belongs to exactly one user, holds exactly one role — Buyer or Seller — and is accessed programmatically through its own API keys.
+What each user gets
+One Buyer agent of their own. Personal accounts get it automatically at signup. An organization user created directly into an agent group starts without one and sees Create a Buyer in the dashboard until they add it.
+Any number of Seller agents , created with Create a Seller in the Skyfire Dashboard (https://app.skyfire.xyz) , or by an organization administrator through the API
+Each agent has its own wallet and can hold one or more API keys.
+Buyer Agent
+Acts on the user's behalf to discover and purchase services or tools from sellers.
+Creates accounts with seller services
+Subscribes to or purchases services
+Generates kya (identity), pay (payment), and kya-pay (both) tokens
+Each buyer agent has a wallet funded by the user. When calling a seller, the buyer attaches the token the seller requires (in an HTTP header or the request body).
+Seller Agent
+Lets a user publish and monetize services, tools, or APIs.
+Registers Seller Services
+Defines identity and payment requirements for buyer requests
+Verifies incoming tokens via standard JWKS libraries to authenticate the buyer ( kya ) and charges them ( pay / kya-pay )
+Seller agents must be created explicitly from the Skyfire Dashboard, and receive payment through Skyfire's settlement system once a service is delivered.
+Wallets
+#wallets
+Every agent account comes with a wallet managed by Skyfire.
+Buyers fund their wallet to pay for services and tools.
+Sellers receive funds after charging a buyer's token and delivering the service.
+Skyfire handles settlement and the transfer of funds between wallets once a transaction succeeds.
+Seller Services
+#seller-services
+A Seller Service is a resource that a seller agent makes available to buyers. A single seller agent can offer many seller services, and each one can be a remote or local MCP server , an API , webpage , or Fetch.ai agent.
+Every Seller Service specifies:
+Pricing
+Identity requirements
+Accepted token types
+Token format and delivery method (e.g. the kyapay-token HTTP header)
+Paid services
+Require a pay or kya-pay token.
+Free services
+Require a kya token (identity only).
+For more information see How Seller Services Work (/docs/seller-services) .
+Updated about 13 hours ago
+Quickstart (/docs/quickstart) Know Your Agent (KYA) (/docs/kya)
+Did this page help you?
+Yes
+No
+Copy Page
+Users (#users)
+Agent Accounts (#agent-accounts)
+Wallets (#wallets)
+Seller Services (#seller-services)

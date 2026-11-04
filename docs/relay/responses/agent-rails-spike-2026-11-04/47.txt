@@ -1,0 +1,140 @@
+meta description: Instant payments for your APIs, websites, and autonomous agents.
+meta og:title: x402 Payments
+meta og:description: Instant payments for your APIs, websites, and autonomous agents.
+meta og:site_name: thirdweb docs
+meta og:locale: en_US
+meta og:image:height: 630
+meta og:image: https://portal.thirdweb.com/api/og?icon=payments&title=x402%20Payments
+meta og:image:width: 1200
+meta og:type: website
+meta twitter:card: summary_large_image
+meta twitter:site: @thirdweb
+meta twitter:creator: @thirdweb
+meta twitter:title: x402 Payments
+meta twitter:description: Instant payments for your APIs, websites, and autonomous agents.
+meta twitter:image:height: 630
+meta twitter:image: https://portal.thirdweb.com/api/og?icon=payments&title=x402%20Payments
+meta twitter:image:width: 1200
+x402 Payments
+Docs (/)
+https://github.com/thirdweb-dev
+Search Docs
+K
+Ask AI
+Ask AI
+Ask AI
+Ask AI
+Wallets (/wallets)
+x402 (/x402)
+Bridge (/bridge)
+Tokens (/tokens)
+AI (/ai/chat)
+API Reference (/reference)
+SDKs
+SDKs
+TypeScript (/references/typescript/v5) React (/references/typescript/v5) React Native (/references/typescript/v5) .NET (/dotnet) Unity (/unity) Unreal Engine (/unreal-engine)
+Support
+Support
+Articles (/knowledge-base) Account (/account) Status (https://status.thirdweb.com)
+Changelog (/changelog)
+Get Started (/x402)
+Playground (https://playground.thirdweb.com/x402)
+Guides
+Client Side (/x402/client)
+Server Side (/x402/server)
+Agents (/x402/agents)
+Facilitator (/x402/facilitator)
+Solana (/x402/facilitator/solana)
+API References
+HTTP API (/reference)
+TypeScript (/references/typescript/v5)
+React (/references/typescript/v5)
+Unity (/unity)
+Unreal Engine (/unreal-engine)
+Resources
+FAQ (/x402/faq)
+x402
+x402 Payments
+x402 (https://x402.org) is an open-source protocol that turns the dormant HTTP 402 Payment Required status code into a fully-featured, on-chain payment layer for APIs, websites, and autonomous agents.
+x402 Playground Try out x402 payments in our live playground (https://playground.thirdweb.com/x402)
+Chain and token support
+#chain-and-token-support
+The thirdweb x402 client/server stack supports payments on 170+ EVM chains (https://thirdweb.com/chainlist?service=account-abstraction) .
+The payment token must support either:
+ERC-2612 permit (most ERC20 tokens)
+ERC-3009 sign with authorization (USDC on all chains)
+Client Side
+#client-side
+React
+TypeScript
+useFetchWithPayment is a React hook that automatically handles 402 Payment Required responses with built-in UI for payment errors and wallet connection:
+import { useFetchWithPayment } from "thirdweb/react" ;
+import { createThirdwebClient } from "thirdweb" ;
+const client = createThirdwebClient ({ clientId: "your-client-id" });
+function MyComponent () {
+const { fetchWithPayment , isPending } = useFetchWithPayment (client);
+const handleApiCall = async () => {
+// Handle wallet connection, funding, and payment errors automatically
+// Response is parsed as JSON by default
+const data = await fetchWithPayment (
+"https://api.example.com/paid-endpoint" ,
+);
+console. log (data);
+};
+return (
+< button onClick = { handleApiCall } disabled = { isPending } >
+{ isPending ? "Loading..." : "Make Paid API Call" }
+</ button >
+);
+}
+The hook automatically shows modals for wallet connection, funding and payment errors. See the client side docs (/x402/client) for more details.
+Server Side
+#server-side
+To make your API calls payable, use the settlePayment function in a middleware or endpoint:
+import { createThirdwebClient } from "thirdweb" ;
+import { facilitator, settlePayment } from "thirdweb/x402" ;
+import { arbitrumSepolia } from "thirdweb/chains" ;
+const client = createThirdwebClient ({ secretKey: "your-secret-key" });
+const thirdwebX402Facilitator = facilitator ({
+client,
+serverWalletAddress: "0xYourWalletAddress" ,
+});
+export async function GET ( request : Request ) {
+const paymentData =
+request.headers. get ( "PAYMENT-SIGNATURE" ) ||
+request.headers. get ( "X-PAYMENT" );
+const result = await settlePayment ({
+resourceUrl: "https://api.example.com/premium-content" ,
+method: "GET" ,
+paymentData,
+payTo: "0xYourWalletAddress" ,
+network: arbitrumSepolia,
+price: "$0.01" ,
+facilitator: thirdwebX402Facilitator,
+});
+if (result.status === 200 ) {
+return Response. json ({ data: "premium content" });
+} else {
+return Response. json (result.responseBody, {
+status: result.status,
+headers: result.responseHeaders,
+});
+}
+}
+You can also create middlewares to handle payment for multiple endpoints, see the server side docs (/x402/server) for more details. The facilitator (/x402/facilitator) handles settling the payment onchain using your own server wallet.
+Going Further
+#going-further
+Client Side Learn how to interact with x402-compatible APIs from your client applications (/x402/client) Server Side Accept x402 payments in your APIs with middleware or dedicated endpoints (/x402/server) Facilitator API Configure the facilitator service to verify and settle payments (/x402/facilitator)
+Playground (https://playground.thirdweb.com/x402)
+Edit this page (https://github.com/thirdweb-dev/js/edit/main/apps/portal/src/app/x402/page.mdx)
+Was this page helpful?
+Yes
+No
+Watch our
+Video tutorials (https://www.youtube.com/@thirdweb_)
+View our
+Changelog (/changelog)
+Using AI?
+View llms.txt (/llms-full.txt)
+Subscribe for the latest dev updates
+Subscribe

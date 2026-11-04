@@ -1,0 +1,140 @@
+meta og:type: website
+meta og:title: Machine payments
+meta og:description: Machine payments lets agents pay for APIs and services programmatically. The server returns a payment challenge, the agent presents a valid payment credential, and the resource is delivered within the same request.
+meta og:image: https://d37ugbyn3rpeym.cloudfront.net/docs/og-image/payments.machine.ogimage.png
+meta twitter:card: summary_large_image
+meta twitter:title: Machine payments
+meta twitter:description: Machine payments lets agents pay for APIs and services programmatically. The server returns a payment challenge, the agent presents a valid payment credential, and the resource is delivered within the same request.
+meta twitter:image: https://d37ugbyn3rpeym.cloudfront.net/docs/og-image/payments.machine.ogimage.png
+meta description: Machine payments lets agents pay for APIs and services programmatically. The server returns a payment challenge, the agent presents a valid payment credential, and the resource is delivered within the same request.
+Machine payments | Stripe Documentation
+Skip to content (#main-content)
+Tool calls and HTTP requests
+Create account (https://dashboard.stripe.com/register) or Sign in (https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2Fpayments%2Fmachine)
+/
+Search / Ask AI
+Create account (https://dashboard.stripe.com/register) Sign in (https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2Fpayments%2Fmachine)
+Get started (/get-started)
+Payments (/payments)
+Revenue (/revenue)
+Risk (/risk)
+Data (/data)
+Money management (/money-management)
+Stablecoins (/stablecoins)
+Embedded finance (/connect)
+Developer resources (/development)
+More
+APIs & SDKs
+Help
+Overview (/payments) Accept a payment (/payments/accept-a-payment)
+Online payments
+Overview (/payments/online-payments) Find your use case (/payments/use-cases/get-started)
+Use Payment Links (/payment-links)
+Build a payments page (/payments/checkout)
+Build a custom integration with Elements (/payments/advanced)
+Build an in-app integration (/payments/mobile)
+Use Managed Payments (/payments/managed-payments)
+Recurring payments (/recurring-payments) Migrate legacy integrations (/payments/migrations)
+In-person payments
+Overview (/terminal) How Terminal works (/terminal/overview) Availability (/terminal/payments/collect-card-payment/supported-card-brands)
+Readers (/terminal/payments/setup-reader)
+Ready-made apps (/terminal/payments/ready-made-apps)
+Custom integration
+Payment methods
+Add payment methods (/payments/payment-methods/overview)
+Manage payment methods
+Faster checkout with Link (/payments/link)
+Payment operations
+Analytics (/payments/analytics)
+Balances and settlement time (/payments/balances)
+Compliance and security
+Currencies (/currencies)
+Declines (/declines)
+Disputes (/disputes)
+Payouts
+Receipts (/receipts) Refunds and cancellations (/refunds)
+Advanced integrations
+Custom payment flows (/payments/more-payment-scenarios)
+Flexible acquiring (/payments/flexible-payments)
+Off-Session Payments (/payments/off-session-payments)
+Multiprocessor orchestration (/payments/orchestration)
+Beyond payments
+Incorporate your company (/atlas)
+Agentic commerce (/agentic-commerce)
+Build an agent
+Sell to agents
+Retail and e-commerce (/agentic-commerce/sellers/use-cases/retail)
+Service bookings (/agentic-commerce/sellers/use-cases/booking)
+Tool calls and HTTP requests
+Accept payments for MCP tools (/agentic-commerce/monetize-mcp)
+MPP (/payments/machine/mpp)
+x402 (/payments/machine/x402)
+Concepts and references
+Financial Connections (/financial-connections)
+Climate (/climate)
+United States
+English (United States)
+Home (/) /
+Payments (/payments) /
+Agentic commerce (/agentic-commerce) /
+Sell to agents
+Frontier (/release-phases)
+Machine payments Frontier (/release-phases)
+Allow agents to pay-per-call using MPP and x402.
+Ask about this page
+Copy for LLM
+View as Markdown
+Set up agent
+Monetizing an API or service typically requires account creation, subscription selection, and payment entry. These flows require human input, which blocks agents from completing tasks autonomously.
+Machine payments let agents pay for APIs and services programmatically. Your server returns a payment challenge, the agent presents a valid payment credential, and Stripe settles the payment to your Stripe balance.
+Machine payments on Stripe works best with the Machine Payments Protocol (MPP) that is able to accept card and stablecoin payments. Stripe also supports stablecoin payments over the x402 protocol.
+Start accepting payments from agents
+Learn how to accept machine payments from agents.
+Get started (/payments/machine/mpp)
+Features
+Integrating with Stripe means reconciliation, reporting, and the rest of your Stripe workflows continue to work as expected.
+Stripe payments	Payments land directly in your Stripe balance and settle in fiat. Metrics, reporting, and multi-currency payouts work the same as any other payment in Stripe.
+Refunds	Refunds are available through the Refunds API (/refunds) and in the Dashboard.
+Microtransactions
+For card payments through Shared Payment Tokens (SPTs) (/agentic-commerce/concepts/shared-payment-tokens) , the minimum amount is 0.50 USD.
+For stablecoin payments (/payments/stablecoin-payments) , the minimum amount is 0.01 USDC .
+For MPP sessions (/payments/machine/mpp/sessions) , you can charge users for work in sub-cent increments, but the minimum settlement amount is 0.01 USDC.
+Stripe Connect	Machine payments are available for Connect platforms across all charge types.
+Availability
+Accept payments from agents with a variety of payment methods, including cards through Shared Payment Tokens (SPTs) (/agentic-commerce/concepts/shared-payment-tokens) and stablecoin payments (/payments/stablecoin-payments) .
+Accept card payments
+MPP supports fiat payments using cards with SPTs, which are scoped grants that let an agent use a customer’s payment method, such as a card, through your Stripe profile (/get-started/account/profile) . Each SPT includes usage and expiration limits.
+SPTs are available to businesses in all US states. If your business operates outside the US, view all supported countries (/agentic-commerce/concepts/shared-payment-tokens) . You can accept SPTs in all Stripe-supported currencies (/currencies) , and issue them from the Link Agent Wallet (https://link.com/agents) .
+Accept stablecoin payments
+Stripe supports stablecoin payments on both MPP and x402 protocols across the following networks and currencies.
+Protocol	Network	Currency
+MPP	Tempo	USDC.e
+MPP	Solana	USDC
+x402	Base	USDC
+Stablecoin payments are available to businesses in all US states, except New York. For businesses operating outside of the US, email machine-payments@stripe.com (mailto:machine-payments@stripe.com) with your Stripe account ID to request access to stablecoin payments in 30+ countries.
+To enable the payment method:
+Enable the Stablecoins and Crypto payment method for your account in the Dashboard (https://dashboard.stripe.com/settings/payment_methods) .
+Stripe reviews your access request and contacts you for more details if necessary. After we approve your request, the Stablecoins and Crypto payment method becomes active in the Dashboard.
+Submit your integration
+After you finish your integration, submit it for listing in the Stripe Directory (/directory) . The Directory is a catalog of tools and services that helps agents find your business.
+Email machine-payments@stripe.com (mailto:machine-payments@stripe.com) with:
+Your business name
+Your Stripe account ID
+Your Stripe profile ID. If necessary, claim your Stripe profile (/get-started/account/profile) .
+A link to your llms. txt file and links to any agent skills
+Whether your integration accepts SPTs, stablecoins, or both
+One to three example prompts that demonstrate your use case
+Integration guides
+Learn how to add machine payments to any API or service using MPP or x402.
+Machine Payments Protocol (MPP) Use MPP to accept machine payments from agents. (/payments/machine/mpp)
+x402 Use x402 to accept machine payments from agents. (/payments/machine/x402)
+Starter code Server (https://github.com/stripe-samples/machine-payments)
+Was this page helpful?
+Yes
+No
+Need help? Contact Support (https://support.stripe.com/) .
+Chat with Stripe developers on Discord (https://stripe.com/go/developer-chat) .
+Check out our changelog (/changelog) .
+Questions? Contact Sales (https://stripe.com/contact/sales) .
+LLM? Read llms.txt (/llms.txt) .
+Powered by Markdoc (https://markdoc.dev)

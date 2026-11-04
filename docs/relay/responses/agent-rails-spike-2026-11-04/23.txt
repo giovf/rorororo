@@ -1,0 +1,107 @@
+meta og:type: website
+meta og:title: Universal Commerce Protocol
+meta og:description: Universal Commerce Protocol (UCP) enables agentic commerce across platforms.
+meta og:image: https://d37ugbyn3rpeym.cloudfront.net/docs/og-image/agentic-commerce.protocols.ucp.ogimage.png
+meta twitter:card: summary_large_image
+meta twitter:title: Universal Commerce Protocol
+meta twitter:description: Universal Commerce Protocol (UCP) enables agentic commerce across platforms.
+meta twitter:image: https://d37ugbyn3rpeym.cloudfront.net/docs/og-image/agentic-commerce.protocols.ucp.ogimage.png
+meta description: Universal Commerce Protocol (UCP) enables agentic commerce across platforms.
+Universal Commerce Protocol | Stripe Documentation
+Skip to content (#main-content)
+Universal Commerce Protocol
+Create account (https://dashboard.stripe.com/register) or Sign in (https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2Fagentic-commerce%2Fprotocols%2Fucp)
+/
+Search / Ask AI
+Create account (https://dashboard.stripe.com/register) Sign in (https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2Fagentic-commerce%2Fprotocols%2Fucp)
+Get started (/get-started)
+Payments (/payments)
+Revenue (/revenue)
+Risk (/risk)
+Data (/data)
+Money management (/money-management)
+Stablecoins (/stablecoins)
+Embedded finance (/connect)
+Developer resources (/development)
+More
+APIs & SDKs
+Help
+Overview (/payments) Accept a payment (/payments/accept-a-payment)
+Online payments
+Overview (/payments/online-payments) Find your use case (/payments/use-cases/get-started)
+Use Payment Links (/payment-links)
+Build a payments page (/payments/checkout)
+Build a custom integration with Elements (/payments/advanced)
+Build an in-app integration (/payments/mobile)
+Use Managed Payments (/payments/managed-payments)
+Recurring payments (/recurring-payments) Migrate legacy integrations (/payments/migrations)
+In-person payments
+Overview (/terminal) How Terminal works (/terminal/overview) Availability (/terminal/payments/collect-card-payment/supported-card-brands)
+Readers (/terminal/payments/setup-reader)
+Ready-made apps (/terminal/payments/ready-made-apps)
+Custom integration
+Payment methods
+Add payment methods (/payments/payment-methods/overview)
+Manage payment methods
+Faster checkout with Link (/payments/link)
+Payment operations
+Analytics (/payments/analytics)
+Balances and settlement time (/payments/balances)
+Compliance and security
+Currencies (/currencies)
+Declines (/declines)
+Disputes (/disputes)
+Payouts
+Receipts (/receipts) Refunds and cancellations (/refunds)
+Advanced integrations
+Custom payment flows (/payments/more-payment-scenarios)
+Flexible acquiring (/payments/flexible-payments)
+Off-Session Payments (/payments/off-session-payments)
+Multiprocessor orchestration (/payments/orchestration)
+Beyond payments
+Incorporate your company (/atlas)
+Agentic commerce (/agentic-commerce)
+Build an agent
+Sell to agents
+Concepts and references
+Shared payment tokens (/agentic-commerce/concepts/shared-payment-tokens)
+Catalog feed and ingestion (/agentic-commerce/concepts/catalog-feed)
+Agentic Commerce Protocol (/agentic-commerce/protocols/acp)
+Universal Commerce Protocol
+Stripe Payments handler for UCP (/agentic-commerce/protocols/ucp/stripe-payments-handler)
+Financial Connections (/financial-connections)
+Climate (/climate)
+United States
+English (United States)
+Home (/) /
+Payments (/payments) /
+Agentic commerce (/agentic-commerce) /
+Concepts and references
+Universal Commerce Protocol
+Universal Commerce Protocol (UCP) enables agentic commerce across platforms.
+Ask about this page
+Copy for LLM
+View as Markdown
+Set up agent
+The Universal Commerce Protocol (https://ucp.dev) (UCP) is an open standard that lets different participants in commerce transactions interoperate, with support for checkout, identity linking, order tracking, and secure payment token exchange (Stripe is a member of the UCP Tech Council). See ucp.dev (https://ucp.dev) for the full specification.
+UCP defines composable building blocks for commerce:
+Checkout : Create and manage checkout flows including cart management, tax calculation, and payment, with or without human intervention.
+Identity linking : OAuth 2.0 based authorization lets platforms act on a buyer’s behalf.
+Order : Monitor the status of shipping, delivery, and returns with webhook-based lifecycle updates.
+Payment token exchange : Platforms, businesses, and credential providers can securely exchange payment tokens and credentials.
+Stripe payment handlers for UCP
+UCP payment handlers (https://ucp.dev/latest/specification/payment-handler-guide/) define how payment instruments are acquired, exchanged, and processed between all participants in a transaction.
+The Stripe Payments handler (/agentic-commerce/protocols/ucp/stripe-payments-handler) lets platforms submit card and Apple Pay credentials for UCP checkouts processed by Stripe.
+See also
+UCP specification and documentation (https://ucp.dev)
+UCP GitHub repository (https://github.com/Universal-Commerce-Protocol/ucp)
+UCP samples and reference implementations (https://github.com/Universal-Commerce-Protocol/samples)
+Was this page helpful?
+Yes
+No
+Need help? Contact Support (https://support.stripe.com/) .
+Chat with Stripe developers on Discord (https://stripe.com/go/developer-chat) .
+Check out our changelog (/changelog) .
+Questions? Contact Sales (https://stripe.com/contact/sales) .
+LLM? Read llms.txt (/llms.txt) .
+Powered by Markdoc (https://markdoc.dev)

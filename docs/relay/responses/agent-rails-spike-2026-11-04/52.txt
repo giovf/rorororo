@@ -1,0 +1,165 @@
+{"@context":"https://schema.org","@type":"WebSite","name":"x402scan","url":"https://www.x402scan.com","description":"Explore the x402 ecosystem. View transactions, sellers, origins and resources. Explore the future of agentic commerce.","potentialAction":{"@type":"SearchAction","target":"https://www.x402scan.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
+{"@context":"https://schema.org","@type":"Organization","name":"x402scan","url":"https://www.x402scan.com","sameAs":["https://github.com/Merit-Systems/x402scan","https://x.com/x402scan"]}
+meta description: Explore the x402 ecosystem. View transactions, sellers, origins and resources. Explore the future of agentic commerce.
+meta og:title: x402scan | x402 Ecosystem Explorer
+meta og:description: Explore the x402 ecosystem. View transactions, sellers, origins and resources. Explore the future of agentic commerce.
+meta og:image: https://www.x402scan.com/opengraph-image.png?opengraph-image.fccea18e.png
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:image:type: image/png
+meta twitter:card: summary_large_image
+meta twitter:title: x402scan | x402 Ecosystem Explorer
+meta twitter:description: Explore the x402 ecosystem. View transactions, sellers, origins and resources. Explore the future of agentic commerce.
+meta twitter:image: https://www.x402scan.com/opengraph-image.png?opengraph-image.fccea18e.png
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+meta twitter:image:type: image/png
+x402scan | x402 Ecosystem Explorer
+Command Palette
+Search for a command to run...
+/
+x402scan (/)
+All Chains
+Navigate
+⌘K
+https://github.com/Merit-Systems/x402scan
+Discover (/)
+All (/all)
+Facilitators (/facilitators)
+Networks (/networks)
+[x402scan Logo]
+x402scan
+Add your API (/resources/register)
+The x402 block explorer, analytics dashboard and marketplace for paid APIs and agentic commerce
+Add your API (/resources/register)
+Overall Stats
+Per Bucket
+Past 30 Days
+Global statistics for the x402 ecosystem
+Transactions
+4.04M
+Volume
+$1.62M
+Buyers
+33.81K
+Sellers
+14K
+Featured Services
+Past 30 Days
+x402scan curated services
+Server
+Activity
+Volume
+Txns
+Buyers
+Latest
+Chain
+https://agentcash.dev
+AX1 · Research, capital, and network for early consumer teams +1 We work closely with a small number of founders before the category gets obvious. Founder support, capital access, distribution and thesis research. ax1.vc (/server/2b2c3165-d4e6-4666-8770-699562804772)
+$21.24K
+1.06M
+9K
+18m ago
+[Base]
+Try it
+BlockRun on Solana +1 116 AI models plus live search, market data and multi-chain RPC behind one OpenAI-compatible endpoint. No account, no API key — every call is quoted in a 402 and paid with a USDC micropayment on Solana. sol.blockrun.ai (/server/239470e8-8384-4783-8448-b7365d80fc43)
+$3.39K
+646.4K
+189
+~1h ago
+[Solana]
+Try it
+Claw402 Backed by https://vergex.trade. Payment infrastructure for AI and APIs. One wallet. Pay per call or by actual usage. claw402.ai (/server/c03533a3-523f-4687-b1cd-c61e9de7aed9)
+$1.18K
+395.11K
+167
+19m ago
+[Base]
+Try it
+BlockRun +1 BlockRun independently tests AI agents that move money: did they pay the right party the right amount, avoid being scammed, stay within their mandate, and tell the truth afterwards. Scored from the ledger, not by a model judge. blockrun.ai (/server/b85dcf0f-d4a9-47ce-9d0b-6ec70e2844e0)
+$1.54K
+110.37K
+589
+20m ago
+[Base]
+Try it
+Agentic Portal Pay-per-call access to Pocket Network services. No account, no API key. agent.pocket.network (/server/a55002f1-f1da-49e7-b3b5-2056f5f03448)
+$500.53
+100.11K
+178
+18m ago
+[Base]
+Try it
+StableEnrich Pay-per-request access to FullEnrich, CompanyEnrich, LeadMagic, Exa, Firecrawl, Google Maps, Serper, and Whitepages APIs. No auth, no subscriptions. stableenrich.dev (/server/b8a06bde-b6e8-4a10-b4e0-cc6a25fb9efb)
+$1.28K
+64.86K
+318
+39m ago
+[Base]
+Try it
+X Pay Pay-per-request utility APIs powered by x402 using USDC on Base. www.api-xpay.com (/server/766676c5-56f8-4b05-ba3d-95a8ce6a3561)
+$10.00K
+60.57K
+390
+18m ago
+[Base]
+Try it
+OneShot Agent API Tools, payments, and compute orchestration for autonomous AI agents. ## Authentication - **`x402Payment`** — paid tool endpoints use the [x402 payment protocol](https://x402.io). First call returns `402 Payment Required` with a quote; sign and resend the request with `payment-signature: <base64 x402 payment>` and `X-Quote-ID: <quote_id>`. - **`agentId`** — free read-only endpoints accept `X-Agent-ID: <wallet>` (0x… address). - **`soulKey`** — soul marketplace seller dashboard uses `Authorization: Bearer soul_…` (issued by `POST /v1/soul/register`). - **`acpBearer`** — Stripe ACP checkout sessions use a separate bearer token plus the `API-Version: 2026-01-30` header. ## Async tools & polling Most tool endpoints return `202 Accepted` with `{ request_id, tool, status }`. Poll `GET /v1/requests/{id}` (with the same `X-Agent-ID`) to retrieve the final result. A WebSocket fallback is available at `wss://<host>/v1/requests/subscribe`. ## Pricing Prices are listed at [docs.oneshotagent.com/pricing](https://docs.oneshotagent.com/pricing). A wallet (x402) call returns its exact price in the 402 quote before anything is charged. Calls paid from prepaid credits (access-token sessions, and the phone number purchase at `POST /v1/tools/voice/numbers`) debit the credit balance when the request is accepted, before the work runs (`200` for a synchronous lookup, `201` for the number purchase, `202` for a queued job), and answer `402 insufficient_credits` with nothing charged or bought when the balance cannot cover it. ## Error format `{ "error": "<machine_code>", "message": "<human readable>", "details": <optional> }`. Validation errors include a `details` field with the failing field paths. win.oneshotagent.com (/server/819fe252-3a1b-4dd9-a249-f31836c8841e)
+$262.69
+28.68K
+106
+32m ago
+[Base]
+Try it
+BotPay BotPay provides payment access, API discovery, automated service delivery, and settlement infrastructure for AI agents, applications, robots, and connected machines. api.botpay.network (/server/6083073a-bd94-4625-a719-ac64488a38d6)
+$1.58K
+22K
+367
+~3h ago
+[Base] [Solana]
+Try it
+Agent402 Agentic Finance for AI agents: 500+ pay-per-call tools, metered models and finished reports over x402 and MPP, or by card. No signup, no API keys. agent402.tools (/server/07eb3020-932a-436d-a739-557b6e47101d)
+$363.74
+18.91K
+345
+28m ago
+[Base] [Solana]
+Try it
+dTelecom x402 Gateway Pay-per-use WebRTC, Speech-to-Text, and Text-to-Speech for AI agents. Pay with USDC via x402. No API keys, no accounts. Built on dTelecom DePIN. x402.dtelecom.org (/server/ed6e501d-6817-400e-8e6c-810222318856)
+$36.60K
+16.67K
+30
+19m ago
+[Base]
+Try it
+twit.sh +1 Real-time Twitter/X data for AI agents. No sign-up, no API keys. Pay per request in USDC on Base via x402. Fully autonomous. twit.sh (/server/afb258f2-165c-483f-8a55-020424384562)
+$78.83
+13.41K
+82
+31m ago
+[Base]
+Try it
+glim.sh +1 One remote endpoint gives your agent live data from Twitter, Reddit, the open web, GitHub and more. No API keys, no scraping stack - just connect the URL and go. glim.sh (/server/f1c8745d-03d7-485a-bea5-282ffe833bc7)
+$54.58
+13.38K
+160
+~1h ago
+[Base] [Solana]
+Try it
+Payment Service +1 No description available. payment.ardrive.io (/server/df373e80-3b8a-420b-bfe5-b799b0be14fe)
+$620.09
+11.51K
+113
+4d ago
+[Base]
+Try it
+OneSource Three data families for AI agents: live Ethereum mainnet, Sepolia testnet, and Robinhood Chain RPC reads, plus Deepstate on-chain market data (order books, trades, candles, and analytics), plus The Standard Reserve (TSR), an on-chain reserve protocol on Robinhood Chain (supply, policy, epochs, auctions, branches, vaults, exit pressure). Pay per call or use batch/session mode: USDC on Base via x402, or pathUSD/USDC.e on Tempo via MPP. No API key required to start; a flat-rate monthly subscription is also available. api.onesource.io (/server/bbb78e94-611e-4f0c-9a48-6df8fd9b26be)
+$89.47
+10.89K
+1.42K
+~3h ago
+[Base]
+Try it
+Page 1 of 24
+x402scan (/) Merit (https://merit.systems)
+https://github.com/Merit-Systems/x402scan https://x.com/x402scan Privacy (/privacy) Terms (/tos)

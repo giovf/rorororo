@@ -1,0 +1,130 @@
+{"@context":"https://schema.org","@type":"TechArticle","headline":"Seller Guide ","dateModified":"2026-11-03T19:56:23.000Z"}
+meta description: What a seller agent is, how to create one, and how to manage it once you're accepting KYAPay tokens.
+meta og:title: Seller Guide
+meta og:description: What a seller agent is, how to create one, and how to manage it once you're accepting KYAPay tokens.
+meta og:site_name: Skyfire Developer Portal
+meta twitter:title: Seller Guide
+meta twitter:description: What a seller agent is, how to create one, and how to manage it once you're accepting KYAPay tokens.
+meta twitter:card: summary_large_image
+meta og:image: https://cdn.readme.io/og-image/create?type=docs&title=Seller%20Guide%20&projectTitle=Skyfire%20Developer%20Portal&description=What%20a%20seller%20agent%20is%2C%20how%20to%20create%20one%2C%20and%20how%20to%20manage%20it%20once%20you're%20accepting%20KYAPay%20tokens.&logoUrl=https%3A%2F%2Ffiles.readme.io%2F74cda49-small-Skyfire_Black_Logo.png&color=%23018ef5&variant=light
+meta twitter:image: https://cdn.readme.io/og-image/create?type=docs&title=Seller%20Guide%20&projectTitle=Skyfire%20Developer%20Portal&description=What%20a%20seller%20agent%20is%2C%20how%20to%20create%20one%2C%20and%20how%20to%20manage%20it%20once%20you're%20accepting%20KYAPay%20tokens.&logoUrl=https%3A%2F%2Ffiles.readme.io%2F74cda49-small-Skyfire_Black_Logo.png&color=%23018ef5&variant=light
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:updated_time: 2026-11-03T19:56:23.000Z
+Seller Guide
+For AI agents: the docs index is at https://docs.skyfire.xyz/llms.txt. Append .md to any documentation page URL to get its markdown version.
+Jump to Content (#content)
+/docs Home (/)
+Home (/) Guides (/docs) API Reference (/reference)
+Home (/) Log In (/login?redirect_uri=/docs/seller-guide) /docs
+Guides
+Log In (/login?redirect_uri=/docs/seller-guide)
+Home (/) Guides (/docs) API Reference (/reference)
+Seller Guide
+Overview
+Introduction to Skyfire (/docs/introduction-to-skyfire)
+Quickstart (/docs/quickstart)
+Core Concepts
+Platform Structure (/docs/platform-structure)
+Know Your Agent (KYA) (/docs/kya)
+KYAPay Tokens (/docs/kyapay-tokens)
+Common Token Claims (/docs/common-token-claims)
+KYA Token (/docs/kya-token)
+Example KYA Token (/docs/example-kya-token)
+PAY Token (/docs/pay-token)
+Example PAY Token (/docs/example-pay-token)
+KYA-PAY Token (/docs/token-schemas)
+Example KYA-PAY Token (/docs/example-kya-pay-token)
+Payment Cards (/docs/payment-cards)
+Agentic Commerce with Payment Cards (/docs/agentic-commerce-with-payment-cards)
+Payments & Settlement (/docs/payments-settlement)
+Token Interaction Flows (/docs/token-interaction-flows)
+For Buyers
+Buyer Guide (/docs/buyer-guide)
+Funding Your Wallet (/docs/wallet-funding)
+Using the Skyfire MCP Server (/docs/using-the-skyfire-mcp-server)
+For Sellers
+Seller Guide (/docs/seller-guide)
+Enforce KYA-based access control (/docs/enforce-kya-based-access-control)
+AWS (/docs/aws)
+Cloudflare (/docs/cloudflare)
+How Seller Services Work (/docs/seller-services)
+OpenAPI Specs (/docs/api-specs)
+MCP Servers (/docs/mcp-servers)
+Verify and Extract Data from Tokens (/docs/verify-and-extract-data-from-tokens)
+Handling Missing or Invalid Tokens (/docs/handling-missing-or-invalid-tokens)
+Security Brief for Sellers and Bot Managers (/docs/security-brief-for-sellers)
+For Organizations
+Organization Guide (/docs/organization-guide)
+Agent Provider (/docs/agent-provider)
+Resource Provider (/docs/resource-provider)
+Sell to Your Customers' Agents (/docs/sell-to-your-customers-agents)
+Coin Wallet Embed SDK (/docs/coin-wallet-embed-sdk)
+For Service Providers
+Service Provider Guide (/docs/service-provider-guide)
+Originate Tokens (/docs/originate-tokens)
+Skyfire Directory
+Service Discovery (/docs/service-discovery)
+Verified Service Guarantee (/docs/verified-service-guarantee)
+Examples & Demos
+Live Implementations (/docs/live-implementations)
+Dappier.com (/docs/dappier-implementation)
+BuildShip.tools (/docs/buildship-implementation)
+Apify.com (/docs/apify-implementation)
+Reference Implementations (/docs/reference-implementations)
+Building an Agentic Checkout (/docs/building-an-agentic-checkout)
+Smart News Crawler (/docs/smart-news-crawler)
+Discovery and Purchase of Premium Financial Data by an Agent (/docs/agent-data-purchase)
+Access to Premium Web Content by a Paying Web Crawler (/docs/crawler-access-protected-content)
+Powered by https://readme.com?ref_src=hub&project=skyfire-developer-portal
+Seller Guide
+What a seller agent is, how to create one, and how to manage it once you're accepting KYAPay tokens.
+Selling on Skyfire means letting buyer agents transact with a resource you run, using KYAPay tokens. This page covers the steps you take on Skyfire, and the enforcement you build on your own side.
+What is a seller?
+#what-is-a-seller
+A seller agent is an agent account that publishes seller services and accepts KYAPay tokens from buyer agents. Buyer agents are created automatically at signup. A seller agent is not, so you create one explicitly.
+A seller agent:
+Belongs to exactly one user, and always has the Seller role
+Creates a seller service , the resource it publishes
+Receives every token a buyer agent creates for that seller service
+Charges payment tokens
+Has its own wallet , where charged funds settle
+Can be managed in the Skyfire Dashboard, or accessed programmatically through its own API keys
+An agent's role is fixed at creation. A seller agent cannot create tokens, and a buyer agent cannot charge them. For how sellers fit into the wider platform, see Platform Structure (/docs/platform-structure) .
+Your email identifies you on Skyfire. The same account can hold a buyer agent and any number of seller agents, each with its own wallet and API keys, and each key authorizes a different set of calls: a buyer agent's key creates tokens, and a seller agent's key verifies and charges them. Adding a seller agent to your account does not replace or affect any agent you already have.
+Create a separate seller agent for each business you run on Skyfire, for example one per store or brand, so that each has its own services, settlement wallet, and ID.
+Seller agents publish seller services for buyer agents to find and transact with. See How Seller Services Work (/docs/seller-services) for what it configures, how to create one, and how to require and validate its tokens on your own backend.
+Setting up on Skyfire
+#setting-up-on-skyfire
+Create your seller agent
+#create-your-seller-agent
+From the Skyfire Dashboard (https://app.skyfire.xyz) , click Create a Seller . The button is available whether or not you already have a seller agent, so you can add as many as you need.
+Enter a Display Name , which is the name buyer agents see in the directory. It must be unique among your active agents. Skyfire then creates the seller agent, creates its wallet, and opens the seller view for it. If you hold more than one seller agent, use the agent switcher in the upper-left corner to choose which one you are managing.
+Your seller agent also has a unique ID, which you use during verification. Every token created for your seller service carries it as the aud claim.
+Once your seller agent exists, create a seller service, configure it, and submit it for approval. See How Seller Services Work (/docs/seller-services) for details.
+Managing your seller agent
+#managing-your-seller-agent
+Your dashboard organizes each seller agent's activity into two tabs. Switch between seller agents with the agent switcher.
+API keys
+#api-keys
+Generate API keys to authenticate your seller service, and view, rotate, or deactivate them as needed. These keys authorize charges on pay and kya-pay tokens, among other seller capabilities. These seller agent API keys are separate from any buyer agent API keys on the same account. See API Authentication (/reference/api-authentication) .
+Deposits
+#deposits
+The Deposits tab shows every successful payment to your seller service: the token used, the buyer agent ID, the amount charged, and the timestamp and status.
+Next steps
+#next-steps
+For creating and configuring a seller service, see How Seller Services Work (/docs/seller-services) .
+For how money moves after a charge, see Payments & Settlement (/docs/payments-settlement) .
+Updated about 13 hours ago
+Using the Skyfire MCP Server (/docs/using-the-skyfire-mcp-server) Enforce KYA-based access control (/docs/enforce-kya-based-access-control)
+Did this page help you?
+Yes
+No
+Copy Page
+What is a seller? (#what-is-a-seller)
+Setting up on Skyfire (#setting-up-on-skyfire)
+Create your seller agent (#create-your-seller-agent)
+Managing your seller agent (#managing-your-seller-agent)
+API keys (#api-keys)
+Deposits (#deposits)
+Next steps (#next-steps)

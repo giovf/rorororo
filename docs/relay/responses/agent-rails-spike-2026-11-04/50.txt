@@ -1,0 +1,264 @@
+> ## Content Index
+> Fetch the complete content index at: https://stablecoininsider.org/llms.txt
+> Use this file to discover other available public pages before exploring further.
+
+# Best x402 Facilitators Compared
+- URL: https://stablecoininsider.org/best-x402-facilitators-compared/
+- Published: 2026-10-19T13:16:04.000Z
+- Updated: 2026-10-19T13:16:04.000Z
+- Description: Fifteen facilitators are now listed and the one most tutorials point at is testnet only. Fees, networks, schemes and self-hosting compared.
+- Author: Milos Djukanovic
+- Tags: Analysis, AI
+
+The facilitator is the piece of x402 that almost nobody chooses deliberately. A tutorial supplies an endpoint, the payment works in testing, and that endpoint quietly becomes a production dependency.
+
+It deserves more thought than that, because the facilitator is what verifies a payment signature and puts the settlement on chain on behalf of your server. Its fees, its chain coverage and its uptime become yours.
+
+The good news is that the field is much wider than the one name everyone knows. The official developer documentation now lists fifteen facilitators and says the list is not exhaustive, with several of them free and several specific to a single chain.
+
+> A facilitator verifies and settles payments for your server. Choosing it by copying a tutorial means inheriting someone else's fee schedule, chain list and failure modes.
+
+### Key Takeaways
+
+- Fifteen facilitators are listed officially and more exist.
+- The x402.org endpoint in most tutorials is testnet only.
+- Coinbase gives 1,000 free monthly settlements, then $0.001 each.
+- Fireblocks publishes an Apache 2.0 facilitator you can self-host.
+- Several chain-sponsored facilitators are free and gasless.
+
+---
+
+## The Mistake Almost Everyone Makes First
+
+Start with the single most expensive misunderstanding in this whole topic.
+
+The convenient facilitator at x402.org requires no setup and appears throughout sample code, including in Cloudflare's own x402 examples. The developer documentation is explicit that it is intended for testnet development only and not for mainnet.
+
+Worth clarifying alongside it, Cloudflare does not operate a facilitator at all. It ships SDKs and middleware for sellers and buyers, and its examples point at the public endpoint that it says Coinbase operates, so building on Cloudflare still means choosing a facilitator separately.
+
+Anyone can run one, including you. Self-facilitation in process is a documented option, which matters because it removes a third party from the settlement path entirely.
+
+**What to note:** check which facilitator URL your code actually calls before you take payments, because the default is frequently a development endpoint.
+
+---
+
+## How to Judge a Facilitator
+
+Five things separate them, and only one is price.
+
+Chain and token coverage comes first, since the facilitator has to support the network your buyers and sellers actually use. Second is scheme support, meaning whether it handles fixed pricing only or also the ceiling scheme that lets you settle below an authorised maximum.
+
+Third is whether it batches, because a provider that can claim many off-chain vouchers in one on-chain transaction changes your unit economics entirely. Fourth is who holds signing material, and fifth is whether you can self-host if the hosted service disappears or reprices.
+
+None of this decides how much your agent may spend, which remains your own policy as set out in our guide to [**agent spend limits**](https://stablecoininsider.org/how-to-set-spend-limits-ai-agent-usdc-wallet/).
+
+**What to note:** ask whether a quoted fee applies per payment or per settlement, since batching makes those two numbers wildly different.
+
+[![How to Set Spend Limits for an AI Agent USDC Wallet (2026)](https://storage.ghost.io/c/73/6a/736af0e4-2274-4543-a329-2952b2b52abc/content/images/2026/10/Screenshot-2026-10-19-at-15.09.58.png)](https://stablecoininsider.org/how-to-set-spend-limits-ai-agent-usdc-wallet/)
+
+---
+
+## Best x402 Facilitators Compared
+
+### 1\. [Coinbase CDP Facilitator](https://docs.cdp.coinbase.com/x402/seller/facilitator)
+
+[![Coinbase CDP Facilitator](https://storage.ghost.io/c/73/6a/736af0e4-2274-4543-a329-2952b2b52abc/content/images/2026/10/Screenshot-2026-10-19-at-15.10.36.png)](https://docs.cdp.coinbase.com/x402/seller/facilitator)
+
+**Does the job:** the default for production, with published pricing and the widest scheme support.
+
+This is the facilitator most teams end up on, and the documentation is the most complete in the category.
+
+- First 1,000 onchain transactions each month free, then $0.001 per transaction
+- Verification always free, so fees attach to settlement rather than to requests
+- Fixed, ceiling and batch settlement schemes on EVM, where one onchain transaction can cover thousands of payments
+- Base, Polygon, Arbitrum and World plus their testnets, and Solana with fixed and ceiling schemes
+- All ERC-20 tokens via EIP-3009 or Permit2, and SPL tokens on Solana
+
+One operational detail is worth pricing in. The ceiling scheme on Solana uses two onchain transactions rather than one, a deposit and a settlement, which doubles that component of the cost.
+
+Best for teams who want documented pricing, batching and the broadest scheme coverage, and the launch context is covered in our report on [**USDC agent payments**](https://stablecoininsider.org/coinbase-usdc-payments-ai-agents-x402/).
+
+### 2\. [Circle Facilitator](https://developers.circle.com/agent-stack)
+
+[![Circle Facilitator](https://storage.ghost.io/c/73/6a/736af0e4-2274-4543-a329-2952b2b52abc/content/images/2026/10/Screenshot-2026-10-19-at-15.11.04.png)](https://developers.circle.com/agent-stack)
+
+**Does the job:** USDC-native settlement with gasless nanopayments and a marketplace attached.
+
+Circle approaches this as the token issuer rather than as a wallet vendor, and the bundle reflects that.
+
+- Hosted facilitator for sellers accepting USDC on Arc, Base and Polygon PoS
+- Gasless nanopayments at sub-cent scale, batched through Gateway
+- A curated marketplace of services priced in USDC that agents can discover
+- Agent wallets with spend policies in the same stack
+- A command line tool and open-source skills usable from any framework
+
+The constraint is deliberate. This is built around USDC, so a seller wanting to accept arbitrary ERC-20 tokens is working against the design.
+
+Best for USDC-denominated businesses that want settlement, discovery and wallets from one vendor.
+
+### 3\. [Fireblocks Facilitator](https://developers.fireblocks.com/docs/x402-facilitator-overview)
+
+[![Fireblocks Facilitator](https://storage.ghost.io/c/73/6a/736af0e4-2274-4543-a329-2952b2b52abc/content/images/2026/10/Screenshot-2026-10-19-at-15.11.26.png)](https://developers.fireblocks.com/docs/x402-facilitator-overview)
+
+**Does the job:** settlement that draws from an institutional vault without exposing keys.
+
+This is the option for businesses that already treat custody as a controlled process rather than an API credential.
+
+- Apache 2.0 open source, cloneable from GitHub and deployable yourself
+- A fully managed hosted version with monitoring, available by early-access request
+- Settlement submitted as a contract call through Fireblocks from the merchant's vault account
+- Raw private keys never leave Fireblocks and the facilitator process holds no signing material
+- Four transfer mechanisms covering USDC-style authorisation, any ERC-20 via Permit2, a ceiling variant, and smart-account delegation
+
+Mind the default. The facilitator runs in testnet mode unless mainnet is explicitly enabled by configuration, which is a sensible safeguard and a surprise if nobody reads the deployment notes.
+
+Best for regulated or treasury-grade sellers who want settlement wired into existing custody controls.
+
+### 4\. [thirdweb](https://portal.thirdweb.com/x402/server)
+
+[![thirdweb](https://storage.ghost.io/c/73/6a/736af0e4-2274-4543-a329-2952b2b52abc/content/images/2026/10/Screenshot-2026-10-19-at-15.11.55.png)](https://portal.thirdweb.com/x402/server)
+
+**Does the job:** the fastest path from an existing web app to a paid endpoint.
+
+thirdweb is the most developer-ergonomic of the group, with verification and settlement available through its own facilitator service or a custom one.
+
+- Any EVM chain, with documented examples on Arbitrum and Polygon
+- Dollar-denominated prices defaulting to USDC on the chosen network
+- A one-step settle call for fixed pricing, and verify-then-settle for the ceiling scheme
+- Multiple settlements against the same authorisation until it expires, with a configurable signature lifetime
+- Client helpers that cache payment data so the backend keeps no extra state
+
+Two limitations are explicit in the documentation. Native token payments are not supported, and non-USDC tokens must implement either permit or authorisation standards to work at all.
+
+Best for teams shipping a paid route inside an existing application rather than building payment infrastructure.
+
+### 5\. Chain-Sponsored Facilitators
+
+**Does the job:** free or gasless settlement on one specific network.
+
+Several networks now run their own facilitator to attract agent traffic, and the economics are hard to argue with.
+
+- Celo publishes mainnet and testnet endpoints with gasless settlement
+- NEAR covers both NEAR and Base with the fixed scheme and sponsored gas
+- Stellar, Mogami on Base and Dexter across Solana and EVM are listed as free
+- Polygon, HPP, Canton and an XRP Ledger facilitator cover their own networks
+- Mogami additionally offers an optional self-hosted Docker deployment
+
+The trade is concentration risk rather than cost. A facilitator subsidised to grow one network is excellent while that strategy lasts and is a single point of failure tied to one ecosystem's priorities.
+
+Best for sellers whose traffic genuinely lives on one chain and who want settlement cost near zero.
+
+### 6\. Self-Hosted or In-Process
+
+**Does the job:** removes the third party from the settlement path.
+
+Running your own is explicitly supported, and for some businesses it is the only acceptable answer.
+
+- Self-facilitation in process, with no external verification call at all
+- Open-source implementations available, including the Apache 2.0 Fireblocks codebase and a Docker option from Mogami
+- No per-transaction facilitator fee, leaving only network costs
+- Full control over which networks, tokens and schemes you support
+- No dependency on a vendor's uptime, pricing changes or business direction
+
+The cost is everything a managed service was doing for you. Key handling, gas management, monitoring, retries and chain reorganisations become your on-call problem.
+
+Best for high volume sellers with infrastructure teams, or anyone whose compliance posture rules out a third party in the settlement path.
+
+---
+
+## What the Fees Actually Add Up To
+
+Facilitator pricing looks trivial per transaction and deserves one pass with real numbers.
+
+At a tenth of a cent per settlement, fifty thousand settlements in a month cost about forty-nine dollars once the free allowance is applied. Batch the same volume into periodic claims and the figure drops toward nothing, which is why batching matters more than the headline rate.
+
+The mirror image is the seller's revenue. Earning fractions of a cent per call means income arrives in increments too small to notice individually and only becomes real through accumulation, which is the same arithmetic that makes a small automatic contribution work in consumer finance and the reason an offer to [**invest $5, earn $25**](https://gotrk1.com/o/click/aa0415d8-530d-4b52-88dc-f602512cf15b/299a048f-26a7-4086-8fb6-09bc51ab1f2b?p%5Fclick%5Fid=[CLICK%5FID]) is coherent rather than pointless.
+
+**What to note:** model your monthly settlement count rather than your request count, because the free tier and the fee both attach to settlements.
+
+[![Stash](https://storage.ghost.io/c/73/6a/736af0e4-2274-4543-a329-2952b2b52abc/content/images/2026/10/Screenshot-2026-10-19-at-15.13.12.png)](https://www.stash.com/investing-app/get25?utm%5Fmedium=affiliate-content&utm%5Fsource=goloot&utm%5Fcontent=goloot%5Fpromotion%5Fgetfive&utm%5Fprovider=ImpactRadius&clickid=Rgt1oJWMSxyZUoiRNvxgC3hgUkr1co3VCThKXc0&irclickid=Rgt1oJWMSxyZUoiRNvxgC3hgUkr1co3VCThKXc0&irpid=2959690&iradid=3880308&utm%5Fcampaign=affiliate-content%5Fgoloot%5Fconversion%5Faccount-create%5Fprospect%5Fweb%5F&irgwc=1&afsrc=1&tgclid=07010031-752f-4f04-8d00-24236ad61763)
+
+---
+
+## Facilitators Compared
+
+| Facilitator     | Networks                               | Schemes                     | Published fees                  | Self-host                    |
+| --------------- | -------------------------------------- | --------------------------- | ------------------------------- | ---------------------------- |
+| Coinbase CDP    | Base, Polygon, Arbitrum, World, Solana | Fixed, ceiling, batch       | 1,000 free monthly, then $0.001 | No                           |
+| Circle          | Arc, Base, Polygon PoS                 | Fixed, gasless nanopayments | Not published here              | No                           |
+| Fireblocks      | EVM networks                           | Four transfer mechanisms    | Not published                   | Yes, Apache 2.0              |
+| thirdweb        | Any EVM chain                          | Fixed and ceiling           | Not published                   | Custom facilitator supported |
+| Chain-sponsored | One network each                       | Varies, often fixed         | Several free or gasless         | Mogami offers Docker         |
+| Self-hosted     | Your choice                            | Your choice                 | Network costs only              | By definition                |
+
+Two columns carry most of the decision. Published pricing is rarer than it should be in this category, and self-hosting is the only real protection against a repricing you did not agree to.
+
+**What to note:** no facilitator supplies the authorisation record proving a human approved a purchase, which is the separate layer our analysis of [**payments for AI agents**](https://stablecoininsider.org/stablecoin-payments-for-ai-agents/) examines.
+
+---
+
+## Which to Pick
+
+- If you want **documented pricing and batching**, Coinbase CDP is the most complete option.
+- If you are **USDC-only with discovery needs**, Circle bundles the most around settlement.
+- If custody is **already a controlled process**, the Fireblocks facilitator settles from your vault.
+- If you are **adding a paid route quickly**, thirdweb gets there with the least new infrastructure.
+- If your traffic is **on one chain only**, a chain-sponsored facilitator may cost nothing.
+- If a third party is **unacceptable or volume is huge**, self-host and keep only network costs.
+
+**What to note:** whichever you choose, keep a second facilitator configured and tested, since the swap is cheap in advance and painful during an outage.
+
+---
+
+## Risks and Limitations
+
+- Most providers in this category do not publish fees, so the comparison is incomplete by necessity.
+- Free and gasless facilitators are growth subsidies and can be repriced or withdrawn.
+- Scheme and batching support differs by network even within one provider.
+- A facilitator sits in your payment path, so its uptime becomes your revenue risk.
+- The official list is not exhaustive and the field is still changing quickly.
+
+---
+
+## Conclusion
+
+The best x402 facilitator depends on what you are optimising. Coinbase CDP is the sensible production default thanks to published pricing, batch settlement and the broadest scheme coverage. Circle is the stronger choice for USDC-native businesses that also want discovery.
+
+Fireblocks is the one to pick when settlement must run through existing custody controls, thirdweb when speed of integration matters most, and a chain-sponsored facilitator when your traffic genuinely lives on a single network and the price is zero.
+
+Whatever you choose, do two things first. Confirm the endpoint in your code is not the testnet-only public facilitator, and keep a tested alternative configured, because this is a dependency sitting directly in the path of your revenue.
+
+***Read Next:***
+
+- [**USDC Agent Payments**](https://stablecoininsider.org/coinbase-usdc-payments-ai-agents-x402/)
+- [**Payments for AI Agents**](https://stablecoininsider.org/stablecoin-payments-for-ai-agents/)
+- [**Agent Spend Limits**](https://stablecoininsider.org/how-to-set-spend-limits-ai-agent-usdc-wallet/)
+
+---
+
+## FAQs:
+
+### 1\. What does an x402 facilitator do?
+
+It verifies and settles x402 payments on behalf of a resource server. The seller's server asks the facilitator to check a signed payment authorisation and then to broadcast the settlement on chain, which means the seller never runs blockchain infrastructure.
+
+### 2\. Can I use the x402.org facilitator in production?
+
+No. The developer documentation states it is intended for testnet development only rather than mainnet, despite appearing in sample code across the ecosystem, so production deployments need a different endpoint or a self-hosted facilitator.
+
+### 3\. How much do facilitators charge?
+
+Coinbase publishes the clearest schedule, with the first 1,000 onchain transactions each month free and $0.001 per transaction after that, while verification is always free. Several chain-sponsored facilitators are listed as free or gasless, and most other providers do not publish pricing.
+
+### 4\. Can I run my own facilitator?
+
+Yes. The documentation states that anyone can run one and that self-facilitation in process is possible, with open-source options including an Apache 2.0 implementation from Fireblocks and a self-hosted Docker deployment from Mogami.
+
+### 5\. Does Cloudflare operate a facilitator?
+
+No. Cloudflare provides SDKs and middleware for sellers and buyers, and its documented examples call the public x402.org endpoint, which it attributes to Coinbase, so a facilitator still has to be chosen separately.
+
+---
+
+***Disclaimer:***  
+This content is provided for informational and educational purposes only and does not constitute financial, investment, legal, or tax advice; no material herein should be interpreted as a recommendation, endorsement, or solicitation to buy or sell any financial instrument, and readers should conduct their own independent research or consult a qualified professional. Facilitator fees, network support, scheme availability and free allowances are taken from each provider's own documentation at the time of writing, are not independently verified here, and change frequently; confirm current terms directly with the provider before routing production payments through it.

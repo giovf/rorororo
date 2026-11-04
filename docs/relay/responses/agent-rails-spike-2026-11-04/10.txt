@@ -1,0 +1,156 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://nevermined.ai/#organization","name":"Nevermined","url":"https://nevermined.ai","logo":"https://nevermined.ai/images/nevermined_logo.svg","sameAs":["https://x.com/neverminedio","https://linkedin.com/company/nevermined"]}
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://nevermined.ai/#website","name":"Nevermined","url":"https://nevermined.ai","description":"Payments infrastructure for AI agents. Autonomous metering, billing, settlement, and card delegation across MCP, x402, and A2A.","publisher":{"@id":"https://nevermined.ai/#organization"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nevermined.ai/"},{"@type":"ListItem","position":2,"name":"Pricing","item":"https://nevermined.ai/pricing/"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://nevermined.ai/#software","name":"Nevermined","url":"https://nevermined.ai/","applicationCategory":"BusinessApplication","applicationSubCategory":"FinanceApplication","operatingSystem":"Web","description":"Agentic payments infrastructure: delegate spending to AI agents inside a spend mandate you set, buy from the AI Services Catalog, and settle every purchase with Nevermined Pay.","publisher":{"@id":"https://nevermined.ai/#organization"},"offers":[{"@type":"Offer","name":"Free","description":"A personal account for one developer.","price":"0","priceCurrency":"USD","url":"https://nevermined.ai/pricing/"},{"@type":"Offer","name":"AI Services Catalog","description":"20,000 catalog credits a month, for any service at its listed price. Credit packs at $10.","price":"20","priceCurrency":"USD","url":"https://nevermined.ai/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"20","priceCurrency":"USD","billingDuration":"P1M","unitText":"month"}},{"@type":"Offer","name":"Starter","description":"Organization tier: embedded payments in your product.","price":"50","priceCurrency":"USD","url":"https://nevermined.ai/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"50","priceCurrency":"USD","billingDuration":"P1M","unitText":"month"}},{"@type":"Offer","name":"Premium","description":"Organization tier: team seats, groups, analytics.","price":"250","priceCurrency":"USD","url":"https://nevermined.ai/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"250","priceCurrency":"USD","billingDuration":"P1M","unitText":"month"}},{"@type":"Offer","name":"Enterprise","description":"Organization tier: customer management, no caps.","price":"500","priceCurrency":"USD","url":"https://nevermined.ai/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"500","priceCurrency":"USD","billingDuration":"P1M","unitText":"month"}}]}
+meta description: Nevermined pricing: a free personal account, catalog credits at $20 a month or in $10 packs, organization tiers from $50 a month, and 1-2% of settled volume when agents buy from you. No setup fees, no minimums.
+meta og:title: Pricing | Nevermined
+meta og:description: Start solo, scale as an organization. Free to start, $20 a month or $10 packs for catalog credits, organization tiers from $50 a month.
+meta og:url: https://nevermined.ai/pricing/
+meta og:image:alt: Nevermined Pricing: Start Free, Pay When Money Moves
+meta og:image:type: image/png
+meta og:image: https://nevermined.ai/pricing/opengraph-image?3b4e3ec27cb013a2
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:type: website
+meta twitter:card: summary_large_image
+meta twitter:title: Nevermined - Payments Infrastructure for AI Agents
+meta twitter:description: Delegate spending to your AI agents. They buy what they need, inside limits you set or from prepaid credits: a vetted catalog of AI services, every purchase attributed.
+meta twitter:image: https://nevermined.ai/opengraph-image.png
+Pricing - Start Solo, Scale as an Organization | Nevermined
+Skip to main content (#main-content)
+/
+Product
+For platforms
+Enterprise
+For merchants
+Pricing (/pricing) Docs (https://nevermined.ai/docs)
+Start free (https://nevermined.app/)
+Product
+What your agents pay with, and what they buy
+Nevermined Pay Cards, crypto, bank rails soon (/nevermined-pay)
+AI Services Catalog New Paid services, one connection (/catalog)
+Connect your agent
+MCP server ↗ Claude Code, Codex, Cursor (https://nevermined.ai/docs/products/catalog/mcp)
+SDK and API ↗ Your own agent or platform (https://nevermined.ai/docs/products/catalog/router/quickstart)
+For platforms
+Build it into your product
+Spend infrastructure Mandates, cards and reporting (/platforms)
+Catalog reselling Paid services, at your price (/catalog/platforms)
+Enterprise
+Banks and PSPs
+Banks and PSPs Inside your product, on your rails (/enterprise)
+Security Certifications and controls (/security)
+For merchants
+Reach agents ready to buy
+Get listed ↗ Be found where agents shop (https://nevermined.ai/docs/products/catalog/publish-ai-service)
+Get paid Per call or by card (/merchants)
+Not sure where you fit?
+Opens a calendar Talk to us ↗ (https://cal.com/team/nevermined/talk)
+Pricing
+Start solo,
+scale as an organization.
+A personal account is free and starts with 2,000 catalog credits. Add more for $20 a month, or in $10 packs, when your agent buys services. Move to an organization from $50 a month when your team does.
+Start free ↗ (https://nevermined.app/) See organization plans → (#organization)
+Moving serious volume? Talk to us ↗ (https://cal.com/team/nevermined/talk)
+Free
+$0
+A personal account. 20 agents, 10 plans.
+Catalog
+$20
+a month
+Credits for any service, or $10 packs.
+Starter
+$50
+a month
+Embedded payments in your product.
+Premium
+$250
+a month
+Team seats, groups, analytics.
+Enterprise
+$500
+a month
+Customer management, no caps.
+start here
+Solo one developer
+Organization a team, a shared bill
+Free solo A personal account. 20 agents, 10 plans. $0
+Catalog solo Credits for any service, or $10 packs. $20 a month
+Starter organization Embedded payments in your product. $50 a month
+Premium organization Team seats, groups, analytics. $250 a month
+Enterprise organization Customer management, no caps. $500 a month
+Here is what each step includes.
+On your own, start free and add the catalog subscription or a credit pack when your agent buys. As an organization, pick the tier for the size of your team. Every tier is monthly and you can cancel any time.
+Solo one developer
+Free
+A personal account for one developer.
+$0 to start
+Register up to 20 agents and publish up to 10 payment plans
+2,000 free catalog credits to try any service
+Set a spend mandate and let your agent buy inside it
+Get paid when agents buy from you, at 1-2% of what settles
+No setup fee, no minimum, nothing before money moves
+Start free ↗ (https://nevermined.app/)
+AI Services Catalog
+Credits for the catalog, when your agent buys services.
+$20 a month
+20,000 credits a month, on top of the 2,000 every new account starts with
+Run low mid month? Top up with $10 credit packs
+No subscription? Buy $10 packs and pay as you go
+Every service at its listed price, paid by card
+Works in Claude Code, Cursor and any MCP client
+Subscribe ↗ (https://nevermined.app/catalog/subscription)
+Organization for teams and platforms, monthly
+Starter
+$50 a month
+Embedded agent payments in your product.
+Card enrollment and spend mandate widgets, inside your product
+Activity feed of every purchase, plus an organization wallet
+Publish one agent to the AI Services Catalog
+20 agents, 10 payment plans, one seat
+Start an organization ↗ (https://nevermined.app/)
+Recommended
+Premium
+$250 a month
+Your team, managed in one organization.
+Everything in Starter
+Invite your team: five seats
+Groups with their own spending caps
+Analytics dashboards and webhooks
+Settle through Braintree as well as Stripe
+100 agents, 50 payment plans, three catalog listings
+Start an organization ↗ (https://nevermined.app/)
+Enterprise
+$500 a month
+Your customers and their agents, at scale.
+Everything in Premium
+Customer management for your end users
+Realtime activity stream
+Unlimited agents, payment plans and seats
+Ten catalog listings, plus credits every month
+Talk to us ↗ (https://cal.com/team/nevermined/talk) opens a calendar
+An organization is a team that manages its people, or a platform that builds us into its product, with or without managing its users. Premium and Enterprise include catalog credits every month; top up with $10 packs.
+Selling the catalog to your users? Subscription credits at your price, today. The listed price plus your margin per call is in design with partners. See how (/catalog/platforms/#pricing)
+Who pays what
+Three lanes, no surprises
+Buyers pay nothing
+$0
+Agents buying from Nevermined merchants
+Agents pay the listed price, whether by delegated card, credits, or checkout. No buyer-side fee, ever.
+Buyers pay
+2%
+Buying external services
+Managed access to external services: one integration, one wallet, spend mandates enforced, consolidated accounting. The fee rides on top of the buyer's total and the merchant receives 100% of its quoted price. The same 2% on every rail, with no tiers and no minimums. Browsing the catalog is free, and always will be. How the subscription works (https://nevermined.ai/docs/products/catalog/router/subscription)
+Merchants pay
+1-2%
+Selling with Nevermined
+1% on stablecoin rails, 2% on card rails, taken from settlement. Payment-processing costs pass through at cost. Buyers pay nothing on top when they buy from you: one fee per flow, never both sides.
+This page is what Nevermined costs you. What your agents charge is up to you: per call, per token, per outcome, or cost plus margin. Publish any model and we meter, enforce, and settle it.
+Start free. Pay when money moves.
+No setup fee and no minimum. The organization tiers are monthly, and you can cancel any time.
+Start free ↗ (https://nevermined.app/) Start an organization ↗ (https://nevermined.app/)
+Enterprise, or serious volume? Talk to us ↗ (https://cal.com/team/nevermined/talk) (opens a calendar)
+Audit-ready
+ISO 27001 (/security/) SOC 2 Type II (/security/) PCI SAQ-D (/security/)
+Nevermined Pay (/nevermined-pay/) AI Services Catalog (/catalog/) Platforms (/platforms/) Enterprise (/enterprise/) Merchants (/merchants/) Pricing (/pricing/) Docs (https://nevermined.ai/docs) About us (/about-us/) Blog (https://nevermined.ai/blog) Contact (/contact-us/)
+© 2026 Nevermined ISO 27001 · SOC 2 Type II (/security/) Privacy (/legal/privacy) Terms (/legal/terms) llms.txt (/llms.txt)

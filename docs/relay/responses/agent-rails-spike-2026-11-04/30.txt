@@ -1,0 +1,110 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.payai.network/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Facilitator Pricing
+
+> PayAI Facilitator pricing: 1,000 free credits to start, then $1 = 1,000 credits, with each payment priced by network.
+
+Start with 1,000 free credits. No sign-up or API key needed. When they run out, buy more credits and keep going.
+
+> [card] Free
+>
+> **1,000 free credits**
+>
+> * No sign-up or API key needed
+> * Covers ordinary payments and public batch settlement
+> * Testnets are always free
+
+> [card] Pay as you go
+>
+> **\$1 = 1,000 credits**
+>
+> * Each payment costs its network's rate in credits
+> * [See live rates](https://facilitator.payai.network/pricing)
+
+Jump to the [quickstart](https://docs.payai.network/x402/quickstart.md) to start building.
+
+## What a payment costs
+
+One credit is \$0.001. Each payment your server settles costs its network's rate in credits. The rate tracks the on-chain gas PayAI pays to settle on that network, plus 30%, and refreshes daily. It is never a percentage of the payment amount. Testnets are free.
+
+For example, if the Solana rate is 1.33 credits:
+
+| Payments | Credits | Cost |
+| - | -: | -: |
+| 1 | 1.33 | \$0.00133 |
+| 1,000 | 1,330 | \$1.33 |
+| 100,000 | 133,000 | \$133 |
+
+Rates differ by network and change with gas prices. See the [live rates](https://facilitator.payai.network/pricing) for every network.
+
+Batch settlement and `upto` are priced per on-chain transaction, so a channel costs the sum of its legs (deposit, claim, refund and so on). Solana token-account (ATA) setup is a separate cost. Enterprise (invoiced) accounts use the same rates unless their agreement says otherwise.
+
+> [!NOTE]
+>
+> The facilitator fee is separate from the price your API charges its customer.
+> Payment amounts must satisfy the advertised payment requirements and the
+> selected scheme's rules. Batch channel deposits have their own
+> [limits](https://docs.payai.network/x402/servers/batch-settlement.md); they are not the price of each API request.
+
+### Reading rates from your server
+
+`GET /supported` carries the current rates under `pricing`, so a server can read the price for the network it is about to use. `GET https://facilitator.payai.network/pricing` returns the same object when you request JSON (`Accept: application/json`), including any upcoming change and its effective time.
+
+```json theme={null}
+{
+  "creditUsd": "0.001",
+  "marginBps": 3000,
+  "rates": [
+    { "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp", "scheme": "exact",
+      "transferMethod": "svm_transfer", "credits": "1.33", "usd": "0.00133",
+      "effectiveAt": "2026-10-15T12:00:00.002Z" }
+  ],
+  "upcoming": []
+}
+```
+
+## When your free credits run out
+
+When your free credits run out, the facilitator stops settling new payments for that wallet. Its error message includes a top-up link. To keep going:
+
+1. Open [merchant.payai.network/top-up](https://merchant.payai.network/top-up?payai_campaign=docs-pricing) and sign in. The link in the error already has your wallet and network filled in.
+2. Buy credits. Paying with `$PAYAI` on Solana gets a 10% discount; review the quote before you pay. Your customers do not need `$PAYAI` to pay your API in USDC.
+3. Add your API key to your server's environment:
+
+```env theme={null}
+PAYAI_API_KEY_ID=your-key-id
+PAYAI_API_KEY_SECRET=your-key-secret
+```
+
+If you use `@payai/facilitator` (as the TypeScript server guides do), it reads these variables automatically. No code changes are needed. For other languages, see [facilitator authentication](https://docs.payai.network/x402/facilitators/authentication.md).
+
+```typescript theme={null}
+import { facilitator } from "@payai/facilitator";
+import { HTTPFacilitatorClient } from "@x402/core/server";
+
+// Automatically uses API keys from environment when available
+const facilitatorClient = new HTTPFacilitatorClient(facilitator);
+```
+
+Agents can do this without a person. An agent can [buy credits and receive an API key over x402](https://docs.payai.network/x402/facilitators/agent-api-keys.md), with no portal signup. PayAI creates a wallet-owned agent account during the purchase. A paying wallet already linked to a portal account receives credits but not a new agent key; manage that account's keys in the portal.
+
+Check whether a wallet still has free credits. Anyone can look up any wallet, so the answer is `available`, `low` (20% or less left) or `exhausted`, not exact numbers. You see exact numbers in the [merchant portal](https://merchant.payai.network) after you link the wallet.
+
+```bash theme={null}
+curl "https://facilitator.payai.network/free-credits?payTo=<address>&network=<caip2>"
+```
+
+> [!NOTE]
+>
+> Free credits are tracked per receiving wallet, and per account when you use an API key. Very high-volume shared hosts may be asked to use an API key sooner.
+
+## Need help?
+
+> [card] [Join our Community](https://discord.gg/eWJRwMpebQ)
+>
+> Have questions or want to connect with other developers? Join our Discord server.
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.
