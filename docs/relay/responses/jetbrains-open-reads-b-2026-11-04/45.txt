@@ -1,0 +1,47 @@
+{ "@context": "http://schema.org", "@type": "WebPage", "@id": "https://plugins.jetbrains.com/docs/marketplace/organizations.html#webpage", "url": "https://plugins.jetbrains.com/docs/marketplace/organizations.html", "name": "Vendor profile | JetBrains Marketplace", "description": "", "image": "", "inLanguage":"en-US" }
+{ "@type": "WebSite", "@id": "https://plugins.jetbrains.com/docs/marketplace/#website", "url": "https://plugins.jetbrains.com/docs/marketplace/", "name": "JetBrains Marketplace Help" }
+meta og:title: Vendor profile | JetBrains Marketplace
+meta og:site_name: JetBrains Marketplace Help
+meta og:type: website
+meta og:locale: en_US
+meta og:url: https://plugins.jetbrains.com/docs/marketplace/organizations.html
+meta twitter:card: summary_large_image
+meta twitter:title: Vendor profile | JetBrains Marketplace
+Vendor profile | JetBrains Marketplace Documentation
+JetBrains Marketplace Help
+Vendor profile
+A Vendor is an entity that publishes and represents plugins on JetBrains Marketplace. Every plugin must be associated with a vendor profile, regardless of whether the vendor is an individual or represents an organization. This requirement ensures that users can easily identify the vendor responsible for a plugin and understand their status (trader-status.html) ( trader or non-trader ), in accordance with EU consumer protection regulations.
+Both individuals and organizations have dedicated vendor pages where their plugins are listed, offering users a centralized and transparent view of their contributions.
+[Vendor profile]
+Creating a new Vendor
+The easiest way to create a new Vendor profile is during the initial plugin upload (https://plugins.jetbrains.com/plugin/add#intellij) .
+[Create Organization]
+Be sure to choose your Vendor ID carefully, because you won’t be able to edit this parameter later on.
+Other fields such as Public Vendor Name, Email, and Website can be updated at any time.
+During the profile creation, you must also declare whether you can be considered a trader or non-trader according to the definition from the European Union. This will allow consumers from the EU to determine whether consumer protection regulations apply to them. Learn more about the requirements here (trader-status.html) .
+If you have already uploaded a plugin you can still create a new Vendor profile. To create it click the Create new Vendor (https://plugins.jetbrains.com/organizations/new) button under Vendors on your profile page:
+[Add Organization]
+Vendor profile administrators
+The user who creates a Vendor becomes its administrator.
+As an administrator, you can:
+Manage all the plugins under your Vendor profile.
+Update the Vendor details, including the banking information.
+Add new members to the Vendor profile.
+Grant additional administrator roles to other members.
+Revoke administrator privileges.
+Reserve plugin IDs (https://plugins.jetbrains.com/docs/marketplace/reserved-plugin-ids.html)
+Adding members
+To add more members, you just need to open the Edit Vendor page, switch to the Members tab, and enter the plugin author's ID in the Add member field.
+Associating plugins with Vendor
+To associate a plugin, the author should be a member of that Vendor profile and select it as Vendor on the plugin Overview page.
+[Transfer a plugin]
+Once the plugin has been transferred, the plugin authors will retain the right to manage the plugin, even if some of them do not belong to the Vendor profile. At this point, the plugin may also be managed by other administrators of this Vendor.
+Verified Vendor Badge
+If you want your Vendor to be marked as "Verified", check that it meets the criteria (verified-vendor-badge.html) .
+Transferring plugins from one Vendor to another
+You can easily move free plugins to another Vendor by following these steps:
+De-associate the plugin from its current Vendor profile by removing it in the Plugins tab.
+Transfer the plugin to the new Vendor on the plugin’s Overview page.
+For freemium or paid plugins, the procedure is not so simple, and it requires the involvement of the Marketplace Support team. If you wish to transfer a freemium or paid plugin, please contact us at marketplace@jetbrains.com (mailto:marketplace@jetbrains.com) .
+30 July 2026
+Roles (roles.html) Verified vendor badge (verified-vendor-badge.html)

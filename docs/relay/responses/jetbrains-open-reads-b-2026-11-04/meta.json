@@ -1,0 +1,707 @@
+{
+  "request": "jetbrains-open-reads-b-2026-11-04",
+  "fetched_at": "2026-11-04T17:20:26.893Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/9707/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:19:53.968Z",
+      "status": 200,
+      "elapsed_ms": 193,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/9707/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 534,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/9707/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:19:54.666Z",
+      "status": 200,
+      "elapsed_ms": 95,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/9707/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 618,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/13905/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:19:55.263Z",
+      "status": 200,
+      "elapsed_ms": 93,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/13905/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 625,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/13905/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:19:55.858Z",
+      "status": 200,
+      "elapsed_ms": 117,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/13905/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "4.json",
+      "bytes": 748,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/18151/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:19:56.477Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/18151/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 642,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/18151/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:19:57.073Z",
+      "status": 200,
+      "elapsed_ms": 96,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/18151/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "6.json",
+      "bytes": 764,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/21289/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:19:57.671Z",
+      "status": 200,
+      "elapsed_ms": 96,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/21289/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "7.json",
+      "bytes": 1056,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/21289/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:19:58.269Z",
+      "status": 200,
+      "elapsed_ms": 97,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/21289/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "8.json",
+      "bytes": 1302,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/24816/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:19:58.867Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/24816/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "9.json",
+      "bytes": 630,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/24816/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:19:59.462Z",
+      "status": 200,
+      "elapsed_ms": 96,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/24816/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "10.json",
+      "bytes": 752,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/10828/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:20:00.060Z",
+      "status": 200,
+      "elapsed_ms": 97,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/10828/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "11.json",
+      "bytes": 1046,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/10828/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:20:00.658Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/10828/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "12.json",
+      "bytes": 1294,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/25828/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:20:01.253Z",
+      "status": 200,
+      "elapsed_ms": 93,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/25828/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "13.json",
+      "bytes": 950,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/25828/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:20:01.847Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/25828/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "14.json",
+      "bytes": 1200,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/20243/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:20:02.442Z",
+      "status": 200,
+      "elapsed_ms": 93,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/20243/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "15.json",
+      "bytes": 500,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/20243/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:20:03.036Z",
+      "status": 200,
+      "elapsed_ms": 93,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/20243/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "16.json",
+      "bytes": 586,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/23115/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:20:03.630Z",
+      "status": 200,
+      "elapsed_ms": 95,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/23115/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "17.json",
+      "bytes": 1020,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/23115/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:20:04.226Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/23115/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "18.json",
+      "bytes": 1266,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/14053/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:20:04.821Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/14053/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "19.json",
+      "bytes": 619,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/14053/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:20:05.416Z",
+      "status": 200,
+      "elapsed_ms": 93,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/14053/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "20.json",
+      "bytes": 742,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/21314/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:20:06.010Z",
+      "status": 200,
+      "elapsed_ms": 93,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/21314/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "21.json",
+      "bytes": 1066,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/21314/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:20:06.604Z",
+      "status": 200,
+      "elapsed_ms": 96,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/21314/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "22.json",
+      "bytes": 1310,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/28734/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:20:07.201Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/28734/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "23.json",
+      "bytes": 350,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/28734/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:20:07.796Z",
+      "status": 200,
+      "elapsed_ms": 95,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/28734/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "24.json",
+      "bytes": 394,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/16217/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:20:08.392Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/16217/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "25.json",
+      "bytes": 1008,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/16217/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:20:08.987Z",
+      "status": 200,
+      "elapsed_ms": 95,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/16217/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "26.json",
+      "bytes": 1254,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/24753/prices?countryCode=US",
+      "fetched_at": "2026-11-04T17:20:09.583Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/24753/prices?countryCode=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "27.json",
+      "bytes": 590,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/24753/prices?countryCode=DE",
+      "fetched_at": "2026-11-04T17:20:10.178Z",
+      "status": 200,
+      "elapsed_ms": 95,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/24753/prices?countryCode=DE",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "28.json",
+      "bytes": 712,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/13905",
+      "fetched_at": "2026-11-04T17:20:10.775Z",
+      "status": 200,
+      "elapsed_ms": 117,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/13905",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "29.json",
+      "bytes": 3470,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/18151",
+      "fetched_at": "2026-11-04T17:20:11.394Z",
+      "status": 200,
+      "elapsed_ms": 117,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/18151",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "30.json",
+      "bytes": 2720,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/21289",
+      "fetched_at": "2026-11-04T17:20:12.012Z",
+      "status": 200,
+      "elapsed_ms": 119,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/21289",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "31.json",
+      "bytes": 4911,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/24816",
+      "fetched_at": "2026-11-04T17:20:12.632Z",
+      "status": 200,
+      "elapsed_ms": 111,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/24816",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "32.json",
+      "bytes": 2430,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/10828",
+      "fetched_at": "2026-11-04T17:20:13.244Z",
+      "status": 200,
+      "elapsed_ms": 112,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/10828",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "33.json",
+      "bytes": 4541,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/25828",
+      "fetched_at": "2026-11-04T17:20:13.858Z",
+      "status": 200,
+      "elapsed_ms": 112,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/25828",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "34.json",
+      "bytes": 4532,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/20243",
+      "fetched_at": "2026-11-04T17:20:14.471Z",
+      "status": 200,
+      "elapsed_ms": 117,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/20243",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "35.json",
+      "bytes": 6105,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/23115",
+      "fetched_at": "2026-11-04T17:20:15.090Z",
+      "status": 200,
+      "elapsed_ms": 110,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/23115",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "36.json",
+      "bytes": 4393,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/14053",
+      "fetched_at": "2026-11-04T17:20:15.701Z",
+      "status": 200,
+      "elapsed_ms": 110,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/14053",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "37.json",
+      "bytes": 5014,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/21314",
+      "fetched_at": "2026-11-04T17:20:16.312Z",
+      "status": 200,
+      "elapsed_ms": 115,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/21314",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "38.json",
+      "bytes": 6711,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/28734",
+      "fetched_at": "2026-11-04T17:20:16.928Z",
+      "status": 200,
+      "elapsed_ms": 144,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/28734",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "39.json",
+      "bytes": 4670,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/16217",
+      "fetched_at": "2026-11-04T17:20:17.573Z",
+      "status": 200,
+      "elapsed_ms": 118,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/16217",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "40.json",
+      "bytes": 2507,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/24753",
+      "fetched_at": "2026-11-04T17:20:18.192Z",
+      "status": 200,
+      "elapsed_ms": 114,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/24753",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "41.json",
+      "bytes": 2705,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/pricing-guidelines.html",
+      "fetched_at": "2026-11-04T17:20:18.805Z",
+      "status": 200,
+      "elapsed_ms": 112,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/pricing-guidelines.html",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 21 Oct 2026 15:35:43 GMT",
+        "etag": "W/\"9cb713d48c7552b95d5c7f058f57eaa9\""
+      },
+      "file": "42.txt",
+      "bytes": 1702,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 7690
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/license-types-and-schemes.html",
+      "fetched_at": "2026-11-04T17:20:19.420Z",
+      "status": 200,
+      "elapsed_ms": 113,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/license-types-and-schemes.html",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 21 Oct 2026 15:35:43 GMT",
+        "etag": "W/\"18fd4637d9fdfcde2dfdef7fb66de564\""
+      },
+      "file": "43.txt",
+      "bytes": 2109,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 7350
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/paid-plugins.html",
+      "fetched_at": "2026-11-04T17:20:20.035Z",
+      "status": 200,
+      "elapsed_ms": 125,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/paid-plugins.html",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 21 Oct 2026 15:35:43 GMT",
+        "etag": "W/\"da0af41071160d56848a7bf9eeadb45b\""
+      },
+      "file": "44.txt",
+      "bytes": 1607,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 6437
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/organizations.html",
+      "fetched_at": "2026-11-04T17:20:20.663Z",
+      "status": 200,
+      "elapsed_ms": 113,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/organizations.html",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 21 Oct 2026 15:35:43 GMT",
+        "etag": "W/\"0a4c22389f6114f1b02b4c658bc09111\""
+      },
+      "file": "45.txt",
+      "bytes": 4294,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 12812
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html",
+      "fetched_at": "2026-11-04T17:20:21.278Z",
+      "status": 200,
+      "elapsed_ms": 187,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 21 Oct 2026 15:35:42 GMT",
+        "etag": "W/\"1d8bab2809dcff9b3810ea56ff916e15\""
+      },
+      "file": "46.txt",
+      "bytes": 5526,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 13813
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/9707/sales-info",
+      "fetched_at": "2026-11-04T17:20:21.968Z",
+      "status": 400,
+      "elapsed_ms": 89,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/9707/sales-info",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "47.json",
+      "bytes": 72,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/vendor/Nifty-Thoughts",
+      "render": true,
+      "fetched_at": "2026-11-04T17:20:22.558Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/vendor/Nifty-Thoughts",
+      "title": "Ahmed Layouni - Vendor | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 67,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "48.txt",
+      "bytes": 2576,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 232602
+    }
+  ]
+}

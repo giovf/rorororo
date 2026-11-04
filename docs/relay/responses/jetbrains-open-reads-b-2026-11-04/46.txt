@@ -1,0 +1,43 @@
+{ "@context": "http://schema.org", "@type": "WebPage", "@id": "https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html#webpage", "url": "https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html", "name": "How to add required parameters for paid plugins | JetBrains Marketplace", "description": "", "image": "", "inLanguage":"en-US" }
+{ "@type": "WebSite", "@id": "https://plugins.jetbrains.com/docs/marketplace/#website", "url": "https://plugins.jetbrains.com/docs/marketplace/", "name": "JetBrains Marketplace Help" }
+meta og:title: How to add required parameters for paid plugins | JetBrains Marketplace
+meta og:site_name: JetBrains Marketplace Help
+meta og:type: website
+meta og:locale: en_US
+meta og:url: https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html
+meta twitter:card: summary_large_image
+meta twitter:title: How to add required parameters for paid plugins | JetBrains Marketplace
+How to add required parameters for paid plugins | JetBrains Marketplace Documentation
+JetBrains Marketplace Help
+How to add required parameters for paid plugins
+Every plugin sold via JetBrains Marketplace must define the following parameters in the plugin descriptor (plugin.xml) (https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html) , which can be found in the &#60;product-descriptor&#62; :
+code — a plugin Product Code (type: varchar , 15 characters max). It is registered in the JetBrains Sales System and serves as a unique ID for all plugin-related sales operations. It also connects the JetBrains Marketplace releases of the plugin to the Sales System.
+Your Product Code must:
+Start with the letter P .
+Be no shorter than 4 characters.
+Be no longer than 15 characters.
+NOT contain any numbers or special symbols.
+Contain only CAPITAL LETTERS .
+For example, the Product Code for a plugin called “Make Me Coffee” should be PMAKEMECOFFEE .
+Please note that it is rather difficult to change a Product Code after it’s been created and used, as doing so requires merging a lot of financial information and transactions, and additionally maintaining legacy product code in our systems for reference and backward compatibility.
+End-users will see the Product Code on the invoices, on the check-out page, and in their JetBrains Accounts (https://account.jetbrains.com/) .
+release-date — date of the major version release, written in the YYYYMMDD format (type: integer ).
+This is one of the most crucial parameters, as the subscription model depends on it. Perpetual fallback licenses (https://sales.jetbrains.com/hc/en-gb/articles/207240845-What-is-perpetual-fallback-license-) and licensing term calculations rely on the release-date and release-version .
+release-version — a major version in a special number format (type: integer ).
+The number should contain at least 2 digits, as it will be split into 2 numbers, the second of which will contain only one digit. Take, for example, release-version=20241 . The first number would be 2024 and the second one 1 .
+This is different from the version (versioning-of-paid-plugins.html) of the plugin, as this is a version number of the major release (i.e. the release that happened on release-date ).
+Please make sure the release-version and the version parameters match. They should have similar integers at the beginning, like release-version=20241 and version=2024.1.1 .
+Let’s take a look at an example:
+The initial release of a new plugin will be the first major release. That is why the parameters will look something like this in the plugin.xml file:
+<product-descriptor code="PMAKEMECOFFEE" release-date="20240818" release-version="20241"/>
+<version>2024.1.1</version>
+If you’re building the plugin with Gradle, the plugin version is defined in the plugins section of a project's build.gradle file. For more detailed information, please refer here (https://plugins.jetbrains.com/docs/intellij/gradle-guide.html#controlling-downloads-by-the-gradle-plugin) .
+According to the release-date parameter, this plugin can be purchased starting from August 18, 2024 . Its major version release is 2024.1 , and that number should not be changed in your further minor updates. As for the version parameter, it matches the release-version initially. When you increase the version parameter for minor updates, it still should match the release-version (only last digits are increased).
+Here is an example of a minor update:
+<product-descriptor code="PMAKEMECOFFEE" release-date="20240818" release-version="20241"/>
+<version>2024.1.2</version>
+As you can see, only the version parameter has been changed. Subsequent minor updates (e.g. 2024.1.1 , 2024.1.2 , 2024.1.x ) should have the same release-date and release-version . This will allow your users who have a perpetual fallback license to get the latest minor update of the major version they have access to.
+A plugin version with an altered release-version and release-date is considered a new stable version of the plugin, and in this case the current active trial licenses are reset.
+optional — not a required parameter (type: boolean ). This should be set to true if you would like to add the free functionality to your plugin. Please see Freemium (freemium.html) article for more information about free functionality. The default value of this parameter is false .
+30 July 2026
+Inform your users in advance (inform-your-users-in-advance.html) Technical implementation of the marketplace in the product (technical-implementation.html)

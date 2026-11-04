@@ -1,0 +1,20 @@
+{ "@context": "http://schema.org", "@type": "WebPage", "@id": "https://plugins.jetbrains.com/docs/marketplace/paid-plugins.html#webpage", "url": "https://plugins.jetbrains.com/docs/marketplace/paid-plugins.html", "name": "Paid plugins | JetBrains Marketplace", "description": "", "image": "", "inLanguage":"en-US" }
+{ "@type": "WebSite", "@id": "https://plugins.jetbrains.com/docs/marketplace/#website", "url": "https://plugins.jetbrains.com/docs/marketplace/", "name": "JetBrains Marketplace Help" }
+meta og:title: Paid plugins | JetBrains Marketplace
+meta og:site_name: JetBrains Marketplace Help
+meta og:type: website
+meta og:locale: en_US
+meta og:url: https://plugins.jetbrains.com/docs/marketplace/paid-plugins.html
+meta twitter:card: summary_large_image
+meta twitter:title: Paid plugins | JetBrains Marketplace
+Paid plugins | JetBrains Marketplace Documentation
+JetBrains Marketplace Help
+Paid plugins
+This section of the documentation describes the process of publishing a paid plugin to JetBrains Marketplace.
+If you're switching the payment model from free to paid, please inform your users in advance (inform-your-users-in-advance.html) .
+Follow these steps to start selling a plugin
+Prepare your plugin for publication (prepare-your-plugin-for-publication.html)
+Release the Plugin (release-plugin.html)
+If you encounter any issues with the paid plugin publication, feel free to contact us at marketplace@jetbrains.com (mailto:marketplace@jetbrains.com) .
+30 July 2026
+Plugin monetization (plugin-monetization.html) Preparing your plugin for publication (prepare-your-plugin-for-publication.html)
