@@ -1,0 +1,31 @@
+{ "@context": "http://schema.org", "@type": "WebPage", "@id": "https://plugins.jetbrains.com/docs/marketplace/billing-and-licensing.html#webpage", "url": "https://plugins.jetbrains.com/docs/marketplace/billing-and-licensing.html", "name": "Billing &amp; licensing | JetBrains Marketplace", "description": "", "image": "", "inLanguage":"en-US" }
+{ "@type": "WebSite", "@id": "https://plugins.jetbrains.com/docs/marketplace/#website", "url": "https://plugins.jetbrains.com/docs/marketplace/", "name": "JetBrains Marketplace Help" }
+meta og:title: Billing & licensing | JetBrains Marketplace
+meta og:site_name: JetBrains Marketplace Help
+meta og:type: website
+meta og:locale: en_US
+meta og:url: https://plugins.jetbrains.com/docs/marketplace/billing-and-licensing.html
+meta twitter:card: summary_large_image
+meta twitter:title: Billing & licensing | JetBrains Marketplace
+Billing & licensing | JetBrains Marketplace Documentation
+JetBrains Marketplace Help
+Billing & licensing
+Plugins are very similar to JetBrains’ own products in regard to how JetBrains’ sales systems treat them on the business logic level. This means that most of the sales processes available for JetBrains products are also available for third-party plugins sold via JetBrains Marketplace.
+We support all the standard approaches we have for JetBrains’ own products, such as:
+Evaluation licenses.
+Different means of payment (credit/debit cards, PayPal, wire transfer).
+Quotes.
+Monthly/yearly subscriptions.
+Personal/Commercial subscriptions.
+Management via JetBrains Account (https://account.jetbrains.com/login) (JBA).
+Community support programs of open source projects, teachers, students, etc.
+Discounts.
+Please check out the JetBrains Sales FAQ (https://sales.jetbrains.com/hc/en-gb) and this JBA-related section (https://sales.jetbrains.com/hc/en-gb/categories/200934669-JetBrains-Account-Help) to familiarize yourself with JetBrains Account (JBA), which is JetBrains’ license management solution.
+On-premises License Server
+Third-party plugin licenses are also fully supported on the JetBrains on-premises License Server. More information about the solution here (https://www.jetbrains.com/help/license_server/getting_started.html) .
+Distribution Network - Resellers
+JetBrains is utilizing its resellers and distributors network to make plugins available via the JetBrains distribution network. Plugin vendors decide whether to participate or not during the release process (release-plugin.html) .
+In a case of selling a plugin via JetBrains' resellers, there will be an additional commission held by the reseller, and this reseller commission is paid from JetBrains commission (so the plugin developer always gets a constant % of the plugin price). More information about developer’s fee here (revenue-sharing-and-fees.html) .
+Resellers might set their prices higher than a regular list price set by the vendor, and JetBrains Marketplace doesn't have control over it.
+18 January 2024
+JetBrains Marketplace demo plugin (marketplace-demo-plugin.html) Payment processing (payment-processing.html)

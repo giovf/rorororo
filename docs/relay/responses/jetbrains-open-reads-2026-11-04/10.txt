@@ -1,0 +1,62 @@
+{ "@context": "http://schema.org", "@type": "WebPage", "@id": "https://plugins.jetbrains.com/docs/marketplace/trader-status.html#webpage", "url": "https://plugins.jetbrains.com/docs/marketplace/trader-status.html", "name": "Developer requirement to disclose trader or non-trader status | JetBrains Marketplace", "description": "", "image": "", "inLanguage":"en-US" }
+{ "@type": "WebSite", "@id": "https://plugins.jetbrains.com/docs/marketplace/#website", "url": "https://plugins.jetbrains.com/docs/marketplace/", "name": "JetBrains Marketplace Help" }
+meta og:title: Developer requirement to disclose trader or non-trader status | JetBrains Marketplace
+meta og:site_name: JetBrains Marketplace Help
+meta og:type: website
+meta og:locale: en_US
+meta og:url: https://plugins.jetbrains.com/docs/marketplace/trader-status.html
+meta twitter:card: summary_large_image
+meta twitter:title: Developer requirement to disclose trader or non-trader status | JetBrains Marketplace
+Developer requirement to disclose trader or non-trader status | JetBrains Marketplace Documentation
+JetBrains Marketplace Help
+Developer requirement to disclose trader or non-trader status
+The European Commission adopted the New Deal for Consumers with the aim of supporting EU consumer protection rules. One of the requirements of the so-called Omnibus Directive 2019/2161 (https://eur-lex.europa.eu/eli/dir/2019/2161/oj) is that online marketplaces must inform consumers about whether the third parties offering goods or services on them act as professional traders or not. This applies also to JetBrains Marketplace and the digital content (for example, plugins) uploaded there.
+To comply with this requirement, we must ask every vendor on JetBrains Marketplace to declare whether they are a professional trader or not, so that consumers may be informed about whether they can benefit from consumer rights when dealing with them. This status must be assessed not merely based on whether the plugin is provided for free or for a fee, but rather based on other factors outlined below.
+This information about the status of each plugin developer is mandatory , so we kindly ask for your support.
+Trader and non-trader status
+“Non-trader (peer-consumer)” means any natural person who is acting for purposes which are outside his trade, business, craft or profession.
+“Trader” means any natural person or any legal person, irrespective of whether privately or publicly owned, who is acting, including through any other person acting in his name or on his behalf, for purposes relating to his trade, business, craft or profession.
+– Directive 2005/29/EC, Art. 2
+Furthermore, the status of a trader can be determined based on indicative criteria, for example:
+The vendor’s sales are intended to generate profit.
+The vendor has a legal status which enables them to engage in commercial activities.
+The vendor is subject to VAT.
+The vendor, acting on their own behalf or on behalf another person, received remuneration.
+The European Commission guidance on the further interpretation of the directive can be found here (https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52021XC1229%2804%29&qid=1674657310759) .
+Examples
+If you are a natural person acting outside your business (not an entrepreneur) and you offer plugins on JetBrains Marketplace for free, you may be qualified as a non-trader.
+If you are a natural person (software developer) working for a company, but you develop plugins in your free time as a hobby and offer them for free and provide means for users to support your development on a voluntary basis ( voluntary financial contribution ), you may be qualified as a non-trader.
+If you are a for-profit legal entity, regardless of whether you are a private or publicly held entity, you would be directly qualified as a trader.
+If you are a natural person acting for professional purposes (relating to your trade, business, craft, or profession), you are a trader, and it is immaterial whether you offer some or all of your plugins for free.
+If you create a plugin in cooperation with other individuals, you make the declaration as an individual vendor, i.e. the person uploading the plugin is the one making the declaration.
+Information you need to provide if you're a trader
+The law requires us to collect and verify certain information about traders offering their plugins on JetBrains Marketplace. The specific information required depends on whether the trader is an individual or a legal entity.
+[OrgTrader.png]
+Legal Entities:
+If you represent a legal entity, JetBrains will require you to provide:
+Company name
+Registration number in the commercial register
+Email address
+Phone number
+Business address
+[IndividualTrader.png]
+Individuals:
+If you are an individual, you will be asked to provide:
+Full name
+A copy of your identification document
+Phone number
+Residential address
+Email address
+Registration number in the trade register
+All Traders:
+In addition to the above, all traders will be required to provide to JetBrains their banking details.
+[BankingForTraders.png]
+Even if your sales happen externally and not directly through our marketplace, we are obligated under the DSA to collect banking details along with address, phone, etc. Rest assured, your banking details will be kept fully secure and are only used for verification purposes in line with our privacy policy.
+You will also need to certify that all offered products or services comply with applicable EU laws.
+In some cases, additional documents may be requested, if the initially provided information is insufficient for verification.
+Information provided to consumers
+Depending on your status, end-users of the plugins will be informed that consumer protection laws will (if you are a trader) or will not (if you are not a trader) apply to any contracts concluded between you and them. Additionally, some of the information provided, such as your name, email, address, and phone number, will be displayed to end-users.
+Please note that it is your responsibility as a vendor to make the declaration of your trader or non-trader status!
+This document serves as guidance only. We do not provide further consultations on this topic or on determining your trader or non-trader status.
+23 July 2025
+Digital Services Act (transparency-reports.html) Changelog (changelog.html)

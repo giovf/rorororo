@@ -1,0 +1,236 @@
+{
+  "request": "jetbrains-open-reads-2026-11-04",
+  "fetched_at": "2026-11-04T17:16:59.360Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/9707",
+      "fetched_at": "2026-11-04T17:16:51.208Z",
+      "status": 200,
+      "elapsed_ms": 451,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/9707",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 7018,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/26118",
+      "fetched_at": "2026-11-04T17:16:52.165Z",
+      "status": 403,
+      "elapsed_ms": 84,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/26118",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 44,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/9707/pricing?family=intellij&country=US",
+      "fetched_at": "2026-11-04T17:16:52.750Z",
+      "status": 400,
+      "elapsed_ms": 82,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/9707/pricing?family=intellij&country=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/9707/pricing?family=INTELLIJ&country=US",
+      "fetched_at": "2026-11-04T17:16:53.333Z",
+      "status": 400,
+      "elapsed_ms": 81,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/9707/pricing?family=INTELLIJ&country=US",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "4.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugins/9707/pricing",
+      "fetched_at": "2026-11-04T17:16:53.915Z",
+      "status": 404,
+      "elapsed_ms": 80,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugins/9707/pricing",
+      "headers": {
+        "content-type": "application/problem+json"
+      },
+      "file": "5.json",
+      "bytes": 174,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/",
+      "fetched_at": "2026-11-04T17:16:54.497Z",
+      "status": 200,
+      "elapsed_ms": 171,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "399",
+        "last-modified": "Wed, 21 Oct 2026 15:35:43 GMT",
+        "etag": "\"a4b65c3a53c98234849945bf59287702\""
+      },
+      "file": "6.txt",
+      "bytes": 122,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 399
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/plugin-monetization.html",
+      "fetched_at": "2026-11-04T17:16:55.169Z",
+      "status": 200,
+      "elapsed_ms": 104,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/plugin-monetization.html",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 21 Oct 2026 15:35:43 GMT",
+        "etag": "W/\"c59b859f81d4098dd7bd9832471eae6d\""
+      },
+      "file": "7.txt",
+      "bytes": 3574,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 10109
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/paid-plugins-marketplace.html",
+      "fetched_at": "2026-11-04T17:16:55.787Z",
+      "status": 200,
+      "elapsed_ms": 102,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/paid-plugins-marketplace.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "399",
+        "last-modified": "Wed, 21 Oct 2026 15:35:43 GMT",
+        "etag": "\"a4b65c3a53c98234849945bf59287702\""
+      },
+      "file": "8.txt",
+      "bytes": 122,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 399
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/billing-and-licensing.html",
+      "fetched_at": "2026-11-04T17:16:56.390Z",
+      "status": 200,
+      "elapsed_ms": 102,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/billing-and-licensing.html",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 21 Oct 2026 15:35:42 GMT",
+        "etag": "W/\"409666412d3ab38f9a467d199ab90a22\""
+      },
+      "file": "9.txt",
+      "bytes": 3080,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 8715
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/trader-status.html",
+      "fetched_at": "2026-11-04T17:16:56.993Z",
+      "status": 200,
+      "elapsed_ms": 109,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/trader-status.html",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 21 Oct 2026 15:35:43 GMT",
+        "etag": "W/\"9cffa03438070b31fcd246c2f43c57cb\""
+      },
+      "file": "10.txt",
+      "bytes": 6344,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 13579
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/docs/marketplace/vendor-profile.html",
+      "fetched_at": "2026-11-04T17:16:57.603Z",
+      "status": 200,
+      "elapsed_ms": 106,
+      "final_url": "https://plugins.jetbrains.com/docs/marketplace/vendor-profile.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "348",
+        "last-modified": "Wed, 21 Oct 2026 15:35:43 GMT",
+        "etag": "\"520bba52e82dba7b7f8490c06a14e5e5\""
+      },
+      "file": "11.txt",
+      "bytes": 105,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 348
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/9707-ansi-highlighter-premium/pricing",
+      "raw": true,
+      "fetched_at": "2026-11-04T17:16:58.209Z",
+      "status": 200,
+      "elapsed_ms": 90,
+      "final_url": "https://plugins.jetbrains.com/plugin/9707-ansi-highlighter-premium/pricing",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "12.html",
+      "bytes": 84815,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/static/versions/37886/index.js",
+      "raw": true,
+      "fetched_at": "2026-11-04T17:16:58.801Z",
+      "status": 200,
+      "elapsed_ms": 10,
+      "final_url": "https://plugins.jetbrains.com/static/versions/37886/index.js",
+      "headers": {
+        "content-type": "text/javascript",
+        "last-modified": "Fri, 09 Oct 2026 15:17:36 GMT",
+        "etag": "W/\"87daa3a8c72e4b0e8cfcbeed099d0211\""
+      },
+      "file": "13.txt",
+      "bytes": 1049920,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/static/versions/37886/common.js",
+      "raw": true,
+      "fetched_at": "2026-11-04T17:16:59.350Z",
+      "status": 200,
+      "elapsed_ms": 9,
+      "final_url": "https://plugins.jetbrains.com/static/versions/37886/common.js",
+      "headers": {
+        "content-type": "text/javascript",
+        "last-modified": "Fri, 09 Oct 2026 15:17:36 GMT",
+        "etag": "W/\"28b6c49a8096e32ab19d00bfd022c96f\""
+      },
+      "file": "14.txt",
+      "bytes": 28677,
+      "truncated": false
+    }
+  ]
+}
