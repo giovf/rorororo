@@ -2440,3 +2440,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-04 18:05 | build | Address ask not filed: line scores 1.8, under STRATEGY §3's ≥ 10 bar for an identity step; triggers on the entry
 - 2026-11-04 18:05 | build | Relay hosts added: .gradle.org, .jetbrains.team; three relay rounds (14 + 48 + 12 lines)
 - 2026-11-04 18:20 | build | Vendor addresses and phones seen in the relay bodies are not copied into the spike (third-party personal data)
+- 2026-11-04 19:07 | triage | notify owner dispatched: last run started 16:30 UTC, 2 h 37 min ago
