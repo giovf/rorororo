@@ -2410,3 +2410,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-03 19:28 | burn-down | Stopping: 1 item done; starved-and-cooled; week budget 30 of 30 slots spent, pre-research left for W45
 - 2026-11-03 21:07 | triage | notify owner dispatched: last run started 17:59 UTC, 3 h ago
 - 2026-11-04 02:07 | triage | notify owner dispatched: last run started 23:36 UTC, 2.5 h ago
+- 2026-11-04 02:08 | watchdog | ci-minutes: 515 billed min/7d (~2207/mo; cap 2000) top: notify owner 132, gankdat 65, gankdat metrics 64
