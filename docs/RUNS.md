@@ -2431,3 +2431,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-04 10:35 | build | Relay hosts added: Skyfire, Nevermined, AP2, mpp.dev, PayAI, x402.rs, x402.org, thirdweb, x402scan, FareSide
 - 2026-11-04 12:08 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-11-04 15:07 | triage | notify owner dispatched: last run started 12:08 UTC, 3 h ago
+- 2026-11-04 17:12 | build | Claimed new-ventures spike-jetbrains-open-reads (4 × 2) before npm ci; main green (STEP 0); first-runs: nothing owed
+- 2026-11-04 18:05 | build | Spike spike-jetbrains-open-reads done: PARK — vendor home address public on the shelf; sandbox cannot build
+- 2026-11-04 18:05 | build | Commercial prices read from the pricing tab's own API: 12 of 14 ≥ US$10/user/yr, 2–10× personal on nine
+- 2026-11-04 18:05 | build | No Marketplace minimum price in any help page; vendors sell at US$1/yr and US$5/yr, so US$1/mo is a convention
+- 2026-11-04 18:05 | build | Keyless /api/plugins/{id} returns every trader vendor's street address and phone; vendor page shows them
+- 2026-11-04 18:05 | build | Toolchain: sandbox cannot fetch Gradle 9 or reach any JetBrains artefact host; a runner reaches all 12
+- 2026-11-04 18:05 | build | Address ask not filed: line scores 1.8, under STRATEGY §3's ≥ 10 bar for an identity step; triggers on the entry
+- 2026-11-04 18:05 | build | Relay hosts added: .gradle.org, .jetbrains.team; three relay rounds (14 + 48 + 12 lines)
+- 2026-11-04 18:20 | build | Vendor addresses and phones seen in the relay bodies are not copied into the spike (third-party personal data)
