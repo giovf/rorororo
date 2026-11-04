@@ -2420,3 +2420,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-04 08:45 | exchange | Declined: nothing new; 13 spike files read since W44, their 11 parks and 1 decline stand
 - 2026-11-04 08:45 | exchange | Exchange file docs/exchange/2026-W45.md; relay round exchange-w45-2026-11-04 (7 lines, 30 s)
 - 2026-11-04 08:45 | exchange | Owner later: one ≤ 15-min Leanpub sign-up and upload, raised by the listing-pack build, not now
+- 2026-11-04 09:08 | triage | notify owner dispatched: last run started 06:55 UTC, 2 h ago
