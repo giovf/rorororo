@@ -753,6 +753,15 @@
       "status": "parked",
       "trigger": "a new edition announced on apify.com/challenge or in Apify's developer mail (the inbox triage logs Apify mail; a `challenge` subject becomes an ALERTS line) — then a gankdat item the same week: read the terms, enrol the eligible actors (owner click only if the console asks), and add the reward reading to the Daily numbers `apify:` clause",
       "added": "2026-11-04"
+    },
+    {
+      "id": "second-agent-payment-rail",
+      "title": "A second agent-payment rail beside the CDP x402 lane for gankdat's per-call routes (Skyfire, Nevermined, Google AP2, Stripe MPP/x402, PayAI or another non-CDP x402 facilitator, thirdweb)",
+      "why": "Exchange 2026-W45 asked whether a second rail brings a different buyer pool or only the same agents. Spike 2026-11-04 (build, docs/exchange/spikes/agent-payment-rails.md): the buyer pool is split by catalogue, not by facilitator — any Base USDC agent can pay any seller; x402scan's cumulative index puts Coinbase's facilitator at 28.96K buyers / 7.42K sellers and PayAI's at 1.27K / 1.14K (sellers ≈ buyers = self-tests; 111 vs 2,511 buyers in 24 h). Skyfire (Skyfire Systems Inc.): 0 % fee today, email account + seller agent + 48 h review per service, KYA optional on a paid subscription, off-chain settlement up to 51 h, directory of 75 services / 38 sellers with no usage counts. Nevermined (AG, Zug): 1 % stablecoin / ~2 % card, free account sells but catalogue listing needs the US$50/month Starter tier or an unguaranteed email review; 160 services of search/scrape/inference. AP2 v0.2: card mandates through a Merchant Payment Processor, no catalogue, no micro-prices. Stripe: SPT cards ≥ US$0.50 (US, Canada, select EU), stablecoins US-only unless an access request Stripe reviews, and its x402 path settles through the CDP facilitator into a Stripe deposit address — same buyers. PayAI (LLC, Delaware): no sign-up, 1,000 free credits then US$0.00197 a Base settlement (gas + 30 %), a 15,115-resource Bazaar without call counts, Solana-heavy. thirdweb: 0.3 % + account + server-wallet custody. x402.rs: testnet only (FareSide). Parked.",
+      "status": "parked",
+      "trigger": "PayAI's x402scan buyers ≥ 25 % of Coinbase's on a 24 h read, or a Base register/company-data route in its top 100 with ≥ 100 payers; Skyfire's directory publishing call or buyer counts; Nevermined opening a free listing path for individuals; Stripe opening stablecoin machine payments to UK accounts self-serve. The 11-14 x402-bazaar-day-30 read notes x402scan's facilitator split beside the Bazaar clause.",
+      "spiked": "2026-11-04",
+      "added": "2026-11-04"
     }
   ]
 }

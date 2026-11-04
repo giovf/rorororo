@@ -639,7 +639,7 @@
     },
     {
       "id": "x402-bazaar-day-30",
-      "title": "Day-30 read of the x402 Bazaar listing: resources indexed, calls and payers by resource from the `bazaar:` clause and the discovery API, our rank for a sample intent search (searchX402Resources 'UK company lookup', 'sanctions list', 'public tenders'), x402_paid excluding internal; record in RESEARCH.md and decide: extend (more routes, curation tier, the aggregator idea's trigger) or leave listed",
+      "title": "Day-30 read of the x402 Bazaar listing: resources indexed, calls and payers by resource from the `bazaar:` clause and the discovery API, our rank for a sample intent search (searchX402Resources 'UK company lookup', 'sanctions list', 'public tenders'), x402_paid excluding internal; record in RESEARCH.md and decide: extend (more routes, curation tier, the aggregator idea's trigger) or leave listed; plus x402scan's facilitator page (Coinbase vs PayAI buyers, 24 h and cumulative) as the monthly re-read of the second-rail question (spike 2026-11-04)",
       "why": "Exchange 2026-W42 proof (≥ 50 paid calls from ≥ 5 payers in 30 days). The reading also settles the parked x402-aggregator-mcp trigger (our listing converts) and whether compliance/register data has buyers in the catalogue at all (EDGAR 69 calls / 29 payers and an OFAC screen 12 / 10 were the only compliance-shaped resources in the top 200 on 2026-10-14). Ledger convention (review W42, 2026-10-18): x402 receipts are USDC in the seller wallet, below the ledger's pence at half a cent a call — at each day-30 Bazaar read, record the period's receipts (excluding our probe) as one `revenue` row in docs/LEDGER.md at the GBP rate when they reach £0.01, else carry the running USDC total in RESEARCH.md; the first three external paid calls landed 10-17/18 (US$0.015).",
       "effort_days": 0.1,
       "proof": "numbers recorded in RESEARCH.md; keep/extend decision in STRATEGY §8; parked ideas re-triggered or left with the reason",
@@ -647,7 +647,7 @@
       "status": "todo",
       "not_before": "2026-11-14",
       "added": "2026-10-14",
-      "updated": "2026-10-18"
+      "updated": "2026-11-04"
     },
     {
       "id": "googlebot-401-noindex",

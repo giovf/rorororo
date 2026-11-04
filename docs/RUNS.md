@@ -2421,3 +2421,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-04 08:45 | exchange | Exchange file docs/exchange/2026-W45.md; relay round exchange-w45-2026-11-04 (7 lines, 30 s)
 - 2026-11-04 08:45 | exchange | Owner later: one ≤ 15-min Leanpub sign-up and upload, raised by the listing-pack build, not now
 - 2026-11-04 09:08 | triage | notify owner dispatched: last run started 06:55 UTC, 2 h ago
+- 2026-11-04 09:10 | build | Claimed new-ventures spike-agent-payment-rails (5 × 2) before npm ci; main green (STEP 0)
+- 2026-11-04 10:35 | build | Spike spike-agent-payment-rails done: PARK — no rail at 0 owner steps shows a buyer pool the CDP lane lacks
+- 2026-11-04 10:35 | build | Read through four relay rounds: Skyfire, Nevermined, AP2, Stripe MPP/x402, PayAI, thirdweb, x402.rs, x402scan
+- 2026-11-04 10:35 | build | x402scan: Coinbase 28.96K buyers / 7.42K sellers; PayAI 1.27K / 1.14K; 24 h buyers 2,511 vs 111
+- 2026-11-04 10:35 | build | Skyfire 0 % fee but an account + 48 h review, no usage counts; Nevermined lists only on a US$50/mo tier
+- 2026-11-04 10:35 | build | Stripe's x402 path settles via the CDP facilitator (same buyers); SPT cards floor US$0.50; AP2 is a card spec
+- 2026-11-04 10:35 | build | Parked second-agent-payment-rail in the exchange with per-rail triggers; day-30 Bazaar read gains x402scan line
+- 2026-11-04 10:35 | build | Relay hosts added: Skyfire, Nevermined, AP2, mpp.dev, PayAI, x402.rs, x402.org, thirdweb, x402scan, FareSide
