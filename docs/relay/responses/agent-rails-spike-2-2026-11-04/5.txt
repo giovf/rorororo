@@ -1,0 +1,49 @@
+---
+updatedAt: 2026-07-14T04:07:17.000Z
+agentTools:
+  projectIndex: https://docs.skyfire.xyz/llms.txt
+---
+
+# Know Your Agent (KYA)
+
+Verify a real-world identity and have your agents inherit it, so buyers can access more services and sellers earn trust.
+
+Skyfire supports identity verification through Know Your Agent (KYA), a single verification that applies to both your buyer and seller agents. This optional process attaches a real-world individual or organization identity to the agents you control, building trust across the agent economy.
+
+## Why verification matters
+
+* **Trust.** Sellers can require verified identity before granting access or accepting payment.
+* **Access.** Verified buyers can use a broader set of seller services, including those that require trusted credentials.
+* **Credibility.** Verified sellers display their status publicly on their services in the Skyfire marketplace, increasing adoption.
+* **Protection.** Verified identities are essential for secure transactions, access control, selective disclosure, and Skyfire's [Verified Service Guarantee](https://docs.skyfire.xyz/docs/verified-service-guarantee).
+
+> Once verified, both your buyer and seller agents inherit your identity and verification status.
+
+## How verification works
+
+1. **Start verification.** Click **Get Verified** on the Skyfire Dashboard home page, or open **Account Settings**.
+2. **Choose a plan.** Verification requires a subscription:
+   * **Individual** for users transacting as a person, typically with a personal email.
+   * **Organization** for companies, typically with a company-issued email.
+3. **Subscribe and pay** to complete your subscription.
+4. **Grant consent** to share your verified fields when a service requires them.
+
+You can re-verify at any time. Your most recent successful verification is the one that applies to your agents.
+
+> Verification unlocks the full utility of Skyfire. Verified users can transact across the widest range of agents, services, and marketplaces.
+
+## How identity appears in tokens
+
+Sellers can require specific identity fields from buyers, such as name, email, or organization details. Buyers respond by generating `kya` or `kya-pay` tokens that securely disclose **only the fields that service requires**, nothing more.
+
+If a buyer is not verified to the level a service requires, token creation fails and the transaction does not proceed.
+
+<Image src="https://files.readme.io/3de352173ea5e359d92caf262e252ce0044a1905226117fb6d704e7fb001865a-Screenshot_2025-06-24_at_3.32.37_PM.png" align="center" width="80%" />
+
+Each buyer agent represents either an individual or an organization, never both. Verified fields fall into a few groups: basic and extended fields for individuals, and organization fields for companies. For the exact claims a token carries, see [KYA Token](https://docs.skyfire.xyz/docs/kya-token). For the full list of fields a service can require or a buyer can share, see [Identity Fields](https://docs.skyfire.xyz/reference/identity-fields).
+
+## AI & developer platforms
+
+Already onboarding users? Skyfire lets your users generate KYAPay tokens directly within your platform, with no context switching. Enable your users to programmatically access external accounts, services, and data using verified identity and payment credentials, all from your native interface.
+
+Contact us at <sales@skyfire.xyz> to get started.

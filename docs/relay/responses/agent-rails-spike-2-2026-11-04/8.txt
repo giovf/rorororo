@@ -1,0 +1,146 @@
+---
+updatedAt: 2026-07-14T03:08:35.000Z
+agentTools:
+  projectIndex: https://docs.skyfire.xyz/llms.txt
+---
+
+# Identity Fields
+
+The shared set of verified identity fields that sellers require and buyers share, plus the full field reference for individuals and organizations.
+
+Skyfire uses **one shared set of verified identity fields** across its APIs. The same fields appear on both sides of a transaction: a seller can *require* them, and a buyer can *share* them. Both the buyer and seller APIs draw from the single catalog on this page.
+
+> **First, get verified.** These fields only carry data once you've verified your identity. Both buyers and sellers verify the same way: in the <Anchor target="_blank" href="https://app.skyfire.xyz">Skyfire Dashboard</Anchor>, click **Get Verified** on your home page, or open **Account Settings&#x20;**&#x61;nd follow the steps. Verification is tied to your user, so once complete, both your buyer and seller agents can use it.
+
+## How identity fields are used
+
+The same field set is referenced two ways, depending on who's acting:
+
+<Cards columns={2}>
+  <Card title="Sellers require fields" icon="fa-store">
+    **`humanIdentityRequirement`** — set in [Create Agent's Service](https://docs.skyfire.xyz/reference/create-agents-service).
+
+    Defines which identity fields a buyer must have **verified** before they can create tokens for the service. It acts as an access requirement.
+  </Card>
+  <Card title="Buyers share fields" icon="fa-cart-shopping">
+    **`identityPermissions`** — set in [Create Token](https://docs.skyfire.xyz/reference/create-token).
+
+    Defines which verified fields the buyer **includes in a token**, controlling what identity data is disclosed to the seller.
+  </Card>
+</Cards>
+
+> **Key idea:** any field a seller can require through `humanIdentityRequirement` can also be requested by a buyer through `identityPermissions`. It's one field set, used from two sides.
+
+### Examples
+
+<Tabs>
+  <Tab title="Seller — require fields">
+    A seller requires buyers to have verified their birthdate and family name before creating tokens for the service:
+
+    ```http
+    POST https://api.skyfire.xyz/api/v1/agents/seller-services
+    skyfire-api-key: {{SELLER_AGENT_API_KEY}}
+    content-type: application/json
+
+    {
+      "name": "Weather Data API Service",
+      "description": "Real-time weather data and forecasts.",
+      "type": "API",
+      "price": "0.01",
+      "priceModel": "PAY_PER_USE",
+      "minimumTokenAmount": "0.01",
+      "humanIdentityRequirement": {
+        "individual": ["birthdate", "family_name"],
+        "organization": ["birthdate", "family_name"]
+      }
+    }
+    ```
+  </Tab>
+  <Tab title="Buyer — share fields">
+    A buyer includes their first name in a token — for example, so the seller can attach it to a transaction:
+
+    ```http
+    POST {{baseUrl}}/api/v1/tokens
+    skyfire-api-key: {{VERIFIED_BUYER_AGENT_API_KEY}}
+    content-type: application/json
+
+    {
+      "type": "kya",
+      "sellerServiceId": "94d8beab-a134-48d5-8353-bd8a67eab40b",
+      "identityPermissions": ["given_name"]
+    }
+    ```
+  </Tab>
+</Tabs>
+
+### Empty Requirements
+
+A seller can set both `"individual"` and `"organization"` to empty arrays in `humanIdentityRequirement`:
+
+```json
+{
+  "individual": [],
+  "organization": []
+}
+```
+
+This means either only a verified email is required, and no additional identity verification is enforced.
+
+## Field reference
+
+A Skyfire user is either an **individual** or an **organization**, and each type supports its own set of fields. Use the exact field names below in both `humanIdentityRequirement` and `identityPermissions`.
+
+### Individual
+
+#### Level 1 · Basic identity
+
+| Field name           | Type     |
+| -------------------- | -------- |
+| `birthdate`          | `string` |
+| `given_name`         | `string` |
+| `middle_name`        | `string` |
+| `family_name`        | `string` |
+| `phone_number`       | `string` |
+| `phone_country_code` | `string` |
+
+#### Level 2 · Extended identity
+
+Includes all Level 1 fields, plus:
+
+| Field name               | Type     |
+| ------------------------ | -------- |
+| `id_document.issued_on`  | `string` |
+| `id_document.expires_on` | `string` |
+| `id_document.issued_by`  | `string` |
+| `address-full`           | `string` |
+| `address-city`           | `string` |
+| `address-region`         | `string` |
+| `address-country`        | `string` |
+| `no-address`             | `string` |
+
+> Level 2 verification automatically includes all Level 1 fields.
+
+### Organization
+
+| Field name                                | Type     |
+| ----------------------------------------- | -------- |
+| `organization_name`                       | `string` |
+| `organization_tax_id`                     | `string` |
+| `organization_physical_address-full`      | `string` |
+| `organization_physical_address-city`      | `string` |
+| `organization_physical_address-region`    | `string` |
+| `organization_physical_address-country`   | `string` |
+| `no-organization_physical_address`        | `string` |
+| `organization_registered_address-full`    | `string` |
+| `organization_registered_address-city`    | `string` |
+| `organization_registered_address-region`  | `string` |
+| `organization_registered_address-country` | `string` |
+| `no-organization_registered_address`      | `string` |
+| `birthdate`                               | `string` |
+| `given_name`                              | `string` |
+| `middle_name`                             | `string` |
+| `family_name`                             | `string` |
+| `phone_number`                            | `string` |
+| `phone_country_code`                      | `string` |
+
+<br />

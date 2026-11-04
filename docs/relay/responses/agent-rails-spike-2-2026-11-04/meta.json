@@ -1,0 +1,431 @@
+{
+  "request": "agent-rails-spike-2-2026-11-04",
+  "fetched_at": "2026-11-04T09:16:59.593Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://x402scan.com/facilitators",
+      "render": true,
+      "fetched_at": "2026-11-04T09:16:34.074Z",
+      "status": 200,
+      "final_url": "https://www.x402scan.com/facilitators",
+      "title": "Facilitators | x402scan",
+      "rendered": {
+        "network_idle": true,
+        "requests": 114,
+        "failed": [
+          "POST https://api.cdp.coinbase.com/platform/v2/embedded-wallet-api/projects/f324a33d-13ec-4990-8339-b8b7627fa043/auth/refresh → 401",
+          "POST https://api.cdp.coinbase.com/platform/v2/embedded-wallet-api/projects/f324a33d-13ec-4990-8339-b8b7627fa043/auth/logout → 401",
+          "GET https://www.x402scan.com/networks?_rsc=ozryu → net::ERR_ABORTED",
+          "GET https://www.x402scan.com/facilitator/fluxa?_rsc=1lchm → net::ERR_ABORTED",
+          "GET https://www.x402scan.com/facilitators?_rsc=bme87 → net::ERR_ABORTED",
+          "GET https://www.x402scan.com/facilitator/fluxa?_rsc=fkdzk → net::ERR_ABORTED",
+          "GET https://www.x402scan.com/facilitator/coinbase?_rsc=v7deu → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 2245,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 422916
+    },
+    {
+      "method": "GET",
+      "url": "https://x402scan.com/networks",
+      "render": true,
+      "fetched_at": "2026-11-04T09:16:39.237Z",
+      "status": 200,
+      "final_url": "https://www.x402scan.com/networks",
+      "title": "Networks | x402scan",
+      "rendered": {
+        "network_idle": true,
+        "requests": 98,
+        "failed": [
+          "POST https://api.cdp.coinbase.com/platform/v2/embedded-wallet-api/projects/f324a33d-13ec-4990-8339-b8b7627fa043/auth/refresh → 401",
+          "POST https://api.cdp.coinbase.com/platform/v2/embedded-wallet-api/projects/f324a33d-13ec-4990-8339-b8b7627fa043/auth/logout → 401",
+          "GET https://www.x402scan.com/all?_rsc=ues6h → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 1884,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 251463
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.skyfire.xyz/docs/payments-settlement.md",
+      "fetched_at": "2026-11-04T09:16:42.979Z",
+      "status": 200,
+      "elapsed_ms": 149,
+      "final_url": "https://docs.skyfire.xyz/docs/payments-settlement.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"18c473c204129023a39bc582209b6c3c62240262:expanded|00e2aea2\""
+      },
+      "file": "3.txt",
+      "bytes": 3256,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.skyfire.xyz/reference/settlement-of-payments.md",
+      "fetched_at": "2026-11-04T09:16:43.632Z",
+      "status": 200,
+      "elapsed_ms": 165,
+      "final_url": "https://docs.skyfire.xyz/reference/settlement-of-payments.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "374",
+        "etag": "\"34e10e547039098cacaf29a8779d972dd2acd3c1:expanded|00e2aea2\""
+      },
+      "file": "4.txt",
+      "bytes": 685,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.skyfire.xyz/docs/kya.md",
+      "fetched_at": "2026-11-04T09:16:44.298Z",
+      "status": 200,
+      "elapsed_ms": 115,
+      "final_url": "https://docs.skyfire.xyz/docs/kya.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"f3cdf7e259704b63f4b1014fb5e0ba1ffd9b2cba-8f51eff47a65c72f156d86b23fd171bd19506022:expanded|00e2aea2\""
+      },
+      "file": "5.txt",
+      "bytes": 3394,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.skyfire.xyz/docs/seller-services.md",
+      "fetched_at": "2026-11-04T09:16:44.914Z",
+      "status": 200,
+      "elapsed_ms": 556,
+      "final_url": "https://docs.skyfire.xyz/docs/seller-services.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"76c05025a992cdddf0d0df47805211d19f13b528-8f51eff47a65c72f156d86b23fd171bd19506022:expanded|00e2aea2\""
+      },
+      "file": "6.txt",
+      "bytes": 11160,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.skyfire.xyz/docs/service-discovery.md",
+      "fetched_at": "2026-11-04T09:16:45.972Z",
+      "status": 200,
+      "elapsed_ms": 212,
+      "final_url": "https://docs.skyfire.xyz/docs/service-discovery.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"13d36270da62c0bb1a2086c5d1a2f1d7b8adca4d:expanded|00e2aea2\""
+      },
+      "file": "7.txt",
+      "bytes": 1828,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.skyfire.xyz/reference/identity-fields.md",
+      "fetched_at": "2026-11-04T09:16:46.688Z",
+      "status": 200,
+      "elapsed_ms": 533,
+      "final_url": "https://docs.skyfire.xyz/reference/identity-fields.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"f60cf86aa5e89a79fd3f94717566e4a27dc4f8e4-8f51eff47a65c72f156d86b23fd171bd19506022:expanded|00e2aea2\""
+      },
+      "file": "8.txt",
+      "bytes": 5698,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.skyfire.xyz/docs/quickstart.md",
+      "fetched_at": "2026-11-04T09:16:47.724Z",
+      "status": 200,
+      "elapsed_ms": 260,
+      "final_url": "https://docs.skyfire.xyz/docs/quickstart.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"93ad06021439283cdd6b49fb141e5792b14fdbd1-8f51eff47a65c72f156d86b23fd171bd19506022:expanded|00e2aea2\""
+      },
+      "file": "9.txt",
+      "bytes": 2196,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://nevermined.ai/catalog",
+      "fetched_at": "2026-11-04T09:16:47.985Z",
+      "status": 200,
+      "elapsed_ms": 342,
+      "final_url": "https://nevermined.ai/catalog/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"ulio0k0i0c3qca\""
+      },
+      "file": "10.txt",
+      "bytes": 5197,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 174366
+    },
+    {
+      "method": "GET",
+      "url": "https://nevermined.ai/merchants",
+      "fetched_at": "2026-11-04T09:16:48.831Z",
+      "status": 200,
+      "elapsed_ms": 228,
+      "final_url": "https://nevermined.ai/merchants/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"qfoce5xtvy1bvv\""
+      },
+      "file": "11.txt",
+      "bytes": 7230,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 62121
+    },
+    {
+      "method": "GET",
+      "url": "https://nevermined.ai/docs/products/catalog/publish-ai-service.md",
+      "fetched_at": "2026-11-04T09:16:49.563Z",
+      "status": 200,
+      "elapsed_ms": 536,
+      "final_url": "https://nevermined.ai/docs/products/catalog/publish-ai-service.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline",
+        "last-modified": "Wed, 04 Nov 2026 09:16:50 GMT"
+      },
+      "file": "12.txt",
+      "bytes": 6161,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://nevermined.ai/docs/development-guide/nevermined-x402.md",
+      "fetched_at": "2026-11-04T09:16:50.600Z",
+      "status": 200,
+      "elapsed_ms": 308,
+      "final_url": "https://nevermined.ai/docs/development-guide/nevermined-x402.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline",
+        "last-modified": "Wed, 04 Nov 2026 09:16:50 GMT"
+      },
+      "file": "13.txt",
+      "bytes": 29462,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://nevermined.ai/docs/getting-started/how-it-works.md",
+      "fetched_at": "2026-11-04T09:16:51.410Z",
+      "status": 200,
+      "elapsed_ms": 523,
+      "final_url": "https://nevermined.ai/docs/getting-started/overview.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline",
+        "last-modified": "Wed, 04 Nov 2026 09:16:51 GMT"
+      },
+      "file": "14.txt",
+      "bytes": 6860,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://nevermined.ai/docs/llms.txt",
+      "fetched_at": "2026-11-04T09:16:52.434Z",
+      "status": 200,
+      "elapsed_ms": 883,
+      "final_url": "https://nevermined.ai/docs/llms.txt",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "etag": "W/\"Q08VXj49Xe1bxVTIDawrlVd0Krn5V5_lQ4IquWNohDI\""
+      },
+      "file": "15.txt",
+      "bytes": 85306,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.stripe.com/payments/machine/x402",
+      "fetched_at": "2026-11-04T09:16:53.324Z",
+      "status": 200,
+      "elapsed_ms": 387,
+      "final_url": "https://docs.stripe.com/payments/machine/x402",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 13728,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 657462
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+      "fetched_at": "2026-11-04T09:16:54.265Z",
+      "status": 200,
+      "elapsed_ms": 949,
+      "final_url": "https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.txt",
+      "bytes": 15389,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 826659
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.stripe.com/payments/stablecoin-payments",
+      "fetched_at": "2026-11-04T09:16:55.739Z",
+      "status": 200,
+      "elapsed_ms": 273,
+      "final_url": "https://docs.stripe.com/payments/stablecoin-payments",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.txt",
+      "bytes": 9815,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 486927
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.stripe.com/agentic-commerce/monetize-mcp",
+      "fetched_at": "2026-11-04T09:16:56.520Z",
+      "status": 200,
+      "elapsed_ms": 326,
+      "final_url": "https://docs.stripe.com/agentic-commerce/monetize-mcp",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.txt",
+      "bytes": 19584,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 649504
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.payai.network/x402/facilitators/bazaar.md",
+      "fetched_at": "2026-11-04T09:16:56.858Z",
+      "status": 200,
+      "elapsed_ms": 436,
+      "final_url": "https://docs.payai.network/x402/facilitators/bazaar.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline",
+        "last-modified": "Wed, 04 Nov 2026 09:16:57 GMT"
+      },
+      "file": "20.txt",
+      "bytes": 18145,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.payai.network/llms.txt",
+      "fetched_at": "2026-11-04T09:16:57.797Z",
+      "status": 200,
+      "elapsed_ms": 458,
+      "final_url": "https://docs.payai.network/llms.txt",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "last-modified": "Wed, 04 Nov 2026 09:16:58 GMT"
+      },
+      "file": "21.txt",
+      "bytes": 7532,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://facilitator.payai.network/pricing",
+      "fetched_at": "2026-11-04T09:16:58.257Z",
+      "status": 200,
+      "elapsed_ms": 238,
+      "final_url": "https://facilitator.payai.network/pricing",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"1bd5-FUo7+83FgCzBQlJGlG0fTXEhwrM\""
+      },
+      "file": "22.json",
+      "bytes": 7125,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payai.network/terms-of-service",
+      "fetched_at": "2026-11-04T09:16:58.496Z",
+      "status": 200,
+      "elapsed_ms": 327,
+      "final_url": "https://payai.network/terms-of-service",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline",
+        "etag": "W/\"fc8189720db3148c91f5c68c1389a7c5\""
+      },
+      "file": "23.txt",
+      "bytes": 15801,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 82628
+    },
+    {
+      "method": "GET",
+      "url": "https://portal.thirdweb.com/x402/facilitator",
+      "fetched_at": "2026-11-04T09:16:58.827Z",
+      "status": 200,
+      "elapsed_ms": 133,
+      "final_url": "https://portal.thirdweb.com/x402/facilitator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "24.txt",
+      "bytes": 6776,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 523969
+    },
+    {
+      "method": "GET",
+      "url": "https://fareside.com/",
+      "fetched_at": "2026-11-04T09:16:58.967Z",
+      "error": "fetch failed",
+      "elapsed_ms": 73
+    },
+    {
+      "method": "GET",
+      "url": "https://fareside.com/pricing",
+      "fetched_at": "2026-11-04T09:16:59.542Z",
+      "error": "fetch failed",
+      "elapsed_ms": 50
+    }
+  ]
+}

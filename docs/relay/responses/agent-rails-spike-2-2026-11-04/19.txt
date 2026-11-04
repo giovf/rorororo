@@ -1,0 +1,383 @@
+meta og:type: website
+meta og:title: Monetize your Model Context Protocol (MCP) server
+meta og:description: Charge AI agents for one-time payments using MPP.
+meta og:image: https://d37ugbyn3rpeym.cloudfront.net/docs/og-image/agentic-commerce.monetize-mcp.ogimage.png
+meta twitter:card: summary_large_image
+meta twitter:title: Monetize your Model Context Protocol (MCP) server
+meta twitter:description: Charge AI agents for one-time payments using MPP.
+meta twitter:image: https://d37ugbyn3rpeym.cloudfront.net/docs/og-image/agentic-commerce.monetize-mcp.ogimage.png
+meta description: Charge AI agents for one-time payments using MPP.
+Monetize your Model Context Protocol (MCP) server | Stripe Documentation
+Skip to content (#main-content)
+Accept payments for MCP tools
+Create account (https://dashboard.stripe.com/register) or Sign in (https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2Fagentic-commerce%2Fmonetize-mcp)
+/
+Search / Ask AI
+Create account (https://dashboard.stripe.com/register) Sign in (https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2Fagentic-commerce%2Fmonetize-mcp)
+Get started (/get-started)
+Payments (/payments)
+Revenue (/revenue)
+Risk (/risk)
+Data (/data)
+Money management (/money-management)
+Stablecoins (/stablecoins)
+Embedded finance (/connect)
+Developer resources (/development)
+More
+APIs & SDKs
+Help
+Overview (/payments) Accept a payment (/payments/accept-a-payment)
+Online payments
+Overview (/payments/online-payments) Find your use case (/payments/use-cases/get-started)
+Use Payment Links (/payment-links)
+Build a payments page (/payments/checkout)
+Build a custom integration with Elements (/payments/advanced)
+Build an in-app integration (/payments/mobile)
+Use Managed Payments (/payments/managed-payments)
+Recurring payments (/recurring-payments) Migrate legacy integrations (/payments/migrations)
+In-person payments
+Overview (/terminal) How Terminal works (/terminal/overview) Availability (/terminal/payments/collect-card-payment/supported-card-brands)
+Readers (/terminal/payments/setup-reader)
+Ready-made apps (/terminal/payments/ready-made-apps)
+Custom integration
+Payment methods
+Add payment methods (/payments/payment-methods/overview)
+Manage payment methods
+Faster checkout with Link (/payments/link)
+Payment operations
+Analytics (/payments/analytics)
+Balances and settlement time (/payments/balances)
+Compliance and security
+Currencies (/currencies)
+Declines (/declines)
+Disputes (/disputes)
+Payouts
+Receipts (/receipts) Refunds and cancellations (/refunds)
+Advanced integrations
+Custom payment flows (/payments/more-payment-scenarios)
+Flexible acquiring (/payments/flexible-payments)
+Off-Session Payments (/payments/off-session-payments)
+Multiprocessor orchestration (/payments/orchestration)
+Beyond payments
+Incorporate your company (/atlas)
+Agentic commerce (/agentic-commerce)
+Build an agent
+Sell to agents
+Retail and e-commerce (/agentic-commerce/sellers/use-cases/retail)
+Service bookings (/agentic-commerce/sellers/use-cases/booking)
+Tool calls and HTTP requests (/payments/machine)
+Accept payments for MCP tools
+MPP (/payments/machine/mpp)
+x402 (/payments/machine/x402)
+Concepts and references
+Financial Connections (/financial-connections)
+Climate (/climate)
+United States
+English (United States)
+Home (/) /
+Payments (/payments) /
+Agentic commerce (/agentic-commerce) /
+Sell to agents /
+Tool calls and HTTP requests (/payments/machine)
+Public preview (/release-phases)
+Monetize your Model Context Protocol (MCP) server Public preview (/release-phases)
+Charge AI agents for one-time payments using MPP.
+Ask about this page
+Copy for LLM
+View as Markdown
+Set up agent
+This guide shows how to charge AI agents for one-time purchases, such as service bookings, donations, or digital goods, by using a Model Context Protocol (MCP) server, Stripe, and the Machine Payments Protocol (MPP) (/payments/machine/mpp) .
+The approach in this guide is experimental and works with AI agents that support MCP and can make HTTP requests that handle MPP. You can accept payments from agents with a variety of payment methods, including cards through Shared Payment Tokens (SPTs) (/agentic-commerce/concepts/shared-payment-tokens) and stablecoin payments (/payments/stablecoin-payments) .
+Payments settle through your existing Stripe or Connect setup, so you keep your receipts, fees, and customer relationship. The same link also falls back to your existing checkout or donation form for human users, so you don’t need to change how you currently accept payments to support agents.
+Note
+Nonprofits and fundraising platforms can use this flow to accept agent-initiated donations. The MPP receipt confirms the payment, but it doesn’t replace any donation acknowledgment or tax receipt that the nonprofit or platform must provide.
+Understand how payment works
+When an AI agent calls one of your MCP tools, you can collect payment before you return a result.
+When MPP defines the HTTP payment handshake:
+The client requests a resource without payment.
+Your server returns an HTTP 402 response with a payment challenge.
+The client obtains an SPT credential and retries the request.
+Your server verifies payment and returns the resource with a receipt.
+In this pattern, your MCP tool validates the request, then returns a payment link. That link points to a separate HTTP endpoint that handles MPP. The agent posts to the URL, and MPP handles the challenge and credential flow at the HTTP layer.
+The same URL can also work for human users. If a browser opens it, the endpoint recognizes the Accept: text/html header, redirects to a checkout page that you control, and prefills the relevant parameters. This example demonstrates browser detection and redirection, but it doesn’t implement a card checkout or donation form. Replace the placeholder route with your existing browser payment flow.
+Review the flow
+The following sequence diagrams show how the same integration supports both the agent flow and browser fallback.
+Agent flow
+Browser fallback
+Before you begin
+Make sure you have the following set up before you start:
+Access to Shared Payment Tokens (/agentic-commerce/concepts/shared-payment-tokens) and a valid Stripe profile.
+A fulfillment flow that validates requests and completes purchases, such as checking availability, confirming inventory, or recording a donation.
+These environment variables:
+BASE_ URL : The base URL for your application
+STRIPE_ SECRET_ KEY : Your Stripe secret key
+STRIPE_ PROFILE_ ID : Your Stripe profile (https://dashboard.stripe.com/profiles) identifier
+If you use Connect (https://stripe.com/connect) to route funds to connected accounts, make sure you have the connected account ID available.
+Use a coding agent
+You can monetize an MCP server by giving your coding agent this prompt:
+Command Line
+Read https://docs.stripe.com/agentic-commerce/monetize-mcp.md?lang=node, and update my MCP server to use MPP to charge for one-time purchases.
+To build the integration yourself, follow the steps in this guide to define your MCP tool, create a server that handles MPP payments, and test the full payment flow.
+You can also review the app’s complete source code (https://github.com/stripe-samples/machine-payments/tree/main/mcp/server/node-typescript) on GitHub.
+Install dependencies (#install-dependencies)
+Install the required dependencies:
+Command Line
+npm install @hono/node-server @modelcontextprotocol/sdk hono mppx stripe zod
+Define your catalog (#define-your-catalog)
+This example shows a minimal catalog for testing. In production, replace it with your inventory and fulfillment logic.
+catalog.ts
+const catalog = [
+{ id : 'coffee' , title : 'Coffee' , priceCents : 500 } ,
+{ id : 'sticker' , title : 'MCP sticker' , priceCents : 200 } ,
+]
+type Purchase = {
+item : ( typeof catalog ) [ number ]
+quantity : number
+customerName : string
+customerEmail : string
+}
+export function getItem ( itemId : string | null ) {
+return catalog . find ( ( item ) => item . id === itemId )
+}
+export function validatePurchase ( input : { item : ( typeof catalog ) [ number ] | undefined ; quantity : number ; customerName : string | null ; customerEmail : string | null } ) : input is Purchase {
+return input . item !== undefined && Number . isInteger ( input . quantity ) && input . quantity >= 1 && input . customerName !== null && input . customerName . length > 0 && input . customerEmail !== null && input . customerEmail . length > 0
+}
+export function completeOrder ( purchase : Purchase ) {
+return { id : ` ${ purchase . item . id } - ${ purchase . quantity } ` , status : 'complete' }
+}
+Define your MCP tool (#define-your-mcp-tool)
+The following example shows the MCP tool definition. It validates the purchase request and returns a payment link without handling payment directly.
+mcp.ts
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
+import {
+WebStandardStreamableHTTPServerTransport ,
+} from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js'
+import { z } from 'zod'
+import { getItem , validatePurchase } from './catalog.js'
+function createMcpServer ( ) : McpServer {
+const server = new McpServer ( {
+name : 'your-mcp-server' ,
+version : '1.0.0' ,
+} )
+server . registerTool (
+'create_purchase_link' ,
+{
+description :
+'Returns a payment link for a one-time purchase. ' +
+'POST to the link with an MPP credential to pay automatically, ' +
+'or open it in a browser to preview the browser checkout fallback.' ,
+inputSchema : {
+itemId : z . string ( ) ,
+quantity : z . number ( ) . int ( ) . positive ( ) ,
+customerName : z . string ( ) ,
+customerEmail : z . string ( ) ,
+} ,
+} ,
+async ( { itemId , quantity , customerName , customerEmail } ) => {
+const params = new URLSearchParams ( {
+itemId ,
+quantity : String ( quantity ) ,
+customerName ,
+customerEmail ,
+} )
+const paymentLink = ` ${ process . env . BASE_URL } /api/purchase? ${ params } `
+// Do your normal business logic
+const item = getItem ( itemId )
+if ( ! item ) throw new Error ( 'Item not found' )
+if ( ! validatePurchase ( { item , quantity , customerName , customerEmail } ) ) {
+throw new Error ( 'Invalid purchase request' )
+}
+return {
+content : [ {
+type : 'text' ,
+text : JSON . stringify ( {
+// This link must be MPP enabled
+paymentLink ,
+instructions : {
+agent : ` POST to paymentLink. Server returns 402 on first call — use link-cli to obtain an SPT for networkId " ${ process . env . STRIPE_PROFILE_ID } " and retry. ` ,
+browser : 'Open paymentLink in a browser to view the placeholder checkout page.' ,
+} ,
+item : {
+title : item . title ,
+quantity ,
+price : ` ${ ( item . priceCents / 100 ) . toFixed ( 2 ) } USD ` ,
+} ,
+} , null , 2 ) ,
+} ] ,
+}
+} ,
+)
+return server
+}
+export async function handleMcpRequest ( request : Request ) : Promise < Response > {
+const server = createMcpServer ( )
+const transport = new WebStandardStreamableHTTPServerTransport ( {
+sessionIdGenerator : undefined ,
+enableJsonResponse : true ,
+} )
+await server . connect ( transport )
+try {
+return await transport . handleRequest ( request )
+} finally {
+await server . close ( )
+}
+}
+Create your server (#create-your-payment-endpoint)
+The following example shows the HTTP endpoint that handles MPP payments for agents and redirects browsers to a checkout flow that you control. It also hosts the MCP tool.
+server.ts
+import crypto from 'crypto'
+import StripeClient from 'stripe'
+import { serve } from '@hono/node-server'
+import { Hono } from 'hono'
+import { Mppx , stripe } from 'mppx/server'
+import { completeOrder , getItem , validatePurchase } from './catalog.js'
+import { handleMcpRequest } from './mcp.js'
+if ( ! process . env . STRIPE_SECRET_KEY ) {
+throw new Error ( 'STRIPE_SECRET_KEY environment variable is required' )
+}
+if ( ! process . env . STRIPE_PROFILE_ID ) {
+throw new Error ( 'STRIPE_PROFILE_ID environment variable is required' )
+}
+if ( ! process . env . BASE_URL ) {
+throw new Error ( 'BASE_URL environment variable is required' )
+}
+// Secret used to secure payment challenges
+// https://mpp.dev/protocol/challenges#challenge-binding
+const mppSecretKey = crypto
+. createHmac ( 'sha256' , process . env . STRIPE_SECRET_KEY )
+. update ( 'mpp-challenge-signing' )
+. digest ( 'base64' )
+const stripeClient = new StripeClient ( process . env . STRIPE_SECRET_KEY )
+const stripeMachinePayments = stripe . create ( {
+client : stripeClient ,
+networkId : process . env . STRIPE_PROFILE_ID ,
+livemode : ! process . env . STRIPE_SECRET_KEY . includes ( '_test_' ) ,
+// connect: connectOptions,
+} )
+const mppx = Mppx . create ( {
+methods : [ stripeMachinePayments . spt . charge ( ) ] ,
+secretKey : mppSecretKey ,
+} )
+// GET or POST /api/purchase?itemId=...&quantity=...
+async function handler ( request : Request ) : Promise < Response > {
+const url = new URL ( request . url )
+const params = url . searchParams
+// Browser redirect — replace the placeholder route with your checkout flow
+const accept = request . headers . get ( 'Accept' ) ?? ''
+if ( accept . includes ( 'text/html' ) ) {
+return Response . redirect ( new URL (
+` /checkout/ ${ params . get ( 'itemId' ) } ? ${ params } ` ,
+process . env . BASE_URL ,
+) )
+}
+// Agent/programmatic path — MPP 402-challenge flow
+const item = getItem ( params . get ( 'itemId' ) )
+if ( ! item ) return Response . json ( { error : 'Not found' } , { status : 404 } )
+const quantity = Number ( params . get ( 'quantity' ) )
+const customerName = params . get ( 'customerName' )
+const customerEmail = params . get ( 'customerEmail' )
+const purchase = { item , quantity , customerName , customerEmail }
+if ( ! validatePurchase ( purchase ) ) {
+return Response . json ( { error : 'Invalid purchase request' } , { status : 400 } )
+}
+const result = await mppx . compose ( [
+'stripe/charge' ,
+{
+amount : ( ( purchase . item . priceCents * purchase . quantity ) / 100 ) . toFixed ( 2 ) ,
+currency : 'usd' ,
+decimals : 2 ,
+description : purchase . item . title ,
+} ,
+] ) ( request )
+if ( result . status === 402 ) return result . challenge
+// Payment confirmed — run your business logic
+const order = completeOrder ( purchase )
+return result . withReceipt ( Response . json ( { success : true , orderId : order . id } ) )
+}
+const app = new Hono ( )
+app . post ( '/mcp' , ( context ) => handleMcpRequest ( context . req . raw ) )
+app . on ( [ 'GET' , 'POST' ] , '/api/purchase' , ( context ) =>
+handler ( context . req . raw ) ,
+)
+app . get ( '/checkout/:itemId' , ( context ) => {
+return context . text (
+'Replace this route with the browser checkout flow for your application.' ,
+)
+} )
+serve ( {
+fetch : app . fetch ,
+port : Number ( process . env . PORT ?? 4242 ) ,
+} )
+This example uses a basic implementation of an MCP endpoint. For a production deployment, make sure to add authentication and other controls that your application requires.
+Configure Connect
+If you’re using Connect, define connectOptions before the stripe. create() call and uncomment the connect line:
+const connectedAccountId = process . env . STRIPE_CONNECTED_ACCOUNT_ID
+const connectOptions = {
+applicationFeeAmount : 250 ,
+// Direct charge — the PaymentIntent is created directly on the connected
+// account. Pass the connected account ID as `stripeAccount` instead of
+// `transferData`/`onBehalfOf`.
+stripeAccount : connectedAccountId ,
+// Destination charge — the PaymentIntent is created on your platform
+// account and funds move to the connected account after the charge.
+// `onBehalfOf` is optional; set it if you want the connected account's
+// statement descriptor, MCC, and so on to apply to the charge.
+// transferData: { destination: connectedAccountId },
+// onBehalfOf: connectedAccountId,
+}
+Test your integration (#test-your-integration)
+You can test the full agent payment flow end to end by connecting your MCP server and the Link agent wallet to an agent harness that you control, such as Claude Code (https://docs.claude.com/en/docs/claude-code) , then asking the agent to complete a payment. When everything is configured correctly, the agent can use your MCP server and the Link agent wallet independently to discover your tool, call the payment endpoint, obtain a credential, and complete the purchase.
+Start your server
+Start the server to host both the MCP tool and payment functionality:
+Command Line
+npx tsx --env-file = /absolute/path/to/ .env /absolute/path/to/ server.ts
+Add your MCP server
+Add your MCP server to an agent harness that you control. Replace https://example. com/mcp with the URL where your server is running. For local testing, this URL is http://localhost:4242/mcp by default.
+Claude Code
+Codex
+Other
+Run the following command:
+Command Line
+claude mcp add --transport http paid-catalog https://example.com/mcp
+Add the Link agent wallet skill
+Add the Link agent wallet skill (https://github.com/stripe/link-cli) so the agent can provision a shared payment token to pay:
+Command Line
+npx skills add stripe/link-cli
+Configure test mode
+Add an instruction to your agent’s context, such as in CLAUDE. md or the system prompt, that identifies the flow as a test. This signals the Link agent wallet to create shared payment tokens in a sandbox (/sandboxes) , which return test credentials and don’t charge the underlying payment method.
+With that configuration in place, make sure that your agent passes the --test flag when it creates a spend request so the entire flow runs against test credentials end to end.
+Ask the agent to complete a payment
+Prompt the agent to use your MCP server to make a purchase.
+Command Line
+Use the ` create_purchase_link ` tool from the paid-catalog MCP to purchase one item with the ID ` coffee ` for a customer named ` Alice ` with the email ` test@example.com ` .
+This flow uses test mode, so it doesn't move real funds. Make sure you use the test mode flag when you create the Link spend request.
+When you configure your integration correctly, the agent calls your MCP tool, receives the payment link, follows the returned Link CLI instructions to obtain a sandbox credential, and completes the payment.
+Verify expected behavior
+Verify these behaviors during testing:
+The order is completed in your system.
+The payment succeeds.
+The link shows a checkout page when you open it in a browser.
+If you use Connect (/connect) , your integration routes funds to the expected connected account.
+You can also test the payment endpoint directly, open it in a browser, or use the Link CLI (https://github.com/stripe/link-cli) to make an MPP payment request manually.
+List your MCP server on the Stripe Directory (#list-your-mcp-server)
+After you finish your integration, submit it for listing in the Stripe Directory (/directory) , a catalog of tools and services that helps agents find your business.
+Email machine-payments@stripe.com (mailto:machine-payments@stripe.com) with:
+Your business name
+Your Stripe account ID
+Your Stripe profile ID. If necessary, claim your Stripe profile (/get-started/account/profile) .
+A link to your llms. txt file and links to any agent skills
+One to three example prompts that demonstrate your use case
+See also
+Link agent wallet (https://github.com/stripe/link-cli)
+Machine Payments Protocol (MPP) (/payments/machine/mpp)
+Shared Payment Tokens (SPT) (/agentic-commerce/concepts/shared-payment-tokens)
+Was this page helpful?
+Yes
+No
+Need help? Contact Support (https://support.stripe.com/) .
+Chat with Stripe developers on Discord (https://stripe.com/go/developer-chat) .
+Check out our changelog (/changelog) .
+Questions? Contact Sales (https://stripe.com/contact/sales) .
+LLM? Read llms.txt (/llms.txt) .
+Powered by Markdoc (https://markdoc.dev)
+On this page

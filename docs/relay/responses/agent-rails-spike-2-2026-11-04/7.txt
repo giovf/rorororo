@@ -1,0 +1,43 @@
+---
+updatedAt: 2026-03-16T15:16:49.000Z
+agentTools:
+  projectIndex: https://docs.skyfire.xyz/llms.txt
+---
+
+# Service Discovery
+
+Making services, tools and agents available for agent discovery
+
+The Skyfire Directory is an open, searchable registry of verified services that accept AI agents as first-class customers. Services support all three Skyfire token types: enabling agents to create accounts, make payments, and access external resources programmatically.
+
+In the Directory, you’ll find public **Sellers** and **Seller Services** with:
+
+* **Service Name & Description**
+* **Service ID**
+* **Minimum Pay Token Value**
+* **Integration Endpoint** (OpenAPI spec, MCP URL, or Web Address)
+* **Terms of Service URL**
+* **Identity Requirements**
+
+Skyfire also provides **token creation examples** in multiple programming languages. These examples show how to generate valid tokens with:
+
+* **Token type** (`kya`, `pay`, or `kya-pay`)
+* **Identity claims** required by the service
+* **Token value and expiration**
+
+You can modify and copy these examples directly into your agent's logic to streamline access and interaction with seller services.
+
+Explore the directory to discover services your agents can access today.
+
+<br />
+
+<Image align="center" alt="Quick and simple sign up " caption="Service Directory can be access within the Skyfire Dashboard." src="https://files.readme.io/010e1c405a55bf19bb965ae4893461e79ed460450af317487e485351644e7927-Screenshot_2025-06-24_at_5.32.28_PM.png" width="50% " />
+
+## Verified Sellers
+
+Some seller services in the Skyfire Directory feature a green “Verified” tag. This indicates that the seller has:
+
+* Subscribed to Skyfire, and
+* Completed **KYA (Know Your Agent)** verification through Skyfire
+
+These verified sellers offer a higher level of trust and accountability for buyers.

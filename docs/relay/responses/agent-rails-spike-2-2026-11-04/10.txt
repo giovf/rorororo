@@ -1,0 +1,62 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://nevermined.ai/#organization","name":"Nevermined","url":"https://nevermined.ai","logo":"https://nevermined.ai/images/nevermined_logo.svg","sameAs":["https://x.com/neverminedio","https://linkedin.com/company/nevermined"]}
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://nevermined.ai/#website","name":"Nevermined","url":"https://nevermined.ai","description":"Payments infrastructure for AI agents. Autonomous metering, billing, settlement, and card delegation across MCP, x402, and A2A.","publisher":{"@id":"https://nevermined.ai/#organization"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nevermined.ai/"},{"@type":"ListItem","position":2,"name":"AI Services Catalog","item":"https://nevermined.ai/catalog/"}]}
+{"@context":"https://schema.org","@type":"Service","@id":"https://nevermined.ai/catalog/#service","name":"Nevermined AI Services Catalog","description":"A vetted list of paid services an AI agent can find and buy through one endpoint, at each service's listed price, with every call on one ledger. The list is free and public.","serviceType":"AI agent service catalog","provider":{"@id":"https://nevermined.ai/#organization"},"url":"https://nevermined.ai/catalog/","audience":{"@type":"Audience","audienceType":"Developers building agents that buy services"}}
+meta description: Everything your agent can buy besides a model: 160 paid services. $20 a month or $10 credit packs, services at their listed price.
+meta og:title: AI Services Catalog | Nevermined
+meta og:description: Your agent needs more than a model. Here is everything else: a vetted list of paid services for search, scraping, enrichment, filings and data, on one bill.
+meta og:url: https://nevermined.ai/catalog/
+meta og:image:alt: AI Services Catalog: paid services your agent can buy
+meta og:image:type: image/png
+meta og:image: https://nevermined.ai/catalog/opengraph-image?e62333d66711c1f2
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:type: website
+meta twitter:card: summary
+meta twitter:title: AI Services Catalog | Nevermined
+meta twitter:description: Your agent needs more than a model. Here is everything else: a vetted list of paid services for search, scraping, enrichment, filings and data, on one bill.
+meta twitter:image:alt: AI Services Catalog: paid services your agent can buy
+meta twitter:image:type: image/png
+meta twitter:image: https://nevermined.ai/catalog/opengraph-image?e62333d66711c1f2
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+AI Services Catalog | Nevermined
+Skip to main content (#main-content)
+/
+Earn credits → (/catalog/claim/) For platforms → (/catalog/platforms) Docs (https://nevermined.ai/docs/products/catalog/overview)
+Start using it (https://nevermined.app/catalog/get-started)
+AI Services Catalog
+Your agent needs more than a model. Here is everything else.
+160 vetted paid services for search, scraping and data. One bill, paid from your credits.
+Paste this line into your AI assistant or agent
+https:// mcp.live.nevermined.app /mcp copy
+Make your first call (/catalog/claim/) See how it works (#need)
+Browse all 160 services in the app ↗ (https://nevermined.app/catalog/services) · See what people run ↗ (https://nevermined.app/catalog/outcomes)
+01 / Say what you need
+Your agent asks for
+“ the latest annual report from NVIDIA, as plain text ”
+Example, not a live result.
+An illustration. 23 provider marks from the catalog are drawn as a faint band, standing in for 160 listed services. A line passes across them, every mark fades, and one is left at full strength inside a ring: EDGAR (SEC), at its listed price of $0.008. This is an example of one need being resolved to one service, not a live result.
+Your agent says what it needs. The catalog picks the service.
+One service comes back, called and paid at its listed price, ranked on real payment data and liveness, among other signals.
+02 / Paying
+One balance for every service.
+what access costs
+free to start
+2,000 credits
+on every new account
+subscription
+$20 a month
+20,000 credits
+credit packs
+$10 packs
+top up mid month, or pay as you go with no subscription
+Every service is paid at its listed price, from your credits. Prepaid, so spend can never exceed what you bought.
+See pricing (/pricing/)
+03 / Get started
+Paste this line into your agent to start.
+https:// mcp.live.nevermined.app /mcp copy
+Make your first call (/catalog/claim/) It starts in the chat you have open.
+Works in Claude Code, Codex, Cursor and any MCP client today. Setup for each one ↗ (https://nevermined.ai/docs/products/catalog/mcp) Or add it to your own harness ↗ (https://nevermined.ai/docs/products/catalog/from-a-harness)
+Open the catalog in the app (https://nevermined.app/catalog) Docs (https://nevermined.ai/docs/products/catalog/overview) Get started (https://nevermined.ai/docs/getting-started) API (https://nevermined.ai/docs/api-reference) Merchants (/merchants/) Pricing (/pricing/) Contact (/contact-us/)
+© 2026 Nevermined Privacy (/legal/privacy) Terms (/legal/terms) llms.txt (/llms.txt)
