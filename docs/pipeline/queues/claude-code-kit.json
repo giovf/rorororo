@@ -25,8 +25,9 @@
       "effort_days": 0.3,
       "proof": "release/claude-code-kit-extras.zip builds reproducibly; the scrub test passes and fails on a planted secret; the README lists every file",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-04"
+      "status": "doing",
+      "added": "2026-11-04",
+      "doing_since": "2026-11-05"
     },
     {
       "id": "leanpub-listing-pack-and-owner-step",
