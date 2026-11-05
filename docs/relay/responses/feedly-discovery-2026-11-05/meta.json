@@ -1,0 +1,36 @@
+{
+  "request": "feedly-discovery-2026-11-05",
+  "fetched_at": "2026-11-05T18:30:44.418Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://cloud.feedly.com/v3/search/feeds?query=gankdat.com&count=20",
+      "fetched_at": "2026-11-05T18:30:43.463Z",
+      "status": 200,
+      "elapsed_ms": 350,
+      "final_url": "https://cloud.feedly.com/v3/search/feeds?query=gankdat.com&count=20",
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "last-modified": "Thu Nov 05 10:30:43 PST 2026"
+      },
+      "file": "1.json",
+      "bytes": 29,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cloud.feedly.com/v3/search/feeds?query=https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene&count=5",
+      "fetched_at": "2026-11-05T18:30:44.321Z",
+      "status": 200,
+      "elapsed_ms": 96,
+      "final_url": "https://cloud.feedly.com/v3/search/feeds?query=https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene&count=5",
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "last-modified": "Thu Nov 05 10:30:44 PST 2026"
+      },
+      "file": "2.json",
+      "bytes": 29,
+      "truncated": false
+    }
+  ]
+}
