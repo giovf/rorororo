@@ -361,9 +361,10 @@
       "effort_days": 0.05,
       "proof": "page count and referrer share recorded in RESEARCH.md; keep/fix decision in STRATEGY §8",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-11-05",
-      "added": "2026-10-05"
+      "added": "2026-10-05",
+      "doing_since": "2026-11-05"
     },
     {
       "id": "indexnow-from-runner",
