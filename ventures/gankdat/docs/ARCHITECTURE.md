@@ -224,6 +224,23 @@ runs `check:root`.
   yesterday's of the rest (every row present, nothing partially loaded; `last_refreshed_at`
   flips at the end, and a crash mid-way self-heals against the stored hashes). `refresh_log`
   carries `delta +a ~c -r` per source. Migrations via `wrangler d1 migrations`.
+  **D1's 10-second throttle** (2026-11-05, `refresh-uk-food-hygiene-2026-11-05`, v0.27.2, `src/sources/d1pace.ts`):
+  `D1_ERROR: D1 DB is overloaded. Too many resources consumed within a 10 second window` first appeared on
+  10-28 and hit every night from 11-04: the stored-index read (50,000-row pages back to back; `record_id`
+  and `record_hash` sit at the end of a wide row, so a page reads its rows whole) crossed the line on the
+  three biggest registers (uk-care-locations 05:30, uk-food-hygiene 05:45, uk-trademark-journal 06:05),
+  the full-reload fallback's first statement and the refresh_log error row failed the same way within the
+  same second, and the Daily numbers row could only say "no successful refresh since 11-03"; the same
+  window refused the Apify QA run's second page of uk-food-hygiene (a 7 s full-register scan) with a bare
+  503, the actor's 2 s / 4 s retries landed inside it, and Apify flagged the actor. Now: the index is read
+  in 10,000-row pages 2.5 s apart (≤ ~40k rows a window), a throttled page is re-read after 12 s (four
+  hits at most, logged `delta_index_throttled`), a throttle that persists ends the night with an error row
+  (`delta index unreadable: …`, `DeltaIndexUnavailableError`) and the rows kept — never a full reload into
+  the same window; a throttled delta batch, full-reload chunk or refresh_log row waits the window out once;
+  `isTransientD1Error` matches D1's own wording ("D1 DB is overloaded", both variants) and `refreshOne`'s
+  retry waits 12 s; a throttled data read answers 503 with `Retry-After: 11` ("Source … is busy"), which
+  the shared Apify client honours (three retries, 3/6/12 s when no header). The cost of a filtered page
+  (COUNT + page, two full scans in parallel) is unchanged — queued as `filtered-page-count-cache`.
 - **KV**: response cache per source (+ precomputed `/stats` blob and a
   best-effort refresh single-flight lock), monthly usage counters per account
   email (`usage:<email>:<yyyymm>`), the top-up balance (`topup:<email>`, no period, no TTL —
