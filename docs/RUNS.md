@@ -2524,3 +2524,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 19:33 | burn-down | gankdat change-feed-shelf-listing done: feeds page + OPML live with the next deploy; 3 tests
 - 2026-11-05 19:38 | burn-down | hackathons research: Kiroween (Kiro-built only), MCP 2nd birthday absent, Solana x402 no 2026 run
 - 2026-11-05 19:38 | burn-down | hackathons: lablab index, Colosseum, Codegeist read — nothing fits; research_after 2026-11-10 (Meta winners)
+- 2026-11-05 19:41 | burn-down | foundry research: first-runs-bare-workflow-name (4), ci-minutes-line-public-repo (3), runner-script-dispatch (4)

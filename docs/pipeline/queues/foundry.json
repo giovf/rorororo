@@ -2,10 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-03",
-  "researched": "2026-11-02",
-  "researching_since": "2026-11-05T19:35Z",
-  "researching_by": "burn-down",
+  "updated": "2026-11-05",
+  "researched": "2026-11-05",
   "items": [
     {
       "id": "fetch-relay",
@@ -1352,6 +1350,36 @@
       "status": "done",
       "added": "2026-11-03",
       "done_at": "2026-11-03"
+    },
+    {
+      "id": "first-runs-bare-workflow-name",
+      "title": "`npm run first-runs` accepts a `<name> first run:` line with or without the `.yml` suffix, and `npm run runs` rejects a new first-run line whose name is neither",
+      "why": "Research 2026-11-05 (burn-down): the 18:25 slot dispatched epubcheck.yml after its installer and stamped `epubcheck first run: success (…)` at 18:32; `first-runs` matches the marker `| <file name> first run: ` only, so the 19:00 slot was told `epubcheck.yml: installer 18:27, dispatchable, no line`, re-read the run through the Actions API and stamped the line a second time in the `.yml` shape — the exact double-stamp the 10-20 rule exists to stop, now from the other side. Accept the bare name (the file name without `.yml`) as the same marker, and have the run-log check refuse a new `first run:` line that names no installed workflow in either shape, so the mistake is caught at commit time. Evidence 1 (one wasted re-read) × reach 2 (every slot's CI check) ÷ 0.1 day = 20, discounted to 4: a reading's cost, not income.",
+      "effort_days": 0.1,
+      "proof": "first-runs.test.ts: a bare-name line after the installer counts; runs check fails a `first run:` line naming an unknown workflow",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-05"
+    },
+    {
+      "id": "ci-minutes-line-public-repo",
+      "title": "The watchdog's `ci-minutes:` line stops warning about the 2,000-minute cap while the repository is public (owner chose public on 2026-11-02): it reads the visibility from the Actions API it already calls and prints `(public, no cap)`",
+      "why": "Research 2026-11-05 (burn-down): every ci-minutes line since 11-02 reads `~2,200–2,470/mo; cap 2000` as if the cap bound us, but the cap applies to private repositories on the free plan only and the owner decided on 11-02 (action 036, A) to stay public behind the mirror — so the line has been a daily false warning for four days, and the `actions-minutes` item that would cut usage was dropped for the same reason. Keep the measurement and the top-3 list (cost awareness for a later private switch), drop the cap clause while `repository.private` is false, and restore it the day the repo goes private. Evidence 1 × reach 2 ÷ 0.05 day = 40, discounted to 3: a reading, no income.",
+      "effort_days": 0.05,
+      "proof": "the next ci-minutes line reads `… (public, no cap) top: …`; actions-minutes-line.test.ts covers both visibilities",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-05"
+    },
+    {
+      "id": "runner-script-dispatch",
+      "title": "One dispatchable workflow `docs/ci/run-script.yml` (inputs: workspace, an allow-listed npm script, an argument) runs the script on a GitHub runner and prints its output to the job log, so a tool the sandbox refuses (a Java jar, ffmpeg, LibreOffice) needs no bespoke workflow and no first-run cycle",
+      "why": "Research 2026-11-05 (burn-down): the 17:00 and 18:00 slots both lost time to epubcheck — the sandbox refused the jar download, then refused to run the downloaded jar — and the way out was a new bespoke workflow (`docs/ci/epubcheck.yml`), its installer commit and a first-run check in the next slot; the demo video (ffmpeg, W42) and the Worker-log read (10-29) each went the same way. A generic runner — `workflow_dispatch` with `workspace`, `script` (validated against an allow-list kept in the file: epubcheck, recalc, demo, …) and `args`, `npm ci` for that workspace only, a 10-minute cap, output to the job log, nothing committed — is read with `get_job_logs` like worker-logs, and a new tool becomes one line in the allow-list instead of a file. Evidence 2 (three bespoke workflows in three weeks, two slots on one tool today) × reach 2 ÷ 0.3 day = 13, discounted to 4: operation cost, not income.",
+      "effort_days": 0.3,
+      "proof": "the workflow's first run (dispatched with script=epubcheck) prints the EPUB result in the job log; epubcheck.yml retired in the same change",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-05"
     }
   ]
 }
