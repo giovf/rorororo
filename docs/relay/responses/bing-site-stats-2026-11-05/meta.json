@@ -1,0 +1,54 @@
+{
+  "request": "bing-site-stats-2026-11-05",
+  "fetched_at": "2026-11-05T18:29:25.277Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.bing.com/search?q=site%3Agankdat.com%2Fstats&count=50",
+      "fetched_at": "2026-11-05T18:29:24.335Z",
+      "status": 200,
+      "elapsed_ms": 228,
+      "final_url": "https://www.bing.com/search?q=site%3Agankdat.com%2Fstats&count=50",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 12031,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 131667
+    },
+    {
+      "method": "GET",
+      "url": "https://html.duckduckgo.com/html/?q=site%3Agankdat.com%2Fstats",
+      "fetched_at": "2026-11-05T18:29:24.584Z",
+      "status": 200,
+      "elapsed_ms": 545,
+      "final_url": "https://html.duckduckgo.com/html/?q=site%3Agankdat.com%2Fstats",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.txt",
+      "bytes": 3847,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 15446
+    },
+    {
+      "method": "GET",
+      "url": "https://www.bing.com/search?q=site%3Agankdat.com&count=50",
+      "fetched_at": "2026-11-05T18:29:25.130Z",
+      "status": 200,
+      "elapsed_ms": 54,
+      "final_url": "https://www.bing.com/search?q=site%3Agankdat.com&count=50",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 12621,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 131167
+    }
+  ]
+}
