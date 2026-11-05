@@ -270,8 +270,9 @@
       "effort_days": 0.2,
       "proof": "the first own-checkout sale appears as a §7 Sale row the same day with its referrer named, and the Daily numbers row carries the `own checkout 30d:` clause",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-05"
+      "status": "doing",
+      "added": "2026-11-05",
+      "doing_since": "2026-11-05"
     },
     {
       "id": "kindle-day-60-read",
