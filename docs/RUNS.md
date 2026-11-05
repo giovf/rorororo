@@ -2475,12 +2475,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 17:17 | burn-down | Inbox triage: OWN-CHECKOUT SALES rule writes the §7 Sale row; referrer filled via relay next run
 - 2026-11-05 17:17 | burn-down | Relay host foundry-licenses.faceless-api.workers.dev added (sandbox curl: proxy 403)
 - 2026-11-05 17:23 | burn-down | Claimed gankdat x402-change-feed-route (6); second item of the slot
-- 2026-11-05 17:45 | burn-down | gankdat x402-change-feed-route done (v0.28.0): /x402/changes/<slug> sold on the lane at $0.01
-- 2026-11-05 17:45 | burn-down | Bazaar declares changes/<slug> per register (feed query, change-row example); paywall text names it
-- 2026-11-05 17:45 | burn-down | Daily numbers validate clause covers change routes; weekly probe pays an unlisted one (changeSlugs)
-- 2026-11-05 17:45 | burn-down | Tests: 402 at $0.01 with since, paid 200 with cursor, 404 without feed, probe targets (25 pass)
-- 2026-11-05 17:52 | burn-down | Claimed claude-code-kit kit-handbook-manuscript (3 × 2); third item of the slot, runs past 50 min
-- 2026-11-05 18:30 | burn-down | Built claude-code-kit kit-handbook-manuscript: 21,030 words, preface + 15 chapters + appendix, EPUB + PDF
-- 2026-11-05 18:30 | burn-down | Content module src/content/part1-4.ts drafted from the repo's own docs; 9 tests incl. scrub and preface
-- 2026-11-05 18:30 | burn-down | release/: EPUB 302 kB, PDF 7x10in 75 pages, cover 1600x2400; MANUSCRIPT-REVIEW.md lists every chapter
-- 2026-11-05 18:30 | burn-down | epubcheck not run (sandbox refused the jar download); moved to the listing-pack item; venture validated
+- 2026-11-05 17:32 | burn-down | gankdat x402-change-feed-route done (v0.28.0): /x402/changes/<slug> sold on the lane at $0.01
+- 2026-11-05 17:32 | burn-down | Bazaar declares changes/<slug> per register (feed query, change-row example); paywall text names it
+- 2026-11-05 17:32 | burn-down | Daily numbers validate clause covers change routes; weekly probe pays an unlisted one (changeSlugs)
+- 2026-11-05 17:32 | burn-down | Tests: 402 at $0.01 with since, paid 200 with cursor, 404 without feed, probe targets (25 pass)
+- 2026-11-05 17:33 | burn-down | Claimed claude-code-kit kit-handbook-manuscript (3 × 2); third item of the slot, runs past 50 min
+- 2026-11-05 17:55 | burn-down | Built claude-code-kit kit-handbook-manuscript: 21,030 words, preface + 15 chapters + appendix, EPUB + PDF
+- 2026-11-05 17:55 | burn-down | Content module src/content/part1-4.ts drafted from the repo's own docs; 9 tests incl. scrub and preface
+- 2026-11-05 17:55 | burn-down | release/: EPUB 302 kB, PDF 7x10in 75 pages, cover 1600x2400; MANUSCRIPT-REVIEW.md lists every chapter
+- 2026-11-05 17:55 | burn-down | epubcheck not run (sandbox refused the jar download); moved to the listing-pack item; venture validated
