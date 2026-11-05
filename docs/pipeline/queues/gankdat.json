@@ -1010,8 +1010,9 @@
       "effort_days": 0.5,
       "proof": "three consecutive days with no D1_ERROR line in the Daily numbers row, uk-food-hygiene refreshed, and Apify's maintenance flag lifted (its QA runs succeed)",
       "score": 8,
-      "status": "todo",
-      "added": "2026-11-05"
+      "status": "doing",
+      "added": "2026-11-05",
+      "doing_since": "2026-11-05"
     }
   ],
   "research_after": "2026-11-06"
