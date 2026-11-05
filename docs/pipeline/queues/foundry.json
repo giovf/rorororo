@@ -1358,8 +1358,9 @@
       "effort_days": 0.1,
       "proof": "first-runs.test.ts: a bare-name line after the installer counts; runs check fails a `first run:` line naming an unknown workflow",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-05"
+      "status": "doing",
+      "added": "2026-11-05",
+      "doing_since": "2026-11-05"
     },
     {
       "id": "ci-minutes-line-public-repo",
