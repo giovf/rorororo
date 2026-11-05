@@ -264,7 +264,10 @@ relay subject:  relay: <name>
 installer:      ci: install workflow(s) <name> …
 decision log:   - YYYY-MM-DD <routine>: <what and why>`),
     h3('File map of the Extras'),
-    pre(`CLAUDE.md                          the instruction file (scrubbed)
+    pre(`README.md                          what each file is for, how to adopt them, what to change
+LICENSE                            MIT
+CLAUDE.md                          the instruction file (scrubbed)
+package.json                       the npm scripts the routines call
 docs/routines/README.md            the bootstrap and the editing rules
 docs/routines/build.md             the daily build routine
 docs/routines/burn-down.md         the evening burn-down
@@ -282,13 +285,14 @@ docs/ops/SELF-CAUSED.md            the register, empty
 docs/ops/SLOTS.md, docs/RUNS.md    the slots file and the run log, empty
 docs/relay/README.md, hosts.txt    the relay rules and an empty allowlist
 docs/ci/README.md                  the drop zone rules
+packages/core/src/pipeline.ts      the queue model the pipeline command imports
 scripts/pipeline.ts, pipeline-cold.ts, pipeline-claim.ts   the queue commands
-scripts/slot.ts, run-watchdog.ts, slot-utilisation.ts       slots and the watchdog
+scripts/slot.ts, run-watchdog.ts, slot-utilisation.ts, handoffs.ts   slots and the watchdog
 scripts/fetch-relay.mjs, fetch-relay-lines.ts              the relay
-scripts/first-runs.ts, ci-workflow-yaml.ts, runs-check.ts  the gates
+scripts/first-runs.ts, ci-workflow-yaml.ts, runs-check.ts, decisions-roll.ts   the gates
 scripts/notify-owner.ts                                    the phone line
 .githooks/pre-push                 the pre-push gate
-workflows/check.yml, fetch-relay.yml, notify-owner.yml, workflow-installer.yml
+workflows/check.yml, fetch-relay.yml, notify-owner.yml, run-watchdog.yml, workflow-installer.yml
 LICENSE                            MIT`),
     p(
       'The Extras are assembled by a script from the operation’s repository and pass a scrub test — no secrets, no venture-specific names, no owner identity — before they are zipped. The versions of the files match this edition; later versions live in the operation and may differ.',

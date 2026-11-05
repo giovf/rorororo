@@ -2485,3 +2485,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 17:55 | burn-down | release/: EPUB 302 kB, PDF 7x10in 75 pages, cover 1600x2400; MANUSCRIPT-REVIEW.md lists every chapter
 - 2026-11-05 17:55 | burn-down | epubcheck not run (sandbox refused the jar download); moved to the listing-pack item; venture validated
 - 2026-11-05 18:07 | triage | notify owner dispatched: last run started 15:07 UTC, 3 h ago
+- 2026-11-05 18:19 | burn-down | Claimed claude-code-kit kit-extras-zip (3 × 2) before npm ci; main green; first-runs: nothing owed
+- 2026-11-05 18:19 | burn-down | Built claude-code-kit kit-extras-zip: 44 scrubbed files from the repo, MIT, 172 kB, reproducible
+- 2026-11-05 18:19 | burn-down | extras.ts rewrites owner, repo, domains, mailboxes, trigger ids and 7 venture slugs to placeholders
+- 2026-11-05 18:19 | burn-down | Scrub refuses secrets, emails, trigger ids, our domains, the handle, venture slugs; planted key fails
+- 2026-11-05 18:19 | burn-down | Appendix file map now equals the zip manifest (test parses it); book rebuilt at 21,063 words

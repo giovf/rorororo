@@ -2,7 +2,7 @@
   "venture": "claude-code-kit",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "researched": "2026-11-04",
   "weight": 2,
   "items": [
@@ -21,13 +21,14 @@
     {
       "id": "kit-extras-zip",
       "title": "Build the MIT-licensed Extras zip: the operation's files assembled from the repo by a script with a scrub test",
-      "why": "The Package tier (book + kit at the suggested US$29) is what no rival on the shelf has: six weeks of a real unattended operation's files. Leanpub's terms allow Extras as 'source files, code samples, apps, templates, worksheets' and forbid services or licences in them. Contents: CLAUDE.md, docs/routines/*.md (the prompts), scripts/pipeline*.ts and packages/core/src/pipeline.ts, the slot and watchdog scripts, the fetch-relay workflow and script, .githooks/pre-push, a docs/ops starter (SLOTS, SELF-CAUSED, BURN templates), a README that says what each file is for and that the reader adapts it; LICENSE MIT. A build script (ventures/claude-code-kit/src/extras.ts) copies, rewrites venture-specific names to placeholders and refuses to zip when the scrub test finds a secret-shaped string, an email address, a trigger id, a domain of ours or a venture slug.",
+      "why": "The Package tier (book + kit at the suggested US$29) is what no rival on the shelf has: six weeks of a real unattended operation's files. Leanpub's terms allow Extras as 'source files, code samples, apps, templates, worksheets' and forbid services or licences in them. Contents: CLAUDE.md, docs/routines/*.md (the prompts), scripts/pipeline*.ts and packages/core/src/pipeline.ts, the slot and watchdog scripts, the fetch-relay workflow and script, .githooks/pre-push, a docs/ops starter (SLOTS, SELF-CAUSED, BURN templates), a README that says what each file is for and that the reader adapts it; LICENSE MIT. A build script (ventures/claude-code-kit/src/extras.ts) copies, rewrites venture-specific names to placeholders and refuses to zip when the scrub test finds a secret-shaped string, an email address, a trigger id, a domain of ours or a venture slug. — Built 2026-11-05 (burn-down): src/extras.ts (manifest, rewrite, scrub, README/LICENSE/starters, reproducible zip), src/extras.test.ts (7 tests: scrub on the real tree, planted secret refused, byte-identical builds, README lists every file, appendix map equals the manifest); release/claude-code-kit-extras.zip 44 files 172 kB; build.ts writes it with the book.",
       "effort_days": 0.3,
       "proof": "release/claude-code-kit-extras.zip builds reproducibly; the scrub test passes and fails on a planted secret; the README lists every file",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-04",
-      "doing_since": "2026-11-05"
+      "doing_since": "2026-11-05",
+      "done_at": "2026-11-05"
     },
     {
       "id": "leanpub-listing-pack-and-owner-step",

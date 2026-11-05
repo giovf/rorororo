@@ -46,5 +46,6 @@ in the text, so the listing item cannot ship without it being replaced.
 
 - Page count: the PDF is 7 × 10 in; the build prints the real count. The queue item estimated 150–200 pages at Leanpub's
   technical theme; a Chromium print of ~24k words lands lower. Leanpub takes the finished PDF as is.
-- The Extras are described (chapter 15, appendix) but assembled by the next item (`kit-extras-zip`); the file map must be
-  re-checked against the zip when that item is done.
+- The Extras zip is built (`kit-extras-zip`, 2026-11-05: `release/claude-code-kit-extras.zip`, 44 files, 172 kB) and the
+  appendix file map is checked against its contents by `src/extras.test.ts`; the placeholders the zip uses (`<owner>`, `data-api`,
+  `workbook` …) are listed in its README, which the owner should read once before publishing the Package.
