@@ -231,3 +231,6 @@ html.duckduckgo.com  # DuckDuckGo HTML results (Bing-backed index): the `site:` 
 cloud.feedly.com  # Feedly keyless feed search (/v3/search/feeds): are the change feeds discoverable (gankdat indexnow-day-30-read, 2026-11-05)
 docs.n8n.io  # n8n RSS trigger / RSS read node docs: how a feed is added, any listing path (gankdat change-feed-shelf-listing, 2026-11-05)
 www.inoreader.com  # Inoreader public feed page by URL: is a never-subscribed feed shown (gankdat change-feed-shelf-listing, 2026-11-05)
+kiro.dev  # Kiro (AWS) blog: the Kiroween hackathon's official post and rules link, never Devpost (hackathons research 2026-11-05)
+huggingface.co  # Hugging Face organisation pages: an MCP birthday hackathon successor (hackathons research 2026-11-05)
+colosseum.com  # Colosseum: a second agent hackathon edition (hackathons research 2026-11-05)
