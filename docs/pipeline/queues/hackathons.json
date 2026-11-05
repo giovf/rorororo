@@ -4,6 +4,9 @@
   "needs_research": false,
   "updated": "2026-11-02",
   "researched": "2026-10-26",
+  "research_after": "2026-11-05",
+  "researching_since": "2026-11-05T19:32Z",
+  "researching_by": "burn-down",
   "weight": 2,
   "items": [
     {
@@ -197,6 +200,5 @@
       "not_before": "2026-11-10",
       "added": "2026-11-02"
     }
-  ],
-  "research_after": "2026-11-05"
+  ]
 }
