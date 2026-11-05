@@ -2504,3 +2504,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 18:32 | burn-down | Feeds: 380 fetches, 18 UAs, 0 keys with /feeds referrer; Feedly search finds no gankdat feed
 - 2026-11-05 18:32 | burn-down | gankdat indexnow-day-30-read done: content fix queued (3), feed shelf listing queued (3)
 - 2026-11-05 18:32 | burn-down | Relay hosts added: www.bing.com, html.duckduckgo.com, cloud.feedly.com (two rounds, ~1 min each)
+- 2026-11-05 18:34 | burn-down | Claimed gankdat filtered-page-count-cache (4); fourth item of the slot
+- 2026-11-05 18:34 | burn-down | gankdat filtered-page-count-cache done (v0.28.1): filtered total cached in KV until the next refresh
+- 2026-11-05 18:34 | burn-down | queryD1Source: page 2+ of the same filters runs one scan; KV miss or failure costs one COUNT, never a 500
+- 2026-11-05 18:34 | burn-down | Tests: cache hit proven by a sentinel, old generation never served, key shape (3 new); ARCHITECTURE note
+- 2026-11-05 18:34 | burn-down | Proof pending: worker-logs read of a two-page actor run on uk-food-hygiene, seven clean Daily rows
+- 2026-11-05 18:44 | burn-down | Count key carries last_refreshed_at too: the journal's windowed refresh grows rows inside one generation

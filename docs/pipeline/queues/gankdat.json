@@ -1022,13 +1022,14 @@
     {
       "id": "filtered-page-count-cache",
       "title": "Serve page 2+ of a filtered register query without the COUNT(*) scan: cache the filtered total per (source, generation, filter set) in KV for the generation's life, so a paged read of a 613k-row register costs one full scan a page instead of two running in parallel",
-      "why": "`worker logs` 2026-11-05 (build): the Apify QA run's `GET /v1/data/uk-food-hygiene?new_rating_pending=false&page=2&per_page=100` took 6.96 s and was refused by D1's 10-second throttle (`Too many resources consumed within a 10 second window`); every page of a filtered query runs COUNT(*) and the page SELECT in parallel over the whole register (no index on record fields, record_lc/json_extract predicates), so two pages a few seconds apart read ~2.4M wide rows. refresh-uk-food-hygiene-2026-11-05 made such a refusal recoverable (503 + Retry-After, client waits), not cheaper; halving the scan per page keeps paged actor runs (510 runs/30 d by others) and MCP callers out of the throttle in the first place. Evidence 1 (one measured 7 s page, one refusal) × reach 2 (every caller of the four 100k+ registers) ÷ 0.5 day = 4.",
+      "why": "`worker logs` 2026-11-05 (build): the Apify QA run's `GET /v1/data/uk-food-hygiene?new_rating_pending=false&page=2&per_page=100` took 6.96 s and was refused by D1's 10-second throttle (`Too many resources consumed within a 10 second window`); every page of a filtered query runs COUNT(*) and the page SELECT in parallel over the whole register (no index on record fields, record_lc/json_extract predicates), so two pages a few seconds apart read ~2.4M wide rows. refresh-uk-food-hygiene-2026-11-05 made such a refusal recoverable (503 + Retry-After, client waits), not cheaper; halving the scan per page keeps paged actor runs (510 runs/30 d by others) and MCP callers out of the throttle in the first place. Evidence 1 (one measured 7 s page, one refusal) × reach 2 (every caller of the four 100k+ registers) ÷ 0.5 day = 4. — Built 2026-11-05 (burn-down, v0.28.1): queryD1Source caches the filtered total in KV per (slug, generation, last_refreshed_at, predicate hash) until the next refresh (a delta refresh restamps the meta row inside one generation; TTL two days) (filteredCountKey, COUNT_CACHE_TTL_S); the first page of a filter set scans COUNT beside the page, every later page reads the total from KV and runs the page SELECT alone; a KV failure costs one scan, never the request; 3 tests (cache hit via sentinel, generation isolation, key shape). Proof pending: the next worker-logs read of a two-page actor run and seven clean Daily numbers rows.",
       "effort_days": 0.5,
       "proof": "a `worker logs` read of a two-page actor run on uk-food-hygiene shows page 2 under 4 s with no 503, and seven Daily numbers rows in a row carry no `D1 DB is overloaded` line on /v1/data routes",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-05",
-      "doing_since": "2026-11-05"
+      "doing_since": "2026-11-05",
+      "done_at": "2026-11-05"
     },
     {
       "id": "stats-page-content-depth",

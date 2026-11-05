@@ -250,7 +250,9 @@ runs `check:root`.
   `isTransientD1Error` matches D1's own wording ("D1 DB is overloaded", both variants) and `refreshOne`'s
   retry waits 12 s; a throttled data read answers 503 with `Retry-After: 11` ("Source … is busy"), which
   the shared Apify client honours (three retries, 3/6/12 s when no header). The cost of a filtered page
-  (COUNT + page, two full scans in parallel) is unchanged — queued as `filtered-page-count-cache`.
+  was COUNT + page, two full scans in parallel; since v0.28.1 (`filtered-page-count-cache`, 2026-11-05)
+  the filtered total is cached in KV per (slug, generation, `last_refreshed_at`, predicate) until the next
+  refresh — a delta or windowed refresh restamps the meta row inside one generation — so page 2+ of the same filters runs one scan (`filteredCountKey`, `COUNT_CACHE_TTL_S` in `d1store.ts`).
 - **KV**: response cache per source (+ precomputed `/stats` blob and a
   best-effort refresh single-flight lock), monthly usage counters per account
   email (`usage:<email>:<yyyymm>`), the top-up balance (`topup:<email>`, no period, no TTL —
