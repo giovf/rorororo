@@ -1000,8 +1000,9 @@
       "effort_days": 0.3,
       "proof": "the route answers 402 then 200 with a real cursor for a paid call; the 17 + N resources validate (`x402 validate: N/N valid`); the Bazaar lists the change routes; ≥ 5 paid change-feed calls from ≥ 2 clients by the 2026-12-14 read",
       "score": 6,
-      "status": "todo",
-      "added": "2026-11-04"
+      "status": "doing",
+      "added": "2026-11-04",
+      "doing_since": "2026-11-05"
     },
     {
       "id": "refresh-uk-food-hygiene-2026-11-05",
