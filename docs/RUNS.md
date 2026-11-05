@@ -2458,3 +2458,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 09:19 | build | Inbox 08:17: Apify flagged uk-food-hygiene-ratings; queued gankdat refresh-uk-food-hygiene-2026-11-05 (8): D1 overloaded
 - 2026-11-05 11:06 | triage | notify owner dispatched: last run started 08:06 UTC, 3 h ago
 - 2026-11-05 15:09 | triage | notify owner dispatched: last run started 12:41 UTC, 2 h 27 min ago
+- 2026-11-05 17:12 | burn-down | Claimed tax-workbook own-checkout-sale-reading (4) before npm ci; main green
+- 2026-11-05 17:17 | burn-down | Built tax-workbook own-checkout-sale-reading: own-checkout sales now read like Payhip's
+- 2026-11-05 17:17 | burn-down | Licence Worker: per-day order counters + keyless /v1/downloads/summary (refs per token, £0 tests apart)
+- 2026-11-05 17:17 | burn-down | Daily numbers row gains `own checkout 30d: N sales (guide N), refunds, net` beside payhip 30d
+- 2026-11-05 17:17 | burn-down | Inbox triage: OWN-CHECKOUT SALES rule writes the §7 Sale row; referrer filled via relay next run
+- 2026-11-05 17:17 | burn-down | Relay host foundry-licenses.faceless-api.workers.dev added (sandbox curl: proxy 403)

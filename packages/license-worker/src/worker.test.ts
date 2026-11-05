@@ -183,5 +183,27 @@ describe('license worker', () => {
       expect(referrerOf({ client_reference_id: ' Guide ' })).toBe('guide');
       expect(referrerOf({})).toBeUndefined();
     });
+
+    it('serves a keyless per-day sales summary: paid orders, pence, referrers, refunds; £0 tests apart; no buyer data', async () => {
+      const paid = { ...sale, id: 'evt_paid', data: { object: { ...sale.data.object, id: 'cs_paid', client_reference_id: 'guide', amount_total: 699, currency: 'gbp' } } };
+      const test = { ...sale, id: 'evt_test', data: { object: { ...sale.data.object, id: 'cs_test', amount_total: 0, currency: 'gbp' } } };
+      await webhook(paid);
+      await webhook(paid); // Stripe's retry: not a second order
+      await webhook(test);
+      expect(JSON.parse(kv.map.get('license:cs_paid') ?? '{}')).toMatchObject({ amount_pence: 699, currency: 'GBP', ref: 'guide' });
+      await handle(new Request('https://w.test/admin/revoke/cs_paid', { method: 'POST', headers: { authorization: 'Bearer admin' } }), env);
+      await handle(new Request('https://w.test/admin/revoke/cs_paid', { method: 'POST', headers: { authorization: 'Bearer admin' } }), env); // once
+      const res = await handle(new Request('https://w.test/v1/downloads/summary'), env);
+      expect(res.status).toBe(200);
+      expect(res.headers.get('access-control-allow-origin')).toBe('*');
+      const s = (await res.json()) as Record<string, unknown>;
+      // earlier tests of this block posted cs_wb, cs_ref (guide) and cs_odd without an amount: orders with 0 pence
+      expect(s).toMatchObject({ venture: 'tax-workbook', currency: 'GBP', to: '2026-09-18', sales: 4, test_orders: 1, refunds: 1, gross_pence: 699, refunded_pence: 699, net_pence: 0, refs: { guide: 2 } });
+      expect(JSON.stringify(s)).not.toContain('example.com');
+      expect(JSON.stringify(s)).not.toContain('cs_');
+      const dated = (await (await handle(new Request('https://w.test/v1/downloads/summary?to=2026-08-01'), env)).json()) as { sales: number };
+      expect(dated.sales).toBe(0);
+      expect((await handle(new Request('https://w.test/v1/downloads/summary?venture=flow-tool'), env)).status).toBe(404);
+    });
   });
 });
