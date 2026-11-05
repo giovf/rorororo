@@ -229,3 +229,5 @@ foundry-licenses.faceless-api.workers.dev  # the licence Worker's keyless own-ch
 www.bing.com  # Bing site: searches for the IndexNow day-30 read — served the runner a junk SERP, use DuckDuckGo (gankdat indexnow-day-30-read, 2026-11-05)
 html.duckduckgo.com  # DuckDuckGo HTML results (Bing-backed index): the `site:` count that Bing itself refuses a runner (gankdat indexnow-day-30-read, 2026-11-05)
 cloud.feedly.com  # Feedly keyless feed search (/v3/search/feeds): are the change feeds discoverable (gankdat indexnow-day-30-read, 2026-11-05)
+docs.n8n.io  # n8n RSS trigger / RSS read node docs: how a feed is added, any listing path (gankdat change-feed-shelf-listing, 2026-11-05)
+www.inoreader.com  # Inoreader public feed page by URL: is a never-subscribed feed shown (gankdat change-feed-shelf-listing, 2026-11-05)

@@ -1,0 +1,10 @@
+GET https://cloud.feedly.com/v3/search/feeds?query=https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene.xml&count=5
+GET https://cloud.feedly.com/v3/search/feeds?query=https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-trademark-journal%2Fclass%2F09.xml&count=5
+GET https://cloud.feedly.com/v3/feeds/feed%2Fhttps%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene.xml
+GET https://cloud.feedly.com/v3/search/feeds?query=trade+mark+applications&count=10
+GET https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger/
+GET https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedread/
+GET https://zapier.com/apps/rss/integrations
+GET https://zapier.com/apps/rss/help
+GET https://www.inoreader.com/feed/https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene.xml
+GET https://gankdat.com/feeds/uk-food-hygiene.xml
