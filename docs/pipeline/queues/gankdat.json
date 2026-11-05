@@ -357,14 +357,15 @@
     {
       "id": "indexnow-day-30-read",
       "title": "Day-30 read of IndexNow and the Atom feeds: Bing `site:gankdat.com/stats` page count, bing/duckduckgo referrer share, /feeds user agents and any key with a /feeds referrer",
-      "why": "Proof of `indexnow-stats-pages` (built 2026-10-05): ≥ 50 /stats pages in Bing's index on 2026-11-05. Do: a Bing search `site:gankdat.com/stats` through the relay (add bing.com to scripts/fetch-relay.mjs if needed) or WebSearch, the `indexnow:` statuses across the 30 rows (any 422/429 days), and the Analytics Engine Referer kinds on /stats if the traffic point carries them; record the count in RESEARCH.md under the 2026-10-05 build note. Decide: keep (≥ 50 pages), or if < 10 pages despite 202s, check the key file from outside and whether Bing drops the facet pages as thin — then queue a content fix, never a second submitter. Also proof of `change-feed-rss` (built the same night): the `feeds 30d:` readings across the rows — ≥ 20 distinct user agents and ≥ 1 key issued with a /feeds referrer keeps the feeds; fewer means list them on the feed shelves (a Feedly/Inoreader discovery check, the n8n/Zapier RSS-trigger docs pages) before touching the format.",
+      "why": "Proof of `indexnow-stats-pages` (built 2026-10-05): ≥ 50 /stats pages in Bing's index on 2026-11-05. Do: a Bing search `site:gankdat.com/stats` through the relay (add bing.com to scripts/fetch-relay.mjs if needed) or WebSearch, the `indexnow:` statuses across the 30 rows (any 422/429 days), and the Analytics Engine Referer kinds on /stats if the traffic point carries them; record the count in RESEARCH.md under the 2026-10-05 build note. Decide: keep (≥ 50 pages), or if < 10 pages despite 202s, check the key file from outside and whether Bing drops the facet pages as thin — then queue a content fix, never a second submitter. Also proof of `change-feed-rss` (built the same night): the `feeds 30d:` readings across the rows — ≥ 20 distinct user agents and ≥ 1 key issued with a /feeds referrer keeps the feeds; fewer means list them on the feed shelves (a Feedly/Inoreader discovery check, the n8n/Zapier RSS-trigger docs pages) before touching the format. — Read 2026-11-05 (burn-down): 3 of 62 /stats URLs in the Bing-backed index (DuckDuckGo HTML; Bing served the runner a junk SERP), key proven by the 200s, Bingbot 330 fetches/30d — crawled, not indexed: thin facet pages. Feeds: 380 fetches, 18 UAs, 0 keys; Feedly search empty. Decision: content fix + shelf listing, never a second submitter (RESEARCH.md day-30 note).",
       "effort_days": 0.05,
       "proof": "page count and referrer share recorded in RESEARCH.md; keep/fix decision in STRATEGY §8",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-11-05",
       "added": "2026-10-05",
-      "doing_since": "2026-11-05"
+      "doing_since": "2026-11-05",
+      "done_at": "2026-11-05"
     },
     {
       "id": "indexnow-from-runner",
@@ -1025,6 +1026,26 @@
       "effort_days": 0.5,
       "proof": "a `worker logs` read of a two-page actor run on uk-food-hygiene shows page 2 under 4 s with no 503, and seven Daily numbers rows in a row carry no `D1 DB is overloaded` line on /v1/data routes",
       "score": 4,
+      "status": "todo",
+      "added": "2026-11-05"
+    },
+    {
+      "id": "stats-page-content-depth",
+      "title": "Give every /stats page and facet page a reason to be indexed: a dated written summary (what moved this month, the top movers, the share of the parent), per-facet titles that name the class, and cross-links between facets — so Bing and Google stop dropping them as thin",
+      "why": "Day-30 read of indexnow-stats-pages (2026-11-05): 29 of 30 days of IndexNow 200s and 330 Bingbot fetches in 30 d put 3 of 62 /stats URLs in Bing's index and 8 of 19 in Google's ('Discovered – currently not indexed ×7'). The engines crawl the pages and decline them: a facet page is a title, one description sentence, the parent's blurb and two number tables. Content, not submission, is the lever — the item that built IndexNow said: queue a content fix, never a second submitter. Proof is the next dated read.",
+      "effort_days": 0.5,
+      "proof": "every facet page renders ≥ 150 words of generated, dated prose unique to it (tests); the next IndexNow/Search Console read (queue a stats-index-day-30-read not_before build + 30) shows ≥ 20 /stats URLs indexed in either engine",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-05"
+    },
+    {
+      "id": "change-feed-shelf-listing",
+      "title": "Put the change feeds where readers find feeds: a Feedly/Inoreader presence (one owner-free route first — the feeds' own discovery pages and an OPML of all feeds at /feeds/opml; then, if the shelves index only subscribed feeds, one ≤ 5-minute owner step adding the OPML to a free reader account) and the n8n/Zapier RSS-trigger docs read for a listing path",
+      "why": "change-feed-rss proof failed at day 30 (2026-11-05): 380 fetches, 18 user agents (< 20) and no key issued with a /feeds referrer; Feedly's keyless search returns nothing for gankdat.com or a feed URL, i.e. no reader has ever added one, so the shelves cannot show them. The pages already carry Atom autodiscovery links. The item that built the feeds said: list them on the feed shelves before touching the format.",
+      "effort_days": 0.3,
+      "proof": "/feeds/opml serves every change feed (test); Feedly search for gankdat.com returns ≥ 1 feed at the next read, or the owner step is filed with the reason the shelf needs a subscriber",
+      "score": 3,
       "status": "todo",
       "added": "2026-11-05"
     }

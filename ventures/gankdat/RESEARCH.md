@@ -223,6 +223,25 @@ key file, 429 = throttled, `none/24h` = no wave sent anything); the day-30 read 
 reads the `bing`/`duckduckgo` referrer share — proof is ≥ 50 pages. Not a Google signal: Google
 does not read IndexNow, so `search-console-stats-indexing` stays blocked on the owner.
 
+**Day-30 read 2026-11-05 — `indexnow-day-30-read`** (burn-down): **3 of 62 `/stats` URLs are in the Bing-backed
+index** after 30 days of submissions (`indexnow: 15–60 urls 200` on 29 of 30 rows; the two 429 days were 10-05/06).
+Bing itself served the hosted runner a junk SERP for `site:gankdat.com/stats` ("2,770 results", square-root
+calculators — the operator is ignored for a datacentre client), so the count is DuckDuckGo's HTML results (Bing's
+index): uk-food-hygiene, uk-trademark-journal, uk-care-locations, no second page (`docs/relay/responses/bing-site-stats-2026-11-05/2.txt`).
+None of the 45 Nice-class facet pages and only 3 of 17 parents. Key file: proven by the 200s themselves (IndexNow
+answers 422 when it cannot read the key; the key is a plain var, `src/lib/indexnow.ts`). Discovery is not the
+problem: the zone reading shows Bingbot fetched 330 pages in 30 d (22/7 d in the Worker logs), and Google says the
+same of its 19 known URLs (`indexed 8/19`, `Discovered – currently not indexed ×7`). Both engines crawl the pages and
+decline to index most of them — the thin-page verdict the item anticipated: a facet page is a title, one
+`description` sentence, the parent's blurb and two number tables. Referrer share bing/duckduckgo: n/a — the Daily
+numbers row carries crawler families, not human referrers, and Search Console's 17 impressions / 0 clicks are Google's.
+**Decision: fix the content, not the submitter** — queued `stats-page-content-depth` (3). Feeds (`change-feed-rss`
+proof): `feeds 30d: 380 fetches, 18 user agents, 0 keys/30d` — 18 < 20 user agents and no key with a `/feeds` referrer,
+so the format is kept and the feeds go on the shelves: Feedly's keyless search returns nothing for `gankdat.com` or
+the feed URL itself (`docs/relay/responses/feedly-discovery-2026-11-05/`, both `{"results":[]}`), i.e. no reader has
+ever added one; the pages already carry `<link rel="alternate" type="application/atom+xml">` — queued
+`change-feed-shelf-listing` (3).
+
 **Built 2026-10-05 — `change-feed-rss`** (burn-down): every register dataset now has a keyless
 Atom feed (`/feeds/<slug>.xml`, plus one per facet value such as
 `/feeds/uk-trademark-journal/class/09.xml`) of its last 7 days of changes, linked from the stats

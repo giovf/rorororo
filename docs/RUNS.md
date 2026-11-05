@@ -2497,3 +2497,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 18:25 | burn-down | Owner request 038 written (~15 min, £0; the 2 h read stated as the owner's choice); SELF-CAUSED row
 - 2026-11-05 18:25 | burn-down | Built claude-code-kit leanpub-listing-pack-and-owner-step: listing pack and owner request ready
 - 2026-11-05 18:25 | notify | Your Claude Code handbook is ready to publish on Leanpub: about 15 minutes, no cost
+- 2026-11-05 18:32 | burn-down | epubcheck first run: success (dispatched after the installer; handbook EPUB 0 errors 0 warnings)
+- 2026-11-05 18:32 | burn-down | Claimed gankdat indexnow-day-30-read (4); third item of the slot
+- 2026-11-05 18:32 | burn-down | Bing gave the relay a junk SERP for site:; DuckDuckGo (Bing index) lists 3 of 62 /stats URLs
+- 2026-11-05 18:32 | burn-down | Crawled not indexed: Bingbot 330 fetches/30d, Google 8/19; key proven by 29 days of 200s
+- 2026-11-05 18:32 | burn-down | Feeds: 380 fetches, 18 UAs, 0 keys with /feeds referrer; Feedly search finds no gankdat feed
+- 2026-11-05 18:32 | burn-down | gankdat indexnow-day-30-read done: content fix queued (3), feed shelf listing queued (3)
+- 2026-11-05 18:32 | burn-down | Relay hosts added: www.bing.com, html.duckduckgo.com, cloud.feedly.com (two rounds, ~1 min each)
