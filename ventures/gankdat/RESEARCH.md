@@ -242,6 +242,19 @@ the feed URL itself (`docs/relay/responses/feedly-discovery-2026-11-05/`, both `
 ever added one; the pages already carry `<link rel="alternate" type="application/atom+xml">` — queued
 `change-feed-shelf-listing` (3).
 
+**Built 2026-11-05 — `stats-page-content-depth`** (burn-down, v0.28.2): every `/stats` page and facet page now
+carries a dated written summary computed from its own precomputed numbers (`src/lib/narrative.ts`, rendered as a
+`summary` section before the tables): the headline with the share of the register and the page's rank among the
+facet's pages, what moved this month against last with the busiest and quietest months in view, one sentence per
+breakdown table (the leaders of a top-N table, the latest issues of a chronological one), the neighbouring and the
+five largest sibling pages, and the filter rule — ≥ 150 words on every facet page, an empty class included, with
+no paragraph shared between two pages (tests). Facet titles lead with the class (`Class 09 trade mark applications:
+Scientific and electrical apparatus — UK trade mark applications …`, the query a searcher types) and an `other
+class pages` list cross-links the page before, the page after and the largest five. Nothing is read per request:
+the prose is a pure function of the blob the refresh already writes. Proof is the dated read queued as
+`stats-index-day-30-read` (not before 2026-12-05): ≥ 20 `/stats` URLs in either index, read the same way as the
+11-05 count (DuckDuckGo's HTML results through the relay; Search Console's `indexed N/M` in the Daily numbers row).
+
 **Built 2026-10-05 — `change-feed-rss`** (burn-down): every register dataset now has a keyless
 Atom feed (`/feeds/<slug>.xml`, plus one per facet value such as
 `/feeds/uk-trademark-journal/class/09.xml`) of its last 7 days of changes, linked from the stats

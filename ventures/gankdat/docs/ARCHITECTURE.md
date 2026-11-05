@@ -684,6 +684,20 @@ runs `check:root`.
   that needs no account while the Search Console reading is owner-blocked. The runner leaves
   `dist/indexnow.json`; `metrics.mjs` reads it → `indexnow: N urls S` in the Daily numbers row
   (`n/a (<reason>)` on a push run).
+  **Written summaries on every stats page** (2026-11-05, `stats-page-content-depth`, v0.28.2): the day-30 read
+  found both engines crawling the pages (Bingbot 330 fetches in 30 d; Google `Discovered – currently not indexed ×7`)
+  and indexing 3 of 62 — a facet page was a title, one sentence and two number tables. `lib/narrative.ts` now writes
+  each page's prose from its own blob, nothing read per request: the dated headline with the share of the parent
+  and the page's rank among the facet's pages, this month against last with the busiest and quietest months in
+  view, one sentence per breakdown (the leaders of a top-N table, the latest rows of a chronological one), the
+  neighbouring and largest sibling pages, the change-feed totals on a parent, and the filter rule — ≥ 150 words on
+  every facet page, an empty value included, no paragraph shared between two pages (`test/narrative.spec.ts`,
+  `test/stats.spec.ts`). The facet page's `<title>` and h1 lead with the value (`Class 09 trade mark applications:
+  Scientific and electrical apparatus — <source title>`; `StatsFacet.noun`, falling back to `StatsSpec.noun`, then
+  'records' — the journal's spec says `trade mark applications`), and an `other <segment> pages` list links the page
+  before, the page after and the five largest, so the facet pages link each other and not only the parent. The
+  isolation rule holds: the prose reads titles, values and counts, never a dataset's fields by name. Proof is the
+  dated read `stats-index-day-30-read` (not before 2026-12-05).
 - **Apify run outcomes** (`lib/apify-outcomes.ts`, 2026-10-11): each actor's public 30-day run stats
   are by status, so the Daily numbers row's `apify 30d by actor` carries `(F failed)` (failed +
   timed-out, every account, Apify's QA runner included) and an actor whose F rose since the previous

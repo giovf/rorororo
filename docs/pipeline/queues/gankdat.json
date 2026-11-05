@@ -1034,13 +1034,25 @@
     {
       "id": "stats-page-content-depth",
       "title": "Give every /stats page and facet page a reason to be indexed: a dated written summary (what moved this month, the top movers, the share of the parent), per-facet titles that name the class, and cross-links between facets — so Bing and Google stop dropping them as thin",
-      "why": "Day-30 read of indexnow-stats-pages (2026-11-05): 29 of 30 days of IndexNow 200s and 330 Bingbot fetches in 30 d put 3 of 62 /stats URLs in Bing's index and 8 of 19 in Google's ('Discovered – currently not indexed ×7'). The engines crawl the pages and decline them: a facet page is a title, one description sentence, the parent's blurb and two number tables. Content, not submission, is the lever — the item that built IndexNow said: queue a content fix, never a second submitter. Proof is the next dated read.",
+      "why": "Day-30 read of indexnow-stats-pages (2026-11-05): 29 of 30 days of IndexNow 200s and 330 Bingbot fetches in 30 d put 3 of 62 /stats URLs in Bing's index and 8 of 19 in Google's ('Discovered – currently not indexed ×7'). The engines crawl the pages and decline them: a facet page is a title, one description sentence, the parent's blurb and two number tables. Content, not submission, is the lever — the item that built IndexNow said: queue a content fix, never a second submitter. Proof is the next dated read. — Built 2026-11-05 (burn-down, v0.28.2): `src/lib/narrative.ts` writes each page's summary from its own blob (the dated headline with the share of the parent and its rank among the facet's pages; what moved this month against last with the busiest and quietest months; one sentence per breakdown — the leaders of a top-N table, the latest issues of a chronological one; the neighbouring and largest sibling pages; the filter rule), rendered as a `summary` section before the tables on every facet page and parent page; facet titles and h1 lead with the class (`Class 09 trade mark applications: Scientific and electrical apparatus — …`, `StatsFacet.noun` / `StatsSpec.noun`, 'records' by default); an `other class pages` list links the page before, the page after and the five largest; 14 tests (≥ 150 words on a page with data and on an empty class, no paragraph shared between two pages, origin names escaped in the prose, the parent's summary). Proof: `stats-index-day-30-read` queued not_before 2026-12-05.",
       "effort_days": 0.5,
       "proof": "every facet page renders ≥ 150 words of generated, dated prose unique to it (tests); the next IndexNow/Search Console read (queue a stats-index-day-30-read not_before build + 30) shows ≥ 20 /stats URLs indexed in either engine",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-05",
-      "doing_since": "2026-11-05"
+      "doing_since": "2026-11-05",
+      "done_at": "2026-11-05"
+    },
+    {
+      "id": "stats-index-day-30-read",
+      "title": "Day-30 read of stats-page-content-depth: /stats URLs indexed in Bing (DuckDuckGo HTML site: count through the relay) and Google (Search Console indexed/known), Bingbot and Googlebot fetches of /stats in the zone reading, and whether the facet pages now show in either index",
+      "why": "Proof of `stats-page-content-depth` (built 2026-11-05, v0.28.2): the day-30 IndexNow read found 3 of 62 /stats URLs in Bing's index and 8 of 19 in Google's after 330 Bingbot fetches — crawled, declined as thin. Every page now carries ≥ 150 words of dated prose computed from its own numbers, class-first titles and cross-links. Do: the same DuckDuckGo HTML `site:gankdat.com/stats` count through the relay (`html.duckduckgo.com` is in hosts.txt; Bing serves the runner a junk SERP), the Search Console `indexed N/M` and `Discovered – currently not indexed` counts from the Daily numbers row, the zone crawler fetches of /stats; record in RESEARCH.md under the 2026-11-05 build note. Decide: keep (≥ 20 URLs in either index) or, if the facet pages are still dropped despite the prose, read one page as Bing sees it (`RENDER RAW` through the relay) and queue the next content lever (per-class applicant lists, a weekly digest sentence) — never a second submitter. Evidence 2 × reach 2 ÷ 0.05 = 80, discounted to 4: a reading, not a build.",
+      "effort_days": 0.05,
+      "proof": "the counts recorded in RESEARCH.md; keep/fix decision in STRATEGY §8",
+      "score": 4,
+      "status": "todo",
+      "not_before": "2026-12-05",
+      "added": "2026-11-05"
     },
     {
       "id": "change-feed-shelf-listing",

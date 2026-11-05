@@ -2511,3 +2511,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 18:34 | burn-down | Proof pending: worker-logs read of a two-page actor run on uk-food-hygiene, seven clean Daily rows
 - 2026-11-05 18:44 | burn-down | Count key carries last_refreshed_at too: the journal's windowed refresh grows rows inside one generation
 - 2026-11-05 18:44 | burn-down | Stopping at 34 min: 4 items done (2 claude-code-kit, 2 gankdat); next is a 0.5-day item, left for 19:00
+- 2026-11-05 19:12 | burn-down | Claimed gankdat stats-page-content-depth (3); main green at STEP 0; no new owner notes
+- 2026-11-05 19:20 | burn-down | narrative.ts: dated summary per stats page from its own blob — share, rank, month vs last, movers
+- 2026-11-05 19:20 | burn-down | Facet titles lead with the class (StatsFacet.noun); other-class list links before, after, largest 5
+- 2026-11-05 19:20 | burn-down | Tests: ≥ 150 words on a full and an empty class page, no shared paragraph, names escaped (14 new)
+- 2026-11-05 19:20 | burn-down | gankdat stats-page-content-depth done (v0.28.2): prose on every stats page; day-30 read queued 12-05
