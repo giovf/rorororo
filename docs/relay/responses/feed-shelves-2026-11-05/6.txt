@@ -1,0 +1,142 @@
+meta description: Documentation for the RSS Read node in n8n, a workflow automation platform. Includes guidance on usage, and links to examples.
+meta og:title: RSS Read | Nodes | n8n Docs
+meta og:description: Documentation for the RSS Read node in n8n, a workflow automation platform. Includes guidance on usage, and links to examples.
+meta og:image: https://docs.n8n.io/~gitbook/image?url=https%3A%2F%2F2083420238-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FgkeAaBEvbwHB2NmepVHG%252Fsites%252Fsite_Qp7QM%252Fsocialpreview%252FBJYuJLS829e7wvgPdf5m%252FGitBook%25201280x630.png%3Falt%3Dmedia%26token%3D535a1998-3467-4390-aef9-2f68fdbe688f&width=1200&height=630&sign=66c16ad3aef77b2b228614fe76c6c3a3&sv=3
+meta twitter:card: summary_large_image
+meta twitter:title: RSS Read | Nodes | n8n Docs
+meta twitter:description: Documentation for the RSS Read node in n8n, a workflow automation platform. Includes guidance on usage, and links to examples.
+meta twitter:image: https://docs.n8n.io/~gitbook/image?url=https%3A%2F%2F2083420238-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FgkeAaBEvbwHB2NmepVHG%252Fsites%252Fsite_Qp7QM%252Fsocialpreview%252FBJYuJLS829e7wvgPdf5m%252FGitBook%25201280x630.png%3Falt%3Dmedia%26token%3D535a1998-3467-4390-aef9-2f68fdbe688f&width=1200&height=630&sign=66c16ad3aef77b2b228614fe76c6c3a3&sv=3
+RSS Read | Nodes | n8n Docs
+n8n Docs (/)
+⌘ Ctrl k
+Forum (https://community.n8n.io/) Changelog (/changelog)
+More
+Get started (/)
+Deploy (/deploy)
+Build (/build)
+Nodes (/integrations)
+Connect (/connect)
+Administer (/administer)
+Contribute (/contribute)
+n8n Docs (/)
+Nodes (/integrations)
+Built-in nodes (/integrations/builtin)
+Node types (/integrations/builtin/node-types)
+Core nodes (/integrations/builtin/core-nodes)
+Activation Trigger Deprecated (/integrations/builtin/core-nodes/n8n-nodes-base.activationtrigger)
+Aggregate (/integrations/builtin/core-nodes/n8n-nodes-base.aggregate)
+AI Transform (/integrations/builtin/core-nodes/n8n-nodes-base.aitransform)
+Code (/integrations/builtin/core-nodes/n8n-nodes-base.code)
+Compare Datasets (/integrations/builtin/core-nodes/n8n-nodes-base.comparedatasets)
+Compression (/integrations/builtin/core-nodes/n8n-nodes-base.compression)
+Chat Trigger (/integrations/builtin/core-nodes/n8n-nodes-langchain.chattrigger)
+Convert to File (/integrations/builtin/core-nodes/n8n-nodes-base.converttofile)
+Crypto (/integrations/builtin/core-nodes/n8n-nodes-base.crypto)
+Data Table (/integrations/builtin/core-nodes/n8n-nodes-base.datatable)
+Date & Time (/integrations/builtin/core-nodes/n8n-nodes-base.datetime)
+Debug Helper (/integrations/builtin/core-nodes/n8n-nodes-base.debughelper)
+Edit Fields (Set) (/integrations/builtin/core-nodes/n8n-nodes-base.set)
+Edit Image (/integrations/builtin/core-nodes/n8n-nodes-base.editimage)
+Email Trigger (IMAP) (/integrations/builtin/core-nodes/n8n-nodes-base.emailimap)
+Error Trigger (/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger)
+Evaluation (/integrations/builtin/core-nodes/n8n-nodes-base.evaluation)
+Evaluation Trigger (/integrations/builtin/core-nodes/n8n-nodes-base.evaluationtrigger)
+Execute Command (/integrations/builtin/core-nodes/n8n-nodes-base.executecommand)
+Execute Sub-workflow (/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflow)
+Execute Sub-workflow Trigger (/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflowtrigger)
+Execution Data (/integrations/builtin/core-nodes/n8n-nodes-base.executiondata)
+Extract From File (/integrations/builtin/core-nodes/n8n-nodes-base.extractfromfile)
+Filter (/integrations/builtin/core-nodes/n8n-nodes-base.filter)
+FTP (/integrations/builtin/core-nodes/n8n-nodes-base.ftp)
+Git (/integrations/builtin/core-nodes/n8n-nodes-base.git)
+GraphQL (/integrations/builtin/core-nodes/n8n-nodes-base.graphql)
+Guardrails (/integrations/builtin/core-nodes/n8n-nodes-langchain.guardrails)
+HTML (/integrations/builtin/core-nodes/n8n-nodes-base.html)
+HTTP Request (/integrations/builtin/core-nodes/n8n-nodes-base.httprequest)
+If (/integrations/builtin/core-nodes/n8n-nodes-base.if)
+JWT (/integrations/builtin/core-nodes/n8n-nodes-base.jwt)
+LDAP (/integrations/builtin/core-nodes/n8n-nodes-base.ldap)
+Limit (/integrations/builtin/core-nodes/n8n-nodes-base.limit)
+Local File Trigger (/integrations/builtin/core-nodes/n8n-nodes-base.localfiletrigger)
+Loop Over Items (Split in Batches) (/integrations/builtin/core-nodes/n8n-nodes-base.splitinbatches)
+Manual Trigger (/integrations/builtin/core-nodes/n8n-nodes-base.manualworkflowtrigger)
+Markdown (/integrations/builtin/core-nodes/n8n-nodes-base.markdown)
+MCP Client (/integrations/builtin/core-nodes/n8n-nodes-langchain.mcpclient)
+MCP Server Trigger (/integrations/builtin/core-nodes/n8n-nodes-langchain.mcptrigger)
+Merge (/integrations/builtin/core-nodes/n8n-nodes-base.merge)
+Message an Agent Preview (/integrations/builtin/core-nodes/n8n-nodes-base.messageanagent)
+n8n (/integrations/builtin/core-nodes/n8n-nodes-base.n8n)
+n8n Form (/integrations/builtin/core-nodes/n8n-nodes-base.form)
+n8n Form (/integrations/builtin/core-nodes/n8n-nodes-base.formtrigger)
+n8n Trigger (/integrations/builtin/core-nodes/n8n-nodes-base.n8ntrigger)
+No Operation, do nothing (/integrations/builtin/core-nodes/n8n-nodes-base.noop)
+Read/Write Files from Disk (/integrations/builtin/core-nodes/n8n-nodes-base.readwritefile)
+Remove Duplicates (/integrations/builtin/core-nodes/n8n-nodes-base.removeduplicates)
+Rename Keys (/integrations/builtin/core-nodes/n8n-nodes-base.renamekeys)
+Chat (/integrations/builtin/core-nodes/n8n-nodes-langchain.chat)
+Respond to Webhook (/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook)
+RSS Read (/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedread)
+RSS Feed Trigger (/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger)
+Schedule Trigger (/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger)
+Send Email (/integrations/builtin/core-nodes/n8n-nodes-base.sendemail)
+Sort (/integrations/builtin/core-nodes/n8n-nodes-base.sort)
+Split Out (/integrations/builtin/core-nodes/n8n-nodes-base.splitout)
+SSE Trigger (/integrations/builtin/core-nodes/n8n-nodes-base.ssetrigger)
+SSH (/integrations/builtin/core-nodes/n8n-nodes-base.ssh)
+Stop And Error (/integrations/builtin/core-nodes/n8n-nodes-base.stopanderror)
+Summarize (/integrations/builtin/core-nodes/n8n-nodes-base.summarize)
+Switch (/integrations/builtin/core-nodes/n8n-nodes-base.switch)
+TOTP (/integrations/builtin/core-nodes/n8n-nodes-base.totp)
+Track Time Saved (/integrations/builtin/core-nodes/n8n-nodes-base.timesaved)
+Wait (/integrations/builtin/core-nodes/n8n-nodes-base.wait)
+Webhook (/integrations/builtin/core-nodes/n8n-nodes-base.webhook)
+Workflow Trigger Deprecated (/integrations/builtin/core-nodes/n8n-nodes-base.workflowtrigger)
+XML (/integrations/builtin/core-nodes/n8n-nodes-base.xml)
+App nodes (/integrations/builtin/app-nodes)
+Trigger nodes (/integrations/builtin/trigger-nodes)
+Cluster nodes (/integrations/builtin/cluster-nodes)
+Credentials (/integrations/builtin/credentials)
+Custom API actions for existing nodes (/integrations/builtin/custom-api-actions-for-existing-nodes)
+Handle rate limits (/integrations/builtin/handle-rate-limits)
+Deprecated nodes (/integrations/builtin/deprecated-nodes)
+Community nodes (/integrations/community-nodes)
+On this page
+For the complete documentation index, see llms.txt (https://docs.n8n.io/llms.txt) . This page is also available as Markdown (https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedread.md) .
+Copy
+On this page
+Nodes (/integrations)
+Built-in nodes (/integrations/builtin)
+Core nodes (/integrations/builtin/core-nodes)
+RSS Read
+Use the RSS Read node to read data from RSS feeds published on the internet.
+Node parameters #node-parameters
+URL : Enter the URL for the RSS publication you want to read.
+Node options #node-options
+Ignore SSL Issues : Choose whether n8n should ignore SSL/TLS verification (turned on) or not (turned off).
+Templates and examples #templates-and-examples
+Browse RSS Read integration templates (https://n8n.io/integrations/rss-read) or search all templates (https://n8n.io/workflows/)
+Related resources #related-resources
+n8n provides a trigger node for RSS Read. Refer to the RSS Feed Trigger node documentation (/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger) for more information.
+Previous Respond to Webhook (/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook) Next RSS Feed Trigger (/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger)
+Last updated 7 days ago
+Was this helpful?
+Company
+n8n.io (https://n8n.io/)
+Careers (https://n8n.io/careers)
+Blog (https://blog.n8n.io/)
+Resources
+Templates (https://n8n.io/workflows/)
+Academy (https://learn.n8n.io/)
+Changelog (/changelog)
+Legal and privacy
+Security (https://n8n.io/legal/security/)
+Privacy (/privacy-and-security)
+n8n community license
+Sustainable use license (/n8n-community-license)
+https://x.com/n8n_io https://github.com/n8n-io/n8n https://discord.com/invite/n8n https://linkedin.com/company/n8n https://youtube.com/@n8n-io
+© 2026 n8n | All rights reserved
+Node parameters (#node-parameters)
+Node options (#node-options)
+Templates and examples (#templates-and-examples)
+Related resources (#related-resources)
+Was this helpful?

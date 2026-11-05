@@ -1,0 +1,861 @@
+{ "@context": "https://schema.org", "@type": "Organization", "@id": "https://zapier.com/#organization", "name": "Zapier", "url": "https://zapier.com", "legalName": "Zapier Inc", "foundingDate": "2011", "description": "Build and scale AI workflows and agents across 9,000 apps with Zapier, the most connected AI orchestration platform. Trusted by 3 million+ businesses.", "sameAs": [ "https://www.facebook.com/ZapierApp", "https://www.linkedin.com/company/zapier/", "https://twitter.com/zapier", "https://x.com/zapier", "https://www.youtube.com/user/ZapierApp/videos", "https://en.wikipedia.org/wiki/Zapier", "https://www.crunchbase.com/organization/zapier", "https://github.com/zapier" ], "logo": { "@type": "ImageObject", "url": "https://zapier.com/brand/assets/images/logos/zapier-logo.png" }, "address": { "addressCountry": "USA", "addressLocality": "San Francisco", "addressRegion": "CA", "streetAddress": "548 Market St. #62411", "postalCode": "94104", "@type": "PostalAddress" }, "founders": [ { "@type": "Person", "name": "Bryan Helmig" }, { "@type": "Person", "name": "Wade Foster" }, { "@type": "Person", "name": "Mike Knoop" } ], "contactPoint": { "url": "https://zapier.com/help/", "@type": "ContactPoint", "contactType": "customer support" } }
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Zapier", "item": "https://zapier.com/" }, { "@type": "ListItem", "position": 2, "name": "Apps", "item": "https://zapier.com/apps" }, { "@type": "ListItem", "position": 3, "name": "RSS by Zapier Integrations", "item": "https://zapier.com/apps/rss/integrations" } ] }
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "What feed formats are supported?", "acceptedAnswer": { "@type": "Answer", "text": "Standard RSS and Atom feeds are supported." } }, { "@type": "Question", "name": "How often are feeds checked?", "acceptedAnswer": { "@type": "Answer", "text": "Polling frequency depends on your Zapier plan." } }, { "@type": "Question", "name": "Why might items be missed?", "acceptedAnswer": { "@type": "Answer", "text": "Some feeds limit history or update frequently. Testing helps ensure reliability." } }, { "@type": "Question", "name": "Can I filter feed items?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use filters to act only on items that meet your criteria." } } ] }
+{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Zapier", "operatingSystem": "Web-based", "installUrl": "https://zapier.com/webintent/create-zap?steps[1][app]=RSSCLIAPI@latest&steps[1][type]=read", "applicationCategory": "BusinessApplication", "description": "Instantly connect RSS by Zapier with the apps you use everyday. RSS by Zapier integrates with 9,000 other apps on Zapier - it's the easiest way to automate your work.", "url": "https://zapier.com/apps/rss/integrations", "image": "https://res.cloudinary.com/zapier-media/image/upload/q_auto/f_auto/v1746212260/App%20Directory/zapier_logo_ybrvyf.png", "publisher": { "@type": "Organization", "@id": "https://zapier.com/#organization", "name": "Zapier", "url": "https://zapier.com/" }, "softwareHelp": "https://help.zapier.com/hc/en-us", "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://zapier.com/pricing" }, "featureList": [ "Post new RSS items to Facebook Pages", "Post new RSS items to Discord channels", "Send new RSS feed entries via email", "Share new RSS items in Slack" ], "potentialAction": [ { "@type": "ReadAction", "name": "New Items in Multiple Feeds" }, { "@type": "ReadAction", "name": "New Item in Feed" }, { "@type": "WriteAction", "name": "Create Item in Feed" } ] }
+{ "@context": "https://schema.org", "@type": "Service", "name": "RSS by Zapier Integrations", "provider": { "@type": "Organization", "@id": "https://zapier.com/#organization", "name": "Zapier", "url": "https://zapier.com" }, "serviceType": "Application Integration", "description": "Instantly connect RSS by Zapier with the apps you use everyday. RSS by Zapier integrates with 9,000 other apps on Zapier - it's the easiest way to automate your work.", "url": "https://zapier.com/apps/rss/integrations", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free tier available. Paid plans from $19.99/month." }, "potentialAction": [ { "@type": "Action", "name": "Connect via Zapier MCP", "description": "Call these apps’ actions as tools from any MCP client (Claude, ChatGPT, Cursor). No code; authenticate once.", "target": { "@type": "EntryPoint", "urlTemplate": "https://zapier.com/mcp", "actionPlatform": [ "https://schema.org/DesktopWebPlatform" ] } }, { "@type": "Action", "name": "Call via Zapier SDK", "description": "Run these apps’ actions from TypeScript with @zapier/zapier-sdk.", "target": { "@type": "EntryPoint", "urlTemplate": "https://docs.zapier.com/sdk" } } ], "hasOfferCatalog": { "@type": "OfferCatalog", "name": "RSS by Zapier Automations", "itemListElement": [ { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Post new RSS items to Facebook Pages", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Post new RSS items to Discord channels", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Send new RSS feed entries via email", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Share new RSS items in Slack", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Add new RSS feed articles to Instapaper", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Buffer new items in an RSS feed", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Add new Facebook Pages posts to an RSS feed", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Save new items in RSS feeds to Pocket", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Send OneSignal push notifications for new RSS items", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Be Alerted via Email of New RSS Feed Items", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Log RSS feed updates as new rows in Google Sheets", "serviceType": "Trigger-Action Automation" } }, { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Send webhooks with new items in RSS feeds", "serviceType": "Trigger-Action Automation" } } ] } }
+{ "@context": { "@vocab": "https://schema.org/", "zapier": "https://zapier.com/schema#" }, "@type": "Service", "name": "RSS by Zapier Integration on Zapier", "provider": { "@type": "Organization", "@id": "https://zapier.com/#organization", "name": "Zapier" }, "zapier:appSlug": "rss", "zapier:accessMethods": [ { "@type": "zapier:AccessMethod", "zapier:method": "mcp", "name": "Zapier MCP Server", "url": "https://zapier.com/mcp", "zapier:setupUrl": "https://mcp.zapier.com", "zapier:compatibleClients": [ "Claude", "ChatGPT", "Cursor", "Any MCP client" ], "zapier:exampleActions": [ "Create Item in Feed" ] }, { "@type": "zapier:AccessMethod", "zapier:method": "sdk", "name": "Zapier SDK (TypeScript)", "url": "https://docs.zapier.com/sdk", "zapier:package": "@zapier/zapier-sdk", "zapier:installCommand": "npm install @zapier/zapier-sdk", "zapier:entryPoint": "createZapierSdk().runAction(...)" } ], "zapier:triggers": [ { "@type": "zapier:Trigger", "name": "New Items in Multiple Feeds", "zapier:key": "multi_feed", "zapier:operationType": "read", "zapier:requiredFields": [ "urls" ], "zapier:optionalFields": [ "trigger_style" ] }, { "@type": "zapier:Trigger", "name": "New Item in Feed", "zapier:key": "new_feed", "zapier:operationType": "read", "zapier:requiredFields": [ "url" ], "zapier:optionalFields": [ "username", "password", "trigger_style" ] } ], "zapier:actions": [ { "@type": "zapier:Action", "name": "Create Item in Feed", "zapier:key": "post", "zapier:operationType": "write", "zapier:requiredFields": [ "title", "link", "description" ], "zapier:optionalFields": [ "feed_title", "max_records", "auto_truncate", "author_name", "author_email", "author_link", "podcast_url", "podcast_mime_type", "podcast_length", "pubdate" ] } ] }
+RSS by Zapier Integrations | Connect Your Apps with Zapier
+Skip to content (#main) /
+Products
+Zapier Automation Platform
+No-code automation across 9,000+ apps
+Most Popular
+Zap workflows Do-it-yourself automation for workflows (/workflows)
+Zapier MCP Add Zapier to your AI chat (/mcp)
+Zapier SDK Install Zapier to your AI coding agent (/sdk)
+Tables Store data your Zap workflows can read and update (/tables)
+Capabilities
+App integrations Explore 9,000+ app connections (/apps)
+AI automation 🪄 Cutting-edge AI to upgrade your workflows (/ai)
+Security Enterprise-grade security (/security-compliance)
+Explore templates (/templates)
+Explore use cases (/automations)
+Join Zapier Early Access (/early-access)
+Industry comparisons (/compare)
+More Products
+Forms Capture inputs that trigger workflows (/forms)
+Canvas Plan and map your workflows with AI (/canvas)
+Agents Create your own AI assistants for any task (/agents)
+Chatbots Answer customer questions with AI chatbots (/ai/chatbot)
+Solutions
+Solutions
+How Zapier can help you automate your work across teams
+By team
+RevOps Drive revenue through automation (/solutions/revops-automation)
+Marketing Multiply campaign effectiveness and ROI (/solutions/marketing)
+IT Better manage systems with automation (/solutions/it)
+HR Empower your HR team with AI automation (/solutions/hr)
+Sales Close more deals (/solutions/sales)
+Customer Support Elevate customer satisfaction (/solutions/customer-support)
+Leaders Streamline decision-making processes (/solutions/leaders)
+Executive Assistants Eliminate repetitive admin tasks (/solutions/executive-assistants)
+By app
+NetSuite (/apps/netsuite/integrations)
+Salesforce (/apps/salesforce/integrations)
+HubSpot (/apps/hubspot/integrations)
+Slack (/apps/slack/integrations)
+ChatGPT (OpenAI) (/apps/chatgpt/integrations)
+Microsoft Dynamics CRM (/apps/microsoft-dynamics-crm/integrations)
+Microsoft Teams (/apps/microsoft-teams/integrations)
+Zendesk (/apps/zendesk/integrations)
+Jira Software Cloud (/apps/jira-software-cloud/integrations)
+View all apps (/apps)
+By use case
+Lead management Automate your way to more conversions (/solutions/lead-management)
+Sales pipeline Automate handoffs and streamline sales (/solutions/sales-pipeline-management)
+Marketing campaigns Boost your marketing campaign's impact (/solutions/marketing-campaigns)
+Customer support Quickly route tickets and responses (/solutions/customer-support-management)
+Data management Connect app data for more insights (/solutions/data-management)
+Project management Deliver projects seamlessly (/solutions/project-management)
+Tickets and incidents Resolve issues and incidents faster (/solutions/ticket-incident-management)
+Explore templates (/templates)
+Explore use cases (/automations)
+Join Zapier Early Access (/early-access)
+Industry comparisons (/compare)
+Automation you can govern See how Zapier helps you manage, secure, and scale automation across your organization. (/govern)
+Zapier for
+Startups (/startups)
+Small and medium businesses (/smb)
+Enterprise (/enterprise)
+Resources
+Resources
+Educational resources to move your work forward
+Get inspired
+5 things to automate today Popular workflows to save time (/blog/what-you-should-automate/)
+Create custom chatbots Build an AI chatbot in minutes (/blog/create-custom-ai-chatbots-with-interfaces/)
+Guides Go deep with dedicated guidance (/resources/guides)
+Webinars Join live or watch on demand (/resources/events)
+Customer stories See how businesses grow with Zapier (/customer-stories)
+Blog Read all about apps and automation (/blog/)
+How to use Zapier
+Zapier quick-start guide Automate with confidence (/blog/get-started-with-zapier/)
+Webhooks and Zapier Connect your favorite apps with Zapier’s webhooks (/blog/what-are-webhooks/)
+Zapier Academy Build AI skills to transform work (https://academy.zapier.com)
+Help Center Find answers to your questions (https://help.zapier.com/hc/en-us)
+Zapier Support Get help and find support options (/app/get-help)
+Hire a Zapier Solution Partner Find a consultant to help you do more (/partnerdirectory)
+AI & Zapier
+AI orchestration at work Your guide to intelligent systems (/blog/ai-orchestration/)
+Zapier Copilot A personalized automation assistant (/blog/zapier-copilot-guide/)
+Zapier's AI tools An AI tool for every need (/blog/zapier-ai-guide/)
+How to use Zapier MCP Connect AI to thousands of apps—code-free (/blog/zapier-mcp-guide/)
+Explore templates (/templates)
+Explore use cases (/automations)
+Join Zapier Early Access (/early-access)
+Industry comparisons (/compare)
+Implement AI orchestration Three phases to move from disconnected AI pilots to orchestrated systems that scale. (/resources/guides/how-to-implement-ai-orchestration-in-3-phases)
+Developer resources
+Powered by Zapier (/developer-platform)
+Build an integration (/developer-platform/integrations)
+Embed an integration (/developer-platform/embed-tools)
+Integration Partner Program (/developer-platform/partner-program)
+Documentation (https://docs.zapier.com/integrations)
+Enterprise (/enterprise)
+Pricing (/pricing)
+EN
+Deutsch - DE
+English - EN
+Español - ES
+Français - FR
+日本語 - JA
+GitHub (https://github.com/zapier)
+Explore apps (/apps)
+Contact sales (/l/contact-sales?demo_source=cs_nav_header)
+Products
+Most Popular
+Zap workflows (/workflows)
+Zapier MCP (/mcp)
+Zapier SDK (/sdk)
+Tables (/tables)
+Capabilities
+App integrations (/apps)
+AI automation 🪄 (/ai)
+Security (/security-compliance)
+More Products
+Forms (/forms)
+Canvas (/canvas)
+Agents (/agents)
+Chatbots (/ai/chatbot)
+Solutions
+By team
+RevOps (/solutions/revops-automation)
+Marketing (/solutions/marketing)
+IT (/solutions/it)
+HR (/solutions/hr)
+Sales (/solutions/sales)
+Customer Support (/solutions/customer-support)
+Leaders (/solutions/leaders)
+Executive Assistants (/solutions/executive-assistants)
+By app
+NetSuite (/apps/netsuite/integrations)
+Salesforce (/apps/salesforce/integrations)
+HubSpot (/apps/hubspot/integrations)
+Slack (/apps/slack/integrations)
+ChatGPT (OpenAI) (/apps/chatgpt/integrations)
+Microsoft Dynamics CRM (/apps/microsoft-dynamics-crm/integrations)
+Microsoft Teams (/apps/microsoft-teams/integrations)
+Zendesk (/apps/zendesk/integrations)
+Jira Software Cloud (/apps/jira-software-cloud/integrations)
+View all apps (/apps)
+By use case
+Lead management (/solutions/lead-management)
+Sales pipeline (/solutions/sales-pipeline-management)
+Marketing campaigns (/solutions/marketing-campaigns)
+Customer support (/solutions/customer-support-management)
+Data management (/solutions/data-management)
+Project management (/solutions/project-management)
+Tickets and incidents (/solutions/ticket-incident-management)
+Zapier for
+Startups (/startups)
+Small and medium businesses (/smb)
+Enterprise (/enterprise)
+Resources
+Get inspired
+5 things to automate today (/blog/what-you-should-automate/)
+Create custom chatbots (/blog/create-custom-ai-chatbots-with-interfaces/)
+Guides (/resources/guides)
+Webinars (/resources/events)
+Customer stories (/customer-stories)
+Blog (/blog/)
+How to use Zapier
+Zapier quick-start guide (/blog/get-started-with-zapier/)
+Webhooks and Zapier (/blog/what-are-webhooks/)
+Zapier Academy (https://academy.zapier.com)
+Help Center (https://help.zapier.com/hc/en-us)
+Zapier Support (/app/get-help)
+Hire a Zapier Solution Partner (/partnerdirectory)
+AI & Zapier
+AI orchestration at work (/blog/ai-orchestration/)
+Zapier Copilot (/blog/zapier-copilot-guide/)
+Zapier's AI tools (/blog/zapier-ai-guide/)
+How to use Zapier MCP (/blog/zapier-mcp-guide/)
+Developer resources
+Powered by Zapier (/developer-platform)
+Build an integration (/developer-platform/integrations)
+Embed an integration (/developer-platform/embed-tools)
+Integration Partner Program (/developer-platform/partner-program)
+Documentation (https://docs.zapier.com/integrations)
+Enterprise (/enterprise)
+Pricing (/pricing)
+EN
+Deutsch - DE
+English - EN
+Español - ES
+Français - FR
+日本語 - JA
+GitHub (https://github.com/zapier)
+Explore apps (/apps)
+Contact sales (/l/contact-sales?demo_source=cs_nav_header)
+[RSS by Zapier logo]
+[RSS by Zapier logo]
+RSS by Zapier Integrations
+News & Lifestyle (https://zapier.com/apps/categories/news) , Zapier (https://zapier.com/apps/categories/zapier-tools)
+News & Lifestyle (https://zapier.com/apps/categories/news) , Zapier (https://zapier.com/apps/categories/zapier-tools)
+Integrations (#integrations) Help (#help)
+Put RSS by Zapier to work with AI and enterprise-grade automation
+Automate smarter with RSS by Zapier and scale with confidence. Zapier is built for enterprise-grade security, compliance, and performance.
+Start free with email (https://zapier.com/sign-up/?next=https%3A%2F%2Fzapier.com%2Fwebintent%2Fcreate-zap%3Fentry-point-location%3Dexplore%26entry-point-method%3Dconnect_call_to_action%26steps%255B0%255D%255Bapp%255D%3DRSSCLIAPI%25401.1.0&selected_apis=RSSCLIAPI%401.1.0&referrer=%2Fapps%2Frss%2Fintegrations)
+Start free with email (https://zapier.com/sign-up/?next=https%3A%2F%2Fzapier.com%2Fwebintent%2Fcreate-zap%3Fentry-point-location%3Dexplore%26entry-point-method%3Dconnect_call_to_action%26steps%255B0%255D%255Bapp%255D%3DRSSCLIAPI%25401.1.0&selected_apis=RSSCLIAPI%401.1.0&referrer=%2Fapps%2Frss%2Fintegrations)
+Continue with Google (https://zapier.com/google-sso/start?scopes=basic&next=https%3A%2F%2Fzapier.com%2Fwebintent%2Fcreate-zap%3Fentry-point-location%3Dexplore%26entry-point-method%3Dconnect_call_to_action%26steps%255B0%255D%255Bapp%255D%3DRSSCLIAPI%25401.1.0)
+Start free with email (https://zapier.com/sign-up/?next=https%3A%2F%2Fzapier.com%2Fwebintent%2Fcreate-zap%3Fentry-point-location%3Dexplore%26entry-point-method%3Dconnect_call_to_action%26steps%255B0%255D%255Bapp%255D%3DRSSCLIAPI%25401.1.0&selected_apis=RSSCLIAPI%401.1.0&referrer=%2Fapps%2Frss%2Fintegrations)
+Start free with email (https://zapier.com/sign-up/?next=https%3A%2F%2Fzapier.com%2Fwebintent%2Fcreate-zap%3Fentry-point-location%3Dexplore%26entry-point-method%3Dconnect_call_to_action%26steps%255B0%255D%255Bapp%255D%3DRSSCLIAPI%25401.1.0&selected_apis=RSSCLIAPI%401.1.0&referrer=%2Fapps%2Frss%2Fintegrations)
+Continue with Google (https://zapier.com/google-sso/start?scopes=basic&next=https%3A%2F%2Fzapier.com%2Fwebintent%2Fcreate-zap%3Fentry-point-location%3Dexplore%26entry-point-method%3Dconnect_call_to_action%26steps%255B0%255D%255Bapp%255D%3DRSSCLIAPI%25401.1.0)
+No-code AI automation
+Full audit trails and controls
+SOC 2 and GDPR compliant
+Easy visual workflow builder
+9,000+ apps, 450+ AI tools
+Free tier available
+[RSS by Zapier logo] [RSS by Zapier logo]
+Or pick an app to pair with
+[arrow pointing down]
+https://zapier.com/apps/facebook-pages/integrations/rss
+Facebook Pages
+Facebook, Social Media Accounts
+https://zapier.com/apps/gmail/integrations/rss
+Gmail
+Email, Google
+https://zapier.com/apps/rss/integrations/slack
+Slack
+Team Chat
+https://zapier.com/apps/buffer/integrations/rss
+Buffer
+Social Media Marketing
+https://zapier.com/apps/notion/integrations/rss
+Notion
+Task Management
+https://zapier.com/apps/linkedin/integrations/rss
+LinkedIn
+Microsoft, Social Media Accounts
+https://zapier.com/apps/discord/integrations/rss
+Discord
+Team Chat
+https://zapier.com/apps/airtable/integrations/rss
+Airtable
+Databases
+https://zapier.com/apps/rss/integrations/wordpress
+WordPress
+Website Builders, WordPress
+https://zapier.com/apps/facebook-pages/integrations/rss
+Facebook Pages
+Facebook, Social Media Accounts
+https://zapier.com/apps/gmail/integrations/rss
+Gmail
+Email, Google
+https://zapier.com/apps/rss/integrations/slack
+Slack
+Team Chat
+https://zapier.com/apps/buffer/integrations/rss
+Buffer
+Social Media Marketing
+https://zapier.com/apps/notion/integrations/rss
+Notion
+Task Management
+https://zapier.com/apps/linkedin/integrations/rss
+LinkedIn
+Microsoft, Social Media Accounts
+https://zapier.com/apps/facebook-pages/integrations/rss
+Facebook Pages
+Facebook, Social Media Accounts
+https://zapier.com/apps/gmail/integrations/rss
+Gmail
+Email, Google
+https://zapier.com/apps/rss/integrations/slack
+Slack
+Team Chat
+https://zapier.com/apps/buffer/integrations/rss
+Buffer
+Social Media Marketing
+https://zapier.com/apps/notion/integrations/rss
+Notion
+Task Management
+https://zapier.com/apps/linkedin/integrations/rss
+LinkedIn
+Microsoft, Social Media Accounts
+https://zapier.com/apps/discord/integrations/rss
+Discord
+Team Chat
+https://zapier.com/apps/airtable/integrations/rss
+Airtable
+Databases
+https://zapier.com/apps/rss/integrations/wordpress
+WordPress
+Website Builders, WordPress
+Loading
+Loading
+Top companies trust Zapier to automate work and free up time
+Join millions worldwide who automate their work using Zapier
+Integrate for free
+Integrate for free
+Sign up with Google (https://zapier.com/google-sso/start?scopes=basic&next=https%3A%2F%2Fzapier.com%2Fgoogle-sso%2Fstart%3Fscopes%3Dbasic%26next%3Dhttps%253A%252F%252Fzapier.com%252Fwebintent%252Fcreate-zap%253Fentry-point-location%253Dexplore%2526entry-point-method%253Dconnect_call_to_action%2526steps%25255B0%25255D%25255Bapp%25255D%253DRSSCLIAPI%2525401.1.0)
+[The RSS by Zapier logo]
+[The Zapier logo]
+[The Facebook Pages logo]
+[The Gmail logo]
+[The Slack logo]
+[The Buffer logo]
+[The Notion logo]
+[The LinkedIn logo]
+[The Discord logo]
+[The Airtable logo]
+[The WordPress logo]
+[The ChatGPT (OpenAI) logo]
+[The Facebook Pages logo]
+RSS by Zapier + Zapier
+How it works
+RSS by Zapier lets you monitor RSS or Atom feeds and trigger workflows when new items are published. It is often used to track blog posts, product updates, job listings, or news feeds automatically.
+When to use RSS by Zapier with Zapier
+Monitoring content updates
+Automatically detect when new items appear in a feed.
+Distributing updates to teams
+Send feed updates to chat tools, email, or internal trackers.
+Building automated digests
+Collect new feed items and summarize or send them on a schedule.
+Launch your first automated workflow (#zap-template-list)
+Post new RSS items to Facebook Pages
+Details (/apps/facebook-pages/integrations/rss/39/post-new-rss-items-to-facebook-pages)
+Try it (/webintent/create-zap?template=39)
+[RSS by Zapier logo]
+[Facebook Pages logo]
+RSS by Zapier, Facebook Pages
+RSS by Zapier + Facebook Pages
+Post new RSS items to Discord channels
+Details (/apps/discord/integrations/rss/25366/post-new-rss-items-to-discord-channels)
+Try it (/webintent/create-zap?template=25366)
+[RSS by Zapier logo]
+[Discord logo]
+RSS by Zapier, Discord
+RSS by Zapier + Discord
+Send new RSS feed entries via email
+Details (/apps/email/integrations/rss/1441/send-new-rss-feed-entries-via-email)
+Try it (/webintent/create-zap?template=1441)
+[RSS by Zapier logo]
+[Email by Zapier logo]
+RSS by Zapier, Email by Zapier
+RSS by Zapier + Email by Zapier
+Share new RSS items in Slack
+Details (/apps/rss/integrations/slack/230/share-new-rss-items-in-slack)
+Try it (/webintent/create-zap?template=230)
+[RSS by Zapier logo]
+[Slack logo]
+RSS by Zapier, Slack
+RSS by Zapier + Slack
+Add new RSS feed articles to Instapaper
+Details (/apps/instapaper/integrations/rss/7474/add-new-rss-feed-articles-to-instapaper)
+Try it (/webintent/create-zap?template=7474)
+[RSS by Zapier logo]
+[Instapaper logo]
+RSS by Zapier, Instapaper
+RSS by Zapier + Instapaper
+Buffer new items in an RSS feed
+Details (/apps/buffer/integrations/rss/141/buffer-new-items-in-an-rss-feed)
+Try it (/webintent/create-zap?template=141)
+[RSS by Zapier logo]
+[Buffer logo]
+RSS by Zapier, Buffer
+RSS by Zapier + Buffer
+Load more
+Post new RSS items to Facebook Pages
+Details (/apps/facebook-pages/integrations/rss/39/post-new-rss-items-to-facebook-pages)
+Try it (/webintent/create-zap?template=39)
+[RSS by Zapier logo]
+[Facebook Pages logo]
+RSS by Zapier, Facebook Pages
+RSS by Zapier + Facebook Pages
+Post new RSS items to Discord channels
+Details (/apps/discord/integrations/rss/25366/post-new-rss-items-to-discord-channels)
+Try it (/webintent/create-zap?template=25366)
+[RSS by Zapier logo]
+[Discord logo]
+RSS by Zapier, Discord
+RSS by Zapier + Discord
+Send new RSS feed entries via email
+Details (/apps/email/integrations/rss/1441/send-new-rss-feed-entries-via-email)
+Try it (/webintent/create-zap?template=1441)
+[RSS by Zapier logo]
+[Email by Zapier logo]
+RSS by Zapier, Email by Zapier
+RSS by Zapier + Email by Zapier
+Share new RSS items in Slack
+Details (/apps/rss/integrations/slack/230/share-new-rss-items-in-slack)
+Try it (/webintent/create-zap?template=230)
+[RSS by Zapier logo]
+[Slack logo]
+RSS by Zapier, Slack
+RSS by Zapier + Slack
+Add new RSS feed articles to Instapaper
+Details (/apps/instapaper/integrations/rss/7474/add-new-rss-feed-articles-to-instapaper)
+Try it (/webintent/create-zap?template=7474)
+[RSS by Zapier logo]
+[Instapaper logo]
+RSS by Zapier, Instapaper
+RSS by Zapier + Instapaper
+Buffer new items in an RSS feed
+Details (/apps/buffer/integrations/rss/141/buffer-new-items-in-an-rss-feed)
+Try it (/webintent/create-zap?template=141)
+[RSS by Zapier logo]
+[Buffer logo]
+RSS by Zapier, Buffer
+RSS by Zapier + Buffer
+Add new Facebook Pages posts to an RSS feed
+Details (/apps/facebook-pages/integrations/rss/3827/add-new-facebook-pages-posts-to-an-rss-feed)
+Try it (/webintent/create-zap?template=3827)
+[Facebook Pages logo]
+[RSS by Zapier logo]
+Facebook Pages, RSS by Zapier
+Facebook Pages + RSS by Zapier
+Save new items in RSS feeds to Pocket
+Details (/apps/pocket/integrations/rss/1696/save-new-items-in-rss-feeds-to-pocket)
+Try it (/webintent/create-zap?template=1696)
+[RSS by Zapier logo]
+[Pocket logo]
+RSS by Zapier, Pocket
+RSS by Zapier + Pocket
+Send OneSignal push notifications for new RSS items
+Details (/apps/onesignal/integrations/rss/8120/send-onesignal-push-notifications-for-new-rss-items)
+Try it (/webintent/create-zap?template=8120)
+[RSS by Zapier logo]
+[OneSignal logo]
+RSS by Zapier, OneSignal
+RSS by Zapier + OneSignal
+Be Alerted via Email of New RSS Feed Items
+Details (/apps/gmail/integrations/rss/648/be-alerted-via-email-of-new-rss-feed-items)
+Try it (/webintent/create-zap?template=648)
+[RSS by Zapier logo]
+[Gmail logo]
+RSS by Zapier, Gmail
+RSS by Zapier + Gmail
+Log RSS feed updates as new rows in Google Sheets
+Details (/apps/google-sheets/integrations/rss/1442/log-rss-feed-updates-as-new-rows-in-google-sheets)
+Try it (/webintent/create-zap?template=1442)
+[RSS by Zapier logo]
+[Google Sheets logo]
+RSS by Zapier, Google Sheets
+RSS by Zapier + Google Sheets
+Send webhooks with new items in RSS feeds
+Premium
+Premium apps: Webhooks by Zapier
+Details (/apps/rss/integrations/webhook/1746/send-webhooks-with-new-items-in-rss-feeds)
+Try it (/webintent/create-zap?template=1746)
+[RSS by Zapier logo]
+[Webhooks by Zapier logo]
+RSS by Zapier, Webhooks by Zapier
+RSS by Zapier + Webhooks by Zapier
+Add new Facebook Pages posts to an RSS feed
+Details (/apps/facebook-pages/integrations/rss/3827/add-new-facebook-pages-posts-to-an-rss-feed)
+Try it (/webintent/create-zap?template=3827)
+[Facebook Pages logo]
+[RSS by Zapier logo]
+Facebook Pages, RSS by Zapier
+Facebook Pages + RSS by Zapier
+Save new items in RSS feeds to Pocket
+Details (/apps/pocket/integrations/rss/1696/save-new-items-in-rss-feeds-to-pocket)
+Try it (/webintent/create-zap?template=1696)
+[RSS by Zapier logo]
+[Pocket logo]
+RSS by Zapier, Pocket
+RSS by Zapier + Pocket
+Send OneSignal push notifications for new RSS items
+Details (/apps/onesignal/integrations/rss/8120/send-onesignal-push-notifications-for-new-rss-items)
+Try it (/webintent/create-zap?template=8120)
+[RSS by Zapier logo]
+[OneSignal logo]
+RSS by Zapier, OneSignal
+RSS by Zapier + OneSignal
+Be Alerted via Email of New RSS Feed Items
+Details (/apps/gmail/integrations/rss/648/be-alerted-via-email-of-new-rss-feed-items)
+Try it (/webintent/create-zap?template=648)
+[RSS by Zapier logo]
+[Gmail logo]
+RSS by Zapier, Gmail
+RSS by Zapier + Gmail
+Log RSS feed updates as new rows in Google Sheets
+Details (/apps/google-sheets/integrations/rss/1442/log-rss-feed-updates-as-new-rows-in-google-sheets)
+Try it (/webintent/create-zap?template=1442)
+[RSS by Zapier logo]
+[Google Sheets logo]
+RSS by Zapier, Google Sheets
+RSS by Zapier + Google Sheets
+Send webhooks with new items in RSS feeds
+Premium
+Premium apps: Webhooks by Zapier
+Details (/apps/rss/integrations/webhook/1746/send-webhooks-with-new-items-in-rss-feeds)
+Try it (/webintent/create-zap?template=1746)
+[RSS by Zapier logo]
+[Webhooks by Zapier logo]
+RSS by Zapier, Webhooks by Zapier
+RSS by Zapier + Webhooks by Zapier
+Popular ways to use RSS by Zapier + Zapier
+Post new blog posts to Slack
+Send a message to a channel when a new post is published.
+Log competitor updates
+Track new feed items in a spreadsheet or database for review.
+Send daily content digests
+Compile new items and email a summary to the team.
+Monitor job boards
+Get notified when new job listings are posted.
+Supported triggers and actions (#triggers-and-actions)
+Zapier helps you create workflows that connect your apps to automate repetitive tasks. A trigger is an event that starts a workflow, and an action is an event a Zap performs.
+Triggers
+Actions
+Triggers & Actions
+[RSS by Zapier triggers, actions, and search]
+New Items in Multiple Feeds
+Triggers when there is a new item in any of the feeds being watched.
+Feed URLs
+Required
+What Triggers a New Feed Item?
+Trigger This is the start of your Zap Polling Zapier checks for new data every 15 min on the Free plan Try It (https://zapier.com/sign-up/?next=https%3A%2F%2Fzapier.com%2Fwebintent%2Fcreate-zap%3Fentry-point-location%3Dexplore%26entry-point-method%3Dconnect_call_to_action%26template__0__selected_api%3DRSSCLIAPI%25401.1.0%26template__0__type_of%3Dread%26template__0__action%3Dmulti_feed%26steps%255B0%255D%255Bapp%255D%3DRSSCLIAPI%25401.1.0&selected_apis=RSSCLIAPI%401.1.0&referrer=%2Fapps%2Frss%2Fintegrations&utm_source=zapier&utm_medium=product&utm_campaign=zapier-gbl-zcr-display-team_explore_zt_integration_triggers&entry-point-method=make_a_zap_supported_trigger)
+[RSS by Zapier triggers, actions, and search]
+Create Item in Feed
+Power your own Zapier RSS feed.
+Feed Title
+Max Records
+Item Title
+Required
+Source URL
+Required
+Content
+Required
+Automatically Truncate Messages over 10KB?
+Author_name
+Author_email
+Author_link
+Media URL
+Media MIME Type
+Media Length in Bytes
+Pubdate
+Action
+This is an event a Zap performs.
+Write
+Create a new record or update an existing record in your app.
+[RSS by Zapier triggers, actions, and search]
+New Item in Feed
+Triggers when a new RSS feed item is published.
+Feed URL
+Required
+Username
+Password
+What Triggers a New Feed Item?
+Trigger This is the start of your Zap Polling Zapier checks for new data every 15 min on the Free plan Try It (https://zapier.com/sign-up/?next=https%3A%2F%2Fzapier.com%2Fwebintent%2Fcreate-zap%3Fentry-point-location%3Dexplore%26entry-point-method%3Dconnect_call_to_action%26template__0__selected_api%3DRSSCLIAPI%25401.1.0%26template__0__type_of%3Dread%26template__0__action%3Dnew_feed%26steps%255B0%255D%255Bapp%255D%3DRSSCLIAPI%25401.1.0&selected_apis=RSSCLIAPI%401.1.0&referrer=%2Fapps%2Frss%2Fintegrations&utm_source=zapier&utm_medium=product&utm_campaign=zapier-gbl-zcr-display-team_explore_zt_integration_triggers&entry-point-method=make_a_zap_supported_trigger)
+For builders
+Let your AI safely access RSS by Zapier
+Go beyond Zap workflows. Install Zapier in your AI to call RSS by Zapier actions directly from your agents—with governance built in. Authenticate once. Revoke access anytime.
+No code
+Call actions in natural language with Zapier MCP
+Act in RSS by Zapier from your AI—no exposed credentials, and you control which actions your AI can touch. One install covers 9,000+ other apps.
+Example actions on this page
+Create Item in Feed
+Works with
+Claude · ChatGPT · Cursor · Any MCP-compatible AI
+Install Zapier MCP (https://mcp.zapier.com)
+Code
+Work in code with the Zapier SDK
+Expose RSS by Zapier actions from backend services, scripts, or agent code. Zapier handles the OAuth and scoped permissions. Access 9,000+ apps, plus thousands more with .fetch().
+Install
+npm install @zapier/zapier-sdk
+npm install -D @zapier/zapier-sdk-cli
+zapier-sdk login
+# create a RSS by Zapier connection @ https://zapier.com/app/assets/connections
+Run an action
+// Typescript
+import { createZapierSdk } from "@zapier/zapier-sdk";
+const zapier = createZapierSdk();
+const { data: connection } = await zapier.findFirstConnection({ app: "rss", owner: "me" });
+await zapier.runAction({
+app: 'rss',
+action: 'post',
+connection: connection.id,
+input: {
+{inputKeyValuePairs}
+},
+});
+Open the SDK docs (https://docs.zapier.com/sdk/quickstart)
+Direct API calls to raw endpoints through fetch are not yet subject to org-level app and action restrictions.
+Get started automating RSS by Zapier
+1 Add RSS by Zapier as a trigger
+2 Enter the feed URL you want to monitor
+3 Test the trigger to pull in sample items
+4 Add an action to route or log the feed item
+5 Turn the Zap on
+Frequently asked questions about automating with RSS by Zapier
+What feed formats are supported?
+Standard RSS and Atom feeds are supported.
+How often are feeds checked?
+Polling frequency depends on your Zapier plan.
+Why might items be missed?
+Some feeds limit history or update frequently. Testing helps ensure reliability.
+Can I filter feed items?
+Yes. Use filters to act only on items that meet your criteria.
+RSS by Zapier Help & Support
+Common issues
+Trigger Zap workflows from new RSS feed items (https://help.zapier.com/hc/en-us/articles/8496279482125-Trigger-Zap-workflows-from-new-RSS-feed-items) Add items to an RSS feed in a Zap (https://help.zapier.com/hc/en-us/articles/8496290390157-Add-items-to-an-RSS-feed-in-a-Zap)
+RSS by Zapier Tutorials
+How to use RSS feeds to boost your productivity
+By handpicking your own newsfeed, you can easily keep track of every content source that matters to you, from blogs and newsletters to job postings and online mentions of your brand. If you think RSS died when Google Reader shut down—or if you&#x27;re only vaguely aware of how to use...
+https://zapier.com/blog/how-to-use-rss-feeds/
+How to get email alerts from an RSS feed
+Using RSS by Zapier, you can connect any blog with an open RSS feed directly to your Gmail account, so you can get updates in your inbox the moment they go live. Here&#x27;s how to set this up for yourself or your entire team in minutes.
+https://zapier.com/blog/email-alerts-from-rss/
+How to post on Facebook from an RSS feed
+Connecting an RSS feed to your Facebook Page with automation can be a total game-changer for keeping your social content fresh and engaging. It streamlines the process, ensuring your latest blog posts or news articles pop up directly on your Facebook feed without the fuss of manual updates. Here&#x27;s how.
+https://zapier.com/blog/post-rss-items-to-facebook/
+Load more
+https://zapier.com/apps/rss/integrations
+Apps (/apps)
+RSS by Zapier (https://zapier.com/apps/rss/integrations)
+Integrations
+https://zapier.com/apps/rss/integrations
+About RSS by Zapier
+RSS (really simple syndication) is pretty much the industry standard for feed readers. You'll find RSS feeds in almost every app imaginable.
+Learn more (https://zapier.com/blog/how-to-use-rss-feeds/) Learn more (https://zapier.com/blog/how-to-use-rss-feeds/) Help (https://zapier.com/apps/rss/integrations#help) Help (https://zapier.com/apps/rss/integrations#help)
+Related categories
+News & Lifestyle (/apps/categories/news) Zapier (/apps/categories/zapier-tools)
+Popular RSS by Zapier Integrations
+Filter by Zapier (https://zapier.com/apps/rss/integrations/filter)
+Paths by Zapier (https://zapier.com/apps/rss/integrations/paths)
+Facebook Pages (https://zapier.com/apps/rss/integrations/facebook-pages)
+Email by Zapier (https://zapier.com/apps/rss/integrations/email)
+Gmail (https://zapier.com/apps/rss/integrations/gmail)
+Slack (https://zapier.com/apps/rss/integrations/slack)
+Buffer (https://zapier.com/apps/rss/integrations/buffer)
+Formatter by Zapier (https://zapier.com/apps/rss/integrations/formatter)
+Code by Zapier (https://zapier.com/apps/rss/integrations/code)
+Notion (https://zapier.com/apps/rss/integrations/notion)
+LinkedIn (https://zapier.com/apps/rss/integrations/linkedin)
+Zapier Tables (https://zapier.com/apps/rss/integrations/zapier-tables)
+Webhooks by Zapier (https://zapier.com/apps/rss/integrations/webhook)
+Discord (https://zapier.com/apps/rss/integrations/discord)
+Airtable (https://zapier.com/apps/rss/integrations/airtable)
+Schedule by Zapier (https://zapier.com/apps/rss/integrations/schedule)
+WordPress (https://zapier.com/apps/rss/integrations/wordpress)
+Digest by Zapier (https://zapier.com/apps/rss/integrations/digest)
+ChatGPT (OpenAI) (https://zapier.com/apps/rss/integrations/chatgpt)
+Telegram (https://zapier.com/apps/rss/integrations/telegram)
+AI by Zapier (https://zapier.com/apps/rss/integrations/ai)
+Google AI Studio (Gemini) (https://zapier.com/apps/rss/integrations/google-ai-studio)
+Instagram for Business (https://zapier.com/apps/rss/integrations/instagram-for-business)
+Google Docs (https://zapier.com/apps/rss/integrations/google-docs)
+Google Drive (https://zapier.com/apps/rss/integrations/google-drive)
+Google Sheets (https://zapier.com/apps/rss/integrations/google-sheets)
+Instapaper (https://zapier.com/apps/rss/integrations/instapaper)
+Google Calendar (https://zapier.com/apps/rss/integrations/google-calendar)
+Web Parser by Zapier (https://zapier.com/apps/rss/integrations/web-parser-by-zapier)
+Trello (https://zapier.com/apps/rss/integrations/trello)
+Popular RSS by Zapier Integrations
+Filter by Zapier (https://zapier.com/apps/rss/integrations/filter)
+Email by Zapier (https://zapier.com/apps/rss/integrations/email)
+Buffer (https://zapier.com/apps/rss/integrations/buffer)
+Notion (https://zapier.com/apps/rss/integrations/notion)
+Webhooks by Zapier (https://zapier.com/apps/rss/integrations/webhook)
+Schedule by Zapier (https://zapier.com/apps/rss/integrations/schedule)
+ChatGPT (OpenAI) (https://zapier.com/apps/rss/integrations/chatgpt)
+Google AI Studio (Gemini) (https://zapier.com/apps/rss/integrations/google-ai-studio)
+Google Drive (https://zapier.com/apps/rss/integrations/google-drive)
+Google Calendar (https://zapier.com/apps/rss/integrations/google-calendar)
+Paths by Zapier (https://zapier.com/apps/rss/integrations/paths)
+Gmail (https://zapier.com/apps/rss/integrations/gmail)
+Formatter by Zapier (https://zapier.com/apps/rss/integrations/formatter)
+LinkedIn (https://zapier.com/apps/rss/integrations/linkedin)
+Discord (https://zapier.com/apps/rss/integrations/discord)
+WordPress (https://zapier.com/apps/rss/integrations/wordpress)
+Telegram (https://zapier.com/apps/rss/integrations/telegram)
+Instagram for Business (https://zapier.com/apps/rss/integrations/instagram-for-business)
+Google Sheets (https://zapier.com/apps/rss/integrations/google-sheets)
+Web Parser by Zapier (https://zapier.com/apps/rss/integrations/web-parser-by-zapier)
+Facebook Pages (https://zapier.com/apps/rss/integrations/facebook-pages)
+Slack (https://zapier.com/apps/rss/integrations/slack)
+Code by Zapier (https://zapier.com/apps/rss/integrations/code)
+Zapier Tables (https://zapier.com/apps/rss/integrations/zapier-tables)
+Airtable (https://zapier.com/apps/rss/integrations/airtable)
+Digest by Zapier (https://zapier.com/apps/rss/integrations/digest)
+AI by Zapier (https://zapier.com/apps/rss/integrations/ai)
+Google Docs (https://zapier.com/apps/rss/integrations/google-docs)
+Instapaper (https://zapier.com/apps/rss/integrations/instapaper)
+Trello (https://zapier.com/apps/rss/integrations/trello)
+Apps by title
+0-9 (/find-apps/0-9)
+A (/find-apps/a)
+B (/find-apps/b)
+C (/find-apps/c)
+D (/find-apps/d)
+E (/find-apps/e)
+F (/find-apps/f)
+G (/find-apps/g)
+H (/find-apps/h)
+I (/find-apps/i)
+J (/find-apps/j)
+K (/find-apps/k)
+L (/find-apps/l)
+M (/find-apps/m)
+N (/find-apps/n)
+O (/find-apps/o)
+P (/find-apps/p)
+Q (/find-apps/q)
+R (/find-apps/r)
+S (/find-apps/s)
+T (/find-apps/t)
+U (/find-apps/u)
+V (/find-apps/v)
+W (/find-apps/w)
+X (/find-apps/x)
+Y (/find-apps/y)
+Z (/find-apps/z)
+Top searches
+Slack integrations (/apps/slack/integrations)
+Salesforce integrations (/apps/salesforce/integrations)
+HubSpot CRM integrations (/apps/hubspot/integrations)
+PayPal integrations (/apps/paypal/integrations)
+Asana integrations (/apps/asana/integrations)
+Stripe integrations (/apps/stripe/integrations)
+GitHub integrations (/apps/github/integrations)
+Trello integrations (/apps/trello/integrations)
+Todoist integrations (/apps/todoist/integrations)
+Xero integrations (/apps/xero/integrations)
+Facebook Groups integrations (/apps/facebook-groups/integrations)
+JIRA integrations (/apps/jira-software-server/integrations)
+Pipedrive integrations (/apps/pipedrive/integrations)
+Zendesk integrations (/apps/zendesk/integrations)
+Google Analytics integrations (/apps/google-analytics/integrations)
+Notion integrations (/apps/notion/integrations)
+MailChimp integrations (/apps/mailchimp/integrations)
+Shopify integrations (/apps/shopify/integrations)
+Intercom integrations (/apps/intercom/integrations)
+GitLab integrations (/apps/gitlab/integrations)
+Magento 2.X integrations (/apps/magento-v2/integrations)
+Google Drive integrations (/apps/google-drive/integrations)
+WooCommerce integrations (/apps/woocommerce/integrations)
+Basecamp 3 integrations (/apps/basecamp3/integrations)
+Show more
+Popular apps
+Dropbox (/apps/dropbox/integrations)
+Google Sheets (/apps/google-sheets/integrations)
+DocuSign (/apps/docusign/integrations)
+WordPress (/apps/wordpress/integrations)
+Office 365 (/apps/office-365/integrations)
+Quickbooks Online (/apps/quickbooks/integrations)
+Mixpanel (https://zapier.com/apps/mixpanel/integrations)
+RingCentral (https://zapier.com/apps/ringcentral/integrations)
+Zoho CRM (https://zapier.com/apps/zoho-crm/integrations)
+HubSpot (https://zapier.com/apps/hubspot/integrations)
+Microsoft Teams (https://zapier.com/apps/microsoft-teams/integrations)
+Eventbrite (https://zapier.com/apps/eventbrite/integrations)
+Box (https://zapier.com/apps/box/integrations)
+Evernote Business (https://zapier.com/apps/evernote-business/integrations)
+LinkedIn (https://zapier.com/apps/linkedin/integrations)
+Marketo (https://zapier.com/apps/marketo/integrations)
+ChatGPT (https://zapier.com/apps/chatgpt/integrations)
+Twilio (https://zapier.com/apps/twilio/integrations)
+Keap (https://zapier.com/apps/keap-max-classic/integrations)
+Google Forms (https://zapier.com/apps/google-forms/integrations)
+SurveyMonkey (https://zapier.com/apps/surveymonkey/integrations)
+Campaign Monitor (https://zapier.com/apps/campaign-monitor/integrations)
+Pardot (https://zapier.com/apps/pardot/integrations)
+Microsoft Dynamics CRM (https://zapier.com/apps/microsoft-dynamics-crm/integrations)
+Show more
+Trending apps
+Twitch (/apps/twitch/integrations)
+Calendly (/apps/calendly/integrations)
+Microsoft To-Do (/apps/microsoft-todo/integrations)
+Microsoft Outlook (/apps/microsoft-outlook/integrations)
+Medium (/apps/medium/integrations)
+Unbounce (/apps/unbounce/integrations)
+freshdesk (/apps/freshdesk/integrations)
+airtable (/apps/airtable/integrations)
+Expensify (/apps/expensify/integrations)
+Insightly (https://zapier.com/apps/insightly/integrations)
+PagerDuty (https://zapier.com/apps/pagerduty/integrations)
+Podio (https://zapier.com/apps/podio/integrations)
+OpenAI (https://zapier.com/apps/openai/integrations)
+Square (https://zapier.com/apps/square/integrations)
+Datadog (https://zapier.com/apps/datadog/integrations)
+Toggl (https://zapier.com/apps/toggl/integrations)
+Facebook Lead Ads (https://zapier.com/apps/facebook-lead-ads/integrations)
+rocket Chat (https://zapier.com/apps/rocketchat/integrations)
+Firebase (https://zapier.com/apps/firebase/integrations)
+AWS Lambda (https://zapier.com/apps/aws-lambda/integrations)
+MINDBODY (https://zapier.com/apps/mindbody/integrations)
+Harvest (https://zapier.com/apps/harvest/integrations)
+Smartsheet (https://zapier.com/apps/smartsheet/integrations)
+Teamwork Desk (https://zapier.com/apps/teamwork-desk/integrations)
+Yammer (https://zapier.com/apps/yammer/integrations)
+Typeform (https://zapier.com/apps/typeform/integrations)
+Autotask (https://zapier.com/apps/autotask/integrations)
+Wrike (https://zapier.com/apps/wrike/integrations)
+Help Scout (https://zapier.com/apps/help-scout/integrations)
+Braintree (https://zapier.com/apps/braintree/integrations)
+Show more
+Top apps by category
+Project management (/apps/categories/project-management)
+Calendar (/apps/categories/calendar)
+Email (/apps/categories/email)
+CRM (/apps/categories/crm)
+Marketing (/apps/categories/marketing)
+Notes (/apps/categories/notes)
+Accounting (/apps/categories/accounting)
+Social Media Marketing (/apps/categories/social-marketing)
+Online Courses (/apps/categories/it-operations-education)
+Contact Management (/apps/categories/contacts)
+Forms & Surveys (/apps/categories/forms)
+Scheduling & Booking (/apps/categories/scheduling)
+Task Management (/apps/categories/todo-lists)
+Databases (/apps/categories/databases)
+Call Tracking (/apps/categories/call-tracking)
+Documents (/apps/categories/documents)
+Fax (/apps/categories/fax)
+Files (/apps/categories/files)
+Customer Support (/apps/categories/customer-support)
+Team Collaboration (/apps/categories/team-collaboration)
+Spreadsheets (/apps/categories/spreadsheets)
+Website Builders (/apps/categories/cms)
+Ecommerce (/apps/categories/ecommerce)
+Event Management (/apps/categories/event-management)
+Show more
+Our best content
+Best Video Conferencing Apps (/blog/best-video-conferencing-apps/)
+Best Email Apps (/blog/best-email-app/)
+Best CRM Apps (/blog/best-crm-app/)
+Best Note Taking Apps (/blog/best-note-taking-apps/)
+Best Calendar Apps (/blog/best-calendar-apps/)
+Best Meeting Scheduler Apps (/blog/best-meeting-scheduler-apps/)
+Best Todo List Apps (/blog/best-todo-list-apps/)
+Best Powerpoint Alternatives (/blog/best-powerpoint-alternatives/)
+Best Spreadsheet & Excel Alternatives (/blog/best-spreadsheet-excel-alternative/)
+Best Time Tracking Apps (/blog/best-time-tracking-apps/)
+Best eCommerce Shopping Cart Software (/blog/best-ecommerce-shopping-cart-software/)
+Best Survey Apps (/blog/best-survey-apps/)
+Best Online Form Builder Software (/blog/best-online-form-builder-software/)
+Best Digital Signature Apps (/blog/best-digital-signature-apps/)
+Best Team Chat App (/blog/best-team-chat-app/)
+Workato vs. Zapier (/l/workato-vs-zapier/)
+Show more
+Follow us
+http://www.facebook.com/ZapierApp?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier
+https://www.linkedin.com/company/zapier/?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier
+https://x.com/zapier?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#!
+https://www.youtube.com/user/ZapierApp/videos?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier
+/blog/feeds/latest/
+Pricing (/pricing)
+Help (/app/get-help)
+Developer Platform (/developer-platform/integrations)
+Press (/press)
+Jobs (/jobs)
+Enterprise (/enterprise)
+Industry Comparisons (/compare)
+App Integrations (/apps)
+Partners Program (/l/partners)
+/
+© 2026 Zapier Inc.
+Manage cookies
+Legal (/legal)
+Privacy (/privacy)

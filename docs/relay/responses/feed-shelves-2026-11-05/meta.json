@@ -1,0 +1,165 @@
+{
+  "request": "feed-shelves-2026-11-05",
+  "fetched_at": "2026-11-05T19:27:31.520Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://cloud.feedly.com/v3/search/feeds?query=https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene.xml&count=5",
+      "fetched_at": "2026-11-05T19:27:24.537Z",
+      "status": 200,
+      "elapsed_ms": 254,
+      "final_url": "https://cloud.feedly.com/v3/search/feeds?query=https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene.xml&count=5",
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "last-modified": "Thu Nov 05 11:27:24 PST 2026"
+      },
+      "file": "1.json",
+      "bytes": 29,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cloud.feedly.com/v3/search/feeds?query=https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-trademark-journal%2Fclass%2F09.xml&count=5",
+      "fetched_at": "2026-11-05T19:27:25.296Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://cloud.feedly.com/v3/search/feeds?query=https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-trademark-journal%2Fclass%2F09.xml&count=5",
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "last-modified": "Thu Nov 05 11:27:25 PST 2026"
+      },
+      "file": "2.json",
+      "bytes": 29,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cloud.feedly.com/v3/feeds/feed%2Fhttps%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene.xml",
+      "fetched_at": "2026-11-05T19:27:25.893Z",
+      "status": 200,
+      "elapsed_ms": 76,
+      "final_url": "https://cloud.feedly.com/v3/feeds/feed%2Fhttps%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene.xml",
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "last-modified": "Thu Nov 05 11:27:25 PST 2026"
+      },
+      "file": "3.json",
+      "bytes": 2,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cloud.feedly.com/v3/search/feeds?query=trade+mark+applications&count=10",
+      "fetched_at": "2026-11-05T19:27:26.470Z",
+      "status": 200,
+      "elapsed_ms": 93,
+      "final_url": "https://cloud.feedly.com/v3/search/feeds?query=trade+mark+applications&count=10",
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "last-modified": "Thu Nov 05 11:27:26 PST 2026"
+      },
+      "file": "4.json",
+      "bytes": 29,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger/",
+      "fetched_at": "2026-11-05T19:27:26.564Z",
+      "status": 200,
+      "elapsed_ms": 680,
+      "final_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedreadtrigger",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"124jbz5mgm7gd8j\""
+      },
+      "file": "5.txt",
+      "bytes": 11482,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 763747
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedread/",
+      "fetched_at": "2026-11-05T19:27:27.774Z",
+      "status": 200,
+      "elapsed_ms": 378,
+      "final_url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.rssfeedread",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"9ra41nitamekp8\""
+      },
+      "file": "6.txt",
+      "bytes": 9375,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 680044
+    },
+    {
+      "method": "GET",
+      "url": "https://zapier.com/apps/rss/integrations",
+      "fetched_at": "2026-11-05T19:27:28.171Z",
+      "status": 200,
+      "elapsed_ms": 289,
+      "final_url": "https://zapier.com/apps/rss/integrations",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"gftyksf4akcfn6\""
+      },
+      "file": "7.txt",
+      "bytes": 47582,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 580205
+    },
+    {
+      "method": "GET",
+      "url": "https://zapier.com/apps/rss/help",
+      "fetched_at": "2026-11-05T19:27:28.992Z",
+      "status": 200,
+      "elapsed_ms": 233,
+      "final_url": "https://zapier.com/apps/rss/integrations",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"gftyksf4akcfn6\""
+      },
+      "file": "8.txt",
+      "bytes": 47582,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 580205
+    },
+    {
+      "method": "GET",
+      "url": "https://www.inoreader.com/feed/https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene.xml",
+      "fetched_at": "2026-11-05T19:27:29.257Z",
+      "status": 200,
+      "elapsed_ms": 529,
+      "final_url": "https://www.inoreader.com/login?sendback=%2Ffeed%2Fhttps%253A%252F%252Fgankdat.com%252Ffeeds%252Fuk-food-hygiene.xml",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.txt",
+      "bytes": 9346,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 84040
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/feeds/uk-food-hygiene.xml",
+      "fetched_at": "2026-11-05T19:27:29.936Z",
+      "status": 200,
+      "elapsed_ms": 1581,
+      "final_url": "https://gankdat.com/feeds/uk-food-hygiene.xml",
+      "headers": {
+        "content-type": "application/atom+xml; charset=utf-8",
+        "content-length": "41414"
+      },
+      "file": "10.xml",
+      "bytes": 41414,
+      "truncated": false
+    }
+  ]
+}

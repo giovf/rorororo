@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<id>https://gankdat.com/feeds/uk-food-hygiene.xml</id>
+<title>UK food hygiene ratings (FSA) — changes</title>
+<subtitle>Rows added, removed or changed in the last 7 days, from the official register, diffed daily by gankdat. Filters, history and JSON need a free API key.</subtitle>
+<link rel="self" type="application/atom+xml" href="https://gankdat.com/feeds/uk-food-hygiene.xml"/>
+<link rel="alternate" type="text/html" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<author><name>gankdat</name><uri>https://gankdat.com</uri></author>
+<generator uri="https://gankdat.com">gankdat</generator>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1041580</id>
+<title>added: Dee Pizza &amp; Kebab House — Takeaway/sandwich shop</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1041580
+business_name: Dee Pizza &amp; Kebab House
+business_type: Takeaway/sandwich shop
+address: 4 Oak Street, Llangollen, Denbighshire
+postcode: LL20 8NR
+outward_code: LL20
+local_authority: Denbighshire
+local_authority_code: 559
+rating_value: 5
+scheme_type: FHRS
+rating_date: 2026-06-30
+hygiene_score: 0
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/10500</id>
+<title>added: Greggs — Retailers - other</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 10500
+business_name: Greggs
+business_type: Retailers - other
+address: 49 The Square, Kelso, Scottish Borders
+postcode: TD5 7HW
+outward_code: TD5
+local_authority: Scottish Borders
+local_authority_code: 767
+rating_value: Pass
+scheme_type: FHIS
+rating_date: 2026-10-27
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1428787</id>
+<title>added: Brent Mill Bakery — Manufacturers/packers</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1428787
+business_name: Brent Mill Bakery
+business_type: Manufacturers/packers
+address: Unit 13, Brent Mill Business Park, Long Meadow, South Brent
+postcode: TQ10 9YT
+outward_code: TQ10
+local_authority: South Hams
+local_authority_code: 077
+rating_value: Exempt
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 50.422364
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1528238</id>
+<title>added: A To Z Nidz Ltd — Retailers - other</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1528238
+business_name: A To Z Nidz Ltd
+business_type: Retailers - other
+address: A To Z Nidz Ltd, 29 Seven Sisters Road, London, N7 6AN
+postcode: N7 6AN
+outward_code: N7
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5587148
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1651775</id>
+<title>added: Junior Adventures Group — School/college/university</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1651775
+business_name: Junior Adventures Group
+business_type: School/college/university
+address: Darrick Wood Infant School Lovibonds Avenue, Orpington
+postcode: BR6 8ER
+outward_code: BR6
+local_authority: Bromley
+local_authority_code: 505
+rating_value: 5
+scheme_type: FHRS
+rating_date: 2025-09-26
+hygiene_score: 5
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1774371</id>
+<title>added: Qoozies — Restaurant/Cafe/Canteen</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1774371
+business_name: Qoozies
+business_type: Restaurant/Cafe/Canteen
+address: 4a New Beetwell Street, Chesterfield
+postcode: S40 1QR
+outward_code: S40
+local_authority: Chesterfield
+local_authority_code: 064
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 53.234204
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1813465</id>
+<title>added: BloomingSpuds (HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1813465
+business_name: BloomingSpuds (HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1847596</id>
+<title>added: Yield N1 — Retailers - other</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1847596
+business_name: Yield N1
+business_type: Retailers - other
+address: Yield N1, 10A Essex Road, London, N1 8LN
+postcode: N1 8LN
+outward_code: N1
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.536421
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1880044</id>
+<title>added: Camphill Bakehouse — Manufacturers/packers</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1880044
+business_name: Camphill Bakehouse
+business_type: Manufacturers/packers
+address: Botton Bakery Rogers House, Danby
+postcode: YO21 2NH
+outward_code: YO21
+local_authority: North Yorkshire
+local_authority_code: 250
+rating_value: Exempt
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 54.4325859
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1886925</id>
+<title>added: Cinnamon Twist Ltd — Retailers - other</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1886925
+business_name: Cinnamon Twist Ltd
+business_type: Retailers - other
+address: Unit 5 Westgate Carr Road, Pickering
+postcode: YO18 8LX
+outward_code: YO18
+local_authority: North Yorkshire
+local_authority_code: 250
+rating_value: 5
+scheme_type: FHRS
+rating_date: 2025-02-17
+hygiene_score: 5
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1911142</id>
+<title>added: Jacques Wine Bar — Restaurant/Cafe/Canteen</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1911142
+business_name: Jacques Wine Bar
+business_type: Restaurant/Cafe/Canteen
+address: 1 Upper Clwyd Street, Ruthin
+postcode: LL15 1HY
+outward_code: LL15
+local_authority: Denbighshire
+local_authority_code: 559
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: true
+latitude: 53.1141953
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1918568</id>
+<title>added: Excellent Curry — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1918568
+business_name: Excellent Curry
+business_type: Other catering premises
+local_authority: Hammersmith and Fulham
+local_authority_code: 513
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1955366</id>
+<title>added: Samasia — Distributors/Transporters</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1955366
+business_name: Samasia
+business_type: Distributors/Transporters
+address: 255 Ash Road, Aldershot, Hampshire
+postcode: GU12 4DD
+outward_code: GU12
+local_authority: Rushmoor
+local_authority_code: 140
+rating_value: Exempt
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.2423225
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1969519</id>
+<title>added: The Masons Arms — Pub/bar/nightclub</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1969519
+business_name: The Masons Arms
+business_type: Pub/bar/nightclub
+address: Knowstone, South Molton, Devon
+postcode: EX36 4RY
+outward_code: EX36
+local_authority: North Devon
+local_authority_code: 075
+rating_value: 5
+scheme_type: FHRS
+rating_date: 2026-10-19
+hygiene_score: 5
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1970292</id>
+<title>added: The Castle Inn — Hotel/bed &amp; breakfast/guest house</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1970292
+business_name: The Castle Inn
+business_type: Hotel/bed &amp; breakfast/guest house
+address: Castle Inn, 2 High Street, Castle Donington, Derby
+postcode: DE74 2PP
+outward_code: DE74
+local_authority: North West Leicestershire
+local_authority_code: 215
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 52.8413366
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1971468</id>
+<title>added: Dolce @ The Ferns Primary Academy — School/college/university</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1971468
+business_name: Dolce @ The Ferns Primary Academy
+business_type: School/college/university
+address: Fernhill Primary School, Field Road, Farnborough, Hampshire
+postcode: GU14 9FX
+outward_code: GU14
+local_authority: Rushmoor
+local_authority_code: 140
+rating_value: 5
+scheme_type: FHRS
+rating_date: 2026-10-14
+hygiene_score: 5
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1972249</id>
+<title>added: Noctiva Health — Retailers - other</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1972249
+business_name: Noctiva Health
+business_type: Retailers - other
+address: 1 Spartan Way, Ifield, Crawley, West Sussex
+postcode: RH11 7GH
+outward_code: RH11
+local_authority: Crawley
+local_authority_code: 326
+rating_value: Exempt
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.1284907
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1975673</id>
+<title>added: Gusto Tua - Authentic Italian — Takeaway/sandwich shop</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1975673
+business_name: Gusto Tua - Authentic Italian
+business_type: Takeaway/sandwich shop
+address: Gusto Tua - Authentic Italian, Basement And Ground Floor, 96 Old Street, London
+postcode: EC1V 9AY
+outward_code: EC1V
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5246201
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1975674</id>
+<title>added: Casa Marcona (HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1975674
+business_name: Casa Marcona (HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1975675</id>
+<title>added: Soft Lad Sauces (HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1975675
+business_name: Soft Lad Sauces (HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1975676</id>
+<title>added: Home Rice Co (HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1975676
+business_name: Home Rice Co (HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1975677</id>
+<title>added: Maki and Ramen — Restaurant/Cafe/Canteen</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1975677
+business_name: Maki and Ramen
+business_type: Restaurant/Cafe/Canteen
+address: Maki and Ramen, 80 City Road, London, EC1Y 2AS
+postcode: EC1Y 2AS
+outward_code: EC1Y
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5249221
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1975678</id>
+<title>added: Dolce Vita London (HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1975678
+business_name: Dolce Vita London (HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1976212</id>
+<title>added: BYOG — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1976212
+business_name: BYOG
+business_type: Other catering premises
+local_authority: Crawley
+local_authority_code: 326
+rating_value: 5
+scheme_type: FHRS
+rating_date: 2026-10-26
+hygiene_score: 5
+structural_score: 5
+confidence_score: 5
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977883</id>
+<title>added: Mesob Shop — Retailers - other</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977883
+business_name: Mesob Shop
+business_type: Retailers - other
+address: Mesob Shop, Ground Floor, 224 Hornsey Road, London
+postcode: N7 7LL
+outward_code: N7
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5597827
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977884</id>
+<title>added: Holloway Kebab Restaurant — Takeaway/sandwich shop</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977884
+business_name: Holloway Kebab Restaurant
+business_type: Takeaway/sandwich shop
+address: Holloway Kebab Restaurant, Ground floor Front, 537 Holloway Road, London
+postcode: N19 4BT
+outward_code: N19
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5621231
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977886</id>
+<title>added: Llerena Tapas — Restaurant/Cafe/Canteen</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977886
+business_name: Llerena Tapas
+business_type: Restaurant/Cafe/Canteen
+address: Llerena Tapas, Shop, 45 Stroud Green Road, London
+postcode: N4 3EF
+outward_code: N4
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5676239
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977887</id>
+<title>added: Bite Mi (HCA) — Mobile caterer</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977887
+business_name: Bite Mi (HCA)
+business_type: Mobile caterer
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977888</id>
+<title>added: Pockets Greens Co (HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977888
+business_name: Pockets Greens Co (HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977889</id>
+<title>added: Fluffy &amp; Co — Mobile caterer</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977889
+business_name: Fluffy &amp; Co
+business_type: Mobile caterer
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977890</id>
+<title>added: George IV — Pub/bar/nightclub</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977890
+business_name: George IV
+business_type: Pub/bar/nightclub
+address: George IV, 57 Liverpool Road, London, N1 0RJ
+postcode: N1 0RJ
+outward_code: N1
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.534789
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977891</id>
+<title>added: GAIL's Highbury Village — Restaurant/Cafe/Canteen</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977891
+business_name: GAIL's Highbury Village
+business_type: Restaurant/Cafe/Canteen
+address: GAIL's Highbury Village, Ground Floor, 11 Highbury Park, London
+postcode: N5 1QJ
+outward_code: N5
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5538253
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977892</id>
+<title>added: Islington Kebab — Takeaway/sandwich shop</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977892
+business_name: Islington Kebab
+business_type: Takeaway/sandwich shop
+address: Islington Kebab, 63 Essex Road, London, N1 2SF
+postcode: N1 2SF
+outward_code: N1
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5376879
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977893</id>
+<title>added: Hudson's Coffee — Takeaway/sandwich shop</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977893
+business_name: Hudson's Coffee
+business_type: Takeaway/sandwich shop
+address: Hudson's Coffee, Ground Floor Front Office, 490 Holloway Road, London
+postcode: N7 6JA
+outward_code: N7
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5587106
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977894</id>
+<title>added: Rehana Supermarket — Retailers - supermarkets/hypermarkets</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977894
+business_name: Rehana Supermarket
+business_type: Retailers - supermarkets/hypermarkets
+address: Rehana Supermarket, 72 Seven Sisters Road, London, N7 6AE
+postcode: N7 6AE
+outward_code: N7
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5592161
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977895</id>
+<title>added: Remail (HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977895
+business_name: Remail (HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977896</id>
+<title>added: Let's Dough — Restaurant/Cafe/Canteen</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977896
+business_name: Let's Dough
+business_type: Restaurant/Cafe/Canteen
+address: Let's Dough, 167 Fairbridge Road, London, N19 3HS
+postcode: N19 3HS
+outward_code: N19
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5684273
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977897</id>
+<title>added: Curry Cartel — Takeaway/sandwich shop</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977897
+business_name: Curry Cartel
+business_type: Takeaway/sandwich shop
+address: Curry Cartel, 55 Newington Green Road, London, N1 4QU
+postcode: N1 4QU
+outward_code: N1
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.548303
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977898</id>
+<title>added: Chew's Custom Cookies (HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977898
+business_name: Chew's Custom Cookies (HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1977899</id>
+<title>added: Warm Regards Kitchen @ North Nineteen — Pub/bar/nightclub</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1977899
+business_name: Warm Regards Kitchen @ North Nineteen
+business_type: Pub/bar/nightclub
+address: Warm Regards Kitchen @ North Nineteen, 194-196 Sussex Way, London, N19 4HZ
+postcode: N19 4HZ
+outward_code: N19
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5646612
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1980230</id>
+<title>added: Holland and Barrett — Retailers - other</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1980230
+business_name: Holland and Barrett
+business_type: Retailers - other
+address: Holland and Barrett, Unit 7 8 and 9 Clifton House, 14 Wells Terrace, London
+postcode: N4 3JU
+outward_code: N4
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5656289
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1980231</id>
+<title>added: Stall (Max's Delhi-HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1980231
+business_name: Stall (Max's Delhi-HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1980233</id>
+<title>added: Tam's Vietnamese Kitchen — Restaurant/Cafe/Canteen</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1980233
+business_name: Tam's Vietnamese Kitchen
+business_type: Restaurant/Cafe/Canteen
+address: Tam's Vietnamese Kitchen, Ground Floor, 75 Stroud Green Road, London
+postcode: N4 3EG
+outward_code: N4
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5682631
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1980234</id>
+<title>added: First Lounge — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1980234
+business_name: First Lounge
+business_type: Other catering premises
+address: First Lounge, 115 Belgravia Workshops, 157-163 Marlborough Road, London
+postcode: N19 4NF
+outward_code: N19
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5662232
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1980235</id>
+<title>added: Old Beijing Tanghulu (HCA) — Mobile caterer</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1980235
+business_name: Old Beijing Tanghulu (HCA)
+business_type: Mobile caterer
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1980236</id>
+<title>added: Legends Global Services Limited — Restaurant/Cafe/Canteen</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1980236
+business_name: Legends Global Services Limited
+business_type: Restaurant/Cafe/Canteen
+address: Legends Global Services Limited, Arsenal Football Club, 75 Drayton Park, London
+postcode: N5 1BU
+outward_code: N5
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5566692
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1980237</id>
+<title>added: Zeno Labs (HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1980237
+business_name: Zeno Labs (HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1980238</id>
+<title>added: Mamma Rosa London — Restaurant/Cafe/Canteen</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1980238
+business_name: Mamma Rosa London
+business_type: Restaurant/Cafe/Canteen
+address: Mamma Rosa London, 630, Holloway Road, London
+postcode: N19 3NU
+outward_code: N19
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1980239</id>
+<title>added: Evie's Fruits (HCA) — Other catering premises</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1980239
+business_name: Evie's Fruits (HCA)
+business_type: Other catering premises
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+<entry>
+<id>tag:gankdat.com,2026:uk-food-hygiene/2026-11-03T05:46:27.275Z/added/1980240</id>
+<title>added: Tiffany's Breakfast Cafe — Takeaway/sandwich shop</title>
+<link rel="alternate" href="https://gankdat.com/stats/uk-food-hygiene"/>
+<updated>2026-11-03T05:46:27.275Z</updated>
+<category term="added"/>
+<content type="text">fhrs_id: 1980240
+business_name: Tiffany's Breakfast Cafe
+business_type: Takeaway/sandwich shop
+address: Tiffany's Breakfast Cafe, Ground And First Floor 60, 40-60 Brewery Road, London
+postcode: N7 9NH
+outward_code: N7
+local_authority: Islington
+local_authority_code: 519
+rating_value: AwaitingInspection
+scheme_type: FHRS
+new_rating_pending: false
+latitude: 51.5453692
+
+Statistics and filters: https://gankdat.com/stats/uk-food-hygiene
+JSON change feed (free API key, https://gankdat.com/#key): https://gankdat.com/v1/changes/uk-food-hygiene</content>
+</entry>
+</feed>
