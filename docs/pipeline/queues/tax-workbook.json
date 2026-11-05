@@ -266,12 +266,14 @@
     {
       "id": "own-checkout-sale-reading",
       "title": "Read own-checkout sales into §7: the licence Worker gains a keyless `/v1/downloads/summary` (per-day counts of tax-workbook orders and of each `ref` referrer token, pence from the session's amount_total — no buyer data, the Payhip summary's shape), the gankdat Daily numbers row prints `own checkout 30d: N sales (guide N), net £…` beside `payhip 30d:`, and the inbox triage rule writes the §7 `Sale` row from Stripe's receipt mail naming the referrer the summary shows",
-      "why": "Checked 2026-11-05 (cross-sell-links-guide-and-workbook): the Etsy shelf is read from order mail and Payhip from its webhook summary, but a sale on the product page's own Buy button reaches no §7 row — the licence Worker stores the order and mails the link, Stripe's receipt goes to the owner's inbox (SELF-CAUSED row, logged only), and the referrer token the Worker now keeps (`ref`) is read by nobody, so the cross-sell proof cannot be measured. Score: 1 × 2 ÷ 0.2 day = 10, discounted to 4 while no own-checkout sale has happened (W40 convention).",
+      "why": "Checked 2026-11-05 (cross-sell-links-guide-and-workbook): the Etsy shelf is read from order mail and Payhip from its webhook summary, but a sale on the product page's own Buy button reaches no §7 row — the licence Worker stores the order and mails the link, Stripe's receipt goes to the owner's inbox (SELF-CAUSED row, logged only), and the referrer token the Worker now keeps (`ref`) is read by nobody, so the cross-sell proof cannot be measured. Score: 1 × 2 ÷ 0.2 day = 10, discounted to 4 while no own-checkout sale has happened (W40 convention). — Built 2026-11-05 (burn-down): packages/license-worker/src/sales.ts (per-day counters written by the webhook and /admin/revoke; keyless GET /v1/downloads/summary in the Payhip summary's shape with refs per token, £0 tests apart, 4 tests); metrics.mjs `own checkout 30d:` clause; inbox-triage.md OWN-CHECKOUT SALES rule (Sale row at once, referrer filled from the relay response next run; relay host added); SELF-CAUSED stripe.com row points to it; ARCHITECTURE note. Proof waits on the first real sale (the 11-02 £0 test shows as `1 test`).",
       "effort_days": 0.2,
       "proof": "the first own-checkout sale appears as a §7 Sale row the same day with its referrer named, and the Daily numbers row carries the `own checkout 30d:` clause",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-05"
+      "status": "done",
+      "added": "2026-11-05",
+      "doing_since": "2026-11-05",
+      "done_at": "2026-11-05"
     },
     {
       "id": "kindle-day-60-read",

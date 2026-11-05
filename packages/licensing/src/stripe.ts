@@ -18,6 +18,10 @@ export interface CheckoutSessionLike {
   created?: number;
   /** Set by a `?client_reference_id=` query on a Payment Link; the tax workbook's page passes its `?from=` referrer here. */
   client_reference_id?: string | null;
+  /** Total charged, in the currency's minor units (0 for a 100 %-off coupon); read into the sales summary, never the buyer. */
+  amount_total?: number | null;
+  /** Lower-case ISO code, as Stripe sends it. */
+  currency?: string | null;
 }
 
 export interface IssueInput {

@@ -2468,3 +2468,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 17:26 | build | gankdat v0.27.2; 8 new tests (d1store throttle, route Retry-After, retry regex); ARCHITECTURE note
 - 2026-11-05 17:26 | build | Queued gankdat filtered-page-count-cache (4): a filtered page runs two full scans; cache the count per generation
 - 2026-11-05 17:26 | build | Proof pending: the next Daily numbers rows (no overloaded line, 3 registers refreshed, Apify flag lifted)
+- 2026-11-05 17:12 | burn-down | Claimed tax-workbook own-checkout-sale-reading (4) before npm ci; main green
+- 2026-11-05 17:17 | burn-down | Built tax-workbook own-checkout-sale-reading: own-checkout sales now read like Payhip's
+- 2026-11-05 17:17 | burn-down | Licence Worker: per-day order counters + keyless /v1/downloads/summary (refs per token, £0 tests apart)
+- 2026-11-05 17:17 | burn-down | Daily numbers row gains `own checkout 30d: N sales (guide N), refunds, net` beside payhip 30d
+- 2026-11-05 17:17 | burn-down | Inbox triage: OWN-CHECKOUT SALES rule writes the §7 Sale row; referrer filled via relay next run
+- 2026-11-05 17:17 | burn-down | Relay host foundry-licenses.faceless-api.workers.dev added (sandbox curl: proxy 403)

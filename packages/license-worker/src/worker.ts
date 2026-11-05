@@ -1,6 +1,7 @@
 import { issueLicense, payloadFromSession, verifyStripeSignature, type LicensePayload } from '@foundry/licensing';
 import { DOWNLOADS, downloadEmail, mintDownloadToken, verifyDownloadToken, type DownloadProduct } from './downloads.js';
 import { getMail, listMail, markRead, reply } from './mail.js';
+import { amountOf, dateOf, readDays, recordOrder, recordRefund, summarise } from './sales.js';
 
 /** Minimal KV surface so tests don't need Cloudflare types. */
 export interface KV {
@@ -46,6 +47,10 @@ interface StoredLicense {
    * from a fixed alphabet, never anything about the buyer.
    */
   ref?: string;
+  /** The session's `amount_total` in minor units (own-checkout sales reading, 2026-11-05); 0 for a coupon test. */
+  amount_pence?: number;
+  /** ISO code of that amount, upper case. */
+  currency?: string;
 }
 
 /** The referrer token an order may carry: `guide` from the Kindle guide's page link; anything else is dropped. */
@@ -71,6 +76,20 @@ export function createHandler(deps: Deps = { fetch, now: () => new Date() }) {
     const path = url.pathname.replace(/\/$/, '');
 
     if (request.method === 'POST' && path === '/stripe/webhook') return webhook(request, env, deps);
+
+    // Download products: keyless per-day sales summary (counts, pence and referrer tokens only; the Payhip
+    // summary's shape) — read by the gankdat Daily numbers row and the inbox triage, 2026-11-05.
+    if (request.method === 'GET' && path === '/v1/downloads/summary') {
+      const venture = url.searchParams.get('venture') ?? 'tax-workbook';
+      if (!DOWNLOADS[venture]) return json({ error: 'not a download product' }, 404);
+      const q = url.searchParams.get('to') ?? '';
+      const to = /^\d{4}-\d{2}-\d{2}$/.test(q) ? q : dateOf(deps.now());
+      const summary = summarise(venture, await readDays(env.LICENSES, venture), to);
+      return new Response(JSON.stringify(summary), {
+        status: 200,
+        headers: { 'content-type': 'application/json', 'cache-control': 'public, max-age=300', 'access-control-allow-origin': '*' },
+      });
+    }
 
     // Download products: the signed link from the purchase mail serves the file from KV.
     const download = /^\/v1\/downloads\/([^/]+)$/.exec(path);
@@ -104,6 +123,10 @@ export function createHandler(deps: Deps = { fetch, now: () => new Date() }) {
       const stored = await readLicense(env, id);
       if (!stored) return json({ error: 'not found' }, 404);
       await env.LICENSES.put(`license:${id}`, JSON.stringify({ ...stored, revoked: true }));
+      // A revoked download order is a refund in the day's sales reading (a £0 test or a repeat revoke is not).
+      if (!stored.revoked && DOWNLOADS[stored.payload.venture] && (stored.amount_pence ?? 0) > 0) {
+        await recordRefund(env.LICENSES, stored.payload.venture, dateOf(deps.now()), stored.amount_pence ?? 0);
+      }
       return json({ ok: true, id });
     }
 
@@ -163,8 +186,16 @@ async function webhook(request: Request, env: Env, deps: Deps): Promise<Response
   const key = existing?.key ?? (await issueLicense(env.LICENSE_SIGNING_KEY, issued.payload));
   if (!existing) {
     const ref = referrerOf(event.data.object);
-    const stored: StoredLicense = { key, email: issued.email, payload: issued.payload, ...(ref ? { ref } : {}) };
+    const amount = amountOf(event.data.object);
+    const stored: StoredLicense = {
+      key,
+      email: issued.email,
+      payload: issued.payload,
+      ...(ref ? { ref } : {}),
+      ...(amount.pence === null ? {} : { amount_pence: amount.pence, currency: amount.currency }),
+    };
     await env.LICENSES.put(`license:${issued.payload.id}`, JSON.stringify(stored));
+    if (DOWNLOADS[issued.payload.venture]) await recordOrder(env.LICENSES, issued.payload.venture, issued.payload.issued, { ...amount, ...(ref ? { ref } : {}) });
   }
 
   let emailed = false;
