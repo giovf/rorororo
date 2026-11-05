@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2400" viewBox="0 0 1600 2400" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif">
+<rect width="1600" height="2400" fill="#14213D"/>
+<text x="120" y="300" font-size="170" fill="#F3F5F9" font-weight="bold" text-anchor="start">RUNNING</text>
+<text x="120" y="480" font-size="170" fill="#F3F5F9" font-weight="bold" text-anchor="start">CLAUDE CODE</text>
+<text x="120" y="660" font-size="170" fill="#E0A426" font-weight="bold" text-anchor="start">UNATTENDED</text>
+<line x1="120" y1="740" x2="1480" y2="740" stroke="#E0A426" stroke-width="6"/>
+<text x="120" y="860" font-size="64" fill="#F3F5F9" font-weight="normal" text-anchor="start">The operations handbook of a</text>
+<text x="120" y="950" font-size="64" fill="#F3F5F9" font-weight="normal" text-anchor="start">self-running software business</text>
+<rect x="120" y="1080" width="1360" height="760" rx="24" fill="#0B1226" stroke="#2A3A5F" stroke-width="4"/>
+<text x="170" y="1190" font-size="40" fill="#C7D0E0" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, Liberation Mono, monospace">17:00  burn-down   claimed tax-workbook/own-checkout</text>
+<text x="170" y="1302" font-size="40" fill="#C7D0E0" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, Liberation Mono, monospace">17:10  build       slot started — marker pushed</text>
+<text x="170" y="1414" font-size="40" fill="#C7D0E0" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, Liberation Mono, monospace">17:12  burn-down   npm ci · npm run check · main green</text>
+<text x="170" y="1526" font-size="40" fill="#E0A426" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, Liberation Mono, monospace">17:21  burn-down   one commit, one push: item done</text>
+<text x="170" y="1638" font-size="40" fill="#C7D0E0" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, Liberation Mono, monospace">17:40  watchdog    nothing missed, nothing stalled</text>
+<text x="170" y="1750" font-size="40" fill="#C7D0E0" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, Liberation Mono, monospace">18:00  burn-down   next item: gankdat/x402-change-feed</text>
+<text x="120" y="2010" font-size="52" fill="#C7D0E0" font-weight="normal" text-anchor="start">Routines, queues, gates, relays and watchdogs —</text>
+<text x="120" y="2080" font-size="52" fill="#C7D0E0" font-weight="normal" text-anchor="start">with the incidents that shaped every rule</text>
+<text x="800" y="2260" font-size="56" fill="#F3F5F9" font-weight="normal" text-anchor="middle">Foundry</text>
+<text x="800" y="2330" font-size="40" fill="#8A94A6" font-weight="normal" text-anchor="middle">First edition · November 2026</text>
+</svg>

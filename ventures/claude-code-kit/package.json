@@ -1,0 +1,16 @@
+{
+  "name": "@foundry/claude-code-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Running Claude Code unattended — the operations handbook of this self-running software business, built as EPUB 3 (JSZip) and PDF (Chromium print) from a content module for Leanpub, plus its MIT Extras zip.",
+  "scripts": {
+    "build": "node --disable-warning=ExperimentalWarning src/build.ts",
+    "test": "vitest run --root ../.. ventures/claude-code-kit",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "jszip": "^3.10.2",
+    "sharp": "^0.35.5"
+  }
+}

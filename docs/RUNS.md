@@ -2479,3 +2479,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 17:45 | burn-down | Bazaar declares changes/<slug> per register (feed query, change-row example); paywall text names it
 - 2026-11-05 17:45 | burn-down | Daily numbers validate clause covers change routes; weekly probe pays an unlisted one (changeSlugs)
 - 2026-11-05 17:45 | burn-down | Tests: 402 at $0.01 with since, paid 200 with cursor, 404 without feed, probe targets (25 pass)
+- 2026-11-05 17:52 | burn-down | Claimed claude-code-kit kit-handbook-manuscript (3 × 2); third item of the slot, runs past 50 min
+- 2026-11-05 18:30 | burn-down | Built claude-code-kit kit-handbook-manuscript: 21,030 words, preface + 15 chapters + appendix, EPUB + PDF
+- 2026-11-05 18:30 | burn-down | Content module src/content/part1-4.ts drafted from the repo's own docs; 9 tests incl. scrub and preface
+- 2026-11-05 18:30 | burn-down | release/: EPUB 302 kB, PDF 7x10in 75 pages, cover 1600x2400; MANUSCRIPT-REVIEW.md lists every chapter
+- 2026-11-05 18:30 | burn-down | epubcheck not run (sandbox refused the jar download); moved to the listing-pack item; venture validated
