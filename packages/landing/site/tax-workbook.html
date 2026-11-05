@@ -124,6 +124,12 @@
         <a href="sole-trader-tax-calculator.html">free 2026/27 tax estimate</a> uses the same
         arithmetic.
       </p>
+      <p class="small" id="also-guide">
+        Prefer the rules explained in prose first? The same publisher's Kindle guide
+        <em>UK Sole Trader Tax 2026/27</em> (Foundry Tax Guides, in the Kindle Store) walks through
+        Self Assessment, Making Tax Digital, expenses and the year-end sums with the same worked
+        examples. The workbook is complete without it, and the guide without the workbook.
+      </p>
       <h2>Where to buy — £6.99, instant download</h2>
       <!--
         Own checkout (tax-workbook own-checkout-listing, 2026-10-29): the Stripe Payment Link is created by the
@@ -281,5 +287,18 @@
       <a href="./">Home</a><a href="privacy.html">Privacy</a
       ><a href="terms.html">Terms &amp; refunds</a><span>© 2026 Foundry · info@gankdat.com</span>
     </footer>
+    <script>
+      // Cross-sell reading (tax-workbook cross-sell-links-guide-and-workbook, 2026-11-05): a reader who arrives
+      // from the Kindle guide's "Also from" page carries ?from=guide; the Buy link passes it to Stripe as the
+      // Payment Link's client_reference_id, which the completed session carries to the licence Worker, so an
+      // own-checkout sale can say which product referred it. One short token, nothing about the visitor.
+      (function () {
+        var from = new URLSearchParams(location.search).get('from');
+        if (!from || !/^[a-z0-9-]{1,32}$/.test(from)) return;
+        var buy = document.querySelector('#buy a.button');
+        if (!buy || buy.href.indexOf('https://buy.stripe.com/') !== 0) return;
+        buy.href += (buy.href.indexOf('?') === -1 ? '?' : '&') + 'client_reference_id=' + from;
+      })();
+    </script>
   </body>
 </html>

@@ -11,7 +11,11 @@ The text's figures are computed from `src/rates.ts` and `src/tax.ts`, so the boo
 
 - **Standalone guide, not a companion.** KDP's Guide to Kindle Content Quality bars books that redirect readers elsewhere
   for the full content, exist to advertise, or are companions to other books. The guide is complete on its own; the
-  workbook is named once, in the back matter, as a separate product (`npm test` checks exactly one mention, back matter only).
+  workbook is named once, on the back matter's "Also from Foundry Tax Guides" page, as a separate product, with the
+  publisher's own product page (apps.gankdat.com/tax-workbook.html?from=guide) as the one link in the book — KDP allows
+  links to the author's own site, never to a retailer (`npm test` checks exactly one mention and exactly one link, back
+  matter only; `cross-sell-links-guide-and-workbook`, 2026-11-05). The Kindle re-upload rides the April 2027 refresh or
+  the next KDP sitting, never a new request.
 - **AI disclosure.** KDP requires AI-generated text to be declared at publication and allows it. The text is AI-generated
   under KDP's definition (drafted with AI tools, then edited); say so on the form. The book's own copyright page and
   colophon also say it. No buyer-facing label is shown on the product page.
@@ -110,7 +114,7 @@ What it is not: tax advice, or a substitute for HMRC's own calculation. It uses 
 ## Paperback (second format of the live title, `kdp-paperback-edition`, 2026-11-03)
 
 `npm run paperback -w @foundry/tax-workbook` prints `kindle/paperback/UK-Sole-Trader-Tax-2026-27-paperback-interior.pdf`
-(6" × 9", 49 pages, DejaVu Serif embedded, running head and page numbers, every chapter on a new page, the same text as
+(6" × 9", 50 pages, DejaVu Serif embedded, running head and page numbers, every chapter on a new page, the same text as
 the EPUB plus a "Paperback edition" line) and `…-paperback-cover.pdf` (one page, 12.3603" × 9.25": 0.125" bleed + 6" back
 + 0.1103" spine + 6" front + 0.125" bleed, spine = 49 × 0.002252" for white paper, no spine text — KDP allows it only from
 79 pages; the bottom-right 2" × 1.2" of the back cover is left white for KDP's barcode). The build refuses a page count
@@ -136,3 +140,4 @@ mail lands (the `kindle N sold` note covers both formats from then on).
 | 2026-10-31 | KDP mail 14:32 UTC: the book is live in the Kindle Store and enrolled in KDP Select (90-day term from 2026-10-31). ASIN and URL still to be filled by `kdp-listing-live`. |
 | 2026-11-03 | Recorded live from 2026-10-31 (`kdp-listing-live`, burn-down): RESEARCH.md §7 `Kindle live` row; the §6 proof clock runs from 10-31 (first sale by 2026-11-30, ten by 2026-12-30 — `kindle-day-60-read`); the Select term ends 2027-01-29 (`google-play-listing` dated); the paperback (`kdp-paperback-edition`) is buildable. The mail names no ASIN and amazon.co.uk is never read (Conditions of Use), so the page link comes from the owner's 2026-11-30 shelf note — the monthly ask says "+ the Kindle book's Amazon link" until a row here carries a `/dp/` link (`scripts/shelf-note.ts` writes it from `kindle … https://www.amazon.co.uk/dp/B0…` or `ASIN B0…`). Whether the £2.99 Countdown Deal was started is unknown until that note; our copy makes no launch-price claim outside KDP's own deal page. |
 | 2026-11-03 | Paperback built (`kdp-paperback-edition`, burn-down): interior 49 pages and the matching wrap cover in `kindle/paperback/`; the owner's add-a-format step is written above and waits for the next KDP sitting. |
+| 2026-11-05 | **"Also from Foundry Tax Guides" page added** (`cross-sell-links-guide-and-workbook`, build): a one-page back-matter section before the colophon names the workbook once (moved from the colophon) with the product page as the book's only link; EPUB rebuilt (9,184 words, 267 kB), paperback rebuilt (50 pages, spine 0.1126 in — the cover PDF follows the count). Both files wait for the next KDP sitting (April 2027 refresh or the paperback upload, action 029 follow-up 6); the live Kindle copy is unchanged until then. |

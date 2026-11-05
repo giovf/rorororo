@@ -4,7 +4,9 @@
 //
 // KDP's content-quality rules shape the book (docs/exchange/spikes/kdp-sole-trader-tax-guide.md §1):
 // it must stand alone — no redirect anywhere for "the full content", nothing whose purpose is to
-// advertise, not a companion to another book — so the workbook is named once, in the back matter.
+// advertise, not a companion to another book — so the workbook is named once, on the back matter's
+// "Also from" page (cross-sell-links-guide-and-workbook, 2026-11-05) with the publisher's own product
+// page as the one link in the book: KDP allows links to the author's own site, never to a retailer.
 
 import { EXPENSE_CATEGORIES, RATES_2026_27 as R } from '../rates.ts';
 import { class2Voluntary, class4, EXAMPLE_CASE as X, incomeTax, mileageClaim, personalAllowance, taxableProfit, useTradingAllowance, yearEnd } from '../tax.ts';
@@ -755,14 +757,32 @@ function backMatter(): Chapter {
 ${p(
   `<em>${esc(BOOK.title)}</em> is published by ${esc(BOOK.publisher)}, a small independent publisher of practical UK tax and record-keeping material for the self-employed. This is the ${esc(BOOK.edition)}. A new edition follows each April once HMRC publishes the year's rates.`,
   `The text was drafted with the help of AI writing tools and edited against HMRC's published guidance; the arithmetic in every example was produced and checked by the code that typesets the book, from the same rates listed in the Sources chapter, so a figure in a table and the same figure in the prose cannot disagree. Nothing in it is advice about your own affairs: HMRC's calculation is the one you pay, and an accountant is the person to ask about anything this guide said it leaves out.`,
-  `The spreadsheet that keeps the three logs of chapter 3 and works the figures of chapter 13 the way this book does is the publisher's <em>UK Sole Trader Tax Workbook 2026/27</em>, sold separately; this guide is complete without it.`,
   `If you found an error, or a rate has changed since October 2026, the publisher would be glad to hear of it through the store's contact form, and the correction will appear in the next edition. Thank you for reading.`,
 )}`,
   };
 }
 
+/** The publisher's own product page for the workbook; `?from=guide` lets the page count readers who arrive from here. */
+export const WORKBOOK_PAGE_URL = 'https://apps.gankdat.com/tax-workbook.html?from=guide';
+
+/** The one cross-sell page: names the workbook once, with the publisher's own page as the only link in the book. */
+function alsoBy(): Chapter {
+  const shown = WORKBOOK_PAGE_URL.replace(/^https:\/\//, '');
+  return {
+    id: 'also-by',
+    title: 'Also from Foundry Tax Guides',
+    backMatter: true,
+    body: `${h2('Also from Foundry Tax Guides')}
+${p(
+  `<strong>UK Sole Trader Tax Workbook 2026/27</strong> — a spreadsheet (Excel, Google Sheets, LibreOffice or Numbers) that keeps the three logs of chapter 3, totals the quarters of chapter 11, fills the SA103S boxes of chapter 12 and works the year-end figures of chapter 13 with the same arithmetic as this book, from the same ${R.taxYear} rates. Blue cells are yours to type in; everything else is a formula. Sold separately, as a one-off download with a 14-day replacement-or-refund promise; this guide is complete without it.`,
+  `Details and a free ${R.taxYear} tax estimate that uses the same arithmetic: <a href="${WORKBOOK_PAGE_URL}">${shown}</a>`,
+  `A new edition of this guide and of the workbook follows each April once HMRC publishes the year's rates.`,
+)}`,
+  };
+}
+
 export function chapters(): Chapter[] {
-  return [frontMatter(), ch1(), ch2(), ch3(), ch4(), ch5(), ch6(), ch7(), ch8(), ch9(), ch10(), ch11(), ch12(), ch13(), ch14(), sources(), backMatter()];
+  return [frontMatter(), ch1(), ch2(), ch3(), ch4(), ch5(), ch6(), ch7(), ch8(), ch9(), ch10(), ch11(), ch12(), ch13(), ch14(), sources(), alsoBy(), backMatter()];
 }
 
 /** Plain text of a chapter body, for word counts and phrase checks. */

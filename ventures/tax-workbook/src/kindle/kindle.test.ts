@@ -2,7 +2,7 @@ import JSZip from 'jszip';
 import { describe, expect, it } from 'vitest';
 import { EXAMPLE_EXPECTED, class4, incomeTax } from '../tax.ts';
 import { RATES_2026_27 as R } from '../rates.ts';
-import { AMY, BOOK, chapters, DATES, LEO, MILES, plainText, PRIYA, SAM, wordCount } from './content.ts';
+import { AMY, BOOK, chapters, DATES, LEO, MILES, plainText, PRIYA, SAM, wordCount, WORKBOOK_PAGE_URL } from './content.ts';
 import { COVER_H, COVER_W, coverSvg, renderCoverPng } from './cover.ts';
 import { buildEpub, epubFiles } from './epub.ts';
 import { KDP } from './kdp.ts';
@@ -31,8 +31,8 @@ function assertWellFormed(xml: string, name: string): void {
 describe('the Kindle guide text', () => {
   const chs = chapters();
 
-  it('is a complete standalone guide: 17 sections, well over 7,000 words, every section well-formed', () => {
-    expect(chs).toHaveLength(17);
+  it('is a complete standalone guide: 18 sections, well over 7,000 words, every section well-formed', () => {
+    expect(chs).toHaveLength(18);
     expect(wordCount()).toBeGreaterThan(7_000);
     for (const c of chs) {
       assertWellFormed(`<div>${c.body}</div>`, c.id);
@@ -40,15 +40,22 @@ describe('the Kindle guide text', () => {
     }
   });
 
-  it("names the workbook once, in the back matter only, and never redirects the reader for 'the full content' (KDP content quality)", () => {
-    const all = chs.map((c) => ({ id: c.id, back: c.backMatter === true, text: plainText(c.body) }));
+  it("names the workbook once, on the back matter's 'Also from' page only, and never redirects the reader for 'the full content' (KDP content quality)", () => {
+    const all = chs.map((c) => ({ id: c.id, back: c.backMatter === true, text: plainText(c.body), body: c.body }));
     const mentions = all.filter((c) => /Tax Workbook/i.test(c.text));
-    expect(mentions.map((c) => c.id)).toEqual(['colophon']);
+    expect(mentions.map((c) => c.id)).toEqual(['also-by']);
     expect(mentions[0]?.back).toBe(true);
     expect(mentions[0]?.text.match(/Tax Workbook/gi)).toHaveLength(1);
     const joined = all.map((c) => c.text).join(' ');
     expect(joined).not.toMatch(/full content|companion|buy the workbook|download the workbook|visit .* to get/i);
-    expect(joined).not.toMatch(/https?:\/\//);
+    // The one link in the book is the publisher's own product page (KDP allows the author's site, not a retailer),
+    // shown as text too so the paperback reader can type it (cross-sell-links-guide-and-workbook, 2026-11-05).
+    const bodies = all.map((c) => c.body).join(' ');
+    expect(bodies.match(/https?:\/\/[^"\s<]+/g)).toEqual([WORKBOOK_PAGE_URL]);
+    expect(WORKBOOK_PAGE_URL.startsWith('https://apps.gankdat.com/')).toBe(true);
+    expect(bodies.match(/<a href=/g)).toHaveLength(1);
+    expect(joined).toContain('apps.gankdat.com/tax-workbook.html?from=guide');
+    expect(joined).not.toMatch(/amazon|etsy|payhip/i);
   });
 
   it('carries the 2026/27 figures from rates.ts in the prose and the tables', () => {

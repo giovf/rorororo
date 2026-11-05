@@ -31,6 +31,7 @@ import {
   type Sheet,
   title,
   total,
+  GUIDE_README_LINE,
   WORKBOOK_VERSION,
 } from './workbook.ts';
 
@@ -158,6 +159,9 @@ function buildReadme(ws: Sheet, r: TaxYearRates): void {
     ['', false],
     ['Rates and sources', true],
     ['Every rate on the Setup tab names the page it came from. Platform fees change often — if yours differ, change the one cell and every sale follows, or type the actual fee on the sale.', false],
+    ['', false],
+    ['Also from the publisher', true],
+    [GUIDE_README_LINE, false],
     ['', false],
     ['Licence', true],
     ['One purchase is one licence for your own business records. Please do not resell or share the file. Questions: message the shop.', false],

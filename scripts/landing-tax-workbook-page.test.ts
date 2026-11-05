@@ -36,6 +36,14 @@ describe('tax-workbook product page', () => {
     expect(html).not.toMatch(/only \d+ left|hurry|selling fast/i);
   });
 
+  it('names the Kindle guide and passes a ?from= referrer to the Stripe link as client_reference_id (cross-sell-links-guide-and-workbook)', () => {
+    expect(html).toContain('UK Sole Trader Tax 2026/27');
+    expect(html).toContain('Kindle Store');
+    expect(html).not.toMatch(/amazon\./i);
+    expect(html).toContain("client_reference_id=' + from");
+    expect(html).toContain('/^[a-z0-9-]{1,32}$/');
+  });
+
   it('has a thanks page for the Payment Link redirect', () => {
     const thanks = page('thanks-tax-workbook.html');
     expect(thanks).toContain('download link');

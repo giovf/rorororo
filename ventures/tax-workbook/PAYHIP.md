@@ -36,6 +36,8 @@ Keep your sole-trader records for the 2026/27 tax year in one spreadsheet, and k
 
 This workbook gives you three simple logs (income, expenses and business mileage) and turns them into everything you need at year end: the SA103S self-employment boxes, the quarterly totals Making Tax Digital asks for, a Trading Allowance check, and an estimate of your Income Tax, Class 4 National Insurance and payments on account.
 
+If you would like the rules explained in prose as well, the same publisher's Kindle guide, UK Sole Trader Tax 2026/27 (Foundry Tax Guides), walks through Self Assessment, Making Tax Digital, expenses and the year-end sums with the same worked examples. The workbook is complete without it.
+
 Launch price until 30 November 2026.
 
 AT A GLANCE
@@ -69,6 +71,11 @@ PLEASE READ BEFORE BUYING
 DELIVERY AND REFUNDS
 Payhip emails your download link the moment the payment goes through, and the file stays in your Payhip library. If the file does not open on your device, reply to that email or message me within 14 days for a replacement file or a full refund. One purchase is one licence for your own business records; please do not share or resell the file.
 ```
+
+Changed 2026-11-05 (`cross-sell-links-guide-and-workbook`): the description gains the sentence naming the Kindle guide (title and
+publisher only; Payhip allows links, but the guide's Amazon page is unknown until the owner's shelf note) and the uploaded
+file's README tab names it too (workbook v1.1, `release/`). Paste the sentence and replace the file at any sitting — Payhip's
+product editor is open any time; no new request.
 
 ## 2. Category & Tags (the tab the marketplace reads)
 

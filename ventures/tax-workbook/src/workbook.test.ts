@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { describe, expect, it } from 'vitest';
 import { EXPENSE_CATEGORIES } from './rates.ts';
 import { recalcAsync } from './recalc.ts';
-import { buildWorkbook, EXPENSE_ROWS, INCOME_ROWS, listFormulas, MILEAGE_ROWS, SHEETS, validations } from './workbook.ts';
+import { buildWorkbook, EXPENSE_ROWS, GUIDE_README_LINE, INCOME_ROWS, listFormulas, MILEAGE_ROWS, SHEETS, validations, WORKBOOK_VERSION } from './workbook.ts';
 
 const FORBIDDEN = /\b(XLOOKUP|XMATCH|FILTER|SORT|UNIQUE|SEQUENCE|LET|LAMBDA|IFS|SWITCH|TEXTJOIN|CONCAT|MAXIFS|MINIFS)\s*\(/;
 
@@ -36,6 +36,16 @@ describe('the workbook', () => {
     expect(validations(wb.getWorksheet('Expenses')!).model[`C6:C${5 + EXPENSE_ROWS}`]?.formulae).toEqual(['ExpenseCategories']);
     expect(validations(wb.getWorksheet('Income')!).model[`C6:C${5 + INCOME_ROWS}`]?.formulae).toEqual(['IncomeTypes']);
     expect(validations(wb.getWorksheet('Mileage')!).model[`D6:D${5 + MILEAGE_ROWS}`]?.formulae).toEqual(['VehicleTypes']);
+  });
+
+  it('names the Kindle guide once on the README tab, by title and store, with no URL (cross-sell-links-guide-and-workbook)', () => {
+    const readme = buildWorkbook().getWorksheet('README')!;
+    const texts = [...Array(readme.rowCount).keys()].map((i) => readme.getCell(i + 1, 1).text);
+    expect(texts.filter((t) => /UK Sole Trader Tax 2026\/27/.test(t))).toEqual([GUIDE_README_LINE]);
+    expect(texts[texts.indexOf(GUIDE_README_LINE) - 1]).toBe('Also from the publisher');
+    expect(GUIDE_README_LINE).toContain('Kindle Store');
+    expect(GUIDE_README_LINE).not.toMatch(/https?:|amazon/i);
+    expect(texts.join('\n')).toContain(`Version ${WORKBOOK_VERSION}`);
   });
 
   it('uses only formulas Google Sheets and LibreOffice evaluate', () => {

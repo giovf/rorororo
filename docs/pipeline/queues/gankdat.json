@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "researched": "2026-10-30",
   "items": [
     {
@@ -1002,6 +1002,16 @@
       "score": 6,
       "status": "todo",
       "added": "2026-11-04"
+    },
+    {
+      "id": "refresh-uk-food-hygiene-2026-11-05",
+      "title": "Repair uk-food-hygiene after Apify flagged `uk-food-hygiene-ratings` under maintenance (QA mail 2026-11-05 08:17 UTC, run s6ZbgwNiJq0xL86Mr, three days of failed prefilled runs): the 05:45 wave's delta index fails on `D1_ERROR: D1 DB is overloaded. Too many resources consumed within a 10 second window` and the register has had no successful refresh since 2026-11-03 (uk-care-locations and uk-trademark-journal show the same signature); read the wave's lines with a `worker logs` dispatch, pace or batch the delta-index D1 writes so a wave stays inside the 10-second window (smaller statements, a pause between batches, or the index moved off the wave), prove a green refresh for all three and a green actor run with the prefilled input, then re-publish the actor so Apify's QA lifts the flag",
+      "why": "INBOX 2026-11-05 08:17 (Apify QA, `caused by us but real work` per SELF-CAUSED.md) plus the Daily numbers rows of 11-04 and 11-05: `worker errors 24h` carries D1_ERROR overloaded ×6 then ×8, `refresh errors` names uk-food-hygiene, uk-care-locations and uk-trademark-journal with no successful refresh since 11-03 and `apify-uk-food-hygiene-ratings (1 new failed run(s) since the last row, 2 of 28 in 30 d)`, `requests` shows GET /v1/data/uk-food-hygiene 500 ×2 and 503 ×1. A flagged actor is hidden from the one shelf with outside users (510 runs/30 d by others) and three registers serve stale rows, so this is a repair, not a feature: evidence 2 × reach 2 ÷ 0.5 day = 8. The two earlier flags (uk-planning 09-25, uk-no-website-leads 10-10) were each a code regression; this one is a capacity limit in the wave, so the fix is in the delta index (store.ts / the 05:45 wave), not the actor folder.",
+      "effort_days": 0.5,
+      "proof": "three consecutive days with no D1_ERROR line in the Daily numbers row, uk-food-hygiene refreshed, and Apify's maintenance flag lifted (its QA runs succeed)",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-11-05"
     }
   ],
   "research_after": "2026-11-06"

@@ -8,7 +8,7 @@ import { RATES_2026_27 } from './rates.ts';
 import { recalcAsync } from './recalc.ts';
 import { buildResellerWorkbook, INVENTORY_ROWS, PLATFORMS, RESELLER_FILE_NAME, RESELLER_SHEETS, SALES_ROWS } from './reseller.ts';
 import { EXAMPLE_RESELLER, RESELLER_EXPECTED, yearEnd } from './tax.ts';
-import { listFormulas, validations } from './workbook.ts';
+import { GUIDE_README_LINE, listFormulas, validations } from './workbook.ts';
 
 const FORBIDDEN = /\b(XLOOKUP|XMATCH|FILTER|SORT|UNIQUE|SEQUENCE|LET|LAMBDA|IFS|SWITCH|TEXTJOIN|CONCAT|MAXIFS|MINIFS|VLOOKUP|INDEX|MATCH)\s*\(/;
 
@@ -43,6 +43,13 @@ describe('the reseller workbook', () => {
     const stockRow = [...Array(setup.rowCount).keys()].map((i) => i + 1).find((r) => setup.getCell(r, 1).value === 'Stock deduction method');
     expect(stockRow).toBeDefined();
     expect(validations(setup).model[`B${stockRow}:B${stockRow}`]?.formulae).toEqual(['StockMethods']);
+  });
+
+  it('names the Kindle guide once on its README tab, the same row as the first workbook', () => {
+    const readme = buildResellerWorkbook().getWorksheet('README')!;
+    const texts = [...Array(readme.rowCount).keys()].map((i) => readme.getCell(i + 1, 1).text);
+    expect(texts.filter((t) => /UK Sole Trader Tax 2026\/27/.test(t))).toEqual([GUIDE_README_LINE]);
+    expect(texts[texts.indexOf(GUIDE_README_LINE) - 1]).toBe('Also from the publisher');
   });
 
   it('uses only formulas Google Sheets and LibreOffice evaluate, and no lookups', () => {

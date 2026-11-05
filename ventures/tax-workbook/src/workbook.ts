@@ -15,7 +15,7 @@ import {
 } from './rates.ts';
 import { EXAMPLE_CASE } from './tax.ts';
 
-export const WORKBOOK_VERSION = '1.0';
+export const WORKBOOK_VERSION = '1.1';
 export const FILE_NAME = 'UK-Sole-Trader-Tax-Workbook-2026-27.xlsx';
 export const SHEETS = [
   'README',
@@ -143,6 +143,14 @@ export function listValidation(ws: Sheet, range: string, source: string): void {
 
 /* ----------------------------------------------------------------- README */
 
+/**
+ * The one README row that names the Kindle guide (cross-sell-links-guide-and-workbook, 2026-11-05). The guide is
+ * the same publisher's prose explanation of the rules this workbook applies; no Amazon URL until the owner's shelf
+ * note brings the page link (KINDLE.md), so the row says where to search. Shared with the reseller workbook.
+ */
+export const GUIDE_README_LINE =
+  'The rules this workbook applies — Self Assessment, Making Tax Digital, allowable expenses, the trading allowance, payments on account and the year-end computation — are explained in plain prose, with worked examples that use the same arithmetic, in the Kindle guide "UK Sole Trader Tax 2026/27" by Foundry Tax Guides (search the Kindle Store for the title). This workbook is complete without it.';
+
 function buildReadme(ws: Sheet, r: TaxYearRates): void {
   ws.getColumn(1).width = 110;
   title(ws, `UK Sole Trader Tax Workbook ${r.taxYear}`, `Version ${WORKBOOK_VERSION} · tax year 6 April 2026 to 5 April 2027 · record-keeping for a self-employed sole trader`);
@@ -169,6 +177,9 @@ function buildReadme(ws: Sheet, r: TaxYearRates): void {
     ['', false],
     ['Rates and sources', true],
     ['Every rate on the Setup tab names the gov.uk page it came from (read October 2026). If HMRC changes a figure, change the one cell and every formula follows.', false],
+    ['', false],
+    ['Also from the publisher', true],
+    [GUIDE_README_LINE, false],
     ['', false],
     ['Licence', true],
     ['One purchase is one licence for your own business records. Please do not resell or share the file. Questions: message the shop.', false],

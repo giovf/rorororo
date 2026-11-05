@@ -1,6 +1,6 @@
 import { generateKeyPair, signStripePayload, verifyLicense } from '@foundry/licensing';
 import { beforeAll, describe, expect, it } from 'vitest';
-import { createHandler, type Env, type KV } from './worker.js';
+import { createHandler, referrerOf, type Env, type KV } from './worker.js';
 
 class MemoryKV implements KV {
   readonly map = new Map<string, string>();
@@ -171,6 +171,17 @@ describe('license worker', () => {
       expect(fresh).not.toBe('');
       expect(fresh).not.toBe(first);
       expect(sent.at(-1)?.text).toContain('works until 2026-10-28');
+    });
+
+    it('keeps the referrer token a Payment Link query passed as client_reference_id, and drops anything else', async () => {
+      const referred = { ...sale, id: 'evt_ref', data: { object: { ...sale.data.object, id: 'cs_ref', client_reference_id: 'guide' } } };
+      await webhook(referred);
+      expect(JSON.parse(kv.map.get('license:cs_ref') ?? '{}')).toMatchObject({ ref: 'guide' });
+      const odd = { ...sale, id: 'evt_odd', data: { object: { ...sale.data.object, id: 'cs_odd', client_reference_id: 'Buyer <x@y>' } } };
+      await webhook(odd);
+      expect(JSON.parse(kv.map.get('license:cs_odd') ?? '{}')).not.toHaveProperty('ref');
+      expect(referrerOf({ client_reference_id: ' Guide ' })).toBe('guide');
+      expect(referrerOf({})).toBeUndefined();
     });
   });
 });

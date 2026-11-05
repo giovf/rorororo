@@ -40,6 +40,18 @@ interface StoredLicense {
   activations?: number[];
   /** Download products: how many times the file was fetched with this order's links. */
   downloads?: number;
+  /**
+   * Which of our own products referred the buyer (tax-workbook cross-sell-links-guide-and-workbook, 2026-11-05):
+   * the product page turns its `?from=guide` query into the Payment Link's client_reference_id. A short token
+   * from a fixed alphabet, never anything about the buyer.
+   */
+  ref?: string;
+}
+
+/** The referrer token an order may carry: `guide` from the Kindle guide's page link; anything else is dropped. */
+export function referrerOf(session: { client_reference_id?: string | null }): string | undefined {
+  const ref = session.client_reference_id?.trim().toLowerCase();
+  return ref && /^[a-z0-9-]{1,32}$/.test(ref) ? ref : undefined;
 }
 
 /**
@@ -150,7 +162,8 @@ async function webhook(request: Request, env: Env, deps: Deps): Promise<Response
   const existing = await readLicense(env, issued.payload.id);
   const key = existing?.key ?? (await issueLicense(env.LICENSE_SIGNING_KEY, issued.payload));
   if (!existing) {
-    const stored: StoredLicense = { key, email: issued.email, payload: issued.payload };
+    const ref = referrerOf(event.data.object);
+    const stored: StoredLicense = { key, email: issued.email, payload: issued.payload, ...(ref ? { ref } : {}) };
     await env.LICENSES.put(`license:${issued.payload.id}`, JSON.stringify(stored));
   }
 

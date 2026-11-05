@@ -2,7 +2,7 @@
   "venture": "tax-workbook",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-03",
+  "updated": "2026-11-05",
   "researched": "2026-11-03",
   "weight": 2,
   "items": [
@@ -254,13 +254,24 @@
     {
       "id": "cross-sell-links-guide-and-workbook",
       "title": "Cross-sell between the line's two products: the Kindle guide's back matter gains an 'Also by' page naming the workbook with the product page URL (apps.gankdat.com/tax-workbook.html, KDP-allowed: our own site, not a retailer), the workbook's README tab gains one row naming the Kindle guide (title, 'search the Kindle Store' — no Amazon URL until the owner sends it), both workbook listings' copy (LISTING.md, PAYHIP.md, the product page) mention the guide; rebuilt files land in release/ for the own-checkout KV (CI) and ride the owner's next upload (the Kindle re-upload is batched with the April 2027 refresh or the next KDP sitting, never a new request)",
-      "why": "Checked 2026-11-03: src/kindle/content.ts carries no Etsy, Payhip or gankdat link and src/workbook.ts never names the guide, so a buyer of one product never learns the other exists. The guide (£4.99) and the workbook (£6.99) sell to the same person for the same tax year; a back-matter page is the standard Kindle cross-sell and KDP's guidelines allow links to the author's own site. Cost: 0.1 day, zero owner minutes now — the own-checkout file updates on deploy, the Kindle and Etsy copies when they are next re-uploaded anyway. Worth doing before the first re-upload so the April refresh carries it.",
+      "why": "Checked 2026-11-03: src/kindle/content.ts carries no Etsy, Payhip or gankdat link and src/workbook.ts never names the guide, so a buyer of one product never learns the other exists. The guide (£4.99) and the workbook (£6.99) sell to the same person for the same tax year; a back-matter page is the standard Kindle cross-sell and KDP's guidelines allow links to the author's own site. Cost: 0.1 day, zero owner minutes now — the own-checkout file updates on deploy, the Kindle and Etsy copies when they are next re-uploaded anyway. Worth doing before the first re-upload so the April refresh carries it. — Built 2026-11-05 (build): src/kindle/content.ts gains the back-matter page 'Also from Foundry Tax Guides' (the workbook named once, moved out of the colophon, with https://apps.gankdat.com/tax-workbook.html?from=guide as the book's only link — kindle.test.ts checks one mention, one link, no retailer); GUIDE_README_LINE on both workbooks' README tabs under 'Also from the publisher' (title, publisher, 'search the Kindle Store'; no URL), workbook v1.1, release/ rebuilt and recalculated (0 errors), EPUB and paperback (50 pages) rebuilt; tax-workbook.html names the guide and passes ?from=<token> to the Stripe link as client_reference_id; the licence Worker stores it as `ref` (allow-listed token, nothing about the buyer; test); LISTING.md (both descriptions, name only — no link, Etsy's off-site rule) and PAYHIP.md gain the sentence for the owner's next sitting, no new request. Not done: no Amazon URL anywhere (unknown until the owner's shelf note); own-checkout sales are not read into §7 by anything yet, so the referrer is stored but unread — queued as own-checkout-sale-reading.",
       "effort_days": 0.1,
-      "proof": "A §7 Sale row whose Notes name the other product as the referrer (own checkout: a `?from=guide` query on the Buy link counted by the thanks page) within 90 days",
+      "proof": "A §7 Sale row whose Notes name the other product as the referrer (own checkout: the product page turns `?from=guide` into the Payment Link's client_reference_id, kept as `ref` on the order; read by `own-checkout-sale-reading`) within 90 days",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-03",
-      "doing_since": "2026-11-05"
+      "doing_since": "2026-11-05",
+      "done_at": "2026-11-05"
+    },
+    {
+      "id": "own-checkout-sale-reading",
+      "title": "Read own-checkout sales into §7: the licence Worker gains a keyless `/v1/downloads/summary` (per-day counts of tax-workbook orders and of each `ref` referrer token, pence from the session's amount_total — no buyer data, the Payhip summary's shape), the gankdat Daily numbers row prints `own checkout 30d: N sales (guide N), net £…` beside `payhip 30d:`, and the inbox triage rule writes the §7 `Sale` row from Stripe's receipt mail naming the referrer the summary shows",
+      "why": "Checked 2026-11-05 (cross-sell-links-guide-and-workbook): the Etsy shelf is read from order mail and Payhip from its webhook summary, but a sale on the product page's own Buy button reaches no §7 row — the licence Worker stores the order and mails the link, Stripe's receipt goes to the owner's inbox (SELF-CAUSED row, logged only), and the referrer token the Worker now keeps (`ref`) is read by nobody, so the cross-sell proof cannot be measured. Score: 1 × 2 ÷ 0.2 day = 10, discounted to 4 while no own-checkout sale has happened (W40 convention).",
+      "effort_days": 0.2,
+      "proof": "the first own-checkout sale appears as a §7 Sale row the same day with its referrer named, and the Daily numbers row carries the `own checkout 30d:` clause",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-05"
     },
     {
       "id": "kindle-day-60-read",

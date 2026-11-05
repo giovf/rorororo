@@ -16,6 +16,8 @@ export interface CheckoutSessionLike {
   metadata?: Record<string, string> | null;
   /** Unix seconds; present on subscriptions we create with `expires_days` metadata. */
   created?: number;
+  /** Set by a `?client_reference_id=` query on a Payment Link; the tax workbook's page passes its `?from=` referrer here. */
+  client_reference_id?: string | null;
 }
 
 export interface IssueInput {

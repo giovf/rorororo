@@ -2447,3 +2447,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 01:07 | watchdog | ci-minutes: 517 billed min/7d (~2216/mo; cap 2000) top: notify owner 120, gankdat metrics 66, gankdat 65
 - 2026-11-05 05:08 | triage | notify owner dispatched: last run started 02:42 UTC, 2 h ago
 - 2026-11-05 08:06 | triage | notify owner dispatched: last run started 05:06 UTC, 3 h ago
+- 2026-11-05 09:19 | build | Claimed tax-workbook cross-sell-links-guide-and-workbook (4 × 2) before npm ci; main green; first-runs: nothing owed
+- 2026-11-05 09:19 | build | Built tax-workbook cross-sell-links-guide-and-workbook: the guide and the workbook now name each other
+- 2026-11-05 09:19 | build | Kindle guide: new back-matter page 'Also from Foundry Tax Guides' names the workbook once, product page as the one link
+- 2026-11-05 09:19 | build | EPUB rebuilt (9,184 words) and paperback rebuilt (50 pages, cover resized); both ride the next KDP sitting, no request
+- 2026-11-05 09:19 | build | Workbook v1.1: both README tabs name the Kindle guide (title, 'search the Kindle Store', no URL); recalc 0 errors
+- 2026-11-05 09:19 | build | Product page names the guide; ?from=guide rides to Stripe as client_reference_id, kept as ref by the licence Worker
+- 2026-11-05 09:19 | build | Etsy and Payhip descriptions gain one name-only sentence for the owner's next sitting (no link: Etsy's off-site rule)
+- 2026-11-05 09:19 | build | Gap found: own-checkout sales reach no §7 row, so the referrer is unread — queued own-checkout-sale-reading (4)
+- 2026-11-05 09:19 | build | Inbox 08:17: Apify flagged uk-food-hygiene-ratings; queued gankdat refresh-uk-food-hygiene-2026-11-05 (8): D1 overloaded
