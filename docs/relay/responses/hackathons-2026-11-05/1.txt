@@ -1,0 +1,133 @@
+{"@context":"https:\u002F\u002Fschema.org","@type":"Organization","@id":"https:\u002F\u002Fkiro.dev\u002F#organization","name":"Kiro","description":"Kiro is an agentic IDE that helps you go from prototype to production with spec-driven development.","url":"https:\u002F\u002Fkiro.dev","logo":"https:\u002F\u002Fkiro.dev\u002Fapple-icon.png","sameAs":["https:\u002F\u002Fdiscord.gg\u002Fkirodotdev","https:\u002F\u002Fwww.linkedin.com\u002Fshowcase\u002Fkirodotdev","https:\u002F\u002Fx.com\u002Fkirodotdev","https:\u002F\u002Fwww.instagram.com\u002Fkirodotdev","https:\u002F\u002Fwww.youtube.com\u002F@kirodotdev","https:\u002F\u002Fbsky.app\u002Fprofile\u002Fkiro.dev","https:\u002F\u002Fwww.twitch.tv\u002Fkirodotdev","https:\u002F\u002Fbaike.baidu.com\u002Fitem\u002FKiro\u002F66221428","https:\u002F\u002Fwww.reddit.com\u002Fr\u002FkiroIDE\u002F","https:\u002F\u002Falternativeto.net\u002Fsoftware\u002Fkiro\u002F","https:\u002F\u002Fwww.g2.com\u002Fsellers\u002Fkiro","https:\u002F\u002Fwww.gartner.com\u002Freviews\u002Fproduct\u002Fkiro","https:\u002F\u002Ftheresanaiforthat.com\u002Fai\u002Fkiro\u002F","https:\u002F\u002Fwww.producthunt.com\u002Fproducts\u002Fkiro","https:\u002F\u002Fwww.saashub.com\u002Fkiro"],"parentOrganization":{"@type":"Organization","name":"Amazon Web Services","url":"https:\u002F\u002Faws.amazon.com"}}
+{"@context":"https:\u002F\u002Fschema.org","@type":"WebSite","name":"Kiro","url":"https:\u002F\u002Fkiro.dev","description":"Kiro is an agentic IDE that helps you go from prototype to production with spec-driven development.","publisher":{"@id":"https:\u002F\u002Fkiro.dev\u002F#organization"},"potentialAction":[{"@type":"DownloadAction","target":"https:\u002F\u002Fkiro.dev\u002Fdownloads\u002F"}]}
+{"@context":"https:\u002F\u002Fschema.org","@type":"SoftwareApplication","name":"Kiro","applicationCategory":"DeveloperApplication","operatingSystem":["macOS","Windows","Linux"],"description":"Kiro is an agentic IDE that helps you go from prototype to production with spec-driven development.","url":"https:\u002F\u002Fkiro.dev","downloadUrl":"https:\u002F\u002Fkiro.dev\u002Fdownloads\u002F","offers":[{"@type":"Offer","name":"Kiro Free","price":"0","priceCurrency":"USD","url":"https:\u002F\u002Fkiro.dev\u002Fpricing\u002F","description":"50 credits. Access to open weight models[tip 0] and {freeAnthropicModel}."},{"@type":"Offer","name":"Kiro Pro","price":"20","priceCurrency":"USD","url":"https:\u002F\u002Fkiro.dev\u002Fpricing\u002F","description":"1,000 credits. Access to premium models[tip 0]. Add-on credits ($0.04\u002Fcredit). Billed monthly."},{"@type":"Offer","name":"Kiro Pro+","price":"40","priceCurrency":"USD","url":"https:\u002F\u002Fkiro.dev\u002Fpricing\u002F","description":"2,000 credits. Access to premium models[tip 0]. Add-on credits ($0.04\u002Fcredit). Billed monthly."},{"@type":"Offer","name":"Kiro Pro Max","price":"100","priceCurrency":"USD","url":"https:\u002F\u002Fkiro.dev\u002Fpricing\u002F","description":"5,000 credits. Access to premium models[tip 0]. Add-on credits ($0.04\u002Fcredit). Billed monthly."},{"@type":"Offer","name":"Kiro Power","price":"200","priceCurrency":"USD","url":"https:\u002F\u002Fkiro.dev\u002Fpricing\u002F","description":"10,000 credits. Access to premium models[tip 0]. Add-on credits ($0.04\u002Fcredit). Billed monthly."}],"featureList":["Spec-driven development","Agent hooks for automation","Conversational coding","Full project context understanding","Multi-file operations","Natural language code generation"]}
+meta description: News, tutorials, updates from the Kiro team - find it all here.
+meta og:title: Blog
+meta og:description: News, tutorials, updates from the Kiro team - find it all here.
+meta og:url: https://kiro.dev/blog/
+meta og:image: https://kiro.dev/images/opengraph/blog.png
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:image:alt: Kiro - the AI IDE for prototype to production
+meta og:type: website
+meta twitter:card: summary_large_image
+meta twitter:site: @kirodotdev
+meta twitter:title: Blog
+meta twitter:description: News, tutorials, updates from the Kiro team - find it all here.
+meta twitter:image: https://kiro.dev/images/opengraph/blog.png
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+meta twitter:image:alt: Kiro - the AI IDE for prototype to production
+Blog - Kiro
+Blog
+News, tutorials, updates from the Kiro team - find it all here.
+Follow us: Bluesky, (https://bsky.app/profile/kiro.dev) X, (https://x.com/kirodotdev) Discord, (https://discord.com/invite/kirodotdev) and LinkedIn (https://www.linkedin.com/showcase/kirodotdev)
+RSS Feed (/blog/feed.rss)
+Atom Feed (/blog/feed.atom)
+All blog posts
+Nov 5, 2026 Introducing bots in Kiro Crew Kyle Seaman , Helen Hasbun (/blog/crew-bots/)
+Nov 4, 2026 Share Kiro credits across your team with credit pooling Shweta V A , Ranjith Ramakrishnan , Krishna Parab (/blog/credit-pooling/)
+Nov 2, 2026 Kiro proves properties of its own harness in Lean Yaroslav Kharkov , Ferhat Erata , Behrooz Omidvar-Tehrani , Rajdeep Mukherjee (/blog/harness-properties-in-lean/)
+Oct 30, 2026 Spec it safe: shift left and harden your specs with security requirements Rajdeep Mukherjee , Debashis Das (/blog/spec-it-safe/)
+Oct 28, 2026 Kiro for Students expands to 41 more universities Shweta V A (/blog/41-more-universities/)
+Oct 27, 2026 Kiro’s new free trial gives you 500 extra credits Shweta V A (/blog/kiros-new-free-trial-gives-you-500-extra-credits/)
+Oct 26, 2026 Claude Haiku 5.5 is now available in Kiro Hardeep Singh , Vipin Mohan (/blog/haiku-5-5/)
+Oct 26, 2026 Keeping a software factory stable at 1,000 PRs a week Zejiang (Joe) Guo , Bolin Chen , Zezhen Xu (/blog/software-factory-stability/)
+Oct 20, 2026 Introducing memory in Kiro IDE and CLI Yujie Li , Behrooz Omidvar-Tehrani , Alex Jia (/blog/memory-in-ide-cli/)
+Oct 20, 2026 How Kiro fixes itself, and how we keep the fixes honest Myeongsoo Kim , Patrick Chapman , Chang Liu , Mingwei Zheng , Berk Cirisci , Sam Mayers , Joe Hsu , Liam Bouayad-Agha , Shweta Garg (/blog/how-kiro-fixes-itself/)
+Oct 15, 2026 Kimi K3 model is now available in Kiro Hardeep Singh , Krishna Parab (/blog/kimi-k3/)
+Oct 14, 2026 Local sandboxing in Kiro: keep agent commands within boundaries Mike Landi , Doug Clauson (/blog/local-sandboxing/)
+Oct 13, 2026 Introducing improved enterprise sign-in controls Shweta V A (/blog/sign-in-controls/)
+Oct 9, 2026 Kiro CLI V3 is rolling out as the default experience Pooja Giri , Jay Raval (/blog/cli-3/)
+Oct 2, 2026 Claude Sonnet 5.5 is now available in Kiro Hardeep Singh (/blog/sonnet-5-5/)
+Sep 30, 2026 Introducing Kiro workflows Romain Dura , Doug Clauson (/blog/introducing-workflows/)
+Sep 28, 2026 Claude Opus 5.5 is now available in Kiro Vipin Mohan (/blog/opus-5-5/)
+Sep 18, 2026 How we built a software factory with Kiro Crew to merge 1,000 PRs in a week Zejiang (Joe) Guo , Bolin Chen , Zezhen Xu (/blog/software-factory-1000-prs/)
+Sep 16, 2026 Claude Fable 5.1 is now available in Kiro Vipin Mohan (/blog/fable-5-1/)
+Sep 14, 2026 Tackling technical debt at scale with autonomous mode in Kiro Web Michael Tautschnig , Rajdeep Mukherjee (/blog/tackling-technical-debt-at-scale-with-autonomous-mode/)
+Sep 14, 2026 GPT‑5.6 models now support 1 million token context windows in Kiro Vipin Mohan (/blog/gpt-5-6-1m-context/)
+Sep 8, 2026 Kiro adds ISO/IEC 27001:2022 coverage Arundeep Nagaraj , Jay Raval , Krishna Parab (/blog/iso-27001/)
+Sep 8, 2026 A free year of Kiro, now for students around the world Sharanya Balaji (/blog/students-2026/)
+Sep 3, 2026 Agentic engineering in the cloud Prateek Kotak , Alex Jia (/blog/agentic-engineering-in-the-cloud/)
+Aug 26, 2026 Are AI coding agents actually getting better? Pardis Pashakhanloo , Rajdeep Mukherjee (/blog/diagnostics-over-time/)
+Aug 21, 2026 Continuous Prompt Evaluation: How We Use LLM Judges and Live Signals to Improve Kiro Agent Quality Myeongsoo Kim , Patrick Chapman , Sai Srinivas Somarouthu , Jay Agrawal , Murali Krishna Ramanathan (/blog/continuous-prompt-evaluation/)
+Aug 21, 2026 How We Learned to Trust an AI Agent to Triage Production Incidents Sai Srinivas Somarouthu (/blog/trust-agent-triage/)
+Aug 18, 2026 Close the laptop, keep the agent: building with cloud sessions Brian Beach (/blog/cloud-sessions/)
+Aug 12, 2026 Which Kiro app should I pick? Massimo Re Ferre (/blog/which-kiro-app-should-i-pick/)
+Aug 7, 2026 Kiro powers now support Agent Plugins Clare Liguori , Dan Kiuna (/blog/powers-supports-plugins/)
+Aug 4, 2026 Introducing Kiro Crew Bolin Chen , Zejiang (Joe) Guo , Zezhen Xu (/blog/introducing-kiro-crew/)
+Aug 3, 2026 One agent, every surface: how we built the Kiro agent harness Clare Liguori , Romain Dura , Al Harris , Richard Threlkeld (/blog/one-agent/)
+Jul 31, 2026 GPT‑5.6 update: lower credit multipliers for Terra and Luna Vipin Mohan (/blog/gpt-5-6-pricing/)
+Jul 24, 2026 Claude Opus 5 is now available in Kiro Vipin Mohan (/blog/opus-5/)
+Jul 20, 2026 How Kiro and Snyk create multi-layered security guardrails Gourav Bhardwaj , David B. Schott , Jack Ryan (/blog/kiro-and-snyk-guardrails/)
+Jul 16, 2026 Celebrating the builders: how founders are shipping faster with Kiro Nicole Shum (/blog/one-year-startups/)
+Jul 16, 2026 One year of Kiro: how students are building the future, right now Nicole Shum (/blog/one-year-students/)
+Jul 14, 2026 GPT‑5.6 is now available in Kiro Vipin Mohan (/blog/gpt-5-6/)
+Jul 14, 2026 One year of Kiro: a look back, and a look ahead Deepak Singh (/blog/one-year/)
+Jul 13, 2026 Welcome to birthday week Helen Hasbun , Emma Parkerton (/blog/birthday-2026/)
+Jul 2, 2026 Set a cap on overage spend, or pre-pay for it Ranjith Ramakrishnan (/blog/cap-prepay-overage/)
+Jul 1, 2026 Sonnet 5 is now available in Kiro Vipin Mohan (/blog/sonnet-5/)
+Jun 26, 2026 One Task, Two Providers: Coordinating Changes Across GitLab and GitHub in one session Brian Beach (/blog/coordinating-changes-across-gitlab-and-github-in-one-session/)
+Jun 25, 2026 From OpenAPI/Swagger specifications to test suite in seconds with Kiro Sumitha AP , Rajdeep Mukherjee (/blog/from-openapi-swagger-to-test-suite-in-seconds-with-kiro/)
+Jun 25, 2026 Introducing Agent Focus Sharanya Balaji , Phill Shaffer (/blog/introducing-agent-focus/)
+Jun 18, 2026 Introducing automations in Kiro on the web Kyle Seaman , Alex Jia (/blog/introducing-automations/)
+Jun 17, 2026 Introducing Kiro for iOS Kyle Seaman (/blog/introducing-kiro-for-ios/)
+Jun 15, 2026 Introducing the Kiro merch store Helen Hasbun (/blog/kiro-merch-store/)
+Jun 11, 2026 New in Kiro Web: Build with Spec, GitLab, and more Kyle Seaman (/blog/kiro-web-specs-gitlab/)
+Jun 11, 2026 Introducing Kiro Pro Max ($100/mo): more credits, less guesswork Ranjith Ramakrishnan , Dragos Ilinca (/blog/kiro-pro-max/)
+1 (/blog/) 2 (/blog/page/2/) 3 (/blog/page/3/) /blog/page/2/
+Loading image... [Kiro]
+Product
+About Kiro (/about/)
+Agents (/agents/)
+IDE (/ide/)
+CLI (/cli/)
+Web (/web/)
+Mobile (/mobile/)
+Crew (/crew/)
+Pricing (/pricing/)
+Downloads (/downloads/)
+For
+Enterprise (/enterprise/)
+Startups (/startups/)
+Students (/students/)
+Community
+Overview (/community/)
+Ambassadors (/ambassadors/)
+Case studies (/case-studies/)
+Discord (/discord/)
+Events (/events/)
+Powers (/powers/)
+Shop (https://shop.kiro.dev)
+Showcase (/showcase/)
+Resources
+Docs (/docs/)
+Blog (/blog/)
+Changelog (/changelog/)
+FAQs (/faq/)
+Videos (/videos/)
+Report a bug (https://github.com/kirodotdev/Kiro/issues/new/choose)
+Suggest an idea (https://github.com/kirodotdev/Kiro/issues/new?template=feature_request.yml)
+Billing support (https://app.kiro.dev/settings/account)
+Social
+https://discord.gg/kirodotdev
+https://www.linkedin.com/showcase/kirodotdev
+https://x.com/kirodotdev
+https://www.instagram.com/kirodotdev
+https://www.youtube.com/@kirodotdev
+https://bsky.app/profile/kiro.dev
+https://www.twitch.tv/kirodotdev
+English
+https://aws.amazon.com
+Site Terms (https://aws.amazon.com/terms/) License (/license/) Responsible AI Policy (https://aws.amazon.com/ai/responsible-ai/policy/) Legal (https://aws.amazon.com/legal/) Privacy Policy (https://aws.amazon.com/privacy/) Cookie Preferences
+English
+/
+Agents (/agents/)
+Apps
+Enterprise (/enterprise/)
+Pricing (/pricing/)
+Docs (/docs/)
+Community
+Resources
+SIGN IN (https://app.kiro.dev) DOWNLOADS (/downloads/)
+/

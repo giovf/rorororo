@@ -1,0 +1,109 @@
+{
+  "request": "hackathons-2026-11-05",
+  "fetched_at": "2026-11-05T19:33:45.794Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://kiro.dev/blog/",
+      "fetched_at": "2026-11-05T19:33:36.748Z",
+      "status": 200,
+      "elapsed_ms": 338,
+      "final_url": "https://kiro.dev/blog/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Thu, 05 Nov 2026 18:53:44 GMT",
+        "etag": "W/\"8cc909eef5146c349f3b45503ef0c8ad\""
+      },
+      "file": "1.txt",
+      "bytes": 12272,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 184242
+    },
+    {
+      "method": "GET",
+      "url": "https://huggingface.co/MCP-2nd-Birthday",
+      "fetched_at": "2026-11-05T19:33:37.097Z",
+      "status": 404,
+      "elapsed_ms": 76,
+      "final_url": "https://huggingface.co/MCP-2nd-Birthday",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"cab6-u96KRABQHMPOWA5I0MG1fZPB4+E\""
+      },
+      "file": "2.txt",
+      "bytes": 2077,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 51894
+    },
+    {
+      "method": "GET",
+      "url": "https://solana.com/x402/hackathon",
+      "fetched_at": "2026-11-05T19:33:37.175Z",
+      "retries": 3,
+      "status": 429,
+      "elapsed_ms": 7292,
+      "final_url": "https://solana.com/x402/hackathon",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "10536"
+      },
+      "file": "3.txt",
+      "bytes": 210,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 24732
+    },
+    {
+      "method": "GET",
+      "url": "https://lablab.ai/ai-hackathons",
+      "fetched_at": "2026-11-05T19:33:44.470Z",
+      "status": 200,
+      "elapsed_ms": 345,
+      "final_url": "https://lablab.build/ai-hackathons",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 14001,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 957346
+    },
+    {
+      "method": "GET",
+      "url": "https://colosseum.com/",
+      "fetched_at": "2026-11-05T19:33:44.850Z",
+      "status": 200,
+      "elapsed_ms": 377,
+      "final_url": "https://colosseum.com/",
+      "headers": {
+        "content-type": "text/html",
+        "etag": "W/\"nw0vw7\""
+      },
+      "file": "5.txt",
+      "bytes": 6735,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 358900
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon",
+      "fetched_at": "2026-11-05T19:33:45.296Z",
+      "status": 200,
+      "elapsed_ms": 484,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"el51mqh8k4sx2\""
+      },
+      "file": "6.txt",
+      "bytes": 16259,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 224305
+    }
+  ]
+}
