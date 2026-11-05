@@ -73,6 +73,21 @@ describe('violations', () => {
     expect(violations(md, '2026-10-04')).toEqual([]);
   });
 
+  it('refuses a new first-run line that names no installed workflow, in either name shape', () => {
+    const md = [
+      '- 2026-11-05 18:32 | burn-down | epubcheck first run: success (dispatched after the installer)',
+      '- 2026-11-05 19:29 | burn-down | epubcheck.yml first run: success (run 1 at 18:28)',
+      '- 2026-11-05 19:30 | burn-down | epub-check first run: success',
+      '- 2026-11-04 19:30 | burn-down | old-name first run: success (before the rule)',
+      '- 2026-11-05 19:31 | burn-down | Built foundry x: the first run of nothing',
+    ].join('\n');
+    const found = violations(md, CAP_FROM, CAP, ['epubcheck.yml', 'landing.yml']);
+    expect(found.map((v) => [v.line, v.kind])).toEqual([[3, 'unknown-workflow']]);
+    expect(formatViolation(found[0]!)).toContain('names no workflow in .github/workflows');
+    // Without the workflow list (older callers) the check is off.
+    expect(violations(md, CAP_FROM, CAP)).toEqual([]);
+  });
+
   it('is clean on a file with only compliant new lines', () => {
     const clean = `- 2026-10-03 09:00 | build | ${exactly120}\n- 2026-10-05 17:00 | exchange | ok\n`;
     expect(violations(clean)).toEqual([]);

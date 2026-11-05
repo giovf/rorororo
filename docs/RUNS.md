@@ -2524,5 +2524,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 19:33 | burn-down | gankdat change-feed-shelf-listing done: feeds page + OPML live with the next deploy; 3 tests
 - 2026-11-05 19:38 | burn-down | hackathons research: Kiroween (Kiro-built only), MCP 2nd birthday absent, Solana x402 no 2026 run
 - 2026-11-05 19:38 | burn-down | hackathons: lablab index, Colosseum, Codegeist read — nothing fits; research_after 2026-11-10 (Meta winners)
-- 2026-11-05 19:41 | burn-down | foundry research: first-runs-bare-workflow-name (4), ci-minutes-line-public-repo (3), runner-script-dispatch (4)
+- 2026-11-05 19:36 | burn-down | foundry research: first-runs-bare-workflow-name (4), ci-minutes-line-public-repo (3), runner-script-dispatch (4)
 - 2026-11-05 19:39 | burn-down | tax-workbook research: evidence unchanged (0 sales, open items dated or owner-held); research_after 2026-11-09
+- 2026-11-05 19:39 | burn-down | Claimed foundry first-runs-bare-workflow-name (4); fourth item of the slot, night cap reached after it
+- 2026-11-05 19:39 | burn-down | Built foundry first-runs-bare-workflow-name: a first-run line counts with or without .yml; unknown names fail runs
+- 2026-11-05 19:42 | burn-down | Stopping at 30 min: 3 items done (2 gankdat, 1 foundry), 3 queues researched; next is a 0.3-day item

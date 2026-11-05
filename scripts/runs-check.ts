@@ -31,7 +31,7 @@
 //      npm run runs -- check [--from YYYY-MM-DD] [--cap 120]
 //      npm run runs -- list  [--from YYYY-MM-DD] [--cap 120]   → every offender, never fails
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -94,20 +94,49 @@ export function textLength(text: string): number {
 
 export interface Violation {
   line: number;
-  kind: 'too-long' | 'malformed';
+  kind: 'too-long' | 'malformed' | 'unknown-workflow';
   /** Text length for `too-long`; 0 for `malformed`. */
   length: number;
   preview: string;
 }
 
-/** Violations among lines dated on or after `from`: text over `cap`, or an unparseable bullet. */
-export function violations(md: string, from = CAP_FROM, cap = CAP): Violation[] {
+/** Lines from this date on that read `<name> first run:` must name an installed workflow. */
+export const FIRST_RUN_FROM = '2026-11-05';
+
+/**
+ * The workflow a `<name> first run: …` line names, with or without `.yml`, matched against the
+ * installed files; null when the line is not a first-run line, the name otherwise (2026-11-05,
+ * foundry `first-runs-bare-workflow-name`).
+ */
+export function unknownFirstRunName(text: string, workflows: readonly string[]): string | null {
+  const m = /^(\S+) first run: /.exec(text);
+  if (!m) return null;
+  const name = m[1]!;
+  const known = new Set(workflows.flatMap((w) => [w, w.replace(/\.ya?ml$/, '')]));
+  return known.has(name) ? null : name;
+}
+
+/**
+ * Violations among lines dated on or after `from`: text over `cap`, an unparseable bullet, or
+ * (lines from FIRST_RUN_FROM, when `workflows` is given) a first-run line naming no workflow.
+ */
+export function violations(
+  md: string,
+  from = CAP_FROM,
+  cap = CAP,
+  workflows?: readonly string[],
+): Violation[] {
   const { runs, malformed } = parseRuns(md);
   const out: Violation[] = [];
   for (const r of runs) {
     if (r.date < from) continue;
     const length = textLength(r.text);
     if (length > cap) out.push({ line: r.line, kind: 'too-long', length, preview: r.text });
+    const unknown =
+      workflows && r.date >= FIRST_RUN_FROM ? unknownFirstRunName(r.text, workflows) : null;
+    if (unknown !== null) {
+      out.push({ line: r.line, kind: 'unknown-workflow', length, preview: r.text });
+    }
   }
   for (const m of malformed) {
     if (m.date < from) continue;
@@ -120,7 +149,9 @@ export function formatViolation(v: Violation, cap = CAP): string {
   const head = v.preview.length > 80 ? `${v.preview.slice(0, 79).trimEnd()}…` : v.preview;
   return v.kind === 'too-long'
     ? `${RUNS_FILE}:${v.line}: ${v.length} chars, cap ${cap} (${v.length - cap} over): ${head}`
-    : `${RUNS_FILE}:${v.line}: not \`- YYYY-MM-DD HH:MM | <routine> | <text>\`: ${head}`;
+    : v.kind === 'unknown-workflow'
+      ? `${RUNS_FILE}:${v.line}: first-run line names no workflow in .github/workflows (use the file name, with or without .yml): ${head}`
+      : `${RUNS_FILE}:${v.line}: not \`- YYYY-MM-DD HH:MM | <routine> | <text>\`: ${head}`;
 }
 
 /** Dated bullets (`- YYYY-MM-DD …`) in a file: run lines, or decision-log entries. */
@@ -216,7 +247,11 @@ function main(): void {
     throw new Error('usage: runs -- check|list [--from YYYY-MM-DD] [--cap N]');
   }
   const md = readFileSync(path.resolve(RUNS_FILE), 'utf8');
-  const found = violations(md, from, cap);
+  const workflowsDir = path.resolve('.github/workflows');
+  const workflows = existsSync(workflowsDir)
+    ? readdirSync(workflowsDir).filter((f) => /\.ya?ml$/.test(f))
+    : [];
+  const found = violations(md, from, cap, workflows);
   switch (command) {
     case 'check': {
       if (found.length === 0) {

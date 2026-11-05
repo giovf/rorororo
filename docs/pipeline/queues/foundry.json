@@ -1354,13 +1354,14 @@
     {
       "id": "first-runs-bare-workflow-name",
       "title": "`npm run first-runs` accepts a `<name> first run:` line with or without the `.yml` suffix, and `npm run runs` rejects a new first-run line whose name is neither",
-      "why": "Research 2026-11-05 (burn-down): the 18:25 slot dispatched epubcheck.yml after its installer and stamped `epubcheck first run: success (…)` at 18:32; `first-runs` matches the marker `| <file name> first run: ` only, so the 19:00 slot was told `epubcheck.yml: installer 18:27, dispatchable, no line`, re-read the run through the Actions API and stamped the line a second time in the `.yml` shape — the exact double-stamp the 10-20 rule exists to stop, now from the other side. Accept the bare name (the file name without `.yml`) as the same marker, and have the run-log check refuse a new `first run:` line that names no installed workflow in either shape, so the mistake is caught at commit time. Evidence 1 (one wasted re-read) × reach 2 (every slot's CI check) ÷ 0.1 day = 20, discounted to 4: a reading's cost, not income.",
+      "why": "Research 2026-11-05 (burn-down): the 18:25 slot dispatched epubcheck.yml after its installer and stamped `epubcheck first run: success (…)` at 18:32; `first-runs` matches the marker `| <file name> first run: ` only, so the 19:00 slot was told `epubcheck.yml: installer 18:27, dispatchable, no line`, re-read the run through the Actions API and stamped the line a second time in the `.yml` shape — the exact double-stamp the 10-20 rule exists to stop, now from the other side. Accept the bare name (the file name without `.yml`) as the same marker, and have the run-log check refuse a new `first run:` line that names no installed workflow in either shape, so the mistake is caught at commit time. Evidence 1 (one wasted re-read) × reach 2 (every slot's CI check) ÷ 0.1 day = 20, discounted to 4: a reading's cost, not income. — Built 2026-11-05 (burn-down): `firstRunLines` matches the marker with the file name or its stem (`workflowStem`), so `epubcheck first run:` settles `epubcheck.yml`; `runs-check` gains `unknownFirstRunName` and the `unknown-workflow` violation for lines dated from 2026-11-05 whose `<name> first run:` names no file in `.github/workflows` in either shape (older callers without the list are unchanged); 2 tests. Live: `first-runs` reads `nothing owed`, `runs` clean.",
       "effort_days": 0.1,
       "proof": "first-runs.test.ts: a bare-name line after the installer counts; runs check fails a `first run:` line naming an unknown workflow",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-05",
-      "doing_since": "2026-11-05"
+      "doing_since": "2026-11-05",
+      "done_at": "2026-11-05"
     },
     {
       "id": "ci-minutes-line-public-repo",

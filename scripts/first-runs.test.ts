@@ -44,6 +44,17 @@ describe('owedFirstRuns', () => {
     const owed = owedFirstRuns(parseInstallers(log), r, all).map((o) => o.name);
     expect(owed).toEqual(['demo-video.yml']);
   });
+  it('a line that names the workflow without .yml settles it the same way', () => {
+    // 2026-11-05: `epubcheck first run: success` at 18:32 was invisible to the 19:00 slot.
+    const r = runs(
+      '- 2026-10-26 17:20 | burn-down | epubcheck first run: success (run 1 at 18:28)',
+    );
+    const installers = parseInstallers(
+      '2026-10-26T17:17:00+00:00|ci: install workflow(s) epubcheck.yml\n',
+    );
+    expect(owedFirstRuns(installers, r, all).map((o) => o.name)).toEqual([]);
+  });
+
   it('a line from an earlier install of the same file does not count', () => {
     const r = runs('- 2026-10-23 10:00 | build | notify-owner.yml first run: success');
     const owed = owedFirstRuns(parseInstallers(log), r, all).map((o) => o.name);

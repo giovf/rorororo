@@ -70,15 +70,28 @@ export function hasDispatch(yaml: string): boolean {
     .some((line) => /^\s*(-\s*)?workflow_dispatch\b/.test(line.replace(/#.*$/, '')));
 }
 
-/** The `<name> first run: <result>` lines of RUNS.md, with stamp and result. */
+/** The file name without its `.yml` / `.yaml` suffix — the bare name a slot may stamp instead. */
+export function workflowStem(name: string): string {
+  return name.replace(/\.ya?ml$/, '');
+}
+
+/**
+ * The `<name> first run: <result>` lines of RUNS.md, with stamp and result. The name counts with
+ * or without its `.yml` (2026-11-05, foundry `first-runs-bare-workflow-name`: the 18:32 slot wrote
+ * `epubcheck first run: success` and the next slot, told `no line`, re-read and re-stamped it).
+ */
 function firstRunLines(runs: string, name: string): { stamp: string; result: string }[] {
   const out: { stamp: string; result: string }[] = [];
-  const marker = `| ${name} first run: `;
+  const markers = [...new Set([name, workflowStem(name)])].map((n) => `| ${n} first run: `);
   for (const line of runs.split('\n')) {
     const m = /^- (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) \| [^|]+ /.exec(line);
-    const at = line.indexOf(marker);
-    if (!m || at < 0) continue;
-    out.push({ stamp: m[1]!, result: line.slice(at + marker.length).trim() });
+    if (!m) continue;
+    for (const marker of markers) {
+      const at = line.indexOf(marker);
+      if (at < 0) continue;
+      out.push({ stamp: m[1]!, result: line.slice(at + marker.length).trim() });
+      break;
+    }
   }
   return out;
 }
