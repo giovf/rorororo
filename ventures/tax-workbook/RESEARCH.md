@@ -327,3 +327,10 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   boxes, MTD quarters, how the estimate works — linking the free calculator — and the one-off price); `scripts/landing-tax-workbook-page.test.ts`
   parses both blocks and ties each Offer's price to the page's own price and the FAQ names to the h3s. The thanks page was already
   `noindex`. The day-30 read of the calculator page (2026-12-03) reads this page's rich-result status with it. Nothing fetched.
+- **2026-11-05 19:38 (burn-down):** starved-queue pass, nothing fetched. Evidence unchanged since 11-03: three shelves live with 0 sales (Etsy
+  day 7, Kindle day 5, Payhip and own checkout day 3), the 11-05 build added the cross-sell links and the own-checkout sale reading (§7 rows),
+  and every open item is dated or owner-held — the reseller listing waits on action 037 (open, never gains steps), the paperback and the Etsy
+  bill on the owner's sittings, the price change on 12-01, the three day-30/60 reads on 12-03, 12-28 and 12-30. No item added: the next signal
+  is the W45 review on 11-08 reading the first week of own-checkout rows and the Daily numbers' Payhip summary, so `research_after` is set
+  to 2026-11-09; a first sale on any shelf before then reaches the queue through the inbox triage and needs no pass.
+
