@@ -2516,3 +2516,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 19:20 | burn-down | Facet titles lead with the class (StatsFacet.noun); other-class list links before, after, largest 5
 - 2026-11-05 19:20 | burn-down | Tests: ≥ 150 words on a full and an empty class page, no shared paragraph, names escaped (14 new)
 - 2026-11-05 19:20 | burn-down | gankdat stats-page-content-depth done (v0.28.2): prose on every stats page; day-30 read queued 12-05
+- 2026-11-05 19:29 | burn-down | epubcheck.yml first run: success (run 1 at 18:28, dispatched by the 18:25 slot; EPUB 0 errors)
+- 2026-11-05 19:29 | burn-down | Claimed gankdat change-feed-shelf-listing (3); second item of the slot
+- 2026-11-05 19:33 | burn-down | /feeds discovery page and /feeds/opml (62 feeds, registers as folders); linked from /stats, llms.txt, sitemap
+- 2026-11-05 19:33 | burn-down | Relay feed-shelves: Feedly and Inoreader list a feed only once subscribed; n8n/Zapier take a pasted URL
+- 2026-11-05 19:33 | burn-down | Owner reader-account step held as feeds-reader-subscriber-step (blocked): score 3 < 10 for a new account
+- 2026-11-05 19:33 | burn-down | gankdat change-feed-shelf-listing done: feeds page + OPML live with the next deploy; 3 tests

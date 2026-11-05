@@ -255,6 +255,22 @@ the prose is a pure function of the blob the refresh already writes. Proof is th
 `stats-index-day-30-read` (not before 2026-12-05): ≥ 20 `/stats` URLs in either index, read the same way as the
 11-05 count (DuckDuckGo's HTML results through the relay; Search Console's `indexed N/M` in the Daily numbers row).
 
+**Built 2026-11-05 — `change-feed-shelf-listing`** (burn-down, v0.28.2): the feeds' own discovery page at
+`/feeds` (every register feed with its URL, the 45 class feeds folded under the journal, `<link rel=alternate>`
+per register, how Feedly/Inoreader, Slack, Teams, Zapier, Make, n8n and Power Automate take a feed) and one OPML
+2.0 of all 62 feeds at `/feeds/opml` (registers as folders), linked from `/stats`, `llms.txt` and the sitemap.
+Shelf read through the relay (`docs/relay/responses/feed-shelves-2026-11-05/`): Feedly's keyless search answers
+`[]` for the exact feed URL with `.xml` (the 18:30 read had queried the URL without it), for the class/09 feed and
+for the generic query "trade mark applications", and `/v3/feeds/feed/<url>` answers `[]` — Feedly lists a feed
+only once a user subscribes, with no publisher submission; Inoreader's `/feed/<url>` page is a sign-in wall; the
+n8n RSS Feed Trigger ("Feed URL: enter the URL of the RSS feed to poll") and Zapier's "New Item in Feed"
+(required field `url`) take one pasted URL and keep no directory. So the automation shelves have no listing path
+at all — a feed is found through the product's pages and the search index — and the reader shelves need one
+subscriber. Our own feed answered the runner 200 with 50 entries. The owner step the item allowed (import the OPML
+into a free reader account) is held as `feeds-reader-subscriber-step` (blocked), not filed: a new account on the
+owner's identity is asked only for work scoring ≥ 10 (owner 2026-10-29). Proof of this build is the same `feeds
+30d:` reading — the UA count rising past 20 — and Feedly's search once anyone subscribes.
+
 **Built 2026-10-05 — `change-feed-rss`** (burn-down): every register dataset now has a keyless
 Atom feed (`/feeds/<slug>.xml`, plus one per facet value such as
 `/feeds/uk-trademark-journal/class/09.xml`) of its last 7 days of changes, linked from the stats

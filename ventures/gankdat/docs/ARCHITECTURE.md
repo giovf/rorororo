@@ -552,6 +552,15 @@ runs `check:root`.
   `<link rel="alternate">` on the stats pages; `rest_feed` Analytics Engine point (UA, path,
   hit/miss, slug) → `feeds 30d:` in the Daily numbers row. Entry titles are dataset-agnostic
   (first two short string fields) — the isolation rule holds.
+  **Discovery page and OPML** (2026-11-05, `change-feed-shelf-listing`, v0.28.2): the day-30 read found 18 user
+  agents and no reader that had ever added a feed (Feedly's search empty), and the shelf read showed why — Feedly
+  and Inoreader list a feed only once a user subscribes, the Zapier and n8n triggers take one pasted URL, none
+  keeps a directory. So `GET /feeds` is the feeds' own page (every register feed with its URL and statistics link,
+  facet feeds folded under their register, `<link rel="alternate">` per register, how each shelf takes a feed) and
+  `GET /feeds/opml` one OPML 2.0 of every feed (`listFeeds`, `renderOpml`: registers as folders, facet feeds
+  nested, `text/x-opml`), both an hour in the edge cache and rate limited like the feeds; the stats index,
+  `llms.txt` and `sitemap.xml` link them. Nothing per dataset: the list is the registry's `hasChangeFeed` sources
+  and their listed facet values.
 - **Origin notice** (`DataSource.notice`, 2026-10-11): a dated plain sentence on a source whose origin is
   paused or emptied, shown on `/stats/<slug>`, in `/v1/data` and `list_sources` (`notice`, null
   otherwise). The refresh keeps failing with the evidence (`origin dataset empty: …`) so the Daily

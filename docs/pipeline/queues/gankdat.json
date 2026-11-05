@@ -1057,13 +1057,25 @@
     {
       "id": "change-feed-shelf-listing",
       "title": "Put the change feeds where readers find feeds: a Feedly/Inoreader presence (one owner-free route first — the feeds' own discovery pages and an OPML of all feeds at /feeds/opml; then, if the shelves index only subscribed feeds, one ≤ 5-minute owner step adding the OPML to a free reader account) and the n8n/Zapier RSS-trigger docs read for a listing path",
-      "why": "change-feed-rss proof failed at day 30 (2026-11-05): 380 fetches, 18 user agents (< 20) and no key issued with a /feeds referrer; Feedly's keyless search returns nothing for gankdat.com or a feed URL, i.e. no reader has ever added one, so the shelves cannot show them. The pages already carry Atom autodiscovery links. The item that built the feeds said: list them on the feed shelves before touching the format.",
+      "why": "change-feed-rss proof failed at day 30 (2026-11-05): 380 fetches, 18 user agents (< 20) and no key issued with a /feeds referrer; Feedly's keyless search returns nothing for gankdat.com or a feed URL, i.e. no reader has ever added one, so the shelves cannot show them. The pages already carry Atom autodiscovery links. The item that built the feeds said: list them on the feed shelves before touching the format. — Built 2026-11-05 (burn-down, v0.28.2): `GET /feeds` is the feeds' own discovery page (every register feed with its URL and statistics link, the facet feeds folded under their register, `<link rel=alternate>` per register, how each shelf takes a feed) and `GET /feeds/opml` an OPML 2.0 of all 62 feeds (registers as folders, facet feeds nested; `listFeeds`, `renderOpml` in `routes/feeds.ts`), linked from the stats index, llms.txt and sitemap.xml; 3 tests. Shelf read (relay `feed-shelves-2026-11-05`): Feedly's keyless search and `/v3/feeds/feed/<url>` return nothing for the exact feed URL (.xml) or a generic query — Feedly knows a feed only once a user subscribes, there is no publisher submission; Inoreader's `/feed/<url>` page is behind sign-in; the n8n RSS Feed Trigger and Zapier's New Item in Feed take one pasted URL and have no directory. So the automation shelves have no listing path — the feed is found through the product's own pages — and the reader shelves need a subscriber. The owner step (a free reader account importing the OPML) is NOT filed: a new account on a service is asked only when the work it unblocks scores ≥ 10 (owner 2026-10-29) and this line scores 3; it waits as `feeds-reader-subscriber-step` (blocked) for an owner request that already opens an account or a feeds reading that earns it.",
       "effort_days": 0.3,
       "proof": "/feeds/opml serves every change feed (test); Feedly search for gankdat.com returns ≥ 1 feed at the next read, or the owner step is filed with the reason the shelf needs a subscriber",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-05",
-      "doing_since": "2026-11-05"
+      "doing_since": "2026-11-05",
+      "done_at": "2026-11-05"
+    },
+    {
+      "id": "feeds-reader-subscriber-step",
+      "title": "One ≤ 5-minute owner step: import /feeds/opml into a free Feedly or Inoreader account so the 62 change feeds exist on the reader shelves (both index a feed only once a user has subscribed)",
+      "why": "change-feed-shelf-listing read (2026-11-05, relay feed-shelves-2026-11-05): Feedly's search returns nothing for a feed nobody has subscribed to and has no publisher submission; Inoreader's feed page is behind sign-in. The only way onto either shelf is a subscriber. Evidence 1 (18 UAs/30 d on the feeds, 0 keys) × reach 2 ÷ 0.02 day — but it needs a new account on the owner's identity, which the owner (2026-10-29) asks for only when the work it unblocks scores ≥ 10, so it is held, not filed.",
+      "effort_days": 0.02,
+      "proof": "Feedly search for gankdat.com returns ≥ 1 feed; the feeds 30d reading rises above 20 user agents within 30 days of the import",
+      "score": 3,
+      "status": "blocked",
+      "blocked_on": "a free reader account on the owner's identity (owner rule 2026-10-29: no new account for work scoring < 10). Lift when an owner request that already opens an account can carry it as one extra step, or when the feeds 30d reading reaches 20 user agents or a key with a /feeds referrer on its own.",
+      "added": "2026-11-05"
     }
   ],
   "research_after": "2026-11-06"
