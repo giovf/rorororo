@@ -2484,3 +2484,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 17:55 | burn-down | Content module src/content/part1-4.ts drafted from the repo's own docs; 9 tests incl. scrub and preface
 - 2026-11-05 17:55 | burn-down | release/: EPUB 302 kB, PDF 7x10in 75 pages, cover 1600x2400; MANUSCRIPT-REVIEW.md lists every chapter
 - 2026-11-05 17:55 | burn-down | epubcheck not run (sandbox refused the jar download); moved to the listing-pack item; venture validated
+- 2026-11-05 18:07 | triage | notify owner dispatched: last run started 15:07 UTC, 3 h ago
