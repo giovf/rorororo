@@ -1061,8 +1061,9 @@
       "effort_days": 0.3,
       "proof": "/feeds/opml serves every change feed (test); Feedly search for gankdat.com returns ≥ 1 feed at the next read, or the owner step is filed with the reason the shelf needs a subscriber",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-05"
+      "status": "doing",
+      "added": "2026-11-05",
+      "doing_since": "2026-11-05"
     }
   ],
   "research_after": "2026-11-06"
