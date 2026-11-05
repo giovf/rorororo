@@ -2510,3 +2510,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 18:34 | burn-down | Tests: cache hit proven by a sentinel, old generation never served, key shape (3 new); ARCHITECTURE note
 - 2026-11-05 18:34 | burn-down | Proof pending: worker-logs read of a two-page actor run on uk-food-hygiene, seven clean Daily rows
 - 2026-11-05 18:44 | burn-down | Count key carries last_refreshed_at too: the journal's windowed refresh grows rows inside one generation
+- 2026-11-05 18:44 | burn-down | Stopping at 34 min: 4 items done (2 claude-code-kit, 2 gankdat); next is a 0.5-day item, left for 19:00
