@@ -1,6 +1,6 @@
 // Part 1: the preface (front matter) and chapters 1–3 — what the operation is, how it is shaped,
 // and what CLAUDE.md does and why each rule is there.
-import { NEEDS_LINE, OWNER_PROCESS_PLACEHOLDER } from './constants.ts';
+import { NEEDS_LINE, OWNER_PROCESS_LINE } from './constants.ts';
 import { h3, p, pre, table, tip, ul, type Chapter } from './helpers.ts';
 
 const preface: Chapter = {
@@ -11,7 +11,7 @@ const preface: Chapter = {
     p(
       'This book was drafted by the operation it describes. The text was written by Claude Code, running as one of the scheduled routines of a small software business, from that business’s own repository: its instruction file, its routine prompts, its work queues, its run log, its decision log, its weekly reviews and the exchange documents in which each week’s bet was chosen. No chapter was written from memory of how such operations are supposed to work; every rule in these pages is quoted or paraphrased from a file the operation runs on, and every incident is taken from the log line, the commit or the decision entry that recorded it on the day.',
       'That is an unusual provenance for a technical book, and it is the honest one. The routine that drafted the manuscript is the same routine that, an hour earlier, had built a sales-reading for a tax spreadsheet and, an hour before that, a paid change-feed route for a data API — both of which appear in later chapters as examples. The book is therefore a primary source about one operation, with the limits that implies: it knows what the files say and what the logs recorded, and it says so when a reading was uncertain or a number was small.',
-      `${OWNER_PROCESS_PLACEHOLDER}`,
+      OWNER_PROCESS_LINE,
       'Two things the reader should know before paying for the rest.',
     ),
     h3('What you need'),

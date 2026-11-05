@@ -14,7 +14,7 @@ import { plainText, type Chapter } from './content/helpers.ts';
 
 export type { Chapter } from './content/helpers.ts';
 export { plainText } from './content/helpers.ts';
-export { NEEDS_LINE, OWNER_PROCESS_PLACEHOLDER } from './content/constants.ts';
+export { NEEDS_LINE, OWNER_PROCESS_LINE, OWNER_PROCESS_PLACEHOLDER } from './content/constants.ts';
 
 export const BOOK = {
   title: 'Running Claude Code Unattended',

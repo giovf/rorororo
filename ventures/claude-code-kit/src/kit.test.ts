@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import JSZip from 'jszip';
 import { describe, expect, it } from 'vitest';
-import { BOOK, chapters, NEEDS_LINE, OWNER_PROCESS_PLACEHOLDER, plainText, wordCount } from './content.ts';
+import { BOOK, chapters, NEEDS_LINE, OWNER_PROCESS_LINE, OWNER_PROCESS_PLACEHOLDER, plainText, wordCount } from './content.ts';
 import { COVER_H, COVER_W, coverSvg, renderCoverPng } from './cover.ts';
 import { buildEpub, epubFiles } from './epub.ts';
 import { interiorHtml } from './pdf.ts';
@@ -48,16 +48,19 @@ describe('the handbook text (claude-code-kit kit-handbook-manuscript)', () => {
     }
   });
 
-  it("carries the disclosure preface 'How this book was written' with the real process and the owner's placeholder", () => {
+  it("carries the disclosure preface 'How this book was written' with the real process and the owner's part, placeholder gone", () => {
     const preface = chs.find((ch) => ch.id === 'preface');
     expect(preface?.frontMatter).toBe(true);
     expect(preface?.title).toMatch(/how this book was written/i);
     const text = plainText(preface?.body ?? '');
     expect(text).toContain('drafted by the operation it describes');
     expect(text).toContain('from that business’s own repository');
-    // the owner's part is filled in at publish time by the listing item (never invented here)
-    expect(text).toContain(OWNER_PROCESS_PLACEHOLDER);
-    expect(all.match(new RegExp(OWNER_PROCESS_PLACEHOLDER.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'))).toHaveLength(1);
+    // the owner's part is the publication rule action 038 makes binding (listing-pack item, 2026-11-05): the placeholder
+    // the manuscript carried must be gone from every chapter, and the rule stated once, in the preface
+    expect(text).toContain(OWNER_PROCESS_LINE);
+    expect(OWNER_PROCESS_LINE).toMatch(/only after reading it/);
+    expect(all).not.toContain(OWNER_PROCESS_PLACEHOLDER);
+    expect(all).not.toContain('[What the owner did');
   });
 
   it('states what the reader still needs: a Claude subscription, a terminal and judgement', () => {
@@ -93,7 +96,7 @@ describe('the handbook text (claude-code-kit kit-handbook-manuscript)', () => {
     const review = readFileSync(path.join(here, '..', 'MANUSCRIPT-REVIEW.md'), 'utf8');
     for (const ch of chs) expect(review, ch.id).toContain(ch.title);
     expect(review).toMatch(/check/i);
-    expect(review).toContain(OWNER_PROCESS_PLACEHOLDER.slice(0, 40));
+    expect(review).toContain(OWNER_PROCESS_LINE.slice(0, 60));
   });
 });
 

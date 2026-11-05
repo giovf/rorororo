@@ -2490,3 +2490,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 18:19 | burn-down | extras.ts rewrites owner, repo, domains, mailboxes, trigger ids and 7 venture slugs to placeholders
 - 2026-11-05 18:19 | burn-down | Scrub refuses secrets, emails, trigger ids, our domains, the handle, venture slugs; planted key fails
 - 2026-11-05 18:19 | burn-down | Appendix file map now equals the zip manifest (test parses it); book rebuilt at 21,063 words
+- 2026-11-05 18:25 | burn-down | Claimed claude-code-kit leanpub-listing-pack-and-owner-step (2.5 × 2); second item of the slot
+- 2026-11-05 18:25 | burn-down | epubcheck: jar downloaded but the sandbox refused to run it again; CI job docs/ci/epubcheck.yml instead
+- 2026-11-05 18:25 | burn-down | Preface placeholder replaced by the publication rule (read before publish); tests flipped; book rebuilt
+- 2026-11-05 18:25 | burn-down | LISTING.md: title, subtitle, blurb, categories, AI Usage text, Book US$19 / Package US$29, newsletters
+- 2026-11-05 18:25 | burn-down | Owner request 038 written (~15 min, £0; the 2 h read stated as the owner's choice); SELF-CAUSED row
+- 2026-11-05 18:25 | burn-down | Built claude-code-kit leanpub-listing-pack-and-owner-step: listing pack and owner request ready
+- 2026-11-05 18:25 | notify | Your Claude Code handbook is ready to publish on Leanpub: about 15 minutes, no cost

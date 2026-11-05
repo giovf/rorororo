@@ -1,0 +1,44 @@
+name: epubcheck
+
+# Validates every built EPUB in the repository with W3C epubcheck (claude-code-kit
+# `leanpub-listing-pack-and-owner-step`, 2026-11-05). The sandbox cannot run a downloaded jar (its
+# auto-mode classifier refused it on 2026-11-05 twice), so the check runs here: on a push that changes a
+# release EPUB, and by dispatch for a routine's read. The report is printed to the job log; a file with
+# errors fails the job. Nothing is committed and no secret is used. The tax workbook's Kindle guide
+# passed 5.2.1 with 0 errors on 2026-10-26 in an attended session; this job keeps that reading current.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'ventures/*/release/*.epub'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: epubcheck
+  cancel-in-progress: true
+
+jobs:
+  epubcheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - name: Fetch epubcheck 5.2.1 (W3C release; Java 21 is on the runner)
+        run: |
+          curl -sSL -o epubcheck.zip https://github.com/w3c/epubcheck/releases/download/v5.2.1/epubcheck-5.2.1.zip
+          unzip -q epubcheck.zip
+          java -version
+      - name: Check every EPUB under ventures/*/release/ (errors fail the job, warnings are printed)
+        run: |
+          status=0
+          for f in ventures/*/release/*.epub; do
+            echo "== $f"
+            if ! java -jar epubcheck-5.2.1/epubcheck.jar "$f"; then status=1; fi
+          done
+          exit $status

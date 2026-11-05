@@ -5,13 +5,16 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (2)
+## Requests (3)
 
 1. **second tax spreadsheet is ready for your Etsy shop** — ~10 min, since 2026-11-03; unblocks tax-workbook `reseller-listing-live` (8). Steps: [037](actions/037-etsy-reseller-listing.md).
    second tax spreadsheet is ready for your Etsy shop — publish the Reseller workbook listing, ~10 min, £0.16 — docs/for-owner/actions/037-etsy-reseller-listing.md
 
 2. **Etsy could not charge your card for a £2.98 bill; pay it or…** — time not stated, since 2026-11-01; unblocks tax-workbook `etsy-bill-ledger-row` (3).
    Etsy could not charge your card for a £2.98 bill; pay it or update the card in Etsy billing before 22 Nov
+
+3. **Claude Code handbook ready for Leanpub** — ~15 min, since 2026-11-05; nothing queued waits on it. Steps: [038](actions/038-leanpub-kit.md).
+   Claude Code handbook ready for Leanpub: sign up, upload, publish, ~15 min, £0 — docs/for-owner/actions/038-leanpub-kit.md
 
 ## Waiting on an attended Claude session, not you (3)
 

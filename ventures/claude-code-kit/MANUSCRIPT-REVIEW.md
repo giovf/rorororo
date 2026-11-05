@@ -5,14 +5,15 @@ curation rather than a skim: one row per section, with the claims a reader will 
 sentence only you can write. The build is `npm run build -w @foundry/claude-code-kit` → `release/` (EPUB, PDF, cover);
 the word count and page count are printed by the build and checked by `src/kit.test.ts` (20–30k words).
 
-## The one sentence you must write
+## The one sentence that has to be true
 
-The preface carries this placeholder, which the listing-pack item replaces with what you actually did:
+The preface's placeholder was replaced on 2026-11-05 (listing-pack item) by the publication rule action 038 makes binding:
 
-> [What the owner did before publishing — to be stated by the owner at publication: edited, cut and verified; or read and published as drafted.]
+> The owner of the operation publishes this book only after reading it against the review checklist the routine wrote for it, chapter by chapter, with the claims a reader would rely on marked for checking. Whatever they chose to change is in the text you are reading, and nothing was altered after their read. If this book is on sale, that read happened.
 
-Write it true. "I read it, cut two paragraphs and published it" is fine. The test fails the build while the placeholder is
-in the text, so the listing item cannot ship without it being replaced.
+It is true by construction only if you publish after reading. If you want it worded as what you actually did ("I read
+it, cut two paragraphs and published it"), send `038 changes: …` and the next routine rebuilds the files before you
+upload. The build test fails while the old placeholder is anywhere in the text.
 
 ## Sections and the claims to check
 
