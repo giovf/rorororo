@@ -126,7 +126,17 @@ names — never rename those; see memory/git history for why).
   credit packs → top-up balance + ledger (`paypal.ts`, `packs.json`)
 - `src/mcp/` — MCP server at `/mcp`, tools generated from the registry
 - `src/x402/` — x402 v2 pay-per-request routes (dark until configured); `bazaar.ts`
-  generates each route's Bazaar discovery declaration from the registry
+  generates each route's Bazaar discovery declaration from the registry; since
+  2026-11-05 (`x402-change-feed-route`, v0.28.0) the same lane also sells each register's change
+  feed at `GET /x402/changes/<slug>` (the `since` cursor of /v1/changes, `handleChangesQuery`
+  shared with the keyed route, US$0.01 a call — `X402_CHANGES_PRICE_USD` — above the query
+  price because a delta is the product no rival sells; agents asked the MCP wall for
+  `get_changes` 14 times on 11-03). `bazaarRoutes` declares `changes/<slug>` beside the data
+  routes for every source with `hasChangeFeed`; the paywall text, llms.txt and the
+  `connect_account` description name it; the Daily numbers validate clause checks the change
+  resources as `changes/<slug>` and the weekly probe pays an unlisted one once so the Bazaar
+  lists it; `x402_paid` points carry the source slug in blob5 as before, so `x402 30d:` and
+  `datasets 30d external:` count change-feed calls by source
 - `public/` — landing page, docs (Scalar embed), robots/sitemap (Workers
   Assets); `llms.txt` is Worker-generated from the source registry
 - `src/middleware/canonical.ts` — one URL per page: `www.` and `http://` and

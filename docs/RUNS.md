@@ -2464,3 +2464,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 17:17 | burn-down | Daily numbers row gains `own checkout 30d: N sales (guide N), refunds, net` beside payhip 30d
 - 2026-11-05 17:17 | burn-down | Inbox triage: OWN-CHECKOUT SALES rule writes the §7 Sale row; referrer filled via relay next run
 - 2026-11-05 17:17 | burn-down | Relay host foundry-licenses.faceless-api.workers.dev added (sandbox curl: proxy 403)
+- 2026-11-05 17:23 | burn-down | Claimed gankdat x402-change-feed-route (6); second item of the slot
+- 2026-11-05 17:45 | burn-down | gankdat x402-change-feed-route done (v0.28.0): /x402/changes/<slug> sold on the lane at $0.01
+- 2026-11-05 17:45 | burn-down | Bazaar declares changes/<slug> per register (feed query, change-row example); paywall text names it
+- 2026-11-05 17:45 | burn-down | Daily numbers validate clause covers change routes; weekly probe pays an unlisted one (changeSlugs)
+- 2026-11-05 17:45 | burn-down | Tests: 402 at $0.01 with since, paid 200 with cursor, 404 without feed, probe targets (25 pass)
