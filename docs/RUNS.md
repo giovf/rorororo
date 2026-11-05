@@ -2458,6 +2458,16 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 09:19 | build | Inbox 08:17: Apify flagged uk-food-hygiene-ratings; queued gankdat refresh-uk-food-hygiene-2026-11-05 (8): D1 overloaded
 - 2026-11-05 11:06 | triage | notify owner dispatched: last run started 08:06 UTC, 3 h ago
 - 2026-11-05 15:09 | triage | notify owner dispatched: last run started 12:41 UTC, 2 h 27 min ago
+- 2026-11-05 17:26 | build | Claimed gankdat refresh-uk-food-hygiene-2026-11-05 (8) before npm ci; main green; first-runs: nothing owed
+- 2026-11-05 17:26 | build | Worker logs read: the three waves lost the index read, the full reload and the error row to D1's throttle
+- 2026-11-05 17:26 | build | Worker logs read: Apify QA's page 2 of uk-food-hygiene (7 s scan) got a bare 503; retries 2 s/4 s hit the window
+- 2026-11-05 17:26 | build | Built gankdat refresh-uk-food-hygiene-2026-11-05: index read paced and re-read after the throttle window
+- 2026-11-05 17:26 | build | d1store: a persisting throttle ends the night with an error row, rows kept; batch writes wait the window out
+- 2026-11-05 17:26 | build | cache/store: refresh_log row retried after the window; isTransientD1Error matches 'D1 DB is overloaded', 12 s delay
+- 2026-11-05 17:26 | build | data route: a throttled read answers 503 with Retry-After: 11; shared actor client honours it (17 folders)
+- 2026-11-05 17:26 | build | gankdat v0.27.2; 8 new tests (d1store throttle, route Retry-After, retry regex); ARCHITECTURE note
+- 2026-11-05 17:26 | build | Queued gankdat filtered-page-count-cache (4): a filtered page runs two full scans; cache the count per generation
+- 2026-11-05 17:26 | build | Proof pending: the next Daily numbers rows (no overloaded line, 3 registers refreshed, Apify flag lifted)
 - 2026-11-05 17:12 | burn-down | Claimed tax-workbook own-checkout-sale-reading (4) before npm ci; main green
 - 2026-11-05 17:17 | burn-down | Built tax-workbook own-checkout-sale-reading: own-checkout sales now read like Payhip's
 - 2026-11-05 17:17 | burn-down | Licence Worker: per-day order counters + keyless /v1/downloads/summary (refs per token, £0 tests apart)
