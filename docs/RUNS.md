@@ -2522,3 +2522,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 19:33 | burn-down | Relay feed-shelves: Feedly and Inoreader list a feed only once subscribed; n8n/Zapier take a pasted URL
 - 2026-11-05 19:33 | burn-down | Owner reader-account step held as feeds-reader-subscriber-step (blocked): score 3 < 10 for a new account
 - 2026-11-05 19:33 | burn-down | gankdat change-feed-shelf-listing done: feeds page + OPML live with the next deploy; 3 tests
+- 2026-11-05 19:38 | burn-down | hackathons research: Kiroween (Kiro-built only), MCP 2nd birthday absent, Solana x402 no 2026 run
+- 2026-11-05 19:38 | burn-down | hackathons: lablab index, Colosseum, Codegeist read — nothing fits; research_after 2026-11-10 (Meta winners)

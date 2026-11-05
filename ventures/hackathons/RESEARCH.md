@@ -162,6 +162,26 @@ Next signal: the Meta deadline (4 Nov) and the November hackathon announcements;
 2026-11-05 — that pass reads the Meta result page, the MCP birthday successor, lablab's index and
 colosseum.com through the relay, and the PayPal judging (1–15 Dec) is the dated reading after it.
 
+Read 2026-11-05 19:35 (burn-down) — both entries are submitted (PayPal 10-16, Meta 11-02), so the pass is a
+sweep for a next entry: web search to find candidates, the organisers' own pages through the relay
+(`docs/relay/responses/hackathons-2026-11-05/`), never Devpost. Nothing fits an existing-project entry; no item added:
+
+| Candidate | What the primary read shows | Verdict |
+| --- | --- | --- |
+| Kiroween 2026 (AWS Kiro, Devpost) | only an aggregator lists it (submissions to 4 Dec, judging 16 Dec–29 Jan, US$30k / 20k / 10k top prizes); Kiro's own blog index (`kiro.dev/blog/`, 16 posts since 30 Sep) has no 2026 Kiroween post, unlike the 2025 edition's; the 2025 rules required a public repo with a `.kiro` directory, i.e. a project built in the Kiro IDE | **none** — the entry must be built with Kiro by a person (an AWS Builder ID on the owner's identity, hours of the owner's time), which this operation cannot do for them |
+| MCP's 2nd Birthday (Anthropic + Gradio successor) | `huggingface.co/MCP-2nd-Birthday` is a 404 (the 2025 org was `MCP-1st-Birthday`); the web index holds only the Nov 2025 edition (US$17.5–21k cash) | not announced — re-read with the next pass; still the best fit for gankdat's MCP server if it appears |
+| Solana x402 hackathon | the official page answered the runner 429; the web index shows no 2026 edition (the first ran 28 Oct–11 Nov 2025; the page footer is a reused 2026 copyright) | none open; yearly watch stays with the exchange (`x402-sponsor-hackathons`) |
+| lablab.ai index (`lablab.ai/ai-hackathons`, 144 events) | live: AMD AI League (1 Sep–1 Dec, a points leaderboard on AMD hardware) and Vultr Agent Rush (3–8 Nov, hybrid; US$14k + raffle, US$200 credits, declined 10-20 on the payment-method rule); everything else finished; two "Agentic Commerce on Arc" / "Agentic Economy on Arc" events (Circle's Arc chain) listed without dates | none — nothing online with a cash pool an existing project enters |
+| Colosseum (`colosseum.com`) | the site advertises its accelerator (US$250k) and "Eternal" 4-week sprints; no agent hackathon dated; hackathon 7 projects browsable | none open; watch unchanged |
+| Atlassian Codegeist 2026 | no 2026 announcement anywhere (2025 ran 27 Oct–22 Dec on Forge, US$120k); the parked exchange idea `atlassian-marketplace-forge-apps` would be the entry if one opens | none |
+| Meta Global AI Developer Hackathon | the organiser page (read today) keeps the dates: judging 4–8 Nov, closing ceremony and winners 9 Nov; applications `SoldOut`; our entry (team 506, indie) is in | `meta-global-ai-hackathon-results` reads the winners on 11-10 |
+| PayPal AI Hackathon | submissions close 12 Nov 12:00 PT (Devpost's own reminder mail 11-05 17:03), judging 1–15 Dec | entered 10-16; nothing to do until the judging reading |
+
+Next signal: the Meta winners (9 Nov, read 11-10 by the scheduled item) and the November/December announcements
+(an MCP birthday successor, Codegeist 2026); `research_after` set to 2026-11-10 — that pass reads the Meta result,
+`huggingface.co` for the MCP org and the Atlassian developer community through the relay. The PayPal judging
+(1–15 Dec) is the dated reading after it.
+
 ## 3. Validation gate
 
 - Buyers with money: the prize money is already committed by the sponsor — the only "buyer" is a judge.
@@ -213,3 +233,4 @@ submissions with no placing and no judge feedback → `finished`.
 | 2026-10-29 | Blocked | — | — | — | owner claimed the US$150 Meta credits (issued within days) and applied; dev.meta.ai logged the owner out when creating the API key, so the live run is still blocked; PayPal entry demo access added on Devpost the same day (action 028 done) |
 | 2026-11-01 | Review | — | — | — | W44 strategy review: the entry is submitted by 4 Nov with or without the live run — `meta-global-ai-hackathon-submit-fallback` (6) prepares an honest no-live-run package from 11-03 if the key is still absent; the owner's step-3 paste is the same either way |
 | 2026-11-02 | Submitted | — | — | — | Meta Global AI Developer Hackathon entry submitted by the owner on the Cerebral Valley portal (indie track), after a live run: key working, https://apps.gankdat.com/diligence checked Tesco PLC live (pinned 00445790, LOW, ≈ 5 US cents), 2 min 30 s video at apps.gankdat.com/demo/meta-diligence.mp4; judging to 8 Nov, winners ~9 Nov (`meta-global-ai-hackathon-results`) |
+| 2026-11-05 | Research | — | — | — | sweep for a next entry: Kiroween (Kiro-built only), MCP 2nd birthday (not announced), Solana x402 (no 2026 edition), lablab index, Colosseum, Codegeist — nothing fits; waiting for the Meta winners 9 Nov (read 11-10) |
