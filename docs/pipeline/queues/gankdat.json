@@ -1026,8 +1026,9 @@
       "effort_days": 0.5,
       "proof": "a `worker logs` read of a two-page actor run on uk-food-hygiene shows page 2 under 4 s with no 503, and seven Daily numbers rows in a row carry no `D1 DB is overloaded` line on /v1/data routes",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-05"
+      "status": "doing",
+      "added": "2026-11-05",
+      "doing_since": "2026-11-05"
     },
     {
       "id": "stats-page-content-depth",
