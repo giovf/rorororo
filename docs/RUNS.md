@@ -2457,3 +2457,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 09:19 | build | Gap found: own-checkout sales reach no §7 row, so the referrer is unread — queued own-checkout-sale-reading (4)
 - 2026-11-05 09:19 | build | Inbox 08:17: Apify flagged uk-food-hygiene-ratings; queued gankdat refresh-uk-food-hygiene-2026-11-05 (8): D1 overloaded
 - 2026-11-05 11:06 | triage | notify owner dispatched: last run started 08:06 UTC, 3 h ago
+- 2026-11-05 15:09 | triage | notify owner dispatched: last run started 12:41 UTC, 2 h 27 min ago
