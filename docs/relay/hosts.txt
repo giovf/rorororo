@@ -226,5 +226,6 @@ fareside.com  # FareSide: the production facilitator behind facilitator.x402.rs,
 .gradle.org  # Gradle distributions and the plugin portal — the IntelliJ Platform toolchain check (new-ventures spike jetbrains-open-reads, 2026-11-04)
 .jetbrains.team  # JetBrains Space Maven packages: the plugin verifier artefacts (new-ventures spike jetbrains-open-reads, 2026-11-04)
 foundry-licenses.faceless-api.workers.dev  # the licence Worker's keyless own-checkout sales summary, read by the inbox triage (tax-workbook own-checkout-sale-reading, 2026-11-05)
-www.bing.com
-html.duckduckgo.com
+www.bing.com  # Bing site: searches for the IndexNow day-30 read — served the runner a junk SERP, use DuckDuckGo (gankdat indexnow-day-30-read, 2026-11-05)
+html.duckduckgo.com  # DuckDuckGo HTML results (Bing-backed index): the `site:` count that Bing itself refuses a runner (gankdat indexnow-day-30-read, 2026-11-05)
+cloud.feedly.com  # Feedly keyless feed search (/v3/search/feeds): are the change feeds discoverable (gankdat indexnow-day-30-read, 2026-11-05)

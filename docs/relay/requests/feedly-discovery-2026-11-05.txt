@@ -1,0 +1,2 @@
+GET https://cloud.feedly.com/v3/search/feeds?query=gankdat.com&count=20
+GET https://cloud.feedly.com/v3/search/feeds?query=https%3A%2F%2Fgankdat.com%2Ffeeds%2Fuk-food-hygiene&count=5
