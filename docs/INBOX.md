@@ -287,3 +287,4 @@
 - 2026-11-05 17:03 | notification | devpost.com | Submission checklist: it's go time! - PayPal AI Hackathon | hackathon reminder: submissions close Nov 12 12:00 PST; owner submits entries | logged
 - 2026-11-06 07:36 | store | github.com | [GitHub] Claude is requesting updated permissions | GitHub App Claude on giovf asks for extra permissions; accepting is an account click | needs owner
 - 2026-11-06 14:10 (backlog) | notification | trycoinstancy.com | Who handles partnerships at gankdat? | cold partnership outreach from Coinstancy agent-service catalogue; no ask beyond a contact name | logged
+- 2026-11-06 17:20 (backlog) | notification | github.com | [giovf/rorororo] Run failed: check - main (039eff9) | check.yml run 42260636340 failed in 28 s (job check, 2 annotations); watchdog ci-failed line pending | logged

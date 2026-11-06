@@ -2548,3 +2548,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-06 17:33 | build | docs/ci README: a routine push may delete a workflow file (epubcheck.yml went with the build commit)
 - 2026-11-06 17:36 | build | run-script.yml first run: success (run 3 after the 17:32 install: recalc, 36 s, both workbooks ok)
 - 2026-11-06 17:36 | build | tax-workbook recalc on the runner: LibreOffice 17 s without recommends, npm ci -w 3 s, every check ok
+- 2026-11-06 18:07 | triage | notify owner dispatched: last run started 15:06 UTC, 3 h ago
