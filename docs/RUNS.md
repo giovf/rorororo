@@ -2551,3 +2551,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-06 18:07 | triage | notify owner dispatched: last run started 15:06 UTC, 3 h ago
 - 2026-11-06 18:06 | watchdog | ci-failed: check.yml run 458 17:19 — step Run npm run check:root; no later run
 - 2026-11-06 19:39 | watchdog | missed: burn-down slot 2026-11-06 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
+- 2026-11-06 22:07 | triage | notify owner dispatched: last run started 19:38 UTC, 2 h 28 m ago
