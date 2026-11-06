@@ -289,3 +289,4 @@
 - 2026-11-06 14:10 (backlog) | notification | trycoinstancy.com | Who handles partnerships at gankdat? | cold partnership outreach from Coinstancy agent-service catalogue; no ask beyond a contact name | logged
 - 2026-11-06 17:20 (backlog) | notification | github.com | [giovf/rorororo] Run failed: check - main (039eff9) | check.yml run 42260636340 failed in 28 s (job check, 2 annotations); watchdog ci-failed line pending | logged
 - 2026-11-06 18:13 | notification | amazon.com | Welcome to your everything store | Amazon promo newsletter to an unrelated address | logged
+- 2026-11-06 19:34 | notification | 0200project.com | Re: the payment behind each gankdat call | cold outreach asking if we compare payment-attached calls to settled ones; no customer ask | logged
