@@ -42,4 +42,7 @@ with the GitHub MCP `get_job_logs`. Lines today: `root epubcheck` (W3C epubcheck
 `scripts/epubcheck.ts`) and `@foundry/tax-workbook recalc` (LibreOffice). Three bespoke workflows in three weeks
 (epubcheck, worker logs, demo video) each cost an installer commit and a first-run check in the next slot; a new
 tool is now one allow-list line, dropped here as the full file like any other edit. A job that needs a secret or
-uploads an artifact (demo video, worker logs) keeps its own workflow.
+uploads an artifact (demo video, worker logs) keeps its own workflow. Retiring one needs no installer: a routine's push
+may delete a file under `.github/workflows/` (epubcheck.yml went with the build commit of 2026-11-06 17:19; only
+creating or changing one needs the `workflow` scope), and `npm run runs` still accepts the retired name on old
+first-run lines (it reads git's deletions).

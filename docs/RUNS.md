@@ -2542,3 +2542,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-06 17:25 | build | epubcheck.yml retired: a build that writes an EPUB dispatches run script with script=epubcheck instead
 - 2026-11-06 17:25 | build | Docs: SCHEDULERS run script row, docs/ci README paragraph, build routine RUNNER SCRIPTS sentence
 - 2026-11-06 17:32 | build | runs check: a first-run line may name a retired workflow (git deletions), so epubcheck's lines stay valid
+- 2026-11-06 17:33 | build | run-script.yml first run: success (run 1, epubcheck, 22 s: the handbook EPUB has 0 errors, 0 warnings)
+- 2026-11-06 17:33 | build | run script run 2 (tax-workbook recalc) cancelled at the 10 min cap in a silent apt install of libreoffice-calc
+- 2026-11-06 17:33 | build | run-script.yml re-dropped in docs/ci: apt installs no recommends, prints sizes, checks each package landed
+- 2026-11-06 17:33 | build | docs/ci README: a routine push may delete a workflow file (epubcheck.yml went with the build commit)
