@@ -10,6 +10,9 @@ name: run script
 # so, then runs the script with the arguments. A routine reads the result with the GitHub MCP
 # `get_job_logs`. Manual only, 10-minute cap, no secret, nothing committed. (demo video keeps its
 # own workflow: it needs secrets and uploads an artifact.)
+# Run 2 (2026-11-06 17:20, recalc): `apt-get install -qq libreoffice-calc >/dev/null` pulled every
+# recommended package in silence and was cancelled at the cap, so the apt step installs no recommends
+# and prints its sizes and set-up lines.
 
 on:
   workflow_dispatch:
@@ -56,9 +59,12 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - name: Install the tool the line names (apt)
+      - name: Install the tool the line names (apt, no recommends — libreoffice-calc with them ran past the cap)
         if: env.APT != ''
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq $APT >/dev/null
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends $APT | grep -E '^(Need to get|After this|Setting up)' || true
+          for p in $APT; do dpkg -s "$p" >/dev/null 2>&1 || { echo "::error::$p did not install"; exit 1; }; done
       - name: Install the workspace (npm ci for that workspace only)
         if: env.INSTALL == 'yes'
         run: |
