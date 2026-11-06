@@ -1380,8 +1380,9 @@
       "effort_days": 0.3,
       "proof": "the workflow's first run (dispatched with script=epubcheck) prints the EPUB result in the job log; epubcheck.yml retired in the same change",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-05"
+      "status": "doing",
+      "added": "2026-11-05",
+      "doing_since": "2026-11-06"
     }
   ]
 }
