@@ -979,9 +979,10 @@
       "effort_days": 0.1,
       "proof": "a RESEARCH.md paragraph dated 2026-11-06 with the three numbers (clients, calls, 2026-07-28 status codes) and either the proof met or the next item queued",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-11-06",
-      "added": "2026-10-30"
+      "added": "2026-10-30",
+      "doing_since": "2026-11-06"
     },
     {
       "id": "apify-notice-in-daily-row",
