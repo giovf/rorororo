@@ -32,3 +32,14 @@ format and check a workflow here exactly as they will once it sits in `.github/w
 columns). On 2026-11-02 the build slot dropped `gankdat-metrics.yml` here with a double-quoted step name; nothing
 checked it until the installer moved it, and the next push (`check` run 432, 17:52) failed on Prettier until an
 interactive session reformatted the installed file by hand at 17:57. Run `npm run format` after writing a file here.
+
+**A tool the sandbox refuses is a line in `run-script.yml`, not a new workflow (2026-11-06, foundry
+`runner-script-dispatch`).** `.github/workflows/run-script.yml` is dispatched with `workspace` (`root` or an npm
+workspace name), `script` (an npm script) and `args`; its first step refuses any workspace/script pair that is not
+a line of the `case` allow-list in the file, installs the apt packages that line names, runs `npm ci` for that
+workspace when the line says so, then runs the script and prints its output to the job log, which a routine reads
+with the GitHub MCP `get_job_logs`. Lines today: `root epubcheck` (W3C epubcheck over the release EPUBs,
+`scripts/epubcheck.ts`) and `@foundry/tax-workbook recalc` (LibreOffice). Three bespoke workflows in three weeks
+(epubcheck, worker logs, demo video) each cost an installer commit and a first-run check in the next slot; a new
+tool is now one allow-list line, dropped here as the full file like any other edit. A job that needs a secret or
+uploads an artifact (demo video, worker logs) keeps its own workflow.

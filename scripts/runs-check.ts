@@ -31,6 +31,7 @@
 //      npm run runs -- check [--from YYYY-MM-DD] [--cap 120]
 //      npm run runs -- list  [--from YYYY-MM-DD] [--cap 120]   → every offender, never fails
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
+import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -150,7 +151,7 @@ export function formatViolation(v: Violation, cap = CAP): string {
   return v.kind === 'too-long'
     ? `${RUNS_FILE}:${v.line}: ${v.length} chars, cap ${cap} (${v.length - cap} over): ${head}`
     : v.kind === 'unknown-workflow'
-      ? `${RUNS_FILE}:${v.line}: first-run line names no workflow in .github/workflows (use the file name, with or without .yml): ${head}`
+      ? `${RUNS_FILE}:${v.line}: first-run line names no workflow in .github/workflows, now or retired (use the file name, with or without .yml): ${head}`
       : `${RUNS_FILE}:${v.line}: not \`- YYYY-MM-DD HH:MM | <routine> | <text>\`: ${head}`;
 }
 
@@ -239,6 +240,45 @@ export function parseArgs(argv: string[]): Args {
   return { command: positional[0] ?? 'check', flags };
 }
 
+/**
+ * The workflow names a first-run line may use: every file under `.github/workflows/` plus every one
+ * git has seen deleted there (2026-11-06, foundry `runner-script-dispatch`: retiring `epubcheck.yml`
+ * made its two 2026-11-05 first-run lines "unknown" and failed the check). The deleted names come
+ * from `git log` and are empty when git or the history is unavailable (a shallow clone still sees
+ * the names it holds).
+ */
+export function knownWorkflows(root: string): string[] {
+  const dir = path.join(root, '.github', 'workflows');
+  const current = existsSync(dir) ? readdirSync(dir).filter((f) => /\.ya?ml$/.test(f)) : [];
+  const git = (args: string[]): string => {
+    try {
+      return execFileSync('git', args, {
+        cwd: root,
+        encoding: 'utf8',
+        stdio: ['ignore', 'pipe', 'ignore'],
+      });
+    } catch {
+      return '';
+    }
+  };
+  // Committed deletions, then one staged or unstaged in this checkout (the retiring commit runs this check).
+  const deleted = [
+    git(['log', '--diff-filter=D', '--name-only', '--format=', '--', '.github/workflows']),
+    git(['diff', '--diff-filter=D', '--name-only', 'HEAD', '--', '.github/workflows']),
+  ].join('\n');
+  return withRetired(current, deleted.split('\n'));
+}
+
+/** `current` plus the base names of the retired workflow paths, each once, in that order. */
+export function withRetired(current: readonly string[], retiredPaths: readonly string[]): string[] {
+  const out = [...current];
+  for (const p of retiredPaths) {
+    const name = p.trim().split('/').pop() ?? '';
+    if (/\.ya?ml$/.test(name) && !out.includes(name)) out.push(name);
+  }
+  return out;
+}
+
 function main(): void {
   const { command, flags } = parseArgs(process.argv.slice(2));
   const from = typeof flags.from === 'string' ? flags.from : CAP_FROM;
@@ -247,11 +287,7 @@ function main(): void {
     throw new Error('usage: runs -- check|list [--from YYYY-MM-DD] [--cap N]');
   }
   const md = readFileSync(path.resolve(RUNS_FILE), 'utf8');
-  const workflowsDir = path.resolve('.github/workflows');
-  const workflows = existsSync(workflowsDir)
-    ? readdirSync(workflowsDir).filter((f) => /\.ya?ml$/.test(f))
-    : [];
-  const found = violations(md, from, cap, workflows);
+  const found = violations(md, from, cap, knownWorkflows(path.resolve('.')));
   switch (command) {
     case 'check': {
       if (found.length === 0) {

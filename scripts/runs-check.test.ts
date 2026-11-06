@@ -16,6 +16,7 @@ import {
   parseRuns,
   textLength,
   violations,
+  withRetired,
 } from './runs-check.ts';
 
 const short = 'Built the thing';
@@ -84,6 +85,18 @@ describe('violations', () => {
     const found = violations(md, CAP_FROM, CAP, ['epubcheck.yml', 'landing.yml']);
     expect(found.map((v) => [v.line, v.kind])).toEqual([[3, 'unknown-workflow']]);
     expect(formatViolation(found[0]!)).toContain('names no workflow in .github/workflows');
+    // A retired workflow (deleted under .github/workflows) still settles its old lines.
+    expect(
+      withRetired(['landing.yml'], ['.github/workflows/epubcheck.yml', '', 'docs/x.md']),
+    ).toEqual(['landing.yml', 'epubcheck.yml']);
+    expect(
+      violations(
+        md,
+        CAP_FROM,
+        CAP,
+        withRetired(['landing.yml'], ['.github/workflows/epubcheck.yml']),
+      ),
+    ).toEqual(found);
     // Without the workflow list (older callers) the check is off.
     expect(violations(md, CAP_FROM, CAP)).toEqual([]);
   });

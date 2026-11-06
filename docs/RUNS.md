@@ -2537,3 +2537,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-06 11:08 | triage | notify owner dispatched: last run started 08:06 UTC, 3 h ago
 - 2026-11-06 11:07 | watchdog | stalled: build slot 2026-11-06 09:00 UTC started 09:09, no push by 11:00; usage limit? claude.ai/code/routines
 - 2026-11-06 15:07 | triage | notify owner dispatched: last run started 12:23 UTC, 2 h 43 min ago
+- 2026-11-06 17:25 | build | Built foundry runner-script-dispatch: run-script.yml runs an allow-listed npm script on a runner
+- 2026-11-06 17:25 | build | scripts/epubcheck.ts: npm run epubcheck fetches W3C epubcheck 5.2.1, checks every release EPUB; 2 tests
+- 2026-11-06 17:25 | build | epubcheck.yml retired: a build that writes an EPUB dispatches run script with script=epubcheck instead
+- 2026-11-06 17:25 | build | Docs: SCHEDULERS run script row, docs/ci README paragraph, build routine RUNNER SCRIPTS sentence
+- 2026-11-06 17:32 | build | runs check: a first-run line may name a retired workflow (git deletions), so epubcheck's lines stay valid

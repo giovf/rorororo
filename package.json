@@ -44,6 +44,7 @@
     "decisions-roll": "node --disable-warning=ExperimentalWarning scripts/decisions-roll.ts",
     "entry-imports": "node --disable-warning=ExperimentalWarning scripts/node-entry-imports.ts",
     "first-runs": "node --disable-warning=ExperimentalWarning scripts/first-runs.ts",
+    "epubcheck": "node --disable-warning=ExperimentalWarning scripts/epubcheck.ts",
     "claims": "node --disable-warning=ExperimentalWarning scripts/bounty-claims.ts",
     "ci-yaml": "node --disable-warning=ExperimentalWarning scripts/ci-workflow-yaml.ts",
     "slots": "node --disable-warning=ExperimentalWarning scripts/slot-utilisation.ts",

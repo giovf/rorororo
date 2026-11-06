@@ -1376,13 +1376,14 @@
     {
       "id": "runner-script-dispatch",
       "title": "One dispatchable workflow `docs/ci/run-script.yml` (inputs: workspace, an allow-listed npm script, an argument) runs the script on a GitHub runner and prints its output to the job log, so a tool the sandbox refuses (a Java jar, ffmpeg, LibreOffice) needs no bespoke workflow and no first-run cycle",
-      "why": "Research 2026-11-05 (burn-down): the 17:00 and 18:00 slots both lost time to epubcheck — the sandbox refused the jar download, then refused to run the downloaded jar — and the way out was a new bespoke workflow (`docs/ci/epubcheck.yml`), its installer commit and a first-run check in the next slot; the demo video (ffmpeg, W42) and the Worker-log read (10-29) each went the same way. A generic runner — `workflow_dispatch` with `workspace`, `script` (validated against an allow-list kept in the file: epubcheck, recalc, demo, …) and `args`, `npm ci` for that workspace only, a 10-minute cap, output to the job log, nothing committed — is read with `get_job_logs` like worker-logs, and a new tool becomes one line in the allow-list instead of a file. Evidence 2 (three bespoke workflows in three weeks, two slots on one tool today) × reach 2 ÷ 0.3 day = 13, discounted to 4: operation cost, not income.",
+      "why": "Research 2026-11-05 (burn-down): the 17:00 and 18:00 slots both lost time to epubcheck — the sandbox refused the jar download, then refused to run the downloaded jar — and the way out was a new bespoke workflow (`docs/ci/epubcheck.yml`), its installer commit and a first-run check in the next slot; the demo video (ffmpeg, W42) and the Worker-log read (10-29) each went the same way. A generic runner — `workflow_dispatch` with `workspace`, `script` (validated against an allow-list kept in the file: epubcheck, recalc, demo, …) and `args`, `npm ci` for that workspace only, a 10-minute cap, output to the job log, nothing committed — is read with `get_job_logs` like worker-logs, and a new tool becomes one line in the allow-list instead of a file. Evidence 2 (three bespoke workflows in three weeks, two slots on one tool today) × reach 2 ÷ 0.3 day = 13, discounted to 4: operation cost, not income. — Built 2026-11-06 (build): `docs/ci/run-script.yml` (inputs workspace/script/args, a bash `case` allow-list with apt packages and an npm-ci flag per line: `root epubcheck`, `@foundry/tax-workbook recalc`; 10-minute cap, `contents: read`, nothing committed) plus `scripts/epubcheck.ts` (`npm run epubcheck [file …]`: fetches W3C epubcheck 5.2.1 into `dist/epubcheck/` once, runs the jar over every `ventures/*/release/*.epub`, exit 1 on errors; 2 tests); `epubcheck.yml` removed from `.github/workflows/`; SCHEDULERS row, docs/ci README paragraph and a build-routine sentence. demo video stays bespoke (secrets, artifact).",
       "effort_days": 0.3,
       "proof": "the workflow's first run (dispatched with script=epubcheck) prints the EPUB result in the job log; epubcheck.yml retired in the same change",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-05",
-      "doing_since": "2026-11-06"
+      "doing_since": "2026-11-06",
+      "done_at": "2026-11-06"
     }
   ]
 }
