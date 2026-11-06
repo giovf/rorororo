@@ -2530,3 +2530,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-05 19:39 | burn-down | Built foundry first-runs-bare-workflow-name: a first-run line counts with or without .yml; unknown names fail runs
 - 2026-11-05 19:42 | burn-down | Stopping at 30 min: 3 items done (2 gankdat, 1 foundry), 3 queues researched; next is a 0.3-day item
 - 2026-11-05 21:06 | triage | notify owner dispatched: last run started 18:06 UTC, 3 h ago
+- 2026-11-06 00:06 | triage | notify owner dispatched: last run started 21:11 UTC, 2 h 55 min ago
