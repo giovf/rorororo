@@ -1,0 +1,5 @@
+GET https://kdp.amazon.com/en_US/select
+RENDER https://www.amazon.com/s?k=claude+code&i=digital-text
+RENDER https://www.amazon.co.uk/s?k=claude+code&i=digital-text
+GET https://www.amazon.com/dp/B0H77GL44G
+GET https://www.amazon.com/dp/B0H3KPSF9H
