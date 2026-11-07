@@ -2593,3 +2593,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 20:38 | burn-down | Deploys on this push's gankdat CI run; next-slot check: 11-08 Daily numbers `2026-07-28: … listen 200`
 - 2026-11-07 20:40 | burn-down | Keyless subscriptions/listen answered 401 (OAuth wall before the tool list); listen is introspection now
 - 2026-11-07 20:40 | burn-down | v0.28.3 bump: add-in manifest 0.28.3.0 and the connector package regenerated (npm run connector)
+- 2026-11-07 20:43 | burn-down | Stopping at ~33 min: 3 items done (CH day-30 read, /mcp day-7 read, listen close); next: foundry ci-minutes
