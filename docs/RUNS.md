@@ -2588,3 +2588,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 20:26 | burn-down | Worker logs runs 16–19: Cowork subscriptions/listen held open 177 s then cancelled; our smoke tools/call 401
 - 2026-11-07 20:26 | burn-down | Queued gankdat mcp-listen-graceful-close (5): no listChanged bits, listen closes at once, probe listen leg
 - 2026-11-07 20:26 | burn-down | Job logs above the tail window fetched via the relay from the signed blob URL; needle search is lossy (2 of 5)
+- 2026-11-07 20:38 | burn-down | Built gankdat mcp-listen-graceful-close: tools.listChanged false, listen acknowledged and closed at once
+- 2026-11-07 20:38 | burn-down | mcp-directory.spec pins the one-response listen; probe modern pass gains listen 200 (N ms); v0.28.3
+- 2026-11-07 20:38 | burn-down | Deploys on this push's gankdat CI run; next-slot check: 11-08 Daily numbers `2026-07-28: … listen 200`
+- 2026-11-07 20:40 | burn-down | Keyless subscriptions/listen answered 401 (OAuth wall before the tool list); listen is introspection now
+- 2026-11-07 20:40 | burn-down | v0.28.3 bump: add-in manifest 0.28.3.0 and the connector package regenerated (npm run connector)

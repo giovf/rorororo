@@ -1278,3 +1278,8 @@ same for prompts/resources) so `subscriptions/listen` is acknowledged and closed
 `listen` leg to the probe's modern pass (`2026-07-28: tools 200, call 200, listen <status> <ms>`); proof is a
 live listen answering the graceful-close frame in under one second, then the next Cowork session's
 `tools/list` in a `request_id` read. Falls back to a day-7 read of the same two numbers.
+
+**Built the same slot (burn-down 2026-11-07 20:38, v0.28.3, `mcp-listen-graceful-close` done):** `buildMcpServer`
+advertises `tools.listChanged: false`, so the SDK's listenRouter acknowledges and closes a `subscriptions/listen` in one
+response; `test/mcp-directory.spec.ts` pins it and the probe's modern pass gained `listen 200 (N ms)`. Deploys on this
+push's CI run; the 11-08 Daily numbers row is the first reading, the next Cowork session's `tools/list` the proof.

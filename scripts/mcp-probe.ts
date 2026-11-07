@@ -57,7 +57,7 @@ export const PER_PAGE = 1;
 /** One call's budget; a hung edge is a reading too. */
 export const TIMEOUT_MS = 20_000;
 
-export type StepName = 'initialize' | 'tools/list' | 'tools/call';
+export type StepName = 'initialize' | 'tools/list' | 'tools/call' | 'subscriptions/listen';
 
 export interface ProbeStep {
   name: StepName;
@@ -67,6 +67,8 @@ export interface ProbeStep {
   note: string;
   /** tools/call only: the tool asked. */
   tool?: string;
+  /** subscriptions/listen only: how long the server took to acknowledge and close the stream. */
+  ms?: number;
 }
 
 export interface ProbeRun {
@@ -441,7 +443,13 @@ function modernRequest(
   };
 }
 
-/** The two calls a 2026-07-28 client makes (tools/list, then one tools/call), keyless. */
+/**
+ * The calls a 2026-07-28 client makes, keyless: tools/list, one tools/call, then a
+ * `subscriptions/listen` (gankdat `mcp-listen-graceful-close`, 2026-11-07: the owner's Cowork
+ * connector waited 177 s on a listen the Worker held open and never reached tools/list; a
+ * server with no `listChanged` bits acknowledges and closes the stream in one response, and
+ * this step reads how long that took).
+ */
 export async function probeModern(
   url: string,
   fetchFn: FetchLike,
@@ -487,7 +495,56 @@ export async function probeModern(
     step.note = excerpt(`tool error: ${text}`);
   }
   run.steps.push(step);
+  run.steps.push(await listenStep(fetchFn, url, timeoutMs));
   return run;
+}
+
+/**
+ * One `subscriptions/listen` asking for tools list changes: a clean step is a 200 whose SSE body
+ * ends with the spec's graceful-close frame (`resultType: "complete"`) within the budget. A
+ * stream still open at the deadline is the failure this step exists to catch.
+ */
+async function listenStep(fetchFn: FetchLike, url: string, timeoutMs: number): Promise<ProbeStep> {
+  const name: StepName = 'subscriptions/listen';
+  const req = modernRequest(4, name, { notifications: { toolsListChanged: true } });
+  const started = Date.now();
+  let res: Response;
+  try {
+    res = await fetchFn(url, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        accept: 'application/json, text/event-stream',
+        'user-agent': USER_AGENT,
+        ...req.headers,
+      },
+      body: JSON.stringify(req.body),
+      signal: AbortSignal.timeout(timeoutMs),
+    });
+  } catch (e) {
+    return { name, status: null, note: excerpt(e instanceof Error ? e.message : String(e)) };
+  }
+  let bodyTimer: ReturnType<typeof setTimeout> | undefined;
+  const bodyBudget = new Promise<never>((_, reject) => {
+    bodyTimer = setTimeout(
+      () => reject(new Error(`stream still open after ${timeoutMs} ms`)),
+      Math.max(1, started + timeoutMs - Date.now()),
+    );
+  });
+  try {
+    const text = await Promise.race([res.text(), bodyBudget]);
+    const ms = Date.now() - started;
+    if (res.status !== 200) return { name, status: res.status, note: excerpt(text || 'no body') };
+    if (!text.includes('"resultType":"complete"')) {
+      return { name, status: 200, note: excerpt(`no complete frame in ${ms} ms`) };
+    }
+    return { name, status: 200, note: '', ms };
+  } catch (e) {
+    const reason = e instanceof Error ? e.message : String(e);
+    return { name, status: res.status, note: excerpt(`body unread (headers arrived): ${reason}`) };
+  } finally {
+    clearTimeout(bodyTimer);
+  }
 }
 
 export async function probe(
@@ -509,6 +566,7 @@ const SHORT: Record<StepName, string> = {
   initialize: 'init',
   'tools/list': 'tools',
   'tools/call': 'call',
+  'subscriptions/listen': 'listen',
 };
 
 function stepText(s: ProbeStep, run: ProbeRun): string {
@@ -516,13 +574,16 @@ function stepText(s: ProbeStep, run: ProbeRun): string {
   if (stepOk(s)) {
     if (s.name === 'tools/list' && run.tools !== null)
       return `tools ${status} (${run.tools} tools)`;
+    if (s.name === 'subscriptions/listen' && s.ms !== undefined)
+      return `listen ${status} (${s.ms} ms)`;
     return `${SHORT[s.name]} ${status}`;
   }
   return `${SHORT[s.name]} ${status} (${s.note || 'failed'})`;
 }
 
 export function runFailed(run: ProbeRun): boolean {
-  const expected = run.protocol ? 2 : 3;
+  // Three steps either way: init/tools/call on 2025, tools/call/listen on 2026-07-28.
+  const expected = 3;
   return run.steps.length < expected || run.steps.some((s) => !stepOk(s));
 }
 

@@ -319,6 +319,16 @@ runs `check:root`.
   pass (`tools/list` + one `tools/call`, rendered `2026-07-28: tools 200 (N tools), call 200`) beside the 2025 handshake,
   so either era regressing is the next morning's `mcp probe:` reading; `test/mcp-directory.spec.ts` pins both eras.
   Proof: a 2026-07-28 request 200 in the Worker log and `claude tool callers` ≥ 1 client within a week of the deploy.
+  **Listen closes at once** (2026-11-07, `mcp-listen-graceful-close`, v0.28.3): the day-7 read found the proof failed —
+  the only Claude surface on 2026-07-28 (the owner's Cowork connector, five sessions) did `server/discover` (200) and then
+  `subscriptions/listen`, which the Worker held open for 177 s until Cowork cancelled it, and no `tools/list` followed all
+  week. The SDK's `listenRouter.serve` streams keepalives while any requested bit is honoured and closes gracefully
+  (`resultType: "complete"`) only when the honoured filter is empty; `McpServer.registerTool` advertises
+  `tools.listChanged: true` unless the capability is pre-set, so `buildMcpServer` now passes `{ capabilities: { tools:
+  { listChanged: false } } }` — a stateless Worker emits no server-initiated notification, so nothing is lost and a listen
+  is acknowledged and closed in one response. The probe's modern pass gained a third step (`listen 200 (N ms)`; a stream
+  without the complete frame inside the 20 s budget fails the run), and the spec pins the one-response listen. Proof:
+  the next Daily numbers row's `listen 200`, then a `request_id` read of the next Cowork session showing `tools/list`.
   **Lazy OAuth** (2026-09-30, `src/auth/oauth.ts` + `src/routes/oauth.ts`, migration 0013
   `oauth_grants`): Claude, Cursor and ChatGPT start sign-in only on an HTTP 401 with
   `WWW-Authenticate: Bearer resource_metadata=…` (a 200 tool error never does), so the Worker

@@ -988,13 +988,13 @@
     {
       "id": "mcp-listen-graceful-close",
       "title": "2026-07-28 `subscriptions/listen` closes gracefully at once: advertise no `listChanged` bits (stateless Worker, no server-initiated notifications) so the SDK's listenRouter answers the acknowledgement and the `resultType: complete` frame in one response; add a `listen` leg to the probe's modern pass",
-      "why": "Day-7 read 2026-11-07 (RESEARCH.md \"SDK v2 /mcp day-7\"): the one Claude surface speaking 2026-07-28 to us (the owner's Cowork connector, five sessions in a week) does server/discover (200) then subscriptions/listen, and the listen stream was held open 177 s until Cowork cancelled it — McpServer advertises tools.listChanged, Cowork asks for toolsListChanged, the honoured filter is non-empty and listenRouter waits for events a stateless Worker never emits. No tools/list or tools/call followed in any session. Evidence 3 (the stall is in our log) × reach 4 (every Claude client in the directory) ÷ 0.2 d, discounted to 5 because Cowork's next step after listen is inferred, not read.",
+      "why": "Day-7 read 2026-11-07 (RESEARCH.md \"SDK v2 /mcp day-7\"): the one Claude surface speaking 2026-07-28 to us (the owner's Cowork connector, five sessions in a week) does server/discover (200) then subscriptions/listen, and the listen stream was held open 177 s until Cowork cancelled it — McpServer advertises tools.listChanged, Cowork asks for toolsListChanged, the honoured filter is non-empty and listenRouter waits for events a stateless Worker never emits. No tools/list or tools/call followed in any session. Evidence 3 (the stall is in our log) × reach 4 (every Claude client in the directory) ÷ 0.2 d, discounted to 5 because Cowork's next step after listen is inferred, not read. — Built 2026-11-07 (burn-down, same slot as the read): buildMcpServer advertises tools.listChanged false, the spec pins a one-response listen, the probe gained a listen step (`listen 200 (N ms)`), v0.28.3; deploys on this push's CI run, read on the 11-08 Daily numbers row.",
       "effort_days": 0.2,
       "proof": "a live 2026-07-28 subscriptions/listen answers the acknowledgement and the graceful-close frame in < 1 s (the probe's `listen 200 <ms>` on the next Daily numbers row); then the next Cowork session shows tools/list in a request_id read of the Worker log, else a day-7 read of `claude tool callers` dated 7 days after the deploy",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-07",
-      "doing_since": "2026-11-07"
+      "done_at": "2026-11-07"
     },
     {
       "id": "apify-notice-in-daily-row",

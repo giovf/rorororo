@@ -67,8 +67,24 @@ const healthy: Handler = ({ method, params }) => {
   if (method === 'tools/call' && params?.name === 'query_uk_sanctions') {
     return sse({ jsonrpc: '2.0', id: 3, result: { content: [{ type: 'text', text: '{}' }] } });
   }
+  if (method === 'subscriptions/listen') return listenClosed();
   return json({ error: 'unexpected' }, 500);
 };
+
+/** A listen the server acknowledges (empty honoured filter) and closes at once. */
+const listenClosed = (): Response =>
+  new Response(
+    `event: message\ndata: ${JSON.stringify({
+      jsonrpc: '2.0',
+      method: 'notifications/subscriptions/acknowledged',
+      params: { notifications: {} },
+    })}\n\nevent: message\ndata: ${JSON.stringify({
+      jsonrpc: '2.0',
+      id: 4,
+      result: { resultType: 'complete' },
+    })}\n\n`,
+    { status: 200, headers: { 'content-type': 'text/event-stream' } },
+  );
 
 describe('rpcBody', () => {
   it('reads JSON and the first SSE data line', async () => {
@@ -184,9 +200,18 @@ describe('probeModern', () => {
     expect(run.steps.map((step) => [step.name, step.status])).toEqual([
       ['tools/list', 200],
       ['tools/call', 200],
+      ['subscriptions/listen', 200],
     ]);
     expect(run.tools).toBe(4);
-    expect(s.calls.map((c) => c.body.method)).toEqual(['tools/list', 'tools/call']);
+    expect(s.calls.map((c) => c.body.method)).toEqual([
+      'tools/list',
+      'tools/call',
+      'subscriptions/listen',
+    ]);
+    const listen = s.calls[2]!;
+    expect(listen.headers['mcp-method']).toBe('subscriptions/listen');
+    expect(listen.body.params).toMatchObject({ notifications: { toolsListChanged: true } });
+    expect(run.steps[2]!.ms).toBeGreaterThanOrEqual(0);
     const list = s.calls[0]!;
     expect(list.headers['mcp-protocol-version']).toBe('2026-07-28');
     expect(list.headers['mcp-method']).toBe('tools/list');
@@ -218,14 +243,28 @@ describe('probeModern', () => {
   });
 });
 
+describe('probeModern listen step', () => {
+  it('a stream without the complete frame is a failed modern run', async () => {
+    const s = server((body) =>
+      body.method === 'subscriptions/listen'
+        ? sse({ jsonrpc: '2.0', method: 'notifications/subscriptions/acknowledged', params: {} })
+        : healthy(body),
+    );
+    const run = await probeModern('https://x/mcp', s.fetch);
+    expect(run.steps[2]).toMatchObject({ name: 'subscriptions/listen', status: 200 });
+    expect(run.steps[2]!.note).toMatch(/^no complete frame in \d+ ms$/);
+    expect(runFailed(run)).toBe(true);
+  });
+});
+
 describe('probe, probeNote and probeError', () => {
   it('renders a clean keyless run and says the authed run is optional', async () => {
     const s = server(healthy);
     const result = await probe('https://x/mcp', s.fetch, undefined, '2026-10-08');
     expect(result.date).toBe('2026-10-08');
     expect(result.runs).toHaveLength(2);
-    expect(probeNote(result)).toBe(
-      'mcp probe: init 200, tools 200 (4 tools), call 200; 2026-07-28: tools 200 (4 tools), call 200; authed: n/a (no key)',
+    expect(probeNote(result)).toMatch(
+      /^mcp probe: init 200, tools 200 \(4 tools\), call 200; 2026-07-28: tools 200 \(4 tools\), call 200, listen 200 \(\d+ ms\); authed: n\/a \(no key\)$/,
     );
     expect(probeError(result)).toBeNull();
   });
