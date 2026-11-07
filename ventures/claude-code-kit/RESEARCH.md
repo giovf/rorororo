@@ -137,3 +137,11 @@ says plainly that the reader needs a Claude subscription, a terminal and judgeme
   (#46,774, top-10 in two sub-categories) is a 190-page trade-published book — against 11–13 copies per handbook of this
   shape on Leanpub (§2). KDP Select's exclusivity sentence is quoted in the spike; the twin would never enrol. Trigger:
   the Leanpub day-60 read at ≥ 10 copies adds `kindle-edition` (0.3 day, one more 10-minute step on action 038).
+- **2026-11-07 21:45 (burn-down, `spike-whop-claude-code-kit-shelf`):** parked — `docs/exchange/spikes/whop-claude-code-kit-shelf.md`.
+  One relay round, 12 pages. Whop nets more than Leanpub per copy (US$17.81 vs 15.20 at US$19; 27.34 vs 23.20 at US$29:
+  2.7 % + US$0.30, +2 % for Whop as merchant of record for UK/EU VAT, no monthly fee, UK payouts from a US$10 floor) and
+  the category exists (six Claude Code storefronts at US$4.96–97; a US$9/month blueprint store with 79 reviews and a
+  US$5 skill with 5 reviews and 1,200 members are the two with buyers; none shows a sales count; the marketplace search
+  renders as a shell). Parked because the seller terms require identity verification at onboarding and the owner-time
+  rule bars a new identity check for a score-4 line. Trigger: Leanpub day-60 ≥ 10 copies and the owner volunteering
+  the ID check in the same batched request → the listing from the Leanpub pack (≤ 0.2 day).

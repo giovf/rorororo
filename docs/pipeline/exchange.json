@@ -772,6 +772,16 @@
       "added": "2026-11-07",
       "spiked": "2026-11-07",
       "updated": "2026-11-07"
+    },
+    {
+      "id": "whop-claude-code-kit-shelf",
+      "title": "Whop as the developer-audience shelf for the Claude Code operations kit (handbook + Extras zip at US$19/29) — a marketplace with a live Claude Code category, 2.7 % + US$0.30 a sale, UK payouts from a US$10 floor, Whop as merchant of record for UK/EU VAT at +2 %",
+      "status": "parked",
+      "why": "Spike 2026-11-07 (burn-down, docs/exchange/spikes/whop-claude-code-kit-shelf.md, one relay round of 12 pages): the economics beat Leanpub's (US$17.81 vs 15.20 net at US$19; 27.34 vs 23.20 at US$29) and the category exists — six Claude Code storefronts at US$4.96–97, two with buyers (79 reviews on a US$9/month blueprint store, 5 reviews and 1,200 members on a US$5 skill), four with no social proof, none showing a sales count, and the shape that sells is a subscription or community rather than a one-off book. Parked because Whop's seller terms make identity verification a condition of onboarding (\"our Financial Partners and applicable law require we verify your identity upon onboarding\") and the owner-time rule of 2026-10-29 bars a new identity verification for work scoring under 10 (this scores 4).",
+      "trigger": "The Leanpub day-60 read shows ≥ 10 copies sold and the owner volunteers an identity check on a new service in the same batched request → a kit item writes the Whop listing from the Leanpub pack (≤ 0.2 day, Collects and Remits on, the two Leanpub price tiers) and the owner signs up and uploads (~15 min).",
+      "added": "2026-11-07",
+      "spiked": "2026-11-07",
+      "updated": "2026-11-07"
     }
   ]
 }

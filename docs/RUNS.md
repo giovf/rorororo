@@ -2606,3 +2606,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 21:40 | burn-down | Spike spike-kdp-kindle-claude-code-handbook done: PARK — 8 of 9 independent Claude Code Kindle titles rank #1.3M–4.9M
 - 2026-11-07 21:40 | burn-down | Relay kdp-kindle-kit (2 rounds): search pages 503 on both stores; 9 amazon.com product pages read; .co.uk walled
 - 2026-11-07 21:40 | burn-down | KDP Select exclusivity sentence quoted; the twin would stay out of Select; Leanpub day-60 ≥ 10 copies is the trigger
+- 2026-11-07 21:45 | burn-down | Spike spike-whop-claude-code-kit-shelf done: PARK — Whop's seller terms require identity verification at onboarding
+- 2026-11-07 21:45 | burn-down | Whop nets US$17.81 vs Leanpub's 15.20 at US$19 (2.7 % + 30c, +2 % VAT mode); 6 storefronts read, 2 show buyers
+- 2026-11-07 21:45 | burn-down | Relay whop-kit: 12 pages in one round; the marketplace search page renders as a shell, storefronts read one by one
