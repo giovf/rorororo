@@ -1,0 +1,199 @@
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://whop.com/#organization","name":"Whop","url":"https://whop.com/","logo":{"@type":"ImageObject","url":"https://whop.com/v2/whop.svg"},"sameAs":["https://x.com/whop","https://www.instagram.com/whop/","https://www.youtube.com/@WhopIO","https://www.linkedin.com/company/whop-io/","https://www.tiktok.com/@whophq","https://github.com/whopio"]},{"@type":"WebSite","@id":"https://docs.whop.com#website","name":"Whop Docs","url":"https://docs.whop.com","publisher":{"@id":"https://whop.com/#organization"}},{"@type":"WebPage","@id":"https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts#webpage","url":"https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts","name":"Set Up Payouts","description":"Set up Whop Payments to withdraw your balance, check what's available, request manual or automatic withdrawals, and see which countries Whop supports.","isPartOf":{"@id":"https://docs.whop.com#website"},"breadcrumb":{"@id":"https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Whop Docs","item":"https://docs.whop.com"},{"@type":"ListItem","position":2,"name":"Set Up Payouts","item":"https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts"}]},{"@type":["Article","TechArticle"],"@id":"https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts#article","headline":"Set Up Payouts","name":"Set Up Payouts","description":"Set up Whop Payments to withdraw your balance, check what's available, request manual or automatic withdrawals, and see which countries Whop supports.","url":"https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts","mainEntityOfPage":{"@id":"https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts#webpage"},"image":"https://whop.com/core/images/docs?page=manage-your-business/manage-payouts/set-up-payouts&h=5f827cc0","publisher":{"@id":"https://whop.com/#organization"},"isPartOf":{"@id":"https://docs.whop.com#website"}}]}
+meta description: Set up Whop Payments to withdraw your balance, check what's available, request manual or automatic withdrawals, and see which countries Whop supports.
+meta og:title: Set Up Payouts - Whop Docs
+meta og:description: Set up Whop Payments to withdraw your balance, check what's available, request manual or automatic withdrawals, and see which countries Whop supports.
+meta og:url: https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts
+meta og:site_name: Whop Docs
+meta og:image: https://whop.com/core/images/docs?page=manage-your-business/manage-payouts/set-up-payouts&h=5f827cc0
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:type: website
+meta twitter:card: summary_large_image
+meta twitter:title: Set Up Payouts - Whop Docs
+meta twitter:description: Set up Whop Payments to withdraw your balance, check what's available, request manual or automatic withdrawals, and see which countries Whop supports.
+meta twitter:image: https://whop.com/core/images/docs?page=manage-your-business/manage-payouts/set-up-payouts&h=5f827cc0
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+Set Up Payouts - Whop Docs
+Documentation Index
+Fetch the complete documentation index at: /llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content (#content-area)
+Whop Docs home page (/)
+Help Center
+Search...
+⌘K
+Ask Assistant ⌘I
+Dashboard (https://whop.com/dashboard)
+Log In (/login?redirect=/manage-your-business/manage-payouts/set-up-payouts)
+Start Building (https://whop.com/start)
+Start Building (https://whop.com/start)
+Search...
+Navigation
+Manage Payouts
+Set Up Payouts
+Getting Started (/get-started) Manage Your Business (/whop-finance/cards) Payments & Billing (/payments-and-billing/local-payment-methods) Memberships & Access (/memberships-and-access/accessing-your-purchase/how-to-find-your-purchase) Account Settings (/account-settings/personal-details/update-email) Trust & Safety (/trust-and-safety/trust-safety-overview/what-is-not-allowed-on-whop)
+Do More with Your Money
+Whop Cards
+Products
+Create a Product (/manage-your-business/products/create-product)
+Manage Products (/manage-your-business/products/manage-products)
+Add Apps (/add-apps)
+Create a Waitlist (/manage-your-business/products/create-waitlist)
+Free Trials (/manage-your-business/products/free-trials)
+Create a Product (/payments/create-a-product)
+Create a Checkout Link (/payments/create-checkout-link)
+Growth and Marketing
+Promo Codes (/manage-your-business/growth-marketing/promo-codes)
+Tracking Links (/manage-your-business/growth-marketing/tracking-links)
+Tracking Integrations (/manage-your-business/growth-marketing/tracking-integrations)
+Support Chats (/manage-your-business/growth-marketing/automated-messaging)
+Whop Ads (/manage-your-business/growth-marketing/ads)
+Affiliate Program (/manage-your-business/growth-marketing/affiliate-program)
+Affiliates
+Promote Your Business (/affiliates/promote-your-business)
+Set Up Global Affiliates (/affiliates/setup-global)
+Set Up Custom Affiliates (/affiliates/setup-custom)
+Set Up Revenue Share (/affiliates/setup-rev-share)
+Be an Affiliate (/affiliates/be-an-affiliate)
+Manage Business & Team
+Analytics (/manage-your-business/manage-business/analytics)
+Upload Legal Documents (/manage-your-business/manage-business/legal-documents)
+Team Management (/manage-your-business/team-management/manage-team-roles)
+Set Up Payment Processing
+Create a Checkout Link (/manage-your-business/payment-processing/create-checkout-link)
+Set Up Pricing (/manage-your-business/payment-processing/set-up-pricing)
+Access Higher Checkout Links (/manage-your-business/payment-processing/access-higher-checkout-links)
+Checkout Branding (/manage-your-business/payment-processing/checkout-branding)
+Manage Payments
+Manage Users (/manage-your-business/manage-payments/manage-users)
+Send an Invoice (/manage-your-business/manage-payments/send-invoice)
+Refunds (/manage-your-business/manage-payments/issuing-refunds)
+Resolution Center (/manage-your-business/manage-payments/resolution-center)
+Manage Disputes (/manage-your-business/manage-payments/manage-disputes)
+Send an Invoice (/payments/send-an-invoice)
+Manage Payouts
+Set Up Payouts (/manage-your-business/manage-payouts/set-up-payouts)
+Payout Methods (/manage-your-business/manage-payouts/payout-methods)
+Instant Withdrawals (/manage-your-business/manage-payouts/instant-withdrawals)
+Subaccounts (/manage-your-business/manage-payouts/subaccounts)
+Pay Your Team (/manage-your-business/manage-payouts/pay-your-team)
+Troubleshoot Payouts (/manage-your-business/manage-payouts/troubleshoot-payouts)
+close
+On this page
+Back to top
+Enable withdrawals with Whop Payments (#enable-withdrawals-with-whop-payments)
+Get started (#get-started)
+Check your balance (#check-your-balance)
+Through your dashboard (#through-your-dashboard)
+Through your profile (#through-your-profile)
+How to withdraw (#how-to-withdraw)
+Payout through the dashboard (#payout-through-the-dashboard)
+Payout through your profile (#payout-through-your-profile)
+Supported countries (#supported-countries)
+Setting up automatic withdrawals (#setting-up-automatic-withdrawals)
+Manage Payouts
+Set Up Payouts
+Copy page Copy page
+Set up Whop Payments to withdraw your balance, check what’s available, request manual or automatic withdrawals, and see which countries Whop supports.
+Copy page Copy page
+Set up payouts to send your earnings to your bank account or preferred payout method. With Whop, you can set up manual, recurring, or instant payouts to your bank account through Whop Payments. You can also get direct payouts to your PayPal and Coinbase Commerce accounts.
+​ (#enable-withdrawals-with-whop-payments)
+Enable withdrawals with Whop Payments
+To withdraw, you’ll first need to set up Whop Payments:
+1
+Go to Balances
+Go to Dashboard > Balances
+2
+Set up Whop Payments
+Select Set up Whop Payments
+3
+Select your country
+Select your country so payouts are in your local currency
+4
+Complete KYC
+Complete the KYC setup — fill in your details, link your bank, and upload ID
+​ (#get-started)
+Get started
+1
+Go to Balances
+Go to your Dashboard > Balances
+2
+Verify your identity
+Complete identity and account verification if prompted
+3
+Add a payout method
+Add a payout method (bank account or other supported option)
+4
+Set your schedule
+Choose your payout schedule (instant, daily, or weekly, depending on your account)
+After setup, Whop sends sales funds according to your schedule and reserve policy.
+​ (#check-your-balance)
+Check your balance
+You can view and withdraw your earnings from either your Dashboard or your Profile .
+​ (#through-your-dashboard)
+Through your dashboard
+Go to Dashboard > Balances
+Your Balance and Withdrawals are here
+Your Balance includes:
+The amount you can withdraw now
+The balance that’ll be available to pay out soon (when a customer pays, it can take a couple of days for the money to reach your account)
+The date your pending balance will be available on
+​ (#through-your-profile)
+Through your profile
+View your payouts at Profile > Balance .
+​ (#how-to-withdraw)
+How to withdraw
+You can withdraw from your Dashboard or Profile at any time, as long as you meet the minimum withdrawal threshold of $10 (if applicable).
+​ (#payout-through-the-dashboard)
+Payout through the dashboard
+1
+Go to Balances
+Go to your Dashboard > Balances
+2
+Select Withdraw
+Select Withdraw
+3
+Enter amount
+Input the Amount you want to withdraw and select Continue — you can also select Max to withdraw the maximum amount available
+4
+Confirm payout
+Review the details and select Payout
+​ (#payout-through-your-profile)
+Payout through your profile
+1
+Go to Balance
+Go to your Profile > Balance
+2
+Select Withdraw
+Select Withdraw
+3
+Enter amount and confirm
+Input the Amount you want to withdraw and select Payout
+​ (#supported-countries)
+Supported countries
+Whop supports payouts to over 200 different countries:
+Albania Algeria American Samoa Andorra Angola Anguilla Antarctica Antigua and Barbuda Argentina Armenia Aruba Australia Austria Azerbaijan Bahamas Bahrain Bangladesh Barbados Belgium Belize Benin Bermuda Bhutan Bolivia Bosnia and Herzegovina Botswana Brazil British Indian Ocean Territory British Virgin Islands Brunei Bulgaria Burkina Faso Cambodia Cameroon Canada Cape Verde Cayman Islands Chad Chile China Christmas Island Cocos (Keeling) Islands Colombia Cook Islands Costa Rica Croatia Curaçao Cyprus Czech Republic Côte d’Ivoire Denmark Djibouti Dominica Dominican Republic Ecuador Egypt El Salvador Equatorial Guinea Eswatini Estonia Ethiopia Falkland Islands Faroe Islands Fiji Finland France French Guiana French Polynesia Gabon Gambia Georgia Germany Ghana Gibraltar Greece Greenland Grenada Guadeloupe Guam Guatemala Guernsey Guinea Guinea-Bissau Guyana Honduras Hong Kong Hungary Iceland India Indonesia Ireland Isle of Man Israel Italy Jamaica Japan Jersey Jordan Kazakhstan Kenya Kiribati Kosovo Kuwait Kyrgyzstan Laos Latvia Liechtenstein Lithuania Luxembourg Macau Madagascar Malawi Malaysia Maldives Mali Malta Marshall Islands Martinique Mauritania Mauritius Mayotte Mexico Micronesia Moldova Monaco Mongolia Montenegro Montserrat Morocco Mozambique Namibia Nauru Nepal Netherlands Netherlands Antilles New Caledonia New Zealand Nicaragua Niger Niue North Macedonia Northern Mariana Islands Norway Oman Pakistan Palau Panama Paraguay Peru Philippines Pitcairn Islands Poland Portugal Puerto Rico Qatar Republic of the Congo Romania Rwanda Réunion Saint Barthélemy Saint Helena Saint Kitts and Nevis Saint Lucia Saint Martin Saint Pierre and Miquelon Saint Vincent and the Grenadines Samoa San Marino Saudi Arabia Senegal Serbia Seychelles Sierra Leone Singapore Sint Maarten Slovakia Slovenia Solomon Islands South Africa South Korea Spain Sri Lanka Suriname Svalbard and Jan Mayen Sweden Switzerland São Tomé and Príncipe Taiwan Tajikistan Tanzania Thailand Timor-Leste Togo Tokelau Tonga Trinidad and Tobago Tunisia Turkey Turkmenistan Turks and Caicos Islands Tuvalu U.S. Minor Outlying Islands U.S. Virgin Islands Uganda Ukraine United Arab Emirates United Kingdom United States Uruguay Uzbekistan Vanuatu Vatican City Vietnam Wallis and Futuna Western Sahara Zambia Zimbabwe
+Note that different payout options will be available depending on the country to which you’re paying out.
+Whop doesn’t support payouts to sanctioned or restricted countries. See the full list of sanctioned countries (/trust-and-safety/trust-safety-overview/sanctioned-countries) .
+​ (#setting-up-automatic-withdrawals)
+Setting up automatic withdrawals
+1
+Go to Balances
+Go to your Dashboard > Balances
+2
+Open automatic withdrawals
+Select the three dots on the top right corner of the Balances page, then select Automatic withdrawals
+3
+Choose frequency
+Choose How often you want to get paid and select Continue
+4
+Set minimum balance
+Choose the minimum amount to keep in your account and select Continue — you should always have a minimum balance available for refunds or to pay out disputes
+5
+Confirm
+Review the details and select Confirm
+For payout statuses, failed payouts, and affiliate withdrawals, see Troubleshoot payouts (/manage-your-business/manage-payouts/troubleshoot-payouts) .
+x (https://x.com/whop) github (https://github.com/whopio)
+Assistant
+Responses are generated using AI and may contain mistakes.

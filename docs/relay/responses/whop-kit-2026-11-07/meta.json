@@ -1,0 +1,325 @@
+{
+  "request": "whop-kit-2026-11-07",
+  "fetched_at": "2026-11-07T21:39:51.497Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.whop.com/fees",
+      "fetched_at": "2026-11-07T21:35:56.414Z",
+      "status": 200,
+      "elapsed_ms": 284,
+      "final_url": "https://docs.whop.com/fees",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"18ay152tymqczh5\""
+      },
+      "file": "1.txt",
+      "bytes": 11097,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 606061
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts",
+      "fetched_at": "2026-11-07T21:35:57.218Z",
+      "status": 200,
+      "elapsed_ms": 186,
+      "final_url": "https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"ymy218fmjqdc0y\""
+      },
+      "file": "2.txt",
+      "bytes": 13607,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 622270
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.whop.com/manage-your-business/manage-payouts/payout-methods",
+      "fetched_at": "2026-11-07T21:35:57.918Z",
+      "status": 200,
+      "elapsed_ms": 177,
+      "final_url": "https://docs.whop.com/manage-your-business/manage-payouts/payout-methods",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"jusl5lk9fjb9r9\""
+      },
+      "file": "3.txt",
+      "bytes": 11091,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 525981
+    },
+    {
+      "method": "GET",
+      "url": "https://whop.com/seller-terms/",
+      "fetched_at": "2026-11-07T21:35:58.103Z",
+      "status": 200,
+      "elapsed_ms": 209,
+      "final_url": "https://whop.com/seller-terms/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 25591,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 103456
+    },
+    {
+      "method": "GET",
+      "url": "https://whop.com/guidelines/",
+      "fetched_at": "2026-11-07T21:35:58.818Z",
+      "status": 200,
+      "elapsed_ms": 98,
+      "final_url": "https://whop.com/guidelines/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 9051,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 65058
+    },
+    {
+      "method": "GET",
+      "url": "https://whop.com/claude-code-templates/",
+      "render": true,
+      "fetched_at": "2026-11-07T21:35:59.419Z",
+      "status": 200,
+      "final_url": "https://whop.com/claude-code-templates/",
+      "title": "WhopFlow | Whop",
+      "rendered": {
+        "network_idle": true,
+        "requests": 857,
+        "failed": [
+          "POST https://o438986.ingest.sentry.io/api/5405128/store/?sentry_key=12b69dedf1404159b023b0bd2ac031a4&sentry_version=7 → 429"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 429 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 8113,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 335277
+    },
+    {
+      "method": "GET",
+      "url": "https://whop.com/master-claude-ai/products/master-claude-ai-course-unofficial-guide/",
+      "render": true,
+      "fetched_at": "2026-11-07T21:36:08.290Z",
+      "status": 200,
+      "final_url": "https://whop.com/master-claude-ai/products/master-claude-ai-course-unofficial-guide/",
+      "title": "Claude Code Complete Course | Whop",
+      "rendered": {
+        "network_idle": false,
+        "requests": 674,
+        "failed": [
+          "POST https://whop.com/api/affiliate/resolve-tracking/ → 400",
+          "POST https://o438986.ingest.sentry.io/api/5405128/store/?sentry_key=12b69dedf1404159b023b0bd2ac031a4&sentry_version=7 → 429",
+          "GET https://25ee1fdb7c9a.w.hcaptcha.com/logo.png → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 429 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 8365,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 141021
+    },
+    {
+      "method": "GET",
+      "url": "https://whop.com/ship-with-claude/",
+      "render": true,
+      "fetched_at": "2026-11-07T21:36:51.137Z",
+      "status": 200,
+      "final_url": "https://whop.com/ship-with-claude/",
+      "title": "Ship With Claude | Whop",
+      "rendered": {
+        "network_idle": true,
+        "requests": 815,
+        "failed": [
+          "POST https://o438986.ingest.sentry.io/api/5405128/store/?sentry_key=12b69dedf1404159b023b0bd2ac031a4&sentry_version=7 → 429"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 429 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 6007,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 191334
+    },
+    {
+      "method": "GET",
+      "url": "https://whop.com/joined/the-claude-code-playbook/products/the-claude-code-playbook-d9/",
+      "render": true,
+      "fetched_at": "2026-11-07T21:36:58.714Z",
+      "status": 200,
+      "final_url": "https://whop.com/the-claude-code-playbook/products/the-claude-code-playbook-d9/",
+      "title": "The Claude Code Playbook: The Basics | Whop",
+      "rendered": {
+        "network_idle": false,
+        "requests": 677,
+        "failed": [
+          "POST https://whop.com/api/affiliate/resolve-tracking/ → 400",
+          "GET https://0054cbcedfc9.w.hcaptcha.com/logo.png → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 400 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 4937,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 140974
+    },
+    {
+      "method": "GET",
+      "url": "https://whop.com/content-engine-hq/the-content-engine-51/",
+      "render": true,
+      "fetched_at": "2026-11-07T21:37:41.631Z",
+      "status": 200,
+      "final_url": "https://whop.com/content-engine-hq/the-content-engine-51/",
+      "title": "The Content Engine | Whop",
+      "rendered": {
+        "network_idle": false,
+        "requests": 689,
+        "failed": [
+          "POST https://whop.com/api/affiliate/resolve-tracking/ → 400",
+          "POST https://o438986.ingest.sentry.io/api/5405128/store/?sentry_key=12b69dedf1404159b023b0bd2ac031a4&sentry_version=7 → 429",
+          "GET https://eb60e3c9c953.w.hcaptcha.com/logo.png → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 429 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 8829,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 166782
+    },
+    {
+      "method": "GET",
+      "url": "https://whop.com/digital-products-9b3e/motion-video-director/",
+      "render": true,
+      "fetched_at": "2026-11-07T21:38:24.652Z",
+      "status": 200,
+      "final_url": "https://whop.com/digital-products-9b3e/motion-video-director/",
+      "title": "Motion Video Director — Claude Code Skill for Motion Graphics Videos | Whop",
+      "rendered": {
+        "network_idle": false,
+        "requests": 685,
+        "failed": [
+          "POST https://whop.com/api/affiliate/resolve-tracking/ → 400",
+          "POST https://o438986.ingest.sentry.io/api/5405128/store/?sentry_key=12b69dedf1404159b023b0bd2ac031a4&sentry_version=7 → 429",
+          "GET https://6db417bb5b31.w.hcaptcha.com/logo.png → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 429 ()",
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 429 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 9402,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 182355
+    },
+    {
+      "method": "GET",
+      "url": "https://whop.com/discover/search/?q=claude%20code",
+      "render": true,
+      "fetched_at": "2026-11-07T21:39:07.593Z",
+      "status": 200,
+      "final_url": "https://whop.com/?q=claude%20code",
+      "title": "Whop. Create or run businesses with AI",
+      "rendered": {
+        "network_idle": false,
+        "requests": 978,
+        "failed": [
+          "POST https://o438986.ingest.sentry.io/api/5405128/store/?sentry_key=12b69dedf1404159b023b0bd2ac031a4&sentry_version=7 → 429",
+          "GET https://api.whop.com/api/v1/payment_method_types/google_pay?account_id=biz_demo&currency=eur → 404",
+          "GET https://api.whop.com/api/v1/payment_method_types/google_pay?account_id=biz_demo&currency=eur → 404",
+          "GET https://api.whop.com/api/v1/payment_method_types/paypal_express?account_id=biz_demo&currency=eur → 404",
+          "GET https://api.whop.com/api/v1/payment_method_types/google_pay?account_id=biz_demo&currency=eur → 404",
+          "GET https://api.whop.com/api/v1/payment_method_types/apple_pay?account_id=biz_demo&currency=eur → 404",
+          "GET https://api.whop.com/api/v1/payment_method_types/apple_pay?account_id=biz_demo&currency=eur → 404",
+          "GET https://api.whop.com/api/v1/payment_method_types/apple_pay?account_id=biz_demo&currency=eur → 404",
+          "GET https://2046478083ce.w.hcaptcha.com/logo.png → net::ERR_ABORTED",
+          "POST https://o438986.ingest.sentry.io/api/5405128/store/?sentry_key=12b69dedf1404159b023b0bd2ac031a4&sentry_version=7 → 429",
+          "GET https://6b7820b58229.w.hcaptcha.com/logo.png → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 429 ()",
+          "Failed to load resource: the server responded with a status of 429 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 429 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Permissions policy violation: accelerometer is not allowed in this document.",
+          "Permissions policy violation: accelerometer is not allowed in this document.",
+          "Failed to load resource: the server responded with a status of 429 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 13742,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 429212
+    }
+  ]
+}

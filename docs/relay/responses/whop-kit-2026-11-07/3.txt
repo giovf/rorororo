@@ -1,0 +1,149 @@
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://whop.com/#organization","name":"Whop","url":"https://whop.com/","logo":{"@type":"ImageObject","url":"https://whop.com/v2/whop.svg"},"sameAs":["https://x.com/whop","https://www.instagram.com/whop/","https://www.youtube.com/@WhopIO","https://www.linkedin.com/company/whop-io/","https://www.tiktok.com/@whophq","https://github.com/whopio"]},{"@type":"WebSite","@id":"https://docs.whop.com#website","name":"Whop Docs","url":"https://docs.whop.com","publisher":{"@id":"https://whop.com/#organization"}},{"@type":"WebPage","@id":"https://docs.whop.com/manage-your-business/manage-payouts/payout-methods#webpage","url":"https://docs.whop.com/manage-your-business/manage-payouts/payout-methods","name":"Payout Methods","description":"Add a bank account, PayPal, or Coinbase wallet as a payout method, compare standard and instant payouts, and see how international payouts work.","isPartOf":{"@id":"https://docs.whop.com#website"},"breadcrumb":{"@id":"https://docs.whop.com/manage-your-business/manage-payouts/payout-methods#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://docs.whop.com/manage-your-business/manage-payouts/payout-methods#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Manage Payouts","item":"https://docs.whop.com/manage-your-business/manage-payouts/set-up-payouts"},{"@type":"ListItem","position":2,"name":"Payout Methods","item":"https://docs.whop.com/manage-your-business/manage-payouts/payout-methods"}]},{"@type":["Article","TechArticle"],"@id":"https://docs.whop.com/manage-your-business/manage-payouts/payout-methods#article","headline":"Payout Methods","name":"Payout Methods","description":"Add a bank account, PayPal, or Coinbase wallet as a payout method, compare standard and instant payouts, and see how international payouts work.","url":"https://docs.whop.com/manage-your-business/manage-payouts/payout-methods","mainEntityOfPage":{"@id":"https://docs.whop.com/manage-your-business/manage-payouts/payout-methods#webpage"},"image":"https://whop.com/core/images/docs?page=manage-your-business/manage-payouts/payout-methods&h=58d753ca","publisher":{"@id":"https://whop.com/#organization"},"isPartOf":{"@id":"https://docs.whop.com#website"}}]}
+meta description: Add a bank account, PayPal, or Coinbase wallet as a payout method, compare standard and instant payouts, and see how international payouts work.
+meta og:title: Payout Methods - Whop Docs
+meta og:description: Add a bank account, PayPal, or Coinbase wallet as a payout method, compare standard and instant payouts, and see how international payouts work.
+meta og:url: https://docs.whop.com/manage-your-business/manage-payouts/payout-methods
+meta og:site_name: Whop Docs
+meta og:image: https://whop.com/core/images/docs?page=manage-your-business/manage-payouts/payout-methods&h=58d753ca
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:type: website
+meta twitter:card: summary_large_image
+meta twitter:title: Payout Methods - Whop Docs
+meta twitter:description: Add a bank account, PayPal, or Coinbase wallet as a payout method, compare standard and instant payouts, and see how international payouts work.
+meta twitter:image: https://whop.com/core/images/docs?page=manage-your-business/manage-payouts/payout-methods&h=58d753ca
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+Payout Methods - Whop Docs
+Documentation Index
+Fetch the complete documentation index at: /llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content (#content-area)
+Whop Docs home page (/)
+Help Center
+Search...
+⌘K
+Ask Assistant ⌘I
+Dashboard (https://whop.com/dashboard)
+Log In (/login?redirect=/manage-your-business/manage-payouts/payout-methods)
+Start Building (https://whop.com/start)
+Start Building (https://whop.com/start)
+Search...
+Navigation
+Manage Payouts
+Payout Methods
+Getting Started (/get-started) Manage Your Business (/whop-finance/cards) Payments & Billing (/payments-and-billing/local-payment-methods) Memberships & Access (/memberships-and-access/accessing-your-purchase/how-to-find-your-purchase) Account Settings (/account-settings/personal-details/update-email) Trust & Safety (/trust-and-safety/trust-safety-overview/what-is-not-allowed-on-whop)
+Do More with Your Money
+Whop Cards
+Products
+Create a Product (/manage-your-business/products/create-product)
+Manage Products (/manage-your-business/products/manage-products)
+Add Apps (/add-apps)
+Create a Waitlist (/manage-your-business/products/create-waitlist)
+Free Trials (/manage-your-business/products/free-trials)
+Create a Product (/payments/create-a-product)
+Create a Checkout Link (/payments/create-checkout-link)
+Growth and Marketing
+Promo Codes (/manage-your-business/growth-marketing/promo-codes)
+Tracking Links (/manage-your-business/growth-marketing/tracking-links)
+Tracking Integrations (/manage-your-business/growth-marketing/tracking-integrations)
+Support Chats (/manage-your-business/growth-marketing/automated-messaging)
+Whop Ads (/manage-your-business/growth-marketing/ads)
+Affiliate Program (/manage-your-business/growth-marketing/affiliate-program)
+Affiliates
+Promote Your Business (/affiliates/promote-your-business)
+Set Up Global Affiliates (/affiliates/setup-global)
+Set Up Custom Affiliates (/affiliates/setup-custom)
+Set Up Revenue Share (/affiliates/setup-rev-share)
+Be an Affiliate (/affiliates/be-an-affiliate)
+Manage Business & Team
+Analytics (/manage-your-business/manage-business/analytics)
+Upload Legal Documents (/manage-your-business/manage-business/legal-documents)
+Team Management (/manage-your-business/team-management/manage-team-roles)
+Set Up Payment Processing
+Create a Checkout Link (/manage-your-business/payment-processing/create-checkout-link)
+Set Up Pricing (/manage-your-business/payment-processing/set-up-pricing)
+Access Higher Checkout Links (/manage-your-business/payment-processing/access-higher-checkout-links)
+Checkout Branding (/manage-your-business/payment-processing/checkout-branding)
+Manage Payments
+Manage Users (/manage-your-business/manage-payments/manage-users)
+Send an Invoice (/manage-your-business/manage-payments/send-invoice)
+Refunds (/manage-your-business/manage-payments/issuing-refunds)
+Resolution Center (/manage-your-business/manage-payments/resolution-center)
+Manage Disputes (/manage-your-business/manage-payments/manage-disputes)
+Send an Invoice (/payments/send-an-invoice)
+Manage Payouts
+Set Up Payouts (/manage-your-business/manage-payouts/set-up-payouts)
+Payout Methods (/manage-your-business/manage-payouts/payout-methods)
+Instant Withdrawals (/manage-your-business/manage-payouts/instant-withdrawals)
+Subaccounts (/manage-your-business/manage-payouts/subaccounts)
+Pay Your Team (/manage-your-business/manage-payouts/pay-your-team)
+Troubleshoot Payouts (/manage-your-business/manage-payouts/troubleshoot-payouts)
+close
+On this page
+Back to top
+Payout options (#payout-options)
+Add a payout method (#add-a-payout-method)
+International payouts (#international-payouts)
+Payouts to a digital wallet (#payouts-to-a-digital-wallet)
+Setting up payouts to your PayPal (#setting-up-payouts-to-your-paypal)
+Coinbase payouts (#coinbase-payouts)
+Setting up payouts to your Coinbase crypto wallet (#setting-up-payouts-to-your-coinbase-crypto-wallet)
+Manage Payouts
+Payout Methods
+Copy page Copy page
+Add a bank account, PayPal, or Coinbase wallet as a payout method, compare standard and instant payouts, and see how international payouts work.
+Copy page Copy page
+Payout methods are the bank accounts or other destinations where Whop sends your earnings.
+​ (#payout-options)
+Payout options
+Whop supports payouts to your bank account, mobile wallet, or crypto wallet in over 200 countries. Depending on your country, all eligible payout methods will show up on the modal when you go to withdraw from the Balances (https://whop.com/dashboard/balance/) page of your Whop dashboard. Different countries are eligible for different payout options.
+Standard payouts take up to 5 business days. You can also withdraw your balance through instant payout methods , which take only a few minutes. Instant payouts let you withdraw pending funds from payments that haven’t fully settled in your Whop balance.
+Whop may flag some withdrawals for compliance review based on different risk
+factors. The Trust & Safety team manually reviews and releases these
+withdrawals. When a payout requires review, the Instant payout option doesn’t
+appear because the payout won’t be instant.
+​ (#add-a-payout-method)
+Add a payout method
+Go to your Dashboard > Balances > Payout methods
+Select Add payout method
+Enter your bank details or connect via the supported flow
+Confirm and set as default if you want new payouts to use it
+You can have multiple payout methods and sometimes choose which one to use per payout.
+​ (#international-payouts)
+International payouts
+Creators outside the United States need to set up a bank account that accepts the currency of their registered country.
+On Whop Payments, Whop is the Merchant of Record . The system automatically converts all currencies to the currency of the region you chose when setting up your Whop organization.
+Even if you accept payments in United States dollars, Whop converts those payments to your local currency before sending payouts
+Payouts won’t reach a bank account that accepts United States dollars if the account’s country uses another local currency
+You can change the payout country for an existing Whop. To switch payout
+countries, navigate to your payouts and select the 3 dots on the top right,
+then select Change payout country .
+​ (#payouts-to-a-digital-wallet)
+Payouts to a digital wallet
+To receive PayPal payouts, customers must buy using PayPal (no post-purchase transfer to PayPal).
+​ (#setting-up-payouts-to-your-paypal)
+Setting up payouts to your PayPal
+Go to your Dashboard > Balances > Additional payment methods
+Select Setup next to the PayPal option
+Follow the on-screen instructions to link your PayPal account
+For PayPal to appear at checkout, check the PayPal box under Payment options
+when you create a checkout link.
+[PayPal]
+​ (#coinbase-payouts)
+Coinbase payouts
+Important notes:
+Withdrawals must go to a Coinbase wallet
+To receive Coinbase payouts, customers must buy using crypto (no post-purchase transfer to Coinbase)
+​ (#setting-up-payouts-to-your-coinbase-crypto-wallet)
+Setting up payouts to your Coinbase crypto wallet
+Go to your Dashboard > Balances > Additional payment methods
+Select Setup next to the Coinbase option
+Follow the on-screen instructions to link your Coinbase Commerce account
+You will need to log into your Coinbase account and copy your API key and Webhook secret to paste into Whop
+For Coinbase to appear at checkout: Check the Crypto box under Payment options when you create a checkout link.
+To get paid with crypto, you have to set up a one-time pricing plan.
+[Coinbase]
+x (https://x.com/whop) github (https://github.com/whopio)
+Assistant
+Responses are generated using AI and may contain mistakes.

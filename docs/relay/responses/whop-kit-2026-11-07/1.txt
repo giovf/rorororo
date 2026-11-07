@@ -1,0 +1,226 @@
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://whop.com/#organization","name":"Whop","url":"https://whop.com/","logo":{"@type":"ImageObject","url":"https://whop.com/v2/whop.svg"},"sameAs":["https://x.com/whop","https://www.instagram.com/whop/","https://www.youtube.com/@WhopIO","https://www.linkedin.com/company/whop-io/","https://www.tiktok.com/@whophq","https://github.com/whopio"]},{"@type":"WebSite","@id":"https://docs.whop.com#website","name":"Whop Docs","url":"https://docs.whop.com","publisher":{"@id":"https://whop.com/#organization"}},{"@type":"WebPage","@id":"https://docs.whop.com/fees#webpage","url":"https://docs.whop.com/fees","name":"Payment Processing and Payout Fees","description":"Per-transaction rates for cards, wallets, financing, and ACH on Whop, plus payout, 3DS, Radar, dispute, and revenue optimization and automation fees.","isPartOf":{"@id":"https://docs.whop.com#website"},"breadcrumb":{"@id":"https://docs.whop.com/fees#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://docs.whop.com/fees#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Pricing and Fees","item":"https://docs.whop.com/payments-and-billing/fees/fees"},{"@type":"ListItem","position":2,"name":"Payment Processing and Payout Fees","item":"https://docs.whop.com/fees"}]},{"@type":["Article","TechArticle"],"@id":"https://docs.whop.com/fees#article","headline":"Payment Processing and Payout Fees","name":"Payment Processing and Payout Fees","description":"Per-transaction rates for cards, wallets, financing, and ACH on Whop, plus payout, 3DS, Radar, dispute, and revenue optimization and automation fees.","url":"https://docs.whop.com/fees","mainEntityOfPage":{"@id":"https://docs.whop.com/fees#webpage"},"image":"https://whop.com/core/images/docs?page=fees&h=ae9c1e7e","publisher":{"@id":"https://whop.com/#organization"},"isPartOf":{"@id":"https://docs.whop.com#website"}}]}
+meta description: Per-transaction rates for cards, wallets, financing, and ACH on Whop, plus payout, 3DS, Radar, dispute, and revenue optimization and automation fees.
+meta og:title: Payment Processing and Payout Fees - Whop Docs
+meta og:description: Per-transaction rates for cards, wallets, financing, and ACH on Whop, plus payout, 3DS, Radar, dispute, and revenue optimization and automation fees.
+meta og:url: https://docs.whop.com/fees
+meta og:site_name: Whop Docs
+meta og:image: https://whop.com/core/images/docs?page=fees&h=ae9c1e7e
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:type: website
+meta twitter:card: summary_large_image
+meta twitter:title: Payment Processing and Payout Fees - Whop Docs
+meta twitter:description: Per-transaction rates for cards, wallets, financing, and ACH on Whop, plus payout, 3DS, Radar, dispute, and revenue optimization and automation fees.
+meta twitter:image: https://whop.com/core/images/docs?page=fees&h=ae9c1e7e
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+Payment Processing and Payout Fees - Whop Docs
+Documentation Index
+Fetch the complete documentation index at: /llms.txt
+Use this file to discover all available pages before exploring further.
+Skip to main content (#content-area)
+Whop Docs home page (/)
+Help Center
+Search...
+⌘K
+Ask Assistant ⌘I
+Dashboard (https://whop.com/dashboard)
+Log In (/login?redirect=/fees)
+Start Building (https://whop.com/start)
+Start Building (https://whop.com/start)
+Search...
+Navigation
+Pricing and Fees
+Payment Processing and Payout Fees
+Getting Started (/get-started) Manage Your Business (/whop-finance/cards) Payments & Billing (/payments-and-billing/local-payment-methods) Memberships & Access (/memberships-and-access/accessing-your-purchase/how-to-find-your-purchase) Account Settings (/account-settings/personal-details/update-email) Trust & Safety (/trust-and-safety/trust-safety-overview/what-is-not-allowed-on-whop)
+Payment Options
+Local Payment Methods (/payments-and-billing/local-payment-methods)
+Tap to Pay on iPhone (/payments-and-billing/tap-to-pay)
+Financing
+Financing Options (/payments-and-billing/financing/all-bnpl-options)
+Apply for Financing (/payments-and-billing/financing/apply)
+Splitit Guide (/payments-and-billing/financing/splitit-guide)
+SeQura Guide (/payments-and-billing/financing/sequra-guide)
+Financing (/payments/financing)
+Pricing and Fees
+Fees (/payments-and-billing/fees/fees)
+Regional Fees (/payments-and-billing/fees/regional-fees)
+Taxes (/payments-and-billing/fees/taxes)
+VAT and GST Registration Details (/payments-and-billing/fees/vat-gst-registration)
+In-app iOS Purchases (/payments-and-billing/fees/in-app-ios-purchases)
+Fees (/fees)
+Adaptive Pricing (/payments-and-billing/fees/adaptive-pricing)
+Manage Billing
+Billing Portal (/payments-and-billing/manage-billing/billing-portal)
+Troubleshoot Payments
+Payment Declines (/payments-and-billing/payment-issues/payment-decline-reasons)
+Failed Subscription Payments (/payments-and-billing/payment-issues/troubleshoot-failed-payments)
+Payment Declines (/payments/payment-declines)
+Resolution Center (/payments/resolution-center)
+close
+Pricing and Fees
+Payment Processing and Payout Fees
+Copy page Copy page
+Per-transaction rates for cards, wallets, financing, and ACH on Whop, plus payout, 3DS, Radar, dispute, and revenue optimization and automation fees.
+Copy page Copy page
+[Fees]
+Global access
+195 countries, 135+ currencies, 100+ payment methods.
+Fraud prevention
+Powerful machine learning that adapts to new fraud patterns.
+Optimized checkout
+Flexible UI components and accelerated checkout.
+Payment optimizations
+Real-time retries & automatically updated cards to boost revenue.
+Financing options
+Let your customers pay over time with Klarna, Afterpay, and more.
+Embedded payments
+Instant onboarding and platform management tools.
+Fast, predictable payouts
+Flexible payout options with like-for-like settlement.
+24×7 support
+Phone, chat, and email assistance whenever you need.
+Security & compliance
+99.999% uptime and PCI-compliant infrastructure.
+​ (#global-payments)
+Global payments
+100+ payment methods
+[Fees]
+Payments
+An online payments platform engineered for growth.
+Start today → (https://whop.com/start)
+Increase customer acquisition with 100+ payment methods.
+Improve conversion with Whop’s accelerated checkout.
+Save engineering time with prebuilt UIs.
+Cards and wallets
+Accept widely used credit and debit cards, prepaid cards, and digital
+wallets for online payments.
+2.7% + $0.30
+per successful transaction for domestic cards
++ 1.5% for international cards
++ 1% if currency conversion applies
+Rates differ in Latin America. See regional fees (/payments-and-billing/fees/regional-fees)
+Financing
+Give your customers the flexibility to split their purchases into monthly installments while you get paid upfront.
+15%
+per successful transaction through a financing partner
+20% for ClarityPay No Interest
+Show Klarna supported countries & transaction limits
+Country	Minimum Amount	Maximum Amount
+Austria	€25,00	€10.000,00
+Czechia	25,00 Kč	25.000,00 Kč
+Finland	€25,00	€5.000,00
+France	€1,00	€1.500,00
+Germany	€25,00	€10.000,00
+Greece	€1,00	€1.000,00
+Ireland	€1.00	€1,500.00
+Italy	€1,00	€4.500,00
+Netherlands	€35,00	€4.000,00
+Norway	kr 0,00	kr 150.000,00
+Portugal	€1,00	€1.000,00
+Spain	€1,00	€1.500,00
+Sweden	250,00 kr	150.000,00 kr
+United Kingdom	£1.00	£2,000.00
+United States	$0.50	$10,000.00
+Collect ACH payments
+Accept ACH direct debit payments from US bank accounts.
+1.5% (Maximum fee of $5)
+per successful ACH debit transaction
+​ (#global-payouts)
+Global payouts
+200+ countries
+[Fees]
+Payouts
+Accept money and get paid out as fast as you want.
+Start today → (https://whop.com/start)
+Get paid anywhere in the world with global payout options.
+Flexible payout methods including crypto, Venmo, and wire transfers.
+Same-day payouts available for immediate cash flow.
+Withdraw via next day ACH
+Accelerated ACH transfer to U.S. bank accounts, delivered by the next business day (faster settlement speed).
+$2.50
+per successful payout
+Instant Bank Deposit (RTP)
+Real-time bank transfer to supported accounts with funds available instantly (where supported).
+4% + $2.50
+per successful payout
+Crypto
+Cryptocurrency payout (e.g. Bitcoin, Ethereum) with global reach.
+5% + $1.00
+per successful payout
+Venmo
+Instant payout to a recipient’s Venmo wallet (available for U.S. recipients only).
+5% + $2.50
+per successful payout
+Bank wire
+Traditional bank wire transfer (will typically take 1–2 business days to process in the US).
+$23.00
+per successful payout
+International local banks
+Local bank transfer in your country and currency (timing varies by country).
+Varies by country
+per successful payout
+​ (#fraud-and-security)
+Fraud and security
+[Fees]
+Fraud and security
+Protect your business from fraud and disputes.
+Start today → (https://whop.com/start)
+0% of transaction amount.
+Transparent flat-rate pricing per event.
+No hidden fees. No guessing.
+3DS
+Fee for authenticating cards using 3D Secure to reduce fraud.
+$0.03
+per transaction
+Radar
+ML-based fraud detection fee.
+$0.07
+per transaction
+Dispute
+Flat fee applied when a chargeback or dispute occurs.
+$15.00
+per dispute
+Early dispute alert (RDR)
+Proactive chargeback notification fee.
+$29.00
+per alert
+​ (#revenue-optimization)
+Revenue optimization
+[Fees]
+Revenue optimization and automation
+Tools to reduce payment failures and increase revenue.
+Start today → (https://whop.com/start)
+Automated systems that boost revenue and reduce churn.
+Pricing optimized to reflect real cost of global scale infra.
+Transparent and minimal fees per event.
+Orchestration
+Route payments through multiple payment service providers to boost revenue by ~6%.
+0.8%
+per transaction (when enabled)
+Billing
+Automated invoice generation, retries, and lifecycle handling.
+0.5%
+per transaction (when enabled)
+Tax and remittance
+Handle global tax calculation, collection, and compliance.
+2%
+per transaction (when enabled and tax is collected)
+Revenue optimization fees stack on top of the base processing fee. Below is what a domestic card
+transaction costs as you turn each one on. International cards and currency conversion add to the base
+rate.
+Card processing 2.7% + $0.30
++ Orchestration (when enabled) 0.8%
++ Billing (when enabled) 0.5%
++ Tax and remittance (when enabled and tax is collected) 2%
+Everything enabled, tax collected 6% + $0.30
+Compare the fees that other platforms charge below. This pricing applies to new merchants that sign up today. Enterprise customers can book a call with the Whop sales team (https://calendly.com/d/cv3h-5mq-vc2/whop-payments-enterprise-call) .
+Platform	Pricing
+Stripe	stripe.com/pricing (https://stripe.com/pricing)
+Square	squareup.com/pricing (https://squareup.com/us/en/pricing)
+Shopify	Shopify pricing (https://www.shopify.com/pricing)
+Braintree	braintreepayments.com/pricing (https://www.braintreepayments.com/pricing)
+Adyen	Adyen pricing (https://www.adyen.com/pricing)
+x (https://x.com/whop) github (https://github.com/whopio)
+Assistant
+Responses are generated using AI and may contain mistakes.
