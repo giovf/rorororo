@@ -1,0 +1,937 @@
+{
+  "data": {
+    "total": 381,
+    "count": 20,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "UK Companies House Change Monitor (official API)",
+        "name": "companies-house-change-monitor",
+        "username": "plotbench",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 113,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-11-06T20:44:24.244Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Watch UK companies for changes — name, status, registered office, SIC codes, officer count, new filings, accounts due dates — via the official Companies House API (free key). Built for lead generation, CRM enrichment and KYC monitoring: pipe change events to email/Slack/webhooks.",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Plotbench Studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/bGS_VbqABV4zhnzB9gfs44EUdVryNGyC8Aop_LJo6Sg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20venBVTVlYNVRYODlNNmEwUm1GVnQwUDRMM2VUakFPejR5SHhobHpvdFA3OC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNV1ZFVGpWd2VISnZOa2Q1Y2xOM2NWVXRjSEp2Wm1sc1pTMXNhV0pOUjJ4SU4zZDJMV3h2WjI4dE1TMXdiRzkwWW1WdVkyZ3RZWFpoZEdGeUxXbGpiMjR1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Flat fee per run.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02
+              },
+              "company-check": {
+                "eventTitle": "Company checked",
+                "eventDescription": "One company snapshotted and compared against its previous state (profile + officers + latest filing).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              },
+              "change-event": {
+                "eventTitle": "Change detected",
+                "eventDescription": "One detected change (name, status, registered office, SIC, officers, due dates, or a new filing) pushed to the dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-18T00:13:34.305Z",
+          "createdAt": "2026-07-18T00:13:33.254Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "2Glnm4vvGJetboKls",
+        "url": "https://apify.com/plotbench/companies-house-change-monitor"
+      },
+      {
+        "title": "Companies House Monitor - UK Filing, Director & PSC Alerts",
+        "name": "companies-house-monitor",
+        "username": "skillmerc",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 39,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-11-06T12:06:32.150Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Watch UK companies and officers on Companies House. Get one row, webhook or Slack message per change: new filings, director moves, PSC, charges, status, address, name. $0.02 per alert.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/RDS44RQfAUTmtEt-8gx9xbxGAyi0-i_IpBjMvPK4tUk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUzhUY05XdTVoOHNxY3dET3ctYWN0b3ItWmZPTU9hRTFkNDdWTzAzV0gtZjJvR2hPdFRNVS1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Kyle Pretorius",
+        "userPictureUrl": "https://images.apifyusercontent.com/8gEqhL8Vq28oRGg7ZFufbu7OOtSoY7TCAAtFgTPjpMc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdXVUVmhJeF93YlFsZ1QxYkJGMDF2Y0dXSnBCTjkxWTBfM3JqOGlvQnM0SS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpOWlOVFUzTm1FeVlXTTFObUZsWWpRNU5EUTVZbVkzTVRFMU9XWTBPRE5tTXpneU1UUTJaVGczTm1NNVpHUXlNakJsT1dNME5tUTNZV05oWlRJd1lUWTRQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Store discounts added for paid Apify plans: Bronze 10% off, Silver 20% off, Gold and above 30% off. Prices on the free plan stay the same. Nothing gets more expensive.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              },
+              "alert": {
+                "eventTitle": "Alert",
+                "eventDescription": "One change detected and written to the dataset (and pushed to your webhook or Slack if configured).",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.014
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-10-12T01:49:47.574Z",
+          "createdAt": "2026-10-12T01:39:47.790Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-10-12T01:40:07.917Z",
+          "notifiedAboutChangeAt": "2026-10-12T02:00:23.549Z"
+        },
+        "id": "ZfOMOaE1d47VO03WH",
+        "url": "https://apify.com/skillmerc/companies-house-monitor"
+      },
+      {
+        "title": "Companies House Filing Monitor - UK Company Changes",
+        "name": "companies-house-filing-monitor",
+        "username": "maydit",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 40,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-06T16:46:38.377Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Monitor filings for explicit UK company watchlists. Export filing dates, types, descriptions and document links, with saved new or changed observations. No API key.",
+        "categories": [
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/hWX2R7v8hqABKy4DlDEwKFpY1lu4IH9qJOhORGwF5sg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcjRSVnFoUEtXQUNKc0s5enAtYWN0b3ItdWN3UWdhUnZ5cWpqczFuM3YtVnk1RTJjRlRiZi1jb21wYW5pZXMtaG91c2UtZmlsaW5nLW1vbml0b3IucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Brandt May",
+        "userPictureUrl": "https://images.apifyusercontent.com/hZS34Y5fRpQkmPMIAynfOfr_1YGEUuZfcmCZfVHGcuc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNDVJM3lsOWpTX1JJR3FlbkhYTVgxRVJKc0l3QlVJUklVM0FqNC1pWW9aZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjalJTVm5Gb1VFdFhRVU5LYzBzNWVuQXRjSEp2Wm1sc1pTMUpjRWM0VUUwelMwTndMVk5qY21WbGJuTm9iM1JmTWpBeU5pMHhNQzB4TTE4eU1ERXpORGt1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00005
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Company filing observation",
+                "eventDescription": "One company filing observation saved to the dataset. Source failures do not produce paid results.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0018
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-10-09T04:03:52.760Z",
+          "startedAt": "2026-10-09T04:03:52.760Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ucwQgaRvyqjjs1n3v",
+        "url": "https://apify.com/maydit/companies-house-filing-monitor"
+      },
+      {
+        "title": "UK Company Watch: Companies House Change Monitor",
+        "name": "uk-company-watch",
+        "username": "tudorlane",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 18,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-07T10:08:28.077Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 9,
+            "TIMED-OUT": 0,
+            "TOTAL": 9
+          }
+        },
+        "description": "Monitor UK companies for changes between runs: status, name, registered address, directors added/removed, director disqualifications, owners (PSC), Companies House insolvency history and overdue filings. Only changes are charged extra.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/G_u-kC52-yuBQ2JIMnGfUh1CcmaqpXthgFnVzaMvHzk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNG9rZkVsdXVQNGsxVThBbjYtYWN0b3ItQ1kxOVdTOXk1c29QVWFCVWUtaVlkNEJyUVAyUS1zYW5kLXNhdmUtMTc5MzI2NzU3OTM5MC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Tudor Lane",
+        "userPictureUrl": "https://images.apifyusercontent.com/1FJVyPcj_NUFL17YaO4N8h5TWw5mmoT-RLC-Rmomsn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdjlQdzlHVEFGeFpVRUJ6RWZrcUQyZEtFbTBjN19sWEUxSVhrTzNmdUZQcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZORzlyWmtWc2RYVlFOR3N4VlRoQmJqWXRjSEp2Wm1sc1pTMDVRbEJqZDNkdU0xcEVMWE5oYm1RdGMyRjJaUzB4TnpreU9UVXlOall5TlRjeUxtcHdady5qcGc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "check": {
+                "eventTitle": "Company check",
+                "eventDescription": "One UK company checked for changes",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              },
+              "change": {
+                "eventTitle": "Change detected",
+                "eventDescription": "A company with one or more changes since the last run",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-10-22T07:11:23.408Z",
+          "startedAt": "2026-10-22T07:11:23.408Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "CY19WS9y5soPUaBUe",
+        "url": "https://apify.com/tudorlane/uk-company-watch"
+      },
+      {
+        "title": "UK Companies House PSC Monitor",
+        "name": "uk-companies-house-psc-monitor",
+        "username": "titan_coder",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 38,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-01T20:26:45.582Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 10,
+            "TIMED-OUT": 0,
+            "TOTAL": 10
+          }
+        },
+        "description": "Beneficial ownership changes are buried in filings and nobody watches them for you. This one tracks the PSC register of your companies and reports only new persons with significant control since your last check. Official free API; quiet days cost nothing.",
+        "categories": [
+          "MCP_SERVERS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Radu Furtuna",
+        "userPictureUrl": "https://images.apifyusercontent.com/bGlr9Gz9Mf30cUNKZIVVq9jGKZEEIVjQ63WI4w08KMU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZXQ1cDExLUNhZGRkem1kcGR2SVpXTWg1MkFBVXF3Nkx2OGVuZzlfLVZ4cy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSEo2VlU1TU1rUnZibXBTVURoa1JubDBhMlY2VFhSb2FuQlpaRVZyTldabGVtSktOR0puTVMxRGFVcENkR05IWms1Zlp6MXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "new-psc-detected": {
+                "eventTitle": "New PSC detected",
+                "eventDescription": "One person with significant control genuinely new since the previous check of this company.",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-08T16:05:02.287Z",
+          "startedAt": "2026-09-08T16:05:02.287Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "xLa48VhqyGa5xx5Ak",
+        "url": "https://apify.com/titan_coder/uk-companies-house-psc-monitor"
+      },
+      {
+        "title": "UK Companies House Filing Monitor",
+        "name": "uk-companies-house-filing-monitor",
+        "username": "titan_coder",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 39,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-01T20:26:22.245Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 10,
+            "TIMED-OUT": 0,
+            "TOTAL": 10
+          }
+        },
+        "description": "Companies House tools let you look a company up; none of them tells you when something lands. This one watches your list and reports only filings that appeared since your last check — accounts, charges, officer changes, insolvency notices. Official free API, quiet days cost nothing.",
+        "categories": [
+          "MCP_SERVERS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Radu Furtuna",
+        "userPictureUrl": "https://images.apifyusercontent.com/bGlr9Gz9Mf30cUNKZIVVq9jGKZEEIVjQ63WI4w08KMU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZXQ1cDExLUNhZGRkem1kcGR2SVpXTWg1MkFBVXF3Nkx2OGVuZzlfLVZ4cy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSEo2VlU1TU1rUnZibXBTVURoa1JubDBhMlY2VFhSb2FuQlpaRVZyTldabGVtSktOR0puTVMxRGFVcENkR05IWms1Zlp6MXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "new-filing-detected": {
+                "eventTitle": "New filing detected",
+                "eventDescription": "One filing genuinely new since the previous check of this watched company.",
+                "eventPriceUsd": 0.015,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-08T13:00:03.819Z",
+          "startedAt": "2026-09-08T13:00:03.819Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "14fDv4VK6FZ2RvIcH",
+        "url": "https://apify.com/titan_coder/uk-companies-house-filing-monitor"
+      },
+      {
+        "title": "UK Companies House Monitor: Filings, Directors & PSC Alerts",
+        "name": "uk-companies-house-monitor",
+        "username": "nerolabs",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 102,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-06T12:38:32.022Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Returns UK company records from the official Companies House API (name, status, link) with a monitor mode reporting only what changed: new filings, officer or PSC changes, status changes. Inputs: company number(s), monitorMode. Agent-ready: pay per event (x402 and MCP); not-found is charged.",
+        "categories": [
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/0gIxagSTK-Rh8CQFaVsYcltr8xvqNOdl1tkk3Op3VXA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veGdEZXYxdkN0NHlBR1duVHctYWN0b3ItT21UZFRoWThEaGowT2pQR3QtWlhLOFRjclFtZC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Adam Pearce",
+        "userPictureUrl": "https://images.apifyusercontent.com/mjUr3h4hz4H7cesYAJSFSNmk9q-SqEBzZiGDZlSimYQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vanU2bjR2QlZXQ2pidVN1dmhMRTdWdUh0cU84T0IyemVxbWNpSVFxaVZMZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlR2RFWlhZeGRrTjBOSGxCUjFkdVZIY3RjSEp2Wm1sc1pTMW5XV3RuZUc5R1VWRlVMVU5vWVhSSFVGUmZTVzFoWjJWZlFYVm5YelZmWHpJd01qWmZYekE1WHpVM1h6VTRYMEZOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "company-lookup": {
+                "eventTitle": "Company lookup",
+                "eventDescription": "A single company record returned from a Companies House lookup (single or bulk companyNumbers), not using Monitor mode.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              },
+              "change-detected": {
+                "eventTitle": "Monitor mode: change detected",
+                "eventDescription": "A watched company had a new filing, an officer or PSC change, or a status change since the last check.",
+                "eventPriceUsd": 0.05
+              },
+              "no-change-confirmed": {
+                "eventTitle": "Monitor mode: no change confirmed",
+                "eventDescription": "A watched company was checked in Monitor mode and nothing changed since the last run.",
+                "eventPriceUsd": 0.002
+              }
+            }
+          },
+          "createdAt": "2026-08-13T17:49:45.213Z",
+          "startedAt": "2026-08-13T17:49:45.213Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "OmTdThY8Dhj0OjPGt",
+        "url": "https://apify.com/nerolabs/uk-companies-house-monitor"
+      },
+      {
+        "title": "UK Companies House Monitor — Alerts When a Company Changes",
+        "name": "companies-house-monitor",
+        "username": "alaudinburki",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 32,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-06T18:02:30.108Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 16,
+            "SUCCEEDED": 6,
+            "TIMED-OUT": 0,
+            "TOTAL": 22
+          }
+        },
+        "description": "Watch UK companies on the official Companies House register and get back only what changed since the last run: status, address, accounts dates, insolvency, names, officers, PSC and filings. A first run records a baseline; an unchecked field is named, never passed off as unchanged.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/eIVI1yZ7hyM8bizDp4IbEWOXf2pFHY9CltQXKGPHrJA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNHF5bjQ3WnNRZlcyOVJOUmEtYWN0b3IteFpsd3JqWllSN1JZS3Q1eDAtdlp6UDk2enc3SC1zdG9yZS1sb2dvLXNvdXJjZS5wbmc.webp",
+        "notice": "UNDER_MAINTENANCE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "alaudin burki",
+        "userPictureUrl": "https://images.apifyusercontent.com/1iPJ4xvH5bEOjAeCQECJTzPj91Rs8s4S2rk2BXULUVo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNktMODlxVkV2eVRTaVQtelBBY192bzlZLW9ZRmpYeE02dWtWZTN1YUZLWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTME41ZUZOM1Z6aHRWVjk1Tm1vdGRESkNiM04zZGxsMVVsY3pWWEZhZVRsRWQzcE9hMGRaU2xoZlpVbEhNMVEyVmxnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-16T07:16:50.467Z",
+          "startedAt": "2026-10-16T07:16:50.467Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "xZlwrjZYR7RYKt5x0",
+        "url": "https://apify.com/alaudinburki/companies-house-monitor"
+      },
+      {
+        "title": "UK Companies House Corporate Event & Filing Monitor",
+        "name": "companies-house-event-monitor",
+        "username": "deepaksheoran172",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 4,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-07T06:36:28.599Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "Monitor UK Companies House corporate filings, officer appointments, charges, and company status changes. Export corporate intelligence to JSON & CSV. Zero proxies. Zapier ready. PPE ($0.003/record with 10 free preview items).",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/aJLo8lF2HMaCnSIFSMtANSQ-enI9C2bGmKIs0MUbAUI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vR1ZEVnlBSnVVc1ZmTzBDS2stYWN0b3ItYXhRZXJOWlJKN0piWUlkdW8tMnh3cll3Ym05RC1jb21wYW5pZXMtaG91c2UtZXZlbnQtbW9uaXRvci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Deepak Sheoran",
+        "userPictureUrl": "https://images.apifyusercontent.com/elmtuWE5BjKHIPPhDnHowVMF4M-OmTc4xR9FEV8LIEU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYXowNlZwYXQ4aFFGazJRWXRnT0RGRjIxMXJrUkRZaTFkdEp1NFQzT3hNdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURlJZVXpKRldGcHVaRUoyVms0elozZFZOQzF5VEVkNlZqZFNXbkY0WTJ4c1JHMUxPVjlrWm1OVVVuZDRVV2RRVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE"
+        },
+        "id": "axQerNZRJ7JbYIduo",
+        "url": "https://apify.com/deepaksheoran172/companies-house-event-monitor"
+      },
+      {
+        "title": "Companies House Alerts: Insolvency, Director & PSC Changes",
+        "name": "uk-companies-house-realtime-monitor",
+        "username": "plym-actor-factory",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 67,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-06T12:22:33.385Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Get alerted when a UK company on your list changes at Companies House: insolvency cases, director and PSC (beneficial owner) changes, new or satisfied charges, filings and status changes. For credit control, KYB and compliance teams. Needs your free Companies House Streaming API key.",
+        "categories": [
+          "AUTOMATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Daniel Witney",
+        "userPictureUrl": "https://images.apifyusercontent.com/P1uggaJ7WUFX8y3NrHxjb6YlIKQ8XuxpF2i0jUYVCWg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN19fN2wxWmJhbXJnZmZEODJmb19XM1BoaWxOb2hpNnMzWkMwRE54clI3QS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TXhNVEl6TlRBNU5EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "change-event-delivered": {
+                "eventTitle": "Change event delivered",
+                "eventDescription": "Charged once per unique watchlist change event successfully pushed to the dataset. Never charged for no-change runs, invalid company numbers, duplicates, heartbeats, retries, or filtered non-watchlist traffic.",
+                "eventPriceUsd": 0.015,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-15T21:44:04.394Z",
+          "startedAt": "2026-09-15T21:44:04.394Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "7G5IHQ8n1XZ5lYK2E",
+        "url": "https://apify.com/plym-actor-factory/uk-companies-house-realtime-monitor"
+      },
+      {
+        "title": "UK Companies House New Company Monitor",
+        "name": "uk-companies-house-monitor",
+        "username": "titan_coder",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 34,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-11-01T20:26:18.133Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 11,
+            "TIMED-OUT": 0,
+            "TOTAL": 11
+          }
+        },
+        "description": "Finding UK companies incorporated yesterday means re-running the same search and diffing it by hand. This one remembers what it already delivered and reports only genuinely new incorporations matching your SIC code, name or location. Official free API; a search with nothing new is free.",
+        "categories": [
+          "MCP_SERVERS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Radu Furtuna",
+        "userPictureUrl": "https://images.apifyusercontent.com/bGlr9Gz9Mf30cUNKZIVVq9jGKZEEIVjQ63WI4w08KMU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZXQ1cDExLUNhZGRkem1kcGR2SVpXTWg1MkFBVXF3Nkx2OGVuZzlfLVZ4cy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSEo2VlU1TU1rUnZibXBTVURoa1JubDBhMlY2VFhSb2FuQlpaRVZyTldabGVtSktOR0puTVMxRGFVcENkR05IWms1Zlp6MXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "new-company-detected": {
+                "eventTitle": "New company detected",
+                "eventDescription": "One newly incorporated UK company genuinely new since the previous check of this watch.",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-08T13:00:02.462Z",
+          "startedAt": "2026-09-08T13:00:02.462Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "NfC0WddpAn1lHfjgE",
+        "url": "https://apify.com/titan_coder/uk-companies-house-monitor"
+      },
+      {
+        "title": "UK Company Check & Change Monitor - Companies House API",
+        "name": "uk-company-check",
+        "username": "orange_briefcase_hrj",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 32,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-07T08:12:26.215Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 12,
+            "TIMED-OUT": 0,
+            "TOTAL": 12
+          }
+        },
+        "description": "$3 per 1,000 company checks. Due-diligence reports on UK companies from the official Companies House API: status, overdue filings, directors, PSCs, charges, insolvency and a RED/AMBER/GREEN risk flag. Monitor mode outputs only changes.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/nS9ebNgeb5JyBIOZMaO_qpmo8o86v4CM7CrPV7lfVKw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY3QxUmVaZEUxUG92Y1E3QWotYWN0b3ItaVhxcEVWdEo1ek5Xbnk3ZlMtUGZyQXhLeEdpci1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Fast Agent",
+        "userPictureUrl": "https://images.apifyusercontent.com/ENlRupmzkurSJ1iVEDa6RmsG2B0BghTXLLOcZL_jkbo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vb1k3TlZzVGdjZ2Q3VmtqcVY1NElfenZ3QXBlTjJ4b09lSWhPazRRWHlWVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZM1F4VW1WYVpFVXhVRzkyWTFFM1FXb3RjSEp2Wm1sc1pTMXdSVGhqVm5WQ1EwWlpMWEIxWW14cGMyaGxjbDloZG1GMFlYSXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "company-check": {
+                "eventTitle": "Company check",
+                "eventDescription": "Charged for each full company report, including the first baseline in monitor mode.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0027
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0024
+                  }
+                }
+              },
+              "company-monitored": {
+                "eventTitle": "Company re-checked (monitor mode)",
+                "eventDescription": "Charged for each watched company re-checked in monitor mode.",
+                "eventPriceUsd": 0.002
+              },
+              "change-event": {
+                "eventTitle": "Change detected",
+                "eventDescription": "Charged for each change event detected in monitor mode.",
+                "eventPriceUsd": 0.01
+              }
+            }
+          },
+          "createdAt": "2026-10-26T16:10:56.740Z",
+          "startedAt": "2026-10-26T16:10:56.740Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-26T16:30:38.134Z"
+        },
+        "id": "iXqpEVtJ5zNWny7fS",
+        "url": "https://apify.com/orange_briefcase_hrj/uk-company-check"
+      },
+      {
+        "title": "UK Company Officer Changes: Director & PSC Alerts",
+        "name": "uk-company-officer-changes",
+        "username": "offerastudio",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 33,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-06T12:32:35.975Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Watch up to 2,000 UK companies for director appointments and resignations, PSC (owner) changes, registered office, status and filing changes from the official Companies House API. First run saves a baseline, later runs return only changes. For KYC, AML and credit monitoring.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/hr31Rv0U_vxGgsSO0SlMp5nEXNGThDf87J16a19C_Ak/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWXJIdXhrVDVJM0dPalM2amUtYWN0b3ItZ2Y3WENDbVpDVEM4MzlkbXQtTjJFV1V2bWN6MC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SiteCheck Tools",
+        "userPictureUrl": "https://images.apifyusercontent.com/RRx576zeNI5HvYs5IQX2ZZB3FZmQkQ8Qv7xB_GxAXSA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZ05zLTkxS093NE15VXRXWVUydmVUNWI0T0hZSHV4cmFrMUk1MzlvX041NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZXWEpJZFhoclZEVkpNMGRQYWxNMmFtVXRjSEp2Wm1sc1pTMVdiR0ZPZEZKbVIwMVFMWE5wZEdWamFHVmpheTFzYjJkdkxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-checked": {
+                "eventTitle": "Company checked",
+                "eventDescription": "One UK company checked on Companies House (profile, officers, persons with significant control and filings read and compared with the last run). Charged whether or not it changed. Companies that do not exist or cannot be checked, info rows and sample data are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-07T11:41:51.726Z",
+          "startedAt": "2026-10-07T11:41:51.726Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "gf7XCCmZCTC839dmt",
+        "url": "https://apify.com/offerastudio/uk-company-officer-changes"
+      },
+      {
+        "title": "UK Company Watch — Companies House Changes on Your List, No Key",
+        "name": "uk-company-watch",
+        "username": "rein8",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 55,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-11-06T11:38:31.957Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Companies House company data, no API key: paste UK company numbers; each month get only the ones that changed (strike-off, liquidation, overdue accounts, new charges, name, address), with from and to values. No officers. Unofficial: not affiliated with or endorsed by Companies House.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/jBmXoJvJ-Cx51f3s_K-wIcnImzYEvdp7NzGgxrhfEgI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdmszSk9UYTV3Rjdoak9yeUEtYWN0b3ItaWd3VlVqSGNXeFhmTnVZRUUtWThpbENPWUtwQi1pY29uLnN2Zy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Rein X",
+        "userPictureUrl": "https://images.apifyusercontent.com/XPX_gxzoDSRPSTAovpKDoys9neCzYzkJ8m96x5Tu2mM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcGVrLW9xVEEtb011UDBTdnZMZGl4MjEyUmVxR3ZNUjlzMWtQdEd4d2dKRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkbXN6U2s5VVlUVjNSamRvYWs5eWVVRXRjSEp2Wm1sc1pTMTZSMmQ2T0dOWU16ZGFMVU5vWVhSSFVGUmZTVzFoWjJWZlUyVndYekkxWDE4eU1ESTJYMTh3TWw4MU1sOHpNVjlRVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-10-03T15:59:29.840Z",
+          "startedAt": "2026-10-17T15:59:29.462Z",
+          "apifyMarginPercentage": 0,
+          "notifiedAboutFutureChangeAt": "2026-10-03T15:59:50.059Z",
+          "notifiedAboutChangeAt": "2026-10-17T16:00:22.088Z"
+        },
+        "id": "igwVUjHcWxXfNuYEE",
+        "url": "https://apify.com/rein8/uk-company-watch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "request": "ch-lookup-day-30",
+  "fetched_at": "2026-11-07T20:13:42.539Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/acts/faceless-api~uk-companies-house-lookup-monitor",
+      "fetched_at": "2026-11-07T20:13:40.391Z",
+      "status": 200,
+      "elapsed_ms": 773,
+      "final_url": "https://api.apify.com/v2/acts/faceless-api~uk-companies-house-lookup-monitor",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"128b-cfG4bCBiMy/rkpsP0grVcBxLlsk\""
+      },
+      "file": "1.json",
+      "bytes": 4747,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=companies%20house&limit=50",
+      "fetched_at": "2026-11-07T20:13:41.669Z",
+      "status": 200,
+      "elapsed_ms": 189,
+      "final_url": "https://api.apify.com/v2/store?search=companies%20house&limit=50",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"2ab45-L9zeNlNzPGskKBAwaDcSbz1k94Q\""
+      },
+      "file": "2.json",
+      "bytes": 174917,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=companies%20house%20monitor&limit=20",
+      "fetched_at": "2026-11-07T20:13:42.361Z",
+      "status": 200,
+      "elapsed_ms": 115,
+      "final_url": "https://api.apify.com/v2/store?search=companies%20house%20monitor&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"b0d0-fW4JaiJQkKiSuA3xNQ57ezPi0lQ\""
+      },
+      "file": "3.json",
+      "bytes": 45264,
+      "truncated": false
+    }
+  ]
+}
