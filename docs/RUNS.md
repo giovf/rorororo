@@ -2598,3 +2598,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 21:18 | burn-down | actions-minutes.mjs reads repository.private from the runs page it already fetches; unknown stays private
 - 2026-11-07 21:18 | burn-down | actions-minutes-line.test.ts: 3 new tests (public, private, unknown); proof is the 11-08 00:07 watchdog line
 - 2026-11-07 21:18 | burn-down | dependabot.yml first run: still none since the 09:19 install (fires on a Dependabot PR only; not dispatchable)
+- 2026-11-07 21:36 | burn-down | new-ventures researched: 3 spikes seeded — Kindle kit edition (6), Whop kit shelf (4), Clay marketplace (3)
+- 2026-11-07 21:36 | burn-down | Kindle Store lists 10+ self-published Claude Code guides; KDP account live; the twin stays out of Select
+- 2026-11-07 21:36 | burn-down | Whop sells Claude Code products at US$5–97, 2.7 % + 30c, UK payouts; identity step is the open question
+- 2026-11-07 21:36 | burn-down | Clay pays data partners via annual API agreements (US$50M in 2025); no Companies House integration there
+- 2026-11-07 21:36 | burn-down | Relay hosts added: www.amazon.com, whop.com, docs.whop.com and three clay.com hosts for the spikes

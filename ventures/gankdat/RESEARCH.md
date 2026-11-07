@@ -1283,3 +1283,16 @@ live listen answering the graceful-close frame in under one second, then the nex
 advertises `tools.listChanged: false`, so the SDK's listenRouter acknowledges and closes a `subscriptions/listen` in one
 response; `test/mcp-directory.spec.ts` pins it and the probe's modern pass gained `listen 200 (N ms)`. Deploys on this
 push's CI run; the 11-08 Daily numbers row is the first reading, the next Cowork session's `tools/list` the proof.
+
+## Research 2026-11-07 — Clay's integrations marketplace as a buyer channel for the registers (burn-down, new-ventures research)
+
+Read by WebSearch restricted to clay.com (www.clay.com does not resolve from the sandbox; the spike reads the pages through
+the relay, three hosts added). Clay is a cut of money already flowing (STRATEGY §1): its partner-programme post says the
+integrations marketplace connects providers with 10k+ customers and was on track to pay partners over US$50M in 2025 through
+"a single annual API agreement", and a 2026 Data Partner Awards post shows the programme live. No native Companies House
+integration exists; Beauhurst (UK and German private companies — its action returns the Companies House number, status and
+address from a domain) is the nearest, and a community tutorial wires the Companies House API by hand one HTTP call at a
+time. Two routes: a partner listing (paid by Clay; the annual agreement is a contract and likely a business verification —
+park under the owner-time rule unless the numbers reach 10) or a published Clay template that calls our REST API with the
+user's own key (no contract, every row a paid call, weaker discovery). Queued `new-ventures/spike-clay-data-provider-marketplace`
+(3); nothing added to this queue (the day-30 and day-7 reads of 20:15 and 20:25 hold its open questions).
