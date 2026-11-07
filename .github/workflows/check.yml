@@ -36,7 +36,13 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      # fetch-depth 0 (2026-11-07, foundry ci-check-failing): `npm run runs` accepts a first-run line that
+      # names a retired workflow by reading git's deletions under .github/workflows; at the default depth 1
+      # CI saw no history, so run 458 (2026-11-06 17:19) failed on the two epubcheck.yml lines that passed
+      # locally. The repo is public (owner 2026-11-02), so the full history costs no billed minutes.
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version: 24
