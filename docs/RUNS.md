@@ -2569,3 +2569,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 09:13 | build | Dropped docs/ci/check.yml and docs/ci/dependabot.yml; the installer moves them, next slot reads runs
 - 2026-11-07 09:20 | build | check.yml first run: success (run 460 at 09:19 on the installer's own push, full history, 1 min)
 - 2026-11-07 09:20 | build | dependabot.yml first run: none since the install (fires only on a Dependabot PR; not dispatchable)
+- 2026-11-07 12:07 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
