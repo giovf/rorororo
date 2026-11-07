@@ -2562,3 +2562,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 08:10 | retro | Queued foundry live-read-for-worker-summaries (5); appended the red-main cause to ci-check-failing
 - 2026-11-07 08:10 | retro | Owner: Etsy shop suspended 11-07 over an unpaid bill; already an owner line, nothing re-sent
 - 2026-11-07 08:10 | retro | Decision log roll: 82 October entries moved to docs/decisions/2026-10.md
+- 2026-11-07 09:07 | triage | notify owner dispatched: last run started 06:29 UTC, 2 h 37 min ago
