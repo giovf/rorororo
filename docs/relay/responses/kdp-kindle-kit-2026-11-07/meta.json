@@ -1,0 +1,110 @@
+{
+  "request": "kdp-kindle-kit-2026-11-07",
+  "fetched_at": "2026-11-07T21:29:44.570Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/select",
+      "fetched_at": "2026-11-07T21:29:35.551Z",
+      "status": 200,
+      "elapsed_ms": 199,
+      "final_url": "https://kdp.amazon.com/en_US/select",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "1.txt",
+      "bytes": 5248,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 170190
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.com/s?k=claude+code&i=digital-text",
+      "render": true,
+      "fetched_at": "2026-11-07T21:29:35.764Z",
+      "status": 503,
+      "final_url": "https://www.amazon.com/s?k=claude+code&i=digital-text",
+      "title": "Sorry! Something went wrong!",
+      "rendered": {
+        "network_idle": true,
+        "requests": 4,
+        "failed": [
+          "GET https://www.amazon.com/s?k=claude+code&i=digital-text → 503"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 503 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html",
+        "etag": "\"6aea90bd-a6f\""
+      },
+      "file": "2.txt",
+      "bytes": 90,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 2317
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/s?k=claude+code&i=digital-text",
+      "render": true,
+      "fetched_at": "2026-11-07T21:29:38.510Z",
+      "status": 503,
+      "final_url": "https://www.amazon.co.uk/s?k=claude+code&i=digital-text",
+      "title": "503 - Service Unavailable Error",
+      "rendered": {
+        "network_idle": true,
+        "requests": 3,
+        "failed": [
+          "GET https://www.amazon.co.uk/s?k=claude+code&i=digital-text → 503"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 503 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html",
+        "etag": "\"6a7f5d88-593\""
+      },
+      "file": "3.txt",
+      "bytes": 466,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1098
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.com/dp/B0H77GL44G",
+      "fetched_at": "2026-11-07T21:29:40.900Z",
+      "status": 200,
+      "elapsed_ms": 163,
+      "final_url": "https://www.amazon.com/dp/B0H77GL44G",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "4.txt",
+      "bytes": 74956,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1250964
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.com/dp/B0H3KPSF9H",
+      "fetched_at": "2026-11-07T21:29:43.193Z",
+      "status": 200,
+      "elapsed_ms": 137,
+      "final_url": "https://www.amazon.com/dp/B0H3KPSF9H",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "5.txt",
+      "bytes": 84594,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1225867
+    }
+  ]
+}
