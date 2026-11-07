@@ -17,6 +17,7 @@ import {
   textLength,
   violations,
   withRetired,
+  shallowHint,
 } from './runs-check.ts';
 
 const short = 'Built the thing';
@@ -99,6 +100,12 @@ describe('violations', () => {
     ).toEqual(found);
     // Without the workflow list (older callers) the check is off.
     expect(violations(md, CAP_FROM, CAP)).toEqual([]);
+    // A shallow clone cannot see older deletions: the unknown-workflow verdict gets a hint, nothing else does.
+    expect(shallowHint(found, true)).toContain('shallow clone');
+    expect(shallowHint(found, false)).toBeNull();
+    expect(
+      shallowHint([{ line: 1, kind: 'too-long', length: 130, preview: 'x' }], true),
+    ).toBeNull();
   });
 
   it('is clean on a file with only compliant new lines', () => {

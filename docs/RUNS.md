@@ -2563,3 +2563,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 08:10 | retro | Owner: Etsy shop suspended 11-07 over an unpaid bill; already an owner line, nothing re-sent
 - 2026-11-07 08:10 | retro | Decision log roll: 82 October entries moved to docs/decisions/2026-10.md
 - 2026-11-07 09:07 | triage | notify owner dispatched: last run started 06:29 UTC, 2 h 37 min ago
+- 2026-11-07 09:13 | build | Built foundry ci-check-failing: check and dependabot gates check out full history (fetch-depth 0)
+- 2026-11-07 09:13 | build | runs check: --no-renames on the retired-workflow lookup; shallow-clone hint after an unknown name
+- 2026-11-07 09:13 | build | Reproduced run 458 in a depth-1 clone (two epubcheck.yml lines fail), passes with full history
+- 2026-11-07 09:13 | build | Dropped docs/ci/check.yml and docs/ci/dependabot.yml; the installer moves them, next slot reads runs

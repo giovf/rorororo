@@ -46,3 +46,10 @@ uploads an artifact (demo video, worker logs) keeps its own workflow. Retiring o
 may delete a file under `.github/workflows/` (epubcheck.yml went with the build commit of 2026-11-06 17:19; only
 creating or changing one needs the `workflow` scope), and `npm run runs` still accepts the retired name on old
 first-run lines (it reads git's deletions).
+
+**The gate checks out the full history (2026-11-07, foundry `ci-check-failing`).** `check.yml` and `dependabot.yml`
+set `fetch-depth: 0`: the runs check accepts a retired workflow's first-run lines by reading git's deletions under
+`.github/workflows/`, which a depth-1 checkout cannot see — `check` run 458 (2026-11-06 17:19, the push that retired
+`epubcheck.yml`) failed on two lines that passed locally, and every later push was `[skip ci]`, so main stayed red
+until the W45 retro named it. `npm run runs` now says so when it runs in a shallow clone. Keep the setting when
+editing either file.

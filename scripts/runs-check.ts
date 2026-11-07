@@ -8,8 +8,11 @@
 // is not the routine's to shorten. Lines dated before CAP_FROM are grandfathered (24 of 375 broke
 // the text cap when this landed) so `npm run check` stays green without rewriting history.
 //
-// Why a date cutoff and not the push's diff range: the `check` workflow checks out depth 1, so
-// no range exists in CI, and a cutoff gives the same verdict locally and in CI for the same file.
+// Why a date cutoff and not the push's diff range: the `check` workflow checked out depth 1 until
+// 2026-11-07, so no range existed in CI, and a cutoff gives the same verdict locally and in CI for
+// the same file. (check.yml and dependabot.yml fetch the full history since 2026-11-07, foundry
+// `ci-check-failing`: the retired-workflow lookup below needs git's deletions, and run 458 failed at
+// depth 1 on two lines that passed locally.)
 //
 // Append-only floor (2026-10-04, foundry `append-only-guard`): commit 815ab26 wrote docs/RUNS.md and
 // docs/STRATEGY.md whole with only its new entry (472 and 569 lines gone, CI green, two later runs
@@ -250,23 +253,59 @@ export function parseArgs(argv: string[]): Args {
 export function knownWorkflows(root: string): string[] {
   const dir = path.join(root, '.github', 'workflows');
   const current = existsSync(dir) ? readdirSync(dir).filter((f) => /\.ya?ml$/.test(f)) : [];
-  const git = (args: string[]): string => {
-    try {
-      return execFileSync('git', args, {
-        cwd: root,
-        encoding: 'utf8',
-        stdio: ['ignore', 'pipe', 'ignore'],
-      });
-    } catch {
-      return '';
-    }
-  };
+  const git = (args: string[]): string => gitOutput(root, args);
   // Committed deletions, then one staged or unstaged in this checkout (the retiring commit runs this check).
+  // `--no-renames`: a workflow renamed in one commit is a deletion of its old name here, so the old
+  // name's first-run lines stay valid (rename detection would report it as R, not D).
   const deleted = [
-    git(['log', '--diff-filter=D', '--name-only', '--format=', '--', '.github/workflows']),
-    git(['diff', '--diff-filter=D', '--name-only', 'HEAD', '--', '.github/workflows']),
+    git([
+      'log',
+      '--no-renames',
+      '--diff-filter=D',
+      '--name-only',
+      '--format=',
+      '--',
+      '.github/workflows',
+    ]),
+    git([
+      'diff',
+      '--no-renames',
+      '--diff-filter=D',
+      '--name-only',
+      'HEAD',
+      '--',
+      '.github/workflows',
+    ]),
   ].join('\n');
   return withRetired(current, deleted.split('\n'));
+}
+
+/** Stdout of a git command in `root`, or '' when git or the repository is unavailable. */
+function gitOutput(root: string, args: string[]): string {
+  try {
+    return execFileSync('git', args, {
+      cwd: root,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    });
+  } catch {
+    return '';
+  }
+}
+
+/** True when the checkout is a shallow clone, whose history hides older workflow deletions. */
+export function isShallowClone(root: string): boolean {
+  return gitOutput(root, ['rev-parse', '--is-shallow-repository']).trim() === 'true';
+}
+
+/**
+ * The hint printed after an unknown-workflow violation in a shallow clone (2026-11-07, foundry
+ * `ci-check-failing`): check.yml run 458 failed two epubcheck.yml lines at depth 1 and the log said
+ * only "names no workflow", so the cause took a retro to find. Null when nothing applies.
+ */
+export function shallowHint(found: readonly Violation[], shallow: boolean): string | null {
+  if (!shallow || !found.some((v) => v.kind === 'unknown-workflow')) return null;
+  return 'runs: this is a shallow clone, so a workflow retired before its oldest commit is invisible — fetch the full history (`git fetch --unshallow origin`, or `fetch-depth: 0` in the workflow) and run again';
 }
 
 /** `current` plus the base names of the retired workflow paths, each once, in that order. */
@@ -299,6 +338,8 @@ function main(): void {
         console.error(
           `runs: ${found.length} line(s) dated ${from} or later break the ${cap}-char cap — shorten the text after \`| <routine> | \``,
         );
+        const hint = shallowHint(found, isShallowClone(path.resolve('.')));
+        if (hint) console.error(hint);
         process.exitCode = 1;
       }
       const counts = {
