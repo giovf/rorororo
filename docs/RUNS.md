@@ -2583,3 +2583,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 20:16 | burn-down | Relay ch-lookup-day-30: actor below #50 of 885 Store results; buyers go to directors/PSC actors
 - 2026-11-07 20:16 | burn-down | 14 rival Companies House monitors list since October, every one at the 1–2 users/30d QA floor
 - 2026-11-07 20:16 | burn-down | Exchange: officers-psc and GeBIZ stay parked on their triggers; keyword pass re-parked on rank/users
+- 2026-11-07 20:26 | burn-down | Took over gankdat mcp-2026-07-28-day-7-read: claimed by the 11-06 09:09 build slot that died, 35 h idle
+- 2026-11-07 20:26 | burn-down | gankdat mcp-2026-07-28-day-7-read done: 0 clients, 0 calls; 5 Cowork discovers 200, no tools/list all week
+- 2026-11-07 20:26 | burn-down | Worker logs runs 16–19: Cowork subscriptions/listen held open 177 s then cancelled; our smoke tools/call 401
+- 2026-11-07 20:26 | burn-down | Queued gankdat mcp-listen-graceful-close (5): no listChanged bits, listen closes at once, probe listen leg
+- 2026-11-07 20:26 | burn-down | Job logs above the tail window fetched via the relay from the signed blob URL; needle search is lossy (2 of 5)

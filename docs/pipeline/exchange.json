@@ -158,7 +158,7 @@
     {
       "id": "n8n-community-node",
       "title": "n8n verified community node for gankdat (npm publish with provenance via GitHub Actions)",
-      "why": "A shelf inside n8n Cloud; verification needs provenance publishing (workflow installer can), no runtime deps, one service per package, and an npm token from the owner. Evidence 2, reach 3, 1 day + 10 min → 5.1, below the 7 baseline (W40).",
+      "why": "A shelf inside n8n Cloud; verification needs provenance publishing (workflow installer can), no runtime deps, one service per package, and an npm token from the owner. Evidence 2, reach 3, 1 day + 10 min → 5.1, below the 7 baseline (W40). Trigger read 2026-11-07 (gankdat day-7 read of the SDK v2 /mcp): claude tool callers 30d 0 clients of 20; the only Claude client on the new protocol stalls on subscriptions/listen (queued mcp-listen-graceful-close).",
       "status": "parked",
       "trigger": "the Daily numbers `claude tool callers` reading shows ≥ 20 distinct clients calling an MCP tool in 30 days, or the owner's portal read (action 035) shows Used a tool ≥ 20 (day-30 read 2026-10-30: the portal is owner-only and the old trigger was unreadable from the repo)",
       "added": "2026-09-30",

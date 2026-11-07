@@ -976,14 +976,24 @@
     {
       "id": "mcp-2026-07-28-day-7-read",
       "title": "Day-7 read of the SDK v2 /mcp (v0.27.0, deployed 2026-10-30 18:31 UTC): the week's `claude tool callers` (clients, calls), the probe's `2026-07-28:` line every morning, one `worker logs` dispatch with needle `2026-07-28` for the status codes Claude's clients got (Cowork, claude.ai, Code), and the 2025 side (`mcp probe` 2025 line, Glama's health mail absent); if ≥ 1 client with ≥ 1 call: record the proof in RESEARCH.md and the exchange's n8n trigger reading; if 0: read the first 2026-07-28 request's full invocation (`request_id`) and queue the next cause",
-      "why": "The item `mcp-protocol-2026-07-28` (built tonight) has a dated proof — a 2026-07-28 tools/call answering 200 in the Worker log and `claude tool callers ≥ 1 client, ≥ 1 call within a week of the deploy` — and no item reads it. Tonight's live smoke could only reach the v2 ladder's 400 through the relay (the relay sends no `MCP-Protocol-Version` header), so the first real 2026-07-28 traffic is tomorrow's Cowork session (09–11 UTC on 10-30) and the 10-31 probe row. Evidence 3 × reach 4 ÷ 0.1 day, dated — scored as a reading (4), like the other day-N reads in this queue.",
+      "why": "The item `mcp-protocol-2026-07-28` (built tonight) has a dated proof — a 2026-07-28 tools/call answering 200 in the Worker log and `claude tool callers ≥ 1 client, ≥ 1 call within a week of the deploy` — and no item reads it. Tonight's live smoke could only reach the v2 ladder's 400 through the relay (the relay sends no `MCP-Protocol-Version` header), so the first real 2026-07-28 traffic is tomorrow's Cowork session (09–11 UTC on 10-30) and the 10-31 probe row. Evidence 3 × reach 4 ÷ 0.1 day, dated — scored as a reading (4), like the other day-N reads in this queue. — Read 2026-11-07 (burn-down, after the 11-06 build slot that claimed it died): 0 clients, 0 calls all week; five Claude-User server/discover 200 (the owner's Cowork key), one subscriptions/listen held open 177 s and cancelled, no tools/list or tools/call from any Claude surface; our own keyless smoke the only 2026-07-28 tools/call (401). Next cause queued as mcp-listen-graceful-close. RESEARCH.md \"SDK v2 /mcp day-7\".",
       "effort_days": 0.1,
       "proof": "a RESEARCH.md paragraph dated 2026-11-06 with the three numbers (clients, calls, 2026-07-28 status codes) and either the proof met or the next item queued",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-11-06",
       "added": "2026-10-30",
-      "doing_since": "2026-11-06"
+      "done_at": "2026-11-07"
+    },
+    {
+      "id": "mcp-listen-graceful-close",
+      "title": "2026-07-28 `subscriptions/listen` closes gracefully at once: advertise no `listChanged` bits (stateless Worker, no server-initiated notifications) so the SDK's listenRouter answers the acknowledgement and the `resultType: complete` frame in one response; add a `listen` leg to the probe's modern pass",
+      "why": "Day-7 read 2026-11-07 (RESEARCH.md \"SDK v2 /mcp day-7\"): the one Claude surface speaking 2026-07-28 to us (the owner's Cowork connector, five sessions in a week) does server/discover (200) then subscriptions/listen, and the listen stream was held open 177 s until Cowork cancelled it — McpServer advertises tools.listChanged, Cowork asks for toolsListChanged, the honoured filter is non-empty and listenRouter waits for events a stateless Worker never emits. No tools/list or tools/call followed in any session. Evidence 3 (the stall is in our log) × reach 4 (every Claude client in the directory) ÷ 0.2 d, discounted to 5 because Cowork's next step after listen is inferred, not read.",
+      "effort_days": 0.2,
+      "proof": "a live 2026-07-28 subscriptions/listen answers the acknowledgement and the graceful-close frame in < 1 s (the probe's `listen 200 <ms>` on the next Daily numbers row); then the next Cowork session shows tools/list in a request_id read of the Worker log, else a day-7 read of `claude tool callers` dated 7 days after the deploy",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-11-07"
     },
     {
       "id": "apify-notice-in-daily-row",

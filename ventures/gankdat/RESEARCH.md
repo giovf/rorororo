@@ -1234,3 +1234,47 @@ queued; the weekly review's Apify line reads them.
   actor; read 1). The "real buyers" case from W41 (two GeBIZ actors at 7 and 11 users/30 d) is the same
   shape as the Companies House category: a few incumbents with run history take the buyers, and a new
   gankdat actor in an Apify category has landed at the QA floor 18 times out of 18.
+
+## Read 2026-11-07 — SDK v2 `/mcp` day-7 (`mcp-2026-07-28-day-7-read`, burn-down, 20:25 UTC)
+
+Queue item (4), dated 2026-11-06, claimed by the 11-06 09:09 build slot that then died on the usage limit
+(the retro's "11-06 build missed"); taken over by this run after 35 h with nothing built. The proof written
+on 2026-10-30 for `mcp-protocol-2026-07-28` (v0.27.0, deployed 18:31 UTC): a 2026-07-28 `tools/call`
+answering 200 in the Worker log and `claude tool callers ≥ 1 client, ≥ 1 call` within a week.
+
+| Signal | Reading | Proof |
+| --- | --- | --- |
+| `claude tool callers` (Daily numbers, 10-31 → 11-07) | **30d 0 clients, 0 calls; 7d 0 clients, 0 calls** on all eight rows | ≥ 1 — **not met** |
+| Probe's `2026-07-28:` line every morning | `tools 200 (25 tools), call 200` on all eight rows; the 2025 line `init 200, tools 200, call 200` too; no Glama health mail since 10-29 | — |
+| Worker log, needle `2026-07-28`, 7 d (`worker logs` run 16) | 49 requests: SentinelOracle 37 (tools/list 200 ×19, notifications/initialized 202 ×18), histor 2, mcpcensusbot, sniffmcp, MCPCheckup, InvokeRankBot 1 each (discover 200), `undici` 4 (discover, tools/list 200; one keyless `tools/call query_uk_insolvency` **401** at 11-06 09:16 = the dead build slot's smoke), Claude-User 2 (discover 200) | a 2026-07-28 `tools/call` 200 — **not met**: the only one was a 401 of our own |
+| Worker log, needle `Claude-User`, 7 d (run 19) | **11 requests**: `server/discover` 2026-07-28 **×5**, all 200, all with a bearer key (`keyId f19e015f…`, the owner's own Cowork connector per the 10-30 reading); one `x-anthropic-client: Cowork`, one Claude Code on the 2025 era (`initialize` 200, `notifications/initialized` 202, 11-03 01:29, then nothing); 2 GET 404 + 1 GET 301 from a browser UA; **one `subscriptions/listen` (Cowork, 11-06 09:35) with no status: `outcome canceled`, wall time 177,857 ms** | **0 `tools/list`, 0 `tools/call` from any Claude surface in 7 days** |
+
+Two notes on the instrument. The needle search is a floor, not a count: the `2026-07-28` run found 2 Claude
+discovers where the `Claude-User` run found 5 of the same week, so the Workers Logs `needle` filter misses
+events (recorded for `worker-logs-dispatch-job`; a `request_id` read is exact). And the sandbox cannot pull a
+job log above the GitHub tool's tail window — this read fetched the two job logs through the relay from the
+signed `productionresultssa*.blob.core.windows.net` URL (hosts.txt gained two such lines; the account number
+changes per job).
+
+**Verdict: the proof failed, and the first full invocation names the next cause.** The one Claude surface
+that speaks 2026-07-28 to us (the owner's Cowork connector, five sessions in the week) does what the spec
+says — `server/discover` (200, 300–960 ms) and then `subscriptions/listen` — and the listen call is where
+the week ends: the SDK's `createMcpHandler` serves `subscriptions/listen` as an SSE stream that stays open
+with keepalives for as long as the honoured filter is non-empty (`listenRouter.serve`: an empty honoured
+filter is closed gracefully at once with a `resultType: "complete"` frame; a non-empty one waits for events
+on the bus). Our `McpServer` registers tools and so advertises `tools.listChanged`, Cowork asks for
+`toolsListChanged`, the filter is honoured — and a stateless Worker that never emits `list_changed` holds the
+stream open until the client gives up (177 s, `canceled`). No `tools/list` followed in any of the five
+sessions, so either Cowork waits on the listen acknowledgement/close before listing tools, or it lists
+tools in a way this log does not show; the cheap test is to make listen close gracefully and read the next
+Cowork session. Side readings: the OAuth funnel's one `authorize` + `signin_shown` + one `invalid_grant:
+unknown code` all land in the 11-01 06:37 → 11-02 06:37 window with the first discover (11-01 12:19) — the
+owner re-adding the connector; the exchange's `n8n-community-node` trigger (≥ 20 distinct Claude clients
+calling a tool in 30 d) reads **0 of 20**.
+
+**Queued (this commit): `mcp-listen-graceful-close` (5, 0.2 d).** Advertise no `listChanged` bits on the
+2026-07-28 server (a stateless Worker emits no server-initiated notifications; `tools.listChanged: false`,
+same for prompts/resources) so `subscriptions/listen` is acknowledged and closed in one response; add a
+`listen` leg to the probe's modern pass (`2026-07-28: tools 200, call 200, listen <status> <ms>`); proof is a
+live listen answering the graceful-close frame in under one second, then the next Cowork session's
+`tools/list` in a `request_id` read. Falls back to a day-7 read of the same two numbers.
