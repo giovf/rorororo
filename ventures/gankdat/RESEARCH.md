@@ -1187,3 +1187,50 @@ OpenCorporates and Charity Commission; Clearbit and Hunter are the nearest liste
 key's data to a user who already pays gankdat, and no shelf has a paying account, so it scores ≈ 2.7 as a line and is
 parked in the exchange (`zapier-integration-shelf`): reopen on a converting shelf or an inbound Zapier/Make request, then
 ≈ 1.5 days with the Platform CLI. Details: `docs/exchange/spikes/zapier-integration-shelf.md`. `research_after` unchanged.
+
+## Build 2026-11-07 — Companies House lookup + monitor, day-30 read (burn-down, 20:15 UTC)
+
+Queue `uk-company-lookup-day-30` (3), dated 2026-11-07: the proof written for `uk-company-lookup-monitor`
+(exchange 2026-W41 #1, built 2026-10-07) was an Apify actor with ≥ 5 users from other accounts in its
+first 30 days, ≥ 1 `changes`-mode run, and `datasets 30d:` for `uk-company-profiles` above the automated
+floor. Read from the 2026-11-07 Daily numbers row and one relay read of the Apify API
+(`docs/relay/responses/ch-lookup-day-30/`: the actor object and the Store search for the category's two
+head terms, 20:13 UTC).
+
+| Signal | Reading | Proof |
+| --- | --- | --- |
+| Actor users, other accounts, 30 d | `totalUsers30Days` **1** (Apify's QA runner), `totalUsers` 2 lifetime (us + QA), 7 d 1, 90 d 1; 0 reviews, 0 bookmarks | ≥ 5 — **not met** |
+| Actor runs, 30 d | 29 (27 ok, 2 failed — the 10-26..10-29 QA failures repaired on 10-31 by `apify-companies-house-qa-repair`, inside the window until 11-29); the row's `apify 30d by actor` puts it at 28 with every other actor at 27–32, the QA runner's daily cadence | — |
+| `changes`-mode runs by others | not a row field, but with one 30-day user (QA, which runs the prefilled lookup input) and runs at the QA cadence, **0** | ≥ 1 — **not met** |
+| `datasets 30d: uk-company-profiles` | 31 (1 → 31, one a day since 10-07 = the QA run's lookup); `datasets 30d external` does not list it and the `0:` list does — **0 external calls** | above floor — **not met** |
+| Store rank, search `companies house` | **885** actors match (the W41 read counted 13 paid lookups); ours is **not in the top 50**. Top 5 by 30-day users: scrapesage 56 (21,770 runs), pradio 18 ("Officers, PSC, Charges"), logiover 13, pvalyou 6 (KYB), jungle_synthesizer 5 ("Financials & Beneficial Owners"); 40 of the top 50 sit at 0–3 users/30 d | — |
+| Store rank, search `companies house monitor` | 381 match; ours not in the top 20. The W41 gap ("none offers a monitor") closed within the month: at least 14 monitor actors of our shape now list (plotbench change monitor, skillmerc, maydit filing monitor, tudorlane watch, titan_coder ×3, nerolabs, offerastudio officer changes, rein8 watch …), every one at **1–2 users/30 d** — the QA floor — and 2–3 runs | — |
+
+**Verdict: the proof failed on all three counts, and the market read says why.** The category has buyers,
+but they go to five actors that lead with **directors, PSCs and beneficial owners** (pradio, jungle_synthesizer,
+memo23 "Directors, PSC") or bulk scraping with a long run history; organisation-level lookups and every
+monitor — ours and fourteen rivals' — sit at the floor. Rank in the Store follows run and user history
+(silentflow is #3 on 141 lifetime runs with 2 users/30 d; our 2 lifetime users put us below #50), which copy
+cannot create. The five flagged days (QA `UNDER_MAINTENANCE` 10-26..10-31) cost at most a sixth of the
+window and do not change the reading: every unflagged rival monitor shows the same floor. The dataset's
+MCP tool and REST route stay — on-demand lookups cost nothing while idle (KV cache, no wave) — and the
+Daily numbers row keeps printing the actor's runs and the dataset's external calls, so no dated re-read is
+queued; the weekly review's Apify line reads them.
+
+**The three parked ideas (exchange.json, updated with this reading):**
+
+- `uk-company-officers-psc` — **stays parked, trigger unchanged** (first paying gankdat account and the ICO
+  fee, action 012; then a new LIA line in `GDPR.md`). The reading sharpens the why: person fields are what
+  the paid Companies House actors sell (pradio 18 users/30 d, memo23, titoune33, akeeml, jungle_synthesizer
+  all lead with PSC/directors), so this is the only lever with evidence behind it — but the gate is legal
+  and the owner's (Blind Mode, GDPR.md LIA table), not a market question, and £0 revenue has not re-opened
+  action 012.
+- `apify-quality-score-pass` — **re-parked with a new trigger**: an actor of ours appears in the Store's top
+  50 for its head term, or shows ≥ 3 users/30 d (one real buyer beyond us and QA). The old trigger was
+  "the Companies House actor converting"; it did not (1 user/30 d, below #50 of 885), and the top 50 shows
+  rank following lifetime runs and users, not README keywords — a copy pass on an actor with 2 lifetime
+  users has no mechanism to climb 50 places.
+- `singapore-acra-gebiz` — **stays parked, trigger unchanged** (≥ 5 users/30 d on the Companies House
+  actor; read 1). The "real buyers" case from W41 (two GeBIZ actors at 7 and 11 users/30 d) is the same
+  shape as the Companies House category: a few incumbents with run history take the buyers, and a new
+  gankdat actor in an Apify category has landed at the QA floor 18 times out of 18.

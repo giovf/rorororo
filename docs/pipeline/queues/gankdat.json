@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-05",
+  "updated": "2026-11-07",
   "researched": "2026-10-30",
   "items": [
     {
@@ -438,14 +438,14 @@
     {
       "id": "uk-company-lookup-day-30",
       "title": "Day-30 read of the Companies House lookup + monitor: actor users/runs by others, changes-mode runs, dataset calls above the floor; decide officers/PSC (exchange `uk-company-officers-psc`), the Apify keyword pass and GeBIZ",
-      "why": "The exchange 2026-W41 parked three ideas on this reading (uk-company-officers-psc, apify-quality-score-pass, singapore-acra-gebiz). Record the numbers in RESEARCH.md against the proof of uk-company-lookup-monitor and promote or leave parked with the reason.",
+      "why": "The exchange 2026-W41 parked three ideas on this reading (uk-company-officers-psc, apify-quality-score-pass, singapore-acra-gebiz). Record the numbers in RESEARCH.md against the proof of uk-company-lookup-monitor and promote or leave parked with the reason. — Read 2026-11-07 (burn-down): proof failed on all three counts (1 user/30 d = QA, 0 changes-mode runs by others, 0 external dataset calls; actor below #50 of 885 Store results); officers/PSC and GeBIZ stay parked on their triggers, the keyword pass re-parked on a rank/users trigger. RESEARCH.md \"day-30 read\".",
       "effort_days": 0.2,
       "proof": "numbers recorded in RESEARCH.md; the three parked ideas promoted or re-parked with a reason",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-11-07",
       "added": "2026-10-07",
-      "doing_since": "2026-11-07"
+      "done_at": "2026-11-07"
     },
     {
       "id": "refresh-uk-trademark-journal",

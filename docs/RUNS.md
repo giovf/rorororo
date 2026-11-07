@@ -2579,3 +2579,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 17:14 | build | The fix deploys on this push's license worker run; the live quote after it is the next line this slot writes
 - 2026-11-07 17:19 | build | Live call after the deploy (run 13, 17:18): GET /v1/downloads/summary 200 {"venture":"tax-workbook",…,"sales":0}
 - 2026-11-07 17:19 | build | license-worker.yml first run: success (run 13 at 17:17 on the installer's own push; deploy + live call, 1 min)
+- 2026-11-07 20:16 | burn-down | gankdat uk-company-lookup-day-30 done: proof failed — 1 user/30d (QA), 0 changes runs, 0 external calls
+- 2026-11-07 20:16 | burn-down | Relay ch-lookup-day-30: actor below #50 of 885 Store results; buyers go to directors/PSC actors
+- 2026-11-07 20:16 | burn-down | 14 rival Companies House monitors list since October, every one at the 1–2 users/30d QA floor
+- 2026-11-07 20:16 | burn-down | Exchange: officers-psc and GeBIZ stay parked on their triggers; keyword pass re-parked on rank/users
