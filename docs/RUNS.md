@@ -2603,3 +2603,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 21:36 | burn-down | Whop sells Claude Code products at US$5–97, 2.7 % + 30c, UK payouts; identity step is the open question
 - 2026-11-07 21:36 | burn-down | Clay pays data partners via annual API agreements (US$50M in 2025); no Companies House integration there
 - 2026-11-07 21:36 | burn-down | Relay hosts added: www.amazon.com, whop.com, docs.whop.com and three clay.com hosts for the spikes
+- 2026-11-07 21:40 | burn-down | Spike spike-kdp-kindle-claude-code-handbook done: PARK — 8 of 9 independent Claude Code Kindle titles rank #1.3M–4.9M
+- 2026-11-07 21:40 | burn-down | Relay kdp-kindle-kit (2 rounds): search pages 503 on both stores; 9 amazon.com product pages read; .co.uk walled
+- 2026-11-07 21:40 | burn-down | KDP Select exclusivity sentence quoted; the twin would stay out of Select; Leanpub day-60 ≥ 10 copies is the trigger

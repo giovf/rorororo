@@ -762,6 +762,16 @@
       "trigger": "PayAI's x402scan buyers ≥ 25 % of Coinbase's on a 24 h read, or a Base register/company-data route in its top 100 with ≥ 100 payers; Skyfire's directory publishing call or buyer counts; Nevermined opening a free listing path for individuals; Stripe opening stablecoin machine payments to UK accounts self-serve. The 11-14 x402-bazaar-day-30 read notes x402scan's facilitator split beside the Bazaar clause.",
       "spiked": "2026-11-04",
       "added": "2026-11-04"
+    },
+    {
+      "id": "kdp-kindle-claude-code-handbook",
+      "title": "A Kindle edition of the Claude Code operations handbook ('Running Claude Code unattended') on the owner's live KDP account as the twin of the Leanpub listing — not enrolled in KDP Select, AI-generated disclosure at publish, 70 % band at US$7.99–9.99",
+      "status": "parked",
+      "why": "Spike 2026-11-07 (burn-down, docs/exchange/spikes/kdp-kindle-claude-code-handbook.md, two relay rounds): the rules allow it (KDP Select is the only exclusivity and is opt-in; Leanpub has none), the account exists and a listing is free, but the Kindle Store shows no buyers for an independent Claude Code book — of the ten titles the index listed, eight independent ones rank #1.3M–4.9M in the Kindle Store four to six months after publication (≈ 0–1 copies a month), one is delisted, the Packt title is a 2027 pre-order, and the one seller (#46,774, top-10 in two sub-categories) is a 190-page trade-published book; Leanpub's own counts put the same shape at 11–13 copies per handbook. A US$7.99–9.99 copy nets US$5.56–6.96 against Leanpub's US$15.20, so the twin is worth an owner step only once the Leanpub listing has proven demand.",
+      "trigger": "The Leanpub day-60 read shows ≥ 10 copies sold → the kit's queue gets `kindle-edition` (0.3 day on the Kindle guide's packager; not in Select; disclosure at publish; one more 10-minute step on the kit's existing owner request, never a new one); or a later one-line-per-ASIN relay read of the same ten product pages shows a second independent title at a rank under #100,000.",
+      "added": "2026-11-07",
+      "spiked": "2026-11-07",
+      "updated": "2026-11-07"
     }
   ]
 }

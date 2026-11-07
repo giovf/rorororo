@@ -130,3 +130,10 @@ says plainly that the reader needs a Claude subscription, a terminal and judgeme
   and remits UK VAT. Open: whether set-up needs identity verification on a new account (owner-time rule), whether rival pages
   show sales, any marketplace-attributed fee. Queued `new-ventures/spike-whop-claude-code-kit-shelf` (4). This queue is
   unchanged: its one open item is the Leanpub listing, blocked on the owner's step (action 038).
+- **2026-11-07 21:40 (burn-down, `spike-kdp-kindle-claude-code-handbook`):** parked — `docs/exchange/spikes/kdp-kindle-claude-code-handbook.md`.
+  Two relay rounds: the Kindle search pages answered 503 on both stores, nine of ten product pages read on amazon.com (the
+  .co.uk ones are the "Continue shopping" wall). Eight independent Claude Code titles rank #1.3M–4.9M in the Kindle Store
+  four to six months after publication, one is delisted, the Packt guide is a June 2027 pre-order, and the one seller
+  (#46,774, top-10 in two sub-categories) is a 190-page trade-published book — against 11–13 copies per handbook of this
+  shape on Leanpub (§2). KDP Select's exclusivity sentence is quoted in the spike; the twin would never enrol. Trigger:
+  the Leanpub day-60 read at ≥ 10 copies adds `kindle-edition` (0.3 day, one more 10-minute step on action 038).
