@@ -2577,3 +2577,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 17:14 | build | docs/ci/license-worker.yml: the deploy ends with a live call of the summary route; first run read next slot
 - 2026-11-07 17:14 | build | build.md and burn-down.md RUN LOG: a Worker route Daily numbers reads is done only with one live call quoted
 - 2026-11-07 17:14 | build | The fix deploys on this push's license worker run; the live quote after it is the next line this slot writes
+- 2026-11-07 17:19 | build | Live call after the deploy (run 13, 17:18): GET /v1/downloads/summary 200 {"venture":"tax-workbook",…,"sales":0}
+- 2026-11-07 17:19 | build | license-worker.yml first run: success (run 13 at 17:17 on the installer's own push; deploy + live call, 1 min)
