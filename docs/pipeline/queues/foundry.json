@@ -1371,8 +1371,9 @@
       "effort_days": 0.05,
       "proof": "the next ci-minutes line reads `… (public, no cap) top: …`; actions-minutes-line.test.ts covers both visibilities",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-05"
+      "status": "doing",
+      "added": "2026-11-05",
+      "doing_since": "2026-11-07"
     },
     {
       "id": "runner-script-dispatch",
