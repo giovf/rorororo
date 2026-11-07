@@ -2567,3 +2567,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 09:13 | build | runs check: --no-renames on the retired-workflow lookup; shallow-clone hint after an unknown name
 - 2026-11-07 09:13 | build | Reproduced run 458 in a depth-1 clone (two epubcheck.yml lines fail), passes with full history
 - 2026-11-07 09:13 | build | Dropped docs/ci/check.yml and docs/ci/dependabot.yml; the installer moves them, next slot reads runs
+- 2026-11-07 09:20 | build | check.yml first run: success (run 460 at 09:19 on the installer's own push, full history, 1 min)
+- 2026-11-07 09:20 | build | dependabot.yml first run: none since the install (fires only on a Dependabot PR; not dispatchable)
