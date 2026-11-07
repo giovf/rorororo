@@ -992,8 +992,9 @@
       "effort_days": 0.2,
       "proof": "a live 2026-07-28 subscriptions/listen answers the acknowledgement and the graceful-close frame in < 1 s (the probe's `listen 200 <ms>` on the next Daily numbers row); then the next Cowork session shows tools/list in a request_id read of the Worker log, else a day-7 read of `claude tool callers` dated 7 days after the deploy",
       "score": 5,
-      "status": "todo",
-      "added": "2026-11-07"
+      "status": "doing",
+      "added": "2026-11-07",
+      "doing_since": "2026-11-07"
     },
     {
       "id": "apify-notice-in-daily-row",
