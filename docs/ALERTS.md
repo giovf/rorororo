@@ -355,3 +355,4 @@ closed entries older than 30 days (git keeps the history).
 - 2026-11-03 variables-toolkit: Figma approved the free plugin "Unused Variables Finder & Cleaner" (mail 19:11 UTC); LISTING-FREE.md updated, listing URL still to record
 - 2026-11-05 owner: Claude Code handbook ready for Leanpub: sign up, upload, publish, ~15 min, £0 — docs/for-owner/actions/038-leanpub-kit.md
 - 2026-11-06 owner: GitHub says the Claude app wants new permissions; review and accept or ignore in GitHub settings, Apps.
+- 2026-11-07 owner: Etsy shop Taxelicious is suspended (£2.98 bill unpaid) — update the card in Etsy billing to reopen it
