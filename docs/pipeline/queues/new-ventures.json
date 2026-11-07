@@ -553,8 +553,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/whop-claude-code-kit-shelf.md with the fee table and UK payout row quoted from the docs, the identity-step answer, a six-store rival table (price, members/reviews, sales shown), the net at two prices and a promote / park call",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-07"
+      "status": "doing",
+      "added": "2026-11-07",
+      "doing_since": "2026-11-07"
     },
     {
       "id": "spike-clay-data-provider-marketplace",
