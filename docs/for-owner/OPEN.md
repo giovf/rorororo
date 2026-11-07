@@ -5,7 +5,7 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (4)
+## Requests (5)
 
 1. **second tax spreadsheet is ready for your Etsy shop** — ~10 min, since 2026-11-03; unblocks tax-workbook `reseller-listing-live` (8). Steps: [037](actions/037-etsy-reseller-listing.md).
    second tax spreadsheet is ready for your Etsy shop — publish the Reseller workbook listing, ~10 min, £0.16 — docs/for-owner/actions/037-etsy-reseller-listing.md
@@ -18,6 +18,9 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 4. **GitHub says the Claude app wants new permissions; review an…** — time not stated, since 2026-11-06; nothing queued waits on it.
    GitHub says the Claude app wants new permissions; review and accept or ignore in GitHub settings, Apps.
+
+5. **Etsy shop Taxelicious is suspended** — time not stated, since 2026-11-07; nothing queued waits on it.
+   Etsy shop Taxelicious is suspended (£2.98 bill unpaid) — update the card in Etsy billing to reopen it
 
 ## Waiting on an attended Claude session, not you (3)
 

@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "researched": "2026-11-05",
   "items": [
     {
@@ -1331,7 +1331,7 @@
     {
       "id": "ci-check-failing",
       "title": "The check workflow (check.yml) failed 1 times this week: root-cause and fix it",
-      "why": "Filed by scripts/ci-failed-runs.ts (2026-11-02): check.yml failed 1 times in 7 days — run 432 (2026-11-02 17:52 UTC, step \"Run npm run check:root\", later run 433 ok) — https://github.com/giovf/rorororo/actions/runs/41495183373. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/check.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done. Cause (2026-11-02 burn-down): run 432 failed at `npm run format:check` on `.github/workflows/gankdat-metrics.yml` — the build slot had dropped the file in docs/ci/ with a double-quoted step name, and `docs/` is Prettier-ignored, so neither `npm run check` nor the pre-push hook saw it until the installer (3a9c2d75, 17:47) moved it into place; the next push (4c3cc13c, 17:52) went red, and run 433 was green because the 17:57 interactive commit (41e76204) reformatted the installed file by hand. Fix: `.prettierignore` keeps `docs/*` ignored and re-includes `docs/ci/`, so the format gate and the hook cover drop-zone workflows before the installer does; docs/ci/README.md and both routine prompts say to run `npm run format` after writing there. Filed by scripts/ci-failed-runs.ts (2026-11-06): check.yml failed 1 times in 7 days — run 458 (2026-11-06 17:19 UTC, step \"Run npm run check:root\", no later run) — https://github.com/giovf/rorororo/actions/runs/42260636340. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/check.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done.",
+      "why": "Filed by scripts/ci-failed-runs.ts (2026-11-02): check.yml failed 1 times in 7 days — run 432 (2026-11-02 17:52 UTC, step \"Run npm run check:root\", later run 433 ok) — https://github.com/giovf/rorororo/actions/runs/41495183373. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/check.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done. Cause (2026-11-02 burn-down): run 432 failed at `npm run format:check` on `.github/workflows/gankdat-metrics.yml` — the build slot had dropped the file in docs/ci/ with a double-quoted step name, and `docs/` is Prettier-ignored, so neither `npm run check` nor the pre-push hook saw it until the installer (3a9c2d75, 17:47) moved it into place; the next push (4c3cc13c, 17:52) went red, and run 433 was green because the 17:57 interactive commit (41e76204) reformatted the installed file by hand. Fix: `.prettierignore` keeps `docs/*` ignored and re-includes `docs/ci/`, so the format gate and the hook cover drop-zone workflows before the installer does; docs/ci/README.md and both routine prompts say to run `npm run format` after writing there. Filed by scripts/ci-failed-runs.ts (2026-11-06): check.yml failed 1 times in 7 days — run 458 (2026-11-06 17:19 UTC, step \"Run npm run check:root\", no later run) — https://github.com/giovf/rorororo/actions/runs/42260636340. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/check.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done. W45 retro (2026-11-07): run 458 (11-06 17:19, the runner-script-dispatch push) is still red and no run has re-tested it — every later push is [skip ci]. Cause: scripts/runs-check.ts now lets a first-run line name a retired workflow via `git log --diff-filter=D` (line 266), but check.yml checks out at the default depth 1, so CI cannot see the deleted epubcheck.yml and fails RUNS.md:2500 and :2519; locally it passes. Fix: set `fetch-depth: 0` on the checkout step in docs/ci/check.yml (the installer moves it), and make runs-check print a shallow-clone hint when `git rev-parse --is-shallow-repository` is true and a workflow name is unknown. Proof gains: the first push after the fix runs check green.",
       "effort_days": 0.2,
       "proof": "seven days of check.yml runs with no ci-failed line in docs/RUNS.md",
       "score": 5,
@@ -1383,6 +1383,16 @@
       "added": "2026-11-05",
       "doing_since": "2026-11-06",
       "done_at": "2026-11-06"
+    },
+    {
+      "id": "live-read-for-worker-summaries",
+      "title": "A Worker route that Daily numbers reads is not done until one live call is quoted; fix own-checkout 30d HTTP 500",
+      "why": "Daily numbers 2026-11-06 and 11-07 read `own checkout 30d: n/a (HTTP 500)` after the 11-05 17:21 build `own-checkout sales reading` shipped the licence Worker's /v1/downloads/summary without a recorded live call (same class as W43's datasets shipped blind). Find the 500 (route not redeployed, or KV key shape) and make the summary return a zero-count body when empty. Prompt sentence for docs/routines/build.md and burn-down.md RUN LOG: 'A change to a Worker route that Daily numbers or triage reads is not done until the RUNS line quotes one live call of that route (status and first 80 chars), or says it deploys on the next CI run and names the next-slot check.'",
+      "effort_days": 0.2,
+      "proof": "Seven days of Daily numbers rows show `own checkout 30d:` with a number, and no `HTTP 500` clause",
+      "score": 5,
+      "added": "2026-11-07",
+      "status": "todo"
     }
   ]
 }

@@ -2555,3 +2555,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 00:16 | watchdog | ci-minutes: 408 billed min/7d (~1749/mo; cap 2000) top: notify owner 99, check 48, gankdat metrics 48
 - 2026-11-07 03:07 | triage | notify owner dispatched: last run started 00:15 UTC, 2 h 51 min ago
 - 2026-11-07 06:07 | triage | notify owner dispatched: last run started 03:06 UTC, 3 h ago
+- 2026-11-07 08:10 | retro | Slot reliability: 91 of 95 slots traced; 4 missed, 30 silent, 24 cold, 23 built
+- 2026-11-07 08:10 | retro | Repeat blocker: usage limit, third week; 11-06 build and three 17:00 burn-downs missed
+- 2026-11-07 08:10 | retro | Defect: main red since 11-06 17:19, runs check cannot see a retired workflow in a depth-1 clone
+- 2026-11-07 08:10 | retro | Defect: own checkout reading answers HTTP 500 in Daily numbers; shipped without a live call
+- 2026-11-07 08:10 | retro | Queued foundry live-read-for-worker-summaries (5); appended the red-main cause to ci-check-failing
+- 2026-11-07 08:10 | retro | Owner: Etsy shop suspended 11-07 over an unpaid bill; already an owner line, nothing re-sent
+- 2026-11-07 08:10 | retro | Decision log roll: 82 October entries moved to docs/decisions/2026-10.md
