@@ -68,6 +68,39 @@ describe('ciMinutesLine', () => {
     }
   });
 
+  it('prints `public, no cap` instead of the cap while the repository is public', () => {
+    const line = ciMinutesLine({ billed: 408, projection: 1749, top, isPublic: true });
+    expect(line).toBe(
+      'ci-minutes: 408 billed min/7d (~1749/mo; public, no cap) top: fetch relay 139, owner notes 84, notify owner 71',
+    );
+    expect(line.length).toBeLessThanOrEqual(RUN_LINE_CAP);
+    expect(line).not.toContain('cap 2000');
+  });
+
+  it('keeps the cap clause for a private repository and when the visibility is unknown', () => {
+    expect(ciMinutesLine({ billed: 408, projection: 1749, top: [], isPublic: false })).toBe(
+      'ci-minutes: 408 billed min/7d (~1749/mo; cap 2000)',
+    );
+    expect(ciMinutesLine({ billed: 408, projection: 1749, top: [] })).toBe(
+      'ci-minutes: 408 billed min/7d (~1749/mo; cap 2000)',
+    );
+  });
+
+  it('still fits the cap with the longer public clause and the longest names', () => {
+    const line = ciMinutesLine({
+      billed: 9999,
+      projection: 42853,
+      isPublic: true,
+      top: [
+        ['workflow installer', 9999],
+        ['gankdat publish', 9999],
+        ['mirror gankdat', 9999],
+      ],
+    });
+    expect(line.length).toBeLessThanOrEqual(RUN_LINE_CAP);
+    expect(line).toMatch(/ \d+$/);
+  });
+
   it('leaves out the top list when there is none', () => {
     expect(ciMinutesLine({ billed: 0, projection: 0, top: [] })).toBe(
       'ci-minutes: 0 billed min/7d (~0/mo; cap 2000)',

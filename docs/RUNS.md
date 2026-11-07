@@ -2594,3 +2594,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 20:40 | burn-down | Keyless subscriptions/listen answered 401 (OAuth wall before the tool list); listen is introspection now
 - 2026-11-07 20:40 | burn-down | v0.28.3 bump: add-in manifest 0.28.3.0 and the connector package regenerated (npm run connector)
 - 2026-11-07 20:43 | burn-down | Stopping at ~33 min: 3 items done (CH day-30 read, /mcp day-7 read, listen close); next: foundry ci-minutes
+- 2026-11-07 21:18 | burn-down | Built foundry ci-minutes-line-public-repo: the line prints `public, no cap` while the repo is public
+- 2026-11-07 21:18 | burn-down | actions-minutes.mjs reads repository.private from the runs page it already fetches; unknown stays private
+- 2026-11-07 21:18 | burn-down | actions-minutes-line.test.ts: 3 new tests (public, private, unknown); proof is the 11-08 00:07 watchdog line
+- 2026-11-07 21:18 | burn-down | dependabot.yml first run: still none since the 09:19 install (fires on a Dependabot PR only; not dispatchable)

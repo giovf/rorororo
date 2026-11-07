@@ -61,6 +61,10 @@ let page = 1;
 let minutes = 0;
 let billed = 0;
 let runs = 0;
+// Visibility from the runs' own `repository.private` (2026-11-07, foundry ci-minutes-line-public-repo):
+// the cap binds private repositories only, and the owner kept this one public on 2026-11-02. Unknown
+// (no run carries the field) is treated as private so the cap clause is never dropped by accident.
+let isPublic = false;
 const byName = new Map();
 for (;;) {
   const url = `https://api.github.com/repos/${repo}/actions/runs?per_page=100&page=${page}&created=>=${since.slice(0, 10)}`;
@@ -72,6 +76,7 @@ for (;;) {
   const body = await res.json();
   const items = body.workflow_runs ?? [];
   for (const r of items) {
+    if (r.repository?.private === false) isPublic = true;
     if (r.status !== 'completed' || !r.run_started_at || !r.updated_at) continue;
     const m = (Date.parse(r.updated_at) - Date.parse(r.run_started_at)) / 60_000;
     const b = r.conclusion === 'skipped' ? 0 : m > 1 ? await billedJobs(r) : 1;
@@ -87,7 +92,7 @@ const projection = Math.round((billed * 30) / 7);
 const topEntries = [...byName.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
 const top = topEntries.map(([n, m]) => `${n} ${Math.round(m)}`).join(', ');
 console.log(
-  `actions-minutes: ${billed} billed min in 7 days over ${runs} runs (${Math.round(minutes)} wall) → ~${projection}/month, warn ${WARN_MINUTES} (top: ${top})`,
+  `actions-minutes: ${billed} billed min in 7 days over ${runs} runs (${Math.round(minutes)} wall) → ~${projection}/month, warn ${WARN_MINUTES}, ${isPublic ? 'public (no cap)' : 'private (cap 2000)'} (top: ${top})`,
 );
 
 if (projection > WARN_MINUTES) {
@@ -96,7 +101,7 @@ if (projection > WARN_MINUTES) {
   // check`): the first warning (2026-10-04 18:21, 131 chars) turned main red. Until 2026-10-24 the
   // text was `.slice(0, 120)`d inside the top list (foundry `ci-minutes-line-fits-cap`); the line is
   // now built to fit with whole entries, and the wall figure and warn threshold live in the log above.
-  const text = ciMinutesLine({ billed, projection, top: topEntries });
+  const text = ciMinutesLine({ billed, projection, top: topEntries, isPublic });
   const line = `- ${stamp} | watchdog | ${text}`;
   // Re-read: the watchdog step before this one may have appended lines since the check above.
   if (warnedToday(readFileSync(RUNS_MD, 'utf8'), today)) {

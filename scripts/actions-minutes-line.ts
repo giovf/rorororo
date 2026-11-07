@@ -3,6 +3,11 @@
 // 2026-10-24 (foundry `ci-minutes-line-fits-cap`): every line since 10-17 was `.slice(0, 120)`d
 // inside the list — "owner notes 8" for 84 minutes, "fe" for fetch relay — and the list is the
 // only part that names a lever. The wall figure and the warn threshold stay in the job log.
+// 2026-11-07 (foundry `ci-minutes-line-public-repo`): the 2,000-minute cap binds private repositories on
+// the free plan only; the owner kept the repository public on 2026-11-02 (action 036, A), so the line
+// read `cap 2000` as a false warning for five days. The caller passes `isPublic` from the runs' own
+// `repository.private`, and a public repository prints `public, no cap` while the measurement and the
+// top-3 list stay (cost awareness for a later private switch); the cap clause returns the day it is private.
 
 export const RUN_LINE_CAP = 120;
 export const PRIVATE_CAP_MINUTES = 2000;
@@ -15,11 +20,14 @@ export interface CiMinutesFigures {
   /** Workflows by billed minutes, highest first; only the first three are printed. */
   top: ReadonlyArray<readonly [name: string, minutes: number]>;
   cap?: number;
+  /** `repository.private === false` on the runs read; the cap clause is printed only when it is not true. */
+  isPublic?: boolean;
 }
 
 /** One line, ≤ `RUN_LINE_CAP` chars, listing as many of the top three workflows as fit whole. */
 export function ciMinutesLine(f: CiMinutesFigures): string {
-  const head = `ci-minutes: ${f.billed} billed min/7d (~${f.projection}/mo; cap ${f.cap ?? PRIVATE_CAP_MINUTES})`;
+  const cap = f.isPublic ? 'public, no cap' : `cap ${f.cap ?? PRIVATE_CAP_MINUTES}`;
+  const head = `ci-minutes: ${f.billed} billed min/7d (~${f.projection}/mo; ${cap})`;
   const entries = f.top
     .slice(0, 3)
     .map(([name, m]) => [name.trim(), String(Math.round(m))] as const);
