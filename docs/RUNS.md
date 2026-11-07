@@ -2610,3 +2610,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 21:45 | burn-down | Whop nets US$17.81 vs Leanpub's 15.20 at US$19 (2.7 % + 30c, +2 % VAT mode); 6 storefronts read, 2 show buyers
 - 2026-11-07 21:45 | burn-down | Relay whop-kit: 12 pages in one round; the marketplace search page renders as a shell, storefronts read one by one
 - 2026-11-07 21:44 | burn-down | Stopping at ~35 min: 4 items done (ci-minutes line, new-ventures research, Kindle and Whop spikes); next: Clay spike
+- 2026-11-07 22:06 | triage | notify owner dispatched: last run started 18:59 UTC, 3 h ago
