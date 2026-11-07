@@ -1,0 +1,38 @@
+{
+  "request": "license-summary-live",
+  "fetched_at": "2026-11-07T17:12:05.306Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://foundry-licenses.faceless-api.workers.dev/v1/downloads/summary?venture=tax-workbook",
+      "fetched_at": "2026-11-07T17:12:04.545Z",
+      "status": 500,
+      "elapsed_ms": 206,
+      "final_url": "https://foundry-licenses.faceless-api.workers.dev/v1/downloads/summary?venture=tax-workbook",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "4698"
+      },
+      "file": "1.txt",
+      "bytes": 839,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 4698
+    },
+    {
+      "method": "GET",
+      "url": "https://foundry-licenses.faceless-api.workers.dev/health",
+      "fetched_at": "2026-11-07T17:12:05.256Z",
+      "status": 200,
+      "elapsed_ms": 47,
+      "final_url": "https://foundry-licenses.faceless-api.workers.dev/health",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "11"
+      },
+      "file": "2.json",
+      "bytes": 11,
+      "truncated": false
+    }
+  ]
+}
