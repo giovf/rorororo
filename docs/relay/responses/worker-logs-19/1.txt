@@ -1,0 +1,2104 @@
+﻿2026-11-07T20:24:10.7658073Z Current runner version: '2.338.2'
+2026-11-07T20:24:10.7683019Z ##[group]Runner Image Provisioner
+2026-11-07T20:24:10.7684121Z Hosted Compute Agent
+2026-11-07T20:24:10.7684728Z Version: 20261028.624
+2026-11-07T20:24:10.7685463Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-07T20:24:10.7686190Z Build Date: 2026-10-28T21:51:42Z
+2026-11-07T20:24:10.7686911Z Worker ID: {d4fcb91c-cacb-4965-9620-772c3b0c846d}
+2026-11-07T20:24:10.7687727Z Region: canadacentral
+2026-11-07T20:24:10.7688283Z Cloud: Azure
+2026-11-07T20:24:10.7688871Z ##[endgroup]
+2026-11-07T20:24:10.7690379Z ##[group]Operating System
+2026-11-07T20:24:10.7691086Z Ubuntu
+2026-11-07T20:24:10.7691669Z 26.04.1
+2026-11-07T20:24:10.7692550Z LTS
+2026-11-07T20:24:10.7693173Z ##[endgroup]
+2026-11-07T20:24:10.7693723Z ##[group]Runner Image
+2026-11-07T20:24:10.7694360Z Image: ubuntu-26.04
+2026-11-07T20:24:10.7694984Z Version: 20261101.186.1
+2026-11-07T20:24:10.7696320Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-07T20:24:10.7697874Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+2026-11-07T20:24:10.7698885Z ##[endgroup]
+2026-11-07T20:24:10.7700048Z ##[group]GITHUB_TOKEN Permissions
+2026-11-07T20:24:10.7702588Z Contents: read
+2026-11-07T20:24:10.7703610Z Metadata: read
+2026-11-07T20:24:10.7704234Z ##[endgroup]
+2026-11-07T20:24:10.7706402Z Secret source: Actions
+2026-11-07T20:24:10.7707467Z Cache mode: write
+2026-11-07T20:24:10.7708385Z Prepare workflow directory
+2026-11-07T20:24:10.8158820Z Prepare all required actions
+2026-11-07T20:24:10.8230325Z Getting action download info
+2026-11-07T20:24:11.0414210Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-07T20:24:11.1390292Z Download action repository 'actions/setup-node@v7' (SHA:949feb2413d6458794dcd2491c4babbbce0c15c1)
+2026-11-07T20:24:11.3194460Z Complete job name: logs
+2026-11-07T20:24:11.4116221Z ##[group]Run actions/checkout@v7
+2026-11-07T20:24:11.4117694Z with:
+2026-11-07T20:24:11.4118465Z   ref: main
+2026-11-07T20:24:11.4119243Z   repository: giovf/rorororo
+2026-11-07T20:24:11.4126801Z   token: ***
+2026-11-07T20:24:11.4127307Z   ssh-strict: true
+2026-11-07T20:24:11.4127761Z   ssh-user: git
+2026-11-07T20:24:11.4128225Z   persist-credentials: true
+2026-11-07T20:24:11.4128727Z   clean: true
+2026-11-07T20:24:11.4129183Z   sparse-checkout-cone-mode: true
+2026-11-07T20:24:11.4129714Z   fetch-depth: 1
+2026-11-07T20:24:11.4130153Z   fetch-tags: false
+2026-11-07T20:24:11.4130606Z   show-progress: true
+2026-11-07T20:24:11.4131059Z   lfs: false
+2026-11-07T20:24:11.4131473Z   submodules: false
+2026-11-07T20:24:11.4132207Z   set-safe-directory: true
+2026-11-07T20:24:11.4132727Z   allow-unsafe-pr-checkout: false
+2026-11-07T20:24:11.4133654Z ##[endgroup]
+2026-11-07T20:24:11.6732580Z Syncing repository: giovf/rorororo
+2026-11-07T20:24:11.6734933Z ##[group]Getting Git version info
+2026-11-07T20:24:11.6736437Z Working directory is '/home/runner/work/rorororo/rorororo'
+2026-11-07T20:24:11.6737855Z [command]/usr/bin/git version
+2026-11-07T20:24:11.6742800Z git version 2.56.0
+2026-11-07T20:24:11.6767453Z ##[endgroup]
+2026-11-07T20:24:11.6779751Z Temporarily overriding HOME='/home/runner/work/_temp/bdda4240-12f3-4a23-96e2-9431204ba80d' before making global git config changes
+2026-11-07T20:24:11.6782265Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T20:24:11.6785170Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/rorororo/rorororo
+2026-11-07T20:24:11.6855157Z Deleting the contents of '/home/runner/work/rorororo/rorororo'
+2026-11-07T20:24:11.6869759Z ##[group]Determining repository object format
+2026-11-07T20:24:11.8834144Z ##[endgroup]
+2026-11-07T20:24:11.8835103Z ##[group]Initializing the repository
+2026-11-07T20:24:11.8842933Z [command]/usr/bin/git init /home/runner/work/rorororo/rorororo
+2026-11-07T20:24:11.8954522Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-07T20:24:11.8956508Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-07T20:24:11.8957587Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-07T20:24:11.8958774Z hint: call:
+2026-11-07T20:24:11.8959263Z hint:
+2026-11-07T20:24:11.8959870Z hint: 	git config --global init.defaultBranch <name>
+2026-11-07T20:24:11.8960829Z hint:
+2026-11-07T20:24:11.8961658Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-07T20:24:11.8963263Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-07T20:24:11.8964775Z hint:
+2026-11-07T20:24:11.8965552Z hint: 	git branch -m <name>
+2026-11-07T20:24:11.8966594Z hint:
+2026-11-07T20:24:11.8967824Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-07T20:24:11.8970028Z Initialized empty Git repository in /home/runner/work/rorororo/rorororo/.git/
+2026-11-07T20:24:11.8985073Z [command]/usr/bin/git remote add origin https://github.com/giovf/rorororo
+2026-11-07T20:24:11.9052221Z ##[endgroup]
+2026-11-07T20:24:11.9054328Z ##[group]Disabling automatic garbage collection
+2026-11-07T20:24:11.9055965Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-07T20:24:11.9093091Z ##[endgroup]
+2026-11-07T20:24:11.9094574Z ##[group]Setting up auth
+2026-11-07T20:24:11.9095631Z Removing SSH command configuration
+2026-11-07T20:24:11.9099607Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T20:24:11.9143078Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T20:24:11.9610948Z Removing HTTP extra header
+2026-11-07T20:24:11.9617050Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T20:24:11.9655743Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T20:24:11.9932780Z Removing includeIf entries pointing to credentials config files
+2026-11-07T20:24:11.9933937Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T20:24:11.9971738Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T20:24:12.0247273Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-c0ed3b2f-3982-4a3e-8b7b-b29dd60454a4.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-07T20:24:12.0288408Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/rorororo/rorororo/.git.path /home/runner/work/_temp/git-credentials-c0ed3b2f-3982-4a3e-8b7b-b29dd60454a4.config
+2026-11-07T20:24:12.0323523Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/rorororo/rorororo/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-c0ed3b2f-3982-4a3e-8b7b-b29dd60454a4.config
+2026-11-07T20:24:12.0362299Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-c0ed3b2f-3982-4a3e-8b7b-b29dd60454a4.config
+2026-11-07T20:24:12.0398380Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-c0ed3b2f-3982-4a3e-8b7b-b29dd60454a4.config
+2026-11-07T20:24:12.0431519Z ##[endgroup]
+2026-11-07T20:24:12.0432730Z ##[group]Fetching the repository
+2026-11-07T20:24:12.0438646Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/main*:refs/remotes/origin/main* +refs/tags/main*:refs/tags/main*
+2026-11-07T20:24:13.9981419Z From https://github.com/giovf/rorororo
+2026-11-07T20:24:13.9984441Z  * [new branch]      main       -> origin/main
+2026-11-07T20:24:13.9988257Z ##[endgroup]
+2026-11-07T20:24:13.9989287Z ##[group]Determining the checkout info
+2026-11-07T20:24:13.9996848Z [command]/usr/bin/git branch --list --remote origin/main
+2026-11-07T20:24:14.0028484Z   origin/main
+2026-11-07T20:24:14.0034316Z ##[endgroup]
+2026-11-07T20:24:14.0039689Z [command]/usr/bin/git sparse-checkout disable
+2026-11-07T20:24:14.0096143Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-07T20:24:14.0132169Z ##[group]Checking out the ref
+2026-11-07T20:24:14.0136280Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-07T20:24:14.5423582Z Switched to a new branch 'main'
+2026-11-07T20:24:14.5427689Z branch 'main' set up to track 'origin/main'.
+2026-11-07T20:24:14.5505737Z ##[endgroup]
+2026-11-07T20:24:14.5561340Z [command]/usr/bin/git log -1 --format=%H
+2026-11-07T20:24:14.5596844Z 7c982896be82e1866f1beca3d5ee801ff3209d67
+2026-11-07T20:24:14.5878343Z ##[group]Run actions/setup-node@v7
+2026-11-07T20:24:14.5878650Z with:
+2026-11-07T20:24:14.5878876Z   node-version: 24
+2026-11-07T20:24:14.5879100Z   check-latest: false
+2026-11-07T20:24:14.5881455Z   token: ***
+2026-11-07T20:24:14.5881676Z   package-manager-cache: true
+2026-11-07T20:24:14.5882106Z ##[endgroup]
+2026-11-07T20:24:14.7176512Z Found in cache @ /opt/hostedtoolcache/node/24.22.2/x64
+2026-11-07T20:24:14.7897494Z ##[group]Environment details
+2026-11-07T20:24:15.2292496Z node: v24.22.2
+2026-11-07T20:24:15.2292924Z npm: 11.19.1
+2026-11-07T20:24:15.2293256Z yarn: 1.22.22
+2026-11-07T20:24:15.2293795Z ##[endgroup]
+2026-11-07T20:24:15.2534163Z ##[group]Run node --disable-warning=ExperimentalWarning ventures/gankdat/scripts/worker-logs.mjs "--needle=Claude-User" "--request-id=" "--level=" "--since-minutes=10080" "--limit=300"
+2026-11-07T20:24:15.2535594Z [36;1mnode --disable-warning=ExperimentalWarning ventures/gankdat/scripts/worker-logs.mjs "--needle=Claude-User" "--request-id=" "--level=" "--since-minutes=10080" "--limit=300"[0m
+2026-11-07T20:24:15.2596127Z shell: /usr/bin/bash -e {0}
+2026-11-07T20:24:15.2596417Z env:
+2026-11-07T20:24:15.2596863Z   CLOUDFLARE_API_TOKEN: ***
+2026-11-07T20:24:15.2597126Z ##[endgroup]
+2026-11-07T20:24:15.3535982Z worker-logs: faceless-api, last 10080 min, needle "Claude-User", limit 300
+2026-11-07T20:24:23.3862639Z 19 line(s), newest first:
+2026-11-07T20:24:23.3873452Z   2026-11-06T09:35:30.057Z | info | POST https://gankdat.com/mcp
+2026-11-07T20:24:23.3874628Z   2026-11-06T08:27:35.857Z | info | POST https://gankdat.com/mcp
+2026-11-07T20:24:23.3875861Z   2026-11-05T21:36:19.385Z | info | POST https://gankdat.com/mcp
+2026-11-07T20:24:23.3876851Z   2026-11-03T15:38:37.041Z | info | POST https://gankdat.com/mcp
+2026-11-07T20:24:23.3878296Z   2026-11-03T14:20:32.497Z | info | requestId=a2a09d38-dee7-4b14-912c-e54c7a44d7f4 method=GET path=/workspace/.env userAgent=Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-User/1.0; +claudebot@anthropic.com) status=404 latencyMs=0
+2026-11-07T20:24:23.3882179Z   2026-11-03T14:20:31.896Z | info | requestId=ba4dc5e6-fbf8-4f53-8890-e158ff4ea820 method=GET path=/api/console/api_server userAgent=Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-User/1.0; +claudebot@anthropic.com) status=404 latencyMs=0
+2026-11-07T20:24:23.3884465Z   2026-11-03T14:20:31.185Z | info | GET https://www.gankdat.com/terraform.tfstate.backup
+2026-11-07T20:24:23.3885377Z   2026-11-03T01:29:46.418Z | info | POST https://gankdat.com/mcp
+2026-11-07T20:24:23.3886185Z   2026-11-03T01:29:45.373Z | info | POST https://gankdat.com/mcp
+2026-11-07T20:24:23.3887871Z   2026-11-02T23:53:05.109Z | info | requestId=f908585d-eccc-4f55-a959-6ad4730e17e6 method=POST path=/mcp keyId=f19e015f-5042-47d4-a086-8ab54df4af09 userAgent=Claude-User status=200 latencyMs=273
+2026-11-07T20:24:23.3889152Z   2026-11-02T20:51:22.558Z | info | GET https://gankdat.com/userfiles?path=..%2F..%2F..%2F..%2Fproc%2Fself%2Fenviron
+2026-11-07T20:24:23.3889807Z   2026-11-02T20:51:22.163Z | info | GET https://gankdat.com/.env.preprod
+2026-11-07T20:24:23.3891137Z   2026-11-02T18:14:58.455Z | info | requestId=7a8870ed-72db-4f03-8271-d8d9554ab3ca method=POST path=/mcp keyId=f19e015f-5042-47d4-a086-8ab54df4af09 userAgent=Claude-User status=200 latencyMs=1679
+2026-11-07T20:24:23.3893298Z   2026-11-02T18:01:59.819Z | info | requestId=9a1b7f68-8cd2-4e62-9fa0-718cc89f43cc method=POST path=/mcp keyId=f19e015f-5042-47d4-a086-8ab54df4af09 userAgent=Claude-User status=200 latencyMs=3003
+2026-11-07T20:24:23.3894905Z   2026-11-02T13:37:52.304Z | info | POST https://gankdat.com/mcp
+2026-11-07T20:24:23.3896510Z   2026-11-02T10:51:07.219Z | info | requestId=168cd077-efd4-47b9-8c35-c11b48e28f44 method=POST path=/mcp keyId=f19e015f-5042-47d4-a086-8ab54df4af09 userAgent=Claude-User status=200 latencyMs=684
+2026-11-07T20:24:23.3898842Z   2026-11-02T08:50:21.404Z | info | requestId=f218c5bc-6b2a-4677-9a37-0ac2d4bc2f96 method=POST path=/mcp keyId=f19e015f-5042-47d4-a086-8ab54df4af09 userAgent=Claude-User status=200 latencyMs=246
+2026-11-07T20:24:23.3900426Z   2026-11-01T12:19:47.897Z | info | POST https://gankdat.com/mcp
+2026-11-07T20:24:23.3902322Z   2026-11-01T12:19:47.897Z | info | requestId=40d97e4e-5d87-43ac-992e-92ff0c531f1e method=POST path=/mcp keyId=f19e015f-5042-47d4-a086-8ab54df4af09 userAgent=Claude-User status=200 latencyMs=657
+2026-11-07T20:24:23.3903872Z --- raw events (JSON) ---
+2026-11-07T20:24:23.3904311Z [
+2026-11-07T20:24:23.3904630Z  {
+2026-11-07T20:24:23.3904937Z   "source": {
+2026-11-07T20:24:23.3905318Z    "level": "info",
+2026-11-07T20:24:23.3906176Z    "message": "POST https://gankdat.com/mcp"
+2026-11-07T20:24:23.3906735Z   },
+2026-11-07T20:24:23.3907158Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.3907756Z   "timestamp": 1793957730057,
+2026-11-07T20:24:23.3908293Z   "$workers": {
+2026-11-07T20:24:23.3908682Z    "truncated": false,
+2026-11-07T20:24:23.3909090Z    "event": {
+2026-11-07T20:24:23.3909453Z     "request": {
+2026-11-07T20:24:23.3909900Z      "cf": {
+2026-11-07T20:24:23.3910370Z       "isEUCountry": false,
+2026-11-07T20:24:23.3910797Z       "tlsClientAuth": {
+2026-11-07T20:24:23.3911227Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.3911731Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.3912505Z        "certPresented": "0",
+2026-11-07T20:24:23.3912967Z        "certVerified": "NONE",
+2026-11-07T20:24:23.3913720Z        "certRevoked": "0",
+2026-11-07T20:24:23.3914125Z        "certIssuerDN": "",
+2026-11-07T20:24:23.3914659Z        "certSubjectDN": "",
+2026-11-07T20:24:23.3915169Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.3915749Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.3916289Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.3916851Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.3917390Z        "certSerial": "",
+2026-11-07T20:24:23.3917882Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.3918336Z        "certSKI": "",
+2026-11-07T20:24:23.3918778Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.3919296Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.3919867Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.3920369Z        "certNotBefore": "",
+2026-11-07T20:24:23.3920813Z        "certNotAfter": "",
+2026-11-07T20:24:23.3921258Z        "certRFC9440": "",
+2026-11-07T20:24:23.3921730Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.3922349Z       },
+2026-11-07T20:24:23.3922773Z       "httpProtocol": "HTTP/1.1",
+2026-11-07T20:24:23.3923370Z       "clientAcceptEncoding": "identity",
+2026-11-07T20:24:23.3923904Z       "requestPriority": "",
+2026-11-07T20:24:23.3924410Z       "requestHeaderNames": [
+2026-11-07T20:24:23.3924919Z        "Host",
+2026-11-07T20:24:23.3925333Z        "User-Agent",
+2026-11-07T20:24:23.3925775Z        "X-Anthropic-Client",
+2026-11-07T20:24:23.3926282Z        "MCP-Protocol-Version",
+2026-11-07T20:24:23.3926779Z        "Authorization",
+2026-11-07T20:24:23.3927260Z        "Content-Type",
+2026-11-07T20:24:23.3927728Z        "Accept",
+2026-11-07T20:24:23.3928081Z        "Mcp-Method",
+2026-11-07T20:24:23.3928452Z        "Content-Length",
+2026-11-07T20:24:23.3929076Z        "Accept-Encoding"
+2026-11-07T20:24:23.3929447Z       ],
+2026-11-07T20:24:23.3929756Z       "colo": "IAD",
+2026-11-07T20:24:23.3930184Z       "asOrganization": "Anthropic, PBC",
+2026-11-07T20:24:23.3930705Z       "country": "US",
+2026-11-07T20:24:23.3931088Z       "city": "Columbus",
+2026-11-07T20:24:23.3931377Z       "continent": "NA",
+2026-11-07T20:24:23.3931613Z       "region": "Ohio",
+2026-11-07T20:24:23.3932090Z       "regionCode": "OH",
+2026-11-07T20:24:23.3932385Z       "timezone": "America/New_York",
+2026-11-07T20:24:23.3932688Z       "longitude": "-82.99879",
+2026-11-07T20:24:23.3932936Z       "latitude": "39.96118",
+2026-11-07T20:24:23.3933182Z       "postalCode": "43215",
+2026-11-07T20:24:23.3933422Z       "metroCode": "535",
+2026-11-07T20:24:23.3933676Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.3933984Z       "tlsCipher": "AEAD-AES256-GCM-SHA384",
+2026-11-07T20:24:23.3934425Z       "tlsClientRandom": "vH9ITF8Q7/9C+c504NPRqp/KPXiRchVR2xcfU07BPqE=",
+2026-11-07T20:24:23.3934930Z       "tlsClientCiphersSha1": "EPPWGkMwL/+VHBbDlFeYFF2S3W0=",
+2026-11-07T20:24:23.3935402Z       "tlsClientExtensionsSha1": "fBUOp6N9dJFknSeA48uo+Krt8gU=",
+2026-11-07T20:24:23.3935880Z       "tlsClientExtensionsSha1Le": "TPcgSqNoh+PRgH71acngAX9IU+A=",
+2026-11-07T20:24:23.3936279Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.3936928Z        "clientHandshake": "bdac8ee7dc28bbf1527e854e49f7ed59ff73aa5786e5b6a7a8f2e89ea920debddb18080f26a41d49cf94cd8000ef48cc",
+2026-11-07T20:24:23.3938123Z        "serverHandshake": "5f9b52f3f147d38e50958496aef823274b2a8324ccc7239affa923fe4755cfc9f3c3ac53d9191bd2dedd3da12db50166",
+2026-11-07T20:24:23.3939088Z        "clientFinished": "d31ec3fa97801ddfb70c9183e314b1111c4ccdcfcfcca76557c0f90cd4a460e88864d9dc7b87f37a27574e296387f6d9",
+2026-11-07T20:24:23.3940027Z        "serverFinished": "a3fadea00353766ff3207e5a330cbbbcedd15ccc060b28827bbbedcf2c4589aab317d6945f4c4effc50a323b77fc0962"
+2026-11-07T20:24:23.3940606Z       },
+2026-11-07T20:24:23.3940853Z       "tlsClientHelloLength": "508",
+2026-11-07T20:24:23.3941158Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.3941466Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.3941752Z       "clientTcpRtt": 9,
+2026-11-07T20:24:23.3942219Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.3942457Z       "asn": 396982,
+2026-11-07T20:24:23.3942677Z       "edgeL4": {
+2026-11-07T20:24:23.3942895Z        "deliveryRate": 293700
+2026-11-07T20:24:23.3943129Z       }
+2026-11-07T20:24:23.3943312Z      },
+2026-11-07T20:24:23.3943494Z      "headers": {
+2026-11-07T20:24:23.3943792Z       "accept": "application/json, text/event-stream",
+2026-11-07T20:24:23.3944145Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.3944441Z       "authorization": "********",
+2026-11-07T20:24:23.3944734Z       "cf-connecting-ip": "160.79.106.23",
+2026-11-07T20:24:23.3945023Z       "cf-ipcountry": "US",
+2026-11-07T20:24:23.3945287Z       "cf-ray": "a563176d2effae08",
+2026-11-07T20:24:23.3945588Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.3945902Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.3946185Z       "content-length": "490",
+2026-11-07T20:24:23.3946469Z       "content-type": "application/json",
+2026-11-07T20:24:23.3946752Z       "host": "gankdat.com",
+2026-11-07T20:24:23.3947035Z       "mcp-method": "subscriptions/listen",
+2026-11-07T20:24:23.3947359Z       "mcp-protocol-version": "2026-07-28",
+2026-11-07T20:24:23.3947664Z       "user-agent": "Claude-User",
+2026-11-07T20:24:23.3947955Z       "x-anthropic-client": "Cowork",
+2026-11-07T20:24:23.3948259Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.3948538Z       "x-real-ip": "160.79.106.23"
+2026-11-07T20:24:23.3948789Z      },
+2026-11-07T20:24:23.3948980Z      "method": "POST",
+2026-11-07T20:24:23.3949242Z      "url": "https://gankdat.com/mcp"
+2026-11-07T20:24:23.3949496Z     },
+2026-11-07T20:24:23.3949691Z     "path": "/mcp"
+2026-11-07T20:24:23.3949891Z    },
+2026-11-07T20:24:23.3950112Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.3950509Z    "scriptVersion": {
+2026-11-07T20:24:23.3950784Z     "id": "e6984e17-1b51-4428-a65c-a8c1bb487f7f"
+2026-11-07T20:24:23.3951067Z    },
+2026-11-07T20:24:23.3951258Z    "eventType": "fetch",
+2026-11-07T20:24:23.3951521Z    "executionModel": "stateless",
+2026-11-07T20:24:23.3951960Z    "outcome": "canceled",
+2026-11-07T20:24:23.3952222Z    "wallTimeMs": 177857,
+2026-11-07T20:24:23.3952449Z    "cpuTimeMs": 14
+2026-11-07T20:24:23.3952653Z   },
+2026-11-07T20:24:23.3952837Z   "$metadata": {
+2026-11-07T20:24:23.3953082Z    "id": "01M6R3D5R9000000000000000E",
+2026-11-07T20:24:23.3953420Z    "requestId": "4d3745873cad2ea625d97c09b1a2a861",
+2026-11-07T20:24:23.3953750Z    "rayId": "a563176d2effae08",
+2026-11-07T20:24:23.3954050Z    "traceId": "832975b87b2c3b96a24a737a140de22d",
+2026-11-07T20:24:23.3954349Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.3954627Z    "timestampNs": "1793957730057000000",
+2026-11-07T20:24:23.3954910Z    "service": "faceless-api",
+2026-11-07T20:24:23.3955158Z    "level": "info",
+2026-11-07T20:24:23.3955431Z    "message": "POST https://gankdat.com/mcp",
+2026-11-07T20:24:23.3955788Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.3956092Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.3956335Z    "origin": "fetch",
+2026-11-07T20:24:23.3956551Z    "eventSize": 5528
+2026-11-07T20:24:23.3956752Z   }
+2026-11-07T20:24:23.3956930Z  },
+2026-11-07T20:24:23.3957102Z  {
+2026-11-07T20:24:23.3957282Z   "source": {
+2026-11-07T20:24:23.3957481Z    "level": "info",
+2026-11-07T20:24:23.3957877Z    "message": "POST https://gankdat.com/mcp"
+2026-11-07T20:24:23.3958167Z   },
+2026-11-07T20:24:23.3958387Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.3958659Z   "timestamp": 1793953655857,
+2026-11-07T20:24:23.3958895Z   "$workers": {
+2026-11-07T20:24:23.3959107Z    "truncated": false,
+2026-11-07T20:24:23.3959323Z    "event": {
+2026-11-07T20:24:23.3959519Z     "request": {
+2026-11-07T20:24:23.3959717Z      "cf": {
+2026-11-07T20:24:23.3959926Z       "isEUCountry": false,
+2026-11-07T20:24:23.3960174Z       "tlsClientAuth": {
+2026-11-07T20:24:23.3960438Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.3960741Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.3961028Z        "certPresented": "0",
+2026-11-07T20:24:23.3961302Z        "certVerified": "NONE",
+2026-11-07T20:24:23.3961550Z        "certRevoked": "0",
+2026-11-07T20:24:23.3961989Z        "certIssuerDN": "",
+2026-11-07T20:24:23.3962245Z        "certSubjectDN": "",
+2026-11-07T20:24:23.3962519Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.3962811Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.3963096Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.3963379Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.3963642Z        "certSerial": "",
+2026-11-07T20:24:23.3963900Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.3964140Z        "certSKI": "",
+2026-11-07T20:24:23.3964363Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.3964626Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.3964921Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.3965187Z        "certNotBefore": "",
+2026-11-07T20:24:23.3965422Z        "certNotAfter": "",
+2026-11-07T20:24:23.3965657Z        "certRFC9440": "",
+2026-11-07T20:24:23.3965892Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.3966118Z       },
+2026-11-07T20:24:23.3966336Z       "httpProtocol": "HTTP/1.1",
+2026-11-07T20:24:23.3966628Z       "clientAcceptEncoding": "identity",
+2026-11-07T20:24:23.3966913Z       "requestPriority": "",
+2026-11-07T20:24:23.3967171Z       "requestHeaderNames": [
+2026-11-07T20:24:23.3967404Z        "Host",
+2026-11-07T20:24:23.3967603Z        "User-Agent",
+2026-11-07T20:24:23.3967845Z        "MCP-Protocol-Version",
+2026-11-07T20:24:23.3968097Z        "Authorization",
+2026-11-07T20:24:23.3968323Z        "Content-Type",
+2026-11-07T20:24:23.3968537Z        "Accept",
+2026-11-07T20:24:23.3968737Z        "Mcp-Method",
+2026-11-07T20:24:23.3968953Z        "Content-Length",
+2026-11-07T20:24:23.3969191Z        "Accept-Encoding"
+2026-11-07T20:24:23.3969539Z       ],
+2026-11-07T20:24:23.3969728Z       "colo": "IAD",
+2026-11-07T20:24:23.3969985Z       "asOrganization": "Anthropic, PBC",
+2026-11-07T20:24:23.3970265Z       "country": "US",
+2026-11-07T20:24:23.3970485Z       "city": "Columbus",
+2026-11-07T20:24:23.3970713Z       "continent": "NA",
+2026-11-07T20:24:23.3970938Z       "region": "Ohio",
+2026-11-07T20:24:23.3971163Z       "regionCode": "OH",
+2026-11-07T20:24:23.3971427Z       "timezone": "America/New_York",
+2026-11-07T20:24:23.3971714Z       "longitude": "-82.99879",
+2026-11-07T20:24:23.3972303Z       "latitude": "39.96118",
+2026-11-07T20:24:23.3972711Z       "postalCode": "43215",
+2026-11-07T20:24:23.3973010Z       "metroCode": "535",
+2026-11-07T20:24:23.3973258Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.3973561Z       "tlsCipher": "AEAD-AES256-GCM-SHA384",
+2026-11-07T20:24:23.3974006Z       "tlsClientRandom": "NsW3Bxu5gbBAGQCVqz1uKnxyhaffKbuS5JkyUIB+FLQ=",
+2026-11-07T20:24:23.3974506Z       "tlsClientCiphersSha1": "EPPWGkMwL/+VHBbDlFeYFF2S3W0=",
+2026-11-07T20:24:23.3974970Z       "tlsClientExtensionsSha1": "fBUOp6N9dJFknSeA48uo+Krt8gU=",
+2026-11-07T20:24:23.3975442Z       "tlsClientExtensionsSha1Le": "TPcgSqNoh+PRgH71acngAX9IU+A=",
+2026-11-07T20:24:23.3975856Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.3976496Z        "clientHandshake": "b1eda0fd5bea0a56646262c760b1e9f175dbb29c0249977d7b92f3787c4afe5cf9271deae33a36fcf341ca1281dbbd56",
+2026-11-07T20:24:23.3977559Z        "serverHandshake": "0266555b73755df5050c970d11bf88eba08054b8e3b700d4ff430406bb2031bf67aeb695632ee005ef441eac65501b1e",
+2026-11-07T20:24:23.3978493Z        "clientFinished": "d280c83bd298189b66cb5c5533a3716878e56d8bfeaabb2ce7af91faed61a0a14ef016c3b8dba818cdf4cfd543450c90",
+2026-11-07T20:24:23.3979417Z        "serverFinished": "b3d9e62207c2c6fde3c86e8e2296467249021cab9195134cb2f14c5cf33c17ee2b6965801fe4e133a1c93ea6013e5e5c"
+2026-11-07T20:24:23.3979963Z       },
+2026-11-07T20:24:23.3980195Z       "tlsClientHelloLength": "508",
+2026-11-07T20:24:23.3980500Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.3980796Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.3981079Z       "clientTcpRtt": 9,
+2026-11-07T20:24:23.3981321Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.3981545Z       "asn": 396982,
+2026-11-07T20:24:23.3981753Z       "edgeL4": {
+2026-11-07T20:24:23.3982206Z        "deliveryRate": 315674
+2026-11-07T20:24:23.3982443Z       }
+2026-11-07T20:24:23.3982625Z      },
+2026-11-07T20:24:23.3982806Z      "headers": {
+2026-11-07T20:24:23.3983095Z       "accept": "application/json, text/event-stream",
+2026-11-07T20:24:23.3983438Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.3983732Z       "authorization": "********",
+2026-11-07T20:24:23.3984025Z       "cf-connecting-ip": "160.79.106.168",
+2026-11-07T20:24:23.3984308Z       "cf-ipcountry": "US",
+2026-11-07T20:24:23.3984574Z       "cf-ray": "a562b8481d1b39c0",
+2026-11-07T20:24:23.3984878Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.3985191Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.3985480Z       "content-length": "355",
+2026-11-07T20:24:23.3985771Z       "content-type": "application/json",
+2026-11-07T20:24:23.3986097Z       "host": "gankdat.com",
+2026-11-07T20:24:23.3986378Z       "mcp-method": "server/discover",
+2026-11-07T20:24:23.3986692Z       "mcp-protocol-version": "2026-07-28",
+2026-11-07T20:24:23.3986998Z       "user-agent": "Claude-User",
+2026-11-07T20:24:23.3987284Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.3987569Z       "x-real-ip": "160.79.106.168"
+2026-11-07T20:24:23.3987808Z      },
+2026-11-07T20:24:23.3988000Z      "method": "POST",
+2026-11-07T20:24:23.3988262Z      "url": "https://gankdat.com/mcp"
+2026-11-07T20:24:23.3988527Z     },
+2026-11-07T20:24:23.3988714Z     "path": "/mcp",
+2026-11-07T20:24:23.3988928Z     "response": {
+2026-11-07T20:24:23.3989142Z      "status": 200
+2026-11-07T20:24:23.3989342Z     }
+2026-11-07T20:24:23.3989524Z    },
+2026-11-07T20:24:23.3989744Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.3990138Z    "scriptVersion": {
+2026-11-07T20:24:23.3990410Z     "id": "e6984e17-1b51-4428-a65c-a8c1bb487f7f"
+2026-11-07T20:24:23.3990690Z    },
+2026-11-07T20:24:23.3990878Z    "eventType": "fetch",
+2026-11-07T20:24:23.3991135Z    "executionModel": "stateless",
+2026-11-07T20:24:23.3991385Z    "outcome": "ok",
+2026-11-07T20:24:23.3991594Z    "wallTimeMs": 639,
+2026-11-07T20:24:23.3991916Z    "cpuTimeMs": 22
+2026-11-07T20:24:23.3992115Z   },
+2026-11-07T20:24:23.3992297Z   "$metadata": {
+2026-11-07T20:24:23.3992544Z    "id": "01M6QZGV1H000000000000000R",
+2026-11-07T20:24:23.3992875Z    "requestId": "251cf6e79e5afb668fc0a30096f14468",
+2026-11-07T20:24:23.3993197Z    "rayId": "a562b8481d1b39c0",
+2026-11-07T20:24:23.3993493Z    "traceId": "4ea2ffa65e6369a72f36b00a289d0453",
+2026-11-07T20:24:23.3993792Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.3994059Z    "timestampNs": "1793953655857000000",
+2026-11-07T20:24:23.3994345Z    "service": "faceless-api",
+2026-11-07T20:24:23.3994590Z    "level": "info",
+2026-11-07T20:24:23.3994865Z    "message": "POST https://gankdat.com/mcp",
+2026-11-07T20:24:23.3995212Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.3995516Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.3995758Z    "origin": "fetch",
+2026-11-07T20:24:23.3995974Z    "eventSize": 5423
+2026-11-07T20:24:23.3996177Z   }
+2026-11-07T20:24:23.3996358Z  },
+2026-11-07T20:24:23.3996529Z  {
+2026-11-07T20:24:23.3996710Z   "source": {
+2026-11-07T20:24:23.3996911Z    "level": "info",
+2026-11-07T20:24:23.3997288Z    "message": "POST https://gankdat.com/mcp"
+2026-11-07T20:24:23.3997577Z   },
+2026-11-07T20:24:23.3997803Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.3998069Z   "timestamp": 1793914579385,
+2026-11-07T20:24:23.3998304Z   "$workers": {
+2026-11-07T20:24:23.3998519Z    "truncated": false,
+2026-11-07T20:24:23.3998735Z    "event": {
+2026-11-07T20:24:23.3998929Z     "request": {
+2026-11-07T20:24:23.3999125Z      "cf": {
+2026-11-07T20:24:23.3999326Z       "isEUCountry": false,
+2026-11-07T20:24:23.3999577Z       "tlsClientAuth": {
+2026-11-07T20:24:23.3999841Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.4000146Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.4000428Z        "certPresented": "0",
+2026-11-07T20:24:23.4000701Z        "certVerified": "NONE",
+2026-11-07T20:24:23.4000944Z        "certRevoked": "0",
+2026-11-07T20:24:23.4001179Z        "certIssuerDN": "",
+2026-11-07T20:24:23.4001412Z        "certSubjectDN": "",
+2026-11-07T20:24:23.4001675Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.4002072Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.4002357Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.4002634Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.4002888Z        "certSerial": "",
+2026-11-07T20:24:23.4003148Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.4003388Z        "certSKI": "",
+2026-11-07T20:24:23.4003608Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.4003870Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.4004168Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.4004435Z        "certNotBefore": "",
+2026-11-07T20:24:23.4004669Z        "certNotAfter": "",
+2026-11-07T20:24:23.4004902Z        "certRFC9440": "",
+2026-11-07T20:24:23.4005135Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.4005372Z       },
+2026-11-07T20:24:23.4005592Z       "httpProtocol": "HTTP/1.1",
+2026-11-07T20:24:23.4005884Z       "clientAcceptEncoding": "identity",
+2026-11-07T20:24:23.4006171Z       "requestPriority": "",
+2026-11-07T20:24:23.4006428Z       "requestHeaderNames": [
+2026-11-07T20:24:23.4006662Z        "Host",
+2026-11-07T20:24:23.4006863Z        "User-Agent",
+2026-11-07T20:24:23.4007105Z        "MCP-Protocol-Version",
+2026-11-07T20:24:23.4007353Z        "Authorization",
+2026-11-07T20:24:23.4007588Z        "Content-Type",
+2026-11-07T20:24:23.4007843Z        "Accept",
+2026-11-07T20:24:23.4008050Z        "Mcp-Method",
+2026-11-07T20:24:23.4008270Z        "Content-Length",
+2026-11-07T20:24:23.4008508Z        "Accept-Encoding"
+2026-11-07T20:24:23.4008874Z       ],
+2026-11-07T20:24:23.4009077Z       "colo": "EWR",
+2026-11-07T20:24:23.4009335Z       "asOrganization": "Anthropic, PBC",
+2026-11-07T20:24:23.4009611Z       "country": "US",
+2026-11-07T20:24:23.4009839Z       "city": "Columbus",
+2026-11-07T20:24:23.4010073Z       "continent": "NA",
+2026-11-07T20:24:23.4010296Z       "region": "Ohio",
+2026-11-07T20:24:23.4010520Z       "regionCode": "OH",
+2026-11-07T20:24:23.4010786Z       "timezone": "America/New_York",
+2026-11-07T20:24:23.4011075Z       "longitude": "-82.99879",
+2026-11-07T20:24:23.4011323Z       "latitude": "39.96118",
+2026-11-07T20:24:23.4011562Z       "postalCode": "43215",
+2026-11-07T20:24:23.4011994Z       "metroCode": "535",
+2026-11-07T20:24:23.4012314Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.4012613Z       "tlsCipher": "AEAD-AES256-GCM-SHA384",
+2026-11-07T20:24:23.4013049Z       "tlsClientRandom": "GmyHxEP6U18uUsUeJwkh6tw9XvrX4NFoUy72g9L5xhI=",
+2026-11-07T20:24:23.4013544Z       "tlsClientCiphersSha1": "EPPWGkMwL/+VHBbDlFeYFF2S3W0=",
+2026-11-07T20:24:23.4014008Z       "tlsClientExtensionsSha1": "fBUOp6N9dJFknSeA48uo+Krt8gU=",
+2026-11-07T20:24:23.4014482Z       "tlsClientExtensionsSha1Le": "TPcgSqNoh+PRgH71acngAX9IU+A=",
+2026-11-07T20:24:23.4014878Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.4015538Z        "clientHandshake": "f7be7f286eddca36ebeabd63f5d693a34a9d405782d95ac6ec52dac5c4d673f2389b93ffded1774f35444b7c3eeec1db",
+2026-11-07T20:24:23.4016610Z        "serverHandshake": "012f0f0fc435fc0f83323f93a3c5e157a5bd505a79cf72919fcdf3c8232a6235b5fcacf063e496405c5fa2b45ffcf864",
+2026-11-07T20:24:23.4017543Z        "clientFinished": "9f31d37b7b8b846c05b03ed4fb7731fabfee5ccd12c320b295e11296a32a84c5f273a621ba99192ef645cd7533656558",
+2026-11-07T20:24:23.4018455Z        "serverFinished": "533a14697a3860c704c289ca608c02e7be9f4a98bca354575582f6e48a634e28a00087f3fbb8bb1fb2a4eda2c1c60d0c"
+2026-11-07T20:24:23.4019013Z       },
+2026-11-07T20:24:23.4019252Z       "tlsClientHelloLength": "508",
+2026-11-07T20:24:23.4019555Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.4019853Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.4020145Z       "clientTcpRtt": 15,
+2026-11-07T20:24:23.4020381Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.4020606Z       "asn": 396982,
+2026-11-07T20:24:23.4020815Z       "edgeL4": {
+2026-11-07T20:24:23.4021033Z        "deliveryRate": 178668
+2026-11-07T20:24:23.4021262Z       }
+2026-11-07T20:24:23.4021443Z      },
+2026-11-07T20:24:23.4021628Z      "headers": {
+2026-11-07T20:24:23.4022036Z       "accept": "application/json, text/event-stream",
+2026-11-07T20:24:23.4022392Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.4022686Z       "authorization": "********",
+2026-11-07T20:24:23.4023019Z       "cf-connecting-ip": "160.79.106.129",
+2026-11-07T20:24:23.4023600Z       "cf-ipcountry": "US",
+2026-11-07T20:24:23.4024073Z       "cf-ray": "a55efe3ff97fc32b",
+2026-11-07T20:24:23.4024580Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.4025107Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.4025608Z       "content-length": "355",
+2026-11-07T20:24:23.4026111Z       "content-type": "application/json",
+2026-11-07T20:24:23.4026595Z       "host": "gankdat.com",
+2026-11-07T20:24:23.4027072Z       "mcp-method": "server/discover",
+2026-11-07T20:24:23.4027609Z       "mcp-protocol-version": "2026-07-28",
+2026-11-07T20:24:23.4028187Z       "user-agent": "Claude-User",
+2026-11-07T20:24:23.4028699Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.4029259Z       "x-real-ip": "160.79.106.129"
+2026-11-07T20:24:23.4029586Z      },
+2026-11-07T20:24:23.4029789Z      "method": "POST",
+2026-11-07T20:24:23.4030064Z      "url": "https://gankdat.com/mcp"
+2026-11-07T20:24:23.4030326Z     },
+2026-11-07T20:24:23.4030516Z     "path": "/mcp",
+2026-11-07T20:24:23.4030726Z     "response": {
+2026-11-07T20:24:23.4030939Z      "status": 200
+2026-11-07T20:24:23.4031137Z     }
+2026-11-07T20:24:23.4031313Z    },
+2026-11-07T20:24:23.4031535Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4032324Z    "scriptVersion": {
+2026-11-07T20:24:23.4032722Z     "id": "e6984e17-1b51-4428-a65c-a8c1bb487f7f"
+2026-11-07T20:24:23.4033176Z    },
+2026-11-07T20:24:23.4033382Z    "eventType": "fetch",
+2026-11-07T20:24:23.4033655Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4033921Z    "outcome": "ok",
+2026-11-07T20:24:23.4034136Z    "wallTimeMs": 959,
+2026-11-07T20:24:23.4034356Z    "cpuTimeMs": 58
+2026-11-07T20:24:23.4034560Z   },
+2026-11-07T20:24:23.4034744Z   "$metadata": {
+2026-11-07T20:24:23.4035002Z    "id": "01M6PT8ADS000000000000000R",
+2026-11-07T20:24:23.4035336Z    "requestId": "e76d9b2d8a60803ff4c6559f422977eb",
+2026-11-07T20:24:23.4035714Z    "rayId": "a55efe3ff97fc32b",
+2026-11-07T20:24:23.4036029Z    "traceId": "272cfa739dea6d5a4b0955640a4648b4",
+2026-11-07T20:24:23.4036343Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4036617Z    "timestampNs": "1793914579385000000",
+2026-11-07T20:24:23.4036901Z    "service": "faceless-api",
+2026-11-07T20:24:23.4037153Z    "level": "info",
+2026-11-07T20:24:23.4037441Z    "message": "POST https://gankdat.com/mcp",
+2026-11-07T20:24:23.4037800Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4038102Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.4038345Z    "origin": "fetch",
+2026-11-07T20:24:23.4038567Z    "eventSize": 5423
+2026-11-07T20:24:23.4038784Z   }
+2026-11-07T20:24:23.4038965Z  },
+2026-11-07T20:24:23.4039138Z  {
+2026-11-07T20:24:23.4039315Z   "source": {
+2026-11-07T20:24:23.4039511Z    "level": "info",
+2026-11-07T20:24:23.4039929Z    "message": "POST https://gankdat.com/mcp"
+2026-11-07T20:24:23.4040218Z   },
+2026-11-07T20:24:23.4040443Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4040705Z   "timestamp": 1793720317041,
+2026-11-07T20:24:23.4041011Z   "$workers": {
+2026-11-07T20:24:23.4041387Z    "truncated": false,
+2026-11-07T20:24:23.4041945Z    "event": {
+2026-11-07T20:24:23.4042208Z     "request": {
+2026-11-07T20:24:23.4042432Z      "cf": {
+2026-11-07T20:24:23.4042792Z       "isEUCountry": false,
+2026-11-07T20:24:23.4043083Z       "tlsClientAuth": {
+2026-11-07T20:24:23.4043352Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.4043658Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.4043952Z        "certPresented": "0",
+2026-11-07T20:24:23.4044217Z        "certVerified": "NONE",
+2026-11-07T20:24:23.4044464Z        "certRevoked": "0",
+2026-11-07T20:24:23.4044699Z        "certIssuerDN": "",
+2026-11-07T20:24:23.4044939Z        "certSubjectDN": "",
+2026-11-07T20:24:23.4045206Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.4045498Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.4045786Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.4046072Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.4046337Z        "certSerial": "",
+2026-11-07T20:24:23.4046591Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.4046836Z        "certSKI": "",
+2026-11-07T20:24:23.4047060Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.4047333Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.4047626Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.4047893Z        "certNotBefore": "",
+2026-11-07T20:24:23.4048127Z        "certNotAfter": "",
+2026-11-07T20:24:23.4048369Z        "certRFC9440": "",
+2026-11-07T20:24:23.4048603Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.4048841Z       },
+2026-11-07T20:24:23.4049074Z       "httpProtocol": "HTTP/1.1",
+2026-11-07T20:24:23.4049374Z       "clientAcceptEncoding": "identity",
+2026-11-07T20:24:23.4049672Z       "requestPriority": "",
+2026-11-07T20:24:23.4049932Z       "requestHeaderNames": [
+2026-11-07T20:24:23.4050170Z        "Host",
+2026-11-07T20:24:23.4050373Z        "User-Agent",
+2026-11-07T20:24:23.4050604Z        "X-Anthropic-Client",
+2026-11-07T20:24:23.4050871Z        "MCP-Protocol-Version",
+2026-11-07T20:24:23.4051118Z        "Authorization",
+2026-11-07T20:24:23.4051342Z        "Content-Type",
+2026-11-07T20:24:23.4051560Z        "Accept",
+2026-11-07T20:24:23.4052004Z        "Mcp-Method",
+2026-11-07T20:24:23.4052276Z        "Content-Length",
+2026-11-07T20:24:23.4052720Z        "Accept-Encoding"
+2026-11-07T20:24:23.4052935Z       ],
+2026-11-07T20:24:23.4053131Z       "colo": "ARN",
+2026-11-07T20:24:23.4053411Z       "asOrganization": "Anthropic, PBC",
+2026-11-07T20:24:23.4053693Z       "country": "US",
+2026-11-07T20:24:23.4053914Z       "city": "Columbus",
+2026-11-07T20:24:23.4054143Z       "continent": "NA",
+2026-11-07T20:24:23.4054375Z       "region": "Ohio",
+2026-11-07T20:24:23.4054599Z       "regionCode": "OH",
+2026-11-07T20:24:23.4054869Z       "timezone": "America/New_York",
+2026-11-07T20:24:23.4055155Z       "longitude": "-82.99879",
+2026-11-07T20:24:23.4055408Z       "latitude": "39.96118",
+2026-11-07T20:24:23.4055747Z       "postalCode": "43215",
+2026-11-07T20:24:23.4056228Z       "metroCode": "535",
+2026-11-07T20:24:23.4056711Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.4057040Z       "tlsCipher": "AEAD-AES256-GCM-SHA384",
+2026-11-07T20:24:23.4057484Z       "tlsClientRandom": "GiLZ+8suyH6+j5aBzfGF+V3h52vOvi5Qc46nfyLYb3o=",
+2026-11-07T20:24:23.4057988Z       "tlsClientCiphersSha1": "EPPWGkMwL/+VHBbDlFeYFF2S3W0=",
+2026-11-07T20:24:23.4058444Z       "tlsClientExtensionsSha1": "fBUOp6N9dJFknSeA48uo+Krt8gU=",
+2026-11-07T20:24:23.4058929Z       "tlsClientExtensionsSha1Le": "TPcgSqNoh+PRgH71acngAX9IU+A=",
+2026-11-07T20:24:23.4059345Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.4059984Z        "clientHandshake": "1e7248a43c11dd57cafbd84e26647cf9946936f392395a0ec9caa24c4a53173c7cedbc78c9e918f625e531b3771c03f7",
+2026-11-07T20:24:23.4061060Z        "serverHandshake": "ed906b026953062359c348f3c16bb9953961d59497e50bfe69282e77113423144b2a59e4fd0030e2b96165c18fd1c6d1",
+2026-11-07T20:24:23.4062227Z        "clientFinished": "322c4d53d1e55d1a727237327f1e357b3610589dda79cd4ffef62b88f8b5df2910c857583d1c1a3d5270eb352e422574",
+2026-11-07T20:24:23.4063171Z        "serverFinished": "7963f841df2347e2d73c6ab59d40e1eaa5bc09623580d6e6f845e748ac033d818c855a3fa637776e7a0f2fad7e9cd9fe"
+2026-11-07T20:24:23.4063726Z       },
+2026-11-07T20:24:23.4063973Z       "tlsClientHelloLength": "508",
+2026-11-07T20:24:23.4064276Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.4064572Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.4064852Z       "clientTcpRtt": 109,
+2026-11-07T20:24:23.4065088Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.4065321Z       "asn": 396982,
+2026-11-07T20:24:23.4065528Z       "edgeL4": {
+2026-11-07T20:24:23.4065740Z        "deliveryRate": 25677
+2026-11-07T20:24:23.4065970Z       }
+2026-11-07T20:24:23.4066158Z      },
+2026-11-07T20:24:23.4066347Z      "headers": {
+2026-11-07T20:24:23.4066638Z       "accept": "application/json, text/event-stream",
+2026-11-07T20:24:23.4066985Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.4067275Z       "authorization": "********",
+2026-11-07T20:24:23.4067572Z       "cf-connecting-ip": "160.79.106.18",
+2026-11-07T20:24:23.4067854Z       "cf-ipcountry": "US",
+2026-11-07T20:24:23.4068124Z       "cf-ray": "a54c778b7830e042",
+2026-11-07T20:24:23.4068426Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.4068748Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.4069026Z       "content-length": "458",
+2026-11-07T20:24:23.4069311Z       "content-type": "application/json",
+2026-11-07T20:24:23.4069594Z       "host": "gankdat.com",
+2026-11-07T20:24:23.4069873Z       "mcp-method": "server/discover",
+2026-11-07T20:24:23.4070183Z       "mcp-protocol-version": "2026-07-28",
+2026-11-07T20:24:23.4070536Z       "user-agent": "Claude-User",
+2026-11-07T20:24:23.4070832Z       "x-anthropic-client": "Cowork",
+2026-11-07T20:24:23.4071140Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.4071425Z       "x-real-ip": "160.79.106.18"
+2026-11-07T20:24:23.4071659Z      },
+2026-11-07T20:24:23.4072056Z      "method": "POST",
+2026-11-07T20:24:23.4072331Z      "url": "https://gankdat.com/mcp"
+2026-11-07T20:24:23.4093407Z     },
+2026-11-07T20:24:23.4093800Z     "path": "/mcp",
+2026-11-07T20:24:23.4094054Z     "response": {
+2026-11-07T20:24:23.4094356Z      "status": 200
+2026-11-07T20:24:23.4094902Z     }
+2026-11-07T20:24:23.4095103Z    },
+2026-11-07T20:24:23.4095343Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4095627Z    "scriptVersion": {
+2026-11-07T20:24:23.4095916Z     "id": "90667f0f-8b8f-41c0-b48b-573f9795069f"
+2026-11-07T20:24:23.4096240Z    },
+2026-11-07T20:24:23.4096464Z    "eventType": "fetch",
+2026-11-07T20:24:23.4096737Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4097000Z    "outcome": "ok",
+2026-11-07T20:24:23.4097213Z    "wallTimeMs": 331,
+2026-11-07T20:24:23.4097445Z    "cpuTimeMs": 13
+2026-11-07T20:24:23.4097654Z   },
+2026-11-07T20:24:23.4097846Z   "$metadata": {
+2026-11-07T20:24:23.4098090Z    "id": "01M6H0ZX3H000000000000000R",
+2026-11-07T20:24:23.4098432Z    "requestId": "516441e3d445f70494d850c1eb7d8f53",
+2026-11-07T20:24:23.4098762Z    "rayId": "a54c778b7830e042",
+2026-11-07T20:24:23.4099075Z    "traceId": "dc97b13f76bd98dd6bdd8342010426b5",
+2026-11-07T20:24:23.4099385Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4099669Z    "timestampNs": "1793720317041000000",
+2026-11-07T20:24:23.4099967Z    "service": "faceless-api",
+2026-11-07T20:24:23.4100216Z    "level": "info",
+2026-11-07T20:24:23.4100488Z    "message": "POST https://gankdat.com/mcp",
+2026-11-07T20:24:23.4100852Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4101165Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.4101414Z    "origin": "fetch",
+2026-11-07T20:24:23.4101636Z    "eventSize": 5540
+2026-11-07T20:24:23.4102111Z   }
+2026-11-07T20:24:23.4102388Z  },
+2026-11-07T20:24:23.4102573Z  {
+2026-11-07T20:24:23.4102916Z   "source": {
+2026-11-07T20:24:23.4103145Z    "level": "info",
+2026-11-07T20:24:23.4103447Z    "requestId": "a2a09d38-dee7-4b14-912c-e54c7a44d7f4",
+2026-11-07T20:24:23.4103766Z    "method": "GET",
+2026-11-07T20:24:23.4104000Z    "path": "/workspace/.env",
+2026-11-07T20:24:23.4104592Z    "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-User/1.0; +claudebot@anthropic.com)",
+2026-11-07T20:24:23.4105129Z    "status": 404,
+2026-11-07T20:24:23.4105344Z    "latencyMs": 0
+2026-11-07T20:24:23.4105543Z   },
+2026-11-07T20:24:23.4105776Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4106053Z   "timestamp": 1793715632497,
+2026-11-07T20:24:23.4106293Z   "$workers": {
+2026-11-07T20:24:23.4106499Z    "truncated": false,
+2026-11-07T20:24:23.4106760Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4107019Z    "scriptVersion": {
+2026-11-07T20:24:23.4107296Z     "id": "90667f0f-8b8f-41c0-b48b-573f9795069f"
+2026-11-07T20:24:23.4107580Z    },
+2026-11-07T20:24:23.4107825Z    "eventType": "fetch",
+2026-11-07T20:24:23.4108093Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4108341Z    "event": {
+2026-11-07T20:24:23.4108542Z     "request": {
+2026-11-07T20:24:23.4108753Z      "method": "GET",
+2026-11-07T20:24:23.4109043Z      "url": "https://gankdat.com/workspace/.env",
+2026-11-07T20:24:23.4109370Z      "path": "/workspace/.env"
+2026-11-07T20:24:23.4109615Z     }
+2026-11-07T20:24:23.4109797Z    }
+2026-11-07T20:24:23.4109984Z   },
+2026-11-07T20:24:23.4110168Z   "$metadata": {
+2026-11-07T20:24:23.4110409Z    "id": "01M6GWGYBH0000000000000002",
+2026-11-07T20:24:23.4110739Z    "requestId": "4c118b994750487d25bb3a97f6a7f1ee",
+2026-11-07T20:24:23.4111065Z    "rayId": "a54c052f1da9fafc",
+2026-11-07T20:24:23.4111378Z    "traceId": "c35517bf67ead0937ada53570e2465ba",
+2026-11-07T20:24:23.4111693Z    "spanId": "330009a6f42bfe5e",
+2026-11-07T20:24:23.4112181Z    "trigger": "GET /workspace/.env",
+2026-11-07T20:24:23.4112490Z    "timestampNs": "1793715632497000000",
+2026-11-07T20:24:23.4112786Z    "service": "faceless-api",
+2026-11-07T20:24:23.4113025Z    "level": "info",
+2026-11-07T20:24:23.4113285Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4113572Z    "type": "cf-worker",
+2026-11-07T20:24:23.4113795Z    "origin": "fetch",
+2026-11-07T20:24:23.4114003Z    "eventSize": 890
+2026-11-07T20:24:23.4114199Z   }
+2026-11-07T20:24:23.4114368Z  },
+2026-11-07T20:24:23.4114533Z  {
+2026-11-07T20:24:23.4114710Z   "source": {
+2026-11-07T20:24:23.4115085Z    "level": "info",
+2026-11-07T20:24:23.4115364Z    "requestId": "ba4dc5e6-fbf8-4f53-8890-e158ff4ea820",
+2026-11-07T20:24:23.4115664Z    "method": "GET",
+2026-11-07T20:24:23.4115911Z    "path": "/api/console/api_server",
+2026-11-07T20:24:23.4116502Z    "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-User/1.0; +claudebot@anthropic.com)",
+2026-11-07T20:24:23.4117027Z    "status": 404,
+2026-11-07T20:24:23.4117233Z    "latencyMs": 0
+2026-11-07T20:24:23.4117430Z   },
+2026-11-07T20:24:23.4117663Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4117935Z   "timestamp": 1793715631896,
+2026-11-07T20:24:23.4118173Z   "$workers": {
+2026-11-07T20:24:23.4118380Z    "truncated": false,
+2026-11-07T20:24:23.4118637Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4118896Z    "scriptVersion": {
+2026-11-07T20:24:23.4119169Z     "id": "90667f0f-8b8f-41c0-b48b-573f9795069f"
+2026-11-07T20:24:23.4119452Z    },
+2026-11-07T20:24:23.4119659Z    "eventType": "fetch",
+2026-11-07T20:24:23.4119933Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4120184Z    "event": {
+2026-11-07T20:24:23.4120382Z     "request": {
+2026-11-07T20:24:23.4120587Z      "method": "GET",
+2026-11-07T20:24:23.4121270Z      "url": "https://gankdat.com/api/console/api_server?sense_version=%40%40SENSE_VERSION&apis=..%2F..%2F..%2F..%2F..%2F..%2Fproc%2Fself%2Fenviron",
+2026-11-07T20:24:23.4122153Z      "path": "/api/console/api_server",
+2026-11-07T20:24:23.4122434Z      "search": {
+2026-11-07T20:24:23.4122811Z       "sense_version": "@@SENSE_VERSION",
+2026-11-07T20:24:23.4123168Z       "apis": "../../../../../../proc/self/environ"
+2026-11-07T20:24:23.4123462Z      }
+2026-11-07T20:24:23.4123650Z     }
+2026-11-07T20:24:23.4123837Z    }
+2026-11-07T20:24:23.4124020Z   },
+2026-11-07T20:24:23.4124206Z   "$metadata": {
+2026-11-07T20:24:23.4124450Z    "id": "01M6GWGXRR0000000000000002",
+2026-11-07T20:24:23.4124777Z    "requestId": "21f86448934973fde86ef0ef4660acd2",
+2026-11-07T20:24:23.4125099Z    "rayId": "a54c052b4b42fafc",
+2026-11-07T20:24:23.4125421Z    "traceId": "031d731aa9987cefa6bad01188b3689c",
+2026-11-07T20:24:23.4125745Z    "spanId": "df965348873e7d22",
+2026-11-07T20:24:23.4126037Z    "trigger": "GET /api/console/api_server",
+2026-11-07T20:24:23.4126355Z    "timestampNs": "1793715631896000000",
+2026-11-07T20:24:23.4126638Z    "service": "faceless-api",
+2026-11-07T20:24:23.4126887Z    "level": "info",
+2026-11-07T20:24:23.4127152Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4127447Z    "type": "cf-worker",
+2026-11-07T20:24:23.4127684Z    "origin": "fetch",
+2026-11-07T20:24:23.4127902Z    "eventSize": 1210
+2026-11-07T20:24:23.4128108Z   }
+2026-11-07T20:24:23.4128289Z  },
+2026-11-07T20:24:23.4128461Z  {
+2026-11-07T20:24:23.4128648Z   "source": {
+2026-11-07T20:24:23.4128850Z    "level": "info",
+2026-11-07T20:24:23.4129204Z    "message": "GET https://www.gankdat.com/terraform.tfstate.backup"
+2026-11-07T20:24:23.4129567Z   },
+2026-11-07T20:24:23.4129796Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4130071Z   "timestamp": 1793715631185,
+2026-11-07T20:24:23.4130310Z   "$workers": {
+2026-11-07T20:24:23.4130516Z    "truncated": false,
+2026-11-07T20:24:23.4130730Z    "event": {
+2026-11-07T20:24:23.4130931Z     "request": {
+2026-11-07T20:24:23.4131131Z      "cf": {
+2026-11-07T20:24:23.4131337Z       "isEUCountry": false,
+2026-11-07T20:24:23.4131579Z       "tlsClientAuth": {
+2026-11-07T20:24:23.4132097Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.4132653Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.4132974Z        "certPresented": "0",
+2026-11-07T20:24:23.4133247Z        "certVerified": "NONE",
+2026-11-07T20:24:23.4133501Z        "certRevoked": "0",
+2026-11-07T20:24:23.4133775Z        "certIssuerDN": "",
+2026-11-07T20:24:23.4134014Z        "certSubjectDN": "",
+2026-11-07T20:24:23.4134296Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.4134593Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.4134884Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.4135330Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.4135596Z        "certSerial": "",
+2026-11-07T20:24:23.4135852Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.4136095Z        "certSKI": "",
+2026-11-07T20:24:23.4136319Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.4136587Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.4136883Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.4137152Z        "certNotBefore": "",
+2026-11-07T20:24:23.4137390Z        "certNotAfter": "",
+2026-11-07T20:24:23.4137628Z        "certRFC9440": "",
+2026-11-07T20:24:23.4137869Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.4138105Z       },
+2026-11-07T20:24:23.4138328Z       "httpProtocol": "HTTP/2",
+2026-11-07T20:24:23.4138615Z       "clientAcceptEncoding": "gzip",
+2026-11-07T20:24:23.4139035Z       "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+2026-11-07T20:24:23.4139423Z       "requestHeaderNames": [
+2026-11-07T20:24:23.4139670Z        ":authority",
+2026-11-07T20:24:23.4139888Z        ":method",
+2026-11-07T20:24:23.4140089Z        ":path",
+2026-11-07T20:24:23.4140292Z        ":scheme",
+2026-11-07T20:24:23.4140535Z        "x-middleware-subrequest",
+2026-11-07T20:24:23.4140797Z        "x-nextjs-data",
+2026-11-07T20:24:23.4141032Z        "x-forwarded-for",
+2026-11-07T20:24:23.4141272Z        "x-remote-addr",
+2026-11-07T20:24:23.4141492Z        "accept",
+2026-11-07T20:24:23.4141698Z        "x-client-ip",
+2026-11-07T20:24:23.4142172Z        "x-originating-ip",
+2026-11-07T20:24:23.4142548Z        "true-client-ip",
+2026-11-07T20:24:23.4142812Z        "user-agent",
+2026-11-07T20:24:23.4143046Z        "x-real-ip",
+2026-11-07T20:24:23.4143259Z        "x-remote-ip",
+2026-11-07T20:24:23.4143521Z        "x-custom-ip-authorization",
+2026-11-07T20:24:23.4143802Z        "cluster-client-ip",
+2026-11-07T20:24:23.4144039Z        "forwarded",
+2026-11-07T20:24:23.4144259Z        "x-proxyuser-ip",
+2026-11-07T20:24:23.4144499Z        "accept-encoding"
+2026-11-07T20:24:23.4144719Z       ],
+2026-11-07T20:24:23.4144921Z       "colo": "ARN",
+2026-11-07T20:24:23.4145174Z       "asOrganization": "Google LLC",
+2026-11-07T20:24:23.4145445Z       "country": "SG",
+2026-11-07T20:24:23.4145672Z       "city": "Singapore",
+2026-11-07T20:24:23.4145914Z       "continent": "AS",
+2026-11-07T20:24:23.4146171Z       "timezone": "Asia/Singapore",
+2026-11-07T20:24:23.4146463Z       "longitude": "103.85007",
+2026-11-07T20:24:23.4146717Z       "latitude": "1.28967",
+2026-11-07T20:24:23.4146968Z       "postalCode": "018989",
+2026-11-07T20:24:23.4147239Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.4147536Z       "tlsCipher": "AEAD-AES128-GCM-SHA256",
+2026-11-07T20:24:23.4147977Z       "tlsClientRandom": "yEkAXOQn9gQe1aUSmIshRgtQlm9pVjLaQL9e6V4bbjA=",
+2026-11-07T20:24:23.4148469Z       "tlsClientCiphersSha1": "nWmr2CuvhM3+1BAitb/WHA2q9wk=",
+2026-11-07T20:24:23.4148921Z       "tlsClientExtensionsSha1": "w1E7ro5gtuXv9n9trfHH7lYucHc=",
+2026-11-07T20:24:23.4149393Z       "tlsClientExtensionsSha1Le": "iSShooWq3yCFuDEX9o0iOOxWGT4=",
+2026-11-07T20:24:23.4149797Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.4150286Z        "clientHandshake": "73194b2a0c5daf1051b718f0ad3a562450bca27dc2609b9fc66c01de41b7a249",
+2026-11-07T20:24:23.4150946Z        "serverHandshake": "fc8eba3a7f354847c63e61483247ebe0c01905cf88f185854d949ff3c1a9d5e6",
+2026-11-07T20:24:23.4151600Z        "clientFinished": "4d320145272f87b05c063ed4d66eee397b5f4ea3f5a0cabd822b3bcd1c57dd63",
+2026-11-07T20:24:23.4152518Z        "serverFinished": "34506d41db84f8b8cbbe04a0d9edca9a1a399aabd592801edc6090c392eab451"
+2026-11-07T20:24:23.4152976Z       },
+2026-11-07T20:24:23.4153214Z       "tlsClientHelloLength": "1748",
+2026-11-07T20:24:23.4153518Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.4153819Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.4154108Z       "clientTcpRtt": 189,
+2026-11-07T20:24:23.4154354Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.4154584Z       "asn": 396982,
+2026-11-07T20:24:23.4154796Z       "edgeL4": {
+2026-11-07T20:24:23.4155149Z        "deliveryRate": 132601
+2026-11-07T20:24:23.4155389Z       }
+2026-11-07T20:24:23.4155572Z      },
+2026-11-07T20:24:23.4155762Z      "headers": {
+2026-11-07T20:24:23.4155970Z       "accept": "*/*",
+2026-11-07T20:24:23.4156243Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.4156561Z       "cf-connecting-ip": "35.187.238.249",
+2026-11-07T20:24:23.4156852Z       "cf-ipcountry": "SG",
+2026-11-07T20:24:23.4157122Z       "cf-ray": "a54c0526ecdd3adb",
+2026-11-07T20:24:23.4157431Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.4157762Z       "cluster-client-ip": "172.20.142.64",
+2026-11-07T20:24:23.4158071Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.4158356Z       "forwarded": "for=172.20.142.64",
+2026-11-07T20:24:23.4158652Z       "host": "www.gankdat.com",
+2026-11-07T20:24:23.4158950Z       "true-client-ip": "172.20.142.64",
+2026-11-07T20:24:23.4159575Z       "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-User/1.0; +claudebot@anthropic.com)",
+2026-11-07T20:24:23.4160160Z       "x-client-ip": "172.20.142.64",
+2026-11-07T20:24:23.4160477Z       "x-custom-ip-authorization": "REDACTED",
+2026-11-07T20:24:23.4160810Z       "x-forwarded-for": "172.20.142.64",
+2026-11-07T20:24:23.4161117Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.4162264Z       "x-middleware-subrequest": "src/middleware:nowaf:src/middleware:src/middleware:src/middleware:src/middleware:middleware:middleware:nowaf:middleware:middleware:middleware:pages/_middleware",
+2026-11-07T20:24:23.4163231Z       "x-nextjs-data": "1",
+2026-11-07T20:24:23.4163526Z       "x-originating-ip": "172.20.142.64",
+2026-11-07T20:24:23.4163842Z       "x-proxyuser-ip": "172.20.142.64",
+2026-11-07T20:24:23.4164136Z       "x-real-ip": "35.187.238.249",
+2026-11-07T20:24:23.4164427Z       "x-remote-addr": "172.20.142.64",
+2026-11-07T20:24:23.4164715Z       "x-remote-ip": "172.20.142.64"
+2026-11-07T20:24:23.4164968Z      },
+2026-11-07T20:24:23.4165157Z      "method": "GET",
+2026-11-07T20:24:23.4165504Z      "url": "https://www.gankdat.com/terraform.tfstate.backup"
+2026-11-07T20:24:23.4165847Z     },
+2026-11-07T20:24:23.4166085Z     "path": "/terraform.tfstate.backup",
+2026-11-07T20:24:23.4166365Z     "response": {
+2026-11-07T20:24:23.4166574Z      "status": 301
+2026-11-07T20:24:23.4166779Z     }
+2026-11-07T20:24:23.4166959Z    },
+2026-11-07T20:24:23.4167176Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4167441Z    "scriptVersion": {
+2026-11-07T20:24:23.4167716Z     "id": "90667f0f-8b8f-41c0-b48b-573f9795069f"
+2026-11-07T20:24:23.4168012Z    },
+2026-11-07T20:24:23.4168203Z    "eventType": "fetch",
+2026-11-07T20:24:23.4168465Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4168721Z    "outcome": "ok",
+2026-11-07T20:24:23.4168940Z    "wallTimeMs": 0,
+2026-11-07T20:24:23.4169149Z    "cpuTimeMs": 0
+2026-11-07T20:24:23.4169347Z   },
+2026-11-07T20:24:23.4169535Z   "$metadata": {
+2026-11-07T20:24:23.4169772Z    "id": "01M6GWGX2H0000000000000002",
+2026-11-07T20:24:23.4170111Z    "requestId": "d2da7c8a4d8bcc922cd62771e675a0e2",
+2026-11-07T20:24:23.4170440Z    "rayId": "a54c0526ecdd3adb",
+2026-11-07T20:24:23.4170745Z    "traceId": "be9c8b8e10d3b21c314e8ef1d458083e",
+2026-11-07T20:24:23.4171102Z    "trigger": "GET /terraform.tfstate.backup",
+2026-11-07T20:24:23.4171442Z    "timestampNs": "1793715631185000000",
+2026-11-07T20:24:23.4171721Z    "service": "faceless-api",
+2026-11-07T20:24:23.4172204Z    "level": "info",
+2026-11-07T20:24:23.4172561Z    "message": "GET https://www.gankdat.com/terraform.tfstate.backup",
+2026-11-07T20:24:23.4172996Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4173301Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.4173548Z    "origin": "fetch",
+2026-11-07T20:24:23.4173765Z    "eventSize": 6649
+2026-11-07T20:24:23.4173971Z   }
+2026-11-07T20:24:23.4174147Z  },
+2026-11-07T20:24:23.4174318Z  {
+2026-11-07T20:24:23.4174500Z   "source": {
+2026-11-07T20:24:23.4174701Z    "level": "info",
+2026-11-07T20:24:23.4174972Z    "message": "POST https://gankdat.com/mcp"
+2026-11-07T20:24:23.4175399Z   },
+2026-11-07T20:24:23.4175631Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4175901Z   "timestamp": 1793669386418,
+2026-11-07T20:24:23.4176136Z   "$workers": {
+2026-11-07T20:24:23.4176348Z    "truncated": false,
+2026-11-07T20:24:23.4176561Z    "event": {
+2026-11-07T20:24:23.4176754Z     "request": {
+2026-11-07T20:24:23.4176954Z      "cf": {
+2026-11-07T20:24:23.4177164Z       "isEUCountry": false,
+2026-11-07T20:24:23.4177409Z       "tlsClientAuth": {
+2026-11-07T20:24:23.4177681Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.4177995Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.4178283Z        "certPresented": "0",
+2026-11-07T20:24:23.4178556Z        "certVerified": "NONE",
+2026-11-07T20:24:23.4178803Z        "certRevoked": "0",
+2026-11-07T20:24:23.4179034Z        "certIssuerDN": "",
+2026-11-07T20:24:23.4179267Z        "certSubjectDN": "",
+2026-11-07T20:24:23.4179541Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.4179836Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.4180129Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.4180417Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.4180686Z        "certSerial": "",
+2026-11-07T20:24:23.4180945Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.4181190Z        "certSKI": "",
+2026-11-07T20:24:23.4181415Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.4181684Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.4182227Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.4182631Z        "certNotBefore": "",
+2026-11-07T20:24:23.4182881Z        "certNotAfter": "",
+2026-11-07T20:24:23.4183117Z        "certRFC9440": "",
+2026-11-07T20:24:23.4183359Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.4183594Z       },
+2026-11-07T20:24:23.4183817Z       "httpProtocol": "HTTP/1.1",
+2026-11-07T20:24:23.4184114Z       "clientAcceptEncoding": "identity",
+2026-11-07T20:24:23.4184408Z       "requestPriority": "",
+2026-11-07T20:24:23.4184663Z       "requestHeaderNames": [
+2026-11-07T20:24:23.4184906Z        "Host",
+2026-11-07T20:24:23.4185109Z        "User-Agent",
+2026-11-07T20:24:23.4185337Z        "X-Anthropic-Client",
+2026-11-07T20:24:23.4185613Z        "MCP-Protocol-Version",
+2026-11-07T20:24:23.4185864Z        "Authorization",
+2026-11-07T20:24:23.4186095Z        "Content-Type",
+2026-11-07T20:24:23.4186314Z        "Accept",
+2026-11-07T20:24:23.4186527Z        "Mcp-Method",
+2026-11-07T20:24:23.4186748Z        "Content-Length",
+2026-11-07T20:24:23.4186981Z        "Accept-Encoding"
+2026-11-07T20:24:23.4187205Z       ],
+2026-11-07T20:24:23.4187399Z       "colo": "IAD",
+2026-11-07T20:24:23.4187664Z       "asOrganization": "Anthropic, PBC",
+2026-11-07T20:24:23.4187947Z       "country": "US",
+2026-11-07T20:24:23.4188172Z       "city": "Columbus",
+2026-11-07T20:24:23.4188407Z       "continent": "NA",
+2026-11-07T20:24:23.4188641Z       "region": "Ohio",
+2026-11-07T20:24:23.4188871Z       "regionCode": "OH",
+2026-11-07T20:24:23.4189135Z       "timezone": "America/New_York",
+2026-11-07T20:24:23.4189433Z       "longitude": "-82.99879",
+2026-11-07T20:24:23.4189680Z       "latitude": "39.96118",
+2026-11-07T20:24:23.4189931Z       "postalCode": "43215",
+2026-11-07T20:24:23.4190172Z       "metroCode": "535",
+2026-11-07T20:24:23.4190427Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.4190727Z       "tlsCipher": "AEAD-AES256-GCM-SHA384",
+2026-11-07T20:24:23.4191176Z       "tlsClientRandom": "Apd2CgHss4fIDKXw0XEfnupa8793J+MQ4cwyj1t5fdk=",
+2026-11-07T20:24:23.4191676Z       "tlsClientCiphersSha1": "EPPWGkMwL/+VHBbDlFeYFF2S3W0=",
+2026-11-07T20:24:23.4192249Z       "tlsClientExtensionsSha1": "fBUOp6N9dJFknSeA48uo+Krt8gU=",
+2026-11-07T20:24:23.4192730Z       "tlsClientExtensionsSha1Le": "TPcgSqNoh+PRgH71acngAX9IU+A=",
+2026-11-07T20:24:23.4193141Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.4193780Z        "clientHandshake": "d75d2845926a0e81e55f876bc3879dcbe55667a6f0ac2837606239d375b6f748ff515add1056540bcd663cc133314144",
+2026-11-07T20:24:23.4194710Z        "serverHandshake": "bb434736e625d281ec5f5a95a06d3c1ad0cef453c9c95d889deaad27cdea7676919b19c7411ae6019c056dca034b103d",
+2026-11-07T20:24:23.4195786Z        "clientFinished": "fdae51e45a117453b1c00e5fb9b4ae9310c4f3cc7e2a353ade357e2d546dc8d0cedacb3de698fed3a3fc50ab156f1f84",
+2026-11-07T20:24:23.4196727Z        "serverFinished": "3e9af671b7ddc530b970f1a0536a141656a4b36bee8d292e5353bdaec36ca51af9b4c1a35782e3f27cadfc8a3cd6ac57"
+2026-11-07T20:24:23.4197293Z       },
+2026-11-07T20:24:23.4197522Z       "tlsClientHelloLength": "508",
+2026-11-07T20:24:23.4197834Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.4198133Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.4198417Z       "clientTcpRtt": 10,
+2026-11-07T20:24:23.4198657Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.4198893Z       "asn": 396982,
+2026-11-07T20:24:23.4199104Z       "edgeL4": {
+2026-11-07T20:24:23.4199321Z        "deliveryRate": 287758
+2026-11-07T20:24:23.4199554Z       }
+2026-11-07T20:24:23.4199735Z      },
+2026-11-07T20:24:23.4199927Z      "headers": {
+2026-11-07T20:24:23.4200218Z       "accept": "application/json, text/event-stream",
+2026-11-07T20:24:23.4200566Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.4200860Z       "authorization": "********",
+2026-11-07T20:24:23.4201158Z       "cf-connecting-ip": "160.79.106.179",
+2026-11-07T20:24:23.4201448Z       "cf-ipcountry": "US",
+2026-11-07T20:24:23.4201719Z       "cf-ray": "a5479c1cef1d9c5e",
+2026-11-07T20:24:23.4202125Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.4202569Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.4202843Z       "content-length": "54",
+2026-11-07T20:24:23.4203133Z       "content-type": "application/json",
+2026-11-07T20:24:23.4203417Z       "host": "gankdat.com",
+2026-11-07T20:24:23.4203716Z       "mcp-method": "notifications/initialized",
+2026-11-07T20:24:23.4204068Z       "mcp-protocol-version": "2025-11-25",
+2026-11-07T20:24:23.4204380Z       "user-agent": "Claude-User",
+2026-11-07T20:24:23.4204675Z       "x-anthropic-client": "ClaudeCode",
+2026-11-07T20:24:23.4204989Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.4205282Z       "x-real-ip": "160.79.106.179"
+2026-11-07T20:24:23.4205524Z      },
+2026-11-07T20:24:23.4205716Z      "method": "POST",
+2026-11-07T20:24:23.4205988Z      "url": "https://gankdat.com/mcp"
+2026-11-07T20:24:23.4206259Z     },
+2026-11-07T20:24:23.4206459Z     "path": "/mcp",
+2026-11-07T20:24:23.4206674Z     "response": {
+2026-11-07T20:24:23.4206883Z      "status": 202
+2026-11-07T20:24:23.4207083Z     }
+2026-11-07T20:24:23.4207265Z    },
+2026-11-07T20:24:23.4207493Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4207793Z    "scriptVersion": {
+2026-11-07T20:24:23.4208073Z     "id": "90667f0f-8b8f-41c0-b48b-573f9795069f"
+2026-11-07T20:24:23.4208353Z    },
+2026-11-07T20:24:23.4208546Z    "eventType": "fetch",
+2026-11-07T20:24:23.4208807Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4209063Z    "outcome": "ok",
+2026-11-07T20:24:23.4209277Z    "wallTimeMs": 350,
+2026-11-07T20:24:23.4209508Z    "cpuTimeMs": 34
+2026-11-07T20:24:23.4209714Z   },
+2026-11-07T20:24:23.4209901Z   "$metadata": {
+2026-11-07T20:24:23.4210139Z    "id": "01M6FGDM5J000000000000000F",
+2026-11-07T20:24:23.4210472Z    "requestId": "0153e8843667a7e03bb1fbb8fbd7a9b3",
+2026-11-07T20:24:23.4210799Z    "rayId": "a5479c1cef1d9c5e",
+2026-11-07T20:24:23.4211099Z    "traceId": "14b1054480d5663375ce00484868520f",
+2026-11-07T20:24:23.4211399Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4211674Z    "timestampNs": "1793669386418000000",
+2026-11-07T20:24:23.4212071Z    "service": "faceless-api",
+2026-11-07T20:24:23.4212318Z    "level": "info",
+2026-11-07T20:24:23.4212589Z    "message": "POST https://gankdat.com/mcp",
+2026-11-07T20:24:23.4212950Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4213264Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.4213548Z    "origin": "fetch",
+2026-11-07T20:24:23.4213768Z    "eventSize": 5555
+2026-11-07T20:24:23.4213976Z   }
+2026-11-07T20:24:23.4214160Z  },
+2026-11-07T20:24:23.4214464Z  {
+2026-11-07T20:24:23.4214649Z   "source": {
+2026-11-07T20:24:23.4214855Z    "level": "info",
+2026-11-07T20:24:23.4215119Z    "message": "POST https://gankdat.com/mcp"
+2026-11-07T20:24:23.4215409Z   },
+2026-11-07T20:24:23.4215634Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4215904Z   "timestamp": 1793669385373,
+2026-11-07T20:24:23.4216142Z   "$workers": {
+2026-11-07T20:24:23.4216356Z    "truncated": false,
+2026-11-07T20:24:23.4216577Z    "event": {
+2026-11-07T20:24:23.4216773Z     "request": {
+2026-11-07T20:24:23.4216972Z      "cf": {
+2026-11-07T20:24:23.4217181Z       "isEUCountry": false,
+2026-11-07T20:24:23.4217437Z       "tlsClientAuth": {
+2026-11-07T20:24:23.4217700Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.4218009Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.4218301Z        "certPresented": "0",
+2026-11-07T20:24:23.4218569Z        "certVerified": "NONE",
+2026-11-07T20:24:23.4218819Z        "certRevoked": "0",
+2026-11-07T20:24:23.4219058Z        "certIssuerDN": "",
+2026-11-07T20:24:23.4219301Z        "certSubjectDN": "",
+2026-11-07T20:24:23.4219577Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.4219868Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.4220154Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.4220437Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.4220695Z        "certSerial": "",
+2026-11-07T20:24:23.4220978Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.4221223Z        "certSKI": "",
+2026-11-07T20:24:23.4221448Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.4222043Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.4222413Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.4222712Z        "certNotBefore": "",
+2026-11-07T20:24:23.4222983Z        "certNotAfter": "",
+2026-11-07T20:24:23.4223223Z        "certRFC9440": "",
+2026-11-07T20:24:23.4223463Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.4223706Z       },
+2026-11-07T20:24:23.4223932Z       "httpProtocol": "HTTP/1.1",
+2026-11-07T20:24:23.4224240Z       "clientAcceptEncoding": "identity",
+2026-11-07T20:24:23.4224536Z       "requestPriority": "",
+2026-11-07T20:24:23.4224796Z       "requestHeaderNames": [
+2026-11-07T20:24:23.4225034Z        "Host",
+2026-11-07T20:24:23.4225237Z        "User-Agent",
+2026-11-07T20:24:23.4225465Z        "X-Anthropic-Client",
+2026-11-07T20:24:23.4225715Z        "Authorization",
+2026-11-07T20:24:23.4225954Z        "Content-Type",
+2026-11-07T20:24:23.4226210Z        "Accept",
+2026-11-07T20:24:23.4226418Z        "Mcp-Method",
+2026-11-07T20:24:23.4226643Z        "Content-Length",
+2026-11-07T20:24:23.4226884Z        "Accept-Encoding"
+2026-11-07T20:24:23.4227103Z       ],
+2026-11-07T20:24:23.4227294Z       "colo": "IAD",
+2026-11-07T20:24:23.4227549Z       "asOrganization": "Anthropic, PBC",
+2026-11-07T20:24:23.4227827Z       "country": "US",
+2026-11-07T20:24:23.4228052Z       "city": "Columbus",
+2026-11-07T20:24:23.4228283Z       "continent": "NA",
+2026-11-07T20:24:23.4228508Z       "region": "Ohio",
+2026-11-07T20:24:23.4228733Z       "regionCode": "OH",
+2026-11-07T20:24:23.4229003Z       "timezone": "America/New_York",
+2026-11-07T20:24:23.4229289Z       "longitude": "-82.99879",
+2026-11-07T20:24:23.4229535Z       "latitude": "39.96118",
+2026-11-07T20:24:23.4229777Z       "postalCode": "43215",
+2026-11-07T20:24:23.4230016Z       "metroCode": "535",
+2026-11-07T20:24:23.4230269Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.4230561Z       "tlsCipher": "AEAD-AES256-GCM-SHA384",
+2026-11-07T20:24:23.4230991Z       "tlsClientRandom": "iGKwuaiznYiGA/zmP/FwFUBU6oBg/XSFZB8D7dPH03s=",
+2026-11-07T20:24:23.4231480Z       "tlsClientCiphersSha1": "EPPWGkMwL/+VHBbDlFeYFF2S3W0=",
+2026-11-07T20:24:23.4232047Z       "tlsClientExtensionsSha1": "fBUOp6N9dJFknSeA48uo+Krt8gU=",
+2026-11-07T20:24:23.4232535Z       "tlsClientExtensionsSha1Le": "TPcgSqNoh+PRgH71acngAX9IU+A=",
+2026-11-07T20:24:23.4232944Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.4233582Z        "clientHandshake": "23631e105c896546411cfb2df41fc70115155ac4b58b71b75d063c53531e71212acba4d39d9d8c8f97cacead5e3abcf9",
+2026-11-07T20:24:23.4234655Z        "serverHandshake": "4210edb947abe1e37178c41e87be7141d71a763faf49576684cadf3dc3fa6bb4fc7251c7f83bbd72faa7572eab3937c9",
+2026-11-07T20:24:23.4235594Z        "clientFinished": "c64b37cfd1e1783afe83fe5fa774f0509eeb69b5e3a11328e9e3f787e67d738fdd0a0b808dda96e4ff04e9ddc442c4d3",
+2026-11-07T20:24:23.4236515Z        "serverFinished": "69681486f39c5586c7652e13b66598bc1ba2d8c99c986db6db2ba4f078f2cbe9a5d8f68c71a6a7f8ad5f58b92ea09a8f"
+2026-11-07T20:24:23.4237070Z       },
+2026-11-07T20:24:23.4237307Z       "tlsClientHelloLength": "508",
+2026-11-07T20:24:23.4237610Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.4237910Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.4238017Z       "clientTcpRtt": 10,
+2026-11-07T20:24:23.4238121Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.4238209Z       "asn": 396982,
+2026-11-07T20:24:23.4238302Z       "edgeL4": {
+2026-11-07T20:24:23.4238410Z        "deliveryRate": 283310
+2026-11-07T20:24:23.4238499Z       }
+2026-11-07T20:24:23.4238586Z      },
+2026-11-07T20:24:23.4238680Z      "headers": {
+2026-11-07T20:24:23.4238853Z       "accept": "application/json, text/event-stream",
+2026-11-07T20:24:23.4238986Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.4239119Z       "authorization": "********",
+2026-11-07T20:24:23.4239255Z       "cf-connecting-ip": "160.79.106.171",
+2026-11-07T20:24:23.4239363Z       "cf-ipcountry": "US",
+2026-11-07T20:24:23.4239488Z       "cf-ray": "a5479c138d152290",
+2026-11-07T20:24:23.4239755Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.4240024Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.4240158Z       "content-length": "323",
+2026-11-07T20:24:23.4240294Z       "content-type": "application/json",
+2026-11-07T20:24:23.4240402Z       "host": "gankdat.com",
+2026-11-07T20:24:23.4240529Z       "mcp-method": "initialize",
+2026-11-07T20:24:23.4240650Z       "user-agent": "Claude-User",
+2026-11-07T20:24:23.4240790Z       "x-anthropic-client": "ClaudeCode",
+2026-11-07T20:24:23.4240925Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.4241041Z       "x-real-ip": "160.79.106.171"
+2026-11-07T20:24:23.4241129Z      },
+2026-11-07T20:24:23.4241229Z      "method": "POST",
+2026-11-07T20:24:23.4241366Z      "url": "https://gankdat.com/mcp"
+2026-11-07T20:24:23.4241454Z     },
+2026-11-07T20:24:23.4241553Z     "path": "/mcp",
+2026-11-07T20:24:23.4241643Z     "response": {
+2026-11-07T20:24:23.4241740Z      "status": 200
+2026-11-07T20:24:23.4241922Z     }
+2026-11-07T20:24:23.4242006Z    },
+2026-11-07T20:24:23.4242142Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4242242Z    "scriptVersion": {
+2026-11-07T20:24:23.4242391Z     "id": "90667f0f-8b8f-41c0-b48b-573f9795069f"
+2026-11-07T20:24:23.4242478Z    },
+2026-11-07T20:24:23.4242580Z    "eventType": "fetch",
+2026-11-07T20:24:23.4242707Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4242805Z    "outcome": "ok",
+2026-11-07T20:24:23.4242902Z    "wallTimeMs": 911,
+2026-11-07T20:24:23.4242993Z    "cpuTimeMs": 27
+2026-11-07T20:24:23.4243084Z   },
+2026-11-07T20:24:23.4243177Z   "$metadata": {
+2026-11-07T20:24:23.4243300Z    "id": "01M6FGDK4X000000000000000R",
+2026-11-07T20:24:23.4243465Z    "requestId": "023b78fa1511db3127fe459bb8867fed",
+2026-11-07T20:24:23.4243586Z    "rayId": "a5479c138d152290",
+2026-11-07T20:24:23.4243735Z    "traceId": "489c0d643a6ed573d277441ef2cff7e5",
+2026-11-07T20:24:23.4243839Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4243967Z    "timestampNs": "1793669385373000000",
+2026-11-07T20:24:23.4244072Z    "service": "faceless-api",
+2026-11-07T20:24:23.4244167Z    "level": "info",
+2026-11-07T20:24:23.4244325Z    "message": "POST https://gankdat.com/mcp",
+2026-11-07T20:24:23.4244470Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4244577Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.4244671Z    "origin": "fetch",
+2026-11-07T20:24:23.4244761Z    "eventSize": 5414
+2026-11-07T20:24:23.4244849Z   }
+2026-11-07T20:24:23.4244936Z  },
+2026-11-07T20:24:23.4245014Z  {
+2026-11-07T20:24:23.4245229Z   "source": {
+2026-11-07T20:24:23.4245323Z    "level": "info",
+2026-11-07T20:24:23.4245490Z    "requestId": "f908585d-eccc-4f55-a959-6ad4730e17e6",
+2026-11-07T20:24:23.4245588Z    "method": "POST",
+2026-11-07T20:24:23.4245683Z    "path": "/mcp",
+2026-11-07T20:24:23.4245833Z    "keyId": "f19e015f-5042-47d4-a086-8ab54df4af09",
+2026-11-07T20:24:23.4245958Z    "userAgent": "Claude-User",
+2026-11-07T20:24:23.4246053Z    "status": 200,
+2026-11-07T20:24:23.4246143Z    "latencyMs": 273
+2026-11-07T20:24:23.4246231Z   },
+2026-11-07T20:24:23.4246368Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4246466Z   "timestamp": 1793663585109,
+2026-11-07T20:24:23.4246558Z   "$workers": {
+2026-11-07T20:24:23.4246657Z    "truncated": false,
+2026-11-07T20:24:23.4246779Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4246880Z    "scriptVersion": {
+2026-11-07T20:24:23.4247026Z     "id": "90667f0f-8b8f-41c0-b48b-573f9795069f"
+2026-11-07T20:24:23.4247106Z    },
+2026-11-07T20:24:23.4247207Z    "eventType": "fetch",
+2026-11-07T20:24:23.4247344Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4247431Z    "event": {
+2026-11-07T20:24:23.4247524Z     "request": {
+2026-11-07T20:24:23.4247624Z      "method": "POST",
+2026-11-07T20:24:23.4247760Z      "url": "https://gankdat.com/mcp",
+2026-11-07T20:24:23.4247857Z      "path": "/mcp"
+2026-11-07T20:24:23.4247942Z     }
+2026-11-07T20:24:23.4248022Z    }
+2026-11-07T20:24:23.4248108Z   },
+2026-11-07T20:24:23.4248206Z   "$metadata": {
+2026-11-07T20:24:23.4248483Z    "id": "01M6FAWJTN000000000000000D",
+2026-11-07T20:24:23.4248651Z    "requestId": "7c7d875f8004fe39a04ecd88e32891bd",
+2026-11-07T20:24:23.4248774Z    "rayId": "a5470e7bdf954709",
+2026-11-07T20:24:23.4248917Z    "traceId": "13d35a15737362aa20433bc3bf8a9505",
+2026-11-07T20:24:23.4249041Z    "spanId": "a644b4d9a836c758",
+2026-11-07T20:24:23.4249147Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4249273Z    "timestampNs": "1793663585109000000",
+2026-11-07T20:24:23.4249379Z    "service": "faceless-api",
+2026-11-07T20:24:23.4249479Z    "level": "info",
+2026-11-07T20:24:23.4249624Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4249726Z    "type": "cf-worker",
+2026-11-07T20:24:23.4249822Z    "origin": "fetch",
+2026-11-07T20:24:23.4249914Z    "eventSize": 785
+2026-11-07T20:24:23.4250002Z   }
+2026-11-07T20:24:23.4250089Z  },
+2026-11-07T20:24:23.4250168Z  {
+2026-11-07T20:24:23.4250260Z   "source": {
+2026-11-07T20:24:23.4250354Z    "level": "info",
+2026-11-07T20:24:23.4250686Z    "message": "GET https://gankdat.com/userfiles?path=..%2F..%2F..%2F..%2Fproc%2Fself%2Fenviron"
+2026-11-07T20:24:23.4250771Z   },
+2026-11-07T20:24:23.4250904Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4251013Z   "timestamp": 1793652682558,
+2026-11-07T20:24:23.4251119Z   "$workers": {
+2026-11-07T20:24:23.4251217Z    "truncated": false,
+2026-11-07T20:24:23.4251300Z    "event": {
+2026-11-07T20:24:23.4251400Z     "request": {
+2026-11-07T20:24:23.4251498Z      "cf": {
+2026-11-07T20:24:23.4251598Z       "isEUCountry": false,
+2026-11-07T20:24:23.4251712Z       "tlsClientAuth": {
+2026-11-07T20:24:23.4251942Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.4252080Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.4252187Z        "certPresented": "0",
+2026-11-07T20:24:23.4252313Z        "certVerified": "NONE",
+2026-11-07T20:24:23.4252410Z        "certRevoked": "0",
+2026-11-07T20:24:23.4252509Z        "certIssuerDN": "",
+2026-11-07T20:24:23.4252611Z        "certSubjectDN": "",
+2026-11-07T20:24:23.4252739Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.4252867Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.4252991Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.4253112Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.4253211Z        "certSerial": "",
+2026-11-07T20:24:23.4253333Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.4253423Z        "certSKI": "",
+2026-11-07T20:24:23.4253525Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.4253652Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.4253907Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.4254009Z        "certNotBefore": "",
+2026-11-07T20:24:23.4254109Z        "certNotAfter": "",
+2026-11-07T20:24:23.4254204Z        "certRFC9440": "",
+2026-11-07T20:24:23.4254311Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.4254395Z       },
+2026-11-07T20:24:23.4254521Z       "httpProtocol": "HTTP/2",
+2026-11-07T20:24:23.4254659Z       "clientAcceptEncoding": "gzip",
+2026-11-07T20:24:23.4254907Z       "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+2026-11-07T20:24:23.4255009Z       "requestHeaderNames": [
+2026-11-07T20:24:23.4255107Z        ":authority",
+2026-11-07T20:24:23.4255201Z        ":method",
+2026-11-07T20:24:23.4255288Z        ":path",
+2026-11-07T20:24:23.4255377Z        ":scheme",
+2026-11-07T20:24:23.4255477Z        "x-originating-ip",
+2026-11-07T20:24:23.4255573Z        "user-agent",
+2026-11-07T20:24:23.4255665Z        "accept",
+2026-11-07T20:24:23.4255763Z        "x-forwarded-for",
+2026-11-07T20:24:23.4255898Z        "x-middleware-subrequest",
+2026-11-07T20:24:23.4255999Z        "x-nextjs-data",
+2026-11-07T20:24:23.4256088Z        "forwarded",
+2026-11-07T20:24:23.4256190Z        "true-client-ip",
+2026-11-07T20:24:23.4256287Z        "x-remote-ip",
+2026-11-07T20:24:23.4256386Z        "x-proxyuser-ip",
+2026-11-07T20:24:23.4256521Z        "x-custom-ip-authorization",
+2026-11-07T20:24:23.4256627Z        "cluster-client-ip",
+2026-11-07T20:24:23.4256716Z        "x-real-ip",
+2026-11-07T20:24:23.4256815Z        "x-client-ip",
+2026-11-07T20:24:23.4257029Z        "x-remote-addr",
+2026-11-07T20:24:23.4257130Z        "accept-encoding"
+2026-11-07T20:24:23.4257221Z       ],
+2026-11-07T20:24:23.4257316Z       "colo": "SIN",
+2026-11-07T20:24:23.4257445Z       "asOrganization": "Google LLC",
+2026-11-07T20:24:23.4257546Z       "country": "SG",
+2026-11-07T20:24:23.4257649Z       "city": "Singapore",
+2026-11-07T20:24:23.4257744Z       "continent": "AS",
+2026-11-07T20:24:23.4257871Z       "timezone": "Asia/Singapore",
+2026-11-07T20:24:23.4258047Z       "longitude": "103.85007",
+2026-11-07T20:24:23.4258140Z       "latitude": "1.28967",
+2026-11-07T20:24:23.4258249Z       "postalCode": "018989",
+2026-11-07T20:24:23.4258370Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.4258513Z       "tlsCipher": "AEAD-AES128-GCM-SHA256",
+2026-11-07T20:24:23.4258760Z       "tlsClientRandom": "gXS2epIPiujmjR/ni3I6Rkp9M6Nbl0bQAxT1kuh80GI=",
+2026-11-07T20:24:23.4258965Z       "tlsClientCiphersSha1": "sQ7eseNxgre8sddpKo+nF01osZc=",
+2026-11-07T20:24:23.4259181Z       "tlsClientExtensionsSha1": "FhPLQjNhH6vyFdXcwpxFCWlToww=",
+2026-11-07T20:24:23.4259406Z       "tlsClientExtensionsSha1Le": "WKlppw1DJs7qIxCVjatbR4Rgdh0=",
+2026-11-07T20:24:23.4259538Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.4259844Z        "clientHandshake": "18485737542d262be1178563d24b085689d42508be472622c21549cabb88f08c",
+2026-11-07T20:24:23.4260147Z        "serverHandshake": "9764124c11e0abb2f328347e94e8631823f127df1fba88d0ae1d28ba3d0496a3",
+2026-11-07T20:24:23.4260450Z        "clientFinished": "c8ce55354657423347e18a510c8b745ee62478290c8a8c082edea0071f8bf181",
+2026-11-07T20:24:23.4260756Z        "serverFinished": "963ac5dc3fddabcf6b295777b1541ebaa1df18df6475e44484d2891d6acbd858"
+2026-11-07T20:24:23.4260838Z       },
+2026-11-07T20:24:23.4260973Z       "tlsClientHelloLength": "1776",
+2026-11-07T20:24:23.4261100Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.4261234Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.4261336Z       "clientTcpRtt": 1,
+2026-11-07T20:24:23.4261445Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.4261534Z       "asn": 396982,
+2026-11-07T20:24:23.4261627Z       "edgeL4": {
+2026-11-07T20:24:23.4261749Z        "deliveryRate": 20648044
+2026-11-07T20:24:23.4261930Z       }
+2026-11-07T20:24:23.4262018Z      },
+2026-11-07T20:24:23.4262110Z      "headers": {
+2026-11-07T20:24:23.4262203Z       "accept": "*/*",
+2026-11-07T20:24:23.4262333Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.4262471Z       "cf-connecting-ip": "35.187.238.249",
+2026-11-07T20:24:23.4262694Z       "cf-ipcountry": "SG",
+2026-11-07T20:24:23.4262817Z       "cf-ray": "a5460451fa4cf8e4",
+2026-11-07T20:24:23.4262959Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.4263092Z       "cluster-client-ip": "192.168.71.244",
+2026-11-07T20:24:23.4263218Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.4263346Z       "forwarded": "for=192.168.71.244",
+2026-11-07T20:24:23.4263445Z       "host": "gankdat.com",
+2026-11-07T20:24:23.4263578Z       "true-client-ip": "192.168.71.244",
+2026-11-07T20:24:23.4264027Z       "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-User/1.0; +claudebot@anthropic.com)",
+2026-11-07T20:24:23.4264146Z       "x-client-ip": "192.168.71.244",
+2026-11-07T20:24:23.4264301Z       "x-custom-ip-authorization": "REDACTED",
+2026-11-07T20:24:23.4264433Z       "x-forwarded-for": "192.168.71.244",
+2026-11-07T20:24:23.4264556Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.4265300Z       "x-middleware-subrequest": "src/middleware:nowaf:src/middleware:src/middleware:src/middleware:src/middleware:middleware:middleware:nowaf:middleware:middleware:middleware:pages/_middleware",
+2026-11-07T20:24:23.4265405Z       "x-nextjs-data": "1",
+2026-11-07T20:24:23.4265542Z       "x-originating-ip": "192.168.71.244",
+2026-11-07T20:24:23.4265668Z       "x-proxyuser-ip": "192.168.71.244",
+2026-11-07T20:24:23.4265793Z       "x-real-ip": "35.187.238.249",
+2026-11-07T20:24:23.4265921Z       "x-remote-addr": "192.168.71.244",
+2026-11-07T20:24:23.4266149Z       "x-remote-ip": "192.168.71.244"
+2026-11-07T20:24:23.4266240Z      },
+2026-11-07T20:24:23.4266341Z      "method": "GET",
+2026-11-07T20:24:23.4266633Z      "url": "https://gankdat.com/userfiles?path=..%2F..%2F..%2F..%2Fproc%2Fself%2Fenviron"
+2026-11-07T20:24:23.4266720Z     },
+2026-11-07T20:24:23.4266824Z     "path": "/userfiles",
+2026-11-07T20:24:23.4266913Z     "search": {
+2026-11-07T20:24:23.4267052Z      "path": "../../../../proc/self/environ"
+2026-11-07T20:24:23.4267145Z     },
+2026-11-07T20:24:23.4267235Z     "response": {
+2026-11-07T20:24:23.4267331Z      "status": 404
+2026-11-07T20:24:23.4267418Z     }
+2026-11-07T20:24:23.4267498Z    },
+2026-11-07T20:24:23.4267628Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4267729Z    "scriptVersion": {
+2026-11-07T20:24:23.4267874Z     "id": "90667f0f-8b8f-41c0-b48b-573f9795069f"
+2026-11-07T20:24:23.4267959Z    },
+2026-11-07T20:24:23.4268059Z    "eventType": "fetch",
+2026-11-07T20:24:23.4268185Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4268289Z    "outcome": "ok",
+2026-11-07T20:24:23.4268389Z    "wallTimeMs": 1,
+2026-11-07T20:24:23.4268744Z    "cpuTimeMs": 0
+2026-11-07T20:24:23.4268864Z   },
+2026-11-07T20:24:23.4269022Z   "$metadata": {
+2026-11-07T20:24:23.4269217Z    "id": "01M6F0FVSY0000000000000006",
+2026-11-07T20:24:23.4269398Z    "requestId": "6d72cc4dff46d6a9d15261922dbf4c54",
+2026-11-07T20:24:23.4269650Z    "rayId": "a5460451fa4cf8e4",
+2026-11-07T20:24:23.4269904Z    "traceId": "2ac0a716d15883762dc3d71aaffbf5e8",
+2026-11-07T20:24:23.4270058Z    "trigger": "GET /userfiles",
+2026-11-07T20:24:23.4270252Z    "timestampNs": "1793652682558000000",
+2026-11-07T20:24:23.4270454Z    "service": "faceless-api",
+2026-11-07T20:24:23.4270592Z    "level": "info",
+2026-11-07T20:24:23.4270986Z    "message": "GET https://gankdat.com/userfiles?path=..%2F..%2F..%2F..%2Fproc%2Fself%2Fenviron",
+2026-11-07T20:24:23.4271204Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4271359Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.4271533Z    "origin": "fetch",
+2026-11-07T20:24:23.4271744Z    "eventSize": 6770
+2026-11-07T20:24:23.4272132Z   }
+2026-11-07T20:24:23.4272260Z  },
+2026-11-07T20:24:23.4272394Z  {
+2026-11-07T20:24:23.4272631Z   "source": {
+2026-11-07T20:24:23.4272756Z    "level": "info",
+2026-11-07T20:24:23.4273002Z    "message": "GET https://gankdat.com/.env.preprod"
+2026-11-07T20:24:23.4273152Z   },
+2026-11-07T20:24:23.4273300Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4273720Z   "timestamp": 1793652682163,
+2026-11-07T20:24:23.4273883Z   "$workers": {
+2026-11-07T20:24:23.4274009Z    "truncated": false,
+2026-11-07T20:24:23.4274160Z    "event": {
+2026-11-07T20:24:23.4274346Z     "request": {
+2026-11-07T20:24:23.4274481Z      "cf": {
+2026-11-07T20:24:23.4274639Z       "isEUCountry": false,
+2026-11-07T20:24:23.4322654Z       "tlsClientAuth": {
+2026-11-07T20:24:23.4322992Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.4323282Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.4323517Z        "certPresented": "0",
+2026-11-07T20:24:23.4323646Z        "certVerified": "NONE",
+2026-11-07T20:24:23.4323748Z        "certRevoked": "0",
+2026-11-07T20:24:23.4323848Z        "certIssuerDN": "",
+2026-11-07T20:24:23.4323945Z        "certSubjectDN": "",
+2026-11-07T20:24:23.4324071Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.4324196Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.4324315Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.4324447Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.4324542Z        "certSerial": "",
+2026-11-07T20:24:23.4324661Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.4324754Z        "certSKI": "",
+2026-11-07T20:24:23.4324852Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.4324974Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.4325101Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.4325200Z        "certNotBefore": "",
+2026-11-07T20:24:23.4325295Z        "certNotAfter": "",
+2026-11-07T20:24:23.4325390Z        "certRFC9440": "",
+2026-11-07T20:24:23.4325695Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.4325790Z       },
+2026-11-07T20:24:23.4325915Z       "httpProtocol": "HTTP/2",
+2026-11-07T20:24:23.4326050Z       "clientAcceptEncoding": "gzip",
+2026-11-07T20:24:23.4326300Z       "requestPriority": "weight=16;exclusive=0;group=0;group-weight=0",
+2026-11-07T20:24:23.4326411Z       "requestHeaderNames": [
+2026-11-07T20:24:23.4326505Z        ":authority",
+2026-11-07T20:24:23.4326590Z        ":method",
+2026-11-07T20:24:23.4326686Z        ":path",
+2026-11-07T20:24:23.4326776Z        ":scheme",
+2026-11-07T20:24:23.4326877Z        "x-proxyuser-ip",
+2026-11-07T20:24:23.4326977Z        "x-nextjs-data",
+2026-11-07T20:24:23.4327066Z        "accept",
+2026-11-07T20:24:23.4327156Z        "x-real-ip",
+2026-11-07T20:24:23.4327259Z        "x-originating-ip",
+2026-11-07T20:24:23.4327356Z        "x-remote-addr",
+2026-11-07T20:24:23.4327458Z        "cluster-client-ip",
+2026-11-07T20:24:23.4327554Z        "user-agent",
+2026-11-07T20:24:23.4327657Z        "x-client-ip",
+2026-11-07T20:24:23.4327785Z        "x-middleware-subrequest",
+2026-11-07T20:24:23.4327876Z        "forwarded",
+2026-11-07T20:24:23.4327968Z        "x-remote-ip",
+2026-11-07T20:24:23.4328064Z        "x-forwarded-for",
+2026-11-07T20:24:23.4328163Z        "true-client-ip",
+2026-11-07T20:24:23.4328296Z        "x-custom-ip-authorization",
+2026-11-07T20:24:23.4328393Z        "accept-encoding"
+2026-11-07T20:24:23.4328478Z       ],
+2026-11-07T20:24:23.4328575Z       "colo": "SIN",
+2026-11-07T20:24:23.4328709Z       "asOrganization": "Google LLC",
+2026-11-07T20:24:23.4328808Z       "country": "SG",
+2026-11-07T20:24:23.4328911Z       "city": "Singapore",
+2026-11-07T20:24:23.4329007Z       "continent": "AS",
+2026-11-07T20:24:23.4329137Z       "timezone": "Asia/Singapore",
+2026-11-07T20:24:23.4329257Z       "longitude": "103.85007",
+2026-11-07T20:24:23.4329357Z       "latitude": "1.28967",
+2026-11-07T20:24:23.4329464Z       "postalCode": "018989",
+2026-11-07T20:24:23.4329590Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.4329738Z       "tlsCipher": "AEAD-AES128-GCM-SHA256",
+2026-11-07T20:24:23.4329993Z       "tlsClientRandom": "gXS2epIPiujmjR/ni3I6Rkp9M6Nbl0bQAxT1kuh80GI=",
+2026-11-07T20:24:23.4330200Z       "tlsClientCiphersSha1": "sQ7eseNxgre8sddpKo+nF01osZc=",
+2026-11-07T20:24:23.4330411Z       "tlsClientExtensionsSha1": "FhPLQjNhH6vyFdXcwpxFCWlToww=",
+2026-11-07T20:24:23.4330636Z       "tlsClientExtensionsSha1Le": "WKlppw1DJs7qIxCVjatbR4Rgdh0=",
+2026-11-07T20:24:23.4330891Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.4331197Z        "clientHandshake": "18485737542d262be1178563d24b085689d42508be472622c21549cabb88f08c",
+2026-11-07T20:24:23.4331503Z        "serverHandshake": "9764124c11e0abb2f328347e94e8631823f127df1fba88d0ae1d28ba3d0496a3",
+2026-11-07T20:24:23.4332003Z        "clientFinished": "c8ce55354657423347e18a510c8b745ee62478290c8a8c082edea0071f8bf181",
+2026-11-07T20:24:23.4332355Z        "serverFinished": "963ac5dc3fddabcf6b295777b1541ebaa1df18df6475e44484d2891d6acbd858"
+2026-11-07T20:24:23.4332450Z       },
+2026-11-07T20:24:23.4332594Z       "tlsClientHelloLength": "1776",
+2026-11-07T20:24:23.4332729Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.4332869Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.4332975Z       "clientTcpRtt": 1,
+2026-11-07T20:24:23.4333080Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.4333173Z       "asn": 396982,
+2026-11-07T20:24:23.4333268Z       "edgeL4": {
+2026-11-07T20:24:23.4333395Z        "deliveryRate": 10284196
+2026-11-07T20:24:23.4333485Z       }
+2026-11-07T20:24:23.4333571Z      },
+2026-11-07T20:24:23.4333664Z      "headers": {
+2026-11-07T20:24:23.4333765Z       "accept": "*/*",
+2026-11-07T20:24:23.4333892Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.4334026Z       "cf-connecting-ip": "35.187.238.249",
+2026-11-07T20:24:23.4334128Z       "cf-ipcountry": "SG",
+2026-11-07T20:24:23.4334250Z       "cf-ray": "a546044f8d7ef8e4",
+2026-11-07T20:24:23.4334389Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.4334657Z       "cluster-client-ip": "100.125.125.180",
+2026-11-07T20:24:23.4334790Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.4334921Z       "forwarded": "for=100.125.125.180",
+2026-11-07T20:24:23.4335022Z       "host": "gankdat.com",
+2026-11-07T20:24:23.4335153Z       "true-client-ip": "100.125.125.180",
+2026-11-07T20:24:23.4335605Z       "user-agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-User/1.0; +claudebot@anthropic.com)",
+2026-11-07T20:24:23.4335735Z       "x-client-ip": "100.125.125.180",
+2026-11-07T20:24:23.4335891Z       "x-custom-ip-authorization": "REDACTED",
+2026-11-07T20:24:23.4336024Z       "x-forwarded-for": "100.125.125.180",
+2026-11-07T20:24:23.4336150Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.4336886Z       "x-middleware-subrequest": "src/middleware:nowaf:src/middleware:src/middleware:src/middleware:src/middleware:middleware:middleware:nowaf:middleware:middleware:middleware:pages/_middleware",
+2026-11-07T20:24:23.4336999Z       "x-nextjs-data": "1",
+2026-11-07T20:24:23.4337135Z       "x-originating-ip": "100.125.125.180",
+2026-11-07T20:24:23.4337270Z       "x-proxyuser-ip": "100.125.125.180",
+2026-11-07T20:24:23.4337392Z       "x-real-ip": "35.187.238.249",
+2026-11-07T20:24:23.4337517Z       "x-remote-addr": "100.125.125.180",
+2026-11-07T20:24:23.4337647Z       "x-remote-ip": "100.125.125.180"
+2026-11-07T20:24:23.4337733Z      },
+2026-11-07T20:24:23.4337826Z      "method": "GET",
+2026-11-07T20:24:23.4337990Z      "url": "https://gankdat.com/.env.preprod"
+2026-11-07T20:24:23.4338079Z     },
+2026-11-07T20:24:23.4338183Z     "path": "/.env.preprod",
+2026-11-07T20:24:23.4338278Z     "response": {
+2026-11-07T20:24:23.4338374Z      "status": 404
+2026-11-07T20:24:23.4338455Z     }
+2026-11-07T20:24:23.4338541Z    },
+2026-11-07T20:24:23.4338672Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4338767Z    "scriptVersion": {
+2026-11-07T20:24:23.4338919Z     "id": "90667f0f-8b8f-41c0-b48b-573f9795069f"
+2026-11-07T20:24:23.4339006Z    },
+2026-11-07T20:24:23.4339109Z    "eventType": "fetch",
+2026-11-07T20:24:23.4339239Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4339337Z    "outcome": "ok",
+2026-11-07T20:24:23.4339428Z    "wallTimeMs": 2,
+2026-11-07T20:24:23.4339530Z    "cpuTimeMs": 0
+2026-11-07T20:24:23.4339615Z   },
+2026-11-07T20:24:23.4339704Z   "$metadata": {
+2026-11-07T20:24:23.4339835Z    "id": "01M6F0FVDK0000000000000006",
+2026-11-07T20:24:23.4339999Z    "requestId": "9c9ea65fa9a83b82082217473ef94ff7",
+2026-11-07T20:24:23.4340321Z    "rayId": "a546044f8d7ef8e4",
+2026-11-07T20:24:23.4340477Z    "traceId": "e449351bf6dfa0671d064e25f8e90d56",
+2026-11-07T20:24:23.4340608Z    "trigger": "GET /.env.preprod",
+2026-11-07T20:24:23.4340735Z    "timestampNs": "1793652682163000000",
+2026-11-07T20:24:23.4340843Z    "service": "faceless-api",
+2026-11-07T20:24:23.4340938Z    "level": "info",
+2026-11-07T20:24:23.4341111Z    "message": "GET https://gankdat.com/.env.preprod",
+2026-11-07T20:24:23.4341270Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4341377Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.4341495Z    "origin": "fetch",
+2026-11-07T20:24:23.4341612Z    "eventSize": 6575
+2026-11-07T20:24:23.4341698Z   }
+2026-11-07T20:24:23.4341885Z  },
+2026-11-07T20:24:23.4341980Z  {
+2026-11-07T20:24:23.4342073Z   "source": {
+2026-11-07T20:24:23.4342162Z    "level": "info",
+2026-11-07T20:24:23.4342337Z    "requestId": "7a8870ed-72db-4f03-8271-d8d9554ab3ca",
+2026-11-07T20:24:23.4342434Z    "method": "POST",
+2026-11-07T20:24:23.4342533Z    "path": "/mcp",
+2026-11-07T20:24:23.4342694Z    "keyId": "f19e015f-5042-47d4-a086-8ab54df4af09",
+2026-11-07T20:24:23.4342823Z    "userAgent": "Claude-User",
+2026-11-07T20:24:23.4342914Z    "status": 200,
+2026-11-07T20:24:23.4343014Z    "latencyMs": 1679
+2026-11-07T20:24:23.4343103Z   },
+2026-11-07T20:24:23.4343236Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4343343Z   "timestamp": 1793643298455,
+2026-11-07T20:24:23.4343441Z   "$workers": {
+2026-11-07T20:24:23.4343655Z    "truncated": false,
+2026-11-07T20:24:23.4343794Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4343900Z    "scriptVersion": {
+2026-11-07T20:24:23.4344053Z     "id": "abcb3e1f-ec59-4b0f-8859-99b0317acdb8"
+2026-11-07T20:24:23.4344144Z    },
+2026-11-07T20:24:23.4344248Z    "eventType": "fetch",
+2026-11-07T20:24:23.4344375Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4344469Z    "event": {
+2026-11-07T20:24:23.4344562Z     "request": {
+2026-11-07T20:24:23.4344657Z      "method": "POST",
+2026-11-07T20:24:23.4344806Z      "url": "https://gankdat.com/mcp",
+2026-11-07T20:24:23.4344901Z      "path": "/mcp"
+2026-11-07T20:24:23.4344984Z     }
+2026-11-07T20:24:23.4345066Z    }
+2026-11-07T20:24:23.4345150Z   },
+2026-11-07T20:24:23.4345237Z   "$metadata": {
+2026-11-07T20:24:23.4345364Z    "id": "01M6EQHFMQ000000000000000P",
+2026-11-07T20:24:23.4345522Z    "requestId": "74b7266735035637e129498a1e393197",
+2026-11-07T20:24:23.4345642Z    "rayId": "a5451f2bbbfd91dd",
+2026-11-07T20:24:23.4345797Z    "traceId": "4a95d41991148b8918e28e7b96056608",
+2026-11-07T20:24:23.4345918Z    "spanId": "f0a7598f627d77c5",
+2026-11-07T20:24:23.4346019Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4346149Z    "timestampNs": "1793643298455000000",
+2026-11-07T20:24:23.4346254Z    "service": "faceless-api",
+2026-11-07T20:24:23.4346343Z    "level": "info",
+2026-11-07T20:24:23.4346493Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4346592Z    "type": "cf-worker",
+2026-11-07T20:24:23.4346687Z    "origin": "fetch",
+2026-11-07T20:24:23.4346787Z    "eventSize": 785
+2026-11-07T20:24:23.4346874Z   }
+2026-11-07T20:24:23.4346953Z  },
+2026-11-07T20:24:23.4347038Z  {
+2026-11-07T20:24:23.4347127Z   "source": {
+2026-11-07T20:24:23.4347216Z    "level": "info",
+2026-11-07T20:24:23.4347386Z    "requestId": "9a1b7f68-8cd2-4e62-9fa0-718cc89f43cc",
+2026-11-07T20:24:23.4347492Z    "method": "POST",
+2026-11-07T20:24:23.4347580Z    "path": "/mcp",
+2026-11-07T20:24:23.4347731Z    "keyId": "f19e015f-5042-47d4-a086-8ab54df4af09",
+2026-11-07T20:24:23.4347860Z    "userAgent": "Claude-User",
+2026-11-07T20:24:23.4347949Z    "status": 200,
+2026-11-07T20:24:23.4348055Z    "latencyMs": 3003
+2026-11-07T20:24:23.4348142Z   },
+2026-11-07T20:24:23.4348272Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4348379Z   "timestamp": 1793642519819,
+2026-11-07T20:24:23.4348472Z   "$workers": {
+2026-11-07T20:24:23.4348566Z    "truncated": false,
+2026-11-07T20:24:23.4348694Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4348916Z    "scriptVersion": {
+2026-11-07T20:24:23.4349062Z     "id": "abcb3e1f-ec59-4b0f-8859-99b0317acdb8"
+2026-11-07T20:24:23.4349150Z    },
+2026-11-07T20:24:23.4349245Z    "eventType": "fetch",
+2026-11-07T20:24:23.4349373Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4349463Z    "event": {
+2026-11-07T20:24:23.4349551Z     "request": {
+2026-11-07T20:24:23.4349649Z      "method": "POST",
+2026-11-07T20:24:23.4349799Z      "url": "https://gankdat.com/mcp",
+2026-11-07T20:24:23.4349890Z      "path": "/mcp"
+2026-11-07T20:24:23.4349979Z     }
+2026-11-07T20:24:23.4350070Z    }
+2026-11-07T20:24:23.4350152Z   },
+2026-11-07T20:24:23.4350248Z   "$metadata": {
+2026-11-07T20:24:23.4350379Z    "id": "01M6EPSQ8B000000000000000D",
+2026-11-07T20:24:23.4350530Z    "requestId": "62f3122b9262a4552d0a45e096342fcc",
+2026-11-07T20:24:23.4350652Z    "rayId": "a5450c2119ed3397",
+2026-11-07T20:24:23.4350805Z    "traceId": "e6ca30366036e2f675f6a1174e36fae8",
+2026-11-07T20:24:23.4350922Z    "spanId": "feb1b03694592046",
+2026-11-07T20:24:23.4351035Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4351167Z    "timestampNs": "1793642519819000000",
+2026-11-07T20:24:23.4351269Z    "service": "faceless-api",
+2026-11-07T20:24:23.4351363Z    "level": "info",
+2026-11-07T20:24:23.4351513Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4351607Z    "type": "cf-worker",
+2026-11-07T20:24:23.4351705Z    "origin": "fetch",
+2026-11-07T20:24:23.4351900Z    "eventSize": 785
+2026-11-07T20:24:23.4351986Z   }
+2026-11-07T20:24:23.4352073Z  },
+2026-11-07T20:24:23.4352276Z  {
+2026-11-07T20:24:23.4352370Z   "source": {
+2026-11-07T20:24:23.4352466Z    "level": "info",
+2026-11-07T20:24:23.4352623Z    "message": "POST https://gankdat.com/mcp"
+2026-11-07T20:24:23.4352705Z   },
+2026-11-07T20:24:23.4352837Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4352940Z   "timestamp": 1793626672304,
+2026-11-07T20:24:23.4353028Z   "$workers": {
+2026-11-07T20:24:23.4353127Z    "truncated": false,
+2026-11-07T20:24:23.4353219Z    "event": {
+2026-11-07T20:24:23.4353313Z     "request": {
+2026-11-07T20:24:23.4353404Z      "cf": {
+2026-11-07T20:24:23.4353507Z       "isEUCountry": false,
+2026-11-07T20:24:23.4353604Z       "tlsClientAuth": {
+2026-11-07T20:24:23.4353735Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.4353877Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.4353978Z        "certPresented": "0",
+2026-11-07T20:24:23.4354099Z        "certVerified": "NONE",
+2026-11-07T20:24:23.4354198Z        "certRevoked": "0",
+2026-11-07T20:24:23.4354297Z        "certIssuerDN": "",
+2026-11-07T20:24:23.4354398Z        "certSubjectDN": "",
+2026-11-07T20:24:23.4354527Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.4354650Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.4354775Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.4354911Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.4355013Z        "certSerial": "",
+2026-11-07T20:24:23.4355134Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.4355231Z        "certSKI": "",
+2026-11-07T20:24:23.4355333Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.4355459Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.4355592Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.4355688Z        "certNotBefore": "",
+2026-11-07T20:24:23.4355786Z        "certNotAfter": "",
+2026-11-07T20:24:23.4355880Z        "certRFC9440": "",
+2026-11-07T20:24:23.4355977Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.4356065Z       },
+2026-11-07T20:24:23.4356188Z       "httpProtocol": "HTTP/1.1",
+2026-11-07T20:24:23.4356328Z       "clientAcceptEncoding": "identity",
+2026-11-07T20:24:23.4356435Z       "requestPriority": "",
+2026-11-07T20:24:23.4356542Z       "requestHeaderNames": [
+2026-11-07T20:24:23.4356652Z        "Host",
+2026-11-07T20:24:23.4356750Z        "User-Agent",
+2026-11-07T20:24:23.4356874Z        "MCP-Protocol-Version",
+2026-11-07T20:24:23.4356969Z        "Authorization",
+2026-11-07T20:24:23.4357069Z        "Content-Type",
+2026-11-07T20:24:23.4357161Z        "Accept",
+2026-11-07T20:24:23.4357374Z        "Mcp-Method",
+2026-11-07T20:24:23.4357480Z        "Content-Length",
+2026-11-07T20:24:23.4357584Z        "Accept-Encoding"
+2026-11-07T20:24:23.4357666Z       ],
+2026-11-07T20:24:23.4357763Z       "colo": "IAD",
+2026-11-07T20:24:23.4357904Z       "asOrganization": "Anthropic, PBC",
+2026-11-07T20:24:23.4357997Z       "country": "US",
+2026-11-07T20:24:23.4358097Z       "city": "Columbus",
+2026-11-07T20:24:23.4358195Z       "continent": "NA",
+2026-11-07T20:24:23.4358287Z       "region": "Ohio",
+2026-11-07T20:24:23.4358391Z       "regionCode": "OH",
+2026-11-07T20:24:23.4358525Z       "timezone": "America/New_York",
+2026-11-07T20:24:23.4358639Z       "longitude": "-82.99879",
+2026-11-07T20:24:23.4358740Z       "latitude": "39.96118",
+2026-11-07T20:24:23.4358842Z       "postalCode": "43215",
+2026-11-07T20:24:23.4358935Z       "metroCode": "535",
+2026-11-07T20:24:23.4359052Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.4359199Z       "tlsCipher": "AEAD-AES256-GCM-SHA384",
+2026-11-07T20:24:23.4359454Z       "tlsClientRandom": "BS1d9klm0Sp20Ju8XzGaAsX93hJt+4nCLMaJ0n/nJaw=",
+2026-11-07T20:24:23.4359657Z       "tlsClientCiphersSha1": "EPPWGkMwL/+VHBbDlFeYFF2S3W0=",
+2026-11-07T20:24:23.4359871Z       "tlsClientExtensionsSha1": "fBUOp6N9dJFknSeA48uo+Krt8gU=",
+2026-11-07T20:24:23.4360093Z       "tlsClientExtensionsSha1Le": "TPcgSqNoh+PRgH71acngAX9IU+A=",
+2026-11-07T20:24:23.4360232Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.4360775Z        "clientHandshake": "1da4208428dcc520c76ba05459c5a1cd350925abbdb176c4f5fb5219c26b391031306394254e5356064f565a9200f99b",
+2026-11-07T20:24:23.4361241Z        "serverHandshake": "13aa1a4eaa6dbfd205feff72a8a2702bc985ae66f27bfa8156f3b3f1088606ca3a2573cc38fe911e0c470a9669da8dd8",
+2026-11-07T20:24:23.4361698Z        "clientFinished": "0b5c2dbcfc9c89a2c6242261d2ed8751ffc633eef9f4d6c724fd84491185e3c6566114d513ad5af7fc3f5fcfe93e0c65",
+2026-11-07T20:24:23.4362398Z        "serverFinished": "af7f98d105b6418ca93d3c2600bc01ef8cb04f48b91f862e411beffaba0aacd1582124b0ebcc6210da8d11e55e56317c"
+2026-11-07T20:24:23.4362505Z       },
+2026-11-07T20:24:23.4362638Z       "tlsClientHelloLength": "508",
+2026-11-07T20:24:23.4362768Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.4362907Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.4363010Z       "clientTcpRtt": 9,
+2026-11-07T20:24:23.4363110Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.4363203Z       "asn": 396982,
+2026-11-07T20:24:23.4363294Z       "edgeL4": {
+2026-11-07T20:24:23.4363392Z        "deliveryRate": 300041
+2026-11-07T20:24:23.4363485Z       }
+2026-11-07T20:24:23.4363568Z      },
+2026-11-07T20:24:23.4363660Z      "headers": {
+2026-11-07T20:24:23.4363835Z       "accept": "application/json, text/event-stream",
+2026-11-07T20:24:23.4363964Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.4364087Z       "authorization": "********",
+2026-11-07T20:24:23.4364223Z       "cf-connecting-ip": "160.79.106.163",
+2026-11-07T20:24:23.4364321Z       "cf-ipcountry": "US",
+2026-11-07T20:24:23.4364449Z       "cf-ray": "a5438946fe326fa1",
+2026-11-07T20:24:23.4364594Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.4364715Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.4364836Z       "content-length": "355",
+2026-11-07T20:24:23.4364974Z       "content-type": "application/json",
+2026-11-07T20:24:23.4365072Z       "host": "gankdat.com",
+2026-11-07T20:24:23.4365205Z       "mcp-method": "server/discover",
+2026-11-07T20:24:23.4365346Z       "mcp-protocol-version": "2026-07-28",
+2026-11-07T20:24:23.4365472Z       "user-agent": "Claude-User",
+2026-11-07T20:24:23.4365600Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.4365718Z       "x-real-ip": "160.79.106.163"
+2026-11-07T20:24:23.4365800Z      },
+2026-11-07T20:24:23.4365897Z      "method": "POST",
+2026-11-07T20:24:23.4366033Z      "url": "https://gankdat.com/mcp"
+2026-11-07T20:24:23.4366115Z     },
+2026-11-07T20:24:23.4366209Z     "path": "/mcp",
+2026-11-07T20:24:23.4366302Z     "response": {
+2026-11-07T20:24:23.4366393Z      "status": 200
+2026-11-07T20:24:23.4366614Z     }
+2026-11-07T20:24:23.4366701Z    },
+2026-11-07T20:24:23.4366826Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4366926Z    "scriptVersion": {
+2026-11-07T20:24:23.4367078Z     "id": "df7c6a91-6a3a-4e85-b0b4-26582ce96ab6"
+2026-11-07T20:24:23.4367159Z    },
+2026-11-07T20:24:23.4367259Z    "eventType": "fetch",
+2026-11-07T20:24:23.4367387Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4367476Z    "outcome": "ok",
+2026-11-07T20:24:23.4367573Z    "wallTimeMs": 849,
+2026-11-07T20:24:23.4367671Z    "cpuTimeMs": 44
+2026-11-07T20:24:23.4367749Z   },
+2026-11-07T20:24:23.4367842Z   "$metadata": {
+2026-11-07T20:24:23.4367967Z    "id": "01M6E7P35G000000000000000R",
+2026-11-07T20:24:23.4368126Z    "requestId": "9dff0dd68041a69d69c1f04a29d3629d",
+2026-11-07T20:24:23.4368242Z    "rayId": "a5438946fe326fa1",
+2026-11-07T20:24:23.4368396Z    "traceId": "c99fcf89948f93880c64f44ebae2b48e",
+2026-11-07T20:24:23.4368494Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4368628Z    "timestampNs": "1793626672304000000",
+2026-11-07T20:24:23.4368731Z    "service": "faceless-api",
+2026-11-07T20:24:23.4368823Z    "level": "info",
+2026-11-07T20:24:23.4368973Z    "message": "POST https://gankdat.com/mcp",
+2026-11-07T20:24:23.4369124Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4369224Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.4369318Z    "origin": "fetch",
+2026-11-07T20:24:23.4369410Z    "eventSize": 5423
+2026-11-07T20:24:23.4369490Z   }
+2026-11-07T20:24:23.4369574Z  },
+2026-11-07T20:24:23.4369774Z  {
+2026-11-07T20:24:23.4369865Z   "source": {
+2026-11-07T20:24:23.4369961Z    "level": "info",
+2026-11-07T20:24:23.4370135Z    "requestId": "168cd077-efd4-47b9-8c35-c11b48e28f44",
+2026-11-07T20:24:23.4370227Z    "method": "POST",
+2026-11-07T20:24:23.4370323Z    "path": "/mcp",
+2026-11-07T20:24:23.4370478Z    "keyId": "f19e015f-5042-47d4-a086-8ab54df4af09",
+2026-11-07T20:24:23.4370596Z    "userAgent": "Claude-User",
+2026-11-07T20:24:23.4370692Z    "status": 200,
+2026-11-07T20:24:23.4370792Z    "latencyMs": 684
+2026-11-07T20:24:23.4370873Z   },
+2026-11-07T20:24:23.4371004Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4371104Z   "timestamp": 1793616667219,
+2026-11-07T20:24:23.4371192Z   "$workers": {
+2026-11-07T20:24:23.4371289Z    "truncated": false,
+2026-11-07T20:24:23.4371416Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4371511Z    "scriptVersion": {
+2026-11-07T20:24:23.4371661Z     "id": "df7c6a91-6a3a-4e85-b0b4-26582ce96ab6"
+2026-11-07T20:24:23.4371747Z    },
+2026-11-07T20:24:23.4371966Z    "eventType": "fetch",
+2026-11-07T20:24:23.4372098Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4372187Z    "event": {
+2026-11-07T20:24:23.4372275Z     "request": {
+2026-11-07T20:24:23.4372374Z      "method": "POST",
+2026-11-07T20:24:23.4372512Z      "url": "https://gankdat.com/mcp",
+2026-11-07T20:24:23.4372603Z      "path": "/mcp"
+2026-11-07T20:24:23.4372688Z     }
+2026-11-07T20:24:23.4372771Z    }
+2026-11-07T20:24:23.4372851Z   },
+2026-11-07T20:24:23.4372948Z   "$metadata": {
+2026-11-07T20:24:23.4373070Z    "id": "01M6DY4RJK000000000000000P",
+2026-11-07T20:24:23.4373226Z    "requestId": "923011178b056988fddb6c9bc1b3c354",
+2026-11-07T20:24:23.4373346Z    "rayId": "a54295033ac6393d",
+2026-11-07T20:24:23.4373501Z    "traceId": "ba1e06850111a1860acd60a3fa2c64d2",
+2026-11-07T20:24:23.4373624Z    "spanId": "e6284c9e0514b2ed",
+2026-11-07T20:24:23.4373730Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4373865Z    "timestampNs": "1793616667219000000",
+2026-11-07T20:24:23.4373970Z    "service": "faceless-api",
+2026-11-07T20:24:23.4374063Z    "level": "info",
+2026-11-07T20:24:23.4374216Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4374319Z    "type": "cf-worker",
+2026-11-07T20:24:23.4374421Z    "origin": "fetch",
+2026-11-07T20:24:23.4374516Z    "eventSize": 785
+2026-11-07T20:24:23.4374601Z   }
+2026-11-07T20:24:23.4374686Z  },
+2026-11-07T20:24:23.4374767Z  {
+2026-11-07T20:24:23.4374858Z   "source": {
+2026-11-07T20:24:23.4374958Z    "level": "info",
+2026-11-07T20:24:23.4375295Z    "requestId": "f218c5bc-6b2a-4677-9a37-0ac2d4bc2f96",
+2026-11-07T20:24:23.4375394Z    "method": "POST",
+2026-11-07T20:24:23.4375496Z    "path": "/mcp",
+2026-11-07T20:24:23.4375650Z    "keyId": "f19e015f-5042-47d4-a086-8ab54df4af09",
+2026-11-07T20:24:23.4375776Z    "userAgent": "Claude-User",
+2026-11-07T20:24:23.4375870Z    "status": 200,
+2026-11-07T20:24:23.4375958Z    "latencyMs": 246
+2026-11-07T20:24:23.4376044Z   },
+2026-11-07T20:24:23.4376179Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4376283Z   "timestamp": 1793609421404,
+2026-11-07T20:24:23.4376376Z   "$workers": {
+2026-11-07T20:24:23.4376474Z    "truncated": false,
+2026-11-07T20:24:23.4376600Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4376699Z    "scriptVersion": {
+2026-11-07T20:24:23.4376850Z     "id": "df7c6a91-6a3a-4e85-b0b4-26582ce96ab6"
+2026-11-07T20:24:23.4376931Z    },
+2026-11-07T20:24:23.4377033Z    "eventType": "fetch",
+2026-11-07T20:24:23.4377164Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4377255Z    "event": {
+2026-11-07T20:24:23.4377353Z     "request": {
+2026-11-07T20:24:23.4377454Z      "method": "POST",
+2026-11-07T20:24:23.4377589Z      "url": "https://gankdat.com/mcp",
+2026-11-07T20:24:23.4377687Z      "path": "/mcp"
+2026-11-07T20:24:23.4377775Z     }
+2026-11-07T20:24:23.4377855Z    }
+2026-11-07T20:24:23.4377942Z   },
+2026-11-07T20:24:23.4378036Z   "$metadata": {
+2026-11-07T20:24:23.4378157Z    "id": "01M6DQ7MJW000000000000000D",
+2026-11-07T20:24:23.4378440Z    "requestId": "21bd6efda16e100c8dff1e3b344c832f",
+2026-11-07T20:24:23.4378569Z    "rayId": "a541e420babf8b8b",
+2026-11-07T20:24:23.4378721Z    "traceId": "924695dedfe17c8007cf43d2e807f08b",
+2026-11-07T20:24:23.4378844Z    "spanId": "61f37e0da757a185",
+2026-11-07T20:24:23.4378946Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4379072Z    "timestampNs": "1793609421404000000",
+2026-11-07T20:24:23.4379177Z    "service": "faceless-api",
+2026-11-07T20:24:23.4379272Z    "level": "info",
+2026-11-07T20:24:23.4379426Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4379528Z    "type": "cf-worker",
+2026-11-07T20:24:23.4379629Z    "origin": "fetch",
+2026-11-07T20:24:23.4379723Z    "eventSize": 785
+2026-11-07T20:24:23.4379811Z   }
+2026-11-07T20:24:23.4379899Z  },
+2026-11-07T20:24:23.4379980Z  {
+2026-11-07T20:24:23.4380073Z   "source": {
+2026-11-07T20:24:23.4380171Z    "level": "info",
+2026-11-07T20:24:23.4380320Z    "message": "POST https://gankdat.com/mcp"
+2026-11-07T20:24:23.4380408Z   },
+2026-11-07T20:24:23.4380549Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4380647Z   "timestamp": 1793535587897,
+2026-11-07T20:24:23.4380741Z   "$workers": {
+2026-11-07T20:24:23.4380841Z    "truncated": false,
+2026-11-07T20:24:23.4380926Z    "event": {
+2026-11-07T20:24:23.4381018Z     "request": {
+2026-11-07T20:24:23.4381109Z      "cf": {
+2026-11-07T20:24:23.4381209Z       "isEUCountry": false,
+2026-11-07T20:24:23.4381314Z       "tlsClientAuth": {
+2026-11-07T20:24:23.4381446Z        "certRFC9440TooLarge": false,
+2026-11-07T20:24:23.4381586Z        "certChainRFC9440TooLarge": false,
+2026-11-07T20:24:23.4381692Z        "certPresented": "0",
+2026-11-07T20:24:23.4381917Z        "certVerified": "NONE",
+2026-11-07T20:24:23.4382017Z        "certRevoked": "0",
+2026-11-07T20:24:23.4382120Z        "certIssuerDN": "",
+2026-11-07T20:24:23.4382222Z        "certSubjectDN": "",
+2026-11-07T20:24:23.4382344Z        "certIssuerDNRFC2253": "",
+2026-11-07T20:24:23.4382471Z        "certSubjectDNRFC2253": "",
+2026-11-07T20:24:23.4382601Z        "certIssuerDNLegacy": "",
+2026-11-07T20:24:23.4382722Z        "certSubjectDNLegacy": "",
+2026-11-07T20:24:23.4382819Z        "certSerial": "",
+2026-11-07T20:24:23.4382941Z        "certIssuerSerial": "",
+2026-11-07T20:24:23.4383032Z        "certSKI": "",
+2026-11-07T20:24:23.4383134Z        "certIssuerSKI": "",
+2026-11-07T20:24:23.4383260Z        "certFingerprintSHA1": "",
+2026-11-07T20:24:23.4383389Z        "certFingerprintSHA256": "",
+2026-11-07T20:24:23.4383489Z        "certNotBefore": "",
+2026-11-07T20:24:23.4383714Z        "certNotAfter": "",
+2026-11-07T20:24:23.4383811Z        "certRFC9440": "",
+2026-11-07T20:24:23.4383914Z        "certChainRFC9440": ""
+2026-11-07T20:24:23.4384001Z       },
+2026-11-07T20:24:23.4384122Z       "httpProtocol": "HTTP/1.1",
+2026-11-07T20:24:23.4384262Z       "clientAcceptEncoding": "identity",
+2026-11-07T20:24:23.4384368Z       "requestPriority": "",
+2026-11-07T20:24:23.4384471Z       "requestHeaderNames": [
+2026-11-07T20:24:23.4384563Z        "Host",
+2026-11-07T20:24:23.4384665Z        "User-Agent",
+2026-11-07T20:24:23.4384786Z        "MCP-Protocol-Version",
+2026-11-07T20:24:23.4384883Z        "Authorization",
+2026-11-07T20:24:23.4384980Z        "Content-Type",
+2026-11-07T20:24:23.4385068Z        "Accept",
+2026-11-07T20:24:23.4385165Z        "Mcp-Method",
+2026-11-07T20:24:23.4385267Z        "Content-Length",
+2026-11-07T20:24:23.4385363Z        "Accept-Encoding"
+2026-11-07T20:24:23.4385451Z       ],
+2026-11-07T20:24:23.4385541Z       "colo": "IAD",
+2026-11-07T20:24:23.4385684Z       "asOrganization": "Anthropic, PBC",
+2026-11-07T20:24:23.4385784Z       "country": "US",
+2026-11-07T20:24:23.4385881Z       "city": "Columbus",
+2026-11-07T20:24:23.4385976Z       "continent": "NA",
+2026-11-07T20:24:23.4386068Z       "region": "Ohio",
+2026-11-07T20:24:23.4386162Z       "regionCode": "OH",
+2026-11-07T20:24:23.4386293Z       "timezone": "America/New_York",
+2026-11-07T20:24:23.4386412Z       "longitude": "-82.99879",
+2026-11-07T20:24:23.4386513Z       "latitude": "39.96118",
+2026-11-07T20:24:23.4386723Z       "postalCode": "43215",
+2026-11-07T20:24:23.4386824Z       "metroCode": "535",
+2026-11-07T20:24:23.4386945Z       "tlsVersion": "TLSv1.3",
+2026-11-07T20:24:23.4387088Z       "tlsCipher": "AEAD-AES256-GCM-SHA384",
+2026-11-07T20:24:23.4387339Z       "tlsClientRandom": "grrGr98pOE/e1hqUCQTeRM0F7U26ytG9H4RIaqWTZGY=",
+2026-11-07T20:24:23.4387543Z       "tlsClientCiphersSha1": "EPPWGkMwL/+VHBbDlFeYFF2S3W0=",
+2026-11-07T20:24:23.4387753Z       "tlsClientExtensionsSha1": "fBUOp6N9dJFknSeA48uo+Krt8gU=",
+2026-11-07T20:24:23.4387984Z       "tlsClientExtensionsSha1Le": "TPcgSqNoh+PRgH71acngAX9IU+A=",
+2026-11-07T20:24:23.4388123Z       "tlsExportedAuthenticator": {
+2026-11-07T20:24:23.4388592Z        "clientHandshake": "0cd36a20db0fb92006d2605a48b513806b1b9b42d85256cad5b490a4ec8cba9e9e1c42e0bfb72c2cb8686ae5ec6595e8",
+2026-11-07T20:24:23.4389039Z        "serverHandshake": "1517c755b836115b13dfb23d3ac3e3281b18712502977def0819a64b2b94563c83c6cc38a63c711f0ffb39668aa60ec5",
+2026-11-07T20:24:23.4389503Z        "clientFinished": "792ff568712e2174fafb6d42de376a2ceb5c33708a304baa1f512911a8ba4a89e6f52137df648e7b8b9cc7afe45f3770",
+2026-11-07T20:24:23.4389956Z        "serverFinished": "06e2e277496dabbe85bb4929e2fd8e093da19ac81dd5b2d7697998f1e100fd1cf841d9c68522fb0747104fa85db1359f"
+2026-11-07T20:24:23.4390041Z       },
+2026-11-07T20:24:23.4390177Z       "tlsClientHelloLength": "508",
+2026-11-07T20:24:23.4390308Z       "verifiedBotCategory": "",
+2026-11-07T20:24:23.4390446Z       "edgeRequestKeepAliveStatus": 1,
+2026-11-07T20:24:23.4390555Z       "clientTcpRtt": 9,
+2026-11-07T20:24:23.4390660Z       "clientQuicRtt": 0,
+2026-11-07T20:24:23.4390748Z       "asn": 396982,
+2026-11-07T20:24:23.4390839Z       "edgeL4": {
+2026-11-07T20:24:23.4390941Z        "deliveryRate": 433364
+2026-11-07T20:24:23.4391022Z       }
+2026-11-07T20:24:23.4391108Z      },
+2026-11-07T20:24:23.4391204Z      "headers": {
+2026-11-07T20:24:23.4391373Z       "accept": "application/json, text/event-stream",
+2026-11-07T20:24:23.4391503Z       "accept-encoding": "gzip, br",
+2026-11-07T20:24:23.4391631Z       "authorization": "********",
+2026-11-07T20:24:23.4391927Z       "cf-connecting-ip": "160.79.106.134",
+2026-11-07T20:24:23.4392088Z       "cf-ipcountry": "US",
+2026-11-07T20:24:23.4392225Z       "cf-ray": "a53ad98c2d1b25cc",
+2026-11-07T20:24:23.4392366Z       "cf-visitor": "{\"scheme\":\"https\"}",
+2026-11-07T20:24:23.4392492Z       "connection": "Keep-Alive",
+2026-11-07T20:24:23.4392615Z       "content-length": "355",
+2026-11-07T20:24:23.4392887Z       "content-type": "application/json",
+2026-11-07T20:24:23.4392995Z       "host": "gankdat.com",
+2026-11-07T20:24:23.4393129Z       "mcp-method": "server/discover",
+2026-11-07T20:24:23.4393265Z       "mcp-protocol-version": "2026-07-28",
+2026-11-07T20:24:23.4393393Z       "user-agent": "Claude-User",
+2026-11-07T20:24:23.4393522Z       "x-forwarded-proto": "https",
+2026-11-07T20:24:23.4393639Z       "x-real-ip": "160.79.106.134"
+2026-11-07T20:24:23.4393728Z      },
+2026-11-07T20:24:23.4393826Z      "method": "POST",
+2026-11-07T20:24:23.4393962Z      "url": "https://gankdat.com/mcp"
+2026-11-07T20:24:23.4394050Z     },
+2026-11-07T20:24:23.4394146Z     "path": "/mcp",
+2026-11-07T20:24:23.4394238Z     "response": {
+2026-11-07T20:24:23.4394332Z      "status": 200
+2026-11-07T20:24:23.4394419Z     }
+2026-11-07T20:24:23.4394500Z    },
+2026-11-07T20:24:23.4394627Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4394725Z    "scriptVersion": {
+2026-11-07T20:24:23.4394869Z     "id": "df7c6a91-6a3a-4e85-b0b4-26582ce96ab6"
+2026-11-07T20:24:23.4394960Z    },
+2026-11-07T20:24:23.4395056Z    "eventType": "fetch",
+2026-11-07T20:24:23.4395181Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4395278Z    "outcome": "ok",
+2026-11-07T20:24:23.4395370Z    "wallTimeMs": 703,
+2026-11-07T20:24:23.4395474Z    "cpuTimeMs": 31
+2026-11-07T20:24:23.4395563Z   },
+2026-11-07T20:24:23.4395653Z   "$metadata": {
+2026-11-07T20:24:23.4395782Z    "id": "01M6BGTDHS000000000000000R",
+2026-11-07T20:24:23.4395946Z    "requestId": "2561f489eca85aaf29e8fae60679c49a",
+2026-11-07T20:24:23.4396174Z    "rayId": "a53ad98c2d1b25cc",
+2026-11-07T20:24:23.4396329Z    "traceId": "4a368982a5754168ba5a2e37ad7105e5",
+2026-11-07T20:24:23.4396433Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4396563Z    "timestampNs": "1793535587897000000",
+2026-11-07T20:24:23.4396664Z    "service": "faceless-api",
+2026-11-07T20:24:23.4396757Z    "level": "info",
+2026-11-07T20:24:23.4396908Z    "message": "POST https://gankdat.com/mcp",
+2026-11-07T20:24:23.4397059Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4397164Z    "type": "cf-worker-event",
+2026-11-07T20:24:23.4397263Z    "origin": "fetch",
+2026-11-07T20:24:23.4397356Z    "eventSize": 5423
+2026-11-07T20:24:23.4397441Z   }
+2026-11-07T20:24:23.4397521Z  },
+2026-11-07T20:24:23.4397606Z  {
+2026-11-07T20:24:23.4397697Z   "source": {
+2026-11-07T20:24:23.4397785Z    "level": "info",
+2026-11-07T20:24:23.4397958Z    "requestId": "40d97e4e-5d87-43ac-992e-92ff0c531f1e",
+2026-11-07T20:24:23.4398053Z    "method": "POST",
+2026-11-07T20:24:23.4398149Z    "path": "/mcp",
+2026-11-07T20:24:23.4398303Z    "keyId": "f19e015f-5042-47d4-a086-8ab54df4af09",
+2026-11-07T20:24:23.4398427Z    "userAgent": "Claude-User",
+2026-11-07T20:24:23.4398516Z    "status": 200,
+2026-11-07T20:24:23.4398609Z    "latencyMs": 657
+2026-11-07T20:24:23.4398696Z   },
+2026-11-07T20:24:23.4398822Z   "dataset": "cloudflare-workers",
+2026-11-07T20:24:23.4398925Z   "timestamp": 1793535587897,
+2026-11-07T20:24:23.4399016Z   "$workers": {
+2026-11-07T20:24:23.4399114Z    "truncated": false,
+2026-11-07T20:24:23.4399243Z    "scriptName": "faceless-api",
+2026-11-07T20:24:23.4399340Z    "scriptVersion": {
+2026-11-07T20:24:23.4399483Z     "id": "df7c6a91-6a3a-4e85-b0b4-26582ce96ab6"
+2026-11-07T20:24:23.4399569Z    },
+2026-11-07T20:24:23.4399673Z    "eventType": "fetch",
+2026-11-07T20:24:23.4399797Z    "executionModel": "stateless",
+2026-11-07T20:24:23.4399897Z    "event": {
+2026-11-07T20:24:23.4399992Z     "request": {
+2026-11-07T20:24:23.4400088Z      "method": "POST",
+2026-11-07T20:24:23.4400239Z      "url": "https://gankdat.com/mcp",
+2026-11-07T20:24:23.4400338Z      "path": "/mcp"
+2026-11-07T20:24:23.4400422Z     }
+2026-11-07T20:24:23.4400512Z    }
+2026-11-07T20:24:23.4400598Z   },
+2026-11-07T20:24:23.4400688Z   "$metadata": {
+2026-11-07T20:24:23.4400819Z    "id": "01M6BGTDHS000000000000000P",
+2026-11-07T20:24:23.4400979Z    "requestId": "2561f489eca85aaf29e8fae60679c49a",
+2026-11-07T20:24:23.4401096Z    "rayId": "a53ad98c2d1b25cc",
+2026-11-07T20:24:23.4401339Z    "traceId": "4a368982a5754168ba5a2e37ad7105e5",
+2026-11-07T20:24:23.4401462Z    "spanId": "ce40c83b141248e1",
+2026-11-07T20:24:23.4401561Z    "trigger": "POST /mcp",
+2026-11-07T20:24:23.4401691Z    "timestampNs": "1793535587897000000",
+2026-11-07T20:24:23.4401979Z    "service": "faceless-api",
+2026-11-07T20:24:23.4402120Z    "level": "info",
+2026-11-07T20:24:23.4402288Z    "account": "37e56f3ce4dfe49919e85d4380467f44",
+2026-11-07T20:24:23.4402395Z    "type": "cf-worker",
+2026-11-07T20:24:23.4402487Z    "origin": "fetch",
+2026-11-07T20:24:23.4402590Z    "eventSize": 785
+2026-11-07T20:24:23.4402680Z   }
+2026-11-07T20:24:23.4402762Z  }
+2026-11-07T20:24:23.4402851Z ]
+2026-11-07T20:24:23.4510076Z Post job cleanup.
+2026-11-07T20:24:23.5866888Z Post job cleanup.
+2026-11-07T20:24:23.6720700Z [command]/usr/bin/git version
+2026-11-07T20:24:23.6776514Z git version 2.56.0
+2026-11-07T20:24:23.6818751Z Temporarily overriding HOME='/home/runner/work/_temp/e37e48e3-36f8-4248-a71c-a51655a0c121' before making global git config changes
+2026-11-07T20:24:23.6820250Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-07T20:24:23.6827221Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/rorororo/rorororo
+2026-11-07T20:24:23.6863977Z Removing SSH command configuration
+2026-11-07T20:24:23.6871104Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-07T20:24:23.6922224Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-07T20:24:23.7348488Z Removing HTTP extra header
+2026-11-07T20:24:23.7349990Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-07T20:24:23.7398537Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-07T20:24:23.7806372Z Removing includeIf entries pointing to credentials config files
+2026-11-07T20:24:23.7814672Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-07T20:24:23.7842131Z includeif.gitdir:/home/runner/work/rorororo/rorororo/.git.path
+2026-11-07T20:24:23.7843405Z includeif.gitdir:/home/runner/work/rorororo/rorororo/.git/worktrees/*.path
+2026-11-07T20:24:23.7844446Z includeif.gitdir:/github/workspace/.git.path
+2026-11-07T20:24:23.7845386Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-07T20:24:23.7850954Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/rorororo/rorororo/.git.path
+2026-11-07T20:24:23.7878646Z /home/runner/work/_temp/git-credentials-c0ed3b2f-3982-4a3e-8b7b-b29dd60454a4.config
+2026-11-07T20:24:23.7891428Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/rorororo/rorororo/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-c0ed3b2f\-3982\-4a3e\-8b7b\-b29dd60454a4\.config
+2026-11-07T20:24:23.7926870Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/rorororo/rorororo/.git/worktrees/*.path
+2026-11-07T20:24:23.7995601Z /home/runner/work/_temp/git-credentials-c0ed3b2f-3982-4a3e-8b7b-b29dd60454a4.config
+2026-11-07T20:24:23.8003003Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/rorororo/rorororo/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-c0ed3b2f\-3982\-4a3e\-8b7b\-b29dd60454a4\.config
+2026-11-07T20:24:23.8038769Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-07T20:24:23.8065299Z /github/runner_temp/git-credentials-c0ed3b2f-3982-4a3e-8b7b-b29dd60454a4.config
+2026-11-07T20:24:23.8082443Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-c0ed3b2f\-3982\-4a3e\-8b7b\-b29dd60454a4\.config
+2026-11-07T20:24:23.8110338Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-07T20:24:23.8133639Z /github/runner_temp/git-credentials-c0ed3b2f-3982-4a3e-8b7b-b29dd60454a4.config
+2026-11-07T20:24:23.8141742Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-c0ed3b2f\-3982\-4a3e\-8b7b\-b29dd60454a4\.config
+2026-11-07T20:24:23.8176029Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-07T20:24:23.8447915Z Removing credentials config '/home/runner/work/_temp/git-credentials-c0ed3b2f-3982-4a3e-8b7b-b29dd60454a4.config'
+2026-11-07T20:24:23.8598149Z Cleaning up orphan processes

@@ -1,0 +1,24 @@
+{
+  "request": "worker-logs-19",
+  "fetched_at": "2026-11-07T20:25:18.907Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://productionresultssa0.blob.core.windows.net/actions-results/74c806f9-fdc1-41fc-a18e-439aced49241/workflow-job-run-4fc52159-71d2-520f-9c83-bfc055b72b9f/logs/job/job-logs.txt?rsct=text%2Fplain&se=2026-11-07T20%3A34%3A38Z&sig=KYB2%2FpaRBBexB25IPgiS9Zoc%2BJONBySV3mZiHo%2FUAyQ%3D&ske=2026-11-07T22%3A23%3A52Z&skoid=ca7593d4-ee42-46cd-af88-8b886a2f84eb&sks=b&skt=2026-11-07T18%3A23%3A52Z&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skv=2025-11-05&sp=r&spr=https&sr=b&st=2026-11-07T20%3A24%3A33Z&sv=2025-11-05",
+      "range": "0-900000",
+      "fetched_at": "2026-11-07T20:25:18.303Z",
+      "status": 206,
+      "elapsed_ms": 462,
+      "final_url": "https://productionresultssa0.blob.core.windows.net/actions-results/74c806f9-fdc1-41fc-a18e-439aced49241/workflow-job-run-4fc52159-71d2-520f-9c83-bfc055b72b9f/logs/job/job-logs.txt?rsct=text%2Fplain&se=2026-11-07T20%3A34%3A38Z&sig=KYB2%2FpaRBBexB25IPgiS9Zoc%2BJONBySV3mZiHo%2FUAyQ%3D&ske=2026-11-07T22%3A23%3A52Z&skoid=ca7593d4-ee42-46cd-af88-8b886a2f84eb&sks=b&skt=2026-11-07T18%3A23%3A52Z&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skv=2025-11-05&sp=r&spr=https&sr=b&st=2026-11-07T20%3A24%3A33Z&sv=2025-11-05",
+      "headers": {
+        "content-type": "text/plain",
+        "content-length": "131943",
+        "last-modified": "Sat, 07 Nov 2026 20:24:25 GMT",
+        "etag": "\"0x8DF3D0D1DD20435\""
+      },
+      "file": "1.txt",
+      "bytes": 131943,
+      "truncated": false
+    }
+  ]
+}
