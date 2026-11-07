@@ -7,6 +7,9 @@ name: license worker
 # (first run 2026-10-29 18:28: invalid workflow, a step name held an unquoted colon — names quoted since).
 # like `landing` and `gankdat`. Secrets (STRIPE_WEBHOOK_SECRET, LICENSE_SIGNING_KEY, RESEND_API_KEY,
 # ADMIN_TOKEN) were set once with `wrangler secret put` and survive deploys; nothing here prints or sets them.
+# Since 2026-11-07 (foundry `live-read-for-worker-summaries`) the deploy ends with one live call of the keyless
+# sales summary the gankdat Daily numbers row reads, so a route that throws fails the deploy run instead of
+# reading `n/a (HTTP 500)` in the row for two days (the 11-05..11-07 KV list-shape bug, fixed in src/kv.ts).
 on:
   push:
     branches: [main]
@@ -55,3 +58,8 @@ jobs:
           curl -fsS --max-time 20 https://foundry-licenses.faceless-api.workers.dev/health
           code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://foundry-licenses.faceless-api.workers.dev/v1/downloads/not-a-token)
           test "$code" = "403" || { echo "download endpoint answered $code, expected 403"; exit 1; }
+      - name: 'Live call of the keyless sales summary (the route the Daily numbers row reads)'
+        run: |
+          body=$(curl -fsS --max-time 20 'https://foundry-licenses.faceless-api.workers.dev/v1/downloads/summary?venture=tax-workbook')
+          echo "summary: ${body:0:200}"
+          echo "$body" | grep -q '"sales":' || { echo "summary body carries no sales count"; exit 1; }
