@@ -2571,3 +2571,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-07 09:20 | build | dependabot.yml first run: none since the install (fires only on a Dependabot PR; not dispatchable)
 - 2026-11-07 12:07 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-11-07 16:07 | triage | notify owner dispatched: last run started 13:28 UTC, 2 h 38 min ago
+- 2026-11-07 17:14 | build | Built foundry live-read-for-worker-summaries: licence Worker summary 500 was the KV list shape, now adapted
+- 2026-11-07 17:14 | build | Live call before the fix (relay 17:12): GET /v1/downloads/summary 500 "Worker threw exception" 1101; /health 200
+- 2026-11-07 17:14 | build | kv.ts adaptKV wraps the live binding (list answers key names, paged); 4 tests, one a zero-count summary
+- 2026-11-07 17:14 | build | docs/ci/license-worker.yml: the deploy ends with a live call of the summary route; first run read next slot
+- 2026-11-07 17:14 | build | build.md and burn-down.md RUN LOG: a Worker route Daily numbers reads is done only with one live call quoted
+- 2026-11-07 17:14 | build | The fix deploys on this push's license worker run; the live quote after it is the next line this slot writes
