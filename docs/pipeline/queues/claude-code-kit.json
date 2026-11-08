@@ -2,7 +2,7 @@
   "venture": "claude-code-kit",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-05",
+  "updated": "2026-11-08",
   "researched": "2026-11-04",
   "weight": 2,
   "items": [
@@ -52,6 +52,17 @@
       "status": "blocked",
       "blocked_on": "the owner's 'leanpub done <url>' note after the listing-pack request (leanpub-listing-pack-and-owner-step)",
       "added": "2026-11-04"
+    },
+    {
+      "id": "leanpub-copies-reading",
+      "title": "Daily copies reading for the kit: once `leanpub-listing-live` records the URL, the store-metrics daily check relay-reads the book's public Leanpub page (its `totalCopiesSold` and reader count, the same field the 2026-10-31 shelf read used on 31 books — no login, no author dashboard) and writes a `Daily check` row to RESEARCH §7 (`Sales` = copies sold to date); the day-60 read counts from these rows and the triage's `Sale` rows from the royalty mail",
+      "why": "Review W45: STRATEGY §4 gained a row for the kit (proof: first sale within 30 days of live, ≥ 5 copies in 60 — RESEARCH §6) and the only reading was the owner's royalty mail, which arrives per sale and says nothing on the days there is none; the book page's count is public and the relay already reads leanpub.com. A target with no daily reading is a gap the review queues before any feature (routine rule).",
+      "effort_days": 0.1,
+      "proof": "ventures/claude-code-kit/RESEARCH.md §7 carries a `Daily check` row per day from the first read after the listing is live, with the copies-sold count; the day-60 item names these rows as its source",
+      "score": 4,
+      "status": "blocked",
+      "blocked_on": "leanpub-listing-live — the live book URL (the owner's `leanpub done <url>` note, action 038); the item is taken by the run that records the listing",
+      "added": "2026-11-08"
     }
   ]
 }

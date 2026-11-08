@@ -2,7 +2,7 @@
   "venture": "tax-workbook",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-05",
+  "updated": "2026-11-08",
   "researched": "2026-11-05",
   "weight": 2,
   "items": [
@@ -44,10 +44,10 @@
     },
     {
       "id": "etsy-day-60-read",
-      "title": "Day-60 read of the Etsy listing (listed 2026-10-29): count the `Sale` rows in RESEARCH §7 and apply §6 — proof ≥ 10 sales, kill at 0 sales with ≥ 5 views a day (views from the owner's Shop Manager note), and decide the Payhip twin and own-checkout pages with the same reading",
-      "why": "RESEARCH.md §6 sets the line's proof (first sale within 30 days, ≥ 10 within 60) and kill rule against the listing date; this is the dated reading that applies it, so the decision is made on the number rather than left open. The views come from the `Etsy views` §7 rows the monthly shelf note writes (shelf-stats-owner-note, asked 2026-11-30 and 2026-12-28); the Kindle count from the `Kindle sold` rows.",
+      "title": "Day-60 read of the Etsy listing (listed 2026-10-29): count the `Sale` rows in RESEARCH §7 and apply §6 — proof ≥ 10 sales, kill at 0 sales with ≥ 5 views a day (views from the owner's Shop Manager note), and decide the Payhip twin and own-checkout pages with the same reading. Review W45 (2026-11-08): the clock counts only the days the listing was visible — Etsy suspended the shop on 2026-11-07 (the £2.98 bill of 11-01 unpaid); the dark days from 11-07 to the reopen date (Etsy's reinstatement mail in docs/INBOX.md, the RESEARCH §7 `Reopened` row) are added to the date, and the §6 kill rule cannot apply to them (a buyer cannot fail to buy from a suspended shop); the Payhip and own-checkout shelves keep 2026-12-28, they never closed",
+      "why": "RESEARCH.md §6 sets the line's proof (first sale within 30 days, ≥ 10 within 60) and kill rule against the listing date; this is the dated reading that applies it, so the decision is made on the number rather than left open. The views come from the `Etsy views` §7 rows the monthly shelf note writes (shelf-stats-owner-note, asked 2026-11-30 and 2026-12-28); the Kindle count from the `Kindle sold` rows. Review W45 added the suspension rule: without it the read would count ten or more days on which no buyer could see the listing.",
       "effort_days": 0.1,
-      "proof": "A RESEARCH §7 `Day 60` row with the count and the decision (keep, reprice, or delist), and STRATEGY §8 line if the line is killed",
+      "proof": "A RESEARCH §7 `Day 60` row with the count and the decision (keep, reprice, or delist), and STRATEGY §8 line if the line is killed; the row states the visible-day count and the suspended span",
       "score": 8,
       "status": "todo",
       "not_before": "2026-12-28",
@@ -86,7 +86,7 @@
       "proof": "LISTING.md carries the live URL and date; the ledger row is `cost`; a dated day-60 item is queued",
       "score": 8,
       "status": "blocked",
-      "blocked_on": "owner action 037 (docs/for-owner/actions/037-etsy-reseller-listing.md): the owner publishes the listing and sends `037 done <url>`",
+      "blocked_on": "owner action 037 (docs/for-owner/actions/037-etsy-reseller-listing.md): the owner publishes the listing and sends `037 done <url>`; and the shop reopened — Etsy suspended Taxelicious on 2026-11-07 over the unpaid £2.98 bill (ALERTS 2026-11-07 owner line), so the listing cannot be published until the card is fixed (review W45)",
       "added": "2026-11-03"
     },
     {

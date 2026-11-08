@@ -2616,3 +2616,20 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-08 02:05 | triage | notify owner dispatched: last run started 23:53 UTC, 2 h 12 min ago
 - 2026-11-08 02:06 | watchdog | ci-minutes: 406 billed min/7d (~1740/mo; public, no cap) top: notify owner 89, check 49, gankdat metrics 48
 - 2026-11-08 05:07 | triage | notify owner dispatched: last run started 02:05 UTC, 3 h ago
+- 2026-11-08 08:20 | review | W45: every money target still zero; first repeat x402 payer and Apify's first US$0.17 underneath
+- 2026-11-08 08:20 | review | gankdat: keep — two tiny first readings, reposition still due end of January; W46 reads x402 day-30
+- 2026-11-08 08:20 | review | variables-toolkit: keep at 0.5 — 21 views, 7 runs, 0 installs; free companion plugin approved 11-03
+- 2026-11-08 08:20 | review | read-focus: keep at 0.5 — one Chrome user, first search click; verdict 12-21
+- 2026-11-08 08:20 | review | highlight-keep: keep at 0.5 — first Firefox user, 0 sales; verdict 12-21
+- 2026-11-08 08:20 | review | hackathons: keep at 2 — two entries in, Meta winners ~11-09, PayPal after 11-12; no third event found
+- 2026-11-08 08:20 | review | tax-workbook: keep at 2 — four shelves, 0 sales at day 10; Etsy suspended 11-07, day-60 clock counts visible days
+- 2026-11-08 08:20 | review | claude-code-kit: keep at 2 — built in one night, waits on the owner's Leanpub step (038, 3 days)
+- 2026-11-08 08:20 | review | oss-bounties: stays killed — third weekly board without a free, funded code row
+- 2026-11-08 08:20 | review | foundry: keep — main red for a day and fixed; usage limit missed slots a third week; cadence held
+- 2026-11-08 08:20 | review | Weights unchanged: hackathons, new-ventures, tax-workbook, claude-code-kit 2; gankdat, foundry 1; extensions 0.5
+- 2026-11-08 08:20 | review | Queued gankdat x402-change-routes-bazaar-index (6): nine change routes into the Bazaar for US$0.09 of test USDC
+- 2026-11-08 08:20 | review | Gap: kit had no §4 row or daily reading — row added; leanpub-copies-reading (4) queued behind the live URL
+- 2026-11-08 08:20 | review | Gap: Etsy day-60 would count dark days — etsy-day-60-read counts visible days; RESEARCH §7 Suspended row
+- 2026-11-08 08:20 | review | STRATEGY §4 Now column refreshed on every row with 11-08 sources; §2 four rows; §8 five decision lines
+- 2026-11-08 08:20 | review | Owner needed: fix the Etsy card to reopen the suspended shop (ALERTS 11-07), then publish the Reseller listing
+- 2026-11-08 08:20 | notify | Your Etsy shop is suspended over an unpaid £2.98 bill: update the card in Etsy billing to reopen it

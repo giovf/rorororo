@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "researched": "2026-10-30",
   "items": [
     {
@@ -1089,6 +1089,16 @@
       "status": "blocked",
       "blocked_on": "a free reader account on the owner's identity (owner rule 2026-10-29: no new account for work scoring < 10). Lift when an owner request that already opens an account can carry it as one extra step, or when the feeds 30d reading reaches 20 user agents or a key with a /feeds referrer on its own.",
       "added": "2026-11-05"
+    },
+    {
+      "id": "x402-change-routes-bazaar-index",
+      "title": "Index the nine `/x402/changes/:source` routes in the x402 Bazaar: one settled US$0.01 call per route from the test wallet (US$0.09 total, the 2026-10-23 convention — a £0.00 `cost` row in docs/LEDGER.md, no new money), then confirm each appears in the discovery API and the Daily numbers `bazaar:` clause reads 25 listed; the weekly probe's one-unlisted-route pacing stays for anything added later",
+      "why": "Review W45: the change feed is the product agents asked for at the wall (11-03: `wanted: get_changes 14`, 123 paywall hits) and `x402-change-feed-route` priced it on the only shelf where strangers pay (live 11-05, `x402 validate: 26/26`), but the Bazaar — where the paying agents search by intent — still lists the 16 data routes only, so its `≥ 5 paid change-feed calls from ≥ 2 clients by 2026-12-14` proof is reading an unshelved product. The lane has its first repeat payer (11-03..11-05, uk-trademark-journal); listing the change routes beside the route that payer buys is distribution, not a feature (STRATEGY §5). Indexing needs one settled payment per resource (gankdat `x402-bazaar-week-1-index-check`, 10-23); nine routes at US$0.01 is within the wallet's ≈ US$1.00 and the once-a-month-per-route rule.",
+      "effort_days": 0.1,
+      "proof": "Daily numbers `bazaar:` reads 25 listed (16 data + 9 change routes) within 48 h; the discovery API returns each changes/<slug> resource; a £0.00 ledger row names the nine half-cent-class payments; the 2026-11-14 x402-bazaar-day-30 read and the 2026-12-14 change-feed proof read a listed product",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-11-08"
     }
   ],
   "research_after": "2026-11-06"
