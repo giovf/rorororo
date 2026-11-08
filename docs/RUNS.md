@@ -2647,3 +2647,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-08 09:28 | build | Built gankdat x402-change-routes-bazaar-index: nine change feeds paid once each; 11-09 row should read 25 listed
 - 2026-11-08 09:28 | build | LEDGER: £0.00 cost row for the nine one-cent calls from the test wallet (≈ US$0.90 left); no new money
 - 2026-11-08 09:28 | build | Dispatch rewrote today's Daily numbers row 30 s after the payments: still 16 listed, the 11-09 row is the proof
+- 2026-11-08 12:05 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
