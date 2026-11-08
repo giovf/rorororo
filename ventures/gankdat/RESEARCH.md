@@ -1298,3 +1298,31 @@ time. Two routes: a partner listing (paid by Clay; the annual agreement is a con
 park under the owner-time rule unless the numbers reach 10) or a published Clay template that calls our REST API with the
 user's own key (no contract, every row a paid call, weaker discovery). Queued `new-ventures/spike-clay-data-provider-marketplace`
 (3); nothing added to this queue (the day-30 and day-7 reads of 20:15 and 20:25 hold its open questions).
+
+## Build 2026-11-08 — the nine change feeds into the x402 Bazaar (`x402-change-routes-bazaar-index`, build, 09:10 UTC)
+
+**Reading first.** The 11-06, 11-07 and 11-08 Daily numbers rows all read `x402 validate: 26/26 valid` and
+`bazaar: 16 listed` — the nine `/x402/changes/<slug>` routes priced on 11-05 passed CDP's validation every day and were
+never indexed. The 11-08 metrics job log (run 42457488680) says why: `x402 probe: skipped — 30-day cap spent (29 of 20
+half-cents)`. The weekly probe's cap was a fixed 20 payments in 30 days, and the rows of the window record 29
+(`+1 own probe` 10-17, `+10` 10-23, `+18` 10-24 — the 10-23 survey's two forced rounds, which the LEDGER row counts as 18
+settled calls; the `x402_paid` points the rows read evidently also counted part of the first round's thirteen
+402-rejected attempts, a reading to check on the next survey). So nothing could pay an unlisted route before the 10-17
+row left the window on 11-16, and the nine change feeds — the product agents asked for at the wall (`wanted:
+get_changes 14` on 11-03) — were on the one shelf where strangers pay without being on the shelf's catalogue. The
+`x402_probe` dispatch input could not help either: it paid every route (25 calls, US$0.17) and refused when the cap
+was spent.
+
+**Built.** `scripts/x402-bazaar-read.ts`: the cap is sized from the live route count — `probeMonthlyCap(routes) =
+routes + 3` re-screens (25 routes = 28 payments; at most US$0.20 a month at half a cent per data route and one cent
+per change feed), `shouldProbe` takes the route count, and a forced dispatch pays whatever the spacing and the cap say
+— a dispatch is a decision taken in a run log and the route count bounds it; `probeTargets` gains `all` for the
+every-route re-screen (reason `re-screen`), while `x402_probe: true` now pays the **due** routes only (unlisted, never
+called, 23 days stale). `scripts/x402-probe.mjs` reads the live routes before deciding, pays every due route on
+`X402_PROBE_FORCE=true` and every route on `=all`, and prints the US$ estimate per round. `docs/ci/gankdat-metrics.yml`
+carries the input's new text (the installer moves it; its first run is the next slot's check). 17 tests in
+`test/x402-bazaar-read.spec.ts` (two new: the cap from the route count, the 29-payment window with a forced dispatch).
+**Cost:** nine one-cent calls from the test wallet (US$0.09) on the forced dispatch after this push — the 2026-10-23
+convention, a £0.00 `cost` row; no new money. **Proof:** the discovery API returns each `changes/<slug>` resource and
+the 11-09 or 11-10 Daily numbers row reads `bazaar: 25 listed`; the 2026-11-14 day-30 read and the 2026-12-14
+change-feed proof (`≥ 5 paid change-feed calls from ≥ 2 clients`) then read a listed product.

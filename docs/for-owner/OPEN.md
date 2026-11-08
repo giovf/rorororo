@@ -10,17 +10,17 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 1. **second tax spreadsheet is ready for your Etsy shop** — ~10 min, since 2026-11-03; unblocks tax-workbook `reseller-listing-live` (8). Steps: [037](actions/037-etsy-reseller-listing.md).
    second tax spreadsheet is ready for your Etsy shop — publish the Reseller workbook listing, ~10 min, £0.16 — docs/for-owner/actions/037-etsy-reseller-listing.md
 
-2. **Etsy could not charge your card for a £2.98 bill; pay it or…** — time not stated, since 2026-11-01; unblocks tax-workbook `etsy-bill-ledger-row` (3).
+2. **Etsy shop Taxelicious is suspended** — time not stated, since 2026-11-07; unblocks tax-workbook `reseller-listing-live` (8).
+   Etsy shop Taxelicious is suspended (£2.98 bill unpaid) — update the card in Etsy billing to reopen it
+
+3. **Etsy could not charge your card for a £2.98 bill; pay it or…** — time not stated, since 2026-11-01; unblocks tax-workbook `etsy-bill-ledger-row` (3).
    Etsy could not charge your card for a £2.98 bill; pay it or update the card in Etsy billing before 22 Nov
 
-3. **Claude Code handbook ready for Leanpub** — ~15 min, since 2026-11-05; nothing queued waits on it. Steps: [038](actions/038-leanpub-kit.md).
+4. **Claude Code handbook ready for Leanpub** — ~15 min, since 2026-11-05; unblocks claude-code-kit `leanpub-copies-reading` (4). Steps: [038](actions/038-leanpub-kit.md).
    Claude Code handbook ready for Leanpub: sign up, upload, publish, ~15 min, £0 — docs/for-owner/actions/038-leanpub-kit.md
 
-4. **GitHub says the Claude app wants new permissions; review an…** — time not stated, since 2026-11-06; nothing queued waits on it.
+5. **GitHub says the Claude app wants new permissions; review an…** — time not stated, since 2026-11-06; nothing queued waits on it.
    GitHub says the Claude app wants new permissions; review and accept or ignore in GitHub settings, Apps.
-
-5. **Etsy shop Taxelicious is suspended** — time not stated, since 2026-11-07; nothing queued waits on it.
-   Etsy shop Taxelicious is suspended (£2.98 bill unpaid) — update the card in Etsy billing to reopen it
 
 ## Waiting on an attended Claude session, not you (3)
 

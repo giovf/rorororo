@@ -2634,3 +2634,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-08 08:20 | review | Owner needed: fix the Etsy card to reopen the suspended shop (ALERTS 11-07), then publish the Reseller listing
 - 2026-11-08 08:20 | notify | Your Etsy shop is suspended over an unpaid £2.98 bill: update the card in Etsy billing to reopen it
 - 2026-11-08 09:07 | triage | notify owner dispatched: last run started 06:36 UTC, 2 h 30 min ago
+- 2026-11-08 09:21 | build | Claimed gankdat x402-change-routes-bazaar-index (6) before npm ci; main green; first-runs: dependabot only
+- 2026-11-08 09:21 | build | Found: 11-08 metrics log says x402 probe skipped, 30-day cap spent (29 of 20); 9 change routes unlisted 3 d
+- 2026-11-08 09:21 | build | x402-bazaar-read.ts: probeMonthlyCap = live routes + 3 re-screens (25 → 28); forced dispatch ignores the cap
+- 2026-11-08 09:21 | build | x402-probe.mjs: x402_probe true pays the due routes only, =all re-screens every route; US$ estimate printed
+- 2026-11-08 09:21 | build | docs/ci/gankdat-metrics.yml: probe input text and step comment match the per-route rule (installer moves it)
+- 2026-11-08 09:21 | build | Tests: 17 in x402-bazaar-read.spec (2 new: cap from route count, 29-payment window + forced); gates green
+- 2026-11-08 09:21 | build | RESEARCH.md: 11-08 reading and build; ARCHITECTURE, X402-SETUP, MARKETPLACE-PREP probe passages; task 46

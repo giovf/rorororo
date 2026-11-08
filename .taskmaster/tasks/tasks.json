@@ -1471,13 +1471,25 @@
         "priority": "low",
         "subtasks": [],
         "updatedAt": "2026-11-02T17:42:38.740Z"
+      },
+      {
+        "id": "46",
+        "title": "gankdat: x402 probe pays the due routes on a forced dispatch; 30-day cap sized from the live route count (probeMonthlyCap)",
+        "description": "x402-change-routes-bazaar-index (2026-11-08): the nine /x402/changes/<slug> routes priced on 11-05 stayed unlisted in the Bazaar because the weekly probe's fixed cap of 20 payments in 30 days was spent by the 10-23 survey (29 counted). scripts/x402-bazaar-read.ts: probeMonthlyCap(routes) = routes + 3 re-screens; shouldProbe takes the live route count and a forced dispatch ignores the spacing and the cap; probeTargets gains `all` for the every-route re-screen. scripts/x402-probe.mjs reads the live routes first, pays every due route on X402_PROBE_FORCE=true, every route on =all, prints the US$ estimate. docs/ci/gankdat-metrics.yml input text updated.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-11-08T09:18:35.941Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-11-02T17:42:38.740Z",
-      "taskCount": 45,
-      "completedCount": 38,
+      "lastModified": "2026-11-08T09:18:35.941Z",
+      "taskCount": 46,
+      "completedCount": 39,
       "tags": [
         "master"
       ]

@@ -136,7 +136,12 @@ names — never rename those; see memory/git history for why).
   `connect_account` description name it; the Daily numbers validate clause checks the change
   resources as `changes/<slug>` and the weekly probe pays an unlisted one once so the Bazaar
   lists it; `x402_paid` points carry the source slug in blob5 as before, so `x402 30d:` and
-  `datasets 30d external:` count change-feed calls by source
+  `datasets 30d external:` count change-feed calls by source. **Indexed by a forced dispatch
+  (2026-11-08, `x402-change-routes-bazaar-index`):** the weekly probe never paid them — its
+  fixed cap of 20 payments in 30 days was already spent by the 10-23 survey (29 counted) — so
+  the `gankdat metrics` job was dispatched with `x402_probe: true`, which since this date pays
+  every due route whatever the spacing and the cap say (nine one-cent calls, US$0.09, LEDGER
+  row), and the cap is sized from the live route count (`probeMonthlyCap`, below)
 - `public/` — landing page, docs (Scalar embed), robots/sitemap (Workers
   Assets); `llms.txt` is Worker-generated from the source registry
 - `src/middleware/canonical.ts` — one URL per page: `www.` and `http://` and
@@ -800,9 +805,14 @@ runs `check:root`.
   the route it paid, was listed of 17. With the `X402_PROBE_KEY` secret (action 026
   option B) the metrics job's probe step (`scripts/x402-probe.mjs`) reads the catalogue
   when no probe payment landed in 7 days and pays, through the test client, every route
-  it does not list and every listed route settled 23 days ago (`probeTargets`); the
-  `x402_probe` dispatch input pays every route (a re-screen is per resource); at most 20
-  half-cents in any 30 days (`PROBE_MONTHLY_CAP`, US$0.10). The client prints the
+  it does not list and every listed route settled 23 days ago (`probeTargets`), inside a
+  30-day cap of one payment per live route plus three re-screens (`probeMonthlyCap`, since
+  2026-11-08: 25 routes = 28 payments, at most US$0.20 — a data route is half a cent, a
+  change feed one cent; the fixed cap of 20 before it was spent by the 10-23 survey and kept
+  the nine change feeds unlisted for three days). The `x402_probe` dispatch input pays the
+  due routes today whatever the spacing and the cap say (a decision taken in a run log,
+  bounded by the route count); `X402_PROBE_FORCE=all`, set by hand in the workflow, pays every
+  route (a re-screen after a metadata change is per resource too). The client prints the
   facilitator's Bazaar verdict (`EXTENSION-RESPONSES`: success, processing, rejected) and
   the facilitator's reason when a signed payment gets a 402. **Description cap (v0.25.3,
   2026-10-23):** the CDP facilitator rejects verify and settle when the route description

@@ -109,9 +109,11 @@ Docs: `docs.cdp.coinbase.com/x402/seller/get-discovered` (read 2026-10-14 throug
    <date>` on the Daily numbers row (`bazaar: 0 listed` until indexed, `n/a (<reason>)`
    when a read fails; `scripts/x402-bazaar-read.ts`); day-30 read 2026-11-14. With the
    `X402_PROBE_KEY` secret (option B of action 026) the job's probe step
-   (`scripts/x402-probe.mjs`) repeats the settled call: never twice in 7 days, only while
-   the clause reads `0 listed`, on the 1st of each month (liveness), or when the
-   workflow's `x402_probe` input is set (a re-screen after a metadata change). New endpoints "rank conservatively until usage accrues";
+   (`scripts/x402-probe.mjs`) repeats the settled call per route: never twice in 7 days, for
+   every route the catalogue does not list or has not settled in 23 days, inside a 30-day cap
+   of one payment per live route plus three re-screens; the workflow's `x402_probe` input pays
+   those due routes today whatever the spacing and the cap say (how the nine change feeds were
+   indexed on 2026-11-08). New endpoints "rank conservatively until usage accrues";
    curation (featured tier) needs live mainnet payments, ≥ 99% availability and complete
    metadata — that is editorial, not a step.
 
