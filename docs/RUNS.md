@@ -2633,3 +2633,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-08 08:20 | review | STRATEGY §4 Now column refreshed on every row with 11-08 sources; §2 four rows; §8 five decision lines
 - 2026-11-08 08:20 | review | Owner needed: fix the Etsy card to reopen the suspended shop (ALERTS 11-07), then publish the Reseller listing
 - 2026-11-08 08:20 | notify | Your Etsy shop is suspended over an unpaid £2.98 bill: update the card in Etsy billing to reopen it
+- 2026-11-08 09:07 | triage | notify owner dispatched: last run started 06:36 UTC, 2 h 30 min ago
