@@ -292,3 +292,4 @@
 - 2026-11-06 19:34 | notification | 0200project.com | Re: the payment behind each gankdat call | cold outreach asking if we compare payment-attached calls to settled ones; no customer ask | logged
 - 2026-11-07 06:44 | store | etsy.com | IMPORTANT: Your account for Taxelicious has been suspended | Etsy could not charge the £2.98 monthly bill on 1 Nov; shop suspended until card is fixed (follows the 11-01 alert) | needs owner
 - 2026-11-07 21:40 | notification | devpost.com | HACKATHONS just for you, gio | Devpost marketing newsletter | logged
+- 2026-11-08 01:09 | notification | mg.sealkeeper.run | Your services on gankdat.com are still unclaimed | cold outreach from a directory asking us to claim listings; no customer ask | logged
