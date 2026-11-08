@@ -1334,3 +1334,22 @@ nhs-ods, uk-trademark-journal `0xd9f590a1…`, uk-gambling-operators `0x28b0da91
 `EXTENSION-RESPONSES` header, so the facilitator's verdict is unread and the catalogue is the proof. The run rewrote the
 11-08 Daily numbers row 30 s after the payments (`bazaar: 16 listed` still; indexing takes up to 15 min), so the 11-09 row
 is the first reading — `25 listed` expected (26 routes less the paused uk-planning).
+
+## Spike 2026-11-08 — Clay's integrations marketplace → promote the no-contract listing (build, new-ventures spike)
+
+Two relay rounds (`clay-spike-2026-11-08`, `-b`: 27 pages, every one read). The Integrations Partner Program pays data
+partners through "a single annual API agreement" (Clay buys the calls and resells them as Clay Credits; the FAQ says
+"revenue share is only given to Solutions Partners"), and the 2026 Data Partner Awards went to volume vendors (LeadMagic
+"first … to cross 1 billion enrichment runs"). Below that tier the partner page routes applicants to "native integration,
+marketplace listing, **HTTP API**, or future review" — "Publish your API template", then a listing "on our website and
+docs" — a form and a fit review, no contract or verification stated, 30–60 days. The marketplace holds 220 providers and
+no register-native UK action: Beauhurst (UK & Germany) returns a Companies House number from a *domain* with its per-row
+credit price unpublished anywhere public; HitHorizons lists no live action; charities, insolvency, sanctions and sponsor
+licences are absent. Clay's Data Credits list at US$0.045–0.05 a row and Actions at US$0.0036–0.004; our keyed company
+profile is £0.005 and the x402 route US$0.01, and the community's DIY Companies House tutorial (Aug 2025, 2 reactions; a
+2024 thread of 21 comments) spends three or four Actions a company. Those asks want directors, which Blind Mode drops —
+our row qualifies a company (status, insolvency, sanctions, sponsor) rather than finding a contact. marketplace.clay.com
+takes community skills (49 listed, "Submit GTM skill", installs 0–34). **Promoted** as `clay-http-api-listing` (5,
+0.3 day: `public/clay.html` with the HTTP API config per lookup, a Claybook-shaped walkthrough, a skill folder; the owner
+submits the Typeform and the skill, ≤ 15 min, no verification). The credit-marketplace contract is not promoted. Details:
+`docs/exchange/spikes/clay-data-provider-marketplace.md`.

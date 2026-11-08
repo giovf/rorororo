@@ -782,6 +782,16 @@
       "added": "2026-11-07",
       "spiked": "2026-11-07",
       "updated": "2026-11-07"
+    },
+    {
+      "id": "clay-http-api-listing",
+      "title": "gankdat's register lookups listed in Clay's integrations marketplace as an HTTP API template (the user's own key pays us), plus a community skill on marketplace.clay.com — the no-contract tier of Clay's Integrations Partner Program",
+      "status": "promoted",
+      "why": "Spike 2026-11-08 (build, docs/exchange/spikes/clay-data-provider-marketplace.md): the register slot is open on a 220-provider marketplace (Beauhurst is the only action returning a Companies House number, from a domain; no charity, insolvency, sanctions or sponsor action), the partner page offers an HTTP API listing tier with a form and a fit review and no contract or verification stated, Clay Data Credits list at US$0.045–0.05 a row against our £0.005, and marketplace.clay.com takes community skills. The paid-by-Clay credit marketplace (a single annual API agreement; the 2026 awards went to volume vendors) is not promoted — it is the later step a Clay user base on our keys would earn.",
+      "trigger": "Promoted to gankdat `clay-http-api-listing` (5, 0.3 day). The credit-marketplace application (the annual API agreement, a contract the owner signs) waits for the first paying Clay-referred keys or an invitation from Clay's fit review.",
+      "added": "2026-11-08",
+      "updated": "2026-11-08",
+      "venture": "gankdat"
     }
   ]
 }

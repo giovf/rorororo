@@ -2649,3 +2649,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-08 09:28 | build | Dispatch rewrote today's Daily numbers row 30 s after the payments: still 16 listed, the 11-09 row is the proof
 - 2026-11-08 12:05 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-11-08 16:06 | triage | notify owner dispatched: last run started 13:49 UTC, 2 h 17 min ago
+- 2026-11-08 17:10 | build | Claimed new-ventures spike-clay-data-provider-marketplace (3) before npm ci; main green
+- 2026-11-08 17:11 | build | Relay clay-spike-2026-11-08 (+ -b, marketplace.clay.com added): 27 Clay pages, all 200, read in full
+- 2026-11-08 17:12 | build | dependabot.yml first run: still none since the 11-07 09:19 install (fires on a Dependabot PR only)
+- 2026-11-08 17:40 | build | Clay partner page: an HTTP API listing tier below the credit contract — form, fit review, no verification stated
+- 2026-11-08 17:40 | build | Clay marketplace: 220 providers, no register-native UK action; Beauhurst's credit price unpublished
+- 2026-11-08 17:40 | build | Clay Data Credit US$0.045–0.05 a row vs our £0.005 keyed / US$0.01 x402; community asks want directors
+- 2026-11-08 17:45 | build | Spike spike-clay-data-provider-marketplace done: PROMOTE — gankdat clay-http-api-listing (5) queued
+- 2026-11-08 17:45 | build | Exchange entry clay-http-api-listing promoted to gankdat; credit-marketplace contract not promoted
+- 2026-11-08 17:45 | build | gankdat RESEARCH.md: 11-08 spike section; spike file docs/exchange/spikes/clay-data-provider-marketplace.md

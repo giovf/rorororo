@@ -1101,6 +1101,16 @@
       "added": "2026-11-08",
       "doing_since": "2026-11-08",
       "done_at": "2026-11-08"
+    },
+    {
+      "id": "clay-http-api-listing",
+      "title": "Use gankdat in Clay: a docs page (public/clay.html) with the HTTP API enrichment config for each register lookup (company profiles, charities, insolvency, sanctions, sponsors — GET /v1/data/<source>?company_number=…, the Bearer key as an HTTP API (Headers) account, output fields, a conditional-run formula), a Claybook-shaped walkthrough (CRM accounts → status, insolvency, sanctions and sponsor flags → route or disqualify), a skill folder for marketplace.clay.com, sitemap row and ARCHITECTURE note; then one owner action (≤ 15 min, no verification): submit the Integrations Partner Typeform with the docs URL and the skill on marketplace.clay.com",
+      "why": "Spike 2026-11-08 (docs/exchange/spikes/clay-data-provider-marketplace.md, two relay rounds): Clay's marketplace lists 220 providers with no register-native UK action — Beauhurst is the nearest (Companies House number from a domain, credit price unpublished), HitHorizons has no live action — and clay.com/partners/integrations routes applicants to 'native integration, marketplace listing, HTTP API, or future review', with 'Publish your API template' and a listing 'on our website and docs' as the HTTP API tier: no contract, no verification stated, the user's own gankdat key pays us (£0.005 a row keyed, US$0.01 on x402) while a Clay Data Credit lists at US$0.045–0.05 and the DIY route the community tutorial teaches costs three or four Clay actions a company. marketplace.clay.com takes community skill submissions (49 skills, installs 0–34). Evidence 1.5 (gap confirmed; asks thin and director-focused, which Blind Mode cannot serve) × reach 2.5 (Clay's own listing and docs if accepted, the skills shelf) ÷ 0.4 (0.3 day + the owner's form) ≈ 9, discounted to 5: the listing is at Clay's discretion (30–60 days) and our row qualifies companies rather than finding contacts. Kill: no listing and no skill approval 90 days after the application → park with 'reapply at the first paying UK account'.",
+      "effort_days": 0.3,
+      "proof": "the listing live on clay.com/integrations or the skill live on marketplace.clay.com; then keys created with a clay referrer and their paid rows in the Daily numbers",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-11-08"
     }
   ],
   "research_after": "2026-11-06"
