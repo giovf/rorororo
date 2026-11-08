@@ -1326,3 +1326,11 @@ carries the input's new text (the installer moves it; its first run is the next 
 convention, a £0.00 `cost` row; no new money. **Proof:** the discovery API returns each `changes/<slug>` resource and
 the 11-09 or 11-10 Daily numbers row reads `bazaar: 25 listed`; the 2026-11-14 day-30 read and the 2026-12-14
 change-feed proof (`≥ 5 paid change-feed calls from ≥ 2 clients`) then read a listed product.
+**Dispatched (09:21 UTC, run 42466876424, the installed workflow's first run):** `x402 probe: 16 of 26 routes listed;
+10 due ≈ US$0.095` — the nine change feeds and uk-planning — then `paid 9 of 10 route(s) ≈ US$0.090; failed:
+uk-planning` (503: paused, as on 10-23). Every change route answered `HTTP status: 200` with a settled Base transaction
+(sam-exclusions `0x09b18e51…`, uk-food-hygiene `0xb8be96f1…`, uk-sponsors, uk-charities, uk-care-locations, uk-schools,
+nhs-ods, uk-trademark-journal `0xd9f590a1…`, uk-gambling-operators `0x28b0da91…`); the settle response carried no
+`EXTENSION-RESPONSES` header, so the facilitator's verdict is unread and the catalogue is the proof. The run rewrote the
+11-08 Daily numbers row 30 s after the payments (`bazaar: 16 listed` still; indexing takes up to 15 min), so the 11-09 row
+is the first reading — `25 listed` expected (26 routes less the paused uk-planning).

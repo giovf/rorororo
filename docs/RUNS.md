@@ -2641,3 +2641,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-08 09:21 | build | docs/ci/gankdat-metrics.yml: probe input text and step comment match the per-route rule (installer moves it)
 - 2026-11-08 09:21 | build | Tests: 17 in x402-bazaar-read.spec (2 new: cap from route count, 29-payment window + forced); gates green
 - 2026-11-08 09:21 | build | RESEARCH.md: 11-08 reading and build; ARCHITECTURE, X402-SETUP, MARKETPLACE-PREP probe passages; task 46
+- 2026-11-08 09:28 | build | gankdat-metrics.yml first run: success (09:21 dispatch, run 308, 4.5 min; after the 09:21 installer)
+- 2026-11-08 09:28 | build | Forced probe round (run 308): 16 of 26 listed, 10 due; 9 change routes settled on Base, uk-planning 503 (paused)
+- 2026-11-08 09:28 | build | Live call: GET /x402/changes/uk-trademark-journal paid → HTTP 200, tx 0xd9f590a1…; US$0.09 for the nine
+- 2026-11-08 09:28 | build | Built gankdat x402-change-routes-bazaar-index: nine change feeds paid once each; 11-09 row should read 25 listed
+- 2026-11-08 09:28 | build | LEDGER: £0.00 cost row for the nine one-cent calls from the test wallet (≈ US$0.90 left); no new money
+- 2026-11-08 09:28 | build | Dispatch rewrote today's Daily numbers row 30 s after the payments: still 16 listed, the 11-09 row is the proof

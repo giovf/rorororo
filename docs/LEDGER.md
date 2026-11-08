@@ -26,6 +26,7 @@ and warns under three.
 | 2026-09-17 | portfolio | cost    | 3.70 | Chrome Web Store developer registration — US$5.00 incl. VAT on Mastercard 17 Sep (order CWS.5162-7768-2586-70036); £3.70 at ~1.35, exact GBP per card statement |
 | 2026-10-16 | gankdat   | cost    | 0.00 | x402 Bazaar indexing (action 026, option B): paid US$0.005 from the x402 test wallet funded on 2026-09-19 (US$1.11 USDC on Base, before the ledger counted gankdat); no new money; the wallet's key is the `X402_PROBE_KEY` secret for the monthly liveness probe |
 | 2026-10-23 | gankdat   | cost    | 0.00 | x402 Bazaar per-route indexing (`x402-bazaar-week-1-index-check`): 18 half-cent calls (US$0.09) from the same test wallet: one per route CDP had not indexed, two of them twice because the first round found 13 routes rejecting payment (v0.25.3 fix); from now the metrics probe pays each route once a month at most (≤ 20 half-cents = US$0.10 / 30 d, ~US$1 a year from the wallet's ≈ US$1.09); no new money |
+| 2026-11-08 | gankdat   | cost    | 0.00 | x402 Bazaar indexing of the nine change feeds (`x402-change-routes-bazaar-index`): nine one-cent calls (US$0.09) from the same test wallet, one per `/x402/changes/<slug>` route CDP had not indexed since they were priced on 11-05 (run 42466876424, every call settled on Base); the weekly probe's 30-day cap is now one payment per live route plus three re-screens (≤ US$0.20 a month at 25 routes, ~US$1 a year at the catalogue's usual pace from the wallet's ≈ US$0.90); no new money |
 
 ## Recurring
 
