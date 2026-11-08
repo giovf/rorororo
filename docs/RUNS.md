@@ -2659,3 +2659,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-08 17:45 | build | Exchange entry clay-http-api-listing promoted to gankdat; credit-marketplace contract not promoted
 - 2026-11-08 17:45 | build | gankdat RESEARCH.md: 11-08 spike section; spike file docs/exchange/spikes/clay-data-provider-marketplace.md
 - 2026-11-08 19:02 | watchdog | missed: burn-down slot 2026-11-08 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
+- 2026-11-08 22:05 | triage | notify owner dispatched: last run started 19:01 UTC, 3 h ago
