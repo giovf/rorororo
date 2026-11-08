@@ -1097,8 +1097,9 @@
       "effort_days": 0.1,
       "proof": "Daily numbers `bazaar:` reads 25 listed (16 data + 9 change routes) within 48 h; the discovery API returns each changes/<slug> resource; a £0.00 ledger row names the nine half-cent-class payments; the 2026-11-14 x402-bazaar-day-30 read and the 2026-12-14 change-feed proof read a listed product",
       "score": 6,
-      "status": "todo",
-      "added": "2026-11-08"
+      "status": "doing",
+      "added": "2026-11-08",
+      "doing_since": "2026-11-08"
     }
   ],
   "research_after": "2026-11-06"
