@@ -1,0 +1,124 @@
+{
+  "request": "clay-spike-2026-11-08-b",
+  "fetched_at": "2026-11-08T17:13:53.856Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/partners/integrations",
+      "fetched_at": "2026-11-08T17:13:48.397Z",
+      "status": 200,
+      "elapsed_ms": 165,
+      "final_url": "https://www.clay.com/partners/integrations",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 06 Nov 2026 20:09:53 GMT"
+      },
+      "file": "1.txt",
+      "bytes": 12028,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 241769
+    },
+    {
+      "method": "GET",
+      "url": "https://university.clay.com/docs/credit-refunds",
+      "fetched_at": "2026-11-08T17:13:48.575Z",
+      "status": 200,
+      "elapsed_ms": 110,
+      "final_url": "https://university.clay.com/docs/credit-refunds",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 07 Nov 2026 10:10:56 GMT"
+      },
+      "file": "2.txt",
+      "bytes": 26475,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 182880
+    },
+    {
+      "method": "GET",
+      "url": "https://university.clay.com/use-case-templates",
+      "fetched_at": "2026-11-08T17:13:49.193Z",
+      "status": 200,
+      "elapsed_ms": 23,
+      "final_url": "https://university.clay.com/use-case-templates",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Wed, 04 Nov 2026 03:17:13 GMT"
+      },
+      "file": "3.txt",
+      "bytes": 32126,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 458568
+    },
+    {
+      "method": "GET",
+      "url": "https://university.clay.com/claybooks",
+      "fetched_at": "2026-11-08T17:13:49.728Z",
+      "status": 200,
+      "elapsed_ms": 172,
+      "final_url": "https://university.clay.com/use-case-templates",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Wed, 04 Nov 2026 03:17:13 GMT"
+      },
+      "file": "4.txt",
+      "bytes": 32126,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 458568
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.clay.com/",
+      "fetched_at": "2026-11-08T17:13:49.912Z",
+      "status": 200,
+      "elapsed_ms": 3283,
+      "final_url": "https://marketplace.clay.com/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "5.txt",
+      "bytes": 18462,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 393006
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/integrations/data-provider/hithorizons",
+      "fetched_at": "2026-11-08T17:13:53.249Z",
+      "status": 200,
+      "elapsed_ms": 51,
+      "final_url": "https://www.clay.com/integrations/data-provider/hithorizons",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 07 Nov 2026 17:26:11 GMT"
+      },
+      "file": "6.txt",
+      "bytes": 12244,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 274244
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/integrations/action/find-company-corporate-structure-uk-and-germany-beauhurst",
+      "fetched_at": "2026-11-08T17:13:53.808Z",
+      "status": 200,
+      "elapsed_ms": 42,
+      "final_url": "https://www.clay.com/integrations/action/find-company-corporate-structure-uk-and-germany-beauhurst",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sun, 08 Nov 2026 17:13:53 GMT"
+      },
+      "file": "7.txt",
+      "bytes": 12089,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 301906
+    }
+  ]
+}
