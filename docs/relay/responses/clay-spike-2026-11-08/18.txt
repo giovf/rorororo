@@ -1,0 +1,73 @@
+{"@context":"https://schema.org","@type":"DiscussionForumPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://community.clay.com/x/content-and-events/msg_HKMsN4mDF2ST/use-http-api"},"url":"https://community.clay.com/x/content-and-events/msg_HKMsN4mDF2ST/use-http-api","headline":"Use http api","description":"Use http api","text":"Use http api","author":{"@type":"Person","name":"Summiya B.","url":"https://community.clay.com/members/prof_aGWoorhyVRZu"},"datePublished":"2025-05-10T17:50:53.777Z","dateModified":"2025-05-10T17:52:01.082Z","isPartOf":{"@type":"CollectionPage","name":"Share Content and Events","url":"https://community.clay.com/x/content-and-events"},"interactionStatistic":[{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":1},{"@type":"InteractionCounter","interactionType":{"@type":"CommentAction"},"userInteractionCount":1}],"comment":[{"@type":"Comment","url":"https://community.clay.com/x/content-and-events/msg_HKMsN4mDF2ST/use-http-api#msg_Zu9jk2949x5c","text":"You can use the HTTP API in Clay to connect with almost any external tool or database that supports API access. Here’s how to get started:1. *Add an HTTP API action* to your Clay workflow.2. *Choose the HTTP method* (GET, POST, PUT, PATCH, DELETE) depending on whether you want to retrieve, send, update, or delete data.3. *Enter the API endpoint URL* you want to interact with.4. *Configure optional fields*:• Add query string parameters to filter or refine your request.• Set up the request body (for POST/PUT) using JSON format.• Add any required headers (like authentication tokens).5. *Remove empty fields* from the request to avoid sending blank values.6. *Save your configuration* as a template for reuse, or use AI-assisted setup to help generate the request structure.This integration is low-code and doesn’t require credits if you’re connecting to external tools you already subscribe to. If you need to use an API key, you can find and manage it in your Clay settings under Your Profile. If you encounter issues, double-check your API key and integration settings. Sources:\u003chttps://docs.clay.com/en/articles/9672489-http-api-with-clay|HTTP API with Clay\u003e\u003chttps://www.clay.com/university/guide/http-api-integration-overview?8913605e%5Fpage=2|HTTP API integration overview | Documentation | Clay University\u003e\u003chttps://www.clay.com/university/lesson/http-api-clay-101|HTTP/API [Clay 101] - Clay University\u003e\u003chttps://www.clay.com/university/guide/http-api-integration-overview|HTTP API integration overview | Documentation | Clay University\u003e","datePublished":"2025-05-10T17:51:55.708Z","author":{"@type":"Person","name":"Channeled","url":"https://community.clay.com/members/prof_wgU6CmhZ1xNP"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clay","item":"https://community.clay.com/"},{"@type":"ListItem","position":2,"name":"Share Content and Events","item":"https://community.clay.com/x/content-and-events"},{"@type":"ListItem","position":3,"name":"Use http api","item":"https://community.clay.com/x/content-and-events/msg_HKMsN4mDF2ST/use-http-api"}]}
+meta description: Use http api
+meta og:title: Use http api
+meta og:description: Use http api
+meta og:url: https://community.clay.com/x/content-and-events/msg_HKMsN4mDF2ST/use-http-api
+meta og:site_name: Clay
+meta og:image: https://images.tightknit.ai/og/post?record_id=msg_HKMsN4mDF2ST&v=1746899521&tenant_id=039180af-010b-47f4-b13f-b1f9f244bc4b
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:image:alt: Use http api
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:title: Use http api
+meta twitter:description: Use http api
+meta twitter:image: https://images.tightknit.ai/og/post?record_id=msg_HKMsN4mDF2ST&v=1746899521&tenant_id=039180af-010b-47f4-b13f-b1f9f244bc4b
+meta twitter:image:alt: Use http api
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+Skip to main content (#main-content)
+Open sidebar
+/
+Search
+⌘K
+Join the Community (https://clay.com/slack)
+🏠 Home (/)
+🤔 Ask Me Anything (/x/10-ask-me-anything)
+📣 Clay Announcements (/x/announcements)
+🤗 Clay Club Hub (/x/clay-clubs)
+🎒 Clay Cohorts (/x/clay-cohorts)
+🏆 Clay Cup (/x/clay-cup)
+🌈 Discussion (/x/general)
+👋 Introduce Yourself (/x/welcome)
+💼 Share Jobs (/x/share-jobs)
+🌟 Share Resources (/x/share-resources)
+⚖︎ Community Guidelines (/community-guidelines)
+📄 Attend a Clay Club Event (/p/luma)
+Powered by Tightknit (https://tightknit.ai?utm_medium=community_site&utm_campaign=powered_by&utm_source=)
+Use http api | Clay
+/x/content-and-events Share Content and Events (/x/content-and-events)
+Share Content and Events (/x/content-and-events)
+Use http api
+Summiya B. (/members/prof_aGWoorhyVRZu)
+· May 10, 2025 05:50 PM (/x/content-and-events/msg_HKMsN4mDF2ST/use-http-api) ·
+[Slack logo] View in Slack
+Share
+Open with AI
+Use http api
+🧵 1
+Join the discussion
+1 comment (#comments) · Sorted by Oldest
+/members/prof_wgU6CmhZ1xNP
+Channeled (/members/prof_wgU6CmhZ1xNP)
+APP
+·
+·
+[Slack logo] View in Slack
+You can use the HTTP API in Clay to connect with almost any external tool or database that supports API access. Here’s how to get started:
+1. Add an HTTP API action to your Clay workflow.
+2. Choose the HTTP method (GET, POST, PUT, PATCH, DELETE) depending on whether you want to retrieve, send, update, or delete data.
+3. Enter the API endpoint URL you want to interact with.
+4. Configure optional fields :
+• Add query string parameters to filter or refine your request.
+• Set up the request body (for POST/PUT) using JSON format.
+• Add any required headers (like authentication tokens).
+5. Remove empty fields from the request to avoid sending blank values.
+6. Save your configuration as a template for reuse, or use AI-assisted setup to help generate the request structure.
+This integration is low-code and doesn’t require credits if you’re connecting to external tools you already subscribe to. If you need to use an API key, you can find and manage it in your Clay settings under Your Profile. If you encounter issues, double-check your API key and integration settings.
+Sources:
+HTTP API with Clay (https://docs.clay.com/en/articles/9672489-http-api-with-clay)
+HTTP API integration overview | Documentation | Clay University (https://www.clay.com/university/guide/http-api-integration-overview?8913605e%5Fpage=2)
+HTTP/API [Clay 101] - Clay University (https://www.clay.com/university/lesson/http-api-clay-101)
+HTTP API integration overview | Documentation | Clay University (https://www.clay.com/university/guide/http-api-integration-overview)

@@ -1,0 +1,142 @@
+{"@context":"https://schema.org","@type":"DiscussionForumPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking"},"url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking","headline":"Integrating Companies House API with Clay: Seeking Experiences","description":"Does anyone have any experience connecting companies house API into clay?","text":"Does anyone have any experience connecting companies house API into clay?","author":{"@type":"Person","name":"Leo B.","url":"https://community.clay.com/members/prof_l0ogP48Wg7Hk"},"datePublished":"2024-09-06T13:05:56.528Z","dateModified":"2024-09-18T14:13:37.465Z","isPartOf":{"@type":"CollectionPage","name":"Discussion","url":"https://community.clay.com/x/general"},"interactionStatistic":[{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0},{"@type":"InteractionCounter","interactionType":{"@type":"CommentAction"},"userInteractionCount":21}],"comment":[{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_ghB8xKGGXV6D","text":"Yes, I recently did, are you getting stuck somewhere?","datePublished":"2024-09-06T13:30:17.273Z","author":{"@type":"Person","name":"Muhammad S.","url":"https://community.clay.com/members/prof_PCm3GcwyCtKC"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_g58kU6FdcqVb","text":"Yes, I am trying to get the PDF of the account filings but when I click the url link that gets given, the page is not avaliable","datePublished":"2024-09-06T13:34:10.565Z","author":{"@type":"Person","name":"Leo B.","url":"https://community.clay.com/members/prof_l0ogP48Wg7Hk"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_NHi8NQsHbnrc","text":"did you have this issueC?","datePublished":"2024-09-06T13:34:12.525Z","author":{"@type":"Person","name":"Leo B.","url":"https://community.clay.com/members/prof_l0ogP48Wg7Hk"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_XHTlqrFw0xDs","text":"\u003chttps://document-api.company-information.service.gov.uk/document/a1aBqsXhUq0zOp_OPsfVo90_n5noPnz54RUWda4A-0g\u003e","datePublished":"2024-09-06T13:34:27.000Z","author":{"@type":"Person","name":"Leo B.","url":"https://community.clay.com/members/prof_l0ogP48Wg7Hk"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_mEAMglJjJUQD","text":"because pdf is a binary file","datePublished":"2024-09-06T13:34:30.176Z","author":{"@type":"Person","name":"Muhammad S.","url":"https://community.clay.com/members/prof_PCm3GcwyCtKC"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_uMbRA04FvfcQ","text":"Clay cant handle binary file","datePublished":"2024-09-06T13:34:34.184Z","author":{"@type":"Person","name":"Muhammad S.","url":"https://community.clay.com/members/prof_PCm3GcwyCtKC"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_ROasww7xCXlF","text":"You have to upload the file on aws and then get back the URL in clay","datePublished":"2024-09-06T13:34:46.166Z","author":{"@type":"Person","name":"Muhammad S.","url":"https://community.clay.com/members/prof_PCm3GcwyCtKC"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_iObPoREw72Nj","text":"The file returned by the API is a binary file","datePublished":"2024-09-06T13:34:57.670Z","author":{"@type":"Person","name":"Muhammad S.","url":"https://community.clay.com/members/prof_PCm3GcwyCtKC"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_unrI0nvu0i9G","text":"ahhh","datePublished":"2024-09-06T13:35:13.596Z","author":{"@type":"Person","name":"Leo B.","url":"https://community.clay.com/members/prof_l0ogP48Wg7Hk"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_8ZyeCblKEZ4Y","text":"makes sense","datePublished":"2024-09-06T13:35:17.636Z","author":{"@type":"Person","name":"Leo B.","url":"https://community.clay.com/members/prof_l0ogP48Wg7Hk"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_ebtjZbRGTxZW","text":"Is there anyway I can do that?","datePublished":"2024-09-06T13:35:31.100Z","author":{"@type":"Person","name":"Leo B.","url":"https://community.clay.com/members/prof_l0ogP48Wg7Hk"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_mQxjrvh2dkUh","text":"that part is new to me","datePublished":"2024-09-06T13:35:34.917Z","author":{"@type":"Person","name":"Leo B.","url":"https://community.clay.com/members/prof_l0ogP48Wg7Hk"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_hAlmZj5MTm4B","text":"I need to scrape the data in there","datePublished":"2024-09-06T13:35:45.312Z","author":{"@type":"Person","name":"Leo B.","url":"https://community.clay.com/members/prof_l0ogP48Wg7Hk"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_iTjN3akS59AB","text":"Yes\n\nSend a call to n8n, have n8n upload the file to aws and return the URL to caly.","datePublished":"2024-09-06T13:35:55.604Z","author":{"@type":"Person","name":"Muhammad S.","url":"https://community.clay.com/members/prof_PCm3GcwyCtKC"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}},{"@type":"Comment","url":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking#msg_9dyeanCyj78o","text":"Thank you","datePublished":"2024-09-06T13:52:59.099Z","author":{"@type":"Person","name":"Leo B.","url":"https://community.clay.com/members/prof_l0ogP48Wg7Hk"},"interactionStatistic":{"@type":"InteractionCounter","interactionType":{"@type":"LikeAction"},"userInteractionCount":0}}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clay","item":"https://community.clay.com/"},{"@type":"ListItem","position":2,"name":"Discussion","item":"https://community.clay.com/x/general"},{"@type":"ListItem","position":3,"name":"Integrating Companies House API with Clay: Seeking Experiences","item":"https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking"}]}
+meta description: Does anyone have any experience connecting companies house API into clay?
+meta og:title: Integrating Companies House API with Clay: Seeking Experiences
+meta og:description: Does anyone have any experience connecting companies house API into clay?
+meta og:url: https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking
+meta og:site_name: Clay
+meta og:image: https://images.tightknit.ai/og/post?record_id=msg_8zr5eoQW31kq&v=1726668817&tenant_id=039180af-010b-47f4-b13f-b1f9f244bc4b
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:image:alt: Integrating Companies House API with Clay: Seeking Experiences
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:title: Integrating Companies House API with Clay: Seeking Experiences
+meta twitter:description: Does anyone have any experience connecting companies house API into clay?
+meta twitter:image: https://images.tightknit.ai/og/post?record_id=msg_8zr5eoQW31kq&v=1726668817&tenant_id=039180af-010b-47f4-b13f-b1f9f244bc4b
+meta twitter:image:alt: Integrating Companies House API with Clay: Seeking Experiences
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+Skip to main content (#main-content)
+Open sidebar
+/
+Search
+⌘K
+Join the Community (https://clay.com/slack)
+🏠 Home (/)
+🤔 Ask Me Anything (/x/10-ask-me-anything)
+📣 Clay Announcements (/x/announcements)
+🤗 Clay Club Hub (/x/clay-clubs)
+🎒 Clay Cohorts (/x/clay-cohorts)
+🏆 Clay Cup (/x/clay-cup)
+🌈 Discussion (/x/general)
+👋 Introduce Yourself (/x/welcome)
+💼 Share Jobs (/x/share-jobs)
+🌟 Share Resources (/x/share-resources)
+⚖︎ Community Guidelines (/community-guidelines)
+📄 Attend a Clay Club Event (/p/luma)
+Powered by Tightknit (https://tightknit.ai?utm_medium=community_site&utm_campaign=powered_by&utm_source=)
+Integrating Companies House API with Clay: Seeking Experiences | Clay
+/x/general Discussion (/x/general)
+Discussion (/x/general)
+Integrating Companies House API with Clay: Seeking Experiences
+Leo B. (/members/prof_l0ogP48Wg7Hk)
+· Sep 06, 2024 01:05 PM (/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking) ·
+[Slack logo] View in Slack
+Share
+Open with AI
+Does anyone have any experience connecting companies house API into clay?
+Join the discussion
+21 comments (#comments) · Sorted by Oldest
+View more
+/members/prof_PCm3GcwyCtKC
+Muhammad S. (/members/prof_PCm3GcwyCtKC)
+·
+·
+[Slack logo] View in Slack
+Yes, I recently did, are you getting stuck somewhere?
+/members/prof_l0ogP48Wg7Hk
+Leo B. (/members/prof_l0ogP48Wg7Hk)
+·
+·
+[Slack logo] View in Slack
+Yes, I am trying to get the PDF of the account filings but when I click the url link that gets given, the page is not avaliable
+/members/prof_l0ogP48Wg7Hk
+Leo B. (/members/prof_l0ogP48Wg7Hk)
+·
+·
+[Slack logo] View in Slack
+did you have this issueC?
+/members/prof_l0ogP48Wg7Hk
+Leo B. (/members/prof_l0ogP48Wg7Hk)
+·
+·
+[Slack logo] View in Slack
+https://document-api.company-information.service.gov.uk/document/a1aBqsXhUq0zOp_OPsfVo90_n5noPnz54RUWda4A-0g
+/members/prof_PCm3GcwyCtKC
+Muhammad S. (/members/prof_PCm3GcwyCtKC)
+·
+·
+[Slack logo] View in Slack
+because pdf is a binary file
+/members/prof_PCm3GcwyCtKC
+Muhammad S. (/members/prof_PCm3GcwyCtKC)
+·
+·
+[Slack logo] View in Slack
+Clay cant handle binary file
+/members/prof_PCm3GcwyCtKC
+Muhammad S. (/members/prof_PCm3GcwyCtKC)
+·
+·
+[Slack logo] View in Slack
+You have to upload the file on aws and then get back the URL in clay
+/members/prof_PCm3GcwyCtKC
+Muhammad S. (/members/prof_PCm3GcwyCtKC)
+·
+·
+[Slack logo] View in Slack
+The file returned by the API is a binary file
+/members/prof_l0ogP48Wg7Hk
+Leo B. (/members/prof_l0ogP48Wg7Hk)
+·
+·
+[Slack logo] View in Slack
+ahhh
+/members/prof_l0ogP48Wg7Hk
+Leo B. (/members/prof_l0ogP48Wg7Hk)
+·
+·
+[Slack logo] View in Slack
+makes sense
+/members/prof_l0ogP48Wg7Hk
+Leo B. (/members/prof_l0ogP48Wg7Hk)
+·
+·
+[Slack logo] View in Slack
+Is there anyway I can do that?
+/members/prof_l0ogP48Wg7Hk
+Leo B. (/members/prof_l0ogP48Wg7Hk)
+·
+·
+[Slack logo] View in Slack
+that part is new to me
+/members/prof_l0ogP48Wg7Hk
+Leo B. (/members/prof_l0ogP48Wg7Hk)
+·
+·
+[Slack logo] View in Slack
+I need to scrape the data in there
+/members/prof_PCm3GcwyCtKC
+Muhammad S. (/members/prof_PCm3GcwyCtKC)
+·
+·
+[Slack logo] View in Slack
+Yes
+Send a call to n8n, have n8n upload the file to aws and return the URL to caly.
+/members/prof_l0ogP48Wg7Hk
+Leo B. (/members/prof_l0ogP48Wg7Hk)
+·
+·
+[Slack logo] View in Slack
+Thank you

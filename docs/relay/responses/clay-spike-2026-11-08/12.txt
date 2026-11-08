@@ -1,0 +1,534 @@
+{ "@context": "https://schema.org", "@type": "Article", "headline": "HTTP API", "description": "Facilitate seamless integration and connectivity with any APIs.", "articleBody": "", "url": "/detail_docs", "datePublished": "Jun 24, 2026", "dateModified": "Jun 23, 2026", "author": { "@type": "Organization", "name": "Clay", "url": "https://www.clay.com" }, "publisher": { "@type": "Organization", "name": "Clay", "url": "https://www.clay.com", "logo": { "@type": "ImageObject", "url": "https://cdn.prod.website-files.com/687563213dfbc91a782122b1/691f411366a473645359848d_clay-logo.avif" } }, "inLanguage": "en" }
+meta og:type: website
+HTTP API - Clay Docs
+Skip to main
+[Close-up of overlapping pink and blue translucent geometric shapes on a white background.]
+[Banner with backward arrow, text 'CLAYBACK', 'SECURE ARCHIVAL DATA' and button 'OPEN THE ARCHIVES'.]
+[Abstract composition of overlapping blue and orange translucent rounded shapes on a white background.]
+Review your year with Clay on Clayback.clay.com (https://clayback.clay.com/)
+University home page (/)
+Search University or ask AI. Learn your way.
+⌘
+K
+​
+Open workspace (https://app.clay.com)
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Sign up to Clay
+Doc Topics
+Getting started (/docs-topics/getting-started)
+Find (/docs-topics/find)
+Enrich (/docs-topics/enrich)
+Transform (/docs-topics/transform)
+Web scraping (/docs-topics/web-scraping)
+Gen AI (/docs-topics/gen-ai)
+Export (/docs-topics/export)
+Settings & admin (/docs-topics/data-destinations)
+Signals & triggers (/docs-topics/signals)
+Docs index
+​
+Log in (https://app.clay.com/)
+Sign up (https://app.clay.com/signup?source=nav)
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Sign up to Clay
+Doc Topics
+Getting started (/docs-topics/getting-started)
+Find (/docs-topics/find)
+Enrich (/docs-topics/enrich)
+Transform (/docs-topics/transform)
+Web scraping (/docs-topics/web-scraping)
+Gen AI (/docs-topics/gen-ai)
+Export (/docs-topics/export)
+Settings & admin (/docs-topics/data-destinations)
+Signals & triggers (/docs-topics/signals)
+Docs index
+​
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Doc Topics
+Getting started (/docs-topics/getting-started)
+Find (/docs-topics/find)
+Enrich (/docs-topics/enrich)
+Transform (/docs-topics/transform)
+Web scraping (/docs-topics/web-scraping)
+Gen AI (/docs-topics/gen-ai)
+Export (/docs-topics/export)
+Settings & admin (/docs-topics/data-destinations)
+Signals & triggers (/docs-topics/signals)
+All docs (/docs)
+/
+Getting started (/docs-topics/getting-started)
+/
+HTTP API
+HTTP API
+Facilitate seamless integration and connectivity with any APIs.
+Overview
+HTTP API lets you send or retrieve data from any tool or database using an API endpoint, even when Clay doesn't offer a native integration. With it, you can pull external data into your Clay table or push data out from Clay using any endpoint and method (GET, POST, PUT, DELETE).
+Common use cases
+Pull customer data from your CRM.
+Create leads in your marketing platform.
+Update contact information in your database.
+Access public datasets (NYC Open Data, government APIs).
+Connect to custom tools without native Clay integrations.
+Choose your path
+Before you begin, decide which approach fits your needs.
+HTTP API enrichment (most common)
+Use this when you want to add API data to existing rows in your Clay table.
+Process data row by row.
+Add information to existing records.
+Works with any API endpoint.
+Jump to enrichment setup (see below).
+HTTP API as source
+Use this when you want to import data from an API to create a new table.
+Import datasets from external APIs.
+Build lists from third-party services.
+Start workflows with external data.
+Supports pagination (up to 50,000 rows).
+Multiple pagination methods: page-based, offset, cursor, and full URL.
+Jump to source setup (see below).
+Not sure which to choose?
+Already have a list of companies, people, or records in Clay? → Use enrichment.
+Need to pull a list from an external API? → Use as source.
+Storing authentication credentials at the workspace level
+Instead of entering API keys or bearer tokens manually in the Headers field each time, you can save your auth credentials in an HTTP API (Headers) account . Clay encrypts and stores the headers at the workspace level, making them reusable across any HTTP API enrichment column.
+Setting up an HTTP API (Headers) account from the enrichment panel:
+Open your Clay table and click Add enrichment .
+Search for and select HTTP API .
+In the enrichment panel, click the Select header account dropdown.
+Click + Add account .
+Under API Request Headers , add your auth credentials as key-value pairs — for example:
+Key: Authorization | Value: Bearer YOUR_TOKEN
+Key: X-API-KEY | Value: YOUR_API_KEY
+Name the account (e.g., Stripe API Key ) and click Save .
+The saved account will now appear in the Select header account dropdown. Select it to apply the headers to this enrichment.
+Note: You can also manage existing accounts at any time from Settings → Connections . Keep in mind that editing a saved account will affect every HTTP API enrichment column across your workspace that uses it.
+‍
+A few things to know:
+Connecting an account is optional. Not every API requires auth headers. If no account is selected, the enrichment will still run — as long as the API endpoint doesn't require authentication.
+The Headers field includes a reminder. When configuring the Headers field manually, Clay surfaces a tip directing you to use the HTTP API app account for secure credentials instead.
+Credentials entered manually in the Headers field are visible in plain text to anyone with access to the table column. Use a saved account to avoid exposing keys.
+APIs that require auth will return an error (e.g., access denied ) if no account is selected and no headers are passed manually.
+If you're connecting to an API that uses JWT authentication (dynamically issued tokens), use the HTTP API with JWT Authentication action instead, which uses a separate account type that stores your token endpoint URL and credentials. See the HTTP API with JWT Authentication guide for details.
+HTTP API enrichment
+Prerequisites
+Before configuring HTTP API, gather these details from your API documentation:
+HTTP method: GET, POST, PUT, or DELETE.
+Endpoint URL: The specific API endpoint address.
+Authentication: API key, bearer token, or other credentials.
+Parameters: Headers, query parameters, or body content as specified by the API.
+Pro tip: Always have the API documentation open before setting up HTTP API. Search for "{Platform_name} API Documentation" online (e.g., "Gong API Documentation").
+Setup method: choose your approach
+When you add HTTP API to your table, you'll see two tabs: Generate (AI-assisted) and Configure (manual). Choose the method that works best for you.
+Option A: AI-assisted setup (recommended)
+Clay's Sculptor feature uses AI to automatically generate HTTP API configurations from natural language descriptions. This is now the default and recommended approach for most users.
+When to use AI-assisted setup
+You have API documentation available.
+You want faster, error-free setup.
+You're not familiar with API configuration.
+You want to avoid manual JSON formatting.
+95% of users find AI-assisted setup faster and more reliable than manual configuration.
+How it works
+Step 1: Add HTTP API enrichment
+Open your Clay table.
+Click Add enrichment .
+Search for and select HTTP API .
+You'll automatically land on the Generate tab.
+Step 2: Describe what you want
+In natural language, describe what you want to accomplish. Examples:
+"Find me the average temperature using OpenMeteo, using latitude and longitude"
+"Get customer data from Stripe using customer ID"
+"Create a new contact in HubSpot with name and email"
+You don't need to specify exact column names, technical parameters, HTTP methods, or header formatting.
+Step 3: Add API documentation (optional)
+Paste a link to the API's documentation. This helps Sculptor better understand the API's capabilities and improve accuracy. While helpful, Sculptor can often figure out the configuration without it.
+Step 4: Generate configuration
+Click Generate API connection . Sculptor will automatically:
+Map your table columns to API parameters.
+Select the correct endpoint and method.
+Configure query parameters and optional fields.
+Set up authentication headers.
+Structure the request body for POST/PUT requests.
+Note: Processing time can vary. Be patient while Sculptor analyzes your request.
+Step 5: Review the configuration
+Sculptor shows you a summary of what it configured:
+Which columns were mapped.
+What optional fields were set.
+Authentication setup.
+Request structure.
+Step 6: Test before running
+Switch to the Configure tab to review detailed settings.
+Click Test to run on a single row.
+Verify the response data matches your needs.
+Adjust any settings if needed.
+Step 7: Run on your table
+Once verified, run the enrichment on your full table.
+Troubleshooting with AI
+If you encounter errors, you can use Sculptor to help diagnose issues:
+Paste error messages for suggested fixes.
+Share API docs to verify configuration.
+Get help interpreting unexpected responses.
+Sculptor understands common API patterns and can guide you through authentication issues, body formatting problems, and other configuration challenges.
+Tips for best results
+Provide complete information: Share the full API documentation URL when possible.
+Review before running: Verify the AI-generated configuration makes sense.
+Test first: Run on a single row before processing your entire table.
+Save as template: After successful setup, save your configuration for future use.
+Option B: Manual configuration
+Choose manual configuration if you need precise control or have complex requirements. You can also switch to the Configure tab at any time to adjust AI-generated settings.
+Step 1: HTTP method
+Select the HTTP method based on what you want to do:
+GET — Retrieve data (e.g., pull customer data from your CRM, fetch a list of users).
+POST — Create new data (e.g., create a new lead in your marketing platform, create a new contact).
+PUT — Update existing data (e.g., update contact information in your database, modify user information).
+DELETE — Remove data (e.g., remove outdated records, delete a record).
+Step 2: API endpoint URL
+Enter the complete URL where your request will be sent.
+Step 3: Query string parameters
+Add parameters to filter or refine your request. These appear in the URL after a ? symbol.
+Example:
+Key: email + Value: /Email Column
+Key: status + Value: active
+Step 4: JSON body
+For POST and PUT requests, specify the data to send in the request body.
+Important JSON formatting rules:
+String values need quotes: "name": "Sam"
+Numbers and booleans don't: "age": 30 , "active": true
+Dynamic column references for strings need quotes: "email": "/Email Column"
+Dynamic column references for numbers don't: "count": /Score Column
+Exception: Numbers with trailing zeros (e.g., 0004 ) need quotation marks.
+Example body configuration:
+{ "firstName": "/First Name Column", "lastName": "/Last Name Column", "email": "/Email Column", "score": /Score Column, "subscribed": true }
+Common mistake:
+❌ Wrong: {"name": /Name Column}
+✅ Correct: {"name": "/Name Column"}
+❌ Wrong: {"name": "John" "age": 30}
+✅ Correct: {"name": "John", "age": 30}
+Step 5: Header fields
+Headers provide authentication and specify data formats. Add them as key-value pairs.
+Common header examples:
+Authorization (bearer token):
+Key: Authorization
+Value: Bearer YOUR_API_TOKEN_HERE
+API key in header:
+Key: X-API-Key
+Value: YOUR_API_KEY_HERE
+Content type (automatically set in Clay):
+Key: Content-Type
+Value: application/json
+Common mistake: Some data providers (like Apollo) have different API keys for different endpoints. Make sure you're using the correct key for your specific endpoint.
+Step 6: Field paths to return
+Specify which parts of the API response you want to retrieve. Use this to filter out unnecessary data.
+Example API response:
+{ "data" : { "user" : { "id" : 12345 , "name" : "John Doe" , "email" : "john@example.com" } }}
+Field path to extract email: data.user.email
+This returns only: john@example.com
+Benefits: Faster processing, cleaner data, easier to work with.
+Step 7: Rate limiting
+Control how many API requests you can send within a given time frame. Check your API documentation for rate limits.
+Example configuration:
+Request limit: 10
+Duration (ms): 1000
+This means: 10 requests per second.
+Step 8: Remove empty fields from request
+Toggle ON to automatically exclude empty, null, or undefined fields from your request.
+Why use this:
+Prevents overwriting existing data with blank values.
+Avoids API errors from unexpected null values.
+Keeps requests clean and efficient.
+Advanced options
+Using integration templates
+Click the Browse templates button at the top of the integration window to access pre-configured setups for common use cases.
+Benefits:
+Faster setup — Configure in seconds.
+Reduced errors — Pre-tested configurations.
+Learning tool — See proper API structure.
+After using a template, you can adjust any settings to match your specific needs.
+Conditional runs
+Set up conditional run formulas to only execute HTTP API when required data is present. This prevents unnecessary API calls, error messages, and wasted credits.
+Example: Only run if email column is not empty.
+Testing and validation
+Before running on your entire table:
+Test with a single row.
+Verify the configuration works.
+Check the response data.
+Then run on full table.
+Why: Saves credits and catches errors early.
+HTTP API as source
+HTTP API as source allows you to import data directly from any HTTP API into Clay tables as a starting point for list building.
+When to use this
+Use HTTP API as source when you want to:
+Build lists from external APIs.
+Import datasets from third-party services.
+Create tables from endpoints returning multiple records.
+Start workflows with data from external sources.
+Example use cases:
+Pulling trip hazards from NYC Open Data API
+Importing event listings or class schedules
+Fetching product catalogs from e-commerce APIs
+Retrieving fantasy sports team data
+Accessing government or public datasets
+Setup steps
+Step 1: Start import
+Click Actions → View all sources .
+Search for Import data from an HTTP API .
+Select it.
+Step 2: Configure account (required)
+Select or create an account that contains your API authentication. Accounts are mandatory for sources because they securely store sensitive information like API keys and authorization tokens.
+Step 3: Configure request
+Configure your request settings:
+Method: Select HTTP method (typically GET for imports).
+Endpoint: Enter the API endpoint URL.
+Query parameters: Add key-value pairs for filtering data.
+Headers: Add authentication and other required headers.
+Body: Add request body if needed (for POST/PUT methods).
+Step 4: Specify results path
+This is a critical step unique to sources. Tell Clay exactly where in the API response your data array is located.
+Example: If your API returns:
+{ "items" : [...], "total" : 10 }
+You'd specify items as the results path. Most APIs nest their data within a specific field rather than returning an array at the root level.
+Step 5: Configure optional settings
+Use static IP: Enable for allow-listing requirements.
+Remove empty values: Exclude null or empty fields.
+Follow redirects: Set max redirects if needed.
+Response timeout: Specify timeout in milliseconds.
+Retry on failure: Configure retry attempts and conditions.
+Pagination: Configure automatic pagination (see Pagination settings below).
+Step 6: Preview and import
+Preview the API response to verify the data structure.
+Map the API response fields to table columns.
+Import the data to create your new table.
+Pagination settings
+HTTP API as source supports automatic pagination up to 50,000 rows. Pagination is configured in Step 5 under the Pagination dropdown — it's set to Off by default, which means Clay fetches a single page exactly as before.
+To enable pagination, select one of three modes:
+Update query parameter(s) — Use when your API advances pages via URL query parameters. After selecting this mode, enter the query parameter name(s) as the key and one of the following as the value:
+$page — page number starting at 1 (e.g., ?page=1, 2, 3… )
+$pageZeroIndex — page number starting at 0 (e.g., ?page=0, 1, 2… )
+$offset — total records fetched so far (e.g., ?_start=0, 100, 200… )
+A dot-path into the API response to use a cursor value returned by the API (e.g., meta.next_cursor )
+Update body parameter(s) — Use for POST/PUT requests where pagination parameters go in the request body instead of the URL. Same token and dot-path options as above; the key is a dot-path into the request body (e.g., pagination.cursor ).
+Response contains next URL — Use when the API returns a complete URL for the next page in the response body. Enter the dot-path to that field (e.g., links.next ). Clay follows it directly without re-applying your base query parameters.
+When Clay stops paginating:
+The page returns empty results.
+A stop path you configure becomes falsy (e.g., has_more , data.hasNextPage ).
+A max pages path you configure is reached (e.g., pagination.totalPages ).
+The cursor runs out or the next request would be identical to the previous one (loop protection).
+The 50,000 row cap is reached.
+Note: Always check your API documentation for the correct pagination format and parameter names. Using incorrect pagination settings may result in duplicate or missing data.
+Limitations
+Important considerations:
+Array output required: Make sure the results path points to an array in the API response.
+Pagination limit: Sources support up to 50,000 rows. If your API returns more than 50,000 records, only the first 50,000 will be imported.
+Results path matters: Take time to examine your API response structure. Some APIs nest data several levels deep (e.g., data.results.items ).
+Account security: Your API credentials are stored securely and won't be exposed in the table configuration.
+Best practices
+Start with documentation
+Always review the API documentation before configuration. It contains everything you need: methods, endpoints, authentication, headers, parameters, and response formats.
+Use templates first
+Browse HTTP API templates for pre-configured setups. Templates save time and reduce configuration errors.
+Test with one row
+Before running on your entire table:
+Test with a single row.
+Verify the configuration works.
+Check the response data.
+Then run on full table.
+Why: Saves credits and catches errors early.
+Secure authentication
+Never hardcode API keys in requests.
+Use Clay's built-in authentication features.
+Store credentials securely.
+Configure rate limits
+If the API documentation specifies limits, configure them in your enrichment.
+Example: 100 requests per minute.
+Request limit: 100
+Duration: 60000 ms
+Optimize with field paths
+For large API responses, specify only needed fields:
+data.users.email
+data.users.name
+Benefits: Faster processing, cleaner data, easier to work with.
+Use conditional runs
+Set up conditional run formulas to only execute HTTP API when required data is present.
+This prevents:
+Unnecessary API calls
+Error messages
+Wasted credits
+Document complex setups
+For complex HTTP API configurations:
+Add notes about what each setting does.
+Document field mappings.
+Include example responses.
+Benefits:
+Makes troubleshooting easier.
+Simplifies replication to other tables.
+Troubleshooting
+"Body parse error" (400 error)
+This error indicates a formatting issue in your JSON body.
+Common fixes:
+Add quotes around string variables:
+❌ Wrong: {"name": /Name Column}
+✅ Correct: {"name": "/Name Column"}
+Check punctuation:
+❌ Wrong: {"name": "John" "age": 30}
+✅ Correct: {"name": "John", "age": 30}
+Ensure keys are separated by commas. Watch for extra spaces, colons, and brackets.
+Remove hidden characters:
+Copy your body into a plain text editor.
+Look for invisible characters from API docs.
+Clean and repaste into Clay.
+Verify correct API key: Some providers have multiple API keys for different endpoints. Example: Apollo has separate keys for different APIs.
+Hidden characters in API documentation
+When copying from API documentation:
+Paste into a plain text editor first.
+Check for hidden characters.
+Remove any found.
+Copy clean text into Clay.
+This reveals any hidden characters that might cause parsing errors.
+Multiple API keys
+Some data providers (like Apollo) have different API keys for different endpoints. Make sure you're using the correct key for your specific endpoint.
+Using AI to diagnose issues
+If you encounter errors, use Sculptor to help:
+Paste error messages for suggested fixes.
+Share API docs to verify configuration.
+Get help interpreting unexpected responses.
+Error codes reference
+CodeStatusMeaningWhat to check200OKSuccessEverything worked correctly400Bad requestRequest errorCheck JSON body formatting, syntax401UnauthorizedInvalid credentialsVerify API key or authentication token402Request failedCouldn't completeReview API documentation requirements403ForbiddenNo permissionCheck API key permissions and scopes404Not foundResource missingVerify endpoint URL is correct409ConflictRequest conflictCheck for duplicate or conflicting data429Too many requestsRate limit exceededConfigure rate limits in your enrichment
+FAQs
+Why do I need quotation marks around dynamic string variables?
+As of October 2024, you must enclose dynamic string variables in quotation marks when using the HTTP API enrichment column. This ensures proper JSON formatting.
+Example:
+✅ Correct: {"email": "/Email Column"}
+❌ Wrong: {"email": /Email Column}
+What if a data provider has multiple API keys?
+Some data providers have multiple API keys for different APIs. For example, Apollo has several APIs you can create keys for. Make sure you're using the correct API key for the specific endpoint you're calling.
+How do I handle hidden characters in API documentation?
+When copying from API documentation, paste your code into a plain text editor first. This reveals any hidden characters that might cause parsing errors. Remove them before pasting into Clay.
+When should I use HTTP API as source vs. enrichment?
+Use enrichment if you already have a list of records in Clay and want to add API data to them.
+Use as source if you need to pull a list from an external API to create a new table.
+How does pagination work with HTTP API as source?
+HTTP API as source supports automatic pagination up to 50,000 rows. Pagination is off by default. When enabled, Clay handles fetching subsequent pages automatically based on your configuration, stopping when the API returns no more data, your stop condition is met, or you reach 50,000 total rows.
+You can configure three pagination modes depending on how your API works: updating a query parameter (page-based, offset, or cursor), updating a body parameter (for POST/PUT requests), or following a next URL returned in the response.
+What happens if my API returns more than 50,000 rows?
+HTTP API as source has a limit of 50,000 rows per import. If your API contains more records, only the first 50,000 will be imported. To access additional data, consider:
+Adding filters to your API request to narrow the dataset.
+Importing data in batches using different filter parameters.
+Using HTTP API enrichment on an existing list instead of as a source.
+Table of contents
+TOC Heading
+TOC Heading
+Plan
+https://www.clay.com/pricing
+Explore other docs
+Getting started
+Enhanced matching
+Enhanced matching is Clay's hashed email enrichment: it finds the personal email identifiers ad platforms recognize, so more of your audience matches when you sync it.
+View article
+View article (/docs/enhanced-matching)
+View article
+Signals & triggers
+Ad lead form triggers
+Send LinkedIn and Meta lead generation submissions into a Clay workflow, so each new lead is qualified, routed, or written to Audiences automatically.
+View article
+View article (/docs/ad-lead-form-triggers)
+View article
+Export
+Credit refunds
+Learn when Clay refunds Actions and Data Credits, and which actions refund when a provider returns no data.
+View article
+View article (/docs/credit-refunds)
+View article
+Enrich
+Definitive Healthcare integration
+Find US hospitals in Clay and enrich them with executives, physicians, networks, payor mix, technology, and financial metrics.
+View article
+View article (/docs/definitive-healthcare-integration)
+View article
+Enrich
+Reusing saved enrichment data
+Keep the data your enrichments return so later runs can reuse it instead of paying for the same answer twice.
+View article
+View article (/docs/reusing-saved-enrichment-data)
+View article
+Signals & triggers
+Professional posts
+Gather engagement data from professional social media posts — comments, reactions, shares, and a profile's recent activity.
+View article
+View article (/docs/professional-posts)
+View article
+Settings & admin
+Set up SCIM provisioning in Clay
+Keep your Clay workspace membership and roles in sync with your identity provider.
+View article
+View article (/docs/scim-provisioning)
+View article
+Other popular resources
+Experts
+Find a Clay Expert
+Explore our network of Clay experts and agencies.
+View experts
+View experts (https://www.clay.com/experts)
+View experts
+Community
+Join our slack community
+Find help in our slack community, and support channels.
+Go to slack
+Go to slack (https://community.clay.com)
+Go to slack
+Cohorts
+Join a cohort, learn Clay fast!
+The faster way to master Clay. Sign in if you're enrolled in a cohort (current or past) or apply!
+Learn more about cohorts
+Learn more about cohorts (/cohorts)
+Learn more about cohorts
+Talents
+Hire GTME Talent
+Find and connect with GTM talent who've demonstrated expertise in building advanced workflows
+Explore GTME talents
+Explore GTME talents (https://www.clay.com/talent)
+Explore GTME talents
+Explore, practice and master Clay
+[Clay logo]
+Powered education
+Linkedin (https://www.linkedin.com/company/grow-with-clay/posts/?feedView=all) Youtube (https://www.youtube.com/@GrowWithClay/videos) Slack community (https://www.clay.com/slack-community)
+Explore Clay
+Visit Clay.com (https://www.clay.com)
+Integrations (https://www.clay.com/integrations)
+Multi-provider data enrichment (https://www.clay.com/waterfall-enrichment)
+Sculptor (https://www.clay.com/sculptor)
+AI Claygent (https://www.clay.com/claygent)
+Audiences (https://www.clay.com/audiences)
+Sequencer (https://www.clay.com/sequencer)
+Pricing (https://www.clay.com/pricing)
+Changelog (https://www.clay.com/changelog)
+Get started here
+Get started lesson (https://university.clay.com/lessons/intro-to-clay-101-fete-jigsaw)
+Clay 101 (https://university.clay.com/courses/clay-101)
+Enroll in Clay cohorts (https://university.clay.com/cohorts)
+Engage
+Find a Clay experts (https://www.clay.com/experts)
+Hire a GTME talent (https://www.clay.com/talent)
+GTM job board (https://www.clay.com/job-board)
+Community (https://community.clay.com/)
+Join Slack (https://www.clay.com/slack-community)
+FAQ (https://clay.com/faq)
+Legal
+Privacy policy (https://privacy.clay.com/policies)
+Terms of service (https://www.clay.com/terms-of-service)
+Do not sell my data (https://docs.google.com/forms/d/e/1FAIpQLSeAsU1U-AJfhqzDx6-6eVcyQ_kBD1J9cw1y0huQiS-HCkRf0Q/viewform)
+© Clay 2025 – Born in Brooklyn. Claymation illustrations by the wonderful Hudson Christie (https://www.hudsonchristie.com/) .

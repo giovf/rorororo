@@ -1,0 +1,368 @@
+{ "@context" : "https://schema.org", "@type" : "WebSite", "name" : "Clay", "alternateName" : "Clay", "url" : "https://clay.com/" }
+meta og:type: website
+meta og:site_name: Clay
+meta og:type: article
+meta og:url: https://clay.com/blog/announcing-the-clay-partner-program
+meta og:image:width: 2400
+meta og:image:height: 1260
+meta og:image:secure_url: https://cdn.prod.website-files.com/61702af2e3966e09c4101538/68a3d76be5c98a8dd2da0e65_Blog.avif
+meta twitter:url: https://clay.com/blog/announcing-the-clay-partner-program
+meta twitter:title: Announcing the Clay Partner Program
+meta twitter:description: The Clay Partner Program is to a partner, what a toolbox is to an artist. It keeps essential resources within reach and grows more sophisticated as your expertise develops. We've designed everything around one simple principle: helping you grow your business as Clay grows.
+meta twitter:image: https://cdn.prod.website-files.com/61702af2e3966e09c4101538/68a3d76be5c98a8dd2da0e65_Blog.avif
+meta twitter:site: @clayrunhq
+meta twitter:card: summary_large_image
+Announcing the Clay Partner Program – A new ecosystem dedicated to empowering our partners - The GTM with Clay Blog
+Search
+Thank you! Your submission has been received!
+Oops! Something went wrong while submitting the form.
+The ceiling on your GTM agent is the data, not the model. We tested a generic AI agent against Clay’s Account Agent. Clay's agent resulted in 6.4x fewer tokens, 2.6x faster answers, and fewer missed deal risks. (/blog/ceiling-on-gtm-agent-is-data)
+How to Do Territory Planning for Your GTM Team in Clay Learn how we score accounts and carve out fair books for our reps in Clay. Then build the same system for your own sales team. (/blog/sales-territory-planning)
+How We Turn a Champion’s Departure Into a Buying Signal Clay Growth Play #1: When a senior leader leaves a company that pays for Clay for one that doesn’t, a workflow drafts a personalized outreach sequence for our sales reps. (/blog/how-we-turn-a-champions-departure-into-a-buying-signal)
+Claygent picks the right model for every task with auto-mode Claygent auto-mode picks the best model for each row while optimizing for cost. We post-trained the model router with Applied Compute, and auto-mode costs 47% less than the most capable model. (/blog/automode-for-claygent)
+Making a Billion Records Explain Themselves The engineering behind Clay’s CPJ dataset (/blog/explaining-a-billion-records)
+Announcing the Winners of Clay's 2026 Data Partner Awards Clay Partner Day recap and the 10 data partners who took home awards (/blog/clays-2026-data-partner-awards)
+In an Agentic GTM Era, Sales Plays Will Ship Like Software Clay’s go-to-market engineers adapted the way developers review and release code, calling it GTM CI/CD, to safely run learning loops where agents improve their own workflows. (/blog/gtm-self-learning-loops)
+Sculpt recap: Building the self-learning revenue engine Learn how Clay is building the self-learning revenue engine (/blog/sculpt-2026-recap)
+In the era of agents, GTM alpha means self-learning In Finding GTM Alpha, we argued that winning teams use data others don't have, in plays others can't run, to build an edge. We also argued that no play lasts forever, and that teams must learn and iterate quickly. (/blog/gtm-alpha-means-self-learning)
+How to Use Grok Bot and Clay for Go-to-Market Plays Explore real Grok Bot and Clay use cases from Eric Nowoslawski, including chat-built outbound campaigns, GTM Hub lead magnets, and a daily learning loop. (/blog/grok-bot-clay-use-cases)
+We gave everyone at Clay their own data scientist Data teams have endless request queues. Here's how Clay built monty, a Slack-based analytics agent, so anyone can query the warehouse in plain English. (/blog/building-everyones-personal-data-scientist)
+The Clay Skills Marketplace Is Open We’ve launched a place to find skills built by the Clay community, free to install and ready to run in Claude Code, Codex, or Cursor. (/blog/introducing-clay-skills-marketplace)
+New and updated integrations in Clay Clay adds 24 new and updated integrations for EMEA and APAC coverage, buying signals, new industries, enrichment, dialers, CRMs, and warehouses. (/blog/clay-integrations-september-2026)
+9 Ways to Use Clay’s Agent Plugin to Build GTM Workflows and Tools See how nine Clay team members use the Clay Agent Plugin to build GTM workflows and rep tools with Clay’s API and CLI from their coding agents. (/blog/clay-agent-plugin-use-cases)
+We asked 6,346 companies for a demo. Most never wrote back. A team of Claygents filled out thousands of B2B demo and contact forms and timed how long it took anyone to respond. (/blog/claygent-experiment-speed-to-lead)
+Customers on legacy Starter, Explorer, and Pro plans can try new products through the end of the year Legacy customers can use Audiences, Account Agents, Workflows, Plugin (API/CLI), and Sequencer for a limited time (/blog/legacy-try-before-you-buy)
+How the Clay ecosystem team builds with AI for 50,000+ people See how Clay’s non-engineers built an AI-powered training platform that saves 75+ hours a week, and how they got teammates to use and improve it. (/blog/ecosystem-build)
+Build custom GTM tooling on Clay Build on Clay from any coding agent (/blog/build-custom-gtm-tooling-on-clay)
+Top 1%: How depthfirst Built RevOps on Signals Before Scaling Its Sales Team Mark Hardy, Head of Revenue Operations at depthfirst, on building the AI security startup’s go-to-market systems as a RevOps team of one. (/blog/top-1-depthfirst-mark-hardy)
+How Clay Runs Cold Outbound to Enterprise Accounts Clay GTM engineer Sabrina Glaser cut 85 minutes of account research down to five with four agents, and now the entire sales team runs her play. (/blog/cold-outbound-enterprise-accounts)
+Clay raises $115M to be the AI growth engine for every company Clay has raised $115M in Series D funding at a $7.1B valuation, following 4x revenue growth in 2025. More than 17k customers, including 80% of the Forbes AI50 and companies like Anthropic, Google, OpenAI, Stripe, ElevenLabs, Visa, Siemens, and UPS, use Clay as their infrastructure for growth (/blog/series-d)
+Top 1%: Inside GTM Engineering at the GTM Company Osman Sheikhnureldin, Clay’s Head of GTM Engineering, on compound problems, hacky MVPs, and building systems that improve as they run. (/blog/top-1-clay-osman-sheikhnureldin)
+Run more timely and targeted cold outbound campaigns with the Clay Sequencer Clay Sequencer brings lead sourcing, enrichment, and sequencing into one tool, so every email sends on current data. Now generally available in Clay. (/blog/clay-email-sequencer)
+How we turned a few thousand ad dollars into $1.3 million in pipeline Inside the workflow our growth team uses to turn Clay audience data into synced ad campaigns across Meta, LinkedIn, Google, and more. (/blog/paid-ads-playbooks)
+Practical ways GTM teams can use agents Our growth team at Clay shares six agent use cases from our own workspace, including deal postmortems, account health scores, and personalized research for tier-one ABM campaigns. (/blog/agent-use-cases-gtm)
+How we run bug triage without a second of engineering time The details behind Clay’s 100% autonomous bug triage process that runs in 15 minutes and closes 15% of bugs (/blog/how-we-run-bug-triage)
+Put an account expert inside every GTM play with Account Agents in Workflows Use Account Agents in workflows to run GTM plays on account research (/blog/account-agents-workflows)
+Top 1%: How Brex Scaled Its Outbound Engine and Made Operations More Efficient Five lessons from Michael Tai, Senior Growth PM at Brex, on relevance over personalization, forward-deployed growth engineers, and where go-to-market heads next. (/blog/top-1-brex-michael-tai)
+Why Clay Has an AI Writing Policy The policy that started on our engineering team, spread across the company, and went viral when our co-founder shared it. (/blog/ai-writing-policy)
+Inside Clay Workflows: The Story Behind Our New Building Primitive Why we moved orchestration out of tables, and how to make the most of Workflows to power your GTM system. (/blog/the-story-of-clay-workflows)
+The Automated Growth Plays Behind Clay’s Self-Serve and Enterprise Motions Inside the always-on, automated plays Clay’s growth team uses to convert trials, rescue fading accounts, and open doors into top-tier accounts (/blog/how-clay-uses-clay-automated-growth-plays)
+Run your GTM workflows where your data lives Orchestrate any GTM play in Clay Workflows (/blog/introducing-workflows)
+Make your ad spend efficient with targeted audiences and higher match rates Clay Ads builds unlimited ad audiences, updates them dynamically as your data changes, and boosts match rates by enriching across multiple providers. (/blog/ads)
+How First-Party Signals Become Your GTM Moat Verkada's Cody Leovic explains why first-party data — CRM notes, replies, call transcripts — builds a GTM edge that rented signals can't match. (/blog/how-first-party-signals-become-your-gtm-moat)
+Continuously find every account in your TAM, at scale Combine company, people, and job data in one natural language search. Track which accounts convert to pipeline. Find more prospects like your best customers with Lookalikes. (/blog/tam-sourcing-updates)
+Build on Clay: Clay’s Product Roadmap with CEO Kareem Amin Clay CEO Kareem Amin breaks down the shift to AI-driven GTM: data, infrastructure, and self-improving revenue engines. See what's shipping this summer. (/blog/build-on-clay-clays-product-roadmap-with-ceo-kareem-amin)
+Account Research Agents for always-on intelligence in Clay Use agents for up-to-date account inteliigence to run expansion or re-engagement plays (/blog/account-research-agents)
+Open-weight models are now available in Claygent Use cost-effective open-weight models in Claygent for long-running tasks (/blog/open-weight-models-are-now-in-claygent)
+Prospect more efficiently with MCP for Reps in AI tools Reps call Ops-built functions and data from 200+ providers in one place using natural language (/blog/mcp-for-reps)
+Behind the Scenes of Clay’s Marketing and Growth Go behind the scenes of Clay’s $100M ARR growth with Bruno Estrella and Davide Grieco as they reveal the marketing and growth playbooks driving enterprise and self-serve success. (/blog/behind-the-scenes-of-clays-marketing-and-growth)
+Build on Clay with API & CLI Build on Clay from any coding agent, like Claude Code or Codex (/blog/build-on-clay-with-agent-plugin)
+Behind the scenes of Clay’s new homepage Now, Clay is the infrastructure GTM engineers build on. Here's how we built our new homepage to tell that story. (/blog/new-homepage-2026)
+The four layers of winning GTM infrastructure Every winning GTM engineering system runs on four layers: data, orchestration, execution, and agents. Here's how the best teams build and compound them. (/blog/gtm-infrastructure)
+Run unlimited searches on Clay’s GTM data layer Clay users can now build campaigns at any scale, instead of being limited to working across 50,000 records at a time. Audiences lets you run unlimited people and company searches without row limits, import millions of records from your CRM and data warehouse, and enrich them with first and third party data. (/blog/announcing-audiences)
+How Clay uses Clay from inside Claude and ChatGPT Clay reps run their highest-leverage plays from Claude or ChatGPT. Behind every prompt is a Clay Function. Here are four we use every week. (/blog/how-clay-uses-clay-from-inside-claude-and-chatgpt)
+So…what does growth actually do? SLG edition Three growth leaders share the tactics, trade-offs, and organizational battles that come with doing growth at a sales-led company. (/blog/what-does-growth-actually-do-slg-edition)
+What AI native SDR teams are doing right now We asked three leaders who are actively building and scaling SDR teams what's actually working and how they’re using AI to build pipeline. (/blog/ai-sdr-team)
+How Clay turns closed lost deals into pipeline, product signals, and buyer intelligence Learn how Clay's GTM team uses Clay to mine CRM data and Gong transcripts for re-engagement plays, product insights, and voice of customer feedback. (/blog/how-clay-uses-clay-for-closed-lost-deals)
+Clay MCP is now available in Codex With Clay MCP, reps can self-serve data and ops-built workflows from Clay within Codex. (/blog/mcp-in-codex)
+How Clay uses Clay for recruiting top talent See how Clay's recruiting team finds, prioritizes, and reaches candidates using Clay. (/blog/how-clay-uses-clay-for-recruiting-top-talent)
+Claygent Builder: The easiest way to build, test, and deploy GTM Agents Build production-ready Claygents in natural language with Sculptor. Test on real data for free, track versions, and deploy once across every workflow. All inside Clay. (/blog/claygent-builder)
+How Clay Uses Clay Ads: From $250 to $25 CPL See how Clay uses its own Ads feature to cut LinkedIn CPL from $250 to $25 and unlock Meta with enriched CRM audiences. No manual uploads needed. (/blog/how-clay-uses-clay-ads)
+HG Insights Corporate Hierarchy: GTM Precision in Clay Use HG Insights corporate hierarchy data in Clay to clean CRMs, map parent-child accounts, and trigger expansion plays. See how it works. (/blog/hg-insights-corporate-hierarchy)
+Sales GTM Engineering: How Clay Built the Role From Scratch Learn what sales GTM engineering is, how it collapses SDR, AE, and SE roles into one, and how Clay built and hires for this high-leverage function. See how it works. (/blog/sales-gtm-engineering)
+How to Automate Inbound Lead Outreach: The Clay Playbook Learn how to automate inbound lead outreach with enrichment, scoring, and personalized sequences. See the exact Clay workflow that runs without manual work. (/blog/how-to-automate-inbound-lead-outreach)
+demandDrive Joins Clay’s Partner Ecosystem as an Official Clay Studio Partner demandDrive joins Clay’s partner ecosystem to help B2B teams turn account intelligence into pipeline and revenue with GTM engineering and automation. (/blog/demanddrive)
+B2B Sales Prospecting: 15 Strategies to Drive More Conversions Master B2B sales prospecting with 15 proven strategies covering ICP building, multi-channel outreach, and list hygiene. Build a pipeline that converts. (/blog/b2b-sales-prospecting-15-strategies-to-drive-more-conversions)
+AI Sales Assistants: 11 Ways to Accelerate Your Outbound Discover 11 ways AI sales assistants automate lead research, enrichment, and email personalization. See how top B2B teams use them to accelerate outbound. (/blog/ai-sales-assistants)
+The Three Laws of GTM: How to Win in the AI Era The three laws of GTM explain why uniqueness, saturation, and iteration speed determine who wins. Learn how AI changes the rules and what to do about it. (/blog/the-three-laws-of-gtm)
+Best Work Email Finders by Segment: SMB vs. Enterprise We tested 12 email finders across 4,700+ contacts to find the best work emails by segment. See accuracy, cost, and coverage winners for SMB and enterprise. (/blog/work-emails-by-segment)
+How Clay Converts Trial Users Into Customers With Automated Outreach See how Clay uses automated outreach to convert trial users into customers, with enrichment, lead scoring, and personalized HubSpot campaigns. Learn how. (/blog/how-clay-uses-clay-converting-trial-users-into-customers-with-automated-outreach)
+Best Mobile Phone Data Providers for B2B Sales Teams We tested 9,806 numbers across 10 B2B mobile phone data providers. See which wins on accuracy, coverage, and cost for NAMER, EMEA, and APAC. (/blog/best-mobile-phone-data)
+How to Build a Complete AI Outbound Sales Funnel Learn how to build a complete AI outbound sales funnel—from account scoring to personalized outreach—using Clay waterfalls and automation. See how it works. (/blog/how-to-build-a-complete-ai-outbound-sales-funnel)
+How to Get More Customers Using Outbound Sales: A Complete Guide Learn how outbound sales works, who it's right for, and how to build a strategy from prospecting to closing. Covers cold calling, email, and more. (/blog/how-to-get-more-customers-by-using-outbound-sales-a-complete-guide)
+How to Automate 6 Cold Email Campaigns in One Clay Workflow Learn how to automate 6 cold email campaigns from a single Clay table — with enrichment, AI classification, and deduplication built in. See how it works. (/blog/automate-6-cold-email-campaigns-in-a-single-clay-workflow)
+How Clay Identifies Tier 1 Accounts: A Three-Score System See how Clay identifies tier 1 accounts using a three-score system: fit, engagement, and contract value. Learn how sales and marketing align on the same priorities. (/blog/how-clay-identifies-tier-1-accounts)
+Lead Scoring in Clay: A Step-by-Step Formula Guide Learn how to build lead scoring formulas in Clay to prioritize your ICP leads by employee count, job postings, and more. See how it works. (/blog/lead-scoring-in-clay)
+How to Validate Cold Outbound Offers and Find Message-Market Fit Learn how to validate cold outbound offers by finding message-market fit — from breaking down your value prop to testing with a phased email approach. See how it works. (/blog/how-to-validate-cold-outbound-offers-by-finding-message-market-fit)
+Troubleshooting Outbound Sales and Prospecting: A Comprehensive Guide Fix broken outbound sales campaigns with this guide. Diagnose open and reply rates, reduce no-shows, qualify prospects with MEDDIC, and optimize what's working. (/blog/troubleshooting-outbound-sales-and-prospecting-a-comprehensive-guide)
+Bulk Enrichment: Enrich Millions of CRM Records in Clay Bulk enrichment lets Enterprise teams enrich millions of Salesforce records with firmographics, tech stack, and AI research — then write results back automatically. (/blog/bulk-enrichment)
+Clay Templates: Automate, Customize, and Replicate Any GTM Workflow Clay Templates let you replicate full GTM workflows in hours, not days. Automate prospecting from data scraping to AI messaging, free and fully customizable. (/blog/the-power-of-clay-templates-automate-customize-replicate-any-workflow)
+How to Optimize Your Credit Usage in Clay Learn how to optimize your credit usage in Clay with conditional formulas, Clearbit waterfall lookups, and smarter enrichment workflows. Save credits fast. (/blog/optimize-your-credit-usage-in-clay)
+AI for sales prospecting AI sales prospecting can 2–3x your reply rates. Get the exact AI prompts, prospecting tools, and cold-email frameworks top B2B teams use to find and reach buyers at scale. (/blog/ai-sales-prospecting)
+The Reverse Demo: How Clay Replaced Traditional B2B Sales Demos A reverse demo lets prospects solve real problems live, guided by your rep. Learn how Clay used 100+ sessions to boost conversion, retention, and product quality. (/blog/reverse-demo)
+Data Waterfalls: How to Maximize Contact Coverage with Clay Data waterfalls query multiple providers in sequence so you only pay for matches. See how Clay pushes coverage from 30% to 80%+ without annual contracts. (/blog/data-waterfalls)
+How Clay Runs ABM Campaigns: A Step-by-Step Playbook See how Clay runs ABM campaigns — scoring 300 accounts, personalizing mailers and landing pages, and automating SDR follow-up. Learn how. (/blog/how-clay-runs-abm-campaigns)
+How We Built Clay's GTM Engineering Function See how Clay built its GTM engineering function with sprint-based delivery, founder-level reporting, and full sales automation. A practical inside look. (/blog/how-we-built-gtm-engineering-function)
+Best Personal Email Finder Tools: Tested and Ranked We tested 5 personal email finder tools across 2,354 prospects. See accuracy, coverage, and pricing data — plus the waterfall order that hit 79% coverage. (/blog/personal-email-finder)
+How to Use OpenAI to Write Cold Emails from Scratch with Clay Learn how to use OpenAI to write personalized cold emails at scale with Clay. Set up the integration, craft better prompts, and boost deliverability. (/blog/how-to-use-openai-to-write-the-perfect-cold-email-from-scratch)
+How to Run a Personalized Demo Play at Scale with Clay Learn how to automate a personalized demo play using Clay, Claygent, and AI enrichment to build custom mockups at scale. See how it works. (/blog/personalized-demo-play)
+Automated Slide Deck Creation: How Clay Builds QBRs from Your Data Clay's automated slide deck creation pulls from Snowflake, Salesforce, and Gong to build QBRs in minutes. Save 90+ hours per quarter. See how it works. (/blog/automated-slide-deck-creation)
+HG Insights + Clay: B2B Technographic and Firmographic Data HG Insights surfaces deep technographic and firmographic data from billions of documents. Use it in Clay workflows to enrich accounts and power GTM. See how it works. (/blog/hg-insights)
+B2B Cold Email Deliverability: 21 Best Practices Master B2B cold email deliverability with 21 proven best practices: domain setup, inbox warmup, authentication, and copy tips that keep you out of spam. Learn how. (/blog/b2b-cold-email-deliverability)
+AI Lead Generation Tools and Workflows: The Complete B2B Guide Compare AI lead generation tools for list building, enrichment, and personalized cold email, plus the B2B workflows Clay uses to send 800k+ emails a month. (/blog/ai-lead-generation)
+Clay MCP: Ops-built workflows, consumable by reps Clay MCP: Ops-built workflows, consumable by reps (/blog/clay-mcp)
+How to Manage and Enrich Inbound Leads Automatically Learn how to manage and enrich inbound leads automatically using a four-phase workflow that scores, segments, and triggers outreach from one email. See how it works. (/blog/manage-enrich-inbound-automatically)
+GTM Alpha: How Winning Teams Build a Competitive Edge GTM alpha is the edge winning teams build with unique data and signal-based plays. Learn how to find hidden signals, run better plays, and outpace competitors. (/blog/gtm-alpha)
+Why Good CRM Data Matters and How Clay Helps Poor CRM data kills outreach. Learn why CRM data coverage fails and how Clay's waterfall enrichment lifts coverage rates from 20% to 80%. See how it works. (/blog/why-good-crm-data-matters--and-how-clay-helps)
+How to Use Formulas in Clay: AI Generator and Manual Entry Learn how to use formulas in Clay with the AI Formula Generator or manual entry. Transform and clean your data faster. See how it works. (/blog/how-to-use-formulas-in-clay)
+GTM Engineering: What It Is, How It Works, and How to Hire GTM engineering turns ops teams into revenue builders using AI and automation. Learn what GTM engineers do, how to structure the role, and how to hire one. (/blog/gtm-engineering)
+Formulas in Clay: A Beginner's Intro for Non-Engineers Learn how to use formulas in Clay without coding. This intro covers conditional statements, combining columns, and auto-qualifying leads. Start in 30 minutes. (/blog/formulas-in-clay-intro)
+How Clay Uses Clay for SEO and AEO: 3 Systems That Scale See how Clay uses Clay for SEO and AEO: automated content refresh, video-to-page conversion, and a custom AI visibility dashboard. Learn how. (/blog/how-clay-uses-clay-for-seo-and-aeo)
+Turn Web Visitors into Leads: A Warm Outbound Play for B2B Sales Learn how to turn web visitors into leads using a warm outbound play for B2B sales — with RB2B, Clay, and Lemlist. See how it works. (/blog/turn-web-visitors-into-leads-with-a-warm-outbound-marketing-play-for-b2b-sales)
+How to Use Web Scraping to Enrich Your Data with Clay Learn how to use web scraping to enrich your data without code. Clay's Claygent answers deep GTM research questions at scale. See how it works. (/blog/use-web-scraping-to-enrich-your-data)
+How to Create a Sales Prospect List in Minutes Learn how to create your own sales prospect list in minutes using Clay. Pull from 40+ sources, enrich with ICP data, and export to your CRM. See how it works. (/blog/how-to-create-your-own-sales-prospect-list-in-minutes)
+Best B2B Email List Providers: Tested and Ranked (2026) We tested 8 B2B email list providers head-to-head. See accuracy results, per-email pricing, and how to waterfall providers for maximum coverage. (/blog/best-b2b-email-list-providers)
+Outbound Sales Automation: How to 10x Pipeline Without More SDRs Learn how outbound sales automation replaces manual SDR work, cuts cost per email by 100x, and scales pipeline without growing headcount. See how it works. (/blog/outbound-sales-automation)
+The Wake the Dead Play: Reactivate Closed-Lost Deals with Clay The wake the dead play uses Clay + ChatGPT to send automated, personalized emails to closed-lost prospects. Restart stalled deals in a few steps. Learn how. (/blog/wake-the-dead-play)
+Three Tips to Guarantee Email Deliverability for Cold Outbound Split volume, verify contacts, and personalize copy to guarantee email deliverability for cold outbound. Three actionable tips that keep you out of spam. (/blog/three-tips-to-guarantee-email-deliverability)
+How Clay Uses Clay for Customer Support: 3 Real Workflows See how Clay's customer support team uses Clay to enrich Intercom tickets, automate QA, and draft help articles. Real workflows, real results. (/blog/clay-using-clay-customer-support)
+We couldn't find anything for that query...
+/
+Copy logo to clipboard (png) Copied!
+Copy logo to clipboard (png) Copied!
+Download brand assets Downloaded!
+Back
+Product Product
+Solutions Solutions
+Resources Resources
+Company Company
+Pricing Pricing (/pricing)
+⌘
+K
+Log in (https://app.clay.com/) Get a demo (/demo)
+Start free trial (https://app.clay.com/signup?source=nav)
+Product Product
+Solutions Solutions
+Resources Resources
+Company Company
+Pricing Pricing (/pricing)
+Log in (https://app.clay.com/) Start free trial (https://app.clay.com/signup?source=website)
+Go back
+Data infrastructure
+Audiences Centralize your first and third party data sources in Clay (/audiences)
+Data marketplace Buy data from 200+ providers in one place (/integrations)
+Signals and intent Track job changes promotions or other signals (/signals)
+Waterfall enrichment Combine multiple data providers for the best coverage (/waterfall-enrichment)
+Agents
+Clay's global agent Research target companies and people with AI (/agent)
+Account agents Research target companies and people with AI (/account-agents)
+Claygents Research target companies and people with AI (/claygent)
+Inbound SDR agent Use Clay's native sequencer or automate messaging (/inbound-sdr)
+Orchestration
+Workflows Link long form description will go in this slot here. (/workflows)
+CLI/API Build in Clay directly via a coding agent with API and CLI (/agent-plugin)
+Functions Link long form description will go in this slot here. (/functions)
+Activation
+Ads Sync targeted ad audiences to Linkedin, Meta, and Google (/ads)
+Sequencer Use Clay's native sequencer or automate messaging (/sequencer)
+MCP for reps Track job changes promotions or other signals (/mcp)
+New: Clay’s global agent Build GTM plays for long-running tasks (/agent)
+Data foundations
+CRM enrichment Link long form description will go in this slot here. (/use-cases/crm-enrichment)
+TAM sourcing Link long form description will go in this slot here. (/use-cases/tam-sourcing)
+Territory planning Link long form description will go in this slot here. (/use-cases/territory-planning)
+Reverse ETL Link long form description will go in this slot here. (/use-cases/reverse-etl)
+Pipeline generation
+Outbound Link long form description will go in this slot here. (/use-cases/outbound)
+Automated inbound Build ads audiences and sync them to major ad platforms (/use-cases/inbound-enrichment)
+PLG assist Link long form description will go in this slot here. (/use-cases/plg-assist)
+ABM Link long form description will go in this slot here. (/use-cases/abm)
+Rep productivity
+Rep prospecting Link long form description will go in this slot here. (/use-cases/rep-prospecting)
+Account research Link long form description will go in this slot here. (/use-cases/account-research)
+Rep assist Link long form description will go in this slot here. (/use-cases/rep-assist)
+Department
+GTM Ops Link long form description will go in this slot here. (/clay-for-gtm-ops)
+Marketing Link long form description will go in this slot here. (/clay-for-marketing)
+Sales Link long form description will go in this slot here. (/clay-for-sales)
+Enterprise Link long form description will go in this slot here. (/enterprise)
+Startup Link long form description will go in this slot here. (/clay-for-startups)
+Case studies How top GTM teams grow with Clay (/customers)
+Learn to build on Clay
+University Link long form description will go in this slot here. (https://university.clay.com/)
+Skills library Link long form description will go in this slot here. (https://marketplace.clay.com/)
+Livestreams Link long form description will go in this slot here.
+Cohort live classes Link long form description will go in this slot here. (https://university.clay.com/cohorts)
+Connect with GTM engineers
+Clay community Link long form description will go in this slot here. (https://community.clay.com/)
+Slack Link long form description will go in this slot here. (https://www.clay.com/slack-community)
+Live events Link long form description will go in this slot here. (https://luma.com/claylive?k=c)
+Startup program Link long form description will go in this slot here. (/clay-for-startups)
+Campus ambassadors Link long form description will go in this slot here. (/clay-campus-ambassadors)
+Work with GTM engineers
+Find Clay experts Link long form description will go in this slot here. (/experts)
+GTM Engineer job board Link long form description will go in this slot here. (/job-board)
+Partner with Clay
+Become a partner Link long form description will go in this slot here. (/partners)
+Solution partners Link long form description will go in this slot here. (/partners/solutions)
+Integration partners Link long form description will go in this slot here. (/partners/integrations)
+Private Equity Link long form description will go in this slot here. (/clay-for-private-equity)
+Clay Community In Nigeria, she built a life where money wouldn’t decide (https://www.clay.com/blog/sandra-uche)
+OUR COMPANY
+About Link long form description will go in this slot here. (/about)
+Careers Link long form description will go in this slot here. (/careers)
+Open roles Link long form description will go in this slot here. (/jobs)
+Blog (/blog)
+GET IN TOUCH
+Contact Link long form description will go in this slot here. (/contact)
+Press Link long form description will go in this slot here. (/press)
+SOCIALS
+LinkedIn Link long form description will go in this slot here. (https://www.linkedin.com/company/grow-with-clay/)
+YouTube Link long form description will go in this slot here. (https://www.youtube.com/@GrowWithClay)
+X Link long form description will go in this slot here. (https://x.com/clay)
+Article – NY Times Clay allows employees to sell shares at a $5b valuation. (https://www.nytimes.com/2026/01/28/business/dealbook/clay-start-up-tender-offers.html?unlocked_article_code=1.H1A.LBNX.YbS98P3kIG8Q&smid=url-share)
+Index
+Clay's AI Writing Policy
+Category
+Clay Announcements (/blog-category/clay-announcements)
+Case Studies (/blog-category/case-studies)
+Outbound Plays (/blog-category/outbound-plays)
+Thought Leadership (/blog-category/thought-leadership)
+Announcing the Clay Partner Program
+A new ecosystem dedicated to empowering our partners
+Author
+Author
+Lele Xu
+Billie Solomon
+Category
+Clay Announcements (/blog-category/clay-announcements)
+Date
+Aug 19, 2025
+‍ Why we built this for you
+We've designed The Clay Partner Program around one simple principle: helping you grow your business as Clay grows. It keeps essential resources within reach and grows more sophisticated as your expertise develops. The ecosystem is made up of two initiatives: the Solutions Partner Program and the Integrations Partner Program.
+Solutions Partner Program
+The Solutions Partner Program is built for go-to-market engineers, consultancies, and agencies shaping the next wave of automation-first GTM.
+Formerly known as our Experts and Enterprise Partners programs, this revamped track introduces new tiers, clearer benefits, and more visibility for the partners building cutting-edge workflows on Clay. Whether you’re helping clients streamline prospecting, orchestrate data enrichment, or plug Clay into a GTM system of record, this program is designed to support and scale your impact.
+[Clay Partner badges: Artisan, Advanced Artisan, Studio, Elite Studio]
+‍ What’s New:
+Revamped Partner Directory: Users can now request to be matched with a Solutions Partner. Each listing includes value props, specialties, and badges to highlight your differentiation.
+New Tiered Badges: Show off your progress and expertise with brand-new visual badges, tied to program tiers and partner activity.
+Certifications: A formal certification process to validate your expertise and unlock higher-tier benefits.
+Customer Feedback Loop: Customer surveys tied to your listings help build trust and credibility.
+Partner Growth Fund: We’re investing in our Solutions Partner ecosystem by offering grants and reimbursements to those building and sharing GTM best practices in the wild. The Fund helps you experiment with new approaches, attend industry events, and invest in capabilities that push the entire GTM category forward.
+Beta Feature Previews & Custom Enablement: You'll get early access to new Clay features before they hit the general market, plus custom enablement sessions that help you integrate cutting-edge capabilities into client workflows. While other agencies are playing catch-up, you'll be implementing tomorrow's GTM strategies today.
+Tiered Benefits That Scale With Your Success : Our tier system rewards demonstrated capabilities and track record. As you prove your expertise and deliver results, you unlock enhanced benefits including priority support, co-marketing opportunities, and deeper collaboration with our team.
+If you’ve been part of our ecosystem before, you’ll notice a more comprehensive feedback loop, improved structure, and expanded co-marketing opportunities.
+👉 Apply to become a Solutions Partner here (https://clayhq.typeform.com/to/aNhHDDXQ?utm_source=xxxxx)
+‍
+🔌 Integrations Partner Program
+The Clay Integrations Partner Program is designed for the data providers, platforms, and APIs powering the workflows our customers run every day.
+As our ecosystem grows, we want to invest in the partners behind the scenes — giving them structure, resources, and visibility as they scale alongside Clay. This program is ideal for companies who want to increase their API consumption, drive net-new users, and tap into the GTME movement .
+Why Join:
+Aggregate Demand into ARR: Clay turns thousands of monthly contracts into a single annual API agreement that can be recognized as ARR.
+Increased Consumption: Clay users embed your API keys into recurring workflows — driving more value and deeper usage without friction.
+Frictionless Onboarding: Customers can test your data with Clay Credits, receive prioritized support from our GTM & Support teams, and then quickly scale up their usage.
+Trusted Distribution: Our partners easily access Clay’s network of solutions partners who implement workflows across thousands of accounts.
+Improve Your Data: Our partners receive direct feedback from Clay users, including a dashboard with insights on API match rates, segmented by key customer demographics.
+Co-marketing: Clay is excited to collaborate on co-marketing opportunities with our partners.
+Summary of Benefits:
+What’s New:
+Formal benefits by tier
+More resources from Clay’s ecosystem team to help you succeed
+A unique audience : Clay’s customers are GTM engineers who bring data tools into their workflows on Day 1
+👉 Apply to become an Integrations Partner here (https://clayhq.typeform.com/to/jex58rxk?typeform-source=www.clay.com) .
+For existing partners, reach out in Slack to learn more about your benefits.
+Building the future of GTM together
+Clay is creating an entirely new GTM category with room for everyone to succeed. Our integrations partners, solutions partners, and builders today are helping define what modern go-to-market looks like.
+‍
+Ready to join the movement? Apply to become an Integrations Partner (https://www.clay.com/partners/integrations) or a Solutions Partner (https://www.clay.com/partners/solutions) and start building modern GTM with the resources serious artists deserve.
+More Articles
+Previous Next
+Read more
+Thought Leadership (/blog-category/thought-leadership)
+The ceiling on your GTM agent is the data, not the model.
+Nov 3, 2026
+Nov 2, 2026
+Read post (/blog/ceiling-on-gtm-agent-is-data) Read post
+Read more
+Thought Leadership (/blog-category/thought-leadership)
+How to Do Territory Planning for Your GTM Team in Clay
+Oct 29, 2026
+Oct 29, 2026
+Read post (/blog/sales-territory-planning) Read post
+Read more
+Thought Leadership (/blog-category/thought-leadership)
+How We Turn a Champion’s Departure Into a Buying Signal
+Oct 27, 2026
+Oct 27, 2026
+Read post (/blog/how-we-turn-a-champions-departure-into-a-buying-signal) Read post
+Read more
+Clay Announcements (/blog-category/clay-announcements)
+Claygent picks the right model for every task with auto-mode
+Oct 27, 2026
+Oct 26, 2026
+Read post (/blog/automode-for-claygent) Read post
+Read more
+Engineering (/blog-category/engineering)
+Making a Billion Records Explain Themselves
+Oct 27, 2026
+Oct 15, 2026
+Read post (/blog/explaining-a-billion-records) Read post
+Read more
+Clay Announcements (/blog-category/clay-announcements)
+Announcing the Winners of Clay's 2026 Data Partner Awards
+Oct 22, 2026
+Oct 22, 2026
+Read post (/blog/clays-2026-data-partner-awards) Read post
+Turn your growth ideas into reality today
+Start for free today. No credit card required.
+Start building for free (https://app.clay.com/signup?su=06b94f4a-22ec-47d4-82c5-5d6deff2c808) Get a demo (/demo)
+Use cases
+Automated inbound (/use-cases/inbound-enrichment)
+Account research (/use-cases/account-research)
+ABM (/use-cases/abm)
+PLG assist (/use-cases/plg-assist)
+Rep assist (/use-cases/rep-assist)
+Reverse ETL (/use-cases/reverse-etl)
+Outbound (/use-cases/outbound)
+CRM Enrichment (/use-cases/crm-enrichment)
+TAM Sourcing (/use-cases/tam-sourcing)
+Product
+Claygent AI (/claygent)
+Account Agents (/account-agents)
+Ads (/ads)
+Sequencer (/sequencer)
+Multi-provider data enrichment (/waterfall-enrichment)
+Audiences (/audiences)
+Signals (/signals)
+Workflows (/workflows)
+Functions (/functions)
+Integrations (/integrations)
+Pricing (/pricing)
+Changelog (/changelog)
+Blog
+The rise of the GTM engineer (https://www.clay.com/blog/gtm-engineering)
+Finding GTM alpha (https://www.clay.com/blog/gtm-alpha)
+Clay reaches 100M ARR (https://www.clay.com/blog/100m-arr)
+Series C: The GTM engineering era begins now (https://www.clay.com/series-c)
+Resources
+Get started lesson (https://www.clay.com/university/lesson/intro-to-clay-101-clay-101)
+University (https://university.clay.com/)
+Use case templates (https://university.clay.com/claybooks)
+Partner programs (/partners)
+Community (https://community.clay.com/)
+FAQ (/faq)
+Company
+Contact us (/contact)
+About (/about)
+Careers (/careers)
+Jobs (/jobs)
+Integrate with Clay (https://www.clay.com/partners/integrations)
+Status (https://status.clay.com/)
+Customers
+OpenAI (https://www.clay.com/customers/open-ai)
+Vanta (https://www.clay.com/customers/vanta)
+Verkada (https://www.clay.com/customers/verkada)
+Sendoso (https://www.clay.com/customers/sendoso)
+Anthropic (https://www.clay.com/customers/anthropic)
+Coverflex (https://www.clay.com/customers/coverflex)
+Rippling (https://www.clay.com/customers/rippling)
+Case studies (https://www.clay.com/customers)
+Legal
+Privacy policy (https://privacy.clay.com/)
+Terms of service (/legal/terms-of-service)
+Make a privacy request (https://app.clay.com/privacy/request)
+[Clay logo, go to homepage]
+© 2026 Clay Labs Inc.
+Born in Brooklyn • Art by Hudson (https://www.hudsonchristie.com/)
+Visit Clay on LinkedIn (https://www.linkedin.com/company/grow-with-clay/posts/?feedView=all) Visit Clay on YouTube (https://www.youtube.com/@GrowWithClay) Visit Clay on YouTube (https://x.com/clay) Visit Clay on Slack (https://www.clay.com/slack-community)

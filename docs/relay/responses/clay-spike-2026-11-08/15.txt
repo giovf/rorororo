@@ -1,0 +1,201 @@
+{ "@context": "https://schema.org", "@type": "Article", "headline": "Clean, Enrich, and Structure UK &amp; German CRM Accounts with Beauhurst", "description": "Fill gaps in UK and German company records, layer in funding data for smarter routing, and map corporate structures to identify true buying centers — all automatically synced back to your CRM. ", "url": "/detail_claybooks", "image": "https://cdn.prod.website-files.com/687e604972375496b891fe58/6997541480649478c89e6c94_691fc39114acd9f75d4c23c2_67184ee664d781e37da949b0_Personalized%2520Giftt.png", "datePublished": "Mar 10, 2026", "dateModified": "Oct 26, 2026", "author": { "@type": "Organization", "name": "Clay", "url": "https://www.clay.com" }, "publisher": { "@type": "Organization", "name": "Clay", "url": "https://www.clay.com", "logo": { "@type": "ImageObject", "url": "https://cdn.prod.website-files.com/687563213dfbc91a782122b1/687eb46ac25e61a584b5ed01_university-logo.webp" } }, "inLanguage": "en" }
+meta og:type: website
+Clean, Enrich, and Structure UK & German CRM Accounts with Beauhurst - Claybooks
+Skip to main
+[Close-up of overlapping pink and blue translucent geometric shapes on a white background.]
+[Banner with backward arrow, text 'CLAYBACK', 'SECURE ARCHIVAL DATA' and button 'OPEN THE ARCHIVES'.]
+[Abstract composition of overlapping blue and orange translucent rounded shapes on a white background.]
+Review your year with Clay on Clayback.clay.com (https://clayback.clay.com/)
+University home page (/)
+Search University or ask AI. Learn your way.
+⌘
+K
+​
+Open workspace (https://app.clay.com)
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Sign up to Clay
+Claybooks Role
+​ Customer experience (/roles/customer-experience)
+​ Marketing (/roles/marketing)
+​ Partnerships (/roles/partnerships)
+​ RevOps (/roles/revops)
+​ Sales (/roles/sales)
+​ Other (/roles/other)
+Roles index
+​
+Log in (https://app.clay.com/)
+Sign up (https://app.clay.com/signup?source=nav)
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Sign up to Clay
+Claybooks Role
+​ Customer experience (/roles/customer-experience)
+​ Marketing (/roles/marketing)
+​ Partnerships (/roles/partnerships)
+​ RevOps (/roles/revops)
+​ Sales (/roles/sales)
+​ Other (/roles/other)
+Roles index
+​
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Claybooks Role
+​ Customer experience (/roles/customer-experience)
+​ Marketing (/roles/marketing)
+​ Partnerships (/roles/partnerships)
+​ RevOps (/roles/revops)
+​ Sales (/roles/sales)
+​ Other (/roles/other)
+All claybooks (/use-case-templates)
+/
+RevOps (/roles/revops)
+/
+Clean, Enrich, and Structure UK & German CRM Accounts with Beauhurst
+Clean, Enrich, and Structure UK & German CRM Accounts with Beauhurst
+Fill gaps in UK and German company records, layer in funding data for smarter routing, and map corporate structures to identify true buying centers — all automatically synced back to your CRM.
+Start building now with
+Beauhurst (https://www.clay.com/integrations/data-provider/beauhurst)
+Download the template (https://app.clay.com/shared-table/share_0tbnw9wme9cdeSzDzQG)
+What we used
+Clay (Paid): Powers the full CRM enrichment workflow — pulls in existing account data, runs Beauhurst's enrichment actions across every row, applies scoring and routing logic, and syncs enriched records back to your CRM automatically.
+Beauhurst: Provides three core actions — Enrich Company, Find Company Funding, and Find Company Corporate Structure — that fill gaps in company records, surface funding signals, and map corporate hierarchies. You'll need to bring your own Beauhurst API key to connect the integration inside Clay.
+Your CRM (Salesforce, HubSpot, or other): The source of your existing account data and the destination for enriched records once the workflow runs.
+‍
+Free resources
+Download the template (https://app.clay.com/shared-table/share_0tbnw9wme9cdeSzDzQG) here
+Need help?
+If you have any issue, you can ask for help in Slack (https://clayhq.typeform.com/slack?typeform-source=www.clay.com) or schedule time with a Clay expert (https://www.clay.com/experts)
+Get started
+Dirty CRM data is one of the biggest blockers to effective outbound and account management — missing fields, outdated funding information, and unclear corporate structures mean reps are working with incomplete context and routing decisions are made on bad data.
+This Claybook solves that by applying Beauhurst's three core actions to your existing CRM accounts. Enrich Company fills in missing firmographic details like company registration numbers and LinkedIn URLs so every account is actually actionable. Find Company Funding adds funding data at scale — grants, total fundraising, and investment history — so you can build routing logic, identify growth signals, and trigger re-engagement at the right moment. Find Company Corporate Structure maps parent-subsidiary relationships so you can merge duplicates, route complex accounts to strategic sales, and disqualify records whose parent company puts them outside your ICP. Once enriched, everything syncs automatically back to your CRM on whatever cadence you set.
+‍
+How it works:
+Pull in your CRM data from Salesforce, HubSpot, or any other CRM integration to populate your Clay table with the accounts you want to clean and enrich.
+Run Enrich Company to fill gaps in your company records — pulling registration numbers, LinkedIn URLs, and other missing firmographic data directly from Beauhurst's dataset.
+Run Find Company Funding to layer in funding history at scale — number of grants, total fundraising, and investment rounds — so you can build routing logic, flag growth signals, and trigger re-engagement workflows.
+Run Find Company Corporate Structure to map parent-subsidiary relationships for every account — giving reps clarity on true buying centers, surfacing duplicate records, and flagging accounts whose parent company falls outside your ICP..
+Sync enriched data back to your CRM using an Update action to keep Salesforce, HubSpot, or any other CRM automatically up to date on whatever cadence you set.
+‍
+Information
+Follow the step by steps here in Clay
+Download the free template
+1
+Step 1: Copy this template
+First, copy this template in Clay.
+If you’re already a user, you’ll be directed to your workspace. If not, you’ll be prompted to create a free Clay account.
+The interactive demos on the right will walk you through each step of this Claybook.
+‍
+2
+Step 2: Pull in your CRM data
+Use your CRM integration to import existing account records into Clay as the starting point for enrichment. Customize your import using the following available inputs:
+CRM source (Salesforce, HubSpot, or any other connected CRM)
+Account filters (e.g. only pull accounts missing key fields, or accounts within a specific segment or ownership tier)
+Fields to import (company name, domain, existing firmographic data, owner, and any other relevant CRM fields)
+‍
+3
+Step 3: Run Enrich Company
+Use the Beauhurst: Enrich Company action to fill gaps in your company records with Beauhurst's dataset. Customize your enrichment by mapping the following available identifiers and outputs:
+Company name or domain as the identifier
+Company registration number
+LinkedIn URL
+Firmographic details (industry, headcount, location, and more)
+‍
+4
+Step 4: Run Find Company Funding
+Use the Beauhurst: Find Company Funding action to layer detailed funding history onto each account. Customize your funding data capture using the following available outputs:
+Number of grants received
+Total fundraising amount
+Individual funding rounds (round type, date, amount, and investors)
+Use as a routing trigger — e.g. flag accounts that have raised a Series A or above for enterprise routing
+Use as a re-engagement signal — e.g. trigger outreach when a new funding round is detected
+‍
+5
+Step 5: Run Find Company Corporate Structure
+Use the Beauhurst: Find Company Corporate Structure action to map parent-subsidiary relationships for each account. Customize your structure mapping using the following available outputs:
+Parent company identification
+Subsidiary list
+Use to merge duplicate records (e.g. same parent company appearing multiple times in your CRM)
+Use to route complex accounts to strategic sales based on parent company size or tier
+Use to disqualify records whose parent company falls outside your ICP
+‍
+6
+Step 6: Sync enriched data back to your CRM
+Use the Update CRM action to automatically push all enriched fields back to your Salesforce, HubSpot, or other CRM instance. Customize your sync using the following available inputs:
+Fields to update (registration number, LinkedIn URL, funding data, corporate structure, ICP score)
+Update cadence (set the table to rerun on a schedule to keep records continuously up to date)
+Conditional update logic (only overwrite empty fields, or overwrite all with latest Beauhurst data)
+CRM destination (Salesforce, HubSpot, or any other connected CRM)
+‍
+Get Started
+Start cleaning and enriching your CRM accounts with Beauhurst to fill data gaps, layer in funding signals, and map corporate structures — then sync everything back to your CRM automatically.
+Other popular resources
+Experts
+Find a Clay Expert
+Explore our network of Clay experts and agencies.
+View experts
+View experts (https://www.clay.com/experts)
+View experts
+Community
+Join our slack community
+Find help in our slack community, and support channels.
+Go to slack
+Go to slack (https://community.clay.com)
+Go to slack
+Cohorts
+Join a cohort, learn Clay fast!
+The faster way to master Clay. Sign in if you're enrolled in a cohort (current or past) or apply!
+Learn more about cohorts
+Learn more about cohorts (/cohorts)
+Learn more about cohorts
+Talents
+Hire GTME Talent
+Find and connect with GTM talent who've demonstrated expertise in building advanced workflows
+Explore GTME talents
+Explore GTME talents (https://www.clay.com/talent)
+Explore GTME talents
+Explore, practice and master Clay
+[Clay logo]
+Powered education
+Linkedin (https://www.linkedin.com/company/grow-with-clay/posts/?feedView=all) Youtube (https://www.youtube.com/@GrowWithClay/videos) Slack community (https://www.clay.com/slack-community)
+Explore Clay
+Visit Clay.com (https://www.clay.com)
+Integrations (https://www.clay.com/integrations)
+Multi-provider data enrichment (https://www.clay.com/waterfall-enrichment)
+Sculptor (https://www.clay.com/sculptor)
+AI Claygent (https://www.clay.com/claygent)
+Audiences (https://www.clay.com/audiences)
+Sequencer (https://www.clay.com/sequencer)
+Pricing (https://www.clay.com/pricing)
+Changelog (https://www.clay.com/changelog)
+Get started here
+Get started lesson (https://university.clay.com/lessons/intro-to-clay-101-fete-jigsaw)
+Clay 101 (https://university.clay.com/courses/clay-101)
+Enroll in Clay cohorts (https://university.clay.com/cohorts)
+Engage
+Find a Clay experts (https://www.clay.com/experts)
+Hire a GTME talent (https://www.clay.com/talent)
+GTM job board (https://www.clay.com/job-board)
+Community (https://community.clay.com/)
+Join Slack (https://www.clay.com/slack-community)
+FAQ (https://clay.com/faq)
+Legal
+Privacy policy (https://privacy.clay.com/policies)
+Terms of service (https://www.clay.com/terms-of-service)
+Do not sell my data (https://docs.google.com/forms/d/e/1FAIpQLSeAsU1U-AJfhqzDx6-6eVcyQ_kBD1J9cw1y0huQiS-HCkRf0Q/viewform)
+© Clay 2025 – Born in Brooklyn. Claymation illustrations by the wonderful Hudson Christie (https://www.hudsonchristie.com/) .

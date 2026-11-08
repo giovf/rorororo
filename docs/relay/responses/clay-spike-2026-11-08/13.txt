@@ -1,0 +1,220 @@
+{ "@context": "https://schema.org", "@type": "Article", "headline": "Enrichments", "description": "Learn how to run an enrichment within Clay.", "articleBody": "", "url": "/detail_docs", "datePublished": "Sep 29, 2026", "dateModified": "Sep 29, 2026", "author": { "@type": "Organization", "name": "Clay", "url": "https://www.clay.com" }, "publisher": { "@type": "Organization", "name": "Clay", "url": "https://www.clay.com", "logo": { "@type": "ImageObject", "url": "https://cdn.prod.website-files.com/687563213dfbc91a782122b1/691f411366a473645359848d_clay-logo.avif" } }, "inLanguage": "en" }
+meta og:type: website
+Enrichments - Clay Docs
+Skip to main
+[Close-up of overlapping pink and blue translucent geometric shapes on a white background.]
+[Banner with backward arrow, text 'CLAYBACK', 'SECURE ARCHIVAL DATA' and button 'OPEN THE ARCHIVES'.]
+[Abstract composition of overlapping blue and orange translucent rounded shapes on a white background.]
+Review your year with Clay on Clayback.clay.com (https://clayback.clay.com/)
+University home page (/)
+Search University or ask AI. Learn your way.
+⌘
+K
+​
+Open workspace (https://app.clay.com)
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Sign up to Clay
+Doc Topics
+Getting started (/docs-topics/getting-started)
+Find (/docs-topics/find)
+Enrich (/docs-topics/enrich)
+Transform (/docs-topics/transform)
+Web scraping (/docs-topics/web-scraping)
+Gen AI (/docs-topics/gen-ai)
+Export (/docs-topics/export)
+Settings & admin (/docs-topics/data-destinations)
+Signals & triggers (/docs-topics/signals)
+Docs index
+​
+Log in (https://app.clay.com/)
+Sign up (https://app.clay.com/signup?source=nav)
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Sign up to Clay
+Doc Topics
+Getting started (/docs-topics/getting-started)
+Find (/docs-topics/find)
+Enrich (/docs-topics/enrich)
+Transform (/docs-topics/transform)
+Web scraping (/docs-topics/web-scraping)
+Gen AI (/docs-topics/gen-ai)
+Export (/docs-topics/export)
+Settings & admin (/docs-topics/data-destinations)
+Signals & triggers (/docs-topics/signals)
+Docs index
+​
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Doc Topics
+Getting started (/docs-topics/getting-started)
+Find (/docs-topics/find)
+Enrich (/docs-topics/enrich)
+Transform (/docs-topics/transform)
+Web scraping (/docs-topics/web-scraping)
+Gen AI (/docs-topics/gen-ai)
+Export (/docs-topics/export)
+Settings & admin (/docs-topics/data-destinations)
+Signals & triggers (/docs-topics/signals)
+All docs (/docs)
+/
+Enrich (/docs-topics/enrich)
+/
+Enrichments
+Enrichments
+Learn how to run an enrichment within Clay.
+Overview
+Enrichments in Clay transform your data by pulling in additional information from various sources. Whether you need to verify email addresses, gather company details, or find social media profiles, Clay's enrichment tools enhance your data quickly and efficiently.
+You can run enrichments individually, use pre-built templates, or create powerful recipes to automate complex workflows.
+Running an enrichment
+In a Clay table, click Add enrichment and search for an enrichment.
+Under Integrations , select an option.
+In the modal, select your account.
+Clay provides API keys for certain enrichments, but you can save credits (https://www.clay.com/university/guide/credits) by using your own account—click + Add account to set it up.
+Run settings
+Run settings give you control over when and how your enrichments execute. Access these settings by clicking into any enrichment column.
+Auto-run
+When enabled, the enrichment will automatically re-run whenever its input values change. This keeps your data fresh without manual intervention.
+Toggle on to automatically update results when input data changes
+Toggle off to run the enrichment only when you manually trigger it
+Add run condition
+Use conditional logic to control when an enrichment runs. The enrichment only executes if your specified conditions are met.
+Select Add run condition , then enter your formula.
+The enrichment runs when the formula evaluates to true .
+Click Generate to have Clay write the formula from a plain-language prompt.
+Delay run
+Delay when an enrichment runs after its conditions are met. This is useful when you need to wait for external systems to process data before continuing your workflow.
+Run immediately
+Runs the action as soon as run conditions are met.
+Default behavior for all enrichments.
+Run after delay
+Waits a specified number of seconds before running (maximum 10 minutes).
+Delay starts after run conditions are met.
+Useful for syncing between external systems, like waiting for Salesforce to sync data to Outreach.
+To configure a delay:
+Select Run after delay .
+Enter the number of seconds to wait (up to 600 seconds/10 minutes).
+Use a formula to set different delays per row.
+Troubleshooting
+"Is there a way to make one enrichment (column) run only after another has finished?"
+You can use a boolean formula to check if an enrichment has finished, then use that in a conditional formula to control when another enrichment runs. Learn more here (https://www.notion.so/Sources-1577e66eb01480eba5f5dd85343aeb07?pvs=21) .
+"How can I tell how my credits are being used?"
+You can track credit usage for your workspace in the credit usage (https://www.clay.com/university/guide/credit-usage) dashboard. This shows detailed breakdowns of credit consumption by table, integration, and time period, helping you monitor and optimize your usage.
+Table of contents
+TOC Heading
+TOC Heading
+Plan
+Starter (https://www.clay.com/pricing)
+Explore other docs
+Getting started
+Enhanced matching
+Enhanced matching is Clay's hashed email enrichment: it finds the personal email identifiers ad platforms recognize, so more of your audience matches when you sync it.
+View article
+View article (/docs/enhanced-matching)
+View article
+Signals & triggers
+Ad lead form triggers
+Send LinkedIn and Meta lead generation submissions into a Clay workflow, so each new lead is qualified, routed, or written to Audiences automatically.
+View article
+View article (/docs/ad-lead-form-triggers)
+View article
+Export
+Credit refunds
+Learn when Clay refunds Actions and Data Credits, and which actions refund when a provider returns no data.
+View article
+View article (/docs/credit-refunds)
+View article
+Enrich
+Definitive Healthcare integration
+Find US hospitals in Clay and enrich them with executives, physicians, networks, payor mix, technology, and financial metrics.
+View article
+View article (/docs/definitive-healthcare-integration)
+View article
+Enrich
+Reusing saved enrichment data
+Keep the data your enrichments return so later runs can reuse it instead of paying for the same answer twice.
+View article
+View article (/docs/reusing-saved-enrichment-data)
+View article
+Signals & triggers
+Professional posts
+Gather engagement data from professional social media posts — comments, reactions, shares, and a profile's recent activity.
+View article
+View article (/docs/professional-posts)
+View article
+Settings & admin
+Set up SCIM provisioning in Clay
+Keep your Clay workspace membership and roles in sync with your identity provider.
+View article
+View article (/docs/scim-provisioning)
+View article
+Other popular resources
+Experts
+Find a Clay Expert
+Explore our network of Clay experts and agencies.
+View experts
+View experts (https://www.clay.com/experts)
+View experts
+Community
+Join our slack community
+Find help in our slack community, and support channels.
+Go to slack
+Go to slack (https://community.clay.com)
+Go to slack
+Cohorts
+Join a cohort, learn Clay fast!
+The faster way to master Clay. Sign in if you're enrolled in a cohort (current or past) or apply!
+Learn more about cohorts
+Learn more about cohorts (/cohorts)
+Learn more about cohorts
+Talents
+Hire GTME Talent
+Find and connect with GTM talent who've demonstrated expertise in building advanced workflows
+Explore GTME talents
+Explore GTME talents (https://www.clay.com/talent)
+Explore GTME talents
+Explore, practice and master Clay
+[Clay logo]
+Powered education
+Linkedin (https://www.linkedin.com/company/grow-with-clay/posts/?feedView=all) Youtube (https://www.youtube.com/@GrowWithClay/videos) Slack community (https://www.clay.com/slack-community)
+Explore Clay
+Visit Clay.com (https://www.clay.com)
+Integrations (https://www.clay.com/integrations)
+Multi-provider data enrichment (https://www.clay.com/waterfall-enrichment)
+Sculptor (https://www.clay.com/sculptor)
+AI Claygent (https://www.clay.com/claygent)
+Audiences (https://www.clay.com/audiences)
+Sequencer (https://www.clay.com/sequencer)
+Pricing (https://www.clay.com/pricing)
+Changelog (https://www.clay.com/changelog)
+Get started here
+Get started lesson (https://university.clay.com/lessons/intro-to-clay-101-fete-jigsaw)
+Clay 101 (https://university.clay.com/courses/clay-101)
+Enroll in Clay cohorts (https://university.clay.com/cohorts)
+Engage
+Find a Clay experts (https://www.clay.com/experts)
+Hire a GTME talent (https://www.clay.com/talent)
+GTM job board (https://www.clay.com/job-board)
+Community (https://community.clay.com/)
+Join Slack (https://www.clay.com/slack-community)
+FAQ (https://clay.com/faq)
+Legal
+Privacy policy (https://privacy.clay.com/policies)
+Terms of service (https://www.clay.com/terms-of-service)
+Do not sell my data (https://docs.google.com/forms/d/e/1FAIpQLSeAsU1U-AJfhqzDx6-6eVcyQ_kBD1J9cw1y0huQiS-HCkRf0Q/viewform)
+© Clay 2025 – Born in Brooklyn. Claymation illustrations by the wonderful Hudson Christie (https://www.hudsonchristie.com/) .

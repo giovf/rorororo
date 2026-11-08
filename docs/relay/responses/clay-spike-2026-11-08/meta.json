@@ -1,0 +1,404 @@
+{
+  "request": "clay-spike-2026-11-08",
+  "fetched_at": "2026-11-08T17:12:23.011Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/blog/announcing-the-clay-partner-program",
+      "fetched_at": "2026-11-08T17:11:45.985Z",
+      "status": 200,
+      "elapsed_ms": 227,
+      "final_url": "https://www.clay.com/blog/announcing-the-clay-partner-program",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 07 Nov 2026 10:37:44 GMT"
+      },
+      "file": "1.txt",
+      "bytes": 40279,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 367168
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/faq",
+      "fetched_at": "2026-11-08T17:11:46.731Z",
+      "status": 200,
+      "elapsed_ms": 46,
+      "final_url": "https://www.clay.com/faq",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 06 Nov 2026 20:08:50 GMT"
+      },
+      "file": "2.txt",
+      "bytes": 53102,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 445047
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/pricing",
+      "fetched_at": "2026-11-08T17:11:47.289Z",
+      "status": 200,
+      "elapsed_ms": 40,
+      "final_url": "https://www.clay.com/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 06 Nov 2026 19:37:23 GMT"
+      },
+      "file": "3.txt",
+      "bytes": 33380,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 410255
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/blog/clays-2026-data-partner-awards",
+      "fetched_at": "2026-11-08T17:11:47.840Z",
+      "status": 200,
+      "elapsed_ms": 340,
+      "final_url": "https://www.clay.com/blog/clays-2026-data-partner-awards",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 07 Nov 2026 15:14:52 GMT"
+      },
+      "file": "4.txt",
+      "bytes": 38733,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 363935
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/blog/clay-lusha-beauhurst",
+      "fetched_at": "2026-11-08T17:11:48.689Z",
+      "status": 200,
+      "elapsed_ms": 53,
+      "final_url": "https://www.clay.com/blog/clay-lusha-beauhurst",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 07 Nov 2026 03:49:34 GMT"
+      },
+      "file": "5.txt",
+      "bytes": 42200,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 369814
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/changelog/beauhurst",
+      "fetched_at": "2026-11-08T17:11:49.253Z",
+      "status": 200,
+      "elapsed_ms": 45,
+      "final_url": "https://www.clay.com/changelog/beauhurst",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 07 Nov 2026 07:02:14 GMT"
+      },
+      "file": "6.txt",
+      "bytes": 10775,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 225884
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/integrations/data-provider/beauhurst",
+      "fetched_at": "2026-11-08T17:11:49.814Z",
+      "status": 200,
+      "elapsed_ms": 42,
+      "final_url": "https://www.clay.com/integrations/data-provider/beauhurst",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 07 Nov 2026 14:29:20 GMT"
+      },
+      "file": "7.txt",
+      "bytes": 14228,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 388930
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/integrations/action/enrich-company-uk-and-germany-beauhurst",
+      "fetched_at": "2026-11-08T17:11:50.388Z",
+      "status": 200,
+      "elapsed_ms": 62,
+      "final_url": "https://www.clay.com/integrations/action/enrich-company-uk-and-germany-beauhurst",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 06 Nov 2026 23:19:31 GMT"
+      },
+      "file": "8.txt",
+      "bytes": 12031,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 301656
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/partners",
+      "fetched_at": "2026-11-08T17:11:50.958Z",
+      "status": 200,
+      "elapsed_ms": 33,
+      "final_url": "https://www.clay.com/partners",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 06 Nov 2026 20:12:09 GMT"
+      },
+      "file": "9.txt",
+      "bytes": 15138,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 263940
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/templates",
+      "fetched_at": "2026-11-08T17:11:51.500Z",
+      "status": 200,
+      "elapsed_ms": 45,
+      "final_url": "https://www.clay.com/templates",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 07 Nov 2026 04:57:56 GMT"
+      },
+      "file": "10.txt",
+      "bytes": 43395,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 544009
+    },
+    {
+      "method": "GET",
+      "url": "https://university.clay.com/docs/beauhurst-integration",
+      "fetched_at": "2026-11-08T17:11:51.561Z",
+      "status": 200,
+      "elapsed_ms": 208,
+      "final_url": "https://university.clay.com/docs/beauhurst-integration",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sun, 08 Nov 2026 17:11:51 GMT"
+      },
+      "file": "11.txt",
+      "bytes": 10878,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 99788
+    },
+    {
+      "method": "GET",
+      "url": "https://university.clay.com/docs/http-api-integration-overview",
+      "fetched_at": "2026-11-08T17:11:52.281Z",
+      "status": 200,
+      "elapsed_ms": 77,
+      "final_url": "https://university.clay.com/docs/http-api-integration-overview",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sun, 08 Nov 2026 00:42:09 GMT"
+      },
+      "file": "12.txt",
+      "bytes": 27915,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 123201
+    },
+    {
+      "method": "GET",
+      "url": "https://university.clay.com/docs/enrichments",
+      "fetched_at": "2026-11-08T17:11:52.903Z",
+      "status": 200,
+      "elapsed_ms": 287,
+      "final_url": "https://university.clay.com/docs/enrichments",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sun, 08 Nov 2026 17:11:53 GMT"
+      },
+      "file": "13.txt",
+      "bytes": 9883,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 98383
+    },
+    {
+      "method": "GET",
+      "url": "https://university.clay.com/docs/clay-credit-conservation",
+      "fetched_at": "2026-11-08T17:11:53.741Z",
+      "status": 200,
+      "elapsed_ms": 42,
+      "final_url": "https://university.clay.com/docs/clay-credit-conservation",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sun, 08 Nov 2026 15:53:21 GMT"
+      },
+      "file": "14.txt",
+      "bytes": 12405,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 105704
+    },
+    {
+      "method": "GET",
+      "url": "https://university.clay.com/claybooks/clean-enrich-and-structure-uk-german-crm-accounts-with-beauhurst",
+      "fetched_at": "2026-11-08T17:11:54.288Z",
+      "status": 200,
+      "elapsed_ms": 94,
+      "final_url": "https://university.clay.com/claybooks/clean-enrich-and-structure-uk-german-crm-accounts-with-beauhurst",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sun, 08 Nov 2026 17:11:54 GMT"
+      },
+      "file": "15.txt",
+      "bytes": 11944,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 90267
+    },
+    {
+      "method": "GET",
+      "url": "https://community.clay.com/x/tutorials/vrq40v8xmgcb/using-the-companies-house-api-for-uk-company-prosp",
+      "fetched_at": "2026-11-08T17:11:54.386Z",
+      "status": 200,
+      "elapsed_ms": 1020,
+      "final_url": "https://community.clay.com/x/content-and-events/msg_35cl8fII6aEd/using-the-companies-house-api-for-uk-company-prosp",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 4982,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 108823
+    },
+    {
+      "method": "GET",
+      "url": "https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking",
+      "fetched_at": "2026-11-08T17:11:56.580Z",
+      "status": 200,
+      "elapsed_ms": 286,
+      "final_url": "https://community.clay.com/x/general/msg_8zr5eoQW31kq/integrating-companies-house-api-with-clay-seeking",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.txt",
+      "bytes": 13266,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 237771
+    },
+    {
+      "method": "GET",
+      "url": "https://community.clay.com/x/content-and-events/r9j0fusg8d8l/use-http-api",
+      "fetched_at": "2026-11-08T17:11:58.089Z",
+      "status": 200,
+      "elapsed_ms": 714,
+      "final_url": "https://community.clay.com/x/content-and-events/msg_HKMsN4mDF2ST/use-http-api",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.txt",
+      "bytes": 6863,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 128428
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/integrations",
+      "render": true,
+      "fetched_at": "2026-11-08T17:11:59.770Z",
+      "status": 200,
+      "final_url": "https://www.clay.com/integrations",
+      "title": "Integrations | Clay.com",
+      "rendered": {
+        "network_idle": false,
+        "requests": 387,
+        "failed": [
+          "POST https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=1&auid=21867026.1794157922&dt=Integrations%20%7C%20Clay.com&tid=AW-11388401378&en=page_view&dl=https%3A%2F%2Fwww.clay.com%2Fintegrations&scrsr",
+          "POST https://www.google.com/rmkt/collect/11388401378/?random=1794157921854&cv=11&fst=1794157921854&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6b50h2v9173068337za20ozb858497529zd858497529xe",
+          "POST https://api.claydar.com/tracker/event → net::ERR_ABORTED",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a5763346885dacfc/1794157922772/d50dc75d3ed2720a8ee5b52451938925ac4937351f17d8a891e405efd49f9214/CssKHe3twto_WYbhP-0TYVuvcDJLEij",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a5763346885dacfc/CmQBxky-K71s67CfQl6ewXVbqdvfQJfWTxDhspeWhNwu5mAdU2OWBRYzfOlzHXSYYWRp9Ti68coscP0qzGHmE6OhnbwMu1OXMnZFtFD",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a57633469860acfc/1794157922750/102c44f53927a4c34d7eed3e54fac04faea7850332df7636286c9dacbd327866/CgbKEdg5fVNcJhbBKE4byePbfax8mHR",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a57633469860acfc/CnyMjslk1YEah5pcC9rSVaG2gdnqlcfmp4S-MqcOAPTZtt2yopt3bkGfRJJ5EyFnAZEMbRzE4omDMIZARQ5nRKicQ3tlFPOh6PkufZG",
+          "GET https://cdn.prod.website-files.com/plugins/Basic/assets/placeholder.60f9b1840c.svg → net::ERR_ABORTED",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a576339b1e80acfc/1794157936252/6fad91f87670a133ddca3c3756fa334260505e6ef50fd8b686c80a644ad38689/CvAfOdaUJwFD7lA9PYsfEB8UHFOiElo",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a576339b1e80acfc/CnCMqH5Kgc7bLG7DmkVSXV57vvPdN2nBCUlUqWrzJHU0ey-1mLwZZnX_Grdt5YLw3DXmFUrOAuWkzgRKWyZ4hEMdIflWpTiVb2Y6cpm",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a576339caeabacfc/1794157936323/298e38fbbefa7b1e5ea6cf2accbb4a94d93ab573bb33a3f4f0c49092ad859ad2/CoFZRyiRhOZqESzZFBqXdMQiuqm-f2d",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a576339caeabacfc/CmVzczUhXT_4Atf58mZEDzYGFs4xBeCvXVOInem7tyWDFHvCd22DM6HqZoDiL7TnOJRmtADUpo10bD1EDah9yS13YORSvRwo_U6Eqnj",
+          "POST https://api.claydar.com/tracker/event → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "uncaught: Cannot read properties of null (reading 'addEventListener')",
+          "uncaught: Cannot read properties of null (reading 'querySelectorAll')",
+          "TypeError: analytics.user is not a function\n    at https://www.clay.com/integrations:221:39\n    at https://evs.cdp.clay.com/hwgzA3Y9rl/tWJbqMNRgGHjbwHiie73pz.min.js:1:96156",
+          "[GSI_LOGGER]: FedCM get() rejects with TypeError: Failed to execute 'get' on 'CredentialsContainer': Failed to read the 'identity' property from 'CredentialRequestOptions': Failed to read the 'mode' p",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy.",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%o font-size:0;color:transparent {}",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy.",
+          "Failed to load resource: the server responded with a status of 403 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 06 Nov 2026 19:42:46 GMT"
+      },
+      "file": "19.txt",
+      "bytes": 112827,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5275986
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/integrations/data-provider",
+      "render": true,
+      "fetched_at": "2026-11-08T17:12:19.295Z",
+      "status": 404,
+      "final_url": "https://www.clay.com/integrations/data-provider",
+      "title": "Not Found",
+      "rendered": {
+        "network_idle": true,
+        "requests": 94,
+        "failed": [
+          "GET https://www.clay.com/integrations/data-provider → 404",
+          "POST https://www.google.com/ccm/collect?rcb=18&frm=0&apvc=1&auid=1954658244.1794157940&dt=Not%20Found&tid=AW-11388401378&en=page_view&dl=https%3A%2F%2Fwww.clay.com%2Fintegrations%2Fdata-provider&scrsr",
+          "POST https://www.google.com/rmkt/collect/11388401378/?random=1794157940495&cv=11&fst=1794157940495&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6b41v9173068337za20ozb858497529zd858497529xecx",
+          "POST https://api.claydar.com/tracker/event → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "uncaught: Cannot read properties of null (reading 'addEventListener')",
+          "uncaught: Cannot read properties of null (reading 'addEventListener')",
+          "TypeError: analytics.user is not a function\n    at https://www.clay.com/integrations/data-provider:221:39\n    at https://evs.cdp.clay.com/hwgzA3Y9rl/tWJbqMNRgGHjbwHiie73pz.min.js:1:96156",
+          "[GSI_LOGGER]: FedCM get() rejects with TypeError: Failed to execute 'get' on 'CredentialsContainer': Failed to read the 'identity' property from 'CredentialRequestOptions': Failed to read the 'mode' p"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 06 Nov 2026 19:33:14 GMT",
+        "etag": "W/\"6e85f40789e67b5fa489f50c1a87cc6e\""
+      },
+      "file": "20.txt",
+      "bytes": 342,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 62368
+    }
+  ]
+}

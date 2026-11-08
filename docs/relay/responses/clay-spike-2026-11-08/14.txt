@@ -1,0 +1,243 @@
+{ "@context": "https://schema.org", "@type": "Article", "headline": "Guide: Ways to save Clay credits", "description": "Make the most out of your Clay credits.", "articleBody": "", "url": "/detail_docs", "datePublished": "Sep 29, 2026", "dateModified": "Sep 29, 2026", "author": { "@type": "Organization", "name": "Clay", "url": "https://www.clay.com" }, "publisher": { "@type": "Organization", "name": "Clay", "url": "https://www.clay.com", "logo": { "@type": "ImageObject", "url": "https://cdn.prod.website-files.com/687563213dfbc91a782122b1/691f411366a473645359848d_clay-logo.avif" } }, "inLanguage": "en" }
+meta og:type: website
+Guide: Ways to save Clay credits - Clay Docs
+Skip to main
+[Close-up of overlapping pink and blue translucent geometric shapes on a white background.]
+[Banner with backward arrow, text 'CLAYBACK', 'SECURE ARCHIVAL DATA' and button 'OPEN THE ARCHIVES'.]
+[Abstract composition of overlapping blue and orange translucent rounded shapes on a white background.]
+Review your year with Clay on Clayback.clay.com (https://clayback.clay.com/)
+University home page (/)
+Search University or ask AI. Learn your way.
+⌘
+K
+​
+Open workspace (https://app.clay.com)
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Sign up to Clay
+Doc Topics
+Getting started (/docs-topics/getting-started)
+Find (/docs-topics/find)
+Enrich (/docs-topics/enrich)
+Transform (/docs-topics/transform)
+Web scraping (/docs-topics/web-scraping)
+Gen AI (/docs-topics/gen-ai)
+Export (/docs-topics/export)
+Settings & admin (/docs-topics/data-destinations)
+Signals & triggers (/docs-topics/signals)
+Docs index
+​
+Log in (https://app.clay.com/)
+Sign up (https://app.clay.com/signup?source=nav)
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Sign up to Clay
+Doc Topics
+Getting started (/docs-topics/getting-started)
+Find (/docs-topics/find)
+Enrich (/docs-topics/enrich)
+Transform (/docs-topics/transform)
+Web scraping (/docs-topics/web-scraping)
+Gen AI (/docs-topics/gen-ai)
+Export (/docs-topics/export)
+Settings & admin (/docs-topics/data-destinations)
+Signals & triggers (/docs-topics/signals)
+Docs index
+​
+​ Overview (/)
+​ Courses (/courses)
+​ Docs (/docs)
+​ Use case templates (/use-case-templates)
+​ Certifications (/certifications)
+​ Cohorts (/cohorts)
+​ Clay.com (https://www.clay.com/)
+Doc Topics
+Getting started (/docs-topics/getting-started)
+Find (/docs-topics/find)
+Enrich (/docs-topics/enrich)
+Transform (/docs-topics/transform)
+Web scraping (/docs-topics/web-scraping)
+Gen AI (/docs-topics/gen-ai)
+Export (/docs-topics/export)
+Settings & admin (/docs-topics/data-destinations)
+Signals & triggers (/docs-topics/signals)
+All docs (/docs)
+/
+Getting started (/docs-topics/getting-started)
+/
+Guide: Ways to save Clay credits
+Guide: Ways to save Clay credits
+Make the most out of your Clay credits.
+Overview
+Guide: Ways to Save Clay Credits
+Clay credits are valuable resources that help you save both time by automating manual work and money on go-to-market resources. By optimizing how you use credits, you can ensure your workflows remain efficient while delivering the results you need growth. This guide outlines a few best practices to help you get the most out of your credits.
+Pause enrichments for new entries by turning off Auto-run
+How does this save credits?
+Auto-run lets Clay enrich any new rows added to your table automatically. While this can be helpful when your table is set up for a fully automated workflow, it can also result in unnecessary credit usage if rows are added by mistake or before you’re ready.
+The best practice here is to turn off Auto-run while building your table. Once your setup is finalized, you can turn it back on when you’re ready to launch and start enriching new entries.
+How do you implement this?
+To stop a column from running automatically, go to Run settings and toggle off Auto-run .
+You can also stop an entire table from running automatically: select Auto-run in the table toolbar, then toggle off Auto-run . The button reads Manual while automatic runs are off.
+Leveraging your API Keys
+How does this save credits?
+If you are on a paid plan and have credits with other data providers, Clay allows you to integrate your own API keys, giving you the flexibility to use those resources directly within your workflows.
+How do you use your own API key?
+You can access adding your API key two ways:
+Profile picture > Settings > Navigation Bar
+Go to your profile picture in the top right corner, navigate to Settings, and head over to the Connections section. From there, you can add your API keys to the Clay panel.
+Enrichment Panel > Account > Add Account
+When setting up an enrichment that accepts an API key, you can add an account linked to your API key. By default, Clay’s API key will be selected, but if you want to use your own, simply switch to your account by selecting Add Account .
+Some common API keys you can swap out:
+OpenAI API keys
+Anthropic
+Apollo ( Make sure to use the correct API key for the specific service you are integrating)
+Email Providers (e.g., Findymail, Prospeo) ‍
+Email Verifiers (e.g., Debounce, NeverBounce)
+You can add your own API keys when you select the account your enrichment runs on (Paid Feature)
+Qualify leads before enriching
+How does this help conserve credits?
+By adjusting the order of enrichments, you can save credits by enriching only the leads that meet specific criteria. If you have leads that can be disqualified early in the process, filtering them out ensures that only qualified contacts are enriched, preventing unnecessary credit usage.
+How do you implement this?
+You can set up conditional runs or use AI formulas to filter rows based on specific criteria (e.g., location, company size, or industry) to enrich only the contacts that are most relevant to your criteria.
+Here is an example of a way to use AI formulas to filter out leads
+‍
+Test out your data
+How does this save credits?
+When using a new integration, it’s best to start by testing a small sample—about 10 rows—before running the entire column. This allows you to identify and fix any errors in advance (ex. import errors, column filter error)
+For AI enrichments, prompts may need several iterations to get right, so testing and refining your prompts before running the full enrichment will help ensure better results.
+How do you implement this?
+Before running an enrichment, you can test it on 10 rows or apply it to the entire column. This gives you flexibility in troubleshooting and improving your setup before committing fully.
+Conditional runs
+How does this save credits?
+Conditional formulas help you conserve credits by ensuring that enrichments only run when specific conditions are met. Instead of enriching every row, you can create rules that limit enrichments to only the most relevant rows, such as leads that meet certain criteria. This prevents unnecessary enrichments on disqualified or low-priority leads, allowing you to use credits more efficiently.
+How do you implement this?
+There are two ways to implement conditional runs:
+Method #1: Conditional Runs
+Go to the Run Settings of any enrichment column.
+In the “Only run if” box, add your conditional formula to specify when the enrichment should run.
+Tip: Use the “Use AI” button to input plain language instructions, making it easier to define your conditions without needing complex formulas.
+Method #2: Filter Existing Rows
+You can also conditionally run columns through filtering rows.
+Filtered views only enriches the rows you're viewing so this can be used as a way to run enrichments conditionally
+Look up existing data to avoid duplicate enrichments
+If you’ve already enriched contacts in another table or your CRM, you can use Lookup columns to pull that existing data, saving credits by avoiding duplicate enrichments. Before running a new enrichment, check if the data already exists in your CRM or another Clay table. If it does, use a Lookup column to pull the data into your current table.
+How do you implement this?
+1) Pull Data from Your CRM
+‍
+‍
+2) Leverage Data from Other Tables
+‍
+‍
+Table of contents
+TOC Heading
+TOC Heading
+Plan
+https://www.clay.com/pricing
+Explore other docs
+Getting started
+Enhanced matching
+Enhanced matching is Clay's hashed email enrichment: it finds the personal email identifiers ad platforms recognize, so more of your audience matches when you sync it.
+View article
+View article (/docs/enhanced-matching)
+View article
+Signals & triggers
+Ad lead form triggers
+Send LinkedIn and Meta lead generation submissions into a Clay workflow, so each new lead is qualified, routed, or written to Audiences automatically.
+View article
+View article (/docs/ad-lead-form-triggers)
+View article
+Export
+Credit refunds
+Learn when Clay refunds Actions and Data Credits, and which actions refund when a provider returns no data.
+View article
+View article (/docs/credit-refunds)
+View article
+Enrich
+Definitive Healthcare integration
+Find US hospitals in Clay and enrich them with executives, physicians, networks, payor mix, technology, and financial metrics.
+View article
+View article (/docs/definitive-healthcare-integration)
+View article
+Enrich
+Reusing saved enrichment data
+Keep the data your enrichments return so later runs can reuse it instead of paying for the same answer twice.
+View article
+View article (/docs/reusing-saved-enrichment-data)
+View article
+Signals & triggers
+Professional posts
+Gather engagement data from professional social media posts — comments, reactions, shares, and a profile's recent activity.
+View article
+View article (/docs/professional-posts)
+View article
+Settings & admin
+Set up SCIM provisioning in Clay
+Keep your Clay workspace membership and roles in sync with your identity provider.
+View article
+View article (/docs/scim-provisioning)
+View article
+Other popular resources
+Experts
+Find a Clay Expert
+Explore our network of Clay experts and agencies.
+View experts
+View experts (https://www.clay.com/experts)
+View experts
+Community
+Join our slack community
+Find help in our slack community, and support channels.
+Go to slack
+Go to slack (https://community.clay.com)
+Go to slack
+Cohorts
+Join a cohort, learn Clay fast!
+The faster way to master Clay. Sign in if you're enrolled in a cohort (current or past) or apply!
+Learn more about cohorts
+Learn more about cohorts (/cohorts)
+Learn more about cohorts
+Talents
+Hire GTME Talent
+Find and connect with GTM talent who've demonstrated expertise in building advanced workflows
+Explore GTME talents
+Explore GTME talents (https://www.clay.com/talent)
+Explore GTME talents
+Explore, practice and master Clay
+[Clay logo]
+Powered education
+Linkedin (https://www.linkedin.com/company/grow-with-clay/posts/?feedView=all) Youtube (https://www.youtube.com/@GrowWithClay/videos) Slack community (https://www.clay.com/slack-community)
+Explore Clay
+Visit Clay.com (https://www.clay.com)
+Integrations (https://www.clay.com/integrations)
+Multi-provider data enrichment (https://www.clay.com/waterfall-enrichment)
+Sculptor (https://www.clay.com/sculptor)
+AI Claygent (https://www.clay.com/claygent)
+Audiences (https://www.clay.com/audiences)
+Sequencer (https://www.clay.com/sequencer)
+Pricing (https://www.clay.com/pricing)
+Changelog (https://www.clay.com/changelog)
+Get started here
+Get started lesson (https://university.clay.com/lessons/intro-to-clay-101-fete-jigsaw)
+Clay 101 (https://university.clay.com/courses/clay-101)
+Enroll in Clay cohorts (https://university.clay.com/cohorts)
+Engage
+Find a Clay experts (https://www.clay.com/experts)
+Hire a GTME talent (https://www.clay.com/talent)
+GTM job board (https://www.clay.com/job-board)
+Community (https://community.clay.com/)
+Join Slack (https://www.clay.com/slack-community)
+FAQ (https://clay.com/faq)
+Legal
+Privacy policy (https://privacy.clay.com/policies)
+Terms of service (https://www.clay.com/terms-of-service)
+Do not sell my data (https://docs.google.com/forms/d/e/1FAIpQLSeAsU1U-AJfhqzDx6-6eVcyQ_kBD1J9cw1y0huQiS-HCkRf0Q/viewform)
+© Clay 2025 – Born in Brooklyn. Claymation illustrations by the wonderful Hudson Christie (https://www.hudsonchristie.com/) .
