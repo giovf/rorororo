@@ -22,7 +22,7 @@ on:
   workflow_dispatch:
     inputs:
       x402_probe:
-        description: 'Pay the half-cent x402 probe on every route today whatever the spacing rule says (a re-screen after a metadata change, ≤ US$0.085; needs X402_PROBE_KEY)'
+        description: 'Pay the x402 probe today on every route the Bazaar does not list or has not settled in 23 days, whatever the 7-day spacing and the 30-day cap say (one payment per route, ≤ US$0.17 at 25 routes; needs X402_PROBE_KEY)'
         type: boolean
         default: false
       probe:
@@ -122,7 +122,7 @@ jobs:
         continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      - name: x402 probe payments (half a cent per route due, from the probe wallet)
+      - name: x402 probe payments (one call per route due, from the probe wallet)
         if: steps.row.outputs.skip != 'true'
         # ventures/gankdat/scripts/x402-probe.mjs (gankdat metrics-bazaar-merchant-read, 2026-10-14; owner
         # action 026 option B; per route since x402-bazaar-week-1-index-check, 2026-10-23): with the
@@ -132,8 +132,12 @@ jobs:
         # probe` by metrics.mjs, never a sale). CDP indexes one resource per settled payment and drops
         # it 30 days after the last one, so when no probe or owner payment shows on a Daily numbers row
         # of the last 7 days the step reads the catalogue (keyless) and pays every route it does not
-        # list and every listed route settled 23 days ago; the x402_probe dispatch input pays every
-        # route (a re-screen is per resource too). At most 20 half-cents in any 30 days (US$0.10).
+        # list and every listed route settled 23 days ago, inside a 30-day cap of one payment per live
+        # route plus three re-screens (probeMonthlyCap; 25 routes = 28 payments, at most US$0.20 — a
+        # data route is half a cent, a change feed one cent). The x402_probe dispatch input pays those
+        # due routes today whatever the spacing and the cap say (gankdat x402-change-routes-bazaar-index,
+        # 2026-11-08: the nine change feeds priced on 11-05 sat unlisted for three days behind the fixed
+        # cap of 20 the 10-23 survey had spent); X402_PROBE_FORCE=all, set by hand, re-screens every route.
         # A failed payment never fails the job: the row's `bazaar:` clause below is the reading that
         # matters, the morning after (indexing takes up to 15 minutes).
         run: node ventures/gankdat/scripts/x402-probe.mjs
