@@ -2692,3 +2692,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-09 17:40 | build | gankdat refresh-uk-planning-reread: origin unreadable (platform outage); re-read 11-15; no code change
 - 2026-11-09 17:40 | build | uk-planning §7 clock unchanged: actor 29 runs/30d for outside users, REST external 0; nothing retires
 - 2026-11-09 19:04 | watchdog | missed: burn-down slot 2026-11-09 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
+- 2026-11-09 22:07 | triage | notify owner dispatched: last run started 19:03 UTC, 3 h ago
