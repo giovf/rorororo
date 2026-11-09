@@ -2682,3 +2682,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-09 09:29 | build | Limit noted: insolvency, sanctions, sponsors match by name substring; only profile and charity take a number
 - 2026-11-09 09:29 | notify | A Clay partner form is ready for you: one 10-minute web form puts gankdat in front of Clay's users
 - 2026-11-09 09:33 | build | dependabot.yml first run: still none since the 11-07 09:19 install (latest run 11-01, PR-triggered only)
+- 2026-11-09 09:36 | build | Live read via relay: GET https://gankdat.com/clay 200 text/html 10.4 kB after deploy run 42594329665
