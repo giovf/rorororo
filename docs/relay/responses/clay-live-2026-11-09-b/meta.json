@@ -1,0 +1,48 @@
+{
+  "request": "clay-live-2026-11-09-b",
+  "fetched_at": "2026-11-09T09:36:32.781Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/clay",
+      "fetched_at": "2026-11-09T09:36:31.007Z",
+      "status": 200,
+      "elapsed_ms": 428,
+      "final_url": "https://gankdat.com/clay",
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/clay",
+      "fetched_at": "2026-11-09T09:36:31.935Z",
+      "status": 200,
+      "elapsed_ms": 258,
+      "final_url": "https://gankdat.com/clay",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "2.txt",
+      "bytes": 10431,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 20090
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/sitemap.xml",
+      "fetched_at": "2026-11-09T09:36:32.700Z",
+      "status": 200,
+      "elapsed_ms": 80,
+      "final_url": "https://gankdat.com/sitemap.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "etag": "W/\"3d7216d6a29cd7e6032cb1a7afaeb117\""
+      },
+      "file": "3.xml",
+      "bytes": 5253,
+      "truncated": false
+    }
+  ]
+}

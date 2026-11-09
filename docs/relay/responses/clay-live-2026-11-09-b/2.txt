@@ -1,0 +1,186 @@
+meta description: Clay HTTP API configs for gankdat's UK register lookups: Companies House status and filings, Charity Commission, insolvency notices, the UK sanctions list and licensed visa sponsors — one gankdat credit a row on your own key, no Clay Data Credit. Endpoints, field paths, rate limits, a conditional-run rule and a CRM qualification walkthrough.
+Use gankdat in Clay — UK register checks as an HTTP API enrichment
+gankdat (/) API docs (/docs) Excel add-in (/addin) account (/account) privacy (/privacy) terms (/terms) support (/feedback)
+Use gankdat in Clay
+Five official UK registers as HTTP API enrichment columns in a Clay table:
+the Companies House record of a company (status, incorporation date, SIC codes, overdue
+accounts, charges, insolvency history), whether it is a registered charity, its Gazette
+insolvency notices, any UK sanctions designation under its name and its licensed visa
+sponsor entry. Each column is one GET to the gankdat API (/docs) with your own
+key, so a row costs one gankdat credit (free for 250 a month, then from £5 per 1,000) plus
+Clay's own action — no Clay Data Credit is spent. The result is a qualification and
+compliance row for an account list: route, flag or disqualify before anyone writes an email.
+What it is not: a contact finder. gankdat drops personal data at ingest (officers,
+individual controllers and contact details are never stored), so these columns say what a
+company is, not who runs it.
+Before you start (3 minutes)
+Create a free key at gankdat.com/account (/account) (email sign-in). Name the
+key clay — the name shows in your key list and tells us which rows came from
+Clay.
+In any Clay table:
+Add enrichment → HTTP API → Select header account → + Add account . Add
+one header, Authorization with the value Bearer YOUR_KEY , name
+the account gankdat and save. Clay encrypts it at workspace level and the key
+never sits in a column.
+Make sure the table has a Company Number column (Companies House number,
+8 characters, leading zeros kept — Clay's docs: a number with leading zeros goes in
+quotes). Only a name? Step 1 of the walkthrough below resolves it.
+The five columns
+Every column is Method GET , the gankdat header account, no body.
+The response is always
+{ "ok": true, "data": [ …records ], "meta": { "total": N, … } } , so
+meta.total is the hit count and data.0.<field> the first
+record's field. Paste the Field paths to return you want; every field of a
+record is in the API docs (/docs) . Clay's Generate tab writes the same
+configuration from a sentence plus this page's URL if you would rather not type it.
+1. Company record (Companies House)
+Endpoint URL
+https://gankdat.com/v1/data/uk-company-profiles
+Query string
+company_number → /Company Number (or company →
+/Company Name : the search's top hit, so confirm the returned
+company_number before trusting it)
+Field paths
+data.0.company data.0.status data.0.incorporated_on
+data.0.sic_codes data.0.accounts_overdue
+data.0.confirmation_overdue data.0.has_charges
+data.0.has_insolvency_history data.0.has_been_liquidated
+data.0.postal_code data.0.company_url
+Rate limiting
+Request limit 30 , duration 60000 ms (30 a minute per account)
+Reads
+One record: profile, charges, filing history and corporate controllers from the official
+Companies House API, cached 24 h.
+About this lookup (/stats/uk-company-profiles) .
+2. Registered charity? (Charity Commission)
+Endpoint URL
+https://gankdat.com/v1/data/uk-charities
+Query string
+company_number → /Company Number
+Field paths
+meta.total (0 = not a registered charity)
+data.0.registered_charity_number data.0.name
+data.0.registration_status data.0.latest_income
+data.0.insolvent data.0.in_administration
+Rate limiting
+Request limit 60 , duration 60000 ms
+Reads
+The register of charities in England and Wales (~185k rows, refreshed daily), matched on
+the charity's own company number. Register statistics (/stats/uk-charities) .
+3. Insolvency notices (The Gazette)
+Endpoint URL
+https://gankdat.com/v1/data/uk-insolvency
+Query string
+company → /Company Name — use the registered name from column 1
+( data.0.company ), not the trading name
+Field paths
+meta.total (0 = no notice in the window) data.0.company
+data.0.notice_type data.0.published_at
+data.0.notice_url
+Rate limiting
+Request limit 60 , duration 60000 ms
+Reads
+Corporate insolvency notices (winding-up petitions and orders, administrations,
+liquidations) as the Gazette publishes them; name match is a case-insensitive substring,
+so read the hits on a short name. Register statistics (/stats/uk-insolvency) .
+4. UK sanctions list (FCDO / OFSI)
+Endpoint URL
+https://gankdat.com/v1/data/uk-sanctions
+Query string
+name → /Company Name
+Field paths
+meta.total (0 = no designation under that name) data.0.name
+data.0.regime data.0.designation_type
+data.0.date_designated
+Rate limiting
+Request limit 60 , duration 60000 ms
+Reads
+The UK Sanctions List, refreshed daily. A screening aid for a first pass — a substring
+match on a common word over-matches and a transliterated alias under-matches — not legal
+advice and not a substitute for a screening provider where your obligations need one.
+Register statistics (/stats/uk-sanctions) .
+5. Licensed visa sponsor? (Home Office)
+Endpoint URL
+https://gankdat.com/v1/data/uk-sponsors
+Query string
+organisation → /Company Name
+Field paths
+meta.total (0 = no licence) data.0.organisation
+data.0.town data.0.route data.0.rating
+Rate limiting
+Request limit 60 , duration 60000 ms
+Reads
+The register of licensed sponsors (Worker and Temporary Worker routes, ~143k rows,
+refreshed daily). One row per organisation × town × route, so a national employer returns
+several. Register statistics (/stats/uk-sponsors) .
+Spend nothing on blank rows
+Set each column's conditional run so it runs only when its input column has
+a value. A blank input on column 1 answers HTTP 400 and spends no gankdat credit (it still
+spends a Clay action); on columns 2–5 a blank filter is no filter at all — the call returns
+the first page of the whole register and spends one credit on nothing. Describe the rule to
+Clay's formula generator as run only when Company Number is not empty ; written by
+hand it is a formula that returns true when {{Company Number}} is non-empty.
+Run columns 3–5 only when column 1's status came back (the company exists), so
+a mistyped number costs one call, not five.
+Walkthrough: qualify a CRM account list against the UK registers
+The shape of a Clay template, written out — every step is a column above plus one Clay
+formula; copy it into your own table or ask Clay's Generate tab for each column by
+name. A shared-table template link will be added here once Clay lists the integration.
+Pull in accounts. Import from HubSpot, Salesforce or a CSV: company name,
+website, owner, and the Companies House number where you have it. For rows with a name
+only, add column 1 with company → /Company Name and return
+data.0.company_number and data.0.company ; it is the register's
+top search hit, so keep both and let a formula flag rows where the returned name is far
+from the CRM name. Rows that resolve feed every later column from the number.
+Company record. Column 1 by company_number : status,
+incorporated_on, sic_codes, accounts_overdue, has_charges, has_insolvency_history. A
+formula turns status into
+Active / Dissolved / In liquidation / Administration and
+incorporated_on into company age in years.
+Flags. Columns 3 and 4 by the registered name from step 2:
+meta.total of insolvency notices and of sanctions designations. Column 2 by
+number: charity yes/no (a charity is a different buyer — different budget cycle, often a
+different decision maker).
+Signals. Column 5 by registered name: a sponsor licence means the company
+hires from abroad (a signal for HR, relocation, payroll and immigration-law sellers, and a
+compliance fact for everyone else); sic_codes from step 2 segments by
+industry without a paid firmographic call.
+Route or disqualify. One formula column: Disqualify when status
+is not active, or sanctions total > 0, or insolvency total > 0; Review when
+accounts or confirmation statement are overdue or has_insolvency_history is true;
+otherwise Qualified , with the sponsor and charity flags as tags. Write the
+verdict, the company number and the Companies House URL ( company_url ) back to
+the CRM with an Update action, on whatever schedule you set.
+What a row costs
+Meter
+Per row
+Who bills it
+gankdat credit (one per column that runs)
+free for the first 250 a month; then £5 per 1,000 (≈ £0.005), larger plans cheaper
+gankdat, on your key — plans (/#pricing)
+Clay action (one per column per row)
+Clay's own price for an HTTP API run; no Data Credit, because the key is yours
+Clay
+Five columns over 1,000 accounts is at most 5,000 gankdat credits — one £23 month of the 5k
+plan, or 250 rows a month free. Every call is metered, a re-run included, so set each column
+to run once per row and not again on unchanged input.
+Errors and limits
+400 names the invalid or missing parameter (every valid name is listed in the
+message); 401 an unknown or revoked key; 402 the month's credits
+spent (top up or upgrade at /account ); 429 the
+per-minute limit with a Retry-After header, which Clay honours when you set the
+rate limiting above; 503 a busy register, retry in a few seconds. The response
+envelope on an error is { "ok": false, "error": { "code", "message" } } , so
+error.message as a field path shows the cause in the cell.
+For coding agents: the uk-company-register-check Skill
+The same checks as a Skill for Claude Code, Codex or Cursor — paste a list of company names
+or numbers, approve the credits it will spend, get the register digest and a coverage line,
+and optionally push the rows into a Clay table. The SKILL.md is in gankdat's
+public repository ( skills/uk-company-register-check (https://github.com/giovf/gankdat/tree/main/skills/uk-company-register-check) ), and submitted to Clay's community skills marketplace; once listed there, it installs
+with npx skills add … like the other GTM Skills.
+Data and privacy
+Records come from the publishers' own open feeds under their licences (per-dataset table in
+the terms (/terms#licences) ); personal data is dropped at ingest. A column sends
+gankdat.com only the parameter you map and your key; nothing else in your table is read.
+Details: privacy policy (/privacy) . Support:
+gankdat.com/feedback (/feedback) .
