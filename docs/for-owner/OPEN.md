@@ -5,7 +5,7 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (5)
+## Requests (6)
 
 1. **second tax spreadsheet is ready for your Etsy shop** — ~10 min, since 2026-11-03; unblocks tax-workbook `reseller-listing-live` (8). Steps: [037](actions/037-etsy-reseller-listing.md).
    second tax spreadsheet is ready for your Etsy shop — publish the Reseller workbook listing, ~10 min, £0.16 — docs/for-owner/actions/037-etsy-reseller-listing.md
@@ -21,6 +21,9 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 5. **GitHub says the Claude app wants new permissions; review an…** — time not stated, since 2026-11-06; nothing queued waits on it.
    GitHub says the Claude app wants new permissions; review and accept or ignore in GitHub settings, Apps.
+
+6. **gankdat is ready for Clay's partner listing** — ~10 min, since 2026-11-09; nothing queued waits on it. Steps: [039](actions/039-clay-integrations-partner-form.md).
+   gankdat is ready for Clay's partner listing — fill in Clay's partner form with our page link, ~10 min, £0 — docs/for-owner/actions/039-clay-integrations-partner-form.md
 
 ## Waiting on an attended Claude session, not you (3)
 

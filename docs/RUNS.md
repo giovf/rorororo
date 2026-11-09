@@ -2671,3 +2671,14 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-09 08:00 | report | Open owner actions: 001, 037, 038, Etsy card, GitHub app permissions; 2 store uploads overdue.
 - 2026-11-09 08:00 | report | Next step: owner pays Etsy £2.98 to reopen the shop, then actions 037 and 038.
 - 2026-11-09 08:00 | notify | 5 requests waiting on you, oldest 8 days: second tax spreadsheet is ready for your Etsy s…
+- 2026-11-09 09:29 | build | Built gankdat clay-http-api-listing: /clay page — five HTTP API columns with real params and field paths
+- 2026-11-09 09:29 | build | clay.html: conditional-run rule, 5-step CRM qualification walkthrough, cost table, errors; landing card
+- 2026-11-09 09:29 | build | Skill skills/uk-company-register-check/SKILL.md (Agent Skills format, read from a live listing via relay)
+- 2026-11-09 09:29 | build | test/clay.spec.ts pins every documented source, param, field path and rate limit to the registry
+- 2026-11-09 09:29 | build | Sitemap row /clay, strict CSP in _headers, ARCHITECTURE bullet, RESEARCH section, CLAY-LISTING.md copy
+- 2026-11-09 09:29 | build | Relay round clay-skill-format: a marketplace Skill page + raw home (Skills install via npx skills add)
+- 2026-11-09 09:29 | build | Owner action 039 filed: Clay partner intake form (~10 min) + optional Skill submission; ALERTS owner line
+- 2026-11-09 09:29 | build | Queued gankdat clay-listing-day-90-read (3, not before 2027-02-10): listing, Skill, UA and clay keys read
+- 2026-11-09 09:29 | build | Limit noted: insolvency, sanctions, sponsors match by name substring; only profile and charity take a number
+- 2026-11-09 09:29 | notify | A Clay partner form is ready for you: one 10-minute web form puts gankdat in front of Clay's users
+- 2026-11-09 09:33 | build | dependabot.yml first run: still none since the 11-07 09:19 install (latest run 11-01, PR-triggered only)

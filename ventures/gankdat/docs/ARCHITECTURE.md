@@ -175,6 +175,17 @@ names — never rename those; see memory/git history for why).
   change: the connector calls the live `/v1/data` and `/v1/changes` routes. Owner steps (the same Partner Center Seller
   account as AppSource, the verified-publisher lane, Premium tier) in `docs/POWER-PLATFORM-CONNECTOR.md` and action 031
   step 4.
+- `public/clay.html` + `skills/uk-company-register-check/` — **gankdat in Clay** (2026-11-09, queue `clay-http-api-listing`,
+  spike `docs/exchange/spikes/clay-data-provider-marketplace.md`): the five register checks (Companies House record,
+  charity, Gazette insolvency notices, UK sanctions, sponsor licence) as Clay **HTTP API** enrichment columns — endpoint,
+  the one query parameter mapped from the table's column, the `data.0.<field>` paths to return, the per-source rate
+  limit, a conditional-run rule (a blank filter on a register source is no filter and spends a credit on page 1) and a
+  CRM qualification walkthrough — on the user's own bearer key, stored as a Clay HTTP API (Headers) account; plus the
+  same checks as an Agent Skill (`SKILL.md`, the format Clay's community marketplace installs with `npx skills add`),
+  public through the gankdat mirror. No Worker change, no version bump: a distribution surface over the live
+  `/v1/data` routes, like the add-in and the connector. `test/clay.spec.ts` pins every documented source, parameter,
+  field path and rate limit to the registry. The owner submits Clay's Integrations Partner intake (HTTP API tier) and
+  the Skill (`docs/CLAY-LISTING.md`, action 039); proof reads Clay's UA family in `rest 7d by UA:` and keys named `clay`.
 - `docs/` — architecture, runbook, setup docs; `.taskmaster/` — PRD + backlog
 
 ## Stack

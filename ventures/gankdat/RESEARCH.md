@@ -1355,3 +1355,25 @@ takes community skills (49 listed, "Submit GTM skill", installs 0–34). **Promo
 0.3 day: `public/clay.html` with the HTTP API config per lookup, a Claybook-shaped walkthrough, a skill folder; the owner
 submits the Typeform and the skill, ≤ 15 min, no verification). The credit-marketplace contract is not promoted. Details:
 `docs/exchange/spikes/clay-data-provider-marketplace.md`.
+
+## Build 2026-11-09 — gankdat in Clay (build)
+
+Built `clay-http-api-listing` (score 5), the item the 11-08 spike promoted. What changed: `public/clay.html`
+("Use gankdat in Clay") documents five HTTP API enrichment columns — the Companies House record by
+`company_number` (or `company`, the search's top hit), charity by `company_number`, Gazette insolvency notices by
+`company`, sanctions by `name`, sponsor licence by `organisation` — each with the endpoint, the Clay column mapping,
+the `data.0.<field>` paths to return, the real rate limit (30/min for the lookup, 60 otherwise), a conditional-run
+rule and a five-step CRM qualification walkthrough (import → record → flags → signals → route or disqualify, written
+back with an Update action); the landing gained a card, the sitemap a row, `_headers` the strict CSP. The Skill
+`skills/uk-company-register-check/SKILL.md` (Agent Skills format — the relay round `clay-skill-format` read a live
+marketplace listing: Skills install with `npx skills add clay-run/clay-skill-creator --skill <slug>`, require a coding
+agent, show inputs/outputs, a prompt and a step table) runs the same checks from Claude Code, Codex or Cursor with the
+key from `GANKDAT_API_KEY`, confirms the credit spend first and places every company (disqualify / review / qualified /
+not-found / unreadable). `test/clay.spec.ts` pins every source, parameter, field path and rate limit to the registry.
+No Worker change, no version bump. Honest limits written on the page: only the company record and the charity
+register take a company number — insolvency, sanctions and sponsors are name-substring matches that need the
+registered name and a read of the hits; Blind Mode makes the row a qualification tool, not the director finder the
+two community threads wanted. Owner step: action 039 (Integrations Partner intake form for the HTTP API tier; the
+Skill submission needs a Clay sign-in and is the owner's call), copy in `docs/CLAY-LISTING.md`. Proof: the listing or
+the Skill live; then Clay's UA family in `rest 7d by UA:` and keys named `clay` (no sign-up referrer exists on keys,
+so the spike's "clay referrer" is read this way). Kill: queue `clay-listing-day-90-read` (2027-02-10).

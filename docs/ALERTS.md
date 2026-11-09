@@ -356,3 +356,4 @@ closed entries older than 30 days (git keeps the history).
 - 2026-11-05 owner: Claude Code handbook ready for Leanpub: sign up, upload, publish, ~15 min, £0 — docs/for-owner/actions/038-leanpub-kit.md
 - 2026-11-06 owner: GitHub says the Claude app wants new permissions; review and accept or ignore in GitHub settings, Apps.
 - 2026-11-07 owner: Etsy shop Taxelicious is suspended (£2.98 bill unpaid) — update the card in Etsy billing to reopen it
+- 2026-11-09 owner: gankdat is ready for Clay's partner listing — fill in Clay's partner form with our page link, ~10 min, £0 — docs/for-owner/actions/039-clay-integrations-partner-form.md
