@@ -1,0 +1,2 @@
+GET https://www.planning.data.gov.uk/dataset/planning-application.json
+GET https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=5
