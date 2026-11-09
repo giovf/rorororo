@@ -295,3 +295,5 @@
 - 2026-11-08 01:09 | notification | mg.sealkeeper.run | Your services on gankdat.com are still unclaimed | cold outreach from a directory asking us to claim listings; no customer ask | logged
 - 2026-11-08 14:11 | notification | trycoinstancy.com | a featured spot for gankdat? | cold outreach selling paid directory placement; no customer ask | logged
 - 2026-11-09 16:00 | notification | cerebralvalley.ai | New Notification for Meta Global AI Developer Hackathon | host blast: final-round judging and winners livestream today 12:00 PM ET; no action in mail | logged
+- 2026-11-09 17:00 | notification | cerebralvalley.ai | New Notification for Meta Global AI Developer Hackathon | host blast: awards livestream starting now; no action ours | logged
+- 2026-11-09 17:03 | notification | devpost.com | 3 days left: submissions close Thursday at noon PST - PayPal AI Hackathon | Devpost reminder blast; hackathon entries are submitted by the owner, no new fact | logged
