@@ -2661,3 +2661,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-08 19:02 | watchdog | missed: burn-down slot 2026-11-08 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
 - 2026-11-08 22:05 | triage | notify owner dispatched: last run started 19:01 UTC, 3 h ago
 - 2026-11-09 03:06 | triage | notify owner dispatched: last run started 23:57 UTC, 3 h ago
+- 2026-11-09 06:12 | triage | notify owner dispatched: last run started 03:05 UTC, 3 h ago
