@@ -2663,3 +2663,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-09 03:06 | triage | notify owner dispatched: last run started 23:57 UTC, 3 h ago
 - 2026-11-09 06:12 | triage | notify owner dispatched: last run started 03:05 UTC, 3 h ago
 - 2026-11-09 06:11 | watchdog | ci-minutes: 397 billed min/7d (~1701/mo; public, no cap) top: notify owner 82, gankdat metrics 53, check 50
+- 2026-11-09 08:00 | report | W46 money: revenue £0, net −£58.60, headroom £33.24 (≈9 months).
+- 2026-11-09 08:00 | report | gankdat: accounts 4→5, 0 paid, 12 x402 payments, 492 authed MCP calls this week.
+- 2026-11-09 08:00 | report | Tax workbook: no sale; Etsy shop suspended 11-07 over unpaid £2.98 bill.
+- 2026-11-09 08:00 | report | Figma, ReadFocus, Highlight Keep: no sales; 0–2 users each; oss-bounties 0 claims.
+- 2026-11-09 08:00 | report | Alerts this week: Etsy suspension, GitHub app permissions, Leanpub, Etsy reseller listing.
+- 2026-11-09 08:00 | report | Open owner actions: 001, 037, 038, Etsy card, GitHub app permissions; 2 store uploads overdue.
+- 2026-11-09 08:00 | report | Next step: owner pays Etsy £2.98 to reopen the shop, then actions 037 and 038.
+- 2026-11-09 08:00 | notify | 5 requests waiting on you, oldest 8 days: second tax spreadsheet is ready for your Etsy s…
