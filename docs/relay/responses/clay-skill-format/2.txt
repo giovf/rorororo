@@ -1,0 +1,231 @@
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Clay","url":"https://marketplace.clay.com"},{"@type":"WebSite","name":"Clay","url":"https://marketplace.clay.com"},{"@type":"WebPage","name":"How to time compliance outreach - Clay Workflows & Skills","description":"Copy this Skill to place each account's compliance stage from self-published evidence, with dated quotes; free to copy, paid lookups cost credits.","url":"https://marketplace.clay.com/skills/compliance-buying-window","image":"https://ocempqqdryrmzwqzjthj.supabase.co/storage/v1/object/public/marketplace-social-cards/skill/642f0cdc-122c-4f12-8a92-c5316207a75b/53511d66f94e8680e785a7cc4eca686bb94baadc9f5da009dd6fbf76fbe3f382.png"},{"@type":"CreativeWork","name":"Compliance Buying Window","description":"This Skill places each target account's compliance stage (preparing, mid-audit, recently certified, established) using only what companies publish about themselves, so you can time outreach to real buying windows instead of stale certification news.","url":"https://marketplace.clay.com/skills/compliance-buying-window","author":{"@type":"Person","name":"Aryan Sharma","url":"https://marketplace.clay.com/onegtmlab-team","worksFor":{"@type":"Organization","name":"Growth Force","url":"https://marketplace.clay.com/company/growth-force"}}}]}
+meta description: Copy this Skill to place each account's compliance stage from self-published evidence, with dated quotes; free to copy, paid lookups cost credits.
+meta og:type: website
+meta og:title: How to time compliance outreach - Clay Workflows & Skills
+meta og:site_name: Clay
+meta og:description: Copy this Skill to place each account's compliance stage from self-published evidence, with dated quotes; free to copy, paid lookups cost credits.
+meta og:url: https://marketplace.clay.com/skills/compliance-buying-window
+meta og:image: https://ocempqqdryrmzwqzjthj.supabase.co/storage/v1/object/public/marketplace-social-cards/skill/642f0cdc-122c-4f12-8a92-c5316207a75b/53511d66f94e8680e785a7cc4eca686bb94baadc9f5da009dd6fbf76fbe3f382.png
+meta og:image:alt: Compliance Buying Window, by Aryan Sharma. Clay Marketplace.
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:image:type: image/png
+meta twitter:card: summary_large_image
+meta twitter:title: How to time compliance outreach - Clay Workflows & Skills
+meta twitter:description: Copy this Skill to place each account's compliance stage from self-published evidence, with dated quotes; free to copy, paid lookups cost credits.
+meta twitter:image: https://ocempqqdryrmzwqzjthj.supabase.co/storage/v1/object/public/marketplace-social-cards/skill/642f0cdc-122c-4f12-8a92-c5316207a75b/53511d66f94e8680e785a7cc4eca686bb94baadc9f5da009dd6fbf76fbe3f382.png
+meta twitter:image:alt: Compliance Buying Window, by Aryan Sharma. Clay Marketplace.
+How to time compliance outreach - Clay Workflows & Skills
+https://www.clay.com/
+Product Product
+Solutions Solutions
+Resources Resources
+Company Company
+Pricing Pricing (https://www.clay.com/pricing)
+⌘ K
+Log in (/api/marketplace/clay-oauth-start?returnTo=%2Fskills%2Fcompliance-buying-window) Get a demo (https://www.clay.com/demo)
+Submit GTM skill
+Marketplace (/skills) / Skills (/skills) / Compliance Buying Window
+Research (/skills?category=research) Skill
+Compliance Buying Window
+Time outbound to a target account's compliance window
+This Skill places each target account's compliance stage (preparing, mid-audit, recently certified, established) using only what companies publish about themselves, so you can time outreach to real buying windows instead of stale certification news.
+[Aryan Sharma]
+Aryan Sharma (/onegtmlab-team) https://www.linkedin.com/in/aryan-sharma19/
+GTM Lead at Growth Force (/company/growth-force) https://www.onegtmlab.dev
+Add this Skill
+Open this Skill in your coding agent, or copy the install command.
+Free to copy Version 1
+0
+Requires a coding agent
+[Claude Code] [Codex] [Cursor]
+npx skills add clay-run/clay-skill-creator --skill compliance-buying-window Sign in to install (/api/marketplace/copy-session?returnTo=%2Fskills%2Fcompliance-buying-window)
+Compliance Buying Window
+By Aryan Sharma
+GTM Lead at Growth Force
+Sign in to install (/api/marketplace/copy-session?returnTo=%2Fskills%2Fcompliance-buying-window)
+About this Skill
+When to use it
+Use this Skill when you want to know where each target account sits in its own security compliance cycle, using only trust pages, GRC job postings, and certification announcements the account publishes itself. It gives you a dated, evidence-backed buying-window stage per framework instead of a stale certification headline. Avoid using it for general signal monitoring, job-posting trend counts, ICP scoring, tech-stack detection, or event-based account sourcing.
+What it delivers
+You get a per-account, per-framework compliance stage digest with the date and quoted evidence behind each placement, plus a coverage and spend summary. Use it to decide which accounts to approach now versus nurture, while treating unplaced accounts as missing evidence rather than a negative signal.
+SKILL.md preview
+# SKILL.md
+The full Skill file is available after sign-in.
+This is an illustrative preview, not the source.
+## Inputs and setup
+Required inputs and setup details appear here.
+Sign in to read the complete instructions.
+## Workflow instructions
+The Skill's execution steps appear here.
+This placeholder contains no actual Skill content.
+## Outputs and examples
+The full file includes its source documentation.
+Sign in to view and copy the original file.
+## Notes and requirements
+Additional source details appear after sign-in.
+The actual SKILL.md is not loaded in this preview.
+Sign in to install and view the complete SKILL.md (/api/marketplace/copy-session?returnTo=%2Fskills%2Fcompliance-buying-window)
+Illustrative preview. Sign in for the actual file.
+How someone would prompt this
+We sell a compliance automation platform. Check these 200 Series A and B software companies and tell me which are preparing for or currently inside a SOC 2 or ISO 27001 audit, so I know who to prioritize for outreach this quarter.
+Inputs & outputs
+What someone provides before the Skill runs, and the reviewable artifacts it returns.
+Inputs
+01 Target accounts & frameworks
+A list of target company domains to place
+the compliance frameworks you sell into (SOC 2, ISO 27001, etc.)
+02 Sales mapping & role terms
+Which stages mean reach out, nurture, or skip for your offer
+the job titles that count as compliance hiring
+03 Timing windows
+How many days a job posting still counts
+how many months a certification counts as recent
+04 Budget & delivery
+The maximum Clay credits this run may spend
+where results go, conversation or a named CSV path
+Outputs
+01 Compliance stage digest A table listing each account, framework, stage, dating evidence, quoted proof line, and your next-move action, so you know which accounts to prioritize now.
+02 Coverage and spend line A short summary showing how many accounts it placed, flagged unreadable, or found no evidence for, plus the credits the run actually spent, so you can confirm coverage and cost.
+Representative output
+Compliance stage digest
+Account	Framework	Stage	Dated by	Evidence	Next move
+ledgerline.example	SOC 2	preparing	job posting, 19 Aug 2026 (48 days old, window 90)	"GRC Analyst: you will own our first SOC 2 Type II audit"	reach out now
+quillstack.example	SOC 2	in-observation	trust page, read 6 Oct 2026	"Type I report available on request. Type II observation period underway, report expected Q1 2027"	nurture, continuous monitoring angle
+harborgrid.example	ISO 27001	recently-certified	own announcement, 2 Jun 2026 (4 months old, window 12)	"Harborgrid is now ISO 27001 certified", on the company's own blog	skip
+tallyforge.example	SOC 2	certified-undated	nothing dated it	a SOC 2 badge on its security page, no report date beside it, no announcement found in 12 months	ask about audit timing in discovery; do not lead with it
+corvel.example	none	unreadable	nothing	homepage timed out twice; every trust page candidate failed to connect	check by hand, or drop
+mintpaper.example	SOC 2	no-evidence	all sources read, 6 Oct 2026	no trust page; no compliance postings in 90 days; no announcement in 12 months	nothing visible yet
+The stages are the seven in Step 2 and no others. "Unreadable" means the skill could not look;
+"no-evidence" means it looked and found nothing. The next move column is copied from the installer's
+own mapping, not decided by the skill.
+Coverage and spend line
+186 accounts after dedupe · 171 placed on at least one framework · 7 unreadable · 8 no evidence on
+any framework · 5 trust portals left unread (render not approved) · 151 job lookups and 25 news
+lookups run · 55.2 credits reported by the calls.
+The example shows a results table that lists each account's compliance stage, dated evidence, and recommended next move, plus a summary line that counts how many accounts it placed, found unreadable, or found no evidence for, and what the run actually cost. This lets you spot which accounts deserve a rep's attention right now.
+How the Skill runs
+Follow the steps in order. Each row includes the full instruction.
+Step Workflow Type
+01
+Check Clay access and costs
+Confirms your Clay workspace connection and the live function catalogue, then explains that only Step 5's paid lookups cost credits.
+Step
+02
+Define scope with you
+Asks you to confirm the account list, frameworks, sales-stage mapping, role vocabulary, and timing windows before any reading starts.
+Step
+03
+Set the seven-stage model
+Applies a fixed order of compliance stages per account per framework, stopping at the first one that matches the evidence.
+Step
+04
+Read free public pages
+Checks each account's homepage and trust or security pages at no cost, quoting any dated compliance statements it finds.
+Step
+05
+Review and approve paid lookups
+Stops and shows a sample batch, the planned paid calls, and their price against your budget, waiting for your approval before anything bills.
+Agent
+06
+Run approved paid lookups
+Checks job postings and news results only for the accounts you approved, to date certifications or hiring for compliance roles.
+Agent
+07
+Place every account
+Assigns a final stage to each account and framework, and counts every row as placed, unreadable, or lacking evidence.
+Step
+08
+Deliver the digest
+Hands back the full compliance stage table, a coverage and spend summary, and an offer to save your answers for next time.
+Step
+Connections required
+No connections listed.
+Install Clay and run it
+Sign in once, install the Skill, then run the prompt.
+1 Install Clay Use the connector or official plugin in your coding-agent environment.
+2 Sign up or log in Authorize Clay access and return when the connection is ready.
+3 Install the Skill Run the one-line install command from the Add this Skill card.
+4 Run the Skill Paste the example prompt and review the result.
+Version history
+Version 1 From submitted SKILL.md Current
+Related Skills
+Clay Lead Gen Machine Lets you ask Claude Code in plain English to find businesses in a target vertical, enrich each with a verified email, and write a personalized cold email, then hands back a CSV ready to import into a Clay campaign. View Skill → (/skills/clay-lead-gen-machine) CSV To Clay Webhook Sender Sends a CSV into a Clay table through its webhook source, matching each column to the payload key your table's formulas actually read. Checks a small test batch in Clay before sending the rest, so columns don't land blank. View Skill → (/skills/csv-to-clay-webhook-sender) Social Presence Discovery Finds verified social profiles and the owned website for a list of small, local businesses, confirming each URL matches the exact business and location. Mines links you already hold before searching, and leaves cells empty rather than guessing when it can't confirm anything. View Skill → (/skills/social-presence-discovery)
+Related searches
+Research skills (/skills?category=research)
+Build and share your best GTM work
+Start for free today. No credit card required.
+Start building for free (https://app.clay.com/signup?su=bdc446f6-270b-400a-ada2-970c4c29389d) Get a demo (https://www.clay.com/demo)
+Use cases
+Automated inbound (https://www.clay.com/use-cases/inbound-enrichment)
+Account research (https://www.clay.com/use-cases/account-research)
+ABM (https://www.clay.com/use-cases/abm)
+PLG assist (https://www.clay.com/use-cases/plg-assist)
+Rep assist (https://www.clay.com/use-cases/rep-assist)
+Reverse ETL (https://www.clay.com/use-cases/reverse-etl)
+Outbound (https://www.clay.com/use-cases/outbound)
+CRM Enrichment (https://www.clay.com/use-cases/crm-enrichment)
+TAM Sourcing (https://www.clay.com/use-cases/tam-sourcing)
+Customers
+OpenAI (https://www.clay.com/customers/open-ai)
+Vanta (https://www.clay.com/customers/vanta)
+Verkada (https://www.clay.com/customers/verkada)
+Sendoso (https://www.clay.com/customers/sendoso)
+Anthropic (https://www.clay.com/customers/anthropic)
+Coverflex (https://www.clay.com/customers/coverflex)
+Rippling (https://www.clay.com/customers/rippling)
+Mistral AI (https://www.clay.com/customers/mistral-ai)
+Case studies (https://www.clay.com/customers)
+Product
+Claygent AI (https://www.clay.com/claygent)
+Sculptor (https://www.clay.com/sculptor)
+Ads (https://www.clay.com/ads)
+Sequencer (https://www.clay.com/sequencer)
+Multi-provider data enrichment (https://www.clay.com/waterfall-enrichment)
+Audiences (https://www.clay.com/audiences)
+Signals (https://www.clay.com/signals)
+Functions (https://www.clay.com/functions)
+Integrations (https://www.clay.com/integrations)
+Pricing (https://www.clay.com/pricing)
+Changelog (https://www.clay.com/changelog)
+Blog
+The rise of the GTM engineer (https://www.clay.com/blog/gtm-engineering)
+Finding GTM alpha (https://www.clay.com/blog/gtm-alpha)
+Clay reaches 100M ARR (https://www.clay.com/blog/100m-arr)
+Series C: The GTM engineering era begins now (https://www.clay.com/series-c)
+Resources
+Get started lesson (https://www.clay.com/university/lesson/intro-to-clay-101-clay-101)
+University (https://university.clay.com/)
+Use case templates (https://university.clay.com/claybooks)
+Hire GTME talent (https://www.clay.com/talent)
+Partner programs (https://www.clay.com/partners)
+Community (https://community.clay.com/)
+FAQ (https://www.clay.com/faq)
+Company
+Contact us (https://www.clay.com/contact)
+About (https://www.clay.com/about)
+Careers (https://www.clay.com/careers)
+Jobs (https://www.clay.com/jobs)
+Integrate with Clay (https://www.clay.com/partners/integrations)
+Status (https://status.clay.com/)
+Legal
+Privacy policy (https://www.clay.com/privacy)
+Terms of service (https://www.clay.com/terms-of-service)
+Do not sell my data (https://docs.google.com/forms/d/e/1FAIpQLSeAsU1U-AJfhqzDx6-6eVcyQ_kBD1J9cw1y0huQiS-HCkRf0Q/viewform?pli=1)
+Customers
+OpenAI (https://www.clay.com/customers/open-ai)
+Vanta (https://www.clay.com/customers/vanta)
+Verkada (https://www.clay.com/customers/verkada)
+Sendoso (https://www.clay.com/customers/sendoso)
+Anthropic (https://www.clay.com/customers/anthropic)
+Coverflex (https://www.clay.com/customers/coverflex)
+Rippling (https://www.clay.com/customers/rippling)
+Case studies (https://www.clay.com/customers)
+Legal
+Privacy policy (https://privacy.clay.com/)
+Terms of service (https://www.clay.com/terms-of-service)
+Do not sell my data (https://docs.google.com/forms/d/e/1FAIpQLSeAsU1U-AJfhqzDx6-6eVcyQ_kBD1J9cw1y0huQiS-HCkRf0Q/viewform?usp=send_form)
+[Clay logo, go to homepage]
+Born in Brooklyn
+© 2026 Clay Labs Inc.
+https://www.linkedin.com/company/grow-with-clay/posts/?feedView=all https://www.youtube.com/@GrowWithClay https://www.clay.com/slack-community

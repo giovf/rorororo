@@ -1,0 +1,76 @@
+{
+  "request": "clay-skill-format",
+  "fetched_at": "2026-11-09T09:16:31.186Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://marketplace.clay.com/skills/compliance-buying-window",
+      "fetched_at": "2026-11-09T09:16:19.456Z",
+      "status": 200,
+      "elapsed_ms": 2751,
+      "final_url": "https://marketplace.clay.com/skills/compliance-buying-window",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "1.txt",
+      "bytes": 15695,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 109439
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.clay.com/skills/compliance-buying-window",
+      "render": true,
+      "fetched_at": "2026-11-09T09:16:22.729Z",
+      "status": 200,
+      "final_url": "https://marketplace.clay.com/skills/compliance-buying-window",
+      "title": "How to time compliance outreach - Clay Workflows & Skills",
+      "rendered": {
+        "network_idle": true,
+        "requests": 50,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "2.txt",
+      "bytes": 15719,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 109800
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.clay.com/skills/clay-org-chart-builder",
+      "fetched_at": "2026-11-09T09:16:30.058Z",
+      "status": 200,
+      "elapsed_ms": 309,
+      "final_url": "https://marketplace.clay.com/skills/clay-org-chart-builder",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "3.txt",
+      "bytes": 16484,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 115916
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.clay.com/",
+      "raw": true,
+      "fetched_at": "2026-11-09T09:16:30.887Z",
+      "status": 200,
+      "elapsed_ms": 254,
+      "final_url": "https://marketplace.clay.com/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "4.html",
+      "bytes": 393006,
+      "truncated": false
+    }
+  ]
+}

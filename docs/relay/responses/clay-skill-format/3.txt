@@ -1,0 +1,249 @@
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Clay","url":"https://marketplace.clay.com"},{"@type":"WebSite","name":"Clay","url":"https://marketplace.clay.com"},{"@type":"WebPage","name":"How to build an account org chart - Clay Workflows & Skills","description":"Copy this free Skill to build an interactive org chart for one account, with inferred reporting lines and a review tray for unclear managers.","url":"https://marketplace.clay.com/skills/clay-org-chart-builder","image":"https://ocempqqdryrmzwqzjthj.supabase.co/storage/v1/object/public/marketplace-social-cards/skill/e06accb9-44a4-444b-b48e-99ff9f05c4cb/2605ffbe2ed869e283a206fae96be781e799b3e61cc6c7283910da651534b92d.png"},{"@type":"CreativeWork","name":"Clay Org Chart Builder","description":"Builds an interactive org chart for one target company from Clay's people search, showing inferred reporting lines and a review tray for anyone with no manager evidence.","url":"https://marketplace.clay.com/skills/clay-org-chart-builder","author":{"@type":"Person","name":"Alex Lindahl","url":"https://marketplace.clay.com/alex-lindahl","worksFor":{"@type":"Organization","name":"Clay","url":"https://marketplace.clay.com/company/clay"}}}]}
+meta description: Copy this free Skill to build an interactive org chart for one account, with inferred reporting lines and a review tray for unclear managers.
+meta og:type: website
+meta og:title: How to build an account org chart - Clay Workflows & Skills
+meta og:site_name: Clay
+meta og:description: Copy this free Skill to build an interactive org chart for one account, with inferred reporting lines and a review tray for unclear managers.
+meta og:url: https://marketplace.clay.com/skills/clay-org-chart-builder
+meta og:image: https://ocempqqdryrmzwqzjthj.supabase.co/storage/v1/object/public/marketplace-social-cards/skill/e06accb9-44a4-444b-b48e-99ff9f05c4cb/2605ffbe2ed869e283a206fae96be781e799b3e61cc6c7283910da651534b92d.png
+meta og:image:alt: Clay Org Chart Builder, by Alex Lindahl. Clay Marketplace.
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:image:type: image/png
+meta twitter:card: summary_large_image
+meta twitter:title: How to build an account org chart - Clay Workflows & Skills
+meta twitter:description: Copy this free Skill to build an interactive org chart for one account, with inferred reporting lines and a review tray for unclear managers.
+meta twitter:image: https://ocempqqdryrmzwqzjthj.supabase.co/storage/v1/object/public/marketplace-social-cards/skill/e06accb9-44a4-444b-b48e-99ff9f05c4cb/2605ffbe2ed869e283a206fae96be781e799b3e61cc6c7283910da651534b92d.png
+meta twitter:image:alt: Clay Org Chart Builder, by Alex Lindahl. Clay Marketplace.
+How to build an account org chart - Clay Workflows & Skills
+https://www.clay.com/
+Product Product
+Solutions Solutions
+Resources Resources
+Company Company
+Pricing Pricing (https://www.clay.com/pricing)
+⌘ K
+Log in (/api/marketplace/clay-oauth-start?returnTo=%2Fdashboard) Get a demo (https://www.clay.com/demo)
+Submit GTM skill
+Marketplace (/skills) / Skills (/skills) / Clay Org Chart Builder
+Research (/skills?category=research) Skill
+Clay Org Chart Builder
+Map the leadership structure of one target account
+Builds an interactive org chart for one target company from Clay's people search, showing inferred reporting lines and a review tray for anyone with no manager evidence.
+[Alex Lindahl]
+Alex Lindahl (/alex-lindahl) https://www.linkedin.com/in/alexlindahl
+Creator in Residence at Clay (/company/clay) https://www.clay.com/
+Add this Skill
+Open this Skill in your coding agent, or copy the install command.
+Free to copy Version 1
+31
+Requires a coding agent
+[Claude Code] [Codex] [Cursor]
+npx skills add clay-run/clay-skill-creator --skill clay-org-chart-builder Sign in to install (/api/marketplace/copy-session?returnTo=%2Fskills%2Fclay-org-chart-builder)
+Clay Org Chart Builder
+By Alex Lindahl
+Creator in Residence at Clay
+Sign in to install (/api/marketplace/copy-session?returnTo=%2Fskills%2Fclay-org-chart-builder)
+About this Skill
+When to use it
+Use this Skill when someone asks you to map the leadership of a specific account, such as building an exec-team chart, showing who reports to whom, or flagging which leaders are new in their role. It returns a self-contained org chart page with labeled, editable reporting lines and a tray for people it cannot place. Avoid using it for finding one person's email, building prospect lists across many companies, scoring an account list, or writing to a CRM or sequence.
+What it delivers
+You get one interactive org chart page that groups C-Suite and VP leaders into function lanes, plus a by-level view and a Needs review tray for anyone with no evidence of a manager. The page labels every reporting line as inferred with a confidence level, and you can drag tiles to correct lines yourself; it never states a line as confirmed fact.
+SKILL.md preview
+# SKILL.md
+The full Skill file is available after sign-in.
+This is an illustrative preview, not the source.
+## Inputs and setup
+Required inputs and setup details appear here.
+Sign in to read the complete instructions.
+## Workflow instructions
+The Skill's execution steps appear here.
+This placeholder contains no actual Skill content.
+## Outputs and examples
+The full file includes its source documentation.
+Sign in to view and copy the original file.
+## Notes and requirements
+Additional source details appear after sign-in.
+The actual SKILL.md is not loaded in this preview.
+Sign in to install and view the complete SKILL.md (/api/marketplace/copy-session?returnTo=%2Fskills%2Fclay-org-chart-builder)
+Illustrative preview. Sign in for the actual file.
+How someone would prompt this
+Build an org chart for northwind-robotics.example, so I can see who leads engineering there.
+Inputs & outputs
+What someone provides before the Skill runs, and the reviewable artifacts it returns.
+Inputs
+01 Target account
+Company name or website domain to build the chart for
+confirmed against Clay's company records before any people search runs
+02 Branding choice
+Choose yes or no to style the page in your own brand
+if yes, supply your company website so its colors, fonts and logo can be read
+03 Build settings
+How many leader records to pull on the first build (default 30, capped at 50)
+how far back the news section should search (default 3 months)
+04 Workspace and lookup setup
+Confirm which Clay workspace runs the search
+pick a function from your workspace for mobile-number lookups, or skip it for email lookup only
+05 the requested amount
+re-run the Step 5 query with a limit of current total plus the requested amount, and deduping drops
+the people already charted. Default to 20 more if no number is given, and say it uses Clay credits
+before running it.
+Outputs
+01 Build summary reply A short written summary of leaders found, exclusions, workspace searched, and how many people still need review, so you know the chart is ready and what it left out.
+02 Leadership coverage summary A quick count strip showing how many leaders, VP versus C-Suite, contacts found, people needing review, and lines you've manually set.
+03 Org chart tiles The visual chart itself, with each leader's title, function lane, and reporting line plus the reason and confidence behind that line, ready for you to review or drag into place.
+04 Recent news cards Dated, linked news items naming the charted leaders, so you can see what's currently happening with the team before reaching out.
+Representative output
+Reply after a first build
+Built the Northwind Robotics org chart from Clay (workspace: Acme GTM): 25 leaders — 7 C-Suite,
+18 VP. Left out 5: 2 field CTO titles, 1 former employee, 1 executive assistant, 1 non-VP title.
+10 people are in Needs review because Clay's data has no same-function leader for them, and 1 line
+is low confidence. The news section has 6 items from the last 3 months, naming 4 leaders. Reporting
+lines are inferred from titles, not supplied by Clay. First build size 30 and news window 3 months are
+the defaults.
+Coverage strip on the page
+Leaders	Champions	Exec buyers	Not yet classified	Contacts found	Need a manager	Lines you set	New in role (6 mo)
+25 · 7 C-Suite · 18 VP	0	0	25	0	10	0	7
+Tiles and their lines
+Person	Title	Lane	Reports to	Line	Why
+Dana Whitfield	Chief Executive Officer	top of chart	—	—	most senior title in Clay's results
+Omar Reyes	Chief Technology Officer · New · 4 mo	Engineering & Security	Dana Whitfield	inferred, medium	C-Suite executives usually report to the CEO
+Lena Park	VP, Platform Engineering	Engineering & Security	Omar Reyes	inferred, medium	same function (Engineering) as the Chief Technology Officer
+Priya Nair	VP, Demand Marketing	Needs review	—	none	no same-function leader in this dataset
+A news card
+Date	Outlet	Type	Headline	Names
+Aug 4, 2026	Northwind newsroom	Press release	Northwind launches autonomous fleet monitoring	Omar Reyes
+The example shows a sample build for a fictional company, illustrating how the chart sorts leaders into C-Suite and VP tiles with confidence-labeled reporting lines, places unplaced people in a Needs review tray, and ties dated news cards to specific leaders. It gives you a concrete sense of what counts, exclusions, and evidence look like before you run a real build.
+How the Skill runs
+Follow the steps in order. Each row includes the full instruction.
+Step Workflow Type
+01
+Check Clay connection and tools
+Confirms the Clay search tools and workspace connection work, names which workspace it will search, and stops if anything required is missing.
+Step
+02
+Ask which company
+Asks you to name the target company or, better, its website domain if you haven't already, and waits for your answer.
+Step
+03
+Confirm spend and branding
+Explains how many leaders it will search for and that the search uses credits, asks whether to apply your brand, and the run stops and waits for your answer before any search happens.
+Step
+04
+Extract seller's brand
+Reads your company website's colors, fonts, and logo to style the chart, only when you chose branding, and falls back to the default look if the site can't be read.
+Step
+05
+Resolve the target company
+Matches the name or domain to one Clay company record, and the run stops and waits for you to pick when several plausible companies match.
+Step
+06
+Search current leaders
+Searches Clay for current C-Suite and VP leaders at the resolved company and checks your workspace for a function that can look up mobile numbers.
+Agent
+07
+Classify leaders and infer lines
+Filters out non-qualifying titles, groups remaining leaders by level and function, and infers each reporting line from title seniority with a stated confidence.
+Step
+08
+Find recent leader news
+Searches the web for recent, dated news mentioning the charted leaders and keeps only verified, linked items inside your chosen news window.
+Agent
+09
+Build and deliver the page
+Renders the interactive chart, publishes it privately when possible, and replies with counts, exclusions, and a reminder that titles come from Clay while reporting lines are inferences, not confirmed facts.
+Step
+10
+Add more people later
+Pulls additional leaders into an existing chart, merges them with prior data, refreshes the news section, and republishes to the same page link.
+Action
+Connections required
+No connections listed.
+Install Clay and run it
+Sign in once, install the Skill, then run the prompt.
+1 Install Clay Use the connector or official plugin in your coding-agent environment.
+2 Sign up or log in Authorize Clay access and return when the connection is ready.
+3 Install the Skill Run the one-line install command from the Add this Skill card.
+4 Run the Skill Paste the example prompt and review the result.
+Version history
+Version 1 From submitted SKILL.md Current
+Related Skills
+Clay Lead Gen Machine Lets you ask Claude Code in plain English to find businesses in a target vertical, enrich each with a verified email, and write a personalized cold email, then hands back a CSV ready to import into a Clay campaign. View Skill → (/skills/clay-lead-gen-machine) CSV To Clay Webhook Sender Sends a CSV into a Clay table through its webhook source, matching each column to the payload key your table's formulas actually read. Checks a small test batch in Clay before sending the rest, so columns don't land blank. View Skill → (/skills/csv-to-clay-webhook-sender) Social Presence Discovery Finds verified social profiles and the owned website for a list of small, local businesses, confirming each URL matches the exact business and location. Mines links you already hold before searching, and leaves cells empty rather than guessing when it can't confirm anything. View Skill → (/skills/social-presence-discovery)
+Related searches
+Research skills (/skills?category=research)
+Build and share your best GTM work
+Start for free today. No credit card required.
+Start building for free (https://app.clay.com/signup?su=bdc446f6-270b-400a-ada2-970c4c29389d) Get a demo (https://www.clay.com/demo)
+Use cases
+Automated inbound (https://www.clay.com/use-cases/inbound-enrichment)
+Account research (https://www.clay.com/use-cases/account-research)
+ABM (https://www.clay.com/use-cases/abm)
+PLG assist (https://www.clay.com/use-cases/plg-assist)
+Rep assist (https://www.clay.com/use-cases/rep-assist)
+Reverse ETL (https://www.clay.com/use-cases/reverse-etl)
+Outbound (https://www.clay.com/use-cases/outbound)
+CRM Enrichment (https://www.clay.com/use-cases/crm-enrichment)
+TAM Sourcing (https://www.clay.com/use-cases/tam-sourcing)
+Customers
+OpenAI (https://www.clay.com/customers/open-ai)
+Vanta (https://www.clay.com/customers/vanta)
+Verkada (https://www.clay.com/customers/verkada)
+Sendoso (https://www.clay.com/customers/sendoso)
+Anthropic (https://www.clay.com/customers/anthropic)
+Coverflex (https://www.clay.com/customers/coverflex)
+Rippling (https://www.clay.com/customers/rippling)
+Mistral AI (https://www.clay.com/customers/mistral-ai)
+Case studies (https://www.clay.com/customers)
+Product
+Claygent AI (https://www.clay.com/claygent)
+Sculptor (https://www.clay.com/sculptor)
+Ads (https://www.clay.com/ads)
+Sequencer (https://www.clay.com/sequencer)
+Multi-provider data enrichment (https://www.clay.com/waterfall-enrichment)
+Audiences (https://www.clay.com/audiences)
+Signals (https://www.clay.com/signals)
+Functions (https://www.clay.com/functions)
+Integrations (https://www.clay.com/integrations)
+Pricing (https://www.clay.com/pricing)
+Changelog (https://www.clay.com/changelog)
+Blog
+The rise of the GTM engineer (https://www.clay.com/blog/gtm-engineering)
+Finding GTM alpha (https://www.clay.com/blog/gtm-alpha)
+Clay reaches 100M ARR (https://www.clay.com/blog/100m-arr)
+Series C: The GTM engineering era begins now (https://www.clay.com/series-c)
+Resources
+Get started lesson (https://www.clay.com/university/lesson/intro-to-clay-101-clay-101)
+University (https://university.clay.com/)
+Use case templates (https://university.clay.com/claybooks)
+Hire GTME talent (https://www.clay.com/talent)
+Partner programs (https://www.clay.com/partners)
+Community (https://community.clay.com/)
+FAQ (https://www.clay.com/faq)
+Company
+Contact us (https://www.clay.com/contact)
+About (https://www.clay.com/about)
+Careers (https://www.clay.com/careers)
+Jobs (https://www.clay.com/jobs)
+Integrate with Clay (https://www.clay.com/partners/integrations)
+Status (https://status.clay.com/)
+Legal
+Privacy policy (https://www.clay.com/privacy)
+Terms of service (https://www.clay.com/terms-of-service)
+Do not sell my data (https://docs.google.com/forms/d/e/1FAIpQLSeAsU1U-AJfhqzDx6-6eVcyQ_kBD1J9cw1y0huQiS-HCkRf0Q/viewform?pli=1)
+Customers
+OpenAI (https://www.clay.com/customers/open-ai)
+Vanta (https://www.clay.com/customers/vanta)
+Verkada (https://www.clay.com/customers/verkada)
+Sendoso (https://www.clay.com/customers/sendoso)
+Anthropic (https://www.clay.com/customers/anthropic)
+Coverflex (https://www.clay.com/customers/coverflex)
+Rippling (https://www.clay.com/customers/rippling)
+Case studies (https://www.clay.com/customers)
+Legal
+Privacy policy (https://privacy.clay.com/)
+Terms of service (https://www.clay.com/terms-of-service)
+Do not sell my data (https://docs.google.com/forms/d/e/1FAIpQLSeAsU1U-AJfhqzDx6-6eVcyQ_kBD1J9cw1y0huQiS-HCkRf0Q/viewform?usp=send_form)
+[Clay logo, go to homepage]
+Born in Brooklyn
+© 2026 Clay Labs Inc.
+https://www.linkedin.com/company/grow-with-clay/posts/?feedView=all https://www.youtube.com/@GrowWithClay https://www.clay.com/slack-community
