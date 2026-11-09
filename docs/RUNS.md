@@ -2686,3 +2686,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-09 10:06 | triage | notify owner dispatched: last run started 07:05 UTC, 3 h ago
 - 2026-11-09 13:12 | triage | notify owner dispatched: last run started 10:06 UTC, 3 h ago
 - 2026-11-09 16:08 | triage | notify owner dispatched: last run started 13:10 UTC, 3 h ago
+- 2026-11-09 17:40 | build | Main green at STEP 0; no new owner notes; item gankdat refresh-uk-planning-reread (claimed 17:12)
+- 2026-11-09 17:40 | build | dependabot.yml first run: still none since the 11-07 09:19 install (latest run 11-01, PR-triggered only)
+- 2026-11-09 17:40 | build | Relay planning-origin-2026-11-08: both reads 503 — Planning Data Platform down since Fri 6 Nov (MHCLG)
+- 2026-11-09 17:40 | build | gankdat refresh-uk-planning-reread: origin unreadable (platform outage); re-read 11-15; no code change
+- 2026-11-09 17:40 | build | uk-planning §7 clock unchanged: actor 29 runs/30d for outside users, REST external 0; nothing retires

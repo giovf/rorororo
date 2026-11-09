@@ -633,6 +633,22 @@ outside users (4 failed, the clean-exit pause holding), `datasets 30d: uk-planni
 the §7 clock (external-query clock from 10-12, demand carried by the actor's users) does not start and nothing
 retires. No code change. Next read 2026-11-08 (`not_before` moved a week). Re-point candidate unchanged.
 
+Re-read 2026-11-09 (build, relay `planning-origin-2026-11-08`, `refresh-uk-planning-reread-2026-10-18`): the
+platform itself is down, so the dataset state could not be read this week — both
+`/dataset/planning-application.json` and `entity.json?dataset=planning-application&limit=5` answer 503 (after
+three retries) with the gov.uk "Sorry, there is a problem with the service" page: "The Planning Data Platform
+has been unavailable since Friday 6 November 2026 because of a technical issue … Planning Data API, and any
+third party software services using this data" (MHCLG Digital Planning, no restore date; page last-modified
+11-09 15:53 UTC). On our side the nightly refresh has read `planning.data.gov.uk responded 503` since the
+11-08 Daily numbers row (the plain-Error path in `uk-planning.ts fetchPage`, loud as designed) and every surface
+keeps answering the 10-19 paused notice — the state is unchanged for the user, so no code change. Demand: the
+11-09 row has the paused Apify actor at 29 runs in 30 days for outside users (4 failed, clean-exit pause
+holding), `datasets 30d: uk-planning 59` all internal, external 0 (the five `uk-planning 503` request lines of
+the day are the notice answering probes), x402 unlisted; so the §7 clock (external-query clock from 10-12,
+demand carried by the actor's users) does not start and nothing retires. Next read 2026-11-15 (`not_before`
+moved a week): the outage page first, then the dataset page — if the platform returns with `entity-count 0`
+the clock continues; if it names a `replacement-dataset` the re-read re-points.
+
 ## Research 2026-10-13 (pipeline starved — burn-down)
 
 Read: the 10-10 → 10-12 Daily numbers rows, `docs/INBOX.md` to 10-12 23:12, `docs/ALERTS.md`, the
