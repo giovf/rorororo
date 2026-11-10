@@ -4,6 +4,9 @@
   "needs_research": false,
   "updated": "2026-11-10",
   "researched": "2026-11-05",
+  "research_after": "2026-11-09",
+  "researching_since": "2026-11-10T20:30Z",
+  "researching_by": "burn-down",
   "weight": 2,
   "items": [
     {
@@ -331,6 +334,5 @@
       "blocked_on": "the first Payhip sale of the tax workbook (a `Sale` row from the Payhip webhook in RESEARCH §7, or `payhip 30d: ≥ 1 sales` in the Daily numbers row); then the owner's ≤ 10 min upload is raised",
       "added": "2026-11-10"
     }
-  ],
-  "research_after": "2026-11-09"
+  ]
 }
