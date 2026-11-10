@@ -2725,3 +2725,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 19:21 | burn-down | Replay on live files: 11-06 17:00 paced by the real build stall; 11-07..11-10 17:00 had no gate stop
 - 2026-11-10 19:21 | burn-down | Tonight's 17:00 slot was paced by the old rule (11-09 19:04 line); its watchdog line is harmless now
 - 2026-11-10 19:21 | burn-down | first-runs: nothing owed; no Dependabot PR open
+- 2026-11-10 19:34 | burn-down | dependabot.yml first run: waits for pull_request
+- 2026-11-10 19:34 | burn-down | Built foundry first-runs-event-only-workflow-waiver: first-runs prints waits for <event> and overdue
+- 2026-11-10 19:34 | burn-down | first-runs reads each owed workflow's on: triggers; 14-day window; dependabot.yml settled with its line
+- 2026-11-10 19:34 | burn-down | Build, burn-down and triage prompts: write the waits-for line, the triage records the run from mail

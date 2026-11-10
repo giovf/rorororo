@@ -75,6 +75,11 @@ describe('violations', () => {
     expect(violations(md, '2026-10-04')).toEqual([]);
   });
 
+  it('accepts a `waits for <event>` first-run line that names an installed workflow (2026-11-10)', () => {
+    const md = '- 2026-11-10 19:34 | burn-down | dependabot.yml first run: waits for pull_request';
+    expect(violations(md, CAP_FROM, CAP, ['dependabot.yml'])).toEqual([]);
+  });
+
   it('refuses a new first-run line that names no installed workflow, in either name shape', () => {
     const md = [
       '- 2026-11-05 18:32 | burn-down | epubcheck first run: success (dispatched after the installer)',
