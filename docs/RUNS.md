@@ -2759,3 +2759,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 21:17 | burn-down | A second refusal falls through as before: retained blob for the parent, carried pages for a batch; 3 tests
 - 2026-11-10 21:17 | burn-down | Deploys on the next CI run; proof: 11-11..11-13 Daily rows with no stats_precompute_failed, journal dateModified moving
 - 2026-11-10 21:22 | burn-down | gankdat feeds-reader-subscriber-step blocked: rides the next new owner request as a step, never its own
+- 2026-11-10 21:26 | burn-down | Built gankdat uk-companies-snapshot-window-cap: snapshot holds the 7-day window (cap 15,000), v0.28.5
+- 2026-11-10 21:26 | burn-down | uk-companies walk pages each day to its hits under a 5-page guard; snapshot_window logs per-day counts
+- 2026-11-10 21:26 | burn-down | Correction to the item: uk-companies has no change feed (KV, no idOf); the gain is the Apify actor's week
+- 2026-11-10 21:26 | burn-down | Deploys on the next CI run; proof: 11-11 wave-1 reading shows snapshot_window, no snapshot_truncated

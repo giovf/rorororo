@@ -1438,3 +1438,22 @@ Proof (the item's): three consecutive Daily numbers rows with no `stats_precompu
 `/stats/uk-trademark-journal` `dateModified` moving nightly — the 11-11 row is the first reading, one wave after
 the deploy. If a night still trips after the wait, the next step is a pause between the delta's last write and
 the stats (the window is per database, so the wave's own writes are what the scans follow).
+
+## Build 2026-11-10 — uk-companies' snapshot holds the week (`uk-companies-snapshot-window-cap`, burn-down, 21:26 UTC)
+
+The 20:21 pass's second item. `MAX_RECORDS = 2000` was reached inside the second day of the 7-day walk
+(`snapshot_truncated fetched=2357 / 2774 / 2032` on 11-08..11-10), so the "newest incorporations" snapshot held
+~1.2 days of a register that adds ~2,000–2,800 companies a weekday. One premise of the item was wrong and is
+corrected here: uk-companies is a KV source without `idOf`, so it has no change feed and no `changes/uk-companies`
+x402 route (the nine feeds indexed on 11-08 are the D1 registers); the people who felt the cap are the Apify actor's
+18 outside users (29 runs in 30 days; `max_results` up to 100,000 against a 2,000-row snapshot) and any
+`incorporated_on_after` query of the window. v0.28.5: the cap is the window — 15,000 rows, ~6 MB of KV at ~400
+bytes a record, under the 25 MB value limit, one KV read and one JSON parse per request as before — each day is
+paged to its own `hits` (a short page or the count ends the day) under a 5-page guard (5,000 rows a day, near
+double the busiest day seen; a day past it is logged `snapshot_day_truncated`), a refresh costs ≤ 35 and ~15 origin
+calls of the key's 600 / 5 min, and the refresh logs `snapshot_window` with the per-day counts (`days:
+2026-11-10:812,2026-11-09:2301,…`, `total`) in place of the nightly warning; `snapshot_truncated` stays for the cap.
+`test/uk-companies.spec.ts` walks eight stubbed pages (1,500 over two pages for today, 300 for each of six days)
+to a 3,300-row snapshot and reads the oldest day back through the date filter. Proof: the 11-11 wave-1 reading
+shows `snapshot_window` and no `snapshot_truncated` for uk-companies, and the snapshot's `total` ≈ a week of
+incorporations.

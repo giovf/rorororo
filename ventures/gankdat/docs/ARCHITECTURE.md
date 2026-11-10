@@ -30,7 +30,10 @@ no SAM_API_KEY needed — counterparty-risk bundle with uk-sanctions),
 UK corporate insolvency notices (`uk-insolvency`, shipped 2026-07-13 —
 Gazette corporate-only slice, Blind Mode; same bundle), and UK new
 incorporations (`uk-companies`, shipped 2026-07-13 — Companies House
-advanced search; KYB/lead-gen, completes the counterparty bundle), and UK food
+advanced search; KYB/lead-gen, completes the counterparty bundle; since 2026-11-10 (`uk-companies-snapshot-window-cap`,
+v0.28.5) the KV snapshot holds the whole 7-day window — cap 15,000 rows, each day paged to its own `hits` under a 5-page
+guard, `snapshot_window` logging the per-day counts — where the 2,000-row cap had held ~1.2 days; no change feed, it is a
+KV source without `idOf`), and UK food
 hygiene ratings (`uk-food-hygiene`, shipped 2026-09-20 — FSA FHRS national file, D1, ~610k
 establishments; risk + lead-gen bundle; NICHE-RESEARCH-2026-09 §3), and UK licensed visa sponsors
 (`uk-sponsors`, shipped 2026-09-20 — Home Office register via the GOV.UK Content API, D1,
