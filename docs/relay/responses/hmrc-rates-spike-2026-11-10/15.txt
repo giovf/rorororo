@@ -1,0 +1,115 @@
+meta twitter:card: summary
+meta twitter:domain: api.trade-tariff.service.gov.uk
+meta twitter:image: https://api.trade-tariff.service.gov.uk/assets/govuk/assets/images/govuk-opengraph-image.png
+meta twitter:title: About the Trade Tariff API - GOV.UK
+meta twitter:url: https://api.trade-tariff.service.gov.uk/
+meta og:image: https://api.trade-tariff.service.gov.uk/assets/govuk/assets/images/govuk-opengraph-image.png
+meta og:title: About the Trade Tariff API - GOV.UK
+meta og:type: object
+meta og:url: https://api.trade-tariff.service.gov.uk/
+About the Trade Tariff API - GOV.UK
+Cookies on
+We’d like to use analytics cookies so we can understand how you use the service and make improvements.
+Accept analytics cookies
+Reject analytics cookies
+Skip to main content (#content)
+https://www.gov.uk
+Trade Tariff API documentation
+Menu
+About (./)
+Developer portal (./developer-portal.html)
+API Reference (./reference.html)
+Trade Tariff API (./the-trade-tariff-api.html)
+Categorisation API (./categorisation.html)
+FPO API (./fpo.html)
+FEEDBACK
+Tell us what you think - your feedback (https://www.trade-tariff.service.gov.uk/feedback) will help us improve.
+Table of contents
+About (#about)
+GOV.UK Trade Tariff API (#gov-uk-trade-tariff-api)
+Developer Portal (#developer-portal)
+What can you do with the APIs? (#what-can-you-do-with-the-apis)
+Using the APIs (#using-the-apis)
+Useful links (#useful-links)
+Authentication (#authentication)
+Caching (#caching)
+Security and compliance (#security-and-compliance)
+Reporting vulnerabilities (#reporting-vulnerabilities)
+Security (#security)
+Security patches (#security-patches)
+Terms and Conditions (#terms-and-conditions)
+Enquiries and feedback (#enquiries-and-feedback)
+LLM context files (#llm-context-files)
+Important
+From September 2026, rate limiting will apply to the Trade Tariff API to protect service reliability.
+Access a higher rate limit through the Trade Tariff developer portal.
+Find out more about the Developer Portal (/developer-portal.html) .
+About
+GOV.UK Trade Tariff API
+The GOV.UK Trade Tariff APIs make it easy to access the UK Trade Tariff Service data (opens in new tab) (https://www.gov.uk/trade-tariff) . The data includes commodity codes, duties and VAT rates.
+The APIs are useful for any business and individuals wanting to access up-to-date tariff data through a predictable and stable interface.
+Developer Portal
+The HMRC Trade Tariff developer portal allows you to:
+access official trade tariff information
+create and manage your API keys
+explore, test and integrate tariff data directly from HMRC
+manage organisational details
+invite new members and remove existing members
+Sign up to the Trade Tariff API developer portal (opens in new tab) (https://hub.trade-tariff.service.gov.uk/) .
+Find more information about the Developer Portal (opens in new tab) (/developer-portal.html) .
+What can you do with the APIs?
+Using the Trade Tariff APIs, you can search for commodities by:
+name
+code
+date or data range, including historical data
+This allows you to fill in declarations and other paperwork and determine:
+if duty or VAT applies
+if duty relief and preferential rates are available
+if import or export licenses are required
+You will also be able to:
+search the tariff by date or date range, including historical data
+query quota measures by commodity, year, geographic area and more.
+Using the APIs
+There are multiple APIs available through the UK Trade Tariff Service covering different user needs and search criteria. Some of the core APIs are:
+The Trade Tariff API provides detailed UK Trade Tariff data for imports and exports. It is ideal if you want to access structured trade tariff data across jurisdictions and time. Access requires registration on the Trade Tariff developer portal.
+The Categorisation API relates to bringing goods in and out of Northern Ireland and determines whether goods qualify for the simplified procedures under the Windsor Framework.
+The Fast Parcel Operator (FPO) Commodity Code Identification Tool API is for express operators handling time-dependent deliveries.
+Additional APIs are available to support specific trade tariff and classification needs.
+Useful links
+JSON:API Specification (opens in new tab) (https://jsonapi.org/format/)
+OpenAPI Specification (opens in new tab) (https://swagger.io/specification/)
+Curl (opens in new tab) (https://curl.haxx.se/)
+Postman (opens in new tab) (https://www.postman.com/)
+Ruby on Rails (opens in new tab) (https://rubyonrails.org/)
+HTTPie (opens in new tab) (https://httpie.io/)
+jq (opens in new tab) (https://stedolan.github.io/jq/)
+Authentication
+The Trade Tariff API on api.trade-tariff.service.gov.uk requires managed developer credentials from the Trade Tariff developer portal. Register on the portal, then authenticate with an OAuth 2.0 client_credentials access token.
+Send Authorization: Bearer <access_token> together with the Accept header used throughout this documentation ( application/vnd.hmrc.2.0+json ) so responses are correctly formatted.
+For token endpoints, example requests, token expiry and retry behaviour, and sample code in several languages, see Authenticating with managed credentials (the-trade-tariff-api.html#authenticating-with-managed-credentials) in Using the Trade Tariff API.
+Caching
+The GOV.UK Trade Tariff is updated daily. To reduce the number of API calls, cache requests for 24 hours.
+Security and compliance
+Reporting vulnerabilities
+If you believe there is a security issue with GOV.UK Trade Tariff APIs, email hmrc-trade-tariff-support-g@digital.hmrc.gov.uk (mailto:hmrc-trade-tariff-support-g@digital.hmrc.gov.uk) immediately.
+Please don’t disclose the suspected breach publicly until it has been fixed.
+Security
+GOV.UK Trade Tariff APIs follow government HTTPS security guidelines. The Hypertext Transfer Protocol Secure (HTTPS), which involves the Transport Layer Security (TLS) protocol, is used by the platform to provide secure connections.
+Security patches
+We upgrade the framework and library code in GOV.UK Trade Tariff APIs to the latest versions for security and feature enhancements.
+Terms and Conditions
+By using the FPO APIs, you agree to the terms and conditions (fpo/terms-and-conditions.html) .
+When using the rest of our APIs, you agree to the following terms (opens in new tab) (https://www.trade-tariff.service.gov.uk/terms) .
+Enquiries and feedback
+If you have any suggestions, queries or feedback about this service, please use the Trade Tariff enquiry form (opens in new tab) (https://www.trade-tariff.service.gov.uk/enquiry_form) .
+LLM context files
+For use with AI coding assistants and LLMs:
+llms.txt — summary and links following the llmstxt.org (https://llmstxt.org) convention
+llms-full.txt — full prose rendering of all v2 API endpoints
+View as Markdown (index.md)
+Privacy policy (https://www.trade-tariff.service.gov.uk/privacy)
+Cookies (https://www.trade-tariff.service.gov.uk/cookies)
+Terms and conditions (https://www.trade-tariff.service.gov.uk/terms)
+All content is available under the
+Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) , except where otherwise stated
+© Crown copyright (https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)

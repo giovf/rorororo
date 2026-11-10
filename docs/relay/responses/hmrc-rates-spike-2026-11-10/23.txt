@@ -1,0 +1,163 @@
+{ "@context": "https://schema.org", "@type": "WebApplication", "name": "Frankfurter", "url": "https://frankfurter.dev", "image": "https://frankfurter.dev/images/logo.png", "applicationCategory": "DeveloperApplication", "operatingSystem": "All", "description": "Free, open-source exchange rate API for 219 currencies. Current and historical rates from 111 central banks and official sources. No API key required." }
+{ "@context": "https://schema.org", "@graph": [ { "@type": "WebAPI", "@id": "https://frankfurter.dev/#api", "name": "Frankfurter", "url": "https://frankfurter.dev", "description": "Free, open-source exchange rate API for 219 currencies. Current and historical rates from 111 central banks and official sources.", "image": "https://frankfurter.dev/images/social.png", "documentation": "https://frankfurter.dev" }, { "@type": "WebSite", "@id": "https://frankfurter.dev/#website", "name": "Frankfurter", "url": "https://frankfurter.dev", "about": { "@id": "https://frankfurter.dev/#api" }, "hasPart": [ { "@type": "WebPage", "name": "API Docs", "url": "https://frankfurter.dev/" }, { "@type": "WebPage", "name": "v1", "url": "https://frankfurter.dev/v1/" }, { "@type": "WebPage", "name": "Providers", "url": "https://frankfurter.dev/providers/" }, { "@type": "WebPage", "name": "MCP", "url": "https://frankfurter.dev/mcp/" }, { "@type": "WebPage", "name": "Integrations", "url": "https://frankfurter.dev/integrations/" }, { "@type": "WebPage", "name": "Google Sheets", "url": "https://frankfurter.dev/google-sheets/" }, { "@type": "WebPage", "name": "Excel", "url": "https://frankfurter.dev/excel/" }, { "@type": "WebPage", "name": "pandas", "url": "https://frankfurter.dev/pandas/" }, { "@type": "WebPage", "name": "Python", "url": "https://frankfurter.dev/python/" }, { "@type": "WebPage", "name": "JavaScript", "url": "https://frankfurter.dev/javascript/" }, { "@type": "WebPage", "name": "Deploy", "url": "https://frankfurter.dev/deploy/" }, { "@type": "WebPage", "name": "Playground", "url": "https://frankfurter.dev/playground/" }, { "@type": "WebPage", "name": "License", "url": "https://frankfurter.dev/license/" } ] } ] }
+meta description: Free, open-source exchange rate API for 219 currencies. Current and historical rates from 111 central banks and official sources. No API key required.
+meta og:title: Frankfurter | Free exchange rate API
+meta og:description: Free, open-source exchange rate API for 219 currencies. Current and historical rates from 111 central banks and official sources. No API key required.
+meta og:type: website
+meta og:url: https://frankfurter.dev/
+meta og:image: https://frankfurter.dev/images/social.png
+meta og:image:width: 1200
+meta og:image:height: 1200
+meta og:image:type: image/png
+meta og:site_name: Frankfurter
+meta og:locale: en_US
+meta twitter:card: summary
+meta twitter:title: Frankfurter | Free exchange rate API
+meta twitter:description: Free, open-source exchange rate API for 219 currencies. Current and historical rates from 111 central banks and official sources. No API key required.
+meta twitter:image: https://frankfurter.dev/images/social.png
+Frankfurter | Free exchange rate API
+On this page
+v2 (/) v1 (/v1/) Currencies (/currencies/) Providers (/providers/) Integrations (/integrations/) Deploy (/deploy/) OpenAPI (https://api.frankfurter.dev/v2/openapi.json)
+[Frankfurter]
+Frankfurter Exchange rate and currency API
+2,081 (https://github.com/lineofflight/frankfurter) Playground (/playground/)
+Frankfurter is a free exchange rate API for 219 currencies and 39 other assets (/currencies/) from 111 central banks and official sources (/providers/) . Rates update throughout the day. Daily history goes back to 1948 .
+The public API lives at api.frankfurter.dev (https://api.frankfurter.dev) . You don't need an API key. The project is open source, so you can also self-host (/deploy/) for full control.
+These are reference rates, not live market quotes. Each source publishes them once or a few times a day.
+Working with an AI agent? Point it at llms.txt (/llms.txt) , or add the MCP server (/mcp/) .
+Rates
+Fetch the latest exchange rates.
+curl https://api.frankfurter.dev/v2/rates
+Change the base currency with base .
+curl https://api.frankfurter.dev/v2/rates?base=usd
+Filter target currencies with quotes .
+curl https://api.frankfurter.dev/v2/rates?quotes=usd,gbp
+Historical Rates
+Look up rates for a specific date.
+curl https://api.frankfurter.dev/v2/rates?date=1999-01-04
+Time Series
+Fetch rates over a period with from and to .
+curl https://api.frankfurter.dev/v2/rates?from=2026-01-01&quotes=usd
+Tip: Narrowing down currencies keeps responses small. For large date ranges, request NDJSON (#ndjson) to stream results line by line.
+Grouping
+Downsample a time series with group . Supports week and month .
+curl https://api.frankfurter.dev/v2/rates?from=2026-01-01&group=month
+Filtering by Provider
+Scope to specific providers with providers .
+curl https://api.frankfurter.dev/v2/rates?providers=ecb
+By default, rates are blended across all providers. Use providers to get rates from a specific provider, or use provider routes (#rates-by-provider) to query a provider directly.
+Some providers publish more than one dataset, such as NBP's daily and weekly tables. A provider key selects its default datasets. A dataset key selects just one.
+curl https://api.frankfurter.dev/v2/rates?providers=nbp.b&base=pln&quotes=ars,ngn
+Provider Attribution
+Add expand=providers to see which providers contributed to each blended rate.
+curl https://api.frankfurter.dev/v2/rates?expand=providers
+Each row gains a providers array of contributing provider keys. Pegged-currency rows omit the field. Those rates come from the peg, not provider data.
+CSV Output
+Rates are also available as CSV. Append .csv to the path or set the Accept header to text/csv .
+curl https://api.frankfurter.dev/v2/rates.csv
+NDJSON Output
+For large responses, request NDJSON (https://github.com/ndjson/ndjson-spec) (newline-delimited JSON) by setting the Accept header to application/x-ndjson . Each line is one independent JSON object, useful for streaming large time series without buffering the entire response.
+curl https://api.frankfurter.dev/v2/rates?from=2026-01-01
+Rate
+Get the rate for a single currency pair. Optionally add date or providers .
+curl https://api.frankfurter.dev/v2/rate/eur/usd
+Currencies
+Get available currencies with provider coverage.
+curl https://api.frankfurter.dev/v2/currencies
+Include legacy currencies with scope .
+curl https://api.frankfurter.dev/v2/currencies?scope=all
+Currency
+Get details and provider coverage for a single currency.
+curl https://api.frankfurter.dev/v2/currency/eur
+Providers
+List the providers behind the API.
+curl https://api.frankfurter.dev/v2/providers
+Get details for a single provider.
+curl https://api.frankfurter.dev/v2/providers/ecb
+Each provider lists its datasets, with their own dates, schedule and currencies.
+Rates by Provider
+Query rates directly from a specific provider. Supports the same parameters as /v2/rates and /v2/rate .
+curl https://api.frankfurter.dev/v2/providers/ecb/rates
+Fetch a single currency pair from that provider.
+curl https://api.frankfurter.dev/v2/providers/ecb/rate/eur/usd
+Combine with date , date ranges ( from and to ), or grouping. Formats like .csv and ndjson work here too.
+curl https://api.frankfurter.dev/v2/providers/ecb/rates?date=2024-05-15
+Conversion
+There's no conversion endpoint. Fetch the rate and convert in a few lines of code.
+function convert(base, quote, amount) {
+const api = "https://api.frankfurter.dev";
+return fetch(`${api}/v2/rate/${base}/${quote}`)
+.then((r) => r.json())
+.then((d) => (amount * d.rate).toFixed(2));
+}
+convert("eur", "usd", 10).then((result) =>
+alert(`10 EUR = ${result} USD`)
+);
+Errors
+The API returns standard HTTP status codes with a JSON body.
+{
+"status": 422,
+"message": "invalid currency: ABC"
+}
+400
+Invalid parameter or malformed request.
+404
+Currency, rate, or resource not found.
+422
+Request understood but cannot be processed.
+Self-Hosting
+You can self-host with Docker (/deploy/) . See the deploy guide for production setup and API key configuration.
+FAQ
+Who is Frankfurter for (and who is it not for)?
+It works well for SaaS billing, e-commerce, tax reporting, ERP and accounting systems, and academic research across historical series back to 1948. It isn't built for live trading, or for exotic currencies with wild intraday swings.
+Is the API free for commercial use?
+Yes. Blended rates are Frankfurter's own calculation and free to use. Direct queries to individual provider endpoints remain subject to each provider's terms (/license/#providers) .
+Can I store or cache rates in my own database?
+Yes. Storing daily observations locally for caching or historical analytics is encouraged to keep API traffic light.
+Does the API have any call limits?
+There are no quotas. Requests are rate-limited to prevent abuse, but there are no monthly or daily caps. For high-volume use, consider caching responses, self-hosting, or querying the datasets directly.
+Does the API support GraphQL?
+No. The REST API is simple enough that GraphQL would add complexity without much benefit. It would also break edge caching, which keeps the API fast. Use query parameters like base , quotes , and from / to to get exactly the data you need.
+Is the v1 API being retired?
+No. The v1 API is deprecated in favor of v2, but remains available indefinitely. See the v1 documentation (/v1/) . For European Central Bank data, use /v2/providers/ecb/rates (#rates-by-provider) .
+What is the privacy policy of the API?
+The API doesn't collect or log personal data, IP addresses, or request URLs. The public instance runs behind Cloudflare for caching and DDoS defense, which only provides aggregate traffic stats.
+Do I need to disclose the API in App Store or Google Play privacy labels?
+No. Because queries are anonymous and no request logs are retained, requests qualify as Data Not Collected under Apple and Google Play guidelines.
+Where can I report a bug or ask a question?
+Open an issue (https://github.com/lineofflight/frankfurter/issues) to report a bug, request a feature, or suggest a new provider. Use Discussions (https://github.com/lineofflight/frankfurter/discussions) to ask questions or share a library or tool you built with Frankfurter.
+How accurate are the rates?
+For compliance, filter by a specific provider to get official reference rates. For general use, the default blended rates work well, though the last decimal places may shift as new data comes in.
+Are rates mid, bid, or ask?
+The API returns mid-market rates. When a provider publishes bid and ask quotes instead of a reference rate, Frankfurter stores both and calculates the midpoint.
+Are all exchange rates daily?
+Almost all are. Some sources provide weekly, monthly, or quarterly observations. These sources are excluded from the blended feed. Query them directly with the providers filter.
+Do you have precious metal or crypto rates?
+Yes. Several central banks publish daily rates for gold ( XAU ), silver ( XAG ), platinum ( XPT ), and palladium ( XPD ) per troy ounce. Mainstream coins like BTC , ETH , SOL , and XRP , and stablecoins like USDT and USDC , come from a few sources, though coverage is thin. For tax filings, filter for a specific source.
+Why do some old and new currencies have overlapping dates?
+Some providers backdate replacement currencies into the old currency's period (for example, TRL ends in 2010 while TRY starts in 1996). We record provider data as is, and only filter out overlaps when blending.
+Why Frankfurter?
+Because our original data source is
+API
+v2 (/) v1 (/v1/) OpenAPI (https://api.frankfurter.dev/v2/openapi.json) Playground (/playground/) Currencies (/currencies/) Providers (/providers/) Currency Codes (/world-currency-codes/)
+Integrations
+Excel (/excel/) Google Sheets (/google-sheets/) JavaScript (/javascript/) MCP (/mcp/) pandas (/pandas/) Python (/python/)
+Project
+Status (https://frankfurter.instatus.com/) Changelog (https://github.com/lineofflight/frankfurter/blob/main/CHANGELOG.md) Docker Hub (https://hub.docker.com/r/lineofflight/frankfurter) Deploy (/deploy/)
+Community
+Discussions (https://github.com/lineofflight/frankfurter/discussions) Issues (https://github.com/lineofflight/frankfurter/issues) License (/license/)
+© 2018–2026 Line of Flight (https://lineofflig.ht)
+English
+Deutsch
+Español
+Français
+Italiano
+Português
+Türkçe
+Nederlands
+Polski
+日本語
+한국어
+Bahasa Indonesia
+繁體中文
+ไทย

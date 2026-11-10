@@ -1,0 +1,213 @@
+meta og:title: Currencylayer API | Free, Reliable Currency Converter API
+meta og:description: Free and startup-friendly currency converter JSON API for real-time and historical exchange rates - reliable and accurate, supporting 168 world currencies.
+meta og:url: https://currencylayer.com/
+meta og:image: https://currencylayer.com/site_images/currencylayer_logo.png
+meta og:type: website
+meta og:locale: en_US
+meta og:site_name: Currencylayer
+meta description: Discover Currencylayer's secure and reliable currency API for real-time forex rates, currency conversion, and exchange data via JSON.
+Currencylayer Forex & Exchange Rates API Product
+/
+Pricing (/#pricing_plan)
+Documentation (https://docs.apilayer.com/currencylayer/docs/api-documentation?utm_source=CurrencylayerHomePage&utm_medium=Referral)
+FAQ (/faq)
+Affiliates (https://apilayer.com/affiliates)
+Blog (https://blog.apilayer.com/)
+Status (/api-status)
+Sign In (/login)
+Sign Up Free (/signup/free)
+[Currency API popup banner]
+Our Subscription Plans
+Monthly Billing
+Yearly Billing
+Choose annual billing and save upto 15%.
+Free
+$0.00
+No hidden fees
+$0.00
+No hidden fees
+Get Free API Key (/signup/free)
+100 API Calls
+Daily Updates
+Historical Rates
+HTTPS Encryption
+No Support
+Non-Commercial Use
+Basic
+$14.99/mo
+no hidden fees
+Basic — includes commercial
+use with up to 10,000
+requests.
+$13.99/mo
+or pay $161.99 / year
+save 10% /
+no hidden fees
+Basic — includes commercial
+use with up to 10,000
+requests.
+Sign Up (/signup/basic/yearly)
+10,000 Requests
++ 0.005996 each (/billing-overages-documentation)
+Hourly Updates
+Historical Rates
+Standard Support
+Commercial Use
+HTTPS Encryption
+Source Currency Sw.
+Currency Conversion
+Enterprise
+$59.99/mo
+no hidden fees
+Professional level — premium features with up to 100,000
+monthly requests.
+$52.99/mo
+or pay $629.99 / year
+save 12.5% / no
+hidden fees
+Professional level — premium features with up to 100,000
+monthly requests.
+Sign Up (/signup/enterprise/yearly)
+100,000 Requests
++ 0.0023996 each (/billing-overages-documentation)
+10-minute Updates
+Historical Rates
+Standard Support
+Commercial Use
+HTTPS Encryption
+Source Currency Sw.
+Currency Conversion
+Time-Frame Queries
+Bid/Ask Spread Data
+Enterprise+
+$99.99/mo
+no hidden fees
+Business Plus level — every
+feature we have and up to
+500,000 monthly requests.
+$84.99/mo
+or pay $1,019.99 / year
+save 15% / no
+hidden fees
+Business Plus level — every
+feature we have and up to
+500,000 monthly requests.
+Sign Up (/signup/enterprise+/yearly)
+500,000 Requests
++ 0.00079992 each (/billing-overages-documentation)
+60-second Updates
+Historical Rates
+Standard Support
+Commercial Use
+HTTPS Encryption
+Source Currency Sw.
+Currency Conversion
+Time-Frame Queries
+Currency-Change Q.
+Bid/Ask Spread Data
+Custom
+Need more? We offer custom Enterprise Pricing for unlimited requests, dedicated technical support, and more
+Need more? We offer custom Enterprise Pricing for unlimited requests, dedicated technical support, and more
+Contact us (/contact/quote)
+Volume Requests
+60-second Updates
+Historical Rates
+Standard Support
+HTTPS Encryption
+Commercial Use
+Source Currency Sw.
+Currency Conversion
+Time-Frame Queries
+Currency-Change Q.
+Bid/Ask Spread Data
+[Lyft]
+[Griffin]
+[FedEx]
+— Trusted by thousands —
+[Intel]
+[Freelancer]
+[Opera]
+Historical Rates
+Query the API for Historical Rates all the way back to 1999 by using the historical Endpoint.
+Optional Parameters
+Request only specific currencies to reduce server load, or query the API for a different Source Currency.
+Currency Conversion
+Have the API convert one currency to another on your behalf, using real-time or even historical rates.
+Time-Frame Queries
+Request exchange rates between two specified dates, for timeframes of up to 365 days.
+Currency-Change Queries
+Request any currency's change parameters (margin and percentage) between two specified dates.
+[ and more ]
+JSON Formatting, JSONP Callbacks, HTTP ETags to save bandwidth, Access-Control headers, and more.
+Frequently Asked Questions
+Data & Sources
+How accurate is currencylayer forex data?
+Our spot exchange rates are sourced from a very broad base of commercial sources and banks around the world, each of varying types and frequencies. The larger weighting particularly for major currencies is towards commercial sources as they more accurately reflect the trading occurring in the markets.
+In order to ensure the highest possible level of data coverage and accuracy, the currencylayer system relies on a very distinct “validation and fallback” algorithm, assigning different priorities to each data source and validating each forex rate as it enters our databases. If a source fails to deliver an accurate quote, the next highest provider is queried for this particular currency pair. This enables us to sort out possible inaccuracies and provide the vast majority of all spot exchange rates with a precision of six decimal places.
+How often are exchange rates refreshed?
+Spot exchange rate data is collected within the 60-second market window. Depending on your Subscription Plan, quotes are refreshed every 60 minutes (Free & Basic Plan), 10 minutes (Professional Plan), or 60 seconds (Business Plan).
+Which currency data does the API provide?
+Depending on which API endpoint you are using for your query, the currencylayer API will return or calculate with the most representative forex market rate available, which is generally the "midpoint" value. The "mid" value will also be the most useful tool to your company's financial department for accounting & invoicing purposes, for financial estimates or planning, for calculator & converter applications, and for any other applications you power with currencylayer forex data.
+All exchange rates are returned as currency pairs. (See API Response (/documentation#api_response) )
+Which currencies and precious metals are supported by the API?
+The currencylayer API provides real-time and historical data for a total of 168 world currencies and precious metals (including Gold "XAU" & Silver "XAG"). See a detailed list of all supported currencies (/currencies) .
+Plans, Pricing & Payment
+What is the difference between free and paid subscriptions?
+The Free Plan is set out to be a "trial version" without a time limit, offering some very basic API functionialities, such as making API Requests, getting regular data updates, accessing historical data, and requesting specific currencies.
+Paid Subscription Plans feature significantly higher API Request volumes and data updates as often as every 60 seconds, ensure secure datastreams via 256-bit HTTPS Encryption, include unlimited and prioritised technical support, and offer a variety of must-have API functionalities.
+Which subscription plan fits my needs?
+In order to test the API and to get an idea of the product, you can simply sign up for the Free Plan. (/pricing/#currency_pricing)
+As soon as you or your application requires more than 100 API Requests per month and more professional API functionality (e.g. for powering a currency converter, for accounting & invoicing purposes, for financial planning, estimates, shopping carts, etc.), you would be well-advised to sign up for one of the paid Subscription Plans, starting at Startup-friendly USD 14.99 per month, or at up to 15% Discount - if you decide to pay anually.
+Which payment methods are supported?
+Payments can be made via credit card (Visa, MasterCard, Discover, Diner's Club, American Express). Enterprise and high-volume customers may request annual bank transfer payments to be enabled. You can change your payment method at any given time in the "Payment" section of your account dashboard.
+Can I also pay yearly?
+Yes. If you choose annual billing, the total price of your subscription plan will be up to 15% lower than the total amount you would pay with a monthly payment frequency.
+How do I cancel/downgrade?
+You can initiate a cancellation or downgrade by selecting a new plan and providing at least one reason for your decision. The customer service team will cancel or downgrade your plan. Downgrades are not effective immediately; your premium subscription will remain active until the end of the current billing period.
+How do I change between monthly and yearly billing?
+To change your subscription from monthly to yearly billing, submit a request on the Contact Us (/contact) page on the website following these steps:
+Step 1: Sign in (/login) to your account
+Step 2: Go to Contact Us (/contact) page
+Step 3: Fill out the form and choose the “Sales” category for this request.
+Step 4: In the text box, include your specific request for example “Change from Monthly to Yearly subscription.”
+See all Frequently Asked Questions (/faq)
+API Access & Features
+What is an API Request?
+Pricing is based on the number of monthly API Requests offered for each individual Subscription Plan. Accessing any type of currencylayer forex data using a valid API Access Key counts as one "API Request". Unlike most other providers, any API Endpoint or feature requested (including Time-Frame & Currency-Change Queries, as well as requesting multiple currencies at once) counts as only one API Request.
+What happens if I exceed my API Request volume?
+Users will be automatically notified via e-mail and on their Account Dashboard once at least 75%, 90%, and 100% of their monthly API Request allowance has been reached.
+After reaching 100% of the allowance, overages fees will apply so we make sure you won’t experience any disruptions and your website/application will keep running smoothly. You can learn more about overages billing here. What is the API's uptime? The currencylayer API's system status is closely monitored around the clock. Every effort is made to ensure the highest possible level of availability and consistency, and we are proud to have an average uptime rate of nearly 100% (99.9%), calculated based on the past 12 months. There is a public API status page available at the following URL: status.currencylayer.com (/documentation#billing-overages) .
+All major payment methods accepted:
+/
+https://www.instagram.com/apilayer/
+https://www.facebook.com/APILayer/
+https://www.linkedin.com/company/apilayer/
+https://twitter.com/apilayer/
+https://www.youtube.com/channel/UCwDncja3klyMhkKXWV1zoNQ
+https://github.com/apilayer/
+https://discord.com/invite/hgjA78638n
+PRODUCT
+Pricing (/#pricing_plan)
+List Your API (https://apilayer.com/provider)
+Why choose us? (https://apilayer.com/why-choose-apilayer)
+Marketplace (https://apilayer.com/marketplace)
+Affiliates (https://apilayer.com/affiliates)
+DOCS & HELP
+API Glossary (/api-glossary)
+Documentation (https://docs.apilayer.com/currencylayer/docs/api-documentation?utm_source=CurrencylayerHomePage&utm_medium=Referral)
+Blog (https://blog.apilayer.com/)
+FAQs (/faq)
+ACCOUNT
+Log In (/login)
+Forgot Password (/forgot)
+FREE Signup (/signup/free)
+GET IN TOUCH
+Contact (/contact)
+Get a quote (/contact/quote)
+Address:
+Oppolzergasse 6/1/4, 1010 Wien, Austria
+contact us (/contact)
++43 316 231255 (tel:+43 316 231255)
+[Currency API popup banner]
+Imprint / Legal (https://www.ideracorp.com/legal/APILayer) | Privacy (https://www.ideracorp.com/Legal/PrivacyPolicy) | Terms (https://www.ideracorp.com/legal/APILayer#tabs-2) | Cookie Preference (https://www.ideracorp.com/Legal/APILayer/PrivacyStatement) | Sitemap (https://currencylayer.com/sitemap.php)
+© 2026 Currencylayer API, an APILayer (https://apilayer.com/) product. All rights reserved.

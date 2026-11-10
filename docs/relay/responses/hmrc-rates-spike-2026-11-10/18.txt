@@ -1,0 +1,173 @@
+{ "@context": "https://schema.org", "@graph": [ { "@type": "Organization", "@id": "https://exchangeratesapi.io/#organization", "name": "Exchangerates API", "alternateName": "exchangeratesapi.io", "url": "https://exchangeratesapi.io/", "logo": { "@type": "ImageObject", "url": "https://exchangeratesapi.io/assets/images/exchangeratesapi_main_white_logo.png" }, "description": "Exchangerates API is a JSON-based REST API delivering real-time and historical exchange rate data for 168 world currencies and precious metals. An APILayer product.", "parentOrganization": { "@type": "Organization", "name": "APILayer", "url": "https://apilayer.com/" }, "address": { "@type": "PostalAddress", "streetAddress": "Oppolzergasse 6/1/4", "postalCode": "1010", "addressLocality": "Vienna", "addressCountry": "AT" }, "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "url": "https://exchangeratesapi.io/contact", "telephone": "+43-316-231255", "availableLanguage": "English" } }, { "@type": "WebSite", "@id": "https://exchangeratesapi.io/#website", "url": "https://exchangeratesapi.io/", "name": "Exchangerates API", "publisher": { "@id": "https://exchangeratesapi.io/#organization" }, "inLanguage": "en" }, { "@type": "WebPage", "@id": "https://exchangeratesapi.io/pricing#webpage", "url": "https://exchangeratesapi.io/pricing", "name": "Pricing | Exchange Rates API", "description": "Get started with the Exchange Rates API Free Plan or subscribe to one of our premium plans.", "isPartOf": { "@id": "https://exchangeratesapi.io/#website" }, "inLanguage": "en", "breadcrumb": { "@id": "https://exchangeratesapi.io/pricing#breadcrumb" } }, { "@type": "BreadcrumbList", "@id": "https://exchangeratesapi.io/pricing#breadcrumb", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://exchangeratesapi.io/" }, { "@type": "ListItem", "position": 2, "name": "Pricing" } ] }, { "@type": "Product", "@id": "https://exchangeratesapi.io/pricing#product", "name": "Exchange Rates API Subscription Plans", "description": "Subscription plans for the Exchange Rates API: Free, Basic, Professional and Business, from $0 to $99.99 per month.", "brand": { "@type": "Brand", "name": "Exchange Rates API" }, "offers": [ { "@type": "Offer", "name": "Free Plan", "price": "0", "priceCurrency": "USD", "description": "100 API requests per month, daily rate updates, historical rates included.", "url": "https://exchangeratesapi.io/pricing", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "0", "priceCurrency": "USD", "unitText": "month", "billingIncrement": 1 } }, { "@type": "Offer", "name": "Basic Plan", "price": "14.99", "priceCurrency": "USD", "description": "10,000 API requests per month, hourly rate updates, historical rates, HTTPS encryption, source currency switching, currency conversion. $13.99/mo when billed yearly ($161.99/yr).", "url": "https://exchangeratesapi.io/pricing", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "14.99", "priceCurrency": "USD", "unitText": "month", "billingIncrement": 1 } }, { "@type": "Offer", "name": "Professional Plan", "price": "59.99", "priceCurrency": "USD", "description": "100,000 API requests per month, 10-minute rate updates, time-frame queries plus all Basic features. $52.99/mo when billed yearly ($629.99/yr).", "url": "https://exchangeratesapi.io/pricing", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "59.99", "priceCurrency": "USD", "unitText": "month", "billingIncrement": 1 } }, { "@type": "Offer", "name": "Business Plan", "price": "99.99", "priceCurrency": "USD", "description": "500,000 API requests per month, 60-second rate updates, currency-change queries plus all Professional features. $84.99/mo when billed yearly ($1,019.99/yr).", "url": "https://exchangeratesapi.io/pricing", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "99.99", "priceCurrency": "USD", "unitText": "month", "billingIncrement": 1 } } ] }, { "@type": "FAQPage", "@id": "https://exchangeratesapi.io/pricing#faq", "mainEntity": [ { "@type": "Question", "name": "How accurate is Exchange Rates API forex data?", "acceptedAnswer": { "@type": "Answer", "text": "Our spot exchange rates are sourced from a very broad base of commercial sources and banks around the world, each of varying types and frequencies. The larger weighting particularly for major currencies is towards commercial sources as they more accurately reflect the trading occurring in the markets. In order to ensure the highest possible level of data coverage and accuracy, the Exchange Rates API system relies on a very distinct “validation and fallback” algorithm, assigning different priorities to each data source and validating each forex rate as it enters our databases. If a source fails to deliver an accurate quote, the next highest provider is queried for this particular currency pair. This enables us to sort out possible inaccuracies and provide the vast majority of all spot exchange rates with a precision of six decimal places." } }, { "@type": "Question", "name": "How often are exchange rates refreshed?", "acceptedAnswer": { "@type": "Answer", "text": "Spot exchange rate data is collected within the 60-second market window. Depending on your Subscription Plan, quotes are refreshed every day (Free Plan), every 60 minutes (Basic Plan), 10 minutes (Professional Plan), or 60 seconds (Business Plan)." } }, { "@type": "Question", "name": "Which currency data does the API provide?", "acceptedAnswer": { "@type": "Answer", "text": "Depending on which API endpoint you are using for your query, the Exchange Rates API will return or calculate with the most representative forex market rate available, which is generally the \"midpoint\" value. The \"mid\" value will also be the most useful tool to your company's financial department for accounting & invoicing purposes, for financial estimates or planning, for calculator & converter applications, and for any other applications you power with Exchange Rates API forex data. All exchange rates are returned as currency pairs. (See API Response )" } }, { "@type": "Question", "name": "Which currencies and precious metals are supported by the API?", "acceptedAnswer": { "@type": "Answer", "text": "The Exchange Rates API provides real-time and historical data for a total of 168 world currencies and precious metals (including Gold \"XAU\" & Silver \"XAG\"). See a detailed list of all supported currencies ." } }, { "@type": "Question", "name": "What is the difference between free and paid subscriptions?", "acceptedAnswer": { "@type": "Answer", "text": "The Free Plan is set out to be a \"trial version\" without a time limit, offering some very basic API functionialities, such as making API Requests, getting regular data updates, accessing historical data, and requesting specific currencies. Paid Subscription Plans feature significantly higher API Request volumes and data updates as often as every 60 seconds, ensure secure datastreams via 256-bit HTTPS Encryption, include unlimited and prioritised technical support, and offer a variety of must-have API functionalities." } }, { "@type": "Question", "name": "Which subscription plan fits my needs?", "acceptedAnswer": { "@type": "Answer", "text": "In order to test the API and to get an idea of the product, you can simply sign up for the Free Plan. As soon as you or your application requires more than 100 API Requests per month and more professional API functionality (e.g. for powering a currency converter, for accounting & invoicing purposes, for financial planning, estimates, shopping carts, etc.), you would be well-advised to sign up for one of the paid Subscription Plans, starting at Startup-friendly $14.99 per month, or at up to 15% Discount - if you decide to pay anually." } }, { "@type": "Question", "name": "Which payment methods are supported?", "acceptedAnswer": { "@type": "Answer", "text": "Payments can be made via credit card (Visa, MasterCard, Discover, Diner's Club, American Express). Enterprise and high-volume customers may request annual bank transfer payments to be enabled. You can change your payment method at any given time in the \"Payment\" section of your account dashboard." } }, { "@type": "Question", "name": "Can I also pay yearly?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you choose annual billing, the total price of your subscription plan will be up to 15% lower than the total amount you would pay with a monthly payment frequency." } }, { "@type": "Question", "name": "What is an API Request?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing is based on the number of monthly API Requests offered for each individual Subscription Plan. Accessing any type of exchangeratesapi forex data using a valid API Access Key counts as one \"API Request\". Unlike most other providers, any API Endpoint or feature requested (including Time-Frame & Currency-Change Queries, as well as requesting multiple currencies at once) counts as only one API Request." } }, { "@type": "Question", "name": "What happens if I exceed my API Request volume?", "acceptedAnswer": { "@type": "Answer", "text": "Users will be automatically notified via e-mail and on their Account Dashboard once at least 75%, 90%, and 100% of their monthly API Request allowance has been reached. After reaching 100% of the allowance, overages fees will apply so we make sure you won’t experience any disruptions and your website/application will keep running smoothly. You can learn more about overages billing here." } }, { "@type": "Question", "name": "What is the API's uptime?", "acceptedAnswer": { "@type": "Answer", "text": "The exchangeratesapi API's system status is closely monitored around the clock. Every effort is made to ensure the highest possible level of availability and consistency, and we are proud to have an average uptime rate of nearly 100% (99.9%), calculated based on the past 12 months. There is a public API status page available at the following URL: status.exchangeratesapi.io ." } } ] } ] }
+meta description: Compare Exchange Rates API plans: free 100 calls a month, Basic $14.99, Professional $59.99, Business $99.99. Annual billing saves up to 15%. No hidden fees.
+meta og:title: Exchange Rates API Pricing: Plans from $0 to $99.99 a Month
+meta og:description: Five plans, no hidden fees. Start free with 100 monthly requests and scale to 500,000 with 60 second updates. Annual billing saves up to 15%.
+meta og:type: website
+meta og:url: https://exchangeratesapi.io/pricing
+meta og:image: https://exchangeratesapi.io/assets/images/og/pricing-plans-1200x630.png
+meta og:image:alt: Exchange Rates API pricing table comparing Free, Basic, Professional, Business and Custom plans
+meta og:site_name: Exchange Rates API
+meta og:locale: en_US
+meta twitter:card: summary_large_image
+meta twitter:title: Exchange Rates API Pricing, Free to $99.99 a Month
+meta twitter:description: 100 free calls a month. Paid plans from $14.99. Compare request volumes, update frequency and endpoints.
+Exchange Rate API Pricing | Free, Basic, Pro, Business
+/
+Pricing (/#pricing_plan)
+Documentation (https://docs.apilayer.com/exchangeratesapi/docs/api-documentation?utm_source=ExchangeratesapiHomePage&utm_medium=Referral)
+FAQ (/faq)
+Affiliates (https://apilayer.com/affiliates)
+Blog (https://blog.apilayer.com/)
+Status (/api-status)
+Sign In (https://manage.exchangeratesapi.io/login)
+Get Free API Key (https://manage.exchangeratesapi.io/signup/free)
+Dashboard (https://manage.exchangeratesapi.io/dashboard)
+[APILayer Banner]
+Subscription Plans
+Monthly Billing
+Yearly Billing
+Free
+Try Exchange Rates API for free.
+$0
+per month
+$0
+Get Free API Key (https://manage.exchangeratesapi.io/signup/free)
+100 Requests / mo
+Daily Updates
+Historical Rates
+No Support
+Non-Commercial Use
+Basic
+Standard Kit — includes core features and higher volume.
+$14.99
+per month
+or $13.99 if billed yearly
+$161.99
+billed yearly
+Sign Up (https://manage.exchangeratesapi.io/signup/basic)
+10,000 Requests / mo
++ 0.005996 each (/billing-overages-documentation)
+Hourly Updates
+Historical Rates
+Commercial Use
+Standard Support
+HTTPS Encryption
+Source Currency Switching
+Currency Conversion
+Professional
+Most Popular — advanced functionality and up to 100,000 monthly API requests.
+$59.99
+per month
+or $52.99 if billed yearly
+$629.99
+billed yearly
+Sign Up (https://manage.exchangeratesapi.io/signup/professional)
+100,000 Requests / mo
++ 0.0023996 each (/billing-overages-documentation)
+10-minute Updates
+Historical Rates
+Commercial Use
+Standard Support
+HTTPS Encryption
+Source Currency Switching
+Currency Conversion
+Time-Frame Queries
+Bid/Ask Spread Data
+Business
+The All-Inclusive Suite — complete suite of features and 500,000 monthly API requests.
+$99.99
+per month
+or $84.99 if billed yearly
+$1,019.99
+billed yearly
+Sign Up (https://manage.exchangeratesapi.io/signup/business)
+500,000 Requests / mo
++ 0.00079992 each (/billing-overages-documentation)
+60-second Updates
+Historical Rates
+Commercial Use
+Standard Support
+HTTPS Encryption
+Source Currency Switching
+Currency Conversion
+Time-Frame Queries
+Currency-Change Queries
+Bid/Ask Spread Data
+Custom
+Need more? We offer custom Enterprise Pricing for unlimited requests, dedicated technical support, and more
+Contact Us (/contact/?quote)
+Volume Requests
+60-second Updates
+Historical Rates
+Standard Support
+Commercial Use
+HTTPS Encryption
+Source Currency Switching
+Currency Conversion
+Time-Frame Queries
+Currency-Change Queries
+Bid/Ask Spread Data
+Frequently Asked Questions
+Data & Sources
+How accurate is Exchange Rates API forex data?
+Our spot exchange rates are sourced from a very broad base of commercial sources and banks around the world, each of varying types and frequencies. The larger weighting particularly for major currencies is towards commercial sources as they more accurately reflect the trading occurring in the markets.
+In order to ensure the highest possible level of data coverage and accuracy, the Exchange Rates API system relies on a very distinct “validation and fallback” algorithm, assigning different priorities to each data source and validating each forex rate as it enters our databases. If a source fails to deliver an accurate quote, the next highest provider is queried for this particular currency pair. This enables us to sort out possible inaccuracies and provide the vast majority of all spot exchange rates with a precision of six decimal places.
+How often are exchange rates refreshed?
+Spot exchange rate data is collected within the 60-second market window. Depending on your Subscription Plan, quotes are refreshed every 60 minutes (Free & Basic Plan), 10 minutes (Professional Plan), or 60 seconds (Business Plan).
+Which currency data does the API provide?
+Depending on which API endpoint you are using for your query, the Exchange Rates API will return or calculate with the most representative forex market rate available, which is generally the "midpoint" value. The "mid" value will also be the most useful tool to your company's financial department for accounting & invoicing purposes, for financial estimates or planning, for calculator & converter applications, and for any other applications you power with Exchange Rates API forex data.
+All exchange rates are returned as currency pairs. (See API Response (/documentation#api_response) )
+Which currencies and precious metals are supported by the API?
+The Exchange Rates API provides real-time and historical data for a total of 168 world currencies and precious metals (including Gold "XAU" & Silver "XAG"). See a detailed list of all supported currencies (/currencies) .
+Plans, Pricing & Payment
+What is the difference between free and paid subscriptions?
+The Free Plan is set out to be a "trial version" without a time limit, offering some very basic API functionialities, such as making API Requests, getting regular data updates, accessing historical data, and requesting specific currencies.
+Paid Subscription Plans feature significantly higher API Request volumes and data updates as often as every 60 seconds, ensure secure datastreams via 256-bit HTTPS Encryption, include unlimited and prioritised technical support, and offer a variety of must-have API functionalities.
+Which subscription plan fits my needs?
+In order to test the API and to get an idea of the product, you can simply sign up for the Free Plan. (https://manage.exchangeratesapi.io/signup/free)
+As soon as you or your application requires more than 100 API Requests per month and more professional API functionality (e.g. for powering a currency converter, for accounting & invoicing purposes, for financial planning, estimates, shopping carts, etc.), you would be well-advised to sign up for one of the paid Subscription Plans, starting at Startup-friendly $14.99 per month, or at up to 20% Discount - if you decide to pay anually.
+Which payment methods are supported?
+Payments can be made via credit card (Visa, MasterCard, Discover, Diner's Club, American Express). Enterprise and high-volume customers may request annual bank transfer payments to be enabled. You can change your payment method at any given time in the "Payment" section of your account dashboard.
+Can I also pay yearly?
+Yes. If you choose annual billing, the total price of your subscription plan will be up to 15% lower than the total amount you would pay with a monthly payment frequency.
+See all Frequently Asked Questions (/faq)
+API Access & Features
+What is an API Request?
+Pricing is based on the number of monthly API Requests offered for each individual Subscription Plan. Accessing any type of exchangeratesapi forex data using a valid API Access Key counts as one "API Request". Unlike most other providers, any API Endpoint or feature requested (including Time-Frame & Currency-Change Queries, as well as requesting multiple currencies at once) counts as only one API Request.
+What happens if I exceed my API Request volume?
+Users will be automatically notified via e-mail and on their Account Dashboard once at least 75%, 90%, and 100% of their monthly API Request allowance has been reached.
+After reaching 100% of the allowance, overages fees will apply so we make sure you won’t experience any disruptions and your website/application will keep running smoothly. You can learn more about overages billing here. What is the API's uptime? The exchangeratesapi API's system status is closely monitored around the clock. Every effort is made to ensure the highest possible level of availability and consistency, and we are proud to have an average uptime rate of nearly 100% (99.9%), calculated based on the past 12 months. There is a public API status page available at the following URL: status.exchangeratesapi.io (/documentation#billing-overages) .
+Our Exchangerates API is free for up to 100 monthly requests. Get your API key today Get Free API Key (https://manage.exchangeratesapi.io/signup/free)
+/
+https://www.instagram.com/apilayer/
+https://www.facebook.com/APILayer/
+https://www.linkedin.com/company/apilayer/
+https://twitter.com/apilayer/
+https://www.youtube.com/channel/UCwDncja3klyMhkKXWV1zoNQ
+https://github.com/apilayer/
+https://discord.com/invite/hgjA78638n
+PRODUCT
+Platinum Support (/platinum-support)
+Pricing (/#pricing_plan)
+List Your API (https://apilayer.com/provider)
+Why choose us? (https://apilayer.com/why-choose-apilayer)
+Marketplace (https://apilayer.com/marketplace)
+DOCS & HELP
+Documentation (https://docs.apilayer.com/exchangeratesapi/docs/api-documentation?utm_source=ExchangeratesapiHomePage&utm_medium=Referral)
+Blog (https://blog.apilayer.com/)
+FAQs (https://exchangeratesapi.io/faq/)
+API Glossary (/api-glossary)
+ACCOUNT
+Log In
+Dashboard
+Forgot Password
+FREE Signup
+GET IN TOUCH
+Contact (/contact)
+Get a quote (/contact?quote)
+Address:
+Oppolzergasse 6/1/4, 1010 Wien
+[email protected] (/cdn-cgi/l/email-protection#a8cbdddbdcc7c5cddacbc9dacde8c9d8c1c4c9d1cdda86cbc7c5)
++43 316 231255 (tel:+43 316 231255)
+Imprint / Legal (https://www.ideracorp.com/legal/APILayer) | Privacy (https://www.ideracorp.com/Legal/APILayer/PrivacyStatement) | Terms (https://www.ideracorp.com/Legal/Terms-of-Use) | Cookie Preference (https://www.ideracorp.com/Legal/APILayer/PrivacyStatement) | Sitemap (https://exchangeratesapi.io/sitemap.xml)
+© 2026 Exchangerates API, an APILayer (https://apilayer.com/) product. All rights reserved.
