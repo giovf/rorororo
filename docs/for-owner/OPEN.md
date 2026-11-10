@@ -5,28 +5,18 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (6)
+## Requests (3)
 
-1. **second tax spreadsheet is ready for your Etsy shop** — ~10 min, since 2026-11-03; unblocks tax-workbook `reseller-listing-live` (8). Steps: [037](actions/037-etsy-reseller-listing.md).
-   second tax spreadsheet is ready for your Etsy shop — publish the Reseller workbook listing, ~10 min, £0.16 — docs/for-owner/actions/037-etsy-reseller-listing.md
-
-2. **Etsy shop Taxelicious is suspended** — time not stated, since 2026-11-07; unblocks tax-workbook `reseller-listing-live` (8).
-   Etsy shop Taxelicious is suspended (£2.98 bill unpaid) — update the card in Etsy billing to reopen it
-
-3. **Etsy could not charge your card for a £2.98 bill; pay it or…** — time not stated, since 2026-11-01; unblocks tax-workbook `etsy-bill-ledger-row` (3).
-   Etsy could not charge your card for a £2.98 bill; pay it or update the card in Etsy billing before 22 Nov
-
-4. **Claude Code handbook ready for Leanpub** — ~15 min, since 2026-11-05; unblocks claude-code-kit `leanpub-copies-reading` (4). Steps: [038](actions/038-leanpub-kit.md).
+1. **Claude Code handbook ready for Leanpub** — ~15 min, since 2026-11-05; unblocks claude-code-kit `leanpub-copies-reading` (4). Steps: [038](actions/038-leanpub-kit.md).
    Claude Code handbook ready for Leanpub: sign up, upload, publish, ~15 min, £0 — docs/for-owner/actions/038-leanpub-kit.md
 
-5. **GitHub says the Claude app wants new permissions; review an…** — time not stated, since 2026-11-06; nothing queued waits on it.
+2. **GitHub says the Claude app wants new permissions; review an…** — time not stated, since 2026-11-06; nothing queued waits on it.
    GitHub says the Claude app wants new permissions; review and accept or ignore in GitHub settings, Apps.
 
-6. **gankdat is ready for Clay's partner listing** — ~10 min, since 2026-11-09; nothing queued waits on it. Steps: [039](actions/039-clay-integrations-partner-form.md).
+3. **gankdat is ready for Clay's partner listing** — ~10 min, since 2026-11-09; nothing queued waits on it. Steps: [039](actions/039-clay-integrations-partner-form.md).
    gankdat is ready for Clay's partner listing — fill in Clay's partner form with our page link, ~10 min, £0 — docs/for-owner/actions/039-clay-integrations-partner-form.md
 
-## Waiting on an attended Claude session, not you (3)
+## Waiting on an attended Claude session, not you (2)
 
-- since 2026-10-04 — sign and upload ReadFocus 0.3.0 (ruler colour / height / opacity / lock-in-place controls, plus 0.2.1's Firefox for Android: `gecko_android`, phone-width popup, tap-to-place ruler) once 0.2.0 clears…
 - since 2026-10-05 — sign and upload Highlight Keep 0.4.0 (imports from Weava/Glasp .csv and Hypothesis exports, the "On for every site" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the…
 - since 2026-11-03 — versions check (docs/ops/VERSIONS.md): workflows pin Node 24 while the active LTS is 26 — an attended session tests the newer ids on one routine, updates the routine configs and the register, or reco…

@@ -2696,3 +2696,14 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 01:08 | triage | notify owner dispatched: last run started 22:06 UTC, 3 h ago
 - 2026-11-10 05:07 | triage | notify owner dispatched: last run started 02:53 UTC, 2 h ago
 - 2026-11-10 09:07 | triage | notify owner dispatched: last run started 05:06 UTC, 4 h ago
+- 2026-11-10 09:46 | build | Main green at STEP 0; owner note of 2026-11-09 answered; item hackathons meta results (claimed 09:11)
+- 2026-11-10 09:46 | build | dependabot.yml first run: still none since the 11-07 09:19 install (latest run 11-01, PR-triggered only)
+- 2026-11-10 09:46 | build | hackathons meta-global-ai-hackathon-results done: not placed (5,367 entries, no prize, no feedback)
+- 2026-11-10 09:46 | build | Winners mail: indie US$150k–25k x5, startup x5, 4 bonus prizes; US$10k community vote open to 16 Nov
+- 2026-11-10 09:46 | build | /diligence stopped: DILIGENCE_STOP set, credit window lapsed, use unread; error text now says demo closed
+- 2026-11-10 09:46 | build | /diligence stop deploys on this push's landing CI run; next-slot check: a POST /run answers the closed text
+- 2026-11-10 09:46 | build | Queued hackathons paypal-ai-hackathon-results (5, not before 2026-12-16): the §6 submission count
+- 2026-11-10 09:46 | build | Etsy shelf closed (owner): action 037 withdrawn, 3 owner lines closed, 3 tax-workbook items dropped
+- 2026-11-10 09:46 | build | LEDGER: the £0.16 Etsy listing row is contingent on a reopen; LISTING.md and RESEARCH §7 closing rows
+- 2026-11-10 09:46 | build | Queued tax-workbook reseller-workbook-payhip-listing (4, blocked on the first Payhip sale): £0 route
+- 2026-11-10 09:46 | build | ReadFocus retired (owner): venture killed, queue finished, 3 items dropped, 0.3.0 handoff closed

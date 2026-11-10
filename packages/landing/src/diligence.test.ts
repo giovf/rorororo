@@ -98,7 +98,7 @@ describe('/diligence', () => {
     );
     const evs = await events(res);
     expect(evs).toHaveLength(1);
-    expect(String(evs[0]?.message)).toContain('spending limit');
+    expect(String(evs[0]?.message)).toContain('closed and no longer runs checks');
   });
 
   it('names the model from the vars, Muse Spark on Meta Model API by default', () => {

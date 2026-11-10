@@ -1,10 +1,9 @@
 {
   "venture": "read-focus",
-  "status": "open",
+  "status": "finished",
   "needs_research": false,
-  "updated": "2026-10-30",
+  "updated": "2026-11-10",
   "researched": "2026-10-30",
-  "research_after": "2026-12-21",
   "weight": 0.5,
   "items": [
     {
@@ -44,13 +43,13 @@
     {
       "id": "cws-promo-tile",
       "title": "Chrome listing: small promo tile (440×280) — rides the owner's action-013 dashboard visit",
-      "why": "Relay cws-pages 2026-09-30: the Chrome listing already carries the searched-term title from the manifest ('ReadFocus — Focus Reading: Bold Word Starts, Reading Ruler & Dyslexia Fonts'), the Accessibility category and the screenshots — the one listing asset missing is the promo tile, which the store uses on search cards and collections and which only the dashboard can take. Low evidence that it moves installs on its own, so score 3; it rides the same 2-minute visit as the privacy URL (docs/for-owner/actions/013-repo-private.md), so the cost is the tile PNG in assets/, which Claude produces first.",
+      "why": "Relay cws-pages 2026-09-30: the Chrome listing already carries the searched-term title from the manifest ('ReadFocus — Focus Reading: Bold Word Starts, Reading Ruler & Dyslexia Fonts'), the Accessibility category and the screenshots — the one listing asset missing is the promo tile, which the store uses on search cards and collections and which only the dashboard can take. Low evidence that it moves installs on its own, so score 3; it rides the same 2-minute visit as the privacy URL (docs/for-owner/actions/013-repo-private.md), so the cost is the tile PNG in assets/, which Claude produces first. Dropped 2026-11-10 (build): owner note 2026-11-09 — ReadFocus is retired from the pipeline; venture killed, code and the live Chrome and Firefox listings kept (a later sale still pays), no further work queued.",
       "effort_days": 0.1,
       "proof": "Chrome listing shows the tile; store-metrics row moves off 0 within 30 days",
       "score": 3,
-      "status": "blocked",
-      "blocked_on": "owner: Chrome Web Store dashboard (action 013 visit)",
-      "added": "2026-09-30"
+      "status": "dropped",
+      "added": "2026-09-30",
+      "done_at": "2026-11-10"
     },
     {
       "id": "pdf-viewer",
@@ -98,13 +97,13 @@
     {
       "id": "alternativeto-listing",
       "title": "List ReadFocus as a Reader Mode / Reader View alternative on alternativeto.net and on Product Hunt's Reader Mode alternatives page",
-      "why": "alternativeto.net/software/reader-mode/ and producthunt.com/products/reader-mode/alternatives are the top two results for \"reader mode alternative\" on 2026-10-04 — the exact query our comparison page targets. Both directories take submissions only from an account, which puts the owner's identity on a service, so this waits for the owner (batch with the other account asks). Copy is ready in LISTING.md.",
+      "why": "alternativeto.net/software/reader-mode/ and producthunt.com/products/reader-mode/alternatives are the top two results for \"reader mode alternative\" on 2026-10-04 — the exact query our comparison page targets. Both directories take submissions only from an account, which puts the owner's identity on a service, so this waits for the owner (batch with the other account asks). Copy is ready in LISTING.md. Dropped 2026-11-10 (build): owner note 2026-11-09 — ReadFocus is retired from the pipeline; venture killed, code and the live Chrome and Firefox listings kept (a later sale still pays), no further work queued.",
       "effort_days": 0.1,
       "proof": "the listing appears; ≥ 1 referral from either domain in the landing analytics within 30 days",
       "score": 3,
-      "status": "blocked",
-      "blocked_on": "owner: an AlternativeTo account and a Product Hunt account (identity; batch with the Partner Center ask)",
-      "added": "2026-10-04"
+      "status": "dropped",
+      "added": "2026-10-04",
+      "done_at": "2026-11-10"
     },
     {
       "id": "firefox-android-compat",
@@ -164,13 +163,15 @@
     {
       "id": "day-90-verdict",
       "title": "Day-90 verdict per STRATEGY §7: a sale, rating, Google click, support mail or ≥ 5 users on either store keeps ReadFocus; none → killed, code and listings kept",
-      "why": "Day-30 funnel review 2026-10-30 (RESEARCH.md): Chrome 1 user and Firefox 1 average daily user after 30 days with every listing fixed and 0.2.0 live on both stores, no ratings, 0 keys sold (2 test), 0 activations, £0 in the ledger; Google shows 26 impressions a week with 0 clicks, 22 of them for the reading-ruler page at position 11–12. Every unblocked lever is built; 0.3.0 (ruler controls, spacing, tint, read aloud, Firefox for Android) has waited 26 days for an attended session to sign it. §7 kills a venture with zero sales and zero organic signal 90 days after every planned listing is live: Firefox 09-22, Chrome found live 09-30 (approved between 09-21 and 09-30), so the read is 2026-12-21 (12-29 at the latest). On the date read the Daily check rows, the key count and the ledger; any key sold, rating or review, Search Console click to a ReadFocus page, support mail, or ≥ 5 users on either store keeps the venture at weight 0.5; none of those sets venture.json to killed, keeps the code and the live listings (£0 to keep, a later sale still pays) and finishes the queue.",
+      "why": "Day-30 funnel review 2026-10-30 (RESEARCH.md): Chrome 1 user and Firefox 1 average daily user after 30 days with every listing fixed and 0.2.0 live on both stores, no ratings, 0 keys sold (2 test), 0 activations, £0 in the ledger; Google shows 26 impressions a week with 0 clicks, 22 of them for the reading-ruler page at position 11–12. Every unblocked lever is built; 0.3.0 (ruler controls, spacing, tint, read aloud, Firefox for Android) has waited 26 days for an attended session to sign it. §7 kills a venture with zero sales and zero organic signal 90 days after every planned listing is live: Firefox 09-22, Chrome found live 09-30 (approved between 09-21 and 09-30), so the read is 2026-12-21 (12-29 at the latest). On the date read the Daily check rows, the key count and the ledger; any key sold, rating or review, Search Console click to a ReadFocus page, support mail, or ≥ 5 users on either store keeps the venture at weight 0.5; none of those sets venture.json to killed, keeps the code and the live listings (£0 to keep, a later sale still pays) and finishes the queue. Dropped 2026-11-10 (build): owner note 2026-11-09 — ReadFocus is retired from the pipeline; venture killed, code and the live Chrome and Firefox listings kept (a later sale still pays), no further work queued.",
       "effort_days": 0.1,
       "proof": "A RESEARCH.md metrics row on the date with users, keys and sales, a decision line in STRATEGY §8, and venture.json status set per §7",
       "score": 3,
-      "status": "todo",
+      "status": "dropped",
       "added": "2026-10-30",
-      "not_before": "2026-12-21"
+      "not_before": "2026-12-21",
+      "done_at": "2026-11-10"
     }
-  ]
+  ],
+  "finished_reason": "owner 2026-11-09: 'readfocus can be retired from the pipeline' — venture set to killed on 2026-11-10 (STRATEGY §7: keep the code, stop the effort); the Chrome and Firefox listings stay live at £0; nothing reopens this queue short of a sale or the owner's note"
 }

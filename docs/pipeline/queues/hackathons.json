@@ -2,7 +2,7 @@
   "venture": "hackathons",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-05",
+  "updated": "2026-11-10",
   "researched": "2026-11-05",
   "research_after": "2026-11-10",
   "weight": 2,
@@ -190,14 +190,25 @@
     {
       "id": "meta-global-ai-hackathon-results",
       "title": "Meta Global AI Developer Hackathon results (winners announced ~9 Nov, bonus prizes ~10 Nov): read the winners mail / event page through inbox triage or the relay, record the outcome in RESEARCH.md Metrics; if placed, raise one short owner line for the W-8BEN and payout (and a LEDGER revenue row when paid); either way set the /diligence page's DILIGENCE_STOP once judging is over unless it is drawing real use",
-      "why": "The entry was submitted 2026-11-02 (owner, indie track); judging runs to 8 Nov. The outcome is the line's proof reading, a prize needs the owner's tax form, and the public page keeps spending Meta credit (capped at ≈ US$85) after judging unless stopped.",
+      "why": "The entry was submitted 2026-11-02 (owner, indie track); judging runs to 8 Nov. The outcome is the line's proof reading, a prize needs the owner's tax form, and the public page keeps spending Meta credit (capped at ≈ US$85) after judging unless stopped. Done 2026-11-10 (build): the host's winners mail (cerebralvalley.ai, 02:40 UTC) lists 5,367 submissions, five indie prizes (US$150k ControlAnything … US$25k Video2URDF), five startup prizes and four bonus prizes — Foundry is on none of them, no judge feedback; the US$10,000 Community Vote stays open on the gallery to 16 Nov (the triage logs that mail; a win would be recorded then). RESEARCH Metrics row written. /diligence stopped (DILIGENCE_STOP = 'judging over 2026-11-10' in packages/landing/wrangler.jsonc): the credit's 10-day window has lapsed so a run would bill the owner's card, and the page's use is unread — no reading exists for the landing Worker (worker-logs reads the gankdat service only) — so 'drawing real use' could not be shown; the page's error text now says the demo is closed. §6 count: two complete submissions, no placing, no feedback (PayPal judged 1–15 Dec); the third decides the kill.",
       "effort_days": 0.05,
       "proof": "RESEARCH.md Metrics row with the result; page stopped or kept with a reason",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-11-10",
       "added": "2026-11-02",
-      "doing_since": "2026-11-10"
+      "done_at": "2026-11-10"
+    },
+    {
+      "id": "paypal-ai-hackathon-results",
+      "title": "PayPal AI Hackathon results (judging 1–15 Dec 2026, US$67,500 pool): read the Devpost results mail through inbox triage, record the outcome in RESEARCH.md Metrics; if placed, raise one short owner line for the payout form (and a LEDGER revenue row when paid); if not placed with no feedback, apply §6 — that is the second of three complete submissions without a placing (Meta 2026-11-09 the first), so the queue stays open for one more entry before `finished`",
+      "why": "The entry was submitted 2026-10-16 (owner, action 023) with demo access added 10-29; Devpost's own mail says submissions close 12 Nov 12:00 PT and RESEARCH §2 reads judging 1–15 Dec, so the outcome mail lands mid-December. It is the line's proof reading (RESEARCH §6: a prize credited within 60 days of the first submission) and the §6 kill count after the Meta result of 2026-11-09 (no placing, no feedback).",
+      "effort_days": 0.05,
+      "proof": "RESEARCH.md Metrics row with the result; the §6 count updated",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-11-10",
+      "not_before": "2026-12-16"
     }
   ]
 }

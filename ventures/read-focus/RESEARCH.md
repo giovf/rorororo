@@ -431,3 +431,12 @@ Queue: `day-90-verdict` (not before 2026-12-21, 90 days after the last listing w
 Chrome's exact approval day is unknown, 12-29 at the latest) applies §7: a key sold, a rating or review, a Google
 click to a ReadFocus page, a support mail, or ≥ 5 users on either store keeps it; none of those sets the venture to
 `killed` and keeps the code and the listings (a live listing costs nothing and a later sale still pays).
+
+## Retired (owner, 2026-11-09)
+
+The owner's note of 2026-11-09 ("readfocus can be retired from the pipeline") ends the effort before the §7 date:
+`venture.json` is `killed` as of 2026-11-10, the queue is `finished` (the two owner-blocked listing items and the
+day-90 verdict dropped), and the pending 0.3.0 upload handoff is closed. What stays: the code, the tests in the root
+gate, and the live Chrome and Firefox listings — a listing costs nothing and a later sale still pays through the
+licence Worker. Final reading at retirement: 0 keys sold (2 test), Chrome 1 user, Firefox 0, 24–26 search impressions
+a week with 0 clicks. No routine reads this venture again unless a sale, a rating or a support mail reaches the inbox.

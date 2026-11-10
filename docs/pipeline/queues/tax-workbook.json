@@ -2,7 +2,7 @@
   "venture": "tax-workbook",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-08",
+  "updated": "2026-11-10",
   "researched": "2026-11-05",
   "weight": 2,
   "items": [
@@ -34,18 +34,19 @@
     {
       "id": "etsy-launch-price-end",
       "title": "Owner reminder: change the Etsy listing price from the £6.99 launch price to £8.99 on 1 December 2026 (one `owner:` ALERTS line and a notify line on the day; LISTING.md Status row once done)",
-      "why": "The listing says the launch price ends 30 November 2026; keeping that true is the DMCC Act 2024 rule the listing was written to (LISTING.md §5). The price is edited in Etsy's editor, which only the owner can open, so the item's whole job is a dated, plain reminder.",
+      "why": "The listing says the launch price ends 30 November 2026; keeping that true is the DMCC Act 2024 rule the listing was written to (LISTING.md §5). The price is edited in Etsy's editor, which only the owner can open, so the item's whole job is a dated, plain reminder. Dropped 2026-11-10 (build): the Etsy shop stays suspended by the owner's decision of 2026-11-09 (no more Etsy spend), so the listing is dark on 1 December and there is no price to change; if Etsy ever reinstates it, the launch-price promise must be honoured the same day the listing reappears (LISTING.md §5).",
       "effort_days": 0.05,
       "proof": "An ALERTS owner line dated 2026-12-01 exists; the owner confirms £8.99 and LISTING.md records it",
       "score": 6,
-      "status": "todo",
+      "status": "dropped",
       "not_before": "2026-12-01",
-      "added": "2026-10-29"
+      "added": "2026-10-29",
+      "done_at": "2026-11-10"
     },
     {
       "id": "etsy-day-60-read",
       "title": "Day-60 read of the Etsy listing (listed 2026-10-29): count the `Sale` rows in RESEARCH §7 and apply §6 — proof ≥ 10 sales, kill at 0 sales with ≥ 5 views a day (views from the owner's Shop Manager note), and decide the Payhip twin and own-checkout pages with the same reading. Review W45 (2026-11-08): the clock counts only the days the listing was visible — Etsy suspended the shop on 2026-11-07 (the £2.98 bill of 11-01 unpaid); the dark days from 11-07 to the reopen date (Etsy's reinstatement mail in docs/INBOX.md, the RESEARCH §7 `Reopened` row) are added to the date, and the §6 kill rule cannot apply to them (a buyer cannot fail to buy from a suspended shop); the Payhip and own-checkout shelves keep 2026-12-28, they never closed",
-      "why": "RESEARCH.md §6 sets the line's proof (first sale within 30 days, ≥ 10 within 60) and kill rule against the listing date; this is the dated reading that applies it, so the decision is made on the number rather than left open. The views come from the `Etsy views` §7 rows the monthly shelf note writes (shelf-stats-owner-note, asked 2026-11-30 and 2026-12-28); the Kindle count from the `Kindle sold` rows. Review W45 added the suspension rule: without it the read would count ten or more days on which no buyer could see the listing.",
+      "why": "RESEARCH.md §6 sets the line's proof (first sale within 30 days, ≥ 10 within 60) and kill rule against the listing date; this is the dated reading that applies it, so the decision is made on the number rather than left open. The views come from the `Etsy views` §7 rows the monthly shelf note writes (shelf-stats-owner-note, asked 2026-11-30 and 2026-12-28); the Kindle count from the `Kindle sold` rows. Review W45 added the suspension rule: without it the read would count ten or more days on which no buyer could see the listing. 2026-11-10 (build): the Etsy shelf is closed for good (owner 2026-11-09: no more Etsy spend; the suspended shop is not reopened), so this read applies §6 to the Payhip twin and the own checkout only (both listed 2026-11-02, read 2026-12-28); the Etsy `Sale` rows (0) are the shelf's final count.",
       "effort_days": 0.1,
       "proof": "A RESEARCH §7 `Day 60` row with the count and the decision (keep, reprice, or delist), and STRATEGY §8 line if the line is killed; the row states the visible-day count and the suspended span",
       "score": 8,
@@ -81,13 +82,13 @@
     {
       "id": "reseller-listing-live",
       "title": "Record the second Etsy listing going live: URL and date in LISTING.md, the £0.16 listing fee to `cost`, a Metrics row, the notify line, a day-60 read item",
-      "why": "Publishing is the owner's hands (action 037; the sandbox never reads etsy.com). When the owner's `037 done <url>` note lands this item records the listing: its URL and date in LISTING.md, the ledger's planned £0.16 row moved to cost, a RESEARCH.md §7 `Listed` row, the notify line \"UK Reseller Profit & Tax Workbook is live on Etsy: …\" and a `reseller-day-60-read` item (not_before = listing date + 60) with the §6 kill rule. If a buyer message disputes a platform rate, the first relay read of that platform's fee page (hosts to add to docs/relay/hosts.txt) is done in the same run and the Setup default corrected in a rebuild.",
+      "why": "Publishing is the owner's hands (action 037; the sandbox never reads etsy.com). When the owner's `037 done <url>` note lands this item records the listing: its URL and date in LISTING.md, the ledger's planned £0.16 row moved to cost, a RESEARCH.md §7 `Listed` row, the notify line \"UK Reseller Profit & Tax Workbook is live on Etsy: …\" and a `reseller-day-60-read` item (not_before = listing date + 60) with the §6 kill rule. If a buyer message disputes a platform rate, the first relay read of that platform's fee page (hosts to add to docs/relay/hosts.txt) is done in the same run and the Setup default corrected in a rebuild. Dropped 2026-11-10 (build): owner note 2026-11-09 — no more spending on Etsy; the shop stays suspended, so there is no Etsy listing to record. Action 037 withdrawn, the £0.16 planned ledger row made contingent on the owner ever reopening the shop. The built Reseller workbook keeps a £0 route: `reseller-workbook-payhip-listing`, raised only once the Payhip shelf shows a first sale (no owner time on a shelf with none).",
       "effort_days": 0.1,
       "proof": "LISTING.md carries the live URL and date; the ledger row is `cost`; a dated day-60 item is queued",
       "score": 8,
-      "status": "blocked",
-      "blocked_on": "owner action 037 (docs/for-owner/actions/037-etsy-reseller-listing.md): the owner publishes the listing and sends `037 done <url>`; and the shop reopened — Etsy suspended Taxelicious on 2026-11-07 over the unpaid £2.98 bill (ALERTS 2026-11-07 owner line), so the listing cannot be published until the card is fixed (review W45)",
-      "added": "2026-11-03"
+      "status": "dropped",
+      "added": "2026-11-03",
+      "done_at": "2026-11-10"
     },
     {
       "id": "april-2027-refresh",
@@ -289,13 +290,13 @@
     {
       "id": "etsy-bill-ledger-row",
       "title": "Reconcile Etsy's £2.98 bill of 2026-11-01 (payment failed mail) with the ledger: when the triage reads Etsy's 'payment received' or statement mail, write the `cost` row with what the bill was (set-up VAT, listing renewal or Offsite Ads) and note the gap in LISTING.md Status",
-      "why": "Etsy's 2026-11-01 mail bills £2.98 that the ledger does not carry (its Etsy cost rows total £14.20: the £14 set-up fee and the £0.20 listing fee), and the owner was asked to pay or update the card before 22 Nov (ALERTS 2026-11-01). The ledger rule (CLAUDE.md: every pound in and out the day it happens) needs the row the day the charge clears, and knowing what Etsy bills monthly sets the shop's running cost against the £100 cap (STRATEGY §7). Blocked on the owner's payment; the row is written from the mail, never from a read of etsy.com. Added by the 17:13 build slot's research pass (2026-11-03), merged behind the burn-down's pass of the same minute.",
+      "why": "Etsy's 2026-11-01 mail bills £2.98 that the ledger does not carry (its Etsy cost rows total £14.20: the £14 set-up fee and the £0.20 listing fee), and the owner was asked to pay or update the card before 22 Nov (ALERTS 2026-11-01). The ledger rule (CLAUDE.md: every pound in and out the day it happens) needs the row the day the charge clears, and knowing what Etsy bills monthly sets the shop's running cost against the £100 cap (STRATEGY §7). Blocked on the owner's payment; the row is written from the mail, never from a read of etsy.com. Added by the 17:13 build slot's research pass (2026-11-03), merged behind the burn-down's pass of the same minute. Dropped 2026-11-10 (build): owner note 2026-11-09 — the £2.98 bill is not being paid and the shop stays suspended. If Etsy ever collects it (a payment-received or statement mail), the inbox triage writes the `cost` row from that mail the day it lands; no item waits for it.",
       "effort_days": 0.05,
       "proof": "docs/LEDGER.md carries a dated tax-workbook `cost` row for the bill with its reason; LISTING.md Status notes what Etsy charges monthly",
       "score": 3,
-      "status": "blocked",
-      "blocked_on": "the owner paying the £2.98 Etsy bill (ALERTS 2026-11-01 owner line, due before 22 Nov) and Etsy's payment-received mail reaching the inbox triage",
-      "added": "2026-11-03"
+      "status": "dropped",
+      "added": "2026-11-03",
+      "done_at": "2026-11-10"
     },
     {
       "id": "kdp-paperback-live",
@@ -318,6 +319,17 @@
       "status": "todo",
       "not_before": "2026-12-03",
       "added": "2026-11-03"
+    },
+    {
+      "id": "reseller-workbook-payhip-listing",
+      "title": "List the built UK Reseller Profit & Tax Workbook 2026/27 on the owner's Payhip store as a second £0 listing: write PAYHIP-RESELLER.md from the LISTING.md second-listing pack (title, description, £5.99, the AI-authorship line, the same refund text), add the product to tax-workbook.html and the index card, extend /hooks/payhip to count the second product by name, then raise one ≤ 10 min owner upload (replaces the withdrawn Etsy action 037)",
+      "why": "The owner closed the Etsy shelf on 2026-11-09 (no more Etsy spend), so the second workbook built on 2026-11-03 (11 tabs, 10,159 formulas, Example £945.00) has no shelf. Payhip costs £0 to list and the store exists (https://payhip.com/gankdat, action 033). Blocked until the Payhip shelf proves it can sell at all: the first workbook has read `payhip 30d: 0 sales` every day since 2026-11-02, and the owner-time rule (2026-10-29) spends no owner minutes on a shelf with no buyer yet. The first `Sale` row from Payhip (triage, RESEARCH §7) or a `payhip 30d: ≥ 1 sale` reading unblocks it.",
+      "effort_days": 0.3,
+      "proof": "the second product live on payhip.com; its first `Sale` row within 60 days of listing",
+      "score": 4,
+      "status": "blocked",
+      "blocked_on": "the first Payhip sale of the tax workbook (a `Sale` row from the Payhip webhook in RESEARCH §7, or `payhip 30d: ≥ 1 sales` in the Daily numbers row); then the owner's ≤ 10 min upload is raised",
+      "added": "2026-11-10"
     }
   ],
   "research_after": "2026-11-09"

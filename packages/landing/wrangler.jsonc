@@ -35,7 +35,10 @@
     // Hard stop (2026-10-29): non-empty = /diligence starts no more model runs. The inbox triage sets it
     // to "meta spending alert YYYY-MM-DD" when Meta's spending-limit alert mail arrives (owner's alert,
     // action 032); the push redeploys the page. Clearing it is a deliberate commit, never automatic.
-    "DILIGENCE_STOP": "",
+    // Set 2026-11-10 (build, hackathons `meta-global-ai-hackathon-results`): judging ended 9 Nov with no
+    // placing, the US$150 credit's 10-day window has lapsed so every run would bill the owner's card, and
+    // no reading of the page's use exists (the worker-logs job reads the gankdat service only).
+    "DILIGENCE_STOP": "judging over 2026-11-10",
   },
   // Secrets (wrangler secret put): RESEND_API_KEY, OPS_INTERNAL_TOKEN; DILIGENCE_API_KEY (the landing
   // workflow sets it from the META_MODEL_API_KEY repository secret, action 032) and the optional

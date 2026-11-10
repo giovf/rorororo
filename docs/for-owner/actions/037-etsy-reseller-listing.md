@@ -1,7 +1,7 @@
 # Owner action request #037 — Etsy: publish the second listing, the Reseller workbook (~10 min)
 
 - **Date:** 2026-11-03
-- **Status:** pending
+- **Status:** **withdrawn 2026-11-10 — nothing to do.** Your note of 2026-11-09 (no more spending on Etsy) closes the Etsy shelf; the shop stays suspended and this listing is not published. The Reseller workbook is kept for a free Payhip listing once that store shows a first sale (`tax-workbook/reseller-workbook-payhip-listing`). The text below is kept as the listing pack's history.
 - **Your time:** ~10 minutes
 - **Cost:** £0.16 (Etsy's US$0.20 listing fee, charged when you publish; recorded as `planned` in `docs/LEDGER.md`)
 - **Blocks:** `tax-workbook/reseller-listing-live`
