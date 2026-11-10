@@ -159,6 +159,7 @@ rows written from Etsy's deposit mail. The day-60 kill clock (§6) starts at the
 | 2026-11-05 | Own-checkout reading wired | — | — | 0 | `own-checkout-sale-reading`: the licence Worker counts each tax-workbook order per day (paid orders, pence from Stripe's `amount_total`, a count per referrer token, £0 coupon tests apart; a revoke is a refund) and serves the 30-day summary keyless at `/v1/downloads/summary` (the Payhip summary's shape, no buyer data; 4 tests); gankdat's Daily numbers row prints `own checkout 30d: N sales (guide N), …` beside `payhip 30d:`; the inbox triage's OWN-CHECKOUT SALES rule writes the `Sale` row from Stripe's payment mail and fills its referrer from the summary through the relay (host added). The first real own-checkout sale is still 0 — the 2026-11-02 £0 test will show as `1 test` |
 | 2026-11-07 | Suspended | — | — | 0 | Etsy suspended the Taxelicious shop (mail 06:44 UTC: the £2.98 bill of 2026-11-01 unpaid, the card charge failed); the listing is invisible until the owner updates the card (ALERTS 2026-11-07 owner line). Review W45: the §6 day-60 clock counts visible days only — the dark span from 11-07 to the reinstatement mail is added to the 2026-12-28 read (`etsy-day-60-read`); the second listing (action 037) waits on the reopen; the Kindle, Payhip and own-checkout shelves are unaffected |
 | 2026-11-10 | Etsy closed | — | — | 0 | owner note 2026-11-09 (no more Etsy spend): the suspended shop stays closed, the £2.98 bill unpaid, action 037 withdrawn; Etsy's final count is 0 sales over 9 visible days (10-29 to 11-06); Payhip, own checkout and Kindle carry the line; the Reseller workbook waits for a £0 Payhip listing once that shelf shows a first sale |
+| 2026-11-10 | Research | — | — | 0 | starved-queue pass: three shelves live with 0 sales (payhip 30d 0, own checkout 30d 0, Kindle day 10), Etsy closed; no buyer mail; every open item dated or held on a first sale; no item added, research_after 12-03 (calculator day-30 read) |
 
 ## 8. Owner steps (batched, raised by the build that finishes the workbook, never before)
 
@@ -335,4 +336,10 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   bill on the owner's sittings, the price change on 12-01, the three day-30/60 reads on 12-03, 12-28 and 12-30. No item added: the next signal
   is the W45 review on 11-08 reading the first week of own-checkout rows and the Daily numbers' Payhip summary, so `research_after` is set
   to 2026-11-09; a first sale on any shelf before then reaches the queue through the inbox triage and needs no pass.
-
+- **2026-11-10 (burn-down, research pass):** starved-queue pass, nothing fetched. Evidence unchanged since the 11-05 pass and the
+  W45 review (11-08): three shelves live with 0 sales — the 11-10 Daily numbers row reads `payhip 30d: 0 sales, 0 refunds, net £0.00;
+  own checkout 30d: 0 sales (guide 0)`, Kindle is at day 10 with no KDP sale mail, Etsy is closed (owner 2026-11-09); no buyer mail in
+  the inbox since the 11-02 £0 test. Every open item is dated or held on a first sale: the reseller listing and the Payhip marketplace
+  submission wait on a `Sale` row, the paperback on the owner's KDP sitting, the three reads on 12-03 (calculator page), 12-28 and 12-30.
+  No item added — a fourth lever before the first buyer would be guessing at the reason — so `research_after` is set to 2026-12-03, the
+  calculator page's day-30 read; a first sale on any shelf before then reaches the queue through the inbox triage and needs no pass.

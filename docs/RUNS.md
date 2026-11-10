@@ -2751,3 +2751,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 20:22 | burn-down | Queued gankdat x402-journal-buyer-day-7-read (3, 11-17): one client paid 10 journal calls in a day
 - 2026-11-10 20:26 | burn-down | hackathons research: relay re-read (HF MCP org 404, Codegeist absent, lablab unchanged); no item
 - 2026-11-10 20:26 | burn-down | Cerebral Valley's November hackathons are in person or Japan-only; research_after 11-24
+- 2026-11-10 20:30 | burn-down | tax-workbook research: unchanged — 0 sales on three live shelves, every item dated or sale-held; research_after 12-03
+- 2026-11-10 20:30 | burn-down | Stopping for time: 1 spike parked, 3 research passes (gankdat 3 items + 1 lift; hackathons, tax-workbook none)
