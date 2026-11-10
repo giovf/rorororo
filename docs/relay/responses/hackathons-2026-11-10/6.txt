@@ -1,0 +1,166 @@
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://cerebralvalley.ai/#website","name":"Cerebral Valley","alternateName":"CV","url":"https://cerebralvalley.ai","publisher":{"@id":"https://cerebralvalley.ai/#organization"}}
+{"@context":"https://schema.org","@type":"ItemList","name":"AI Events","url":"https://cerebralvalley.ai/events","numberOfItems":20,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":["Event","Hackathon"],"name":"Built with Claude: Japan 2026","description":"Anthropic’s first nationwide online Japan hackathon will challenge up to 250 selected participants to build useful tools with Claude Code in just one week, drawing on personal expertise and tackling shared social challenges. Participants will receive Claude Code and API credits, with winners…","url":"https://cerebralvalley.ai/e/built-with-claude-japan2026","startDate":"2026-11-02T03:00:00.000Z","endDate":"2026-11-11T05:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode","location":{"@type":"VirtualLocation","url":"https://cerebralvalley.ai/e/built-with-claude-japan2026"},"image":"https://cerebralvalley.ai/api/e/og/built-with-claude-japan2026","organizer":[{"@type":"Person","name":"Cerebral Valley","url":"https://cerebralvalley.ai/u/cv"},{"@type":"Person","name":"Anthropic","url":"https://cerebralvalley.ai/u/anthropicai"}],"performer":[{"@type":"Person","name":"Cerebral Valley","url":"https://cerebralvalley.ai/u/cv"},{"@type":"Person","name":"Anthropic","url":"https://cerebralvalley.ai/u/anthropicai"}],"isAccessibleForFree":true,"offers":{"@type":"Offer","url":"https://cerebralvalley.ai/e/built-with-claude-japan2026","price":0,"priceCurrency":"USD","availability":"https://schema.org/InStock","validThrough":"2026-11-11T05:00:00.000Z"}}},{"@type":"ListItem","position":2,"item":{"@type":["Event","Hackathon"],"name":"Agents in Context Toronto: a MongoDB Hackathon","description":"Teams of up to four will build durable AI agents using MongoDB Atlas, Vector Search, and Agentic Memory, with product experts and Canadian AI community judges evaluating their projects. Finalists will compete for up to CAD $21,000 in cash prizes.","url":"https://cerebralvalley.ai/e/mongodb-toronto-hackathon","startDate":"2026-11-14T14:00:00.000Z","endDate":"2026-11-15T02:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Toronto, Canada","address":{"@type":"PostalAddress","addressLocality":"Toronto","addressCountry":"CA"}},"image":"https://cerebralvalley.ai/api/e/og/mongodb-toronto-hackathon","organizer":{"@type":"Person","name":"MongoDB","url":"https://cerebralvalley.ai/u/mongodb"},"performer":{"@type":"Person","name":"MongoDB","url":"https://cerebralvalley.ai/u/mongodb"},"isAccessibleForFree":true,"offers":{"@type":"Offer","url":"https://cerebralvalley.ai/e/mongodb-toronto-hackathon","price":0,"priceCurrency":"USD","availability":"https://schema.org/InStock","validThrough":"2026-11-15T02:00:00.000Z"}}},{"@type":"ListItem","position":3,"item":{"@type":"Event","name":"ICAI Summer School – June 29th & 30th, 2026","description":"AI researchers and enthusiasts will dive into cutting-edge topics like AI for science, hybrid intelligence, and neuromorphic computing through talks and workshops led by industry leaders, with plenty of networking and hands-on learning packed into two days.","url":"https://www.eventbrite.com/e/tickets-icai-summer-school-june-29th-30th-2026-1383489738049","startDate":"2026-06-29T07:00:00.000Z","endDate":"2027-06-30T16:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Other","address":{"@type":"PostalAddress","addressLocality":"Other"}}}},{"@type":"ListItem","position":4,"item":{"@type":"Event","name":"Clocked Build Challenge: Online AI Hackathon ($2,000 in prizes)","description":"Clocked’s free, three-week online build challenge will run October 21–November 10, 2026, inviting solo developers and teams to create a working app using at least one Clocked LLM API endpoint. Participants will compete for $2,000 in prizes across app-building, security, verification, and…","url":"https://luma.com/ozq1g6q9","startDate":"2026-11-05T16:00:00.000Z","endDate":"2026-11-11T04:59:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode","location":{"@type":"VirtualLocation","url":"https://luma.com/ozq1g6q9"}}},{"@type":"ListItem","position":5,"item":{"@type":"Event","name":"CIKM 2026","description":"Leading researchers in data mining and knowledge representation will gather to present cutting-edge work, with submissions opening up for both full papers and applied abstracts through late May 2026.","url":"https://cikm2026.diag.uniroma1.it/important-dates","startDate":"2026-11-06T00:00:00.000Z","endDate":"2026-11-11T00:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Other","address":{"@type":"PostalAddress","addressLocality":"Other"}}}},{"@type":"ListItem","position":6,"item":{"@type":"Event","name":"CIKM 2026 — International Conference on Information and Knowledge Management","description":"CIKM 2026, the International Conference on Information and Knowledge Management, will feature tutorials, Industry Day, and a PhD Symposium on November 7, followed by workshops and AnalytiCup on November 8. The main conference will run November 9–11, bringing together the information and knowledge…","url":"https://cikm2026.diag.uniroma1.it/important-dates","startDate":"2026-11-07T08:00:00.000Z","endDate":"2026-11-11T17:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Rome, Italy","address":{"@type":"PostalAddress","addressLocality":"Rome","addressCountry":"IT"}}}},{"@type":"ListItem","position":7,"item":{"@type":["Event","Hackathon"],"name":"Chiang Mai SEO Conference","description":"Seasoned SEO professionals and business leaders will dive into cutting-edge AI and search strategies across five days of intensive sessions, workshops, and networking hosted by industry veterans from Diggity Marketing and Smash Digital.","url":"https://chiangmaiseoconference.com","startDate":"2026-11-09T02:00:00.000Z","endDate":"2026-11-13T11:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Other","address":{"@type":"PostalAddress","addressLocality":"Other"}}}},{"@type":"ListItem","position":8,"item":{"@type":"Event","name":"NDSML Summit 2026","description":"The annual Nordic Data Science and Machine Learning Summit will bring the community together to exchange ideas and explore how to unlock the potential of traditional machine-learning models and emerging approaches.","url":"https://aiml.events/events/ndsml-summit-2026","startDate":"2026-11-10T00:00:00.000Z","endDate":"2026-11-11T23:59:59.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Stockholm, Sweden","address":{"@type":"PostalAddress","addressLocality":"Stockholm","addressCountry":"SE"}}}},{"@type":"ListItem","position":9,"item":{"@type":"Event","name":"AI Engineer Code Summit","description":"The application-only AI Engineer Code Summit will bring together leading coding-agent builders and AI engineers for three days of focused exchange, November 10–12, 2026.","url":"https://ai.engineer/code/2026","startDate":"2026-11-10T00:00:00.000Z","endDate":"2026-11-12T00:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"San Francisco, CA","address":{"@type":"PostalAddress","addressLocality":"San Francisco","addressRegion":"CA","addressCountry":"US"}}}},{"@type":"ListItem","position":10,"item":{"@type":"Event","name":"Urban Tech Summit 2026: The Generative City","description":"The sixth Urban Tech Summit will bring together innovators and technologists from Cornell Tech and the Jacobs Technion-Cornell Institute to explore cutting-edge solutions shaping cities. Expect conversations on smart infrastructure, sustainability, and urban innovation from faculty and researchers…","url":"https://www.eventbrite.com/e/tickets-1999389145757","startDate":"2026-11-10T14:00:00.000Z","endDate":"2026-11-10T22:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"New York City, NY","address":{"@type":"PostalAddress","addressLocality":"New York City","addressRegion":"NY","addressCountry":"US"}}}},{"@type":"ListItem","position":11,"item":{"@type":"Event","name":"Ghost AI","description":"Attendees will get hands-on with hunting shadow AI agents across networks, exploring agent observability, LLM pricing, and the risks of malicious MCPs.","url":"https://www.eventbrite.com/e/tickets-2003271424758","startDate":"2026-11-10T15:00:00.000Z","endDate":"2026-11-10T23:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Saint Paul, MN","address":{"@type":"PostalAddress","addressLocality":"Saint Paul","addressRegion":"MN","addressCountry":"US"}}}},{"@type":"ListItem","position":12,"item":{"@type":"Event","name":"After Tokens","description":"After Tokens will bring engineers building AI economy infrastructure together for technical talks and production-system breakdowns on metering, pricing, billing, entitlements, cost control, and moving beyond token-based models. Hosted by Stigg, the one-day conference will explore how AI usage…","url":"https://luma.com/after-tokens","startDate":"2026-11-10T16:00:00.000Z","endDate":"2026-11-11T01:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"San Francisco, CA","address":{"@type":"PostalAddress","addressLocality":"San Francisco","addressRegion":"CA","addressCountry":"US"}}}},{"@type":"ListItem","position":13,"item":{"@type":"Event","name":"Run by Apify","description":"Power users will showcase real-world builds and strategies on the Apify platform, giving businesses and builders a chance to see what's possible and grab actionable insights for their own projects.","url":"https://run.apify.com/","startDate":"2026-11-10T17:00:00.000Z","endDate":"2026-11-11T01:30:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"San Francisco, CA","address":{"@type":"PostalAddress","addressLocality":"San Francisco","addressRegion":"CA","addressCountry":"US"}}}},{"@type":"ListItem","position":14,"item":{"@type":["Event","Hackathon"],"name":"VantaCon 2026 | The AI governance event","description":"VantaCon will bring together 650+ practitioners from leading companies and leaders shaping AI trust and governance. Attendees will share proven AI-risk strategies, practical frameworks, and perspectives that will help set the agenda for trust.","url":"https://www.vanta.com/vantacon","startDate":"2026-11-10T17:00:00.000Z","endDate":"2026-11-13T02:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"San Francisco, CA","address":{"@type":"PostalAddress","addressLocality":"San Francisco","addressRegion":"CA","addressCountry":"US"}}}},{"@type":"ListItem","position":15,"item":{"@type":"Event","name":"The Future of Trust","description":"The Future of Trust will explore how AI, cybersecurity, digital identity, and governance can help maintain trust in an increasingly AI-powered world.","url":"https://www.eventbrite.co.uk/e/tickets-2002569860360","startDate":"2026-11-10T17:30:00.000Z","endDate":"2026-11-10T20:30:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"London, UK","address":{"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"}}}},{"@type":"ListItem","position":16,"item":{"@type":"Event","name":"AWS x NVIDIA Workshop for Model Customization","description":"ML engineers, data scientists, AI leaders, and infrastructure professionals will get hands-on experience fine-tuning NVIDIA Nemotron 3 with Amazon SageMaker AI, evaluating it against a baseline, and deploying it to a real-time endpoint. The workshop will cover when to prompt or fine-tune and how…","url":"https://luma.com/xjuponbi?utm_medium=cerebralvalley&utm_source=cv-events-featured","startDate":"2026-11-10T17:30:00.000Z","endDate":"2026-11-10T22:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"San Francisco, California","address":{"@type":"PostalAddress","addressLocality":"San Francisco","addressRegion":"CA","addressCountry":"US"}},"image":"https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=1920,height=1920/uploads/q6/afa82ab6-528b-4006-8834-c3b610af419d.png"}},{"@type":"ListItem","position":17,"item":{"@type":"Event","name":"AI safety for beginners - a broad overview of the field","description":"AI Safety Berlin and the AUREA community will host a beginner-friendly talk on AI safety, followed by Q&A, open discussion, networking, and a potluck dinner. Justin Shenk will share insights from his work with BlueDot Impact, alongside perspectives from a community of AI safety researchers, policy…","url":"https://luma.com/in9v16r3","startDate":"2026-11-10T17:30:00.000Z","endDate":"2026-11-10T21:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Berlin, Germany","address":{"@type":"PostalAddress","addressLocality":"Berlin","addressCountry":"DE"}}}},{"@type":"ListItem","position":18,"item":{"@type":"Event","name":"OverdriveAI Summit Main Stage","description":"OverdriveAI will put AI’s biggest questions, jobs, the economy, energy, and education, on stage in live debates, alongside hands-on community and executive training and a startup pitch-and-comedy event. Main-stage voices will include Andrew Yang, Noble Mobile’s CEO and founder who helped bring…","url":"https://luma.com/OverdriveAImainstage","startDate":"2026-11-10T18:00:00.000Z","endDate":"2026-11-10T22:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Newark, NJ","address":{"@type":"PostalAddress","addressLocality":"Newark","addressRegion":"NJ","addressCountry":"US"}}}},{"@type":"ListItem","position":19,"item":{"@type":"Event","name":"AI on Tap | London | Episode 5","description":"The monthly meetup will bring AI-curious business professionals together for candid conversations about practical AI, away from the hype. Expect real-world perspectives shared over a beer.","url":"https://www.meetup.com/ai-on-tap-uk/events/316480377","startDate":"2026-11-10T18:00:00.000Z","endDate":"2026-11-10T21:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"London, UK","address":{"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"}}}},{"@type":"ListItem","position":20,"item":{"@type":"Event","name":"AI Builders","description":"AI Builders’ upcoming meetup will bring developers, product leaders, data specialists, ML engineers, and founders together for demos on AI agents and making sense of WhatsApp groups, plus an open panel and informal networking. Speakers include Dave Bennet of Indykite and Martin O’Hanlon of Neo4j…","url":"https://lu.ma/lon-nov10","startDate":"2026-11-10T18:00:00.000Z","endDate":"2026-11-10T21:00:00.000Z","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"London, UK","address":{"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"}}}}]}
+meta description: Discover and attend the best tech & AI events, meetups, hackathons, and conferences in San Francisco, New York, and around the world. Connect with ML engineers, AI researchers, and startup founders building the future of technology.
+meta og:title: AI Events – Cerebral Valley
+meta og:description: Discover and attend the best tech & AI events, meetups, hackathons, and conferences in San Francisco, New York, and around the world. Connect with ML engineers, AI researchers, and startup founders building the future of technology.
+meta og:url: https://cerebralvalley.ai/events
+meta og:site_name: Cerebral Valley
+meta og:locale: en_US
+meta og:image: https://cerebralvalley.ai/opengraph-image-default.png?v=7bae9e22
+meta og:image:type: image/png
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:image:alt: Cerebral Valley
+meta og:type: website
+meta twitter:card: summary_large_image
+meta twitter:site: @cerebral_valley
+meta twitter:creator: @cerebral_valley
+meta twitter:title: AI Events – Cerebral Valley
+meta twitter:description: Discover and attend the best tech & AI events, meetups, hackathons, and conferences in San Francisco, New York, and around the world. Connect with ML engineers, AI researchers, and startup founders building the future of technology.
+meta twitter:image: https://cerebralvalley.ai/opengraph-image-default.png?v=7bae9e22
+meta twitter:image:alt: Cerebral Valley
+meta twitter:image:type: image/png
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+AI Events – Cerebral Valley
+Skip to Main Content (#app-main-content)
+/
+Events (/events) Search (/search) Sign In (/auth/login) Sign In (/auth/login)
+Discover
+Submit Event
+Locations
+All Locations
+SF & Bay Area
+NYC
+Boston
+Seattle
+London
+Paris
+Remote
+Event Type
+All Events
+CV Events
+Hackathons
+Events
+Submit Event
+Discover
+Featured
+Previous slide
+Next slide
+Nov 14
+Agents in Context Toronto: a MongoDB Hackathon (/e/mongodb-toronto-hackathon?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=featured)
+Sat, Nov 14 · 9:00 AM EST
+Toronto, Canada
+MongoDB’s one-day hackathon will challenge teams to build durable, production-ready agents with persistent context and adaptive guardrails using Atlas, Vector Search, and Agentic Memory tooling. Judges include senior engineering, product, and machine-learning leaders from MongoDB, Microsoft, Cohere, the Vector Institute, and other prominent technology organizations; prizes include cash and LangSmith and ElevenLabs credits.
+Nov 30
+AI Dev / New York City: Andrew Ng's AI Developer Conference (https://ai-dev.deeplearning.ai/?coupon=CVPASS&utm_source=cerebralvalley&utm_medium=referral&utm_campaign=featured)
+Mon, Nov 30 · 10:00 PM GMT+9
+Chelsea Piers
+AI Dev will feature Andrew Ng as host and DeepLearning.AI as curator, with Yann LeCun and experts from OpenAI, BlackRock, Hugging Face, Stanford, and more. Speakers will teach practical skills in frontier models, agentic coding, systems architecture, and production AI deployment.
+Nov 21
+Gemini 4 NYC Hackathon (/e/gemini-4-nyc?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=featured)
+Sat, Nov 21 · 9:00 AM EST
+New York, NY
+Teams will push Gemini 4’s capabilities in reasoning, visual coding, robotics, and world models, with Google DeepMind team members speaking and judging. The competition will award $20,000 in prizes, including $5,000 for best use of managed agents.
+Nov 12
+merge(happy_hour) → self_improving_agents @ SGLang Summit (https://luma.com/digita-uj0i?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=featured)
+Thu, Nov 12 · 6:00 PM PST
+San Francisco, CA
+DigitalOcean, NVIDIA, SGLang, and Major League Hacking will spotlight how production agents can improve through feedback, evaluations, sandboxing, and open-model routing, with lightning talks and live demos. Speakers will include Jiantao Jiao, NVIDIA Director of AI and Distinguished Scientist, and Balaji Varadarajan, DigitalOcean Inference Engineer.
+Jun 29
+ICAI Summer School – June 29th & 30th, 2026 (https://www.eventbrite.com/e/tickets-icai-summer-school-june-29th-30th-2026-1383489738049?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Mon, Jun 29 · 12:00 AM PDT LIVE
+Lab42
+AI researchers and enthusiasts will dive into cutting-edge topics like AI for science, hybrid intelligence, and neuromorphic computing through talks and workshops led by industry leaders, with plenty of networking and hands-on learning packed into two days.
+Built with Claude: Japan 2026 (/e/built-with-claude-japan2026?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Remote
+Anthropic’s first nationwide online hackathon in Japan will challenge 250 selected participants to build practical tools with Claude Code in one week, tackling personal work problems and broader social challenges. The November 2 kickoff will feature Junichiro Tsuji, Japan Developer Community Lead; Jason Bigman from Community; and Hidetoshi Tojo, Head of Japan, with up to $50,000 in Claude API credits awarded to winners.
+Clocked Build Challenge: Online AI Hackathon ($2,000 in prizes) (https://luma.com/ozq1g6q9?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+LIVE
+Online Event
+Clocked’s free, three-week online build challenge will run October 21–November 10, 2026, inviting solo developers and teams to create a working app using at least one Clocked LLM API endpoint. Participants will compete for $2,000 in prizes across app-building, security, verification, and community-choice categories, with up to 20,000 free API credits available.
+Nov 5
+CIKM 2026 (https://cikm2026.diag.uniroma1.it/important-dates?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Thu, Nov 5 · 4:00 PM PST LIVE
+Other
+Leading researchers in data mining and knowledge representation will gather to present cutting-edge work, with submissions opening up for both full papers and applied abstracts through late May 2026.
+Nov 7
+CIKM 2026 — International Conference on Information and Knowledge Management (https://cikm2026.diag.uniroma1.it/important-dates?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Sat, Nov 7 · 12:00 AM PST LIVE
+Rome, Italy
+CIKM 2026, the International Conference on Information and Knowledge Management, will feature tutorials, Industry Day, and a PhD Symposium on November 7, followed by workshops and AnalytiCup on November 8. The main conference will run November 9–11, bringing together the information and knowledge management community.
+Nov 8
+Chiang Mai SEO Conference (https://chiangmaiseoconference.com?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Sun, Nov 8 · 6:00 PM PST LIVE
+Other
+Seasoned SEO professionals and business leaders will dive into cutting-edge AI and search strategies across five days of intensive sessions, workshops, and networking hosted by industry veterans from Diggity Marketing and Smash Digital.
+Nov 9
+NDSML Summit 2026 (https://aiml.events/events/ndsml-summit-2026?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Mon, Nov 9 · 4:00 PM PST LIVE
+Stockholm, Sweden
+The annual Nordic Data Science and Machine Learning Summit will bring the community together to exchange ideas and explore how to unlock the potential of traditional machine-learning models and emerging approaches.
+Nov 9
+AI Engineer Code Summit (https://ai.engineer/code/2026?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Mon, Nov 9 · 4:00 PM PST LIVE
+San Francisco, CA
+The application-only AI Engineer Code Summit will bring together leading coding-agent builders and AI engineers for three days of focused exchange, November 10–12, 2026.
+Nov 10
+Urban Tech Summit 2026: The Generative City (https://www.eventbrite.com/e/tickets-1999389145757?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 9:00 AM EST LIVE
+Verizon Executive Education Center
+The sixth Urban Tech Summit will bring together innovators and technologists from Cornell Tech and the Jacobs Technion-Cornell Institute to explore cutting-edge solutions shaping cities. Expect conversations on smart infrastructure, sustainability, and urban innovation from faculty and researchers at the forefront of technology and design.
+Nov 10
+Ghost AI (https://www.eventbrite.com/e/tickets-2003271424758?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 7:00 AM PST LIVE
+Urban Growler Brewing Company
+Attendees will get hands-on with hunting shadow AI agents across networks, exploring agent observability, LLM pricing, and the risks of malicious MCPs.
+Nov 10
+After Tokens (https://luma.com/after-tokens?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 8:00 AM PST LIVE
+TERRA
+After Tokens will bring engineers building AI economy infrastructure together for technical talks and production-system breakdowns on metering, pricing, billing, entitlements, cost control, and moving beyond token-based models. Hosted by Stigg, the one-day conference will explore how AI usage connects to what customers actually buy.
+Nov 10
+Run by Apify (https://run.apify.com/?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 9:00 AM PST LIVE
+The Pearl
+Power users will showcase real-world builds and strategies on the Apify platform, giving businesses and builders a chance to see what's possible and grab actionable insights for their own projects.
+Nov 10
+VantaCon 2026 | The AI governance event (https://www.vanta.com/vantacon?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 9:00 AM PST LIVE
+Convene SF
+VantaCon will bring together 650+ practitioners from leading companies and leaders shaping AI trust and governance. Attendees will share proven AI-risk strategies, practical frameworks, and perspectives that will help set the agenda for trust.
+Nov 10
+The Future of Trust (https://www.eventbrite.co.uk/e/tickets-2002569860360?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 5:30 PM GMT LIVE
+41 Luke St
+The Future of Trust will explore how AI, cybersecurity, digital identity, and governance can help maintain trust in an increasingly AI-powered world.
+Nov 10
+AWS x NVIDIA Workshop for Model Customization (https://luma.com/xjuponbi?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 9:30 AM PST LIVE
+San Francisco, CA
+ML engineers, data scientists, AI leaders, and infrastructure professionals will get hands-on experience fine-tuning NVIDIA Nemotron 3 with Amazon SageMaker AI, evaluating it against a baseline, and deploying it to a real-time endpoint. The workshop will cover when to prompt or fine-tune and how customization can improve production AI agents while managing accuracy, latency, and cost.
+Nov 10
+AI safety for beginners - a broad overview of the field (https://luma.com/in9v16r3?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 9:30 AM PST LIVE
+Berlin, Germany
+AI Safety Berlin and the AUREA community will host a beginner-friendly talk on AI safety, followed by Q&A, open discussion, networking, and a potluck dinner. Justin Shenk will share insights from his work with BlueDot Impact, alongside perspectives from a community of AI safety researchers, policy specialists, and builders.
+Nov 10
+OverdriveAI Summit Main Stage (https://luma.com/OverdriveAImainstage?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 10:00 AM PST LIVE
+The Newark Museum of Art
+OverdriveAI will put AI’s biggest questions, jobs, the economy, energy, and education, on stage in live debates, alongside hands-on community and executive training and a startup pitch-and-comedy event. Main-stage voices will include Andrew Yang, Noble Mobile’s CEO and founder who helped bring automation and universal basic income into national debate, and Brian Distelburger, co-founder of Windmill and Yext.
+Nov 10
+AI on Tap | London | Episode 5 (https://www.meetup.com/ai-on-tap-uk/events/316480377?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 6:00 PM GMT LIVE
+The Albany
+The monthly meetup will bring AI-curious business professionals together for candid conversations about practical AI, away from the hype. Expect real-world perspectives shared over a beer.
+Nov 10
+AI Builders (https://lu.ma/lon-nov10?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Tue, Nov 10 · 6:00 PM GMT LIVE
+Civo Tech Junction
+AI Builders’ upcoming meetup will bring developers, product leaders, data specialists, ML engineers, and founders together for demos on AI agents and making sense of WhatsApp groups, plus an open panel and informal networking. Speakers include Dave Bennet of Indykite and Martin O’Hanlon of Neo4j, with additional demos to be announced.
+Nov 14
+Agents in Context Toronto: a MongoDB Hackathon (/e/mongodb-toronto-hackathon?utm_source=cerebralvalley&utm_medium=referral&utm_campaign=feed)
+Sat, Nov 14 · 9:00 AM EST
+Toronto, Canada
+MongoDB’s one-day hackathon will challenge teams to build durable, production-ready agents with persistent context and adaptive guardrails using Atlas, Vector Search, and Agentic Memory tooling. Judges include senior engineering, product, and machine-learning leaders from MongoDB, Microsoft, Cohere, the Vector Institute, and other prominent technology organizations; prizes include cash and LangSmith and ElevenLabs credits.

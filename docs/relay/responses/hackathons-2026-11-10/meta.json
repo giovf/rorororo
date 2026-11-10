@@ -1,0 +1,125 @@
+{
+  "request": "hackathons-2026-11-10",
+  "fetched_at": "2026-11-10T20:24:09.018Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://huggingface.co/MCP-2nd-Birthday",
+      "fetched_at": "2026-11-10T20:24:04.953Z",
+      "status": 404,
+      "elapsed_ms": 162,
+      "final_url": "https://huggingface.co/MCP-2nd-Birthday",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"cdf1-bDy2+lx+PUrpwgpJtYYCTLswjow\""
+      },
+      "file": "1.txt",
+      "bytes": 2118,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52721
+    },
+    {
+      "method": "GET",
+      "url": "https://huggingface.co/MCP-1st-Birthday",
+      "fetched_at": "2026-11-10T20:24:05.619Z",
+      "status": 200,
+      "elapsed_ms": 226,
+      "final_url": "https://huggingface.co/MCP-1st-Birthday",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"8135b-e4o9KD1b0U+CGEwZwWi6dT2H9AE\""
+      },
+      "file": "2.txt",
+      "bytes": 184137,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 529243
+    },
+    {
+      "method": "GET",
+      "url": "https://community.developer.atlassian.com/search?q=codegeist%202026",
+      "fetched_at": "2026-11-10T20:24:05.871Z",
+      "status": 200,
+      "elapsed_ms": 317,
+      "final_url": "https://community.developer.atlassian.com/search?q=codegeist%202026",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 334,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 325916
+    },
+    {
+      "method": "GET",
+      "url": "https://www.atlassian.com/codegeist",
+      "fetched_at": "2026-11-10T20:24:06.253Z",
+      "status": 404,
+      "elapsed_ms": 1780,
+      "final_url": "https://www.atlassian.com/codegeist",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "last-modified": "Tue, 10 Nov 2026 07:53:20 GMT"
+      },
+      "file": "4.txt",
+      "bytes": 9954,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 159273
+    },
+    {
+      "method": "GET",
+      "url": "https://lablab.ai/ai-hackathons",
+      "fetched_at": "2026-11-10T20:24:08.037Z",
+      "status": 200,
+      "elapsed_ms": 541,
+      "final_url": "https://lablab.build/ai-hackathons",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 14071,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1000365
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/events",
+      "fetched_at": "2026-11-10T20:24:08.646Z",
+      "status": 200,
+      "elapsed_ms": 161,
+      "final_url": "https://cerebralvalley.ai/events",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline",
+        "etag": "W/\"f96e152dc62f20af6080613a8a3e4ae3\""
+      },
+      "file": "6.txt",
+      "bytes": 30328,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 375770
+    },
+    {
+      "method": "GET",
+      "url": "https://kiro.dev/blog/",
+      "fetched_at": "2026-11-10T20:24:08.811Z",
+      "status": 200,
+      "elapsed_ms": 204,
+      "final_url": "https://kiro.dev/blog/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Tue, 10 Nov 2026 18:39:39 GMT",
+        "etag": "W/\"35f5aa251d2d5d7d11d008ef32e15d61\""
+      },
+      "file": "7.txt",
+      "bytes": 14699,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 193485
+    }
+  ]
+}
