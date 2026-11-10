@@ -2717,3 +2717,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 17:38 | build | Queued foundry watchdog-ci-failed-recheck-dispatch (3): run 458 red 16 h; nightly cron lands 10–11 UTC
 - 2026-11-10 17:38 | build | first-runs: nothing owed (the dependabot.yml installer left the 3-day window today)
 - 2026-11-10 18:07 | triage | notify owner dispatched: last run started 15:06 UTC, 3 h ago
+- 2026-11-10 19:21 | burn-down | Main green at STEP 0; no new owner notes; foundry cutoff-signal-ignores-paced-burn-down claimed 19:11
+- 2026-11-10 19:21 | burn-down | Built foundry cutoff-signal-ignores-paced-burn-down: missed burn-down lines no longer pace the next night
+- 2026-11-10 19:21 | burn-down | isCutoffSignal: cutoffSeen and the week-budget learner take stalled lines and missed non-burn-down slots only
+- 2026-11-10 19:21 | burn-down | Watchdog replays BURN.json + pacedStop at a silent 17:00 burn-down and writes `paced:` without the hint
+- 2026-11-10 19:21 | burn-down | npm run slots counts a paced 17:00 burn-down as cold; 11 tests over the three scripts, check green
+- 2026-11-10 19:21 | burn-down | Replay on live files: 11-06 17:00 paced by the real build stall; 11-07..11-10 17:00 had no gate stop
+- 2026-11-10 19:21 | burn-down | Tonight's 17:00 slot was paced by the old rule (11-09 19:04 line); its watchdog line is harmless now
+- 2026-11-10 19:21 | burn-down | first-runs: nothing owed; no Dependabot PR open

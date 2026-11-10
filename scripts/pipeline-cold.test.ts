@@ -15,6 +15,7 @@ import {
   reportStale,
   researchClaimActive,
   datedWithinDay,
+  isCutoffSignal,
   learntWeekSlots,
   weekBudgetStop,
   workingSlots,
@@ -334,6 +335,89 @@ describe('cutoffSeen', () => {
     const thu = slotsText('- 2026-10-22 09:10 | build | started');
     expect(cutoffSeen(runs(), thu, new Date('2026-10-22T17:03:00Z'))).toBeUndefined();
   });
+  it('never takes a missed burn-down slot for a cutoff: its own gate leaves the same silence (2026-11-10)', () => {
+    // 11-07..11-10: each night's `missed: burn-down` line paced the next, three nights running
+    const burn =
+      '- 2026-11-09 19:04 | watchdog | missed: burn-down slot 2026-11-09 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines';
+    const both = slotsText(
+      '- 2026-11-09 09:10 | build | started',
+      '- 2026-11-09 17:10 | build | started',
+      '- 2026-11-10 09:10 | build | started',
+      '- 2026-11-10 17:10 | build | started',
+    );
+    expect(cutoffSeen(runs(burn), both, new Date('2026-11-10T17:12:00Z'))).toBeUndefined();
+    // a stalled burn-down (marker pushed, then died) and a missed build still count
+    const stalledBurn = burn.replace(
+      'missed: burn-down slot 2026-11-09 17:00 UTC left no commit or run line by 19:00',
+      'stalled: burn-down slot 2026-11-09 17:00 UTC started 17:02, no push by 19:00',
+    );
+    expect(cutoffSeen(runs(stalledBurn), both, new Date('2026-11-10T17:12:00Z'))).toBe(
+      'watchdog 2026-11-09 19:04: stalled: burn-down slot 2026-11-09 17:00 UTC started 17:02, no push by 19:00',
+    );
+    const missedBuild = burn.replace('missed: burn-down', 'missed: build');
+    expect(cutoffSeen(runs(missedBuild), both, new Date('2026-11-10T17:12:00Z'))).toBe(
+      'watchdog 2026-11-09 19:04: missed: build slot 2026-11-09 17:00 UTC left no commit or run line by 19:00',
+    );
+    // the watchdog's own paced line is not a signal either
+    const paced =
+      '- 2026-11-09 19:04 | watchdog | paced: burn-down slot 2026-11-09 17:00 UTC stopped by the gate — usage report 2026-10-04 is stale; week budget: 30 of 30 working slots used';
+    expect(cutoffSeen(runs(paced), both, new Date('2026-11-10T17:12:00Z'))).toBeUndefined();
+  });
+});
+
+describe('isCutoffSignal', () => {
+  it('accepts a stalled line of any routine and a missed line of any routine but the burn-down', () => {
+    const line = (text: string): string => `- 2026-11-09 19:04 | watchdog | ${text}`;
+    expect(
+      isCutoffSignal(
+        line(
+          'stalled: burn-down slot 2026-11-09 17:00 UTC started 17:02, no push by 19:00; usage limit?',
+        ),
+      ),
+    ).toBe(true);
+    expect(
+      isCutoffSignal(
+        line(
+          'stalled: build slot 2026-11-09 17:00 UTC started 17:10, no push by 19:00; usage limit?',
+        ),
+      ),
+    ).toBe(true);
+    expect(
+      isCutoffSignal(
+        line(
+          'missed: build slot 2026-11-09 09:00 UTC left no commit or run line by 11:00; usage limit?',
+        ),
+      ),
+    ).toBe(true);
+    expect(
+      isCutoffSignal(
+        line(
+          'missed: exchange slot 2026-11-04 08:00 UTC left no commit or run line by 10:00; usage limit?',
+        ),
+      ),
+    ).toBe(true);
+    expect(
+      isCutoffSignal(
+        line(
+          'missed: burn-down slot 2026-11-09 17:00 UTC left no commit or run line by 19:00; usage limit?',
+        ),
+      ),
+    ).toBe(false);
+    expect(
+      isCutoffSignal(
+        line('paced: burn-down slot 2026-11-09 17:00 UTC stopped by the gate — stale report'),
+      ),
+    ).toBe(false);
+    expect(
+      isCutoffSignal(
+        line('missed: build slot 2026-11-09 09:00 UTC left no commit or run line by 11:00'),
+      ),
+    ).toBe(false);
+    expect(isCutoffSignal(line('ci-minutes: 630 billed min/7d; usage limit?'))).toBe(false);
+    expect(isCutoffSignal('- 2026-11-09 19:04 | build | missed: build slot; usage limit?')).toBe(
+      false,
+    );
+  });
 });
 
 describe('pacedStop', () => {
@@ -414,6 +498,16 @@ describe('week budget (foundry burn-weekly-slot-budget)', () => {
   it('learntWeekSlots is the working slots before the first cutoff slot of the week, or undefined', () => {
     expect(learntWeekSlots(week, reset)).toBe(6);
     expect(learntWeekSlots(week, new Date('2026-10-15T03:00:00Z'))).toBeUndefined();
+    // a missed burn-down alone never starts the cutoff (2026-11-10): the week shows no capacity limit
+    const burnOnly = runs(
+      ...week
+        .split('\n')
+        .filter(
+          (l) =>
+            l.startsWith('- ') && !l.includes('stalled: build') && !l.includes('missed: exchange'),
+        ),
+    );
+    expect(learntWeekSlots(burnOnly, reset)).toBeUndefined();
     // a line with no `slot … UTC` text counts from its own stamp
     const bare = runs(
       '- 2026-10-23 09:20 | build | Built e',

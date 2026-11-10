@@ -156,6 +156,23 @@ describe('classifySlots', () => {
     expect(byKey.get('burn-down@18')).toBe('silent');
   });
 
+  it('counts a 17:00 burn-down the watchdog reported as paced as cold: the gate, not a cutoff (2026-11-10)', () => {
+    const runs = [
+      '- 2026-10-12 19:10 | watchdog | paced: burn-down slot 2026-10-12 17:00 UTC stopped by the gate — usage report 2026-10-04 is stale; week budget: 30 of 30',
+      '',
+    ].join('\n');
+    const { from, to } = day('2026-10-12');
+    const slots = slotsIn(utilisationRoutines(), from, to, now);
+    const byKey = new Map(
+      classifySlots({ runsText: runs, slots }).map((s) => [
+        `${s.routine}@${s.at.getUTCHours()}`,
+        s.class,
+      ]),
+    );
+    expect(byKey.get('burn-down@17')).toBe('cold');
+    expect(byKey.get('burn-down@18')).toBe('silent');
+  });
+
   it('counts the metrics routine as ran when its start marker and both dispatched commits exist', () => {
     const now = at('2026-10-15T12:00:00Z');
     const metrics = ROUTINES.filter((d) => d.routine === 'metrics');

@@ -5,6 +5,8 @@ import {
   handoffNotifyLine,
   missedLine,
   missedSlots,
+  pacedReason,
+  pacedSlots,
   parseCommits,
   parseRuns,
   reportedSlots,
@@ -253,6 +255,111 @@ describe('missedSlots', () => {
     expect(missedSlots({ now, runsText, commitsText: '' })).toEqual([]);
     // The watchdog's own line is not a build trace either.
     expect(parseRuns(runsText)[0]?.kind).toBe('watchdog');
+  });
+});
+
+describe('paced burn-down slots (foundry cutoff-signal-ignores-paced-burn-down, 2026-11-10)', () => {
+  const burnText = JSON.stringify({
+    enabled: true,
+    nights: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
+    stop_if_weekly_pct_at_least: 80,
+    report: { date: '2026-10-04', total_pct: 14, fable_pct: null },
+    week_slots: 33,
+    week_reserve: 3,
+  });
+  // Friday 11-06: the 09:00 build stalled (watchdog 11:07), so the 17:00 burn-down ended at its gate
+  const runsText = [
+    '# Run log',
+    '- 2026-11-06 11:07 | watchdog | stalled: build slot 2026-11-06 09:00 UTC started 09:09, no push by 11:00; usage limit? claude.ai/code/routines',
+    '- 2026-11-06 17:40 | build | Built gankdat x',
+    '',
+  ].join('\n');
+  const slotsText =
+    '# Slot starts\n\n- 2026-11-05 17:10 | build | started\n- 2026-11-06 09:09 | build | started\n- 2026-11-06 17:10 | build | started\n';
+  const now = at('2026-11-06T19:39:00Z');
+  const slot = at('2026-11-06T17:00:00Z');
+
+  it('pacedReason replays the gate at the slot with the lines before it', () => {
+    expect(pacedReason(slot, runsText, slotsText, burnText)).toBe(
+      'usage report 2026-10-04 is stale; cutoff seen — watchdog 2026-11-06 11:07: stalled: build slot 2026-11-06 09:00 UTC started 09:09, no push by 11:00',
+    );
+    // no BURN.json, or a fresh report under the cap: no gate stop
+    expect(pacedReason(slot, runsText, slotsText, undefined)).toBeUndefined();
+    const fresh = burnText.replace('"date":"2026-10-04"', '"date":"2026-11-05"');
+    expect(pacedReason(slot, runsText, slotsText, fresh)).toBeUndefined();
+    // the switches of BURN.json stop a slot too
+    expect(
+      pacedReason(slot, runsText, slotsText, burnText.replace('"enabled":true', '"enabled":false')),
+    ).toBe('BURN.json enabled is false');
+    expect(pacedReason(slot, runsText, slotsText, burnText.replace('"fri",', ''))).toBe(
+      'fri is not in BURN.json nights',
+    );
+    const over = fresh.replace('"total_pct":14', '"total_pct":85');
+    expect(pacedReason(slot, runsText, slotsText, over)).toBe(
+      'usage 85% on 2026-11-05 is at or above 80%',
+    );
+    // lines stamped after the slot are not what the gate saw
+    const later = `${runsText}- 2026-11-06 18:30 | watchdog | stalled: build slot 2026-11-06 17:00 UTC started 17:10, no push by 18:30; usage limit? claude.ai/code/routines\n`;
+    const fridayClean = runsText.replace(/- 2026-11-06 11:07 .*\n/, '');
+    expect(pacedReason(slot, `${fridayClean}`, slotsText, burnText)).toBeUndefined();
+    expect(
+      pacedReason(slot, later.replace(/- 2026-11-06 11:07 .*\n/, ''), slotsText, burnText),
+    ).toBeUndefined();
+  });
+
+  it('reports the gated 17:00 burn-down as paced, without the usage-limit hint, and dedupes on it', () => {
+    const missed = missedSlots({
+      now,
+      runsText,
+      commitsText: '',
+      slotsText,
+      burnText,
+      lookbackHours: 4,
+    });
+    expect(missed.map((s) => slotKey(s.routine, s.at))).toEqual(['burn-down@2026-11-06 17:00']);
+    const line = missedLine(missed[0]!, now);
+    expect(
+      line.startsWith(
+        '- 2026-11-06 19:39 | watchdog | paced: burn-down slot 2026-11-06 17:00 UTC stopped by the gate — usage report 2026-10-04 is stale; cutoff seen — ',
+      ),
+    ).toBe(true);
+    expect(line.endsWith('…')).toBe(true);
+    const text = line.split('|')[2]?.trim() ?? '';
+    expect(text.length).toBe(120);
+    expect(text).not.toContain('usage limit?');
+    const withLine = `${runsText}${line}\n`;
+    expect(reportedSlots(withLine)).toEqual(
+      new Set(['build@2026-11-06 09:00', 'burn-down@2026-11-06 17:00']),
+    );
+    expect(pacedSlots(withLine)).toEqual(new Set(['burn-down@2026-11-06 17:00']));
+    expect(
+      missedSlots({
+        now,
+        runsText: withLine,
+        commitsText: '',
+        slotsText,
+        burnText,
+        lookbackHours: 4,
+      }),
+    ).toEqual([]);
+    // a build slot is never paced, and without BURN.json the burn-down stays missed
+    const noBurn = missedSlots({ now, runsText, commitsText: '', slotsText, lookbackHours: 4 });
+    expect(missedLine(noBurn[0]!, now)).toContain('missed: burn-down slot 2026-11-06 17:00 UTC');
+    expect(pacedSlots(runsText)).toEqual(new Set());
+  });
+
+  it('leaves a burn-down the gate would have let through as missed', () => {
+    const quiet = '# Run log\n- 2026-11-06 17:40 | build | Built gankdat x\n';
+    const missed = missedSlots({
+      now,
+      runsText: quiet,
+      commitsText: '',
+      slotsText,
+      burnText,
+      lookbackHours: 4,
+    });
+    expect(missed[0]?.paced).toBeUndefined();
+    expect(missedLine(missed[0]!, now)).toContain('missed: burn-down slot 2026-11-06 17:00 UTC');
   });
 });
 

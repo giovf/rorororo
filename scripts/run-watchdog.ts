@@ -4,7 +4,8 @@
 // docs/RUNS.md and/or a commit with a known subject. A run refused by the usage limit (the
 // Wednesday 2026-09-23 17:09 build) leaves nothing, and nobody knew until the owner asked.
 // This script enumerates each routine's slots, checks for that trace within the grace window,
-// and appends ONE `| watchdog | missed: …` line per silent slot to docs/RUNS.md. The
+// and appends ONE `| watchdog | missed: …` line per silent slot to docs/RUNS.md (`paced: …` for a
+// burn-down slot its own gate would have stopped, 2026-11-10 — see `pacedReason`). The
 // `notify owner` CI job turns that line into a Telegram bullet; the line itself is the
 // dedupe record, so re-runs (a 2-hourly cron since 2026-10-19; every routine push before) never report a slot twice.
 //
@@ -24,6 +25,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ALERTS_FILE, HANDOFF_DIGEST_MARK, handoffDigestLine, ledger } from './handoffs.ts';
 import { claimMarkerRoutine } from './pipeline-claim.ts';
+import { PACED_ROUTINE, type WeekBudget, lineStamp, pacedStop } from './pipeline-cold.ts';
 import { SLOTS_FILE, parseStarted, startMarkerRoutine } from './slot.ts';
 
 export interface RoutineSlot {
@@ -242,9 +244,10 @@ export function parseCommits(text: string): Trace[] {
 }
 
 const MISSED_RE =
-  /\|\s*watchdog\s*\|\s*(?:missed|stalled): (\S+) slot (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) UTC/;
+  /\|\s*watchdog\s*\|\s*(?:missed|stalled|paced): (\S+) slot (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) UTC/;
+const PACED_RE = /\|\s*watchdog\s*\|\s*paced: (\S+) slot (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) UTC/;
 
-/** Slot keys already reported in RUNS.md (the file is the dedupe record). */
+/** Slot keys already reported in RUNS.md — missed, stalled or paced (the file is the dedupe record). */
 export function reportedSlots(runsText: string): Set<string> {
   const out = new Set<string>();
   for (const line of runsText.split('\n')) {
@@ -252,6 +255,80 @@ export function reportedSlots(runsText: string): Set<string> {
     if (m) out.add(`${m[1]}@${m[2]}`);
   }
   return out;
+}
+
+/** Slot keys RUNS.md reports as `paced:` — a burn-down slot its own gate stopped, not a cutoff (2026-11-10). */
+export function pacedSlots(runsText: string): Set<string> {
+  const out = new Set<string>();
+  for (const line of runsText.split('\n')) {
+    const m = PACED_RE.exec(line);
+    if (m) out.add(`${m[1]}@${m[2]}`);
+  }
+  return out;
+}
+
+/** The `report`, `week_slots` and `week_reserve` of docs/ops/BURN.json the paced gate reads, plus its on/off switches. */
+interface BurnFile {
+  enabled?: boolean;
+  nights?: string[];
+  stop_if_weekly_pct_at_least?: number;
+  report?: { date?: string; total_pct?: number | null };
+  week_slots?: number;
+  week_reserve?: number;
+}
+
+const WEEKDAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+/**
+ * Why the burn-down's own gate would have ended the slot at `at` before any line or commit, or
+ * undefined (2026-11-10, foundry `cutoff-signal-ignores-paced-burn-down`): the gate of
+ * docs/routines/burn-down.md read on docs/ops/BURN.json (`enabled`, `nights`, the percentage) and
+ * `npm run pipeline cold`'s `pacedStop`, replayed with RUNS.md as it stood at the slot (lines
+ * stamped before it) and SLOTS.md as it stands. A slot the gate stopped is reported as `paced:`,
+ * never as `missed … usage limit?` — that hint was the next night's cutoff signal, so one real
+ * stall on 11-06 silenced the burn-down until 11-10. Only the burn-down is replayed; a slot that
+ * stamped its start marker ran past the gate and stays `stalled:`.
+ */
+export function pacedReason(
+  at: Date,
+  runsText: string,
+  slotsText: string,
+  burnText: string | undefined,
+): string | undefined {
+  if (burnText === undefined) return undefined;
+  let burn: BurnFile;
+  try {
+    burn = JSON.parse(burnText) as BurnFile;
+  } catch {
+    return undefined;
+  }
+  if (burn.enabled === false) return 'BURN.json enabled is false';
+  const night = WEEKDAY_KEYS[at.getUTCDay()] ?? '';
+  if (Array.isArray(burn.nights) && !burn.nights.includes(night))
+    return `${night} is not in BURN.json nights`;
+  const pct = burn.report?.total_pct;
+  const date = burn.report?.date;
+  const cap = burn.stop_if_weekly_pct_at_least;
+  if (
+    typeof pct === 'number' &&
+    typeof cap === 'number' &&
+    pct >= cap &&
+    typeof date === 'string' &&
+    at.getTime() - Date.parse(`${date}T00:00:00Z`) <= 7 * 86_400_000
+  )
+    return `usage ${pct}% on ${date} is at or above ${cap}%`;
+  const budget: WeekBudget = {};
+  if (typeof burn.week_slots === 'number') budget.week_slots = burn.week_slots;
+  if (typeof burn.week_reserve === 'number') budget.week_reserve = burn.week_reserve;
+  const slotStamp = stamp(at);
+  const runsThen = runsText
+    .split('\n')
+    .filter((line) => {
+      const s = lineStamp(line);
+      return s === undefined || s < slotStamp;
+    })
+    .join('\n');
+  return pacedStop(date, runsThen, slotsText, at, budget);
 }
 
 /** True when a trace of this routine exists between 5 min before the slot and its deadline. */
@@ -370,6 +447,8 @@ export interface WatchInput {
   slotsText?: string;
   /** `workflow_dispatch` runs from the Actions API; absent when the token or the API is not there. */
   dispatchRuns?: DispatchRun[];
+  /** docs/ops/BURN.json as text — the burn-down's gate, replayed before a silent burn-down slot is called missed. */
+  burnText?: string | undefined;
   defs?: RoutineSlot[];
   since?: number;
   lookbackHours?: number;
@@ -378,6 +457,8 @@ export interface WatchInput {
 export interface MissedSlot extends DueSlot {
   /** Set when the run stamped a start marker and then never committed: stalled, not missed. */
   startedAt?: Date;
+  /** Set when the routine's own gate would have ended the slot (`pacedReason`): paced, not missed. */
+  paced?: string;
 }
 
 /** Slots that have passed their deadline without a trace and are not yet in RUNS.md. */
@@ -393,15 +474,30 @@ export function missedSlots(input: WatchInput): MissedSlot[] {
         !hasDispatchedTrace(slot, traces, slotsText) &&
         dispatchRunTraces(slot, input.dispatchRuns ?? []).length === 0,
     )
-    .map((slot) => {
+    .map((slot): MissedSlot => {
       const started = startedAt(slot, slotsText);
-      return started ? { ...slot, startedAt: started } : slot;
+      if (started) return { ...slot, startedAt: started };
+      const paced =
+        slot.routine === PACED_ROUTINE
+          ? pacedReason(slot.at, input.runsText, slotsText, input.burnText)
+          : undefined;
+      return paced === undefined ? slot : { ...slot, paced };
     });
 }
 
-/** The RUNS.md line for one missed or stalled slot (≤ 120 chars of text after the routine column, burn-down included). */
+/** The run-log cap on the text after the routine column (`npm run runs`). */
+const LINE_TEXT_CAP = 120;
+
+/** `text` cut to the run-log cap with an ellipsis; the slot stamp at the front is what the readers need. */
+function capped(text: string): string {
+  return text.length <= LINE_TEXT_CAP ? text : `${text.slice(0, LINE_TEXT_CAP - 1)}…`;
+}
+
+/** The RUNS.md line for one missed, stalled or paced slot (≤ 120 chars of text after the routine column, burn-down included). */
 export function missedLine(slot: MissedSlot, now: Date): string {
   const hhmm = stamp(slot.deadline).slice(11);
+  if (slot.paced !== undefined)
+    return `- ${stamp(now)} | watchdog | ${capped(`paced: ${slot.routine} slot ${stamp(slot.at)} UTC stopped by the gate — ${slot.paced}`)}`;
   if (slot.startedAt) {
     const started = stamp(slot.startedAt).slice(11);
     return `- ${stamp(now)} | watchdog | stalled: ${slot.routine} slot ${stamp(slot.at)} UTC started ${started}, no push by ${hhmm}; usage limit? claude.ai/code/routines`;
@@ -451,7 +547,9 @@ async function main(): Promise<void> {
     process.env.GITHUB_TOKEN,
     since,
   );
-  const missed = missedSlots({ now, runsText, commitsText, slotsText, dispatchRuns });
+  const burnPath = path.join(root, 'docs', 'ops', 'BURN.json');
+  const burnText = existsSync(burnPath) ? readFileSync(burnPath, 'utf8') : undefined;
+  const missed = missedSlots({ now, runsText, commitsText, slotsText, dispatchRuns, burnText });
   if (missed.length === 0) {
     console.log(`watchdog: every slot due before ${now.toISOString()} left a trace`);
   }

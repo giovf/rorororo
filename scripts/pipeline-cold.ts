@@ -197,6 +197,30 @@ export const BUILD_SLOT_HOURS_UTC: readonly number[] = [9, 17];
 export const BUILD_MARKER_GRACE_MINUTES = 30;
 /** The watchdog's `missed:` and `stalled:` lines end with this question. */
 export const USAGE_LIMIT_HINT = 'usage limit?';
+/** The one routine whose silence is ambiguous: its own gate stops it without a line (see `isCutoffSignal`). */
+export const PACED_ROUTINE = 'burn-down';
+
+/**
+ * True when a run-log line is a usage-limit signal (2026-11-10, foundry
+ * `cutoff-signal-ignores-paced-burn-down`): a `| watchdog |` line asking `usage limit?` that is a
+ * `stalled:` of any routine (a start marker was pushed, so the session ran and died) or a `missed:`
+ * of a routine that has no paced gate (build, exchange, metrics, review, report, retro). A `missed:
+ * burn-down` line never counts: a burn-down slot ends at `pacedStop` without a line or a commit,
+ * so its silence is as often this gate as a cutoff — and reading it as a cutoff paced the next
+ * night, whose silence the watchdog reported again, for three whole nights (11-07 22:06 to 11-10).
+ * A real cutoff still shows through the 17:00 build slot (same model, same allowance, marker pushed
+ * first), which `cutoffSeen` reads on its own.
+ */
+export function isCutoffSignal(line: string): boolean {
+  const cells = line.split(' | ');
+  if (cells[1] !== 'watchdog') return false;
+  const text = (cells[2] ?? '').trim();
+  if (!text.includes(USAGE_LIMIT_HINT)) return false;
+  if (text.startsWith('stalled:')) return true;
+  if (!text.startsWith('missed:')) return false;
+  const routine = text.slice('missed:'.length).trim().split(/\s+/)[0] ?? '';
+  return routine !== PACED_ROUTINE;
+}
 
 /** `YYYY-MM-DD HH:MM` (UTC) of a date, the run-log stamp form. */
 const stampOf = (d: Date): string =>
@@ -235,11 +259,13 @@ export function burnSlotsUsed(runs: string, now: Date): number {
 
 /**
  * A usage-limit cutoff seen in the last 24 h and since the last Thursday 03:00 reset, or undefined:
- * a `| watchdog |` line asking `usage limit?` (`missed:` or `stalled:`), or a build slot (09:00 /
- * 17:00 UTC, Fable) whose start marker — the build routine's very first push — is missing from
- * docs/ops/SLOTS.md half an hour on and that left no `| build |` run-log line either. The marker
- * is read before the watchdog's 2–4 h grace: on 2026-10-21 the 09:00 build was rejected at start
- * and the burn-down could have known by 09:30 what the watchdog wrote at 12:16.
+ * a `| watchdog |` line asking `usage limit?` that `isCutoffSignal` accepts (`stalled:` of any
+ * routine, `missed:` of any routine but the burn-down — its own silence is never its own signal,
+ * 2026-11-10), or a build slot (09:00 / 17:00 UTC, Fable) whose start marker — the build routine's
+ * very first push — is missing from docs/ops/SLOTS.md half an hour on and that left no `| build |`
+ * run-log line either. The marker is read before the watchdog's 2–4 h grace: on 2026-10-21 the
+ * 09:00 build was rejected at start and the burn-down could have known by 09:30 what the watchdog
+ * wrote at 12:16.
  */
 export function cutoffSeen(runs: string, slots: string, now: Date): string | undefined {
   const floor = Math.max(now.getTime() - 86_400_000, lastWeeklyReset(now).getTime());
@@ -248,9 +274,8 @@ export function cutoffSeen(runs: string, slots: string, now: Date): string | und
   for (const line of lines) {
     const stamp = lineStamp(line);
     if (stamp === undefined || stamp < floorStamp) continue;
-    const cells = line.split(' | ');
-    if (cells[1] === 'watchdog' && (cells[2] ?? '').includes(USAGE_LIMIT_HINT))
-      return `watchdog ${stamp}: ${(cells[2] ?? '').split(';')[0]!.trim()}`;
+    if (isCutoffSignal(line))
+      return `watchdog ${stamp}: ${(line.split(' | ')[2] ?? '').split(';')[0]!.trim()}`;
   }
   // Build slots since the floor whose grace has passed, newest first.
   for (let back = 0; back <= 1; back += 1) {
@@ -349,13 +374,11 @@ export function workingSlots(runs: string, from: Date, to: Date): number {
   return hours.size;
 }
 
-/** The slot a watchdog `usage limit?` line names (`slot YYYY-MM-DD HH:MM UTC`), else the line's own stamp; undefined for any other line. */
+/** The slot a watchdog cutoff line (`isCutoffSignal`) names (`slot YYYY-MM-DD HH:MM UTC`), else the line's own stamp; undefined for any other line. */
 function cutoffAt(line: string): Date | undefined {
   const stamp = lineStamp(line);
-  if (stamp === undefined) return undefined;
-  const cells = line.split(' | ');
-  if (cells[1] !== 'watchdog' || !(cells[2] ?? '').includes(USAGE_LIMIT_HINT)) return undefined;
-  const m = /slot (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) UTC/.exec(cells[2] ?? '');
+  if (stamp === undefined || !isCutoffSignal(line)) return undefined;
+  const m = /slot (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) UTC/.exec(line.split(' | ')[2] ?? '');
   return new Date(`${(m?.[1] ?? stamp).replace(' ', 'T')}:00Z`);
 }
 

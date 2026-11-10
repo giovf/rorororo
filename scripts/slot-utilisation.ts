@@ -24,7 +24,9 @@
 //   cold         a burn-down hour with no line after a `Stopping:` (starved) / `Nothing buildable` /
 //                pre-research line earlier the same night — `npm run pipeline cold` would have
 //                said `starved-and-cooled`, which ends the run before any line is written (a
-//                `Stopping for time` line is the opposite: the next fire takes the named item)
+//                `Stopping for time` line is the opposite: the next fire takes the named item);
+//                or a 17:00 burn-down the watchdog reported as `paced:` — its own gate stopped it
+//                (2026-11-10, foundry `cutoff-signal-ignores-paced-burn-down`)
 //   silent       a burn-down hour after 17:00 with no line and no such signal — the usage limit
 //                or a refused session, which the watchdog does not watch on purpose
 //   missed       a watchdog `missed:` / `stalled:` line, or no trace on a watched slot
@@ -54,6 +56,7 @@ import {
   SINCE,
   type Trace,
   dispatchedTraces,
+  pacedSlots,
   parseCommits,
   parseRuns,
   reportedSlots,
@@ -234,12 +237,14 @@ export function classifySlots(input: ClassifyInput): ClassifiedSlot[] {
   const runs = parseRuns(input.runsText);
   const traces = [...runs, ...parseCommits(input.commitsText ?? '')];
   const reported = reportedSlots(input.runsText);
+  const paced = pacedSlots(input.runsText);
   const bySlot = tracesBySlot(input.slots, traces);
   return input.slots.map((slot) => {
     const own = bySlot.get(slot) ?? [];
     if (own.length > 0) return { ...slot, class: classOfTraces(own), traces: own };
     const dispatched = dispatchedTraces(slot, traces, input.slotsText ?? '');
     if (dispatched.length > 0) return { ...slot, class: 'ran', traces: dispatched };
+    if (paced.has(slotKey(slot.routine, slot.at))) return { ...slot, class: 'cold', traces: own };
     if (reported.has(slotKey(slot.routine, slot.at)))
       return { ...slot, class: 'missed', traces: own };
     if (slot.routine === 'burn-down' && slot.at.getUTCHours() !== 17) {
