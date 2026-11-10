@@ -2733,3 +2733,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 19:29 | burn-down | ci-failed-runs: recheckDue + dispatchRecheck (check.yml only, ref main); line says recheck dispatched
 - 2026-11-10 19:29 | burn-down | docs/ci/notify-owner.yml: actions write for the dispatch; SCHEDULERS notes check.yml's cron lands 10–11 UTC
 - 2026-11-10 19:29 | burn-down | Stopping for time: 3 items done; next is research for the starved queues or the exchange pre-research
+- 2026-11-10 19:34 | burn-down | claude-code-kit research: unchanged, every item waits on the owner's Leanpub step; research_after 11-17

@@ -145,3 +145,10 @@ says plainly that the reader needs a Claude subscription, a terminal and judgeme
   renders as a shell). Parked because the seller terms require identity verification at onboarding and the owner-time
   rule bars a new identity check for a score-4 line. Trigger: Leanpub day-60 ≥ 10 copies and the owner volunteering
   the ID check in the same batched request → the listing from the Leanpub pack (≤ 0.2 day).
+- **2026-11-10 19:35 (burn-down, research pass):** no change — no items added. The product is built (manuscript, Extras zip,
+  listing pack, 11-05) and every open item waits on the owner's Leanpub step (action 038, open since 11-05, the `leanpub done
+  <url>` note): `leanpub-listing-live` then `leanpub-copies-reading`. Both second shelves were read on 11-07 and parked on
+  dated triggers (KDP twin and Whop: the Leanpub day-60 read at ≥ 10 copies). No mail, metrics row or owner note names this
+  venture since; the 11-08 review kept its weight at 2 for the same reason. The next signal is the owner's note, which the
+  build routine answers in place and which unblocks the listing item without a research pass; `research_after` is set to
+  2026-11-17 so the nightly fallback does not reread an unchanged shelf before then.
