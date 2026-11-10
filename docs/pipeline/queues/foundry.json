@@ -1428,8 +1428,9 @@
       "effort_days": 0.1,
       "proof": "the next `ci-failed … no later run` line for check.yml is followed within 2 h by a `workflow_dispatch` run of check.yml and a watchdog line naming it; SCHEDULERS.md states the observed schedule time",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-10"
+      "status": "doing",
+      "added": "2026-11-10",
+      "doing_since": "2026-11-10"
     }
   ]
 }
