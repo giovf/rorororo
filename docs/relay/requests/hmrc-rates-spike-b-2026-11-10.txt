@@ -1,0 +1,5 @@
+GET https://allratestoday.com/pricing/
+GET https://allratestoday.com/tax-authority-rates-api/hmrc/
+GET https://allratestoday.com/api/open/central-bank/hmrc?source=GBP&target=USD
+GET https://allratestoday.com/docs/
+GET https://allratestoday.com/terms/
