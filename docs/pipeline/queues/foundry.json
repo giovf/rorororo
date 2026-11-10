@@ -1406,8 +1406,9 @@
       "effort_days": 0.2,
       "proof": "pipeline-cold.test.ts: a `missed: burn-down … usage limit?` line alone leaves cutoffSeen undefined, a `stalled:` line or a missed build slot still counts; run-watchdog.test.ts: a paced 17:00 burn-down gets `paced:`; the first night after the fix shows `| burn-down |` lines at 17:00 or 18:00",
       "score": 8,
-      "status": "todo",
-      "added": "2026-11-10"
+      "status": "doing",
+      "added": "2026-11-10",
+      "doing_since": "2026-11-10"
     },
     {
       "id": "first-runs-event-only-workflow-waiver",
