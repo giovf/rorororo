@@ -297,3 +297,4 @@
 - 2026-11-09 16:00 | notification | cerebralvalley.ai | New Notification for Meta Global AI Developer Hackathon | host blast: final-round judging and winners livestream today 12:00 PM ET; no action in mail | logged
 - 2026-11-09 17:00 | notification | cerebralvalley.ai | New Notification for Meta Global AI Developer Hackathon | host blast: awards livestream starting now; no action ours | logged
 - 2026-11-09 17:03 | notification | devpost.com | 3 days left: submissions close Thursday at noon PST - PayPal AI Hackathon | Devpost reminder blast; hackathon entries are submitted by the owner, no new fact | logged
+- 2026-11-10 02:40 | notification | cerebralvalley.ai | New Notification for Meta Global AI Developer Hackathon | host blast: winners announced (none ours listed); community vote winner Nov 16; no action | logged
