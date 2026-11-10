@@ -299,3 +299,4 @@
 - 2026-11-09 17:03 | notification | devpost.com | 3 days left: submissions close Thursday at noon PST - PayPal AI Hackathon | Devpost reminder blast; hackathon entries are submitted by the owner, no new fact | logged
 - 2026-11-10 02:40 | notification | cerebralvalley.ai | New Notification for Meta Global AI Developer Hackathon | host blast: winners announced (none ours listed); community vote winner Nov 16; no action | logged
 - 2026-11-10 11:00 | store | notify.cloudflare.com | [Confirmation] Purchase confirmed | Cloudflare confirms a $5.00 card purchase on the 10th = the Workers Paid baseline in LEDGER.md (no overage); invoice follows within 24h | logged (matches ledger baseline)
+- 2026-11-10 11:57 | store | notify.cloudflare.com | Your invoice is available (IN-88166016) | Cloudflare invoice $5.00 due 10 Nov = Workers Paid baseline in LEDGER.md; matches the 11:00 purchase confirmation | logged (matches ledger baseline)
