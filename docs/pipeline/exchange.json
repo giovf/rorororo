@@ -792,6 +792,16 @@
       "added": "2026-11-08",
       "updated": "2026-11-08",
       "venture": "gankdat"
+    },
+    {
+      "id": "hmrc-exchange-rates-lookup",
+      "title": "HMRC monthly customs exchange rates (trade-tariff.service.gov.uk, OGL v3) as a gankdat lookup — rate by currency and month since 2021, a latest call, the key, x402 and MCP lanes and an Apify actor",
+      "status": "parked",
+      "why": "Spike 2026-11-10 (burn-down, docs/exchange/spikes/hmrc-exchange-rates-lookup.md, two relay rounds plus registry reads): the licence is OGL v3 (footer of every page) and the files are predictable (monthly_xml_YYYY-M.xml under /api/v2/exchange_rates/files/, a period-list JSON with publication dates, 163 rows a month, history from 2021 on the service), so the build is 0.4 day — but AllRatesToday has sold exactly this series since July 2026 with the latest table free and keyless (/api/open/central-bank/hmrc), history from €4.99/mo, an MCP server, an npm client (26 versions), Sheets formulas and a Business Central extension; Frankfurter (free, keyless, any base, open source) and ExchangeRate-API's open access give a GBP base away; Open Exchange Rates sells all bases at US$12/mo; 15 GitHub wrappers exist and one charges (the same rival); and no gankdat buyer, inbox mail or owner note has asked for currency conversion beside a register read. A gankdat copy would be the eighth source of the same 160 numbers, priced above two free ones — scored ≈ 1 after the rival discount.",
+      "trigger": "A paying gankdat key or an inbox mail asks for GBP conversion beside a register read; or a gankdat trade/customs dataset lands whose rows need the monthly rate; or AllRatesToday's keyless HMRC endpoint goes paid — then gankdat's queue gets `hmrc-exchange-rates` (0.4 day, the shape in the spike's §4).",
+      "added": "2026-11-10",
+      "spiked": "2026-11-10",
+      "updated": "2026-11-10"
     }
   ]
 }

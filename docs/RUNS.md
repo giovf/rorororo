@@ -2737,3 +2737,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 19:36 | burn-down | Exchange pre-research: HMRC monthly exchange rates as a gankdat lookup — spike seeded (3); 1 spike was open
 - 2026-11-10 19:36 | burn-down | new-ventures research: spike-hmrc-exchange-rates-lookup added (OGL default, Open Exchange Rates US$12/mo)
 - 2026-11-10 19:36 | burn-down | Stopping for time: 3 items built, 2 research passes, 1 spike seeded; gankdat, hackathons, tax-workbook research next
+- 2026-11-10 20:17 | burn-down | Main green at STEP 0; no new owner notes; new-ventures spike-hmrc-exchange-rates-lookup claimed 20:11
+- 2026-11-10 20:17 | burn-down | Spike spike-hmrc-exchange-rates-lookup done: PARK — AllRatesToday sells the HMRC series, latest table free
+- 2026-11-10 20:17 | burn-down | Relay 2 rounds: licence OGL v3 on every page, files predictable (monthly_xml_YYYY-M.xml), 163 rows/month
+- 2026-11-10 20:17 | burn-down | Rivals: OER US$12, APILayer trio US$14.99, ExchangeRate-API US$10, Frankfurter and AllRates free keyless
+- 2026-11-10 20:17 | burn-down | Wrappers: 15 GitHub repos (max 15 stars), 2 npm packages (the rival's), 0 PyPI; idea parked with a trigger
+- 2026-11-10 20:17 | burn-down | Pre-research lesson: search npm/GitHub for the series' name before seeding a dataset spike
+- 2026-11-10 20:18 | burn-down | notify-owner.yml first run: success (run 572, dispatched 20:16 after the 19:33 install, 1 min)
