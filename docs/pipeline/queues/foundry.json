@@ -2,10 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-07",
-  "researched": "2026-11-05",
-  "researching_since": "2026-11-10T17:09Z",
-  "researching_by": "build",
+  "updated": "2026-11-10",
+  "researched": "2026-11-10",
   "items": [
     {
       "id": "fetch-relay",
@@ -1400,6 +1398,36 @@
       "status": "done",
       "doing_since": "2026-11-07",
       "done_at": "2026-11-07"
+    },
+    {
+      "id": "cutoff-signal-ignores-paced-burn-down",
+      "title": "A watchdog `missed: burn-down` line is no longer a usage-limit signal: `cutoffSeen` (and the week-budget learner) read only `stalled:` lines and missed build/exchange slots, and the watchdog writes `paced:` instead of `missed … usage limit?` for a burn-down slot the stale-report gate would have stopped",
+      "why": "Research 2026-11-10 (build): the burn-down has been silent since 11-07 22:06 for a reason of its own making. The gate (`npm run pipeline cold`, burn-pace-stale-usage-report 10-24) stops a night when a watchdog line of the last 24 h asks `usage limit?`; a paced stop pushes nothing; at ~19:00 the watchdog sees no burn-down commit or line and writes `missed: burn-down slot … usage limit?`; that line is tomorrow's signal. Traced: one real stall (the 11-06 09:09 build, watchdog 11:07) paced the 11-06 17:00 slot → `missed` 19:39 → 11-07 paced until the line aged out at 19:39 (the 20:00 and 21:00 slots ran, 4 items) → `missed` 22:06 → 11-08 every hour paced → `missed` 19:02 → 11-09 paced → `missed` 19:04 → 11-10 02:06 session ran 61 s and left no line; `cold` at 17:12 today still prints that 11-09 line. Replayed with scripts/pipeline-cold.ts at the start of each of those slots with the `missed: burn-down` lines removed: `pacedStop` is undefined every time — no week budget, no night cap, nothing else stopped them. Cost: 3 nights × 10 hourly slots plus two hours of 11-07, and tonight until the Thursday 03:00 floor; the W45 retro §3.1 ('usage limit, third week') and the 11-08 review's Built % read these as allowance exhaustion. Fix in `cutoffSeen` and `learntWeekSlots` (one predicate, `isCutoffSignal(line)`: a `stalled:` line of any routine, or a `missed:` line of a routine that has no paced gate — build, exchange, metrics, review, report, retro — never `missed: burn-down`, whose silence is ambiguous), and in scripts/run-watchdog.ts: before writing the burn-down line, evaluate `pacedStop` at the slot's time with the files as they stand; when it names a reason write `paced: burn-down slot <stamp> UTC stopped by the gate — <reason>` without the hint, so the slot table and the retro count it as paced, not missed. A real cut-off still shows: the 17:00 build slot (same model, same allowance, marker pushed first) leaves no marker, which `cutoffSeen` already reads. Evidence 3 (three whole nights, replayed) × reach 3 (every burn-down slot after any single miss, until the next Thursday) ÷ 0.2 day = 45, discounted to 8: capacity, not income.",
+      "effort_days": 0.2,
+      "proof": "pipeline-cold.test.ts: a `missed: burn-down … usage limit?` line alone leaves cutoffSeen undefined, a `stalled:` line or a missed build slot still counts; run-watchdog.test.ts: a paced 17:00 burn-down gets `paced:`; the first night after the fix shows `| burn-down |` lines at 17:00 or 18:00",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-11-10"
+    },
+    {
+      "id": "first-runs-event-only-workflow-waiver",
+      "title": "`npm run first-runs` settles a workflow that has no `workflow_dispatch`, `push` or `schedule` trigger with one `<name> first run: waits for <event>` line instead of listing it every slot for three days and then dropping it unrecorded",
+      "why": "Research 2026-11-10 (build): dependabot.yml was installed 11-07 09:19 with a Dependabot pull request as its only trigger; four slots (11-07 21:18, 11-09 09:33, 11-09 17:40, 11-10 09:46) each read its runs through the Actions API and wrote `dependabot.yml first run: still none since the 11-07 09:19 install` — a line the check does not accept as a first run — and today `first-runs` prints `nothing owed` because the installer left its 3-day `git log --since` window, so the first run will never be recorded and the check ended silently. Fix: for a workflow whose triggers are all event-driven, print `waits for <event>` once; the slot writes `<name> first run: waits for <event>` (accepted by scripts/runs-check.ts as a first-run line, counted as settled by first-runs); the inbox triage, which already logs Dependabot PR mails (PR #10, 11-01), records the real first run from the `Run failed:`/PR mail; and an owed workflow older than 3 days with no line of either shape is printed as `overdue` rather than forgotten. Evidence 1 (four repeated readings, one check lost) × reach 2 (every event-only workflow) ÷ 0.1 day = 20, discounted to 3: a reading, no income.",
+      "effort_days": 0.1,
+      "proof": "first-runs.test.ts: an event-only workflow is listed once as `waits for pull_request` and is settled by that line; an owed workflow past 3 days prints `overdue`; runs check accepts the `waits for` shape",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-10"
+    },
+    {
+      "id": "watchdog-ci-failed-recheck-dispatch",
+      "title": "When the watchdog writes `ci-failed: <workflow> … no later run` for a dispatchable gate workflow and a later commit has reached `main`, it dispatches that workflow once (`ref: main`) so a red gate is re-tested within two hours instead of waiting for the next gate-path push",
+      "why": "Research 2026-11-10 (build): check.yml run 458 failed 11-06 17:19 (`npm run runs` at a depth-1 checkout); every push that night was docs-only or `[skip ci]`, which check.yml's path filter skips, and the nightly `15 3 * * *` cron did not fire in the window — the Actions list shows its scheduled runs landing 10:14–11:37 UTC (11-05 10:58, 11-06 10:56, 11-07 10:14, 11-08 10:25, 11-09 11:37, 11-10 11:15), seven to eight hours after the cron line. So `main` showed red for 16 h until the 11-07 09:19 build pushed scripts, with the watchdog's 18:06 line saying `no later run` all night; the W45 retro §4 names the gap ('cannot tell red-with-no-rerun from healed'). The fix is one step in the notify-owner watchdog: for a `ci-failed` line whose workflow has `workflow_dispatch` and is a gate (check, dependabot gate — never gankdat-publish, mirror-gankdat, demo-video or anything that spends, publishes or submits), when `main`'s head is newer than the failed run's commit and no run started after it, dispatch it once with the token it already holds; the next pass records `later run M ok` or leaves the line for the ci-<workflow>-failing item. Also note the cron drift in docs/SCHEDULERS.md (the nightly gate runs mid-morning, not 03:15). Evidence 1 (one 16-hour red) × reach 2 (every red gate on a docs-only night) ÷ 0.1 day = 20, discounted to 3: operation cost, no income.",
+      "effort_days": 0.1,
+      "proof": "the next `ci-failed … no later run` line for check.yml is followed within 2 h by a `workflow_dispatch` run of check.yml and a watchdog line naming it; SCHEDULERS.md states the observed schedule time",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-10"
     }
   ]
 }
