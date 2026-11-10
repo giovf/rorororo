@@ -2708,3 +2708,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 09:46 | build | Queued tax-workbook reseller-workbook-payhip-listing (4, blocked on the first Payhip sale): £0 route
 - 2026-11-10 09:46 | build | ReadFocus retired (owner): venture killed, queue finished, 3 items dropped, 0.3.0 handoff closed
 - 2026-11-10 12:06 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
+- 2026-11-10 15:06 | triage | notify owner dispatched: last run started 12:55 UTC, 2 h 11 min ago
