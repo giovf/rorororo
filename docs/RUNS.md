@@ -2729,3 +2729,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 19:34 | burn-down | Built foundry first-runs-event-only-workflow-waiver: first-runs prints waits for <event> and overdue
 - 2026-11-10 19:34 | burn-down | first-runs reads each owed workflow's on: triggers; 14-day window; dependabot.yml settled with its line
 - 2026-11-10 19:34 | burn-down | Build, burn-down and triage prompts: write the waits-for line, the triage records the run from mail
+- 2026-11-10 19:29 | burn-down | Built foundry watchdog-ci-failed-recheck-dispatch: a red check.yml with no later run is re-run once
+- 2026-11-10 19:29 | burn-down | ci-failed-runs: recheckDue + dispatchRecheck (check.yml only, ref main); line says recheck dispatched
+- 2026-11-10 19:29 | burn-down | docs/ci/notify-owner.yml: actions write for the dispatch; SCHEDULERS notes check.yml's cron lands 10–11 UTC
+- 2026-11-10 19:29 | burn-down | Stopping for time: 3 items done; next is research for the starved queues or the exchange pre-research

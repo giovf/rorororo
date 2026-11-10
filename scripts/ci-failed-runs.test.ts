@@ -3,6 +3,7 @@ import {
   ciFailedRuns,
   failedLine,
   itemId,
+  recheckDue,
   reportedWeek,
   type FailedRun,
 } from './ci-failed-runs.js';
@@ -34,6 +35,41 @@ const queue = (): Queue => ({
   items: [],
 });
 const log = (...lines: string[]): string => `# Run log\n\n${lines.join('\n')}\n`;
+
+describe('recheckDue (foundry watchdog-ci-failed-recheck-dispatch, 2026-11-10)', () => {
+  const check: FailedRun = {
+    workflow: 'check.yml',
+    name: 'check',
+    runNumber: 458,
+    createdAt: '2026-11-06T17:19:00Z',
+    url: 'https://github.com/giovf/rorororo/actions/runs/1',
+    failingStep: 'npm run runs',
+    headSha: 'aaa111',
+  };
+  it('is due for the plain gate with no later run once main has moved on', () => {
+    expect(recheckDue(check, 'bbb222')).toBe(true);
+    expect(recheckDue(check, 'aaa111')).toBe(false);
+    expect(recheckDue(check, undefined)).toBe(false);
+    expect(recheckDue({ ...check, later: { runNumber: 459, conclusion: null } }, 'bbb222')).toBe(
+      false,
+    );
+    expect(recheckDue({ ...relay, headSha: 'aaa111' }, 'bbb222')).toBe(false);
+    const publishNoLater: FailedRun = { ...publish, headSha: 'aaa111' };
+    delete publishNoLater.later;
+    expect(recheckDue(publishNoLater, 'bbb222')).toBe(false);
+  });
+  it('the line says the recheck was dispatched, within the cap', () => {
+    const line = failedLine(
+      { ...check, recheckDispatched: true },
+      new Date('2026-11-06T18:06:00Z'),
+    );
+    expect(line).toBe(
+      '- 2026-11-06 18:06 | watchdog | ci-failed: check.yml run 458 17:19 — step npm run runs; no later run, recheck dispatched',
+    );
+    expect(line.split('|')[2]!.trim().length).toBeLessThanOrEqual(120);
+    expect(failedLine(check, new Date('2026-11-06T18:06:00Z'))).toContain('; no later run');
+  });
+});
 
 describe('failedLine', () => {
   it('names the workflow, run, time, step and the repair, within the 120-char cap', () => {

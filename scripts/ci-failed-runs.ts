@@ -31,6 +31,14 @@ export const REPEAT_DAYS = 7;
 export const SCORE = 5;
 export const EFFORT_DAYS = 0.2;
 export const LINE_PREFIX = 'ci-failed: ';
+/**
+ * Gate workflows the watchdog re-runs once on `main` when a failed run has no later run and main has
+ * moved on (2026-11-10, foundry `watchdog-ci-failed-recheck-dispatch`): check.yml run 458 failed
+ * 11-06 17:19 and every push that night was docs-only or carried the skip-ci marker, which its path
+ * filter skips, while its nightly cron lands 10–11 UTC, so `main` read red for 16 h. Only the plain
+ * gate: gankdat.yml deploys, gankdat-publish / mirror-gankdat / demo-video spend or publish.
+ */
+export const RECHECK_WORKFLOWS: readonly string[] = ['check.yml'];
 const STEP_MAX = 40;
 const RUNS_CAP = 120;
 
@@ -47,6 +55,24 @@ export interface FailedRun {
   failingStep?: string;
   /** The workflow's next run after this one, when any. */
   later?: { runNumber: number; conclusion: string | null };
+  /** The commit the run tested. */
+  headSha?: string;
+  /** Set by main once a `workflow_dispatch` recheck of the workflow on `main` was accepted. */
+  recheckDispatched?: boolean;
+}
+
+/**
+ * True when the watchdog should dispatch the workflow once: a RECHECK_WORKFLOWS gate, no later run,
+ * and `main`'s head (`headSha`) is a different commit from the one that failed.
+ */
+export function recheckDue(run: FailedRun, headSha: string | undefined): boolean {
+  return (
+    RECHECK_WORKFLOWS.includes(run.workflow) &&
+    run.later === undefined &&
+    run.headSha !== undefined &&
+    headSha !== undefined &&
+    run.headSha !== headSha
+  );
 }
 export interface FailedInput {
   runs: FailedRun[];
@@ -94,7 +120,8 @@ function stepName(run: FailedRun, max: number): string {
 }
 
 function repair(run: FailedRun): string {
-  if (!run.later) return 'no later run';
+  if (!run.later)
+    return run.recheckDispatched ? 'no later run, recheck dispatched' : 'no later run';
   if (run.later.conclusion === 'success') return `later run ${run.later.runNumber} ok`;
   return `later run ${run.later.runNumber} ${run.later.conclusion ?? 'running'}`;
 }
@@ -201,6 +228,7 @@ interface GhRun {
   conclusion: string | null;
   created_at: string;
   html_url: string;
+  head_sha?: string;
 }
 interface GhJob {
   conclusion: string | null;
@@ -242,6 +270,7 @@ export async function readGitHub(
       runNumber: r.run_number,
       createdAt: r.created_at,
       url: r.html_url,
+      ...(r.head_sha === undefined ? {} : { headSha: r.head_sha }),
     };
     const jobs = await gh<{ jobs?: GhJob[] }>(`${api}/actions/runs/${r.id}/jobs`, token);
     const failed = jobs?.jobs?.find((j) => j.conclusion === 'failure');
@@ -268,6 +297,29 @@ export async function readGitHub(
   return out;
 }
 
+/** POST a `workflow_dispatch` of `workflow` on `main`; true when GitHub accepted it (204). */
+export async function dispatchRecheck(
+  repo: string,
+  token: string,
+  workflow: string,
+): Promise<boolean> {
+  const res = await fetch(
+    `https://api.github.com/repos/${repo}/actions/workflows/${workflow}/dispatches`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        accept: 'application/vnd.github+json',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ ref: 'main' }),
+    },
+  );
+  if (!res.ok)
+    console.log(`ci-failed-runs: recheck dispatch of ${workflow} answered ${res.status}`);
+  return res.ok;
+}
+
 async function main(): Promise<void> {
   const token = process.env.GITHUB_TOKEN;
   if (!token) {
@@ -275,13 +327,24 @@ async function main(): Promise<void> {
     return;
   }
   const now = new Date();
-  const runs = await readGitHub(process.env.GITHUB_REPOSITORY ?? 'giovf/rorororo', token, now);
+  const repo = process.env.GITHUB_REPOSITORY ?? 'giovf/rorororo';
+  const runs = await readGitHub(repo, token, now);
   if (!runs) return;
   const root = path.resolve(import.meta.dirname, '..');
   const runsPath = path.join(root, RUNS_FILE);
   const queuePath = path.join(root, QUEUE_FILE);
   const runsText = readFileSync(runsPath, 'utf8');
   const queue = JSON.parse(readFileSync(queuePath, 'utf8')) as Queue;
+  // Recheck (2026-11-10): one dispatch per gate workflow whose fresh failed run has no later run while
+  // main has moved on; the line below records it, so the next pass never dispatches the same run again.
+  const headSha = process.env.GITHUB_SHA;
+  const dispatched = new Set<string>();
+  for (const r of runs) {
+    if (!recheckDue(r, headSha) || alreadyReported(runsText, r)) continue;
+    if (!dispatched.has(r.workflow) && !(await dispatchRecheck(repo, token, r.workflow))) continue;
+    dispatched.add(r.workflow);
+    r.recheckDispatched = true;
+  }
   const out = ciFailedRuns({ runs, runsText, queue, now });
   if (out.lines.length === 0) {
     console.log(
