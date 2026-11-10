@@ -1420,3 +1420,21 @@ others / 30 d, 19 users, 18 public; failed counts 1–4 per actor are unchanged 
 sign-up: 0`, `oauth: 0 connects` — the walls are hit by scanners (`connect_account 7d by UA: python-requests 26,
 BrickBlueBot 5`). `claude tool callers: 30d 0` — the Cowork listen fix (11-07) has had no `tools/list` yet. `researched:
 2026-11-10`; the queue has three buildable items, so no `research_after`.
+
+## Build 2026-11-10 — the stats pass waits D1's window out (`stats-precompute-overload-wait`, burn-down, 21:17 UTC)
+
+The 20:21 research pass's first item, built the same night. Since the 11-05 pacing fix the delta index of the big
+registers is read in paced pages and the ok row lands — and then `precomputeStats` ran `aggregateD1Stats` (the
+full-register `GROUP BY` scans) and the facet batches in the seconds after the paced delta writes, in the same
+10-second window, with no retry: the 11-08, 11-09 and 11-10 rows each read `uk-food-hygiene wave 05:45: ok …
+stats_precompute_failed … D1 DB is overloaded` and the same for uk-trademark-journal at 06:05, the blob was the
+retained one each night and no stats page's `dateModified` moved. v0.28.4: the parent aggregation (reads only, so
+repeated whole) and each facet batch run under `withOverloadRetry` — one 12 s wait, one retry, logged
+`stats_throttled` with `phase: parent` or `facet <segment>` — and a window that refuses twice falls through to what
+was there (the retained blob, a batch's carried pages). Three tests in `test/d1store.spec.ts` drive the real
+statements through the throttle façade: a refused parent retried and a fresh blob written, a parent refused twice
+leaving the previous blob, and a facet batch refused once (fresh pages) then twice (pages carried with `as_of`).
+Proof (the item's): three consecutive Daily numbers rows with no `stats_precompute_failed` for either source and
+`/stats/uk-trademark-journal` `dateModified` moving nightly — the 11-11 row is the first reading, one wave after
+the deploy. If a night still trips after the wait, the next step is a pause between the delta's last write and
+the stats (the window is per database, so the wave's own writes are what the scans follow).

@@ -2753,3 +2753,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 20:26 | burn-down | Cerebral Valley's November hackathons are in person or Japan-only; research_after 11-24
 - 2026-11-10 20:30 | burn-down | tax-workbook research: unchanged — 0 sales on three live shelves, every item dated or sale-held; research_after 12-03
 - 2026-11-10 20:30 | burn-down | Stopping for time: 1 spike parked, 3 research passes (gankdat 3 items + 1 lift; hackathons, tax-workbook none)
+- 2026-11-10 21:17 | burn-down | Main green at STEP 0; no new owner notes; first-runs: nothing owed; gankdat stats-precompute-overload-wait claimed 21:10
+- 2026-11-10 21:17 | burn-down | Built gankdat stats-precompute-overload-wait: stats pass waits D1's window out once and retries, v0.28.4
+- 2026-11-10 21:17 | burn-down | precomputeStats: parent aggregation and each facet batch under withOverloadRetry; stats_throttled names the phase
+- 2026-11-10 21:17 | burn-down | A second refusal falls through as before: retained blob for the parent, carried pages for a batch; 3 tests
+- 2026-11-10 21:17 | burn-down | Deploys on the next CI run; proof: 11-11..11-13 Daily rows with no stats_precompute_failed, journal dateModified moving

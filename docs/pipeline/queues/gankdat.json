@@ -1131,9 +1131,9 @@
       "effort_days": 0.3,
       "proof": "three consecutive Daily numbers rows with no `stats_precompute_failed` for uk-food-hygiene or uk-trademark-journal, and `/stats/uk-trademark-journal` `dateModified` moving nightly",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-10",
-      "doing_since": "2026-11-10"
+      "done_at": "2026-11-10"
     },
     {
       "id": "uk-companies-snapshot-window-cap",

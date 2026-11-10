@@ -268,7 +268,15 @@ runs `check:root`.
   the shared Apify client honours (three retries, 3/6/12 s when no header). The cost of a filtered page
   was COUNT + page, two full scans in parallel; since v0.28.1 (`filtered-page-count-cache`, 2026-11-05)
   the filtered total is cached in KV per (slug, generation, `last_refreshed_at`, predicate) until the next
-  refresh — a delta or windowed refresh restamps the meta row inside one generation — so page 2+ of the same filters runs one scan (`filteredCountKey`, `COUNT_CACHE_TTL_S` in `d1store.ts`).
+  refresh — a delta or windowed refresh restamps the meta row inside one generation — so page 2+ of the same filters runs one scan (`filteredCountKey`, `COUNT_CACHE_TTL_S` in `d1store.ts`). **The stats pass waits the window out too** (2026-11-10, `stats-precompute-overload-wait`, v0.28.4):
+  from the pacing fix to 11-10 uk-food-hygiene (05:45) and uk-trademark-journal (06:05) wrote their ok row and then
+  logged `stats_precompute_failed … D1 DB is overloaded` every night — `precomputeStats` ran its full-register GROUP BY
+  scans in the seconds after the paced delta writes, in the same window, with no retry, so the night's blob was the
+  carried one and no stats page's `dateModified` moved. Now the parent aggregation (reads only, repeated whole) and
+  each facet batch run under `withOverloadRetry` — one 12 s wait, one retry, logged `stats_throttled` with the phase
+  (`parent`, `facet <segment>`) — and a window that refuses twice falls through to what was there: the parent to the
+  retained blob, a batch to its carried pages (`stats_facet_failed`), as before. Proof: three Daily numbers rows with no
+  `stats_precompute_failed` for either source and the journal's `dateModified` moving nightly.
 - **KV**: response cache per source (+ precomputed `/stats` blob and a
   best-effort refresh single-flight lock), monthly usage counters per account
   email (`usage:<email>:<yyyymm>`), the top-up balance (`topup:<email>`, no period, no TTL —
