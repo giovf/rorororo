@@ -2734,3 +2734,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 19:29 | burn-down | docs/ci/notify-owner.yml: actions write for the dispatch; SCHEDULERS notes check.yml's cron lands 10–11 UTC
 - 2026-11-10 19:29 | burn-down | Stopping for time: 3 items done; next is research for the starved queues or the exchange pre-research
 - 2026-11-10 19:34 | burn-down | claude-code-kit research: unchanged, every item waits on the owner's Leanpub step; research_after 11-17
+- 2026-11-10 19:36 | burn-down | Exchange pre-research: HMRC monthly exchange rates as a gankdat lookup — spike seeded (3); 1 spike was open
+- 2026-11-10 19:36 | burn-down | new-ventures research: spike-hmrc-exchange-rates-lookup added (OGL default, Open Exchange Rates US$12/mo)
+- 2026-11-10 19:36 | burn-down | Stopping for time: 3 items built, 2 research passes, 1 spike seeded; gankdat, hackathons, tax-workbook research next

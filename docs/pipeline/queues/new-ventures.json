@@ -2,10 +2,8 @@
   "venture": "new-ventures",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-08",
-  "researched": "2026-11-07",
-  "researching_since": "2026-11-10T19:34Z",
-  "researching_by": "burn-down",
+  "updated": "2026-11-10",
+  "researched": "2026-11-10",
   "weight": 2,
   "items": [
     {
@@ -569,6 +567,16 @@
       "status": "done",
       "added": "2026-11-07",
       "done_at": "2026-11-08"
+    },
+    {
+      "id": "spike-hmrc-exchange-rates-lookup",
+      "title": "Research spike: HMRC monthly customs exchange rates (trade-tariff.service.gov.uk/exchange_rates) as a gankdat lookup — through the relay read the monthly page and its footer licence line, one XML file under /api/v2/exchange_rates/files/ (the only programmatic route a third-party client reports; CSV names carry an unpredictable descriptor), the publication timing (last week of the month, rates apply to the following month) and the currency count; read Open Exchange Rates' own plans page (Developer US$12/month, 10,000 requests, the free tier USD-base only) and two more rate APIs' prices; count the GitHub/npm/pip packages that wrap the HMRC files and whether any charges; design the gankdat shape (`/v1/data/hmrc-exchange-rates`: rate by currency and month since 2015, one monthly ingest of ~160 rows into D1 by `idOf(month, currency)`, a `latest` convenience, Blind Mode, the x402 and MCP lanes) and count the build; write docs/exchange/spikes/hmrc-exchange-rates-lookup.md with the licence quote, the rival price table, the package count and a promote / park call (promote shape: a gankdat dataset item ≤ 0.4 day plus its Apify actor; park if the page carries any licence other than OGL v3, if no rival sells the HMRC series or a general rate API below US$20/month exists with the GBP base free, or if the registers' buyers — compliance and KYB — show no reason to want a rate table from the same key)",
+      "why": "Exchange pre-research 2026-11-10 (burn-down; two WebSearch reads — trade-tariff.service.gov.uk is not in the exchange and gankdat has no rates source; the sandbox has not read the page, so the licence line is the spike's first job). The rates are the ones HMRC prescribes for customs and VAT conversions, published monthly as CSV and XML on the GOV.UK trade-tariff service (GOV.UK content is OGL v3 unless a page says otherwise; the spike quotes the footer); third-party clients (matchilling/hmrc-exchange-rates, alexanderGugel/hmrc-exchange-rates on GitHub) wrap the XML, which says developers do want them in code. Money already flows to rate APIs: Open Exchange Rates' plans page lists Developer at US$12/month (US$120/year) and Enterprise at US$47, Unlimited at US$97, with the free tier limited to a USD base and 1,000 calls — a GBP-base, HMRC-official monthly table is a feature none of them sells. Fits STRATEGY §1 (a small per-call cut of a flowing market, no new audience: the same gankdat key, lanes and MCP server) and gankdat's shape (a tiny register: ~160 currencies × 12 months a year, no cron pressure). Score: evidence 1 (one paid rival category, no HMRC-specific paid rival found) × reach 2 (every gankdat lane plus a free-to-list Apify actor) ÷ 0.3 day, discounted to 3 for the niche; weight 2 applies at ranking.",
+      "effort_days": 0.3,
+      "proof": "docs/exchange/spikes/hmrc-exchange-rates-lookup.md with the licence line quoted from the page, the rival price table, the HMRC-wrapper package count and a promote / park call; promote adds the gankdat item in the same commit",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-10"
     }
   ]
 }
