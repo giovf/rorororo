@@ -194,9 +194,10 @@
       "effort_days": 0.05,
       "proof": "RESEARCH.md Metrics row with the result; page stopped or kept with a reason",
       "score": 5,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-11-10",
-      "added": "2026-11-02"
+      "added": "2026-11-02",
+      "doing_since": "2026-11-10"
     }
   ]
 }
