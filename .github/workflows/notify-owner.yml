@@ -39,7 +39,7 @@ on:
 
 permissions:
   contents: write
-  actions: read # scripts/actions-minutes.mjs reads the week's runs; dependabot-gate.ts the gate runs; ci-failed-runs.ts the failed runs
+  actions: write # scripts/actions-minutes.mjs reads the week's runs; dependabot-gate.ts the gate runs; ci-failed-runs.ts the failed runs and, since 2026-11-10, dispatches check.yml once when a failed gate run has no later run and main has moved on (foundry watchdog-ci-failed-recheck-dispatch)
   pull-requests: read # scripts/dependabot-gate.ts lists the open Dependabot PRs
 
 concurrency:
