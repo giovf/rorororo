@@ -1,0 +1,184 @@
+{ "@context": "https://schema.org", "@graph": [ { "@type": "Organization", "@id": "https://allratestoday.com/#organization", "name": "AllRatesToday", "alternateName": ["All Rates Today", "AllRates Today", "allratestoday.com"], "legalName": "AllRatesToday", "url": "https://allratestoday.com", "logo": { "@type": "ImageObject", "url": "https://allratestoday.com/apple-touch-icon.png", "width": 180, "height": 180 }, "description": "Official exchange rates from 120+ central banks and tax authorities (ECB, Federal Reserve, Bank of England, RBI, HMRC, US Treasury), plus real-time mid-market rates for 160+ currencies, in one REST API. Free API key; MCP server for AI agents.", "sameAs": [ "https://github.com/AllRates-Today", "https://github.com/AllRates-Today/central-bank-exchange-rates", "https://github.com/AllRates-Today/free-exchange-rate-api", "https://github.com/AllRates-Today/exchange-rates-api", "https://github.com/AllRates-Today/mcp-server", "https://github.com/AllRates-Today/allratestoday-deepseek", "https://www.npmjs.com/package/@allratestoday/sdk", "https://www.npmjs.com/package/@allratestoday/mcp-server", "https://pypi.org/project/allratestoday/", "https://huggingface.co/datasets/AllRatesToday/central-bank-exchange-rates", "https://www.kaggle.com/datasets/allratestoday/central-bank-exchange-rates", "https://x.com/Allratestoday", "https://www.linkedin.com/company/allratestoday/", "https://www.crunchbase.com/organization/allratestoday", "https://www.trustpilot.com/review/allratestoday.com", "https://www.f6s.com/company/allratestoday" ], "knowsAbout": [ "central bank exchange rates", "tax authority exchange rates", "foreign exchange reference rates", "VAT and customs currency conversion", "exchange rate APIs" ], "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "support@allratestoday.com", "availableLanguage": ["English", "Russian", "Chinese", "Hindi"] } }, { "@type": "WebSite", "@id": "https://allratestoday.com/#website", "name": "AllRatesToday", "alternateName": ["All Rates Today", "AllRatesToday Exchange Rates"], "url": "https://allratestoday.com", "publisher": { "@id": "https://allratestoday.com/#organization" }, "potentialAction": { "@type": "SearchAction", "target": "https://allratestoday.com/search?q={search_term_string}", "query-input": "required name=search_term_string" } } ] }
+{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AllRatesToday Exchange Rate API","applicationCategory":"DeveloperApplication","operatingSystem":"Any","url":"https://allratestoday.com","description":"Real-time and historical currency exchange rate API for developers. 160+ currencies, official rates from 123 central banks, REST API, mid-market rates.","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"EUR","description":"Real-time exchange rates for personal projects and testing"},{"@type":"Offer","name":"Small (Monthly)","price":"4.99","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"4.99","priceCurrency":"EUR","billingDuration":"P1M"},"description":"5,000 requests/month for side projects and MVPs"},{"@type":"Offer","name":"Small (Yearly)","price":"49.99","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"49.99","priceCurrency":"EUR","billingDuration":"P1Y"},"description":"5,000 requests/month for side projects and MVPs — 2 months free"},{"@type":"Offer","name":"Medium (Monthly)","price":"9.99","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"9.99","priceCurrency":"EUR","billingDuration":"P1M"},"description":"10,000 requests/month for production apps"},{"@type":"Offer","name":"Medium (Yearly)","price":"99.99","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"99.99","priceCurrency":"EUR","billingDuration":"P1Y"},"description":"10,000 requests/month for production apps — 2 months free"},{"@type":"Offer","name":"Large (Monthly)","price":"49.99","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"49.99","priceCurrency":"EUR","billingDuration":"P1M"},"description":"100,000 requests/month for high-volume apps"},{"@type":"Offer","name":"Large (Yearly)","price":"499.99","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"499.99","priceCurrency":"EUR","billingDuration":"P1Y"},"description":"100,000 requests/month for high-volume apps — 2 months free"},{"@type":"Offer","name":"Business (Monthly)","price":"239","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"239","priceCurrency":"EUR","billingDuration":"P1M"},"description":"Official central-bank and tax-authority exchange rates for finance teams, billed monthly. Market rates not included."},{"@type":"Offer","name":"Business (Yearly)","price":"2388","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"2388","priceCurrency":"EUR","billingDuration":"P1Y"},"description":"Official central-bank and tax-authority exchange rates for finance teams: 129 institutions (123 central banks + 6 tax authorities), publication dates, full history, 1,000,000 requests/month, priority support. €199/month billed annually. Market rates not included."}],"provider":{"@id":"https://allratestoday.com/#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://allratestoday.com/"},{"@type":"ListItem","position":2,"name":"Pricing","item":"https://allratestoday.com/pricing/"}]}]}
+meta description: AllRatesToday API pricing plans. Free currency exchange rate API with official central bank rates from 123 banks, affordable plans for production apps. Stop worrying about uptime and outdated data.
+meta og:type: website
+meta og:url: https://allratestoday.com/pricing/
+meta og:title: Pricing & Plans | AllRatesToday
+meta og:description: AllRatesToday API pricing plans. Free currency exchange rate API with official central bank rates from 123 banks, affordable plans for production apps. Stop worrying about uptime and outdated data.
+meta og:image: https://allratestoday.com/og-image.png
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:site_name: AllRatesToday
+meta og:locale: en_US
+meta twitter:card: summary_large_image
+meta twitter:url: https://allratestoday.com/pricing/
+meta twitter:title: Pricing & Plans | AllRatesToday
+meta twitter:description: AllRatesToday API pricing plans. Free currency exchange rate API with official central bank rates from 123 banks, affordable plans for production apps. Stop worrying about uptime and outdated data.
+meta twitter:image: https://allratestoday.com/og-image.png
+meta twitter:site: @Allratestoday
+meta twitter:creator: @Allratestoday
+Pricing & Plans | AllRatesToday
+AllRatesToday (/)
+Documentation (/docs)
+Exchange Rate API
+Central Bank Exchange Rate API Official rates from 123 central banks (/central-bank-rates-api/) Tax Authority Exchange Rate API HMRC, US Treasury and Swiss customs rates (/tax-authority-rates-api/) Mid-Market Exchange Rate API Real-time rates for 160+ currencies (/exchange-rate-api/) Free Exchange Rate API Any base currency (/open-api/) Bank Exchange Rate API Commercial bank buy and sell boards — UAE first (/bank-exchange-rate-api/) For Finance Teams VAT, customs, close and audit rates, delivered into your ERP (/for-finance-teams/)
+Playground (/playground) Pricing (/pricing)
+Resources
+Blog (/blog) FAQ (/faq)
+API Status (https://status.allratestoday.com/) Contact us (/contact)
+🇬🇧 English
+Select language
+🇬🇧 English United Kingdom (/pricing/) 🇷🇺 Русский Россия (/ru/pricing/) 🇨🇳 中文 中国 (/zh/pricing/) 🇮🇳 हिन्दी भारत (/hi/pricing/)
+Log in (/login) Register (/register)
+Log in (/login/) Register (/register/)
+Home (/) Documentation (/docs) Central Bank Exchange Rate API (/central-bank-rates-api/) Tax Authority Exchange Rate API (/tax-authority-rates-api/) Mid-Market Exchange Rate API (/exchange-rate-api/) Free Exchange Rate API (/open-api/) Bank Exchange Rate API (/bank-exchange-rate-api/) For Finance Teams (/for-finance-teams/) Playground (/playground) Pricing (/pricing) Search (/search/) API Status (https://status.allratestoday.com/) Blog (/blog) About (/about) FAQ (/faq) Contact Us (/contact) Dashboard (/profile) Log out (/api/auth/logout)
+Pricing & Plans
+Our free currency exchange rate API is the perfect tool to handle your conversions. Stop worrying about uptime and outdated data.
+Monthly
+Yearly Save 17%
+For personal use
+Free
+Get started with real-time exchange rates for personal projects and testing.
+€0 /mo
+Get Free API Key (/login?redirect=/profile)
+No credit card required
+✓ Rates Updated Every 1 Minute
+✓ 1 API Key
+✓ HTTPS Encryption
+✓ 10 Requests / Min
+✓ Real-Time Rates
+✓ Latest Rates
+✓ Central Bank Rates (latest)
+✕ Historical Rates
+✕ Commercial Use
+✕ No Rate Limit
+✕ Email Support
+For small projects
+Small
+Ideal for side projects, MVPs, and early-stage apps with moderate traffic.
+€4.99 /mo
+€49.99 /yr
+That's €4.17/mo — 2 months free
+Get Started
+Prefer a one-time payment? Pay for the year upfront &rarr;
+✓ Rates Updated Every 1 Minute
+✓ 5,000 Requests / mo
+✓ 1 API Key
+✓ HTTPS Encryption
+✓ 10 Requests / Min
+✓ Real-Time Rates
+✓ Latest Rates
+✓ Historical Rates
+✓ Central Bank Rates + History
+✓ Commercial Use
+✕ No Rate Limit
+✓ Email Support
+Recommended For production apps
+Medium
+Built for production apps that need reliable rates, no rate limits, and full API access.
+€9.99 /mo
+€99.99 /yr
+That's €8.33/mo — 2 months free
+Get Started
+Prefer a one-time payment? Pay for the year upfront &rarr;
+✓ Rates Updated Every 1 Minute
+✓ 10,000 Requests / mo
+✓ 1 API Key
+✓ HTTPS Encryption
+✓ No Rate Limit
+✓ Real-Time Rates
+✓ Latest Rates
+✓ Historical Rates
+✓ Central Bank Rates + History
+✓ Commercial Use
+✓ Convert Endpoint
+✓ Email Support
+For high-volume apps
+Large
+For high-traffic platforms and fintech apps that demand scale, speed, and priority support.
+€49.99 /mo
+€499.99 /yr
+That's €41.67/mo — 2 months free
+Get Started
+Prefer a one-time payment? Pay for the year upfront &rarr;
+✓ Rates Updated Every 1 Minute
+✓ 100,000 Requests / mo
+✓ 3 API Keys
+✓ HTTPS Encryption
+✓ No Rate Limit
+✓ Real-Time Rates
+✓ Latest Rates
+✓ Historical Rates
+✓ Central Bank Rates + History
+✓ Commercial Use
+✓ Convert Endpoint
+✓ Priority Email Support
+For finance & compliance teams
+Business
+Official central-bank and tax-authority rates at business scale: 1M requests, ERP setup help, priority support and annual invoicing. Market rates not included.
+€239 /mo
+€2,388 /yr
+That's €199/mo — 2 months free
+Subscribe
+Prefer a one-time payment? Pay for the year upfront &rarr;
+✓ Official Rates, Daily Publication
+✓ 1,000,000 Requests / mo
+✓ 1 API Key per Account
+✓ HTTPS Encryption
+✓ No Rate Limit
+✓ 123 Central Banks + 6 Tax Authorities (/central-bank-rates-api/institutions/)
+✓ Rate on Any Past Date
+✓ Full History + Calendars
+✓ JSON, CSV, XML, XLSX
+✓ ERP Guides + Setup Help
+✓ Commercial Use
+✓ Priority Support (1 business day)
+What finance teams use it for &rarr; (/for-finance-teams/) Purchase order or quote? Talk to us &rarr; (/contact?tab=business&topic=invoicing)
+All prices excluding VAT. Accepted payment methods may vary depending on your location.
+Accepted Payment Methods
+Frequently Asked Questions
+What is the uptime of the AllRatesToday API?
+We target 99.99% availability. Our API runs on Cloudflare's global edge network for maximum reliability and low latency worldwide. You can check real-time status on our Status Page (https://status.allratestoday.com/) .
+Where does the exchange rate data come from?
+Live rates come from institutional foreign exchange market data: true mid-market, with no spread added by us. Official rates are ingested from each central bank's or tax authority's own publication and served unmodified with its publication date — see the full list of institutions (/central-bank-rates-api/institutions/) and data sources (/data-sources/) .
+Do you offer official central bank exchange rates?
+Yes! In addition to real-time mid-market rates, we publish official reference rates from 123 central banks (/central-bank-rates-api/) — including the US Federal Reserve, European Central Bank, Bank of England, People's Bank of China, and Bank of Japan. The latest published rates are available on every plan, including Free. Historical central bank rates and time-series data are included in all paid plans.
+How often are the exchange rates updated?
+Market rates are refreshed every 60 seconds on every plan, including Free — many providers update hourly or daily. Official central-bank and tax-authority rates update when each institution publishes, and every response carries the publication date.
+I need more than 1,000,000 requests per month!
+No problem! Large covers 100,000 requests a month and Business 1,000,000. Beyond that, contact us (/contact) and we'll put together a custom plan that works for your needs.
+Do you offer yearly billing?
+Yes! You can save 17% by switching to yearly billing — that's 2 months free on any paid plan. Use the toggle at the top of this page to see yearly prices.
+Can I cancel my plan at any time?
+Absolutely. You can cancel your subscription in less than 30 seconds from your dashboard. No contracts, no hidden fees, no hassle.
+Can I use the free plan in production?
+The free API key is designed for personal and non-commercial use. For production applications, upgrade to a paid plan which includes commercial use rights and higher limits.
+What happens if I exceed my request limit?
+You'll receive a 429 status code with rate limit headers until your quota resets at the start of the next month — there are no overage charges, so you are never billed more than your plan price. We email you at 90% and 100% of your quota so you can upgrade in time.
+Not sure which plan suits your needs?
+Our team is here to help you find the right fit for your project.
+Contact Us (/contact)
+24 hours response — guaranteed
+Reading this with an AI assistant? This page is also published as plain Markdown for LLMs and agents.
+Copy as Markdown
+View Markdown (/pricing.md) Open in ChatGPT (https://chatgpt.com/?q=Read%20https%3A%2F%2Fallratestoday.com%2Fpricing.md%20so%20I%20can%20ask%20you%20questions%20about%20it.) Open in Claude (https://claude.ai/new?q=Read%20https%3A%2F%2Fallratestoday.com%2Fpricing.md%20so%20I%20can%20ask%20you%20questions%20about%20it.) llms.txt (/llms.txt)
+🍪
+We use cookies
+We use cookies to remember your currency preferences and improve your experience on AllRatesToday. By clicking "Accept", you consent to our use of cookies.
+Accept
+Reject
+AllRatesToday (/)
+Real-time mid-market rates and official central bank rates, through one REST API.
+All Systems Operational (https://status.allratestoday.com/)
+https://x.com/Allratestoday https://www.linkedin.com/company/allratestoday/ https://github.com/AllRates-Today
+Product
+Documentation (/docs) Pricing (/pricing) Playground (/playground) Currency Converter (/currency-converter/) World Currencies (/currency/) Rates by Country (/send-money/)
+Exchange Rate API
+All Exchange Rates (live, official, historical) (/exchange-rates/) Central Bank Exchange Rate API (/central-bank-rates-api/) Tax Authority Exchange Rate API (/tax-authority-rates-api/) Mid-Market Exchange Rate API (/exchange-rate-api/) Forex API (/forex-api/) Exchange Rate API India (/exchange-rate-api-india/) Daily Reference Rate (16:00 London) (/reference-rate/) Bank Exchange Rate API (/bank-exchange-rate-api/) For Finance Teams (/for-finance-teams/) Best Exchange Rate APIs 2026 (/best/best-exchange-rate-api/) API Specifications (/api-specifications) Data Sources (/data-sources/) API Status (https://status.allratestoday.com/)
+Developers
+API Reference (/docs) Free Open API (/open-api/) Open Source Projects (/open-source/) OpenAPI Spec (/openapi.json) WordPress Plugin (/wordpress/) API Benchmark (live) (/benchmarks/exchange-rate-api/) Currency API (/currency-api/) Free Currency APIs 2026 (/blog/best-free-currency-exchange-api-2026/) GitHub (https://github.com/AllRates-Today)
+Company
+About (/about/) Blog (/blog) FAQ (/faq) Contact Us (/contact) Terms (/terms/) Privacy Policy (/privacy-policy/) Cookie Policy (/cookie-policy/) Cookie settings (#cookie-settings)
+Listed on ChatGPT Apps (https://chatgpt.com/plugins/plugin_asdk_app_6ae1e76098f48191a285ac3f5ab7a83b) WordPress.org (https://wordpress.org/plugins/allratestoday-currency-converter/) Official MCP Registry (https://registry.modelcontextprotocol.io/v0/servers?search=cahthuranag) Glama (https://glama.ai/mcp/servers/AllRates-Today/mcp-server) Glama Connectors (https://glama.ai/mcp/connectors/com.allratestoday/mcp) PulseMCP (https://www.pulsemcp.com/servers/allratestoday) MCP Market (https://mcpmarket.com/server/allratestoday) Codex Plugin Stats (https://codex-plugin-stats.com/plugins/allratestoday) ClawHub (https://clawhub.ai/cahthuranag/skills/allratestoday) AI Agents Listing (https://aiagentslisting.com/mcp/central-bank-mcp) SwaggerHub (https://app.swaggerhub.com/apis-docs/allratestoday/allratestoday-exchange-rate-central-bank-rates-api/2.2.0) Bump.sh (https://bump.sh/allratestoday/doc/allratestoday-api) Public APIs (https://publicapis.dev/resource/allratestoday/obgx1siv) AlternativeTo (https://alternativeto.net/software/allratestoday/) Hugging Face (https://huggingface.co/datasets/AllRatesToday/central-bank-exchange-rates) Kaggle (https://www.kaggle.com/datasets/allratestoday/central-bank-exchange-rates)
+AllRatesToday API provides mid-market exchange rates sourced from global financial markets. Rates are for informational purposes and may differ from actual transfer rates offered by banks and providers.
+© 2026AllRatesToday. All rights reserved. AllRatesToday.com · Luton, United Kingdom LU1 5EG · admin@allratestoday.com (mailto:admin@allratestoday.com)

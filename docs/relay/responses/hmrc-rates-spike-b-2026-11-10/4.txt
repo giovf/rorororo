@@ -1,0 +1,1122 @@
+{ "@context": "https://schema.org", "@graph": [ { "@type": "Organization", "@id": "https://allratestoday.com/#organization", "name": "AllRatesToday", "alternateName": ["All Rates Today", "AllRates Today", "allratestoday.com"], "legalName": "AllRatesToday", "url": "https://allratestoday.com", "logo": { "@type": "ImageObject", "url": "https://allratestoday.com/apple-touch-icon.png", "width": 180, "height": 180 }, "description": "Official exchange rates from 120+ central banks and tax authorities (ECB, Federal Reserve, Bank of England, RBI, HMRC, US Treasury), plus real-time mid-market rates for 160+ currencies, in one REST API. Free API key; MCP server for AI agents.", "sameAs": [ "https://github.com/AllRates-Today", "https://github.com/AllRates-Today/central-bank-exchange-rates", "https://github.com/AllRates-Today/free-exchange-rate-api", "https://github.com/AllRates-Today/exchange-rates-api", "https://github.com/AllRates-Today/mcp-server", "https://github.com/AllRates-Today/allratestoday-deepseek", "https://www.npmjs.com/package/@allratestoday/sdk", "https://www.npmjs.com/package/@allratestoday/mcp-server", "https://pypi.org/project/allratestoday/", "https://huggingface.co/datasets/AllRatesToday/central-bank-exchange-rates", "https://www.kaggle.com/datasets/allratestoday/central-bank-exchange-rates", "https://x.com/Allratestoday", "https://www.linkedin.com/company/allratestoday/", "https://www.crunchbase.com/organization/allratestoday", "https://www.trustpilot.com/review/allratestoday.com", "https://www.f6s.com/company/allratestoday" ], "knowsAbout": [ "central bank exchange rates", "tax authority exchange rates", "foreign exchange reference rates", "VAT and customs currency conversion", "exchange rate APIs" ], "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "support@allratestoday.com", "availableLanguage": ["English", "Russian", "Chinese", "Hindi"] } }, { "@type": "WebSite", "@id": "https://allratestoday.com/#website", "name": "AllRatesToday", "alternateName": ["All Rates Today", "AllRatesToday Exchange Rates"], "url": "https://allratestoday.com", "publisher": { "@id": "https://allratestoday.com/#organization" }, "potentialAction": { "@type": "SearchAction", "target": "https://allratestoday.com/search?q={search_term_string}", "query-input": "required name=search_term_string" } } ] }
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://allratestoday.com/"},{"@type":"ListItem","position":2,"name":"API Documentation","item":"https://allratestoday.com/docs/"}]}
+{"@context":"https://schema.org","@type":"TechArticle","headline":"AllRatesToday API Documentation","description":"REST endpoints, authentication, rate limits and code examples for real-time mid-market exchange rates and official central-bank and tax-authority rates.","url":"https://allratestoday.com/docs/","mainEntityOfPage":"https://allratestoday.com/docs/","datePublished":"2026-01-15","dateModified":"2026-11-04","inLanguage":"en","isAccessibleForFree":true,"author":{"@id":"https://allratestoday.com/#organization"},"publisher":{"@id":"https://allratestoday.com/#organization"},"encoding":[{"@type":"MediaObject","encodingFormat":"text/markdown","contentUrl":"https://allratestoday.com/docs.md"}],"about":[{"@type":"Thing","name":"Exchange rate API"},{"@type":"Thing","name":"Central bank exchange rates"}]}
+{"@context":"https://schema.org","@type":"WebAPI","@id":"https://allratestoday.com/#api","name":"AllRatesToday Exchange Rate API","description":"REST API for official exchange rates from 120+ central banks and tax authorities (ECB, Federal Reserve, Bank of England, RBI, HMRC, US Treasury) and real-time mid-market rates for 160+ currencies. JSON, CSV, XML and XLSX output; hosted MCP server for AI agents.","url":"https://allratestoday.com/api/v1/","documentation":"https://allratestoday.com/docs/","termsOfService":"https://allratestoday.com/terms/","provider":{"@id":"https://allratestoday.com/#organization"},"category":"Finance","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","url":"https://allratestoday.com/pricing/"},"potentialAction":{"@type":"ConsumeAction","target":"https://allratestoday.com/api/v1/rates?source=EUR&target=USD"}}
+{"@context":"https://schema.org","@type":"VideoObject","name":"Exchange Rate API for Developers – Live & Central Bank Rates (Free)","description":"One-minute overview of the AllRatesToday exchange rate API: live mid-market rates for 160+ currencies and official rates from 123 central banks and 6 tax authorities through one REST API.","thumbnailUrl":["https://i.ytimg.com/vi/LKcwQhus0LI/hqdefault.jpg"],"uploadDate":"2026-10-15T15:37:44-07:00","duration":"PT1M1S","contentUrl":"https://www.youtube.com/watch?v=LKcwQhus0LI","embedUrl":"https://www.youtube.com/embed/LKcwQhus0LI","publisher":{"@type":"Organization","name":"AllRatesToday","url":"https://allratestoday.com/"}}
+meta description: Complete exchange rate API documentation. REST endpoints, authentication, rate limits, code examples in JavaScript, Python, PHP, and cURL. Free currency API with 160+ currencies.
+meta og:type: website
+meta og:url: https://allratestoday.com/docs/
+meta og:title: API Documentation | AllRatesToday
+meta og:description: Complete exchange rate API documentation. REST endpoints, authentication, rate limits, code examples in JavaScript, Python, PHP, and cURL. Free currency API with 160+ currencies.
+meta og:image: https://allratestoday.com/og-image.png
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:site_name: AllRatesToday
+meta og:locale: en_US
+meta twitter:card: summary_large_image
+meta twitter:url: https://allratestoday.com/docs/
+meta twitter:title: API Documentation | AllRatesToday
+meta twitter:description: Complete exchange rate API documentation. REST endpoints, authentication, rate limits, code examples in JavaScript, Python, PHP, and cURL. Free currency API with 160+ currencies.
+meta twitter:image: https://allratestoday.com/og-image.png
+meta twitter:site: @Allratestoday
+meta twitter:creator: @Allratestoday
+API Documentation | AllRatesToday
+AllRatesToday (/)
+Documentation (/docs)
+Exchange Rate API
+Central Bank Exchange Rate API Official rates from 123 central banks (/central-bank-rates-api/) Tax Authority Exchange Rate API HMRC, US Treasury and Swiss customs rates (/tax-authority-rates-api/) Mid-Market Exchange Rate API Real-time rates for 160+ currencies (/exchange-rate-api/) Free Exchange Rate API Any base currency (/open-api/) Bank Exchange Rate API Commercial bank buy and sell boards — UAE first (/bank-exchange-rate-api/) For Finance Teams VAT, customs, close and audit rates, delivered into your ERP (/for-finance-teams/)
+Playground (/playground) Pricing (/pricing)
+Resources
+Blog (/blog) FAQ (/faq)
+API Status (https://status.allratestoday.com/) Contact us (/contact)
+🇬🇧 English
+Select language
+🇬🇧 English United Kingdom (/docs/) 🇷🇺 Русский Россия (/ru/docs/) 🇨🇳 中文 中国 (/zh/docs/) 🇮🇳 हिन्दी भारत (/hi/docs/)
+Log in (/login) Register (/register)
+Log in (/login/) Register (/register/)
+Home (/) Documentation (/docs) Central Bank Exchange Rate API (/central-bank-rates-api/) Tax Authority Exchange Rate API (/tax-authority-rates-api/) Mid-Market Exchange Rate API (/exchange-rate-api/) Free Exchange Rate API (/open-api/) Bank Exchange Rate API (/bank-exchange-rate-api/) For Finance Teams (/for-finance-teams/) Playground (/playground) Pricing (/pricing) Search (/search/) API Status (https://status.allratestoday.com/) Blog (/blog) About (/about) FAQ (/faq) Contact Us (/contact) Dashboard (/profile) Log out (/api/auth/logout)
+Documentation (/docs) API Reference (/api-reference) Playground (/playground) API Specifications (/api-specifications) Status ↗ (https://status.allratestoday.com/)
+Search the documentation
+API Documentation
+Everything you need to integrate real-time currency exchange rates into your application.
+Get Free API Key &rarr; (/login?redirect=/profile) Quickstart Guide (#quickstart)
+No credit card required · Setup in 30 seconds
+Live exchange rate API: mid-market rates for 160+ currencies
+The real exchange rate, refreshed every 60 seconds — what you show a customer or price a product in.
+Source
+USD US Dollar ▾
+No currency matches that search.
+⇄
+Target
+EUR Euro ▾
+No currency matches that search.
+Date optional
+Run request
+cURL
+JavaScript
+Python
+PHP
+Go
+Java
+C#
+Ruby
+Copy
+Live API Response
+GET /api/v1/rates?source=USD&target=EUR
+Loading live rate…
+Mid-market rate Get API Key → (/login?redirect=/profile)
+Official Central Bank Exchange Rate API
+The published figure an auditor or tax office expects — 129 central banks and tax authorities (/central-bank-rates-api/institutions/) , by date.
+Bank or authority
+ECB European Central Bank ▾
+No source matches that search.
+Base
+USD ▾
+No currency matches that search.
+⇄
+Quote
+EUR ▾
+No currency matches that search.
+Date optional
+Run request
+CSV
+Excel
+cURL
+JavaScript
+Python
+PHP
+Go
+Java
+C#
+Ruby
+Copy
+Live API Response
+GET /api/v1/central-bank/ecb/latest?source=USD&target=EUR
+Loading published rate…
+Published reference rate All sources → (/central-bank-rates-api/)
+Getting Started
+Quickstart (#quickstart) Overview (#overview) API Reference ↗ (/api-reference/) Authentication (#auth) Trial keys for agents (#agent-keys) Security (#security) Rate Limits & Quotas (#rate-limits)
+Endpoints
+Authenticated Rates (#auth-rates) Simple Rate (#simple-rate) Convert (#convert) Historical Rates (#historical) Time Series & Ranges (#time-series) Symbols (#symbols) Central Bank Exchange Rate API (#central-bank) Daily Reference Rate (#reference-rate)
+AI Assistants
+MCP Server (#mcp) DeepSeek Integration (#deepseek) LLM Discovery (#llm-discovery)
+React
+Currency Localizer (#react-localizer) useCurrencyConverter (#react-hook) Batch Conversion (#react-batch) LocalizedPrice (#react-component)
+Tools
+Embeddable Widget (/docs/widget/) Free Open API (/open-api/) ERP Integrations (/docs/integrations/)
+Reference
+Errors (#errors) Response Formats (#formats) Caching (#caching) CORS & Browser Use (#cors) Versioning & Changes (#versioning) Service Availability (#availability) Data Freshness (#data-freshness) Currencies (#currencies) Supported Currencies List (/docs/supported-currencies/) Official SDKs (#sdks) Code Examples (#examples) API Playground (#playground) Run in Postman (#postman) Video Overview (#video)
+Quickstart — Get Started in < 2 Minutes
+Sign up free (/register) or Log in (/login) &rarr; Get your API key from the profile page (/profile#api-keys)
+Copy your API key
+Try this request:
+curl "https://allratestoday.com/api/v1/rates?source=USD&target=EUR" \
+-H "Authorization: Bearer YOUR_API_KEY"
+Don't have an account? Create one for free (/register) .
+Overview
+The AllRatesToday exchange rate API (/exchange-rate-api/) gives your application programmatic access to two complementary families of exchange-rate data through one REST interface: live mid-market rates for 160+ currencies, refreshed around the clock, and the official reference rates published by 123 central banks and 6 tax authorities (/central-bank-rates-api/institutions/) — ingested directly from each publisher's own release and stored unmodified, with the publisher's publication date on every row. Responses are JSON by default; every table endpoint can also answer in CSV, XML or Excel.
+How a rate reaches your application: both rate families flow through the same ingestion, storage and API layer, so one key and one response shape cover live pricing and compliance work alike.
+All endpoints live under a single base URL:
+https://allratestoday.com
+Every endpoint requires an API key except /api/v1/symbols (the currency list) and the free /api/open/ endpoints. Plans differ mainly in how many requests a month you may make — the Business plan covers official rates only; otherwise there is no feature gating on the mid-market endpoints, and only two central-bank endpoints are paid-only. See Rate Limits & Quotas (#rate-limits) and the pricing page (/pricing) .
+The whole API on one page
+Four mid-market endpoints, six official-rate endpoints and four Daily Reference Rate endpoints. Everything else in this documentation is a client library, an integration, or reference material for these fourteen.
+Endpoint	Auth	Quota cost	What it returns
+GET /api/v1/rates (#auth-rates)	Key or session	1	Live mid-market rate for one or many target currencies. Add amount to convert.
+GET /api/rate (#simple-rate)	Key	1	One pair, minimal response body.
+GET /api/historical-rates (#historical)	Key or session	1, or 12 for 1y	Daily mid-market series for a preset period.
+GET /api/v1/symbols (#symbols)	None	0	All supported currency codes, names and symbols.
+GET /api/v1/central-banks (#central-bank)	Key	1	Covered official sources and their latest available date.
+GET /api/v1/central-banks/rates (#central-bank)	Key	1	Every source's latest official rate for one pair, side by side.
+GET /api/v1/central-bank/{bank}/latest (#central-bank)	Key	1	One source's most recent published table.
+GET /api/v1/central-bank/{bank}/{date} (#central-bank)	Key, paid plan	1	The table published on (or most recently before) a given date.
+GET /api/v1/central-bank/{bank}/history (#central-bank)	Key, paid plan	1 per month of range	Daily official series for a currency or a pair.
+GET /api/v1/central-bank/{bank}/availability (#central-bank)	Key	1	The dates a source actually published — its real calendar.
+GET /api/open/reference-rate (#reference-rate)	None	0	Latest Daily Reference Rate table (16:00 London), with attribution.
+GET /api/v1/reference-rate/latest (#reference-rate)	Key	1	Latest reference table with window low/high and sample counts.
+GET /api/v1/reference-rate/{date} (#reference-rate)	Key, paid plan	1	The reference table published on (or most recently before) a date.
+GET /api/v1/reference-rate/history (#reference-rate)	Key, paid plan	1 per month of range	One reference value per business day for a currency or pair.
+Endpoints that do not exist.
+There is no /api/convert , no /api/timeseries and no /api/latest — those paths return a 404 page, not JSON. Conversion is /api/v1/rates with &amount= ; time series is /api/historical-rates . The old /api/public/rates was retired and now answers 401 with a pointer to registration (/register) .
+Two kinds of rate — which one do you need?
+The API serves two deliberately separate families of rates. They answer different questions, and compliance rules often dictate which one you must use:
+Property	Mid-market rates	Official central-bank & tax-authority rates
+What it is	The live midpoint of the interbank market — where the market is trading right now , with no retail markup.	The rate a central bank or tax authority itself published — a fixed, citable number with the publisher's own rate_date .
+How often it changes	Refreshes roughly every 60 seconds, around the clock.	Once per publication cycle — daily for most banks, weekly (Fed), monthly (HMRC), or quarterly (US Treasury). Never changes after publication.
+Use it for	Price display, checkout conversion, dashboards, alerts, anything that should track the market.	Tax filings, customs valuations, statutory invoicing, audits, book closing — anywhere a regulation names the official source.
+Endpoints	/api/v1/rates , /api/rate , /api/historical-rates , /api/v1/symbols	/api/v1/central-bank/{bank}/… — see Central Bank Exchange Rate API (#central-bank)
+Weekend / holiday behaviour	Keeps moving with whatever markets are open.	Returns the most recent published date, explicitly flagged — the rate compliance rules require you to apply.
+The two can differ by several percent: over Aug 2025–Aug 2026 the widest gap between the GBP/USD mid-market rate and HMRC's monthly rate-in-force was 3.7% — about £2,832 on a $100k invoice. Picking the right family is a correctness decision, not a preference. If a regulation or auditor names a source, use the official endpoints; otherwise the mid-market rate is the truer price.
+Authentication
+API endpoints require authentication, apart from /api/v1/symbols and the free /api/open/ endpoints. Include your API key as a Bearer token:
+Authorization: Bearer YOUR_API_KEY
+Get your API key from your profile page (/profile#api-keys) after signing in.
+API keys do not expire.
+A key remains valid until you rotate or revoke it from your profile page (/profile#api-keys) — there is no token endpoint to call and no refresh flow to implement, unlike OAuth-based providers whose access tokens expire every few minutes.
+Requests without a valid key receive a 401 Unauthorized response:
+// 401 response — missing or invalid API key
+{
+"error": "Authentication required. Provide an API key via Authorization header or log in."
+}
+If a key is ever compromised, rotate it immediately (/profile#api-keys) — revocation takes effect instantly — and email support@allratestoday.com (mailto:support@allratestoday.com) if you need help investigating unexpected usage.
+Passing the key in the query string
+Two endpoints also accept the key as a query parameter, for callers that cannot set a header — a browser address bar, a spreadsheet's IMPORTDATA , a webhook tester:
+Endpoint	Parameter
+/api/v1/rates	?api_key=
+/api/rate	?key= or ?apiKey=
+Convenience only — not for production.
+Query strings are written to proxy logs, CDN logs, browser history and Referer headers. Use the Authorization header in any server you deploy; treat a key that has travelled in a URL as exposed and rotate it.
+The other endpoints — /api/historical-rates and every /api/v1/central-bank/… path — accept the header only.
+Session authentication
+/api/v1/rates and /api/historical-rates also accept a logged-in browser session instead of a key, which is what the site's own pages and the playground (#playground) use. The quota is charged to the session user's key exactly as if the key had been sent. This exists so our own pages work; build integrations against the API key.
+Trial keys for AI agents
+Registration is built for people: a captcha and an email to verify. An AI agent that discovers the API through the MCP server (#mcp) or llms.txt has neither. So a machine caller can issue itself a trial key with one request and no account:
+POST https://allratestoday.com/api/agent/keys
+Content-Type: application/json
+{ "agent": "my-invoicing-agent", "purpose": "month-end FX for invoices" } // fields optional; the JSON Content-Type is not
+// 201 response
+{
+"api_key": "art_live_…",
+"calls_included": 100,
+"expires_at": "2026-10-18T09:00:00.000Z",
+"how_to_use": "Send it as `Authorization: Bearer <api_key>` on any endpoint, or append ?api_key=<api_key>.",
+"mcp_url": "https://allratestoday.com/api/mcp?api_key=art_live_…",
+"upgrade": { "free_account": "https://allratestoday.com/register — free…", "paid_plans": "https://allratestoday.com/pricing — …" }
+}
+Property	Trial key	Free account key
+How you get it	One POST , instant	Sign up, verify email
+Calls	100, lifetime	Free, lifetime
+Valid for	7 days, then the key stops working	Until you revoke it
+What it unlocks	The same endpoints: real-time rates, history, dated central-bank tables and calendars
+Limits on issuing	3 per IP per day, 100 per day in total	—
+In the hosted MCP server the tool request_trial_key makes the same call. The server is stateless, so after receiving the key reconnect with ?api_key= on the MCP URL or send the Authorization header. A GET on the endpoint returns a short manifest describing this contract, for agents that only know the URL.
+When the trial runs out the API answers 429 with an upgrade_url . The next step for most teams is a free account, which keeps the key manageable from the dashboard; plans start at 5,000 calls a month on pricing (/pricing) .
+Security
+The AllRatesToday API is designed with security as a first-class concern. This section explains the transport, authentication, and data-handling guarantees you can rely on, plus the responsibilities that sit on your side as an integrator.
+Transport (TLS / HTTPS)
+All API traffic must be sent over HTTPS. Plain-text HTTP requests are permanently redirected ( 301 ) to HTTPS but should never be used for API calls — the redirect leaks your API key via the initial request.
+We require TLS 1.2 or higher . Connections using older TLS versions (1.0, 1.1) or SSLv3 are rejected at the edge.
+Certificates are issued by publicly-trusted CAs and automatically renewed. HSTS is enforced with max-age=31536000; includeSubDomains .
+Network requirements (corporate firewalls)
+The only domain to allow is allratestoday.com on port 443 — every endpoint, including the central-bank API, lives under it.
+The API is served from Cloudflare's edge network , so there is no fixed origin IP. Do not allowlist individual IP addresses — allow Cloudflare's published IP ranges (https://www.cloudflare.com/ips/) (they change; automate updates if your firewall supports it).
+Certificates come from multiple public CAs and rotate automatically — trust the standard set of modern public root CAs rather than pinning a specific CA or certificate.
+TLS-inspecting (SSL interception) proxies can break requests by re-signing with a private CA; if your organisation uses one, exclude allratestoday.com from inspection.
+Prefer TLS 1.3; TLS 1.2 is the minimum accepted.
+Authentication
+Authentication uses a Bearer token in the Authorization header. Two endpoints additionally accept the key as a query parameter for non-programmatic callers — see Authentication (#auth) — but query strings get logged by proxies, CDNs and browser history, so the header is the only form to use from a server.
+Every API key is scoped to one account and can be rotated or revoked instantly from your profile page (/profile#api-keys) . Revocation is immediate: the next request with the old key returns 401 .
+Keys are stored server-side and remain retrievable from your profile page , so you can copy a key again later rather than rotating every environment when one is misplaced. The trade-off is that a key is a bearer credential in the full sense — anyone who can read it can spend your quota. Treat it like a password: secret store, never in git, never in a client bundle.
+Keys are prefixed art_live_ followed by 32 characters. There is no separate test key, sandbox environment or mock mode — staging and production call the same URLs and spend the same quota. Most plans issue one key per account (the Large plan allows three), so if you need to separate environments, budget for it in your quota rather than expecting a free test tier.
+API key handling (your responsibilities)
+Never embed your API key in client-side code.
+Browsers, mobile apps, and any compiled binary can be decompiled. A key shipped to the browser is a public key — expect it to be scraped within hours.
+Server-side only. Call the AllRatesToday API from your backend. Proxy the result to your frontend.
+Use environment variables ( process.env.ART_API_KEY ). Never commit keys to git, never include them in container images.
+Rotate keys periodically — at minimum every 90 days, and immediately if a key is ever exposed in logs, commits, or error reports.
+Use one key per service. When a key leaks, you can revoke just that environment instead of rotating everything.
+Abuse protection
+Rate limiting is applied per API key (see Rate Limits (#rate-limits) ). Exceeding the limit returns 429 Too Many Requests ; it does not leak usage data to other keys.
+WAF & DDoS : requests are filtered by Cloudflare's edge network, which applies OWASP Top 10 mitigations automatically. Malformed or abusive requests are rejected before reaching the API.
+Automated monitoring flags anomalous usage patterns (e.g. sudden 100× spikes) and can lock a key pending verification.
+Data handling & privacy
+We log request metadata (timestamp, endpoint, status code, rate-limit counters) but never the response payload. Rate data is public.
+We do not collect or store any personal data you send in query strings — but please don't send any: all the API needs is currency codes and optional date parameters.
+Access logs are retained for 30 days for debugging and abuse investigation, then permanently deleted.
+AllRatesToday is operated from the UK and complies with UK GDPR. See the privacy policy (/privacy-policy) for the full data-handling statement.
+Reporting a vulnerability
+If you believe you have found a security issue in the AllRatesToday API, please report it privately to support@allratestoday.com (mailto:support@allratestoday.com) . Please do not disclose the issue publicly (on GitHub, Twitter, blog posts, etc.) until we have had a reasonable chance to respond.
+We aim to acknowledge reports within 24 hours and provide a remediation timeline within 72 hours . Responsible disclosure is credited publicly after the fix is deployed (if you want to be named).
+Rate Limits & Quotas
+There is one limit that matters: the number of requests your key may make. It is a quota , not a per-second throttle — you can burst as fast as you like, and nothing is refused until the quota is spent.
+Plan	Requests	Period	API keys
+Free	Free	Lifetime — see below	1
+Small	5,000	Per calendar month	1
+Medium	10,000	Per calendar month	1
+Large	100,000	Per calendar month	3
+Business (official rates only)	1,000,000	Per calendar month	1
+Custom	Agreed per account	Per calendar month	1
+The free tier does not reset monthly.
+Free usage counts against a lifetime total that never resets. Once it is spent, the key returns 429 until the account moves to a paid plan. Plan for it: the free tier is enough to evaluate the API and ship a prototype, not to run a cron job. Paid plans reset at 00:00 UTC on the first of each calendar month.
+What counts as one request
+Each HTTP call to an authenticated endpoint costs 1 , whatever it returns. /api/v1/rates?source=USD&target=EUR,GBP,JPY is one request, not three — batching targets is free, and is the cheapest way to cut usage.
+Historical data is billed by volume , because one call can hand over a year of archive. /api/historical-rates?period=1y costs 12 ; 1d , 7d and 30d cost 1. A from / to range on /api/v1/rates for one target is billed the same way: one unit per 31 days of the range, so a full year costs 12. A range can span at most 366 days, and time or from / to on a free or trial key returns 403 historical_requires_paid_plan . On the central-bank /history endpoint the charge is one unit per calendar month of the requested range per series, and every response reports what it cost in billed_requests .
+/api/v1/symbols takes no key and costs 0 . Cache it and stop paying for currency lists.
+A rejected 401 (bad key), 403 or 429 is never charged, and neither is a 400 from an unsupported ?format= , which is validated before authentication. Everything past that point is counted when the request is accepted — so a call that then fails on a bad currency code, or on an upstream error, does spend a unit. Validate currency codes against /api/v1/symbols (#symbols) rather than discovering them through failed calls.
+The quota is per key. A key that is rotated (/profile#api-keys) keeps the account's usage — rotating does not reset your counter.
+Checking your usage
+GET /api/v1/usage returns the counters for the key that makes the call. It is authenticated like every other endpoint ( Authorization: Bearer or ?key= ) but is never charged , so you can poll it from a monitor. It never sends the 90% or 100% emails either; those come from real requests only.
+curl -H "Authorization: Bearer YOUR_API_KEY" https://allratestoday.com/api/v1/usage
+{
+"plan": "small",
+"period": "month",
+"used": 1240,
+"limit": 5000,
+"remaining": 3760,
+"resets_at": "2026-12-01T00:00:00.000Z",
+"upgrade_url": "https://allratestoday.com/pricing"
+}
+On the free plan and on trial keys period is lifetime and resets_at is never . The same figures are returned as X-Monthly-Limit , X-Monthly-Used and X-Monthly-Resets headers on this response.
+Response headers
+Quota headers are returned on the 429 response only — successful responses do not currently carry X-RateLimit-* or X-Monthly-* headers, so do not build a client that reads a remaining-count from a 200 .
+Header	Sent on	Value
+X-Monthly-Limit	429	Your plan's request allowance.
+X-Monthly-Used	429	Requests spent in the current period.
+X-Monthly-Resets	429	ISO 8601 timestamp of the next reset. On the free plan this date is informational — the lifetime counter does not reset.
+Cache-Control	every 200	max-age=60 on rate endpoints, max-age=86400 on /api/v1/symbols . See Caching (#caching) .
+To watch your usage between calls, call /api/v1/usage (#usage-endpoint) or read the counters on your profile page (/profile#api-keys) , which shows today, this month, last month, and lifetime totals. There is no Retry-After header; use resets_at from the 429 body.
+The 429 response
+HTTP/1.1 429 Too Many Requests
+X-Monthly-Limit: 5000
+X-Monthly-Used: 5000
+X-Monthly-Resets: 2026-09-01T00:00:00.000Z
+{
+"error": "Request limit exceeded",
+"used": 5000,
+"limit": 5000,
+"plan": "small",
+"resets_at": "2026-09-01T00:00:00.000Z",
+"upgrade_url": "https://allratestoday.com/pricing"
+}
+A history request that would cross the limit is refused before any data is returned, and says so explicitly — “A 1y history request is billed as 12 API calls (one per month of data)” — rather than returning a truncated series.
+We email you at 90% of your allowance and again when it is exhausted, so a quota does not run out silently in production.
+View plans and pricing (/pricing) · need a limit that is not on the list? Talk to us (/contact) .
+Handling a 429 in code
+Retrying a quota 429 immediately never helps — the quota is not time-windowed at the second level, so a backoff loop just burns your own CPU. Fail over to a cached rate and alert instead:
+const res = await fetch(url, { headers: { Authorization: `Bearer ${key}` } });
+if (res.status === 429) {
+const { used, limit, resets_at } = await res.json();
+// Do not retry: the allowance is spent until resets_at (or until you upgrade).
+logger.error(`FX quota exhausted: ${used}/${limit}, resets ${resets_at}`);
+return lastKnownRate; // serve stale rather than fail the checkout
+}
+if (!res.ok) throw new Error(`FX API ${res.status}`);
+return (await res.json())[0].rate;
+Authenticated Rates
+GET /api/v1/rates
+Authenticated endpoint with higher rate limits. Requires a Bearer token.
+Parameter	Type	Description
+source optional	string	Source currency code (e.g. USD)
+target optional	string	Target currency code (e.g. EUR). Supports comma-separated values for multiple targets (e.g. EUR,GBP,JPY)
+time optional	ISO 8601	Rate at a specific point in time
+from optional	YYYY-MM-DD	Start date for historical range
+to optional	YYYY-MM-DD	End date for historical range
+group optional	string	Series granularity for a from / to range: day , hour or minute . Resolution depends on the window size: minute applies to windows up to 1 day (~1,400 points), hour up to 30 days (720 points); longer windows return daily points regardless of group . For a long fine-grained series, chunk the range — e.g. twelve 30-day windows with group=hour covers a year at hourly resolution, and day-sized windows with group=minute can be sampled down to any interval (every 30 minutes, say).
+amount optional	number	Convert this amount instead of returning a bare rate. Changes the response shape to the conversion object shown under Convert (#convert) , and requires exactly one source and one target — combining it with a comma-separated target list returns 400 . Must be a non-negative number.
+format optional	string	json (default), csv , xml or xlsx — see Response Formats (#formats) . Ignored when amount is used.
+api_key optional	string	Key as a query parameter, for callers that cannot set a header. Prefer the Authorization header — see Authentication (#auth) .
+One call, many currencies. target=EUR,GBP,JPY,CAD returns one array with four entries and costs a single request against your quota. If you price a page in a dozen currencies, fetch them in one call rather than looping — it is twelve times cheaper and one round trip instead of twelve.
+Example:
+curl "https://allratestoday.com/api/v1/rates?source=USD&target=EUR" \
+-H "Authorization: Bearer YOUR_API_KEY"
+Response — always a JSON array , even for a single pair. A common integration bug is reading res.rate ; it is res[0].rate .
+[
+{
+"rate": 0.9215,
+"source": "USD",
+"target": "EUR",
+"time": "2026-04-03T12:00:00Z"
+}
+]
+Field	Type	Notes
+rate	number	Units of target per 1 unit of source . Full precision — round for display, never for storage.
+source / target	string	ISO 4217 codes, echoed back uppercase.
+time	ISO 8601	When this rate was observed, in UTC. Store it alongside any rate you persist — an FX figure without a timestamp cannot be audited later.
+Simple Rate
+GET /api/rate Auth Required
+Lightweight endpoint for fetching a single pair rate. The response carries the rate and nothing else — useful where bandwidth or parsing cost matters, or where you just want one number. It costs the same one request as /api/v1/rates , which returns more, so reach for this one only when the smaller body is the point.
+Parameter	Type	Description
+source required	string	Source currency code
+target required	string	Target currency code
+key / apiKey optional	string	Key as a query parameter, accepted here so a plain cross-origin GET needs no preflight. The Authorization header works too and is what a server should send.
+curl "https://allratestoday.com/api/rate?source=GBP&target=USD" \
+-H "Authorization: Bearer YOUR_API_KEY"
+{ "rate": 1.2634, "source": "mid-market" }
+Without a valid key the endpoint returns 401 with a signup pointer:
+{
+"error": "A valid API key is required",
+"hint": "Get a free API key at https://allratestoday.com/register"
+}
+What does "source": "mid-market" mean?
+The source field names the rate type: the mid-market rate, halfway between buy and sell prices. (Responses before 16 October 2026 said "interbank" here; treat both values the same.) AllRatesToday delivers mid-market exchange rates aggregated from institutional foreign exchange market data, with no retail markup applied.
+Convert
+GET /api/v1/rates
+Conversion is not a separate endpoint: it is /api/v1/rates with an amount . Adding the parameter switches the response from the rate array to a single conversion object. Exactly one source and one target are required — a comma-separated target list with an amount returns 400 , because one converted figure across several currencies would be ambiguous.
+Parameter	Type	Description
+source required	string	Source currency code (e.g. USD)
+target required	string	Target currency code (e.g. EUR)
+amount required	number	Amount to convert
+Example — Convert $1,000 to EUR:
+curl "https://allratestoday.com/api/v1/rates?source=USD&target=EUR&amount=1000" \
+-H "Authorization: Bearer YOUR_API_KEY"
+Response:
+{
+"from": { "currency": "USD", "amount": 1000 },
+"to": { "currency": "EUR", "amount": 923.4 },
+"rate": 0.9234,
+"source": "mid-market"
+}
+The converted figure is rounded to 6 decimal places ; rate is returned at full precision. For money you are going to book, convert from rate yourself with your own rounding rules and currency exponent (JPY has no minor unit, KWD has three) rather than taking to.amount as final.
+SDK example:
+// JavaScript
+const result = await client.convert('USD', 'EUR', 1000);
+console.log(`$1,000 = €${result.result}`); // $1,000 = €923.4
+# Python
+result = client.convert("USD", "EUR", 1000)
+print(f"$1,000 = €{result['result']}")
+Historical Rates
+GET /api/historical-rates Auth Required
+Fetch historical exchange rate data for charting and analysis. Requires an API key.
+Parameter	Type	Description
+source required	string	Source currency code
+target required	string	Target currency code
+period optional	string	One of 1d , 7d , 30d , 1y . Default 7d . Any other value falls back to 7d rather than erroring — check the period field in the response if you pass it dynamically.
+format optional	string	json (default), csv , xml or xlsx — see Response Formats (#formats) .
+Billing: period=1y costs 12 requests, not 1.
+History is metered by volume — one request per month of data covered — so a single yearly pull cannot drain the archive for one unit. 1d , 7d and 30d each cost 1. If the call would exceed your allowance it is refused with 429 before any data is returned, and the message names the cost.
+What each period actually returns
+period	Points	Granularity	Quota
+1d	24	Hourly — modelled, not observed , see below	1
+7d	~7	One observed close per calendar day, plus today's live rate	1
+30d	~30	One observed close per calendar day, plus today's live rate	1
+1y	~52	Weekly — the daily series is downsampled to every 7th point to keep charts readable	12
+period=1d is a chart shape, not intraday market data.
+It is built from two real observations — yesterday's rate and the current rate — interpolated into 24 hourly points with a small synthetic variation applied so the line does not look drawn with a ruler. The endpoints are real; the path between them is not. Use it to draw a sparkline. Do not use it for backtesting, volatility measurement, or anything where an individual hour's value has to be true. For point-in-time accuracy use /api/v1/rates with time , and for figures that must be citable use the official central-bank rates (#central-bank) .
+Dates in the 1d response are full ISO 8601 timestamps; in every other period they are YYYY-MM-DD . If you parse the date field, handle both, or key off timestamp , which is milliseconds since epoch in all cases.
+curl "https://allratestoday.com/api/historical-rates?source=USD&target=EUR&period=30d" \
+-H "Authorization: Bearer YOUR_API_KEY"
+{
+"source": "USD",
+"target": "EUR",
+"data": [
+{ "date": "2026-03-04", "rate": 0.9198, "timestamp": 1741046400000 },
+{ "date": "2026-03-05", "rate": 0.9210, "timestamp": 1741132800000 }
+],
+"source_api": "mid-market",
+"period": "30d"
+}
+Time Series & Custom Date Ranges
+Mid-market history is served by preset periods only. /api/historical-rates understands period ; it does not read from or to . Sending them is not an error — they are silently ignored and you get the default 7-day window back, which is the failure mode most likely to reach production unnoticed. Always check the period field in the response to confirm what you actually received.
+If you need an arbitrary from – to range, there are two supported routes:
+1. Official rates over an exact range (recommended for reporting)
+The central-bank history endpoint takes real from and to dates, returns one row per published date, and gives you a citable source and a fixed rate_date per row — which is what a report, an audit trail or a month-end close actually needs. It is a paid-plan endpoint and is billed per month of range (#rate-limits) .
+curl "https://allratestoday.com/api/v1/central-bank/ecb/history?source=USD&target=EUR&from=2026-01-01&to=2026-03-31" \
+-H "Authorization: Bearer YOUR_API_KEY"
+See Central Bank Exchange Rate API (#central-bank) for the full parameter list, and add &format=xlsx to get the range straight into a spreadsheet.
+2. Mid-market series from a preset period
+Take the nearest enclosing period and filter client-side. A quarter fits inside 30d only if it is the current month, so in practice this means 1y — which is weekly-sampled and costs 12 requests, so fetch it once and cache it rather than calling it per page view.
+const res = await fetch(
+'https://allratestoday.com/api/historical-rates?source=USD&target=EUR&period=1y',
+{ headers: { Authorization: `Bearer ${key}` } }
+);
+const { data, period } = await res.json();
+// Confirm you got what you asked for — an unknown period silently becomes 7d.
+if (period !== '1y') throw new Error(`Unexpected period: ${period}`);
+const q1 = data.filter((p) => p.date >= '2026-01-01' && p.date
+Response shape
+Both period and central-bank history return a data array of { date, rate, timestamp } objects sorted oldest first. There is no rates object keyed by date, and no pagination — every series is returned in one response, capped at 5,000 rows on the central-bank endpoint.
+Symbols
+GET /api/v1/symbols
+Every supported currency code, name and symbol — 163 of them (browse them with countries and official sources on the supported currencies (/docs/supported-currencies/) page). Use it to build dropdowns, and to validate user input before spending a request on a pair that does not exist.
+curl "https://allratestoday.com/api/v1/symbols"
+No authentication.
+No quota cost, and Access-Control-Allow-Origin: * — so it is the one endpoint you may safely call straight from a browser. Responses carry Cache-Control: public, max-age=86400 ; the list changes rarely, so cache it at build time or on first load rather than fetching it per page view. It also accepts ?format=csv|xml|xlsx (see Response Formats (#formats) ).
+Response:
+{
+"currencies": [
+{ "code": "USD", "name": "US Dollar", "symbol": "$" },
+{ "code": "EUR", "name": "Euro", "symbol": "€" },
+{ "code": "GBP", "name": "British Pound", "symbol": "£" },
+{ "code": "JPY", "name": "Japanese Yen", "symbol": "¥" },
+...
+],
+"count": 163
+}
+A currency appearing here means the code is recognised, not that every pair built from it is quoted at every moment — thinly traded pairs can be temporarily unavailable upstream and return 502 . Handle that case rather than assuming a listed code always resolves.
+SDK example:
+// JavaScript — build a currency dropdown
+const data = await fetch('https://allratestoday.com/api/v1/symbols').then(r => r.json());
+const options = data.currencies.map(c => ({
+value: c.code,
+label: `${c.code} — ${c.name}`,
+}));
+// React example
+<select>
+{options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+</select>
+# Python
+import requests
+data = requests.get("https://allratestoday.com/api/v1/symbols").json()
+for c in data["currencies"]:
+print(f"{c['code']}: {c['name']} ({c['symbol']})")
+Central Bank Rates
+Official exchange rates as published by central banks and national tax authorities — the rates required for tax filings, customs valuations, audits, and compliant invoicing. Coverage — 123 central banks, 6 tax authorities and the Hong Kong Association of Banks, plus the computed composite (/official-rates-methodology/) (131 sources in total). Use the Code column as the {bank} path parameter in the endpoints below.
+Code	Source	Country	Home ccy	Type	In API by (UTC)	Published (local)
+fed	US Federal Reserve (H.10) (/central-bank-rates-api/fed/)	United States	USD	Central bank	10:15	05:07 GMT-5
+boe	Bank of England (/central-bank-rates-api/boe/)	United Kingdom	GBP	Central bank	21:25	06:48 GMT
+pboc	People's Bank of China (CFETS) (/central-bank-rates-api/pboc/)	China	CNY	Central bank	02:15	10:07 GMT+8
+rba	Reserve Bank of Australia (/central-bank-rates-api/rba/)	Australia	AUD	Central bank	06:15	17:07 GMT+11
+cbr	Bank of Russia (/central-bank-rates-api/cbr/)	Russia	RUB	Central bank	15:20	17:14 GMT+3
+tcmb	Central Bank of Türkiye (/central-bank-rates-api/tcmb/)	Türkiye	TRY	Central bank	13:25	16:14 GMT+3
+bcb	Banco Central do Brasil (PTAX) (/central-bank-rates-api/bcb/)	Brazil	BRL	Central bank	17:15	14:08 GMT-3
+bi	Bank Indonesia (/central-bank-rates-api/bi/)	Indonesia	IDR	Central bank	04:15	11:08 GMT+7
+rbi	Reserve Bank of India (/central-bank-rates-api/rbi/)	India	INR	Central bank	09:15	14:38 GMT+5:30
+boc	Bank of Canada (/central-bank-rates-api/boc/)	Canada	CAD	Central bank	21:15	16:07 GMT-5
+bnm	Bank Negara Malaysia (/central-bank-rates-api/bnm/)	Malaysia	MYR	Central bank	06:15	14:07 GMT+8
+cbsl	Central Bank of Sri Lanka (/central-bank-rates-api/cbsl/)	Sri Lanka	LKR	Central bank	05:15	10:37 GMT+5:30
+cnb	Czech National Bank (/central-bank-rates-api/cnb/)	Czech Republic	CZK	Central bank	14:50	15:08 CET
+ecb	European Central Bank (/central-bank-rates-api/ecb/)	Eurozone	EUR	Central bank	15:15	15:07 CET
+nbp	Narodowy Bank Polski (/central-bank-rates-api/nbp/)	Poland	PLN	Central bank	11:15	12:07 CET
+norges	Norges Bank (/central-bank-rates-api/norges/)	Norway	NOK	Central bank	15:15	15:08 CET
+riksbank	Sveriges Riksbank (/central-bank-rates-api/riksbank/)	Sweden	SEK	Central bank	16:20	17:14 CET
+cbn	Central Bank of Nigeria (/central-bank-rates-api/cbn/)	Nigeria	NGN	Central bank	17:15	18:08 GMT+1
+cbk	Central Bank of Kuwait (/central-bank-rates-api/cbk/)	Kuwait	KWD	Central bank	10:15	13:08 GMT+3
+cbb	Central Bank of Bahrain (/central-bank-rates-api/cbb/)	Bahrain	BHD	Central bank	23:15	11:08 GMT+3
+cbar	Central Bank of Azerbaijan (/central-bank-rates-api/cbar/)	Azerbaijan	AZN	Central bank	21:15	13:08 GMT+4
+cbbh	Central Bank of Bosnia and Herzegovina (/central-bank-rates-api/cbbh/)	Bosnia and Herzegovina	BAM	Central bank	23:15	08:08 CET
+bnb	Bulgarian National Bank (/central-bank-rates-api/bnb/)	Bulgaria	EUR	Central bank	15:20	16:16 EET
+bcrp	Central Reserve Bank of Peru (/central-bank-rates-api/bcrp/)	Peru	PEN	Central bank	23:30	05:08 GMT-5
+boj	Bank of Japan (/central-bank-rates-api/boj/)	Japan	JPY	Central bank	10:15	19:08 GMT+9
+hkma	Hong Kong Monetary Authority (/central-bank-rates-api/hkma/)	Hong Kong	HKD	Central bank	—	—
+hkab	Hong Kong Association of Banks (HKAB) (/central-bank-rates-api/hkab/)	Hong Kong	HKD	Banks' association	—	—
+boi	Bank of Israel (/central-bank-rates-api/boi/)	Israel	ILS	Central bank	23:15	16:15 GMT+2
+bcra	Central Bank of Argentina (/central-bank-rates-api/bcra/)	Argentina	ARS	Central bank	22:15	19:08 GMT-3
+sarb	South African Reserve Bank (/central-bank-rates-api/sarb/)	South Africa	ZAR	Central bank	10:15	12:08 GMT+2
+snb	Swiss National Bank (/central-bank-rates-api/snb/)	Switzerland	CHF	Central bank	12:20	13:14 CET
+rbnz	Reserve Bank of New Zealand (/central-bank-rates-api/rbnz/)	New Zealand	NZD	Central bank	10:25	23:20 GMT+13
+bok	Bank of Korea (/central-bank-rates-api/bok/)	South Korea	KRW	Central bank	02:15	11:08 GMT+9
+bnr	National Bank of Romania (/central-bank-rates-api/bnr/)	Romania	RON	Central bank	10:15	12:08 EET
+nbu	National Bank of Ukraine (/central-bank-rates-api/nbu/)	Ukraine	UAH	Central bank	13:25	15:15 EET
+banxico	Banco de México (/central-bank-rates-api/banxico/)	Mexico	MXN	Central bank	21:15	15:08 GMT-6
+bsp	Bangko Sentral ng Pilipinas (/central-bank-rates-api/bsp/)	Philippines	PHP	Central bank	13:30	20:06 GMT+8
+bcrd	Banco Central de la República Dominicana (/central-bank-rates-api/bcrd/)	Dominican Republic	DOP	Central bank	22:15	18:09 GMT-4
+bcp	Banco Central del Paraguay (/central-bank-rates-api/bcp/)	Paraguay	PYG	Central bank	21:15	18:08 GMT-3
+nbc	National Bank of Cambodia (/central-bank-rates-api/nbc/)	Cambodia	KHR	Central bank	17:15	17:09 GMT+7
+bog	Bank of Ghana (/central-bank-rates-api/bog/)	Ghana	GHS	Central bank	18:15	17:09 GMT
+cbe	Central Bank of Egypt (/central-bank-rates-api/cbe/)	Egypt	EGP	Central bank	11:25	13:14 EET
+boa	Bank of Albania (/central-bank-rates-api/boa/)	Albania	ALL	Central bank	12:25	13:15 CET
+banguat	Banco de Guatemala (/central-bank-rates-api/banguat/)	Guatemala	GTQ	Central bank	19:15	00:08 GMT-6
+bom	Bank of Mongolia (/central-bank-rates-api/bom/)	Mongolia	MNT	Central bank	10:15	17:08 GMT+8
+mas	Monetary Authority of Singapore (/central-bank-rates-api/mas/)	Singapore	SGD	Central bank	07:15	15:08 GMT+8
+bdi	Banca d'Italia (/central-bank-rates-api/bdi/)	Italy	EUR	Central bank	16:20	16:15 CET
+dnb	Danmarks Nationalbank (/central-bank-rates-api/dnb/)	Denmark	DKK	Central bank	15:20	15:16 CET
+sfc	Superintendencia Financiera de Colombia (TRM) (/central-bank-rates-api/sfc/)	Colombia	COP	Central bank	00:15	19:08 GMT-5
+nbk	National Bank of Kazakhstan (/central-bank-rates-api/nbk/)	Kazakhstan	KZT	Central bank	07:15	12:08 GMT+5
+nbg	National Bank of Georgia (/central-bank-rates-api/nbg/)	Georgia	GEL	Central bank	15:25	18:16 GMT+4
+cbu	Central Bank of Uzbekistan (/central-bank-rates-api/cbu/)	Uzbekistan	UZS	Central bank	20:15	10:09 GMT+5
+mnb	Magyar Nemzeti Bank (/central-bank-rates-api/mnb/)	Hungary	HUF	Central bank	10:20	10:09 CET
+cbi	Central Bank of Iceland (/central-bank-rates-api/cbi/)	Iceland	ISK	Central bank	16:20	16:15 GMT
+cbuae	Central Bank of the UAE (/central-bank-rates-api/cbuae/)	United Arab Emirates	AED	Central bank	15:25	19:16 GST
+sbp	State Bank of Pakistan (/central-bank-rates-api/sbp/)	Pakistan	PKR	Central bank	20:15	23:54 GMT+5
+nrb	Nepal Rastra Bank (/central-bank-rates-api/nrb/)	Nepal	NPR	Central bank	06:15	09:54 GMT+5:45
+cbj	Central Bank of Jordan (/central-bank-rates-api/cbj/)	Jordan	JOD	Central bank	12:25	15:16 GMT+3
+bb	Bangladesh Bank (/central-bank-rates-api/bb/)	Bangladesh	BDT	Central bank	21:20	03:12 GMT+6
+cbo	Central Bank of Oman (/central-bank-rates-api/cbo/)	Oman	OMR	Central bank	07:15	10:10 GST
+pma	Palestine Monetary Authority (/central-bank-rates-api/pma/)	Palestine	ILS	Central bank	10:15	10:08 EET
+cbm	Central Bank of Myanmar (/central-bank-rates-api/cbm/)	Myanmar	MMK	Central bank	13:30	18:47 GMT+6:30
+cbc	Central Bank of the Republic of China (Taiwan) (/central-bank-rates-api/cbc/)	Taiwan	TWD	Central bank	09:15	17:09 GMT+8
+bot	Bank of Thailand (/central-bank-rates-api/bot/)	Thailand	THB	Central bank	11:25	18:16 GMT+7
+amcm	Monetary Authority of Macao (/central-bank-rates-api/amcm/)	Macao	MOP	Central bank	04:20	12:09 GMT+8
+sbv	State Bank of Vietnam (/central-bank-rates-api/sbv/)	Vietnam	VND	Central bank	02:20	09:10 GMT+7
+bol	Bank of the Lao PDR (/central-bank-rates-api/bol/)	Laos	LAK	Central bank	15:55	20:45 GMT+7
+bcv	Central Bank of Venezuela (/central-bank-rates-api/bcv/)	Venezuela	VES	Central bank	02:45	22:37 GMT-4
+bcch	Central Bank of Chile (/central-bank-rates-api/bcch/)	Chile	CLP	Central bank	21:15	18:09 GMT-3
+bcu	Central Bank of Uruguay (/central-bank-rates-api/bcu/)	Uruguay	UYU	Central bank	20:20	17:09 GMT-3
+bcbol	Banco Central de Bolivia (/central-bank-rates-api/bcbol/)	Bolivia	BOB	Central bank	21:35	16:22 GMT-4
+cbvs	Central Bank of Suriname (/central-bank-rates-api/cbvs/)	Suriname	SRD	Central bank	—	—
+bogy	Bank of Guyana (/central-bank-rates-api/bogy/)	Guyana	GYD	Central bank	—	—
+sama	Saudi Central Bank (SAMA) (/central-bank-rates-api/sama/)	Saudi Arabia	SAR	Central bank	17:15	20:10 GMT+3
+bam	Bank Al-Maghrib (/central-bank-rates-api/bam/)	Morocco	MAD	Central bank	23:20	17:11 WET
+nbs	National Bank of Serbia (/central-bank-rates-api/nbs/)	Serbia	RSD	Central bank	06:35	07:09 CET
+nbrb	National Bank of the Republic of Belarus (/central-bank-rates-api/nbrb/)	Belarus	BYN	Central bank	11:25	14:16 GMT+3
+qcb	Qatar Central Bank (/central-bank-rates-api/qcb/)	Qatar	QAR	Central bank	08:20	11:09 GMT+3
+cbiq	Central Bank of Iraq (/central-bank-rates-api/cbiq/)	Iraq	IQD	Central bank	10:20	13:10 GMT+3
+bda	Bank of Algeria (/central-bank-rates-api/bda/)	Algeria	DZD	Central bank	10:20	11:10 CET
+bccr	Banco Central de Costa Rica (/central-bank-rates-api/bccr/)	Costa Rica	CRC	Central bank	21:55	14:49 GMT-6
+bceao	Central Bank of West African States (BCEAO) (/central-bank-rates-api/bceao/)	West Africa (WAEMU)	XOF	Central bank	19:45	17:11 GMT
+nbe	National Bank of Ethiopia (/central-bank-rates-api/nbe/)	Ethiopia	ETB	Central bank	07:20	10:09 GMT+3
+cbke	Central Bank of Kenya (/central-bank-rates-api/cbke/)	Kenya	KES	Central bank	17:40	20:17 GMT+3
+nbm	National Bank of Moldova (/central-bank-rates-api/nbm/)	Moldova	MDL	Central bank	02:20	04:09 EET
+nbrm	National Bank of North Macedonia (/central-bank-rates-api/nbrm/)	North Macedonia	MKD	Central bank	02:20	03:09 CET
+cba	Central Bank of Armenia (/central-bank-rates-api/cba/)	Armenia	AMD	Central bank	12:30	16:17 GMT+4
+beac	Bank of Central African States (BEAC) (/central-bank-rates-api/beac/)	Central Africa (CEMAC)	XAF	Central bank	09:20	10:10 GMT+1
+bct	Central Bank of Tunisia (/central-bank-rates-api/bct/)	Tunisia	TND	Central bank	15:25	15:16 CET
+bnrw	National Bank of Rwanda (/central-bank-rates-api/bnrw/)	Rwanda	RWF	Central bank	08:20	10:09 GMT+2
+bna	National Bank of Angola (/central-bank-rates-api/bna/)	Angola	AOA	Central bank	13:25	13:17 GMT+1
+botz	Bank of Tanzania (/central-bank-rates-api/botz/)	Tanzania	TZS	Central bank	07:20	10:10 GMT+3
+bou	Bank of Uganda (/central-bank-rates-api/bou/)	Uganda	UGX	Central bank	10:15	10:10 GMT+3
+bojm	Bank of Jamaica (/central-bank-rates-api/bojm/)	Jamaica	JMD	Central bank	17:20	12:11 GMT-5
+bcn	Banco Central de Nicaragua (/central-bank-rates-api/bcn/)	Nicaragua	NIO	Central bank	19:10	13:03 GMT-6
+bch	Banco Central de Honduras (/central-bank-rates-api/bch/)	Honduras	HNL	Central bank	06:15	00:09 GMT-6
+cbtt	Central Bank of Trinidad and Tobago (/central-bank-rates-api/cbtt/)	Trinidad and Tobago	TTD	Central bank	21:20	17:10 GMT-4
+bmu	Bank of Mauritius (/central-bank-rates-api/bmu/)	Mauritius	MUR	Central bank	15:20	11:10 GMT+4
+bdm	Banco de Moçambique (/central-bank-rates-api/bdm/)	Mozambique	MZN	Central bank	14:25	14:18 GMT+2
+bob	Bank of Botswana (/central-bank-rates-api/bob/)	Botswana	BWP	Central bank	09:15	10:10 GMT+2
+boz	Bank of Zambia (/central-bank-rates-api/boz/)	Zambia	ZMW	Central bank	08:20	10:09 GMT+2
+rbm	Reserve Bank of Malawi (/central-bank-rates-api/rbm/)	Malawi	MWK	Central bank	08:20	10:09 GMT+2
+nbkr	National Bank of the Kyrgyz Republic (/central-bank-rates-api/nbkr/)	Kyrgyzstan	KGS	Central bank	10:20	16:10 GMT+6
+lb	Bank of Lithuania (/central-bank-rates-api/lb/)	Lithuania	EUR	Central bank	12:25	14:18 EET
+bcc	Banque Centrale du Congo (/central-bank-rates-api/bcc/)	DR Congo	CDF	Central bank	08:20	09:10 GMT+1
+cbbd	Central Bank of Barbados (/central-bank-rates-api/cbbd/)	Barbados	BBD	Central bank	15:25	08:18 GMT-4
+cbl	Central Bank of Libya (/central-bank-rates-api/cbl/)	Libya	LYD	Central bank	07:20	09:10 EET
+cbg	Central Bank of The Gambia (/central-bank-rates-api/cbg/)	Gambia	GMD	Central bank	09:20	09:09 GMT
+brh	Banque de la République d'Haïti (/central-bank-rates-api/brh/)	Haiti	HTG	Central bank	15:30	09:18 GMT-5
+rma	Royal Monetary Authority of Bhutan (/central-bank-rates-api/rma/)	Bhutan	BTN	Central bank	15:00	19:06 GMT+6
+nbt	National Bank of Tajikistan (/central-bank-rates-api/nbt/)	Tajikistan	TJS	Central bank	23:15	05:09 GMT+5
+cbbz	Central Bank of Belize (/central-bank-rates-api/cbbz/)	Belize	BZD	Central bank	15:25	09:17 GMT-6
+rbf	Reserve Bank of Fiji (/central-bank-rates-api/rbf/)	Fiji	FJD	Central bank	10:15	22:10 GMT+12
+mma	Maldives Monetary Authority (/central-bank-rates-api/mma/)	Maldives	MVR	Central bank	04:15	09:10 GMT+5
+bcm	Banque Centrale de Mauritanie (/central-bank-rates-api/bcm/)	Mauritania	MRU	Central bank	00:15	00:09 GMT
+rbz	Reserve Bank of Zimbabwe (/central-bank-rates-api/rbz/)	Zimbabwe	ZWG	Central bank	06:20	08:09 GMT+2
+bon	Bank of Namibia (/central-bank-rates-api/bon/)	Namibia	NAD	Central bank	06:20	08:09 GMT+2
+bfm	Central Bank of Madagascar (BFM) (/central-bank-rates-api/bfm/)	Madagascar	MGA	Central bank	15:30	16:19 GMT+3
+cbt	Central Bank of Turkmenistan (/central-bank-rates-api/cbt/)	Turkmenistan	TMT	Central bank	04:20	09:10 GMT+5
+bccu	Banco Central de Cuba (/central-bank-rates-api/bccu/)	Cuba	CUP	Central bank	04:15	22:11 GMT-5
+bsl	Bank of Sierra Leone (/central-bank-rates-api/bsl/)	Sierra Leone	SLE	Central bank	17:20	16:16 GMT
+bcstp	Banco Central de São Tomé e Príncipe (/central-bank-rates-api/bcstp/)	São Tomé and Príncipe	STN	Central bank	12:25	10:10 GMT
+imf	International Monetary Fund (/central-bank-rates-api/imf/)	International	USD	Central bank	00:00	18:55 GMT-5
+cbir	Central Bank of Iran (/central-bank-rates-api/cbir/)	Iran	IRR	Central bank	19:20	21:21 GMT+3:30
+hmrc	HM Revenue & Customs (/tax-authority-rates-api/hmrc/)	United Kingdom	GBP	Tax authority	—	—
+bazg	Swiss Federal Office for Customs and Border Security (/tax-authority-rates-api/bazg/)	Switzerland	CHF	Tax authority	05:15	06:08 CET
+ustreasury	U.S. Department of the Treasury (/tax-authority-rates-api/ustreasury/)	United States	USD	Tax authority	—	—
+irs	Internal Revenue Service (yearly average rates) (/tax-authority-rates-api/irs/)	United States	USD	Tax authority	—	—
+sunat	SUNAT (Peru tax and customs authority) (/tax-authority-rates-api/sunat/)	Peru	PEN	Tax authority	—	—
+cbic	Central Board of Indirect Taxes and Customs (CBIC) (/tax-authority-rates-api/cbic/)	India	INR	Tax authority	—	—
+composite	Composite Official Rate (/official-rates-methodology/)	Global	USD	Composite	23:20	23:09 UTC
+See the central bank coverage map (/central-bank-rates-api/) or the tax authority coverage (/tax-authority-rates-api/) for per-source pages, or get the live list from /api/v1/central-banks . Both kinds of source are served by the endpoints below — only the coverage pages are split. More sources are being added. All central-bank requests count toward your plan's monthly request quota, like every other endpoint.
+These are not the mid-market rates served by /api/v1/rates and the conversion endpoints. A mid-market rate is the live interbank midpoint and moves every minute; an official rate is the number the named institution published for that date and never changes afterwards. Use official rates wherever a regulation, tax authority, or auditor names the source; use mid-market rates for pricing and display. The two can diverge by several percent — see the comparison in Overview (#overview) .
+Rates use the convention value = quote currency per 1 base currency and always carry the bank's own publication date ( rate_date ). On weekends and holidays the most recent published date is returned — which is the rate compliance rules require you to apply.
+Every covered bank also has a dedicated zero-dependency npm package (e.g. ecb-exchange-rate , cbsl-exchange-rate ) wrapping these endpoints with TypeScript types — linked from its per-bank page (/central-bank-rates-api/) .
+GET /api/v1/central-banks Auth Required
+List covered banks with metadata and the latest available date.
+curl "https://allratestoday.com/api/v1/central-banks" \
+-H "Authorization: Bearer YOUR_API_KEY"
+GET /api/v1/central-banks/rates Auth Required
+Every bank's latest official rate for one pair, in a single call — useful for comparing what different institutions published for the same day, or picking the one a given regulator names. Pairs a bank does not publish directly are cross-computed from that bank's own table only; banks are never mixed to derive a rate, and any bank that cannot produce the pair is skipped.
+Sources that have not published for 30 days are still returned — the U.S. Treasury publishes quarterly and its rate stays legally in force for months — but are marked stale and excluded from the spread statistics, so a quarter-old table cannot distort the min/max/median against daily publishers.
+curl "https://allratestoday.com/api/v1/central-banks/rates?source=USD&target=EUR" \
+-H "Authorization: Bearer YOUR_API_KEY"
+See the rate methodology (/official-rates-methodology/) for how the composite is computed from these.
+GET /api/v1/central-bank/{bank}/latest Auth Required
+The bank's most recent published rate table. Available on all plans, including free — every request counts as one API call toward your monthly quota. Add source and target (same parameters as the live rates API) to get a single pair instead of the full table. Where the bank publishes two sides, add type=buy or type=sell to pin the side; without it the pair picks reference, mid, import, buy, sell in that order and reports which one in rate_type :
+# Full table
+curl "https://allratestoday.com/api/v1/central-bank/cbsl/latest" \
+-H "Authorization: Bearer YOUR_API_KEY"
+# Single pair — USD to LKR at the CBSL rate
+curl "https://allratestoday.com/api/v1/central-bank/cbsl/latest?source=USD&target=LKR" \
+-H "Authorization: Bearer YOUR_API_KEY"
+{
+"bank": "cbsl",
+"name": "Central Bank of Sri Lanka",
+"rate_date": "2026-07-28",
+"source": "USD",
+"target": "LKR",
+"rate": 336.2512,
+"rate_type": "indicative",
+"derived": false,
+"method": "published",
+"disclaimer": "Official rates as published by the named central bank. On weekends/holidays the most recent published rate_date is returned."
+}
+If the bank does not publish the pair directly, it is computed from the published table — the inverse pair, or a cross rate via the bank's home currency (e.g. USD&rarr;JPY from the ECB's EUR&rarr;USD and EUR&rarr;JPY). Computed rates return "derived": true with the method , so you always know what the bank actually printed versus what was calculated.
+{
+"bank": "cbsl",
+"name": "Central Bank of Sri Lanka",
+"rate_date": "2026-07-28",
+"rates": [
+{ "base": "USD", "quote": "LKR", "type": "indicative", "value": 336.2512 },
+{ "base": "EUR", "quote": "LKR", "type": "indicative", "value": 382.3849 }
+]
+}
+GET /api/v1/central-bank/{bank}/{YYYY-MM-DD} Paid Plans
+The published table for a specific date. If the bank did not publish that day, the response returns the most recent prior rate_date and sets published_on_requested_date: false . Also accepts source / target for a single pair, plus type (e.g. buy , sell ) to pin the table side.
+curl "https://allratestoday.com/api/v1/central-bank/ecb/2026-06-30?source=USD&target=EUR" \
+-H "Authorization: Bearer YOUR_API_KEY"
+GET /api/v1/central-bank/{bank}/history Paid Plans
+Daily time series. Defaults to the last year; max 5000 rows per request. Use symbol for all pairs involving one currency, or source + target for a single pair series (e.g. USD&rarr;LKR day by day), optionally with type ( buy / sell ) on two-sided tables.
+Billing: history is metered by volume — one API call per month of data covered (each response reports the charge in billed_requests ). A one-month series costs 1 call; a full year costs 12. Whole-table history downloads on the bank pages are likewise billed per currency per month.
+Parameter	Type	Description
+symbol optional	string	3-letter currency code, matched against either side of the pair. Required unless source + target given.
+source / target optional	string	Pair mode: one resolved rate per date, cross-computed via the bank's home currency when not directly published ( derived: true )
+from optional	date	Range start, YYYY-MM-DD (default: one year before to )
+to optional	date	Range end, YYYY-MM-DD (default: today)
+curl "https://allratestoday.com/api/v1/central-bank/boc/history?symbol=USD&from=2026-01-01" \
+-H "Authorization: Bearer YOUR_API_KEY"
+GET /api/v1/central-bank/{bank}/availability All Plans
+The bank's publication calendar: the dates it actually published a table, for a ?year=2026 or a ?from / ?to range (default: the last year). Weekends, holidays, and weekly-cadence gaps show up as missing dates — useful for reconciliation jobs that need to know which dates have an official rate before requesting them.
+curl "https://allratestoday.com/api/v1/central-bank/cbsl/availability?year=2026" \
+-H "Authorization: Bearer YOUR_API_KEY"
+When to poll — scheduling a sync
+Each institution publishes at its own fixed local time and our collectors run every hour, so there is no single best time of day. The In API by (UTC) column above, and the available_by_utc field on every /latest response and in both /api/v1/central-banks lists, give the UTC time by which that source's new table was in the API on at least 9 of its last 10 publications ( usually_at_utc is the typical minute; publisher_timezone and usually_at_local give the same moment on the institution's own clock). It is measured from our own database, not copied from the bank's calendar, and refreshed weekly.
+Recommended schedule: run your sync at available_by_utc or shortly after, compare rate_date with the one you stored, and stop once it has moved. If it has not moved (holiday, late publication), retry hourly. Each retry costs one request; a daily source needs one or two calls a day this way. Sources listed with no time publish too irregularly to predict — poll them hourly or once a day and rely on rate_date .
+curl "https://allratestoday.com/api/v1/central-bank/pboc/latest?source=USD&target=CNY" \
+-H "Authorization: Bearer YOUR_API_KEY"
+# ... "rate_date": "2026-10-29", "cadence": "daily", "available_by_utc": "02:15", "usually_at_utc": "02:07" ...
+Response formats
+All three central-bank table endpoints accept ?format=json|csv|xml|xlsx , like the rest of the API — see Response Formats (#formats) for the full description. An xlsx export of a bank's history is the fastest way to hand a finance team an auditable range:
+curl "https://allratestoday.com/api/v1/central-bank/ecb/history?source=USD&target=EUR&from=2026-01-01&format=xlsx" \
+-H "Authorization: Bearer YOUR_API_KEY" -o ecb-usd-eur.xlsx
+Plan requirements
+/latest , /availability and both /api/v1/central-banks… list endpoints work on every plan, free included. /history and the dated /{YYYY-MM-DD} lookup require a paid plan and return 403 on free:
+{
+"error": "Historical central bank rates require a paid plan. The /latest endpoint is available on all plans.",
+"upgrade_url": "https://allratestoday.com/pricing"
+}
+Terminology
+rate_date — the bank's own publication date for the table, never ours. Requests for dates the bank didn't publish resolve to the most recent published date and carry published_on_requested_date: false .
+Value convention — value is always quote currency per 1 unit of base currency . Per-100/per-10,000 unit multipliers used by some banks (JPY, IDR) are already normalized away.
+rate_type — the bank's own price type, preserved as published: reference (single official rate), middle / mid (midpoint), indicative , or buy / sell where the bank publishes both sides (TCMB, BCB, BI, CBN, BCRP, CBBH). Banks publishing buy/sell return one row per side; a pair request ( source + target ) returns the buy side by default, or the side you name with type=buy / type=sell .
+derived + method — pairs the bank doesn't print directly are computed from its table ( inverse or cross via the bank's home currency) and flagged derived: true ; what the bank printed is never mixed with what was computed.
+Publication cadence — most covered banks publish one table per business day. The exceptions: the US Federal Reserve (/central-bank-rates-api/fed/) H.10 release is weekly (one rate per business day, released each Monday), the Swiss National Bank (/central-bank-rates-api/snb/) publishes daily rates for four currencies and monthly averages for the rest, UK HMRC (/tax-authority-rates-api/hmrc/) publishes one table per calendar month, and the US Treasury (/tax-authority-rates-api/ustreasury/) one per quarter. The /availability endpoint shows any source's real calendar.
+Daily Reference Rate (16:00 London)
+One immutable mid-market table per business day for 160+ currencies, fixed at 16:00 London as the per-currency median of five once-a-minute samples (15:57:30–16:02:30). Built for index calculation, research series and reporting, where everyone must be able to reproduce the same number. Values are units of each currency per 1 USD; any pair is an exact cross through USD, flagged derived . Full methodology and disclaimer: /reference-rate/ .
+Not a benchmark. This is not the WM/Refinitiv (LSEG) fix and not a benchmark registered under the EU or UK Benchmarks Regulation. Use it for research, reporting and index work, not as the settlement rate of a financial instrument.
+Endpoint	Access	Parameters
+GET /api/open/reference-rate	None	source , target (one pair) · format json|csv|xml|xlsx
+GET /api/v1/reference-rate/latest	Key	symbols (comma list) or source + target · format
+GET /api/v1/reference-rate/{YYYY-MM-DD}	Paid plan	Same as latest. Weekends/holidays resolve to the previous business day; rate_date says which.
+GET /api/v1/reference-rate/history	Paid plan	symbol or source + target · from , to (default last year) · format . Billed 1 call per month of range.
+curl "https://allratestoday.com/api/v1/reference-rate/latest?symbols=EUR,SAR,EGP" \
+-H "Authorization: Bearer YOUR_API_KEY"
+{
+"rate_date": "2026-10-13",
+"time": "16:00 London",
+"base": "USD",
+"window_start": "2026-10-13T14:57:31.102Z",
+"window_end": "2026-10-13T15:02:30.874Z",
+"samples": 5,
+"published_at": "2026-10-13T15:02:33.511Z",
+"method": "median of once-a-minute mid-market samples, 15:57:30–16:02:30 Europe/London",
+"rates": [
+{ "base": "USD", "quote": "EGP", "value": 48.5125, "low": 48.5061, "high": 48.5198, "samples": 5 },
+{ "base": "USD", "quote": "EUR", "value": 0.892738, "low": 0.892611, "high": 0.892902, "samples": 5 },
+{ "base": "USD", "quote": "SAR", "value": 3.75034, "low": 3.75021, "high": 3.75049, "samples": 5 }
+],
+"attribution": { "source": "AllRatesToday Daily Reference Rate (16:00 London)", "url": "https://allratestoday.com/reference-rate/" },
+"disclaimer": "…"
+}
+Each day's table is written once, a few seconds after 16:02 London, and never revised. Reproduce any cross yourself: EUR/SAR = SAR per USD &divide; EUR per USD .
+MCP Server
+AI tools such as Claude Code, Cursor, Claude Desktop and ChatGPT can call AllRatesToday through the Model Context Protocol (https://modelcontextprotocol.io/) . Use the hosted server, or run the @allratestoday/mcp-server (https://www.npmjs.com/package/@allratestoday/mcp-server) package locally. A key adds real-time rates and history.
+Install
+Hosted (nothing to install) — paste this URL into any client that supports remote MCP:
+https://allratestoday.com/api/mcp
+Claude Code
+claude mcp add --transport http allratestoday https://allratestoday.com/api/mcp
+To run it locally with a key instead:
+claude mcp add allratestoday -e ALLRATES_API_KEY=art_live_xxxxx -- npx -y @allratestoday/mcp-server
+Cursor, Claude Desktop, or ChatGPT Desktop — add the block below to your MCP config ( ~/.cursor/mcp.json or the desktop app's claude_desktop_config.json ). Restart the client after editing.
+{
+"mcpServers": {
+"allratestoday": {
+"command": "npx",
+"args": ["-y", "@allratestoday/mcp-server"],
+"env": { "ALLRATES_API_KEY": "art_live_xxxxx" }
+}
+}
+}
+Tools exposed
+The local package has the first eight tools below. The hosted server has all eleven.
+Tool	API key?	What it does
+get_exchange_rate	no	Without a key, an official central-bank rate, labelled with its bank and date. With a key, the live mid-market rate.
+list_currencies	no	All supported currencies with codes, names, and symbols.
+list_central_banks	no	Codes, names and latest publication date of every official source.
+get_official_rates	no	The latest official table, or one pair, from any source. A dated table needs a paid-plan key.
+get_reference_rate	no	The Daily Reference Rate fixed at 16:00 London. A past date needs a paid-plan key.
+request_trial_key	no	Issues a 100-call, 7-day key with no account.
+get_historical_rates	yes	Time series over 1d , 7d , 30d , or 1y .
+get_rates_authenticated	yes	Live rates for several targets through /api/v1/rates .
+get_official_rate_history	hosted	A source's official series for a currency or pair.
+compare_official_rates	hosted	What each source published for one pair, side by side.
+get_publication_calendar	hosted	The dates a source actually published.
+Environment variables
+Variable	Required?	Purpose
+ALLRATES_API_KEY	No	Bearer token like art_live_xxxxx from your dashboard (/profile) . Adds real-time rates and history.
+ALLRATES_BASE_URL	No	Override to point at a staging or self-hosted deployment.
+Example prompts
+"What's the USD to EUR rate right now?"
+"Show me GBP/JPY over the last 30 days."
+"What rate did the Bank of England publish for USD today?"
+"Compare today's official USD to EUR rates across central banks."
+"List every supported currency."
+Troubleshooting
+Client doesn't see the tools: restart the MCP client after editing config. Claude Desktop caches the server list.
+command not found: npx : install Node.js 18+ — npx ships with it.
+Auth-required tool failing: double-check your ALLRATES_API_KEY . Tools marked "no" above work without one — test those first to confirm connectivity.
+Full setup docs: /docs/mcp-server/ . Source & issues: github.com/AllRates-Today/mcp-server (https://github.com/AllRates-Today/mcp-server) . Feature overview: /mcp/ .
+DeepSeek Integration
+The Python package allratestoday-deepseek (https://github.com/AllRates-Today/allratestoday-deepseek) plugs AllRatesToday tools into any deepseek-chat or deepseek-reasoner conversation via OpenAI-compatible function calling.
+pip install allratestoday-deepseek
+export DEEPSEEK_API_KEY=sk-xxxxx
+allratestoday-deepseek --ask "Convert 2500 USD to EUR."
+Library usage
+from allratestoday_deepseek import DeepSeekCurrencyAgent
+with DeepSeekCurrencyAgent() as agent:
+print(agent.ask("How many Japanese Yen is 500 Swiss Francs?"))
+Core currency tools from the MCP server, plus a dedicated convert_currency tool that fetches the pair rate and multiplies the amount. See the /deepseek/ landing page for details.
+LLM Discovery
+For browsing-enabled LLMs that don't use MCP, AllRatesToday publishes an llms.txt (/llms.txt) and a skill.md (/skill.md) that tell agents which endpoint to call. This one needs no key or headers:
+GET https://allratestoday.com/api/open/reference-rate?source=USD&target=EUR
+# Response includes: {"rate_date": "2026-11-04", "time": "16:00 London", "rate": 0.890175}
+It returns the Daily Reference Rate, so it changes once per business day. For a live rate, an agent needs a key: /api/rate and /api/v1/rates answer 401 without one. An agent with no account can issue itself a trial key (#agent-keys) .
+Landing pages under /currency-converter/{from}-to-{to}-rate/ additionally expose a schema.org/ExchangeRateSpecification microdata block with the current rate, so LLM browsers can extract a numeric value without calling the API at all.
+React Currency Localizer
+Automatically display prices in your user's local currency using IP geolocation. Zero runtime dependencies, intelligent caching, and graceful fallbacks.
+Without apiKey , rates are ECB daily reference rates for about 30 currencies, shown with a visible "Rates by AllRatesToday" link that the component renders for you. Pass apiKey for real-time mid-market rates in 160+ currencies, with no link required.
+npm install react-currency-localizer-realtime
+npm: react-currency-localizer-realtime (https://www.npmjs.com/package/react-currency-localizer-realtime) View on GitHub (https://github.com/AllRates-Today/exchange-rates-api/tree/main/sdks/react)
+How It Works
+Step	Service	Cache	Description
+1. Detect currency	/api/open/geo on allratestoday.com	24h (localStorage)	Detects user's local currency from their IP address
+2. Fetch rate	AllRatesToday API	1h (memory)	Gets the ECB rate, or the real-time mid-market rate with a key
+3. Convert & display	Browser (Intl API)	—	Formats the converted price with currency symbol
+Performance
+First load: 2 API calls. Subsequent loads: 0–1 calls (geo cached). Batch conversion: 1000+ prices in <1ms. Bundle: ~4KB gzipped. Zero runtime dependencies.
+useCurrencyConverter()
+HOOK useCurrencyConverter(options)
+Convert a single price to the user's local currency. Handles geolocation, rate fetching, caching, and error states automatically.
+Parameter	Type	Description
+basePrice required	number	The price in your base currency
+baseCurrency required	string	ISO 4217 currency code (case-insensitive, e.g. USD or usd )
+apiKey optional	string	Enables real-time mode. Omit for ECB mode
+manualCurrency optional	string	Override auto-detected currency
+geoEndpoint optional	string	Any URL returning { currency } . Default https://allratestoday.com/api/open/geo
+onSuccess optional	function	Callback on successful conversion
+onError optional	function	Callback on error
+Returns:
+Property	Type	Description
+convertedPrice	number | null	Price in the user's local currency
+localCurrency	string | null	Detected or manual currency code
+baseCurrency	string	Original base currency
+exchangeRate	number | null	Exchange rate used
+rateSource	string	'ecb' (no apiKey ) or 'realtime' (with a key)
+rateDate	string	YYYY-MM-DD for ECB, an ISO timestamp for real-time
+isLoading	boolean	True while fetching
+error	Error | null	Error object if failed
+Example:
+import { useCurrencyConverter } from 'react-currency-localizer-realtime';
+function ProductPrice({ price }) {
+const { convertedPrice, localCurrency, isLoading, error } = useCurrencyConverter({
+basePrice: price,
+baseCurrency: 'USD',
+apiKey: 'YOUR_API_KEY',
+});
+if (isLoading) return <span>Loading...</span>;
+if (error) return <span>${price}</span>; // Fallback
+return (
+<span>
+{new Intl.NumberFormat(undefined, {
+style: 'currency',
+currency: localCurrency || 'USD',
+}).format(convertedPrice || price)}
+</span>
+);
+}
+useCurrencyLocalizer() — Batch Conversion
+HOOK useCurrencyLocalizer(options)
+Convert multiple prices efficiently with a single exchange rate lookup. Returns convert() , format() , and convertAndFormat() functions.
+Parameter	Type	Description
+baseCurrency required	string	ISO 4217 currency code
+apiKey optional	string	Enables real-time mode. Omit for ECB mode
+manualCurrency optional	string	Override detected currency
+onReady optional	function	Callback when converter is ready
+onError optional	function	Callback on error
+Returns:
+Property	Type	Description
+convert(price)	number | null	Convert a single price
+format(price)	string	Format with currency symbol
+convertAndFormat(price)	string	Convert + format in one call
+isReady	boolean	True when ready to convert
+isLoading	boolean	True while fetching
+localCurrency	string | null	Detected currency
+exchangeRate	number | null	Rate used
+error	Error | null	Error if any
+Example — Product list:
+import { useCurrencyLocalizer } from 'react-currency-localizer-realtime';
+function ProductList({ products }) {
+const { convertAndFormat, isReady } = useCurrencyLocalizer({
+baseCurrency: 'USD',
+apiKey: 'YOUR_API_KEY',
+});
+return (
+<ul>
+{products.map(p => (
+<li key={p.id}>
+{p.name}: {isReady ? convertAndFormat(p.price) : '...'}
+</li>
+))}
+</ul>
+);
+}
+Example — Pricing table:
+function PricingTable() {
+const plans = [
+{ name: 'Basic', price: 9.99 },
+{ name: 'Pro', price: 19.99 },
+{ name: 'Enterprise', price: 49.99 },
+];
+const { convertAndFormat, isReady } = useCurrencyLocalizer({
+baseCurrency: 'USD',
+apiKey: 'YOUR_API_KEY',
+});
+return (
+<div>
+{plans.map(plan => (
+<div key={plan.name}>
+<h3>{plan.name}</h3>
+<p>{isReady ? convertAndFormat(plan.price) : '...'}/month</p>
+</div>
+))}
+</div>
+);
+}
+<LocalizedPrice /> Component
+COMPONENT <LocalizedPrice />
+Drop-in React component that displays a price converted to the user's local currency. Handles loading, errors, and formatting automatically.
+Prop	Type	Description
+basePrice required	number	Price in base currency
+baseCurrency required	string	ISO 4217 code (case-insensitive)
+apiKey optional	string	Enables real-time mode. Omit for ECB mode
+manualCurrency optional	string	Override detected currency
+loadingComponent optional	ReactNode	Custom loading UI
+errorComponent optional	function	Custom error UI (receives error, basePrice, baseCurrency). If not provided, shows original price as fallback.
+formatPrice optional	function	Custom formatter: (price, currency) => string
+Basic usage:
+import { LocalizedPrice } from 'react-currency-localizer-realtime';
+// Auto-detects currency, daily ECB rates, shows fallback on error
+<LocalizedPrice basePrice={99.99} baseCurrency="USD" />
+// With a key — real-time rates, 160+ currencies
+<LocalizedPrice basePrice={99.99} baseCurrency="USD" apiKey="YOUR_API_KEY" />
+Custom format:
+// Custom formatting for subscription pricing
+<LocalizedPrice
+basePrice={19.99}
+baseCurrency="USD"
+apiKey="YOUR_API_KEY"
+formatPrice={(price, currency) => `${currency} ${price.toFixed(2)}/month`}
+/>
+Custom loading and error:
+<LocalizedPrice
+basePrice={99.99}
+baseCurrency="USD"
+apiKey="YOUR_API_KEY"
+loadingComponent={<span>Converting...</span>}
+errorComponent={(error, basePrice) => (
+<span>${basePrice} <small>(conversion unavailable)</small></span>
+)}
+/>
+Manual currency with selector:
+function CurrencySelector() {
+const [currency, setCurrency] = useState('');
+return (
+<div>
+<select value={currency} onChange={e => setCurrency(e.target.value)}>
+<option value="">Auto-detect</option>
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+<option value="JPY">JPY</option>
+</select>
+<LocalizedPrice
+basePrice={99.99}
+baseCurrency="USD"
+apiKey="YOUR_API_KEY"
+manualCurrency={currency || undefined}
+/>
+</div>
+);
+}
+SSR Note
+When using with Next.js or other SSR frameworks, IP geolocation runs on the server and detects the server's location. Use manualCurrency for server rendering and auto-detect on the client:
+const [isClient, setIsClient] = useState(false);
+useEffect(() => setIsClient(true), []);
+<LocalizedPrice
+basePrice={99.99}
+baseCurrency="USD"
+apiKey="YOUR_API_KEY"
+manualCurrency={!isClient ? 'USD' : undefined}
+/>
+Environment Variables
+Store your API key in environment variables:
+VITE_ALLRATESTODAY_KEY (Vite) •
+REACT_APP_ALLRATESTODAY_KEY (CRA) •
+NEXT_PUBLIC_ALLRATESTODAY_KEY (Next.js)
+Errors
+Every error is a JSON object with an error string, and sometimes a hint or extra context. The shape never changes with the status code, so one handler covers all of them.
+{ "error": "Authentication required. Provide an API key via Authorization header or log in." }
+Branch on the status code, not on the message text.
+Messages are written for humans and get reworded; the status codes below are the contract.
+Status	When	What to do
+400	An unsupported ?format= , a negative or non-numeric amount , amount combined with several targets, a malformed date, or from later than to .	Fix the request. Retrying identically will always fail. Format errors are returned before authentication, so a 400 here never means your key is wrong.
+401	No Authorization header, a key that does not exist, or a key that has been disabled or revoked. Also returned by the retired /api/public/rates .	Check the header format is exactly Bearer <key> . If the key was working yesterday, confirm it has not been rotated from the profile page (/profile#api-keys) .
+403	The endpoint needs a paid plan — central-bank /history and /{date} — or a browser-restricted key was used from an unapproved origin.	Not a retry case. Upgrade (/pricing) , or switch to /latest , which is available on every plan.
+404	An unknown central bank code ( { "error": "Unknown central bank: xyz" } ), or a path that is not an endpoint at all — a non-existent path returns the HTML 404 page, not JSON.	List valid codes from /api/v1/central-banks . If you got HTML back, the URL is wrong — check for /api/convert and friends, which do not exist.
+429	Your request allowance is spent. See Rate Limits & Quotas (#rate-limits) .	Do not retry or back off — this is a quota, not a throttle, and it will keep failing until resets_at . Serve a cached rate and alert. There is no Retry-After header; use resets_at from the body.
+500	An unexpected failure on our side, or a missing service configuration.	Retry once after a short delay. If it persists, check status.allratestoday.com (https://status.allratestoday.com/) and email support with the timestamp.
+502	The upstream market-data provider failed or has no quote for that pair ( { "error": "Rate unavailable for that pair" } ).	Safe to retry with backoff — these are usually transient. If one specific pair fails consistently, it is likely not quoted; try routing via USD.
+503	Temporarily unavailable, typically during an incident.	Retry with exponential backoff and fall back to your last cached rate.
+A handler that covers all of them
+async function getRate(from, to) {
+const res = await fetch(
+`https://allratestoday.com/api/v1/rates?source=${from}&target=${to}`,
+{ headers: { Authorization: `Bearer ${process.env.ART_API_KEY}` } }
+);
+if (res.ok) return (await res.json())[0].rate;
+const { error } = await res.json().catch(() => ({ error: res.statusText }));
+switch (res.status) {
+case 400:
+case 404:
+throw new Error(`Bad FX request: ${error}`); // a bug — fix the call
+case 401:
+case 403:
+throw new Error(`FX credentials: ${error}`); // page someone
+case 429:
+return cache.get(`${from}${to}`); // quota gone; serve stale
+default:
+return retryWithBackoff(() => getRate(from, to)); // 5xx — transient
+}
+}
+Whatever you do with an error, keep a last-known-good rate. FX is a dependency in a payment path; failing a checkout because a rate lookup returned 502 is almost never the right trade.
+Response Formats
+Every table endpoint returns JSON by default and accepts ?format= with one of json , csv , xml or xlsx . The rows are identical in every format — only the encoding changes. See JSON and CSV output (/exchange-rate-api-json-csv/) for real responses and parsing examples.
+Value	Content type	Use it for
+json	application/json	The default, and what every SDK uses.
+csv	text/csv	Downloadable CSV with a UTF-8 BOM, so currency symbols and non-ASCII names open correctly in Excel rather than as mojibake.
+xlsx	application/vnd.openxmlformats-…	A real Excel workbook, not a renamed CSV: dates arrive as dates and rates keep full precision, so sorting and filtering behave.
+xml	application/xml	The same fields as the JSON payload, for ERP and legacy pipelines that cannot consume JSON.
+Supported on: /api/v1/rates , /api/v1/symbols , /api/historical-rates , /api/v1/central-banks , and the central-bank /latest , /history and /availability endpoints.
+curl "https://allratestoday.com/api/v1/central-bank/ecb/history?source=USD&target=EUR&from=2026-01-01&format=xlsx" \
+-H "Authorization: Bearer YOUR_API_KEY" -o ecb-usd-eur.xlsx
+An unsupported value returns 400 before authentication is checked , so a typo in format never looks like an auth failure — and never costs a request.
+format is ignored when amount is used on /api/v1/rates : a conversion is a single object, not a table, and always comes back as JSON.
+A non-JSON response is still charged against your quota exactly once, and an xlsx of a year of history is billed by range like any other history call.
+Each coverage page also offers its published table as a one-click Excel or CSV download — see any central bank (/central-bank-rates-api/) or tax authority (/tax-authority-rates-api/) page.
+Caching
+Rates are quoted per request, so the cheapest integration is one that does not call us for every page view. Caching is the single biggest lever on your quota.
+Data	We send	Sensible client cache
+Live rates ( /api/v1/rates , /api/rate )	public, max-age=60	60 seconds. The underlying market data refreshes on roughly that cadence, so a shorter cache buys precision you cannot observe.
+Currency list ( /api/v1/symbols )	public, max-age=86400	A day, or bake it into your build. It costs 0 requests either way.
+Mid-market history	—	Until the next daily close. Yesterday's closes never change.
+Official central-bank rates	—	Indefinitely. A published rate_date is immutable by definition — once you have the ECB's rate for 2026-06-30, it will never differ. Cache it forever and only ever fetch dates you do not hold.
+The pattern that saves the most quota
+Refresh rates on a schedule, not on demand. One cron job every minute writing to a shared cache costs ~44,000 requests a month no matter how much traffic you have; calling the API from each request scales your bill with your traffic. If you display prices in many currencies, fetch them as one comma-separated target call per refresh.
+Only cache a rate as far as your use allows: for display, a minute is invisible; for a booked transaction, store the exact time and rate you used, and never re-derive a historical figure from a cached live rate.
+CORS & Browser Use
+These endpoints send Access-Control-Allow-Origin: * and are callable cross-origin from a browser:
+Endpoint	Key needed?
+/api/v1/symbols	No
+/api/rate	Yes, via header or ?key=
+/api/open/central-bank/{bank} , /api/open/geo	No — the open endpoints behind the widget (/docs/widget/) and React localizer (#react-localizer)
+/api/widget/rate	No — widget-only
+/api/openapi.json	No
+/api/v1/rates , /api/historical-rates and every /api/v1/central-bank/… path do not send permissive CORS headers; a cross-origin fetch to them from a third-party site is blocked by the browser.
+But CORS is not the real objection, and /api/rate being callable from a browser is not an invitation to do it: a key in browser JavaScript is a public key. Anyone can read it from the network tab and spend your quota. Call the API from your server and expose your own endpoint to your frontend:
+// server.js — your backend holds the key
+app.get('/fx/:from/:to', async (req, res) => {
+const r = await fetch(
+`https://allratestoday.com/api/v1/rates?source=${req.params.from}&target=${req.params.to}`,
+{ headers: { Authorization: `Bearer ${process.env.ART_API_KEY}` } }
+);
+res.set('Cache-Control', 'public, max-age=60').json(await r.json());
+});
+If you genuinely need rates in a page with no backend, the supported options are the embeddable widget (/docs/widget/) and the React Currency Localizer (#react-localizer) , both of which are built for it. For a marketing page or a dashboard, those are usually the right answer.
+Versioning & Changes
+The API is versioned in the path. /api/v1/… is the current and only version; v1 paths will not change shape underneath you.
+Additive changes ship without notice. New fields, new endpoints, new central banks and new format values can appear at any time. Parse defensively: ignore fields you do not recognise rather than validating against a closed schema, and do not assume a fixed number of keys in a response object.
+Breaking changes get a new version path and an email to every account using the affected endpoint before the old one is retired.
+Legacy unversioned paths — /api/rate and /api/historical-rates — remain supported. New integrations should prefer the /api/v1/ equivalents where one exists.
+Retired: /api/public/rates now returns 401 with a pointer to registration. If you are still calling it, move to /api/v1/rates with a free key.
+The machine-readable contract is the OpenAPI specification (/openapi.json) — generate a client from it rather than hand-writing one. Coverage and behaviour are also published as a versioned PDF on the API specifications page (/api-specifications/) , which is the document to hand an auditor or a procurement team.
+Service Availability
+Current system health, historical uptime, and incident reports are published on our status page:
+status.allratestoday.com &rarr; (https://status.allratestoday.com/)
+Live status for the website, authenticated rates API, API documentation, and pricing & billing, updated automatically by independent monitoring.
+Historical daily uptime records per component — the 99.9% figure on our homepage is measured, not promised.
+Planned maintenance is announced in advance on the status page. During an incident, check there first — it is hosted separately from the API, so it stays up even if the API does not.
+Data Freshness
+AllRatesToday provides real-time exchange rates aggregated from institutional foreign exchange market data. Unlike providers that update once an hour, our rates refresh every 60 seconds, so you always get a current mid-market rate.
+This section describes the mid-market endpoints. Official central-bank and tax-authority rates follow the publisher's calendar instead — one table per day, week, month, or quarter, fixed once published. See Central Bank Exchange Rate API (#central-bank) and the comparison in Overview (#overview) .
+Real-Time Updates
+Rates sourced from institutional foreign exchange market data — no delayed or batched updates.
+Supported Currencies
+163 currencies, including:
+Major Currencies
+USD, EUR, GBP, JPY, CHF, CAD, AUD, NZD
+Popular Currencies
+INR, CNY, BRL, MXN, RUB, TRY, ZAR, SGD, HKD, KRW, THB, PHP, PKR, BDT, LKR, NGN, GHS, KES, AED, SAR, EGP, and more
+See the full list of all supported currencies (/currencies/) with codes, names, and symbols. Also available via the OpenAPI specification (/openapi.json) . Prefer clicking around? Try every endpoint live in the API Playground (/playground) .
+Official SDKs
+Official clients for JavaScript/TypeScript, Python, PHP, Go, Rust and React return live mid-market rates; the central-bank SDKs return the official rates published by 123 central banks and 6 tax authorities. Historical rates and dated tables need a paid plan (/pricing/) in every SDK.
+JavaScript / TypeScript npm install @allratestoday/sdk (/docs/sdks/#javascript) Python pip install allratestoday (/docs/sdks/#python) PHP composer require allratestoday/sdk (/docs/sdks/#php) Go go get github.com/AllRates-Today/allratestoday-go (/docs/sdks/#go) Rust cargo add allratestoday (/docs/sdks/#rust) React npm install react-currency-localizer-realtime (/docs/sdks/#react) Official rates — JS npm install @allratestoday/central-bank (/docs/sdks/#central-bank-js) Official rates — Python pip install allratestoday-central-bank (/docs/sdks/#central-bank-python) AI agents (MCP) npx -y @allratestoday/mcp-server (/docs/sdks/#ai-agents)
+All SDKs, install commands and quick starts &rarr; (/docs/sdks/) · One npm package per central bank (/docs/sdk/) · MCP server setup (/docs/mcp-server/)
+Code Examples (without SDK)
+JavaScript / Node.js
+const response = await fetch(
+'https://allratestoday.com/api/v1/rates?source=USD&target=EUR',
+{ headers: { 'Authorization': 'Bearer YOUR_API_KEY' } }
+);
+const [{ rate }] = await response.json(); // always an array of rows
+console.log(`1 USD = ${rate} EUR`);
+Python
+import requests
+response = requests.get(
+'https://allratestoday.com/api/v1/rates',
+params={'source': 'USD', 'target': 'EUR'},
+headers={'Authorization': 'Bearer YOUR_API_KEY'}
+)
+data = response.json() # always a list of rows
+print(f"1 USD = {data[0]['rate']} EUR")
+PHP
+$opts = ['http' => ['header' => 'Authorization: Bearer YOUR_API_KEY']];
+$context = stream_context_create($opts);
+$response = file_get_contents(
+'https://allratestoday.com/api/v1/rates?source=USD&target=EUR',
+false, $context
+);
+$data = json_decode($response, true); // always an array of rows
+echo "1 USD = " . $data[0]['rate'] . " EUR";
+cURL
+curl "https://allratestoday.com/api/v1/rates?source=USD&target=EUR" \
+-H "Authorization: Bearer YOUR_API_KEY"
+API Playground
+Try the API directly from your browser. Enter your API key to test.
+API Key
+Source
+Target
+Amount
+Send Request
+GET /api/v1/rates?source=USD&target=EUR&amount=100
+Click "Send Request" to see the live response...
+OpenAPI Specification
+Full machine-readable spec available at /openapi.json — use it to auto-generate client libraries, or explore it interactively in the API Playground (/playground) . The same spec is published on SwaggerHub (https://app.swaggerhub.com/apis-docs/allratestoday/allratestoday-exchange-rate-central-bank-rates-api/2.2.0) and Bump.sh (https://bump.sh/allratestoday/doc/allratestoday-api) .
+Run in Postman
+Fork our Postman collection to quickly test all API endpoints.
+Video Overview
+[Exchange Rate API for Developers – Live & Central Bank Rates (Free)]
+Exchange Rate API for Developers – Live & Central Bank Rates (Free) · Watch on YouTube (https://www.youtube.com/watch?v=LKcwQhus0LI)
+Ready to integrate?
+Get your free API key and start making requests in seconds.
+Get Free API Key (/login?redirect=/profile)
+Last updated 4 November 2026 · Markdown version (/docs.md) · OpenAPI (/openapi.json) · llms.txt (/llms.txt)
+Reading this with an AI assistant? This page is also published as plain Markdown for LLMs and agents.
+Copy as Markdown
+View Markdown (/docs.md) Open in ChatGPT (https://chatgpt.com/?q=Read%20https%3A%2F%2Fallratestoday.com%2Fdocs.md%20so%20I%20can%20ask%20you%20questions%20about%20it.) Open in Claude (https://claude.ai/new?q=Read%20https%3A%2F%2Fallratestoday.com%2Fdocs.md%20so%20I%20can%20ask%20you%20questions%20about%20it.) llms.txt (/llms.txt)
+🍪
+We use cookies
+We use cookies to remember your currency preferences and improve your experience on AllRatesToday. By clicking "Accept", you consent to our use of cookies.
+Accept
+Reject
+AllRatesToday (/)
+Real-time mid-market rates and official central bank rates, through one REST API.
+All Systems Operational (https://status.allratestoday.com/)
+https://x.com/Allratestoday https://www.linkedin.com/company/allratestoday/ https://github.com/AllRates-Today
+Product
+Documentation (/docs) Pricing (/pricing) Playground (/playground) Currency Converter (/currency-converter/) World Currencies (/currency/) Rates by Country (/send-money/)
+Exchange Rate API
+All Exchange Rates (live, official, historical) (/exchange-rates/) Central Bank Exchange Rate API (/central-bank-rates-api/) Tax Authority Exchange Rate API (/tax-authority-rates-api/) Mid-Market Exchange Rate API (/exchange-rate-api/) Forex API (/forex-api/) Exchange Rate API India (/exchange-rate-api-india/) Daily Reference Rate (16:00 London) (/reference-rate/) Bank Exchange Rate API (/bank-exchange-rate-api/) For Finance Teams (/for-finance-teams/) Best Exchange Rate APIs 2026 (/best/best-exchange-rate-api/) API Specifications (/api-specifications) Data Sources (/data-sources/) API Status (https://status.allratestoday.com/)
+Developers
+API Reference (/docs) Free Open API (/open-api/) Open Source Projects (/open-source/) OpenAPI Spec (/openapi.json) WordPress Plugin (/wordpress/) API Benchmark (live) (/benchmarks/exchange-rate-api/) Currency API (/currency-api/) Free Currency APIs 2026 (/blog/best-free-currency-exchange-api-2026/) GitHub (https://github.com/AllRates-Today)
+Company
+About (/about/) Blog (/blog) FAQ (/faq) Contact Us (/contact) Terms (/terms/) Privacy Policy (/privacy-policy/) Cookie Policy (/cookie-policy/) Cookie settings (#cookie-settings)
+Listed on ChatGPT Apps (https://chatgpt.com/plugins/plugin_asdk_app_6ae1e76098f48191a285ac3f5ab7a83b) WordPress.org (https://wordpress.org/plugins/allratestoday-currency-converter/) Official MCP Registry (https://registry.modelcontextprotocol.io/v0/servers?search=cahthuranag) Glama (https://glama.ai/mcp/servers/AllRates-Today/mcp-server) Glama Connectors (https://glama.ai/mcp/connectors/com.allratestoday/mcp) PulseMCP (https://www.pulsemcp.com/servers/allratestoday) MCP Market (https://mcpmarket.com/server/allratestoday) Codex Plugin Stats (https://codex-plugin-stats.com/plugins/allratestoday) ClawHub (https://clawhub.ai/cahthuranag/skills/allratestoday) AI Agents Listing (https://aiagentslisting.com/mcp/central-bank-mcp) SwaggerHub (https://app.swaggerhub.com/apis-docs/allratestoday/allratestoday-exchange-rate-central-bank-rates-api/2.2.0) Bump.sh (https://bump.sh/allratestoday/doc/allratestoday-api) Public APIs (https://publicapis.dev/resource/allratestoday/obgx1siv) AlternativeTo (https://alternativeto.net/software/allratestoday/) Hugging Face (https://huggingface.co/datasets/AllRatesToday/central-bank-exchange-rates) Kaggle (https://www.kaggle.com/datasets/allratestoday/central-bank-exchange-rates)
+AllRatesToday API provides mid-market exchange rates sourced from global financial markets. Rates are for informational purposes and may differ from actual transfer rates offered by banks and providers.
+© 2026AllRatesToday. All rights reserved. AllRatesToday.com · Luton, United Kingdom LU1 5EG · admin@allratestoday.com (mailto:admin@allratestoday.com)

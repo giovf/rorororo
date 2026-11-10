@@ -1,0 +1,150 @@
+{ "@context": "https://schema.org", "@graph": [ { "@type": "Organization", "@id": "https://allratestoday.com/#organization", "name": "AllRatesToday", "alternateName": ["All Rates Today", "AllRates Today", "allratestoday.com"], "legalName": "AllRatesToday", "url": "https://allratestoday.com", "logo": { "@type": "ImageObject", "url": "https://allratestoday.com/apple-touch-icon.png", "width": 180, "height": 180 }, "description": "Official exchange rates from 120+ central banks and tax authorities (ECB, Federal Reserve, Bank of England, RBI, HMRC, US Treasury), plus real-time mid-market rates for 160+ currencies, in one REST API. Free API key; MCP server for AI agents.", "sameAs": [ "https://github.com/AllRates-Today", "https://github.com/AllRates-Today/central-bank-exchange-rates", "https://github.com/AllRates-Today/free-exchange-rate-api", "https://github.com/AllRates-Today/exchange-rates-api", "https://github.com/AllRates-Today/mcp-server", "https://github.com/AllRates-Today/allratestoday-deepseek", "https://www.npmjs.com/package/@allratestoday/sdk", "https://www.npmjs.com/package/@allratestoday/mcp-server", "https://pypi.org/project/allratestoday/", "https://huggingface.co/datasets/AllRatesToday/central-bank-exchange-rates", "https://www.kaggle.com/datasets/allratestoday/central-bank-exchange-rates", "https://x.com/Allratestoday", "https://www.linkedin.com/company/allratestoday/", "https://www.crunchbase.com/organization/allratestoday", "https://www.trustpilot.com/review/allratestoday.com", "https://www.f6s.com/company/allratestoday" ], "knowsAbout": [ "central bank exchange rates", "tax authority exchange rates", "foreign exchange reference rates", "VAT and customs currency conversion", "exchange rate APIs" ], "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "support@allratestoday.com", "availableLanguage": ["English", "Russian", "Chinese", "Hindi"] } }, { "@type": "WebSite", "@id": "https://allratestoday.com/#website", "name": "AllRatesToday", "alternateName": ["All Rates Today", "AllRatesToday Exchange Rates"], "url": "https://allratestoday.com", "publisher": { "@id": "https://allratestoday.com/#organization" }, "potentialAction": { "@type": "SearchAction", "target": "https://allratestoday.com/search?q={search_term_string}", "query-input": "required name=search_term_string" } } ] }
+meta description: Terms of Service for AllRatesToday - Terms and conditions for using our website and API services.
+meta og:type: website
+meta og:url: https://allratestoday.com/terms/
+meta og:title: Terms of Service - AllRatesToday
+meta og:description: Terms of Service for AllRatesToday - Terms and conditions for using our website and API services.
+meta og:image: https://allratestoday.com/og-image.png
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:site_name: AllRatesToday
+meta og:locale: en_US
+meta twitter:card: summary_large_image
+meta twitter:url: https://allratestoday.com/terms/
+meta twitter:title: Terms of Service - AllRatesToday
+meta twitter:description: Terms of Service for AllRatesToday - Terms and conditions for using our website and API services.
+meta twitter:image: https://allratestoday.com/og-image.png
+meta twitter:site: @Allratestoday
+meta twitter:creator: @Allratestoday
+Terms of Service - AllRatesToday
+AllRatesToday (/)
+Documentation (/docs)
+Exchange Rate API
+Central Bank Exchange Rate API Official rates from 123 central banks (/central-bank-rates-api/) Tax Authority Exchange Rate API HMRC, US Treasury and Swiss customs rates (/tax-authority-rates-api/) Mid-Market Exchange Rate API Real-time rates for 160+ currencies (/exchange-rate-api/) Free Exchange Rate API Any base currency (/open-api/) Bank Exchange Rate API Commercial bank buy and sell boards — UAE first (/bank-exchange-rate-api/) For Finance Teams VAT, customs, close and audit rates, delivered into your ERP (/for-finance-teams/)
+Playground (/playground) Pricing (/pricing)
+Resources
+Blog (/blog) FAQ (/faq)
+API Status (https://status.allratestoday.com/) Contact us (/contact)
+🇬🇧 English
+Select language
+🇬🇧 English United Kingdom (/terms/) 🇷🇺 Русский Россия (/ru/terms/) 🇨🇳 中文 中国 (/zh/terms/) 🇮🇳 हिन्दी भारत (/hi/terms/)
+Log in (/login) Register (/register)
+Log in (/login/) Register (/register/)
+Home (/) Documentation (/docs) Central Bank Exchange Rate API (/central-bank-rates-api/) Tax Authority Exchange Rate API (/tax-authority-rates-api/) Mid-Market Exchange Rate API (/exchange-rate-api/) Free Exchange Rate API (/open-api/) Bank Exchange Rate API (/bank-exchange-rate-api/) For Finance Teams (/for-finance-teams/) Playground (/playground) Pricing (/pricing) Search (/search/) API Status (https://status.allratestoday.com/) Blog (/blog) About (/about) FAQ (/faq) Contact Us (/contact) Dashboard (/profile) Log out (/api/auth/logout)
+Terms of Service
+Last updated: November 2026
+Who We Are
+The AllRatesToday website and API ("Services") are operated by AllRatesToday.com, based in Luton, United Kingdom (LU1 5EG). You can reach us at admin@allratestoday.com (mailto:admin@allratestoday.com) . References to "we", "us" or "our" in these Terms mean AllRatesToday.com.
+1. Acceptance of Terms
+By accessing or using AllRatesToday's website and API services ("Services"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Services.
+2. Description of Services
+AllRatesToday provides:
+Real-time and historical currency exchange rate data
+Currency conversion tools
+REST API access for developers
+Related financial information and content
+3. API Terms of Use
+3.1 API Access
+To access our API, you must:
+Register for an account and obtain an API key
+Keep your API key confidential and secure
+Not share your API key with third parties
+Use the API only for lawful purposes
+3.2 Rate Limits
+API usage is subject to rate limits based on your subscription plan:
+Free Plan: Register for free to get your API key
+Paid Plans: Higher limits based on your subscription tier. See Pricing (/pricing) for details.
+Exceeding rate limits will return a 429 status code with a Retry-After header. Your data and API key are never affected.
+3.3 Acceptable Use
+You agree NOT to:
+Use the API to build a competing service
+Resell or redistribute API data without permission
+Use the free tier or the keyless official-rate endpoints in a commercial product, a paid service, or a public display (websites, apps, kiosks or digital signage seen by the public) — these uses require a paid plan. Exception: the open ECB endpoint /api/open/latest/{BASE} , the drop-in compatibility endpoints under /api/compat/ and the embeddable widgets may be used commercially without a key, provided they follow section 3.4
+Attempt to circumvent rate limits or security measures
+Use automated systems to abuse the API
+Reverse engineer or attempt to extract source code
+Use the API for any illegal or unauthorized purpose
+3.4 Attribution
+Keyless data shown to the public needs a visible link. If you use AllRatesToday data without an API key — the open ECB endpoints, the /api/compat/ drop-in endpoints, the public central-bank tables, the embeddable widgets, the hosted MCP endpoint in keyless mode, or the open dataset — and show it to the public, on a website or web page, in an embedded widget, or on a public screen such as digital signage or a kiosk, that page or screen must carry a visible, followable link to AllRatesToday, for example:
+<a href="https://allratestoday.com">Exchange rates by AllRatesToday</a>
+Markdown: Exchange rates by [AllRatesToday](https://allratestoday.com) . The widgets render this link for you; do not hide or remove it. Keyless responses carry an attribution field with the same text. This link is the price of the keyless service on public pages: it is how we keep it free.
+Other keyless use needs no link: back-end processing (invoicing, accounting and ERP synchronisation, reports, scheduled jobs), libraries and packages that pass the data to other code, and apps or tools that do not publish the rates on a public page. A credit is appreciated.
+With an API key, attribution is appreciated but not required, except on public displays such as digital signage, where attribution naming the publishing institution and AllRatesToday, together with the publication date of the rates shown, is required.
+4. User Accounts
+When creating an account, you agree to:
+Provide accurate and complete information
+Maintain the security of your account credentials
+Notify us immediately of any unauthorized access
+Accept responsibility for all activities under your account
+We reserve the right to suspend or terminate accounts that violate these terms.
+5. Data Accuracy
+While we strive to provide accurate exchange rate data, we do not guarantee:
+The accuracy, completeness, or timeliness of any data
+That the data is suitable for any particular purpose
+Uninterrupted or error-free service
+Exchange rates are provided for informational purposes only and should not be used as the sole basis for financial decisions. Always verify rates with official sources before making transactions.
+6. Intellectual Property
+All content, trademarks, and intellectual property on AllRatesToday are owned by us or our licensors. You may not:
+Copy, modify, or distribute our content without permission
+Use our trademarks without written consent
+Remove any copyright or proprietary notices
+7. Disclaimer of Warranties
+Our Services are provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied, including but not limited to:
+Merchantability
+Fitness for a particular purpose
+Non-infringement
+Accuracy or reliability of data
+8. Limitation of Liability
+To the maximum extent permitted by law, AllRatesToday shall not be liable for:
+Any indirect, incidental, special, or consequential damages
+Loss of profits, data, or business opportunities
+Damages arising from use or inability to use our Services
+Any financial losses resulting from reliance on our data
+Our total liability shall not exceed the amount you paid us in the past 12 months, or $100, whichever is greater.
+9. Indemnification
+You agree to indemnify and hold harmless AllRatesToday, its affiliates, and their respective officers, directors, and employees from any claims, damages, or expenses arising from:
+Your use of our Services
+Your violation of these Terms
+Your violation of any third-party rights
+10. Modifications to Service
+We reserve the right to:
+Modify or discontinue any part of our Services
+Change pricing or rate limits with reasonable notice
+Update these Terms at any time
+Continued use of our Services after changes constitutes acceptance of the modified Terms.
+11. Termination
+We may terminate or suspend your access to our Services immediately, without prior notice, for any reason, including breach of these Terms. Upon termination:
+Your right to use the Services will cease immediately
+Your API key will be deactivated
+We may delete your account and associated data
+12. Governing Law
+These Terms shall be governed by and construed in accordance with the laws of England and Wales, and the courts of England and Wales shall have exclusive jurisdiction over any dispute arising from these Terms or the Services.
+13. Contact Us
+If you have questions about these Terms of Service, please contact us at:
+AllRatesToday.com
+Luton, United Kingdom LU1 5EG
+Email: admin@allratestoday.com
+Website: allratestoday.com (https://allratestoday.com)
+Reading this with an AI assistant? This page is also published as plain Markdown for LLMs and agents.
+Copy as Markdown
+View Markdown (/terms.md) Open in ChatGPT (https://chatgpt.com/?q=Read%20https%3A%2F%2Fallratestoday.com%2Fterms.md%20so%20I%20can%20ask%20you%20questions%20about%20it.) Open in Claude (https://claude.ai/new?q=Read%20https%3A%2F%2Fallratestoday.com%2Fterms.md%20so%20I%20can%20ask%20you%20questions%20about%20it.) llms.txt (/llms.txt)
+🍪
+We use cookies
+We use cookies to remember your currency preferences and improve your experience on AllRatesToday. By clicking "Accept", you consent to our use of cookies.
+Accept
+Reject
+AllRatesToday (/)
+Real-time mid-market rates and official central bank rates, through one REST API.
+All Systems Operational (https://status.allratestoday.com/)
+https://x.com/Allratestoday https://www.linkedin.com/company/allratestoday/ https://github.com/AllRates-Today
+Product
+Documentation (/docs) Pricing (/pricing) Playground (/playground) Currency Converter (/currency-converter/) World Currencies (/currency/) Rates by Country (/send-money/)
+Exchange Rate API
+All Exchange Rates (live, official, historical) (/exchange-rates/) Central Bank Exchange Rate API (/central-bank-rates-api/) Tax Authority Exchange Rate API (/tax-authority-rates-api/) Mid-Market Exchange Rate API (/exchange-rate-api/) Forex API (/forex-api/) Exchange Rate API India (/exchange-rate-api-india/) Daily Reference Rate (16:00 London) (/reference-rate/) Bank Exchange Rate API (/bank-exchange-rate-api/) For Finance Teams (/for-finance-teams/) Best Exchange Rate APIs 2026 (/best/best-exchange-rate-api/) API Specifications (/api-specifications) Data Sources (/data-sources/) API Status (https://status.allratestoday.com/)
+Developers
+API Reference (/docs) Free Open API (/open-api/) Open Source Projects (/open-source/) OpenAPI Spec (/openapi.json) WordPress Plugin (/wordpress/) API Benchmark (live) (/benchmarks/exchange-rate-api/) Currency API (/currency-api/) Free Currency APIs 2026 (/blog/best-free-currency-exchange-api-2026/) GitHub (https://github.com/AllRates-Today)
+Company
+About (/about/) Blog (/blog) FAQ (/faq) Contact Us (/contact) Terms (/terms/) Privacy Policy (/privacy-policy/) Cookie Policy (/cookie-policy/) Cookie settings (#cookie-settings)
+Listed on ChatGPT Apps (https://chatgpt.com/plugins/plugin_asdk_app_6ae1e76098f48191a285ac3f5ab7a83b) WordPress.org (https://wordpress.org/plugins/allratestoday-currency-converter/) Official MCP Registry (https://registry.modelcontextprotocol.io/v0/servers?search=cahthuranag) Glama (https://glama.ai/mcp/servers/AllRates-Today/mcp-server) Glama Connectors (https://glama.ai/mcp/connectors/com.allratestoday/mcp) PulseMCP (https://www.pulsemcp.com/servers/allratestoday) MCP Market (https://mcpmarket.com/server/allratestoday) Codex Plugin Stats (https://codex-plugin-stats.com/plugins/allratestoday) ClawHub (https://clawhub.ai/cahthuranag/skills/allratestoday) AI Agents Listing (https://aiagentslisting.com/mcp/central-bank-mcp) SwaggerHub (https://app.swaggerhub.com/apis-docs/allratestoday/allratestoday-exchange-rate-central-bank-rates-api/2.2.0) Bump.sh (https://bump.sh/allratestoday/doc/allratestoday-api) Public APIs (https://publicapis.dev/resource/allratestoday/obgx1siv) AlternativeTo (https://alternativeto.net/software/allratestoday/) Hugging Face (https://huggingface.co/datasets/AllRatesToday/central-bank-exchange-rates) Kaggle (https://www.kaggle.com/datasets/allratestoday/central-bank-exchange-rates)
+AllRatesToday API provides mid-market exchange rates sourced from global financial markets. Rates are for informational purposes and may differ from actual transfer rates offered by banks and providers.
+© 2026AllRatesToday. All rights reserved. AllRatesToday.com · Luton, United Kingdom LU1 5EG · admin@allratestoday.com (mailto:admin@allratestoday.com)
