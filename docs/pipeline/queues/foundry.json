@@ -1417,8 +1417,9 @@
       "effort_days": 0.1,
       "proof": "first-runs.test.ts: an event-only workflow is listed once as `waits for pull_request` and is settled by that line; an owed workflow past 3 days prints `overdue`; runs check accepts the `waits for` shape",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-10"
+      "status": "doing",
+      "added": "2026-11-10",
+      "doing_since": "2026-11-10"
     },
     {
       "id": "watchdog-ci-failed-recheck-dispatch",
