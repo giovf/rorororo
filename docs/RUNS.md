@@ -2716,3 +2716,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 17:38 | build | Queued foundry first-runs-event-only-workflow-waiver (3): dependabot.yml check expired unrecorded
 - 2026-11-10 17:38 | build | Queued foundry watchdog-ci-failed-recheck-dispatch (3): run 458 red 16 h; nightly cron lands 10–11 UTC
 - 2026-11-10 17:38 | build | first-runs: nothing owed (the dependabot.yml installer left the 3-day window today)
+- 2026-11-10 18:07 | triage | notify owner dispatched: last run started 15:06 UTC, 3 h ago
