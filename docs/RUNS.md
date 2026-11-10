@@ -2695,3 +2695,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-09 22:07 | triage | notify owner dispatched: last run started 19:03 UTC, 3 h ago
 - 2026-11-10 01:08 | triage | notify owner dispatched: last run started 22:06 UTC, 3 h ago
 - 2026-11-10 05:07 | triage | notify owner dispatched: last run started 02:53 UTC, 2 h ago
+- 2026-11-10 09:07 | triage | notify owner dispatched: last run started 05:06 UTC, 4 h ago
