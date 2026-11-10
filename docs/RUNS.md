@@ -2745,3 +2745,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 20:17 | burn-down | Pre-research lesson: search npm/GitHub for the series' name before seeding a dataset spike
 - 2026-11-10 20:18 | burn-down | notify-owner.yml first run: success (run 572, dispatched 20:16 after the 19:33 install, 1 min)
 - 2026-11-10 20:16 | watchdog | missed: burn-down slot 2026-11-10 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
+- 2026-11-10 20:22 | burn-down | gankdat research: 3 items from this week's wave-log and x402 lines; feeds reader step lifted (53 UAs)
+- 2026-11-10 20:22 | burn-down | Queued gankdat stats-precompute-overload-wait (5): stats pass trips D1's window nightly since 11-05
+- 2026-11-10 20:22 | burn-down | Queued gankdat uk-companies-snapshot-window-cap (3): the 7-day window holds ~1.2 days at 2,000 rows
+- 2026-11-10 20:22 | burn-down | Queued gankdat x402-journal-buyer-day-7-read (3, 11-17): one client paid 10 journal calls in a day

@@ -2,11 +2,8 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-09",
-  "researched": "2026-10-30",
-  "research_after": "2026-11-06",
-  "researching_since": "2026-11-10T20:21Z",
-  "researching_by": "burn-down",
+  "updated": "2026-11-10",
+  "researched": "2026-11-10",
   "items": [
     {
       "id": "nhs-ods",
@@ -1085,13 +1082,13 @@
     {
       "id": "feeds-reader-subscriber-step",
       "title": "One ≤ 5-minute owner step: import /feeds/opml into a free Feedly or Inoreader account so the 62 change feeds exist on the reader shelves (both index a feed only once a user has subscribed)",
-      "why": "change-feed-shelf-listing read (2026-11-05, relay feed-shelves-2026-11-05): Feedly's search returns nothing for a feed nobody has subscribed to and has no publisher submission; Inoreader's feed page is behind sign-in. The only way onto either shelf is a subscriber. Evidence 1 (18 UAs/30 d on the feeds, 0 keys) × reach 2 ÷ 0.02 day — but it needs a new account on the owner's identity, which the owner (2026-10-29) asks for only when the work it unblocks scores ≥ 10, so it is held, not filed.",
+      "why": "change-feed-shelf-listing read (2026-11-05, relay feed-shelves-2026-11-05): Feedly's search returns nothing for a feed nobody has subscribed to and has no publisher submission; Inoreader's feed page is behind sign-in. The only way onto either shelf is a subscriber. Evidence 1 (18 UAs/30 d on the feeds, 0 keys) × reach 2 ÷ 0.02 day — but it needs a new account on the owner's identity, which the owner (2026-10-29) asks for only when the work it unblocks scores ≥ 10, so it is held, not filed. Lifted 2026-11-10 (burn-down research pass): the feeds 30d reading rose 18 → 53 user agents in five days (11-05 380 fetches / 18 UAs; 11-10 639 / 53), past the 20-UA lift the hold named, so the ≤ 5-minute import step may ride the next owner request as one extra step (never a request of its own).",
       "effort_days": 0.02,
       "proof": "Feedly search for gankdat.com returns ≥ 1 feed; the feeds 30d reading rises above 20 user agents within 30 days of the import",
       "score": 3,
-      "status": "blocked",
-      "blocked_on": "a free reader account on the owner's identity (owner rule 2026-10-29: no new account for work scoring < 10). Lift when an owner request that already opens an account can carry it as one extra step, or when the feeds 30d reading reaches 20 user agents or a key with a /feeds referrer on its own.",
-      "added": "2026-11-05"
+      "status": "todo",
+      "added": "2026-11-05",
+      "updated": "2026-11-10"
     },
     {
       "id": "x402-change-routes-bazaar-index",
@@ -1126,6 +1123,37 @@
       "status": "todo",
       "added": "2026-11-09",
       "not_before": "2027-02-10"
+    },
+    {
+      "id": "stats-precompute-overload-wait",
+      "title": "Pace the stats pass through D1's 10-second window: `precomputeStats` runs `aggregateD1Stats` and the facet batches straight after the delta pass with no `withOverloadRetry`, so uk-food-hygiene (05:45) and uk-trademark-journal (06:05) log `stats_precompute_failed … D1 DB is overloaded` every night since the 11-05 pacing fix — wrap the parent aggregation and each facet batch in the same wait-once-then-retry the delta index got (`d1pace.ts`), log `stats_throttled` with the phase, and keep the carried blob when the window still refuses",
+      "why": "Research pass 2026-11-10 (burn-down): the Daily numbers rows of 11-08, 11-09 and 11-10 each read `uk-food-hygiene wave 05:45: ok … [warn] event=stats_precompute_failed source=uk-food-hygiene reason=D1_ERROR: D1 DB is o…` and the same for uk-trademark-journal at 06:05 — the ok row lands (the delta index is paced since v0.27.2) and then the stats aggregation, which runs full-register GROUP BY scans in the seconds after the paced delta writes, trips the same window and the night's /stats blob is the carried one (`retained`). The journal's 45 class pages and the hygiene page are the SEO surface `stats-page-content-depth` (11-05) depends on, and their `dateModified` has not moved since; the next stats read (`stats-index-day-30-read`, 12-05) would read a stale surface. `precomputeStats` (d1store.ts ~801) and `aggregateFacets` call D1 without `withOverloadRetry`; the fix is the pattern already in the file. Evidence 1 (our own warn line, three nights) × reach 2 (every register's stats page and facet pages, the Bing/Google index) ÷ 0.3 day, discounted to 5: it mends a surface with 41 impressions a week, not a sale.",
+      "effort_days": 0.3,
+      "proof": "three consecutive Daily numbers rows with no `stats_precompute_failed` for uk-food-hygiene or uk-trademark-journal, and `/stats/uk-trademark-journal` `dateModified` moving nightly",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-11-10"
+    },
+    {
+      "id": "uk-companies-snapshot-window-cap",
+      "title": "uk-companies' 7-day window is 1.2 days: `MAX_RECORDS = 2000` is reached inside the second day of the Companies House advanced-search walk (`snapshot_truncated fetched=2357 / 2774 / 2032` on 11-08..11-10), so the 'newest incorporations' snapshot and its change feed hold about one working day of the register's ~2,000–2,800 daily incorporations — raise the cap to the window (≤ 15,000 rows, ~7 MB of KV, under the 25 MB value limit), page the 7 days as today, and log the daily counts instead of the truncation",
+      "why": "Research pass 2026-11-10 (burn-down): the warn line `snapshot_truncated source=uk-companies fetched=N` is in every wave-1 reading this week (11-08 2357, 11-09 2774, 11-10 2032) — the walk stops at 2,000 rows (`uk-companies.ts` MAX_RECORDS) after today's partial day plus one full day, so a `/v1/changes/uk-companies` poller sees yesterday's incorporations only if it polls daily, and `incorporated_after` queries of the 7-day window answer from a day of rows. External demand on the source is 0 in 30 days (`datasets 30d external`), so this is hygiene for a feed we sell on every lane (x402 `changes/uk-companies` is listed since 11-08), not a sale. Evidence 1 × reach 1 ÷ 0.2 day = 5, discounted to 3 for the zero demand.",
+      "effort_days": 0.2,
+      "proof": "no `snapshot_truncated` line for uk-companies in the Daily numbers row for three nights and the snapshot's `total` ≈ 7 days of incorporations",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-10"
+    },
+    {
+      "id": "x402-journal-buyer-day-7-read",
+      "title": "Day-7 read of the x402 journal buyer: `usetested-harness` paid 10 uk-trademark-journal calls on 11-10 (11 of its 30-day calls on the journal), the first external client past one paid call a day since the lane opened — read whether it returned (the `x402 30d` repeat count and its calls by day), what it queried (the `x402_paid` paths in one `worker logs` dispatch, UA needle), and whether the `changes/uk-trademark-journal` route took any of its calls; decide whether the journal gets a buyer-shaped lever (a per-mark watch bundle, a cheaper paged query) or nothing",
+      "why": "Research pass 2026-11-10 (burn-down): the 11-10 Daily numbers row reads `11 x402 paid (10 by buyers: uk-trademark-journal 10; 1 client; usetested-harness 10)` and `x402 30d: 53 paid, 16 clients — buyers 27 paid, 8 clients, repeat 1 (uk-trademark-journal 20 …)` — the journal is 20 of the 27 buyer calls of the month and this client made ten in a day, the lane's first sign of a working integration rather than a one-call test. A dated read, not a build: evidence 2 (settled payments) × reach 1 ÷ 0.05 day, discounted to 3 as a reading.",
+      "effort_days": 0.05,
+      "proof": "the client's calls by day and route recorded in RESEARCH.md; a lever queued or 'nothing' in STRATEGY §8",
+      "score": 3,
+      "status": "todo",
+      "not_before": "2026-11-17",
+      "added": "2026-11-10"
     }
   ]
 }

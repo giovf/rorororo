@@ -1395,3 +1395,28 @@ two community threads wanted. Owner step: action 039 (Integrations Partner intak
 Skill submission needs a Clay sign-in and is the owner's call), copy in `docs/CLAY-LISTING.md`. Proof: the listing or
 the Skill live; then Clay's UA family in `rest 7d by UA:` and keys named `clay` (no sign-up referrer exists on keys,
 so the spike's "clay referrer" is read this way). Kill: queue `clay-listing-day-90-read` (2027-02-10).
+
+## Research pass 2026-11-10 (burn-down, 20:21 UTC)
+
+`npm run pipeline empty` listed gankdat (starved: every open item dated or blocked). Read: the 11-08, 11-09 and 11-10
+Daily numbers rows (wave logs, x402, feeds, Apify, worker errors), `docs/INBOX.md` since 11-04 (cold outreach only: Coinstancy
+×3, 0200project, sealkeeper — no customer ask), ALERTS (action 039 open), the queue's blocked items and their lift
+conditions, and the code behind each warn line. Three items queued and one blocked item lifted, each from a line in our own
+logs:
+
+| Reading | What it says | Item |
+| --- | --- | --- |
+| `uk-food-hygiene wave 05:45: ok … [warn] event=stats_precompute_failed source=uk-food-hygiene reason=D1_ERROR: D1 DB is o…` and the same for uk-trademark-journal at 06:05, on 11-08, 11-09 and 11-10 | the ok row lands (the delta index is paced since v0.27.2) and then the stats aggregation trips the same 10-second window: `precomputeStats` runs `aggregateD1Stats` and the facet batches without `withOverloadRetry`, so the night's blob is the carried one and the journal's 45 class pages have not moved since the pacing fix | `stats-precompute-overload-wait` (5) |
+| `[warn] event=snapshot_truncated source=uk-companies fetched=2357 / 2774 / 2032` in every wave-1 reading | `MAX_RECORDS = 2000` is reached inside the second day of the advanced-search walk, so the 7-day window is ~1.2 days of the register's 2,000–2,800 daily incorporations; external demand on the source is 0/30 d | `uk-companies-snapshot-window-cap` (3) |
+| `11 x402 paid (10 by buyers: uk-trademark-journal 10; 1 client; usetested-harness 10)`; `x402 30d: … buyers 27 paid, 8 clients, repeat 1 (uk-trademark-journal 20 …)` | the journal is 20 of the month's 27 buyer calls and one client made ten in a day — the lane's first integration-shaped buyer; what it queried and whether it returns is a dated read | `x402-journal-buyer-day-7-read` (3, 2026-11-17) |
+| `feeds 30d: 639 fetches, 53 user agents, 614 renders` (11-05: 380 / 18; 11-06 406 / 19; 11-07 428 / 21; 11-08 467 / 26; 11-09 570 / 34) | the lift condition on `feeds-reader-subscriber-step` ("the feeds 30d reading reaches 20 user agents") is met — 53 UAs, though 0 keys with a /feeds referrer, so the rise is readers and crawlers fetching, not subscribers converting | lifted to `todo` (3): the ≤ 5-minute OPML import rides the next owner request as one extra step |
+
+Also read, not queued: `refresh errors: uk-gambling-operators (business-licence-register-businesses.csv download failed:
+526)` — a Cloudflare 526 (origin certificate) from gamblingcommission.gov.uk on 11-10 only, after the 15 s / 30 s retries;
+the last snapshot is served, and the auto-filer's two-rows-in-four rule files it if it repeats. `uk-planning` 503 ×4
+requests and the refresh 503 are the paused origin (`refresh-uk-planning-reread-2026-10-18`, 11-15). Apify: 527 runs by
+others / 30 d, 19 users, 18 public; failed counts 1–4 per actor are unchanged from the previous rows (none rising; no flag).
+`search 7d to 11-09: 41 impressions, 0 clicks, indexed 15/19` — the 12-05 read. `after wall 1h (7d): 0 clients`, `agent
+sign-up: 0`, `oauth: 0 connects` — the walls are hit by scanners (`connect_account 7d by UA: python-requests 26,
+BrickBlueBot 5`). `claude tool callers: 30d 0` — the Cowork listen fix (11-07) has had no `tools/list` yet. `researched:
+2026-11-10`; the queue has three buildable items, so no `research_after`.
