@@ -1086,10 +1086,10 @@
       "effort_days": 0.02,
       "proof": "Feedly search for gankdat.com returns ≥ 1 feed; the feeds 30d reading rises above 20 user agents within 30 days of the import",
       "score": 3,
-      "status": "doing",
+      "status": "blocked",
       "added": "2026-11-05",
       "updated": "2026-11-10",
-      "doing_since": "2026-11-10"
+      "blocked_on": "the next new owner request (2026-11-10 burn-down): the import is one ≤ 5-minute step on the owner's identity, so it rides that request as an extra step — never a request of its own, and never appended to an open one (owner 2026-10-29); the slot that files the next request adds the step and sets this item todo"
     },
     {
       "id": "x402-change-routes-bazaar-index",

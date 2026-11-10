@@ -2758,3 +2758,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 21:17 | burn-down | precomputeStats: parent aggregation and each facet batch under withOverloadRetry; stats_throttled names the phase
 - 2026-11-10 21:17 | burn-down | A second refusal falls through as before: retained blob for the parent, carried pages for a batch; 3 tests
 - 2026-11-10 21:17 | burn-down | Deploys on the next CI run; proof: 11-11..11-13 Daily rows with no stats_precompute_failed, journal dateModified moving
+- 2026-11-10 21:22 | burn-down | gankdat feeds-reader-subscriber-step blocked: rides the next new owner request as a step, never its own
