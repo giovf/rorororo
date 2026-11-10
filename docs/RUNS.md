@@ -2749,3 +2749,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 20:22 | burn-down | Queued gankdat stats-precompute-overload-wait (5): stats pass trips D1's window nightly since 11-05
 - 2026-11-10 20:22 | burn-down | Queued gankdat uk-companies-snapshot-window-cap (3): the 7-day window holds ~1.2 days at 2,000 rows
 - 2026-11-10 20:22 | burn-down | Queued gankdat x402-journal-buyer-day-7-read (3, 11-17): one client paid 10 journal calls in a day
+- 2026-11-10 20:26 | burn-down | hackathons research: relay re-read (HF MCP org 404, Codegeist absent, lablab unchanged); no item
+- 2026-11-10 20:26 | burn-down | Cerebral Valley's November hackathons are in person or Japan-only; research_after 11-24

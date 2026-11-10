@@ -182,6 +182,24 @@ Next signal: the Meta winners (9 Nov, read 11-10 by the scheduled item) and the 
 `huggingface.co` for the MCP org and the Atlassian developer community through the relay. The PayPal judging
 (1–15 Dec) is the dated reading after it.
 
+Read 2026-11-10 20:30 (burn-down) — the pass the 11-05 note scheduled: the Meta result is in (§Metrics 11-10: not placed, 5,367
+submissions, no feedback; read by the 09:46 build), and one relay round (`docs/relay/responses/hackathons-2026-11-10/`, seven
+pages, never Devpost) re-read the candidates:
+
+| Candidate | What the primary read shows | Verdict |
+| --- | --- | --- |
+| MCP 2nd Birthday (Anthropic + Gradio successor) | `huggingface.co/MCP-2nd-Birthday` still 404; the 2025 org page (`MCP-1st-Birthday`) carries no 2026 link | not announced; re-read on the next pass |
+| Atlassian Codegeist 2026 | the developer-community search for "codegeist 2026" returns no thread; `atlassian.com/codegeist` is a 404 | none |
+| lablab.ai index | the same two live events as 11-05 — AMD AI League (to 1 Dec, a points leaderboard on AMD hardware) and nothing else open; Vultr Agent Rush finished 8 Nov | none |
+| Cerebral Valley events | hackathons listed: MongoDB Toronto (14 Nov, in person), Gemini 4 NYC (21 Nov, in person), a DigitalOcean/MLH agents evening (12 Nov, in person), "Built with Claude: Japan 2026" (Anthropic's online hackathon for 250 selected participants in Japan, Claude Code, one week), Clocked Build Challenge (US$2,000, 21 Oct–10 Nov, closed today) | none — in person, country-limited or closed |
+| Kiro blog | ten posts since 26 Oct, none a Kiroween 2026 announcement | none (Kiro-built only anyway) |
+| PayPal AI Hackathon | submissions close 12 Nov 12:00 PT (Devpost reminder mail 11-09); judging 1–15 Dec | entered 10-16; `paypal-ai-hackathon-results` reads it 12-16 |
+
+No item added: nothing open takes an existing project from a UK solo entrant, and the queue holds the dated PayPal read.
+Next signal: the MCP birthday window (the 2025 edition was announced mid-November) and the December announcements;
+`research_after` set to 2026-11-24 — that pass re-reads the Hugging Face org and lablab's index; the PayPal judging reading
+(12-16) is the dated one after it.
+
 ## 3. Validation gate
 
 - Buyers with money: the prize money is already committed by the sponsor — the only "buyer" is a judge.
@@ -235,3 +253,4 @@ submissions with no placing and no judge feedback → `finished`.
 | 2026-11-02 | Submitted | — | — | — | Meta Global AI Developer Hackathon entry submitted by the owner on the Cerebral Valley portal (indie track), after a live run: key working, https://apps.gankdat.com/diligence checked Tesco PLC live (pinned 00445790, LOW, ≈ 5 US cents), 2 min 30 s video at apps.gankdat.com/demo/meta-diligence.mp4; judging to 8 Nov, winners ~9 Nov (`meta-global-ai-hackathon-results`) |
 | 2026-11-05 | Research | — | — | — | sweep for a next entry: Kiroween (Kiro-built only), MCP 2nd birthday (not announced), Solana x402 (no 2026 edition), lablab index, Colosseum, Codegeist — nothing fits; waiting for the Meta winners 9 Nov (read 11-10) |
 | 2026-11-10 | Result | — | — | 0 | Meta Global AI Developer Hackathon: not placed (host's winners mail 02:40 UTC — 5,367 submissions; indie US$150k ControlAnything, US$100k Gatekeeper, US$75k David Barry, US$50k Aurora, US$25k Video2URDF; startup US$250k Consai …; bonus Most Viral, Open Weights, Agentic, Creative — none ours), no judge feedback; the US$10,000 Community Vote runs on the gallery to 16 Nov (triage reads that mail). /diligence stopped the same day (`DILIGENCE_STOP`: the credit's 10-day window has lapsed, use unread). §6 count: 2 complete submissions without a placing (PayPal judged 1–15 Dec, `paypal-ai-hackathon-results`); a third ends the line |
+| 2026-11-10 | Research | — | — | — | re-read after the Meta result: MCP 2nd birthday still unannounced (HF org 404), Codegeist 2026 absent, lablab unchanged, Cerebral Valley's November hackathons in person or country-limited, Kiroween unannounced; no item; research_after 11-24 |
