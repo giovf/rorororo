@@ -2744,3 +2744,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 20:17 | burn-down | Wrappers: 15 GitHub repos (max 15 stars), 2 npm packages (the rival's), 0 PyPI; idea parked with a trigger
 - 2026-11-10 20:17 | burn-down | Pre-research lesson: search npm/GitHub for the series' name before seeding a dataset spike
 - 2026-11-10 20:18 | burn-down | notify-owner.yml first run: success (run 572, dispatched 20:16 after the 19:33 install, 1 min)
+- 2026-11-10 20:16 | watchdog | missed: burn-down slot 2026-11-10 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
