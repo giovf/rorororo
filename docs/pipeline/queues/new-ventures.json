@@ -575,8 +575,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/hmrc-exchange-rates-lookup.md with the licence line quoted from the page, the rival price table, the HMRC-wrapper package count and a promote / park call; promote adds the gankdat item in the same commit",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-10"
+      "status": "doing",
+      "added": "2026-11-10",
+      "doing_since": "2026-11-10"
     }
   ]
 }
