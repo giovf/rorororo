@@ -1,0 +1,416 @@
+{
+  "request": "hmrc-rates-spike-2026-11-10",
+  "fetched_at": "2026-11-10T20:12:49.036Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.trade-tariff.service.gov.uk/exchange_rates",
+      "fetched_at": "2026-11-10T20:12:35.018Z",
+      "status": 200,
+      "elapsed_ms": 541,
+      "final_url": "https://www.trade-tariff.service.gov.uk/exchange_rates",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"952a8b8508284e7b8fc26972ba22bf81\""
+      },
+      "file": "1.txt",
+      "bytes": 11470,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 83211
+    },
+    {
+      "method": "GET",
+      "url": "https://www.trade-tariff.service.gov.uk/exchange_rates/view/2026-11",
+      "fetched_at": "2026-11-10T20:12:36.138Z",
+      "status": 200,
+      "elapsed_ms": 398,
+      "final_url": "https://www.trade-tariff.service.gov.uk/exchange_rates/view/2026-11",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"50f9cae37e2a1f80c66a394efbb6f53a\""
+      },
+      "file": "2.txt",
+      "bytes": 12470,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 109465
+    },
+    {
+      "method": "GET",
+      "url": "https://www.trade-tariff.service.gov.uk/exchange_rates/view/2026-10",
+      "fetched_at": "2026-11-10T20:12:37.215Z",
+      "status": 200,
+      "elapsed_ms": 169,
+      "final_url": "https://www.trade-tariff.service.gov.uk/exchange_rates/view/2026-10",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"2c98c3b267ddfec8672263dc0988fb43\""
+      },
+      "file": "3.txt",
+      "bytes": 12466,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 109461
+    },
+    {
+      "method": "GET",
+      "url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/period_lists",
+      "fetched_at": "2026-11-10T20:12:37.889Z",
+      "status": 422,
+      "elapsed_ms": 203,
+      "final_url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/period_lists",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "45"
+      },
+      "file": "4.json",
+      "bytes": 45,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/period_lists?filter[type]=monthly",
+      "fetched_at": "2026-11-10T20:12:38.593Z",
+      "status": 200,
+      "elapsed_ms": 127,
+      "final_url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/period_lists?filter[type]=monthly",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "9987",
+        "etag": "W/\"3bb3c065b0d94b645c39832e545cd874\""
+      },
+      "file": "5.json",
+      "bytes": 9987,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/periods/2026-11?filter[type]=monthly",
+      "fetched_at": "2026-11-10T20:12:39.220Z",
+      "status": 404,
+      "elapsed_ms": 97,
+      "final_url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/periods/2026-11?filter[type]=monthly",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "41"
+      },
+      "file": "6.json",
+      "bytes": 41,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/period/2026-11?filter[type]=monthly",
+      "fetched_at": "2026-11-10T20:12:39.818Z",
+      "status": 404,
+      "elapsed_ms": 95,
+      "final_url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/period/2026-11?filter[type]=monthly",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "41"
+      },
+      "file": "7.json",
+      "bytes": 41,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/files/monthly_xml_2026-11.xml",
+      "fetched_at": "2026-11-10T20:12:40.414Z",
+      "status": 200,
+      "elapsed_ms": 15,
+      "final_url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/files/monthly_xml_2026-11.xml",
+      "headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "content-length": "35851",
+        "content-disposition": "attachment; filename=exrates-monthly-1126.xml",
+        "last-modified": "Tue, 10 Nov 2026 05:20:23 GMT",
+        "etag": "W/\"f012e943ea92963a1b79a6d8871c7775\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/files/monthly_xml_2026-11.xml",
+      "range": "0-4095",
+      "fetched_at": "2026-11-10T20:12:40.928Z",
+      "status": 206,
+      "elapsed_ms": 53,
+      "final_url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/files/monthly_xml_2026-11.xml",
+      "headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "content-length": "4096",
+        "content-disposition": "attachment; filename=exrates-monthly-1126.xml",
+        "last-modified": "Tue, 10 Nov 2026 05:20:23 GMT",
+        "etag": "W/\"f012e943ea92963a1b79a6d8871c7775\""
+      },
+      "file": "9.xml",
+      "bytes": 4096,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/files/monthly_xml_2026-10.xml",
+      "fetched_at": "2026-11-10T20:12:41.480Z",
+      "status": 200,
+      "elapsed_ms": 180,
+      "final_url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/files/monthly_xml_2026-10.xml",
+      "headers": {
+        "content-type": "application/xml; charset=utf-8",
+        "content-length": "0",
+        "content-disposition": "attachment; filename=exrates-monthly-1026.xml",
+        "last-modified": "Tue, 10 Nov 2026 05:20:23 GMT",
+        "etag": "W/\"f012e943ea92963a1b79a6d8871c7775\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/files/monthly_csv_2026-11.csv",
+      "fetched_at": "2026-11-10T20:12:42.159Z",
+      "status": 200,
+      "elapsed_ms": 50,
+      "final_url": "https://www.trade-tariff.service.gov.uk/api/v2/exchange_rates/files/monthly_csv_2026-11.csv",
+      "headers": {
+        "content-type": "text/csv; charset=utf-8",
+        "content-length": "8584",
+        "content-disposition": "attachment; filename=exrates-monthly-1126.csv",
+        "last-modified": "Tue, 10 Nov 2026 05:20:23 GMT",
+        "etag": "W/\"f012e943ea92963a1b79a6d8871c7775\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://www.trade-tariff.service.gov.uk/exchange_rates/view/2026-11",
+      "raw": true,
+      "fetched_at": "2026-11-10T20:12:42.708Z",
+      "status": 200,
+      "elapsed_ms": 467,
+      "final_url": "https://www.trade-tariff.service.gov.uk/exchange_rates/view/2026-11",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"66791a696491e12f1f7ce98569779343\""
+      },
+      "file": "12.html",
+      "bytes": 109466,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/collections/exchange-rates-for-customs-and-vat",
+      "fetched_at": "2026-11-10T20:12:43.347Z",
+      "status": 200,
+      "elapsed_ms": 653,
+      "final_url": "https://www.gov.uk/government/collections/exchange-rates-for-customs-and-vat",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "11884",
+        "etag": "W/\"a60523b7d3092800b524d0fc4b403c83\""
+      },
+      "file": "13.txt",
+      "bytes": 11158,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 71036
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/publications/hmrc-exchange-rates-for-2026-monthly",
+      "fetched_at": "2026-11-10T20:12:44.504Z",
+      "status": 404,
+      "elapsed_ms": 132,
+      "final_url": "https://www.gov.uk/government/publications/hmrc-exchange-rates-for-2026-monthly",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "8509"
+      },
+      "file": "14.txt",
+      "bytes": 5007,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52491
+    },
+    {
+      "method": "GET",
+      "url": "https://api.trade-tariff.service.gov.uk/reference.html",
+      "fetched_at": "2026-11-10T20:12:44.638Z",
+      "status": 200,
+      "elapsed_ms": 704,
+      "final_url": "https://docs.trade-tariff.service.gov.uk/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "24712",
+        "last-modified": "Tue, 10 Nov 2026 16:59:56 GMT",
+        "etag": "\"5f15acc6c290efeae3547d832fc52630\""
+      },
+      "file": "15.txt",
+      "bytes": 7325,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 24712
+    },
+    {
+      "method": "GET",
+      "url": "https://openexchangerates.org/signup",
+      "fetched_at": "2026-11-10T20:12:45.417Z",
+      "status": 200,
+      "elapsed_ms": 227,
+      "final_url": "https://openexchangerates.org/signup",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "2583"
+      },
+      "file": "16.txt",
+      "bytes": 2408,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 12671
+    },
+    {
+      "method": "GET",
+      "url": "https://openexchangerates.org/",
+      "fetched_at": "2026-11-10T20:12:46.146Z",
+      "status": 200,
+      "elapsed_ms": 21,
+      "final_url": "https://openexchangerates.org/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "2406"
+      },
+      "file": "17.txt",
+      "bytes": 2384,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 10440
+    },
+    {
+      "method": "GET",
+      "url": "https://exchangeratesapi.io/pricing/",
+      "fetched_at": "2026-11-10T20:12:46.168Z",
+      "status": 200,
+      "elapsed_ms": 444,
+      "final_url": "https://exchangeratesapi.io/pricing/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 12:41:45 GMT"
+      },
+      "file": "18.txt",
+      "bytes": 20616,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 167444
+    },
+    {
+      "method": "GET",
+      "url": "https://fixer.io/product",
+      "fetched_at": "2026-11-10T20:12:46.616Z",
+      "status": 200,
+      "elapsed_ms": 315,
+      "final_url": "https://fixer.io/pricing",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "19.txt",
+      "bytes": 5140,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 39568
+    },
+    {
+      "method": "GET",
+      "url": "https://currencylayer.com/product",
+      "fetched_at": "2026-11-10T20:12:46.934Z",
+      "status": 200,
+      "elapsed_ms": 423,
+      "final_url": "https://currencylayer.com/pricing",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "20.txt",
+      "bytes": 11454,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 236947
+    },
+    {
+      "method": "GET",
+      "url": "https://www.exchangerate-api.com/",
+      "fetched_at": "2026-11-10T20:12:47.364Z",
+      "status": 200,
+      "elapsed_ms": 68,
+      "final_url": "https://www.exchangerate-api.com/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Wed, 04 Nov 2026 03:59:39 GMT"
+      },
+      "file": "21.txt",
+      "bytes": 11770,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 226641
+    },
+    {
+      "method": "GET",
+      "url": "https://www.exchangerate-api.com/docs/free",
+      "fetched_at": "2026-11-10T20:12:47.937Z",
+      "status": 200,
+      "elapsed_ms": 31,
+      "final_url": "https://www.exchangerate-api.com/docs/free",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Sun, 11 Oct 2026 08:19:43 GMT"
+      },
+      "file": "22.txt",
+      "bytes": 6919,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 196960
+    },
+    {
+      "method": "GET",
+      "url": "https://frankfurter.dev/",
+      "fetched_at": "2026-11-10T20:12:47.972Z",
+      "status": 200,
+      "elapsed_ms": 194,
+      "final_url": "https://frankfurter.dev/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 10 Nov 2026 00:20:50 GMT"
+      },
+      "file": "23.txt",
+      "bytes": 12511,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 50181
+    },
+    {
+      "method": "GET",
+      "url": "https://api.frankfurter.dev/v1/latest?base=GBP",
+      "fetched_at": "2026-11-10T20:12:48.173Z",
+      "status": 200,
+      "elapsed_ms": 91,
+      "final_url": "https://api.frankfurter.dev/v1/latest?base=GBP",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"7ae83f3f44a4356a36ec9bbe6af7fa9b\""
+      },
+      "file": "24.json",
+      "bytes": 430,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.frankfurter.dev/v1/2026-10-01?base=GBP",
+      "fetched_at": "2026-11-10T20:12:48.764Z",
+      "status": 200,
+      "elapsed_ms": 270,
+      "final_url": "https://api.frankfurter.dev/v1/2026-10-01?base=GBP",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"5455751da1576fcd44fcad0afaf5651a\""
+      },
+      "file": "25.json",
+      "bytes": 433,
+      "truncated": false
+    }
+  ]
+}
