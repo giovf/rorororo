@@ -1,0 +1,389 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EUIPO TMview Trademarks Scraper","description":"Search public TMview trademark records by mark name, office, Nice class, status, and filing date. Export legal IP data for monitoring and diligence.","url":"https://apify.com/automation-lab/euipo-tmview-trademarks-scraper","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/Eyxy69KYygSpqdCxGkamf6Q43t_QW0-dXkavux2LBvA/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotYWN0b3ItMzZhOWRGd1dZYjJ5QmhodkMtbmt4Wmd4OHFzRC1hY3Rvci1pY29uLnBuZw.webp","offers":{"@type":"Offer","description":"from $0.02 / 1,000 trademark records","price":0.02,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":0.02,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"trademark records"}}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apify.com/"},{"@type":"ListItem","position":2,"name":"Store","item":"https://apify.com/store"},{"@type":"ListItem","position":3,"name":"Automation Lab","item":"https://apify.com/automation-lab"},{"@type":"ListItem","position":4,"name":"EUIPO TMview Trademarks Scraper","item":"https://apify.com/automation-lab/euipo-tmview-trademarks-scraper"}]}
+meta description: Scrape EUIPO/TMview trademark records by mark name, office, Nice class, status, and filing date for IP monitoring, clearance checks, and diligence.
+meta og:title: EUIPO TMview Trademarks Scraper for Trademark Search · Apify
+meta og:description: Scrape EUIPO/TMview trademark records by mark name, office, Nice class, status, and filing date for IP monitoring, clearance checks, and diligence.
+meta og:url: https://apify.com/automation-lab/euipo-tmview-trademarks-scraper
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=EUIPO+TMview+Trademarks+Scraper&uniqueName=automation-lab%2Feuipo-tmview-trademarks-scraper&categories=BUSINESS&users=88&runs=5.8K&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FntHCnhNUkzXR7nbUZ-actor-36a9dFwWYb2yBhhvC-nkxZgx8qsD-actor-icon.png&authorName=Automation+Lab&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2F6KsYCOVP-BIIsSyczfnxOmukUkALCtadLXrpLm4TszI%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotcHJvZmlsZS1oNFBXa3lYeUJlLWF1dG9tYXRpb24tbGFiLXByb2ZpbGUtbG9nby5wbmc.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: EUIPO TMview Trademarks Scraper for Trademark Search · Apify
+meta twitter:description: Scrape EUIPO/TMview trademark records by mark name, office, Nice class, status, and filing date for IP monitoring, clearance checks, and diligence.
+meta twitter:image: https://apify.com/og-image/actor?actorName=EUIPO+TMview+Trademarks+Scraper&uniqueName=automation-lab%2Feuipo-tmview-trademarks-scraper&categories=BUSINESS&users=88&runs=5.8K&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FntHCnhNUkzXR7nbUZ-actor-36a9dFwWYb2yBhhvC-nkxZgx8qsD-actor-icon.png&authorName=Automation+Lab&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2F6KsYCOVP-BIIsSyczfnxOmukUkALCtadLXrpLm4TszI%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotcHJvZmlsZS1oNFBXa3lYeUJlLWF1dG9tYXRpb24tbGFiLXByb2ZpbGUtbG9nby5wbmc.webp
+EUIPO TMview Trademarks Scraper for Trademark Search · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,381 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[EUIPO TMview Trademarks Scraper avatar]
+EUIPO TMview Trademarks Scraper
+Pricing
+from $0.02 / 1,000 trademark records
+Try for free (https://console.apify.com/actors/36a9dFwWYb2yBhhvC?addFromActorId=36a9dFwWYb2yBhhvC)
+Go to Apify Store (/store)
+[EUIPO TMview Trademarks Scraper]
+EUIPO TMview Trademarks Scraper
+automation-lab/euipo-tmview-trademarks-scraper
+Try for free (https://console.apify.com/actors/36a9dFwWYb2yBhhvC?addFromActorId=36a9dFwWYb2yBhhvC)
+Copy setup prompt Copied
+Search public TMview trademark records by mark name, office, Nice class, status, and filing date. Export legal IP data for monitoring and diligence.
+Pricing
+from $0.02 / 1,000 trademark records
+Rating
+0.0
+(0)
+Developer
+Automation Lab (/automation-lab) Maintained by Community
+Actor stats
+0
+Bookmarked
+88
+Total users
+31
+Monthly active users
+a month ago
+Last modified
+Categories
+Business (/store/categories/business)
+Features
+Limited permissions
+Share
+README (/automation-lab/euipo-tmview-trademarks-scraper) Input (/automation-lab/euipo-tmview-trademarks-scraper/input-schema) Output (/automation-lab/euipo-tmview-trademarks-scraper/output-schema) Pricing (/automation-lab/euipo-tmview-trademarks-scraper/pricing) API (/automation-lab/euipo-tmview-trademarks-scraper/api/python) Issues (/automation-lab/euipo-tmview-trademarks-scraper/issues/open) Changelog (/automation-lab/euipo-tmview-trademarks-scraper/changelog) Tasks 3 (/automation-lab/euipo-tmview-trademarks-scraper/examples)
+Search public EUIPO/TMDN TMview trademark records and export structured trademark data for brand monitoring, clearance research, IP diligence, and portfolio review.
+This Actor queries the public TMview search workflow and saves clean dataset rows with mark names, offices, application numbers, statuses, Nice classes, applicants, source links, and timestamps. Turn on detail enrichment when you also need registration numbers, expiry dates, representatives, mark features, and goods/services descriptions.
+What does EUIPO TMview Trademarks Scraper do? #what-does-euipo-tmview-trademarks-scraper-do
+EUIPO TMview Trademarks Scraper automates public trademark searches on TMview.
+It helps you collect trademark records for one mark name or a multi-brand watchlist without manually repeating searches in the TMview web application.
+The Actor supports searches across all TMview offices or narrowed to office codes such as EM , US , GB , DE , FR , JP , or CN .
+It can also filter by Nice classes and common status values such as Registered , Filed , Expired , and Ended .
+Who is it for? #who-is-it-for
+⚖️ Trademark attorneys can export filing/status evidence for clearance checks and watch reports.
+🛡️ Brand-protection teams can monitor marks similar to key brand names across jurisdictions.
+📊 IP researchers can build repeatable datasets for market and competitor analysis.
+🤝 M&A and diligence teams can collect owner, registration, and expiry signals before deeper legal review.
+🧑‍💻 Data teams can schedule runs and feed trademark records into BI, enrichment, or alerting workflows.
+Why use this Actor? #why-use-this-actor
+Manual TMview searches are useful for one-off lookups but slow for repeated monitoring.
+This Actor gives you a repeatable export with stable field names.
+It is designed for automation: schedule it, call it from the API, export JSON/CSV/Excel, or connect it to downstream tools.
+Use the default search mode for fast result exports and enable detail enrichment when your workflow needs deeper legal fields.
+Data you can extract #data-you-can-extract
+Field	Description
+searchQuery	Query used for the run
+st13	TMview ST13 identifier
+markName	Trademark / mark name
+officeCode	TMview office code
+officeName	Full office name when detail enrichment is enabled
+applicationNumber	Application number
+registrationNumber	Registration number when available
+status	Trademark status
+niceClasses	Nice class numbers
+applicants	Applicant / owner names
+representatives	Representative names when details are enabled
+applicationDate	Application date in YYYY-MM-DD format
+registrationDate	Registration date when available
+expiryDate	Expiry date when available
+goodsAndServices	Goods/services descriptions by Nice class
+markFeature	Word/figurative/other mark feature when available
+imageUrl	TMview mark image URL when provided
+sourceUrl	Official source URL when provided
+detailUrl	TMview detail route
+totalResults	Total TMview result count for the query
+scrapedAt	ISO timestamp for the scrape
+How much does it cost to scrape EUIPO TMview trademarks? #how-much-does-it-cost-to-scrape-euipo-tmview-trademarks
+This Actor uses pay-per-event pricing.
+There is a small start charge for each run and a per-record charge for every trademark record saved.
+The final Store price is shown in the Apify pricing panel before you run the Actor.
+Start with small limits such as 50 or 100 records when testing a new query.
+Enable detail enrichment only when you need the additional fields because it performs one extra request per trademark record.
+Input options #input-options
+Provide either query for a single backward-compatible search or queries for a batch watchlist. You may provide both; terms are trimmed and deduplicated case-insensitively before searching.
+maxResults controls how many records are saved per query . A two-term watchlist with maxResults: 100 can therefore save up to 200 rows.
+includeDetails fetches the public detail endpoint for each record.
+offices narrows the search to TMview office codes.
+niceClasses narrows by Nice class numbers.
+status narrows by TMview status values.
+dateFrom and dateTo apply a client-side application-date filter in YYYY-MM-DD format.
+Example batch watchlist input #example-batch-watchlist-input
+{
+"queries" : [ "nike" , "adidas" ] ,
+"offices" : [ "EM" ] ,
+"niceClasses" : [ 25 ] ,
+"status" : [ "Registered" ] ,
+"maxResults" : 100 ,
+"includeDetails" : true
+}
+Existing single-query inputs remain supported unchanged:
+{ "query" : "nike" , "maxResults" : 100 }
+Example output #example-output
+{
+"searchQuery" : "nike" ,
+"st13" : "EM500000000827824" ,
+"markName" : "nike" ,
+"officeCode" : "EM" ,
+"officeName" : "European Union Intellectual Property Office" ,
+"applicationNumber" : "000827824" ,
+"registrationNumber" : "000827824" ,
+"status" : "Registered" ,
+"niceClasses" : [ 25 , 28 , 18 ] ,
+"applicants" : [ "NIKE Innovate C.V." ] ,
+"representatives" : [ "..." ] ,
+"applicationDate" : "1998-05-19" ,
+"registrationDate" : "1999-02-24" ,
+"expiryDate" : "2028-05-19" ,
+"goodsAndServices" : [
+{ "niceClass" : "25" , "description" : "Clothing, footwear, headgear..." }
+] ,
+"detailUrl" : "https://www.tmdn.org/tmview/#/tmview/detail/EM500000000827824" ,
+"scrapedAt" : "2026-07-10T00:00:00.000Z"
+}
+How to run it #how-to-run-it
+Open the Actor on Apify.
+Enter one trademark query or a list of watchlist queries.
+Optionally add office codes, Nice classes, and status filters shared by every query.
+Choose the per-query maxResults .
+Enable detail enrichment if you need goods/services or expiry dates.
+Start the run.
+Download the dataset as JSON, CSV, Excel, XML, or HTML.
+Tips for better results #tips-for-better-results
+Use exact brand names for high-precision watchlists. Put multiple names in queries to monitor them in one scheduled run.
+Use shorter stems or product names for broader clearance research.
+Use office filters when your workflow focuses on specific jurisdictions.
+Use Nice class filters to reduce irrelevant results.
+Run a small sample first, inspect the output, then increase maxResults .
+Integrations #integrations
+Send results to Google Sheets for attorney review.
+Load CSV exports into BI tools for portfolio dashboards.
+Use webhooks to notify Slack or email when a scheduled watchlist run completes.
+Push dataset items into your CRM, legal database, or brand-protection queue.
+Combine this Actor with enrichment Actors when you need company, website, or contact context for trademark owners.
+API usage with Node.js #api-usage-with-nodejs
+import { ApifyClient } from 'apify-client' ;
+const client = new ApifyClient ( { token : process . env . APIFY_TOKEN } ) ;
+const run = await client . actor ( 'automation-lab/euipo-tmview-trademarks-scraper' ) . call ( {
+queries : [ 'nike' , 'adidas' ] ,
+offices : [ 'EM' ] ,
+niceClasses : [ 25 ] ,
+maxResults : 100 ,
+includeDetails : true ,
+} ) ;
+console . log ( run . defaultDatasetId ) ;
+API usage with Python #api-usage-with-python
+from apify_client import ApifyClient
+import os
+client = ApifyClient ( os . environ [ 'APIFY_TOKEN' ] )
+run = client . actor ( 'automation-lab/euipo-tmview-trademarks-scraper' ) . call ( run_input = {
+'query' : 'nike' ,
+'offices' : [ 'EM' ] ,
+'niceClasses' : [ 25 ] ,
+'maxResults' : 100 ,
+'includeDetails' : True ,
+} )
+print ( run [ 'defaultDatasetId' ] )
+API usage with cURL #api-usage-with-curl
+curl "https://api.apify.com/v2/acts/automation-lab~euipo-tmview-trademarks-scraper/runs?token= $APIFY_TOKEN " \
+-H 'Content-Type: application/json' \
+-d '{"query":"nike","offices":["EM"],"niceClasses":[25],"maxResults":100,"includeDetails":true}'
+MCP usage #mcp-usage
+Use Apify MCP to run the Actor from Claude Code, Claude Desktop, Cursor, or VS Code.
+MCP server URL:
+https://mcp.apify.com/?tools=automation-lab/euipo-tmview-trademarks-scraper
+Claude Code setup:
+$ claude mcp add --transport http apify-trademarks https://mcp.apify.com/?tools = automation-lab/euipo-tmview-trademarks-scraper
+Claude Desktop JSON config:
+{
+"mcpServers" : {
+"apify-trademarks" : {
+"url" : "https://mcp.apify.com/?tools=automation-lab/euipo-tmview-trademarks-scraper"
+}
+}
+}
+Cursor setup: open Settings → Tools & Integrations → MCP Tools → New MCP Server and use the MCP server URL above.
+VS Code setup: open Command Palette → MCP: Add Server → HTTP , enter the MCP server URL above, and name it apify-trademarks .
+Example prompts:
+“Run the EUIPO TMview trademarks scraper for nike in office EM and summarize active registrations.”
+“Find registered class 25 TMview marks for this brand list and return a CSV.”
+“Monitor this mark weekly and flag new filed or registered records.”
+Scheduling trademark monitoring #scheduling-trademark-monitoring
+Create one Apify Task with all watched terms in queries , then schedule it daily, weekly, or monthly depending on your monitoring cadence.
+Each output row keeps its originating term in searchQuery , making it easy to group results or trigger term-specific alerts downstream.
+Use dataset item timestamps and st13 identifiers to detect new records across runs.
+For high-value brands, keep detail enrichment enabled so you capture expiry and goods/services changes.
+Common office codes #common-office-codes
+EM is EUIPO / European Union trademark coverage.
+US is the United States.
+GB is the United Kingdom.
+DE , FR , IT , ES , and BX are common European office filters.
+TMview supports many more national and regional offices; use the code shown in TMview filters.
+Limitations #limitations
+TMview is a public web application and can change its internal API payloads.
+Date filters are applied client-side in this MVP because the public app's date payload is less stable than office/status/class filters.
+Detail enrichment depends on the public detail endpoint for each office; if one office returns a transient detail error, the Actor still saves the base search result.
+This Actor does not provide legal advice.
+Legality and responsible use #legality-and-responsible-use
+This Actor extracts public trademark information from TMview.
+Use it for legitimate research, monitoring, compliance, and diligence workflows.
+Respect Apify terms, TMview terms, and applicable laws in your jurisdiction.
+Do not use scraped data to spam trademark owners, representatives, or offices.
+Troubleshooting #troubleshooting
+If you get fewer rows than expected, check whether office, Nice class, status, or date filters are too narrow.
+If detail fields are empty, confirm includeDetails is enabled.
+If some detail fields are missing, the source office may not publish that field through TMview.
+If a run is slow, disable detail enrichment or lower maxResults .
+FAQ #faq
+Can I monitor multiple brands in one run? #can-i-monitor-multiple-brands-in-one-run
+Yes. Pass the terms in queries . The Actor applies the same filters and maxResults cap independently to each unique term and keeps the term in every row's searchQuery field.
+Can I search all TMview offices? #can-i-search-all-tmview-offices
+Yes. Leave offices empty to search all public TMview offices.
+Can I export only EUIPO records? #can-i-export-only-euipo-records
+Yes. Set offices to ["EM"] .
+Can I search by owner? #can-i-search-by-owner
+This MVP focuses on mark-name keyword search. Owner-specific search can be added in a future version if demand is strong.
+Can I use this for legal clearance decisions? #can-i-use-this-for-legal-clearance-decisions
+Use it as a data collection tool. A qualified trademark professional should review legal conclusions.
+Related scrapers #related-scrapers
+https://apify.com/automation-lab/uspto-trademark-status-scraper (/automation-lab/uspto-trademark-status-scraper)
+https://apify.com/automation-lab/ip-australia-trademarks-scraper (/automation-lab/ip-australia-trademarks-scraper)
+https://apify.com/automation-lab/website-contact-finder (/automation-lab/website-contact-finder)
+Changelog #changelog
+See .actor/CHANGELOG.md for release notes.
+Diagnostic privacy #diagnostic-privacy
+Failed operations send sanitized diagnostic input, exceptions, and Actor/build/run IDs to our private GlitchTip service for repair. Secret fields and URL query strings are removed; reports are retained for 30 days.
+No AI provider is used. TMview receives your search terms and filters, and Apify Proxy routes requests when enabled. Company-managed service costs are covered by the documented Actor charges; custom proxies are paid by their owner. Public records can contain applicant and representative names. Collect only what you need, and do not submit confidential search terms.
+Results and input are stored in your Apify run storage under your account's retention settings; delete datasets and key-value stores from Console when no longer needed. This Actor creates no separate persistent cache. Diagnostic reports expire after 30 days.
+This is an independent tool, not affiliated with or endorsed by EUIPO, TMview, or Apify. Source names identify the public records being collected.
+Support #support
+If you need a field that TMview exposes but this Actor does not yet output, open an issue on the Actor page with a sample mark and expected field.
+You might also like
+EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview dltik/euipo-trademarks-scraper Search 100M+ trademarks from EUIPO + 70 IP offices (USPTO, INPI, DPMA, WIPO Madrid). Nice class, status, dates, goods & services. AI brand-clearance + applicant→company. No API key. $0.01/result. Walid 167 (/dltik/euipo-trademarks-scraper)
+Web Fetch apify/web-fetch Download any web page by URL and convert it to clean Markdown, plain text, HTML, and other formats. Automatically renders JavaScript and works around bot blocking. The Actor provides a real-time API for quick response times. Apify 54K 5.0 (4) (/apify/web-fetch)
+Google Search Results Scraper apify/google-search-scraper Scrape Google Search Engine Results Pages (SERPs). Select the country or language and extract organic and paid results, AI Mode, AI overviews, ads, queries, People Also Ask, prices, reviews, like a Google SERP API. Export data, run the scraper via API, schedule runs, or integrate with other tools. Apify 231K 4.7 (218) (/apify/google-search-scraper)
+Google Maps Scraper - Most Comprehensive kaix/google-maps-places-scraper 🔥 ~$0.06/1K places + FREE contact details (email, phone, and more..) 🔥 Scrape businesses and locations with 76+ fields per place including photos, review breakdowns, owner info, contacts, coordinates, and 30+ service options. Just type a keyword and location. Kai 2K 4.3 (4) (/kaix/google-maps-places-scraper)
+RAG Web Browser apify/rag-web-browser Web search and fetch tool for AI agents and RAG pipelines. It queries Google Search, scrapes the top N pages using a full web browser, and returns their content as clean Markdown for further processing by an LLM. Can also fetch individual URLs. Apify 211K 4.7 (35) (/apify/rag-web-browser)
+✨ Google Shopping Scraper damilo/google-shopping-apify ⚡ Lightning-fast Google Shopping scraper that captures live product listings straight from Google’s Shopping tab. Extract prices, ratings, sellers, availability, images and more—fully localized by keyword, language, and country with automatic pagination. Ideal for e-commerce price monitoring... Imad 1.5K 4.6 (5) (/damilo/google-shopping-apify)
+EUIPO Trademark Scraper - EU Trademark Search & Monitoring jungle_synthesizer/euipo-trademark-scraper Scrape EUIPO trademark database via eSearch API. Extract records: application/registration numbers, status, applicant, Nice classes, goods and services, opposition data, and mark type. Search by name, applicant, Nice class, date range, and status. For brand-protection teams and trademark attorneys. BowTiedRaccoon 3 (/jungle_synthesizer/euipo-trademark-scraper)
+YouTube Transcript & Subtitles Scraper API johnvc/YoutubeTranscripts Scrape YouTube transcripts, subtitles, and captions in bulk, the cheapest pay-per-video YouTube transcript API on Apify. Callable from any MCP client (Claude, Cursor, ChatGPT). Supports YouTube videos, Shorts, and every URL format. John 12K 4.8 (11) (/johnvc/youtubetranscripts)
+Website Contact Form Scraper automation-lab/javascript-website-contact-extractor Crawl public websites and bounded contact/about pages. Extract published emails, phone numbers, social profiles, contact URLs, form fields, and page provenance, rendering JavaScript when needed. Automation Lab 10 (/automation-lab/javascript-website-contact-extractor)
+Texas Business Entity Search Scraper automation-lab/texas-comptroller-entity-scraper Search Texas Comptroller taxable entities and export official status, right-to-transact, addresses, registered agent, officers, and source dates for KYB workflows. Automation Lab 15 (/automation-lab/texas-comptroller-entity-scraper)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)

@@ -1,0 +1,433 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Global Trademark Search Scraper - 77 Offices Worldwide","description":"Search 145M+ trademarks from 77 national and regional registers at once: mark text, owner name and address, representative, status, Nice classes, goods and services wording, oppositions, priority and seniority claims. JSON, CSV, Excel.","url":"https://apify.com/scrapers_lat/tmview-global-trademarks-scraper","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/Qe7ELtLWHxP-yl2aBDrO_FMKE8h7iYgKWHADqGi3S_0/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItVnlhWDRIRHV2Unh0YkhDN2QtSWtudklpTFU2Yy1nbG9iYWx3YWxsYXJ0LnBuZw.webp","offers":{"@type":"Offer","description":"from $13.00 / 1,000 results","price":13,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":13,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"results"}}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apify.com/"},{"@type":"ListItem","position":2,"name":"Store","item":"https://apify.com/store"},{"@type":"ListItem","position":3,"name":"Scrapers Lat","item":"https://apify.com/scrapers_lat"},{"@type":"ListItem","position":4,"name":"Global Trademark Search Scraper - 77 Offices Worldwide","item":"https://apify.com/scrapers_lat/tmview-global-trademarks-scraper"}]}
+meta description: Search 145M+ trademarks from 77 national and regional registers at once: mark text, owner name and address, representative, status, Nice classes, goods ...
+meta og:title: Global Trademark Search Scraper - 77 Offices Worldwide · Apify
+meta og:description: Search 145M+ trademarks from 77 national and regional registers at once: mark text, owner name and address, representative, status, Nice classes, goods ...
+meta og:url: https://apify.com/scrapers_lat/tmview-global-trademarks-scraper
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=Global+Trademark+Search+Scraper+-+77+Offices+Worldwide&uniqueName=scrapers_lat%2Ftmview-global-trademarks-scraper&categories=LEAD_GENERATION%2CDEVELOPER_TOOLS&users=36&runs=1.1K&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2Fm5Kd4LRwREzEyiZc6-actor-VyaX4HDuvRxtbHC7d-IknvIiLU6c-globalwallart.png&authorName=Scrapers+Lat&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FukXvC3SQjgRYGDaU-QCw3c9kilrynoPXIKfMe7-JFz8%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtcHJvZmlsZS14RWFXMU9WZ1NzLTE3NjIyNzU4MTk2NDMuanBn.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: Global Trademark Search Scraper - 77 Offices Worldwide · Apify
+meta twitter:description: Search 145M+ trademarks from 77 national and regional registers at once: mark text, owner name and address, representative, status, Nice classes, goods ...
+meta twitter:image: https://apify.com/og-image/actor?actorName=Global+Trademark+Search+Scraper+-+77+Offices+Worldwide&uniqueName=scrapers_lat%2Ftmview-global-trademarks-scraper&categories=LEAD_GENERATION%2CDEVELOPER_TOOLS&users=36&runs=1.1K&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2Fm5Kd4LRwREzEyiZc6-actor-VyaX4HDuvRxtbHC7d-IknvIiLU6c-globalwallart.png&authorName=Scrapers+Lat&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FukXvC3SQjgRYGDaU-QCw3c9kilrynoPXIKfMe7-JFz8%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtcHJvZmlsZS14RWFXMU9WZ1NzLTE3NjIyNzU4MTk2NDMuanBn.webp
+Global Trademark Search Scraper - 77 Offices Worldwide · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,381 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[Global Trademark Search Scraper - 77 Offices Worldwide avatar]
+Global Trademark Search Scraper - 77 Offices Worldwide
+Pricing
+from $13.00 / 1,000 results
+Try for free (https://console.apify.com/actors/VyaX4HDuvRxtbHC7d?addFromActorId=VyaX4HDuvRxtbHC7d)
+Go to Apify Store (/store)
+[Global Trademark Search Scraper - 77 Offices Worldwide]
+Global Trademark Search Scraper - 77 Offices Worldwide
+scrapers_lat/tmview-global-trademarks-scraper
+Try for free (https://console.apify.com/actors/VyaX4HDuvRxtbHC7d?addFromActorId=VyaX4HDuvRxtbHC7d)
+Copy setup prompt Copied
+Search 145M+ trademarks from 77 national and regional registers at once: mark text, owner name and address, representative, status, Nice classes, goods and services wording, oppositions, priority and seniority claims. JSON, CSV, Excel.
+Pricing
+from $13.00 / 1,000 results
+Rating
+0.0
+(0)
+Developer
+Scrapers Lat (/scrapers_lat) Maintained by Community
+Actor stats
+0
+Bookmarked
+36
+Total users
+18
+Monthly active users
+14 hours ago
+Last modified
+Categories
+Lead generation (/store/categories/lead-generation) Developer tools (/store/categories/developer-tools)
+Features
+Limited permissions
+Share
+README (/scrapers_lat/tmview-global-trademarks-scraper) Input (/scrapers_lat/tmview-global-trademarks-scraper/input-schema) Output (/scrapers_lat/tmview-global-trademarks-scraper/output-schema) Pricing (/scrapers_lat/tmview-global-trademarks-scraper/pricing) API (/scrapers_lat/tmview-global-trademarks-scraper/api/python) Issues (/scrapers_lat/tmview-global-trademarks-scraper/issues/open)
+/scrapers_lat/tmview-global-trademarks-scraper
+Global Trademark Search Scraper #global-trademark-search-scraper
+Here is one real result, trimmed to show every field the actor returns:
+{
+"st13" : "EM500000018396517" ,
+"office" : "EM" ,
+"officeName" : "European Union (EUIPO)" ,
+"markText" : "PIXELMATE" ,
+"markFeature" : "Word" ,
+"kindOfMark" : "Individual" ,
+"status" : "Registered" ,
+"statusDetail" : "Registered" ,
+"statusDate" : "2021-07-15" ,
+"applicationNumber" : "018396517" ,
+"applicationDate" : "2021-02-11" ,
+"registrationNumber" : "018396517" ,
+"registrationDate" : "2021-07-14" ,
+"expirationDate" : "2031-02-11" ,
+"renewalStatus" : "Not to be renewed" ,
+"applicantNames" : [ "Framos Holding GmbH" ] ,
+"applicants" : [
+{
+"name" : "Framos Holding GmbH" ,
+"street" : "Wallbergstraße 9" ,
+"city" : "Pullach im Isartal" ,
+"postcode" : "82049" ,
+"country" : "DE" ,
+"addressText" : "Wallbergstraße 9, 82049, Pullach im Isartal" ,
+"legalEntity" : "Legal Entity" ,
+"nationality" : "DE" ,
+"identifier" : "1170902"
+}
+] ,
+"applicantAddresses" : [ "Wallbergstraße 9, 82049, Pullach im Isartal" ] ,
+"representatives" : [
+{
+"name" : "DE CLERCQ & PARTNERS" ,
+"street" : "Edgard Gevaertdreef 10 a" ,
+"city" : "Sint-Martens-Latem" ,
+"postcode" : "9830" ,
+"country" : "BE" ,
+"addressText" : "Edgard Gevaertdreef 10 a, 9830, Sint-Martens-Latem" ,
+"legalEntity" : "Legal Person" ,
+"identifier" : "69847"
+}
+] ,
+"niceClasses" : [ 9 ] ,
+"goodsAndServices" : [
+{
+"classNumber" : 9 ,
+"description" : "Connectors for electronic circuits; Plug-in connectors; Connectors for electronic devices; Electronic components, namely semiconductors, sensors, microprocessors, signal memories, A/D converters, D/A converters, multipliers, integrated circuits, amplifiers, diodes, transistors, rectifiers, CMOS circuits and thyristors; Interface circuits for video cameras; Graphics processing units (gpus); Semiconductors and semiconductor chip sets; System-on-chip processors; Electronic computer vision accelerators." ,
+"language" : "en"
+}
+] ,
+"goodsServicesText" : "9: Connectors for electronic circuits; Plug-in connectors; …" ,
+"goodsServicesLanguages" : [ "bg" , "cs" , "da" , "de" , "el" , "en" , "es" , "et" , "fi" , "fr" , "hr" , "hu" , "it" , "lt" , "lv" , "mt" , "nl" , "pl" , "pt" , "ro" , "sk" , "sl" , "sv" ] ,
+"protectionTerritories" : [ "DE" , "BE" , "FI" , "PT" , "BG" , "DK" , "LT" , "LU" , "HR" , "LV" , "FR" , "HU" , "SE" , "SI" , "BX" , "SK" , "IE" , "EE" , "MT" , "EM" , "GR" , "IT" , "ES" , "AT" , "CY" , "CZ" , "PL" , "RO" , "NL" ] ,
+"viennaCodes" : [ ] ,
+"priorities" : [ ] ,
+"seniorities" : [ ] ,
+"seniorityClaimed" : false ,
+"oppositions" : [ ] ,
+"oppositionCount" : 0 ,
+"oppositionPeriodStart" : "2021-04-06" ,
+"oppositionPeriodEnd" : "2021-07-06" ,
+"publications" : [
+{ "identifier" : "2021/063" , "section" : "A.1" , "date" : "2021-04-06" } ,
+{ "identifier" : "2021/131" , "section" : "B.1" , "date" : "2021-07-15" } ,
+{ "identifier" : "2022/136" , "section" : "C.3.2" , "date" : "2022-07-22" }
+] ,
+"markEvents" : [
+{
+"identifier" : "021607042" ,
+"kind" : "Proprietor - Change of name and address" ,
+"status" : "Published" ,
+"statusDate" : "2022-05-09" ,
+"publicationDate" : "2022-05-10"
+} ,
+{
+"identifier" : "022002276" ,
+"kind" : "Trade mark - Partial Surrender" ,
+"status" : "Published" ,
+"statusDate" : "2022-07-22" ,
+"publicationDate" : "2022-07-22"
+}
+] ,
+"markTranscription" : "PIXELMATE" ,
+"filingLanguage" : "nl" ,
+"secondLanguage" : "en" ,
+"applicationReference" : "STRF-212430-TM-EU" ,
+"fastTrack" : "false" ,
+"acquiredDistinctiveness" : "false" ,
+"markImageUrl" : "http://euipo.europa.eu/trademark/image/EM500000018396517" ,
+"officeRecordUrl" : "https://euipo.europa.eu/trademark/data/EM500000018396517" ,
+"detailUrl" : "https://www.tmdn.org/tmview/api/detail/EM500000018396517" ,
+"fullRecordAvailable" : true ,
+"matchedQuery" : "PIXELMATE" ,
+"source" : "TMview global trademark search (EUIPO/TMDN)" ,
+"observedAt" : "2026-08-20T21:25:26.808Z"
+}
+One search across 77 trademark registers and more than 145 million marks , from the US, EU, China, Japan, Brazil and 72 more offices, plus the Madrid international register. Most trademark scrapers cover a single office. This one returns the same clean record shape for all of them, with the owner, the representative, the goods and services wording, and the opposition history attached. Export as JSON, CSV or Excel.
+📥 Input (/scrapers_lat/tmview-global-trademarks-scraper/input-schema) · 📤 Output (/scrapers_lat/tmview-global-trademarks-scraper/output-schema) · 💰 Pricing (/scrapers_lat/tmview-global-trademarks-scraper/pricing) · ▶️ Examples (/scrapers_lat/tmview-global-trademarks-scraper/examples)
+[Apify]
+[Coverage]
+[Output]
+[Billing]
+Table of contents #table-of-contents
+What it does (#what-it-does)
+Offices covered (#offices-covered)
+Quickstart (#quickstart)
+Input reference (#input-reference)
+Output reference (#output-reference)
+Use cases (#use-cases)
+Run via API and CLI (#run-via-api-and-cli)
+Fetch results (#fetch-results)
+Billing and limits (#billing-and-limits)
+FAQ and troubleshooting (#faq-and-troubleshooting)
+What it does #what-it-does
+Give it a brand name, an owner name, or no search term at all and just filters, and it returns matching trademarks from every register you selected, with the full public record attached: who owns the mark and where they are based, which IP firm represents them, what goods and services it covers in the language you ask for, which territories it is protected in, whether anyone opposed it and on what grounds, and when it expires.
+Both search fields accept a list , so one run can cover many brands or many owners at once. Results are merged and de-duplicated across searches and across offices. Fields with no value at the publishing office are omitted, never guessed.
+Large pulls are handled for you: when a filter combination matches more marks than a single query can return, the actor splits it into smaller office and filing-date slices automatically and keeps going, so maxTrademarks in the hundreds of thousands still works.
+Offices covered #offices-covered
+Albania, Argentina, Australia, Austria, Belize, Benelux, Bosnia and Herzegovina, Brazil, Brunei, Bulgaria, Cambodia, Canada, Chile, China, Colombia, Costa Rica, Croatia, Cuba, Cyprus, Czechia, Denmark, Dominican Republic, Egypt, Estonia, European Union (EUIPO) , Finland, France, Georgia, Germany, Greece, Hungary, Iceland, India, Ireland, Israel, Italy, Japan, Jordan, Laos, Latvia, Liechtenstein, Lithuania, Malaysia, Malta, Mexico, Moldova, Monaco, Montenegro, Morocco, New Zealand, North Macedonia, Norway, Paraguay, Peru, Philippines, Poland, Portugal, Romania, Russia, San Marino, Serbia, Slovakia, Slovenia, South Korea, Spain, Sweden, Switzerland, Thailand, Trinidad and Tobago, Tunisia, Turkiye, Ukraine, United Kingdom , United States , Uruguay, Vietnam, and the WIPO Madrid international register .
+Quickstart #quickstart
+Open the actor, paste this into the input, and press Run. It returns up to 100 EU trademarks in Nice class 9 filed during 2025, each with the owner's postal address and the goods and services wording in English.
+{
+"offices" : [ "EM" ] ,
+"niceClasses" : [ "9" ] ,
+"applicationDateFrom" : "2025-01-01" ,
+"applicationDateTo" : "2025-12-31" ,
+"trademarkStatus" : [ "Registered" ] ,
+"maxTrademarks" : 100 ,
+"fetchFullRecord" : true
+}
+Leave both search fields empty to browse a whole register purely by filter. All filters combine with AND; multi-value fields match any of the listed values.
+Input reference #input-reference
+Field	Type	Required	Default	Description
+maxTrademarks	integer	no	10	Maximum trademarks to collect. Hard cap; the actor stops once it is reached.
+markTexts	string[]	no	(empty)	Brand names or mark words to search. Each entry runs as its own search; results are merged and de-duplicated.
+applicantNames	string[]	no	(empty)	Owner names to search, for example Nestle , Siemens . Each entry runs as its own search.
+matchMode	enum	no	contains	How mark text is matched: contains , exact , beginsWith , word , or fuzzy for clearance-style similar spellings.
+offices	string[]	no	(all 77)	Two-letter office codes to search, for example US , EM , CN , GB , WO .
+territories	string[]	no	(all)	Keep only marks in force in these territories. Useful for EU and Madrid marks whose protection reaches beyond the issuing office.
+niceClasses	string[]	no	(all)	Nice classification classes 1 to 45, for example 9 , 25 , 35 .
+trademarkStatus	string[]	no	(all)	Registered , Filed , Expired , Ended .
+trademarkTypes	string[]	no	(all)	Word , Figurative , Combined , 3D shape , Sound , Colour , Position , and others.
+viennaCodes	string[]	no	(all)	Vienna classification codes for figurative elements, for example 26.11.12 .
+applicationDateFrom	string	no	(empty)	Only marks filed on or after this date ( YYYY-MM-DD ).
+applicationDateTo	string	no	(empty)	Only marks filed on or before this date ( YYYY-MM-DD ).
+registrationDateFrom	string	no	(empty)	Only marks registered on or after this date ( YYYY-MM-DD ).
+registrationDateTo	string	no	(empty)	Only marks registered on or before this date ( YYYY-MM-DD ).
+fetchFullRecord	boolean	no	true	Open each mark's full register record for goods and services, priority and seniority claims, oppositions, publications and register events. Turn off for a faster, lighter run.
+fetchPartyDetails	boolean	no	true	Also look up owner and representative postal addresses at the publishing office.
+goodsServicesLanguage	string	no	en	Preferred language for goods and services wording. Falls back to English, then to whatever the office published.
+proxyConfiguration	object	no	residential	Proxy settings. Leave as is unless you know you need something different.
+Output reference #output-reference
+One dataset item per trademark. Types: string , integer , boolean , object[] , string[] , or the field is omitted when the publishing office has no value for it.
+Field	Type	Description
+st13	string	Stable 13-character identifier, unique across all offices.
+office	string	Two-letter office code.
+officeName	string	Office name, for example European Union (EUIPO) .
+markText	string	The trademark text.
+markFeature	string	Mark type: Word , Figurative , Combined , 3D shape , Sound , and others.
+kindOfMark	string	Individual , Collective , Certification , and similar.
+status	string	Registered , Filed , Expired or Ended .
+statusDetail	string	The office's own status wording, for example Application refused .
+statusDate	string	Date the current status took effect.
+applicationNumber	string	Application number at that office.
+applicationDate	string	Filing date ( YYYY-MM-DD ).
+registrationNumber	string	Registration number at that office.
+registrationDate	string	Registration date ( YYYY-MM-DD ).
+expirationDate	string	Date protection expires ( YYYY-MM-DD ).
+renewalStatus	string	Renewal state recorded by the office.
+applicantNames	string[]	Owner names.
+applicants	object[]	Owners with name , street , city , state , postcode , country , addressText , legalEntity , nationality , and email / phone where the office publishes them.
+applicantAddresses	string[]	Flat owner addresses, convenient for CSV exports.
+representatives	object[]	IP firm or attorney of record, same shape as applicants .
+niceClasses	integer[]	Nice classification classes covered.
+goodsAndServices	object[]	Per class: classNumber , description , language .
+goodsServicesText	string	All classes flattened into one string.
+goodsServicesLanguages	string[]	Every language the office published the wording in.
+protectionTerritories	string[]	Territories where the mark is in force.
+viennaCodes	string[]	Vienna classification codes for the figurative elements.
+priorities	object[]	Priority claims: country , number , date .
+seniorities	object[]	Seniority claims: country , applicationNumber , registrationNumber , dates, status .
+seniorityClaimed	boolean	Whether any seniority is claimed.
+oppositions	object[]	Oppositions with identifier , date , grounds , status , statusDate , and the earlierMarks relied on.
+oppositionCount	integer	Number of oppositions on record.
+oppositionPeriodStart	string	Start of the opposition window.
+oppositionPeriodEnd	string	End of the opposition window.
+publications	object[]	Official bulletin entries: identifier , section , date .
+markEvents	object[]	Register events such as ownership changes, surrenders and transfers.
+markDescription	string	Description of the mark, where published.
+markDisclaimer	string	Disclaimed elements.
+markTranslation	string	Translation of a non-Latin or foreign-language mark.
+markTranscription	string	Transliteration of the mark.
+colourClaimed	string	Colours claimed, for example Orange; Red; White.
+filingLanguage	string	Language the application was filed in.
+secondLanguage	string	Second language of the application, where applicable.
+applicationReference	string	The applicant's own file reference.
+fastTrack	string	Whether the application used the office's fast-track route.
+acquiredDistinctiveness	string	Whether acquired distinctiveness was claimed.
+markImageUrl	string	Image of the mark, for figurative and combined marks.
+officeRecordUrl	string	Link to the record at the publishing office.
+detailUrl	string	Link to the multi-office record view.
+fullRecordAvailable	boolean	Whether the full register record was retrieved for this mark.
+partyDetailsWithheld	boolean	Present when the office does not publish owner or representative details to automated requests.
+matchedQuery	string	Which search or filter slice matched this record.
+source	string	Constant source label.
+observedAt	string	ISO 8601 timestamp of when the record was collected.
+error	string	Present only on a failed run, where a single item with a populated error field is written instead of results.
+Use cases #use-cases
+Global clearance searches. Run one fuzzy search for a proposed brand across all 77 offices and see every conflicting mark, its classes and its owner, before you file.
+Portfolio and competitor mapping. Pull an owner's entire worldwide filing history in a single run, including marks filed under local subsidiary names.
+Renewal and expiry pipelines. Filter by expiry window and office to get marks coming up for renewal, with the responsible IP firm and its address already attached.
+IP firm business development. Find owners filing into your jurisdiction and see who currently represents them, with postal addresses for outreach.
+Brand protection and watch services. Monitor new filings in your Nice classes and territories with a filing-date window, and catch lookalikes early with fuzzy matching.
+Opposition and litigation research. Study which grounds succeed in a given office and class, and which earlier marks are relied on.
+Run via API and CLI #run-via-api-and-cli
+Start a run via the REST API. Replace YOUR_TOKEN with your Apify API token.
+curl -X POST "https://api.apify.com/v2/acts/scrapers_lat~tmview-global-trademarks-scraper/runs?token=YOUR_TOKEN" \
+-H "Content-Type: application/json" \
+-d '{"offices":["EM"],"niceClasses":["9"],"applicationDateFrom":"2025-01-01","maxTrademarks":100}'
+Apify CLI:
+apify call scrapers_lat/tmview-global-trademarks-scraper \
+--input '{"markTexts":["nike"],"matchMode":"fuzzy","maxTrademarks":25}'
+Fetch results #fetch-results
+Results land in the run's dataset and can be exported as JSON, CSV or Excel from the Apify console or the API:
+$ curl "https://api.apify.com/v2/datasets/DATASET_ID/items?clean=true&format=csv&token=YOUR_TOKEN"
+Billing and limits #billing-and-limits
+This actor uses pay-per-event pricing. You are only charged on a successful result.
+Event	Price (USD)	When it is charged
+result	0.015	Once per trademark written to the dataset.
+No charge on failure. If a run errors, a single item with a populated error field is written and is not charged. Empty runs cost nothing.
+Free Apify plans are capped at 10 results per run; upgrade for larger pulls.
+Spend cap respected. Set maxTotalChargeUsd on the run to stop once a budget is reached.
+De-duplicated. The same mark is never charged twice in a run, even when several searches or offices match it.
+Set maxTrademarks to control run size and cost, and use the filters to target the exact segment you need.
+FAQ and troubleshooting #faq-and-troubleshooting
+Which trademarks are covered? Marks published by the 77 offices listed above, including applications, registrations, expired and ended marks. Each office decides how far back its own history goes.
+How fresh is the data? It is read live from the public registers on each run, and every record carries observedAt .
+Why do some rows have partyDetailsWithheld ? A handful of offices publish owner and representative details only through a channel that refuses automated requests. Those rows still carry the owner name that the register itself returns, and the flag tells you the postal address was unavailable rather than absent. Owner addresses are available for most European and Latin American offices.
+Why is goodsAndServices sometimes not in English? Many offices publish the wording only in their own language. The actor returns your requested language when it exists, then English, then whatever the office published. goodsServicesLanguages tells you which versions exist.
+Can I search several brands at once? Yes. markTexts and applicantNames both accept lists, and results are merged and de-duplicated by the mark's global identifier.
+What is st13 ? A 13-character identifier that is stable and unique across every office, so you can key on it when you re-run and diff.
+Why are applicationDate and registrationDate sometimes inconsistent? A few offices record the registration date of an earlier related right. The dates are reported exactly as the office publishes them, never adjusted.
+Can I get more than the count I set? No. maxTrademarks is a hard cap; the actor stops once it is reached.
+Do I need an API key? No. The registers are public. Residential proxies are used by default because the registers throttle bulk traffic, and Apify Proxy is already included in your plan.
+Not affiliated with, endorsed by or sponsored by EUIPO, WIPO or any national intellectual property office. All data is read from publicly available records.
+You might also like
+EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview dltik/euipo-trademarks-scraper Search 100M+ trademarks from EUIPO + 70 IP offices (USPTO, INPI, DPMA, WIPO Madrid). Nice class, status, dates, goods & services. AI brand-clearance + applicant→company. No API key. $0.01/result. Walid 167 (/dltik/euipo-trademarks-scraper)
+Website Screenshot Generator apify/screenshot-url Create a screenshot of a website based on a specified URL. The screenshot is stored as the output in a key-value store. It can be used to monitor web changes regularly after setting up the scheduler. Apify 10K 3.9 (20) (/apify/screenshot-url)
+Facebook Reviews Scraper apify/facebook-reviews-scraper Extract data from hundreds of Facebook reviews from one or multiple Facebook pages. Get review text, timestamp, review URL, likes and comments count and basic reviewer info. Download the data in JSON, CSV, Excel and use it in apps, spreadsheets, and reports. Apify 4K 4.6 (10) (/apify/facebook-reviews-scraper)
+Web Fetch apify/web-fetch Download any web page by URL and convert it to clean Markdown, plain text, HTML, and other formats. Automatically renders JavaScript and works around bot blocking. The Actor provides a real-time API for quick response times. Apify 54K 5.0 (4) (/apify/web-fetch)
+RAG Web Browser apify/rag-web-browser Web search and fetch tool for AI agents and RAG pipelines. It queries Google Search, scrapes the top N pages using a full web browser, and returns their content as clean Markdown for further processing by an LLM. Can also fetch individual URLs. Apify 211K 4.7 (35) (/apify/rag-web-browser)
+Google Search Results Scraper apify/google-search-scraper Scrape Google Search Engine Results Pages (SERPs). Select the country or language and extract organic and paid results, AI Mode, AI overviews, ads, queries, People Also Ask, prices, reviews, like a Google SERP API. Export data, run the scraper via API, schedule runs, or integrate with other tools. Apify 231K 4.7 (218) (/apify/google-search-scraper)
+Singapore ACRA Company Registry Scraper scrapers_lat/singapore-acra-entities-scraper Look up Singapore companies and businesses from the official ACRA corporate register on data.gov.sg. Get UEN, entity status, incorporation date, registered address, SSIC industry codes, officer count, former names and audit firms. Export to JSON, CSV or Excel. Scrapers Lat 8 4.7 (2) (/scrapers_lat/singapore-acra-entities-scraper)
+Website Content Crawler apify/website-content-crawler Crawl websites and extract text content to feed AI models, LLM applications, vector databases, or RAG pipelines. The Actor supports rich formatting using Markdown, cleans the HTML, downloads files, and integrates well with 🦜🔗 LangChain, LlamaIndex, and the wider LLM ecosystem. Apify 176K 4.6 (235) (/apify/website-content-crawler)
+TMview Trademark Search & Watch trev0n/tmview-scraper Search 140M+ trade marks from the EUIPO, WIPO, USPTO and ~80 national offices via TMview: name, owner, Nice classes, status, dates, goods & services, oppositions. Watch mode alerts you to new conflicting filings and their opposition deadline. Paweł 4 (/trev0n/tmview-scraper)
+Spain Company Directory Scraper (CIF, CNAE, Address & Phone) scrapers_lat/spain-companies-directory-scraper Look up Spanish companies by name and get CIF/NIF, CNAE activity code, full registered address, phone, website, legal form, employees and founding date. Export to JSON, CSV or Excel. Scrapers Lat 10 (/scrapers_lat/spain-companies-directory-scraper)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)
