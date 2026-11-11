@@ -1,0 +1,9 @@
+RENDER https://data.uspto.gov/support/universal-registration
+RENDER https://data.uspto.gov/support/faq
+RENDER https://data.uspto.gov/apis/bulk-data/download
+RENDER https://data.uspto.gov/apis/api-rate-limits
+GET https://www.uspto.gov/learning-and-resources/electronic-bulk-data-products
+GET https://apify.com/foxlabs/uspto-trademark-leads/output-schema
+GET https://apify.com/thoob/uspto-trademark-feed/output-schema
+GET https://apify.com/accountable_eel/trademark-filing-watch/output-schema
+GET https://apify.com/thoob/uspto-trademark-feed/input-schema
