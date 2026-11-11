@@ -1,0 +1,225 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Trademark Filing Watch: New USPTO Application Alerts","description":"Watch my brand for similar trademark filings? Get new USPTO and EUIPO trademark applications that contain or resemble your marks, by Nice class. One row per filing with owner, classes and record link. Monitoring bills only new matches; alerts to Slack, Discord or Telegram, or Google Sheets.","url":"https://apify.com/accountable_eel/trademark-filing-watch","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/EeA-AbzCkX6ArlKc4xbErS-PIxnvY9R6gjnVSlqca60/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNkVMTUNxazg0eEpBSHU2SmQtYWN0b3ItN3UzdXF5S01SUW9NTmxnTzItY0JuM2VFaDZ4RC10cmFkZW1hcmstZmlsaW5nLXdhdGNoLnBuZw.webp","offers":{"@type":"Offer","description":"from $5.00 / 1,000 new trademark filing matcheds","price":5,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":5,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"new trademark filing matcheds"}}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apify.com/"},{"@type":"ListItem","position":2,"name":"Store","item":"https://apify.com/store"},{"@type":"ListItem","position":3,"name":"Adriana Voss","item":"https://apify.com/accountable_eel"},{"@type":"ListItem","position":4,"name":"Trademark Filing Watch: New USPTO Application Alerts","item":"https://apify.com/accountable_eel/trademark-filing-watch"}]}
+meta description: Trademark filing alerts to Slack or n8n: new USPTO trademark filings to Google Sheets, plus EUIPO, for a keyword and by Nice class. $10 per 1,000 filings
+meta og:title: trademark watch for new USPTO filings · Apify
+meta og:description: Trademark filing alerts to Slack or n8n: new USPTO trademark filings to Google Sheets, plus EUIPO, for a keyword and by Nice class. $10 per 1,000 filings
+meta og:url: https://apify.com/accountable_eel/trademark-filing-watch
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=Trademark+Filing+Watch%3A+New+USPTO+Application+Alerts&uniqueName=accountable_eel%2Ftrademark-filing-watch&categories=LEAD_GENERATION%2CAUTOMATION&users=2&runs=37&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2F6ELMCqk84xJAHu6Jd-actor-7u3uqyKMRQoMNlgO2-cBn3eEh6xD-trademark-filing-watch.png&authorName=Adriana+Voss&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FVE7cfmCs0qdEFIqFDMB3nd3uO2Padzt1GcsEZBMvg7E%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNkVMTUNxazg0eEpBSHU2SmQtcHJvZmlsZS1vOWdGQW9IdjB2LXBleGVscy1hbnRvbmlvLWJhdGluaWMtMjU3MzQzNC00MTY0NDE4LmpwZw.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: trademark watch for new USPTO filings · Apify
+meta twitter:description: Trademark filing alerts to Slack or n8n: new USPTO trademark filings to Google Sheets, plus EUIPO, for a keyword and by Nice class. $10 per 1,000 filings
+meta twitter:image: https://apify.com/og-image/actor?actorName=Trademark+Filing+Watch%3A+New+USPTO+Application+Alerts&uniqueName=accountable_eel%2Ftrademark-filing-watch&categories=LEAD_GENERATION%2CAUTOMATION&users=2&runs=37&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2F6ELMCqk84xJAHu6Jd-actor-7u3uqyKMRQoMNlgO2-cBn3eEh6xD-trademark-filing-watch.png&authorName=Adriana+Voss&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FVE7cfmCs0qdEFIqFDMB3nd3uO2Padzt1GcsEZBMvg7E%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNkVMTUNxazg0eEpBSHU2SmQtcHJvZmlsZS1vOWdGQW9IdjB2LXBleGVscy1hbnRvbmlvLWJhdGluaWMtMjU3MzQzNC00MTY0NDE4LmpwZw.webp
+trademark watch for new USPTO filings · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,129 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[Trademark Filing Watch: New USPTO Application Alerts avatar]
+Trademark Filing Watch: New USPTO Application Alerts
+Pricing
+from $5.00 / 1,000 new trademark filing matcheds
+Try for free (https://console.apify.com/actors/7u3uqyKMRQoMNlgO2?addFromActorId=7u3uqyKMRQoMNlgO2)
+Go to Apify Store (/store)
+[Trademark Filing Watch: New USPTO Application Alerts]
+Trademark Filing Watch: New USPTO Application Alerts
+accountable_eel/trademark-filing-watch
+Try for free (https://console.apify.com/actors/7u3uqyKMRQoMNlgO2?addFromActorId=7u3uqyKMRQoMNlgO2)
+Copy setup prompt Copied
+Watch my brand for similar trademark filings? Get new USPTO and EUIPO trademark applications that contain or resemble your marks, by Nice class. One row per filing with owner, classes and record link. Monitoring bills only new matches; alerts to Slack, Discord or Telegram, or Google Sheets.
+Pricing
+from $5.00 / 1,000 new trademark filing matcheds
+Rating
+0.0
+(0)
+Developer
+Adriana Voss (/accountable_eel) Maintained by Community
+Actor stats
+0
+Bookmarked
+2
+Total users
+1
+Monthly active users
+16 days ago
+Last modified
+Categories
+Lead generation (/store/categories/lead-generation) Automation (/store/categories/automation)
+Features
+Limited permissions
+Share
+README (/accountable_eel/trademark-filing-watch) Input (/accountable_eel/trademark-filing-watch/input-schema) Output (/accountable_eel/trademark-filing-watch/output-schema) Pricing (/accountable_eel/trademark-filing-watch/pricing) API (/accountable_eel/trademark-filing-watch/api/python) Issues (/accountable_eel/trademark-filing-watch/issues/open)
+Watch USPTO and EUIPO for new trademark applications that contain or resemble your marks, by Nice class. One row per filing with the owner, classes and a record link. Monitoring bills only new matches, and can alert Slack, Discord or Telegram. No API key and no proxy. EUIPO is searched through TMview ( adFrom / adTo ). If USPTO later requires a token, the fallback is the official bulk daily XML on bulkdata.uspto.gov; that path is not built yet.
+How to use #how-to-use
+In the Apify Console. Open the actor page and click Start — the terms field is already pre-filled with a working example. Results land in the run's dataset as soon as each item is found.
+Via the API. Call it directly with a POST request — no Console needed once you have an API token:
+curl "https://api.apify.com/v2/acts/accountable_eel~trademark-filing-watch/run-sync-get-dataset-items?token=<YOUR_TOKEN>" \
+-X POST \
+-H "Content-Type: application/json" \
+-d '{"terms":["cloud"]}'
+On a schedule. Save this actor as an Apify Task with the input you want, then add a Schedule (hourly, daily, weekly) so it runs on its own — no server of your own required.
+Input #input
+{
+"terms" : [
+"cloud"
+]
+}
+One mark per line. Each line is searched on its own. By default a filing matches when the word mark contains the term. Accepted formats: cloud, ClassCloud, your brand.
+Example runs #example-runs
+For brand owners and IP attorneys. Change the field named in each note.
+1. Watch my brand (who: brand protection). Change terms .
+{ "terms" : [ "yourbrand" ] , "matchMode" : "similar" , "onlyNewSinceLastRun" : true }
+2. New software trademarks in classes 9 and 42 (who: agency lead-gen). Change classes .
+{ "terms" : [ "ai" ] , "classes" : [ 9 , 42 ] , "sinceDays" : 7 }
+3. New filings by keyword (who: a category watch). Change terms .
+{ "terms" : [ "coffee" ] , "classes" : [ 30 , 43 ] , "sinceDays" : 14 }
+Output #output
+One row per item, for example:
+query	found	status	filingCount	filings	searchSummary	monitorStatus	truncated	notifyErrors	office	serialNumber	mark	matchType	similarityScore	filedDate	liveStatus	statusCode	ownerNames	niceClasses	goodsAndServices	recordUrl	isNew	firstSeenAt	scrapedAt
+cloud	true	OK	<all filings (full list)>	<is this filing new?>	1970-01-01T00:00:00.000Z
+A miss comes back as a row with "found": false and is never charged.
+Pricing #pricing
+New trademark filing matched : $10 per 1,000 filings
+Plus a $0.002 start fee per run. Each event above is billed independently, only when it actually returns data — misses ( found:false ) are never charged.
+Use it from Clay, n8n, Make, or an AI agent #use-it-from-clay-n8n-make-or-an-ai-agent
+This actor runs synchronously over plain HTTP — call it directly from a script, a workflow tool, or an AI agent, no Apify Console needed once you have an API token.
+curl "https://api.apify.com/v2/acts/accountable_eel~trademark-filing-watch/run-sync-get-dataset-items?token=<YOUR_TOKEN>" \
+-X POST \
+-H "Content-Type: application/json" \
+-d '{"terms":["cloud"]}'
+n8n. Add an HTTP Request node: Method POST , URL https://api.apify.com/v2/acts/accountable_eel~trademark-filing-watch/run-sync-get-dataset-items?token=<YOUR_TOKEN> , Body Content Type JSON , JSON Body {"terms":["cloud"]} (swap in an expression from an earlier node for a real value).
+Clay. Add an "HTTP API" column: Method POST , URL https://api.apify.com/v2/acts/accountable_eel~trademark-filing-watch/run-sync-get-dataset-items?token=<YOUR_TOKEN> , Body {"terms":["{{term}}"]} , mapping the row's term into the terms array.
+MCP. In Claude, Cursor, or any MCP client with the Apify MCP server, ask for "trademark watch for new USPTO filings" — the agent will find and run this actor.
+You might also like
+Trademark Watch & Monitoring: Opposition Deadline Alerts jdepablos/trademark-watch-tmview Trademark monitoring and search across USPTO, EUIPO, WIPO and 70+ national offices. Get an alert for each new conflicting application, with Nice classes, applicant, status and opposition deadline, in time to file a trademark opposition. Built for brand owners, IP professionals and AI agents. Juan de Pablos 20 (/jdepablos/trademark-watch-tmview)
+Vinted Listings API Scraper: New & Price Drop Alerts to Discord accountable_eel/vinted-listing-lookup Vinted scraper for 27 countries: watch a Vinted search and get only new listings, price drops and gone since last run. Send new listings to a Discord webhook, Slack or Telegram. 2,000 per search. Sold items tracker, sell-through rate, cross country price gap. Vinted prices to Google Sheets. No login Adriana Voss 20 (/accountable_eel/vinted-listing-lookup)
+USPTO Trademark Search Feed: Applications, Owners, Status thoob/uspto-trademark-feed Pulls official USPTO daily data and returns clean, flat US trademark records: word mark, serial and registration number, owner, goods and services, class, status and dates, with a what-changed-since-last-run mode. Billed only per delivered record. No API key needed. Pono Data 2 (/thoob/uspto-trademark-feed)
+EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview dltik/euipo-trademarks-scraper Search 100M+ trademarks from EUIPO + 70 IP offices (USPTO, INPI, DPMA, WIPO Madrid). Nice class, status, dates, goods & services. AI brand-clearance + applicant→company. No API key. $0.01/result. Walid 167 (/dltik/euipo-trademarks-scraper)
+USPTO Trademark Batch Search API dev00/uspto-trademark-api Bulk verify keywords and phrases against the USPTO database to instantly detect LIVE and PENDING trademarks. dev00 111 (/dev00/uspto-trademark-api)
+EUIPO Trademark Scraper - EU Trademark Search & Monitoring jungle_synthesizer/euipo-trademark-scraper Scrape EUIPO trademark database via eSearch API. Extract records: application/registration numbers, status, applicant, Nice classes, goods and services, opposition data, and mark type. Search by name, applicant, Nice class, date range, and status. For brand-protection teams and trademark attorneys. BowTiedRaccoon 3 (/jungle_synthesizer/euipo-trademark-scraper)
+Trademark Search API: USPTO, TMview, Madrid, IP Australia s-r/trademark-search Trademark search across USPTO, TMview, WIPO Madrid, IP Australia and Global Brand DB: one row per mark with mark text, owner, live/dead/pending status in the office's own wording, serial and registration numbers, Nice classes, goods and services text, dates and per-source status flags. SR 4 (/s-r/trademark-search)
+Google News Scraper: Company News Alerts by Keyword accountable_eel/google-news-lookup Google News scraper to monitor a keyword or track press coverage of competitors. Give it a list of keywords (or site:domain.com) and get one row per article: headline, source, publish date, link, snippet. Only-new-articles mode for daily alerts to Slack or Google Sheets, or runs from n8n or Make. Adriana Voss 6 (/accountable_eel/google-news-lookup)
+dubizzle Egypt Scraper: New Listing Alerts accountable_eel/dubizzle-egypt-listing-lookup dubizzle Egypt (formerly OLX Egypt) scraper by keyword: get one row per listing (title, price, location, condition, link). Turn on monitoring for only new listings and a price drop alert since your last run, or spot underpriced iPhones. Export a search to Google Sheets or n8n. $0.005 per run. Adriana Voss 10 (/accountable_eel/dubizzle-egypt-listing-lookup)
+USPTO New Trademark Filings & Search — Leads with Contacts foxlabs/uspto-trademark-leads Daily US trademark application leads and register search from USPTO: new filings 1-2 days after filing, or search by mark text or owner name. Owner name & address, attorney, correspondent email & phone, pro-se flag, classes and goods — for IP law firms and brand protection. No key required. Berkan Kaplan 20 (/foxlabs/uspto-trademark-leads)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)

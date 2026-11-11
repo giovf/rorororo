@@ -1,0 +1,354 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"USPTO New Trademark Filings & Search — Leads with Contacts","description":"Daily US trademark application leads and register search from USPTO: new filings 1-2 days after filing, or search by mark text or owner name. Owner name & address, attorney, correspondent email & phone, pro-se flag, classes and goods — for IP law firms and brand protection. No key required.","url":"https://apify.com/foxlabs/uspto-trademark-leads","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/gdMqbUI_lWgAvNvSE42pg5XQ_BksX9palt3cYYazX-M/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1htTW5VaXhrRTdUSkdlSWYtYWN0b3ItZEdUcHJCcnBYT0FrbmZzWkgteG1rR1oxUXVJRi11c3B0by10cmFkZW1hcmstbGVhZHMucG5n.webp","offers":{"@type":"Offer","description":"from $6.00 / 1,000 results","price":6,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":6,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"results"}}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apify.com/"},{"@type":"ListItem","position":2,"name":"Store","item":"https://apify.com/store"},{"@type":"ListItem","position":3,"name":"Berkan Kaplan","item":"https://apify.com/foxlabs"},{"@type":"ListItem","position":4,"name":"USPTO New Trademark Filings & Search — Leads with Contacts","item":"https://apify.com/foxlabs/uspto-trademark-leads"}]}
+meta description: New US trademark applications 1-2 days after filing, plus register search by mark or owner name, with the contact email and phone on the USPTO record.
+meta og:title: USPTO Trademark Filings & Search: Leads with Emails · Apify
+meta og:description: New US trademark applications 1-2 days after filing, plus register search by mark or owner name, with the contact email and phone on the USPTO record.
+meta og:url: https://apify.com/foxlabs/uspto-trademark-leads
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=USPTO+New+Trademark+Filings+%26+Search+%E2%80%94+Leads+with+Contacts&uniqueName=foxlabs%2Fuspto-trademark-leads&categories=LEAD_GENERATION&users=21&runs=427&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FcXmMnUixkE7TJGeIf-actor-dGTprBrpXOAknfsZH-xmkGZ1QuIF-uspto-trademark-leads.png&authorName=Berkan+Kaplan&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FtSnHE1oSfsEO1nRpSDL2Uu__udfhrL1qpjcD6xcEfvc%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1htTW5VaXhrRTdUSkdlSWYtcHJvZmlsZS1TM09KY1l0UWt2LUlNR18yMDI2MDMwMl8xMjU3NTVfcmVzaXplZC5KUEVH.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: USPTO Trademark Filings & Search: Leads with Emails · Apify
+meta twitter:description: New US trademark applications 1-2 days after filing, plus register search by mark or owner name, with the contact email and phone on the USPTO record.
+meta twitter:image: https://apify.com/og-image/actor?actorName=USPTO+New+Trademark+Filings+%26+Search+%E2%80%94+Leads+with+Contacts&uniqueName=foxlabs%2Fuspto-trademark-leads&categories=LEAD_GENERATION&users=21&runs=427&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FcXmMnUixkE7TJGeIf-actor-dGTprBrpXOAknfsZH-xmkGZ1QuIF-uspto-trademark-leads.png&authorName=Berkan+Kaplan&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FtSnHE1oSfsEO1nRpSDL2Uu__udfhrL1qpjcD6xcEfvc%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1htTW5VaXhrRTdUSkdlSWYtcHJvZmlsZS1TM09KY1l0UWt2LUlNR18yMDI2MDMwMl8xMjU3NTVfcmVzaXplZC5KUEVH.webp
+USPTO Trademark Filings & Search: Leads with Emails · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,129 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[USPTO New Trademark Filings & Search — Leads with Contacts avatar]
+USPTO New Trademark Filings & Search — Leads with Contacts
+Pricing
+from $6.00 / 1,000 results
+Try for free (https://console.apify.com/actors/dGTprBrpXOAknfsZH?addFromActorId=dGTprBrpXOAknfsZH)
+Go to Apify Store (/store)
+[USPTO New Trademark Filings & Search — Leads with Contacts]
+USPTO New Trademark Filings & Search — Leads with Contacts
+foxlabs/uspto-trademark-leads
+Try for free (https://console.apify.com/actors/dGTprBrpXOAknfsZH?addFromActorId=dGTprBrpXOAknfsZH)
+Copy setup prompt Copied
+Daily US trademark application leads and register search from USPTO: new filings 1-2 days after filing, or search by mark text or owner name. Owner name & address, attorney, correspondent email & phone, pro-se flag, classes and goods — for IP law firms and brand protection. No key required.
+Pricing
+from $6.00 / 1,000 results
+Rating
+0.0
+(0)
+Developer
+Berkan Kaplan (/foxlabs) Maintained by Community
+Actor stats
+0
+Bookmarked
+21
+Total users
+8
+Monthly active users
+5 days ago
+Last modified
+Categories
+Lead generation (/store/categories/lead-generation)
+Features
+Limited permissions
+Share
+README (/foxlabs/uspto-trademark-leads) Input (/foxlabs/uspto-trademark-leads/input-schema) Output (/foxlabs/uspto-trademark-leads/output-schema) Pricing (/foxlabs/uspto-trademark-leads/pricing) API (/foxlabs/uspto-trademark-leads/api/python) Issues (/foxlabs/uspto-trademark-leads/issues/open) Changelog (/foxlabs/uspto-trademark-leads/changelog) Tasks 10 (/foxlabs/uspto-trademark-leads/examples)
+/foxlabs/uspto-trademark-leads
+USPTO Trademark Leads ™️ #uspto-trademark-leads-tm
+foXLabs US lead series: FMCSA carriers (/foxlabs/fmcsa-carrier-leads) · Insurance producers (/foxlabs/us-insurance-producer-leads) · Employer benefit plans (/foxlabs/us-employer-benefit-plans) · Federal contractors (/foxlabs/usaspending-contractor-data)
+🎉 Turn USPTO trademark filings into lead data — no login, no API key, one row per application, with the applicant, the mark, the classes and the contact details on the record: correspondent e-mail and phone, attorney, owner address .
+Built for IP services, legal and B2B sales to new brands.
+🔍 What is USPTO Trademark Leads — and when should you use it? #what-is-uspto-trademark-leads-and-when-should-you-use-it
+It answers two questions about the USPTO trademark register, live on every run:
+Who filed a trademark application in the last days? New filings mode lists the applications filed in the last 14 days, newest first — optionally only the ones filed without an attorney (pro se), in the classes you care about.
+Which applications belong to this owner, or carry this mark? Search mode finds applications anywhere in the register by owner name and/or mark text.
+Every result is then read from its own USPTO status page, which is where the contact details are.
+Use it when you need: a daily list of new applicants to reach out to; the filings of one company with their contact person; the applications behind a brand name.
+Use something else when: you only need to know whether a phrase is already taken (a plain availability check does not need the contact details and is faster elsewhere), or you need company firmographics — this is trademark filings, not a company registry.
+🤖 Use with AI agents #use-with-ai-agents
+Already on the Apify MCP server? Ask for this Actor by name: foxlabs/uspto-trademark-leads .
+Your agent can pay for its own runs. This Actor is pay-per-event with agentic payments, so an agent can discover it, run it and settle the bill over x402 (USDC on Base) or Skyfire — no Apify account or API token of its own. Billing is the same either way: per delivered record, never for errors.
+Otherwise paste this into Claude, ChatGPT, Cursor or any MCP-enabled assistant:
+I want to pull US trademark filings with contact details using the Apify Actor ` foxlabs/uspto-trademark-leads ` .
+Input: ` mode ` is ` new_filings ` ( the latest filings ) , ` search ` ( needs ` markText ` and/or ` ownerName ` ) , ` serial_range ` or ` serial_list ` . Optional filters: ` filerType ` ( ` pro_se_only ` = filed without an attorney ) , ` intlClasses ` , ` liveOnly ` . ` maxResults ` caps how many results are returned ; each result takes about 3 seconds.
+Start with: { "mode" : "new_filings" , "maxResults" :20 }
+Ask me what to look up, run the Actor, then summarise the rows as a table.
+The machine-readable API, MCP config and OpenAPI definition live at apify.com/foxlabs/uspto-trademark-leads.md .
+📋 Overview #overview
+Why teams pick this actor:
+✉️ The contact details on the record — correspondent e-mail and phone, attorney, owner address, as they stand at USPTO. In a run of 300 self-filed applications on 6 October 2026, every row had an e-mail and 205 had a phone.
+🆕 Fresh filings — a new application shows up one to two days after it is filed (measured 2026-10-06: the filings of 5 October were available on 6 October).
+🙋 Pro-se filter — keep only the applicants who filed without an attorney. On 5 October 2026 that was 627 of 1,779 filings.
+🔎 Search the register — by owner name and/or mark text, with class and live-mark filters (13.3 million records on 2026-10-06).
+🔁 Feeds that do not repeat — with "Only new since last run", a scheduled run delivers each filing once.
+💰 Pay per delivered row — no subscription; the run stops at your spending limit and tells you.
+✨ Features #features
+📰 New filings feed — the last 14 days, or a custom filing-date range, newest first.
+🔤 Search — every word of the mark text and/or the owner name must match; results newest first. The matching is USPTO's own: for mark text it can also return a mark that is spelled differently (a search for canopy in class 28 also returned KANOPEO).
+#️⃣ Serial lookup — a list or a range of US serial numbers.
+🧾 One record shape in every mode — mark, filing date, status, classes, goods and services, owner (name, address, legal entity type), attorney, correspondent contact, link to the USPTO page.
+🎬 Quick Start #quick-start
+curl -X POST "https://api.apify.com/v2/acts/foxlabs~uspto-trademark-leads/runs?token=YOUR_TOKEN" \
+-H "Content-Type: application/json" \
+-d '{"mode":"new_filings","maxResults":20}'
+🚀 Getting Started (3 steps) #getting-started-3-steps
+Choose the mode — New filings for the feed, Search for an owner or a mark, or serial numbers you already have.
+Set the filters and the cap — filer type, classes, and maxResults (each result takes about 3 seconds).
+Run and export — get the dataset as JSON, CSV or Excel.
+📥 Input #input
+{ "mode" : "new_filings" , "maxResults" : 20 }
+Field	Type	Description
+mode	string	new_filings (default) — the lead feed. search — by mark text and/or owner name. serial_range / serial_list — specific applications by US serial number.
+markText	string	Words to find in the mark — all of them must match. USPTO's index does the matching and can also return marks that are spelled differently. Required in search mode unless ownerName is given; narrows the feed in new_filings mode.
+ownerName	string	Words that must all appear in the applicant / owner name. Required in search mode unless markText is given; narrows the feed in new_filings mode.
+intlClasses	array	Keep only applications in at least one of these Nice classes (1-45), e.g. ["25"] .
+liveOnly	boolean	Leave out abandoned, cancelled and expired marks.
+filerType	string	all (default), pro_se_only — filed without an attorney, attorney_only .
+datePreset	string	freshest (default) — the last 14 days in new_filings mode, no date limit in search mode. custom — use dateFrom / dateTo .
+onlyNewSinceLastRun	boolean	For scheduled feeds in new_filings mode: each run delivers only filings it has not delivered before, newest first, looking back up to 14 days. A run that is cut short leaves the rest for the next run. The memory is kept per set of filters. One run per feed at a time: a second run with the same filters that starts meanwhile ends at once.
+dateFrom	string	YYYY-MM-DD filing date. Only used when datePreset is custom .
+dateTo	string	YYYY-MM-DD filing date. Only used when datePreset is custom . Leave empty for today.
+serialFrom	integer	First US serial number (8 digits). Only used in serial_range mode.
+serialTo	integer	Last US serial number. Only used in serial_range mode.
+serialNumbers	array	Specific 8-digit US serial numbers. Only used in serial_list mode.
+maxResults	integer	Hard cap on dataset rows per run (default 300, at most 2,500).
+maxRunSeconds	integer	Stop after this many seconds and keep the leads collected so far. 0 = no budget. The Actor also stops by itself 30 seconds before the run timeout.
+includeGoodsServices	boolean	Add the full goods/services description per class (default on).
+requestDelayMs	integer	Delay between USPTO status pages (default 3000, minimum 2500).
+More recipes
+The newest self-filed applications in clothing: {"mode":"new_filings","filerType":"pro_se_only","intlClasses":["25"],"maxResults":50}
+Everything one company has filed: {"mode":"search","ownerName":"Landscape Structures","maxResults":25}
+Live marks containing a word, in one class: {"mode":"search","markText":"canopy","intlClasses":["28"],"liveOnly":true,"maxResults":25}
+A scheduled feed that delivers each new filing once: {"mode":"new_filings","filerType":"pro_se_only","onlyNewSinceLastRun":true,"maxResults":300}
+One application you already know: {"mode":"serial_list","serialNumbers":["99900001"]}
+📤 Output #output
+One row per application, saved to the dataset. Every run ends with a status message that says how many leads were delivered and, if the run stopped early, why.
+Field	Description
+serialNumber	US serial number
+markText	The mark (word mark or literal elements)
+filingDate	Application filing date (YYYY-MM-DD)
+isProSe	true when no attorney is on the record
+contactEmail / contactEmails	Correspondent e-mail (and attorney e-mail) on the record
+correspondentPhone	Correspondent phone
+correspondentNameAddress	Correspondent name and address
+ownerName / ownerAddress	Applicant / owner and their address
+legalEntityType / ownerOrigin	Owner's legal entity type and where it is organized
+attorneyName / attorneyEmail	Attorney of record, if any
+markDrawingType / markType / register	Kind of mark and register
+status / statusDate	USPTO status text and its date
+intlClasses / usClasses	International (Nice) and US classes
+goodsServices	Goods and services text per class (optional)
+tsdrUrl	Link to the USPTO status page
+source / fetchedAt	Source label and fetch time
+💼 Use cases #use-cases
+1. New-brand lead-gen — reach applicants while the filing is fresh.
+Input: {"mode":"new_filings","filerType":"pro_se_only","maxResults":300} . Output: the newest self-filed applications with the applicant's e-mail and phone.
+2. IP services sales by class — a feed for one industry.
+Input: {"mode":"new_filings","intlClasses":["9","42"],"onlyNewSinceLastRun":true} . Output: each new software / tech filing once.
+3. Account research — what a company has filed and who handles it.
+Input: {"mode":"search","ownerName":"Landscape Structures"} . Output: its applications, newest first, with attorney and correspondent.
+🔗 Integration #integration
+JavaScript / Node.js
+import { ApifyClient } from 'apify-client' ;
+const client = new ApifyClient ( { token : 'YOUR_TOKEN' } ) ;
+const run = await client . actor ( 'foxlabs/uspto-trademark-leads' ) . call ( { "mode" : "new_filings" , "maxResults" : 20 } ) ;
+const { items } = await client . dataset ( run . defaultDatasetId ) . listItems ( ) ;
+console . log ( items [ 0 ] ) ;
+Python
+from apify_client import ApifyClient
+client = ApifyClient ( 'YOUR_TOKEN' )
+run = client . actor ( 'foxlabs/uspto-trademark-leads' ) . call ( run_input = { "mode" : "new_filings" , "maxResults" : 20 } )
+for item in client . dataset ( run . default_dataset_id ) . iterate_items ( ) :
+print ( item )
+Written for apify-client 3 for Python, where call() returns a run object; with version 1 or 2 it returns a dict — write run['defaultDatasetId'] there.
+Automation (n8n / Zapier / Make): schedule or webhook → HTTP request to the actor API with your input → handle the JSON dataset → push to a sheet, CRM or dashboard.
+📊 Pricing #pricing
+Pay-per-event: $0.006 per delivered record (≈ $6 per 1,000 leads), plus Apify's run-start event ($0.00005 per GB of run memory). A run that delivers nothing adds no record charge. View current pricing. (/foxlabs/uspto-trademark-leads)
+Spending limit. Before every USPTO status page the Actor checks the run's maximum charge — the limit you set for the run, or else what is left of your monthly usage limit. When there is no room for another lead it stops, keeps what it has delivered, and the status message says how many leads you got.
+❓ FAQ #faq
+Do I need an account, login or API key? No.
+Where does the data come from? Two public USPTO sources. The list of applications (who filed what, when) comes from the search service behind USPTO's own trademark search page; the contact details come from each application's TSDR status page. The search service is not a documented API: if it changes or stops answering, the run ends with a message that says so, and what was delivered is kept.
+What do I search by? Mark text, owner name, international class, filer type (with or without attorney), filing date — or serial numbers.
+How current is the data? Every run reads the sources live. A new application appears one to two days after it is filed.
+Why does a run take a while? Each lead's contact details are read from its own status page with a pause of at least 2.5 seconds, to stay polite to the official source: about 100 leads per 5-6 minutes.
+Does "Only new since last run" skip anything when a run stops early? No. The Actor remembers the filings it has delivered, per set of filters, and looks back 14 days on every run; whatever a run did not get to comes with the next one.
+Can a lead come twice? The memory is written while the run goes (every 10 leads) and when the run ends, so a run that stops at maxResults or on a time or spending limit does not repeat its leads. An aborted run writes its memory too when Apify gives it the chance (a graceful abort). If a run is killed without warning — an immediate abort, a crash — the next run can deliver up to 10 of its last leads once more.
+Can two runs of the same feed run at the same time? No, and the Actor prevents it, because both would deliver the same leads. A run with "Only new since last run" that starts while another run with the same filters is still going ends at once with a status message; it delivers nothing and does not contact USPTO. Feeds with different filters do not affect each other.
+Can I export to CSV / Excel / JSON? Yes — directly from the Apify dataset.
+🐛 Troubleshooting #troubleshooting
+Fewer rows than expected — raise maxResults , or widen the filters. In search mode every word you type must be in the mark or the owner name.
+No rows for the newest day — filings appear one to two days after they are filed, so the newest day in the window is usually empty.
+The run ended with "stopped because the maximum charge … was reached" — the run's maximum charge, or what is left of your monthly usage limit, covered fewer leads than you asked for. The dataset holds the ones that were delivered; raise the limit and run again for the rest.
+The run ended with "USPTO's trademark search service … " — the search service did not answer this time. Nothing is wrong with your input; run again later. Serial number modes do not use the search service.
+The run ended with "another run of this same feed is in progress" — two runs with "Only new since last run" and the same filters overlapped: the earlier one was still going, or had been killed less than three minutes before. Nothing was delivered. Start the run again when the other one has finished; if a schedule causes it, make the interval longer than a run takes, or lower maxResults .
+A mark-text search returned a mark without my word — USPTO's index does the matching and also returns some marks that are spelled differently (for example KANOPEO for canopy ). Filter the dataset on markText if you need the literal word.
+An application is missing its e-mail — the record has none: the Actor returns what the USPTO status page shows.
+⚖️ Is it legal to scrape this data? #is-it-legal-to-scrape-this-data
+This actor reads the public USPTO trademark database. Results can still contain personal data (e.g. a person’s name); personal data is protected by the GDPR and similar laws, so only process it with a legitimate basis. See Apify’s blog post on the legality of web scraping. If you use the leads to market legal services, the attorney advertising and solicitation rules of your jurisdiction apply to you.
+🤝 Support & contact #support-and-contact
+🌐 Website: data.foxlabs.com.tr (https://data.foxlabs.com.tr)
+📧 Email: info@foxlabs.com.tr (mailto:info@foxlabs.com.tr)
+🐛 Issues: open a ticket in the Actor’s Issues tab
+🧰 More clean B2B data actors: Fox Labs on Apify (/foxlabs)
+Changelog #changelog
+0.1.13 — 2026-10-08 — README: the Python example works with the current Apify client #0113-2026-10-08-readme-the-python-example-works-with-the-current-apify-client
+The README's Python example read the results with run['defaultDatasetId'] . With the current Apify client for Python (version 3) call() returns a run object, not a dict, and that line raised TypeError: 'Run' object is not subscriptable — after the run itself had finished. The example now reads run.default_dataset_id ; with client version 1 or 2, keep run['defaultDatasetId'] . Checked with apify-client 3.2.1, 2.5.1 and 1.12.2.
+No code, output field or pricing change.
+0.1.12 — 2026-10-07 — a run that Apify starts again keeps to maxResults #0112-2026-10-07-a-run-that-apify-starts-again-keeps-to-maxresults
+A run that the platform starts again no longer writes past maxResults or repeats rows. Apify can move a run to another server while it is going; the Actor then starts again with the same dataset. Until now it started counting from zero: a run with maxResults 30 that was started again after 14 rows ended with 44 rows, 4 of them written twice. The Actor now first reads what its own dataset already holds — those leads count towards maxResults and are not written again. All four modes.
+No output field changed, no pricing change.
+0.1.11 — 2026-10-07 — fresh filings again, and search by mark text or owner name #0111-2026-10-07-fresh-filings-again-and-search-by-mark-text-or-owner-name
+New filings mode returns new filings again. Since about 20 July 2026 it had been returning the same filings of that date as "the freshest": USPTO changed how it numbers applications (a new 50… series since 18 July 2026, and 99… numbers no longer in filing order), and the Actor found new filings by walking down from the highest serial number. It now gets the list of applications by filing date from USPTO's search service and reads the contact details from each application's status page as before. Measured on 2026-10-06: the filings of 5 October were available (1,779 that day, 627 without an attorney), and a run no longer starts by spending about two minutes looking for the newest serial number.
+New: Search mode ( "mode":"search" ) — find applications anywhere in the register by markText and/or ownerName ; every word must match; newest first.
+New filters for New filings and Search: intlClasses (Nice classes) and liveOnly . markText and ownerName also narrow the New filings feed.
+Behaviour change — onlyNewSinceLastRun : the Actor now remembers the filings it has delivered (per set of filters) and looks back 14 days on every run. Each filing is delivered once; whatever a run does not get to (Max results, a time limit, your spending limit) comes with the next run. The first runs of a new feed therefore work back through the last 14 days before they are down to only the newest filings.
+onlyNewSinceLastRun — the memory is written while the run goes (every 10 leads), when it ends and on a graceful abort. A run that is killed without warning can repeat at most its last 10 leads in the next run.
+onlyNewSinceLastRun — one run per feed at a time. A run that starts while another run with the same filters is still going ends at once with a status message, without delivering anything or contacting USPTO: two at once would deliver the same leads twice.
+Behaviour change — pro-se filter: it is applied when the list is made, so the run no longer spends requests on applications that have an attorney.
+If USPTO's search service does not answer, the run ends with a message that says so; rows already delivered are kept. Serial number modes do not use it.
+serialFrom / serialTo accept the 50… series.
+No output field changed, no pricing change.
+0.1.9 — 2026-10-07 — a run that is cut short stops cleanly, says why, and the next one carries on #019-2026-10-07-a-run-that-is-cut-short-stops-cleanly-says-why-and-the-next-one-carries-on
+A run that reaches its maximum charge now stops by itself and tells you. The maximum charge is the limit you set for the run, or else what is left of your monthly usage limit. Until now the Actor did not look at it: the scan went on, leads past the limit were logged as pushed but left out of the dataset, and a longer run was aborted by Apify. The Actor now checks the room left before every USPTO request, stops the scan when there is none, and finishes as a normal run with a status message that says how many leads were delivered.
+onlyNewSinceLastRun : a cut-short run no longer loses the rest of its batch. A run that stops early — at maxResults , on a time limit, or on its maximum charge — saves the part it did not reach, and the next incremental run continues with it after the new filings. Nothing is skipped and nothing is delivered twice. Before, the rest of that batch was never delivered. For a daily feed whose maxResults is smaller than the day's filings this means a run can now also return filings older than the previous run's newest one.
+The time limits hold. The Actor stops 30 seconds before the run timeout instead of being cut off by it, and maxRunSeconds also covers the first step, locating the newest filing.
+Every run ends with a status message that says what was delivered and, for a partial run, why it stopped.
+No output field changed, no pricing change.
+0.1.8 — 2026-09-20 — README examples corrected against the real input schema #018-2026-09-20-readme-examples-corrected-against-the-real-input-schema
+The README's code examples did not match this Actor. They used queries and maxResultsPerQuery — keys that do not exist in this Actor's input schema — with a placeholder value, and the input table listed those same phantom fields. Anyone who copied the AI-agent, cURL, JavaScript or Python example got a failing run. Every example now uses the real schema and matches the Console prefill: {"mode":"new_filings","maxResults":20}
+The input table is regenerated from input_schema.json , so it lists the fields the Actor actually accepts.
+Removed claims carried over from the same generator template where present: "formation / status monitoring", "a canonical registry record for KYB and due diligence", "every row carries query ", and industry described as a NACE code.
+No code, output field or pricing change.
+0.1 — 2026-09-07 #01-2026-09-07
+Enabled AI-agent payments (x402) + rebuilt the README to the full standard (What-is / when, AI-agents + x402 agentic payments + MCP, Overview, Features, Use cases, Integration, FAQ, Troubleshooting, Support & contact).
+0.0 #00
+Initial release: data from the USPTO trademark database (official open data) by name or registry ID.
+You might also like
+Trademark Search — USPTO Serial + IP Australia Name Search nexgendata/uspto-trademark-search Trademark due diligence and brand clearance: look up US trademarks by serial/registration number from the official USPTO TSDR source, and search brand names across the IP Australia register. JSON: mark, owner, status, serial/registration, dates, class, goods/services. No API key. Pay per record. NexGenData 50 (/nexgendata/uspto-trademark-search)
+USPTO Trademark Scraper - Brand-Owner & Attorney Leads scrapesage/uspto-trademark-scraper Scrape USPTO trademarks by keyword, owner, class or serial number. Get mark, status, Nice classes, owner name & address, goods & services, dates, plus the filing attorney's name & email. Export brand-owner and IP-attorney leads. Monitor new filings. No API key, no browser. Scrape Sage 25 (/scrapesage/uspto-trademark-scraper)
+Leads Scraper ✅ $1/1k with EMAILS ✅ Apollo | LinkedIn Profile peakydev/leads-scraper-ppe ✅ - Cheap ways to Extract leads with verified ☎️ Mobile ✅ Work & Personal Emails. Similar to Apollo, ZoomInfo, Lusha, LinkedIn | Google Maps Peaky Dev 18K 4.0 (155) (/peakydev/leads-scraper-ppe)
+Leads Scraper $1/2,000 Apollo/ZoomInfo Scraper B2B B2C disarming_screw-owner/1-2-000-leads-apollo-scraper-replacement-b2b-b2c-leads $0.50/1k leads — 2× cheaper than every Apollo alternative. 800M+ verified contacts: work email, mobile, LinkedIn, company data. Owned database, not scraped. Sub-200ms. No charge for misses. Free trial included. Agentic Data 1.5K 5.0 (4) (/disarming_screw-owner/1-2-000-leads-apollo-scraper-replacement-b2b-b2c-leads)
+Leads ✅ Finder | Similar to Apollo LinkedIn Leads Generator braveleads/leads-finder-linkedin-apollo-leads-generator --Maximum Result issue fixed---. Get premium leads similar to apollo, linkedin, zoominfo. ✅ Work emails, Phone numbers and more Brave Leads 5.4K 4.5 (49) (/braveleads/leads-finder-linkedin-apollo-leads-generator)
+🎉 Leads Finder ✅ $1.50/1k with Emails ✅ Apollo Alternative pipelinelabs/leads-finder-with-emails-apollo-lusha-zoominfo Find verified B2B leads with emails, LinkedIn URLs & phone numbers. 250M+ contact database with 100% email coverage. Apollo, Zoominfo & Lusha alternative. Up to 50,000 leads per run. Pipeline Labs 5.3K 3.9 (13) (/pipelinelabs/leads-finder-with-emails-apollo-lusha-zoominfo)
+USPTO Trademark Search API — Bulk Phrase, Serial & Owner khadinakbar/uspto-trademark-batch-search Check phrases against the US trademark register and get one clear or conflict answer each, from live official USPTO data. Bulk trademark search and trademark checker for clearance and availability. $5 per 1,000 results, usage included, no API key or login. US only, not legal advice. Khadin Akbar 30 (/khadinakbar/uspto-trademark-batch-search)
+USPTO Trademark Search — Lookup, Availability & Data sian.agency/uspto-trademark-scraper Search and extract USPTO trademark data — keyword search, brand-name availability checks, owner and full-text search, serial-number lookups, class suggestions, and expiring-mark discovery. Seven operations, one clean dataset per run. No API key, no setup. SIÁN OÜ 34 (/sian.agency/uspto-trademark-scraper)
+Google Ads Transparency Scraper — Copy, Regions, Impressions foxlabs/google-ads-transparency-scraper Get the ads a domain, brand or advertiser runs on Google from the Ads Transparency Center (Google's ad library): ad text, with OCR for image-only ads, image, YouTube ID, first/last shown, per-country impressions (EEA/TR), platforms, targeting, topic, Shopping price and legal name. Berkan Kaplan 15 (/foxlabs/google-ads-transparency-scraper)
+🎉Leads Scraper ✅ $1/1k Leads ✅ 50K/Run With EMAILS✅Like Apollo pipelinelabs/lead-scraper-apollo-zoominfo-lusha-ppe $1/1k Leads - Scrape Up to 50K leads per run with Emails, LinkedIn URL, Phone Numbers, & More! Similar to Apollo, ZoomInfo, Lusha. 250+ Million Verified Database! Pipeline Labs 18K 2.9 (89) (/pipelinelabs/lead-scraper-apollo-zoominfo-lusha-ppe)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)

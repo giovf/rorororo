@@ -1,0 +1,203 @@
+meta description: The Open Data Portal (ODP) is USPTO's data platform that empowers you to discover and easily extract USPTO data in one place for free.
+Getting Started | Open Data Portal
+[key]
+Open Data Portal Registration Requirement​
+In order to access the Open Data Portal (ODP), starting on June 18, 2026 , you'll need to sign in with a valid USPTO.gov account. Please sign in using the navigation below or create an account using the button in the banner. If you want more information on this initiative, please visit our Register for ODP access page (support/universal-registration) and sign-in today. Additionally, your USPTO.gov account requires multi-factor authentication (MFA). For guidance on MFA setup, please visit the USPTO.gov account FAQs (https://www.uspto.gov/learning-and-resources/account-faqs#subcategory=&category=Multifactor+authentication) .
+Also, effective August 18, 2026 , users are required to provide four additional fields of information on their USPTO profile. API keys for accounts that did not complete these fields by October 8, 2026, have been deactivated. To reactivate your key, update these fields in your USPTO.gov account (https://account.uspto.gov/profile) settings by selecting the “Open Data Portal” section at the bottom of the left navigation menu. Next login to ODP and click on the Activate API Key button on the Manage API Key page. See our FAQs (/support/faq) for details.
+Create a USPTO.gov account (https://account.uspto.gov/profile/create-account?startingURL=https://data.uspto.gov/apis/getting-started)
+[U.S. flag]
+An official website of the United States government A Here’s how you know keyboard_arrow_down
+close
+[U.S. flag]
+An official website of the United States government
+Here’s how you know keyboard_arrow_down
+[Dot gov]
+The .gov means it’s official.
+Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+[Https]
+The site is secure.
+The https:// ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+United States Patent and Trademark Office (https://www.uspto.gov)
+Patents
+Patent Center (https://patentcenter.uspto.gov)
+Search with Patent Public Search (https://ppubs.uspto.gov/pubwebapp/static/pages/landing.html)
+Check filing status (https://patentcenter.uspto.gov)
+Search and record assignments (https://assignmentcenter.uspto.gov/)
+Order certified Patent documents (https://certifiedcopycenter.uspto.gov/)
+Patent Trial and Appeal Case Tracking System (https://ptacts.uspto.gov/ptacts/ui/home)
+View the Manual of Patent Examining Procedure (https://www.uspto.gov/web/offices/pac/mpep/index.html)
+Trademarks
+Search trademarks (https://tmsearch.uspto.gov/)
+File trademark forms (https://www.uspto.gov/trademarks-application-process/filing-online)
+View status, documents, and registration certificates (https://tsdr.uspto.gov/)
+File Trademark Trial and Appeal Board forms (https://estta.uspto.gov/)
+View Trademark Trial and Appeal Board proceedings (https://ttabvue.uspto.gov/ttabvue/)
+Search the Trademark Official Gazette (https://tmog.uspto.gov/#)
+Search and record assignments (https://assignmentcenter.uspto.gov/)
+Order certified trademark documents (https://certifiedcopycenter.uspto.gov/)
+View the Trademark Manual of Examining Procedure (https://tmep.uspto.gov/)
+Search the ID Manual (https://idm-tmng.uspto.gov/id-master-list-public.html)
+Fees and payment
+Fees Self-Service (https://fees.uspto.gov/)
+Financial Manager (https://fees.uspto.gov/FinancialManager)
+Patent Maintenance Fees Storefront (https://fees.uspto.gov/MaintenanceFees)
+Contact Us
+Contact Us (https://www.uspto.gov/about-us/contact-us)
+Learning and resources (https://www.uspto.gov/learning-resources)
+MyUSPTO (https://my.uspto.gov)
+Sign in
+[Open Data Portal logo]
+[Open Data Portal logo]
+* Home (/home)
+* Data products
+* APIs
+* Support
+* Manage API Key (/apikey)
+* Register for ODP access (/support/universal-registration)
+[what's new] What's New? Office Action Search and updated Petition Decisions are now available in ODP. See our latest release notes (/support/release/5.0) for more details.
+×
+OPEN DATA PORTAL API
+Getting started (/apis/getting-started)
+API syntax examples (/apis/api-syntax-examples)
+API rate limits (/apis/api-rate-limits)
+Patent File Wrapper API
+Search (/apis/patent-file-wrapper/search)
+Application Data (/apis/patent-file-wrapper/application-data)
+Continuity (/apis/patent-file-wrapper/continuity)
+Documents (/apis/patent-file-wrapper/documents)
+Transactions (/apis/patent-file-wrapper/transactions)
+Patent Term Adjustment (/apis/patent-file-wrapper/patent-term-adjustment)
+Address and Attorney/Agent Information (/apis/patent-file-wrapper/address)
+Assignments (/apis/patent-file-wrapper/assignments)
+Foreign Priority (/apis/patent-file-wrapper/foreign-priority)
+Associated Documents (/apis/patent-file-wrapper/associated-documents)
+Status Codes (/apis/patent-file-wrapper/status-codes)
+Bulk Datasets API
+Search (/apis/bulk-data/search)
+Product Data (/apis/bulk-data/product)
+Download (/apis/bulk-data/download)
+Petition Decisions API
+Search (/apis/petition-decision/search)
+Petition Decision Data (/apis/petition-decision/petition-decision-data)
+Final Petition Decision Data (/apis/petition-decision/final-petition-decision)
+Download (/apis/petition-decision/download)
+PTAB Trials API
+Search Proceedings (/apis/ptab-trials/search-proceedings)
+Download Proceedings Search Results (/apis/ptab-trials/download-proceedings)
+Search Proceedings by Trial Number (/apis/ptab-trials/proceedings-trial-number)
+Search Decisions (/apis/ptab-trials/search-decisions)
+Download Decisions Search Results (/apis/ptab-trials/download-decisions)
+Search Decisions by Trial Number (/apis/ptab-trials/decisions-trial-number)
+Search Decisions by Document Identifier (/apis/ptab-trials/decisions-document-identifier)
+Search Documents (/apis/ptab-trials/search-documents)
+Download Documents Search Results (/apis/ptab-trials/download-documents)
+Search Documents by Trial Number (/apis/ptab-trials/documents-trial-number)
+Search Documents by Document Identifier (/apis/ptab-trials/document-identifier)
+PTAB Appeals API
+Search Appeals (/apis/ptab-appeals/search)
+Download Search Result (/apis/ptab-appeals/download)
+Search by Document Identifier (/apis/ptab-appeals/document-identifier)
+Search by Appeal Number (/apis/ptab-appeals/search-appeal-number)
+PTAB Interferences API
+Search Interferences (/apis/ptab-interferences/search)
+Download Search Result (/apis/ptab-interferences/download)
+Search by Document Identifier (/apis/ptab-interferences/document-identifier)
+Search by Interference Number (/apis/ptab-interferences/search-interference-number)
+Office Action Search API
+Search (/apis/office-action/search)
+Details (/apis/office-action/details)
+Download Search Results (/apis/office-action/download)
+Download Office Action Text (/apis/office-action/download-oa-text)
+Office Action Text Retrieval API *
+Office Action Text Retrieval (/apis/office-action-retrieval/search)
+Office Action Rejections API *
+Office Action Rejections (/apis/office-action-rejections/search)
+Enriched Citations API *
+Enriched Citations (/apis/enriched-citations/search)
+Office Action Citations API *
+Office Action Citations (/apis/office-action-citations/search)
+Swagger UI (/swagger/index.html)
+*Legacy APIs
+Home
+APIs (/apis)
+Getting started
+Getting started
+Was this page helpful?
+What is the ODP API?
+The Open Data Portal (ODP) API allows you to access USPTO data at no cost – with several ways to do it.
+The ODP API uses HTTP, GET, and POST requests to return responses in JSON format. ODP also provides REST APIs, which provide rich search capabilities and allow users to retrieve patent application data, continuity data, documents, patent term adjustment data, and much more. You must get an API Key to use the ODP API.
+Note: The data products on our website allow users to download data without the need for an API key. Using ODP APIs will require an API key.
+Resources for APIs:
+The API Syntax Examples (/apis/api-syntax-examples) section is helpful for a “quick start” and may be used by more casual users to flexibily search the same data available on the Patent File Wrapper.
+The Swagger UI (/swagger/index.html) [swagger icon] has examples, schemes, and more to test out ODP APIs for Patent File Wrapper and Bulk Data Directory. Note that you will need your ODP API key to use the Swagger UI.
+The Open Data Portal Simplified Query Syntax Documentation (/documents/documents/ODP-API-Query-Spec.pdf) includes defined keywords, POST and GET search request guides, field dictionary, and FAQs.
+The Field Dictionary (/documents/documents/patent-data-schema.json) is a schema document that shows data fields and dataset JSON structures that ODP uses.
+The Patent File Wrapper APIs (/apis/patent-file-wrapper/search) and Bulk Data Directory APIs (/apis/bulk-data/search) document all available endpoints with their respective JSON Response examples and data property information for each return response.
+The API Transition Guidance (/support/transition-guide/peds) will help you transition from using the Patent Examination Data System (PEDS) and Bulk Data Storage System (BDSS) to the Open Data Portal (ODP).
+The PEDS-to-ODP API Mapping (/documents/documents/PEDS-to-ODP-API-Mapping.pdf) and BDSS-to-ODP API Mapping (/documents/documents/BDSS-to-ODP-API-Mapping.pdf) will be helpful for API endpoint transition.
+How do I get an ODP API key?
+To use the ODP API, you must have a registered USPTO.gov account and a validated and linked ID.me account to request an API Key. This API Key will allow the USPTO to manage and track data threshold limits, providing sustainable access to USPTO data for all customers. Follow the steps below to obtain your API Key.
+Note: If you have any questions that can’t be answered in the FAQs, please contact us. (/support/contact)
+1. Create your USPTO.gov account
+If you do not already have a USPTO.gov account, please complete the following steps:
+Visit https://account.uspto.gov to create a USPTO.gov account.
+Complete the required fields and accept the USPTO terms of use (https://www.uspto.gov/terms-use-uspto-websites) and privacy policy (https://www.uspto.gov/privacy-policy) , which apply to the Open Data Portal APIs. You are required to adhere to these terms of use.
+Please be sure to update the additional ODP product specific fields in your USPTO.gov account. These can be found under the Open Data Portal section of the account settings page.
+Check your email for an activation code. Note that this code expires in 48 hours.
+Activate your account using the link in your email.
+2. Create your ID.me account
+Create an ID.me account by navigating here (https://api.id.me/en/registration/new) and completing the required steps.
+Complete the required fields and submit the required documents to start your verification process with ID.me. You can verify using self-service, which is a guided process, or with a live agent during a video call.
+Note for international users:
+If you live outside the United States, you’ll need to verify your identity on a video call. Learn more from ID.me’s Video Call article. (https://help.id.me/hc/en-us/articles/4415907236375-Verifying-if-you-live-outside-of-the-United-States)
+You will also need to submit an English-translated version of your documents if not already in English. Troubleshoot document upload issues with ID.me’s fix rejected documents article. (https://help.id.me/hc/en-us/articles/360058791094-How-to-fix-rejected-documents)
+3. Link your USPTO.gov account and obtain your API Key
+With both USPTO.gov and ID.me accounts created, click the “Manage API Key” button in the ODP navigation.
+Once signed in, a page with information on how to link your USPTO.gov and ID.me accounts will be available. That page holds additional instructions on sign-in if needed. To link the accounts please click the “Verify MyUSPTO.gov account with ID.me.” Follow the guidance enclosed.
+This guided process will automatically link your ID.me account to your USPTO.gov account, which is a one-time registration.
+Once your accounts are linked, a final page will display a button to request API Key access. Click this button to view your personal API Key information.
+Notes:
+This will be the same API Key you always use to access Open Data Portal APIs.
+There can only be one API Key per account. Do not share it with others. It is an identifier unique to you.
+Your Key shouldn't expire if it is used at least one time per year. If your API Key expires, you will be provided instructions on how to renew it.
+Your API Key will always display on the Manage API Key (/apikey/key-reveal) page, so you can view it at any time (when logged in to your USPTO.gov account).
+You do not have to be logged in to your USPTO.gov account to use the API Key. You just need to be logged in to view it.
+4. Start using your API Key to request patent data
+Once you have obtained your API key, you can start using the Open Data Portal APIs via the Open Data Portal API Syntax Examples (apis/api-syntax-examples) page.
+Find resources and documentation depending on how you want to use the APIs:
+Simple use cases
+See the API Syntax Examples (/apis/api-syntax-examples) section for simplified syntax examples and a link to additional documentation.
+Advanced use cases
+See advanced syntax examples and documentation in Swagger UI (/swagger/index.html) [swagger icon] .
+Note that there are additional examples for each API endpoint under the ODP Patent Data section (such as Application Data (/apis/patent-file-wrapper/application-data) , Continuity (/apis/patent-file-wrapper/continuity) , etc.).
+Here is a sample format of where you should add your API key in the HTTP header:
+x-api-key as “x-api-key: < api-key >”
+-H 'X-API-KEY: <YOUR_API_KEY>'
+For example:
+curl -X 'GET' \ 'https://api.uspto.gov/api/v1/patent/applications/search' \
+-H 'accept: application/ json' \ -H 'X-API-KEY: <YOUR_API_KEY>'
+If you have any questions or errors, please visit the FAQs (https://data.uspto.gov/support/faq) page for assistance.
+Unused API Key and Deletion Policy
+If an ODP API key remains unused for 90 days, it will be deleted.
+If your API key is deleted and need a new API key, please visit Manage API Key (/apikey/key-reveal) page to obtain a new one.
+Additional information about this page
+×
+Published on: May 5, 2017 at 09:24 AM EST
+Last updated on: July 1, 2018 at 10:03 AM EST
+Owned by: Office of the Chief Communications Officer
+Close
+Receive updates from the USPTO
+Enter your email to subscribe or update your preferences
+Subscribe
+About the USPTO (https://www.uspto.gov/about-us) Search for patents (https://www.uspto.gov/patents/search) Search for trademarks (https://www.uspto.gov/trademarks/search)
+US Department of Commerce (https://www.commerce.gov)
+Accessibility (https://www.uspto.gov/using-usptogov/accessibility-uspto-website)
+Privacy Policy (https://www.uspto.gov/privacy-policy)
+Financial and Performance Data (https://www.uspto.gov/about-us/financial-and-performance)
+Freedom of Information Act (https://www.uspto.gov/learning-and-resources/ip-policy/electronic-freedom-information-act-e-foia)
+Inspector General (https://www.oig.doc.gov/Pages/U.S.-Patent-and-Trademark-Office.aspx)
+NoFEAR Act (https://www.uspto.gov/about-us/organizational-offices/office-equal-employment-opportunity-and-diversity/nofear-act)
+USA.gov (https://www.usa.gov)
+https://www.uspto.gov
+Follow us https://www.facebook.com/uspto.gov https://www.instagram.com/uspto https://www.linkedin.com/company/uspto https://twitter.com/uspto https://www.youtube.com/user/USPTOvideo
+Feedback

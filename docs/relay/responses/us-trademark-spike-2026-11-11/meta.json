@@ -1,0 +1,303 @@
+{
+  "request": "us-trademark-spike-2026-11-11",
+  "fetched_at": "2026-11-11T09:13:19.637Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/bulkdata/datasets",
+      "render": true,
+      "fetched_at": "2026-11-11T09:12:52.773Z",
+      "status": 200,
+      "final_url": "https://data.uspto.gov/universal-dialog",
+      "title": "Registration | Open Data Portal",
+      "rendered": {
+        "network_idle": true,
+        "requests": 100,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "1.txt",
+      "bytes": 5727,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 121074
+    },
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/bulkdata/datasets/trtdxfap",
+      "render": true,
+      "fetched_at": "2026-11-11T09:12:58.699Z",
+      "status": 200,
+      "final_url": "https://data.uspto.gov/universal-dialog",
+      "title": "Registration | Open Data Portal",
+      "rendered": {
+        "network_idle": true,
+        "requests": 104,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "2.txt",
+      "bytes": 5736,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 117549
+    },
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/apis/getting-started",
+      "render": true,
+      "fetched_at": "2026-11-11T09:13:03.569Z",
+      "status": 200,
+      "final_url": "https://data.uspto.gov/apis/getting-started",
+      "title": "Getting Started | Open Data Portal",
+      "rendered": {
+        "network_idle": true,
+        "requests": 105,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "3.txt",
+      "bytes": 15736,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 154965
+    },
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/terms-of-use",
+      "render": true,
+      "fetched_at": "2026-11-11T09:13:08.590Z",
+      "status": 200,
+      "final_url": "https://data.uspto.gov/page-not-found",
+      "title": "Page Not Found | Open Data Portal",
+      "rendered": {
+        "network_idle": true,
+        "requests": 85,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "4.txt",
+      "bytes": 5942,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 94713
+    },
+    {
+      "method": "GET",
+      "url": "https://www.uspto.gov/terms-use-uspto-websites",
+      "fetched_at": "2026-11-11T09:13:12.952Z",
+      "status": 200,
+      "elapsed_ms": 192,
+      "final_url": "https://www.uspto.gov/terms-use-uspto-websites",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "25812"
+      },
+      "file": "5.txt",
+      "bytes": 43964,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 144342
+    },
+    {
+      "method": "GET",
+      "url": "https://www.uspto.gov/learning-and-resources/open-data-and-mobility",
+      "fetched_at": "2026-11-11T09:13:13.655Z",
+      "status": 200,
+      "elapsed_ms": 44,
+      "final_url": "https://www.uspto.gov/learning-and-resources/data-and-statistics",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "19878"
+      },
+      "file": "6.txt",
+      "bytes": 29122,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 130722
+    },
+    {
+      "method": "GET",
+      "url": "https://www.uspto.gov/learning-and-resources/bulk-data-products",
+      "fetched_at": "2026-11-11T09:13:14.203Z",
+      "status": 200,
+      "elapsed_ms": 186,
+      "final_url": "https://data.uspto.gov/home",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "20666",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "7.txt",
+      "bytes": 153,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 20666
+    },
+    {
+      "method": "GET",
+      "url": "https://bulkdata.uspto.gov/data/trademark/dailyxml/applications/",
+      "fetched_at": "2026-11-11T09:13:14.390Z",
+      "error": "fetch failed",
+      "elapsed_ms": 15
+    },
+    {
+      "method": "HEAD",
+      "url": "https://bulkdata.uspto.gov/data/trademark/dailyxml/applications/apc261110.zip",
+      "fetched_at": "2026-11-11T09:13:14.905Z",
+      "error": "fetch failed",
+      "elapsed_ms": 32
+    },
+    {
+      "method": "HEAD",
+      "url": "https://bulkdata.uspto.gov/data/trademark/dailyxml/applications/apc261109.zip",
+      "fetched_at": "2026-11-11T09:13:15.437Z",
+      "error": "fetch failed",
+      "elapsed_ms": 20
+    },
+    {
+      "method": "GET",
+      "url": "https://api.uspto.gov/api/v1/datasets/products/TRTDXFAP?fileDataFromDate=2026-11-01&fileDataToDate=2026-11-11",
+      "fetched_at": "2026-11-11T09:13:15.457Z",
+      "status": 401,
+      "elapsed_ms": 59,
+      "final_url": "https://api.uspto.gov/api/v1/datasets/products/TRTDXFAP?fileDataFromDate=2026-11-01&fileDataToDate=2026-11-11",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "26"
+      },
+      "file": "11.json",
+      "bytes": 26,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.uspto.gov/api/v1/datasets/products/search?q=trademark+daily",
+      "fetched_at": "2026-11-11T09:13:16.019Z",
+      "status": 401,
+      "elapsed_ms": 7,
+      "final_url": "https://api.uspto.gov/api/v1/datasets/products/search?q=trademark+daily",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "26"
+      },
+      "file": "12.json",
+      "bytes": 26,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=0",
+      "fetched_at": "2026-11-11T09:13:16.026Z",
+      "status": 200,
+      "elapsed_ms": 239,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=0",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "13.json",
+      "bytes": 334326,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=100",
+      "fetched_at": "2026-11-11T09:13:16.781Z",
+      "status": 200,
+      "elapsed_ms": 217,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=100",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "14.json",
+      "bytes": 354499,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=200",
+      "fetched_at": "2026-11-11T09:13:17.502Z",
+      "status": 200,
+      "elapsed_ms": 231,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=200",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "15.json",
+      "bytes": 369427,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/foxlabs/uspto-trademark-leads",
+      "fetched_at": "2026-11-11T09:13:17.738Z",
+      "status": 200,
+      "elapsed_ms": 413,
+      "final_url": "https://apify.com/foxlabs/uspto-trademark-leads",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"im76dsktsubqh3\""
+      },
+      "file": "16.txt",
+      "bytes": 37464,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 548267
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/thoob/uspto-trademark-feed",
+      "fetched_at": "2026-11-11T09:13:18.665Z",
+      "status": 200,
+      "elapsed_ms": 170,
+      "final_url": "https://apify.com/thoob/uspto-trademark-feed",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"8s28p3p1qd9hw9\""
+      },
+      "file": "17.txt",
+      "bytes": 20334,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 443183
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/accountable_eel/trademark-filing-watch",
+      "fetched_at": "2026-11-11T09:13:19.343Z",
+      "status": 200,
+      "elapsed_ms": 284,
+      "final_url": "https://apify.com/accountable_eel/trademark-filing-watch",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"zz3n19mu7qa3jo\""
+      },
+      "file": "18.txt",
+      "bytes": 18971,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 471252
+    }
+  ]
+}
