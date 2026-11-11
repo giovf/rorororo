@@ -1,0 +1,6 @@
+HEAD https://www.gamblingcommission.gov.uk/downloads/business-licence-register-businesses.csv
+HEAD https://www.gamblingcommission.gov.uk/downloads/business-licence-register-licences.csv
+HEAD https://www.gamblingcommission.gov.uk/downloads/business-licence-register-trading-names.csv
+HEAD https://www.gamblingcommission.gov.uk/downloads/business-licence-register-domain-names.csv
+HEAD https://www.gamblingcommission.gov.uk/downloads/premises-licence-register.csv
+GET RANGE=0-1023 https://www.gamblingcommission.gov.uk/downloads/business-licence-register-businesses.csv
