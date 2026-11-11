@@ -2791,3 +2791,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 17:18 | burn-down | fetchFile throws OriginUnavailableError after 3 reads; cache.ts and d1store.ts now log it skipped like the runner
 - 2026-11-11 17:18 | burn-down | refreshOne logs such a night as warn refresh_skipped; 3 new tests (526 path, wave pin, KV + D1 skipped rows)
 - 2026-11-11 17:18 | burn-down | Deploys on the next CI run; proof: 11-12 Daily row with no uk-gambling-operators refresh error, refresh at 05:5x
+- 2026-11-11 17:27 | burn-down | Built foundry pre-research-shelf-cap-three: pre-research seeds a spike under three open, not two
+- 2026-11-11 17:27 | burn-down | build.md, burn-down.md, exchange.md and pipeline README changed with dated Changes lines; 11-10 search rule kept
+- 2026-11-11 17:27 | burn-down | Proof: the next starved slot seeds a third spike when two are open (Exchange pre-research line)
