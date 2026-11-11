@@ -1,0 +1,72 @@
+{
+  "request": "pre-research-abn-2026-11-11",
+  "fetched_at": "2026-11-11T17:35:47.477Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=abn&limit=100",
+      "fetched_at": "2026-11-11T17:35:44.969Z",
+      "status": 200,
+      "elapsed_ms": 357,
+      "final_url": "https://api.apify.com/v2/store?search=abn&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"50471-Ksvgm3d5IvHtPr7k9wB9W6fJIX0\""
+      },
+      "file": "1.json",
+      "bytes": 328817,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=australia%20business&limit=100",
+      "fetched_at": "2026-11-11T17:35:45.959Z",
+      "status": 200,
+      "elapsed_ms": 145,
+      "final_url": "https://api.apify.com/v2/store?search=australia%20business&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"55f29-kqlg4qbYHwxOefbLDBmO2mpPEeU\""
+      },
+      "file": "2.json",
+      "bytes": 352041,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://data.gov.au/data/dataset/abn-bulk-extract",
+      "fetched_at": "2026-11-11T17:35:46.111Z",
+      "status": 200,
+      "elapsed_ms": 417,
+      "final_url": "https://data.gov.au/data/dataset/abn-bulk-extract",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 13459,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 510992
+    },
+    {
+      "method": "GET",
+      "url": "https://abr.business.gov.au/Documentation/WebServices",
+      "fetched_at": "2026-11-11T17:35:47.083Z",
+      "error": "host not on the relay allowlist: abr.business.gov.au"
+    },
+    {
+      "method": "GET",
+      "url": "https://registry.npmjs.org/-/v1/search?text=abn%20lookup&size=20",
+      "fetched_at": "2026-11-11T17:35:47.083Z",
+      "status": 200,
+      "elapsed_ms": 393,
+      "final_url": "https://registry.npmjs.org/-/v1/search?text=abn%20lookup&size=20",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 20221,
+      "truncated": false
+    }
+  ]
+}

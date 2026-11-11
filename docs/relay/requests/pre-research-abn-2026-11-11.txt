@@ -1,5 +1,0 @@
-GET https://api.apify.com/v2/store?search=abn&limit=100
-GET https://api.apify.com/v2/store?search=australia%20business&limit=100
-GET https://data.gov.au/data/dataset/abn-bulk-extract
-GET https://abr.business.gov.au/Documentation/WebServices
-GET https://registry.npmjs.org/-/v1/search?text=abn%20lookup&size=20

@@ -1,0 +1,141 @@
+{ "@context": { "brick": "https://brickschema.org/schema/Brick#", "csvw": "http://www.w3.org/ns/csvw#", "dc": "http://purl.org/dc/elements/1.1/", "dcam": "http://purl.org/dc/dcam/", "dcat": "http://www.w3.org/ns/dcat#", "dcmitype": "http://purl.org/dc/dcmitype/", "dcterms": "http://purl.org/dc/terms/", "doap": "http://usefulinc.com/ns/doap#", "foaf": "http://xmlns.com/foaf/0.1/", "geo": "http://www.opengis.net/ont/geosparql#", "odrl": "http://www.w3.org/ns/odrl/2/", "org": "http://www.w3.org/ns/org#", "owl": "http://www.w3.org/2002/07/owl#", "prof": "http://www.w3.org/ns/dx/prof/", "prov": "http://www.w3.org/ns/prov#", "qb": "http://purl.org/linked-data/cube#", "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdfs": "http://www.w3.org/2000/01/rdf-schema#", "schema": "http://schema.org/", "sh": "http://www.w3.org/ns/shacl#", "skos": "http://www.w3.org/2004/02/skos/core#", "sosa": "http://www.w3.org/ns/sosa/", "ssn": "http://www.w3.org/ns/ssn/", "time": "http://www.w3.org/2006/time#", "vann": "http://purl.org/vocab/vann/", "void": "http://rdfs.org/ns/void#", "wgs": "https://www.w3.org/2003/01/geo/wgs84_pos#", "xsd": "http://www.w3.org/2001/XMLSchema#" }, "@graph": [ { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/3b975e4f-af2f-4de7-a20e-6dcb3f67805c", "@type": "schema:DataDownload", "schema:contentSize": 153761, "schema:description": "The purpose of this document is to provide information about the ABN Lookup Bulk Extract service.", "schema:encodingFormat": "PDF", "schema:name": "ABN Lookup Bulk Extract Readme", "schema:url": "https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/3b975e4f-af2f-4de7-a20e-6dcb3f67805c/download/abnlookupbulkextractreadme.pdf" }, { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/635fcb95-7864-4509-9fa7-a62a6e32b62d", "@type": "schema:DataDownload", "schema:contentSize": 500936917, "schema:encodingFormat": "ZIP", "schema:name": "ABN Bulk Extract Part 2 ", "schema:url": "https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/635fcb95-7864-4509-9fa7-a62a6e32b62d/download/public_split_11_20.zip" }, { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/0ae4d427-6fa8-4d40-8e76-c6909b5a071b", "@type": "schema:DataDownload", "schema:contentSize": 501188909, "schema:encodingFormat": "ZIP", "schema:name": "ABN Bulk Extract Part 1", "schema:url": "https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/0ae4d427-6fa8-4d40-8e76-c6909b5a071b/download/public_split_1_10.zip" }, { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e", "@type": "schema:Dataset", "schema:creator": [ { "@id": "https://data.gov.au/organization/3459235b-bfb7-4e13-8245-83bfafb8972e" }, { "@id": "_:N888abccbaef94b71ba5c0030b20b726a" } ], "schema:dateModified": "2026-11-10T21:36:11.196532", "schema:datePublished": "2014-09-05T05:14:28.708198", "schema:description": "ABN Lookup Bulk Data - Australian Business Register.\r\n\r\nThe extract information contains a subset of the publicly available information supplied by businesses when they register for an Australian Business Number (ABN). Current details for the following attributes are available:\r\n\r\n+ ABN\r\n+ ABN Status and Date\r\n+ Entity Type\r\n+ Legal Name\r\n+ Business Name(s)\r\n+ Trading Name(s)\r\n+ State and Postcode of Main Business Location\r\n+ ACN/ARBN\r\n+ GST Status and Registration Date\r\n+ Deductible Gift Recipient Status and Dates\r\n\r\nAccess to ABN Lookup data is also available via SOAP web services, you can find more information on the ABN lookup website (http://abr.business.gov.au/Webservices.aspx).", "schema:distribution": [ { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/469c8c2c-0be5-45b2-90d7-c42f637f3323" }, { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/0ae4d427-6fa8-4d40-8e76-c6909b5a071b" }, { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/635fcb95-7864-4509-9fa7-a62a6e32b62d" }, { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/3b975e4f-af2f-4de7-a20e-6dcb3f67805c" }, { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/f3f8f8a1-590c-4d87-8285-806b093c2c69" } ], "schema:inLanguage": "English", "schema:includedInDataCatalog": { "@id": "_:Ndf09654e46be4517b9819e25edc651e3" }, "schema:keywords": [ "ABN Lookup Bulk extract ABR Public Data Australian Business Register", "abn lookup", "australian business register", "abn", "abr public" ], "schema:license": "http://creativecommons.org/licenses/by/3.0/au/", "schema:name": "ABN Bulk Extract", "schema:publisher": { "@id": "https://data.gov.au/organization/3459235b-bfb7-4e13-8245-83bfafb8972e" }, "schema:url": "https://data.gov.au/data/dataset/abn-bulk-extract" }, { "@id": "_:Ndf09654e46be4517b9819e25edc651e3", "@type": "schema:DataCatalog", "schema:description": "Find, explore and reuse Australia\u2019s public data", "schema:name": "Data.gov.au", "schema:url": "https://data.gov.au" }, { "@id": "_:N888abccbaef94b71ba5c0030b20b726a", "@type": "schema:Organization", "schema:name": "Australian Business Register" }, { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/469c8c2c-0be5-45b2-90d7-c42f637f3323", "@type": "schema:DataDownload", "schema:contentSize": 748, "schema:description": "Simple CSV detailing the Name, type and download link of the resources within this dataset.", "schema:encodingFormat": "CSV", "schema:name": "ABN Bulk Extract Resource List", "schema:url": "https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/469c8c2c-0be5-45b2-90d7-c42f637f3323/download/abn-bulk-extract-resources.csv" }, { "@id": "https://data.gov.au/organization/3459235b-bfb7-4e13-8245-83bfafb8972e", "@type": "schema:Organization", "schema:contactPoint": [ { "@id": "_:N05e3517628f14814b63da3cae595776b" }, { "@id": "_:N09a537a994bb49659875a3a344a3dd5b" } ], "schema:name": "Australian Business Register" }, { "@id": "_:N05e3517628f14814b63da3cae595776b", "@type": "schema:ContactPoint", "schema:contactType": "customer service", "schema:name": "Australian Business Register", "schema:url": "https://data.gov.au" }, { "@id": "_:N09a537a994bb49659875a3a344a3dd5b", "@type": "schema:ContactPoint", "schema:contactType": "customer service", "schema:name": "Australian Business Register", "schema:url": "https://data.gov.au" }, { "@id": "https://data.gov.au/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/f3f8f8a1-590c-4d87-8285-806b093c2c69", "@type": "schema:DataDownload", "schema:contentSize": 12866, "schema:description": "Schema (xsd) for the ABN Lookup Bulk Extract files.", "schema:encodingFormat": "XML", "schema:name": "Bulk Extract Schema", "schema:url": "https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/f3f8f8a1-590c-4d87-8285-806b093c2c69/download/bulkextract.xsd" } ] }
+meta twitter:site: @datagovau
+meta og:site_name: data.gov.au
+meta og:title: ABN Bulk Extract - Data.gov.au
+meta og:description: ABN Lookup Bulk Data - Australian Business Register. The extract information contains a subset of the publicly available information supplied by businesses when they register for an Australian...
+ABN Bulk Extract - Dataset - Data.gov.au
+Skip to main content (#content)
+Log in (/data/user/login)
+Data.gov.au (/)
+Datasets (/data/dataset)
+Organisations (/data/organization)
+About (/about)
+Search Datasets...
+Search the Dataset Catalogue
+Advanced search
+Add query syntax to search
+https://solr.apache.org/guide/6_6/common-query-parameters.html
+Home (/)
+Organisations (/data/organization/)
+Australian Business Register (/data/organization/australian-business-register)
+ABN Bulk Extract (/data/dataset/abn-bulk-extract)
+Dataset (/data/dataset/abn-bulk-extract)
+Groups (/data/dataset/groups/abn-bulk-extract)
+Activity Stream (/data/dataset/activity/abn-bulk-extract)
+[JSON format icon]
+JSON (/data/api/3/action/package_show?id=5bd7fcab-e315-42cb-8daf-50b7efc2027e)
+[RDF format icon]
+RDF (/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e.rdf)
+ISO19115-3 XML (/data/dataset/abn-bulk-extract/metaexport/iso19115)
+ABN Bulk Extract
+Created 05/09/2014
+Updated 11/11/2026
+[JSON format icon]
+JSON (/data/api/3/action/package_show?id=5bd7fcab-e315-42cb-8daf-50b7efc2027e)
+[RDF format icon]
+RDF (/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e.rdf)
+ISO19115-3 XML (/data/dataset/abn-bulk-extract/metaexport/iso19115)
+Ask a question about this dataset
+ABN Lookup Bulk Data - Australian Business Register.
+The extract information contains a subset of the publicly available information supplied by businesses when they register for an Australian Business Number (ABN). Current details for the following attributes are available:
+ABN
+ABN Status and Date
+Entity Type
+Legal Name
+Business Name(s)
+Trading Name(s)
+State and Postcode of Main Business Location
+ACN/ARBN
+GST Status and Registration Date
+Deductible Gift Recipient Status and Dates
+Access to ABN Lookup data is also available via SOAP web services, you can find more information on the ABN lookup website ( http://abr.business.gov.au/Webservices.aspx ).
+Files and APIs
+XML
+Bulk Extract Schema (/data/dataset/abn-bulk-extract/resource/f3f8f8a1-590c-4d87-8285-806b093c2c69)
+Creative Commons Attribution 3.0 Australia
+Explore
+Preview (/data/dataset/abn-bulk-extract/resource/f3f8f8a1-590c-4d87-8285-806b093c2c69)
+Download (https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/f3f8f8a1-590c-4d87-8285-806b093c2c69/download/bulkextract.xsd)
+PDF
+ABN Lookup Bulk Extract Readme (/data/dataset/abn-bulk-extract/resource/3b975e4f-af2f-4de7-a20e-6dcb3f67805c)
+Creative Commons Attribution 3.0 Australia
+Explore
+Preview (/data/dataset/abn-bulk-extract/resource/3b975e4f-af2f-4de7-a20e-6dcb3f67805c)
+Download (https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/3b975e4f-af2f-4de7-a20e-6dcb3f67805c/download/abnlookupbulkextractreadme.pdf)
+ZIP
+ABN Bulk Extract Part 1 (/data/dataset/abn-bulk-extract/resource/0ae4d427-6fa8-4d40-8e76-c6909b5a071b)
+Creative Commons Attribution 3.0 Australia
+Explore
+Preview (/data/dataset/abn-bulk-extract/resource/0ae4d427-6fa8-4d40-8e76-c6909b5a071b)
+Download (https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/0ae4d427-6fa8-4d40-8e76-c6909b5a071b/download/public_split_1_10.zip)
+ZIP
+ABN Bulk Extract Part 2 (/data/dataset/abn-bulk-extract/resource/635fcb95-7864-4509-9fa7-a62a6e32b62d)
+Creative Commons Attribution 3.0 Australia
+Explore
+Preview (/data/dataset/abn-bulk-extract/resource/635fcb95-7864-4509-9fa7-a62a6e32b62d)
+Download (https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/635fcb95-7864-4509-9fa7-a62a6e32b62d/download/public_split_11_20.zip)
+CSV
+ABN Bulk Extract Resource List (/data/dataset/abn-bulk-extract/resource/469c8c2c-0be5-45b2-90d7-c42f637f3323)
+Creative Commons Attribution 3.0 Australia
+Explore
+Preview (/data/dataset/abn-bulk-extract/resource/469c8c2c-0be5-45b2-90d7-c42f637f3323)
+Download (https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e/resource/469c8c2c-0be5-45b2-90d7-c42f637f3323/download/abn-bulk-extract-resources.csv)
+Tags
+ABN Lookup Bulk... (/data/dataset/?tags=ABN+Lookup+Bulk+extract+ABR+Public+Data+Australian+Business+Register)
+abn (/data/dataset/?tags=abn)
+abn lookup (/data/dataset/?tags=abn+lookup)
+abr public (/data/dataset/?tags=abr+public)
+australian... (/data/dataset/?tags=australian+business+register)
+Additional Info
+Field
+Value
+Title
+ABN Bulk Extract
+Language
+English
+Licence
+Creative Commons Attribution 3.0 Australia (http://creativecommons.org/licenses/by/3.0/au/)
+Landing Page
+https://data.gov.au/data/dataset/5bd7fcab-e315-42cb-8daf-50b7efc2027e
+Contact Point
+Australian Business Register
+ABNLookup.Support@industry.gov.au (mailto:ABNLookup.Support@industry.gov.au)
+Reference Period
+01/12/2021
+Geospatial Coverage
+http://www.ga.gov.au/place-names/PlaceDetails.jsp?submit1=GA1
+Data Portal
+Data.gov.au
+Ask question about this dataset
+Your question will be sent to the publisher of the dataset.
+What would you like to ask about this dataset? *
+You can use Markdown formatting ('http://daringfireball.net/projects/markdown/syntax') here
+Your name *
+Your email *
+Clear
+Send
+Organisation
+/data/organization/australian-business-register
+Australian Business Register (/data/organization/australian-business-register)
+The Australian Business Register is managed by the Australian Taxation Office as a whole-of-government program. Our vision is to contribute to improving the wellbeing of the...
+View organisation details (/data/organization/about/australian-business-register)
+License
+Creative Commons Attribution 3.0 Australia (http://creativecommons.org/licenses/by/3.0/au/)
+http://opendefinition.org/okd/
+Data.gov.au
+About (/about)
+Privacy Policy (/privacy-policy)
+Recent Developments (/recent-developments)
+Contact us (mailto:support@data.gov.au)
+Publishers
+Login (/data/user/login)
+User guide (/user-guide)
+Developers
+CKAN Documentation (https://docs.ckan.org/en/2.11/api/index.html)
+Accessibility (/accessibility)
+Copyright (/about#terms-of-use)
+Disclaimers (/about#terms-of-use)
+© Commonwealth of Australia.
+With the exception of the Commonwealth Coat of Arms
+and where otherwise noted, this work is licensed
+under the CC BY 4.0 license.
