@@ -1450,8 +1450,9 @@
       "effort_days": 0.1,
       "proof": "the exchange.md and README sentences in one commit; the next exchange file (2026-W47) quotes a terms line in every scored candidate row",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-11"
+      "status": "doing",
+      "added": "2026-11-11",
+      "doing_since": "2026-11-11"
     }
   ]
 }
