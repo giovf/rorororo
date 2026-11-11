@@ -1481,3 +1481,24 @@ in all three and the runner, and `refreshOne` logs the night as a warn-level `re
 row, the previous generation still served; the wave pin. `test/origin.spec.ts`: the KV and D1 paths' `skipped`
 row. Proof: the item's own — no uk-gambling-operators under refresh errors for seven Daily numbers rows, and
 the 11-12 row's `last_refreshed_at` for the source at ~05:5x with today's files.
+
+### 2026-11-11 burn-down — `trademark-actor-store-keywords` (score 4), built
+
+Store ranks before, relay `apify-store-trademark-rank-2026-11-11` (17:29 UTC, `api.apify.com/v2/store?search=<term>&limit=100`,
+the API returns ≤ 90 of a result set): `trademark` 329 results, 89 returned, ours absent; `uk trademark` 16 results, 15
+returned, ours absent; `trademark watch` 204 results, 90 returned, ours absent. The actor's title, description, README
+and input schema spelled it "trade mark" (the IPO's two-word form) everywhere and "trademark" nowhere, and the Store's
+search is a keyword match — so `uk-trademark-journal-watch` (name only) was invisible to all three searches, not
+merely below position 30. The category's buyers, for the record: `trademark` tops with dltik's EUIPO scraper (42
+users/30 d, 173 total), dev00 (23), scrapers_lat (18), memo23 (17), khadinakbar (14); `uk trademark` is thin — nexgendata's
+UK clearance API 2 users/30 d (6 total), the journal change-signals actor 1 (2), scrapersdelight 1 (1); `trademark watch`
+leads with trev0n's TMview watch (5/30 d) and jdepablos's opposition-deadline alerts (3/30 d, 20 total). Changes: title
+"UK Trademark Search & Watch: IPO Journal, Opposition Dates" (58 chars, inside the 60-char SEO title), description
+297 chars whose first 160 end on "Nice classes and deadlines" (the SEO description), README first paragraph with
+"trademark search", "trademark watch", "UK IPO", "opposition", a clearance use case added, input schema title and the
+representative field reworded; "Trade Marks Journal" kept once as the proper noun. One line beyond the metadata:
+`scripts/publish-actors.mjs` set `seoTitle` / `seoDescription` only at first pricing and `apify-cli push` never
+touches them, so the publisher now syncs both from each repo actor's current title and description whenever the live
+values differ (a generic rule, every actor). CI pushes the actor on this commit. After-read: `trademark-actor-store-rank-day-30`
+(not before 2026-12-11) repeats the three relay lines and reads `apify 30d by actor:`; proof per the item — a top-50
+rank for one term or ≥ 3 users/30 d.

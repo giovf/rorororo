@@ -2804,6 +2804,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 17:27 | burn-down | Built foundry pre-research-shelf-cap-three: pre-research seeds a spike under three open, not two
 - 2026-11-11 17:27 | burn-down | build.md, burn-down.md, exchange.md and pipeline README changed with dated Changes lines; 11-10 search rule kept
 - 2026-11-11 17:27 | burn-down | Proof: the next starved slot seeds a third spike when two are open (Exchange pre-research line)
-- 2026-11-11 17:34 | burn-down | Built foundry exchange-source-terms-before-scoring: a spike's sources get terms + RENDER lines first
-- 2026-11-11 17:34 | burn-down | exchange.md Candidates paragraph and pipeline README changed; forbidden or identity-walled sources park at once
-- 2026-11-11 17:34 | burn-down | Proof: the 2026-W47 exchange file quotes a terms line in every scored candidate row
+- 2026-11-11 17:27 | burn-down | Built foundry exchange-source-terms-before-scoring: a spike's sources get terms + RENDER lines first
+- 2026-11-11 17:27 | burn-down | exchange.md Candidates paragraph and pipeline README changed; forbidden or identity-walled sources park at once
+- 2026-11-11 17:27 | burn-down | Proof: the 2026-W47 exchange file quotes a terms line in every scored candidate row
+- 2026-11-11 17:32 | burn-down | Built gankdat trademark-actor-store-keywords: journal actor retitled UK Trademark Search & Watch
+- 2026-11-11 17:32 | burn-down | Relay: actor absent from all three Store searches — its files spelled 'trade mark', the search matches keywords
+- 2026-11-11 17:32 | burn-down | README, description and input schema reworded; publisher now syncs seoTitle/seoDescription from actor.json
+- 2026-11-11 17:32 | burn-down | Queued gankdat trademark-actor-store-rank-day-30 (3, 12-11): the after-read of the three ranks and users/30 d
+- 2026-11-11 17:32 | burn-down | CI pushes the actor on this commit; proof: top-50 rank for one term or ≥ 3 users/30 d at the day-30 read
