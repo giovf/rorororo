@@ -1,0 +1,3 @@
+GET https://api.apify.com/v2/store?search=trademark&limit=100
+GET https://api.apify.com/v2/store?search=uk%20trademark&limit=100
+GET https://api.apify.com/v2/store?search=trademark%20watch&limit=100
