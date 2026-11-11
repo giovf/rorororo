@@ -1,0 +1,185 @@
+{
+  "request": "trademark-clearance-spike-2026-11-11-d",
+  "fetched_at": "2026-11-11T17:16:04.587Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://data.europa.eu/euodp/repository/agencies/euipo/tm.csv.gz",
+      "fetched_at": "2026-11-11T17:15:46.598Z",
+      "status": 200,
+      "elapsed_ms": 629,
+      "final_url": "https://data.europa.eu/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Wed, 11 Nov 2026 13:38:12 GMT",
+        "etag": "W/\"1794404292\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://data.europa.eu/euodp/repository/agencies/euipo/TM_GANDS.zip.gz",
+      "fetched_at": "2026-11-11T17:15:47.727Z",
+      "status": 200,
+      "elapsed_ms": 251,
+      "final_url": "https://data.europa.eu/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Wed, 11 Nov 2026 13:38:12 GMT",
+        "etag": "W/\"1794404292\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://data.europa.eu/euodp/repository/agencies/euipo/euipo.csv.gz",
+      "fetched_at": "2026-11-11T17:15:48.479Z",
+      "status": 200,
+      "elapsed_ms": 461,
+      "final_url": "https://data.europa.eu/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Wed, 11 Nov 2026 13:38:12 GMT",
+        "etag": "W/\"1794404292\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://data.europa.eu/euodp/repository/agencies/euipo/tm.csv.gz",
+      "range": "0-4095",
+      "fetched_at": "2026-11-11T17:15:49.440Z",
+      "status": 206,
+      "elapsed_ms": 431,
+      "final_url": "https://data.europa.eu/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "4096",
+        "last-modified": "Wed, 11 Nov 2026 13:38:12 GMT",
+        "etag": "\"1794404292\""
+      },
+      "file": "4.txt",
+      "bytes": 1011,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 4096
+    },
+    {
+      "method": "HEAD",
+      "url": "https://assets.publishing.service.gov.uk/media/5a82e5f4e5274a2e87dc387d/opendatadomestic.zip",
+      "fetched_at": "2026-11-11T17:15:49.876Z",
+      "status": 200,
+      "elapsed_ms": 3007,
+      "final_url": "https://assets.publishing.service.gov.uk/media/5a82e5f4e5274a2e87dc387d/opendatadomestic.zip",
+      "headers": {
+        "content-type": "application/zip",
+        "content-length": "63238846",
+        "content-disposition": "inline; filename=\"opendatadomestic.zip\"",
+        "last-modified": "Tue, 13 Feb 2018 13:19:48 GMT",
+        "etag": "\"5a82e5f4-3c4f2be\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://assets.publishing.service.gov.uk/media/5a82a5f4e5274a2e8ab589f5/opendataIR.zip",
+      "fetched_at": "2026-11-11T17:15:53.383Z",
+      "status": 200,
+      "elapsed_ms": 1784,
+      "final_url": "https://assets.publishing.service.gov.uk/media/5a82a5f4e5274a2e8ab589f5/opendataIR.zip",
+      "headers": {
+        "content-type": "application/zip",
+        "content-length": "6155443",
+        "content-disposition": "inline; filename=\"opendataIR.zip\"",
+        "last-modified": "Tue, 13 Feb 2018 08:46:44 GMT",
+        "etag": "\"5a82a5f4-5decb3\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=uk+trademark&limit=20",
+      "fetched_at": "2026-11-11T17:15:55.168Z",
+      "status": 200,
+      "elapsed_ms": 221,
+      "final_url": "https://api.apify.com/v2/store?search=uk+trademark&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"dfb7-8gKwlJTiudq2I5b68SrpxO6XU60\""
+      },
+      "file": "7.json",
+      "bytes": 57271,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=tmview&limit=20",
+      "fetched_at": "2026-11-11T17:15:55.892Z",
+      "status": 200,
+      "elapsed_ms": 75,
+      "final_url": "https://api.apify.com/v2/store?search=tmview&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"11510-3souwOSKd7tlB0DLxUvgf31BtUM\""
+      },
+      "file": "8.json",
+      "bytes": 70928,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tmdn.org/tmview/api/search/results?page=1&pageSize=1&criteria=C&basicSearch=gankdat",
+      "fetched_at": "2026-11-11T17:15:55.968Z",
+      "status": 200,
+      "elapsed_ms": 1068,
+      "final_url": "https://www.tmdn.org/tmview/api/search/results?page=1&pageSize=1&criteria=C&basicSearch=gankdat",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "244"
+      },
+      "file": "9.txt",
+      "bytes": 119,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 244
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tmdn.org/network/legal-notices",
+      "render": true,
+      "fetched_at": "2026-11-11T17:15:57.537Z",
+      "status": 200,
+      "final_url": "https://www.euipn.org/en/info/legal-notices",
+      "title": "Legal notices - EUIPN",
+      "rendered": {
+        "network_idle": true,
+        "requests": 86,
+        "failed": [],
+        "console_errors": [
+          "uncaught: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"wstu850qul361r\""
+      },
+      "file": "10.txt",
+      "bytes": 15690,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 152363
+    },
+    {
+      "method": "GET",
+      "url": "https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/contentPdfs/law_and_practice/decisions_president/EX-22-05_en_annex_I_version_2_en.pdf",
+      "fetched_at": "2026-11-11T17:16:03.055Z",
+      "status": 200,
+      "elapsed_ms": 686,
+      "final_url": "https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/contentPdfs/law_and_practice/decisions_president/EX-22-05_en_annex_I_version_2_en.pdf",
+      "headers": {
+        "content-type": "application/pdf",
+        "content-length": "273978",
+        "last-modified": "Thu, 06 Jul 2023 12:10:18 GMT",
+        "etag": "\"232bc-42e3a-5ffd066501199\""
+      },
+      "file": "11.bin",
+      "bytes": 273978,
+      "truncated": false
+    }
+  ]
+}
