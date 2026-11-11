@@ -303,3 +303,4 @@
 - 2026-11-10 20:22 | notification | github.com | [docker/mcp-registry] PR run failed: .github/workflows/ci.yaml - Add gankdat (remote) (7b5f2a5) | Docker's CI on our catalog PR: "No jobs were run" (their workflow, not ours) | logged (self-caused: docker-mcp-catalog PR)
 - 2026-11-10 20:22 | notification | github.com | [docker/mcp-registry] PR run failed: Security Review Trigger - Add gankdat (remote) (7b5f2a5) | Docker's Security Review Trigger on our catalog PR: "No jobs were run" | logged (self-caused: docker-mcp-catalog PR)
 - 2026-11-07 23:59 (backlog) | notification | google.com | Report domain: gankdat.com Submitter: google.com Report-ID: 7438034353565875505 | Google DMARC aggregate report for gankdat.com | logged
+- 2026-11-11 14:14 | notification | trycoinstancy.com | Show what gankdat can do | cold paid-placement/launch-package pitch from Coinstancy (4th); no customer ask | logged

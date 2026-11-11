@@ -2784,3 +2784,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 09:20 | build | Parked in exchange.json with a trigger; no owner ask (identity verification fails the owner-time rule)
 - 2026-11-11 09:20 | build | Lesson: RENDER a shell-answering source page in the exchange round before scoring a spike
 - 2026-11-11 12:06 | triage | notify owner dispatched: last run started 09:47 UTC, 2 h ago
+- 2026-11-11 15:06 | triage | notify owner dispatched: last run started 12:06 UTC, 3 h ago
