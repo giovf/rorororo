@@ -1439,8 +1439,9 @@
       "effort_days": 0.1,
       "proof": "the three prompt and README sentences changed in one commit; the next starved night seeds a third spike when two are open (a RUNS `Exchange pre-research` line)",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-11"
+      "status": "doing",
+      "added": "2026-11-11",
+      "doing_since": "2026-11-11"
     },
     {
       "id": "exchange-source-terms-before-scoring",
