@@ -1,0 +1,283 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"USPTO Trademark Search API — Bulk Phrase, Serial & Owner","description":"Check phrases against the US trademark register and get one clear or conflict answer each, from live official USPTO data. Bulk trademark search and trademark checker for clearance and availability. $5 per 1,000 results, usage included, no API key or login. US only, not legal advice.","url":"https://apify.com/khadinakbar/uspto-trademark-batch-search","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/VqvDKrPHXTSaBVK46K8tasBYrYnVuoHN9QGyXl_g8ak/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcU5IdjFhTkZKZGk3cUNwV2UtYWN0b3ItZ3RsTUlheG85SmdwOTJoWFkta3o0ZVJFU2FKVy05YTBlOWIyZC1kOTUzLTRhYmUtOTQzNC02OThhZWQ0MmY3NDIucG5n.webp","offers":{"@type":"Offer","description":"from $4.00 / 1,000 uspto trademark results","price":4,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":4,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"uspto trademark results"}}}}
+meta description: Bulk trademark checker for clearance and availability: one clear or conflict answer per phrase from live USPTO data. $5 per 1,000, usage included.
+meta og:title: Input · USPTO Trademark Search API: Bulk Phrase & Serial · Apify
+meta og:description: Bulk trademark checker for clearance and availability: one clear or conflict answer per phrase from live USPTO data. $5 per 1,000, usage included.
+meta og:url: https://apify.com/khadinakbar/uspto-trademark-batch-search/input-schema
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=USPTO+Trademark+Search+API+%E2%80%94+Bulk+Phrase%2C+Serial+%26+Owner&uniqueName=khadinakbar%2Fuspto-trademark-batch-search&categories=DEVELOPER_TOOLS%2CECOMMERCE%2CMCP_SERVERS&users=32&runs=553&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FqNHv1aNFJdi7qCpWe-actor-gtlMIaxo9Jgp92hXY-kz4eRESaJW-9a0e9b2d-d953-4abe-9434-698aed42f742.png&authorName=Khadin+Akbar&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2F0tD1SQpy6u9R7pi6VBvj3tah_LDkiUlQY_KeDCTtB6k%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcU5IdjFhTkZKZGk3cUNwV2UtcHJvZmlsZS1vOXhjRkpVSE5JLTk5NkRDMTgyLTkzRUMtNDA5Mi05RTNDLTkwNkU0NjIwRjZBQl80XzUwMDVfYy5qcGVn.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: Input · USPTO Trademark Search API: Bulk Phrase & Serial · Apify
+meta twitter:description: Bulk trademark checker for clearance and availability: one clear or conflict answer per phrase from live USPTO data. $5 per 1,000, usage included.
+meta twitter:image: https://apify.com/og-image/actor?actorName=USPTO+Trademark+Search+API+%E2%80%94+Bulk+Phrase%2C+Serial+%26+Owner&uniqueName=khadinakbar%2Fuspto-trademark-batch-search&categories=DEVELOPER_TOOLS%2CECOMMERCE%2CMCP_SERVERS&users=32&runs=553&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FqNHv1aNFJdi7qCpWe-actor-gtlMIaxo9Jgp92hXY-kz4eRESaJW-9a0e9b2d-d953-4abe-9434-698aed42f742.png&authorName=Khadin+Akbar&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2F0tD1SQpy6u9R7pi6VBvj3tah_LDkiUlQY_KeDCTtB6k%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcU5IdjFhTkZKZGk3cUNwV2UtcHJvZmlsZS1vOXhjRkpVSE5JLTk5NkRDMTgyLTkzRUMtNDA5Mi05RTNDLTkwNkU0NjIwRjZBQl80XzUwMDVfYy5qcGVn.webp
+Input · USPTO Trademark Search API: Bulk Phrase & Serial · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,381 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[USPTO Trademark Search API — Bulk Phrase, Serial & Owner avatar]
+USPTO Trademark Search API — Bulk Phrase, Serial & Owner
+Pricing
+from $4.00 / 1,000 uspto trademark results
+Try for free (https://console.apify.com/actors/gtlMIaxo9Jgp92hXY?addFromActorId=gtlMIaxo9Jgp92hXY)
+Go to Apify Store (/store)
+[USPTO Trademark Search API — Bulk Phrase, Serial & Owner]
+USPTO Trademark Search API — Bulk Phrase, Serial & Owner
+khadinakbar/uspto-trademark-batch-search
+Try for free (https://console.apify.com/actors/gtlMIaxo9Jgp92hXY?addFromActorId=gtlMIaxo9Jgp92hXY)
+Copy setup prompt Copied
+Check phrases against the US trademark register and get one clear or conflict answer each, from live official USPTO data. Bulk trademark search and trademark checker for clearance and availability. $5 per 1,000 results, usage included, no API key or login. US only, not legal advice.
+Pricing
+from $4.00 / 1,000 uspto trademark results
+Rating
+0.0
+(0)
+Developer
+Khadin Akbar (/khadinakbar) Maintained by Community
+Actor stats
+0
+Bookmarked
+32
+Total users
+16
+Monthly active users
+2 days ago
+Last modified
+Categories
+Developer tools (/store/categories/developer-tools) E-commerce (/store/categories/ecommerce) MCP servers (/store/categories/mcp-servers)
+Features
+Limited permissions
+Share
+README (/khadinakbar/uspto-trademark-batch-search) Input (/khadinakbar/uspto-trademark-batch-search/input-schema) Output (/khadinakbar/uspto-trademark-batch-search/output-schema) Pricing (/khadinakbar/uspto-trademark-batch-search/pricing) API (/khadinakbar/uspto-trademark-batch-search/api/python) Issues (/khadinakbar/uspto-trademark-batch-search/issues/open) Tasks 3 (/khadinakbar/uspto-trademark-batch-search/examples)
+You might also like
+Amazon Scraper automly/amazon-products-scraper---fast-efficient-with-sales-data Amazon product scraper: Scrape Amazon products by keyword, product link or ASIN in 20 Amazon stores: price, Best Sellers Rank, monthly sales and revenue estimates, rating, review count, badges, variants and specs. No login. Export to CSV, JSON or Excel, schedule runs or use the API. Automly 1.9K 5.0 (2) (/automly/amazon-products-scraper---fast-efficient-with-sales-data)
+Website Screenshot Generator apify/screenshot-url Create a screenshot of a website based on a specified URL. The screenshot is stored as the output in a key-value store. It can be used to monitor web changes regularly after setting up the scheduler. Apify 10K 3.9 (20) (/apify/screenshot-url)
+Google Ads Transparency Center Scraper & API scrapesage/google-ads-transparency-scraper Scrape ads from the Google Ads Transparency Center by brand, domain or advertiser. Get creatives, dates, days active and per-country reach. No login. Independent tool, not affiliated with Google. Scrape Sage 3.5K 5.0 (1) (/scrapesage/google-ads-transparency-scraper)
+Zillow ZIP Code Search Scraper maxcopell/zillow-zip-search Scraper to find all Zillow real estate properties for sale, for rent or recently sold from given ZIP code locations. Max 4K 3.4 (13) (/maxcopell/zillow-zip-search)
+Similarweb Scraper tri_angle/similarweb-scraper A simple but powerful scraper for similarweb.com. Retrieve website popularity information and get it in a JSON/XML/CSV/Excel/HTML table format. Get data such as total visits, traffic sources, competitors, top countries, company info, etc.. Tri⟁angle 5.3K 4.6 (9) (/tri_angle/similarweb-scraper)
+Reddit Post Comments Scraper | Bulk Thread & Reply Export clearpath/reddit-post-comments-bulk-scraper Scrape Reddit posts with full comment trees. 6 sort orders, Q&A filtering, and deep sub-thread expansion. Bulk URLs, CSV upload, any format. ClearPath 3K (/clearpath/reddit-post-comments-bulk-scraper)
+USPTO Trademark Batch Search API dev00/uspto-trademark-api Bulk verify keywords and phrases against the USPTO database to instantly detect LIVE and PENDING trademarks. dev00 111 (/dev00/uspto-trademark-api)
+Trademark Search — USPTO Serial + IP Australia Name Search nexgendata/uspto-trademark-search Trademark due diligence and brand clearance: look up US trademarks by serial/registration number from the official USPTO TSDR source, and search brand names across the IP Australia register. JSON: mark, owner, status, serial/registration, dates, class, goods/services. No API key. Pay per record. NexGenData 50 (/nexgendata/uspto-trademark-search)
+Amazon Product Search Scraper: Rank, Price & Details khadinakbar/amazon-product-search-scraper Search Amazon by keyword or URL across 18 marketplaces and see where every product ranks: page position, organic rank and sponsored flag, plus price, rating and reviews. Add detail pages for brand, Best Sellers Rank, bullets, images and seller. Khadin Akbar 424 (/khadinakbar/amazon-product-search-scraper)
+USPTO Trademark Search — Wordmark, Owner, Class & Serial Lookup memo23/uspto-trademark-scraper Search US federal trademarks straight from USPTO: by wordmark/brand, owner name, or goods & services, plus exact serial-number lookup. Filter by live/dead status and Nice class. Full records — status, owner, classes, dates, goods, mark image. No API key. JSON/CSV Muhamed Didovic 59 5.0 (1) (/memo23/uspto-trademark-scraper)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)
+Description
+JSON example
+Search terms
+searchTerms
+Optional
+#searchTerms
+Words or phrases to check against USPTO wordmarks, for example 'star wars' or 'just do it'. Each term is searched separately, up to 100 per run. Use this for POD/brand clearance, not for patent search and not for downloading TSDR prosecution PDFs.
+Type: string[]
+Max. items: 100
+Item
+Serial numbers
+serialNumbers
+Optional
+#serialNumbers
+USPTO serial numbers to look up exactly, such as 74612654. Accepts 7-8 digits, an SN prefix, or a TSDR URL with caseNumber. Maximum 100 per run. Use this when you already know the filing number; do not put brand phrases here.
+Type: string[]
+Max. items: 100
+Item
+Registration numbers
+registrationNumbers
+Optional
+#registrationNumbers
+USPTO registration numbers to look up exactly, such as 2239077 or RN:2239077. Maximum 100 per run. This is the registration identifier on a live or dead certificate, not the 8-digit serial number.
+Type: string[]
+Max. items: 100
+Item
+Owner names
+ownerNames
+Optional
+#ownerNames
+Owner or applicant names to search, for example 'Nike, Inc.'. Returns that owner's marks subject to status and class filters. Maximum 50 per run. This is an owner-portfolio search, not a goods/services keyword search.
+Type: string[]
+Max. items: 50
+Item
+Goods and services words
+goodsServicesTerms
+Optional
+#goodsServicesTerms
+Words to find inside the goods and services text of marks, for example 'phone case' or 'hair oil'. Combine with niceClasses to stay in one class (class 9 for phone cases). Each value is one search, at least 3 characters, up to 50 per run. Returns marks whose goods/services text contains the phrase.
+Type: string[]
+Max. items: 50
+Item
+Status filter
+statusFilter
+Optional
+#statusFilter
+Which USPTO live/dead states to return. Default live includes registered and pending filings and is the usual POD clearance filter. pending is live-but-unregistered; dead is abandoned/cancelled/expired; all includes history. This is not a legal-risk score.
+Type: string
+Default: live
+Options:
+live pending registered dead all
+Nice classes
+niceClasses
+Optional
+#niceClasses
+Optional comma-separated Nice Classification numbers from 1 to 45, for example '25' for clothing or '25,9,18'. Leave empty to search every class. Class 25 is the common POD clothing filter; this is not a US design-code or coordinated-class filter.
+Type: string
+Wordmark match mode
+matchMode
+Optional
+#matchMode
+How searchTerms are matched against USPTO wordmarks. contains (default) finds the phrase inside combined mark text, so 'star wars' also returns STAR WARS GALACTIC STARCRUISER. exact prefers the literal wordmark. Serial and registration lookups ignore this field.
+Type: string
+Default: contains
+Options:
+contains exact
+Max results per query
+maxResultsPerTerm
+Optional
+#maxResultsPerTerm
+Maximum matching trademark rows saved for each search term, serial, registration, or owner query. Default 5 keeps POD batches cheap; raise toward 50 for owner portfolios. This caps output per query, not the entire USPTO hit count.
+Type: integer
+Minimum: 1
+Maximum: 50
+Default: 5
+Max results per run
+maxResults
+Optional
+#maxResults
+Hard cap on dataset rows for the whole run, including CLEAR rows. Default 250. Use this as the cost ceiling: each saved row is one $0.005 trademark-result event. This is not pagination into a previous run.
+Type: integer
+Minimum: 1
+Maximum: 1000
+Default: 250
+Include CLEAR rows
+includeClearRows
+Optional
+#includeClearRows
+When enabled (default), a query with zero matches still writes one row with matchFound=false and recordStatus=CLEAR so a 100-term batch stays complete. Turn this off when you only want conflicting marks. CLEAR rows are billed the same as matches.
+Type: boolean
+Default: true
+Max concurrency
+maxConcurrency
+Optional
+#maxConcurrency
+How many USPTO queries to run in parallel. Default 4 balances speed against USPTO courtesy limits. Lower to 1 if you see HTTP 429 in the log; raise to 8 only for large owner or serial batches.
+Type: integer
+Minimum: 1
+Maximum: 8
+Default: 4

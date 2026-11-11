@@ -1,0 +1,61 @@
+meta description: Do you have an EUIPO account?Sandbox or Production?Register an appSubscribe to APIsDo you have an EUIPO account?To access our APIs you need an EUIPO account. You can register your user account at the following URL of the EUIPO website:
+Getting started | API Portal
+Skip to main content (#main-content)
+/
+API Portal
+Develop #IPtech applications with our API Catalog
+Toggle navigation
+Main navigation
+Getting started (/getting-started)
+Security (/security)
+API Products (/product)
+Problems registry (/problems-registry)
+Status (/status)
+FAQ (/faq)
+Sandbox (https://dev-sandbox.euipo.europa.eu/)
+Login
+Create account (/user/register)
+Sign in (/user/login)
+Do you have an EUIPO account? (#guide-section-1)
+Sandbox or Production? (#guide-section-2)
+Register an app (#guide-section-3)
+Subscribe to APIs (#guide-section-4)
+Do you have an EUIPO account?
+To access our APIs you need an EUIPO account. You can register your user account at the following URL of the EUIPO website:
+https://euipo.europa.eu/ohimportal/en/web/guest/login?loginmode=register
+Sandbox or Production?
+There are two types of portals: Sandbox (https://dev-sandbox.euipo.europa.eu/) and Production (https://dev.euipo.europa.eu/) . The Sandbox and Production portals have the same APIs. If you are new to the EUIPO’s APIs, or are using a new version of an API, you should start with the Sandbox portal. This gives you read/write access to test versions of our APIs using realistic sample data.
+To log in, click on ‘Sign in’
+You’ll see the following login form where you will have to use your EUIPO account credentials (username/password)
+Register an app
+After login, a new option ‘Apps’ will be available in the menu at the top.
+Register your application in the ‘Apps’ section. When you register an application, it is assigned a unique Client ID and Client Secret, which is used later when integrating with one of our APIs.
+Subscribe to APIs
+After registering your application, look through our API catalogue and find the one that best suits your business needs. Then, request a subscription to an available plan.
+Each plan determines the number of calls that your application can make within in a specific period.
+Select the product that for you, accept the ‘ condition of use ’ and click on the ‘Next’ button...
+You can now integrate this API with your application, website or business system.
+Most subscription requests are subject to approval. Subscription requests for the Sandbox environment can take up to a week. However, requests for the Production environment may take a bit longer.
+Getting started
+About EUIPO (https://euipo.europa.eu/ohimportal/about-euipo)
+European Union Intellectual Property Office
+Public procurement (https://euipo.europa.eu/ohimportal/public-procurement)
+Jobs (https://euipo.europa.eu/ohimportal/work-with-euipo)
+Press (https://euipo.europa.eu/ohimportal/press-room)
+Transparency Portal (https://euipo.europa.eu/ohimportal/transparency-portal)
+An Agency of the European Union (http://europa.eu/)
+EU Agencies network (https://euagencies.eu/)
+Conditions of Use (https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/contentPdfs/law_and_practice/decisions_president/EX-25-1_annex-1_v2_en.pdf)
+Data protection (https://dev.euipo.europa.eu/system/files/2026-02/API_Privacy%20Statement.pdf)
+Help & FAQs (https://euipo.europa.eu/ohimportal/help)
+Find the answers to all your questions on trade marks, designs and our online services
+Contact Us (https://euipo.europa.eu/ohimportal/contact-us)
+Our Information Centre staff can guide you before and during the application process
+Avenida de Europa, 4, 03008 Alicante, Spain
+Information centre: +34 965 139 100
+Follow on Social Media
+Twitter (https://twitter.com/EU_IPO)
+Linkedin (https://www.linkedin.com/company/euipo)
+Facebook (https://www.facebook.com/EUIPO.eu)
+Youtube (http://www.youtube.com/euipo)
+Instagram DesignEuropa (https://www.instagram.com/euipo)

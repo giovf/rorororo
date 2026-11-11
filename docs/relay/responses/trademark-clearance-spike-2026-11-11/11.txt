@@ -1,0 +1,342 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"USPTO Trademark Search — Wordmark, Owner, Class & Serial Lookup","description":"Search US federal trademarks straight from USPTO: by wordmark/brand, owner name, or goods & services, plus exact serial-number lookup. Filter by live/dead status and Nice class. Full records — status, owner, classes, dates, goods, mark image. No API key. JSON/CSV","url":"https://apify.com/memo23/uspto-trademark-scraper","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/p2OM7h8BBmoHvbI0mY1AtxS0qbuJ9DrGWfzlF_rZt8Q/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItSThPVTBiZzZDSVZueFR6OUctMlpUMGlMQ3dOdy11c3B0by5qcGVn.webp","offers":{"@type":"Offer","description":"from $7.00 / 1,000 trademark records","price":7,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":7,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"trademark records"}}},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":1,"bestRating":5,"worstRating":1}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apify.com/"},{"@type":"ListItem","position":2,"name":"Store","item":"https://apify.com/store"},{"@type":"ListItem","position":3,"name":"Muhamed Didovic","item":"https://apify.com/memo23"},{"@type":"ListItem","position":4,"name":"USPTO Trademark Search — Wordmark, Owner, Class & Serial Lookup","item":"https://apify.com/memo23/uspto-trademark-scraper"}]}
+meta description: Search US federal trademarks straight from USPTO: by wordmark/brand, owner name, or goods & services, plus exact serial-number lookup.
+meta og:title: USPTO Trademark Scraper — Search — Wordmark, Owner, Class · Apify
+meta og:description: Search US federal trademarks straight from USPTO: by wordmark/brand, owner name, or goods & services, plus exact serial-number lookup.
+meta og:url: https://apify.com/memo23/uspto-trademark-scraper
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=USPTO+Trademark+Search+%E2%80%94+Wordmark%2C+Owner%2C+Class+%26+Serial+Lookup&uniqueName=memo23%2Fuspto-trademark-scraper&categories=DEVELOPER_TOOLS%2CAUTOMATION%2CAI&users=59&runs=751&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2Fngn8vRESTkseyWE6p-actor-I8OU0bg6CIVnxTz9G-2ZT0iLCwNw-uspto.jpeg&authorName=Muhamed+Didovic&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FgF5odQ3-BT2EqSEqHC0SyEU5PZaDWZM0oPotGMrN_-Q%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAvS3FicmQ3cnNMYmRsU1lkaFctMTYyOTI4NTEwMjE5NC5qcGVn.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: USPTO Trademark Scraper — Search — Wordmark, Owner, Class · Apify
+meta twitter:description: Search US federal trademarks straight from USPTO: by wordmark/brand, owner name, or goods & services, plus exact serial-number lookup.
+meta twitter:image: https://apify.com/og-image/actor?actorName=USPTO+Trademark+Search+%E2%80%94+Wordmark%2C+Owner%2C+Class+%26+Serial+Lookup&uniqueName=memo23%2Fuspto-trademark-scraper&categories=DEVELOPER_TOOLS%2CAUTOMATION%2CAI&users=59&runs=751&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2Fngn8vRESTkseyWE6p-actor-I8OU0bg6CIVnxTz9G-2ZT0iLCwNw-uspto.jpeg&authorName=Muhamed+Didovic&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FgF5odQ3-BT2EqSEqHC0SyEU5PZaDWZM0oPotGMrN_-Q%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAvS3FicmQ3cnNMYmRsU1lkaFctMTYyOTI4NTEwMjE5NC5qcGVn.webp
+USPTO Trademark Scraper — Search — Wordmark, Owner, Class · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,381 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[USPTO Trademark Search — Wordmark, Owner, Class & Serial Lookup avatar]
+USPTO Trademark Search — Wordmark, Owner, Class & Serial Lookup
+Pricing
+from $7.00 / 1,000 trademark records
+Try for free (https://console.apify.com/actors/I8OU0bg6CIVnxTz9G?addFromActorId=I8OU0bg6CIVnxTz9G)
+Go to Apify Store (/store)
+[USPTO Trademark Search — Wordmark, Owner, Class & Serial Lookup]
+USPTO Trademark Search — Wordmark, Owner, Class & Serial Lookup
+memo23/uspto-trademark-scraper
+Try for free (https://console.apify.com/actors/I8OU0bg6CIVnxTz9G?addFromActorId=I8OU0bg6CIVnxTz9G)
+Copy setup prompt Copied
+Search US federal trademarks straight from USPTO: by wordmark/brand, owner name, or goods & services, plus exact serial-number lookup. Filter by live/dead status and Nice class. Full records — status, owner, classes, dates, goods, mark image. No API key. JSON/CSV
+Pricing
+from $7.00 / 1,000 trademark records
+Rating
+5.0
+(1)
+Developer
+Muhamed Didovic (/memo23) Maintained by Community
+Actor stats
+0
+Bookmarked
+59
+Total users
+17
+Monthly active users
+3 days ago
+Last modified
+Categories
+Developer tools (/store/categories/developer-tools) Automation (/store/categories/automation) AI (/store/categories/ai)
+Features
+Limited permissions
+Share
+README (/memo23/uspto-trademark-scraper) Input (/memo23/uspto-trademark-scraper/input-schema) Pricing (/memo23/uspto-trademark-scraper/pricing) API (/memo23/uspto-trademark-scraper/api/python) Reviews (/memo23/uspto-trademark-scraper/reviews) Issues (/memo23/uspto-trademark-scraper/issues/open)
+Search US federal trademarks straight from the USPTO — by wordmark/brand, by owner, by goods & services, or by exact serial number — and get back clean, structured records: status, owner, international classes, filing and registration dates, the full goods & services text, and a link to the mark image. No API key, no login, no CAPTCHA.
+Why Use This Scraper? #why-use-this-scraper
+Straight from the source. Queries the USPTO's own trademark search index, so every field is the official record — not a third-party copy that lags behind.
+Four ways to search. By wordmark/brand keyword, by owner/applicant name, by words in the goods & services text, or by exact serial-number lookup — one operation each, one clean dataset out.
+Built-in filters. Narrow to live (active/pending) or dead (abandoned/cancelled) marks, and to one or more international (Nice) classes — perfect for brand-clearance and availability checks.
+Full records, flattened. Each row carries status, owner(s), mark type, classes (international + US + coordinated), filing/registration/abandon/cancel dates, the complete goods & services description, design codes, disclaimer, translation, and a direct mark-image URL.
+No key, no login, no browser. Pure HTTP against a public endpoint — fast, stable, and cheap. Auto-paginates every match up to USPTO's limit.
+Bulk-ready. Pass many terms or many serial numbers in one run; results merge into a single dataset you can export as JSON, CSV, or Excel.
+Overview #overview
+This actor turns the USPTO Trademark Search system into a structured data feed. You pick an operation (how you want to search), give it terms or serial numbers, optionally filter by status and class, and it returns one flat record per matching trademark.
+It runs four operations, each a distinct search mode against the same official index:
+search — the core wordmark/brand search (e.g. nike , apple ). Optionally require an exact phrase for tighter clearance checks.
+owner-search — every mark held by an owner or applicant (e.g. Nike, Inc. ).
+goods-services-search — full-text search across the goods & services descriptions (e.g. athletic footwear ).
+serial-lookup — fetch exact records for a list of serial numbers.
+Typical uses: trademark clearance and availability checks before a launch, portfolio monitoring of a competitor's marks, IP due-diligence, building a brand database, and feeding trademark data to legal/brand AI agents.
+Supported Inputs #supported-inputs
+Wordmark / brand terms — one or more keywords for the search operation.
+Owner names — for owner-search (e.g. Tesla, Inc. ).
+Goods & services phrases — for goods-services-search (e.g. computer software ).
+Serial numbers — for serial-lookup (digits only; dashes/spaces are stripped).
+Filters — liveDead (all / live / dead) and internationalClasses (Nice classes) apply to all three search operations.
+Use Cases #use-cases
+Who	What they use it for
+Trademark attorneys & paralegals	Run clearance and availability searches before filing; pull every live mark in a class to assess likelihood of confusion.
+Brand & marketing teams	Check whether a proposed brand name is already taken (live marks in the relevant classes) before a launch.
+Competitive / IP intelligence	Monitor a competitor's trademark portfolio by owner name — new filings, abandonments, classes they're expanding into.
+Domainers & startup founders	Screen candidate names against federal trademarks in bulk.
+Legal-tech & AI agents	Feed structured, official trademark records into clearance tools, dashboards, or LLM apps.
+How It Works #how-it-works
+[How the USPTO Trademark Search scraper works]
+Choose a mode — pick an operation (wordmark, owner, goods & services, or serial lookup), give it terms or serial numbers, and optionally set the live/dead and class filters.
+Query USPTO — the actor queries the USPTO trademark search index directly over plain HTTP (no API key, no login) and auto-paginates through every match up to the cap.
+Export — each matching mark becomes one flat record, streamed to the dataset for download as JSON, CSV, or Excel, or via the Apify API.
+Input Configuration #input-configuration
+Field	Type	Description
+operation	enum	search , owner-search , goods-services-search , or serial-lookup .
+searchTerms	array	Terms to search. Wordmarks (search), owner names (owner-search), or goods/services words (goods-services-search). Each term runs as its own query; results merge.
+serialNumbers	array	Serial numbers for serial-lookup (digits only).
+exactMatch	boolean	search only — require the wordmark to contain the term as an exact phrase. Great for availability checks. Default false .
+liveDead	enum	Restrict to live , dead , or all marks. Default all .
+internationalClasses	array	Optional Nice-class filter, e.g. ["025","009"] or ["IC 025"] . Matches any listed class.
+maxItems	integer	Hard cap on records returned this run. USPTO limits deep paging to 10,000 per query.
+proxy	object	Optional. The API is open, so the actor runs direct by default; set a proxy only for very large runs.
+Example input #example-input
+{
+"operation" : "search" ,
+"searchTerms" : [ "nike" ] ,
+"liveDead" : "live" ,
+"internationalClasses" : [ "025" ] ,
+"exactMatch" : false ,
+"maxItems" : 500
+}
+Output Overview #output-overview
+Every matching trademark is emitted as one flat JSON object. Array fields (owners, classes, goods & services, design codes) come back as arrays; fields a given mark doesn't have come back null or [] , so the schema stays consistent across the whole dataset. Download as JSON, CSV, Excel, or via the Apify API.
+Output Sample #output-sample
+A live registered wordmark (trimmed for readability):
+{
+"serialNumber" : "97509558" ,
+"wordmark" : "NIKE UNIVERSA" ,
+"pseudoMark" : null ,
+"status" : "LIVE" ,
+"alive" : true ,
+"markType" : [ "TRADEMARK" ] ,
+"registrationNumber" : "7489663" ,
+"registrationType" : [ "PRINCIPAL" ] ,
+"filedDate" : "2022-07-19" ,
+"registrationDate" : "2024-08-27" ,
+"abandonDate" : null ,
+"cancelDate" : null ,
+"owners" : [ "Nike, Inc. (CORPORATION; OREGON, USA)" ] ,
+"ownerType" : "ORIGINAL REGISTRANT" ,
+"goodsAndServices" : [
+"IC 025: Athletic apparel, namely, leggings, pants, shorts, athletic tights and cycling shorts, tops, footwear, headwear."
+] ,
+"internationalClasses" : [ "IC 025" ] ,
+"usClasses" : [ "039 022." ] ,
+"coordinatedClasses" : [ ] ,
+"markDescription" : [ ] ,
+"designCodes" : [ ] ,
+"drawingCode" : 4 ,
+"disclaimer" : null ,
+"translation" : null ,
+"currentBasis" : [ "1a" ] ,
+"attorney" : "Jennifer M. Reynolds" ,
+"markImageUrl" : "https://tmcms-docs.uspto.gov/cases/97509558/mark/large.png" ,
+"tsdrUrl" : "https://tsdr.uspto.gov/#caseNumber=97509558&caseType=SERIAL_NO&searchType=statusSearch" ,
+"relevanceScore" : 89.4
+}
+Key Output Fields #key-output-fields
+Identity & status
+serialNumber — USPTO serial number (the record's unique id)
+wordmark — the literal mark text; pseudoMark — USPTO's phonetic equivalent
+status — LIVE or DEAD ; alive — boolean
+markType , registrationNumber , registrationType , drawingCode
+Owner
+owners — owner/applicant name(s); ownerFullText — full owner blocks with addresses; ownerType
+Classification & goods
+internationalClasses — Nice classes (e.g. IC 025 ); usClasses ; coordinatedClasses
+goodsAndServices — the full goods & services description(s)
+designCodes — design-search codes for figurative marks; disclaimer , translation , markDescription
+Dates
+filedDate , registrationDate , abandonDate , cancelDate , priorityDate , publishForOppositionDate
+Links
+markImageUrl — the mark image (for design/stylized marks); tsdrUrl — the official status page; attorney ; relevanceScore
+FAQ #faq
+Do I need a USPTO API key or an account?
+No. The actor queries the public USPTO trademark search index directly over HTTP. There is no key, no login, and no CAPTCHA.
+What's the difference between the four operations?
+search looks in the wordmark (brand text). owner-search looks in the owner/applicant name. goods-services-search looks in the goods & services description. serial-lookup fetches exact records by serial number. Pick the one that matches how you want to find marks.
+How do I check if a brand name is available?
+Use search with exactMatch: true and liveDead: "live" , optionally filtered to the international class(es) you care about. Live marks that exactly contain your term are the ones most relevant to a clearance decision. (This is a research aid, not legal advice — see the disclaimer.)
+Can I filter by trademark class?
+Yes. Set internationalClasses to one or more Nice classes, e.g. ["025"] for clothing/footwear or ["009"] for software/electronics. A mark matches if it belongs to any listed class.
+Why do some records have no mark image?
+markImageUrl points to the mark drawing. Standard-character (typed) marks have no stylized image, so the URL will 404 for those; design/stylized marks return a PNG.
+How many results can I get per search?
+The USPTO search index caps deep paging at 10,000 results per query, so a single very broad term returns at most 10,000 records. Narrow with filters or more specific terms to stay under that. maxItems caps your run below that if you want fewer.
+Does it include full prosecution history / status documents?
+No — this actor returns the searchable trademark record (status, owner, classes, goods, dates, image). Full document history lives behind USPTO's separate TSDR document API, which now requires a USPTO API key. The tsdrUrl on each row links to that official status page.
+What export formats are supported?
+Every run writes to an Apify dataset you can download as JSON, CSV, Excel, XML, or JSONL, or fetch via the Apify API — and wire into scheduling, webhooks, Google Sheets, Zapier, or Make.
+Support #support
+Found a bug or need a new field? Open a ticket on the Issues tab of this actor — it's the fastest way to reach me and I actively maintain this scraper.
+Email: muhamed.didovic@gmail.com (mailto:muhamed.didovic@gmail.com)
+Website: muhamed-didovic.github.io (https://muhamed-didovic.github.io/)
+Additional Services #additional-services
+Need something beyond the standard output? I build and maintain custom scrapers and data pipelines. Happy to help with:
+Scheduled trademark-portfolio monitoring wired into your CRM, data warehouse, or Slack/email alerts
+Custom fields, filters, or exports tailored to your clearance workflow
+Cross-referencing with other IP sources (patents, TTAB proceedings, international registers)
+Private or dedicated actors for high-volume or compliance-sensitive use
+Reach out via the Issues tab or email and describe what you need.
+Explore More Scrapers #explore-more-scrapers
+Browse my other Apify actors — business directories, review sites, job boards, real estate, and lead-generation tools — on my profile: memo23 on Apify (/memo23) .
+🤖 For AI Agents & LLM Apps #for-ai-agents-and-llm-apps
+Compact reference for AI agents calling this actor via the Apify MCP server (https://mcp.apify.com) or the Apify API (actor: memo23/uspto-trademark-scraper ).
+Purpose: Searches the public USPTO federal trademark index by wordmark, owner, goods & services, or serial number, and returns one flat structured record per matching mark.
+Minimal input:
+{
+"operation" : "search" ,
+"searchTerms" : [ "nike" ] ,
+"maxItems" : 25
+}
+For exact records by serial number, set "operation": "serial-lookup" and pass serialNumbers (digits only) instead of searchTerms .
+Output: one dataset row per trademark — serialNumber , wordmark , pseudoMark , status , alive , markType , registrationNumber , registrationType , filedDate , registrationDate , abandonDate , cancelDate , owners , ownerType , goodsAndServices , internationalClasses , usClasses , coordinatedClasses , markDescription , designCodes , drawingCode , disclaimer , translation , currentBasis , attorney , markImageUrl , tsdrUrl , relevanceScore .
+Behaviors an agent should know:
+Pick one operation : search (wordmark), owner-search , goods-services-search , or serial-lookup . Each term in searchTerms runs as its own query and results merge.
+Always set maxItems ; USPTO caps deep paging at 10,000 results per query, so narrow broad terms with filters.
+liveDead ( all / live / dead ) and internationalClasses (Nice classes, e.g. ["025"] ) filter the three search operations; exactMatch: true (search only) tightens clearance checks.
+Runs direct over HTTP — no API key, login, or CAPTCHA; proxy is optional and only useful for very large runs.
+Returns the searchable record only; full prosecution history lives behind USPTO's separate TSDR API — tsdrUrl links to it per row.
+Pay-per-event billing — see the Pricing tab on the actor page.
+⚠️ Disclaimer #disclaimer
+This Actor accesses publicly available trademark data published by the United States Patent and Trademark Office (USPTO) for legitimate research, clearance, and business-analysis purposes. It is an independent tool and is not affiliated with, endorsed by, or officially connected to the USPTO or any government agency.
+The output is provided for informational purposes only and is not legal advice . A trademark clearance or availability decision should be made by a qualified attorney; the presence or absence of a record in these results does not by itself establish that a mark is available or free to use. Use the data in compliance with applicable laws and the USPTO's terms of use. We do not store any scraped data; the Actor returns it directly to your Apify dataset for your authorized use.
+SEO Keywords #seo-keywords
+USPTO trademark scraper, USPTO trademark search, trademark search API, trademark availability check, trademark clearance search, wordmark search, trademark owner search, trademark serial number lookup, TESS alternative, trademark search system, federal trademark database, trademark data extraction, brand name availability, Nice class trademark search, live trademark search, trademark monitoring, trademark portfolio, goods and services search, trademark lookup tool, IP due diligence, trademark JSON export, trademark CSV export, no-code trademark scraper, trademark clearance API
+You might also like
+Páginas Amarelas / pai.pt Scraper memo23/paginasamarelas-scraper Scrape pai.pt (Páginas Amarelas Portugal) into structured business rows: name, phone, email when listed, website, address, hours. Keyword plus city, nationwide PT, or a search/profile URL. JSON or CSV out. $5 per 1,000 listings. Muhamed Didovic 25 (/memo23/paginasamarelas-scraper)
+Skroutz Seller Contact Scraper — Email, Phone, GEMI memo23/skroutz-sellers-scraper Turn a Skroutz.gr keyword, product or shop URL into a lead list of the shops selling those products — legal name, seat address, GEMI number, AFM when published, phone and email from the shop card. Every competing offer, not just the cheapest. Greece. Pure HTTP. JSON or CSV. Muhamed Didovic 21 (/memo23/skroutz-sellers-scraper)
+ForRentUniversity.com [$1.25💰] Scraper · Emails memo23/forrentuniversity-scraper Extract comprehensive student housing data: floor plans, pricing, amenities, reviews, walkability scores, nearby schools, transit info, virtual tours, property photos, management contacts, and detailed location data from ForRentUniversity.com listings Muhamed Didovic 28 5.0 (1) (/memo23/forrentuniversity-scraper)
+Collecting Cars [$3💰] | 33k SOLD prices + live bids memo23/collectingcars-scraper 💰$3 per 1,000 lots. Turn Collecting Cars into auction-results data: ~33,000 finished lots with their sale prices, plus every live lot with its current bid and closing time. Filter by country, make, year and price. Optional VIN, colours, original market and full write-up. Muhamed Didovic 18 (/memo23/collectingcars-scraper)
+Autotrader.com.au [$1💰] Australia Search & Details Scraper🇦🇺 memo23/autotrader-australia-cheerio 💰 $1 per 1,000 results. Scrape AutoTrader.com.au search and listing pages with normalized vehicle, price, dealer, location, media, and spec data. Supports filtered region URLs and optional detail enrichment for richer dealer address, technical specs, and more complete listing fields. Muhamed Didovic 32 5.0 (1) (/memo23/autotrader-australia-cheerio)
+s1jobs.com Scraper · Emails memo23/s1jobs-scraper Scrape Scottish job postings (all sectors) from s1jobs.com — title, salary, employer, location, real lat/lng coordinates, posted/closing dates, full description, structured skills, and the actual recruiter apply URL or apply email. Works with any listing or vacancy URL. JSON or CSV out. Muhamed Didovic 22 (/memo23/s1jobs-scraper)
+Trademark Search — USPTO Serial + IP Australia Name Search nexgendata/uspto-trademark-search Trademark due diligence and brand clearance: look up US trademarks by serial/registration number from the official USPTO TSDR source, and search brand names across the IP Australia register. JSON: mark, owner, status, serial/registration, dates, class, goods/services. No API key. Pay per record. NexGenData 50 (/nexgendata/uspto-trademark-search)
+Handelsregister.de [$8💰] German Company Registry memo23/handelsregister-scraper Scrape the official German company register (handelsregister.de) — register number, court, status, legal form, registered address, officers with roles & birth dates, representation rules, and name history. Precise lookups or keyword search with filters. JSON or CSV out. Muhamed Didovic 99 5.0 (1) (/memo23/handelsregister-scraper)
+PistonHeads.com [$1💰] | Full 208k catalogue | Real pagination memo23/pistonheads-scraper 💰$1 per 1,000 cars. Scrape the FULL PistonHeads catalogue — rival scrapers loop on page one because the site ignores its own page parameter. Get price, mileage, spec, seller and photos per car. Filter by make, model, price, year, mileage or postcode radius. Optional descriptions + galleries. Muhamed Didovic 25 5.0 (1) (/memo23/pistonheads-scraper)
+USPTO Trademark Search Feed: Applications, Owners, Status thoob/uspto-trademark-feed Pulls official USPTO daily data and returns clean, flat US trademark records: word mark, serial and registration number, owner, goods and services, class, status and dates, with a what-changed-since-last-run mode. Billed only per delivered record. No API key needed. Pono Data 3 (/thoob/uspto-trademark-feed)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)

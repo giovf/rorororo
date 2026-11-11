@@ -1,0 +1,204 @@
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.trademarkdashboard.com/#organization","name":"Trademark Dashboard","legalName":"Decentralised Finance Software Ltd","url":"https://www.trademarkdashboard.com","logo":{"@type":"ImageObject","url":"https://www.trademarkdashboard.com/logo.png","width":300,"height":150},"image":"https://www.trademarkdashboard.com/logo.png","description":"The UK's AI-powered trademark clearance platform. Search 3M+ UK trademarks, find attorneys, and get AI-powered clearance reports.","foundingDate":"2025","founder":{"@type":"Person","name":"Nik Maguire","jobTitle":"CEO & Founder"},"address":{"@type":"PostalAddress","streetAddress":"Moxon House, Moxon Street","addressLocality":"Marylebone","addressRegion":"London","postalCode":"W1U 4EY","addressCountry":"GB"},"sameAs":["https://find-and-update.company-information.service.gov.uk/company/16838716","https://www.linkedin.com/company/moxon-ai-group/"],"parentOrganization":{"@type":"Organization","name":"Moxon AI Group Ltd","url":"https://www.linkedin.com/company/moxon-ai-group/"},"knowsAbout":["UK trademark registration","EU trademark registration","US trademark registration","Nice Classification","trademark clearance","brand protection","intellectual property","trademark monitoring","phonetic similarity analysis"],"areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"European Union"},{"@type":"Country","name":"United States"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Trademark Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Free Trademark Search","description":"Search 3M trademarks across UK IPO, EUIPO, and USPTO databases instantly."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Trademark Clearance Report","description":"Comprehensive clearance report with phonetic similarity analysis, Nice class conflicts, and risk assessment."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Trademark Attorney Directory","description":"Find qualified UK trademark attorneys for registration, opposition, and portfolio management."}}]}},{"@type":"WebSite","@id":"https://www.trademarkdashboard.com/#website","name":"Trademark Dashboard","url":"https://www.trademarkdashboard.com","publisher":{"@id":"https://www.trademarkdashboard.com/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.trademarkdashboard.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}
+{"@context":"https://schema.org","@type":"Dataset","name":"UK Trademark Database (2026)","description":"Complete UK IPO trademark register containing 3 million trade mark records including mark names, owners, Nice classifications, filing dates, registration status, and associated attorneys.","url":"https://www.trademarkdashboard.com/uk-trademark-database","license":"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/","creator":{"@type":"Organization","name":"UK Intellectual Property Office","url":"https://www.gov.uk/government/organisations/intellectual-property-office"},"distribution":{"@type":"DataDownload","contentUrl":"https://www.trademarkdashboard.com/search","encodingFormat":"text/html"},"temporalCoverage":"1876/2026","spatialCoverage":{"@type":"Place","name":"United Kingdom"},"variableMeasured":["Trademark name","Registration number","Nice classification","Filing date","Registration status","Owner name","Attorney or agent"]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the UK trademark database?","acceptedAnswer":{"@type":"Answer","text":"The UK trademark database is the official register maintained by the UK Intellectual Property Office (IPO). It contains records for every trade mark application filed in the UK, dating back to the Trade Marks Registration Act 1875. As of 2026, the register contains 3 million records including active, expired, and refused applications. The data is publicly available under the Open Government Licence."}},{"@type":"Question","name":"How many trademarks are registered in the UK?","acceptedAnswer":{"@type":"Answer","text":"The UK IPO register contains 3 million trade mark records as of 2026. This includes approximately 1.1 million active registrations, plus filed, expired, refused, and withdrawn marks. New applications are added daily — the IPO receives around 70,000–90,000 new applications per year. TrademarkDashboard indexes the complete register with daily updates."}},{"@type":"Question","name":"Is the UK trademark database free to access?","acceptedAnswer":{"@type":"Answer","text":"Yes, the underlying UK IPO register data is public information available under the Open Government Licence (OGL v3.0). You can search the register for free via the IPO's own Find a trade mark tool or via TrademarkDashboard. Both free tools match exact and word text, but TrademarkDashboard adds the convenience of owner and class views, daily updates, and US-register cross-search in one place. AI similarity, look-alike, and sound-alike matching is included in the paid clearance report (from £9.99) and Pro."}},{"@type":"Question","name":"How often is the UK trademark database updated?","acceptedAnswer":{"@type":"Answer","text":"TrademarkDashboard synchronises with the UK IPO register daily. New applications, status changes, renewals, and cancellations are reflected within 24 hours of the IPO publishing them. The IPO itself publishes the Trade Marks Journal weekly, which lists new applications open to opposition."}},{"@type":"Question","name":"Can I download the full UK trademark database?","acceptedAnswer":{"@type":"Answer","text":"The UK IPO publishes bulk trademark data under the Open Government Licence through its data portal. However, the raw data requires significant processing to be usable. TrademarkDashboard provides a pre-processed, searchable interface to the complete dataset with class analysis and owner lookups included free. AI similarity matching is part of the paid clearance report and Pro."}},{"@type":"Question","name":"What data fields are in the UK trademark register?","acceptedAnswer":{"@type":"Answer","text":"Each record in the UK trademark register includes: the mark text or image description, registration number, application and registration dates, Nice class(es), current status (registered, filed, expired, refused, etc.), owner name and address, and the attorney or agent of record. TrademarkDashboard surfaces all of these fields in a searchable format."}},{"@type":"Question","name":"What is the oldest UK trademark?","acceptedAnswer":{"@type":"Answer","text":"The Bass red triangle, registered on 1 January 1876 under the Trade Marks Registration Act 1875, is widely considered the UK's first registered trademark (UK registration number 1). The system has run continuously since then, with the current register inheriting all historical records."}},{"@type":"Question","name":"How does the UK trademark register relate to EUIPO and WIPO?","acceptedAnswer":{"@type":"Answer","text":"The UK trademark register is a national register covering the United Kingdom only. The EUIPO (EU Intellectual Property Office) manages EU Trade Marks covering all EU member states — since Brexit, these no longer cover the UK. WIPO manages the Madrid System for international trademark registration. A mark registered through WIPO can designate the UK, in which case it also appears on the UK register. TrademarkDashboard allows searching across UK, EU, and international registers simultaneously."}}]}
+{"@context":"https://schema.org","@type":"Article","@id":"https://www.trademarkdashboard.com/uk-trademark-database#article","headline":"UK Trademark Database — 3M Records, Free Search & Download (2026) | TrademarkDashboard","datePublished":"2026-04-15","dateModified":"2026-07-04","inLanguage":"en-GB","author":{"@type":"Person","@id":"https://www.trademarkdashboard.com/authors/nik-maguire#person","name":"Nik Maguire","url":"https://www.trademarkdashboard.com/authors/nik-maguire"},"publisher":{"@type":"Organization","name":"Trademark Dashboard","logo":{"@type":"ImageObject","url":"https://www.trademarkdashboard.com/images/v2/logo.png"}},"mainEntityOfPage":"https://www.trademarkdashboard.com/uk-trademark-database"}
+{"@context":"https://schema.org","@type":"VideoObject","name":"How to Read the UK Trademark Register","description":"A short walkthrough of how to read a UK trade mark register entry on Trademark Dashboard — what each status means (filed, examined, published for opposition, registered, expired, refused), how to read the owner, Nice classes and dates, and how to tell a live mark from a dead one before you rely on it.","thumbnailUrl":["https://i.ytimg.com/vi/69da1cNecoE/maxresdefault.jpg"],"uploadDate":"2026-06-22T00:00:00+00:00","contentUrl":"https://www.youtube.com/watch?v=69da1cNecoE","embedUrl":"https://www.youtube.com/embed/69da1cNecoE"}
+{"@context":"https://schema.org","@type":"VideoObject","name":"What is a Trademark Clearance Report?","description":"A short explainer on what a UK trademark clearance report is and what it checks before you file — the s.3 absolute-grounds screen, conflicts ranked by sound, look and AI-judged meaning across the UK, EU, US, Japan and Australia registers, plus company, domain and social-handle signals — so you can clear a brand name with confidence.","thumbnailUrl":["https://i.ytimg.com/vi/7kM0LmNh6EI/maxresdefault.jpg"],"uploadDate":"2026-06-06T00:00:00+00:00","contentUrl":"https://www.youtube.com/watch?v=7kM0LmNh6EI","embedUrl":"https://www.youtube.com/embed/7kM0LmNh6EI"}
+meta description: Explore the complete UK IPO trademark database. 3 million marks with owner details, Nice classes, filing dates, and status. Free exact and word-match search, daily updates, owner and class views. AI similarity matching in the paid clearance report. Official register data under OGL.
+meta og:title: UK Trademark Database — 3M Records, Free Search & Download (2026)
+meta og:description: Explore the complete UK IPO trademark database. 3 million marks with owner details, Nice classes, filing dates, and status. Free search, daily updates.
+meta og:url: https://www.trademarkdashboard.com/uk-trademark-database
+meta og:site_name: Trademark Dashboard
+meta og:locale: en_GB
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:title: Free UK Trademark Search, Monitoring & Renewal | Trademark Dashboard
+meta twitter:description: Search the official UK IPO trademark register free. Paid clearance reports and dashboard tools are available when you need more detail.
+meta twitter:image: https://www.trademarkdashboard.com/opengraph-image
+UK Trademark Database — 3M Records, Free Search & Download (2026) | TrademarkDashboard
+Skip to content (#main-content)
+/
+2026 · Official UK IPO Data · Updated Daily
+The Complete UK Trademark Database — 3 million+ records
+Search every trademark ever filed with the UK Intellectual Property Office. Free exact and word-match search across the full register, with owner lookups and Nice class analysis. AI similarity matching comes with the paid clearance report from £9.99.
+Search Free
+All statuses
+Registered
+Filing
+Published
+Refused
+Expired
+Withdrawn
+All classes
+Class 1
+Class 2
+Class 3
+Class 4
+Class 5
+Class 6
+Class 7
+Class 8
+Class 9
+Class 10
+Class 11
+Class 12
+Class 13
+Class 14
+Class 15
+Class 16
+Class 17
+Class 18
+Class 19
+Class 20
+Class 21
+Class 22
+Class 23
+Class 24
+Class 25
+Class 26
+Class 27
+Class 28
+Class 29
+Class 30
+Class 31
+Class 32
+Class 33
+Class 34
+Class 35
+Class 36
+Class 37
+Class 38
+Class 39
+Class 40
+Class 41
+Class 42
+Class 43
+Class 44
+Class 45
+Full UK IPO register · Daily sync · Exact & word match · Free
+3M
+Total records
+1.1m+
+Active registrations
+148 yrs
+Of trademark history
+Daily
+Update frequency
+Where are you in the trademark journey?
+I haven't filed yet
+Check your name is clear before you commit: sound-alikes, look-alikes and Nice-class overlap, not just exact text.
+Run a clearance report → (/pricing#one-off)
+I've just filed
+Filing isn't the finish line. Look-alike marks can be filed after yours, and you can oppose them inside the roughly two-month window.
+Set up an opposition watch → (/trademarkshield)
+I already own a mark
+A registration is only useful if you spot threats in time. Monitor the register and your classes for new conflicts.
+Start Trademark Shield → (/trademarkshield)
+How do I search UK, US, EU and Australian trademarks at once?
+Government registers only cover their own territory: gov.uk searches the UK, the USPTO the US, EUIPO the EU. Trademark Dashboard puts all five registers (UK, US, EU, Japan and Australia) in one search, so you can clear a name across every market you trade in without visiting five separate websites. UK and US search are free; EU, Japan and Australia are on Pro.
+Search all five registers with Pro → (/pricing#subscriptions)
+The UK register by the numbers
+2.95 million trade marks sit on the UK register, but only 53% are live registrations. The rest are dead, expired, removed or withdrawn, so a search hit is not automatically a live obstacle.
+40.5% are figurative (logo) marks; the remainder are word marks.
+The single most-filed class is Class 9 (/trademark-classes/class-9) (software and electronics), followed by Class 35 (/trademark-classes/class-35) (advertising and retail) and Class 41 (/trademark-classes/class-41) (education and entertainment).
+1.18 million distinct owners hold UK marks, and 67% of them hold just one.
+Computed by Trademark Dashboard from 2,950,119 UK IPO register records, July 2026.
+How to read a UK trademark register entry
+What the register does not tell you: the UK trade mark database shows every registered and pending mark, but it does not tell you whether a mark is in genuine use, whether a confusingly similar (not identical) name already exists, or whether your own name is safe to use. Under the Trade Marks (Relative Grounds) Order 2007 the IPO will not refuse a new mark over an earlier similar one; it only flags it and notifies the earlier owner. The record shows filings, not your risk. Find every mark a company owns (/find-uk-trademark-by-owner) , or see how a clearance search differs (/guides/trademark-search-vs-clearance-uk) .
+What Is in the UK Trademark Database?
+The UK trademark register is the official record of every trade mark application and registration in the United Kingdom. Maintained by the UK Intellectual Property Office, it has been in continuous operation since the Trade Marks Registration Act 1875 — making it one of the oldest trademark registers in the world.
+TrademarkDashboard indexes the complete register with free exact and word-match search, attorney cross-referencing, and Nice class analysis. AI similarity matching is added by the paid clearance report (from £9.99) and Pro. The underlying data is publicly available under the OGL v3.0 .
+Data Field	Description	Example
+Mark Name	The registered word mark or description of a device/figurative mark.	ROLLS-ROYCE
+Registration Number	The unique UK IPO identifier for the application.	UK00003456789
+Nice Class(es)	One or more of the 45 Nice classes (/trademark-classes) covering goods and services.	12, 37
+Status	Current state: Registered, Filed, Opposed, Expired, Refused, or Withdrawn.	Registered
+Filing Date	Date the application was submitted to the UK IPO.	2024-03-15
+Owner	The individual or legal entity that holds the mark.	Rolls-Royce plc
+Attorney / Agent	The professional who filed or manages the registration.	See attorney directory (/attorneys)
+History of the UK Trademark Register
+The UK was one of the first countries to establish a formal trademark registration system. Key milestones include:
+1875
+Trade Marks Registration Act
+Parliament establishes the first UK trademark register, enabling businesses to formally register and protect their marks. The Bass Brewery’s red triangle becomes registration number 1 on 1 January 1876.
+1938
+Trade Marks Act 1938
+A major overhaul introducing the concept of “Part A” and “Part B” registrations and strengthening owner protections. This Act governed UK trademark law for nearly six decades.
+1994
+Trade Marks Act 1994
+Current governing legislation, aligning UK law with the EU Trade Marks Directive. Introduces the Nice Classification system and modernises registration procedures.
+2021
+Post-Brexit Register
+Following EU exit, all EU Trade Marks designating the UK are converted to equivalent UK registrations. The register grows by approximately 1.4 million “comparable” marks.
+2026
+Today
+The register contains 3 million records, receives 70,000–90,000 new applications annually, and is fully searchable online. TrademarkDashboard adds free exact and word-match search plus attorney cross-referencing on top of the official data, with AI similarity matching in the paid clearance report and Pro.
+How the UK Trademark Data Is Structured
+Nice Classification
+Every mark is filed in one or more of 45 Nice classes (/trademark-classes) . The most popular classes in the UK are Class 25 (/trademark-classes/class-25) (clothing), Class 35 (/trademark-classes/class-35) (business services), and Class 9 (/trademark-classes/class-9) (software & electronics). Filing costs increase per class (£205 first class, £60 each additional).
+Status Lifecycle
+A mark progresses through distinct stages: Filed → Examined → Published for Opposition → Registered . Marks can be refused at examination or opposed by third parties during the publication period. Registrations last 10 years and can be renewed indefinitely.
+Owners & Attorneys
+Each registration records the owner (individual or company) and the attorney or agent who manages it. Our attorney directory (/attorneys) ranks 3,200+ UK trademark attorneys by filing volume, enabling you to compare firms and find specialists in your industry.
+Open Data & Licensing
+UK IPO register data is published under the OGL v3.0 and the Re-use of Public Sector Information Regulations 2015. This means anyone can access, use, and redistribute the data for commercial or non-commercial purposes with attribution.
+Notable Marks in the UK Register
+From Britain’s oldest trademark to global brands headquartered in the UK, the register tells the story of British commerce across nearly 150 years.
+Bass Brewery UK’s first trademark (1876) (/trademarks/bass) Rolls-Royce Class 12 — Motor vehicles (/trademarks/rolls-royce) Cadbury Famous “purple” colour mark dispute (/trademarks/cadbury) Dulux Class 1 — Paints & coatings (/trademarks/dulux) Costa Coffee Class 43 — Beverages (/trademarks/costa) ARM Holdings Class 9 — Technology (/trademarks/arm)
+Explore all notable UK trademarks & case studies → (/trademarks)
+UK Register vs International Registers
+The UK operates its own national register, separate from European and international systems. Understanding which register applies to your business is essential.
+Register	Coverage	Managed By	UK Impact
+UK IPO	United Kingdom	UK Intellectual Property Office	Direct UK protection
+EUIPO	EU member states	EU Intellectual Property Office	No longer covers UK post-Brexit. Existing EUTMs were converted to comparable UK marks in 2021.
+WIPO Madrid	130+ countries	World Intellectual Property Organisation	Can designate the UK. Madrid marks appear on both WIPO and UK registers.
+Search UK, EU, and international registers simultaneously → (/search)
+UK Trademark Attorneys by Region
+Our directory cross-references the UK trademark register with attorney filing data, so you can compare firms by volume, specialisation, and location.
+London Largest IP practice hub in the UK. (/attorneys/london) Manchester Major northern centre for IP law. (/attorneys/manchester) Bristol Growing tech & startup-focused IP firms. (/attorneys/bristol) Edinburgh Scotland’s leading IP practice centre. (/attorneys/edinburgh) Birmingham Midlands hub for trademark & patent work. (/attorneys/birmingham) Leeds Professional services hub in Yorkshire. (/attorneys/leeds)
+Browse the full UK trademark attorney directory → (/attorneys)
+Free search done. But is your name actually safe to file?
+A free search shows what already exists. A clearance report goes further: it scores every conflict by sound, look and meaning, checks Nice-class overlap, and returns a green/amber/red filing verdict with a downloadable PDF, from £9.99.
+Compare clearance reports → (/pricing#one-off) See what a clearance report includes (/trademark-clearance-report-uk)
+Frequently Asked Questions
+What is the UK trademark database?
+The UK trademark database is the official register maintained by the UK Intellectual Property Office (IPO). It contains records for every trade mark application filed in the UK since 1876 — 3 million records including active, expired, and refused applications. The data is publicly available under the Open Government Licence.
+How many trademarks are registered in the UK?
+3 million records as of 2026, including approximately 1.1 million active registrations. The IPO receives 70,000–90,000 new applications per year. TrademarkDashboard indexes the complete register with daily updates.
+Is the UK trademark database free to access?
+Yes. The underlying data is public information under the OGL v3.0. You can search for free via the IPO's own tool or TrademarkDashboard. Both free tools match exact and word text, but TrademarkDashboard adds owner and class views, daily updates, and US-register cross-search in one place. AI similarity and look-alike matching is included in the paid clearance report (from £9.99) and Pro.
+How often is the database updated?
+TrademarkDashboard synchronises daily. New applications, status changes, renewals, and cancellations are reflected within 24 hours of the IPO publishing them.
+Can I download the full UK trademark database?
+The IPO publishes bulk data under OGL. The raw files require significant processing. TrademarkDashboard provides a pre-processed, searchable interface with class analysis and owner lookups built in free. AI similarity matching is part of the paid clearance report and Pro.
+What data fields does each record contain?
+Mark text or image description, registration number, application and registration dates, Nice class(es), current status, owner name and address, and the attorney or agent of record.
+What is the oldest UK trademark?
+The Bass red triangle, registered on 1 January 1876 under the Trade Marks Registration Act 1875. It is widely considered the UK's first registered trademark (registration number 1).
+How does the UK register relate to EUIPO and WIPO?
+The UK register covers the United Kingdom only. EUIPO manages EU-wide marks (no longer covering the UK post-Brexit). WIPO manages the Madrid System for international marks, which can designate the UK. TrademarkDashboard searches UK, EU, and international registers.
+Data source: UK IPO register, licensed under RPSI 2015. Updated daily. Contains public sector information under the OGL v3.0 . Not affiliated with the UK IPO or UK government.
+Search the UK Trademark Database
+Access 3 million UK trade mark records free, with exact and word-match search and daily updates. AI similarity matching comes with the paid clearance report from £9.99.
+Search the database free
+Search UK trademarks free
+Search 3M UK trademark records in under a second
+Search trademarks → (/)
+/
+Search and clear UK trade marks using official UK IPO register data for free, includes live United States register search from USPTO, EU EUIPO search and world wide trade mark search.
+Tools
+Free UK trademark search (/trademark-search-uk) Name Risk Scanner (/tools/name-risk-scanner) Domain Check (/tools/availability-checker) Filing Cost Calculator (/tools/cost-calculator) Trademark Strength Scorer (/tools/strength-scorer) UK Company & Charity Search (/tools/company-name-search)
+UK Trademark Guides
+Register a UK Trademark (/guides/register-trademark-uk) Free Trademark Search Guide (/guides/trademark-search-guide) Trademark Filing Mistakes (/guides/trademark-filing-mistakes) Company Name vs Trademark (/guides/company-name-vs-trademark) Trademark Opposition UK (/guides/trademark-opposition-uk)
+Attorneys
+Find an Attorney (/attorneys) London Attorneys (/attorneys/greater-london) West Midlands (/attorneys/west-midlands) Manchester (/attorneys/greater-manchester) West Yorkshire (/attorneys/west-yorkshire)
+Trademark Wiki
+Browse Notable Trademarks (/trademarks) Coca-Cola (/trademarks/coca-cola) Rolls-Royce (/trademarks/rolls-royce) Burberry (/trademarks/burberry) Dyson (/trademarks/dyson) Trademark 100 (/trademark-100)
+Resources
+All 45 Trademark Classes (/trademark-classes) Pricing (/pricing) FAQ (/faq) About (/about) UK vs EU Trademarks (/guides/uk-vs-eu-trademarks-brexit) Using the ® Symbol (/guides/using-registered-symbol-uk)
+© 2026 Trademark Dashboard . All rights reserved.
+Privacy (/privacy) Terms (/terms) Cookies (/cookies)
+Trademark Dashboard is a trading name of Decentralised Finance Software Ltd . Registered office: Moxon House, Moxon Street, London, W1U 4EY. Company No: 16838716 (England & Wales). ICO Registration: ZC110187.
+UK trademark data is Crown copyright, used under the Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) . Class numbers follow the international Nice Classification (https://www.wipo.int/classifications/nice/) , administered by the World Intellectual Property Organization (WIPO) (https://www.wipo.int/) . Descriptions and examples on our class pages are our own editorial summaries, not a reproduction of the official Nice list or the TMclass (https://tmclass.tmdn.org/ec2/) harmonised filing database.
+United States trademark records on this site are derived from the United States Patent and Trademark Office (USPTO) (https://www.uspto.gov/) public register and related bulk data products (https://www.uspto.gov/trademarks/apply/check-status-view-documents/trademark-bulk-data) . The USPTO is the authoritative source; we do not guarantee that data shown here is complete, current, or free of error. This service is not sponsored or endorsed by the USPTO or the United States government.
+Trademark Dashboard is a technology product, not a law firm. Information on this site does not constitute legal advice.

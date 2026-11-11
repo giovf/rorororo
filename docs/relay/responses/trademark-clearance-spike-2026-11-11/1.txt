@@ -1,0 +1,383 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview","description":"Search 100M+ trademarks from EUIPO + 70 IP offices (USPTO, INPI, DPMA, WIPO Madrid). Nice class, status, dates, goods & services. AI brand-clearance + applicant→company. No API key. $0.01/result.","url":"https://apify.com/dltik/euipo-trademarks-scraper","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/hOYuQIVgXoNZFDurxnmfT2L_fF8sllL-Y4nlB1PvfOM/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTVJNT3kwWXJhZzF1RE9oYkMtYWN0b3ItRnpEUVpGejN4WXdyYzRZdkUtV0RLSmlRWW1vQS1ldWlwby10cmFkZW1hcmtzLXNjcmFwZXIucG5n.webp","offers":{"@type":"Offer","description":"from $0.00005 / actor start","price":0.00005,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":0.00005,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1,"unitText":"actor start"}}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apify.com/"},{"@type":"ListItem","position":2,"name":"Store","item":"https://apify.com/store"},{"@type":"ListItem","position":3,"name":"Walid","item":"https://apify.com/dltik"},{"@type":"ListItem","position":4,"name":"EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview","item":"https://apify.com/dltik/euipo-trademarks-scraper"}]}
+meta description: Scrape EUIPO + 70 IP offices via TMview: Nice class, applicant, status, dates, goods & services, image. AI likelihood-of-confusion clearance + trademark...
+meta og:title: EUIPO Trademarks Scraper API: 100M+ EU Trademarks TMview · Apify
+meta og:description: Scrape EUIPO + 70 IP offices via TMview: Nice class, applicant, status, dates, goods & services, image. AI likelihood-of-confusion clearance + trademark...
+meta og:url: https://apify.com/dltik/euipo-trademarks-scraper
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=EUIPO+Trademarks+Scraper%3A+100M%2B+EU%2FGlobal+Trademarks+via+TMview&uniqueName=dltik%2Feuipo-trademarks-scraper&categories=BUSINESS&users=173&runs=10K&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FMRMOy0Yrag1uDOhbC-actor-FzDQZFz3xYwrc4YvE-WDKJiQYmoA-euipo-trademarks-scraper.png&authorName=Walid&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2F_l_yach7MUt3EIeLVMSZaVcVfnRd6GEv9DnlGA4mKLA%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jTFZ3Wmp6RkVjX0Y0eFNzY1FXTk5MWThscWtYdFkwcHZGZVhJMFlad1JrNEM2NmhR.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: EUIPO Trademarks Scraper API: 100M+ EU Trademarks TMview · Apify
+meta twitter:description: Scrape EUIPO + 70 IP offices via TMview: Nice class, applicant, status, dates, goods & services, image. AI likelihood-of-confusion clearance + trademark...
+meta twitter:image: https://apify.com/og-image/actor?actorName=EUIPO+Trademarks+Scraper%3A+100M%2B+EU%2FGlobal+Trademarks+via+TMview&uniqueName=dltik%2Feuipo-trademarks-scraper&categories=BUSINESS&users=173&runs=10K&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FMRMOy0Yrag1uDOhbC-actor-FzDQZFz3xYwrc4YvE-WDKJiQYmoA-euipo-trademarks-scraper.png&authorName=Walid&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2F_l_yach7MUt3EIeLVMSZaVcVfnRd6GEv9DnlGA4mKLA%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jTFZ3Wmp6RkVjX0Y0eFNzY1FXTk5MWThscWtYdFkwcHZGZVhJMFlad1JrNEM2NmhR.webp
+EUIPO Trademarks Scraper API: 100M+ EU Trademarks TMview · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,381 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview avatar]
+EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview
+Pricing
+from $0.00005 / actor start
+Try for free (https://console.apify.com/actors/FzDQZFz3xYwrc4YvE?addFromActorId=FzDQZFz3xYwrc4YvE)
+Go to Apify Store (/store)
+[EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview]
+EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview
+dltik/euipo-trademarks-scraper
+Try for free (https://console.apify.com/actors/FzDQZFz3xYwrc4YvE?addFromActorId=FzDQZFz3xYwrc4YvE)
+Copy setup prompt Copied
+Search 100M+ trademarks from EUIPO + 70 IP offices (USPTO, INPI, DPMA, WIPO Madrid). Nice class, status, dates, goods & services. AI brand-clearance + applicant→company. No API key. $0.01/result.
+Pricing
+from $0.00005 / actor start
+Rating
+0.0
+(0)
+Developer
+Walid (/dltik) Maintained by Community
+Actor stats
+1
+Bookmarked
+173
+Total users
+42
+Monthly active users
+1.2 hours
+Issues response
+14 days ago
+Last modified
+Categories
+Business (/store/categories/business)
+Features
+Limited permissions
+Share
+README (/dltik/euipo-trademarks-scraper) Input (/dltik/euipo-trademarks-scraper/input-schema) Pricing (/dltik/euipo-trademarks-scraper/pricing) API (/dltik/euipo-trademarks-scraper/api/python) Issues (/dltik/euipo-trademarks-scraper/issues/open)
+EUIPO Trademarks Scraper — 100M+ EU & Global Trademarks (TMview) + AI Brand Clearance #euipo-trademarks-scraper-100m-eu-and-global-trademarks-tmview-ai-brand-clearance
+[EUIPO Trademarks Scraper banner]
+⭐ Bookmark this actor → apify.com/dltik/euipo-trademarks-scraper (/dltik/euipo-trademarks-scraper) — Apify ranks by bookmarks, so it directly drives the visibility of this scraper. One click. No signup beyond your existing Apify account.
+Scrape 100M+ trademarks from EUIPO and 70+ national IP offices (USPTO, INPI France, DPMA Germany, WIPO Madrid, JPO Japan, UKIPO, CNIPA China and more) via the official TMview backend ( tmdn.org ) operated by the EU Intellectual Property Office. Filter by Nice class, status, office, application date, mark type — then go further than any other scraper: AI likelihood-of-confusion brand clearance , applicant → company resolution , free lifecycle & renewal signals , and a scheduled trademark-watch mode. No API key, no OAuth, no monthly quota — $0.01 per trademark, the disruptive sweet spot vs $0.10 elsewhere.
+✨ What makes this EUIPO trademarks scraper different #what-makes-this-euipo-trademarks-scraper-different
+Feature	This scraper	Other EUIPO scrapers
+Price per result	$0.01	$0.05 - $0.10
+Coverage (offices)	70+ IP offices via TMview	EUIPO-only
+Full goods & services text (per Nice class)	✅ (enrichDetails)	❌ / extra fee / needs your OAuth
+No OAuth / no API key (self-serve)	✅	often needs your EUIPO credentials
+AI likelihood-of-confusion (brand clearance)	✅ (analyzeClearance)	❌
+Free computed conflict score (phonetic + name + Nice)	✅ (referenceMark)	❌
+Applicant → company record (SIREN + size + status)	✅ (enrichApplicant)	❌
+Free lifecycle signals (days-to-expiry, opposition window, renewal-due)	✅	rare / paid
+Trademark watch (only new/updated marks on a schedule)	✅ (incrementalMode)	❌
+Nice + Vienna classification arrays	✅	partial
+Concurrent detail enrichment (fast on big runs)	✅	❌
+Success rate (live 30d)	100%	varies
+What can this EUIPO trademark scraper do? #what-can-this-euipo-trademark-scraper-do
+🇪🇺 100M+ live trademarks indexed by the EU IP Office's TMview (every active EUIPO trademark + 70+ national IP offices including USPTO, INPI, DPMA, WIPO Madrid)
+🔎 Multi-criteria search — name, applicant/owner, Nice class, status, office, mark type, application date range
+🔢 Lookup by filing or registration number — paste a list of application or registration numbers and get each mark's full record (bulk portfolio checks, docketing, IP audits)
+🧠 AI brand-clearance / likelihood-of-confusion (analyzeClearance) — score every existing mark against a proposed brand name the way an EU examiner would: semantic (meaning) similarity, goods & services conflict, an overall confusion score, a verdict and a recommended action
+🎯 Free computed conflict score (referenceMark) — even without AI, every result is scored against your proposed mark: Jaro-Winkler name distance + phonetic match (Metaphone/Soundex) + Nice-class overlap → a 0-100 computed_conflict_score
+🏢 Applicant → company intelligence (enrichApplicant) — resolve the brand owner to a real company: French applicants to their SIREN + size + sector + active/ceased status, other countries to the matching national company-registry actor
+📅 Free lifecycle & renewal signals — every mark returns lifecycle_stage , days_until_expiry , renewal_due_soon , and an opposition_open window with days left — no enrichment needed
+👀 Trademark watch (incrementalMode) — schedule it and receive only NEW and UPDATED marks (competitor filings, status changes) since the last run
+📝 Full goods & services text (enrichDetails) — the complete descriptive wording per Nice class, the field most EUIPO scrapers omit or hide behind your own OAuth
+🎨 Nice + Vienna classification — numeric Nice classes plus Vienna image codes for figurative/combined marks
+🚀 HTTP-only, no API key — TMview is a free public service from the EUIPO (Apify datacenter proxy is enabled by default to avoid edge IP filtering)
+Brand clearance & likelihood of confusion — the premium wedge #brand-clearance-and-likelihood-of-confusion-the-premium-wedge
+Commercial trademark platforms (Corsearch, CompuMark, Markify) sell likelihood-of-confusion screening for $300–500 per mark per year . This actor puts the same core capability behind a single input flag.
+Set referenceMark to the brand name you want to clear (and optionally referenceNiceClasses for the goods/services you'd use it in). Every result then carries a clearance object:
+Free tier (just referenceMark ): mark_similarity (Jaro-Winkler), phonetic_match (Metaphone/Soundex), nice_overlap , computed_conflict_score (0–100) and a computed_conflict_band (high/medium/low/none).
+AI tier ( analyzeClearance: true , paid plans): adds semantic_similarity (catches translations & synonyms — "SUN" vs "SOLEIL"), goods_conflict , an overall likelihood_of_confusion , a verdict (clear / caution / high_risk), a recommended_action and one-line reasoning .
+⚖️ Screening triage to prioritise professional review — not legal advice .
+What data can you extract per trademark? #what-data-can-you-extract-per-trademark
+Fields marked ⭐ require enrichDetails: true (billed as trademark-detail ). 🏢 requires enrichApplicant . 🧠 requires referenceMark / analyzeClearance . Everything else comes from the base search at $0.01/result.
+Field	Description
+st13	TMview unique global ID (office code + sequential ID)
+application_number	Office-level application number
+mark_name	Verbal element of the mark
+mark_type	Word , Figurative , Combined , 3-D , Sound , Colour , Hologram , Motion
+office_code	Two-letter IP office ( EM = EUIPO, FR = INPI, DE = DPMA, US = USPTO, WO = WIPO, ...)
+status	Registered , Filed , Application published , Application opposed , Ended , Expired ...
+lifecycle_stage	Normalized: registered / pending / expired / ended / unknown
+is_active	true when the mark is registered or still in prosecution
+days_until_expiry	Days from today to expiration (negative if lapsed)
+renewal_due_soon	true when expiry is within 180 days
+opposition_open / opposition_days_left	Whether the opposition window is still open + days left
+application_date	YYYY-MM-DD
+nice_classes	Array of Nice class numbers ( [9, 38, 41, 42] )
+vienna_codes	Array of Vienna image classification codes (figurative/combined marks)
+applicant_name / applicant_names	Primary applicant + full list
+territories_protected	Country codes where the mark is enforced (Madrid + EU)
+mark_image_url / mark_thumbnail_url	TMview-hosted mark image + thumbnail
+tmview_url / office_record_url	Deep links to TMview + the originating IP office
+scraped_at	ISO-8601 UTC timestamp
+registration_number / registration_date / expiration_date	Office registration data (from the search for most offices; refreshed by enrichDetails )
+opposition_period_start / opposition_period_end / opposition_deadline	Opposition window dates (when the office publishes them)
+⭐ status_detail / status_date / kind_mark	Detailed status + Individual / Collective / Certification
+⭐ goods_and_services	Array of {nice_class, description} — full descriptive wording per class
+⭐ applicants_detail	Array of {name, country, address}
+⭐ representatives / renewals	Legal representative(s) + renewal history
+🏢 applicant_company	Resolved French company: siren , legal_name , naf_code , sector , employee_range , is_active , risk_flag
+🏢 registry_hint	For non-FR applicants: pointer to the matching national company-registry actor
+🧠 clearance	{mark_similarity, phonetic_match, nice_overlap, computed_conflict_score, computed_conflict_band} + AI {semantic_similarity, goods_conflict, likelihood_of_confusion, verdict, recommended_action, reasoning}
+How to scrape EUIPO trademarks in 5 steps #how-to-scrape-euipo-trademarks-in-5-steps
+Create a free Apify account (/sign-up) — no credit card required
+Open EUIPO Trademarks Scraper (/dltik/euipo-trademarks-scraper) on Apify Store
+Enter query — brand name or keyword ( apple , louis vuitton , tesla )
+Optionally filter — offices=['EM'] , niceClasses=[9, 42] , statuses=['Registered'] ; set enrichDetails=true for full dates + goods & services, enrichApplicant=true for company data, referenceMark + analyzeClearance=true for AI clearance
+Click Start — clean JSON in seconds, exportable to CSV / JSON / Excel
+How much does it cost to scrape EUIPO trademarks? #how-much-does-it-cost-to-scrape-euipo-trademarks
+PAY_PER_EVENT — $0.01 per trademark result ($10 per 1,000). Failed/empty runs are not charged. Optional add-ons are OFF by default and billed only when you enable them:
+Event	When	Price
+trademark-result	every mark (identity, status, Nice/Vienna, applicant, + free lifecycle & conflict score )	$0.01
+trademark-detail	enrichDetails — reg/expiry/opposition dates + full goods & services + representatives + renewals	+$0.01
+applicant-enriched	enrichApplicant — only for applicants resolved to a real company (FR SIREN)	+$0.005
+clearance-analyzed	analyzeClearance — AI likelihood-of-confusion per mark (paid plans)	+$0.02
+Still far under the $0.05–$0.10 competitors charge for less data — and none of them offer AI clearance, applicant intelligence, or watch mode at any price.
+Run size	Trademarks	Base ($0.01)	+ Detail ($0.02)	+ AI clearance ($0.04)
+Quick test	30	$0.30	$0.60	$1.20
+Standard	300	$3.00	$6.00	$12.00
+Deep	1,000	$10.00	$20.00	$40.00
+Input parameters #input-parameters
+Parameter	Type	Default	Description
+query	string	—	Brand name / keyword search
+applicantName	string[]	[]	Owner/applicant name search (OR between names, AND with query )
+applicationNumbers	string[]	[]	Exact filing (application) numbers, e.g. 018000001 — one lookup per number, de-duplicated
+registrationNumbers	string[]	[]	Exact registration numbers, e.g. 1156585 + offices=['US']
+offices	string[]	[] (all)	Office codes: EM , FR , DE , US , WO , JP , UK , ...
+statuses	string[]	[] (all)	Registered , Filed , Expired , Application published , ...
+niceClasses	int[]	[] (all)	Nice class numbers 1 - 45
+tmTypes	string[]	[] (all)	Word , Figurative , Combined , 3-D , Sound , Colour
+applicationDateFrom / applicationDateTo	string	—	YYYY-MM-DD window
+enrichDetails	boolean	false	Full detail per result (dates, goods & services, representatives, renewals). +$0.01/result. Fetched concurrently.
+enrichApplicant	boolean	false	Resolve applicant → company (FR SIREN live; other countries → registry pointer). +$0.005/resolved.
+referenceMark	string	—	Proposed brand name to clear → free computed conflict score on every result
+referenceNiceClasses	int[]	[]	Intended Nice classes — sharpens the clearance score
+analyzeClearance	boolean	false	AI likelihood-of-confusion vs referenceMark (paid plans). +$0.02/mark.
+referenceGoods	string	—	Free-text intended goods/services, for AI clearance context
+incrementalMode	boolean	false	Watch mode: only NEW/UPDATED marks on recurring runs
+includeUnchanged / includeExpired	boolean	false	Also emit unchanged marks / expired markers (watch mode)
+stateKey	string	default	Namespace for the watch baseline
+detailConcurrency	integer	4	Parallel detail requests (1-8) when enrichDetails is on
+pageSize	integer	100	TMview page size (1-100)
+maxResults	integer	30	1-5000
+proxyConfig	object	datacenter	Apify datacenter proxy enabled by default
+Output example #output-example
+[Sample output — EUIPO Trademarks Scraper]
+Record with enrichDetails + enrichApplicant + referenceMark: "APPEL" + analyzeClearance :
+{
+"st13" : "EM500000000000753" ,
+"mark_name" : "APPLE" ,
+"mark_type" : "Word" ,
+"office_code" : "EM" ,
+"status" : "Registered" ,
+"lifecycle_stage" : "registered" ,
+"is_active" : true ,
+"days_until_expiry" : 3562 ,
+"renewal_due_soon" : false ,
+"opposition_open" : false ,
+"application_date" : "1996-04-01" ,
+"registration_date" : "1999-02-03" ,
+"expiration_date" : "2036-04-01" ,
+"nice_classes" : [ 9 , 16 , 38 , 41 , 42 ] ,
+"goods_and_services" : [
+{ "nice_class" : 9 , "description" : "Computers, computer terminals, keyboards ..." }
+] ,
+"applicant_name" : "Apple Inc." ,
+"applicant_company" : null ,
+"registry_hint" : { "country" : "US" , "registry_actor" : "usa-ny-company-registry-scraper" , "registry_actor_url" : "https://apify.com/dltik/usa-ny-company-registry-scraper" } ,
+"clearance" : {
+"reference_mark" : "APPEL" ,
+"mark_similarity" : 0.907 ,
+"phonetic_match" : true ,
+"nice_overlap" : [ 9 , 42 ] ,
+"computed_conflict_score" : 88 ,
+"computed_conflict_band" : "high" ,
+"semantic_similarity" : 20 ,
+"goods_conflict" : 90 ,
+"likelihood_of_confusion" : 82 ,
+"verdict" : "high_risk" ,
+"recommended_action" : "avoid" ,
+"reasoning" : "Near-identical spelling and phonetics with heavy Nice-class 9/42 overlap makes confusion likely."
+} ,
+"tmview_url" : "https://www.tmdn.org/tmview/#/tmview/detail/EM500000000000753" ,
+"scraped_at" : "2026-07-01T12:32:01Z"
+}
+Use cases — trademark watch, brand clearance & IP intelligence #use-cases-trademark-watch-brand-clearance-and-ip-intelligence
+🧠 Brand clearance / naming — before you file, run your candidate name as referenceMark with analyzeClearance and get every conflicting mark ranked by likelihood of confusion across EU + national offices
+👀 Trademark watch services — schedule incrementalMode on a watchlist and receive only newly-filed or status-changed marks (competitor look-alikes) each day/week
+🏢 Brand-owner lead-gen & competitive intel — enrichApplicant turns "who owns this mark" into a full company profile (SIREN, size, sector, active/ceased) — impossible with a trademark-only scraper
+⚖️ IP attorney prior-art search — pull every trademark named X across EU + national offices in seconds, ranked by Nice class, with full goods & services text
+🚨 Opposition & renewal alerts — surface every mark whose opposition_open window or renewal_due_soon flag fires within your horizon
+📊 IP portfolio analytics — aggregate application_date × office × Nice class × applicant to map filing trends and competitor portfolios
+Use the EUIPO scraper via API #use-the-euipo-scraper-via-api
+import requests
+run = requests . post (
+"https://api.apify.com/v2/acts/dltik~euipo-trademarks-scraper/run-sync-get-dataset-items" ,
+headers = { "Authorization" : "Bearer YOUR_APIFY_TOKEN" , "Content-Type" : "application/json" } ,
+json = {
+"query" : "lumina" ,
+"offices" : [ "EM" , "FR" ] ,
+"referenceMark" : "lumina" ,
+"referenceNiceClasses" : [ 9 , 42 ] ,
+"analyzeClearance" : True ,
+"enrichDetails" : True ,
+"maxResults" : 50
+}
+) . json ( )
+print ( f"Scraped { len ( run ) } trademarks" )
+FAQ #faq
+Is this an official EUIPO API?
+TMview ( tmdn.org ) is the official EU Intellectual Property Office trademark search backend, aggregating EUIPO + 70 national IP offices. This scraper hits the same public JSON endpoint the TMview web UI calls — no HTML parsing, no anti-bot circumvention.
+How is the AI likelihood-of-confusion different from the free conflict score?
+The free computed_conflict_score (from referenceMark ) is string-level: Jaro-Winkler distance + phonetic keys + Nice-class overlap. The AI layer ( analyzeClearance ) adds meaning : it catches translations, synonyms and conceptual overlap ("SUN"/"SOLEIL"), and it reasons about goods & services conflict the way an EU examiner does. Use the free score to triage cheaply, then AI on the shortlist. It's screening triage, not legal advice.
+What's the difference vs the nexgendata/euipo-esearch-trademarks actor?
+Price ($0.01 vs $0.10), coverage (70+ offices vs EUIPO-only), and depth: we return goods & services, opposition data, applicant-company resolution, lifecycle signals and AI clearance — none of which it offers. And we're self-serve (no BYO EUIPO OAuth, unlike the actors that do return goods & services).
+Will TMview rate-limit my runs?
+TMview has a soft ~3-5 req/s limit. Detail enrichment runs through a small concurrent pool with exponential backoff on 429, so even a 5,000-mark enriched run finishes comfortably inside the actor timeout. Datacenter proxy is enabled by default.
+Does the watch mode charge me for everything every run?
+No. In incrementalMode only NEW and UPDATED marks are emitted and billed; unchanged marks are skipped (unless you set includeUnchanged ). That's what makes daily brand monitoring cheap.
+⭐ Found this EUIPO Trademarks Scraper useful? Bookmark it (/dltik/euipo-trademarks-scraper) — Apify ranks actors by bookmarks, so it's the strongest single signal for Store visibility. One click.
+The dltik IP intelligence suite #the-dltik-ip-intelligence-suite
+Trademarks are one right — cover the whole IP + company graph with the rest of the suite:
+Actor	What it does	Price
+Espacenet Patents Scraper (/dltik/espacenet-patents-scraper)	130M patents from EPO (Espacenet)	$0.015/patent
+USPTO Patents Scraper (/dltik/uspto-patents-scraper)	US patents via PatentsView	$0.01/patent
+Pappers Sirene Scraper (/dltik/pappers-sirene-scraper)	26M French companies (SIREN/SIRET) — powers enrichApplicant	$0.008/result
+INPI MCP Server (/dltik/mcp-server-inpi)	French IP (patents/trademarks/designs) for AI agents	$0.01/tool-call
+BODACC Scraper (/dltik/bodacc-fr-scraper)	French commercial court announcements	$0.003/record
+SEC EDGAR MCP Server (/dltik/mcp-server-sec-edgar)	US public companies for AI agents	$0.01/tool-call
+TED Europa Scraper (/dltik/ted-europa-scraper)	EU public procurement tenders	$0.005/tender
+Pappers MCP Server (/dltik/mcp-server-pappers)	French company data for Claude / GPT	$0.01/tool-call
+License: MIT · Author: dltik (/dltik)
+You might also like
+Pige Immo FR: 20 Portals, Address + Price Tracking dltik/pige-immo-fr-scraper Scrape 20 French real estate portals in one run: Leboncoin, SeLoger, PAP, iad, Orpi, Century 21, Foncia, Capifrance, SAFTI and more. Resolve the exact address of anonymized listings, track price drops and days on market, flag under-priced sellers. For agents, pige and CRM prospecting. $5/1K. Walid 209 5.0 (3) (/dltik/pige-immo-fr-scraper)
+Google Search Results Scraper apify/google-search-scraper Scrape Google Search Engine Results Pages (SERPs). Select the country or language and extract organic and paid results, AI Mode, AI overviews, ads, queries, People Also Ask, prices, reviews, like a Google SERP API. Export data, run the scraper via API, schedule runs, or integrate with other tools. Apify 231K 4.7 (218) (/apify/google-search-scraper)
+Google Maps Scraper - Most Comprehensive kaix/google-maps-places-scraper 🔥 ~$0.06/1K places + FREE contact details (email, phone, and more..) 🔥 Scrape businesses and locations with 76+ fields per place including photos, review breakdowns, owner info, contacts, coordinates, and 30+ service options. Just type a keyword and location. Kai 2K 4.3 (4) (/kaix/google-maps-places-scraper)
+Bluesky Scraper | Enterprise Grade fatihtahta/All-In-One-Bluesky-Scraper Extract Bluesky posts and full comment threads from searches, subreddits, user pages, and direct post URLs. Built for enterprise-grade speed, richest-in-class data coverage, advanced filtering, and clean JSON for market intelligence, sentiment analysis, and analytics. Fatih Tahta 243 5.0 (2) (/fatihtahta/all-in-one-bluesky-scraper)
+Trustpilot Reviews Scraper automation-lab/trustpilot Scrape Trustpilot reviews by company domain: rating, text, reviewer country, verification, company replies and TrustScore. Filter by stars, language, date or a publishedAfter cursor for daily review monitoring. Pay per review plus a $0.005 run start fee. Automation Lab 4K 5.0 (1) (/automation-lab/trustpilot)
+Google Ads Transparency Scraper solidcode/ads-transparency-scraper [💰 $0.80 / 1K] Affordable and effective | Extract ad creatives from Google Ads Transparency Center. Search by keyword, domain, or advertiser ID with filters for platform, region, and date range. SolidCode 2.8K 1.9 (4) (/solidcode/ads-transparency-scraper)
+Website Content Crawler apify/website-content-crawler Crawl websites and extract text content to feed AI models, LLM applications, vector databases, or RAG pipelines. The Actor supports rich formatting using Markdown, cleans the HTML, downloads files, and integrates well with 🦜🔗 LangChain, LlamaIndex, and the wider LLM ecosystem. Apify 176K 4.6 (235) (/apify/website-content-crawler)
+Trademark Search — USPTO Serial + IP Australia Name Search nexgendata/uspto-trademark-search Trademark due diligence and brand clearance: look up US trademarks by serial/registration number from the official USPTO TSDR source, and search brand names across the IP Australia register. JSON: mark, owner, status, serial/registration, dates, class, goods/services. No API key. Pay per record. NexGenData 50 (/nexgendata/uspto-trademark-search)
+Global Trademark Search Scraper - 77 Offices Worldwide scrapers_lat/tmview-global-trademarks-scraper Search 145M+ trademarks from 77 national and regional registers at once: mark text, owner name and address, representative, status, Nice classes, goods and services wording, oppositions, priority and seniority claims. JSON, CSV, Excel. Scrapers Lat 35 (/scrapers_lat/tmview-global-trademarks-scraper)
+Website Screenshot Generator apify/screenshot-url Create a screenshot of a website based on a specified URL. The screenshot is stored as the output in a key-value store. It can be used to monitor web changes regularly after setting up the scheduler. Apify 10K 3.9 (20) (/apify/screenshot-url)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)

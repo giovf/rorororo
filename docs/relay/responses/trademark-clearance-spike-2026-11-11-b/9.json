@@ -1,0 +1,1402 @@
+{
+    "@graph": [
+        {
+            "@id": "http://data.europa.eu/88u/distribution/211355bb-8227-4c03-a1f2-240a8989bdf3",
+            "dct:description": [
+                {
+                    "@language": "ro-t-en-t0-mtec",
+                    "@value": "Acesta este un tabel complementar tm cu denumirea mărcilor și descrierea (descrierile) produselor protejate de marcă în limba engleză.\n  Tabelele tm_gands_99 unde 99 este 1.. 57\nExemplu tm_gands_31.csv\nTabel cu informații privind EUTM, câte un rând pentru fiecare aplicație și clasa Nisa; 4 511 307 înregistrează 5 câmpuri (1996-04-01-2020-01-21)\n câmpul 1: aplicație_code (999999999, cheia EUTM) \ncâmpul 2:\nNice_class (99, Cod Nisa al produsului)\n\ncâmpul 3:\ntm_verbal_element [[element verbal al mărcii (dacă există)]\n\ncâmpul 4:\nproduct_desc [descrierea produsului mărcii (engleză))]\n\ncâmpul 5:\nSerie (99, numărul fișierului)"
+                },
+                {
+                    "@language": "en",
+                    "@value": "This is a complementary of table of tm with the name of the trade marks and the description(s) of the products protected by the trade mark in English.  \r\nTables tm_gands_99 where 99 is  1 .. 57 \r\nExample tm_gands_31.csv \r\nTable with EUTM info, one line per application and Nice class,\r\n4 511 307 records 5 fields (1996-04-01 to 2020-01-21)\r\nfield 1: appli_code\t\t(999999999, EUTM key)\r\nfield 2: Nice_class\t\t(99, Nice code of product)\r\nfield 3: tm_verbal_element\t((verbal element of the trade mark (if any))\r\nfield 4: product_desc\t\t(product description of the trade mark (English))\r\nfield 5: serie\t\t\t(99, number of the file)"
+                },
+                {
+                    "@language": "nl-t-en-t0-mtec",
+                    "@value": "Dit is een aanvulling op de tabel van tm met de naam van de merken en de beschrijving(en) van de door het merk beschermde waren in het Engels.\n Tabellen tm_gands_99 waar 99 1. 57 Voorbeeld tm_gands_31.csv\nTabel met informatie over het EUTM, één regel per aanvraag en klasse Nice,\n 4 511 307 records 5 velden (1996-04-01 tot en met 2020-01-21)\nveld 1: appli_code (999999999, EUTM-sleutel)\n\nveld 2:\nNice_class (99, code van het product van Nice)\n\nveld 3:\ntm_verbal_element (woordelijk element van het merk (indien van toepassing))\n\nveld 4:\nproduct_desc (productbeschrijving van het merk (Engels))\n\nveld 5:\nserie (99, nummer van het dossier)"
+                },
+                {
+                    "@language": "sv-t-en-t0-mtec",
+                    "@value": "Detta är ett komplement till tabellen på tm med varumärkenas namn och beskrivning(ar) av de varor som skyddas av varumärket på engelska.\n Tabeller tm_gands_99 där 99 är 1.. 57 Exempel tm_gands_31.csv\nTabell med EUTM-information, en rad per ansökan och Nice-klass.\n 4 511 307 poster 5 fält (1996–04–01 till 2020–01–21)\nfält 1: appli_code (999999999, EUTM nyckel)\n\nfält 2:\nNice_class (99, fin produktkod)\n\nfält 3:\ntm_verbal_element (ordelement i varumärket (om sådant finns))\n\nfält 4:\nproduct_desc (varubeskrivning av varumärket (engelska))\n\nfält 5:\nSerie (99, ärendenummer)"
+                },
+                {
+                    "@language": "et-t-en-t0-mtec",
+                    "@value": "See täiendab tabeli tm nimetust ja kaubamärgiga kaitstud toodete kirjeldust (kirjeldusi) inglise keeles. \nTabelid tm_gands_99 kus 99 on 1.. 57\nNäide tm_gands_31.csv\nTabel koos ELi kaubamärgi teabega, üks rida iga taotluse ja Nice’i klassi kohta;\n4 511 307 kirjet 5 välja (1996–04–01 kuni 2020–01–21)\nväli: rakenduskood (999999999, ELi kaubamärgi võti)\nväli: Nice_klass (99, Nice’i tootekood)\nväli: tm_verbal_element (kaubamärgi sõnaline osa (kui see on olemas))\nväli: product_desc (kaubamärgi kauba kirjeldus (inglise keeles))\nväli: Serie (99, faili number)"
+                },
+                {
+                    "@language": "cs-t-en-t0-mtec",
+                    "@value": "Jedná se o komplementární tabulku tm s názvem ochranných známek a popisem (názvy) výrobků chráněných ochrannou známkou v angličtině. \nTabulky tm_gands_99 kde 99 je 1.. 57\nPříklad tm_gands_31.csv\nTabulka s informacemi o ochranné známce EU, jedním řádkem pro každou aplikaci a třídou Nice,\n4 511 307 záznamů 5 polí (1996–04–01 až 2020–01–21)\npole 1: kód aplikace (999999999, klíč ochranné známky EU)\npole 2: Nice_class (99, Nice kód produktu)\npole 3: tm_verbal_element (verbální prvek ochranné známky (pokud existuje))\npole 4: product_desc (popis výrobku ochranné známky (angličtina))\npole 5: Serie (99, číslo spisu)"
+                },
+                {
+                    "@language": "de-t-en-t0-mtec",
+                    "@value": "Dies ist eine Ergänzung der Tabelle tm mit dem Namen der Marken und der Beschreibung(en) der durch die Marke geschützten Waren in englischer Sprache. \nTabellen tm_gands_99, wobei 99 1.. 57\nBeispiel tm_gands_31.csv\nTabelle mit EUTM-Info, eine Zeile pro Anwendung und Nizza-Klasse,\n4 511 307 Datensätze 5 Felder (1996-04-01 bis 2020-01-21)\nFeld 1: appli_code (999999999, EUTM-Schlüssel)\nFeld 2: Nice_class (99, Nice code of product)\nFeld 3: tm_verbal_element ((verbales Element der Marke (falls vorhanden))\nFeld 4: product_desc (Produktbeschreibung der Marke (Englisch))\nFeld 5: Serie (99, Nummer der Datei)"
+                },
+                {
+                    "@language": "el-t-en-t0-mtec",
+                    "@value": "Πρόκειται για συμπληρωματικό πίνακα με την ονομασία των σημάτων και την περιγραφή των προϊόντων που προστατεύονται από το σήμα στην αγγλική γλώσσα. \nΠίνακες tm_gands_99 όπου 99 είναι 1.. 57\nΠαράδειγμα tm_gands_31.csv\nΠίνακας με πληροφορίες EUTM, μία γραμμή ανά αίτηση και κλάση Νίκαιας,\n4 511 307 εγγραφές 5 πεδία (1996-04-01 έως 2020-01-21)\nπεδίο 1: appli_code (9999999, κλειδί EUTM)\nπεδίο 2: Nice_class (99, κωδικός Νίκαιας του προϊόντος)\nπεδίο 3: tm_verbal_element [[λεκτικό στοιχείο του σήματος (εάν υπάρχει)]\nπεδίο 4: product_desc (Περιγραφή προϊόντος του σήματος (English))\nπεδίο 5: Serie (99, αριθμός του αρχείου)"
+                },
+                {
+                    "@language": "ga-t-en-t0-mtec",
+                    "@value": "Is comhlánú é seo ar thábla tm le hainm na dtrádmharcanna agus le tuairisc/tuairiscí na dtáirgí atá faoi chosaint ag an trádmharc i mBéarla.\n Táblaí tm_gands_99 áit a bhfuil 99. 57 Sampla tm_gands_31.csv\nTábla le EUTM info, líne amháin in aghaidh an iarratais agus rang Nice,\n 4 511 307 taifead 5 réimse (1996-04-01 go 2020-01-21)\nréimse 1: appli_code (999999999, eochair EUTM)\n\nréimse 2:\nNice_aicme (99, Cód táirge Nice)\n\nréimse 3:\ntm_verbal_eilimint (eilimint bhriathartha an trádmhairc (más ann di))\n\nréimse 4:\nproduct_desc (tuairisc ar an táirge ar an trádmharc (Béarla))\n\nréimse 5:\nSerie (99, uimhir an chomhaid)"
+                },
+                {
+                    "@language": "lt-t-en-t0-mtec",
+                    "@value": "Tai papildo tm lentelę su prekių ženklų pavadinimu ir prekių ženklu saugomų produktų aprašymu (-ais) anglų kalba. \nLentelės tm_gands_99, kur 99 yra 1.. 57\nPavyzdys tm_gands_31.csv\nLentelė su EUTM informacija, viena eilutė kiekvienai paraiškai ir Nicos klasei,\n4 511 307 įrašo 5 laukus (nuo 1996–04–01 iki 2020–01–21)\n1 laukelis. Appli_kodas (999999999, EUTM raktas)\n\n2 laukelis.\nNice_class (99, gražus produkto kodas)\n\n3 laukelis.\ntm_verbal_element ((prekių ženklo žodinis elementas (jei yra))\n\n4 laukelis.\nproduct_desc (prekių ženklo prekės aprašymas (anglų k.))\n\n5 laukelis.\nSerie (99, bylos numeris)"
+                },
+                {
+                    "@language": "hr-t-en-t0-mtec",
+                    "@value": "To je dopuna tablice tm s nazivom žigova i opisima proizvoda zaštićenih žigom na engleskom jeziku.\n Tablice tm_gands_99 gdje je 99. 57  Primjer tm_gands_31.csv\nTablica s informacijama o žigu EU-a, jedan redak po prijavi i razred u Nici, 4 511 307 bilježi 5 polja (1996 – 04 – 01 do 2020 – 01 – 21)\npolje 1.:\nAppli_code (999999999, ključ žiga EU-a) polje 2.:\nNice_class (99, Nice kod proizvoda)\npodručje 3.: tm_verbal_element (verbalni element žiga (ako postoji)) polje 4.:\nproduct_desc (opis proizvoda žiga (engleski))  polje 5.: Serie (99, broj datoteke) To je dopuna tablice tm s nazivom žigova i opisima proizvoda zaštićenih žigom na engleskom jeziku.\n\n\nTablice tm_gands_99 gdje je 99.\n57\n\nPrimjer tm_gands_31.csv\n\nTablica s informacijama o žigu EU-a, jedan redak po prijavi i razred u Nici,\n\n4 511 307 bilježi 5 polja (1996 – 04 – 01 do 2020 – 01 – 21)\n\npolje 1.:\nAppli_code (999999999, ključ žiga EU-a)\n\npolje 2.:\nNice_class (99, Nice kod proizvoda)\n\npodručje 3.:\ntm_verbal_element (verbalni element žiga (ako postoji))\n\npolje 4.:\nproduct_desc (opis proizvoda žiga (engleski))\n\npolje 5.:\nSerie (99, broj datoteke)"
+                },
+                {
+                    "@language": "da-t-en-t0-mtec",
+                    "@value": "Dette er et supplement til tabel tm med varemærkernes navn og beskrivelse(r) af de varer, der er beskyttet af varemærket, på engelsk.\n Tabeller tm_gands_99 hvor 99 er 1.. 57 Eksempel tm_gands_31.csv\nTabel med oplysninger om EU-varemærket, én linje pr. ansøgning og Nice-klasse\n 4 511 307 poster 5 felter (1996-04-01 til 2020-01-21)\nfelt 1: appli_code (999999999, EUTM nøgle)\n\nfelt 2:\nNice_class (99, Nicekode for produktet)\n\nfelt 3:\ntm_verbal_element ((varemærkets ordbestanddel (eventuelt))\n\nfelt 4:\nproduct_desc (varebeskrivelse af varemærket (engelsk))\n\nfelt 5:\nSerie (99, filnummer)"
+                },
+                {
+                    "@language": "pt-t-en-t0-mtec",
+                    "@value": "Trata-se de um complemento do quadro tm com o nome das marcas e a(s) designação(ões) dos produtos protegidos pela marca em inglês.\n Tabelas tm_gands_99 onde 99 é 1. 57 Exemplo tm_gands_31.csv\nQuadro com informações da EUTM, uma linha por aplicação e classe Nice,\n 4 511 307 registos 5 campos (1996-04-01 a 2020-01-21)\ncampo 1: appli_code (999999999, chave MUE)\n\ncampo 2:\nNice_class (99, Nice code of product)\n\ncampo 3:\ntm_verbal_element ((elemento verbal da marca (se for caso disso))\n\ncampo 4:\nproduct_desc (Descrição do produto da marca (inglês))\n\ncampo 5:\nsérie (99, número do processo)"
+                },
+                {
+                    "@language": "fi-t-en-t0-mtec",
+                    "@value": "Tämä täydentää tm-taulukkoa tavaramerkkien nimen ja tavaramerkillä suojattujen tuotteiden englanninkielisten kuvausten kanssa. \nTaulukot tm_gands_99, joissa 99 on 1. 57\nEsimerkki tm_gands_31.csv\nTaulukko, jossa on EUTM-tiedot, yksi rivi hakemusta ja Nizzan luokkaa kohti,\n4 511 307 kirjaa 5 kenttää (1996–04–01–2020–01–21)\nkenttä 1: appli_code (999999999, EUTM avain)\nkenttä 2: Nice_class (99, Mukava tuotekoodi)\nkenttä 3: tm_verbal_element (tavaramerkin sanallinen osa (jos sellainen on))\nkenttä 4: product_desc (tavaramerkin kuvaus (englanniksi))\nkenttä 5: Serie (99, tiedoston numero)"
+                },
+                {
+                    "@language": "mt-t-en-t0-mtec",
+                    "@value": "Dan huwa komplementarju tat-tabella tm bl-isem tat-trade marks u d-deskrizzjoni(jiet) tal-prodotti protetti mit-trade mark bl-Ingliż.\nTabelli tm_gands_99 fejn 99 huwa 1..\n57  Eżempju tm_gands_31.csv Tabella bl-informazzjoni tal-EUTM, linja waħda għal kull applikazzjoni u l-klassi ta’ Nizza,\n 4 511 307 rekords 5 oqsma (1996–04–01 sa 2020–01–21)  qasam 1: applikazzjoni_code (999999999, ċavetta tal-EUTM)  qasam 2:Nizza_klassi (99, Kodiċi tal-prodott ta’ Nizza)\n qasam 3: tm_verbal_element ((element verbali tat-trade mark (jekk ikun hemm))\n\nqasam 4:\nproduct_desc (deskrizzjoni tal-prodott tat-trade mark (Ingliż))\n\nqasam 5:\nSerie (99, numru tal-fajl)"
+                },
+                {
+                    "@language": "es-t-en-t0-mtec",
+                    "@value": "Se trata de un complemento de la tabla de tm con el nombre de las marcas y la descripción o descripciones de los productos protegidos por la marca en inglés. \nTablas tm_gands_99 donde 99 es 1. 57\nEjemplo tm_gands_31.csv\nTabla con información de la EUTM, una línea por aplicación y clase Niza,\n4 511 307 registra 5 campos (1996-04-01 a 2020-01-21)\ncampo 1: appli_code (999999999, tecla EUTM)\ncampo 2: Nice_class (99, Código de producto de Niza)\ncampo 3: tm_verbal_element [[elemento verbal de la marca (en su caso)]\ncampo 4: product_desc (descripción del producto de la marca (inglés))\ncampo 5: serie (99, número del expediente)"
+                },
+                {
+                    "@language": "bg-t-en-t0-mtec",
+                    "@value": "Това е допълнение към таблицата на tm с наименованието на марките и описанието(ята) на продуктите, защитени от марката на английски език.\nТаблици tm_gands_99 където 99 е 1.\n57  Пример tm_gands_31.csv Таблица с информация за марката на ЕС, по един ред за всяко заявление и клас от Ница,\n 4 511 307 записа 5 полета (1996—04—01 до 2020—01—21)  поле 1: appli_code (9999999, ключ за марка на ЕС)  поле 2:Nice_class (99, Ница код на продукта)\n поле 3: tm_verbal_element ((словесен елемент на марката (ако има такъв))\n\nполе 4:\nproduct_desc (описание на продукта на марката (английски))\n\nполе 5:\nсерия (99, номер на файла)"
+                },
+                {
+                    "@language": "pl-t-en-t0-mtec",
+                    "@value": "Jest to uzupełnienie tabeli tm z nazwą znaków towarowych i opisem(-ami) towarów chronionych znakiem towarowym w języku angielskim.\n Tabele tm_gands_99 gdzie 99 jest 1.. 57 Przykład tm_gands_31.csv\nTabela zawierająca informacje EUTM, jedną linię na aplikację i klasę Nicei,\n 4 511 307 zapisuje 5 pól (1996-04-01 do 2020-01-21)\npole 1: appli_code (999999999, klucz EUTM)\n\npole 2:\nNice_class (99, Nice kod produktu)\n\npole 3:\ntm_verbal_element (element słowny znaku towarowego (jeżeli występuje))\n\npole 4:\nproduct_desc (opis towaru znaku towarowego (ang. English))\n\npole 5:\nSerie (99, numer pliku)"
+                },
+                {
+                    "@language": "sk-t-en-t0-mtec",
+                    "@value": "Táto tabuľka dopĺňa tabuľku tm s názvom ochranných známok a opisom (opismi) výrobkov chránených ochrannou známkou v angličtine.\n Tabuľky tm_gands_99, kde 99 je 1.. 57  Príklad tm_gands_31.csv\nTabuľka s informáciami o OZEÚ, jedným riadkom na žiadosť a triedou v Nice, 4 511 307 záznamov 5 polí (1996 – 04 – 01 až 2020 – 01 – 21)\npole 1:\nappli_code (999999999, kľúč EUTM) pole 2:\nNice_class (99, pekný kód výrobku)\npole 3: tm_verbal_element (slovný prvok ochrannej známky (ak existuje)) pole 4:\nproduct_desc (opis výrobku ochrannej známky (angličtina))  pole 5: Serie (99, číslo súboru) Táto tabuľka dopĺňa tabuľku tm s názvom ochranných známok a opisom (opismi) výrobkov chránených ochrannou známkou v angličtine.\n\n\nTabuľky tm_gands_99, kde 99 je 1..\n57\n\nPríklad tm_gands_31.csv\n\nTabuľka s informáciami o OZEÚ, jedným riadkom na žiadosť a triedou v Nice,\n\n4 511 307 záznamov 5 polí (1996 – 04 – 01 až 2020 – 01 – 21)\n\npole 1:\nappli_code (999999999, kľúč EUTM)\n\npole 2:\nNice_class (99, pekný kód výrobku)\n\npole 3:\ntm_verbal_element (slovný prvok ochrannej známky (ak existuje))\n\npole 4:\nproduct_desc (opis výrobku ochrannej známky (angličtina))\n\npole 5:\nSerie (99, číslo súboru)"
+                },
+                {
+                    "@language": "fr-t-en-t0-mtec",
+                    "@value": "Il s’agit d’un complément du tableau de tm avec le nom des marques et la ou les description(s) des produits protégés par la marque en anglais.\n Tables tm_gands_99 où 99 est 1.. 57 Exemple tm_gands_31.csv\nTableau contenant des informations sur la marque de l’Union européenne, une ligne par demande et la classe Nice,\n 4 511 307 enregistre 5 champs (1996-04-01 à 2020-01-21)\ndomaine 1: appli_code (999999999, clé MUE)\n\ndomaine 2:\nNice_class (99), Code Nice du produit)\n\ndomaine 3:\ntm_verbal_element (élément verbal de la marque (le cas échéant))\n\ndomaine 4:\nproduct_desc (description du produit de la marque (en anglais))\n\ndomaine 5:\nsérie (99, numéro du dossier)"
+                },
+                {
+                    "@language": "lv-t-en-t0-mtec",
+                    "@value": "Tas papildina tm tabulu ar preču zīmju nosaukumu un preču zīmes aizsargāto preču aprakstu(-iem) angļu valodā.\n Tabulas tm_gands_99 kur 99 ir 1... 57 Piemērs tm_gands_31.csv\nTabula ar ESPZ informāciju, viena rinda katram lietojumam un Nicas klasei,\n 4 511 307 ieraksti 5 lauki (1996–04–01 līdz 2020–01–21)\nlauks: appli_code (9999999, ESPK atslēga)\n\nlauks:\nNicas_klase (99, produkta Nicas kods)\n\nlauks:\ntm_verbal_element (preču zīmes vārdiskais elements (ja tāds ir))\n\nlauks:\nProduct_desc (preču zīmes preces apraksts (angļu valodā))\n\nlauks:\nSerie (99, lietas numurs)"
+                },
+                {
+                    "@language": "hu-t-en-t0-mtec",
+                    "@value": "Ez a tm táblázat kiegészítése a védjegyek nevével és az oltalom alatt álló áruk angol nyelvű leírásával (leírásaival).\n Tm_gands_99 táblázat, ahol 99 az 1.. 57 Példa tm_gands_31.csv\nTáblázat az EUTM-információkkal, bejelentésenként egy sor és nizzai osztály,\n 4 511 307 rekord 5 mezőt (1996–04–01 2020–01–21)\nmező: appli_code (9999999, EUTM kulcs)\n\nmező:\nNice_class (99, Nizzai termékkód)\n\nmező:\ntm_verbal_element (a védjegy szóeleme (ha van))\n\nmező:\nproduct_desc (a védjegy árumegnevezése (angol))\n\nmező:\nSerie (99, a fájl száma)"
+                },
+                {
+                    "@language": "sl-t-en-t0-mtec",
+                    "@value": "To je dopolnilo razpredelnice tm z imenom blagovnih znamk in opisi proizvodov, zaščitenih z blagovno znamko, v angleščini.\n Tabele tm_gands_99, kjer je 99 1. 57 Primer tm_gands_31.csv\nTabela s podatki o blagovni znamki EU, ena vrstica na prijavo in Nice razred,\n 4 511 307 zapisov 5 polj (1996–04–01 do 2020–01–21)\npolje 1: Appli_code (999999999, ključ EUTM)\n\npolje 2:\nNice_class (99, Nice koda izdelka)\n\npodročje 3:\ntm_verbal_element (besedni element blagovne znamke (če obstaja))\n\npodročje 4:\nProduct_desc (opis proizvoda blagovne znamke (v angleščini))\n\npodročje 5:\nSerie (99, številka datoteke)"
+                },
+                {
+                    "@language": "it-t-en-t0-mtec",
+                    "@value": "Si tratta di una tabella complementare di tm con il nome dei marchi e la descrizione o le descrizioni dei prodotti protetti dal marchio in inglese.\n Tabelle tm_gands_99 dove 99 è 1.. 57 Esempio tm_gands_31.csv\nTabella con EUTM info, una riga per applicazione e classe Nizza,\n 4 511 307 registra 5 campi (1996-04-01 a 2020-01-21)\ncampo 1: appli_code (999999999, chiave MUE)\n\ncampo 2:\nNice_class (99, Nizza codice del prodotto)\n\ncampo 3:\ntm_verbal_element ((elemento verbale del marchio (se esiste))\n\ncampo 4:\nproduct_desc (descrizione del prodotto del marchio (inglese))\n\ncampo 5:\nserie (99, numero del fascicolo)"
+                }
+            ],
+            "dcat:compressFormat": {
+                "@id": "http://www.iana.org/assignments/media-types/application/gzip"
+            },
+            "dct:title": [
+                {
+                    "@language": "bg-t-en-t0-mtec",
+                    "@value": "Допълнителна таблица на марката на ЕС с имена и описания"
+                },
+                {
+                    "@language": "sk-t-en-t0-mtec",
+                    "@value": "Doplnková tabuľka OZEÚ s názvami a opismi"
+                },
+                {
+                    "@language": "nl-t-en-t0-mtec",
+                    "@value": "Aanvullende tabel van het EUTM met namen en beschrijvingen"
+                },
+                {
+                    "@language": "it-t-en-t0-mtec",
+                    "@value": "Tabella complementare del MUE con nomi e descrizioni"
+                },
+                {
+                    "@language": "mt-t-en-t0-mtec",
+                    "@value": "Tabella komplementari tal-EUTM bl-ismijiet u d-deskrizzjonijiet"
+                },
+                {
+                    "@language": "ro-t-en-t0-mtec",
+                    "@value": "Tabel complementar al mărcii UE cu denumiri și descrieri"
+                },
+                {
+                    "@language": "hu-t-en-t0-mtec",
+                    "@value": "Az EU védjegy kiegészítő táblázata nevekkel és leírásokkal"
+                },
+                {
+                    "@language": "da-t-en-t0-mtec",
+                    "@value": "Supplerende tabel over EU-varemærket med navne og beskrivelser"
+                },
+                {
+                    "@language": "fi-t-en-t0-mtec",
+                    "@value": "EUTM:n täydentävä taulukko nimineen ja kuvauksineen"
+                },
+                {
+                    "@language": "cs-t-en-t0-mtec",
+                    "@value": "Doplňková tabulka ochranných známek EU s názvy a popisy"
+                },
+                {
+                    "@language": "lt-t-en-t0-mtec",
+                    "@value": "Papildoma ESPŽ lentelė su pavadinimais ir aprašymais"
+                },
+                {
+                    "@language": "lv-t-en-t0-mtec",
+                    "@value": "ESPZ papildu tabula ar nosaukumiem un aprakstiem"
+                },
+                {
+                    "@language": "pl-t-en-t0-mtec",
+                    "@value": "Tabela uzupełniająca EUTM zawierająca nazwy i opisy"
+                },
+                {
+                    "@language": "el-t-en-t0-mtec",
+                    "@value": "Συμπληρωματικός πίνακας του EUTM με ονόματα και περιγραφές"
+                },
+                {
+                    "@language": "es-t-en-t0-mtec",
+                    "@value": "Tabla complementaria de la MUE con nombres y descripciones"
+                },
+                {
+                    "@language": "sl-t-en-t0-mtec",
+                    "@value": "Dopolnilna tabela blagovne znamke EU z imeni in opisi"
+                },
+                {
+                    "@language": "en",
+                    "@value": "Complementary table of EUTM with names and descriptions"
+                },
+                {
+                    "@language": "ga-t-en-t0-mtec",
+                    "@value": "Tábla comhlántach EUTM ina bhfuil ainmneacha agus tuairiscí"
+                },
+                {
+                    "@language": "hr-t-en-t0-mtec",
+                    "@value": "Dopunska tablica žiga EU-a s imenima i opisima"
+                },
+                {
+                    "@language": "de-t-en-t0-mtec",
+                    "@value": "Ergänzende Tabelle der UM mit Namen und Beschreibungen"
+                },
+                {
+                    "@language": "et-t-en-t0-mtec",
+                    "@value": "ELi kaubamärgi lisatabel koos nimede ja kirjeldustega"
+                },
+                {
+                    "@language": "sv-t-en-t0-mtec",
+                    "@value": "Kompletterande tabell över EU-varumärket med namn och beskrivningar"
+                },
+                {
+                    "@language": "fr-t-en-t0-mtec",
+                    "@value": "Tableau complémentaire de la MUE avec noms et descriptions"
+                },
+                {
+                    "@language": "pt-t-en-t0-mtec",
+                    "@value": "Quadro complementar da MUE com nomes e descrições"
+                }
+            ],
+            "@type": "dcat:Distribution",
+            "dcat:mediaType": {
+                "@id": "http://www.iana.org/assignments/media-types/text/csv"
+            },
+            "dct:rights": {
+                "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+            },
+            "dcat:accessURL": {
+                "@id": "https://data.europa.eu/euodp/repository/agencies/euipo/TM_GANDS.zip.gz"
+            },
+            "dct:identifier": "http://data.europa.eu/88u/distribution/c06a0495-1eea-496a-bda0-cd49152cb8c2",
+            "dct:format": {
+                "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
+            },
+            "dct:type": {
+                "@id": "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"
+            },
+            "dct:license": {
+                "@id": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0"
+            },
+            "dcat:downloadURL": {
+                "@id": "https://data.europa.eu/euodp/repository/agencies/euipo/TM_GANDS.zip.gz"
+            }
+        },
+        {
+            "@id": "http://www.iana.org/assignments/media-types/text/csv",
+            "@type": "dct:MediaType"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC",
+            "@type": "dct:RightsStatement"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/CSV",
+            "@type": "dct:MediaTypeOrExtent"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0",
+            "@type": "dct:LicenseDocument"
+        },
+        {
+            "@id": "vcard:Kind/17df9e7c-5066-4b0e-b921-07ca38d4f6bc",
+            "@type": "vcard:Kind"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/HTML",
+            "@type": "dct:MediaTypeOrExtent"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/GBR",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/GRC",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/ROU",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/CYP",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/PRT",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/ITA",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://data.europa.eu/88u/dataset/euipo-eu-trade-mark-applications",
+            "dct:title": [
+                {
+                    "@language": "sl-t-en-t0-mtec",
+                    "@value": "Pravice intelektualne lastnine v EU: Prijave blagovne znamke EU"
+                },
+                {
+                    "@language": "lv-t-en-t0-mtec",
+                    "@value": "Intelektuālā īpašuma tiesības ES: ES preču zīmju pieteikumi"
+                },
+                {
+                    "@language": "pl-t-en-t0-mtec",
+                    "@value": "Prawa własności intelektualnej w UE: Zgłoszenia unijnego znaku towarowego"
+                },
+                {
+                    "@language": "hr-t-en-t0-mtec",
+                    "@value": "Prava intelektualnog vlasništva u EU-u: Prijave žiga EU-a"
+                },
+                {
+                    "@language": "it-t-en-t0-mtec",
+                    "@value": "Diritti di proprietà intellettuale nell'UE: Domande di marchio UE"
+                },
+                {
+                    "@language": "nl-t-en-t0-mtec",
+                    "@value": "Intellectuele-eigendomsrechten in de EU: Uniemerkaanvragen"
+                },
+                {
+                    "@language": "et-t-en-t0-mtec",
+                    "@value": "Intellektuaalomandi õigused ELis: ELi kaubamärgi taotlused"
+                },
+                {
+                    "@language": "hu-t-en-t0-mtec",
+                    "@value": "Szellemitulajdon-jogok az EU-ban: Az európai uniós védjegybejelentések"
+                },
+                {
+                    "@language": "ga-t-en-t0-mtec",
+                    "@value": "Cearta maoine intleachtúla san AE: Iarratais ar Thrádmharc de chuid AE"
+                },
+                {
+                    "@language": "de-t-en-t0-mtec",
+                    "@value": "Rechte des geistigen Eigentums in der EU: Anmeldungen von Unionsmarken"
+                },
+                {
+                    "@language": "da-t-en-t0-mtec",
+                    "@value": "IP-rettigheder i EU: EU-varemærkeansøgninger"
+                },
+                {
+                    "@language": "mt-t-en-t0-mtec",
+                    "@value": "Id-drittijiet tal-PI fl-UE: Applikazzjonijiet għal trademark tal-UE"
+                },
+                {
+                    "@language": "sk-t-en-t0-mtec",
+                    "@value": "Práva duševného vlastníctva v EÚ: Prihlášky ochrannej známky EÚ"
+                },
+                {
+                    "@language": "en",
+                    "@value": "IP rights in EU: EU Trade mark applications"
+                },
+                {
+                    "@language": "el-t-en-t0-mtec",
+                    "@value": "Δικαιώματα διανοητικής ιδιοκτησίας στην ΕΕ: Αιτήσεις σήματος της ΕΕ"
+                },
+                {
+                    "@language": "es-t-en-t0-mtec",
+                    "@value": "Derechos de PI en la UE: Solicitudes de marca de la UE"
+                },
+                {
+                    "@language": "ro-t-en-t0-mtec",
+                    "@value": "Drepturile de proprietate intelectuală în UE: Cererile de înregistrare a mărcii UE"
+                },
+                {
+                    "@language": "bg-t-en-t0-mtec",
+                    "@value": "Права върху интелектуална собственост в ЕС: Заявки за марки на ЕС"
+                },
+                {
+                    "@language": "fr-t-en-t0-mtec",
+                    "@value": "Droits de propriété intellectuelle dans l’UE: Demandes de marque de l’Union européenne"
+                },
+                {
+                    "@language": "fi-t-en-t0-mtec",
+                    "@value": "Teollis- ja tekijänoikeudet eu:ssa: EU-tavaramerkkihakemukset"
+                },
+                {
+                    "@language": "cs-t-en-t0-mtec",
+                    "@value": "Práva duševního vlastnictví v EU: Přihlášky ochranné známky EU"
+                },
+                {
+                    "@language": "lt-t-en-t0-mtec",
+                    "@value": "Intelektinės nuosavybės teisės ES: ES prekių ženklų paraiškos"
+                },
+                {
+                    "@language": "pt-t-en-t0-mtec",
+                    "@value": "Direitos de propriedade intelectual na UE: Pedidos de marcas da UE"
+                },
+                {
+                    "@language": "sv-t-en-t0-mtec",
+                    "@value": "Immateriella rättigheter i EU: Ansökningar om EU-varumärken"
+                }
+            ],
+            "dct:subject": [
+                {
+                    "@id": "http://eurovoc.europa.eu/1821"
+                },
+                {
+                    "@id": "http://eurovoc.europa.eu/6128"
+                },
+                {
+                    "@id": "http://eurovoc.europa.eu/3663"
+                },
+                {
+                    "@id": "http://eurovoc.europa.eu/2123"
+                },
+                {
+                    "@id": "http://eurovoc.europa.eu/2817"
+                },
+                {
+                    "@id": "http://eurovoc.europa.eu/5043"
+                }
+            ],
+            "dct:alternative": {
+                "@language": "en",
+                "@value": "European Intellectual Property Rights "
+            },
+            "dcat:keyword": [
+                {
+                    "@language": "en",
+                    "@value": "EUTM"
+                },
+                {
+                    "@language": "en",
+                    "@value": "IPR"
+                },
+                {
+                    "@language": "en",
+                    "@value": "EPO"
+                },
+                {
+                    "@language": "en",
+                    "@value": "European Registered Design"
+                },
+                {
+                    "@language": "en",
+                    "@value": "EUIPO"
+                }
+            ],
+            "dct:description": [
+                {
+                    "@language": "cs-t-en-t0-mtec",
+                    "@value": "Tento soubor obsahuje základní informace o všech ochranných známkách EU a zapsaných (průmyslových) vzorech Společenství od začátku rejstříku do roku 2020–01–21. Obsahuje podrobné informace o souvisejícím produktu. Obsahuje informace o majitelích práv duševního vlastnictví a odkaz na ID vlastníků EPO."
+                },
+                {
+                    "@language": "el-t-en-t0-mtec",
+                    "@value": "Το σύνολο αυτό περιέχει βασικές πληροφορίες για όλα τα σήματα της ΕΕ και τα καταχωρισμένα κοινοτικά σχέδια και υποδείγματα από την αρχή του μητρώου έως την περίοδο 2020-01-21. Περιλαμβάνει λεπτομερείς πληροφορίες σχετικά με το προϊόν που σχετίζεται. Περιλαμβάνει πληροφορίες σχετικά με τους κατόχους δικαιωμάτων διανοητικής ιδιοκτησίας και σύνδεσμο με το αναγνωριστικό ταυτότητας των ιδιοκτητών του ΕΓΔΕ."
+                },
+                {
+                    "@language": "lv-t-en-t0-mtec",
+                    "@value": "Šis komplekts satur pamatinformāciju par visām ES preču zīmēm un reģistrētajiem Kopienas dizainparaugiem no reģistra sākuma līdz 2020. gada 1.-21. gadam. Tajā ir iekļauta detalizēta informācija par produktu. Tā ietver informāciju par intelektuālā īpašuma tiesību īpašniekiem un saiti uz EPO īpašnieku ID."
+                },
+                {
+                    "@language": "mt-t-en-t0-mtec",
+                    "@value": "Dan is-sett fih informazzjoni bażika għat-trademarks kollha tal-UE u d-disinji Komunitarji rreġistrati mill-bidu tar-reġistru sal-2020–01–21. Dan jinkludi informazzjoni dettaljata dwar il-prodott assoċjat. Dan jinkludi informazzjoni dwar is-sidien tad-drittijiet tal-PI u link għall-ID tas-sidien tal-EPO."
+                },
+                {
+                    "@language": "nl-t-en-t0-mtec",
+                    "@value": "Deze set bevat basisinformatie voor alle Uniemerken en ingeschreven Gemeenschapsmodellen vanaf het begin van de registratie tot en met 2020-01-21. Het bevat gedetailleerde informatie over het betrokken product. Het bevat informatie over de houders van intellectuele-eigendomsrechten en een link naar EOB-eigenaars."
+                },
+                {
+                    "@language": "pt-t-en-t0-mtec",
+                    "@value": "Este conjunto contém informações básicas para todas as marcas da UE e desenhos ou modelos comunitários registados desde o início do registo até 2020-01-21. Inclui informações detalhadas sobre o produto associado. Inclui informações sobre os titulares de direitos de propriedade intelectual e uma ligação para a identificação dos titulares do IEP."
+                },
+                {
+                    "@language": "fi-t-en-t0-mtec",
+                    "@value": "Sarja sisältää perustiedot kaikista EU-tavaramerkeistä ja rekisteröidyistä yhteisömalleista rekisterin alusta vuosiin 2020–01–21. Se sisältää yksityiskohtaiset tiedot tuotteeseen liittyvästä tuotteesta. Se sisältää tietoa teollis- ja tekijänoikeuksien omistajista ja linkin EPO:n omistajatunnukseen."
+                },
+                {
+                    "@language": "fr-t-en-t0-mtec",
+                    "@value": "Cet ensemble contient des informations de base pour toutes les marques de l’Union européenne et tous les dessins ou modèles communautaires enregistrés depuis le début du registre jusqu’au 2020-01-21. Il comprend des informations détaillées sur le produit associé. Il comprend des informations sur les titulaires de droits de propriété intellectuelle et un lien vers l’identifiant des titulaires de droits de propriété intellectuelle."
+                },
+                {
+                    "@language": "en",
+                    "@value": "This set contains basic information for all EU trade marks and registered Community designs from the beginning of the registry to 2020-01-21. It includes detail information about product associated. It includes information about the IP rights owners and a link to EPO owners ID."
+                },
+                {
+                    "@language": "lt-t-en-t0-mtec",
+                    "@value": "Šiame rinkinyje pateikiama pagrindinė informacija apie visus ES prekių ženklus ir registruotąjį Bendrijos dizainą nuo registro pradžios iki 2020–01–21. Jame pateikiama išsami informacija apie susijusį produktą. Jame pateikiama informacija apie intelektinės nuosavybės teisių savininkus ir nuoroda į EPO savininkų ID."
+                },
+                {
+                    "@language": "es-t-en-t0-mtec",
+                    "@value": "Este conjunto contiene información básica sobre todas las marcas de la UE y dibujos y modelos comunitarios registrados desde el inicio del registro hasta 2020-01-21. Incluye información detallada sobre el producto asociado. Incluye información sobre los titulares de derechos de propiedad intelectual y un enlace a la identificación de propietarios de EPO."
+                },
+                {
+                    "@language": "da-t-en-t0-mtec",
+                    "@value": "Dette sæt indeholder grundlæggende oplysninger om alle EU-varemærker og registrerede EF-design fra begyndelsen af registret til 2020-01-21. Den indeholder detaljerede oplysninger om det tilknyttede produkt. Den indeholder oplysninger om IP-rettighedsindehavere og et link til EPO-ejeres ID."
+                },
+                {
+                    "@language": "it-t-en-t0-mtec",
+                    "@value": "Questo set contiene le informazioni di base per tutti i marchi UE e i disegni e modelli comunitari registrati dall'inizio del registro fino al 2020-01-21. Esso include informazioni dettagliate sul prodotto associato. Include informazioni sui titolari dei diritti di proprietà intellettuale e un link all'ID proprietari dell'UEB."
+                },
+                {
+                    "@language": "et-t-en-t0-mtec",
+                    "@value": "See kogum sisaldab põhiteavet kõigi ELi kaubamärkide ja ühenduse registreeritud disainilahenduste kohta alates registri algusest kuni aastani 2020–01–21. See sisaldab üksikasjalikku teavet seotud toote kohta. See sisaldab teavet intellektuaalomandi õiguste omanike kohta ja linki EPO omanike ID-le."
+                },
+                {
+                    "@language": "pl-t-en-t0-mtec",
+                    "@value": "Zestaw ten zawiera podstawowe informacje dotyczące wszystkich unijnych znaków towarowych i zarejestrowanych wzorów wspólnotowych od początku rejestru do roku 2020-01-21. Zawiera szczegółowe informacje na temat produktu powiązanego. Zawiera ona informacje o właścicielach praw własności intelektualnej oraz link do identyfikatora właściciela EPO."
+                },
+                {
+                    "@language": "sv-t-en-t0-mtec",
+                    "@value": "Denna uppsättning innehåller grundläggande information om alla EU-varumärken och registrerade gemenskapsformgivningar från registrets början till 2020–01–21. Den innehåller detaljerad information om produkten. Den innehåller information om ägare av immateriella rättigheter och en länk till EPO:s ägares ID."
+                },
+                {
+                    "@language": "ro-t-en-t0-mtec",
+                    "@value": "Acest set conține informații de bază pentru toate mărcile UE și desenele sau modelele industriale comunitare înregistrate de la începutul registrului până în 2020-01-21. Acesta include informații detaliate despre produsul asociat. Acesta include informații despre titularii drepturilor de proprietate intelectuală și un link către ID-ul proprietarilor OEB."
+                },
+                {
+                    "@language": "ga-t-en-t0-mtec",
+                    "@value": "Tá faisnéis bhunúsach sa tacar seo maidir le trádmharcanna uile AE agus dearaí cláraithe Comhphobail ó thús na clárlainne go dtí 2020-01-21. Tá faisnéis mhionsonraithe ann maidir leis an táirge a bhaineann leis. Áirítear ann faisnéis faoi úinéirí cearta maoine intleachtúla agus nasc le haitheantas úinéirí EPO."
+                },
+                {
+                    "@language": "bg-t-en-t0-mtec",
+                    "@value": "Този набор съдържа основна информация за всички марки на ЕС и регистрирани дизайни на Общността от началото на регистъра до 2020—01—21. Тя включва подробна информация за свързания с продукта продукт. Тя включва информация за носителите на права върху интелектуалната собственост и връзка към идентификационния номер на собствениците на ЕПВ."
+                },
+                {
+                    "@language": "hu-t-en-t0-mtec",
+                    "@value": "Ez a készlet a kibocsátásiegység-forgalmi jegyzék kezdetétől 2020–01–21-ig minden európai uniós védjegyre és lajstromozott közösségi formatervezési mintára vonatkozó alapvető információkat tartalmaz. Részletes információkat tartalmaz a kapcsolódó termékről. Tartalmazza a szellemitulajdon-jogok tulajdonosaira vonatkozó információkat és az EPO-tulajdonosok azonosítójára mutató linket."
+                },
+                {
+                    "@language": "sl-t-en-t0-mtec",
+                    "@value": "Ta sklop vsebuje osnovne informacije za vse blagovne znamke EU in registrirane modele Skupnosti od začetka registra do leta 2020–01–21. Vsebuje podrobne informacije o povezanem izdelku. Vključuje informacije o imetnikih pravic intelektualne lastnine in povezavo do identifikacijske številke lastnikov EPO."
+                },
+                {
+                    "@language": "sk-t-en-t0-mtec",
+                    "@value": "Tento súbor obsahuje základné informácie o všetkých ochranných známkach EÚ a zapísaných dizajnoch Spoločenstva od začiatku registra do roku 2020 – 01 – 21.\nObsahuje podrobné informácie o súvisiacich produktoch.\nObsahuje informácie o vlastníkoch práv duševného vlastníctva a odkaz na ID vlastníkov EPO."
+                },
+                {
+                    "@language": "hr-t-en-t0-mtec",
+                    "@value": "Ovaj skup sadrži osnovne podatke za sve žigove EU-a i registrirane dizajne Zajednice od početka registra do 2020 – 01 – 21. Sadržava detaljne informacije o povezanom proizvodu. Uključuje informacije o vlasnicima prava intelektualnog vlasništva i poveznicu na identifikacijsku oznaku vlasnika EPU-a."
+                },
+                {
+                    "@language": "de-t-en-t0-mtec",
+                    "@value": "Dieser Satz enthält grundlegende Informationen für alle Unionsmarken und eingetragenen Gemeinschaftsgeschmacksmuster vom Beginn der Eintragung bis 2020-01-21. Es enthält detaillierte Informationen über Produkt verbunden. Es enthält Informationen über die Inhaber von Rechten des geistigen Eigentums und einen Link zur EPO-Eigentümer-ID."
+                }
+            ],
+            "dct:spatial": [
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/ITA"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/LUX"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/SVN"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/ESP"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/FRA"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/CZE"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/HUN"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/LTU"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/GRC"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/FIN"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/PRT"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/AUT"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/LVA"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/DEU"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/POL"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/DNK"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/BGR"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/NLD"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/CYP"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/ROU"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/EST"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/MLT"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/GBR"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/BEL"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/HRV"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/IRL"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/SWE"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/country/SVK"
+                }
+            ],
+            "dct:relation": {
+                "@id": "http://data.europa.eu/88u/dataset/euipo-links-between-euipo-and-epo-owner-information"
+            },
+            "dct:temporal": {
+                "@id": "dct:PeriodOfTime/2511c12b-65a7-4977-8eeb-49e214de291e"
+            },
+            "dcat:theme": [
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/data-theme/TECH"
+                },
+                {
+                    "@id": "http://publications.europa.eu/resource/authority/data-theme/ECON"
+                }
+            ],
+            "owl:versionInfo": "1",
+            "dcat:landingPage": {
+                "@id": "https://euipo.europa.eu/ohimportal/en/open-data"
+            },
+            "dct:identifier": "EU_IPR",
+            "dct:issued": {
+                "@value": "2003-04-01",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            },
+            "dct:modified": {
+                "@value": "2020-01-21",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            },
+            "dcat:distribution": [
+                {
+                    "@id": "http://data.europa.eu/88u/distribution/207be123-ec0f-4af2-8f71-0c9030c93ace"
+                },
+                {
+                    "@id": "http://data.europa.eu/88u/distribution/211355bb-8227-4c03-a1f2-240a8989bdf3"
+                },
+                {
+                    "@id": "http://data.europa.eu/88u/distribution/030f75aa-c888-498b-9014-f183eb1c0a26"
+                },
+                {
+                    "@id": "http://data.europa.eu/88u/distribution/879870a1-2fdb-48d9-a9f0-e1997f18b594"
+                }
+            ],
+            "foaf:page": {
+                "@id": "https://data.europa.eu/euodp/repository/agencies/euipo/Data_description.docx.gz"
+            },
+            "http://data.europa.eu/88u/ontology/dcatapop#debugInfo": "EUODP Legacy->DEU xslt, version:20220321",
+            "@type": "dcat:Dataset",
+            "dct:language": {
+                "@id": "http://publications.europa.eu/resource/authority/language/ENG"
+            },
+            "dct:accessRights": {
+                "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+            },
+            "dcat:contactPoint": {
+                "@id": "vcard:Kind/17df9e7c-5066-4b0e-b921-07ca38d4f6bc"
+            },
+            "adms:versionNotes": {
+                "@language": "en",
+                "@value": "0"
+            },
+            "dct:publisher": {
+                "@id": "http://publications.europa.eu/resource/authority/corporate-body/OAMI"
+            }
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/LUX",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "dct:PeriodOfTime/2511c12b-65a7-4977-8eeb-49e214de291e",
+            "dcat:endDate": {
+                "@value": "2020-01-21",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            },
+            "dcat:startDate": {
+                "@value": "1996-01-01",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            },
+            "@type": "dct:PeriodOfTime"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/data-theme/TECH",
+            "@type": "skos:Concept"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/SVN",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "https://euipo.europa.eu/ohimportal/en/open-data",
+            "foaf:topic": {
+                "@id": "http://data.europa.eu/88u/dataset/euipo-eu-trade-mark-applications"
+            },
+            "@type": "foaf:Document",
+            "http://schema.org/url": "https://euipo.europa.eu/ohimportal/en/open-data"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/ESP",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/FRA",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/CZE",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/HUN",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/LTU",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/FIN",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://data.europa.eu/88u/distribution/207be123-ec0f-4af2-8f71-0c9030c93ace",
+            "dct:description": [
+                {
+                    "@language": "ga-t-en-t0-mtec",
+                    "@value": "Comhad atá ar iarraidh sa “Thábla Comhlántach EUTM le hainmneacha agus cur síos”, cuid de na sonraí a bhí in easnamh ó 2008"
+                },
+                {
+                    "@language": "cs-t-en-t0-mtec",
+                    "@value": "Chybějící soubor v „Doplňkové tabulce ochranných známek EU s názvy a popisem“, některé chybějící údaje z roku 2008"
+                },
+                {
+                    "@language": "mt-t-en-t0-mtec",
+                    "@value": "Fajl nieqes fit-“Tabella komplementari tal-EUTM bl-ismijiet u d-deskrizzjoni”, xi data nieqsa tal-2008"
+                },
+                {
+                    "@language": "bg-t-en-t0-mtec",
+                    "@value": "Липсващ файл в „Допълнителна таблица на марката на ЕС с имена и описание“, някои липсващи данни от 2008 г."
+                },
+                {
+                    "@language": "fi-t-en-t0-mtec",
+                    "@value": "EUTM:n nimiä ja kuvausta täydentävästä taulukosta puuttuvat tiedot vuodelta 2008"
+                },
+                {
+                    "@language": "pl-t-en-t0-mtec",
+                    "@value": "Brakujący plik w tabeli uzupełniającej EUTM z nazwami i opisem, niektóre brakujące dane z 2008 r."
+                },
+                {
+                    "@language": "sl-t-en-t0-mtec",
+                    "@value": "Manjkajoča datoteka v „Dopolnilni preglednici blagovne znamke EU z imeni in opisom“, nekateri manjkajoči podatki iz leta 2008"
+                },
+                {
+                    "@language": "el-t-en-t0-mtec",
+                    "@value": "Ελλείπων φάκελος στον «Συμπληρωματικό πίνακα του EUTM με ονόματα και περιγραφή», ορισμένα ελλείποντα δεδομένα του 2008"
+                },
+                {
+                    "@language": "es-t-en-t0-mtec",
+                    "@value": "Archivo que falta en el «cuadro complementario de la MUE con nombres y descripción», algunos datos que faltan de 2008"
+                },
+                {
+                    "@language": "hr-t-en-t0-mtec",
+                    "@value": "Datoteka koja nedostaje u „Dopunskoj tablici žiga EU-a s imenima i opisom”, neki podaci koji nedostaju iz 2008."
+                },
+                {
+                    "@language": "hu-t-en-t0-mtec",
+                    "@value": "Hiányzó fájl az „EUTM kiegészítő táblázata névvel és leírással”, néhány 2008-as hiányzó adat"
+                },
+                {
+                    "@language": "et-t-en-t0-mtec",
+                    "@value": "Puuduv toimik ELi kaubamärgi täiendavas tabelis koos nimede ja kirjeldusega, mõned 2008. aasta andmed puuduvad"
+                },
+                {
+                    "@language": "pt-t-en-t0-mtec",
+                    "@value": "Ficheiro em falta no «Quadro complementar da MUE com nomes e descrição», alguns dados em falta de 2008"
+                },
+                {
+                    "@language": "da-t-en-t0-mtec",
+                    "@value": "Manglende fil i \"Supplerende tabel over EU-varemærket med navne og beskrivelse\", nogle manglende data fra 2008"
+                },
+                {
+                    "@language": "nl-t-en-t0-mtec",
+                    "@value": "Ontbrekende dossier in de „Aanvullende tabel van het EUTM met namen en beschrijving”, enkele ontbrekende gegevens van 2008"
+                },
+                {
+                    "@language": "lt-t-en-t0-mtec",
+                    "@value": "Trūksta dokumentų „Papildomoje ESPŽ lentelėje nurodant pavadinimus ir aprašymus“, trūksta kai kurių 2008 m. duomenų."
+                },
+                {
+                    "@language": "en",
+                    "@value": "Missing file in the \"Complementary table of EUTM with names and description\", some missing data of 2008"
+                },
+                {
+                    "@language": "it-t-en-t0-mtec",
+                    "@value": "File mancante nella \"Tabella complementare di MUE con nomi e descrizione\", alcuni dati mancanti del 2008"
+                },
+                {
+                    "@language": "lv-t-en-t0-mtec",
+                    "@value": "Trūkst datnes “ESPZ papildu tabulā ar nosaukumiem un aprakstu”, daži trūkstošie dati par 2008. gadu"
+                },
+                {
+                    "@language": "sk-t-en-t0-mtec",
+                    "@value": "Chýbajúci súbor v „Doplnkovej tabuľke OZEÚ s názvami a opisom“, niektoré chýbajúce údaje z roku 2008"
+                },
+                {
+                    "@language": "sv-t-en-t0-mtec",
+                    "@value": "Fil saknas i ”Kompletterande tabell över EU-varumärke med namn och beskrivning”, vissa saknade uppgifter från 2008"
+                },
+                {
+                    "@language": "ro-t-en-t0-mtec",
+                    "@value": "Dosar lipsă din „Tabelul complet al mărcii UE cu denumiri și descriere”, unele date lipsă din 2008"
+                },
+                {
+                    "@language": "fr-t-en-t0-mtec",
+                    "@value": "Dossier manquant dans le «Tableau complémentaire de la MUE avec noms et description», quelques données manquantes de 2008"
+                },
+                {
+                    "@language": "de-t-en-t0-mtec",
+                    "@value": "Fehlende Datei in der „Ergänzenden Tabelle der EUTM mit Namen und Beschreibung“, einige fehlende Daten aus dem Jahr 2008"
+                }
+            ],
+            "dct:title": [
+                {
+                    "@language": "sv-t-en-t0-mtec",
+                    "@value": "Kompletterande tabell över EUTM med namn och beskrivning, tilläggsfil (2008)"
+                },
+                {
+                    "@language": "fi-t-en-t0-mtec",
+                    "@value": "EUTM:n täydentävä taulukko, jossa on nimet ja kuvaus, lisätiedosto (2008)"
+                },
+                {
+                    "@language": "da-t-en-t0-mtec",
+                    "@value": "Supplerende tabel over EU-varemærket med navne og beskrivelse, addtional fil (2008)"
+                },
+                {
+                    "@language": "fr-t-en-t0-mtec",
+                    "@value": "Tableau complémentaire de la MUE avec noms et description, dossier addtionnel (2008)"
+                },
+                {
+                    "@language": "es-t-en-t0-mtec",
+                    "@value": "Tabla complementaria de la EUTM con nombres y descripción, archivo adicional (2008)"
+                },
+                {
+                    "@language": "de-t-en-t0-mtec",
+                    "@value": "Ergänzende Tabelle der EUTM mit Namen und Beschreibung, Zusatzdatei (2008)"
+                },
+                {
+                    "@language": "nl-t-en-t0-mtec",
+                    "@value": "Aanvullende tabel van EUTM met namen en beschrijving, additief bestand (2008)"
+                },
+                {
+                    "@language": "el-t-en-t0-mtec",
+                    "@value": "Συμπληρωματικός πίνακας του EUTM με ονόματα και περιγραφή, πρόσθετος φάκελος (2008)"
+                },
+                {
+                    "@language": "hr-t-en-t0-mtec",
+                    "@value": "Dopunska tablica žiga EU-a s nazivima i opisom, dodatna datoteka (2008.)"
+                },
+                {
+                    "@language": "sk-t-en-t0-mtec",
+                    "@value": "Doplnková tabuľka OZEÚ s názvami a opisom, doplnkový spis (2008)"
+                },
+                {
+                    "@language": "it-t-en-t0-mtec",
+                    "@value": "Tabella complementare di MUE con nomi e descrizione, file aggiuntivo (2008)"
+                },
+                {
+                    "@language": "sl-t-en-t0-mtec",
+                    "@value": "Dopolnilna preglednica blagovne znamke EU z imeni in opisom, dodatna datoteka (2008)"
+                },
+                {
+                    "@language": "cs-t-en-t0-mtec",
+                    "@value": "Doplňková tabulka ochranné známky EU s názvy a popisem, doplňkový soubor (2008)"
+                },
+                {
+                    "@language": "lv-t-en-t0-mtec",
+                    "@value": "ESPZ papildu tabula ar nosaukumiem un aprakstu, papildu datne (2008. gads)"
+                },
+                {
+                    "@language": "ro-t-en-t0-mtec",
+                    "@value": "Tabel complementar al mărcii UE cu denumiri și descriere, dosar adițional (2008)"
+                },
+                {
+                    "@language": "hu-t-en-t0-mtec",
+                    "@value": "Az EU védjegy kiegészítő táblázata nevekkel és leírással, kiegészítő fájl (2008)"
+                },
+                {
+                    "@language": "pl-t-en-t0-mtec",
+                    "@value": "Tabela uzupełniająca EUTM z nazwami i opisem, plik dodatkowy (2008)"
+                },
+                {
+                    "@language": "mt-t-en-t0-mtec",
+                    "@value": "Tabella komplementari tal-EUTM bl-ismijiet u d-deskrizzjoni, fajl addizzjonali (2008)"
+                },
+                {
+                    "@language": "bg-t-en-t0-mtec",
+                    "@value": "Допълнителна таблица на марката на ЕС с имена и описание, допълнително досие (2008 г.)"
+                },
+                {
+                    "@language": "en",
+                    "@value": "Complementary table of EUTM with names and description, addtional file (2008)"
+                },
+                {
+                    "@language": "et-t-en-t0-mtec",
+                    "@value": "ELi kaubamärgi täiendav tabel koos nimede ja kirjeldusega, lisafail (2008)"
+                },
+                {
+                    "@language": "pt-t-en-t0-mtec",
+                    "@value": "Quadro complementar da MUE com nomes e descrição, ficheiro adicional (2008)"
+                },
+                {
+                    "@language": "ga-t-en-t0-mtec",
+                    "@value": "Tábla comhlántach EUTM ina bhfuil ainmneacha agus tuairisc, comhad breise (2008)"
+                },
+                {
+                    "@language": "lt-t-en-t0-mtec",
+                    "@value": "Papildoma ESPŽ lentelė su pavadinimais ir aprašymu, papildoma byla (2008 m.)"
+                }
+            ],
+            "dct:rights": {
+                "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+            },
+            "@type": "dcat:Distribution",
+            "dct:format": {
+                "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
+            },
+            "dct:identifier": "http://data.europa.eu/88u/distribution/d40bf63a-507c-43b3-a1c9-93617b36f461",
+            "dct:type": {
+                "@id": "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"
+            },
+            "dct:license": {
+                "@id": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0"
+            },
+            "dcat:mediaType": {
+                "@id": "http://www.iana.org/assignments/media-types/text/csv"
+            },
+            "dcat:accessURL": {
+                "@id": "https://euipo.europa.eu/ohimportal/en/open-data"
+            }
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/data-theme/ECON",
+            "@type": "skos:Concept"
+        },
+        {
+            "@id": "https://data.europa.eu/euodp/repository/agencies/euipo/Data_description.docx.gz",
+            "dct:title": {
+                "@language": "en",
+                "@value": "Data description"
+            },
+            "foaf:topic": {
+                "@id": "http://data.europa.eu/88u/dataset/euipo-eu-trade-mark-applications"
+            },
+            "dct:format": {
+                "@id": "http://publications.europa.eu/resource/authority/file-type/DOCX"
+            },
+            "http://schema.org/url": {
+                "@language": "en",
+                "@value": "https://data.europa.eu/euodp/repository/agencies/euipo/Data_description.docx.gz"
+            },
+            "@type": "foaf:Document",
+            "dct:type": {
+                "@id": "http://publications.europa.eu/resource/authority/documentation-type/DOCUMENTATION_MAIN"
+            }
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/AUT",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/LVA",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/DEU",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/POL",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/DNK",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/BGR",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/language/ENG",
+            "@type": "dct:LinguisticSystem"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/NLD",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://data.europa.eu/88u/distribution/030f75aa-c888-498b-9014-f183eb1c0a26",
+            "dct:description": [
+                {
+                    "@language": "ro-t-en-t0-mtec",
+                    "@value": "Tabel cu informații privind EUTM, câte un rând pentru fiecare aplicație și clasa Nisa;\n 3 857 467 înregistrează 6 câmpuri (1996-01-01-2020-01-21)\nCâmpul 1:aplicație_code (999999999, cheia EUTM)\n Câmpul 2:euipo_owner_code (cheie din tabelul euipo)\n Câmpul 3: receive_date (aaaa @-@ mm @-@ dd, data depunerii) Câmpul 4:\nNice_class (99, Cod Nisa al produsului)\nCâmpul 5: date_grant (aaaa @-@ mm @-@ dd, data înregistrării)\nCâmpul 6: date_expi (aaaa @-@ mm @-@ dd, data expirării) Tabel cu informații privind EUTM, câte un rând pentru fiecare aplicație și clasa Nisa;\n\n3 857 467 înregistrează 6 câmpuri (1996-01-01-2020-01-21)\n\nCâmpul 1:\naplicație_code (999999999, cheia EUTM)\n\nCâmpul 2:\neuipo_owner_code (cheie din tabelul euipo)\n\nCâmpul 3:\nreceive_date (aaaa @-@ mm @-@ dd, data depunerii)\n\nCâmpul 4:\nNice_class (99, Cod Nisa al produsului)\n\nCâmpul 5:\ndate_grant (aaaa @-@ mm @-@ dd, data înregistrării)\n\nCâmpul 6:\ndate_expi (aaaa @-@ mm @-@ dd, data expirării)"
+                },
+                {
+                    "@language": "fi-t-en-t0-mtec",
+                    "@value": "Taulukko, jossa on EUTM-tiedot, yksi rivi hakemusta ja Nizzan luokkaa kohti,\n3 857 467 kirjaa 6 kenttää (1996–01–01–2020–01–21)\nKenttä 1: appli_code (999999999, EUTM avain)\nKenttä 2: euipo_owner_code (taulukon euipo-avain)\nKenttä 3: receiving_date (vvvv @-@ mm @-@ dd dd, hakupäivä)\nKenttä 4: Nice_class (99, Mukava tuotekoodi)\nKenttä 5: date_grant (vvvv @-@ mm @-@ dd dd, rekisteripäivämäärä)\nKenttä 6: date_expi (vvvv @-@ mm @-@ dd, Vanhentumispäivä)"
+                },
+                {
+                    "@language": "lt-t-en-t0-mtec",
+                    "@value": "Lentelė su EUTM informacija, viena eilutė kiekvienai paraiškai ir Nicos klasei, \n3 857 467 įrašai 6 laukai (nuo 1996–01–01 iki 2020–01–21)\n\n1 laukelis.\nAppli_kodas (999999999, EUTM raktas)\n\n2 laukelis.\neuipo_owner_code (lentelės euipo raktas)\n\n3 laukelis.\nget_date (mmmm @-@ mm @-@ dd, paraiškos padavimo data)\n\n4 laukelis.\nNice_class (99, gražus produkto kodas)\n\n5 laukelis.\ndata_grant (yyyy @-@ mm @-@ dd, registracijos data)\n\n6 laukelis.\ndate_expi (yyyy @-@ mm @-@ dd, galiojimo laikas)"
+                },
+                {
+                    "@language": "cs-t-en-t0-mtec",
+                    "@value": "Tabulka s informacemi o ochranné známce EU, jedním řádkem pro každou aplikaci a třídou Nice,\n 3 857 467 záznamů 6 polí (1996–01–01 až 2020–01–21) Pole 1:\nkód aplikace (999999999, klíč ochranné známky EU)\nPole 2:euipo_owner_code (klíč tabulky euipo)\n Pole 3: příjem_date (rrrr @-@ mm @-@ dd, datum podání)\nPole 4:Nice_class (99, Nice kód produktu)\n Pole 5: date_grant (rrrr @-@ mm @-@ dd, datum registru)\nPole 6: date_expi (rrrr @-@ mm @-@ dd, datum vypršení platnosti)"
+                },
+                {
+                    "@language": "en",
+                    "@value": "Table with EUTM info, one line per application and Nice class,\r\n3 857 467 records 6 fields (1996-01-01 to 2020-01-21)\r\nField 1: appli_code\t\t(999999999, EUTM key)\r\nField 2: euipo_owner_code\t(key of table euipo)\r\nField 3: receiving_date\t(yyyy-mm-dd, filing date)\r\nField 4: Nice_class\t\t(99, Nice code of product) \r\nField 5: date_grant\t\t(yyyy-mm-dd, registry date)\r\nField 6: date_expi\t\t(yyyy-mm-dd, expiration date)\r\n"
+                },
+                {
+                    "@language": "da-t-en-t0-mtec",
+                    "@value": "Tabel med oplysninger om EU-varemærket, én linje pr. ansøgning og Nice-klasse\n3 857 467 poster 6 felter (1996-01 til 2020-01-21)\nFelt 1:\nappli_code (999999999, EUTM nøgle)  Felt 2: euipo_owner_code (nøgle i tabellen euipo) Felt 3:\nmodtager_date (yyyy @-@ mm @-@ dd, ansøgningsdato)\nFelt 4: Nice_class (99, Nicekode for produktet) Felt 5:\ndate_grant (yyyy @-@ mm @-@ dd, registreringsdatabasen) Felt 6:\ndate_expi (yyyy @-@ mm @-@ dd, udløbsdato)Tabel med oplysninger om EU-varemærket, én linje pr. ansøgning og Nice-klasse\n 3 857 467 poster 6 felter (1996-01 til 2020-01-21)\nFelt 1: appli_code (999999999, EUTM nøgle)\nFelt 2: euipo_owner_code (nøgle i tabellen euipo)\n\nFelt 3:\nmodtager_date (yyyy @-@ mm @-@ dd, ansøgningsdato)\n\nFelt 4:\nNice_class (99, Nicekode for produktet)\n\nFelt 5:\ndate_grant (yyyy @-@ mm @-@ dd, registreringsdatabasen)\n\nFelt 6:\ndate_expi (yyyy @-@ mm @-@ dd, udløbsdato)"
+                },
+                {
+                    "@language": "nl-t-en-t0-mtec",
+                    "@value": "Tabel met informatie over het EUTM, één regel per aanvraag en klasse Nice,\n3 857 467 records 6 velden (1996-01-01 tot 2020-01-21)\nVeld 1:\nappli_code (999999999, EUTM-sleutel)  Veld 2: euipo_owner_code (sleutel van tabel euipo) Veld 3:\nontvangende_date (yyyy @-@ mm @-@ dd, datum van indiening)\nVeld 4: Nice_class (99, code van het product van Nice) Veld 5:\ndate_grant (yyyy @-@ mm @-@ dd, registerdatum) Veld 6:\ndate_expi (yyyy @-@ mm @-@ dd, vervaldatum)Tabel met informatie over het EUTM, één regel per aanvraag en klasse Nice,\n 3 857 467 records 6 velden (1996-01-01 tot 2020-01-21)\nVeld 1: appli_code (999999999, EUTM-sleutel) \nVeld 2:\neuipo_owner_code (sleutel van tabel euipo)\n\nVeld 3:\nontvangende_date (yyyy @-@ mm @-@ dd, datum van indiening)\n\nVeld 4:\nNice_class (99, code van het product van Nice)\n\nVeld 5:\ndate_grant (yyyy @-@ mm @-@ dd, registerdatum)\n\nVeld 6:\ndate_expi (yyyy @-@ mm @-@ dd, vervaldatum)"
+                },
+                {
+                    "@language": "es-t-en-t0-mtec",
+                    "@value": "Tabla con información de la EUTM, una línea por aplicación y clase Niza,\n3 857 467 registros 6 campos (1996-01-01 a 2020-01-21)\nCampo 1: appli_code (999999999, tecla EUTM)\nCampo 2: euipo_owner_code (clave de la tabla euipo)\nCampo 3: recibir_date (yyyy @-@ mm @-@ dd, fecha de presentación)\nCampo 4: Nice_class (99, Código de producto de Niza)\nCampo 5: date_grant (yyyy @-@ mm @-@ dd, fecha de registro)\nCampo 6: date_expi (yyyy @-@ mm @-@ dd, fecha de caducidad)"
+                },
+                {
+                    "@language": "de-t-en-t0-mtec",
+                    "@value": "Tabelle mit EUTM-Info, eine Zeile pro Anwendung und Nizza-Klasse,\n3 857 467 Datensätze 6 Felder (1996-01-01 bis 2020-01-21)\nFeld 1: appli_code (999999999, EUTM-Schlüssel)\nFeld 2: euipo_owner_code (Schlüssel der Tabelle euipo)\nFeld 3: Empfang_date (yyyy @-@ mm @-@ dd, Anmeldetag)\nFeld 4: Nice_class (99, Nice code of product)\nFeld 5: date_grant (yyyy @-@ mm @-@ dd, Registrierungsdatum)\nFeld 6: date_expi (yyyy @-@ mm @-@ dd, Ablaufdatum)"
+                },
+                {
+                    "@language": "hr-t-en-t0-mtec",
+                    "@value": "Tablica s informacijama o žigu EU-a, jedan redak po prijavi i razred u Nici,\n3 857 467 zabilježilo 6 polja (1996 – 01 – 01 do 2020 – 01 – 21) Polje 1.:\nAppli_code (999999999, ključ žiga EU-a)\nPolje 2.:euipo_owner_code (ključ tablice euipo)\nPodručje 3.:\nprimanje_datum (yyyy @-@ mm @-@ dd, datum podnošenja)\nPolje 4.:Nice_class (99, Nice kod proizvoda)\n Polje 5.: date_grant (ggg. @-@ mm @-@ dd, datum registra)\nPolje 6.:date_expi (ggg. @-@ mm @-@ dd, datum isteka)  3 857 467 zabilježilo 6 polja (1996 – 01 – 01 do 2020 – 01 – 21) Polje 1.:\nAppli_code (999999999, ključ žiga EU-a)  Polje 2.:\neuipo_owner_code (ključ tablice euipo)\n\nPodručje 3.:\nprimanje_datum (yyyy @-@ mm @-@ dd, datum podnošenja)\n\nPolje 4.:\nNice_class (99, Nice kod proizvoda)\n\nPolje 5.:\ndate_grant (ggg. @-@ mm @-@ dd, datum registra)\n\nPolje 6.:\ndate_expi (ggg. @-@ mm @-@ dd, datum isteka)"
+                },
+                {
+                    "@language": "sv-t-en-t0-mtec",
+                    "@value": "Tabell med EUTM-information, en rad per ansökan och Nice-klass.\n 3 857 467 poster 6 fält (1996–01–01 till 2020–01–21)\nFält 1:appli_code (999999999, EUTM nyckel)\n Fält 2:euipo_owner_code (nyckel i tabellen euipo)\n Fält 3: mottagande_date (åååå @-@ mm @-@ dd, ansökningsdatum)\n\nFält 4:\nNice_class (99, fin produktkod)\n\nFält 5:\ndate_grant (åååå @-@ mm @-@ dd, registreringsdatum)\n\nFält 6:\ndate_expi (åååå @-@ mm @-@ dd, utgångsdatum)"
+                },
+                {
+                    "@language": "bg-t-en-t0-mtec",
+                    "@value": "Таблица с информация за марката на ЕС, по един ред за всяко заявление и клас от Ница,\n 3 857 467 записа 6 полета (1996—01—01 до 2020—01—21)\nПоле 1:appli_code (9999999, ключ за марка на ЕС)\nПоле 2:\neuipo_owner_code (ключ на таблицата euipo) Поле 3:\nполучаване_дата (гггг @-@ mm @-@ dd, дата на подаване)\nПоле 4:Nice_class (99, Ница код на продукта)\nПоле 5:\ndate_grant (гггг @-@ mm @-@ dd, дата на регистъра)\nПоле 6:date_expi (гггг @-@ mm @-@ dd, срок на валидност)  3 857 467 записа 6 полета (1996—01—01 до 2020—01—21)\nПоле 1:appli_code (9999999, ключ за марка на ЕС)\nПоле 2:\neuipo_owner_code (ключ на таблицата euipo)\nПоле 3:получаване_дата (гггг @-@ mm @-@ dd, дата на подаване)\n Поле 4: Nice_class (99, Ница код на продукта)  Поле 5: date_grant (гггг @-@ mm @-@ dd, дата на регистъра)\nПоле 6:date_expi (гггг @-@ mm @-@ dd, срок на валидност)\n3 857 467 записа 6 полета (1996—01—01 до 2020—01—21)  Поле 1: appli_code (9999999, ключ за марка на ЕС) Поле 2:\neuipo_owner_code (ключ на таблицата euipo)  Поле 3:\nполучаване_дата (гггг @-@ mm @-@ dd, дата на подаване)\n\nПоле 4:\nNice_class (99, Ница код на продукта)\n\nПоле 5:\ndate_grant (гггг @-@ mm @-@ dd, дата на регистъра)\n\nПоле 6:\ndate_expi (гггг @-@ mm @-@ dd, срок на валидност)"
+                },
+                {
+                    "@language": "it-t-en-t0-mtec",
+                    "@value": "Tabella con EUTM info, una riga per applicazione e classe Nizza,\n3 857 467 registra 6 campi (1996-01-01 a 2020-01-21)\nCampo 1:\nappli_code (999999999, chiave MUE)  Campo 2: euipo_owner_code (chiave della tabella euipo) Campo 3:\ndata di ricezione (aaaa @-@ mm @-@ dd, data di deposito)\nCampo 4: Nice_class (99, Nizza codice del prodotto) Campo 5:\ndate_grant (aaaa @-@ mm @-@ dd, data del registro) Campo 6:\ndate_expi (aaaa @-@ mm @-@ dd, data di scadenza)Tabella con EUTM info, una riga per applicazione e classe Nizza,\n 3 857 467 registra 6 campi (1996-01-01 a 2020-01-21)\nCampo 1: appli_code (999999999, chiave MUE) \nCampo 2:\neuipo_owner_code (chiave della tabella euipo)\n\nCampo 3:\ndata di ricezione (aaaa @-@ mm @-@ dd, data di deposito)\n\nCampo 4:\nNice_class (99, Nizza codice del prodotto)\n\nCampo 5:\ndate_grant (aaaa @-@ mm @-@ dd, data del registro)\n\nCampo 6:\ndate_expi (aaaa @-@ mm @-@ dd, data di scadenza)"
+                },
+                {
+                    "@language": "sk-t-en-t0-mtec",
+                    "@value": "Tabuľka s informáciami o OZEÚ, jedným riadkom na žiadosť a triedou v Nice,\n3 857 467 záznamov 6 polí (1996 – 01 – 01 až 2020 – 01 – 21)\nPole 1:appli_code (999999999, kľúč EUTM)\n Pole 2:\neuipo_owner_code (kľúč tabuľky euipo)\n\nPole 3:\npríjem_date (rrrr @-@ mm @-@ dd, dátum podania)\n\nPole 4:\nNice_class (99, pekný kód výrobku)\n\nPole 5:\ndate_grant (rrrr @-@ mm @-@ dd, dátum registrácie)\n\nPole 6:\ndate_expi (yyyy @-@ mm @-@ dd, dátum expirácie)"
+                },
+                {
+                    "@language": "hu-t-en-t0-mtec",
+                    "@value": "Táblázat az EUTM-információkkal, bejelentésenként egy sor és nizzai osztály,\n3 857 467 rekord 6 mezőt (1996–01–01 2020–01–21)\nMező:\nappli_code (9999999, EUTM kulcs)  Mező: euipo_owner_code (a táblázat kulcsa euipo) Mező:\nfogadás_dátum (éééé @-@ mm @-@ dd, bejelentési dátum)\nMező: Nice_class (99, Nizzai termékkód) Mező:\ndate_grant (yyyy @-@ mm @-@ dd, regisztráció dátuma) Mező:\ndate_expi (éééé @-@ mm @-@ dd, lejárati dátum)Táblázat az EUTM-információkkal, bejelentésenként egy sor és nizzai osztály,\n 3 857 467 rekord 6 mezőt (1996–01–01 2020–01–21)\nMező: appli_code (9999999, EUTM kulcs) \nMező:\neuipo_owner_code (a táblázat kulcsa euipo)\n\nMező:\nfogadás_dátum (éééé @-@ mm @-@ dd, bejelentési dátum)\n\nMező:\nNice_class (99, Nizzai termékkód)\n\nMező:\ndate_grant (yyyy @-@ mm @-@ dd, regisztráció dátuma)\n\nMező:\ndate_expi (éééé @-@ mm @-@ dd, lejárati dátum)"
+                },
+                {
+                    "@language": "sl-t-en-t0-mtec",
+                    "@value": "Tabela s podatki o blagovni znamki EU, ena vrstica na prijavo in Nice razred,\n3 857 467 zapisov 6 polj (1996–01–01 do 2020–01–21)\nPolje 1:\nAppli_code (999999999, ključ EUTM)  Polje 2: koda euipo_lastnika (ključ tabele euipo) Področje 3:\ndatum prejemanja_date (yyyy @-@ mm @-@ dd, datum vložitve)\nPodročje 4: Nice_class (99, Nice koda izdelka) Področje 5:\ndate_grant (yyyy @-@ mm @-@ dd, datum registracije) Polje 6:\ndatum izteka roka uporabnosti (yyyy @-@ mm @-@ dd, datum poteka veljavnosti)Tabela s podatki o blagovni znamki EU, ena vrstica na prijavo in Nice razred,\n 3 857 467 zapisov 6 polj (1996–01–01 do 2020–01–21)\nPolje 1: Appli_code (999999999, ključ EUTM) \nPolje 2:\nkoda euipo_lastnika (ključ tabele euipo)\n\nPodročje 3:\ndatum prejemanja_date (yyyy @-@ mm @-@ dd, datum vložitve)\n\nPodročje 4:\nNice_class (99, Nice koda izdelka)\n\nPodročje 5:\ndate_grant (yyyy @-@ mm @-@ dd, datum registracije)\n\nPolje 6:\ndatum izteka roka uporabnosti (yyyy @-@ mm @-@ dd, datum poteka veljavnosti)"
+                },
+                {
+                    "@language": "fr-t-en-t0-mtec",
+                    "@value": "Tableau contenant des informations sur la marque de l’Union européenne, une ligne par demande et la classe Nice,\n3 857 467 enregistre 6 champs (1996-01-01 à 2020-01-21)\nDomaine 1:\nappli_code (999999999, clé MUE)  Domaine 2: euipo_owner_code (clé de la table euipo) Domaine 3:\nréception_date (yyyy @-@ mm @-@ jd, date de dépôt)\nDomaine 4: Nice_class (99), Code Nice du produit) Domaine 5:\ndate_grant (yyyy @-@ mm @-@ jd, date d’enregistrement) Domaine 6:\ndate_expi (yyyy @-@ mm @-@ jd, date d’expiration)Tableau contenant des informations sur la marque de l’Union européenne, une ligne par demande et la classe Nice,\n 3 857 467 enregistre 6 champs (1996-01-01 à 2020-01-21)\nDomaine 1: appli_code (999999999, clé MUE) \nDomaine 2:\neuipo_owner_code (clé de la table euipo)\n\nDomaine 3:\nréception_date (yyyy @-@ mm @-@ jd, date de dépôt)\n\nDomaine 4:\nNice_class (99), Code Nice du produit)\n\nDomaine 5:\ndate_grant (yyyy @-@ mm @-@ jd, date d’enregistrement)\n\nDomaine 6:\ndate_expi (yyyy @-@ mm @-@ jd, date d’expiration)"
+                },
+                {
+                    "@language": "ga-t-en-t0-mtec",
+                    "@value": "Tábla le EUTM info, líne amháin in aghaidh an iarratais agus rang Nice,\n3 857 467 taifead 6 réimse (1996-01-01 go 2020-01-21)\nRéimse 1:\nappli_code (999999999, eochair EUTM)  Réimse 2: euipo_owner_code (eochair an tábla EUIPO) Réimse 3:\nreceiving_date (yyyy @-@ mm @-@ dd, an dáta comhdaithe)\nRéimse 4: Nice_aicme (99, Cód táirge Nice) Réimse 5:\ndate_grant (yyyy @-@ mm @-@ dd, date) Réimse 6:\ndate_expi (bbbb @-@ mm @-@ dd, dáta éaga)Tábla le EUTM info, líne amháin in aghaidh an iarratais agus rang Nice,\n 3 857 467 taifead 6 réimse (1996-01-01 go 2020-01-21)\nRéimse 1: appli_code (999999999, eochair EUTM) \nRéimse 2:\neuipo_owner_code (eochair an tábla EUIPO)\n\nRéimse 3:\nreceiving_date (yyyy @-@ mm @-@ dd, an dáta comhdaithe)\n\nRéimse 4:\nNice_aicme (99, Cód táirge Nice)\n\nRéimse 5:\ndate_grant (yyyy @-@ mm @-@ dd, date)\n\nRéimse 6:\ndate_expi (bbbb @-@ mm @-@ dd, dáta éaga)"
+                },
+                {
+                    "@language": "el-t-en-t0-mtec",
+                    "@value": "Πίνακας με πληροφορίες EUTM, μία γραμμή ανά αίτηση και κλάση Νίκαιας,\n 3 857 467 εγγραφές 6 πεδία (1996-01-01 έως 2020-01-21) Πεδίο 1:\nappli_code (9999999, κλειδί EUTM)\nΠεδίο 2:euipo_owner_code (κλειδί του πίνακα euipo)\n Πεδίο 3: παραλαβή_date (εεε @-@ mm @-@ dd, ημερομηνία κατάθεσης)\nΠεδίο 4:Nice_class (99, κωδικός Νίκαιας του προϊόντος)\n Πεδίο 5: date_grant (εεε @-@ mm @-@ dd, ημερομηνία μητρώου)\nΠεδίο 6:date_expi (εεε @-@ mm @-@ dd, ημερομηνία λήξης)  3 857 467 εγγραφές 6 πεδία (1996-01-01 έως 2020-01-21)\nΠεδίο 1: appli_code (9999999, κλειδί EUTM)\nΠεδίο 2:euipo_owner_code (κλειδί του πίνακα euipo)\n Πεδίο 3:παραλαβή_date (εεε @-@ mm @-@ dd, ημερομηνία κατάθεσης)\n Πεδίο 4:Nice_class (99, κωδικός Νίκαιας του προϊόντος)\n Πεδίο 5:\ndate_grant (εεε @-@ mm @-@ dd, ημερομηνία μητρώου)\n\nΠεδίο 6:\ndate_expi (εεε @-@ mm @-@ dd, ημερομηνία λήξης)"
+                },
+                {
+                    "@language": "lv-t-en-t0-mtec",
+                    "@value": "Tabula ar ESPZ informāciju, viena rinda katram lietojumam un Nicas klasei,\n3 857 467 ieraksti 6 lauki (1996–01–01 līdz 2020–01–21)\nLauks:\nappli_code (9999999, ESPK atslēga)  Lauks: euipo_owner_code (galda euipo atslēga) Lauks:\nsaņemšana_datums (gggg @-@ mm @-@ dd, iesniegšanas datums)\nLauks: Nicas_klase (99, produkta Nicas kods) Lauks:\ndatums_piešķiršana (gggg @-@ mm @-@ dd, reģistra datums) Lauks:\ndate_expi (gggg @-@ mm @-@ dd, derīguma termiņš)Tabula ar ESPZ informāciju, viena rinda katram lietojumam un Nicas klasei,\n 3 857 467 ieraksti 6 lauki (1996–01–01 līdz 2020–01–21)\nLauks: appli_code (9999999, ESPK atslēga) \nLauks:\neuipo_owner_code (galda euipo atslēga)\n\nLauks:\nsaņemšana_datums (gggg @-@ mm @-@ dd, iesniegšanas datums)\n\nLauks:\nNicas_klase (99, produkta Nicas kods)\n\nLauks:\ndatums_piešķiršana (gggg @-@ mm @-@ dd, reģistra datums)\n\nLauks:\ndate_expi (gggg @-@ mm @-@ dd, derīguma termiņš)"
+                },
+                {
+                    "@language": "pt-t-en-t0-mtec",
+                    "@value": "Quadro com informações da EUTM, uma linha por aplicação e classe Nice,\n3 857 467 registos 6 campos (1996-01-01 a 2020-01-21)\nCampo 1:\nappli_code (999999999, chave MUE)  Campo 2: euipo_owner_code (chave da tabela euipo) Campo 3:\nreceive_date (aaaa @-@ mm @-@ dd, data de depósito)\nCampo 4: Nice_class (99, Nice code of product) Campo 5:\ndate_grant (aaaa @-@ mm @-@ dd, data do registo) Campo 6:\ndate_expi (aaaa @-@ mm @-@ dd, data de validade)Quadro com informações da EUTM, uma linha por aplicação e classe Nice,\n 3 857 467 registos 6 campos (1996-01-01 a 2020-01-21)\nCampo 1: appli_code (999999999, chave MUE) \nCampo 2:\neuipo_owner_code (chave da tabela euipo)\n\nCampo 3:\nreceive_date (aaaa @-@ mm @-@ dd, data de depósito)\n\nCampo 4:\nNice_class (99, Nice code of product)\n\nCampo 5:\ndate_grant (aaaa @-@ mm @-@ dd, data do registo)\n\nCampo 6:\ndate_expi (aaaa @-@ mm @-@ dd, data de validade)"
+                },
+                {
+                    "@language": "pl-t-en-t0-mtec",
+                    "@value": "Tabela zawierająca informacje EUTM, jedną linię na aplikację i klasę Nicei,\n3 857 467 zapisuje 6 pól (1996-01-01 do 2020-01-21)\nPole 1:\nappli_code (999999999, klucz EUTM)  Pole 2: euipo_owner_code (klucz tabeli euipo) Pole 3:\ndata odbioru (rrrr @-@ mm @-@ dd, data zgłoszenia)\nPole 4: Nice_class (99, Nice kod produktu) Pole 5:\ndate_grant (rrrr @-@ mm @-@ dd, data rejestracji) Pole 6:\ndate_expi (rrrr @-@ mm @-@ dd, data ważności)Tabela zawierająca informacje EUTM, jedną linię na aplikację i klasę Nicei,\n 3 857 467 zapisuje 6 pól (1996-01-01 do 2020-01-21)\nPole 1: appli_code (999999999, klucz EUTM) \nPole 2:\neuipo_owner_code (klucz tabeli euipo)\n\nPole 3:\ndata odbioru (rrrr @-@ mm @-@ dd, data zgłoszenia)\n\nPole 4:\nNice_class (99, Nice kod produktu)\n\nPole 5:\ndate_grant (rrrr @-@ mm @-@ dd, data rejestracji)\n\nPole 6:\ndate_expi (rrrr @-@ mm @-@ dd, data ważności)"
+                },
+                {
+                    "@language": "mt-t-en-t0-mtec",
+                    "@value": "Tabella bl-informazzjoni tal-EUTM, linja waħda għal kull applikazzjoni u l-klassi ta’ Nizza,\n 3 857 467 rekords 6 oqsma (1996–01–01 sa 2020–01–21)\nQasam 1:applikazzjoni_code (999999999, ċavetta tal-EUTM)\nQasam 2:\neuipo_owner_code (iċ-ċavetta tat-tabella euipo) Qasam 3:\nreceived_date (ssss @-@ mm @-@ dd, data tal-preżentazzjoni)\nQasam 4:Nizza_klassi (99, Kodiċi tal-prodott ta’ Nizza)\nQasam 5:\ndate_grant (ssss @-@ mm @-@ dd, data tar-reġistru)\nQasam 6:date_expi (ssss @-@ mm @-@ dd, data ta’ skadenza)  3 857 467 rekords 6 oqsma (1996–01–01 sa 2020–01–21)\nQasam 1:applikazzjoni_code (999999999, ċavetta tal-EUTM)\nQasam 2:\neuipo_owner_code (iċ-ċavetta tat-tabella euipo)\nQasam 3:received_date (ssss @-@ mm @-@ dd, data tal-preżentazzjoni)\n Qasam 4: Nizza_klassi (99, Kodiċi tal-prodott ta’ Nizza)  Qasam 5: date_grant (ssss @-@ mm @-@ dd, data tar-reġistru)\nQasam 6:date_expi (ssss @-@ mm @-@ dd, data ta’ skadenza)\n3 857 467 rekords 6 oqsma (1996–01–01 sa 2020–01–21)  Qasam 1: applikazzjoni_code (999999999, ċavetta tal-EUTM) Qasam 2:\neuipo_owner_code (iċ-ċavetta tat-tabella euipo)  Qasam 3:\nreceived_date (ssss @-@ mm @-@ dd, data tal-preżentazzjoni)\n\nQasam 4:\nNizza_klassi (99, Kodiċi tal-prodott ta’ Nizza)\n\nQasam 5:\ndate_grant (ssss @-@ mm @-@ dd, data tar-reġistru)\n\nQasam 6:\ndate_expi (ssss @-@ mm @-@ dd, data ta’ skadenza)"
+                },
+                {
+                    "@language": "et-t-en-t0-mtec",
+                    "@value": "Tabel koos ELi kaubamärgi teabega, üks rida iga taotluse ja Nice’i klassi kohta;\n3 857 467 kirjet 6 välja (1996–01–01 kuni 2020–01–21)\nVäli: rakenduskood (999999999, ELi kaubamärgi võti)\nVäli: euipo_owner_code (tabeli euipo võti)\nVäli: vastuvõtmine_date (ayyy @-@ mm @-@ dd, esitamise kuupäev)\nVäli: Nice_klass (99, Nice’i tootekood)\nVäli: date_grant (ayyy @-@ mm @-@ dd, registrikuupäev)\nVäli: date_expi (ayyy @-@ mm @-@ dd, aegumiskuupäev)"
+                }
+            ],
+            "dct:title": [
+                {
+                    "@language": "en",
+                    "@value": "Table with EUTM per application and Nice class"
+                },
+                {
+                    "@language": "hr-t-en-t0-mtec",
+                    "@value": "Tablica sa žigom EU-a po prijavi i Nicanskom razredu"
+                },
+                {
+                    "@language": "pl-t-en-t0-mtec",
+                    "@value": "Tabela z EUTM na wniosek i Nicea"
+                },
+                {
+                    "@language": "da-t-en-t0-mtec",
+                    "@value": "Tabel med EUTM pr. ansøgning og Nice-klasse"
+                },
+                {
+                    "@language": "lt-t-en-t0-mtec",
+                    "@value": "Lentelė su EUTM kiekvienai paraiškai ir Nicos klasei"
+                },
+                {
+                    "@language": "nl-t-en-t0-mtec",
+                    "@value": "Tabel met EUTM per aanvraag en klasse Nice"
+                },
+                {
+                    "@language": "sk-t-en-t0-mtec",
+                    "@value": "Tabuľka s OZEÚ podľa žiadosti a Niceskej triedy"
+                },
+                {
+                    "@language": "pt-t-en-t0-mtec",
+                    "@value": "Quadro com MUE por aplicação e classe Nice"
+                },
+                {
+                    "@language": "el-t-en-t0-mtec",
+                    "@value": "Πίνακας με EUTM ανά αίτηση και κλάση Νίκαιας"
+                },
+                {
+                    "@language": "cs-t-en-t0-mtec",
+                    "@value": "Tabulka s OZEU podle přihlášky a Nice třídy"
+                },
+                {
+                    "@language": "de-t-en-t0-mtec",
+                    "@value": "Tabelle mit UM je Anwendung und Klasse Nizza"
+                },
+                {
+                    "@language": "sl-t-en-t0-mtec",
+                    "@value": "Tabela z blagovno znamko EU za vsako prijavo in razred iz Nice"
+                },
+                {
+                    "@language": "fi-t-en-t0-mtec",
+                    "@value": "Taulukko, jossa EUTM hakemusta ja Nizzan luokkaa kohti"
+                },
+                {
+                    "@language": "fr-t-en-t0-mtec",
+                    "@value": "Tableau avec MUE par demande et classe Nice"
+                },
+                {
+                    "@language": "sv-t-en-t0-mtec",
+                    "@value": "Tabell med EU-varumärke per ansökan och Niceklass"
+                },
+                {
+                    "@language": "es-t-en-t0-mtec",
+                    "@value": "Tabla con EUTM por aplicación y clase Niza"
+                },
+                {
+                    "@language": "bg-t-en-t0-mtec",
+                    "@value": "Таблица с марка на ЕС за всяко заявление и клас от Ница"
+                },
+                {
+                    "@language": "it-t-en-t0-mtec",
+                    "@value": "Tabella con MUE per applicazione e classe Nizza"
+                },
+                {
+                    "@language": "mt-t-en-t0-mtec",
+                    "@value": "Tabella bl-EUTM għal kull applikazzjoni u l-klassi ta’ Nizza"
+                },
+                {
+                    "@language": "hu-t-en-t0-mtec",
+                    "@value": "Táblázat bejelentésenként és nizzai osztályonként"
+                },
+                {
+                    "@language": "et-t-en-t0-mtec",
+                    "@value": "Tabel ELi kaubamärgiga taotluse ja Nice’i klassi kohta"
+                },
+                {
+                    "@language": "ro-t-en-t0-mtec",
+                    "@value": "Tabel cu marca UE pentru fiecare cerere și clasa Nisa"
+                },
+                {
+                    "@language": "lv-t-en-t0-mtec",
+                    "@value": "Tabula ar ESPZ katram lietojumam un Nicas klasei"
+                },
+                {
+                    "@language": "ga-t-en-t0-mtec",
+                    "@value": "Tábla le EUTM in aghaidh an iarratais agus rang Nice"
+                }
+            ],
+            "dct:identifier": "http://data.europa.eu/88u/distribution/67621aac-6a57-436b-9bbe-373993f989fd",
+            "dct:rights": {
+                "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+            },
+            "@type": "dcat:Distribution",
+            "dcat:mediaType": {
+                "@id": "http://www.iana.org/assignments/media-types/text/csv"
+            },
+            "dcat:compressFormat": {
+                "@id": "http://www.iana.org/assignments/media-types/application/gzip"
+            },
+            "dct:license": {
+                "@id": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0"
+            },
+            "dcat:downloadURL": {
+                "@id": "https://data.europa.eu/euodp/repository/agencies/euipo/tm.csv.gz"
+            },
+            "dct:type": {
+                "@id": "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"
+            },
+            "dct:format": {
+                "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
+            },
+            "dcat:accessURL": {
+                "@id": "https://data.europa.eu/euodp/repository/agencies/euipo/tm.csv.gz"
+            }
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/EST",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/MLT",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/BEL",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/HRV",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/IRL",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/SWE",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/country/SVK",
+            "@type": "dct:Location"
+        },
+        {
+            "@id": "http://data.europa.eu/88u/distribution/879870a1-2fdb-48d9-a9f0-e1997f18b594",
+            "dct:title": [
+                {
+                    "@language": "pl-t-en-t0-mtec",
+                    "@value": "Dostęp do bazy danych EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "lt-t-en-t0-mtec",
+                    "@value": "Prieiga prie EUIPO duomenų bazės „eSearch Plus“"
+                },
+                {
+                    "@language": "da-t-en-t0-mtec",
+                    "@value": "Få adgang til EUIPO's database eSearch Plus"
+                },
+                {
+                    "@language": "hr-t-en-t0-mtec",
+                    "@value": "Pristup EUIPO-ovoj bazi podataka eSearch Plus"
+                },
+                {
+                    "@language": "hu-t-en-t0-mtec",
+                    "@value": "Hozzáférés az EUIPO adatbázisához eSearch Plus"
+                },
+                {
+                    "@language": "es-t-en-t0-mtec",
+                    "@value": "Acceda a la base de datos de la EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "en",
+                    "@value": "Access EUIPO's database eSearch Plus"
+                },
+                {
+                    "@language": "lv-t-en-t0-mtec",
+                    "@value": "Piekļuve EUIPO datubāzei eSearch Plus"
+                },
+                {
+                    "@language": "fr-t-en-t0-mtec",
+                    "@value": "Accéder à la base de données de l’EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "pt-t-en-t0-mtec",
+                    "@value": "Acesso à base de dados do EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "fi-t-en-t0-mtec",
+                    "@value": "Pääsy EUIPO:n tietokantaan eSearch Plus"
+                },
+                {
+                    "@language": "ga-t-en-t0-mtec",
+                    "@value": "Rochtain a fháil ar bhunachar sonraí EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "de-t-en-t0-mtec",
+                    "@value": "Zugriff auf die Datenbank des EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "sv-t-en-t0-mtec",
+                    "@value": "Få tillgång till EUIPO:s databas eSearch Plus"
+                },
+                {
+                    "@language": "el-t-en-t0-mtec",
+                    "@value": "Πρόσβαση στη βάση δεδομένων του EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "bg-t-en-t0-mtec",
+                    "@value": "Достъп до базата данни eSearch Plus на EUIPO"
+                },
+                {
+                    "@language": "nl-t-en-t0-mtec",
+                    "@value": "Toegang tot de databank van EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "ro-t-en-t0-mtec",
+                    "@value": "Accesați baza de date a EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "mt-t-en-t0-mtec",
+                    "@value": "Aċċess għall-bażi tad-data tal-EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "it-t-en-t0-mtec",
+                    "@value": "Accedi alla banca dati dell'EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "sl-t-en-t0-mtec",
+                    "@value": "Dostop do zbirke podatkov urada EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "sk-t-en-t0-mtec",
+                    "@value": "Prístup k databáze úradu EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "cs-t-en-t0-mtec",
+                    "@value": "Přístup k databázi úřadu EUIPO eSearch Plus"
+                },
+                {
+                    "@language": "et-t-en-t0-mtec",
+                    "@value": "Juurdepääs EUIPO andmebaasile eSearch Plus"
+                }
+            ],
+            "@type": "dcat:Distribution",
+            "dct:license": {
+                "@id": "http://publications.europa.eu/resource/authority/licence/CC_BY_4_0"
+            },
+            "dct:identifier": "http://data.europa.eu/88u/distribution/492455ba-bcf0-41cf-adb8-4ac7aa3a1903",
+            "dct:rights": {
+                "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC"
+            },
+            "dcat:accessURL": {
+                "@id": "https://euipo.europa.eu/eSearch/"
+            },
+            "dcat:mediaType": {
+                "@id": "http://www.iana.org/assignments/media-types/text/html"
+            },
+            "dct:format": {
+                "@id": "http://publications.europa.eu/resource/authority/file-type/HTML"
+            },
+            "dct:type": {
+                "@id": "http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE"
+            }
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/corporate-body/OAMI",
+            "@type": "foaf:Agent"
+        },
+        {
+            "@id": "http://www.iana.org/assignments/media-types/text/html",
+            "@type": "dct:MediaType"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/file-type/DOCX",
+            "@type": "dct:MediaTypeOrExtent"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/documentation-type/DOCUMENTATION_MAIN",
+            "@type": "skos:Concept"
+        }
+    ],
+    "@context": {
+        "dct": "http://purl.org/dc/terms/",
+        "adms": "http://www.w3.org/ns/adms#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "foaf": "http://xmlns.com/foaf/0.1/"
+    }
+}

@@ -1,0 +1,231 @@
+{ "@context": "http://schema.org", "@type": "FAQPage", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016" }, "name": "Open data explained: Domestic UK Applications", "datePublished": "2016-11-02T10:14:18+00:00", "dateModified": "2018-02-13T10:20:01+00:00", "text": null, "publisher": { "@type": "Organization", "name": "GOV.UK", "url": "https://www.gov.uk", "logo": { "@type": "ImageObject", "url": "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-logo-b8553f688131fad665e52a8c2df7633f9cd1c0fffb9f69703cc68c728e7b3b74.png" } }, "image": [ "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-1x1-2672c0fb7a5d5f947d880522c509ebe7f2be090885883cc94418f6860e812e15.png", "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-4x3-194fde4197f00e669f6f52c182df2ed707bfb2024c9ef39f7a2ed20da62b90eb.png", "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-16x9-30e6c0e035636ee6b9dc72ae254bcd4a925182805afe7c5b7170cf2394894b28.png" ], "author": { "@type": "Organization", "name": "Intellectual Property Office", "url": "https://www.gov.uk/government/organisations/intellectual-property-office" }, "mainEntity": [ { "@type": "Question", "name": "1. Details of columns and their description", "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016#details-of-columns-and-their-description", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016#details-of-columns-and-their-description", "text": "\u003ctable\u003e\n \u003cthead\u003e\n \u003ctr\u003e\n \u003cth scope=\"col\"\u003eItem\u003c/th\u003e\n \u003cth scope=\"col\"\u003eDescription\u003c/th\u003e\n \u003c/tr\u003e\n \u003c/thead\u003e\n \u003ctbody\u003e\n \u003ctr\u003e\n \u003ctd\u003eTrade mark\u003c/td\u003e\n \u003ctd\u003eThe unique reference number given to the trade mark at application.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eHyperlink\u003c/td\u003e\n \u003ctd\u003eHyperlink to the given record on the Intellectual Property Offices’ online trade mark enquiry webpage.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eMark Text\u003c/td\u003e\n \u003ctd\u003eThe text elements of the trade mark if the mark consists of or contains words, letters, numbers or any other characters that can be typed.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eName\u003c/td\u003e\n \u003ctd\u003eName of trade mark owner.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003ePostcode\u003c/td\u003e\n \u003ctd\u003eThe postcode of the trade mark owner (Note: this is only the area code and is present only for UK owners, where available).\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eRegion\u003c/td\u003e\n \u003ctd\u003eThe UK region of the owner (Note: only present for UK owners where available and is determined by postcode where available).\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eCountry\u003c/td\u003e\n \u003ctd\u003eThe stated country of residence of the owner.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eStatus\u003c/td\u003e\n \u003ctd\u003eIdentifies the legal status of the trade mark. \u003ca href=\"#table2\"\u003eSee Table 2\u003c/a\u003e ‘Trade mark description and status’.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eCategory of Mark\u003c/td\u003e\n \u003ctd\u003eStandard - an ordinary trade mark.\u003cbr\u003e\u003cbr\u003eCertification - a mark indicating that the goods and services in connection with which it is used are certified by the proprietor of the mark in respect of origin, material, mode of manufacture of goods or performance of services, quality, accuracy or other characteristics (Section 50(1) Trade marks Act 1994).\u003cbr\u003e\u003cbr\u003eCollective - a mark distinguishing the goods or services of members of the association which is the proprietor of the mark from those of other undertakings. (Section 49 (1) Trade marks Act 1994).\u003cbr\u003e\u003cbr\u003eGuidance on \u003ca href=\"https://www.gov.uk/guidance/trade-marks-manual/certification-and-collective-marks\"\u003eCertification and Collective marks\u003c/a\u003e.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eMark Type\u003c/td\u003e\n \u003ctd\u003eWord marks are represented using words, letters, numbers or any other characters that can be typed.\u003cbr\u003e\u003cbr\u003e Figurative marks are represented using pictures, graphics or images and may also combine words, letters or numbers.\u003cbr\u003e\u003cbr\u003e 3D (Shape mark), a three-dimensional mark is represented using a three-dimensional shape, such as the actual product.\u003cbr\u003e\u003cbr\u003e Other includes:\u003cbr\u003e\u003cbr\u003e Colour marks, a colour per se mark is used only to register an actual colour to distinguish products or services.\u003cbr\u003e\u003cbr\u003e Hologram marks are three-dimensional images.\u003cbr\u003e\u003cbr\u003e Sound marks must be represented graphically using, for example, musical notation.\u003cbr\u003e\u003cbr\u003e Olfactory is mark which is a smell or scent.\u003cbr\u003e\u003cbr\u003e Movement marks - a series of still images showing the sequence of movement.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eSeries\u003c/td\u003e\n \u003ctd\u003eIdentifies a series of trade marks. A ‘series’ is a number of marks with very small differences. Any differences between the marks must not substantially change how the marks look, sound or alter their meanings (Section 41(2) of the Trade Marks Act 1994).\u003cbr\u003e\u003cbr\u003eFrom 1st October 2009 the maximum number of marks allowed in a series is six. Prior to 1 October 2009 the maximum was 999.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eNo of marks in series\u003c/td\u003e\n \u003ctd\u003eThe number of marks in a series of marks.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eFiled\u003c/td\u003e\n \u003ctd\u003eThe date the trade mark application was correctly filed at the Intellectual Property Office\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003ePublished\u003c/td\u003e\n \u003ctd\u003eThe date the trade mark application was published for opposition purposes.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eRegistered\u003c/td\u003e\n \u003ctd\u003eThe date of completion of the registration procedures.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eExpired\u003c/td\u003e\n \u003ctd\u003eThe date the registration expired due to non-renewal.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eRenewal due date\u003c/td\u003e\n \u003ctd\u003eThe date the registration is/was due for renewal.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eClass\u003c/td\u003e\n \u003ctd\u003eThe current number of the goods or service classes that protection has been applied for/registered. Note: ‘1’ indicates that the Class is covered by the application.\u003cbr\u003e\u003cbr\u003eThe trade mark classification system \u003ca rel=\"external\" href=\"http://www.wipo.int/classifications/nice/en/index.html\"\u003eNice Classification\u003c/a\u003e is divided between goods, in classes 1 - 34 and services, in classes 35 - 45. The \u003ca href=\"https://www.gov.uk/government/publications/how-to-classify-trade-marks/trade-mark-classification-list-of-goods-and-services\"\u003eclass headings\u003c/a\u003e describe the types of goods and services included within the class, please note that the class headings do not include all goods or services in a particular class.\u003cbr\u003e\u003cbr\u003e The \u003ca rel=\"external\" href=\"http://www.wipo.int/classifications/nice/en/index.html\"\u003eNice Classification (NCL)\u003c/a\u003e established by the \u003ca rel=\"external\" href=\"http://www.wipo.int/treaties/en/classification/nice/\"\u003eNice Agreement\u003c/a\u003e (1957), is an international classification of goods and services applied for the registration of marks.\u003c/td\u003e\n \u003c/tr\u003e\n \u003c/tbody\u003e\n\u003c/table\u003e" } }, { "@type": "Question", "name": "2. Trade mark status and description", "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016#table2", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016#table2", "text": "\u003ctable\u003e\n \u003cthead\u003e\n \u003ctr\u003e\n \u003cth scope=\"col\"\u003eStatus\u003c/th\u003e\n \u003cth scope=\"col\"\u003eDefinition\u003c/th\u003e\n \u003c/tr\u003e\n \u003c/thead\u003e\n \u003ctbody\u003e\n \u003ctr\u003e\n \u003ctd\u003eApplication received\u003c/td\u003e\n \u003ctd\u003eThe application has been received at the Intellectual Property Office and is awaiting formalities examination.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eExamination\u003c/td\u003e\n \u003ctd\u003eThe application is awaiting examination or has been examined.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003ePre-Publication\u003c/td\u003e\n \u003ctd\u003eThe application has been examined and accepted for publication.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eApplication published\u003c/td\u003e\n \u003ctd\u003eThe application has been accepted and published in the Intellectual Property Office Trade Marks Journal for opposition purposes.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eOpposed\u003c/td\u003e\n \u003ctd\u003eThe application has been published and opposition to the registration of the mark has been filed.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eRegistered\u003c/td\u003e\n \u003ctd\u003eThe trade mark is registered and is legally protected.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eAppealed\u003c/td\u003e\n \u003ctd\u003eThe application has been refused by the Intellectual Property Office and the applicant has appealed the decision.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eMerged\u003c/td\u003e\n \u003ctd\u003eThe trade mark has been merged with similar trade mark registrations.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eExpired\u003c/td\u003e\n \u003ctd\u003eThe trade mark registration has not been renewed.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eWithdrawn\u003c/td\u003e\n \u003ctd\u003eThe application for registration has been withdrawn by the owner or the application was a ‘Right Start’ application and the continuation fee was not paid.\u003cbr\u003e\u003cbr\u003e See \u003ca rel=\"external\" href=\"http://www.ipo.gov.uk/tmcase.htm\"\u003ehistoric events details on Case Enquiry\u003c/a\u003e.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eRefused\u003c/td\u003e\n \u003ctd\u003eThe application has been refused by the Intellectual Property Office.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eCancelled\u003c/td\u003e\n \u003ctd\u003eThe registration has been cancelled following a successful application for cancellation.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eSurrendered\u003c/td\u003e\n \u003ctd\u003eThe trade mark registration has been surrendered by the owner and the trade mark is no longer registered.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eRemoved\u003c/td\u003e\n \u003ctd\u003eThe trade mark registration has not been renewed, but is still in the restoration period.\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003ctd\u003eDead\u003c/td\u003e\n \u003ctd\u003eThe trade mark registration has not been renewed, and the period for restoration has expired.\u003c/td\u003e\n \u003c/tr\u003e\n \u003c/tbody\u003e\n\u003c/table\u003e" } }, { "@type": "Question", "name": "3. Coverage", "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016#coverage", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016#coverage", "text": "\u003cp\u003eBibliographic data (not including a representation of the mark) for trade marks held on the Intellectual Property Office database with a filing date earlier than 31 August 2016.\u003c/p\u003e\u003cp\u003eThis includes:\u003c/p\u003e\u003cul\u003e\n \u003cli\u003etrade marks applied for 1 January 2010 – 31 August 2016\u003c/li\u003e\n \u003cli\u003etrade marks applied for and subsequently registered 1 April 1996 – 31 August 2016\u003c/li\u003e\n \u003cli\u003etrade marks registered and renewed 1878 – Present, excluding those that died prior to 1 April 1996\u003c/li\u003e\n\u003c/ul\u003e\u003cp\u003eEach row of data represents a trade mark. However, a trade mark may appear on multiple rows if it has multiple owners. In such cases, the trade mark data will be identical, with only the individual owner information changing.\u003c/p\u003e" } }, { "@type": "Question", "name": "4. Comparison to other releases", "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016#comparison-to-other-releases", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016#comparison-to-other-releases", "text": "\u003cp\u003eOnline registers are dynamic and alter as the trade marks’ status changes. As this data is a snapshot, it may not be directly comparable with official publications such as the facts and figures or online registers and search tools.\u003c/p\u003e" } }, { "@type": "Question", "name": "5. Open government licence", "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016#open-government-licence", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016#open-government-licence", "text": "\u003cp\u003eProvision and use of this data is defined under an \u003ca rel=\"external\" href=\"http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/\"\u003eopen government licence\u003c/a\u003e\u003c/p\u003e" } } ] }
+{ "@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "item": { "name": "Home", "@id": "https://www.gov.uk/" } }, { "@type": "ListItem", "position": 2, "item": { "name": "Business and industry", "@id": "https://www.gov.uk/business-and-industry" } }, { "@type": "ListItem", "position": 3, "item": { "name": "IPO: Trade mark data release", "@id": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release" } } ] }
+meta og:image: https://www.gov.uk/assets/frontend/govuk-opengraph-image-4196a4d6333cf92aaf720047f56cfd91b3532d7635fc21ebcf0d5897df6b5f77.png
+meta og:site_name: GOV.UK
+meta og:type: article
+meta og:url: https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016
+meta og:title: Open data explained: Domestic UK Applications
+meta twitter:card: summary
+Open data explained: Domestic UK Applications - GOV.UK
+Cookies on GOV.UK
+We use some essential cookies to make this website work.
+We’d like to set additional cookies to understand how you use GOV.UK, remember your settings and improve government services.
+We also use cookies set by other sites to help us deliver content from their services.
+You have accepted additional cookies. You can change your cookie settings (/help/cookies) at any time.
+You have rejected additional cookies. You can change your cookie settings (/help/cookies) at any time.
+Accept additional cookies
+Reject additional cookies
+View cookies (/help/cookies)
+Hide cookie message
+Skip to main content (#content)
+/
+Navigation menu
+Menu (/browse)
+Menu
+Services and information
+Benefits (/browse/benefits)
+Births, death, marriages and care (/browse/births-deaths-marriages)
+Business and self-employed (/browse/business)
+Childcare and parenting (/browse/childcare-parenting)
+Citizenship and living in the UK (/browse/citizenship)
+Crime, justice and the law (/browse/justice)
+Disabled people (/browse/disabilities)
+Driving and transport (/browse/driving)
+Education and learning (/browse/education)
+Employing people (/browse/employing-people)
+Environment and countryside (/browse/environment-countryside)
+Housing and local services (/browse/housing-local-services)
+Money and tax (/browse/tax)
+Passports, travel and living abroad (/browse/abroad)
+Visas and immigration (/browse/visas-immigration)
+Working, jobs and pensions (/browse/working)
+Government activity
+Departments (/government/organisations)
+Departments, agencies and public bodies
+News (/search/news-and-communications)
+News stories, speeches, letters and notices
+Guidance and regulation (/search/guidance-and-regulation)
+Detailed guidance, regulations and rules
+Research and statistics (/search/research-and-statistics)
+Reports, analysis and official statistics
+Policy papers and consultations (/search/policy-papers-and-consultations)
+Consultations and strategy
+Transparency (/search/transparency-and-freedom-of-information-releases)
+Data, Freedom of Information releases and corporate reports
+Search GOV.UK
+×
+Search GOV.UK (/search)
+Search
+Search GOV.UK
+Search
+Home (/)
+Business and industry (/business-and-industry)
+IPO: Trade mark data release (/government/publications/ipo-trade-mark-data-release)
+Intellectual Property Office (/government/organisations/intellectual-property-office)
+Transparency data
+Open data explained: Domestic UK Applications
+Updated 13 February 2018
+Contents
+1. Details of columns and their description (#details-of-columns-and-their-description)
+2. Trade mark status and description (#table2)
+3. Coverage (#coverage)
+4. Comparison to other releases (#comparison-to-other-releases)
+5. Open government licence (#open-government-licence)
+Print this page
+© Crown copyright 2018
+This publication is licensed under the terms of the Open Government Licence v3.0 except where otherwise stated. To view this licence, visit nationalarchives.gov.uk/doc/open-government-licence/version/3 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3) or write to the Information Policy Team, The National Archives, Kew, London TW9 4DU, or email: psi@nationalarchives.gov.uk (mailto:psi@nationalarchives.gov.uk) .
+Where we have identified any third party copyright information you will need to obtain permission from the copyright holders concerned.
+This publication is available at https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016
+1. Details of columns and their description
+Item
+Description
+Trade mark
+The unique reference number given to the trade mark at application.
+Hyperlink
+Hyperlink to the given record on the Intellectual Property Offices’ online trade mark enquiry webpage.
+Mark Text
+The text elements of the trade mark if the mark consists of or contains words, letters, numbers or any other characters that can be typed.
+Name
+Name of trade mark owner.
+Postcode
+The postcode of the trade mark owner (Note: this is only the area code and is present only for UK owners, where available).
+Region
+The UK region of the owner (Note: only present for UK owners where available and is determined by postcode where available).
+Country
+The stated country of residence of the owner.
+Status
+Identifies the legal status of the trade mark. See Table 2 (#table2) ‘Trade mark description and status’.
+Category of Mark
+Standard - an ordinary trade mark.
+Certification - a mark indicating that the goods and services in connection with which it is used are certified by the proprietor of the mark in respect of origin, material, mode of manufacture of goods or performance of services, quality, accuracy or other characteristics (Section 50(1) Trade marks Act 1994).
+Collective - a mark distinguishing the goods or services of members of the association which is the proprietor of the mark from those of other undertakings. (Section 49 (1) Trade marks Act 1994).
+Guidance on Certification and Collective marks (https://www.gov.uk/guidance/trade-marks-manual/certification-and-collective-marks) .
+Mark Type
+Word marks are represented using words, letters, numbers or any other characters that can be typed.
+Figurative marks are represented using pictures, graphics or images and may also combine words, letters or numbers.
+3D (Shape mark), a three-dimensional mark is represented using a three-dimensional shape, such as the actual product.
+Other includes:
+Colour marks, a colour per se mark is used only to register an actual colour to distinguish products or services.
+Hologram marks are three-dimensional images.
+Sound marks must be represented graphically using, for example, musical notation.
+Olfactory is mark which is a smell or scent.
+Movement marks - a series of still images showing the sequence of movement.
+Series
+Identifies a series of trade marks. A ‘series’ is a number of marks with very small differences. Any differences between the marks must not substantially change how the marks look, sound or alter their meanings (Section 41(2) of the Trade Marks Act 1994).
+From 1st October 2009 the maximum number of marks allowed in a series is six. Prior to 1 October 2009 the maximum was 999.
+No of marks in series
+The number of marks in a series of marks.
+Filed
+The date the trade mark application was correctly filed at the Intellectual Property Office
+Published
+The date the trade mark application was published for opposition purposes.
+Registered
+The date of completion of the registration procedures.
+Expired
+The date the registration expired due to non-renewal.
+Renewal due date
+The date the registration is/was due for renewal.
+Class
+The current number of the goods or service classes that protection has been applied for/registered. Note: ‘1’ indicates that the Class is covered by the application.
+The trade mark classification system Nice Classification (http://www.wipo.int/classifications/nice/en/index.html) is divided between goods, in classes 1 - 34 and services, in classes 35 - 45. The class headings (https://www.gov.uk/government/publications/how-to-classify-trade-marks/trade-mark-classification-list-of-goods-and-services) describe the types of goods and services included within the class, please note that the class headings do not include all goods or services in a particular class.
+The Nice Classification (NCL) (http://www.wipo.int/classifications/nice/en/index.html) established by the Nice Agreement (http://www.wipo.int/treaties/en/classification/nice/) (1957), is an international classification of goods and services applied for the registration of marks.
+2. Trade mark status and description
+Status
+Definition
+Application received
+The application has been received at the Intellectual Property Office and is awaiting formalities examination.
+Examination
+The application is awaiting examination or has been examined.
+Pre-Publication
+The application has been examined and accepted for publication.
+Application published
+The application has been accepted and published in the Intellectual Property Office Trade Marks Journal for opposition purposes.
+Opposed
+The application has been published and opposition to the registration of the mark has been filed.
+Registered
+The trade mark is registered and is legally protected.
+Appealed
+The application has been refused by the Intellectual Property Office and the applicant has appealed the decision.
+Merged
+The trade mark has been merged with similar trade mark registrations.
+Expired
+The trade mark registration has not been renewed.
+Withdrawn
+The application for registration has been withdrawn by the owner or the application was a ‘Right Start’ application and the continuation fee was not paid.
+See historic events details on Case Enquiry (http://www.ipo.gov.uk/tmcase.htm) .
+Refused
+The application has been refused by the Intellectual Property Office.
+Cancelled
+The registration has been cancelled following a successful application for cancellation.
+Surrendered
+The trade mark registration has been surrendered by the owner and the trade mark is no longer registered.
+Removed
+The trade mark registration has not been renewed, but is still in the restoration period.
+Dead
+The trade mark registration has not been renewed, and the period for restoration has expired.
+3. Coverage
+Bibliographic data (not including a representation of the mark) for trade marks held on the Intellectual Property Office database with a filing date earlier than 31 August 2016.
+This includes:
+trade marks applied for 1 January 2010 – 31 August 2016
+trade marks applied for and subsequently registered 1 April 1996 – 31 August 2016
+trade marks registered and renewed 1878 – Present, excluding those that died prior to 1 April 1996
+Each row of data represents a trade mark. However, a trade mark may appear on multiple rows if it has multiple owners. In such cases, the trade mark data will be identical, with only the individual owner information changing.
+4. Comparison to other releases
+Online registers are dynamic and alter as the trade marks’ status changes. As this data is a snapshot, it may not be directly comparable with official publications such as the facts and figures or online registers and search tools.
+5. Open government licence
+Provision and use of this data is defined under an open government licence (http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/)
+Back to top (#contents)
+Is this page useful?
+Maybe (/contact/govuk)
+Yes this page is useful
+No this page is not useful
+Thank you for your feedback
+Report a problem with this page
+Help us improve GOV.UK
+Do not include personal or financial information like your National Insurance number or credit card details.
+This field is for robots only. Please leave blank
+What were you doing?
+What went wrong?
+Send
+Cancel
+Help us improve GOV.UK
+To help us improve GOV.UK, we’d like to know more about your visit today.
+Please fill in this survey (opens in a new tab ) (https://www.smartsurvey.co.uk/s/gov-uk-banner/?c=no-js) .
+Cancel
+Services and information
+Benefits (/browse/benefits)
+Births, death, marriages and care (/browse/births-deaths-marriages)
+Business and self-employed (/browse/business)
+Childcare and parenting (/browse/childcare-parenting)
+Citizenship and living in the UK (/browse/citizenship)
+Crime, justice and the law (/browse/justice)
+Disabled people (/browse/disabilities)
+Driving and transport (/browse/driving)
+Education and learning (/browse/education)
+Employing people (/browse/employing-people)
+Environment and countryside (/browse/environment-countryside)
+Housing and local services (/browse/housing-local-services)
+Money and tax (/browse/tax)
+Passports, travel and living abroad (/browse/abroad)
+Visas and immigration (/browse/visas-immigration)
+Working, jobs and pensions (/browse/working)
+Government activity
+Departments (/government/organisations)
+News (/search/news-and-communications)
+Guidance and regulation (/search/guidance-and-regulation)
+Research and statistics (/search/research-and-statistics)
+Policy papers and consultations (/search/policy-papers-and-consultations)
+Transparency (/search/transparency-and-freedom-of-information-releases)
+How government works (/government/how-government-works)
+Get involved (/government/get-involved)
+Support links
+Help (/help)
+Privacy (/help/privacy-notice)
+Cookies (/help/cookies)
+Accessibility statement (/help/accessibility-statement)
+Contact (/contact)
+Terms and conditions (/help/terms-conditions)
+Rhestr o Wasanaethau Cymraeg (/cymraeg)
+Government Digital Service (/government/organisations/government-digital-service)
+All content is available under the Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) , except where otherwise stated
+© Crown copyright (https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)

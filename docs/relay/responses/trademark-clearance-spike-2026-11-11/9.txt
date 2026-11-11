@@ -1,0 +1,420 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"USPTO Trademark Search API — Bulk Phrase, Serial & Owner","description":"Check phrases against the US trademark register and get one clear or conflict answer each, from live official USPTO data. Bulk trademark search and trademark checker for clearance and availability. $5 per 1,000 results, usage included, no API key or login. US only, not legal advice.","url":"https://apify.com/khadinakbar/uspto-trademark-batch-search","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/VqvDKrPHXTSaBVK46K8tasBYrYnVuoHN9QGyXl_g8ak/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcU5IdjFhTkZKZGk3cUNwV2UtYWN0b3ItZ3RsTUlheG85SmdwOTJoWFkta3o0ZVJFU2FKVy05YTBlOWIyZC1kOTUzLTRhYmUtOTQzNC02OThhZWQ0MmY3NDIucG5n.webp","offers":{"@type":"Offer","description":"from $4.00 / 1,000 uspto trademark results","price":4,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":4,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"uspto trademark results"}}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apify.com/"},{"@type":"ListItem","position":2,"name":"Store","item":"https://apify.com/store"},{"@type":"ListItem","position":3,"name":"Khadin Akbar","item":"https://apify.com/khadinakbar"},{"@type":"ListItem","position":4,"name":"USPTO Trademark Search API — Bulk Phrase, Serial & Owner","item":"https://apify.com/khadinakbar/uspto-trademark-batch-search"}]}
+meta description: Bulk trademark checker for clearance and availability: one clear or conflict answer per phrase from live USPTO data. $5 per 1,000, usage included.
+meta og:title: USPTO Trademark Search API: Bulk Phrase & Serial · Apify
+meta og:description: Bulk trademark checker for clearance and availability: one clear or conflict answer per phrase from live USPTO data. $5 per 1,000, usage included.
+meta og:url: https://apify.com/khadinakbar/uspto-trademark-batch-search
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=USPTO+Trademark+Search+API+%E2%80%94+Bulk+Phrase%2C+Serial+%26+Owner&uniqueName=khadinakbar%2Fuspto-trademark-batch-search&categories=DEVELOPER_TOOLS%2CECOMMERCE%2CMCP_SERVERS&users=32&runs=553&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FqNHv1aNFJdi7qCpWe-actor-gtlMIaxo9Jgp92hXY-kz4eRESaJW-9a0e9b2d-d953-4abe-9434-698aed42f742.png&authorName=Khadin+Akbar&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2F0tD1SQpy6u9R7pi6VBvj3tah_LDkiUlQY_KeDCTtB6k%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcU5IdjFhTkZKZGk3cUNwV2UtcHJvZmlsZS1vOXhjRkpVSE5JLTk5NkRDMTgyLTkzRUMtNDA5Mi05RTNDLTkwNkU0NjIwRjZBQl80XzUwMDVfYy5qcGVn.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: USPTO Trademark Search API: Bulk Phrase & Serial · Apify
+meta twitter:description: Bulk trademark checker for clearance and availability: one clear or conflict answer per phrase from live USPTO data. $5 per 1,000, usage included.
+meta twitter:image: https://apify.com/og-image/actor?actorName=USPTO+Trademark+Search+API+%E2%80%94+Bulk+Phrase%2C+Serial+%26+Owner&uniqueName=khadinakbar%2Fuspto-trademark-batch-search&categories=DEVELOPER_TOOLS%2CECOMMERCE%2CMCP_SERVERS&users=32&runs=553&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FqNHv1aNFJdi7qCpWe-actor-gtlMIaxo9Jgp92hXY-kz4eRESaJW-9a0e9b2d-d953-4abe-9434-698aed42f742.png&authorName=Khadin+Akbar&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2F0tD1SQpy6u9R7pi6VBvj3tah_LDkiUlQY_KeDCTtB6k%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcU5IdjFhTkZKZGk3cUNwV2UtcHJvZmlsZS1vOXhjRkpVSE5JLTk5NkRDMTgyLTkzRUMtNDA5Mi05RTNDLTkwNkU0NjIwRjZBQl80XzUwMDVfYy5qcGVn.webp
+USPTO Trademark Search API: Bulk Phrase & Serial · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,381 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[USPTO Trademark Search API — Bulk Phrase, Serial & Owner avatar]
+USPTO Trademark Search API — Bulk Phrase, Serial & Owner
+Pricing
+from $4.00 / 1,000 uspto trademark results
+Try for free (https://console.apify.com/actors/gtlMIaxo9Jgp92hXY?addFromActorId=gtlMIaxo9Jgp92hXY)
+Go to Apify Store (/store)
+[USPTO Trademark Search API — Bulk Phrase, Serial & Owner]
+USPTO Trademark Search API — Bulk Phrase, Serial & Owner
+khadinakbar/uspto-trademark-batch-search
+Try for free (https://console.apify.com/actors/gtlMIaxo9Jgp92hXY?addFromActorId=gtlMIaxo9Jgp92hXY)
+Copy setup prompt Copied
+Check phrases against the US trademark register and get one clear or conflict answer each, from live official USPTO data. Bulk trademark search and trademark checker for clearance and availability. $5 per 1,000 results, usage included, no API key or login. US only, not legal advice.
+Pricing
+from $4.00 / 1,000 uspto trademark results
+Rating
+0.0
+(0)
+Developer
+Khadin Akbar (/khadinakbar) Maintained by Community
+Actor stats
+0
+Bookmarked
+32
+Total users
+16
+Monthly active users
+2 days ago
+Last modified
+Categories
+Developer tools (/store/categories/developer-tools) E-commerce (/store/categories/ecommerce) MCP servers (/store/categories/mcp-servers)
+Features
+Limited permissions
+Share
+README (/khadinakbar/uspto-trademark-batch-search) Input (/khadinakbar/uspto-trademark-batch-search/input-schema) Output (/khadinakbar/uspto-trademark-batch-search/output-schema) Pricing (/khadinakbar/uspto-trademark-batch-search/pricing) API (/khadinakbar/uspto-trademark-batch-search/api/python) Issues (/khadinakbar/uspto-trademark-batch-search/issues/open) Tasks 3 (/khadinakbar/uspto-trademark-batch-search/examples)
+What is USPTO Trademark Search API? #what-is-uspto-trademark-search-api
+Check phrases against the US federal trademark register and get one plain clear-or-conflict answer per phrase, from live official USPTO data.
+Price: $5 per 1,000 results, plus a $0.00005 start fee. Apify platform usage is included. No API key or login. A CLEAR row counts as one result.
+Use it as a bulk trademark search and trademark checker for trademark clearance, trademark availability and trademark conflict checks. Batch-search the United States Patent and Trademark Office register by phrase, serial number, registration number, owner name, or words inside the goods and services text. Each query returns matching federal marks with live/pending/dead status, Nice classes, owner, filing, registration and first-use dates, goods and services, a mark image link and a TSDR link — or one CLEAR row when nothing matches. Every phrase also gets one plain verdict: CLEAR or CONFLICT . Designed for print-on-demand sellers, brand-clearance workflows, trademark monitoring, and AI agents that need a structured USPTO answer without a USPTO.gov login or API key.
+This Actor reads the public Trademark Search index behind tmsearch.uspto.gov. It is a search and status lookup, not a legal opinion and not a substitute for a comprehensive attorney-led clearance search. It covers US federal marks only, not state, EU or other countries' registers. Source: United States Patent and Trademark Office, www.uspto.gov (http://www.uspto.gov) .
+How billing works: one trademark-result event per saved row. Checking 100 phrases with up to 3 rows each costs at most 300 trademark-result events.
+Best fit for this Actor #best-fit-for-this-actor
+You have a list of brand phrases, merch slogans, or domain names and need to know whether live or pending US federal marks already use them.
+You already have serial or registration numbers and want structured status, owner, class, and TSDR links in one dataset.
+You need a trademark availability screen or a bulk trademark conflict check before you print, list, or name a product.
+You want an owner-portfolio snapshot (for example every live mark owned by Nike, Inc. ) capped to a predictable number of rows.
+For patents, citations, and family graphs, use Google Patents Scraper (/khadinakbar/google-patents-scraper) instead of this Actor.
+POD clothing clearance for a merch phrase #pod-clothing-clearance-for-a-merch-phrase
+A merch seller is about to print STAR WARS on class 25 apparel. They pass that phrase with niceClasses set to 25 and statusFilter set to live . The dataset comes back with matchFound: true , recordStatus: LIVE , Lucasfilm as ownerName , serial 75306994 , and a tsdrUrl they can open. Every row for that phrase also carries queryVerdict: CONFLICT . They drop the phrase from the catalog and keep the TSDR link in the audit trail. A nonsense phrase in the same batch returns recordStatus: CLEAR and queryVerdict: CLEAR , so the rest of the list can ship. The free PHRASE_SUMMARY record lists one line per phrase with its verdict and top match, which is the quickest way to sort a 100-phrase list.
+Trademark clearance and availability: what the answer means #trademark-clearance-and-availability-what-the-answer-means
+Every phrase gets one plain answer in queryVerdict , so a bulk trademark conflict check does not need anyone to read every row.
+Answer	What it tells you	What to do
+CLEAR	No matching federal mark was found under your filters. The phrase looks available on the USPTO register.	Keep it, then confirm with an attorney before you file or launch.
+CONFLICT	At least one live or pending mark matched.	Drop it, or review the matches and their Nice classes.
+DEAD_ONLY	Only abandoned, cancelled or expired marks matched.	Lower risk, but older unregistered rights can still exist.
+REVIEW	Status filter all : the saved rows were dead, but more unsaved matches exist.	Raise maxResultsPerTerm or use statusFilter: "live" .
+Results come straight from the live USPTO search index on every run, not from a stored copy. CLEAR is a search result, not legal clearance: it does not cover similar-sounding marks, state registrations, or unregistered common-law rights.
+Quick start input #quick-start-input
+{
+"searchTerms" : [ "star wars" ] ,
+"niceClasses" : "25" ,
+"statusFilter" : "live" ,
+"maxResultsPerTerm" : 3 ,
+"includeClearRows" : true
+}
+Each value in searchTerms is one USPTO query. maxResultsPerTerm keeps a famous mark from dumping hundreds of rows into the dataset; maxResults is the run-wide cost ceiling.
+Input reference #input-reference
+Field	Type	What it controls
+searchTerms	array	Wordmark/keyword phrases, up to 100. Example: star wars .
+serialNumbers	array	Exact 7-8 digit serials, SN: prefixes, or TSDR URLs.
+registrationNumbers	array	Exact registration numbers such as 2239077 .
+ownerNames	array	Owner-portfolio search, up to 50 names.
+goodsServicesTerms	array	Words inside the goods and services text, up to 50. Example: phone case with niceClasses 9 .
+statusFilter	enum	live (default), pending , registered , dead , or all .
+niceClasses	string	Comma-separated Nice classes 1-45. Empty = every class. 25 is clothing.
+matchMode	enum	contains (default) or exact wordmark. Ignored for serial/registration lookup.
+maxResultsPerTerm	integer	1-50 rows saved per query. Default 5. Prefill 3.
+maxResults	integer	Run-wide row cap, 1-1000. Default 250.
+includeClearRows	boolean	Write a CLEAR row when a query has zero matches. Default true.
+maxConcurrency	integer	Parallel USPTO queries, 1-8. Default 4.
+At least one of searchTerms , serialNumbers , registrationNumbers , ownerNames , or goodsServicesTerms is required. Empty input returns INVALID_INPUT with zero rows and zero trademark-result charges.
+What data you receive #what-data-you-receive
+One dataset item is either a matching USPTO mark or a CLEAR no-match row for a query.
+{
+"searchTerm" : "star wars" ,
+"queryType" : "wordmark" ,
+"matchFound" : true ,
+"recordStatus" : "LIVE" ,
+"wordmark" : "STAR WARS" ,
+"serialNumber" : "75306994" ,
+"registrationNumber" : "2534385" ,
+"statusDescription" : "REGISTERED AND RENEWED" ,
+"niceClasses" : [ 25 ] ,
+"ownerName" : "Lucasfilm Ltd. LLC (LIMITED LIABILITY COMPANY; CALIFORNIA, USA)" ,
+"queryVerdict" : "CONFLICT" ,
+"filingDate" : "1997-06-11" ,
+"firstUseDate" : "1977-05-25" ,
+"markImageUrl" : "https://tsdr.uspto.gov/img/75306994/large" ,
+"tsdrUrl" : "https://tsdr.uspto.gov/#caseNumber=75306994&caseSearchType=US_APPLICATION&caseType=SERIAL_NO&searchType=statusSearch" ,
+"source" : "uspto-tmsearch" ,
+"scrapedAt" : "2026-08-17T10:00:00.000Z"
+}
+recordStatus values:
+Value	Meaning
+LIVE	Alive and registered
+PENDING	Alive but not yet registered
+DEAD	Abandoned, cancelled, or expired
+CLEAR	This query produced no matches under the chosen filters
+queryVerdict values (phrases from searchTerms only, under your own filters):
+Value	Meaning
+CLEAR	No match
+CONFLICT	At least one live or pending mark matched
+DEAD_ONLY	Only dead marks matched
+REVIEW	Status filter all , the saved rows were dead, but more unsaved matches exist
+Other fields when USPTO has them: firstUseInCommerceDate , disclaimer , markDescription , translation , drawingType , standardCharacterClaim , pseudoMark (USPTO's look-alike spelling), designCodes and designCodeDescriptions , registrationType , filingBasis , usClasses , ownerStateCountry , ownerType , attorney , and the full goodsAndServices text.
+The key-value store record PHRASE_SUMMARY is free and holds one line per query: search term, query type, verdict, match count, rows saved and top match.
+matchCountForQuery is the hit total before the per-query cap, so you can see that STAR WARS in class 25 had thousands of hits even when only three rows were saved.
+Real-world use cases #real-world-use-cases
+1. POD clothing batch #1-pod-clothing-batch
+Check a merch phrase list against live class 25 marks before upload.
+{
+"searchTerms" : [ "star wars" , "just do it" , "zzzxqwertyplugh999" ] ,
+"niceClasses" : "25" ,
+"statusFilter" : "live" ,
+"maxResultsPerTerm" : 3 ,
+"includeClearRows" : true
+}
+Use matchFound and recordStatus to drop conflicts. Keep CLEAR phrases.
+2. Exact wordmark, all classes #2-exact-wordmark-all-classes
+Confirm whether the literal mark NIKE is live anywhere, not just as a substring of longer marks.
+{
+"searchTerms" : [ "NIKE" ] ,
+"matchMode" : "exact" ,
+"statusFilter" : "live" ,
+"maxResultsPerTerm" : 5
+}
+3. Serial number status #3-serial-number-status
+Look up a known filing from a TSDR URL or raw serial.
+{
+"serialNumbers" : [ "74612654" ]
+}
+Returns owner, classes, registration number, and the canonical TSDR link.
+4. Registration number lookup #4-registration-number-lookup
+Resolve a certificate number to the current index record.
+{
+"registrationNumbers" : [ "2239077" ] ,
+"statusFilter" : "all"
+}
+5. Owner portfolio #5-owner-portfolio
+List live marks for one registrant, capped so the run stays cheap.
+{
+"ownerNames" : [ "Nike, Inc." ] ,
+"statusFilter" : "live" ,
+"maxResultsPerTerm" : 10 ,
+"maxResults" : 10
+}
+6. Pending-only watch #6-pending-only-watch
+See only applications that are alive but not yet registered.
+{
+"searchTerms" : [ "just do it" ] ,
+"statusFilter" : "pending" ,
+"maxResultsPerTerm" : 5
+}
+7. Dead-mark history #7-dead-mark-history
+Check whether a name was used before and later abandoned or cancelled.
+{
+"searchTerms" : [ "twin spray" ] ,
+"statusFilter" : "dead" ,
+"maxResultsPerTerm" : 5 ,
+"includeClearRows" : false
+}
+8. Mixed batch for an agent #8-mixed-batch-for-an-agent
+Combine a phrase, a serial, and an owner in one run.
+{
+"searchTerms" : [ "star wars" ] ,
+"serialNumbers" : [ "74612654" ] ,
+"ownerNames" : [ "Lucasfilm Ltd." ] ,
+"niceClasses" : "25" ,
+"statusFilter" : "live" ,
+"maxResultsPerTerm" : 3 ,
+"maxResults" : 20 ,
+"maxConcurrency" : 2
+}
+9. Goods and services text search #9-goods-and-services-text-search
+Find live marks whose goods text mentions phone cases, limited to class 9.
+{
+"goodsServicesTerms" : [ "phone case" ] ,
+"niceClasses" : "9" ,
+"statusFilter" : "live" ,
+"maxResultsPerTerm" : 10
+}
+Why agents choose this Actor #why-agents-choose-this-actor
+Bounded cost: $0.005 per saved row plus a $0.00005 start event, with maxResults as the hard ceiling.
+Flat JSON keys ( wordmark , serialNumber , recordStatus , tsdrUrl ) instead of nested USPTO XML.
+CLEAR rows make a 100-term batch complete even when most phrases are free of live hits.
+Provenance is explicit: source is always uspto-tmsearch , scrapedAt is ISO, tsdrUrl points at the official case.
+One queryVerdict per phrase plus a free PHRASE_SUMMARY record, so an agent can answer "is this phrase taken?" without reading every row.
+Terminal OUTPUT.outcome values ( COMPLETE , PARTIAL , VALID_EMPTY , INVALID_INPUT , UPSTREAM_FAILED ) are stable enough to branch on.
+Phrase, serial, registration, owner, and goods/services search share one schema, so a tool call does not need a mode enum.
+Patent work is out of scope on purpose, which keeps this tool from colliding with Google Patents Scraper (/khadinakbar/google-patents-scraper) .
+Agent checklist #agent-checklist
+Pass trademark phrases, serials, registration numbers, or owner names. Patent numbers belong on Google Patents Scraper.
+Set maxResults (and maxResultsPerTerm ) to the budget you can spend at $0.005 per row.
+Prefer statusFilter: "live" and a Nice class such as "25" for merch clearance.
+After the run, read OUTPUT.outcome , then the dataset. An empty dataset is a valid CLEAR/no-match result when the outcome is VALID_EMPTY .
+Open tsdrUrl when you need the official status page or documents; this Actor does not download TSDR PDFs.
+If matchCountForQuery is larger than the rows you received, raise the caps or narrow niceClasses / matchMode .
+Schedule repeats against the same searchTerms when you are monitoring new filings; USPTO search is not a live opposition-calendar feed.
+Use through the API #use-through-the-api
+curl "https://api.apify.com/v2/acts/khadinakbar~uspto-trademark-batch-search/runs?token= $APIFY_TOKEN " \
+-H "Content-Type: application/json" \
+-d '{
+"searchTerms": ["star wars"],
+"niceClasses": "25",
+"statusFilter": "live",
+"maxResultsPerTerm": 3
+}'
+When the Actor completes, read dataset items from the default dataset and the OUTPUT record from the default key-value store.
+Use with AI agents through Apify MCP #use-with-ai-agents-through-apify-mcp
+Check these merch phrases against live USPTO class 25 trademarks: "star wars", "just do it". Return wordmark, serialNumber, recordStatus, ownerName, niceClasses, and tsdrUrl. Cap at 3 matches per phrase and keep CLEAR rows. Then inspect OUTPUT.outcome before summarizing.
+Connect through https://mcp.apify.com . After the tool call, read the dataset and the OUTPUT / RUN_SUMMARY records. Preserve tsdrUrl as the official source link.
+Pricing #pricing
+This Actor uses Pay per event with Apify platform usage included. Open the live Pricing tab for current event details, and use Apify's run cost controls to keep the workflow aligned with your budget.
+Worked examples at the launch prices ( apify-actor-start $0.00005, trademark-result $0.005):
+Input	Rows billed	Event cost
+One phrase, 3 matches	3	~$0.015
+10 phrases, all CLEAR	10	~$0.050
+100 phrases, 1 row each	100	~$0.500
+Serial lookup, 1 hit	1	~$0.005
+Empty / invalid input	0	start event only
+Formula: trademark-result count × $0.005 + start event . Apify platform usage is included in the event price.
+Outcome vocabulary #outcome-vocabulary
+These values live in the key-value store records OUTPUT and RUN_SUMMARY , not on each dataset row.
+Outcome	Meaning
+COMPLETE	Every query was processed and useful rows were saved.
+PARTIAL	Some queries were incomplete, a cap stopped the run, or the event limit was hit; saved rows are still in the dataset.
+VALID_EMPTY	Queries succeeded and produced zero rows (usually includeClearRows: false with no matches).
+INVALID_INPUT	Nothing to search. Fix the input; no trademark events are charged.
+UPSTREAM_FAILED	USPTO Trademark Search did not return usable data for the requested work.
+Connect the workflow #connect-the-workflow
+After you confirm a brand name is clear at USPTO, enrich the seller or importer with ImportYeti Scraper (/khadinakbar/importyeti-scraper) when you also need US Customs shipment history and listed trademarks.
+For patent — not trademark — search, citations, and family graphs, use Google Patents Scraper (/khadinakbar/google-patents-scraper) .
+To see whether a brand name is being used in live Google Search ads, continue with Google Ads Scraper (/khadinakbar/google-ads-scraper) .
+Best results #best-results
+Filter by Nice class for POD and product clearance. Class 25 is clothing; class 9 is electronics; class 18 is bags.
+Use contains for risk spotting and exact when you care about the literal wordmark.
+Keep maxResultsPerTerm small (3-5) on famous marks. STAR WARS in class 25 has thousands of live hits.
+Leave includeClearRows on for batch jobs so every input phrase appears in the export.
+USPTO search can lag new filings by a short index delay. Re-run if you are checking a mark filed in the last few days.
+Builder's note #builders-note
+I built this after posting live queries to the public Trademark Search index. I found the UI is a thin client over an Elasticsearch-style POST whose envelope uses hits.totalValue and source (not _source ), and that _source: true can come back empty. In my testing, mapping alive plus registered into LIVE / PENDING / DEAD was more useful for agents than raw USPTO status codes. My goal was a complete 100-phrase batch, which is why a query with zero hits still writes a CLEAR row instead of going missing from the export. When AWS WAF challenges a datacenter IP, the run retries once through Apify Residential US and keeps only real USPTO rows.
+FAQ #faq
+How many trademarks do I get per phrase?
+Up to maxResultsPerTerm matching rows, plus one CLEAR row when includeClearRows is on and nothing matches. Famous marks such as STAR WARS can have thousands of hits; the cap keeps the export and the bill predictable.
+Do I need a USPTO API key or login?
+No. The Actor queries the public Trademark Search index over HTTP. You never supply a USPTO account, cookie, or API key.
+What if USPTO is temporarily unavailable?
+The Actor reads USPTO's current search address at the start of every run and keeps an older address as a fallback. It retries, then tries Apify Residential US. When no query returns usable data and no rows were saved, the run ends UPSTREAM_FAILED . Useful partial results still succeed as PARTIAL .
+Can an AI agent use this?
+Yes. It is MCP-ready: pass phrases, serials, registration numbers, owner names, or goods words and read one row per match (or CLEAR), each phrase with a queryVerdict . Inspect OUTPUT.outcome before summarizing.
+Does a CLEAR answer mean the trademark is available?
+It means no matching US federal mark was found under your filters. It is a strong first screen for trademark availability, not a legal opinion. Similar-sounding marks, state registrations and common-law use are not covered.
+Does it cover the EU or other countries?
+No. This Actor covers the US federal register only.
+Is this legal advice or a full clearance search?
+No. Results are public-register data for research and monitoring. Pair them with a trademark attorney before filing or launching a brand.
+Responsible use #responsible-use
+This Actor returns public USPTO trademark records for clearance research, monitoring, and enrichment. Treat the output as public-register data: pair it with a trademark attorney before filing or launching a brand, keep request volume courteous to the public search service, and use results in line with USPTO terms and applicable laws.
+Reliability and spending limits #reliability-and-spending-limits
+A CLEAR row requires a validated, successful USPTO response with zero matches. HTTP errors, malformed responses and truncated unresolved source results do not prove no matches. Result fees follow coupled row delivery and named charge verification; saved rows and terminal counts are reconciled against a durable delivery checkpoint. An uncertain write stops further paid writes and automatic replay.
+Invalid option values are rejected before requests. Event allowance and the time limit are checked before source requests; a zero or insufficient result allowance reports BUDGET_LIMIT_REACHED. Output capped below the observed source hit count reports PARTIAL. OUTPUT and RUN_SUMMARY include actual saved rows, named fee counts, physical request attempts, fallback use and delivery uncertainty.
+You might also like
+Amazon Scraper automly/amazon-products-scraper---fast-efficient-with-sales-data Amazon product scraper: Scrape Amazon products by keyword, product link or ASIN in 20 Amazon stores: price, Best Sellers Rank, monthly sales and revenue estimates, rating, review count, badges, variants and specs. No login. Export to CSV, JSON or Excel, schedule runs or use the API. Automly 1.9K 5.0 (2) (/automly/amazon-products-scraper---fast-efficient-with-sales-data)
+Website Screenshot Generator apify/screenshot-url Create a screenshot of a website based on a specified URL. The screenshot is stored as the output in a key-value store. It can be used to monitor web changes regularly after setting up the scheduler. Apify 10K 3.9 (20) (/apify/screenshot-url)
+Google Ads Transparency Center Scraper & API scrapesage/google-ads-transparency-scraper Scrape ads from the Google Ads Transparency Center by brand, domain or advertiser. Get creatives, dates, days active and per-country reach. No login. Independent tool, not affiliated with Google. Scrape Sage 3.5K 5.0 (1) (/scrapesage/google-ads-transparency-scraper)
+Zillow ZIP Code Search Scraper maxcopell/zillow-zip-search Scraper to find all Zillow real estate properties for sale, for rent or recently sold from given ZIP code locations. Max 4K 3.4 (13) (/maxcopell/zillow-zip-search)
+Similarweb Scraper tri_angle/similarweb-scraper A simple but powerful scraper for similarweb.com. Retrieve website popularity information and get it in a JSON/XML/CSV/Excel/HTML table format. Get data such as total visits, traffic sources, competitors, top countries, company info, etc.. Tri⟁angle 5.3K 4.6 (9) (/tri_angle/similarweb-scraper)
+Reddit Post Comments Scraper | Bulk Thread & Reply Export clearpath/reddit-post-comments-bulk-scraper Scrape Reddit posts with full comment trees. 6 sort orders, Q&A filtering, and deep sub-thread expansion. Bulk URLs, CSV upload, any format. ClearPath 3K (/clearpath/reddit-post-comments-bulk-scraper)
+USPTO Trademark Batch Search API dev00/uspto-trademark-api Bulk verify keywords and phrases against the USPTO database to instantly detect LIVE and PENDING trademarks. dev00 111 (/dev00/uspto-trademark-api)
+Trademark Search — USPTO Serial + IP Australia Name Search nexgendata/uspto-trademark-search Trademark due diligence and brand clearance: look up US trademarks by serial/registration number from the official USPTO TSDR source, and search brand names across the IP Australia register. JSON: mark, owner, status, serial/registration, dates, class, goods/services. No API key. Pay per record. NexGenData 50 (/nexgendata/uspto-trademark-search)
+Amazon Product Search Scraper: Rank, Price & Details khadinakbar/amazon-product-search-scraper Search Amazon by keyword or URL across 18 marketplaces and see where every product ranks: page position, organic rank and sponsored flag, plus price, rating and reviews. Add detail pages for brand, Best Sellers Rank, bullets, images and seller. Khadin Akbar 424 (/khadinakbar/amazon-product-search-scraper)
+USPTO Trademark Search — Wordmark, Owner, Class & Serial Lookup memo23/uspto-trademark-scraper Search US federal trademarks straight from USPTO: by wordmark/brand, owner name, or goods & services, plus exact serial-number lookup. Filter by live/dead status and Nice class. Full records — status, owner, classes, dates, goods, mark image. No API key. JSON/CSV Muhamed Didovic 59 5.0 (1) (/memo23/uspto-trademark-scraper)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)

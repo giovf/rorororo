@@ -1,0 +1,419 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"UK Trademark Scraper - UK IPO Register, Owners & Journal","description":"Search the UK trade mark register (UK IPO) by mark, owner, number, Nice class, status or date: mark text, status, filing, registration and renewal dates, classes, goods and services, owner. Plus the IPO's weekly Trade Marks Journal with representatives, addresses and logos. No login.","url":"https://apify.com/scrapersdelight/uk-trademark-scraper","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/mdNt431xkEuT8ABW3ssrdWEdUER5CQ_nuITjrVxf-zQ/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQlRna3dMRUM0YlpWemI4VmItYWN0b3ItVVl4QjJrNUJiMmtYaktPYW0tSVZYbHd5bnpKOS11ay10cmFkZW1hcmstc2NyYXBlci5wbmc.webp","offers":{"@type":"Offer","description":"$0.90 / 1,000 trade marks","price":0.9,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":0.9,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"trade marks"}}}}
+meta description: Export UK trade marks from the UK IPO register: mark, owner, status, Nice classes, goods and services, filing and renewal dates, plus the weekly Trade M...
+meta og:title: Input · UK Trade Mark Search API - UKIPO Register & Journal Data · Apify
+meta og:description: Export UK trade marks from the UK IPO register: mark, owner, status, Nice classes, goods and services, filing and renewal dates, plus the weekly Trade M...
+meta og:url: https://apify.com/scrapersdelight/uk-trademark-scraper/input-schema
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=UK+Trademark+Scraper+-+UK+IPO+Register%2C+Owners+%26+Journal&uniqueName=scrapersdelight%2Fuk-trademark-scraper&categories=BUSINESS%2CLEAD_GENERATION%2CAUTOMATION&users=1&runs=28&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FBTgkwLEC4bZVzb8Vb-actor-UYxB2k5Bb2kXjKOam-IVXlwynzJ9-uk-trademark-scraper.png&authorName=Scrapers+Delight&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2F6NAc7wRzEgQrk8IvgucBKirhMytXo7FjYJRidCDOq2U%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQlRna3dMRUM0YlpWemI4VmItcHJvZmlsZS1lSERqenA1N09YLUdlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfanUxazNmanUxazNmanUxay1jbGVhbi5wbmc.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: Input · UK Trade Mark Search API - UKIPO Register & Journal Data · Apify
+meta twitter:description: Export UK trade marks from the UK IPO register: mark, owner, status, Nice classes, goods and services, filing and renewal dates, plus the weekly Trade M...
+meta twitter:image: https://apify.com/og-image/actor?actorName=UK+Trademark+Scraper+-+UK+IPO+Register%2C+Owners+%26+Journal&uniqueName=scrapersdelight%2Fuk-trademark-scraper&categories=BUSINESS%2CLEAD_GENERATION%2CAUTOMATION&users=1&runs=28&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FBTgkwLEC4bZVzb8Vb-actor-UYxB2k5Bb2kXjKOam-IVXlwynzJ9-uk-trademark-scraper.png&authorName=Scrapers+Delight&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2F6NAc7wRzEgQrk8IvgucBKirhMytXo7FjYJRidCDOq2U%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQlRna3dMRUM0YlpWemI4VmItcHJvZmlsZS1lSERqenA1N09YLUdlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfanUxazNmanUxazNmanUxay1jbGVhbi5wbmc.webp
+Input · UK Trade Mark Search API - UKIPO Register & Journal Data · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,381 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[UK Trademark Scraper - UK IPO Register, Owners & Journal avatar]
+UK Trademark Scraper - UK IPO Register, Owners & Journal
+Pricing
+$0.90 / 1,000 trade marks
+Try for free (https://console.apify.com/actors/UYxB2k5Bb2kXjKOam?addFromActorId=UYxB2k5Bb2kXjKOam)
+Go to Apify Store (/store)
+[UK Trademark Scraper - UK IPO Register, Owners & Journal]
+UK Trademark Scraper - UK IPO Register, Owners & Journal
+scrapersdelight/uk-trademark-scraper
+Try for free (https://console.apify.com/actors/UYxB2k5Bb2kXjKOam?addFromActorId=UYxB2k5Bb2kXjKOam)
+Copy setup prompt Copied
+Search the UK trade mark register (UK IPO) by mark, owner, number, Nice class, status or date: mark text, status, filing, registration and renewal dates, classes, goods and services, owner. Plus the IPO's weekly Trade Marks Journal with representatives, addresses and logos. No login.
+Pricing
+$0.90 / 1,000 trade marks
+Rating
+0.0
+(0)
+Developer
+Scrapers Delight (/scrapersdelight) Maintained by Community
+Actor stats
+0
+Bookmarked
+1
+Total users
+1
+Monthly active users
+22 days ago
+Last modified
+Categories
+Business (/store/categories/business) Lead generation (/store/categories/lead-generation) Automation (/store/categories/automation)
+Features
+Limited permissions
+Share
+README (/scrapersdelight/uk-trademark-scraper) Input (/scrapersdelight/uk-trademark-scraper/input-schema) Output (/scrapersdelight/uk-trademark-scraper/output-schema) Pricing (/scrapersdelight/uk-trademark-scraper/pricing) API (/scrapersdelight/uk-trademark-scraper/api/python) Issues (/scrapersdelight/uk-trademark-scraper/issues/open)
+You might also like
+New York State Bar Attorney Scraper — License Lookup & Leads scrapersdelight/state-bar-attorney-scraper Every attorney on the New York bar register: name, bar number, status, firm, firm head-count, phone, business address, county, law school and admission year. Filter to solo and small firms, a county or an admission-year cohort — or look up a registration number to verify a licence. No API key. Scrapers Delight 1 (/scrapersdelight/state-bar-attorney-scraper)
+Denmark New Companies - CVR New Registrations & Leads scrapersdelight/cvr-new-companies-dk-scraper From $0.90 per 1,000 companies, no start fee. Newly registered Danish companies from the official CVR register, any date window: CVR number, name, start date, address, industry code, email, phone - plus the reklamebeskyttelse advertising-protection flag, so you can drop rows you may not market to. Scrapers Delight 7 (/scrapersdelight/cvr-new-companies-dk-scraper)
+Mobile.de Scraper — Car Dealer Leads with Emails scrapersdelight/mobile-de-dealer-scraper Scrape German car dealers from Mobile.de's regional dealer directory as clean B2B leads: company name, street, ZIP, city, e-mail, phone, website, VAT ID, star rating, geo-coordinates and live inventory. One deduplicated row per dealer. Filter by state, city and make. No login. Scrapers Delight 6 (/scrapersdelight/mobile-de-dealer-scraper)
+Belgisch Staatsblad Scraper - Moniteur Belge & KBO Filings scrapersdelight/be-gazette-company-publications-scraper Scrape the Belgian Official Gazette: every company act in the Annexes by KBO/BCE number, name or date — incorporation, statutes, director changes, office moves, dissolutions — with company number (mod-97 checked), legal form, address, act types, publication number and PDF. Scrapers Delight 4 (/scrapersdelight/be-gazette-company-publications-scraper)
+USPTO Trademark Search — Wordmark, Owner, Class & Serial Lookup memo23/uspto-trademark-scraper Search US federal trademarks straight from USPTO: by wordmark/brand, owner name, or goods & services, plus exact serial-number lookup. Filter by live/dead status and Nice class. Full records — status, owner, classes, dates, goods, mark image. No API key. JSON/CSV Muhamed Didovic 54 5.0 (1) (/memo23/uspto-trademark-scraper)
+Global Trademark Search Scraper - 77 Offices Worldwide scrapers_lat/tmview-global-trademarks-scraper Search 145M+ trademarks from 77 national and regional registers at once: mark text, owner name and address, representative, status, Nice classes, goods and services wording, oppositions, priority and seniority claims. JSON, CSV, Excel. Scrapers Lat 36 (/scrapers_lat/tmview-global-trademarks-scraper)
+Cardmarket Scraper - Price Guide, Seller Offers & Top Cards scrapersdelight/cardmarket-scraper Scrape Cardmarket for 23 trading card games: the daily price guide (trend, low, 1/7/30-day averages, foil) for every card and sealed product, live seller offers with condition, language, price, quantity, seller type and country, seller shops, and the Best Sellers / Best Bargains lists. Scrapers Delight 3 (/scrapersdelight/cardmarket-scraper)
+Tripadvisor Scraper — Restaurants, Hotels & Attractions scrapersdelight/tripadvisor-scraper Scrape Tripadvisor city listings into a lead list: restaurants, hotels & attractions with name, phone, email, address, geo coordinates, rating, review count & price. Paste a city URL, get every place. No login or API key. Scrapers Delight 7 (/scrapersdelight/tripadvisor-scraper)
+Healthgrades Scraper — Doctor & Dentist Leads, NPI + Phone scrapersdelight/healthgrades-scraper Scrape the Healthgrades provider directory by specialty and city — doctor/dentist name, credentials, specialty, NPI number, star rating, review count, every office address with phone and GPS, awards and profile URL. 184 specialties, all 50 states. Public data, no login. Export JSON/CSV/Excel. Scrapers Delight 15 (/scrapersdelight/healthgrades-scraper)
+WeddingWire Scraper - Wedding Vendor Leads, Emails & Reviews scrapersdelight/weddingwire-vendor-scraper Scrape WeddingWire wedding venues and vendors by category and city: phone, website email, address, socials, rating, reviews count, starting price, guests, Couples' Choice awards, deals, team, pricing and FAQ, plus optional reviews with 5 category scores. Filters, monitor mode. No login. Scrapers Delight 1 (/scrapersdelight/weddingwire-vendor-scraper)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)
+Description
+JSON example
+What to read
+mode
+Optional
+#mode
+Register = search all 3.6 million UK marks (live, pending and dead). Journal = the IPO's weekly Trade Marks Journal: every newly published application, with its representative and address.
+Type: string
+Default: register
+Options:
+register journal
+Mark text
+searchQueries
+Optional
+#searchQueries
+One or more marks, e.g. "nike", "apple", "brewdog". Register: searched on the mark text. Journal: filters the issue's marks by mark text.
+Type: array
+Match
+matchMode
+Optional
+#matchMode
+How the mark text must match. Measured for "nike" on the register: contains 249, exact 57, begins with 121, whole word 99, similar spelling 3,365.
+Type: string
+Default: contains
+Options:
+contains exact beginsWith word fuzzy
+Owner / applicant
+ownerNames
+Optional
+#ownerNames
+Owner names, e.g. "Nike Innovate C.V.", "Diageo". Register: owner search (alone or with a mark). Journal: applicant name contains.
+Type: array
+Trade mark numbers
+trademarkNumbers
+Optional
+#trademarkNumbers
+Look up numbers, e.g. UK00003904654, 3904654, UK00912101689 (cloned EU mark). Journal mode also takes international registrations, e.g. WO0000001939971.
+Type: array
+Nice classes
+niceClasses
+Optional
+#niceClasses
+Only marks covering any of these classes (1-45), e.g. 25 (clothing), 9 (software), 35 (retail), 42 (SaaS).
+Type: array
+Status
+statuses
+Optional
+#statuses
+Registered, Filed (pending), Expired or Ended. Empty = all. On 2026-10-16: 2,325,043 registered, 72,398 pending, 1,265,253 expired, 11,725 ended.
+Type: string[]
+Item
+Mark type
+markTypes
+Optional
+#markTypes
+Word, Figurative (logo), 3D shape, Colour, Sound and so on. Empty = all.
+Type: string[]
+Item
+Vienna codes
+viennaCodes
+Optional
+#viennaCodes
+Figurative-element codes for logo searches, e.g. 27.05.21 (letters forming a monogram), 03.01 (cats, dogs). Register only.
+Type: array
+Filed from
+filingDateFrom
+Optional
+#filingDateFrom
+Only marks filed on or after this date (YYYY-MM-DD).
+Type: string
+Filed until
+filingDateTo
+Optional
+#filingDateTo
+Only marks filed on or before this date (YYYY-MM-DD).
+Type: string
+Filed in the last N days
+filedInLastDays
+Optional
+#filedInLastDays
+Rolling window for schedules, e.g. 7 = marks filed in the last week. Overrides "Filed from" when later. 0 = off.
+Type: integer
+Minimum: 0
+Maximum: 36500
+Default: 0
+Registered from
+registrationDateFrom
+Optional
+#registrationDateFrom
+Only marks entered in the register on or after this date (YYYY-MM-DD). Register only.
+Type: string
+Registered until
+registrationDateTo
+Optional
+#registrationDateTo
+Only marks entered in the register on or before this date (YYYY-MM-DD). Register only.
+Type: string
+Open to opposition now
+openToOppositionOnly
+Optional
+#openToOppositionOnly
+Only marks whose opposition period is running today (27,853 on the register on 2026-10-16). In journal mode: published less than two months ago.
+Type: boolean
+Default: false
+Sort
+sortBy
+Optional
+#sortBy
+Register order. Journal rows come in the IPO's own order.
+Type: string
+Default: relevance
+Options:
+relevance newest oldest name
+Latest issues
+journalWeeks
+Optional
+#journalWeeks
+How many of the latest weekly issues to read (1 = this week's; the IPO lists about a year, 51 issues on 2026-10-16). One issue holds about 3,600 marks.
+Type: integer
+Minimum: 1
+Maximum: 52
+Default: 1
+Specific issues
+journalIssues
+Optional
+#journalIssues
+Read these issues instead of the latest ones, e.g. 2026/042, 2026/041.
+Type: array
+Origin
+origin
+Optional
+#origin
+UK applications, international registrations designating the UK, or both.
+Type: string
+Default: all
+Options:
+all uk international
+Representative
+representation
+Optional
+#representation
+Keep marks filed with a representative (attorney firm), without one (applicant filed alone), or both.
+Type: string
+Default: any
+Options:
+any with without
+Representative contains
+representativeContains
+Optional
+#representativeContains
+Representative name or address contains any of these, e.g. "Marks & Clerk", "London", "EC4M".
+Type: array
+Goods & services contain
+goodsServicesContains
+Optional
+#goodsServicesContains
+Goods and services text contains any of these, e.g. "software", "gin", "cosmetics".
+Type: array
+Goods & services
+includeGoodsAndServices
+Optional
+#includeGoodsAndServices
+Register: read each mark's goods and services specification (one small extra request per mark). Journal rows always carry it.
+Type: boolean
+Default: true
+Mark images (journal)
+includeImages
+Optional
+#includeImages
+Journal: save each logo / figurative mark image the journal carries and give its link (imageUrl). The register source has no images.
+Type: boolean
+Default: true
+IPO case record
+includeIpoRecord
+Optional
+#includeIpoRecord
+Also read the IPO's own page for each UK mark: owner postal address, country of incorporation, company number, representative and address, renewal date, publications, image. ~1.2 s per mark.
+Type: boolean
+Default: false
+Only new or changed marks
+monitorMode
+Optional
+#monitorMode
+Deliver only marks not delivered by an earlier run of the same search, or whose status or dates changed. Pairs with a daily or weekly schedule.
+Type: boolean
+Default: false
+Monitor name
+monitorKey
+Optional
+#monitorKey
+Optional name for the monitor memory, e.g. "my-brand-watch". Empty = one memory per distinct search.
+Type: string
+Max results
+maxResults
+Optional
+#maxResults
+Stop after this many marks in total. 0 = no limit (the register search reads past TMview's 10,000-per-query window by date).
+Type: integer
+Minimum: 0
+Maximum: 1000000
+Default: 100
+Max per search
+maxResultsPerSearch
+Optional
+#maxResultsPerSearch
+Cap per mark text / owner search (register) or per journal issue (journal). 0 = no per-search cap.
+Type: integer
+Minimum: 0
+Maximum: 1000000
+Default: 0
+Compact output
+compact
+Optional
+#compact
+Core fields only (number, mark, status, classes, owner, representative, key dates, IPO link) - trimmed for spreadsheets and AI agents.
+Type: boolean
+Default: false
+Proxy
+proxyConfiguration
+Optional
+#proxyConfiguration
+Optional. By default the run connects directly and falls back to Apify residential proxy (GB) only if the register search refuses the connection.
+Type: object
+Default:
+{
+"useApifyProxy" : false
+}
+Parallel requests
+maxConcurrency
+Optional
+#maxConcurrency
+Goods & services requests in flight at once (register mode).
+Type: integer
+Minimum: 1
+Maximum: 10
+Default: 6

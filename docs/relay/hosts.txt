@@ -253,3 +253,7 @@ allratestoday.com  # AllRatesToday: plans, the HMRC rates page and its keyless o
 .eloquens.com  # Eloquens best-practices marketplace: Excel tool pages with price and download counts, author terms (exchange 2026-W46 shelf read)
 .uspto.gov  # USPTO Open Data Portal bulk trademark datasets (daily TM application XML) and API terms (exchange 2026-W46 trademark-journal siblings read)
 .wipo.int  # WIPO Madrid Gazette / Madrid Monitor bulk data pages and terms (exchange 2026-W46 trademark-journal siblings read)
+.tmdn.org  # TMview / EUIPN: home, robots, legal notice, the search API the Store's trademark actors read (new-ventures spike trademark-clearance-search-sources, 2026-11-11)
+.whatdotheyknow.com  # UK FOI responses (the IPO's 2025 answer on bulk trade mark data; new-ventures spike trademark-clearance-search-sources, 2026-11-11)
+.trademarkdashboard.com  # a free UK trade mark database/search rival: where its 3M records come from and its plans (same spike)
+signa.so  # Signa: commercial UKIPO / EUIPO trademark API rival, offices pages and pricing (same spike)

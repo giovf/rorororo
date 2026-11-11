@@ -1,0 +1,189 @@
+{ "@context": "http://schema.org", "@type": "FAQPage", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.gov.uk/search-for-trademark" }, "name": "Search for a trade mark", "datePublished": "2012-07-03T16:17:48+01:00", "dateModified": "2017-09-08T00:01:09+01:00", "text": "Look up a trade mark to see if something identical or similar to your brand is already registered.\r\n", "publisher": { "@type": "Organization", "name": "GOV.UK", "url": "https://www.gov.uk", "logo": { "@type": "ImageObject", "url": "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-logo-b8553f688131fad665e52a8c2df7633f9cd1c0fffb9f69703cc68c728e7b3b74.png" } }, "image": [ "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-1x1-2672c0fb7a5d5f947d880522c509ebe7f2be090885883cc94418f6860e812e15.png", "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-4x3-194fde4197f00e669f6f52c182df2ed707bfb2024c9ef39f7a2ed20da62b90eb.png", "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-16x9-30e6c0e035636ee6b9dc72ae254bcd4a925182805afe7c5b7170cf2394894b28.png" ], "author": { "@type": "Organization", "name": "Government Digital Service", "url": "https://www.gov.uk/government/organisations/government-digital-service" }, "isPartOf": [ { "@context": "http://schema.org", "@type": "CreativeWork", "sameAs": "https://www.gov.uk/government/collections/intellectual-property-trade-marks" } ], "about": [ { "@context": "http://schema.org", "@type": "Thing", "sameAs": "https://www.gov.uk/business/trade-marks" }, { "@context": "http://schema.org", "@type": "Thing", "sameAs": "https://www.gov.uk/crime-justice-and-law/intellectual-property-law-practice-trade-marks" } ], "mainEntity": [ { "@type": "Question", "name": "Search for a trade mark", "url": "https://www.gov.uk/search-for-trademark", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/search-for-trademark", "text": "\u003cp\u003eFind details of trade marks to:\u003c/p\u003e\n\n\u003cul\u003e\n \u003cli\u003echeck if a similar trade mark to your brand already exists in the UK\u003c/li\u003e\n \u003cli\u003efind out who owns a trade mark\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cp\u003e\u003ca rel=\"external\" href=\"https://trademarks.ipo.gov.uk/ipo-tmcase/start\"\u003eSearch by trade mark number\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003e\u003ca rel=\"external\" href=\"https://trademarks.ipo.gov.uk/ipo-tmowner/start\"\u003eSearch by owner\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003e\u003ca rel=\"external\" href=\"https://trademarks.ipo.gov.uk/ipo-tmtext/start\"\u003eSearch by keyword, phrase or image\u003c/a\u003e.\u003c/p\u003e\n\n\u003cp\u003e\u003ca rel=\"external\" href=\"https://6ter.wipo.int/simple-search\"\u003eSearch by flag, emblem or hallmark\u003c/a\u003e using the Article 6ter Express Database.\u003c/p\u003e\n\n\u003cdiv role=\"note\" aria-label=\"Information\" class=\"application-notice info-notice\"\u003e\n \u003cp\u003eFor trade marks in Jersey and Guernsey, search the \u003ca rel=\"external\" href=\"http://www.jgreffe-online.gov.je/trademarksdb/searchform.asp\"\u003eJersey trade mark register\u003c/a\u003e or the \u003ca rel=\"external\" href=\"http://ipo.guernseyregistry.com/article/107508/View-the-Trade-Mark-Register\"\u003eGuernsey trade mark register\u003c/a\u003e.\u003c/p\u003e\n\u003c/div\u003e\n\n" } }, { "@type": "Question", "name": "Check the trade marks journal", "url": "https://www.gov.uk/search-for-trademark#check-the-trade-marks-journal", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/search-for-trademark#check-the-trade-marks-journal", "text": "\n\n\u003cp\u003eTo find trade mark applications accepted in the last week, check:\u003c/p\u003e\n\n\u003cul\u003e\n \u003cli\u003e\n\u003ca href=\"/check-trade-marks-journal\"\u003eIntellectual Property Office’s online trade marks journal\u003c/a\u003e - for UK trade marks and international trade marks that include the UK\u003c/li\u003e\n \u003cli\u003ethe \u003ca rel=\"external\" href=\"http://ipo.guernseyregistry.com/article/4929/Current-Journal%20-%20for%20Guernsey\"\u003eGuernsey online trade marks journal\u003c/a\u003e - for Guernsey trade marks\u003c/li\u003e\n\u003c/ul\u003e\n" } } ] }
+{ "@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "item": { "name": "Home", "@id": "https://www.gov.uk/" } }, { "@type": "ListItem", "position": 2, "item": { "name": "Set up a limited company: step by step", "@id": "https://www.gov.uk/set-up-limited-company" } } ] }
+meta og:image: https://www.gov.uk/assets/frontend/govuk-opengraph-image-4196a4d6333cf92aaf720047f56cfd91b3532d7635fc21ebcf0d5897df6b5f77.png
+meta description: Look up a trade mark to see if something identical or similar to your brand is already registered.
+meta og:site_name: GOV.UK
+meta og:type: article
+meta og:url: https://www.gov.uk/search-for-trademark
+meta og:title: Search for a trade mark
+meta og:description: Look up a trade mark to see if something identical or similar to your brand is already registered.
+meta twitter:card: summary
+Search for a trade mark - GOV.UK
+Cookies on GOV.UK
+We use some essential cookies to make this website work.
+We’d like to set additional cookies to understand how you use GOV.UK, remember your settings and improve government services.
+We also use cookies set by other sites to help us deliver content from their services.
+You have accepted additional cookies. You can change your cookie settings (/help/cookies) at any time.
+You have rejected additional cookies. You can change your cookie settings (/help/cookies) at any time.
+Accept additional cookies
+Reject additional cookies
+View cookies (/help/cookies)
+Hide cookie message
+Skip to main content (#content)
+/
+Navigation menu
+Menu (/browse)
+Menu
+Services and information
+Benefits (/browse/benefits)
+Births, death, marriages and care (/browse/births-deaths-marriages)
+Business and self-employed (/browse/business)
+Childcare and parenting (/browse/childcare-parenting)
+Citizenship and living in the UK (/browse/citizenship)
+Crime, justice and the law (/browse/justice)
+Disabled people (/browse/disabilities)
+Driving and transport (/browse/driving)
+Education and learning (/browse/education)
+Employing people (/browse/employing-people)
+Environment and countryside (/browse/environment-countryside)
+Housing and local services (/browse/housing-local-services)
+Money and tax (/browse/tax)
+Passports, travel and living abroad (/browse/abroad)
+Visas and immigration (/browse/visas-immigration)
+Working, jobs and pensions (/browse/working)
+Government activity
+Departments (/government/organisations)
+Departments, agencies and public bodies
+News (/search/news-and-communications)
+News stories, speeches, letters and notices
+Guidance and regulation (/search/guidance-and-regulation)
+Detailed guidance, regulations and rules
+Research and statistics (/search/research-and-statistics)
+Reports, analysis and official statistics
+Policy papers and consultations (/search/policy-papers-and-consultations)
+Consultations and strategy
+Transparency (/search/transparency-and-freedom-of-information-releases)
+Data, Freedom of Information releases and corporate reports
+Search GOV.UK
+×
+Search GOV.UK (/search)
+Search
+Search GOV.UK
+Search
+Part of
+Set up a limited company: step by step (/set-up-limited-company)
+Search for a trade mark
+Find details of trade marks to:
+check if a similar trade mark to your brand already exists in the UK
+find out who owns a trade mark
+Search by trade mark number (https://trademarks.ipo.gov.uk/ipo-tmcase/start) .
+Search by owner (https://trademarks.ipo.gov.uk/ipo-tmowner/start) .
+Search by keyword, phrase or image (https://trademarks.ipo.gov.uk/ipo-tmtext/start) .
+Search by flag, emblem or hallmark (https://6ter.wipo.int/simple-search) using the Article 6ter Express Database.
+For trade marks in Jersey and Guernsey, search the Jersey trade mark register (http://www.jgreffe-online.gov.je/trademarksdb/searchform.asp) or the Guernsey trade mark register (http://ipo.guernseyregistry.com/article/107508/View-the-Trade-Mark-Register) .
+Check the trade marks journal
+To find trade mark applications accepted in the last week, check:
+Intellectual Property Office’s online trade marks journal (/check-trade-marks-journal) - for UK trade marks and international trade marks that include the UK
+the Guernsey online trade marks journal (http://ipo.guernseyregistry.com/article/4929/Current-Journal%20-%20for%20Guernsey) - for Guernsey trade marks
+This page is Part of
+Set up a limited company: step by step (/set-up-limited-company)
+Step 1 :
+Check if setting up a limited company is right for you
+Check what a private limited company is (/limited-company-formation?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+How you set up your business depends on what sort of work you do. It can also affect the way you pay tax and get funding.
+Most businesses register as a limited company or a sole trader.
+Find out about the different ways to set up a business (/set-up-business?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Find local advice and free support for your business on business.gov.uk (https://www.business.gov.uk)
+Step 2 :
+Choose your limited company type
+Check whether you'll be limited by shares or guarantee (/limited-company-formation/limited-company-types?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Step 3 :
+Choose directors and a company secretary
+You must appoint a director but you do not have to appoint a company secretary.
+Find out what directors are responsible for (/running-a-limited-company?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Check who can be a director or company secretary (/limited-company-formation/appoint-directors-and-company-secretaries?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Step 4 :
+Decide who the shareholders are
+You need at least one shareholder, who can be a director.
+Check how to choose shareholders for a company limited by shares (/limited-company-formation/shareholders?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Find out how dividends from shares are taxed (/tax-on-dividends?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+or
+Decide who your guarantors are
+You need at least one guarantor who can be a director.
+Check how to choose guarantors for a company limited by guarantee (/limited-company-formation/guarantors?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+and
+Identify people with significant control (PSC) over your company
+You need to identify people with significant control (PSC) - for example, anyone with more than 25% of the shares or voting rights.
+Find out what counts as a PSC (/guidance/people-with-significant-control-pscs?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+You'll confirm these when you register your company with Companies House.
+Step 5 :
+Prepare documents agreeing how to run your company
+You need to prepare documents agreeing how to run your company. These documents include the :
+'memorandum of association'
+'articles of association'
+'statement of capital'
+'statement of guarantee'
+Find out how to create these documents (/limited-company-formation/documents?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Step 6 :
+Check what records you'll need to keep
+Check the company and accounting records you must keep (/running-a-limited-company/company-and-accounting-records?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Step 7 :
+Choose a name
+Check the rules for company names (/limited-company-formation/choose-company-name?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Check if the name you want is available (https://find-and-update.company-information.service.gov.uk/company-name-availability)
+You are currently viewing: Check existing trade marks (#content)
+Step 8 :
+Register your company with Companies House
+You'll need to register an official address and choose a SIC code - this identifies what your company does.
+Check the rules for registered office addresses and email addresses (/limited-company-formation/company-address?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Check what your SIC code is (/government/publications/standard-industrial-classification-of-economic-activities-sic?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Register your company with Companies House (/limited-company-formation/register-your-company?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Step 9 :
+Find out what to do after you've registered
+There are some things you may need to do once you've registered a limited company.
+Add Corporation Tax services to your business tax account (/limited-company-formation/add-corporation-tax-services-to-business-tax-account?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Check the next steps for your limited company (/next-steps-for-your-business?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763)
+Is this page useful?
+Maybe (/contact/govuk)
+Yes this page is useful
+No this page is not useful
+Thank you for your feedback
+Report a problem with this page
+Help us improve GOV.UK
+Do not include personal or financial information like your National Insurance number or credit card details.
+This field is for robots only. Please leave blank
+What were you doing?
+What went wrong?
+Send
+Cancel
+Help us improve GOV.UK
+To help us improve GOV.UK, we’d like to know more about your visit today.
+Please fill in this survey (opens in a new tab ) (https://www.smartsurvey.co.uk/s/gov-uk-banner/?c=no-js) .
+Cancel
+Services and information
+Benefits (/browse/benefits)
+Births, death, marriages and care (/browse/births-deaths-marriages)
+Business and self-employed (/browse/business)
+Childcare and parenting (/browse/childcare-parenting)
+Citizenship and living in the UK (/browse/citizenship)
+Crime, justice and the law (/browse/justice)
+Disabled people (/browse/disabilities)
+Driving and transport (/browse/driving)
+Education and learning (/browse/education)
+Employing people (/browse/employing-people)
+Environment and countryside (/browse/environment-countryside)
+Housing and local services (/browse/housing-local-services)
+Money and tax (/browse/tax)
+Passports, travel and living abroad (/browse/abroad)
+Visas and immigration (/browse/visas-immigration)
+Working, jobs and pensions (/browse/working)
+Government activity
+Departments (/government/organisations)
+News (/search/news-and-communications)
+Guidance and regulation (/search/guidance-and-regulation)
+Research and statistics (/search/research-and-statistics)
+Policy papers and consultations (/search/policy-papers-and-consultations)
+Transparency (/search/transparency-and-freedom-of-information-releases)
+How government works (/government/how-government-works)
+Get involved (/government/get-involved)
+Support links
+Help (/help)
+Privacy (/help/privacy-notice)
+Cookies (/help/cookies)
+Accessibility statement (/help/accessibility-statement)
+Contact (/contact)
+Terms and conditions (/help/terms-conditions)
+Rhestr o Wasanaethau Cymraeg (/cymraeg)
+Government Digital Service (/government/organisations/government-digital-service)
+All content is available under the Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) , except where otherwise stated
+© Crown copyright (https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)

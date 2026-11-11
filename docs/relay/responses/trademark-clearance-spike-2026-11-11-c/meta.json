@@ -1,0 +1,140 @@
+{
+  "request": "trademark-clearance-spike-2026-11-11-c",
+  "fetched_at": "2026-11-11T17:15:10.690Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.whatdotheyknow.com/request/bulk_download_of_trade_mark_data_2",
+      "fetched_at": "2026-11-11T17:15:06.845Z",
+      "status": 403,
+      "elapsed_ms": 133,
+      "final_url": "https://www.whatdotheyknow.com/request/bulk_download_of_trade_mark_data_2",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5873
+    },
+    {
+      "method": "GET",
+      "url": "https://www.trademarkdashboard.com/uk-trademark-database",
+      "fetched_at": "2026-11-11T17:15:06.979Z",
+      "status": 200,
+      "elapsed_ms": 682,
+      "final_url": "https://www.trademarkdashboard.com/uk-trademark-database",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 26422,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 115635
+    },
+    {
+      "method": "GET",
+      "url": "https://www.trademarkdashboard.com/uk-ipo-guide",
+      "fetched_at": "2026-11-11T17:15:08.174Z",
+      "status": 200,
+      "elapsed_ms": 188,
+      "final_url": "https://www.trademarkdashboard.com/uk-ipo-guide",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 13182,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 67377
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/scrapersdelight/uk-trademark-scraper",
+      "fetched_at": "2026-11-11T17:15:08.365Z",
+      "status": 200,
+      "elapsed_ms": 210,
+      "final_url": "https://apify.com/scrapersdelight/uk-trademark-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"mqs0b68oipbfqk\""
+      },
+      "file": "4.txt",
+      "bytes": 31852,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 533963
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/scrapersdelight/uk-trademark-scraper/input-schema",
+      "fetched_at": "2026-11-11T17:15:09.095Z",
+      "status": 200,
+      "elapsed_ms": 172,
+      "final_url": "https://apify.com/scrapersdelight/uk-trademark-scraper/input-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"i0yryhldefcqil\""
+      },
+      "file": "5.txt",
+      "bytes": 21620,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 594473
+    },
+    {
+      "method": "GET",
+      "url": "https://signa.so/offices/ukipo",
+      "fetched_at": "2026-11-11T17:15:09.280Z",
+      "status": 200,
+      "elapsed_ms": 185,
+      "final_url": "https://signa.so/offices/ukipo",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"13k50psn9l4n69\""
+      },
+      "file": "6.txt",
+      "bytes": 23142,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 216691
+    },
+    {
+      "method": "GET",
+      "url": "https://signa.so/offices/euipo",
+      "fetched_at": "2026-11-11T17:15:09.969Z",
+      "status": 200,
+      "elapsed_ms": 60,
+      "final_url": "https://signa.so/offices/euipo",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"15a118pyvum4iml\""
+      },
+      "file": "7.txt",
+      "bytes": 20959,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 210813
+    },
+    {
+      "method": "GET",
+      "url": "https://signa.so/pricing",
+      "fetched_at": "2026-11-11T17:15:10.537Z",
+      "status": 200,
+      "elapsed_ms": 149,
+      "final_url": "https://signa.so/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline",
+        "etag": "W/\"00294d6d4be4030e9f5fe1255153e5a3\""
+      },
+      "file": "8.txt",
+      "bytes": 5056,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 157710
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{"@context":"https://schema.org","@type":"Organization","name":"Signa","legalName":"Signa Technologies Ltd","url":"https://signa.so","logo":"https://signa.so/brand/signa-dark-logo.svg","description":"Global trademark API for search, screening, and monitoring across major trademark offices","address":{"@type":"PostalAddress","streetAddress":"Fellachoglou 35, Mouttallos","addressLocality":"Paphos","postalCode":"8016","addressCountry":"CY"},"contactPoint":{"@type":"ContactPoint","email":"support@signa.so","contactType":"customer support","url":"https://signa.so/contact"},"sameAs":["https://github.com/signa-so"]}
+{"@context":"https://schema.org","@type":"WebSite","name":"Signa","url":"https://signa.so","description":"Global trademark API platform","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://signa.so/trademarks?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://signa.so"},{"@type":"ListItem","position":2,"name":"Offices","item":"https://signa.so/offices"},{"@type":"ListItem","position":3,"name":"EUIPO","item":"https://signa.so/offices/euipo"}]},{"@type":"WebPage","name":"EUIPO API","description":"The EUIPO API for trademark search. Access European Union Intellectual Property Office records via API: normalized data, sub-second response, daily sync.","url":"https://signa.so/offices/euipo","isPartOf":{"@type":"WebSite","name":"Signa","url":"https://signa.so"}},{"@type":"GovernmentOrganization","name":"European Union Intellectual Property Office","alternateName":"EUIPO","url":"https://www.euipo.europa.eu","address":{"@type":"PostalAddress","addressLocality":"Alicante, Spain"},"parentOrganization":{"@type":"Organization","name":"European Union"}},{"@type":"Dataset","name":"EUIPO Trademark Register via Signa","description":"Indexed and normalized EUIPO trademark applications and registrations: 3,268,094 records, synced daily.","url":"https://signa.so/offices/euipo","license":"https://signa.so/legal/terms-of-service","creator":{"@type":"Organization","name":"European Union Intellectual Property Office","url":"https://www.euipo.europa.eu"},"provider":{"@type":"Organization","name":"Signa","url":"https://signa.so"},"keywords":["trademark","EUIPO","European Union"],"dateModified":"2026-11-10","distribution":{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://api.signa.so/v1/trademarks?offices=EM"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the EUIPO eSearch Plus API free?","acceptedAnswer":{"@type":"Answer","text":"Yes — eSearch Plus is a free public REST API offered by EUIPO. Access requires registering an application on the EUIPO developer portal (dev.euipo.europa.eu), subscribing to the Trademark Search product, and completing an identity verification step (passport or national ID plus proof of address). Once approved, you authenticate with OAuth2 client credentials. The data itself is public; you build the ingestion and normalization pipeline. Signa is paid because it does that work for you."}},{"@type":"Question","name":"How do I get an EUIPO API key?","acceptedAnswer":{"@type":"Answer","text":"For EUIPO direct: register at dev.euipo.europa.eu, create an app, subscribe to the Trademark Search API, submit identity documents to docs.apiplatform@euipo.europa.eu, and wait for approval. After approval you get a client ID and client secret used in an OAuth2 client_credentials flow against https://euipo.europa.eu/cas-server-webapp/oidc/accessToken. For Signa: sign up at app.signa.so, copy your API key, and pass it as Authorization: Bearer. The same key works for EUIPO and every other office Signa covers."}},{"@type":"Question","name":"What is the difference between eSearch Plus and TMview?","acceptedAnswer":{"@type":"Answer","text":"TMview is a multi-office search front-end run by EUIPO that aggregates trademark data from EUIPO, WIPO, and dozens of national offices into a single human-facing search UI. It is meant for end-user lookups, not programmatic ingestion. eSearch Plus is the EUIPO-only REST API that returns structured JSON for EUTMs and Madrid designations of the EU — it is what you build on. Signa ingests eSearch Plus directly and separately consumes other offices through their own native feeds rather than relaying through TMview."}},{"@type":"Question","name":"What are the EUIPO API rate limits?","acceptedAnswer":{"@type":"Answer","text":"The eSearch Plus API enforces approximately 200 requests per minute per client. Search responses lack several detail fields (markText, full applicants array, goods/services descriptions, events, proceedings), so a full ingestion typically combines a fast search pass with a slower detail pass — and the detail pass becomes the bottleneck. OAuth2 tokens expire every 2 hours and must be refreshed. Signa does not pass these limits through: we share the underlying EUIPO quota across customers and surface our own per-key rate limits."}},{"@type":"Question","name":"How fresh is EUIPO data on Signa?","acceptedAnswer":{"@type":"Answer","text":"EUIPO has an active daily sync at 07:00 UTC that uses the RSQL `updateDate>=watermark` filter to pick up both new EU direct filings and updates to Madrid Protocol designations of the EU. New and changed records are normalized, enriched with detail-endpoint data (goods/services, events, proceedings), and indexed within minutes. Every record carries an updated_at timestamp so you can verify freshness inside the data itself."}},{"@type":"Question","name":"Can I bulk export EUIPO trademark data via Signa?","acceptedAnswer":{"@type":"Answer","text":"Yes. Signa exposes a cursor-paginated search endpoint that streams the full EUIPO register, including both EUTMs and Madrid designations of the EU. For very large exports, enterprise plans include S3 delivery of the same normalized records as gzipped NDJSON, refreshed daily."}},{"@type":"Question","name":"Does the EUIPO API include national trademarks from EU member states?","acceptedAnswer":{"@type":"Answer","text":"No. EUIPO covers EUTMs and Madrid Protocol designations of the European Union. Both grant unitary protection across all 27 member states through the EUIPO register. National registrations in France (INPI), Germany (DPMA), Spain (OEPM), and other member-state offices are separate filings on separate registers. Signa has the national registers of France (INPI) and Sweden (PRV) today, and Germany, Spain and Italy are on the roadmap. Madrid designations of individual EU countries are searchable through the same Signa endpoint via WIPO."}},{"@type":"Question","name":"How does Signa handle EUIPO opposition and cancellation data?","acceptedAnswer":{"@type":"Answer","text":"EUIPO exposes proceedings (oppositions, cancellations, appeals, invalidations) through the detail endpoint of eSearch Plus. Signa ingests the full proceeding record — kind, parties, status, key dates, and decision events — and normalizes EUIPO status strings like OPPOSITION_PENDING, CANCELLATION_PENDING, APPEALABLE, and REMOVED_FROM_REGISTER into the canonical status object (status.primary / status.stage). All 18 EUIPO status codes are mapped, and decision events (opposition_decided, cancellation_decided, appeal_decided) are emitted to the event timeline so you can reconstruct the prosecution and post-grant history of any mark."}}]}]}
+meta description: The EUIPO API for trademark search. Access European Union Intellectual Property Office records via API: normalized data, sub-second response, daily sync.
+meta og:title: EUIPO API: European Union Trademark Data | Signa
+meta og:description: The EUIPO API for trademark search. Access European Union Intellectual Property Office records via API: normalized data, sub-second response, daily sync.
+meta og:url: https://signa.so/offices/euipo
+meta og:site_name: Signa
+meta og:image: https://signa.so/offices/euipo/opengraph-image-13awph?c1aa4449ff193525
+meta og:image:type: image/png
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:image:alt: Signa Office Page
+meta og:type: website
+meta twitter:card: summary_large_image
+meta twitter:title: EUIPO API: European Union Trademark Data | Signa
+meta twitter:description: The EUIPO API for trademark search. Access European Union Intellectual Property Office records via API: normalized data, sub-second response, daily sync.
+meta twitter:image: https://signa.so/offices/euipo/opengraph-image-13awph?c1aa4449ff193525
+meta twitter:image:alt: Signa Office Page
+meta twitter:image:type: image/png
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+EUIPO API: European Union Trademark Data | Signa
+/
+Product
+Solutions
+Resources
+Pricing (/pricing)
+Log in (https://app.signa.so/login) Sign up (https://app.signa.so/signup)
+Offices (/offices)
+EUIPO
+The EUIPO API for trademark search
+EUIPO European Union Synced daily
+Search, monitor and analyze all 3,268,094 trademarks on the European Union Intellectual Property Office register through one API, in the same format as every other office.
+Get API key (https://app.signa.so/signup) See the API (#api)
+Data current as of November 10, 2026
+Trademarks on file
+3,268,094
+Registered 92% of decided applications
+2,190,597
+Filed in 2025
+191,736
+Update cadence
+Daily
+Register
+What is on the EUIPO register
+Every mark on this register, including international registrations designating it. A mark can cover several classes, so class shares add up to more than 100%.
+Top classes
+Class 9 (/classes/9) Computers and Scientific Devices 909,643 28%
+Class 35 (/classes/35) Advertising and Business 790,742 24%
+Class 42 (/classes/42) Computer and Scientific Services 628,998 19%
+Class 41 (/classes/41) Education and Entertainment 498,775 15%
+Class 25 (/classes/25) Clothing 388,347 12%
+Class 16 (/classes/16) Paper Goods and Printed Matter 317,020 10%
+Class 5 (/classes/5) Pharmaceuticals 309,410 9%
+Class 3 (/classes/3) Cosmetics and Cleaning Preparations 276,849 8%
+Class 38 (/classes/38) Telecommunications 228,637 7%
+Class 36 (/classes/36) Insurance and Financial 226,406 7%
+By status
+registered
+2,190,597 67%
+expired
+590,894 18%
+abandoned
+264,201 8%
+cancelled
+121,927 4%
+pending
+100,475 3%
+Activity
+Filings per year
+New applications at EUIPO each year. The current year is year to date.
+Peak year · 195,301 filed
+2021
+2022 to 2026 · filed
+872,070
+First filing
+1961
+Filings by year: 1961: 1, 1996: 41707, 1997: 26716, 1998: 31342, 1999: 40404, 2000: 56329, 2001: 47904, 2002: 44084, 2003: 56289, 2004: 58262, 2005: 64538, 2006: 74713, 2007: 85330, 2008: 84339, 2009: 83781, 2010: 95208, 2011: 101517, 2012: 103962, 2013: 108616, 2014: 113943, 2015: 124973, 2016: 134934, 2017: 140806, 2018: 148858, 2019: 155118, 2020: 172818, 2021: 195301, 2022: 168820, 2023: 170649, 2024: 176564, 2025: 191736, 2026: 164301.
+About EUIPO
+What is EUIPO?
+European Union Intellectual Property Office, Alicante, Spain.
+The European Union Intellectual Property Office (EUIPO) is the EU agency responsible for the European Union Trade Mark (EUTM) and Registered Community Design systems. Founded in 1994 as the Office for Harmonization in the Internal Market (OHIM) and renamed EUIPO in 2016, it is headquartered in Alicante, Spain, and operates under EU Regulation 2017/1001.
+A single EUTM application gives unitary protection across all 27 EU member states, one filing, one fee, one renewal, one register. EUIPO receives roughly 196,000 EUTM applications per year and maintains over 1.3M active registrations alongside historical filings dating back to 1996. There is no use requirement to file or register, but a mark becomes vulnerable to revocation if it has not been put to genuine use within five years.
+EUIPO publishes trademark data through TMview (a multi-office search front-end) and its eSearch Plus REST API. Signa ingests the eSearch Plus feed, including EUTMs and Madrid Protocol designations of the EU, normalizing 18 EUIPO status codes into a unified status object, resolving co-applicants, and enriching each record with the goods/services descriptions, classification events, publications, and opposition/cancellation proceedings exposed by the detail endpoint.
+What makes it different
+Unitary right, one EUTM registration covers all 27 EU member states with a single application, fee, and renewal
+No use requirement to register, unlike USPTO, you can file and register without proving commercial use (genuine use becomes relevant only after 5 years)
+11 mark types, word, figurative, shape, position, pattern, colour, sound, motion, multimedia, hologram, and "other"
+Fast Track examination, qualifying applications (pre-approved goods/services from the harmonized database) can publish in roughly half the standard time
+File in any of 23 official EU languages plus one of 5 working languages (EN/FR/DE/IT/ES) for the procedure
+Seniority claims, preserve the priority date of an earlier national mark when consolidating into a single EUTM
+SME Fund, EU SMEs can reclaim up to 75% of EUTM application fees (capped at €1,000) through annual EUIPO grants
+Opposition system, third parties have a 3-month window after publication to oppose before registration issues
+Comparison
+EUIPO eSearch Plus API vs Signa
+EUIPO's eSearch Plus is a real, working REST API, OAuth2, JSON, well-documented. It is the right tool if you only need EU data and you are willing to build an OAuth refresher, an RSQL query layer, a status mapper, and a detail-enrichment pipeline. Here is what changes when you use Signa instead.
+EUIPO eSearch Plus API	Signa
+Setup
+Register on dev.euipo.europa.eu, submit identity docs, wait for approval, build OAuth2 client_credentials flow with 2-hour token refresh
+Sign up, copy API key, curl the endpoint
+Data shape
+Raw JSON with 18 EUIPO-specific status strings, Madrid designations mixed in, search results missing markText and applicants until you call the detail endpoint
+Normalized JSON with canonical status object, search results pre-enriched with detail fields, same schema as every other office
+Search
+RSQL query language over the search endpoint, useful for filters, but you build full-text, fuzzy, and image search yourself
+Full-text, fuzzy, and phonetic search out of the box across all 27 EU jurisdictions
+Freshness
+200 req/min rate limit on a single connection; full bulk takes ~40 hours, daily incremental needs RSQL `updateDate>=watermark` to catch Madrid updates
+Pre-ingested by Signa; daily incremental at 07:00 UTC, records queryable within minutes
+Coverage
+EUIPO only, add USPTO, WIPO, UKIPO, and national offices of EU member states separately, each with its own auth and format
+EUIPO and every other office Signa covers through the same endpoint, including the WIPO Madrid feed that carries EU designations
+Building directly on eSearch Plus is the right call when EU coverage is all you need and you have engineering time to spend on the OAuth refresher, the search-vs-detail field gap, and the 18-status mapping. Signa exists for the case where neither of those is true.
+FAQ
+EUIPO API questions
+Is the EUIPO eSearch Plus API free?
+Yes, eSearch Plus is a free public REST API offered by EUIPO. Access requires registering an application on the EUIPO developer portal (dev.euipo.europa.eu), subscribing to the Trademark Search product, and completing an identity verification step (passport or national ID plus proof of address). Once approved, you authenticate with OAuth2 client credentials. The data itself is public; you build the ingestion and normalization pipeline. Signa is paid because it does that work for you.
+How do I get an EUIPO API key?
+For EUIPO direct: register at dev.euipo.europa.eu, create an app, subscribe to the Trademark Search API, submit identity documents to docs.apiplatform@euipo.europa.eu, and wait for approval. After approval you get a client ID and client secret used in an OAuth2 client_credentials flow against https://euipo.europa.eu/cas-server-webapp/oidc/accessToken. For Signa: sign up at app.signa.so, copy your API key, and pass it as Authorization: Bearer. The same key works for EUIPO and every other office Signa covers.
+What is the difference between eSearch Plus and TMview?
+TMview is a multi-office search front-end run by EUIPO that aggregates trademark data from EUIPO, WIPO, and dozens of national offices into a single human-facing search UI. It is meant for end-user lookups, not programmatic ingestion. eSearch Plus is the EUIPO-only REST API that returns structured JSON for EUTMs and Madrid designations of the EU, it is what you build on. Signa ingests eSearch Plus directly and separately consumes other offices through their own native feeds rather than relaying through TMview.
+What are the EUIPO API rate limits?
+The eSearch Plus API enforces approximately 200 requests per minute per client. Search responses lack several detail fields (markText, full applicants array, goods/services descriptions, events, proceedings), so a full ingestion typically combines a fast search pass with a slower detail pass, and the detail pass becomes the bottleneck. OAuth2 tokens expire every 2 hours and must be refreshed. Signa does not pass these limits through: we share the underlying EUIPO quota across customers and surface our own per-key rate limits.
+How fresh is EUIPO data on Signa?
+EUIPO has an active daily sync at 07:00 UTC that uses the RSQL `updateDate>=watermark` filter to pick up both new EU direct filings and updates to Madrid Protocol designations of the EU. New and changed records are normalized, enriched with detail-endpoint data (goods/services, events, proceedings), and indexed within minutes. Every record carries an updated_at timestamp so you can verify freshness inside the data itself.
+Can I bulk export EUIPO trademark data via Signa?
+Yes. Signa exposes a cursor-paginated search endpoint that streams the full EUIPO register, including both EUTMs and Madrid designations of the EU. For very large exports, enterprise plans include S3 delivery of the same normalized records as gzipped NDJSON, refreshed daily.
+Does the EUIPO API include national trademarks from EU member states?
+No. EUIPO covers EUTMs and Madrid Protocol designations of the European Union. Both grant unitary protection across all 27 member states through the EUIPO register. National registrations in France (INPI), Germany (DPMA), Spain (OEPM), and other member-state offices are separate filings on separate registers. Signa has the national registers of France (INPI) and Sweden (PRV) today, and Germany, Spain and Italy are on the roadmap. Madrid designations of individual EU countries are searchable through the same Signa endpoint via WIPO.
+How does Signa handle EUIPO opposition and cancellation data?
+EUIPO exposes proceedings (oppositions, cancellations, appeals, invalidations) through the detail endpoint of eSearch Plus. Signa ingests the full proceeding record, kind, parties, status, key dates, and decision events, and normalizes EUIPO status strings like OPPOSITION_PENDING, CANCELLATION_PENDING, APPEALABLE, and REMOVED_FROM_REGISTER into the canonical status object (status.primary / status.stage). All 18 EUIPO status codes are mapped, and decision events (opposition_decided, cancellation_decided, appeal_decided) are emitted to the event timeline so you can reconstruct the prosecution and post-grant history of any mark.
+API
+Get this data via the API
+Every number on this page comes from the Signa API. Query the EUIPO register in the same format as every other office.
+GET /v1/analytics/offices/{id}
+Totals, status mix, top classes and filings per year
+GET /v1/offices/{id}
+Register size, sync cadence and last sync time
+POST /v1/trademarks
+Search EUIPO marks with filters.offices = ["EM"]
+Get API key (https://app.signa.so/signup) View docs (https://docs.signa.so)
+GET /v1/analytics/offices/{id}
+ID = EM
+curl https://api.signa.so/v1/analytics/offices/$ID \
+-H "Authorization: Bearer $SIGNA_API_KEY"
+Response
+{
+"object" : "office_analytics" ,
+"code" : "EM" ,
+"total_marks" : 3268094 ,
+"registered_count" : 2190597 ,
+"registration_rate" : 0.917
+}
+/
+The global trademark API. Search, screen and monitor marks from one place.
+Product
+Search (/solutions/search)
+Screening (/solutions/screening)
+Monitor (/solutions/monitor)
+Scan (/solutions/scan)
+Pricing (/pricing)
+Integrations (/integrations)
+Docs (https://docs.signa.so)
+Data
+Trademarks (/trademarks)
+Companies (/companies)
+Firms (/firms)
+Collections (/collections)
+Statistics (/stats)
+Offices (/offices)
+Countries (/countries)
+Resources
+Free tools (/tools)
+Blog (/blog)
+Reports (/reports)
+Learn (/learn)
+Glossary (/glossary)
+Newsletter (/radar)
+llms.txt (/llms.txt)
+Company
+Contact (/contact)
+Trust (/trust)
+Terms (/legal/terms-of-service)
+Privacy (/legal/privacy-policy)
+© 2026 Signa. All rights reserved.
+Cookie settings
+Status (https://status.signa.so)
