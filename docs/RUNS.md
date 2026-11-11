@@ -2804,3 +2804,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 17:27 | burn-down | Built foundry pre-research-shelf-cap-three: pre-research seeds a spike under three open, not two
 - 2026-11-11 17:27 | burn-down | build.md, burn-down.md, exchange.md and pipeline README changed with dated Changes lines; 11-10 search rule kept
 - 2026-11-11 17:27 | burn-down | Proof: the next starved slot seeds a third spike when two are open (Exchange pre-research line)
+- 2026-11-11 17:34 | burn-down | Built foundry exchange-source-terms-before-scoring: a spike's sources get terms + RENDER lines first
+- 2026-11-11 17:34 | burn-down | exchange.md Candidates paragraph and pipeline README changed; forbidden or identity-walled sources park at once
+- 2026-11-11 17:34 | burn-down | Proof: the 2026-W47 exchange file quotes a terms line in every scored candidate row
