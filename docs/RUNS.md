@@ -2817,3 +2817,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 17:38 | burn-down | Parked au-abn-bulk-extract in exchange.json with a trigger (an ABN actor ≥ 10 users/30 d or a buyer asking)
 - 2026-11-11 17:38 | burn-down | Stopping: 4 items built (gankdat ×2 incl. v0.28.6, foundry ×2), 1 pre-research park; starved and cooled
 - 2026-11-11 18:01 | watchdog | ci-minutes: 401 billed min/7d (~1719/mo; public, no cap) top: notify owner 82, gankdat metrics 61, fetch relay 47
+- 2026-11-11 21:06 | triage | notify owner dispatched: last run started 18:00 UTC, 3 h ago
