@@ -122,6 +122,7 @@ _Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10
 | 2026-11-08 | Daily check | 1 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 11-07: 2 impressions, 0 clicks, avg pos 81.5, top /weava-alternative.html 2, indexed 2/2; sales: 0 keys |
 | 2026-11-09 | Daily check | 3 | — | 0 | via store-metrics CI: chrome: 2 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 11-08: 2 impressions, 0 clicks, avg pos 81.5, top /weava-alternative.html 2, indexed 2/2; sales: 0 keys |
 | 2026-11-10 | Daily check | 1 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 11-09: 0 impressions, 0 clicks, indexed 1/2, not: Crawled - currently not indexed ×1; sales: 0 keys |
+| 2026-11-11 | Daily check | 1 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 11-10: 0 impressions, 0 clicks, indexed 1/2, not: Crawled - currently not indexed ×1; sales: 0 keys |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
