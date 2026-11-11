@@ -1,0 +1,51 @@
+{
+  "request": "apify-store-trademark-rank-2026-11-11",
+  "fetched_at": "2026-11-11T17:27:52.513Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=trademark&limit=100",
+      "fetched_at": "2026-11-11T17:27:51.076Z",
+      "status": 200,
+      "elapsed_ms": 282,
+      "final_url": "https://api.apify.com/v2/store?search=trademark&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"53e66-jMaIz+57SjJ5V0m6KlzmzAKEIaM\""
+      },
+      "file": "1.json",
+      "bytes": 343654,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=uk%20trademark&limit=100",
+      "fetched_at": "2026-11-11T17:27:51.870Z",
+      "status": 200,
+      "elapsed_ms": 48,
+      "final_url": "https://api.apify.com/v2/store?search=uk%20trademark&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"dfb8-/EMCAoxaZHa7QZ3Mkhto4GB/nh0\""
+      },
+      "file": "2.json",
+      "bytes": 57272,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=trademark%20watch&limit=100",
+      "fetched_at": "2026-11-11T17:27:52.418Z",
+      "status": 200,
+      "elapsed_ms": 91,
+      "final_url": "https://api.apify.com/v2/store?search=trademark%20watch&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"586c0-ydqZ1qR2pMlPjjlLx2L9+ammPf8\""
+      },
+      "file": "3.json",
+      "bytes": 362176,
+      "truncated": false
+    }
+  ]
+}
