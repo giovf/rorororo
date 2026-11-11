@@ -1,0 +1,8 @@
+GET https://www.whatdotheyknow.com/request/bulk_download_of_trade_mark_data_2
+GET https://www.trademarkdashboard.com/uk-trademark-database
+GET https://www.trademarkdashboard.com/uk-ipo-guide
+GET https://apify.com/scrapersdelight/uk-trademark-scraper
+GET https://apify.com/scrapersdelight/uk-trademark-scraper/input-schema
+GET https://signa.so/offices/ukipo
+GET https://signa.so/offices/euipo
+GET https://signa.so/pricing
