@@ -1,0 +1,84 @@
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.trademarkdashboard.com/#organization","name":"Trademark Dashboard","legalName":"Decentralised Finance Software Ltd","url":"https://www.trademarkdashboard.com","logo":{"@type":"ImageObject","url":"https://www.trademarkdashboard.com/logo.png","width":300,"height":150},"image":"https://www.trademarkdashboard.com/logo.png","description":"The UK's AI-powered trademark clearance platform. Search 3M+ UK trademarks, find attorneys, and get AI-powered clearance reports.","foundingDate":"2025","founder":{"@type":"Person","name":"Nik Maguire","jobTitle":"CEO & Founder"},"address":{"@type":"PostalAddress","streetAddress":"Moxon House, Moxon Street","addressLocality":"Marylebone","addressRegion":"London","postalCode":"W1U 4EY","addressCountry":"GB"},"sameAs":["https://find-and-update.company-information.service.gov.uk/company/16838716","https://www.linkedin.com/company/moxon-ai-group/"],"parentOrganization":{"@type":"Organization","name":"Moxon AI Group Ltd","url":"https://www.linkedin.com/company/moxon-ai-group/"},"knowsAbout":["UK trademark registration","EU trademark registration","US trademark registration","Nice Classification","trademark clearance","brand protection","intellectual property","trademark monitoring","phonetic similarity analysis"],"areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"European Union"},{"@type":"Country","name":"United States"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Trademark Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Free Trademark Search","description":"Search 3M trademarks across UK IPO, EUIPO, and USPTO databases instantly."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Trademark Clearance Report","description":"Comprehensive clearance report with phonetic similarity analysis, Nice class conflicts, and risk assessment."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Trademark Attorney Directory","description":"Find qualified UK trademark attorneys for registration, opposition, and portfolio management."}}]}},{"@type":"WebSite","@id":"https://www.trademarkdashboard.com/#website","name":"Trademark Dashboard","url":"https://www.trademarkdashboard.com","publisher":{"@id":"https://www.trademarkdashboard.com/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.trademarkdashboard.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}
+{"@context":"https://schema.org","@type":"Article","headline":"UK Trademark Data: Why the IPO's Search Tool Isn't Enough","description":"An analysis of UK trademark data accessibility compared to the US and EU, and what alternatives are available to UK businesses.","author":{"@type":"Organization","name":"TrademarkDashboard","url":"https://www.trademarkdashboard.com"},"publisher":{"@type":"Organization","name":"TrademarkDashboard"},"datePublished":"2026-03-27","mainEntityOfPage":"https://www.trademarkdashboard.com/uk-ipo-guide"}
+{"@context":"https://schema.org","@type":"VideoObject","name":"What is a Trademark Clearance Report?","description":"A short explainer on what a UK trademark clearance report is and what it checks before you file — the s.3 absolute-grounds screen, conflicts ranked by sound, look and AI-judged meaning across the UK, EU, US, Japan and Australia registers, plus company, domain and social-handle signals — so you can clear a brand name with confidence.","thumbnailUrl":["https://i.ytimg.com/vi/7kM0LmNh6EI/maxresdefault.jpg"],"uploadDate":"2026-06-06T00:00:00+00:00","contentUrl":"https://www.youtube.com/watch?v=7kM0LmNh6EI","embedUrl":"https://www.youtube.com/embed/7kM0LmNh6EI"}
+meta description: The UK IPO's trademark search only does exact text matching. Its open data is from 2018. There's no public API. Here's what UK businesses actually need — and the free alternatives.
+meta og:title: UK Trademark Data: Why the IPO's Search Tool Isn't Enough
+meta og:description: An analysis of UK trademark data accessibility compared to the US and EU, and what alternatives are available.
+meta og:url: https://www.trademarkdashboard.com/uk-ipo-guide
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:title: Free UK Trademark Search, Monitoring & Renewal | Trademark Dashboard
+meta twitter:description: Search the official UK IPO trademark register free. Paid clearance reports and dashboard tools are available when you need more detail.
+meta twitter:image: https://www.trademarkdashboard.com/opengraph-image
+UK Trademark Data: Why the IPO's Search Tool Isn't Enough | TrademarkDashboard
+Skip to content (#main-content)
+/
+UK Trademark Data Analysis · March 2026
+UK trademark data: why the IPO's search tool isn't enough
+The UK government's search only does exact text matching. Its open data is from 2018. There's no public API. Here's what UK businesses actually need.
+Published 27 March 2026 · TrademarkDashboard Research
+How do I search the UK IPO trademark register?
+The UK IPO's Find a trade mark tool searches the official register for exact text, free. Trademark Dashboard searches the same 3 million UK records free for exact and word matches, and adds owner, class and status views in one place. For sound-alike and look-alike conflicts plus a filing verdict, a clearance report scores every match from £9.99.
+Run a clearance report → (/pricing#one-off)
+What the IPO search tool actually does
+The IPO's online search accepts a text query and returns trademarks containing those exact words. What it does not do is detect phonetically similar names, visually similar marks, or conceptual matches. These are precisely the factors an IPO examiner assesses when deciding whether to accept your application.
+The open data problem
+The IPO published a bulk data release of the UK trademark register — a tab-separated text file. The last update was in February 2018. Seven years of filings, registrations, oppositions, and expirations are missing.
+“The Intellectual Property Office does not at present provide an API for bulk data retrieval of the trade mark database.” — UK IPO, Freedom of Information response FOI-2016-489
+How the UK compares to the US and EU
+The USPTO provides free bulk downloads and API access. The EUIPO offers open APIs via TMview. The UK IPO has neither — its only bulk release is from 2018, and it has confirmed no API is available. The UK's approach to IP data openness lags behind both the US and EU.
+USPTO & EUIPO
+Free bulk data downloads, public APIs, regular updates, machine-readable formats, comprehensive developer documentation.
+UK IPO
+No public API (confirmed via FOI). Last bulk data release: 2018. Exact text matching only. Tab-separated text format. No developer docs.
+UK IPO Find a trade mark vs Trademark Dashboard
+Feature	UK IPO (Find a trade mark)	Trademark Dashboard
+Cost	Free	Free (UK and US search)
+Match type	Exact text only	Exact and word matches free; sound-alike and look-alike on a clearance report from £9.99
+Owner / class / status views	Limited	Yes, in one place
+Registers covered	UK only	UK and US free; EU, Japan and Australia on Pro
+Filing risk verdict	No	Clearance report, green/amber/red, from £9.99
+What UK businesses actually need
+A useful trademark search needs four things the IPO's tool doesn't provide: similarity detection (phonetic, visual, conceptual), class-aware analysis, current data (not a 2018 snapshot), and plain-language risk assessment accessible to non-experts.
+Start free, go deeper when it counts
+Built on a licensed, daily-updated copy of the full UK IPO register. Free search finds exact and word matches across the current register, instantly, with no sign-up. AI look-alike and sound-alike similarity, Nice class analysis and plain-language risk scores come with the paid clearance report (from £9.99) and Pro.
+Search UK trademarks free → (/trademark-search-uk)
+UK IPO trade mark application fees
+A single-class application filed online with the UK IPO costs £205 (with £60 for each additional class). Fees are not refunded if the application fails — which makes pre-filing clearance checks more valuable than ever.
+Free search done. But is your name actually safe to file?
+A free search shows what already exists. A clearance report goes further: it scores every conflict by sound, look and meaning, checks Nice-class overlap, and returns a green/amber/red filing verdict with a downloadable PDF, from £9.99.
+Compare clearance reports → (/pricing#one-off) See what a clearance report includes (/trademark-clearance-report-uk)
+Frequently asked questions
+Does the UK IPO have a public trademark search API?
+No. The UK IPO confirmed in an FOI response that it does not provide a public API. TrademarkDashboard is building the UK's first free trademark API.
+Is the UK IPO's open data release up to date?
+No. The only publicly downloadable bulk dataset was last updated in February 2018. TrademarkDashboard uses a licensed FTP data feed updated daily.
+What's the difference between the IPO search tool and TrademarkDashboard?
+The IPO's tool searches for exact text matches only. TrademarkDashboard's free search finds exact and word matches across the current register instantly, and its paid clearance report (from £9.99) and Pro add AI to detect phonetic, visual, and conceptual similarities, the same factors an IPO examiner evaluates.
+Is TrademarkDashboard affiliated with the UK government?
+No. TrademarkDashboard is an independent service operated by Moxon AI Group Ltd using UK IPO data licensed under RPSI 2015 and OGL v3.0.
+Related: Search UK trademarks free (/trademark-search-uk) · UK trademark opposition timeline (/uk-trademark-opposition-timeline)
+The data gap is real. The solution is free.
+UK businesses deserve the same data access as the US and EU. Search the complete, current UK trademark register free for exact and word matches. AI look-alike and sound-alike similarity comes with the paid clearance report (from £9.99) and Pro.
+Search the UK register free
+Search UK trademarks free
+Search 3M UK trademark records in under a second
+Search trademarks → (/)
+/
+Search and clear UK trade marks using official UK IPO register data for free, includes live United States register search from USPTO, EU EUIPO search and world wide trade mark search.
+Tools
+Free UK trademark search (/trademark-search-uk) Name Risk Scanner (/tools/name-risk-scanner) Domain Check (/tools/availability-checker) Filing Cost Calculator (/tools/cost-calculator) Trademark Strength Scorer (/tools/strength-scorer) UK Company & Charity Search (/tools/company-name-search)
+UK Trademark Guides
+Register a UK Trademark (/guides/register-trademark-uk) Free Trademark Search Guide (/guides/trademark-search-guide) Trademark Filing Mistakes (/guides/trademark-filing-mistakes) Company Name vs Trademark (/guides/company-name-vs-trademark) Trademark Opposition UK (/guides/trademark-opposition-uk)
+Attorneys
+Find an Attorney (/attorneys) London Attorneys (/attorneys/greater-london) West Midlands (/attorneys/west-midlands) Manchester (/attorneys/greater-manchester) West Yorkshire (/attorneys/west-yorkshire)
+Trademark Wiki
+Browse Notable Trademarks (/trademarks) Coca-Cola (/trademarks/coca-cola) Rolls-Royce (/trademarks/rolls-royce) Burberry (/trademarks/burberry) Dyson (/trademarks/dyson) Trademark 100 (/trademark-100)
+Resources
+All 45 Trademark Classes (/trademark-classes) Pricing (/pricing) FAQ (/faq) About (/about) UK vs EU Trademarks (/guides/uk-vs-eu-trademarks-brexit) Using the ® Symbol (/guides/using-registered-symbol-uk)
+© 2026 Trademark Dashboard . All rights reserved.
+Privacy (/privacy) Terms (/terms) Cookies (/cookies)
+Trademark Dashboard is a trading name of Decentralised Finance Software Ltd . Registered office: Moxon House, Moxon Street, London, W1U 4EY. Company No: 16838716 (England & Wales). ICO Registration: ZC110187.
+UK trademark data is Crown copyright, used under the Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) . Class numbers follow the international Nice Classification (https://www.wipo.int/classifications/nice/) , administered by the World Intellectual Property Organization (WIPO) (https://www.wipo.int/) . Descriptions and examples on our class pages are our own editorial summaries, not a reproduction of the official Nice list or the TMclass (https://tmclass.tmdn.org/ec2/) harmonised filing database.
+United States trademark records on this site are derived from the United States Patent and Trademark Office (USPTO) (https://www.uspto.gov/) public register and related bulk data products (https://www.uspto.gov/trademarks/apply/check-status-view-documents/trademark-bulk-data) . The USPTO is the authoritative source; we do not guarantee that data shown here is complete, current, or free of error. This service is not sponsored or endorsed by the USPTO or the United States government.
+Trademark Dashboard is a technology product, not a law firm. Information on this site does not constitute legal advice.
