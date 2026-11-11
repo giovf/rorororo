@@ -1459,3 +1459,25 @@ calls of the key's 600 / 5 min, and the refresh logs `snapshot_window` with the 
 to a 3,300-row snapshot and reads the oldest day back through the date filter. Proof: the 11-11 wave-1 reading
 shows `snapshot_window` and no `snapshot_truncated` for uk-companies, and the snapshot's `total` ≈ a week of
 incorporations.
+
+### 2026-11-11 burn-down — `refresh-uk-gambling-operators` (score 6), built, v0.28.6
+
+Filed by the auto-filer after the 05:15 wave-2 refresh read `business-licence-register-businesses.csv download
+failed: 526` on 11-10 and 11-11 (two error rows, the last generation served meanwhile). The relay round
+`gambling-register-2026-11-11` (17:11 UTC) HEADed all five files: every one 200 `text/csv`, 82 kB–1.3 MB, the
+businesses, licences, trading-names and domain-names files `Last-Modified` 05:30:14–05:30:18 on 11-11 and the
+premises file 05:30:23 on 11-10 — the Commission rewrites the register at ~05:30 UTC, and the files are intact;
+a 1 kB range read shows the businesses header without the BOM recorded on 09-24 (the parser strips one when
+present). 526 is Cloudflare's "invalid SSL certificate" answer from the edge in front of the Commission's host,
+not a file problem; why it answers at 05:15 and not at 17:11 is not proven. Three changes: (1) the read moves
+from wave 2 (05:15) to wave 6 (05:55, with nhs-ods, ~2 MB of files and a 90 s per-file timeout so the wave
+stays far under its budget) — after the 05:30 rewrite, so a good night now takes today's files instead of
+yesterday's; (2) `fetchFile` throws `OriginUnavailableError` when a 5xx outlasts its three reads (15 s and
+30 s pauses, `originRetry.pauseMs`), as uk-insolvency does; (3) the Worker's refresh paths — `cache.ts` and
+both `d1store.ts` paths — wrote `error` for every failure, so the typed error only ever became a `skipped`
+row from the runner (uk-insolvency is runner-fed): the status now comes from `origin.ts failedRefreshStatus`
+in all three and the runner, and `refreshOne` logs the night as a warn-level `refresh_skipped` line.
+`test/uk-gambling-operators.spec.ts`: a 526 on every read is the typed error after three reads, a `skipped`
+row, the previous generation still served; the wave pin. `test/origin.spec.ts`: the KV and D1 paths' `skipped`
+row. Proof: the item's own — no uk-gambling-operators under refresh errors for seven Daily numbers rows, and
+the 11-12 row's `last_refreshed_at` for the source at ~05:5x with today's files.
