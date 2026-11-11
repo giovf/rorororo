@@ -1,0 +1,14 @@
+GET https://www.tmdn.org/network/legal-notices
+GET https://www.tmdn.org/tmview/legal-notices
+GET https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/contentPdfs/data_protection/EUTM_Download_en.pdf
+GET https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/EUIPO-Download/EUTM-Download-License_Agreement.pdf
+RENDER https://www.euipo.europa.eu/en
+RENDER https://euipo.europa.eu/ohimportal/en/open-data
+GET https://www.euipo.europa.eu/en/the-office/open-data-portal
+GET https://euipo.europa.eu/en/open-data-portal
+GET https://data.europa.eu/api/hub/repo/datasets/euipo-eu-trade-mark-applications?format=json
+GET https://data.europa.eu/data/datasets/euipo-eu-trade-mark-applications?locale=en
+GET https://www.ipo.gov.uk/t-tmj.htm
+GET https://www.gov.uk/guidance/trade-mark-data-and-statistics
+GET https://www.gov.uk/government/organisations/intellectual-property-office/about/research
+GET https://apify.com/trev0n/tmview-scraper
