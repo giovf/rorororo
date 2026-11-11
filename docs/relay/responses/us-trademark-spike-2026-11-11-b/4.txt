@@ -1,0 +1,169 @@
+meta description: The Open Data Portal (ODP) is USPTO's data platform that empowers you to discover and easily extract USPTO data in one place for free.
+API Rate Limits | Open Data Portal
+[key]
+Open Data Portal Registration Requirement​
+In order to access the Open Data Portal (ODP), starting on June 18, 2026 , you'll need to sign in with a valid USPTO.gov account. Please sign in using the navigation below or create an account using the button in the banner. If you want more information on this initiative, please visit our Register for ODP access page (support/universal-registration) and sign-in today. Additionally, your USPTO.gov account requires multi-factor authentication (MFA). For guidance on MFA setup, please visit the USPTO.gov account FAQs (https://www.uspto.gov/learning-and-resources/account-faqs#subcategory=&category=Multifactor+authentication) .
+Also, effective August 18, 2026 , users are required to provide four additional fields of information on their USPTO profile. API keys for accounts that did not complete these fields by October 8, 2026, have been deactivated. To reactivate your key, update these fields in your USPTO.gov account (https://account.uspto.gov/profile) settings by selecting the “Open Data Portal” section at the bottom of the left navigation menu. Next login to ODP and click on the Activate API Key button on the Manage API Key page. See our FAQs (/support/faq) for details.
+Create a USPTO.gov account (https://account.uspto.gov/profile/create-account?startingURL=https://data.uspto.gov/apis/api-rate-limits)
+[U.S. flag]
+An official website of the United States government A Here’s how you know keyboard_arrow_down
+close
+[U.S. flag]
+An official website of the United States government
+Here’s how you know keyboard_arrow_down
+[Dot gov]
+The .gov means it’s official.
+Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+[Https]
+The site is secure.
+The https:// ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+United States Patent and Trademark Office (https://www.uspto.gov)
+Patents
+Patent Center (https://patentcenter.uspto.gov)
+Search with Patent Public Search (https://ppubs.uspto.gov/pubwebapp/static/pages/landing.html)
+Check filing status (https://patentcenter.uspto.gov)
+Search and record assignments (https://assignmentcenter.uspto.gov/)
+Order certified Patent documents (https://certifiedcopycenter.uspto.gov/)
+Patent Trial and Appeal Case Tracking System (https://ptacts.uspto.gov/ptacts/ui/home)
+View the Manual of Patent Examining Procedure (https://www.uspto.gov/web/offices/pac/mpep/index.html)
+Trademarks
+Search trademarks (https://tmsearch.uspto.gov/)
+File trademark forms (https://www.uspto.gov/trademarks-application-process/filing-online)
+View status, documents, and registration certificates (https://tsdr.uspto.gov/)
+File Trademark Trial and Appeal Board forms (https://estta.uspto.gov/)
+View Trademark Trial and Appeal Board proceedings (https://ttabvue.uspto.gov/ttabvue/)
+Search the Trademark Official Gazette (https://tmog.uspto.gov/#)
+Search and record assignments (https://assignmentcenter.uspto.gov/)
+Order certified trademark documents (https://certifiedcopycenter.uspto.gov/)
+View the Trademark Manual of Examining Procedure (https://tmep.uspto.gov/)
+Search the ID Manual (https://idm-tmng.uspto.gov/id-master-list-public.html)
+Fees and payment
+Fees Self-Service (https://fees.uspto.gov/)
+Financial Manager (https://fees.uspto.gov/FinancialManager)
+Patent Maintenance Fees Storefront (https://fees.uspto.gov/MaintenanceFees)
+Contact Us
+Contact Us (https://www.uspto.gov/about-us/contact-us)
+Learning and resources (https://www.uspto.gov/learning-resources)
+MyUSPTO (https://my.uspto.gov)
+Sign in
+[Open Data Portal logo]
+[Open Data Portal logo]
+* Home (/home)
+* Data products
+* APIs
+* Support
+* Manage API Key (/apikey)
+* Register for ODP access (/support/universal-registration)
+[what's new] What's New? Office Action Search and updated Petition Decisions are now available in ODP. See our latest release notes (/support/release/5.0) for more details.
+×
+OPEN DATA PORTAL API
+Getting started (/apis/getting-started)
+API syntax examples (/apis/api-syntax-examples)
+API rate limits (/apis/api-rate-limits)
+Patent File Wrapper API
+Search (/apis/patent-file-wrapper/search)
+Application Data (/apis/patent-file-wrapper/application-data)
+Continuity (/apis/patent-file-wrapper/continuity)
+Documents (/apis/patent-file-wrapper/documents)
+Transactions (/apis/patent-file-wrapper/transactions)
+Patent Term Adjustment (/apis/patent-file-wrapper/patent-term-adjustment)
+Address and Attorney/Agent Information (/apis/patent-file-wrapper/address)
+Assignments (/apis/patent-file-wrapper/assignments)
+Foreign Priority (/apis/patent-file-wrapper/foreign-priority)
+Associated Documents (/apis/patent-file-wrapper/associated-documents)
+Status Codes (/apis/patent-file-wrapper/status-codes)
+Bulk Datasets API
+Search (/apis/bulk-data/search)
+Product Data (/apis/bulk-data/product)
+Download (/apis/bulk-data/download)
+Petition Decisions API
+Search (/apis/petition-decision/search)
+Petition Decision Data (/apis/petition-decision/petition-decision-data)
+Final Petition Decision Data (/apis/petition-decision/final-petition-decision)
+Download (/apis/petition-decision/download)
+PTAB Trials API
+Search Proceedings (/apis/ptab-trials/search-proceedings)
+Download Proceedings Search Results (/apis/ptab-trials/download-proceedings)
+Search Proceedings by Trial Number (/apis/ptab-trials/proceedings-trial-number)
+Search Decisions (/apis/ptab-trials/search-decisions)
+Download Decisions Search Results (/apis/ptab-trials/download-decisions)
+Search Decisions by Trial Number (/apis/ptab-trials/decisions-trial-number)
+Search Decisions by Document Identifier (/apis/ptab-trials/decisions-document-identifier)
+Search Documents (/apis/ptab-trials/search-documents)
+Download Documents Search Results (/apis/ptab-trials/download-documents)
+Search Documents by Trial Number (/apis/ptab-trials/documents-trial-number)
+Search Documents by Document Identifier (/apis/ptab-trials/document-identifier)
+PTAB Appeals API
+Search Appeals (/apis/ptab-appeals/search)
+Download Search Result (/apis/ptab-appeals/download)
+Search by Document Identifier (/apis/ptab-appeals/document-identifier)
+Search by Appeal Number (/apis/ptab-appeals/search-appeal-number)
+PTAB Interferences API
+Search Interferences (/apis/ptab-interferences/search)
+Download Search Result (/apis/ptab-interferences/download)
+Search by Document Identifier (/apis/ptab-interferences/document-identifier)
+Search by Interference Number (/apis/ptab-interferences/search-interference-number)
+Office Action Search API
+Search (/apis/office-action/search)
+Details (/apis/office-action/details)
+Download Search Results (/apis/office-action/download)
+Download Office Action Text (/apis/office-action/download-oa-text)
+Office Action Text Retrieval API *
+Office Action Text Retrieval (/apis/office-action-retrieval/search)
+Office Action Rejections API *
+Office Action Rejections (/apis/office-action-rejections/search)
+Enriched Citations API *
+Enriched Citations (/apis/enriched-citations/search)
+Office Action Citations API *
+Office Action Citations (/apis/office-action-citations/search)
+Swagger UI (/swagger/index.html)
+*Legacy APIs
+Home
+APIs (/apis)
+API rate limits
+API rate limits
+Was this page helpful?
+ODP provides three types of APIs that have their own set of rate limits: Meta data retrieval APIs, Patent File Wrapper Documents API and Bulk Datasets Downloads API.
+Meta data retrieval APIs:
+For each data product there are a set of meta data retrievals-
+Patent File Wrapper API (/apis/patent-file-wrapper/search) meta data retrieval includes Application Data (/apis/patent-file-wrapper/application-data) , Continuity (/apis/patent-file-wrapper/continuity) , Transactions (/apis/patent-file-wrapper/transactions) , Patent Term Adjustment (/apis/patent-file-wrapper/patent-term-adjustment) , Address and Attorney/Agent Information (/apis/patent-file-wrapper/address) , Assignments (/apis/patent-file-wrapper/assignments) , Foreign Priority (/apis/patent-file-wrapper/foreign-priority) and Associated Documents (/apis/patent-file-wrapper/associated-documents) .
+Bulk Datasets API (/apis/bulk-data/search) meta data retrieval includes Product Data (/apis/bulk-data/product) .
+Final Petition Decisions API (/apis/petition-decision/search) meta data retrieval includes Search (/apis/petition-decision/search) , Document Data (/apis/petition-decision/petition-decision-data) , and Download (/apis/petition-decision/download) .
+Meta data retrievals are limited to 5 million calls per week for all the APIs in this category combined.
+Patent File Wrapper’s Documents API:
+The weekly limit for all the APIs under the Patent File Wrapper Documents API (/apis/patent-file-wrapper/documents) is 1,200,000. This means you can make 1.2 million calls per week for the APIs under this category.
+Bulk Datasets’ Downloads API:
+For the same file downloaded using the Bulk Datasets Downloads API (/apis/bulk-data/download) , you are limited to 20 downloads per year using your API key, except for XML files which has a much higher limit
+You can download up to 5 files per 10 seconds from the same IP address.
+Our files are redirected and digitally signed with a signature expiring in 5 seconds, so be sure to start downloading any redirected files right way.
+API rate limit reset
+Your weekly quota for Meta data retrieval and Patent File Wrapper Documents APIs will reset on Sunday at midnight Greenwich Time (also known as UTC). After the reset, you will be able to use a full allocated quota again.
+We limit all API calls to one API call per API key. You will need to wait until an API call completed until starting a new one. We also advise against using the same API key in applications running in parallel: concurrent API calls with the same key are currently blocked.
+API request threshold
+Burst: This defines how many requests can be run in parallel per API Key. It is set to 1, meaning you should not run any requests in parallel at all for the same API key.
+Rate: This defines how many requests one can submit per second. It is set at 4 to 15, depending on the API call type. For example, if an API call takes 0.1 seconds, you can still submit 10 sequential calls even with the burst limit of 1.
+In general, you should design a system that waits for an API call to finish before making the next call using the same API key, as some of the calls require significant resources.
+If you submit more than one request at a time or exceed weekly quota, you will get the error message: “ HTTP 429 Too Many Requests. ” Therefore, it is “best practice” to handle an HTTP 429 error gracefully. We strongly discourage automatic retries, without at least 5 second delay, when you get a HTTP 429 response: this may exacerbate the problem.
+Please note these limits are subject to change. Check this page regularly for the most up-to-date information.
+If you have any questions or errors, please visit the Support (/support/contact) page for assistance.
+Additional information about this page
+×
+Published on: May 5, 2017 at 09:24 AM EST
+Last updated on: July 1, 2018 at 10:03 AM EST
+Owned by: Office of the Chief Communications Officer
+Close
+Receive updates from the USPTO
+Enter your email to subscribe or update your preferences
+Subscribe
+About the USPTO (https://www.uspto.gov/about-us) Search for patents (https://www.uspto.gov/patents/search) Search for trademarks (https://www.uspto.gov/trademarks/search)
+US Department of Commerce (https://www.commerce.gov)
+Accessibility (https://www.uspto.gov/using-usptogov/accessibility-uspto-website)
+Privacy Policy (https://www.uspto.gov/privacy-policy)
+Financial and Performance Data (https://www.uspto.gov/about-us/financial-and-performance)
+Freedom of Information Act (https://www.uspto.gov/learning-and-resources/ip-policy/electronic-freedom-information-act-e-foia)
+Inspector General (https://www.oig.doc.gov/Pages/U.S.-Patent-and-Trademark-Office.aspx)
+NoFEAR Act (https://www.uspto.gov/about-us/organizational-offices/office-equal-employment-opportunity-and-diversity/nofear-act)
+USA.gov (https://www.usa.gov)
+https://www.uspto.gov
+Follow us https://www.facebook.com/uspto.gov https://www.instagram.com/uspto https://www.linkedin.com/company/uspto https://twitter.com/uspto https://www.youtube.com/user/USPTOvideo
+Feedback

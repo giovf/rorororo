@@ -1,0 +1,262 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"USPTO Trademark Search Feed: Applications, Owners, Status","description":"Pulls official USPTO daily data and returns clean, flat US trademark records: word mark, serial and registration number, owner, goods and services, class, status and dates, with a what-changed-since-last-run mode. Billed only per delivered record. No API key needed.","url":"https://apify.com/thoob/uspto-trademark-feed","applicationCategory":"BrowserApplication","offers":{"@type":"Offer","description":"$4.00 / 1,000 trademark records","price":4,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":4,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"trademark records"}}}}
+meta description: Flat US trademark records from official USPTO daily data: word mark, serial and registration number, owner, goods and services, class, status and dates....
+meta og:title: Input · USPTO Trademark Search Feed: Applications and Status · Apify
+meta og:description: Flat US trademark records from official USPTO daily data: word mark, serial and registration number, owner, goods and services, class, status and dates....
+meta og:url: https://apify.com/thoob/uspto-trademark-feed/input-schema
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=USPTO+Trademark+Search+Feed%3A+Applications%2C+Owners%2C+Status&uniqueName=thoob%2Fuspto-trademark-feed&categories=DEVELOPER_TOOLS%2CBUSINESS&users=3&runs=142&authorName=Pono+Data&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FJPhEFqbsCaQsqUo0cQW-0DqrUMyCXJO-xG0_CtY__-U%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNmFGMFVrVmNrM2ZlbkNDNEQtcHJvZmlsZS00RFNyWmhVRTNFLXBvbm8tZGF0YS5wbmc.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: Input · USPTO Trademark Search Feed: Applications and Status · Apify
+meta twitter:description: Flat US trademark records from official USPTO daily data: word mark, serial and registration number, owner, goods and services, class, status and dates....
+meta twitter:image: https://apify.com/og-image/actor?actorName=USPTO+Trademark+Search+Feed%3A+Applications%2C+Owners%2C+Status&uniqueName=thoob%2Fuspto-trademark-feed&categories=DEVELOPER_TOOLS%2CBUSINESS&users=3&runs=142&authorName=Pono+Data&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FJPhEFqbsCaQsqUo0cQW-0DqrUMyCXJO-xG0_CtY__-U%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNmFGMFVrVmNrM2ZlbkNDNEQtcHJvZmlsZS00RFNyWmhVRTNFLXBvbm8tZGF0YS5wbmc.webp
+Input · USPTO Trademark Search Feed: Applications and Status · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,129 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[USPTO Trademark Search Feed: Applications, Owners, Status avatar]
+USPTO Trademark Search Feed: Applications, Owners, Status
+Pricing
+$4.00 / 1,000 trademark records
+Try for free (https://console.apify.com/actors/BFa74bHeelfk80JXg?addFromActorId=BFa74bHeelfk80JXg)
+Go to Apify Store (/store)
+[USPTO Trademark Search Feed: Applications, Owners, Status]
+USPTO Trademark Search Feed: Applications, Owners, Status
+thoob/uspto-trademark-feed
+Try for free (https://console.apify.com/actors/BFa74bHeelfk80JXg?addFromActorId=BFa74bHeelfk80JXg)
+Copy setup prompt Copied
+Pulls official USPTO daily data and returns clean, flat US trademark records: word mark, serial and registration number, owner, goods and services, class, status and dates, with a what-changed-since-last-run mode. Billed only per delivered record. No API key needed.
+Pricing
+$4.00 / 1,000 trademark records
+Rating
+0.0
+(0)
+Developer
+Pono Data (/thoob) Maintained by Community
+Actor stats
+0
+Bookmarked
+3
+Total users
+3
+Monthly active users
+16 days ago
+Last modified
+Categories
+Developer tools (/store/categories/developer-tools) Business (/store/categories/business)
+Features
+Limited permissions
+Share
+README (/thoob/uspto-trademark-feed) Input (/thoob/uspto-trademark-feed/input-schema) Output (/thoob/uspto-trademark-feed/output-schema) Pricing (/thoob/uspto-trademark-feed/pricing) API (/thoob/uspto-trademark-feed/api/python) Issues (/thoob/uspto-trademark-feed/issues/open)
+You might also like
+EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview dltik/euipo-trademarks-scraper Search 100M+ trademarks from EUIPO + 70 IP offices (USPTO, INPI, DPMA, WIPO Madrid). Nice class, status, dates, goods & services. AI brand-clearance + applicant→company. No API key. $0.01/result. Walid 167 (/dltik/euipo-trademarks-scraper)
+Trademark Search — USPTO Serial + IP Australia Name Search nexgendata/uspto-trademark-search Trademark due diligence and brand clearance: look up US trademarks by serial/registration number from the official USPTO TSDR source, and search brand names across the IP Australia register. JSON: mark, owner, status, serial/registration, dates, class, goods/services. No API key. Pay per record. NexGenData 50 (/nexgendata/uspto-trademark-search)
+USPTO Trademark Search — Wordmark, Owner, Class & Serial Lookup memo23/uspto-trademark-scraper Search US federal trademarks straight from USPTO: by wordmark/brand, owner name, or goods & services, plus exact serial-number lookup. Filter by live/dead status and Nice class. Full records — status, owner, classes, dates, goods, mark image. No API key. JSON/CSV Muhamed Didovic 54 5.0 (1) (/memo23/uspto-trademark-scraper)
+USPTO Trademark Batch Search API dev00/uspto-trademark-api Bulk verify keywords and phrases against the USPTO database to instantly detect LIVE and PENDING trademarks. dev00 111 (/dev00/uspto-trademark-api)
+USPTO Trademark Scraper - Brand-Owner & Attorney Leads scrapesage/uspto-trademark-scraper Scrape USPTO trademarks by keyword, owner, class or serial number. Get mark, status, Nice classes, owner name & address, goods & services, dates, plus the filing attorney's name & email. Export brand-owner and IP-attorney leads. Monitor new filings. No API key, no browser. Scrape Sage 25 (/scrapesage/uspto-trademark-scraper)
+USPTO Trademark Search — Lookup, Availability & Data sian.agency/uspto-trademark-scraper Search and extract USPTO trademark data — keyword search, brand-name availability checks, owner and full-text search, serial-number lookups, class suggestions, and expiring-mark discovery. Seven operations, one clean dataset per run. No API key, no setup. SIÁN OÜ 34 (/sian.agency/uspto-trademark-scraper)
+USPTO Trademark Search magnova/uspto-trademark-search Search U.S. federal trademarks from the official USPTO database — wordmark, owner, international class, live/dead status, filing dates, goods/services. No API key, no login, no registration: uses the public backend behind the USPTO's own Trademark Search site, with automatic version discovery. Magnova 6 (/magnova/uspto-trademark-search)
+TMview Trademark Search & Watch trev0n/tmview-scraper Search 140M+ trade marks from the EUIPO, WIPO, USPTO and ~80 national offices via TMview: name, owner, Nice classes, status, dates, goods & services, oppositions. Watch mode alerts you to new conflicting filings and their opposition deadline. Paweł 4 (/trev0n/tmview-scraper)
+USPTO Trademark Search API — Bulk Phrase, Serial & Owner khadinakbar/uspto-trademark-batch-search Check phrases against the US trademark register and get one clear or conflict answer each, from live official USPTO data. Bulk trademark search and trademark checker for clearance and availability. $5 per 1,000 results, usage included, no API key or login. US only, not legal advice. Khadin Akbar 30 (/khadinakbar/uspto-trademark-batch-search)
+Trademark Search API: USPTO, TMview, Madrid, IP Australia s-r/trademark-search Trademark search across USPTO, TMview, WIPO Madrid, IP Australia and Global Brand DB: one row per mark with mark text, owner, live/dead/pending status in the office's own wording, serial and registration numbers, Nice classes, goods and services text, dates and per-source status flags. SR 4 (/s-r/trademark-search)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)
+Description
+JSON example
+USPTO API key
+apiKey
+Optional
+#apiKey
+Optional. The actor supplies a working key, so you can leave this blank. Pass your own to run against your own quota. Stored as a secret; never written to the dataset or logs.
+Type: string
+Days to look back
+lookbackDays
+Optional
+#lookbackDays
+How many days of USPTO daily trademark files to read, counting back from today. USPTO publishes on business days, so a lookback of 3 typically covers the last 2 or 3 published files. Each day holds roughly 9,500 records.
+Type: integer
+Minimum: 1
+Maximum: 60
+Default: 3
+Mark text contains
+markContains
+Optional
+#markContains
+Optional. Keep only marks whose word mark contains this text, matched case-insensitively. Leave empty for every mark.
+Type: string
+Owner name contains
+ownerContains
+Optional
+#ownerContains
+Optional. Keep only records where an owner's name contains this text, matched case-insensitively. Useful for watching one company's portfolio.
+Type: string
+International classes
+internationalClasses
+Optional
+#internationalClasses
+Optional. Keep only marks in these Nice international classes (for example 009 for software, 025 for clothing, 042 for tech services). Leave empty for all classes.
+Type: array
+Owner states
+ownerStates
+Optional
+#ownerStates
+Optional. Keep only marks with an owner in these US states (two-letter postal codes). Leave empty for all.
+Type: array
+Status codes
+statusCodes
+Optional
+#statusCodes
+Optional. Keep only marks carrying one of these USPTO status codes (for example 630 for a new application awaiting examination, 700 for registered). Leave empty for all statuses.
+Type: array
+Registered marks only
+registeredOnly
+Optional
+#registeredOnly
+Keep only marks that carry a registration number, dropping pending applications.
+Type: boolean
+Default: false
+Live marks only
+liveOnly
+Optional
+#liveOnly
+Drop marks that carry an abandonment date.
+Type: boolean
+Default: false
+Mode
+mode
+Optional
+#mode
+full returns every matching record in the window. changes returns only marks that are new to you or whose status, registration, abandonment, renewal or owner has moved since your last run.
+Type: string
+Default: full
+Options:
+full changes
+Max delivered records
+maxRecords
+Optional
+#maxRecords
+Cap on how many records a run delivers and bills. Defaults to 1000, because a single USPTO day holds around 9,500 records and a busy one holds far more. Set 0 for no cap. In changes mode nothing is lost to the cap: the rest arrives on a later run and is never billed twice. The platform spend cap is honored regardless.
+Type: integer
+Minimum: 0
+Maximum: 200000
+Default: 1000

@@ -1,0 +1,448 @@
+meta description: The Open Data Portal (ODP) is USPTO's data platform that empowers you to discover and easily extract USPTO data in one place for free.
+FAQs | Open Data Portal
+[key]
+Open Data Portal Registration Requirement​
+In order to access the Open Data Portal (ODP), starting on June 18, 2026 , you'll need to sign in with a valid USPTO.gov account. Please sign in using the navigation below or create an account using the button in the banner. If you want more information on this initiative, please visit our Register for ODP access page (support/universal-registration) and sign-in today. Additionally, your USPTO.gov account requires multi-factor authentication (MFA). For guidance on MFA setup, please visit the USPTO.gov account FAQs (https://www.uspto.gov/learning-and-resources/account-faqs#subcategory=&category=Multifactor+authentication) .
+Also, effective August 18, 2026 , users are required to provide four additional fields of information on their USPTO profile. API keys for accounts that did not complete these fields by October 8, 2026, have been deactivated. To reactivate your key, update these fields in your USPTO.gov account (https://account.uspto.gov/profile) settings by selecting the “Open Data Portal” section at the bottom of the left navigation menu. Next login to ODP and click on the Activate API Key button on the Manage API Key page. See our FAQs (/support/faq) for details.
+Create a USPTO.gov account (https://account.uspto.gov/profile/create-account?startingURL=https://data.uspto.gov/support/faq)
+[U.S. flag]
+An official website of the United States government A Here’s how you know keyboard_arrow_down
+close
+[U.S. flag]
+An official website of the United States government
+Here’s how you know keyboard_arrow_down
+[Dot gov]
+The .gov means it’s official.
+Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+[Https]
+The site is secure.
+The https:// ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+United States Patent and Trademark Office (https://www.uspto.gov)
+Patents
+Patent Center (https://patentcenter.uspto.gov)
+Search with Patent Public Search (https://ppubs.uspto.gov/pubwebapp/static/pages/landing.html)
+Check filing status (https://patentcenter.uspto.gov)
+Search and record assignments (https://assignmentcenter.uspto.gov/)
+Order certified Patent documents (https://certifiedcopycenter.uspto.gov/)
+Patent Trial and Appeal Case Tracking System (https://ptacts.uspto.gov/ptacts/ui/home)
+View the Manual of Patent Examining Procedure (https://www.uspto.gov/web/offices/pac/mpep/index.html)
+Trademarks
+Search trademarks (https://tmsearch.uspto.gov/)
+File trademark forms (https://www.uspto.gov/trademarks-application-process/filing-online)
+View status, documents, and registration certificates (https://tsdr.uspto.gov/)
+File Trademark Trial and Appeal Board forms (https://estta.uspto.gov/)
+View Trademark Trial and Appeal Board proceedings (https://ttabvue.uspto.gov/ttabvue/)
+Search the Trademark Official Gazette (https://tmog.uspto.gov/#)
+Search and record assignments (https://assignmentcenter.uspto.gov/)
+Order certified trademark documents (https://certifiedcopycenter.uspto.gov/)
+View the Trademark Manual of Examining Procedure (https://tmep.uspto.gov/)
+Search the ID Manual (https://idm-tmng.uspto.gov/id-master-list-public.html)
+Fees and payment
+Fees Self-Service (https://fees.uspto.gov/)
+Financial Manager (https://fees.uspto.gov/FinancialManager)
+Patent Maintenance Fees Storefront (https://fees.uspto.gov/MaintenanceFees)
+Contact Us
+Contact Us (https://www.uspto.gov/about-us/contact-us)
+Learning and resources (https://www.uspto.gov/learning-resources)
+MyUSPTO (https://my.uspto.gov)
+Sign in
+[Open Data Portal logo]
+[Open Data Portal logo]
+* Home (/home)
+* Data products
+* APIs
+* Support
+* Manage API Key (/apikey)
+* Register for ODP access (/support/universal-registration)
+[what's new] What's New? Office Action Search and updated Petition Decisions are now available in ODP. See our latest release notes (/support/release/5.0) for more details.
+×
+Home
+Resources (/support)
+SUPPORT
+What's New? (/support/whats-new)
+Register for ODP access (/support/universal-registration)
+Transition guidance
+PatentsView (/support/transition-guide/patentsview)
+Patent Examination Data System (PEDS) (/support/transition-guide/peds)
+Bulk Data Storage System (BDSS) (/support/transition-guide/bdss)
+Petition Decisions - Office of the Commissioner for Patents (/support/transition-guide/petitions)
+Patent Trial and Appeal Board (PTAB) (/support/transition-guide/ptab)
+Office Actions (OA) Weekly ZIPs (/support/transition-guide/oa)
+Office Action (OA) APIs (/support/transition-guide/office-action-apis)
+FAQs (/support/faq)
+Newsletters (/support/newsletters)
+Release notes
+5.0 Release notes (/support/release/5.0)
+5.0 Details
+4.0 Release notes (/support/release/4.0)
+4.5 Details
+4.4 Details
+4.3 Details
+4.2 Details
+4.1 Details
+4.0 Details
+3.0 Release notes (/support/release/3.0)
+3.6 Details
+3.5 Details
+3.4 Details
+3.3 Details
+3.2 Details
+3.1 Details
+3.0 Details
+2.0 Release notes (/support/release/2.0)
+2.11 Details
+2.10 Details
+2.9 Details
+2.8 Details
+2.7 Details
+2.6 Details
+2.5 Details
+2.3 Details
+2.2 Details
+2.0 Details
+1.0 Release notes (/support/release/1.0)
+1.5 Details
+1.4 Details
+1.3 Details
+1.2 Details
+1.1 Details
+Video tutorials (/support/video)
+Contact us (/support/contact)
+Home
+Support (/support/whats-new)
+FAQs
+FAQs
+Was this page helpful?
+Expand All | Collapse All
+About the Open Data Portal (ODP)
+What is the Open Data Portal (ODP)?
+The Open Data Portal (ODP) is our new hub for open data, built on the idea of finding several datasets in one platform so anyone can easily search and extract the data they need. The ODP is a unified platform that offers public patent data in one place. Enhanced APIs and robust documentation help improve the entire data experience.
+Customer demand for our data has grown rapidly since the launch of the original Open Data Portal initiative in 2015 – from 50 users to millions. The new Open Data Portal is the next step in the USPTO journey to amplify the public value, accessibility, and efficiency of patent data sharing. Improved Patent Examination Data System (PEDS) capabilities, Bulk Data Storage System (BDSS), and Developer Hub features and datasets will be included in this tool.
+We are continuously making improvements to ensure the reliability, efficiency, and quality of the data and overall service for all customers.
+With new customer feedback, iterative design, and continued development, we’ll add new datasets and features to ODP to meet your needs.
+What data is available in ODP?
+ODP provides access to patent data made available to the public as set forth in  37 CFR 1.11 and 1.14 (https://www.uspto.gov/web/offices/pac/mpep/s103.html) This includes datasets from the Office Action Search, Patent Trial and Appeal Board (PTAB), Patent File Wrapper (PFW), Final Petitions Decisions (FPD), and Bulk Data Storage System (BDSS).
+Office Action Search includes data relating to patent applications and patents filed in 2001 or later.
+Patent Trial and Appeal Board (PTAB) includes trial and appeal proceeding public data.
+The Patent File Wrapper (PFW) are datasets previously found in the Patent Examination Data System (PEDS), including publicly available patent applications, bibliographic/front page, and patent-related data fields.
+Petition Decisions include the same datasets as the previous Final Decisions – Commissioner for Patents, such as final agency petition decisions in patents and published patent applications.
+ODP’s Bulk Data Directory replaced the previous Bulk Data Storage System (BDSS), which includes statis bulk datasets.
+Over time, additional datasets and functionality will become available as new services are folded into ODP, including Trademark Decisions and Proceedings, Office Actions, and more. New features to support these new datasets will also be continuously added. Refer to the Release Notes (https://data.uspto.gov/support/release)  page for details on what services and functionality have been transitioned to ODP.
+Why are you creating a new Open Data Portal?
+Customer demand for USPTO data has grown rapidly since the launch of the Open Data Portal initiative in 2015. In recent years, customer feedback has demonstrated the need for a central portal of USPTO data.
+Customer feedback helped the team design and develop the site’s features.
+As part of our commitment to fostering a culture of open government, ODP supports the broader goals of solving customer data needs while improving the customer experience as a High-Impact Service Provider.
+Ultimately, we can better serve the public and the intellectual property community by offering tools to efficiently discover, access, and use our public data for new innovation. This effort supports American innovation and competition that drives our economy forward.
+Open Data Portal (ODP) Registration
+How do I get registered to access the Open Data Portal website?
+Users need to create a USPTO.gov account (https://my.uspto.gov) to register and access the ODP site.
+Any current account holder accessing APIs will continue to use their USPTO.gov account without the need to re-register to access the ODP site.
+Why do I need to be registered to access the ODP site and data?
+This registration will allow the agency to improve the customer profile, and lead to better future offerings. It helps keep the ODP safe, fast, and reliable. By requiring all users to sign in, we will:
+Protect site performance and ensure resources are available for legitimate use​
+​Block harmful automated bot traffic that can slow or disrupt the site​
+Reduce infrastructure costs caused by excessive unregistered traffic​
+I am registered for USPTO.gov, but I have never logged into ODP.  What do I need to do to access ODP?
+​If you are a registered user, you just need to log in by clicking on the ‘Sign in’ link on the top right corner of the site.
+What information will I need to provide when updating my ODP profile?
+When prompted to complete your profile, you will be asked to provide the following four fields:
+Job Title
+Organization Name
+Organization Type
+Intended Use
+As of August 18, 2026 , completing these fields will be required to continue accessing ODP data products.
+If you have already completed these fields in your USPTO.gov account (https://my.uspto.gov) or you are a USPTO employee logged in through the PTO network , no further action is needed.
+If your API key was deactivated because these fields were not completed by October 8, 2026, update your profile and then click on Activate API Key button on the Manage API Key (/apikey/key-reveal) page in ODP. For step-by-step instructions, see “Why is my API key returning a “Forbidden” error, and how do I reactivate it?” below.
+What is MFA and why do I need it?
+Multi-factor authentication (MFA) is a security step that protects your USPTO.gov account. When you create an account, you must enroll in a secure MFA method — such as Okta Verify or another authenticator app — in addition to setting a password. MFA enrollment is required as part of the USPTO.gov account setup process.
+The USPTO Contact Center (UCC) (https://www.uspto.gov/learning-and-resources/support-centers/uspto-contact-center-ucc) can help you complete enrollment. For guidance on MFA setup, please visit the USPTO.gov account FAQs (https://www.uspto.gov/learning-and-resources/account-faqs#subcategory=&category=Multifactor+authentication) .
+Who do I contact if I need help with my USPTO.gov account or MFA setup?
+For guidance on MFA setup, please visit the USPTO.gov account FAQs (https://www.uspto.gov/learning-and-resources/account-faqs#subcategory=&category=Multifactor+authentication) .
+For questions related to your USPTO.gov account, including MFA setup support (https://www.uspto.gov/learning-and-resources/account-faqs#subcategory=&category=Multifactor+authentication) , account creation, or login issues, contact the USPTO Contact Center (UCC) (https://www.uspto.gov/learning-and-resources/support-centers/uspto-contact-center-ucc) directly:
+800-786-9199 (toll free) | 571-272-1000 (local) | 800-877-8339 (TTY/TDD)
+usptoinfo@uspto.gov (mailto:usptoinfo@uspto.gov) │ M–F, 8:30 a.m.–8:00 p.m. ET │ Select option 3
+For questions about ODP data, products, or API access, email us at at data@uspto.gov. (mailto:data@uspto.gov)
+How can I get access to an API key in ODP? Is this the same as simply accessing the site?  ​
+In order to get access to an API you must get your USPTO.gov account (https://my.uspto.gov) verified with ID.me to receive an API key. To learn more about USPTO.gov ID.me verification, please visit the USPTO and ID.me help page (https://help.id.me/hc/en-us/articles/4412245504407-USPTO-and-ID-me) .
+Any current account holder accessing APIs will continue to use their USPTO.gov account without the need to re-register to access the ODP site.​
+Why is my API key returning a “Forbidden” error, and how do I reactivate it?
+If your API requests return {"message":"Forbidden"}, your API key may have been deactivated. After October 8, 2026, API keys for accounts that have not completed the four required profile fields are deactivated. Your API key is still valid, and you do not need a new API key.
+To reactivate your API key:
+Log in to ODP at data.uspto.gov.
+Go to the Manage API Key (/apikey/key-reveal) page. You will be prompted to update your profile. Complete the four required fields: Job Title, Organization Name, Organization Type, and Intended Use .
+Once your profile is updated, your API key appears on the Manage API Key (/apikey/key-reveal) page. Click on Activate API Key.
+Continue using your existing API key. You do not need to update your scripts or applications.
+You can also update your profile from your USPTO.gov account settings, in the “Open Data Portal” section. You will still need to return to ODP and select Activate API Key.
+If you need help, contact data@uspto.gov (mailto:data@uspto.gov) .
+Open Data Portal (ODP) and Petition Decisions – Office of the Commissioner for Patents
+What petition decisions are included in the Petition Decisions – Office of the Commissioner for Patents datasets in ODP? ​
+ODP’s Petition Decisions feature contains electronically available petition decisions issued by the Office of the Commissioner for Patents in patents and patent applications deemed public by 37 CFR 1.11 and 1.14 (https://www.uspto.gov/web/offices/pac/mpep/s103.html) and that were filed in 2001 or later.
+What is the difference between the petition decisions listed under the “Petition Decisions” data table and the “Final Petition Decisions” data table? ​
+A petition is a written request for the USPTO to take a certain action in your patent or patent application. The Petitions Decisions data table includes all electronically available petition decisions from the Office of the Commissioner for Patents in patents and patent applications deemed public by 37 CFR 1.11 and 1.14 (https://www.uspto.gov/web/offices/pac/mpep/s103.html) This includes decisions which grant, grant-in-part, dismiss, or deny the relief requested in the petition. The Petition Decisions dataset is automatically updated daily with decisions as they become electronically available.
+The Final Petition Decisions data table includes a subset of decisions that are also available under the “Petition Decisions” data table. The denial decisions contained in ODP’s Final Petition Decisions feature are final agency actions, or the conclusion of the USPTO’s consideration of the petition or request. Depending on the petition type and status of the application or patent, judicial review of the decision may be available. A dismissal of a petition, a denial of a petition without prejudice, and other interlocutory orders are not final agency decisions. See the Manual of Patent Examining Procedure (MPEP) 1002.02 (https://rdms-mpep-vip.uspto.gov/RDMS/MPEP/current#/current/d0e116602.html) for additional information. Decisions listed under Final Petition Decisions are all “denied” decisions that have been manually reviewed and validated as final agency decisions and tagged with additional data filters before being added to this dataset. Due to this manual review process, Final Petition Decisions is updated on a monthly basis. Therefore, a newly issued final agency decision may appear in the Petition Decisions dataset before it is viewable in the Final Petition Decisions dataset.​
+How does the Final Petition Decision feature in Open Data Portal (ODP) differ from the Final Decisions - Commissioner for Patents webpage?
+ODP’s Final Petition Decisions feature contains final agency petition decisions in patents and patent applications deemed public by 37 CFR 1.11 and 1.14 (https://www.uspto.gov/web/offices/pac/mpep/s103.html) and that were filed in 2001 or later. This feature has the same datasets as the Final Decisions - Commissioner for Patents, but with improved attributes and better functionality. Users are able to search, view, and extract any available Final Petition Decisions from the Office of the Commissioner for Patents in one place. Users will also be able to utilize ODP’s Application Programming Interfaces (APIs) to extract datasets.
+Will the Final Decisions - Commissioner for Patents webpage on the USPTO FOIA page be retired because of ODP?
+The Final Decisions – Commissioner for Patents (https://www.uspto.gov/learning-and-resources/ip-policy/foia-reading-room/final-decisions-commissioner-patents) webpage will still be accessible to the public but will no longer be updated to include additional petition decisions. Users will be directed to ODP’s Final Petition Decisions feature to search, view, and extract final decisions on matters related to patent applications and patents from the Office of the Commissioner for Patents. Petition decisions that were previously stored on the Final Decisions – Commissioner for Patents webpage, including those in patents and published patent applications that were filed prior to 2001, will remain archived on the webpage.
+Open Data Portal (ODP) and Bulk Data Storage System (BDSS)
+What functionality differs in ODP Data vs. Bulk Data Storage System (BDSS)?
+The ODP’s Bulk Data Directory will be replacing the current Bulk Data Storage System (BDSS). ODP has all the same functionalities as BDSS with much more:
+Retrieve all static bulk datasets in one place:
+View and download all static bulk datasets
+Review related bulk dataset products in the detailed pages
+Refined and more accurate Patent File Wrapper search and display:
+Download Patent File Wrapper Search results and view the step-by-step guide to complete the action
+Easily filter by number fields with or without special characters
+Quickly search by multiple values in filters such as Identifying Number, Attorney Docket Number, etc.
+Readily view both Power of Attorney and Correspondent information in the Address and Attorney/Agent Information side drawer
+Improved UI enhancements and bug fixes
+Improved API response
+Will the Bulk Data Storage System (BDSS) be retired because of ODP?
+Bulk Data Storage System (BDSS) or the bulkdata.uspto.gov webpage has been retired. The bulk data files previously on BDSS are accessible through ODP’s Bulk Data Directory (/bulkdata) feature.
+Use our BDSS transition guide (/support/transition-guide/bdss) to get you accustomed to the Bulk Data Directory interface and utilizing the Application Programming Interfaces (APIs).
+Please feel free to provide suggestions for improvement in the User Feedback Survey (https://uspto.gov1.qualtrics.com/jfe/form/SV_3mapetA09zbS3H0) , and Contact us (/support/contact) with any additional questions.
+Open Data Portal (ODP) and Patent Examination Data System (PEDS)
+What data from the Patent Examination Data System (PEDS) is available in ODP?
+PEDS data is established as the Patent File Wrapper in ODP. From the Patent File Wrapper web interface, you can search and extract the entire dataset containing the data for all indexed documents (up to 3,000 records at a time) or you can select just the data you are interested in by adjusting the dataset for desired attributes. Alternatively, you can use the APIs to extract the data you need. The data can be accessed by anyone using the Patent File Wrapper web interface or the provided APIs with your personal API Key.
+The Patent File Wrapper Search in ODP contains publicly available patent applications, bibliographic/front page, and patent-related data fields filed from January 2001 to the present, with ODP refreshed daily. They are sourced from the USPTO file storage center, Patent Application data hub, and Patent Assignment systems. You can also navigate to Bulk Datasets > Patent File Wrapper (Bulk Datasets) (/search/bulkdata/entire) to access bibliographic and static patent data compiled into file sets. You can access the Entire Datasets (10-year increments) and Delta Datasets (daily increments) to download in bulk within ODP.
+What functionality is different in ODP Patent Data vs. in the Patent Examination Data System (PEDS)?
+We interviewed  PEDS (https://ped.uspto.gov/peds/#/)  customers to understand their needs for the new Open Data Portal. As a result, you can:
+Easily refine your searches to retrieve the data you want, not just fixed bulk formats:
+Search across several attributes from one search bar to extract the data you need
+Customize the data attributes you’d like to view
+Download only the bulk data you want (not an entire bulk dataset that you don't want), including records from search results in both CSV and JSON
+Conduct Boolean queries to search across patent attributes
+Easily navigate the interface, making data easy to access regardless of skillset:
+View search results via a new, modern user interface (UI)
+Quicker navigation for browsing through patent applications and details, including easily moving from patent to patent using previous and next buttons when viewing patent application details
+View the front-page image of patents and download PDFs of PGPub and Granted Patents
+Quick access to API syntax of search results
+Experience enhanced APIs and documentation for more encompassing and accessible data extraction:
+Leverage improved API documentation with clear examples of JSON responses and attribute descriptions to expertly request and receive patent data via API
+Learn how to use APIs to perform the same functions from PEDS for improved efficiency, including a new process for accessing the data you downloaded from PEDS in bulk
+Use an API Key to manage site traffic for an improved experience for all users – reducing or eliminating site outages caused by excessive downloads
+See what data was updated in ODP since the last time you extracted data
+See improved data quality, efficiency, and overall service operability with a more reliable and resilient service:
+Data is preprocessed, cleansed, and analyzed
+Dates have been standardized to the international format (Day/Month/Year) for consistency with International Organization for Standardization guidelines
+Schema enforcement makes data consistent
+Transactions ensure that only completed writes are committed
+Time travel maintains versions of data
+And more
+The ODP launch with PEDS data sets the stage for future implementation, integrating data sources and services as we add additional USPTO datasets to the same platform over time.
+Will the Patent Examination Data System (PEDS) be retired because of ODP?
+As of March 14, 2025, Patent Examination Data System (PEDS) is no longer available. To access publicly available records of USPTO patent applications or patent filing status, users can access ODP’s Patent File Wrapper (/patent-file-wrapper) feature.
+Use our PEDS transition (/support/transition-guide/peds) guide to get you accustomed to the Patent File Wrapper interface and utilizing the Application Programming Interfaces (APIs).
+Please feel free to provide suggestions for improvement in the User Feedback Survey (https://uspto.gov1.qualtrics.com/jfe/form/SV_3mapetA09zbS3H0) , and Contact us (/support/contact) with any additional questions.
+ODP only has patent data from 2001 to the present. Where can I access patent application data prior to 2001?
+To retrieve data prior to January 2001 that you previously found on PEDS, you can visit the Patent Center (https://patentcenter.uspto.gov/) (for data similar to what is found in ODP) or find the static files in Bulk Data Directory’s Patent Examination Data System (Bulk Datasets) - XML (/bulkdata/datasets/pedsxml?fileDataFromDate=1900-01-01&fileDataToDate=2000-12-31) and Patent Examination Data System (Bulk Datasets) - JSON (/bulkdata/datasets/pedsjson?fileDataFromDate=1900-01-01&fileDataToDate=2000-12-31) .
+I used to be able to download the entire USPTO dataset in XML. Why can’t I do this in ODP?
+To provide all users with these improvements, we needed to change how data is downloaded. Whereas on PEDS, a user could download the entire USPTO dataset in JSON or XML files from the homepage (in flat, static files) and create custom patent dataset downloads, users can now access this data in JSON format via API instead.
+General Questions
+Where can I find additional help and documentation for using the Open Data Portal?
+You can reference the Release notes (https://data.uspto.gov/support/release) page to better understand new changes to ODP. This page details every update made to ODP, with the most recent updates at the top.
+You can find API documentation on the API syntax examples (https://data.uspto.gov/apis/api-syntax-examples) page and Swagger UI (https://data.uspto.gov/swagger/index.html) [swagger icon] .
+You can access the FAQs on this page at any time. If you still have a question, reference the Contact us (/support/contact) page and email us so we can assist you as soon as possible.
+Is the information I am viewing in ODP current?
+ODP intends to provide customers with the most recently available public information. Data available to view is recorded with a date and time stamp so that you know for certain that you are accessing the most recent information. Data will refresh daily overnight.
+What happened to Developer Hub (DH)?
+Developer Hub (DH) has been decommissioned on June 5, 2026. All public data has been migrated to the new Open Data Portal (ODP). To learn more about which products have been integrated and which ones have been decommissioned, please view this document (/documents/documents/DH-Decommission-FAQ.pdf) .
+Where can I find a list of the patent application status codes with definitions?
+To see a list of potential application status codes, you can conduct an API call or use the Swagger UI (/swagger/index.html) [swagger icon] . Learn more from the Status Codes API (/apis/patent-file-wrapper/status-codes) page.
+How can I trust the quality of the data?
+We are taking several measures to ensure that the data available is high quality and reliable:
+Data is preprocessed, cleansed, and analyzed
+Schema enforcement makes data consistent
+Additionally, the website will ensure reliable and fast processing for more efficient queries at scale with daily data refreshes.
+Improvements in data quality in the Open Data Portal will build your trust in our data as we transition to this new and improved data dissemination service.
+Which browsers are compatible with ODP?
+ODP will support the latest Chrome and Microsoft Edge browsers. It is also mobile-compatible.
+Where can I provide suggestions/feedback?
+Each iteration of the ODP will incorporate your feedback. If you have suggestions, praise, or other feedback, you can share it using this survey (https://uspto.gov1.qualtrics.com/jfe/form/SV_3mapetA09zbS3H0) , which is also displayed on the home page.
+Is usage monitored on ODP?
+To comply with USPTO security and operational policies, the Open Data Portal (ODP) monitors website interactions and API usage for security, performance, and service-quality purposes.
+Patent File Wrapper
+How can I use the Patent File Wrapper API to download documents/files?
+Look at Example 4 on the API syntax example (/apis/api-syntax-examples) page to learn how to download documents/files using the API.
+Note that downloading large files may be delayed. If you are unable to download any large files, send us a message on our Contact us (/support/contact) page.
+Additionally, ODP uses an HTTP redirect 301 to provide a direct link to download files and you may need to add an extra parameter (allow/follow redirects) based on your software library. For example, in Python to allow redirects, you can add “allow_redirects=True” to your request;. In Curl, you can use -L or -location option to enable redirect following.
+Can I download the entire (static) dataset or a dataset that I have customized?
+You can download the entire USPTO dataset (in flat, static files) by navigating to the Patent File Wrapper (Bulk Datasets) page. (https://data.uspto.gov/search/bulkdata/entire) You can view and download entire patent datasets along with delta datasets under the respective tabs on this page as well. Note that data will no longer be available in XML files; it will be available in JSON format.
+In the meantime, you can still access the entire dataset programmatically (via the API).
+As for downloading a customized dataset, custom downloads put a severe burden on USPTO systems and caused system outages that meant PEDS wasn't accessible to all users. You can still access this data, but for the USPTO to provide this free service and ensure it is available and accessible to all users and integrate it with the ODP design, we needed to change how you access it. Whereas on PEDS, a user could create custom patent dataset downloads, users will now be able to access a downloadable file of patent data in two different ways:
+(1) Programmatically (in JSON format) via API
+You will want to use this method to download large datasets (i.e., more than 3000 records). Follow these steps for extracting customized, bulk data using ODP APIs:
+If you haven't already, follow the steps in the Getting started (/apis/getting-started) section to create a USPTO.gov account and obtain your API Key
+Use the ODP API – Search endpoint ( https://api.uspto.gov/api/v1/patent/applications/ )
+Use Swagger UI (/swagger/index.html) [swagger icon] . to help you format your request and use the table below to know which data attributes you want to include in the JSON response
+(2) Customize select data attributes to download Patent File Wrapper data
+You can use this method if you want to look for certain filters and download based on certain data attributes. You can use this method if you want to download 3,000 records or less. Follow these steps for downloading data via the download modal:
+Navigate to Patent File Wrapper UI (https://data.uspto.gov/search) to search for applications or grants.
+Use the Search Filter panel to view available filter options
+Select the files you want to download
+Select the download button to select or deselect data attributes to include in your download
+Download a customized Patent dataset
+For example, if you would like all records related to the application type label "Utility," you input "searchText": "applicationTypeLabelName:Utility," and then add any sorts, filters, pagination, etc., that would help you review the data response.
+For example,
+"filters": [
+{
+"name": "applicationStatusDescriptionText",
+"value": [
+"Patented Case"
+]
+}
+],
+"rangeFilters": [
+{
+"field": "issueDate",
+"valueFrom": "2010-08-04",
+"valueTo": "2022-08-04"
+}
+],
+"sort": [
+{
+"field": "filingDate",
+"order": "desc"
+}
+],
+"fieldList": {
+"action": "include",
+"fields": [
+"applicationNumberText",
+"firstNamedInventor",
+"patentNumber"
+]
+},
+"pagination": {
+"offset": 0,
+"limit": 25
+},
+"facets": [
+"applicationTypeLabelName",
+"applicationStatusCode"
+],
+"downloadType": "json"
+}
+If you have any questions about formatting your request to receive the customized dataset you are used to, please review our FAQs (https://data.uspto.gov/support/faq) , API Syntax Examples (/apis/api-syntax-examples) , and Swagger UI (https://data.uspto.gov/swagger/index.html) [swagger icon] , and Contact us (https://data.uspto.gov/support/contact) as needed. Please keep an eye out for more details on the ODP information sessions we will be hosting as we begin to make this transition! You can learn about all events and ODP news by subscribing to ODP updates (https://uspto.gov1.qualtrics.com/jfe/form/SV_3mapetA09zbS3H0) .
+What search criteria/operators can I use in ODP?
+Search criteria can be viewed in the Simplified Syntax API Documentation (https://data.uspto.gov/apis/api-syntax-examples) or the Search Parameters modal on the Patent File Wrapper interface.
+What is the default search operator when I perform a search?
+The default search operator is AND.
+For more details on search operators, you can view search criteria in Simplified Syntax API Documentation (https://ppubs.uspto.gov/pubwebapp/static/pages/landing.html?MURL=PatentPublicSearch) or in the Search Parameters modal (https://data.uspto.gov/search) on the Patent Data interface.
+Can I search the full text of a patent application or issued patent?
+Unfortunately, we are unable to offer full-text search as part of this free service at this time. However, you can conduct full-text searches on all USPTO patents and patent applications on the Patent Public Search (PPUBS) (https://ppubs.uspto.gov/pubwebapp/static/pages/landing.html?MURL=PatentPublicSearch)
+Can I use multiple search criteria?
+Yes, in both the Patent File Wrapper search and when using APIs, you can use multiple search criteria to return a more specific subset of data to meet your needs. This allows you to customize the data you receive from ODP more easily.
+Can I see a visual of a patent I am interested in?
+At this time, you can view PDF images of the front of the patent and patent application in the side drawer after selecting a specific patent or patent application.
+What is SmartSearch?
+Smart Search within the Open Data Portal (ODP) is the new enhanced, experimental querying tool to enhance speed and data calls available starting June 18, 2026. This enhancement of the data related experience helps ODP serve as a unified platform that offers public patent data in one place.
+How can I best utilize Smart Search?
+Smart Search is accessible via [Patent File Wrapper](patent-file-wrapper/search)
+Smart Search is an experimental tool – please note the content generated may not always reflect the most accurate search results. Best practices to ensure optimal results from the SmartSearch tool include the following:
+Write complete sentences that clearly describe the data you’re looking for.
+Use terminology aligned with the ODP documented Data Attributes.
+You can use the word “Not” to exclude results that are not desired.
+Be specific about the entities (e.g. company names), desired data fields (e.g. inventor name, application number), and filtering criteria (e.g., filing year, patent type).
+How does Smart Search work?
+Smart Search lets you enter natural sentence into the USPTO ODP search engine. The sentence is processed, interpreted, and translated utilizing a field synonym dictionary. This result is organized into structured filters and parameters which are then used to construct a valid Search JSON query. This query is executed to retrieve relevant patent data from the OpenSearch API, returning results.
+What limits for Smart Search are there for users?
+There are limits to the number of queries that can be made with the Smart Search feature:
+Individual users are limited to 500 queries per day (this limit resets daily at 12AM EST).
+There is also a monthly system limit of queries that applies to ALL users, and once exceeded, the Smart Search tool will become unavailable for the remainder of that month (this limit resets at 12AM EST on the first of each month).
+Bulk Data Directory
+I want to programmatically download the zip files from Bulk Data Directory, but I get the “Please use redirect URL to download” error. What do I need to do?
+To download a bulk data file, you need to use an option to allow redirect. “-L”
+In case of CURL, you need to follow this example:
+curl -L -H "x-api-key: your-api-key"
+https://api.uspto.gov/api/v1/datasets/products/files/TRTDXFAP/apc250421.zip -o apc250421.zip
+In case of Python, use this example below:
+url = 'https://api.uspto.gov/api/v1/datasets/products/files/TRTDXFAP/apc250421.zip'
+response = requests.get(url, allow_redirects=True)
+How can I form a downloadable URL for a bulk data product file to download?
+There are two options to identify or form a downloadable file URL.
+Option 1:
+Go to web page of the Product that you are interested, see the file pattern and form the downloadable url:
+Ex: Go to Trademark Full Text XML Data (No Images) – Daily Applications (https://data.uspto.gov/bulkdata/datasets/trtdxfap) and see the files are structured in the format “apcyymmdd.zip”
+To download a file from this product (TRTDXFAP), the file downloadable URL would be
+https://api.uspto.gov/api/v1/datasets/products/files/TRTDXFAP/apc250421.zip
+Once you know the URL, you can download it using the API Key like the below CURL example. Please note that you need to use “-L” option to follow the redirect.
+curl -L -H "x-api-key: your-api-key"
+https://api.uspto.gov/api/v1/datasets/products/files/TRTDXFAP/apc250421.zip -o apc250421.zip
+Option 2:
+Make a product metadata api call that returns the file downloadable urls.
+Ex: For the same product trtdxfap (https://data.uspto.gov/bulkdata/datasets/trtdxfap) ( Trademark Full Text XML Data (No Images) – Daily Applications ), make a product metadata call like this -
+curl –X GET ‘https://api.uspto.gov/api/v1/datasets/products/trtdxfap’ -H "x-api-key: your-api-key"
+Which will return the JSON response that contains the fileDownloadURI.
+API
+Are there rate limits?
+Yes, there are rate limits. To learn about the ODP API Rate Limits, please navigate to the API Rate Limits page. (/apis/api-rate-limits) You can also find your Metadata and Patent File Wrapper threshold limit view in your personal Manage API Key (/apikey/key-reveal) page. We may need to adjust rate limits from time to time to maintain an optimal, free service for all customers.
+Where can I find documentation for available APIs, and which should I use?
+There are several API endpoints that you can use based on your data needs. Each endpoint has its page with examples and detailed information on when to use it. View the different endpoints, examples, and details for GET and POST requests on the  Open Data Portal API (/apis/patent-file-wrapper/search)  Patent Data navigation. Alternatively, you can visit the  Getting started (/apis/getting-started)  section to learn more.
+View details on using simplified vs. advanced syntax and examples for each option on the  API Syntax Examples (/apis/api-syntax-examples)  page.
+Can I submit more than one API request at a time? What happens if I exceed my weekly download quota?
+No, you cannot make more than one API request at a time. If you submit more than one request at a time or exceed weekly quota, you will get the error message: “HTTP 429 Too Many Requests.” Therefore, it is “best practice” to handle an HTTP 429 error gracefully. We strongly discourage automatic retries as this may exacerbate the issue. When you get a HTTP 429 response, try again using at least a 5 second delay between requests.
+It is best practice to remedy a HTTP 429 error with a “try catch” block. Please refer the API Syntax Examples page (/apis/api-syntax-examples) for code samples.
+If you exceed your download quota (/apis/api-rate-limits) , you will receive an HTTP 429 error. To continue making API calls, you will need to wait seven days from the time you first started using the API key to try again.
+How do I use ODP APIs?
+Please refer to the Getting started (/apis/getting-started) page to learn more about how to use ODP APIs.
+Where can I find working code samples to demonstrate the use of ODP APIs?
+Working code samples are available in the "Code Examples to Manage ODP API Rate Limits" section of the API Syntax Examples page. (/apis/api-syntax-examples)
+How can I transition from using legacy systems to ODP?
+You can use the Transition Guide (https://data.uspto.gov/support/transition-guide/peds) found on the API page. This guide is designed to help you migrate your APIs from PEDS and BDSS to ODP. We encourage you to follow the step-by-step instructions and helpful resources to successfully transfer your APIs and continue seamless access to USPTO's services.
+API Key
+What will require an API key?
+Open Data Portal provides free and non-authenticated access to data through our bulk files and user interfaces. ODP’s APIs provide developers with programmatic access and require an API key.
+Why is an API Key required?
+To manage the load on the system and ensure access to USPTO data is available and fair to everyone, an API Key will be required to access USPTO data using APIs.
+How do I get an API Key?
+To get an API Key, you must sign in to the Manage API Key page with your USPTO.gov account, validate, and link your ID.me account. Follow the steps on the Getting started (/apis/getting-started) page to create your API Key.
+Why do I need a USPTO.gov account to get my API key?
+MyUSPTO is where you can actively manage your intellectual property portfolio. You can track patent applications and grants, check trademark registrations and statuses, and access our services in your personalized USPTO gateway.
+Why do I need an ID.me account to get my API key?
+Verification enhances our security for online services by ensuring the identities of individuals performing actions related to our filing and registering processes. This helps to protect sensitive information while preventing fraud.
+Linking your ID.me account to your USPTO.gov account is a one-time registration. Once completed, you will be able to access your API Key anytime.
+What if I have multiple ID.me accounts? Which one should I link?
+A duplicate account occurs if you verified your identity on a different ID.me account. Since a verified account is tied to you as an individual, you can only have one account.
+If you already created a duplicate ID.me account using your work email address or another email address you own, follow the steps in  How to use an email address on your duplicate account (https://help.id.me/hc/en-us/articles/21085019129367)  to make your email address available to add to your original ID.me account.
+For more information on duplicate accounts, visit   What to do if you have a duplicate account (https://help.id.me/hc/articles/1500002444141) .
+Can I have multiple API keys with one ID.me account?
+No. The ID.me account integration with your USPTO.gov account is a one-to-one connection. You can only integrate your ID.me account into one USPTO.gov account. If you need to replace your API Key, email data@uspto.gov (mailto:data@uspto.gov) a request for a new API Key https://help.id.me/hc/en-us/articles/4412245504407-USPTO-and-ID-me on your personal Manage API Key page.
+I'm an international user and ID.me requires documents I do not have. What do I do?
+You must verify your identity on a video call if you live outside the United States. To learn how to do this, visit the   Verifying if you live outside of the United States (https://help.id.me/hc/en-us/articles/4415907236375-Verifying-if-you-live-outside-of-the-United-States) page.
+Where should I include my API Key in the API call?
+Here is a sample format of where you should add your API key in HTTP header: x-api-key as “x-api-key: ”
+What if I lose access to my ID.me account?
+Review ID.me's Help Center (https://help.id.me/hc/en-us/articles/4412245504407-USPTO-and-ID-me) and contact their team for support.
+What if my employee leaves and I need to reassign an ID.me account?
+An ID.me account cannot be reassigned as an API key is assigned by person, not organization. For a new employee, a new API key must be created. Follow the Getting Started (/apis/getting-started) guidance on how to create a new API key. Note that the employee leaving the organization can deactivate and reactivate their API key on their personal Manage API Key page.
+What if I need to block an ID.me account from accessing the API key?
+You can deactivate your API key in your personal Manage API Key (/apikey/key-reveal) page.
+I’m having trouble verifying my ID.me. Who can I contact to support this?
+If you have any questions regarding ID.me, review ID.me’s Help Center (https://help.id.me/hc/en-us/articles/4412245504407-USPTO-and-ID-me)  page. If you have any further questions, please visit our Contact us (/support/contact)  page.
+What law or regulation requires the USPTO to use ID.me to verify the identity or authenticate users prior to using USPTO API services?
+While there is no single law or regulation that specifically requires the use of ID.me, the USPTO has adopted ID.me for identity verification and authentication purposes to comply with a framework of laws, regulations, and guidelines designed to secure federal information systems and protect sensitive agency data and user privacy. The Federal Information Security Modernization Act of 2014 (FISMA), 44 U.S.C. § 3551 et seq., requires federal agencies to implement information security protections commensurate with the risk and magnitude of the harm resulting from unauthorized access, use, disclosure, disruption, modification, or destruction of information collected, used, or maintained by a federal agency or contractor. FISMA also requires federal agencies, among other requirements, to investigate incidents, audit information systems, and implement certain policies, standards, and guidelines for safeguarding federal information systems. One such policy is the Office of Management and Budget (OMB) Circular A-130, which further requires federal agencies to deploy effective security controls, such as user identification and authentication tools, to balance the potential security risk of public access systems and services that is consistent with the protection of privacy. Additionally, the USPTO’s use of ID.me follows NIST Special Publication 800-63 (four-volume suite), Digital Identity Guidelines, which provides technical requirements for digital identity services implemented by federal agencies.
+The USPTO’s use of ID.me supports compliance with all of these requirements and guidelines for offering its use of digital API services that is commensurate with the agency’s information system risks. For more information regarding the agency’s risk assessment, see Privacy Impact Assessment. We only collect identifying information to the extent that is legally authorized and necessary for the proper performance of agency functions in providing these services to the public. The USPTO also continues to provide free and non-authenticated access to patent data through our bulk files and user interfaces.
+I'm having trouble with my USPTO account. Who can I contact to support this?
+If you have any questions regarding your USPTO account, please send a message to usptoinfo@uspto.gov (mailto:usptoinfo@uspto.gov) or contact the USPTO Contact Center (UCC) at 1-800-786-9199 (toll-free), 571-272-1000 (local), or 1-800-877-8339 (TTY) and choose option 3, then option 3 for USPTO.gov accounts.
+Additional information about this page
+×
+Published on: May 5, 2017 at 09:24 AM EST
+Last updated on: July 1, 2018 at 10:03 AM EST
+Owned by: Office of the Chief Communications Officer
+Close
+Receive updates from the USPTO
+Enter your email to subscribe or update your preferences
+Subscribe
+About the USPTO (https://www.uspto.gov/about-us) Search for patents (https://www.uspto.gov/patents/search) Search for trademarks (https://www.uspto.gov/trademarks/search)
+US Department of Commerce (https://www.commerce.gov)
+Accessibility (https://www.uspto.gov/using-usptogov/accessibility-uspto-website)
+Privacy Policy (https://www.uspto.gov/privacy-policy)
+Financial and Performance Data (https://www.uspto.gov/about-us/financial-and-performance)
+Freedom of Information Act (https://www.uspto.gov/learning-and-resources/ip-policy/electronic-freedom-information-act-e-foia)
+Inspector General (https://www.oig.doc.gov/Pages/U.S.-Patent-and-Trademark-Office.aspx)
+NoFEAR Act (https://www.uspto.gov/about-us/organizational-offices/office-equal-employment-opportunity-and-diversity/nofear-act)
+USA.gov (https://www.usa.gov)
+https://www.uspto.gov
+Follow us https://www.facebook.com/uspto.gov https://www.instagram.com/uspto https://www.linkedin.com/company/uspto https://twitter.com/uspto https://www.youtube.com/user/USPTOvideo
+Feedback

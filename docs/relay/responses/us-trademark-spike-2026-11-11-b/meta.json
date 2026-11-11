@@ -1,0 +1,191 @@
+{
+  "request": "us-trademark-spike-2026-11-11-b",
+  "fetched_at": "2026-11-11T09:15:40.581Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/support/universal-registration",
+      "render": true,
+      "fetched_at": "2026-11-11T09:15:18.255Z",
+      "status": 200,
+      "final_url": "https://data.uspto.gov/support/universal-registration",
+      "title": "Register for ODP access | Open Data Portal",
+      "rendered": {
+        "network_idle": true,
+        "requests": 100,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "1.txt",
+      "bytes": 10986,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 134727
+    },
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/support/faq",
+      "render": true,
+      "fetched_at": "2026-11-11T09:15:23.724Z",
+      "status": 200,
+      "final_url": "https://data.uspto.gov/support/faq",
+      "title": "FAQs | Open Data Portal",
+      "rendered": {
+        "network_idle": true,
+        "requests": 106,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "2.txt",
+      "bytes": 49038,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 190189
+    },
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/apis/bulk-data/download",
+      "render": true,
+      "fetched_at": "2026-11-11T09:15:28.815Z",
+      "status": 200,
+      "final_url": "https://data.uspto.gov/apis/bulk-data/download",
+      "title": "API - Download | Open Data Portal",
+      "rendered": {
+        "network_idle": true,
+        "requests": 113,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "3.txt",
+      "bytes": 10785,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 157481
+    },
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/apis/api-rate-limits",
+      "render": true,
+      "fetched_at": "2026-11-11T09:15:33.819Z",
+      "status": 200,
+      "final_url": "https://data.uspto.gov/apis/api-rate-limits",
+      "title": "API Rate Limits | Open Data Portal",
+      "rendered": {
+        "network_idle": true,
+        "requests": 101,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "4.txt",
+      "bytes": 12540,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 150755
+    },
+    {
+      "method": "GET",
+      "url": "https://www.uspto.gov/learning-and-resources/electronic-bulk-data-products",
+      "fetched_at": "2026-11-11T09:15:38.214Z",
+      "status": 200,
+      "elapsed_ms": 65,
+      "final_url": "https://www.uspto.gov/learning-and-resources/electronic-bulk-data-products",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "157"
+      },
+      "file": "5.txt",
+      "bytes": 78,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 214
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/foxlabs/uspto-trademark-leads/output-schema",
+      "fetched_at": "2026-11-11T09:15:38.286Z",
+      "status": 200,
+      "elapsed_ms": 268,
+      "final_url": "https://apify.com/foxlabs/uspto-trademark-leads/output-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"cpfhv2gufbbc6s\""
+      },
+      "file": "6.txt",
+      "bytes": 16059,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 529535
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/thoob/uspto-trademark-feed/output-schema",
+      "fetched_at": "2026-11-11T09:15:39.068Z",
+      "status": 200,
+      "elapsed_ms": 146,
+      "final_url": "https://apify.com/thoob/uspto-trademark-feed/output-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"17dzn6phhu29ygn\""
+      },
+      "file": "7.txt",
+      "bytes": 14453,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 464659
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/accountable_eel/trademark-filing-watch/output-schema",
+      "fetched_at": "2026-11-11T09:15:39.722Z",
+      "status": 200,
+      "elapsed_ms": 186,
+      "final_url": "https://apify.com/accountable_eel/trademark-filing-watch/output-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"9n4tmptxbqarxw\""
+      },
+      "file": "8.txt",
+      "bytes": 17151,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 502862
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/thoob/uspto-trademark-feed/input-schema",
+      "fetched_at": "2026-11-11T09:15:40.416Z",
+      "status": 200,
+      "elapsed_ms": 157,
+      "final_url": "https://apify.com/thoob/uspto-trademark-feed/input-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"qb5tfl1717a23i\""
+      },
+      "file": "9.txt",
+      "bytes": 16333,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 469370
+    }
+  ]
+}
