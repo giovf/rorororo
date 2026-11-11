@@ -302,3 +302,4 @@
 - 2026-11-10 11:57 | store | notify.cloudflare.com | Your invoice is available (IN-88166016) | Cloudflare invoice $5.00 due 10 Nov = Workers Paid baseline in LEDGER.md; matches the 11:00 purchase confirmation | logged (matches ledger baseline)
 - 2026-11-10 20:22 | notification | github.com | [docker/mcp-registry] PR run failed: .github/workflows/ci.yaml - Add gankdat (remote) (7b5f2a5) | Docker's CI on our catalog PR: "No jobs were run" (their workflow, not ours) | logged (self-caused: docker-mcp-catalog PR)
 - 2026-11-10 20:22 | notification | github.com | [docker/mcp-registry] PR run failed: Security Review Trigger - Add gankdat (remote) (7b5f2a5) | Docker's Security Review Trigger on our catalog PR: "No jobs were run" | logged (self-caused: docker-mcp-catalog PR)
+- 2026-11-07 23:59 (backlog) | notification | google.com | Report domain: gankdat.com Submitter: google.com Report-ID: 7438034353565875505 | Google DMARC aggregate report for gankdat.com | logged
