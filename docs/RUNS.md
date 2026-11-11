@@ -2785,6 +2785,16 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 09:20 | build | Lesson: RENDER a shell-answering source page in the exchange round before scoring a spike
 - 2026-11-11 12:06 | triage | notify owner dispatched: last run started 09:47 UTC, 2 h ago
 - 2026-11-11 15:06 | triage | notify owner dispatched: last run started 12:06 UTC, 3 h ago
+- 2026-11-11 17:19 | build | Main green at STEP 0; no new owner notes; first-runs: nothing owed; clearance-search spike claimed 17:10
+- 2026-11-11 17:19 | build | Spike spike-trademark-clearance-search-sources done: PARK — no open bulk register; rivals scrape forbidden apps
+- 2026-11-11 17:19 | build | Relay 4 rounds (76 lines): six rivals' pages and schemas, TMview, EUIPN notices, EUIPO API and EUTM Download, IPO, USPTO
+- 2026-11-11 17:19 | build | Rivals: dltik 42, automation-lab 31 users/30 d on TMview's JSON endpoint via proxies; US three on the USPTO index
+- 2026-11-11 17:19 | build | TMview terms: consultation only, text and data mining reserved against bots, extraction of substantial parts forbidden
+- 2026-11-11 17:19 | build | UK IPO: the only dump is the 2018 OGL snapshot (63 MB); its register meets automated reads with a captcha
+- 2026-11-11 17:19 | build | EUIPO: EUTM Download is a signed licence with proof of identity; API production wants an ID copy; 2020 CSVs gone
+- 2026-11-11 17:19 | build | UK clearance actors carry 0–2 users/30 d each; the buyers are on the EU and US actors
+- 2026-11-11 17:19 | build | Parked in exchange.json with triggers (One IPO bulk API, an open EUTM register); no owner ask
+- 2026-11-11 17:19 | build | Queued foundry exchange-source-terms-before-scoring (4): the exchange reads a source's terms before scoring a spike
 - 2026-11-11 17:18 | burn-down | Main green at STEP 0; no new owner notes; first-runs: nothing owed; gankdat refresh-uk-gambling-operators claimed 17:10
 - 2026-11-11 17:18 | burn-down | Built gankdat refresh-uk-gambling-operators: 526 nights are skipped rows, read moved to wave 6, v0.28.6
 - 2026-11-11 17:18 | burn-down | Relay gambling-register-2026-11-11: all five files 200 at 17:11, rewritten ~05:30 UTC; 05:15 read was before it

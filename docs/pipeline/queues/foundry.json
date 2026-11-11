@@ -1442,6 +1442,16 @@
       "status": "done",
       "added": "2026-11-11",
       "done_at": "2026-11-11"
+    },
+    {
+      "id": "exchange-source-terms-before-scoring",
+      "title": "The venture exchange reads a candidate source's terms before scoring its spike: docs/routines/exchange.md's relay-round paragraph gains the rule that every source a spike would read gets two lines in the exchange's own round — its terms / legal-notice / data-use page and a RENDER of any page that answers a plain GET as a shell (≤ 1 kB) — and a spike is scored only after both are read, with the terms line quoted in the exchange file's candidate row; a source whose terms forbid automated access or whose data sits behind an identity-verified account is parked in the exchange file at once (no spike); update docs/pipeline/README.md's spike paragraph the same way",
+      "why": "Both 2026-W46 spikes parked within the day on walls the exchange could have read in its own 22-line round: spike-us-trademark-filings-feed (5 × 2 = 10, the top of the pipeline) parked at 09:20 because data.uspto.gov answers plain GETs as a 153-byte shell that a RENDER shows is a USPTO.gov + MFA registration wall, and spike-trademark-clearance-search-sources (4 × 2 = 8) parked at 17:25 because the EUIPN legal notices (one GET) reserve TMview against scraping and the UK IPO register answers automated reads with an anti-data-mining captcha. Two build slots (0.6 day) spent confirming what two relay lines would have shown on Wednesday; the morning run-log line already asked for the RENDER half. Self-expansion: a prompt-file change, 0.1 day, evidence 2 (two parks in one day) × reach 2 (every future spike) ÷ 0.1, capped as a routine change at 4.",
+      "effort_days": 0.1,
+      "proof": "the exchange.md and README sentences in one commit; the next exchange file (2026-W47) quotes a terms line in every scored candidate row",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-11"
     }
   ]
 }
