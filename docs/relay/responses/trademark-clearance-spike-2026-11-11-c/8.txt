@@ -1,0 +1,184 @@
+{"@context":"https://schema.org","@type":"Organization","name":"Signa","legalName":"Signa Technologies Ltd","url":"https://signa.so","logo":"https://signa.so/brand/signa-dark-logo.svg","description":"Global trademark API for search, screening, and monitoring across major trademark offices","address":{"@type":"PostalAddress","streetAddress":"Fellachoglou 35, Mouttallos","addressLocality":"Paphos","postalCode":"8016","addressCountry":"CY"},"contactPoint":{"@type":"ContactPoint","email":"support@signa.so","contactType":"customer support","url":"https://signa.so/contact"},"sameAs":["https://github.com/signa-so"]}
+{"@context":"https://schema.org","@type":"WebSite","name":"Signa","url":"https://signa.so","description":"Global trademark API platform","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://signa.so/trademarks?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+meta description: One pool of credits, spendable on any Signa API call. Start free, then pick the plan whose pool covers your usage. Same credit prices on every plan.
+meta og:title: Pricing | Signa
+meta og:description: One pool of credits, spendable on any Signa API call. Start free, then pick the plan whose pool covers your usage. Same credit prices on every plan.
+meta og:url: https://signa.so/pricing
+meta og:type: website
+meta twitter:card: summary
+meta twitter:title: Pricing | Signa
+meta twitter:description: One pool of credits, spendable on any Signa API call. Start free, then pick the plan whose pool covers your usage. Same credit prices on every plan.
+Pricing
+/
+Product
+Solutions
+Resources
+Pricing (/pricing)
+Log in (https://app.signa.so/login) Sign up (https://app.signa.so/signup)
+Pricing
+Start for free, then scale as you grow.
+Monthly
+Annual
+Save up to 25% with annual billing
+Free
+Evaluate the API with real data. No card required.
+$0
+per month
+Start for free (https://app.signa.so/signup)
+10,000
+credits
+on signup
+1,000
+credits
+a month
+Up to 100 searches
+Starter
+For developers and small practices getting started.
+$99
+per month, billed yearly
+Get started (https://app.signa.so/signup?plan=starter)
+20,000
+credits
+a month
+Up to 2,000 searches
+$10 per 1,000 extra credits
+Growth
+For production products and IP teams with steady volume.
+$399
+per month, billed yearly
+Get started (https://app.signa.so/signup?plan=growth)
+100,000
+credits
+a month
+Up to 10,000 searches
+$5 per 1,000 extra credits
+Scale
+For high-volume platforms and large IP operations.
+$999
+per month, billed yearly
+Get started (https://app.signa.so/signup?plan=scale)
+500,000
+credits
+a month
+Up to 50,000 searches
+$2.50 per 1,000 extra credits
+Enterprise · Custom credits, white-label and data rights, SLA and dedicated support.
+Contact sales → (/contact)
+API credits
+Starter
+Growth
+Scale
+All
+API credits
+API usage draws from a shared credit pool. The table shows each feature’s credit cost and how much you’d get if you spent all your credits on it.
+Starter
+Growth
+Scale
+All
+Credits
+Starter · 20,000
+Data
+Retrieve
+1 / record
+20,000 records
+Search
+10 / search
+2,000 searches
+Image search coming soon
+100 / search
+200 searches
+Intelligence
+Screening beta
+To be announced
+—
+Filing and docketing
+Mark under management beta
+To be announced
+—
+Deadlines and fees
+10 / request or mark
+2,000 computations
+Classification
+1–100 / request
+2,000 suggestions
+Monitoring
+Mark watch beta
+To be announced
+—
+Filing watch beta
+To be announced
+—
+Image watch coming soon
+To be announced
+—
+Estimate your usage
+Plans
+Starter
+Growth
+Scale
+Enterprise
+Credits
+20,000 / mo
+100,000 / mo
+500,000 / mo
+Custom
+Additional credits
+$10 per 1,000
+$5 per 1,000
+$2.50 per 1,000
+Custom
+Rate limit
+300 rpm
+1,000 rpm
+3,000 rpm
+Custom
+Rights and support
+Embed in your product
+Uptime SLA
+Priority support
+Feeds, OEM and redistribution
+FAQ
+Anything else, email hello@signa.so (mailto:hello@signa.so) .
+What is a credit?
+Does search cost more for fuzzy or phonetic matching, or for more offices?
+What happens when I run out of credits?
+Do unused credits roll over?
+How is monitoring billed?
+Are failed requests charged?
+Your first searches are on us.
+Explore real trademark data with 10,000 free credits.
+Start for free (https://app.signa.so/signup) Read the docs (https://docs.signa.so)
+/
+The global trademark API. Search, screen and monitor marks from one place.
+Product
+Search (/solutions/search)
+Screening (/solutions/screening)
+Monitor (/solutions/monitor)
+Scan (/solutions/scan)
+Pricing (/pricing)
+Integrations (/integrations)
+Docs (https://docs.signa.so)
+Data
+Trademarks (/trademarks)
+Companies (/companies)
+Firms (/firms)
+Collections (/collections)
+Statistics (/stats)
+Offices (/offices)
+Countries (/countries)
+Resources
+Free tools (/tools)
+Blog (/blog)
+Reports (/reports)
+Learn (/learn)
+Glossary (/glossary)
+Newsletter (/radar)
+llms.txt (/llms.txt)
+Company
+Contact (/contact)
+Trust (/trust)
+Terms (/legal/terms-of-service)
+Privacy (/legal/privacy-policy)
+© 2026 Signa. All rights reserved.
+Cookie settings
+Status (https://status.signa.so)

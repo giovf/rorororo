@@ -1,0 +1,376 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TMview Trademark Search & Watch","description":"Search 140M+ trade marks from the EUIPO, WIPO, USPTO and ~80 national offices via TMview: name, owner, Nice classes, status, dates, goods & services, oppositions. Watch mode alerts you to new conflicting filings and their opposition deadline.","url":"https://apify.com/trev0n/tmview-scraper","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/Dy7Eq6qbs_ruNbGbw-lPpGmTctGwBiSk48n1OTKtLOE/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZk5CUHJ4ZGh0dWdCTGFPN24tYWN0b3ItRFlKeDBvdmp0YXkyRFJlZHYtdWtpeDdqVUt3bC1UTXZpZXcyLnBuZw.webp","offers":{"@type":"Offer","description":"from $2.00 / 1,000 trade marks","price":2,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":2,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"trade marks"}}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apify.com/"},{"@type":"ListItem","position":2,"name":"Store","item":"https://apify.com/store"},{"@type":"ListItem","position":3,"name":"Paweł","item":"https://apify.com/trev0n"},{"@type":"ListItem","position":4,"name":"TMview Trademark Search & Watch","item":"https://apify.com/trev0n/tmview-scraper"}]}
+meta description: Search 140M+ trade marks from the EUIPO, WIPO, USPTO and ~80 national offices via TMview: name, owner, Nice classes, status, dates, goods & services, op...
+meta og:title: TMview Trademark Search & Watch · Apify
+meta og:description: Search 140M+ trade marks from the EUIPO, WIPO, USPTO and ~80 national offices via TMview: name, owner, Nice classes, status, dates, goods & services, op...
+meta og:url: https://apify.com/trev0n/tmview-scraper
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=TMview+Trademark+Search+%26+Watch&uniqueName=trev0n%2Ftmview-scraper&categories=DEVELOPER_TOOLS%2CLEAD_GENERATION&users=5&runs=317&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FfNBPrxdhtugBLaO7n-actor-DYJx0ovjtay2DRedv-ukix7jUKwl-TMview2.png&authorName=Pawe%C5%82&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2Fl25Hfspld6elNklYCFOL1QLYCx0rODuBZSjjDaJ480c%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZk5CUHJ4ZGh0dWdCTGFPN24tcHJvZmlsZS1PZkRlOVZtY2daLTE3NzM1MTE5OTgxOTMuanBlZw.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: TMview Trademark Search & Watch · Apify
+meta twitter:description: Search 140M+ trade marks from the EUIPO, WIPO, USPTO and ~80 national offices via TMview: name, owner, Nice classes, status, dates, goods & services, op...
+meta twitter:image: https://apify.com/og-image/actor?actorName=TMview+Trademark+Search+%26+Watch&uniqueName=trev0n%2Ftmview-scraper&categories=DEVELOPER_TOOLS%2CLEAD_GENERATION&users=5&runs=317&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FfNBPrxdhtugBLaO7n-actor-DYJx0ovjtay2DRedv-ukix7jUKwl-TMview2.png&authorName=Pawe%C5%82&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2Fl25Hfspld6elNklYCFOL1QLYCx0rODuBZSjjDaJ480c%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZk5CUHJ4ZGh0dWdCTGFPN24tcHJvZmlsZS1PZkRlOVZtY2daLTE3NzM1MTE5OTgxOTMuanBlZw.webp
+TMview Trademark Search & Watch · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,381 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[TMview Trademark Search & Watch avatar]
+TMview Trademark Search & Watch
+Pricing
+from $2.00 / 1,000 trade marks
+Try for free (https://console.apify.com/actors/DYJx0ovjtay2DRedv?addFromActorId=DYJx0ovjtay2DRedv)
+Go to Apify Store (/store)
+[TMview Trademark Search & Watch]
+TMview Trademark Search & Watch
+trev0n/tmview-scraper
+Try for free (https://console.apify.com/actors/DYJx0ovjtay2DRedv?addFromActorId=DYJx0ovjtay2DRedv)
+Copy setup prompt Copied
+Search 140M+ trade marks from the EUIPO, WIPO, USPTO and ~80 national offices via TMview: name, owner, Nice classes, status, dates, goods & services, oppositions. Watch mode alerts you to new conflicting filings and their opposition deadline.
+Pricing
+from $2.00 / 1,000 trade marks
+Rating
+0.0
+(0)
+Developer
+Paweł (/trev0n) Maintained by Community
+Actor stats
+0
+Bookmarked
+5
+Total users
+5
+Monthly active users
+12 hours ago
+Last modified
+Categories
+Developer tools (/store/categories/developer-tools) Lead generation (/store/categories/lead-generation)
+Features
+Limited permissions
+Share
+README (/trev0n/tmview-scraper) Input (/trev0n/tmview-scraper/input-schema) Pricing (/trev0n/tmview-scraper/pricing) API (/trev0n/tmview-scraper/api/python) Issues (/trev0n/tmview-scraper/issues/open)
+™️ TMview Trademark Search & Watch #tm-tmview-trademark-search-and-watch
+🎯 Search 140+ million trade marks from the EUIPO, WIPO, USPTO and ~80 national offices in one run, and get alerted the moment someone files a mark that looks like yours.
+Get each mark's name, office, application and registration numbers, status, type, Nice classes, owner, filing, registration and expiry dates, opposition window and image. Optionally add the full goods and services wording, applicants, representatives, oppositions and publications. Covers the EU trade mark, international (Madrid) registrations, the United States, the UK, every EU member state, China, Japan, Korea, Brazil, Mexico, India, Australia, Canada and many more.
+🚀 What Does It Do? #what-does-it-do
+This scraper searches TMview, the trade mark database run by the EU Intellectual Property Office together with ~80 national and regional offices. You get structured, ready-to-use data without clicking through search pages. Type a brand name or pick your filters, and hit Start.
+💡 Three ways to use it:
+🔍 Clearance search : check a name against every register before you launch a brand, with exact, contains, word or fuzzy matching.
+👀 Trade mark watch : schedule it daily or weekly with Watch mode. Each run returns only the new or changed marks, such as a fresh conflicting filing, a status change, a registration or a renewal. Alerts can go to Slack, Discord, Telegram or any webhook, and each alert includes the opposition deadline.
+📋 Portfolio and market monitoring : pull every mark an owner holds (e.g. Apple Inc. ), or every new filing in a class and office. For example, all EU clothing filings (class 25) from the last 30 days.
+👥 Who Is This For? #who-is-this-for
+🏢 Use Case	💬 How It Helps
+⚖️ IP law firms & trade mark attorneys	Run watch services for clients across 80 offices and catch conflicting filings while the opposition window is still open
+🏷️ Brand owners	Get a weekly alert when someone files a look-alike of your brand in your classes
+🚀 Founders & naming agencies	Clear a new product name against the EU, US, UK and international registers in minutes
+📊 Market & competitive intelligence	Track which companies file what, where and in which product classes, and spot launches before they happen
+🤝 IP service providers & lead generators	Find every new applicant in a class or country and offer renewal, opposition or enforcement services
+🧠 Data & AI teams	Build trade mark datasets for brand-similarity models, analytics and compliance tools
+✨ Features #features
+🌍 ~80 offices in one search : EUIPO, WIPO, USPTO, UKIPO, DPMA, INPI, the Polish, Spanish and Italian offices, China, Japan, Korea, Brazil, India and more
+🔤 Six ways to match a name : contains, whole word, begins with, ends with, exact, and fuzzy for similar spellings (adidas ↔ adidaz)
+🎛️ Precise filters : office, Nice class, status, mark type, owner, filing and registration dates, and "open to opposition right now"
+👀 Watch mode : returns only marks that are new or changed since the last run, so daily monitoring stays cheap
+⏰ Opposition deadlines : every mark shows its opposition window and whether you can still oppose today
+🔔 Instant alerts : Slack, Discord, Telegram or your own webhook
+📄 Full details on demand : goods and services wording, applicants with country and city, representatives, oppositions with the earlier mark, publications, priorities and the link to the office's own record
+🖼️ Mark images : image and thumbnail links for figurative and combined marks
+🔓 Beyond the 10 000 limit : big searches are split automatically by office, filing date and class, so you get all of them
+🔗 Paste TMview links : trade mark pages or whole search-result pages work as input
+⚡ Fast & Scalable : from a single clearance check to tens of thousands of marks per run
+🧹 Deduplication : each mark appears once, along with the names that matched it
+📤 Export Anywhere : download results as JSON, CSV or Excel, or push them to Google Sheets, Zapier, Make or your CRM
+🎛️ Filters & Options #filters-and-options
+Option	What It Does
+🔍 Trade mark names	One search per name; leave empty to search by filters alone
+🔤 How names match	Contains, Word, Begins with, Ends with, Exact or Fuzzy
+🌍 Trade mark offices	Choose any of the ~80 registers (EM = EU, WO = international); empty = all
+🗂️ Nice classes	Only marks covering these classes (1–45), e.g. 25 clothing, 9 software
+🚦 Status	Active, filed, registered, inactive, ended or expired
+🎨 Mark type	Word, figurative, combined, 3-D, colour, sound, position and more
+🏢 Applicant / owner	A whole portfolio in one run
+📅 Filed from / until	Filing date range, or a window such as 30 days
+📅 Registered from / until	Registration date range
+⚔️ Only marks open to opposition	Applications you can still oppose today
+↕️ Order	Newest filings first, oldest, relevance or name
+🔗 TMview links	Trade mark pages or search-result pages from TMview
+🔢 Max marks per search	Limit per search; 0 = all of them
+📄 Include full details	Add goods and services, applicants, representatives, oppositions and more
+👀 Watch mode	Return only new or changed marks on each run
+🔔 Alerts	Webhook, Slack, Discord or Telegram
+🧰 Compact output	Only the key fields
+📦 What You Get (Output Fields) #what-you-get-output-fields
+Every trade mark includes:
+Mark #mark
+Field	Example
+st13	EM500000019432151
+trademarkName	COSMOSIS
+markType	Word
+status	Filed
+niceClasses	[3]
+imageUrl	https://www.tmdn.org/tmview/api/trademark/image/EM500000019437404
+thumbnailUrl	https://www.tmdn.org/tmview/api/trademark/thumbnail/EM500000019437404
+url	https://www.tmdn.org/tmview/#/tmview/detail/EM500000019432151
+Register #register
+Field	Example
+office	EM
+officeName	European Union (EUIPO)
+applicationNumber	019432151
+registrationNumber	019432151
+protectedTerritories	["DE", "FR", "PL", "IT", "ES"]
+officeRecordUrl	https://euipo.europa.eu/eSearch/#details/trademarks/019432151
+Dates & opposition #dates-and-opposition
+Field	Example
+applicationDate	2026-10-06
+registrationDate	2027-02-14
+expiryDate	2036-10-06
+oppositionPeriodStart	2026-10-27
+oppositionPeriodEnd	2027-01-27
+inOppositionPeriod	true
+Owner #owner
+Field	Example
+applicantNames	["FLVIDO FRAGRANCES L.L.C"]
+applicants	[{"name": "FLVIDO FRAGRANCES L.L.C", "country": "AE", "city": "Dubai"}]
+representatives	[{"name": "Abion AB", "country": "SE", "city": "Göteborg"}]
+Full details (optional) #full-details-optional
+Field	Example
+goodsAndServices	[{"niceClass": 3, "terms": "Perfumes; fragrances; toiletries; …"}]
+markKind	Individual
+statusDate	2026-10-06
+oppositions	[{"status": "Withdrawn", "earlierMark": "KOSMOS", "opponents": ["Franckh-Kosmos Verlags-GmbH"]}]
+publications	[{"id": "2026/198", "section": "A.1", "date": "2026-10-27"}]
+events	[{"date": "2026-10-06", "description": "New application entered"}]
+Watch mode #watch-mode
+Field	Example
+changeType	NEW
+firstSeenAt	2026-10-19T06:00:00.000Z
+matchedSearches	["cosmos"]
+📊 Example Output #example-output
+{
+"st13" : "EM500000019432151" ,
+"trademarkName" : "COSMOSIS" ,
+"office" : "EM" ,
+"officeName" : "European Union (EUIPO)" ,
+"applicationNumber" : "019432151" ,
+"registrationNumber" : null ,
+"status" : "Filed" ,
+"markType" : "Word" ,
+"niceClasses" : [ 3 ] ,
+"applicantNames" : [ "FLVIDO FRAGRANCES L.L.C" ] ,
+"applicationDate" : "2026-10-06" ,
+"registrationDate" : null ,
+"expiryDate" : null ,
+"oppositionPeriodStart" : null ,
+"oppositionPeriodEnd" : null ,
+"oppositionDeadline" : null ,
+"protectedTerritories" : [ "DE" , "BE" , "FI" , "PT" , "FR" , "PL" , "IT" , "ES" , "AT" , "NL" ] ,
+"seniorityClaimed" : null ,
+"imageUrl" : null ,
+"thumbnailUrl" : null ,
+"url" : "https://www.tmdn.org/tmview/#/tmview/detail/EM500000019432151" ,
+"officeRecordUrl" : "https://euipo.europa.eu/eSearch/#details/trademarks/019432151" ,
+"inOppositionPeriod" : null ,
+"matchedSearches" : [ "cosmos" ] ,
+"markKind" : "Individual" ,
+"statusDate" : "2026-10-06" ,
+"applicationLanguage" : "en" ,
+"secondLanguage" : "it" ,
+"goodsAndServices" : [
+{
+"niceClass" : 3 ,
+"terms" : "Perfumes; fragrances; toiletries; natural oils for perfumes and scents; eau de parfum; aftershave lotions."
+}
+] ,
+"goodsAndServicesLanguage" : "EN" ,
+"applicants" : [
+{
+"name" : "FLVIDO FRAGRANCES L.L.C" ,
+"isLegalEntity" : true ,
+"legalForm" : "Legal Entity" ,
+"country" : "AE" ,
+"city" : "Dubai" ,
+"address" : "Office F17-2, Al Ghurair Real Estate Building, Al Muteena, Deira" ,
+"postcode" : null ,
+"state" : null
+}
+] ,
+"representatives" : [
+{ "name" : "Abion AB" , "isLegalEntity" : true , "legalForm" : "Legal Person" , "country" : "SE" , "city" : "Göteborg" }
+] ,
+"oppositions" : [ ] ,
+"publications" : [ ] ,
+"events" : [ ] ,
+"officeDataUpdatedAt" : "2026-10-19" ,
+"detailScraped" : true ,
+"scrapedAt" : "2026-10-19T10:55:16.950Z"
+}
+📋 Dataset Views #dataset-views
+The Apify Console gives you 3 ready-made table views to quickly browse your results:
+View	What It Shows
+📊 Trade marks	Image, name, office, status, type, classes, owner, key dates, opposition deadline and link
+📄 Details	Numbers, status date, goods and services, applicants, representatives, oppositions and office link
+👀 Watch changes	What changed (NEW / UPDATED), when it was first seen and which of your names it matched
+❓ FAQ #faq
+🤔 How do I set up a trade mark watch?
+Add your brand names, choose Fuzzy matching, pick the offices and Nice classes you care about, and turn on Watch mode . Then schedule the task weekly. The first run saves today's picture, and every later run returns only new filings or changes. Each one comes with its opposition deadline.
+🤔 Which countries are covered?
+About 80 registers: the EU trade mark (EUIPO), international Madrid registrations (WIPO), every EU member state, the UK, Switzerland, Norway, the United States, Canada, Mexico, Brazil, Argentina, China, Japan, South Korea, India, Australia, New Zealand, Türkiye and many more.
+🤔 Can I get more than 10 000 marks?
+Yes. Set Max marks per search to 0 and big searches are split automatically by office, filing date and class, so nothing is cut off.
+🤔 Can I find marks that look like mine but are spelled differently?
+Yes. Fuzzy matching finds similar spellings, and Contains finds your name inside longer marks.
+🤔 Can I export the data?
+Yes. Export as JSON, CSV, Excel, XML, HTML or RSS, or push the data directly to Google Sheets, Zapier, Make or any webhook/API endpoint.
+🤔 How often should I run this?
+For a watch, weekly is the usual rhythm, because opposition periods last one to three months. Daily works too. You can schedule automatic runs on Apify with a few clicks.
+🤔 Does it work with proxies?
+You do not need to set one. A run starts from its own address at a polite pace, and if TMview's firewall does not answer that address it moves to Apify Proxy on its own after three refusals. That is the default and the recommended setting: leave Switch to proxies when blocked on. You can also turn on Apify Proxy in Proxy to use it from the first request.
+If you switch the fallback off and set no proxy, the run has only its own address. When TMview refuses it, the run stops with an error after three refusals rather than retrying until it times out.
+🤔 Can I read one trade mark from its TMview link?
+Yes. Put the link ( https://www.tmdn.org/tmview/#/tmview/detail/<ST13> ) in TMview links . The record always comes with its full detail, including the goods and services wording in the office's language, for every office TMview covers. Filters such as offices or classes are not needed next to a link and are not used when links are the only thing you give.
+🤔 Can I limit the retries?
+Yes, with Retries per request ( maxRequestRetries , 0–10, default 5). Every refused or timed-out request is written to the log with its URL.
+🛠️ Need Custom Filters or Features? #need-custom-filters-or-features
+I'm happy to customize this scraper for your specific needs! 🤝
+Whether you need:
+🎯 Additional filters (Vienna figurative codes, designated territories, image similarity, specific goods and services terms)
+📊 Extra data fields or custom output formats, such as watch reports ready to send to clients
+🔄 Integration with your CRM, docketing system, Google Sheets or database
+⏰ Scheduled watches with automatic deduplication and client-ready alerts
+🌐 Scraping design registers (DesignView) or other IP databases alongside TMview
+👉 Don't hesitate to reach out via private message. I respond quickly and I'm always open to building exactly what you need. No request is too small or too specific!
+⚖️ Legal & Ethical Use #legal-and-ethical-use
+This scraper collects only publicly available register information from TMview. It does not log in or bypass any access control. For applicants who are private individuals, it keeps only the name, country and city, never the street address. TMview is not an official register and its information has no legal effect, so always confirm critical decisions with the office's own record. Please use the data responsibly and in compliance with applicable laws.
+You might also like
+Global Trademark Search Scraper - 77 Offices Worldwide scrapers_lat/tmview-global-trademarks-scraper Search 145M+ trademarks from 77 national and regional registers at once: mark text, owner name and address, representative, status, Nice classes, goods and services wording, oppositions, priority and seniority claims. JSON, CSV, Excel. Scrapers Lat 35 (/scrapers_lat/tmview-global-trademarks-scraper)
+Hasznaltauto.hu Scraper - Hungarian Used Car Marketplace trev0n/hasznaltauto-scraper Extract used-car and vehicle listings from Hasznaltauto.hu — Hungary's largest car marketplace. Prices, year, mileage, fuel, transmission, equipment, photos, seller and dealer info across cars, motorcycles, trucks, trailers, motorhomes, caravans and buses. Includes incremental monitoring. Paweł 35 (/trev0n/hasznaltauto-scraper)
+Otodom.pl Scraper | 2$/1k trev0n/otodom-scraper Scrape Otodom.pl listings with 30+ fields: price, area, rooms, location, GPS, seller info. Supports sale & rent for apartments, houses, plots. No browser needed. Paweł 173 (/trev0n/otodom-scraper)
+USPTO Trademark Search Feed: Applications, Owners, Status thoob/uspto-trademark-feed Pulls official USPTO daily data and returns clean, flat US trademark records: word mark, serial and registration number, owner, goods and services, class, status and dates, with a what-changed-since-last-run mode. Billed only per delivered record. No API key needed. Pono Data 2 (/thoob/uspto-trademark-feed)
+OnlyFans Finder trev0n/onlyfans-finder Discover OnlyFans creators by keyword, niche, location, or category. Filter by price, likes range, and sort order. Or look up specific usernames directly via the API. Extracts 35+ profile fields including bio, stats, pricing, and social links. No OnlyFans account needed. Paweł 111 (/trev0n/onlyfans-finder)
+Pracuj.pl Scraper trev0n/pracuj-pl-scraper Automated web scraper for extracting job listings from Pracuj.pl, Poland's leading job portal. This actor collects comprehensive job data including titles, companies, locations, salary information, and detailed job descriptions. Paweł 50 (/trev0n/pracuj-pl-scraper)
+CryptoPanic News Scraper - Crypto News & Sentiment Data trev0n/cryptopanic-news-scraper Scrape cryptocurrency news from CryptoPanic with headlines, publication dates, community votes (bullish/bearish), source domains, and affected cryptocurrency tags. Filter by category: hot, rising, bullish, bearish, important, and more. Paweł 68 (/trev0n/cryptopanic-news-scraper)
+Trademark Watch & Monitoring: Opposition Deadline Alerts jdepablos/trademark-watch-tmview Trademark monitoring and search across USPTO, EUIPO, WIPO and 70+ national offices. Get an alert for each new conflicting application, with Nice classes, applicant, status and opposition deadline, in time to file a trademark opposition. Built for brand owners, IP professionals and AI agents. Juan de Pablos 20 (/jdepablos/trademark-watch-tmview)
+Posh.vip Scraper - Events, Organizers & Tickets trev0n/posh-vip-scraper Scrape live events, organizers, tickets, performer lineups and venue details from Posh.vip. Supports event pages, organizer/group pages, and explore (marketplace) URLs with location-based filtering. Paweł 44 (/trev0n/posh-vip-scraper)
+EUIPO Trademark Scraper - EU Trademark Search & Monitoring jungle_synthesizer/euipo-trademark-scraper Scrape EUIPO trademark database via eSearch API. Extract records: application/registration numbers, status, applicant, Nice classes, goods and services, opposition data, and mark type. Search by name, applicant, Nice class, date range, and status. For brand-protection teams and trademark attorneys. BowTiedRaccoon 3 (/jungle_synthesizer/euipo-trademark-scraper)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)

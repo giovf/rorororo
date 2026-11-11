@@ -1,0 +1,242 @@
+{
+  "request": "trademark-clearance-spike-2026-11-11-b",
+  "fetched_at": "2026-11-11T17:15:06.844Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.tmdn.org/network/legal-notices",
+      "fetched_at": "2026-11-11T17:14:42.144Z",
+      "status": 200,
+      "elapsed_ms": 1891,
+      "final_url": "https://www.euipn.org/en/info/legal-notices",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"wstu850qul361r\""
+      },
+      "file": "1.txt",
+      "bytes": 15157,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 147970
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tmdn.org/tmview/legal-notices",
+      "fetched_at": "2026-11-11T17:14:44.553Z",
+      "error": "fetch failed",
+      "elapsed_ms": 111
+    },
+    {
+      "method": "GET",
+      "url": "https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/contentPdfs/data_protection/EUTM_Download_en.pdf",
+      "fetched_at": "2026-11-11T17:14:44.664Z",
+      "status": 200,
+      "elapsed_ms": 568,
+      "final_url": "https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/contentPdfs/data_protection/EUTM_Download_en.pdf",
+      "headers": {
+        "content-type": "application/pdf",
+        "content-length": "119939",
+        "last-modified": "Fri, 18 Jan 2019 07:45:41 GMT",
+        "etag": "\"d838-1d483-57fb6b29d9340\""
+      },
+      "file": "3.bin",
+      "bytes": 119939,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/EUIPO-Download/EUTM-Download-License_Agreement.pdf",
+      "fetched_at": "2026-11-11T17:14:46.276Z",
+      "status": 200,
+      "elapsed_ms": 116,
+      "final_url": "https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/EUIPO-Download/EUTM-Download-License_Agreement.pdf",
+      "headers": {
+        "content-type": "application/pdf",
+        "content-length": "602208",
+        "last-modified": "Wed, 03 Apr 2019 06:52:36 GMT",
+        "etag": "\"5379-93060-5859ab2df7500\""
+      },
+      "file": "4.bin",
+      "bytes": 602208,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.euipo.europa.eu/en",
+      "render": true,
+      "fetched_at": "2026-11-11T17:14:47.370Z",
+      "status": 200,
+      "final_url": "https://www.euipo.europa.eu/en",
+      "title": "Home - EUIPO",
+      "rendered": {
+        "network_idle": true,
+        "requests": 84,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 12108,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 687973
+    },
+    {
+      "method": "GET",
+      "url": "https://euipo.europa.eu/ohimportal/en/open-data",
+      "render": true,
+      "fetched_at": "2026-11-11T17:14:54.659Z",
+      "status": 200,
+      "final_url": "https://www.euipo.europa.eu/bg",
+      "title": "Начало - EUIPO",
+      "rendered": {
+        "network_idle": true,
+        "requests": 94,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 18000,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 862337
+    },
+    {
+      "method": "GET",
+      "url": "https://www.euipo.europa.eu/en/the-office/open-data-portal",
+      "fetched_at": "2026-11-11T17:15:01.987Z",
+      "status": 200,
+      "elapsed_ms": 445,
+      "final_url": "https://www.euipo.europa.eu/en/the-office/open-data-portal",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 5749,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 239127
+    },
+    {
+      "method": "GET",
+      "url": "https://euipo.europa.eu/en/open-data-portal",
+      "fetched_at": "2026-11-11T17:15:02.514Z",
+      "status": 404,
+      "elapsed_ms": 465,
+      "final_url": "https://euipo.europa.eu/en/open-data-portal",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "content-length": "19"
+      },
+      "file": "8.txt",
+      "bytes": 19,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://data.europa.eu/api/hub/repo/datasets/euipo-eu-trade-mark-applications?format=json",
+      "fetched_at": "2026-11-11T17:15:02.980Z",
+      "status": 200,
+      "elapsed_ms": 443,
+      "final_url": "https://data.europa.eu/api/hub/repo/datasets/euipo-eu-trade-mark-applications?format=json",
+      "headers": {
+        "content-type": "application/ld+json; charset=UTF-8",
+        "content-length": "104231"
+      },
+      "file": "9.json",
+      "bytes": 104231,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://data.europa.eu/data/datasets/euipo-eu-trade-mark-applications?locale=en",
+      "fetched_at": "2026-11-11T17:15:03.941Z",
+      "status": 200,
+      "elapsed_ms": 144,
+      "final_url": "https://data.europa.eu/data/datasets/euipo-eu-trade-mark-applications?locale=en",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 25 Sep 2026 10:20:26 GMT",
+        "etag": "W/\"6ab64aea-63f\""
+      },
+      "file": "10.txt",
+      "bytes": 21,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1599
+    },
+    {
+      "method": "GET",
+      "url": "https://www.ipo.gov.uk/t-tmj.htm",
+      "fetched_at": "2026-11-11T17:15:04.087Z",
+      "status": 403,
+      "elapsed_ms": 153,
+      "final_url": "https://www.ipo.gov.uk/t-tmj.htm",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "11.txt",
+      "bytes": 927,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 717728
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/guidance/trade-mark-data-and-statistics",
+      "fetched_at": "2026-11-11T17:15:04.290Z",
+      "status": 404,
+      "elapsed_ms": 941,
+      "final_url": "https://www.gov.uk/guidance/trade-mark-data-and-statistics",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "8508"
+      },
+      "file": "12.txt",
+      "bytes": 5007,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52491
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/organisations/intellectual-property-office/about/research",
+      "fetched_at": "2026-11-11T17:15:05.733Z",
+      "status": 200,
+      "elapsed_ms": 540,
+      "final_url": "https://www.gov.uk/government/organisations/intellectual-property-office/about/research",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "71850",
+        "etag": "W/\"d1a6ed51167f0be499e5da22c4fc152f\""
+      },
+      "file": "13.txt",
+      "bytes": 15384,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 71850
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/trev0n/tmview-scraper",
+      "fetched_at": "2026-11-11T17:15:06.525Z",
+      "status": 200,
+      "elapsed_ms": 301,
+      "final_url": "https://apify.com/trev0n/tmview-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"4nonbwb4z5auux\""
+      },
+      "file": "14.txt",
+      "bytes": 27407,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 507012
+    }
+  ]
+}
