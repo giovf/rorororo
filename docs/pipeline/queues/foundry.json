@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "researched": "2026-11-10",
   "items": [
     {
@@ -1431,6 +1431,16 @@
       "status": "done",
       "added": "2026-11-10",
       "done_at": "2026-11-10"
+    },
+    {
+      "id": "pre-research-shelf-cap-three",
+      "title": "Widen the night and day pre-research pass's shelf cap from 'fewer than two open spikes' to 'fewer than three' (`pre-research-shelf-cap`, 2026-10-18): the starved slot seeds one scored spike when fewer than three `new-ventures` spikes are open; update the build and burn-down prompts' sentence, docs/pipeline/README.md and docs/routines/exchange.md's NEW-VENTURES paragraph, and keep the 2026-11-10 lesson in the seeding rule (search npm, GitHub and the Apify Store for the series' name before seeding a dataset spike)",
+      "why": "Review 2026-W45 §4: 'If the 11-09 report reads burn-down under 30 % for 11-02..11-08 with the pipeline as starved as today, the W46 review widens the night pre-research pass (from fewer than two open spikes to fewer than three) — the cheaper widening — rather than adding an exchange slot.' The 11-09 report read burn-down Built % 20 % (W45 36 %), 15 cold and 39 silent burn-down hours, and the pipeline held one buildable item at 08:00 on 11-11 (`next: gankdat/refresh-uk-gambling-operators`). The exchange applies the review's own rule now instead of waiting four days for it; the W46 review reads it done. Scored as self-expansion: unblocks one research slot a night; 0.1 day; score 4; weight 1.",
+      "effort_days": 0.1,
+      "proof": "the three prompt and README sentences changed in one commit; the next starved night seeds a third spike when two are open (a RUNS `Exchange pre-research` line)",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-11"
     }
   ]
 }

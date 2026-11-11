@@ -290,8 +290,9 @@
       "status": "parked",
       "venture": "oss-bounties",
       "added": "2026-10-11",
-      "trigger": "two consecutive weekly boards (docs/bounties/BOARD.md) each show at least one free (no assignee, no open PR), funded and escrowed code-with-tests row at US$25+ in a language the repo builds; then the exchange reopens queues/oss-bounties.json with first-bounty-pr as its first item and venture.json goes back to building",
-      "parked": "2026-10-18"
+      "trigger": "two consecutive weekly boards (docs/bounties/BOARD.md) each show at least one free (no assignee, no open PR), funded and escrowed code-with-tests row at US$25+ in a language the repo builds; then the exchange reopens queues/oss-bounties.json with first-bounty-pr as its first item and venture.json goes back to building — Exchange 2026-W46 (2026-11-11): board 11-09 keeps 13 of 582; the three funded tt-metal rows (US$3,000, 750, 750) are all assigned, the rest sit under 1–106 attempts — fourth board without a free row; not met.",
+      "parked": "2026-10-18",
+      "updated": "2026-11-11"
     },
     {
       "id": "data-science-prize-competitions",
@@ -364,8 +365,9 @@
       "title": "Ofsted childcare providers register (England nurseries, pre-schools, out-of-school clubs; childminders dropped) with Early Years Register inspection outcomes, on gankdat as a lead-gen dataset beside uk-schools",
       "why": "Pre-research 2026-10-13 (build, relay + WebSearch of primary sources): Ofsted publishes 'Childcare providers and inspections: management information' on GOV.UK twice a year (Jan/Feb for 31 Dec, Jul/Aug for 30 Jun; latest 2026-08-05 as at 30 June 2026) — a 19.1 MB provider-level CSV, a 1.4 MB Early Years Register inspections CSV (10 Nov 2025 → 30 Jun 2026, the renewed framework) and a 70 KB Childcare Register inspections CSV — plus the twice-yearly official statistics (as at 31 March 2026: provider-level ODS 11.2 MB, published 2026-07-09; 59,700 registered providers, −1% y/y). Licence: Open Government Licence v3 (the data.gov.uk collection 'Early years and childcare inspections and outcomes' carries the OGL v3 licence link; Ofsted's methodology reports repeat the OGL re-use wording; nurseryscan.co.uk cites the same files under OGL v3). Personal data: about half the providers are childminders (individuals) — Blind Mode drops them, leaving ~26k non-domestic settings (nurseries, pre-schools, out-of-school clubs) with URN, name, postcode, local authority, register, places and the latest inspection grade/date. Paid rivals: RD Marketing sells a UK nursery contact list at £295/1k contacts (<2.5k) down to £170/1k (50k+), 13,600 organisations — the money is in the contact fields we never serve; on Apify eleven Ofsted actors exist and none has more than 5 users (parseforge/uk-ofsted-inspections-scraper US$19/1k results, 3 users, 145 runs; the rest 1–2 users), the same thin signal uk-schools met. Our edge is a change feed, and a twice-yearly file gives none: no new-registration or grade-drop events between releases, so the dataset would be a static list like uk-schools (0 paid calls to date). Build ≈ 1 day (ODS/CSV ingest, URN keys, inspection join by URN, Blind Mode filter), £0, no account; 'Childcare providers data' CSV columns unread (verify the header through the relay before any parser).",
       "status": "parked",
-      "trigger": "uk-schools or uk-care-locations records its first paid call or paid Apify run (the lead-gen bundle proves a buyer), or Ofsted moves the management information to monthly or weekly — then queue it in gankdat.json at score 4 (evidence 2 × reach 2 ÷ 1 d) under the day-30 funnel review's keep decision for lead-gen",
-      "added": "2026-10-13"
+      "trigger": "uk-schools or uk-care-locations records its first paid call or paid Apify run (the lead-gen bundle proves a buyer), or Ofsted moves the management information to monthly or weekly — then queue it in gankdat.json at score 4 (evidence 2 × reach 2 ÷ 1 d) under the day-30 funnel review's keep decision for lead-gen — Exchange 2026-W46 (2026-11-11): uk-care-locations took one half-cent x402 call from a one-call client (10-26..11-01) and the trigger is not treated as met, by the W44 eu-ted rule; it now reads a repeat x402 payer (a client paying on two or more days in the Daily numbers `buyers … repeat R` clause) on uk-schools or uk-care-locations, or a paid Apify run on either actor.",
+      "added": "2026-10-13",
+      "updated": "2026-11-11"
     },
     {
       "id": "ireland-cro-company-register",
@@ -802,6 +804,35 @@
       "added": "2026-11-10",
       "spiked": "2026-11-10",
       "updated": "2026-11-10"
+    },
+    {
+      "id": "us-trademark-filings-feed",
+      "title": "USPTO daily trademark applications (public-domain daily XML) as a gankdat register — the UK Trade Marks Journal's US twin on the x402, MCP and Apify lanes, with the changes route",
+      "status": "parked",
+      "why": "Exchange 2026-W46: the UK journal is 30 of 37 x402 buyer calls in 30 d with two repeat clients, and the Apify Store's trademark category is the busiest paid category read so far (top twelve actors 12–40 users/30 d, pay-per-event); the watch-shaped US rivals are thin (7/20, 3/3, 1/2 users) and data.uspto.gov answered the relay as a 153-byte shell, so the source is unread. Honoured as new-ventures `spike-us-trademark-filings-feed` (5 × 2).",
+      "trigger": "the spike's promote call (public-domain terms quoted, one day's file parsed within the Worker's limits, no key for bulk files) → a ≤ 1-day gankdat item `us-trademark-applications` plus its actor; park on a keyed download, a non-public-domain terms line, or watch-shaped rivals all under 5 users/30 d",
+      "added": "2026-11-11",
+      "spiked": "2026-11-11",
+      "updated": "2026-11-11"
+    },
+    {
+      "id": "trademark-clearance-search",
+      "title": "A UK / EU trademark clearance search on gankdat ('is this mark name taken') from a bulk register under an open licence — the search half of the Apify Store's trademark category, where the 10–40-user actors live",
+      "status": "parked",
+      "why": "Exchange 2026-W46: the paid trademark actors with users are search actors over TMview, USPTO and EUIPO web apps; whether any open bulk register (UK IPO beyond the journal, EUIPO open data, USPTO backfile) allows the same answer without scraping is unread. Honoured as new-ventures `spike-trademark-clearance-search-sources` (4 × 2).",
+      "trigger": "the spike's promote call (a bulk register under an open licence small enough for D1 at £0) → a ≤ 1-week gankdat search endpoint scored for gankdat.json; park if every source is a web app whose terms forbid automated access",
+      "added": "2026-11-11",
+      "spiked": "2026-11-11",
+      "updated": "2026-11-11"
+    },
+    {
+      "id": "eloquens-templates-shelf",
+      "title": "Eloquens (eloquens.com), a best-practices marketplace for Excel models and templates with author revenue share, as a second shelf for the UK Sole Trader Tax Workbook and the Reseller workbook",
+      "status": "parked",
+      "why": "Exchange 2026-W46: a shelf whose buyers come for Excel tools would fit the two built workbooks, but every URL answered the relay 403 behind a Cloudflare challenge (eight plain GETs and one RENDER, 'Just a moment...') and the sandbox cannot resolve the host, so author terms, fees, payout and listing counts are unread — nothing to score.",
+      "trigger": "a relay RENDER of an Eloquens tool page returns the listing (the challenge lifted), or the owner pastes a tool page's price and download count with the author-terms page; then a 0.2-day spike scores it against Payhip (0 sales in 9 days) before any listing",
+      "added": "2026-11-11",
+      "updated": "2026-11-11"
     }
   ]
 }

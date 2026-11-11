@@ -2767,3 +2767,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 00:06 | triage | notify owner dispatched: last run started 20:58 UTC, 3 h ago
 - 2026-11-11 05:07 | triage | notify owner dispatched: last run started 02:10 UTC, 2 h 56 min ago
 - 2026-11-11 08:06 | triage | notify owner dispatched: last run started 05:06 UTC, 3 h ago
+- 2026-11-11 08:17 | exchange | No new venture; no build beats the queue — trademark line spiked (UK journal 30 of 37 x402 buyer calls)
+- 2026-11-11 08:17 | exchange | Queued new-ventures: USPTO trademark filings feed spike 5, trademark clearance-search sources spike 4
+- 2026-11-11 08:17 | exchange | Queued gankdat trademark-actor-store-keywords (4): retitle the journal actor for Store trademark searches
+- 2026-11-11 08:17 | exchange | Queued foundry pre-research-shelf-cap-three (4): the W45 review's widening, its condition met
+- 2026-11-11 08:17 | exchange | Parked: us-trademark feed and clearance search behind their spikes; Eloquens (walled); ofsted refined
+- 2026-11-11 08:17 | exchange | Declined: nothing new; 6 spike files read since W45, their 5 parks and 1 promote stand
+- 2026-11-11 08:17 | exchange | Exchange file docs/exchange/2026-W46.md; relay round exchange-w46-2026-11-11 (22 lines, 60 s)
+- 2026-11-11 08:17 | exchange | Owner: nothing from this decision; 038, 039 and the GitHub permissions stay the open asks

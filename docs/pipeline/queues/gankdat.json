@@ -1167,6 +1167,16 @@
       "score": 6,
       "status": "todo",
       "added": "2026-11-11"
+    },
+    {
+      "id": "trademark-actor-store-keywords",
+      "title": "Apify listing of `uk-trademark-journal` (the actor already takes mark_text, classes, applicant, representative, q): retitle and re-describe it for the Store's trademark searches — a title that leads with 'UK Trademark Search & Watch' and names the journal, opposition deadlines and Nice classes; the README's first paragraph and the SEO description carry 'trademark search', 'trademark watch', 'UK IPO', 'opposition'; record the actor's Store rank for `trademark`, `uk trademark` and `trademark watch` before and after through the relay (`api.apify.com/v2/store?search=<term>&limit=100`, the position of our username) and its users/30 d in the Daily numbers row; no code change beyond the actor's metadata files",
+      "why": "Exchange 2026-W46 (relay exchange-w46-2026-11-11 lines 19–21): the Store's trademark category is the busiest paid category this operation has read — the top twelve actors carry 12–40 users/30 d, 30–167 total, pay-per-event — and our journal actor, in the same category with a richer filter set, is below position 30 of 327 for `trademark` and at the QA floor (29 runs/30 d, 0 outside users). The parked `apify-quality-score-pass` waits on rank or users across all 18 actors; this is the one actor whose category has buyers, so its listing copy is the cheapest test of whether the category's users reach a UK offer. Evidence 2 (rival users in the category) × reach 2 ÷ 0.1 day, discounted from the raw 40 to 4: a copy change with no proven effect; weight 1. Proof: a rank inside the top 50 for one of the three terms at the day-30 read, or ≥ 3 users/30 d.",
+      "effort_days": 0.1,
+      "proof": "the three Store ranks before and after in the actor's README log and a Daily numbers row; day-30 read dated 2026-12-11 on the `apify 30d by actor:` clause (uk-trademark-journal-watch users/30 d)",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-11"
     }
   ]
 }
