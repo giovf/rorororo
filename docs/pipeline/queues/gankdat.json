@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "researched": "2026-11-10",
   "items": [
     {
@@ -1157,6 +1157,16 @@
       "status": "todo",
       "not_before": "2026-11-17",
       "added": "2026-11-10"
+    },
+    {
+      "id": "refresh-uk-gambling-operators",
+      "title": "uk-gambling-operators: refresh has failed 2 times in the last 4 days — fix the source or keep the last snapshot without an error row",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-gambling-operators under refresh errors on 2026-11-10 (Gambling Commission business-licence-register-businesses.csv download failed: 526) and 2026-11-11: Gambling Commission business-licence-register-businesses.csv download failed: 526. The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-gambling-operators.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted.",
+      "effort_days": 0.1,
+      "proof": "uk-gambling-operators absent from refresh errors for 7 consecutive Daily numbers rows",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-11-11"
     }
   ]
 }
