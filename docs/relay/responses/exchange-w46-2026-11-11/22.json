@@ -1,0 +1,1489 @@
+{
+  "data": {
+    "total": 102,
+    "count": 20,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "PDF to Excel - PDF Form & Scanned Document Data to Rows",
+        "name": "pdf-form-to-excel",
+        "username": "tidytools",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 17,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-09T17:02:27.445Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 13,
+            "TIMED-OUT": 0,
+            "TOTAL": 13
+          }
+        },
+        "description": "PDF to Excel for filled PDF forms, scanned receipts and printed reports: one aligned row per document or page with your column names, XLSX and CSV downloads. $0.01 per readable page; failed pages are free.",
+        "categories": [
+          "AI",
+          "AUTOMATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/OVVSZtIloGOFmy7-cYCEIDIj00hDfnOyS4Dp9Jk7o9Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMUI3T2dXRzdZSmFoYTVFNUUtYWN0b3ItcjQ1SEdFdzBpZXNUc29MaXYtQWJjdFBaemNYQi1wZGYtZm9ybS10by1leGNlbC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Yukai Lin",
+        "userPictureUrl": "https://images.apifyusercontent.com/f_KqRUzQbEbicIGOSmz6vgXmV4e51UOzP7xa_aiNAmc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMW9Qb2xWTkM5eGNVa09hLUFJRUZ1My10QUVYZjN2OXFidy1ZWGNTSExrSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNVUkzVDJkWFJ6ZFpTbUZvWVRWRk5VVXRjSEp2Wm1sc1pTMXJSMVpRYkZaMGNWTTRMV2x6ZEc5amEzQm9iM1J2TFRFeE1qazRNVE0yTURRdE5qRXllRFl4TWk1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "page-extracted": {
+                "eventTitle": "Extracted page",
+                "eventDescription": "One page read by AI and returned as structured JSON.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.008
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-28T16:16:51.748Z",
+          "startedAt": "2026-10-28T16:16:51.748Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "r45HGEw0iesTsoLiv",
+        "url": "https://apify.com/tidytools/pdf-form-to-excel"
+      },
+      {
+        "title": "Word Template to PDF API: Fill DOCX from JSON or CSV",
+        "name": "docx-template-filler",
+        "username": "jumblemog",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 17,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T00:32:31.685Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 16,
+            "TIMED-OUT": 0,
+            "TOTAL": 16
+          }
+        },
+        "description": "Fill your own Word .docx template's {{ placeholders }} or mail-merge fields from JSON, CSV, Excel or a Google Sheet: one Word file and PDF per row, with table rows, conditions, money and dates.",
+        "categories": [
+          "AI",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Jumble Mog",
+        "userPictureUrl": "https://images.apifyusercontent.com/IgTK1Yjd-mlBRurnuHmozFq1ntbJENsZfvtdy8u-vcc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdG9XVGtsZVVmSnlyemRBMG1JUDZSeUZtNy1OVTZ1cmNkRTJfN3djT3RZUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbE4yVTNoMVUweFViakppVFhneWQzZEhZa2M1TlZCRWMzbDFkbmxNVFdreFNYTkhTa0ZTUWxORFRrSnFNbXhCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "document": {
+                "eventTitle": "Document made",
+                "eventDescription": "One document filled from the template, as Word and/or PDF with a page picture, or one template's placeholders listed. Requests that fail are never charged.",
+                "eventPriceUsd": 0.005
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventPriceUsd": 0.00005,
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              }
+            }
+          },
+          "createdAt": "2026-10-25T09:30:50.880Z",
+          "startedAt": "2026-10-25T09:30:50.880Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "cbMnWoSE142aaiFUF",
+        "url": "https://apify.com/jumblemog/docx-template-filler"
+      },
+      {
+        "title": "Dataset Export to S3, GCS, Azure, SFTP & Airtable",
+        "name": "dataset-cloud-export",
+        "username": "gazidev",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 9,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-09T12:36:37.043Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 7,
+            "TIMED-OUT": 0,
+            "TOTAL": 7
+          }
+        },
+        "description": "Export any Apify dataset to your own S3, R2, MinIO, Google Cloud Storage, Azure Blob, SFTP or FTP as CSV, JSON, JSONL, Excel or Parquet (gzip, split, path templates), or upsert it into Airtable or Postgres. Use after any scraper. Free preview.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/IQpuL7U76ov9nbXR4neVhZugWtpkIb35EsrdcBHwoRY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vYllTdHlxV1JDSWRpaGlWREUtYWN0b3ItaDlJR3I4WEE0blFJVGxSWXMtSWNXNmliSUp6VS1kYXRhc2V0LWNsb3VkLWV4cG9ydC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Cemal Atakli",
+        "userPictureUrl": "https://images.apifyusercontent.com/-_6KzX3OUksbxUoX5ttbhyF_BHLHhwqVeLV4HSuF0lM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVG96N0R3cnVNYWV3Si1SMXN2S2ZXeVQ0RWx0dEk0dTB1RGFpU0NHSEt1RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZbGxUZEhseFYxSkRTV1JwYUdsV1JFVXRjSEp2Wm1sc1pTMU5SVXBRYkVKR1pXVnZMV3h2WjI4dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "file-delivered": {
+                "eventTitle": "File delivered",
+                "eventDescription": "One export file written to your cloud storage (S3, GCS, Azure, SFTP, FTP or key-value store)",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              },
+              "rows-1k": {
+                "eventTitle": "1,000 rows exported",
+                "eventDescription": "Each 1,000 rows exported (rounded up)",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0005
+              },
+              "record-upserted": {
+                "eventTitle": "Record upserted",
+                "eventDescription": "One record created or updated in Airtable or Postgres",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0002
+              }
+            }
+          },
+          "startedAt": "2026-11-03T12:23:14.627Z",
+          "createdAt": "2026-11-03T12:23:15.155Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "h9IGr8XA4nQITlRYs",
+        "url": "https://apify.com/gazidev/dataset-cloud-export"
+      },
+      {
+        "title": "PDF to Excel Extractor",
+        "name": "schema-guided-pdf-to-excel-extractor",
+        "username": "automation-lab",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 54,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-09T13:50:33.700Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Extract user-defined fields from repeated-layout text PDFs into XLSX with page provenance and missing-field warnings.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/3jkw3hW1ThbgRWJeW27AWvN7xQ65D5KoPEusdGc-o0o/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotYWN0b3ItU3NkZ2IyYXJBaWQ1UE9nekctaTVycUZnYVhTbC1hY3Rvci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Automation Lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/K_C4LOMfOgJZv5UcVqbze6xlfc6mS23zsoHRS5nDXvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMDdsSFdveGptQlpJN0NMWkJqVi1wUlBjV0ZHRFQyRzIwVjdkVzBRSzBCay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiblJJUTI1b1RsVnJlbGhTTjI1aVZWb3RjSEp2Wm1sc1pTMW9ORkJYYTNsWWVVSmxMV0YxZEc5dFlYUnBiMjR0YkdGaUxYQnliMlpwYkdVdGJHOW5ieTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "startedAt": "2026-09-19T04:05:53.842Z",
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "start": {
+                "eventTitle": "Run started",
+                "eventDescription": "One-time fee charged when a run starts. Covers fixed startup cost (init, proxy warmup, first HTTP setup).",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": true
+              },
+              "document": {
+                "eventTitle": "Document extracted",
+                "eventDescription": "Charged per document extracted.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0092
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00624
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0048
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0048
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0048
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-19T04:05:55.148Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Ssdgb2arAid5POgzG",
+        "url": "https://apify.com/automation-lab/schema-guided-pdf-to-excel-extractor"
+      },
+      {
+        "title": "Wikimedia Commons Template Scraper",
+        "name": "wikimedia-commons-templates-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 68,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-09T21:44:35.851Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrapes template pages from Wikimedia Commons via the public API. Returns each template's page ID, namespace, and title as a flat row. Filter by search term and set a max items limit.",
+        "categories": [
+          "EDUCATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/uWCscvqAfFgeTdm-Dvm-5yvOK-59A3ivzOmtpQ72kMg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3IteEQwd0QzMTJFeWdmdWlFSlMteU81dDVSSmVDRy1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Enterprise discount: PLATINUM and DIAMOND plans now pay less per result than GOLD. All other prices are unchanged.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00387
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00375
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00362
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003258
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002896
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-10-27T05:07:27.899Z",
+          "startedAt": "2026-10-27T05:07:27.899Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-27T05:30:36.475Z"
+        },
+        "id": "xD0wD312EygfuiEJS",
+        "url": "https://apify.com/parseforge/wikimedia-commons-templates-scraper"
+      },
+      {
+        "title": "Merge Datasets & Remove Duplicates — Deduplicate, Filter, Excel",
+        "name": "merge-dedupe-datasets",
+        "username": "tidydata",
+        "stats": {
+          "totalBuilds": 20,
+          "totalRuns": 333,
+          "totalUsers": 19,
+          "totalUsers7Days": 5,
+          "totalUsers30Days": 11,
+          "totalUsers90Days": 11,
+          "lastRunStartedAt": "2026-11-10T06:42:25.867Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 8,
+            "SUCCEEDED": 284,
+            "TIMED-OUT": 0,
+            "TOTAL": 292
+          }
+        },
+        "description": "Merge datasets and remove duplicates in one call: combine Apify datasets, CSV, Excel, JSON or Google Sheets, dedupe by any field (smart URL/email/phone matching), filter, sort, keep only new rows, export CSV/Excel/JSON. Works from AI agents via Apify MCP (Claude, ChatGPT), n8n and the API.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/6-h6t6lfKfHaLjAlov_S_YllCGK8W-QE4QOx9WhZTYw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcEJhWWxTRkJMQ3JyYlpad28tYWN0b3ItR29wYWJVaXU3d0F1dmRLNVgtdEdLeTdhMGJrQi1hLW1lcmdlLWRlZHVwZS1kYXRhc2V0cy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "tidydata",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "row": {
+                "eventTitle": "Row in the result",
+                "eventDescription": "One row in the merged, cleaned result. Rows removed as duplicates or by filters are free.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00025
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000225
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0002125
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0002
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0002
+                  }
+                }
+              },
+              "file": {
+                "eventTitle": "File created",
+                "eventDescription": "One CSV, Excel or JSON export file.",
+                "isPrimaryEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00425
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-10-14T23:24:23.158Z",
+          "startedAt": "2026-10-14T23:24:23.158Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-14T23:30:28.285Z"
+        },
+        "id": "GopabUiu7wAuvdK5X",
+        "url": "https://apify.com/tidydata/merge-dedupe-datasets"
+      },
+      {
+        "title": "Framer Templates Scraper",
+        "name": "framer-templates-scraper",
+        "username": "parsebird",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 275,
+          "totalUsers": 29,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-11-09T17:40:35.881Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 48,
+            "TIMED-OUT": 0,
+            "TOTAL": 48
+          }
+        },
+        "description": "Extract template data from the Framer Marketplace — the leading platform for responsive website templates. Browse all templates or filter by category, pricing, and search query. Optionally visit detail pages for rich metadata including features, screenshots, and page lists.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/zneQVSKpceGAs7f7wTXnj5_U6dNQkJhD3VUZN0BWXpQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc2ZucEJvV2tRWE1rU1V2ZnQtYWN0b3ItbDdvdVlMVVBkUVZ1MmhHNm4tbzVna0NLWlN5Qi1GcmFtZXJfSWNvbl8lMjhXaGl0ZV9vbl9CbGFjayUyOS5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseBird",
+        "userPictureUrl": "https://images.apifyusercontent.com/OlHWJQ_zdtWlC6re6HWpLIRb2eq_YxPvjeLZnYwiz0M/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSFBFUEVXcWdKUHptR0huN21mT2QzVXQ2WEhPZVhZUHgtWTFnaWdWRlRwTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjMlp1Y0VKdlYydFJXRTFyVTFWMlpuUXRjSEp2Wm1sc1pTMHdVRGxXY0ZCMVRHVlFMV1poZG1samIyNHVjM1puTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "template-listing": {
+                "eventTitle": "Template Listed",
+                "eventDescription": "One template extracted from listing page",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "template-detail": {
+                "eventTitle": "Template Detail",
+                "eventDescription": "One template with full detail page data",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.03
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-03-28T09:30:22.153Z",
+          "createdAt": "2026-03-28T09:30:23.706Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "l7ouYLUPdQVu2hG6n",
+        "url": "https://apify.com/parsebird/framer-templates-scraper"
+      },
+      {
+        "title": "Translate Excel, CSV & Websites in Bulk with AI | No API Key",
+        "name": "bulk-ai-translator",
+        "username": "fayoussef",
+        "stats": {
+          "totalBuilds": 30,
+          "totalRuns": 136,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-11-09T11:24:30.114Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "Translate Excel, CSV and Google Sheets files, whole websites, PDFs and SRT/VTT subtitles into 42 languages in one run, and get the same file back translated. Pick from 150+ AI models. Brand terms, HTML and {{variables}} stay intact, and repeat runs only pay for what changed. No API key needed.",
+        "categories": [
+          "AI",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/VvgvyKGBV-9TMccmgXMOM3cVHnrd5rGpKeesiDihgKM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vb0ppZHBuOEhxS3pidHVOZkUtYWN0b3ItMzdxU1Z5djdxWWVURkJTdjItRzNwY0RpQWxwMS1idWxrLWFpLXRyYW5zbGF0b3IucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Youssef Farhan",
+        "userPictureUrl": "https://images.apifyusercontent.com/k52tO1CgDc02RoqMnvwdjMFV1Xa4q17YfBfELV7hb2U/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vY0UxdTdFRGZxSUd2MDJYS2lIbS1NYldvaG9aMzJjdExXaVYyNHNkVjd6MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiMHBwWkhCdU9FaHhTM3BpZEhWT1prVXRjSEp2Wm1sc1pTMWxOR2RYWW1kaE0zTkJMVzE1WDJsdFlXZGxMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "translated-item": {
+                "eventTitle": "Translated item",
+                "eventDescription": "One text or dataset record translated into one language",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.00095
+              },
+              "page-translated": {
+                "eventTitle": "Translated page",
+                "eventDescription": "One crawled web page translated and saved",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.009
+                  }
+                }
+              },
+              "file-translated": {
+                "eventTitle": "Translated file",
+                "eventDescription": "One CSV, XLSX, JSON, SRT, VTT or Markdown file rebuilt",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0195
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.019
+                  }
+                }
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "createdAt": "2026-10-10T17:10:14.868Z",
+          "startedAt": "2026-10-10T17:10:14.868Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-10T17:30:35.187Z"
+        },
+        "id": "37qSVyv7qYeTFBSv2",
+        "url": "https://apify.com/fayoussef/bulk-ai-translator"
+      },
+      {
+        "title": "Merge, Dedup & Transform Datasets – Filter, CSV, Excel",
+        "name": "dataset-filter-transform",
+        "username": "gazidev",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 66,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-11-09T17:34:30.791Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 8,
+            "SUCCEEDED": 54,
+            "TIMED-OUT": 0,
+            "TOTAL": 62
+          }
+        },
+        "description": "Merge datasets and remove duplicates: combine several Apify datasets, CSV, XLSX and JSON files, dedupe by fields, filter rules (equals, contains, regex, ranges, dates, AND/OR), only-new-since-last-run, rename/select/drop, flatten, sort. Export CSV/XLSX/JSON. Pay per row.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/q0q-x4q7IBguYuFBYU-PJEbq3gEZqdBmNj0nN0X4Xc4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vYllTdHlxV1JDSWRpaGlWREUtYWN0b3ItM3BXeDFwbDBhSUQzOFhDZUEtekNvak1kQjF2Wi1kYXRhc2V0LWZpbHRlci10cmFuc2Zvcm0ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Cemal Atakli",
+        "userPictureUrl": "https://images.apifyusercontent.com/-_6KzX3OUksbxUoX5ttbhyF_BHLHhwqVeLV4HSuF0lM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVG96N0R3cnVNYWV3Si1SMXN2S2ZXeVQ0RWx0dEk0dTB1RGFpU0NHSEt1RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZbGxUZEhseFYxSkRTV1JwYUdsV1JFVXRjSEp2Wm1sc1pTMU5SVXBRYkVKR1pXVnZMV3h2WjI4dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "row-output": {
+                "eventTitle": "Row delivered",
+                "eventDescription": "Charged per row that passes your filters and is delivered to the output.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0002,
+                "isPrimaryEvent": true
+              },
+              "rows-read-1k": {
+                "eventTitle": "1,000 source rows scanned",
+                "eventDescription": "Charged per started block of 1,000 input rows read from your datasets or files.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              },
+              "file-exported": {
+                "eventTitle": "Export file created",
+                "eventDescription": "Charged per CSV, XLSX, JSON or JSONL export file created (only if you enable file export).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003
+              }
+            }
+          },
+          "startedAt": "2026-10-17T16:57:19.664Z",
+          "createdAt": "2026-10-17T16:57:20.263Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "3pWx1pl0aID38XCeA",
+        "url": "https://apify.com/gazidev/dataset-filter-transform"
+      },
+      {
+        "title": "Word, Excel & PowerPoint to PDF Converter (LibreOffice)",
+        "name": "office-to-pdf-converter",
+        "username": "raional",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 256,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-11-09T17:04:31.894Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 34,
+            "TIMED-OUT": 0,
+            "TOTAL": 34
+          }
+        },
+        "description": "Convert DOCX, XLSX, PPTX, DOC, XLS, PPT, RTF, CSV, and ODF files to PDF exactly as Office would render them. Powered by LibreOffice headless via unoserver.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Raion Al",
+        "userPictureUrl": "https://images.apifyusercontent.com/u5_szYYFRZKqCzzNpsRjXbXCPny3bqeh5yVei16Av3E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZXV1SzRpQy14MFVwQ3RzQWtJTFYyNjJodndLb1p3TEdSSnZsbXo1dm1yVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjRlpzWkhoUWFXMXFObUpRT1RWb1ZtZ3RjSEp2Wm1sc1pTMVlhV2RaVEU5SFlVSTFMV2x0WVdkbGN5NXFjR1ZuLmpwZWc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "document-converted": {
+                "eventTitle": "Document",
+                "eventDescription": "Fee charged once per document converted to PDF.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.03,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-08-07T18:36:38.759Z",
+          "startedAt": "2026-08-07T18:36:38.759Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-07T19:05:44.629Z"
+        },
+        "id": "FviCmn34D7WQY6dFi",
+        "url": "https://apify.com/raional/office-to-pdf-converter"
+      },
+      {
+        "title": "DOCX to Markdown: Word, PowerPoint, Excel to Text for LLMs",
+        "name": "docx-to-markdown",
+        "username": "itayozer9",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 42,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-09T20:04:28.284Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 7,
+            "TIMED-OUT": 0,
+            "TOTAL": 7
+          }
+        },
+        "description": "Convert Word .docx, PowerPoint .pptx and Excel .xlsx links or uploads to clean Markdown and plain text for LLMs and RAG: headings, lists, tables, links, footnotes, image alt text, metadata, word and token counts. Pay per file.",
+        "categories": [
+          "AI",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Itay Ozer",
+        "userPictureUrl": "https://images.apifyusercontent.com/euHuEQxpRJd4ePqzK1QaiVgbk0L4jRTH3SHJML-sOMk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYUh2RFVjWFF5ZjJnYi0xYlkwc0Vmb1BaSHF2dmhwRG9ZNGxyZmtmTFJPTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbVpLT1hrMlltVTRRbWczYm5KR1NtaFpkMVZvYlVSaVRWZE9jMGc0Y1ZSMlZVSXdVR3hMV1ZSS1JYWkNablp3TW1OVWR6MXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-11-03T19:53:23.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "file-converted": {
+                "eventTitle": "File converted",
+                "eventDescription": "One Word, PowerPoint or Excel file converted to Markdown and text, up to 2 MB (and up to 2 MB of unpacked Word or PowerPoint markup). Files that fail and files with no text are not charged.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              },
+              "extra-mb": {
+                "eventTitle": "Extra MB",
+                "eventDescription": "Each further MB of file size over 2 MB, or each further MB of unpacked Word or PowerPoint markup over 2 MB, whichever count is higher",
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "createdAt": "2026-11-03T19:53:23.752Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "bPdNNZOZTYnnF1hq8",
+        "url": "https://apify.com/itayozer9/docx-to-markdown"
+      },
+      {
+        "title": "Excel Agent",
+        "name": "excel-agent",
+        "username": "queueing_jump",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 0,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "Lets you control spreadsheets with plain English. Provide an instruction and an optional .xlsx or .csv file, and the AI agent reads, analyses, transforms, and generates spreadsheets.",
+        "categories": [
+          "AUTOMATION",
+          "AGENTS",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Matt Russell",
+        "userPictureUrl": "https://images.apifyusercontent.com/vdqQ9jDF-CXps3svI7Donc-C9E7QSgly3TYKE3BWp2U/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNDVwcVJOLWJKLWdQaVZ4WEUtRjVtclFBbVRIRDJMalRZaldCNi1PVVR1NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVnBLTlhkbmIyVTNWbmhUYTBkNlYxSnFlREZmVVc1NWMzaDFUbXhxTkhwUVEwNWFjbTEzZDBOTGFHRjZZMUYzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.05,
+                "isPrimaryEvent": true
+              },
+              "tool-execution": {
+                "eventTitle": "tool-execution",
+                "eventDescription": "depending on complexity, multiple tools called.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.05
+              }
+            }
+          },
+          "startedAt": "2026-02-25T14:36:57.728Z",
+          "createdAt": "2026-02-25T14:36:58.166Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "grLQcchMG4Ai9Xeoc",
+        "url": "https://apify.com/queueing_jump/excel-agent"
+      },
+      {
+        "title": "Figma Templates Scraper",
+        "name": "figma-templates-scraper",
+        "username": "lexis-solutions",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 107,
+          "totalUsers": 1,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T05:40:28.753Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Scrape Figma Community design templates: title, author, likes, duplicates, tags, category, and public template details from category or search pages.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ooR8X5zDU7-vGcRkdO8VrzdL1AuoV7i-fIKQYqVpajU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRGV2YmtZM2FkTVRCdW9FQ3QtYWN0b3ItRGN6SVBDTmJNZ1BuVG5MRE0tNmpGbW1uQ0tvVS1maWdtYS10ZW1wbGF0ZXMtc2NyYXBlci1jb2xvci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Lexis Solutions",
+        "userPictureUrl": "https://images.apifyusercontent.com/w6fgguezd0VqQ371uTghlQ5W1bkPWD36aUaQ5oCDq3Q/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWURtUkRMTnNtT2I3aXM4R0REd211MXZicGQxWW1TLThnbnFkYXN6WWtiRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11WVcxaGVtOXVZWGR6TG1OdmJTOUVaWFppYTFrellXUk5WRUoxYjBWRGRDOUlRVVZCVG1wcE5ETndTRXBtUkdaaVlTMXNiMmR2TFdkeVlXUnBaVzUwTG1wd1p3LmpwZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": true,
+          "forceContainsSignificantPriceChange": true,
+          "minimalMaxTotalChargeUsd": null,
+          "createdAt": "2026-07-27T08:27:05.597Z",
+          "startedAt": "2026-07-27T08:27:03.495Z",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Template",
+                "eventDescription": "Single Figma Community design template in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00699
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00586
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00511
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00464
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00464
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00464
+                  }
+                }
+              }
+            }
+          }
+        },
+        "id": "DczIPCNbMgPnTnLDM",
+        "url": "https://apify.com/lexis-solutions/figma-templates-scraper"
+      },
+      {
+        "title": "Discord Server Template — Channel tree from URL",
+        "name": "discord-server-template",
+        "username": "bakos_bence",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 40,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-11-09T18:30:32.614Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Resolve a public Discord server template code to the channel tree and roles. Does not join the server. No login. Unofficial; not affiliated with Discord.",
+        "categories": [
+          "SOCIAL_MEDIA",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/MOcx-9SAMlMtGmassDJs3QVdYjHy-T8_29_QG3Ryk6M/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQnBGdUZsdThSV0pXVmo3U2UtYWN0b3Itd3BTRHdTOER5cDBVSG9BM2wtVWFlVlR1a2lhei1kaXNjb3JkLXNlcnZlci10ZW1wbGF0ZS1hY3Rvci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Bakos Bence",
+        "userPictureUrl": "https://images.apifyusercontent.com/UU7IsYXdpgPKuMoYh_V_8b3B0M4f4fdnZuDvpXa7_Hs/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vU05Cem1zakpmWDhudFRNUkVwTmZ2M0ZQbktKYnNCSnlNc01VZWREdDBkNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRbkJHZFVac2RUaFNWMHBYVm1vM1UyVXRjSEp2Wm1sc1pTMVROVEZ3Y2xsbFUzWXpMWEJ5YjJZdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "Each row saved to the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002491
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001994
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001495
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001495
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001495
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-04T07:26:33.422Z",
+          "startedAt": "2026-10-04T07:26:33.422Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "wpSDwS8Dyp0UHoA3l",
+        "url": "https://apify.com/bakos_bence/discord-server-template"
+      },
+      {
+        "title": "Framer Marketplace Templates Scraper",
+        "name": "framer-marketplace-templates-scraper",
+        "username": "b2b_lead_generation",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 10,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T12:48:27.332Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "Collect public Framer marketplace templates and category links into clean JSON, CSV, or Excel datasets. Filter by category, extract names and URLs effortlessly, and streamline your design research or catalog builds.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/QkVyQdS7d1PTXDTOwB7DcTMbXBPMU4f4aK4lTOZfdzM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNDBLUTBKNDNYaWZjN2pUdVctYWN0b3ItdDJUR2lOUnVrRWlyUkxkS1otZXZ0ZElQZlJrTC1mcmFtZXItbG9nby1yb3VuZGVkLWZyZWUtcG5nLndlYnA.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "B2B Lead Generation",
+        "userPictureUrl": "https://images.apifyusercontent.com/RxtenBzgnh--8EELAc44IpM_8rRddcsoSD2c9jFkeSU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYlJ4S0tzSmlVR01rbjNWSU9ZLXJrRTJkUkFTZnFzVEZCSU5nazJCYnNBMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOREJMVVRCS05ETllhV1pqTjJwVWRWY3RjSEp2Wm1sc1pTMTJSbW96WVVZd01XMURMVU5vWVhSSFVGUmZTVzFoWjJWZlRXRjVYemRmWHpJd01qWmZYekV5WHpJelh6UXdYMEZOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00599
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00399
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00299
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-11-09T17:49:50.694Z",
+          "createdAt": "2026-11-09T17:49:50.174Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "t2TGiNRukEirRLdKZ",
+        "url": "https://apify.com/b2b_lead_generation/framer-marketplace-templates-scraper"
+      },
+      {
+        "title": "Webflow Templates Scraper",
+        "name": "webflow-templates-scraper",
+        "username": "b2b_lead_generation",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 4,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-11-08T06:31:10.859Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "Scrape public Webflow templates and extract names, slugs, and URLs directly into JSON, CSV, or Excel formats. Customize your run using optional category filters or item limits, then download your structured dataset instantly from the run outputs tab.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/clVjsyeLzabqAPzhMUX7E60hXvHMVfv_iWC4XLpHk0U/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNDBLUTBKNDNYaWZjN2pUdVctYWN0b3ItaHIyVGI2a0J6aTVlMlN6WlotcmVVblVKNjJsWS1pbWFnZXNfJTI4NzclMjkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "B2B Lead Generation",
+        "userPictureUrl": "https://images.apifyusercontent.com/RxtenBzgnh--8EELAc44IpM_8rRddcsoSD2c9jFkeSU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYlJ4S0tzSmlVR01rbjNWSU9ZLXJrRTJkUkFTZnFzVEZCSU5nazJCYnNBMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOREJMVVRCS05ETllhV1pqTjJwVWRWY3RjSEp2Wm1sc1pTMTJSbW96WVVZd01XMURMVU5vWVhSSFVGUmZTVzFoWjJWZlRXRjVYemRmWHpJd01qWmZYekV5WHpJelh6UXdYMEZOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00599
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00399
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00299
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-11-09T17:51:18.167Z",
+          "createdAt": "2026-11-09T17:51:17.647Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "hr2Tb6kBzi5e2SzZZ",
+        "url": "https://apify.com/b2b_lead_generation/webflow-templates-scraper"
+      },
+      {
+        "title": "Reddit Scraper - Posts, Comments & Search",
+        "name": "reddit-posts-comments-scraper",
+        "username": "smart_albatross",
+        "stats": {
+          "totalBuilds": 59,
+          "totalRuns": 153552,
+          "totalUsers": 30,
+          "totalUsers7Days": 5,
+          "totalUsers30Days": 15,
+          "totalUsers90Days": 26,
+          "lastRunStartedAt": "2026-11-10T10:11:02.582Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 60,
+            "FAILED": 1170,
+            "SUCCEEDED": 112400,
+            "TIMED-OUT": 0,
+            "TOTAL": 113630
+          }
+        },
+        "description": "Scrape Reddit posts, comments, subreddits, user profiles and keyword search results. Filter by flair, score and date; export reply trees, text and media to JSON, CSV or Excel. No Reddit API key required. Run through the Apify API or connect n8n, Make and Zapier.",
+        "categories": [
+          "SOCIAL_MEDIA"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/YNsOLajtrypgjiZYh21NYXafGhcBuY113RHm_H_PLzs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vR3NPb3V1UHQ1YjNBSlpTekMtYWN0b3ItMTZKUUpOZlZ6QUFIZ01GWVItYnJyZzZ1QXdmNi1yZWRkaXQtbG9nby0yNDM2XzEwMjQucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Dev",
+        "userPictureUrl": "https://images.apifyusercontent.com/Kcx802Y1scFZcK1J7PtSAkiutokjfGp7CXK7o-oMnq0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZVJvRTM4WXpYMUQ2TTFuT0ZZU1U4VTVrYmFBenVvWmNQYUhjRFdUNkstMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSM05QYjNWMVVIUTFZak5CU2xwVGVrTXRjSEp2Wm1sc1pTMVpVM1l6VldONlZFcElMVU5vWVhSSFVGUmZTVzFoWjJWZlUyVndYelpmWHpJd01qWmZYekEwWHpRMlh6VXdYMUJOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": 0.00075,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0005
+              }
+            }
+          },
+          "createdAt": "2026-09-14T18:59:05.903Z",
+          "startedAt": "2026-09-14T18:59:05.903Z",
+          "notifiedAboutChangeAt": "2026-09-14T19:05:49.111Z"
+        },
+        "id": "16JQJNfVzAAHgMFYR",
+        "url": "https://apify.com/smart_albatross/reddit-posts-comments-scraper"
+      },
+      {
+        "title": "Dataset Filter & Transform",
+        "name": "dataset-filter-transform",
+        "username": "nerolabs",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 2344,
+          "totalUsers": 186,
+          "totalUsers7Days": 19,
+          "totalUsers30Days": 58,
+          "totalUsers90Days": 133,
+          "lastRunStartedAt": "2026-11-10T04:09:32.748Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 3,
+            "FAILED": 77,
+            "SUCCEEDED": 1004,
+            "TIMED-OUT": 2,
+            "TOTAL": 1086
+          }
+        },
+        "description": "Returns rows of any Apify dataset, CSV/Excel/JSON file URL or Google Sheet that pass filter rules (25 operators, AND/OR, date ranges that fix a scraper's ignored date filter) after transforms (rename, cast, compute, regex), then sort, dedupe, export, webhook. Agent-ready: pay per event (x402, MCP).",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/0ZsRs4ZrhyTWxY3VYAspN5_XbWMB03opB2xyFEIYwGI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veGdEZXYxdkN0NHlBR1duVHctYWN0b3ItNGhHZlJDaWhnd2RDNGZFSTItS0xNNmdDZjVPeC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Adam Pearce",
+        "userPictureUrl": "https://images.apifyusercontent.com/mjUr3h4hz4H7cesYAJSFSNmk9q-SqEBzZiGDZlSimYQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vanU2bjR2QlZXQ2pidVN1dmhMRTdWdUh0cU84T0IyemVxbWNpSVFxaVZMZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlR2RFWlhZeGRrTjBOSGxCUjFkdVZIY3RjSEp2Wm1sc1pTMW5XV3RuZUc5R1VWRlVMVU5vWVhSSFVGUmZTVzFoWjJWZlFYVm5YelZmWHpJd01qWmZYekE1WHpVM1h6VTRYMEZOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "row-kept": {
+                "eventTitle": "Kept row",
+                "eventDescription": "One row that passed the filter and was written to the output dataset, after the transform steps ran.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                },
+                "isOneTimeEvent": false
+              },
+              "file-export": {
+                "eventTitle": "File exported",
+                "eventDescription": "One downloadable result file generated (CSV or Excel).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.007
+                  }
+                },
+                "isOneTimeEvent": false
+              },
+              "webhook-delivery": {
+                "eventTitle": "Webhook delivered",
+                "eventDescription": "The kept and transformed rows were confirmed delivered (HTTP 2xx) to your webhook URL. Never charged on a failed or skipped delivery.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.014
+                  }
+                },
+                "isOneTimeEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-09-15T20:35:19.263Z",
+          "startedAt": "2026-09-30T20:35:12.000Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "4hGfRCihgwdC4fEI2",
+        "url": "https://apify.com/nerolabs/dataset-filter-transform"
+      }
+    ]
+  }
+}

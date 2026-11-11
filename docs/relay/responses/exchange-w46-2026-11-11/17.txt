@@ -1,0 +1,144 @@
+{ "@context": "http://schema.org", "@type": "FAQPage", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.gov.uk/check-the-patents-journal" }, "name": "Check the patents journal", "datePublished": "2014-08-07T13:08:01+01:00", "dateModified": "2025-01-22T10:30:01+00:00", "text": "Find registered patents, patent applications and pending patents, as well as supplementary protection certificates (SPCs)", "publisher": { "@type": "Organization", "name": "GOV.UK", "url": "https://www.gov.uk", "logo": { "@type": "ImageObject", "url": "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-logo-b8553f688131fad665e52a8c2df7633f9cd1c0fffb9f69703cc68c728e7b3b74.png" } }, "image": [ "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-1x1-2672c0fb7a5d5f947d880522c509ebe7f2be090885883cc94418f6860e812e15.png", "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-4x3-194fde4197f00e669f6f52c182df2ed707bfb2024c9ef39f7a2ed20da62b90eb.png", "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-16x9-30e6c0e035636ee6b9dc72ae254bcd4a925182805afe7c5b7170cf2394894b28.png" ], "author": { "@type": "Organization", "name": "Government Digital Service", "url": "https://www.gov.uk/government/organisations/government-digital-service" }, "isPartOf": [ { "@context": "http://schema.org", "@type": "CreativeWork", "sameAs": "https://www.gov.uk/government/collections/intellectual-property-patents" } ], "about": [ { "@context": "http://schema.org", "@type": "Thing", "sameAs": "https://www.gov.uk/crime-justice-and-law/intellectual-property-law-practice-patents" }, { "@context": "http://schema.org", "@type": "Thing", "sameAs": "https://www.gov.uk/business/patents" } ], "mainEntity": [ { "@type": "Question", "name": "Check the patents journal", "url": "https://www.gov.uk/check-the-patents-journal", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/check-the-patents-journal", "text": "\u003cp\u003eCheck for changes to patents in the UK, including new applications or changes to applications in the ‘Search the Intellectual Property Journal’ service.\u003c/p\u003e\n\n\u003cp\u003eYou can also use this service to check for changes to supplementary protection certificates (SPCs).\u003c/p\u003e\n\n\u003cp\u003eUse this service to view:\u003c/p\u003e\n\n\u003cul\u003e\n \u003cli\u003eUK patent applications\u003c/li\u003e\n \u003cli\u003eEuropean patents that apply in the UK\u003c/li\u003e\n \u003cli\u003eother legal patent proceedings\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cdiv role=\"note\" aria-label=\"Information\" class=\"application-notice info-notice\"\u003e\n \u003cp\u003eThis service is also available \u003ca href=\"/gwiriwch-yr-hysbysydd-patentau\"\u003ein Welsh (Cymraeg)\u003c/a\u003e.\u003c/p\u003e\n\u003c/div\u003e\n\n\u003cp\u003e\u003ca class=\"gem-c-button govuk-button govuk-button--start\" role=\"button\" data-module=\"govuk-button\" data-ga4-attributes='{\"event_name\":\"navigation\",\"type\":\"start button\"}' draggable=\"false\" href=\"https://www.search-for-intellectual-property.service.gov.uk/journal\"\u003e\u003cspan\u003e Start now \u003c/span\u003e\u003csvg class=\"govuk-button__start-icon govuk-!-display-none-print\" xmlns=\"http://www.w3.org/2000/svg\" width=\"17.5\" height=\"19\" viewbox=\"0 0 33 40\" focusable=\"false\" aria-hidden=\"true\"\u003e\u003cpath fill=\"currentColor\" d=\"M0 0h13l20 20-20 20H0l20-20z\"\u003e\u003c/path\u003e\u003c/svg\u003e\u003c/a\u003e\u003c/p\u003e\n\n\u003cdiv role=\"note\" aria-label=\"Information\" class=\"application-notice info-notice\"\u003e\n \u003cp\u003eYou cannot use this service to find the details of a patent or SPC. \u003ca href=\"/search-for-patent\"\u003eUse the search for a patent service\u003c/a\u003e instead.\u003c/p\u003e\n\u003c/div\u003e\n\n" } }, { "@type": "Question", "name": "If the application was filed on or before 21 January 2025", "url": "https://www.gov.uk/check-the-patents-journal#if-the-application-was-filed-on-or-before-21-january-2025", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/check-the-patents-journal#if-the-application-was-filed-on-or-before-21-january-2025", "text": "\n\n\u003cp\u003eYou cannot view or download journals published on or before 21 January 2025 with this service.\u003c/p\u003e\n\n\u003cp\u003eIf the journal was published between 26 March 2008 and 22 January 2025, you can \u003ca rel=\"external\" href=\"http://www.ipo.gov.uk/p-pj-download.htm\"\u003edownload the data\u003c/a\u003e in PDF or XML.\u003c/p\u003e\n\n\u003cp\u003eIf the journal was published between 12 August 1998 to 26 March 2008, you can \u003ca rel=\"external\" href=\"http://webarchive.nationalarchives.gov.uk/20140205082516/http://www.ipo.gov.uk/pro-types/pro-patent/pro-p-os/pro-p-journal/p-pdj.htm\"\u003efind the patents journal\u003c/a\u003e in the National Archive.\u003c/p\u003e\n\n" } }, { "@type": "Question", "name": "Search the patent journals in Guernsey", "url": "https://www.gov.uk/check-the-patents-journal#search-the-patent-journals-in-guernsey", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/check-the-patents-journal#search-the-patent-journals-in-guernsey", "text": "\n\n\u003cp\u003eThe \u003ca rel=\"external\" href=\"http://ipo.guernseyregistry.com/article/6969/Publication-Journals\"\u003eGuernsey patents journal\u003c/a\u003e contains details of new patent applications in Guernsey.\u003c/p\u003e\n" } } ] }
+{ "@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "item": { "name": "Home", "@id": "https://www.gov.uk/" } }, { "@type": "ListItem", "position": 2, "item": { "name": "Crime, justice and law", "@id": "https://www.gov.uk/crime-justice-and-law" } }, { "@type": "ListItem", "position": 3, "item": { "name": "Law and practice", "@id": "https://www.gov.uk/crime-justice-and-law/law-practice" } }, { "@type": "ListItem", "position": 4, "item": { "name": "Patents", "@id": "https://www.gov.uk/crime-justice-and-law/intellectual-property-law-practice-patents" } } ] }
+meta og:image: https://www.gov.uk/assets/frontend/govuk-opengraph-image-4196a4d6333cf92aaf720047f56cfd91b3532d7635fc21ebcf0d5897df6b5f77.png
+meta description: Find registered patents, patent applications and pending patents, as well as supplementary protection certificates (SPCs)
+meta og:site_name: GOV.UK
+meta og:type: article
+meta og:url: https://www.gov.uk/check-the-patents-journal
+meta og:title: Check the patents journal
+meta og:description: Find registered patents, patent applications and pending patents, as well as supplementary protection certificates (SPCs)
+meta twitter:card: summary
+Check the patents journal - GOV.UK
+Cookies on GOV.UK
+We use some essential cookies to make this website work.
+We’d like to set additional cookies to understand how you use GOV.UK, remember your settings and improve government services.
+We also use cookies set by other sites to help us deliver content from their services.
+You have accepted additional cookies. You can change your cookie settings (/help/cookies) at any time.
+You have rejected additional cookies. You can change your cookie settings (/help/cookies) at any time.
+Accept additional cookies
+Reject additional cookies
+View cookies (/help/cookies)
+Hide cookie message
+Skip to main content (#content)
+/
+Navigation menu
+Menu (/browse)
+Menu
+Services and information
+Benefits (/browse/benefits)
+Births, death, marriages and care (/browse/births-deaths-marriages)
+Business and self-employed (/browse/business)
+Childcare and parenting (/browse/childcare-parenting)
+Citizenship and living in the UK (/browse/citizenship)
+Crime, justice and the law (/browse/justice)
+Disabled people (/browse/disabilities)
+Driving and transport (/browse/driving)
+Education and learning (/browse/education)
+Employing people (/browse/employing-people)
+Environment and countryside (/browse/environment-countryside)
+Housing and local services (/browse/housing-local-services)
+Money and tax (/browse/tax)
+Passports, travel and living abroad (/browse/abroad)
+Visas and immigration (/browse/visas-immigration)
+Working, jobs and pensions (/browse/working)
+Government activity
+Departments (/government/organisations)
+Departments, agencies and public bodies
+News (/search/news-and-communications)
+News stories, speeches, letters and notices
+Guidance and regulation (/search/guidance-and-regulation)
+Detailed guidance, regulations and rules
+Research and statistics (/search/research-and-statistics)
+Reports, analysis and official statistics
+Policy papers and consultations (/search/policy-papers-and-consultations)
+Consultations and strategy
+Transparency (/search/transparency-and-freedom-of-information-releases)
+Data, Freedom of Information releases and corporate reports
+Search GOV.UK
+×
+Search GOV.UK (/search)
+Search
+Search GOV.UK
+Search
+Home (/)
+Crime, justice and law (/crime-justice-and-law)
+Law and practice (/crime-justice-and-law/law-practice)
+Patents (/crime-justice-and-law/intellectual-property-law-practice-patents)
+Check the patents journal
+Check for changes to patents in the UK, including new applications or changes to applications in the ‘Search the Intellectual Property Journal’ service.
+You can also use this service to check for changes to supplementary protection certificates (SPCs).
+Use this service to view:
+UK patent applications
+European patents that apply in the UK
+other legal patent proceedings
+This service is also available in Welsh (Cymraeg) (/gwiriwch-yr-hysbysydd-patentau) .
+Start now (https://www.search-for-intellectual-property.service.gov.uk/journal)
+You cannot use this service to find the details of a patent or SPC. Use the search for a patent service (/search-for-patent) instead.
+If the application was filed on or before 21 January 2025
+You cannot view or download journals published on or before 21 January 2025 with this service.
+If the journal was published between 26 March 2008 and 22 January 2025, you can download the data (http://www.ipo.gov.uk/p-pj-download.htm) in PDF or XML.
+If the journal was published between 12 August 1998 to 26 March 2008, you can find the patents journal (http://webarchive.nationalarchives.gov.uk/20140205082516/http://www.ipo.gov.uk/pro-types/pro-patent/pro-p-os/pro-p-journal/p-pdj.htm) in the National Archive.
+Search the patent journals in Guernsey
+The Guernsey patents journal (http://ipo.guernseyregistry.com/article/6969/Publication-Journals) contains details of new patent applications in Guernsey.
+Related content
+Search for a patent (/search-for-patent)
+Patents Journal special notices: 2025 (/government/collections/patents-journal-special-notices-2025)
+Collection
+Intellectual property: Patents (/government/collections/intellectual-property-patents)
+Explore the topic
+Patents (/crime-justice-and-law/intellectual-property-law-practice-patents)
+Patents (/business/patents)
+Is this page useful?
+Maybe (/contact/govuk)
+Yes this page is useful
+No this page is not useful
+Thank you for your feedback
+Report a problem with this page
+Help us improve GOV.UK
+Do not include personal or financial information like your National Insurance number or credit card details.
+This field is for robots only. Please leave blank
+What were you doing?
+What went wrong?
+Send
+Cancel
+Help us improve GOV.UK
+To help us improve GOV.UK, we’d like to know more about your visit today.
+Please fill in this survey (opens in a new tab ) (https://www.smartsurvey.co.uk/s/gov-uk-banner/?c=no-js) .
+Cancel
+Services and information
+Benefits (/browse/benefits)
+Births, death, marriages and care (/browse/births-deaths-marriages)
+Business and self-employed (/browse/business)
+Childcare and parenting (/browse/childcare-parenting)
+Citizenship and living in the UK (/browse/citizenship)
+Crime, justice and the law (/browse/justice)
+Disabled people (/browse/disabilities)
+Driving and transport (/browse/driving)
+Education and learning (/browse/education)
+Employing people (/browse/employing-people)
+Environment and countryside (/browse/environment-countryside)
+Housing and local services (/browse/housing-local-services)
+Money and tax (/browse/tax)
+Passports, travel and living abroad (/browse/abroad)
+Visas and immigration (/browse/visas-immigration)
+Working, jobs and pensions (/browse/working)
+Government activity
+Departments (/government/organisations)
+News (/search/news-and-communications)
+Guidance and regulation (/search/guidance-and-regulation)
+Research and statistics (/search/research-and-statistics)
+Policy papers and consultations (/search/policy-papers-and-consultations)
+Transparency (/search/transparency-and-freedom-of-information-releases)
+How government works (/government/how-government-works)
+Get involved (/government/get-involved)
+Support links
+Help (/help)
+Privacy (/help/privacy-notice)
+Cookies (/help/cookies)
+Accessibility statement (/help/accessibility-statement)
+Contact (/contact)
+Terms and conditions (/help/terms-conditions)
+Rhestr o Wasanaethau Cymraeg (/cymraeg)
+Government Digital Service (/government/organisations/government-digital-service)
+All content is available under the Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) , except where otherwise stated
+© Crown copyright (https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)

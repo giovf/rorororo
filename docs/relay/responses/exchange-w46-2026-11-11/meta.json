@@ -1,0 +1,389 @@
+{
+  "request": "exchange-w46-2026-11-11",
+  "fetched_at": "2026-11-11T08:11:30.301Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.eloquens.com/",
+      "fetched_at": "2026-11-11T08:11:08.555Z",
+      "status": 403,
+      "elapsed_ms": 181,
+      "final_url": "https://www.eloquens.com/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.txt",
+      "bytes": 806,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5660
+    },
+    {
+      "method": "GET",
+      "url": "https://www.eloquens.com/category/finance",
+      "fetched_at": "2026-11-11T08:11:09.241Z",
+      "status": 403,
+      "elapsed_ms": 30,
+      "final_url": "https://www.eloquens.com/category/finance",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.txt",
+      "bytes": 806,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5660
+    },
+    {
+      "method": "GET",
+      "url": "https://www.eloquens.com/category/tax",
+      "fetched_at": "2026-11-11T08:11:09.772Z",
+      "status": 403,
+      "elapsed_ms": 55,
+      "final_url": "https://www.eloquens.com/category/tax",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "3.txt",
+      "bytes": 806,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5660
+    },
+    {
+      "method": "GET",
+      "url": "https://www.eloquens.com/search?q=uk+tax",
+      "fetched_at": "2026-11-11T08:11:10.329Z",
+      "status": 403,
+      "elapsed_ms": 29,
+      "final_url": "https://www.eloquens.com/search?q=uk+tax",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5861
+    },
+    {
+      "method": "GET",
+      "url": "https://www.eloquens.com/search?q=sole+trader",
+      "fetched_at": "2026-11-11T08:11:10.862Z",
+      "status": 403,
+      "elapsed_ms": 75,
+      "final_url": "https://www.eloquens.com/search?q=sole+trader",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "5.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5898
+    },
+    {
+      "method": "GET",
+      "url": "https://www.eloquens.com/terms",
+      "fetched_at": "2026-11-11T08:11:11.439Z",
+      "status": 403,
+      "elapsed_ms": 58,
+      "final_url": "https://www.eloquens.com/terms",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "6.txt",
+      "bytes": 806,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5660
+    },
+    {
+      "method": "GET",
+      "url": "https://www.eloquens.com/authors",
+      "fetched_at": "2026-11-11T08:11:11.998Z",
+      "status": 403,
+      "elapsed_ms": 27,
+      "final_url": "https://www.eloquens.com/authors",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "7.txt",
+      "bytes": 806,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5660
+    },
+    {
+      "method": "GET",
+      "url": "https://www.eloquens.com/page/how-it-works",
+      "fetched_at": "2026-11-11T08:11:12.526Z",
+      "status": 403,
+      "elapsed_ms": 33,
+      "final_url": "https://www.eloquens.com/page/how-it-works",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.txt",
+      "bytes": 806,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5660
+    },
+    {
+      "method": "GET",
+      "url": "https://www.eloquens.com/search?q=self+assessment",
+      "render": true,
+      "fetched_at": "2026-11-11T08:11:13.061Z",
+      "status": 403,
+      "final_url": "https://www.eloquens.com/search?q=self+assessment",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 12,
+        "failed": [
+          "GET https://www.eloquens.com/search?q=self+assessment → 403",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a58bd3350dc478e8/Cvvb0BpYoqdgtVxL_L2ZHNgujPBqNR-_FWABBsS4efSjEctkmFgNKmW020gs_aQNDSOIwVne3EZNzzkEMVsJOqCYXWHpVwpahcgGJoZ",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a58bd3350dc478e8/1794384674351/02984b5a36e7dbd788adc5f0b69614ec8c3a575fcc7a8c06608abf42bf72f20a/CqUa9mQKrBb9GPCpA5x1NLaeucBygvF"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%o font-size:0;color:transparent {}",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.txt",
+      "bytes": 482,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45000
+    },
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/bulkdata/datasets",
+      "fetched_at": "2026-11-11T08:11:16.962Z",
+      "status": 200,
+      "elapsed_ms": 501,
+      "final_url": "https://data.uspto.gov/bulkdata/datasets",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "20666",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "10.txt",
+      "bytes": 153,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 20666
+    },
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/apis/getting-started",
+      "fetched_at": "2026-11-11T08:11:17.965Z",
+      "status": 200,
+      "elapsed_ms": 278,
+      "final_url": "https://data.uspto.gov/apis/getting-started",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "20666",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "11.txt",
+      "bytes": 153,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 20666
+    },
+    {
+      "method": "GET",
+      "url": "https://data.uspto.gov/home",
+      "fetched_at": "2026-11-11T08:11:18.744Z",
+      "status": 200,
+      "elapsed_ms": 401,
+      "final_url": "https://data.uspto.gov/home",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "20666",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "12.txt",
+      "bytes": 153,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 20666
+    },
+    {
+      "method": "GET",
+      "url": "https://euipo.europa.eu/ohimportal/en/open-data",
+      "fetched_at": "2026-11-11T08:11:19.146Z",
+      "status": 200,
+      "elapsed_ms": 1563,
+      "final_url": "https://www.euipo.europa.eu/bg",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 17113,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 488776
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.euipo.europa.eu/",
+      "fetched_at": "2026-11-11T08:11:20.974Z",
+      "status": 200,
+      "elapsed_ms": 862,
+      "final_url": "https://dev.euipo.europa.eu/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "14.txt",
+      "bytes": 2505,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 21712
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wipo.int/madrid/en/data/",
+      "fetched_at": "2026-11-11T08:11:21.838Z",
+      "status": 404,
+      "elapsed_ms": 2389,
+      "final_url": "https://www.wipo.int/en/web/madrid-system/data/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "11969",
+        "last-modified": "Wed, 16 Apr 2025 10:47:33 GMT",
+        "etag": "\"bf2e9e862a4cd54caf8e34d88e57c68d\""
+      },
+      "file": "15.txt",
+      "bytes": 790,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 11969
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wipo.int/madrid/en/madridgazette/",
+      "fetched_at": "2026-11-11T08:11:24.728Z",
+      "status": 200,
+      "elapsed_ms": 1565,
+      "final_url": "https://www.wipo.int/en/web/madrid-system/madridgazette/index",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "16.txt",
+      "bytes": 12263,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 89874
+    },
+    {
+      "method": "GET",
+      "url": "https://www.ipo.gov.uk/p-pj.htm",
+      "fetched_at": "2026-11-11T08:11:26.447Z",
+      "status": 200,
+      "elapsed_ms": 1087,
+      "final_url": "https://www.gov.uk/check-the-patents-journal",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "11523",
+        "etag": "W/\"d78255a3ff3f9521418f9e52c6dc15a0\""
+      },
+      "file": "17.txt",
+      "bytes": 13473,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 69279
+    },
+    {
+      "method": "GET",
+      "url": "https://www.ipo.gov.uk/d-dj.htm",
+      "fetched_at": "2026-11-11T08:11:28.038Z",
+      "status": 403,
+      "elapsed_ms": 54,
+      "final_url": "https://www.ipo.gov.uk/d-dj.htm",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "18.txt",
+      "bytes": 927,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 717704
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=trademark&limit=30",
+      "fetched_at": "2026-11-11T08:11:28.117Z",
+      "status": 200,
+      "elapsed_ms": 254,
+      "final_url": "https://api.apify.com/v2/store?search=trademark&limit=30",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"1a8e6-VhwYxpEh4m3RMNqoi0n1Z7PZSYo\""
+      },
+      "file": "19.json",
+      "bytes": 108774,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=uspto&limit=30",
+      "fetched_at": "2026-11-11T08:11:28.932Z",
+      "status": 200,
+      "elapsed_ms": 129,
+      "final_url": "https://api.apify.com/v2/store?search=uspto&limit=30",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"18fd2-4tWoZSbjbf2nghz6vgA0F2kjMag\""
+      },
+      "file": "20.json",
+      "bytes": 102354,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=euipo&limit=30",
+      "fetched_at": "2026-11-11T08:11:29.562Z",
+      "status": 200,
+      "elapsed_ms": 102,
+      "final_url": "https://api.apify.com/v2/store?search=euipo&limit=30",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"19f0d-BfxD0xh41xYQSzSe+YlOpFDLURI\""
+      },
+      "file": "21.json",
+      "bytes": 106253,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=excel+template&limit=20",
+      "fetched_at": "2026-11-11T08:11:30.165Z",
+      "status": 200,
+      "elapsed_ms": 135,
+      "final_url": "https://api.apify.com/v2/store?search=excel+template&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"10820-8yIPqIwCQOSJdiTzUjLamRZDij4\""
+      },
+      "file": "22.json",
+      "bytes": 67616,
+      "truncated": false
+    }
+  ]
+}
