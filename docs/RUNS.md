@@ -2812,3 +2812,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 17:32 | burn-down | README, description and input schema reworded; publisher now syncs seoTitle/seoDescription from actor.json
 - 2026-11-11 17:32 | burn-down | Queued gankdat trademark-actor-store-rank-day-30 (3, 12-11): the after-read of the three ranks and users/30 d
 - 2026-11-11 17:32 | burn-down | CI pushes the actor on this commit; proof: top-50 rank for one term or ≥ 3 users/30 d at the day-30 read
+- 2026-11-11 17:38 | burn-down | Exchange pre-research: ABN bulk extract read — parked (CC BY 3.0 AU; 14 Store actors at 1-2 users/30 d; free API)
+- 2026-11-11 17:38 | burn-down | Relay pre-research-abn-2026-11-11: Store abn 129 actors, npm 2 free ABN MCP servers, GitHub 73 repos; 1 host line wrong
+- 2026-11-11 17:38 | burn-down | Parked au-abn-bulk-extract in exchange.json with a trigger (an ABN actor ≥ 10 users/30 d or a buyer asking)
+- 2026-11-11 17:38 | burn-down | Stopping: 4 items built (gankdat ×2 incl. v0.28.6, foundry ×2), 1 pre-research park; starved and cooled

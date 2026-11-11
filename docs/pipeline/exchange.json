@@ -833,6 +833,14 @@
       "trigger": "a relay RENDER of an Eloquens tool page returns the listing (the challenge lifted), or the owner pastes a tool page's price and download count with the author-terms page; then a 0.2-day spike scores it against Payhip (0 sales in 9 days) before any listing",
       "added": "2026-11-11",
       "updated": "2026-11-11"
+    },
+    {
+      "id": "au-abn-bulk-extract",
+      "title": "Australian Business Register (ABN bulk extract, data.gov.au, CC BY 3.0 AU) as a gankdat register — every active ABN with entity type, GST status, state and postcode, new registrations as the change feed, an Apify actor in the Store's 'abn' category",
+      "status": "parked",
+      "why": "Exchange pre-research 2026-11-11 (burn-down, relay pre-research-abn-2026-11-11): the source is lawful and keyless — the ABN Bulk Extract on data.gov.au is CC BY 3.0 Australia (schema:license on the dataset page), updated 11/11/2026 (weekly XML parts) — but the demand reading says park: the Store's `abn` search returns 129 actors and the fourteen ABN/ABR lookup actors at the top hold 1–2 users/30 d each (ryanclinton 49 lifetime users, parseforge 4, foxlabs 5, the rest 2–3), the `australia business` search is led by Yellow Pages scrapers (abotapi 13 users/30 d, 147 total) which gankdat will not copy; the official ABN Lookup web service is free (a GUID on registration), npm already carries two free ABN MCP servers (@pipeworx/mcp-abn-lookup, @ljdigital/au-bizintel-mcp) and an API wrapper, and GitHub 73 'abn lookup' repos led by the ABR's own sample code (86 stars). A gankdat register would be the fifteenth paid ABN actor behind a free official API, with the bulk ingest (the whole register, weekly) as the only shape rivals lack and nobody asking for it. Evidence 1 × reach 2 ÷ 1 day ≈ 2 after the free-rival discount.",
+      "trigger": "An ABN actor on the Store reaches ≥ 10 users/30 d, or a gankdat buyer, inbox mail or owner note asks for Australian company data beside a UK register read, or the ABN Lookup web service goes paid — then spike the bulk-extract register (0.3 day: part count and size, the weekly diff as a change feed, one rival's price)",
+      "added": "2026-11-11"
     }
   ]
 }

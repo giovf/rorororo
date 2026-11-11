@@ -258,5 +258,5 @@ allratestoday.com  # AllRatesToday: plans, the HMRC rates page and its keyless o
 .trademarkdashboard.com  # a free UK trade mark database/search rival: where its 3M records come from and its plans (same spike)
 signa.so  # Signa: commercial UKIPO / EUIPO trademark API rival, offices pages and pricing (same spike)
 .data.gov.au  # exchange pre-research 2026-11-11: ABN bulk extract licence page / ABR web services page / npm wrapper search (pre-research seeding rule)
-.abr.gov.au  # exchange pre-research 2026-11-11: ABN bulk extract licence page / ABR web services page / npm wrapper search (pre-research seeding rule)
+.business.gov.au  # ABR web services page abr.business.gov.au (exchange pre-research 2026-11-11; the first entry, .abr.gov.au, matched nothing — the host is under business.gov.au)
 registry.npmjs.org  # exchange pre-research 2026-11-11: ABN bulk extract licence page / ABR web services page / npm wrapper search (pre-research seeding rule)
