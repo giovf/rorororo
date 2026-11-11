@@ -1,0 +1,94 @@
+{
+  "request": "gambling-register-2026-11-11",
+  "fetched_at": "2026-11-11T17:11:44.657Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://www.gamblingcommission.gov.uk/downloads/business-licence-register-businesses.csv",
+      "fetched_at": "2026-11-11T17:11:38.321Z",
+      "status": 200,
+      "elapsed_ms": 2550,
+      "final_url": "https://www.gamblingcommission.gov.uk/downloads/business-licence-register-businesses.csv",
+      "headers": {
+        "content-type": "text/csv; charset=UTF-8",
+        "content-length": "91289",
+        "last-modified": "Wed, 11 Nov 2026 05:30:14 GMT",
+        "etag": "W/\"16499-1a1c915d7bf\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.gamblingcommission.gov.uk/downloads/business-licence-register-licences.csv",
+      "fetched_at": "2026-11-11T17:11:41.373Z",
+      "status": 200,
+      "elapsed_ms": 254,
+      "final_url": "https://www.gamblingcommission.gov.uk/downloads/business-licence-register-licences.csv",
+      "headers": {
+        "content-type": "text/csv; charset=UTF-8",
+        "content-length": "499846",
+        "last-modified": "Wed, 11 Nov 2026 05:30:18 GMT",
+        "etag": "W/\"7a086-1a1c915e768\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.gamblingcommission.gov.uk/downloads/business-licence-register-trading-names.csv",
+      "fetched_at": "2026-11-11T17:11:42.127Z",
+      "status": 200,
+      "elapsed_ms": 243,
+      "final_url": "https://www.gamblingcommission.gov.uk/downloads/business-licence-register-trading-names.csv",
+      "headers": {
+        "content-type": "text/csv; charset=UTF-8",
+        "content-length": "82607",
+        "last-modified": "Wed, 11 Nov 2026 05:30:14 GMT",
+        "etag": "W/\"142af-1a1c915d6ce\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.gamblingcommission.gov.uk/downloads/business-licence-register-domain-names.csv",
+      "fetched_at": "2026-11-11T17:11:42.872Z",
+      "status": 200,
+      "elapsed_ms": 242,
+      "final_url": "https://www.gamblingcommission.gov.uk/downloads/business-licence-register-domain-names.csv",
+      "headers": {
+        "content-type": "text/csv; charset=UTF-8",
+        "content-length": "87232",
+        "last-modified": "Wed, 11 Nov 2026 05:30:18 GMT",
+        "etag": "W/\"154c0-1a1c915e95d\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.gamblingcommission.gov.uk/downloads/premises-licence-register.csv",
+      "fetched_at": "2026-11-11T17:11:43.614Z",
+      "status": 200,
+      "elapsed_ms": 246,
+      "final_url": "https://www.gamblingcommission.gov.uk/downloads/premises-licence-register.csv",
+      "headers": {
+        "content-type": "text/csv; charset=UTF-8",
+        "content-length": "1305411",
+        "last-modified": "Tue, 10 Nov 2026 05:30:23 GMT",
+        "etag": "W/\"13eb43-1a1c3ef9e4e\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gamblingcommission.gov.uk/downloads/business-licence-register-businesses.csv",
+      "range": "0-1023",
+      "fetched_at": "2026-11-11T17:11:44.361Z",
+      "status": 206,
+      "elapsed_ms": 295,
+      "final_url": "https://www.gamblingcommission.gov.uk/downloads/business-licence-register-businesses.csv",
+      "headers": {
+        "content-type": "text/csv; charset=UTF-8",
+        "content-length": "1024",
+        "last-modified": "Wed, 11 Nov 2026 05:30:14 GMT",
+        "etag": "W/\"16499-1a1c915d7bf\""
+      },
+      "file": "6.csv",
+      "bytes": 1024,
+      "truncated": false
+    }
+  ]
+}
