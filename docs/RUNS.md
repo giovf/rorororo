@@ -2795,3 +2795,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 17:19 | build | UK clearance actors carry 0–2 users/30 d each; the buyers are on the EU and US actors
 - 2026-11-11 17:19 | build | Parked in exchange.json with triggers (One IPO bulk API, an open EUTM register); no owner ask
 - 2026-11-11 17:19 | build | Queued foundry exchange-source-terms-before-scoring (4): the exchange reads a source's terms before scoring a spike
+- 2026-11-11 17:18 | burn-down | Main green at STEP 0; no new owner notes; first-runs: nothing owed; gankdat refresh-uk-gambling-operators claimed 17:10
+- 2026-11-11 17:18 | burn-down | Built gankdat refresh-uk-gambling-operators: 526 nights are skipped rows, read moved to wave 6, v0.28.6
+- 2026-11-11 17:18 | burn-down | Relay gambling-register-2026-11-11: all five files 200 at 17:11, rewritten ~05:30 UTC; 05:15 read was before it
+- 2026-11-11 17:18 | burn-down | fetchFile throws OriginUnavailableError after 3 reads; cache.ts and d1store.ts now log it skipped like the runner
+- 2026-11-11 17:18 | burn-down | refreshOne logs such a night as warn refresh_skipped; 3 new tests (526 path, wave pin, KV + D1 skipped rows)
+- 2026-11-11 17:18 | burn-down | Deploys on the next CI run; proof: 11-12 Daily row with no uk-gambling-operators refresh error, refresh at 05:5x

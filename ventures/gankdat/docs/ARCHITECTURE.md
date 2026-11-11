@@ -90,8 +90,16 @@ feed is new licences, surrenders/revocations, new domains and premises. `is_acti
 filter because "Inactive" contains "active". Every file is required (a moved file fails loudly).
 Organisation level: the personal licence registers are never fetched. Written without live-file
 access (gamblingcommission.gov.uk is unreachable from the build container; headers recorded by the
-interactive session), with a 90 s per-file timeout; runs in **wave 2** (05:15) after the two
-sources there, ~15k rows.
+interactive session), with a 90 s per-file timeout; ~15k rows. Ran in **wave 2** (05:15) until
+2026-11-11; now **wave 6** (05:55, with nhs-ods; `refresh-uk-gambling-operators`, v0.28.6): the
+Commission rewrites the five files at ~05:30 UTC (Last-Modified 05:30:14–05:30:23 on 11-10 and
+11-11, relay `gambling-register-2026-11-11`), so the 05:15 read took the previous day's files on a
+good night and answered 526 (Cloudflare's origin-certificate error, in front of the Commission's
+host) on 11-10 and 11-11 while a 17:11 read served all five with 200; the cause of the 05:15
+526s is not proven, only that they sit before the daily rewrite. A 5xx that outlasts the three
+reads (15 s and 30 s pauses) is thrown as `OriginUnavailableError`, so the night is a `skipped`
+row and the last generation keeps serving. The businesses file's BOM was gone on 11-11; the
+parser strips one when present.
 And the **Companies House company lookup** (`uk-company-profiles`, shipped 2026-10-07 — exchange
 2026-W41 winner: the one Apify category where UK-register buyers measurably pay has thirteen
 lookup actors and no monitor). The first **on-demand dataset** (`DataSource.lookup`,
@@ -435,9 +443,9 @@ runs `check:root`.
   valves: login-sized per-IP budget (KV scope `signup`, shared by REST and MCP) and the
   per-email hourly cap shared with browser login (`src/auth/emailcap.ts`). Every keyless
   401 names the path. Proof number in the daily metrics row (`agent sign-up: …`).
-- **Refresh**: seven staggered Cron Triggers (05:00 KV sources, 05:15 exclusions + sponsors + gambling operators,
-  05:30 charities + care locations, 05:45 uk-food-hygiene, 05:50 uk-schools, 05:55 nhs-ods,
-  06:05 uk-trademark-journal;
+- **Refresh**: seven staggered Cron Triggers (05:00 KV sources, 05:15 exclusions + sponsors,
+  05:30 charities + care locations, 05:45 uk-food-hygiene, 05:50 uk-schools, 05:55 nhs-ods + gambling
+  operators (since 2026-11-11), 06:05 uk-trademark-journal;
   `store.ts waveForCron`) pull sources, write `refresh_log`; responses
   expose `last_refreshed_at`. D1 refreshes record what `DataSource.idOf` says was added,
   removed or changed into `source_changes` (90 d; the delta refresh writes them as it goes,
@@ -454,7 +462,12 @@ runs `check:root`.
   four reads over ~13 s of growing fair-use pauses, up from two 2 s apart); the runner logs that
   as a `skipped` refresh_log row, not `error` — the day is the origin's, the last snapshot stays
   served, and a second such day surfaces through the stale `no successful refresh since …; last
-  run skipped: …` reading. The `refresh errors` reading itself (`metrics.mjs`) counts an error row
+  run skipped: …` reading. **The Worker's own paths do the same since 2026-11-11**
+  (`refresh-uk-gambling-operators`, v0.28.6): `cache.ts` and both `d1store.ts` refresh paths wrote
+  `error` for every failure, so the typed error only ever reached the runner's row — now all three
+  and the runner take the status from `origin.ts failedRefreshStatus`, `store.ts refreshOne` logs
+  such a night as a warn-level `refresh_skipped` line (not the day's error line), and the gambling
+  register is the first cron-wave source to throw it. The `refresh errors` reading itself (`metrics.mjs`) counts an error row
   only while no later `ok` row of the same source exists: The Gazette's one 503 of 2026-10-10
   13:00 was still listed in the 10-11 row written 18 h later, right after a 1000-record refresh,
   and the auto-filer read the two rows as two failures.

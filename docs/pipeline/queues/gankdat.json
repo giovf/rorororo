@@ -1161,13 +1161,13 @@
     {
       "id": "refresh-uk-gambling-operators",
       "title": "uk-gambling-operators: refresh has failed 2 times in the last 4 days — fix the source or keep the last snapshot without an error row",
-      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-gambling-operators under refresh errors on 2026-11-10 (Gambling Commission business-licence-register-businesses.csv download failed: 526) and 2026-11-11: Gambling Commission business-licence-register-businesses.csv download failed: 526. The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-gambling-operators.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted.",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-gambling-operators under refresh errors on 2026-11-10 (Gambling Commission business-licence-register-businesses.csv download failed: 526) and 2026-11-11: Gambling Commission business-licence-register-businesses.csv download failed: 526. The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-gambling-operators.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted. Built 2026-11-11 (burn-down): relay HEAD showed all five files 200, rewritten daily at ~05:30 UTC; the read moved from wave 2 (05:15) to wave 6 (05:55), an exhausted 5xx now throws OriginUnavailableError, and the Worker's KV and D1 refresh paths log that as `skipped` like the runner (they wrote `error` for everything). v0.28.6.",
       "effort_days": 0.1,
       "proof": "uk-gambling-operators absent from refresh errors for 7 consecutive Daily numbers rows",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-11",
-      "doing_since": "2026-11-11"
+      "done_at": "2026-11-11"
     },
     {
       "id": "trademark-actor-store-keywords",
