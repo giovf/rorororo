@@ -1,0 +1,704 @@
+{
+  "request": "trademark-clearance-spike-2026-11-11",
+  "fetched_at": "2026-11-11T17:14:06.684Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://apify.com/dltik/euipo-trademarks-scraper",
+      "fetched_at": "2026-11-11T17:13:22.716Z",
+      "status": 200,
+      "elapsed_ms": 450,
+      "final_url": "https://apify.com/dltik/euipo-trademarks-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"90l2s63mb6bdu4\""
+      },
+      "file": "1.txt",
+      "bytes": 32196,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 531698
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/dltik/euipo-trademarks-scraper/input-schema",
+      "fetched_at": "2026-11-11T17:13:23.757Z",
+      "status": 200,
+      "elapsed_ms": 206,
+      "final_url": "https://apify.com/dltik/euipo-trademarks-scraper/input-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"dqbznny5vvccum\""
+      },
+      "file": "2.txt",
+      "bytes": 23735,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 576884
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/automation-lab/euipo-tmview-trademarks-scraper",
+      "fetched_at": "2026-11-11T17:13:24.530Z",
+      "status": 200,
+      "elapsed_ms": 247,
+      "final_url": "https://apify.com/automation-lab/euipo-tmview-trademarks-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"3u64vpv9q8bfww\""
+      },
+      "file": "3.txt",
+      "bytes": 27597,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 534000
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/automation-lab/euipo-tmview-trademarks-scraper/input-schema",
+      "fetched_at": "2026-11-11T17:13:25.292Z",
+      "status": 200,
+      "elapsed_ms": 166,
+      "final_url": "https://apify.com/automation-lab/euipo-tmview-trademarks-scraper/input-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"re6v7smqatagcb\""
+      },
+      "file": "4.txt",
+      "bytes": 15955,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 487865
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/dev00/uspto-trademark-api",
+      "fetched_at": "2026-11-11T17:13:25.970Z",
+      "status": 200,
+      "elapsed_ms": 184,
+      "final_url": "https://apify.com/dev00/uspto-trademark-api",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"5pwmhhcola9fy9\""
+      },
+      "file": "5.txt",
+      "bytes": 16370,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 440675
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/dev00/uspto-trademark-api/input-schema",
+      "fetched_at": "2026-11-11T17:13:26.670Z",
+      "status": 200,
+      "elapsed_ms": 133,
+      "final_url": "https://apify.com/dev00/uspto-trademark-api/input-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"11bciqvkqcz91zq\""
+      },
+      "file": "6.txt",
+      "bytes": 13765,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 422574
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/scrapers_lat/tmview-global-trademarks-scraper",
+      "fetched_at": "2026-11-11T17:13:27.310Z",
+      "status": 200,
+      "elapsed_ms": 243,
+      "final_url": "https://apify.com/scrapers_lat/tmview-global-trademarks-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"1bx6ihfsl9c1ap\""
+      },
+      "file": "7.txt",
+      "bytes": 32833,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 561651
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/scrapers_lat/tmview-global-trademarks-scraper/input-schema",
+      "fetched_at": "2026-11-11T17:13:28.074Z",
+      "status": 200,
+      "elapsed_ms": 235,
+      "final_url": "https://apify.com/scrapers_lat/tmview-global-trademarks-scraper/input-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"72kf5y5xv6b8fr\""
+      },
+      "file": "8.txt",
+      "bytes": 18038,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 524237
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/khadinakbar/uspto-trademark-batch-search",
+      "fetched_at": "2026-11-11T17:13:28.830Z",
+      "status": 200,
+      "elapsed_ms": 255,
+      "final_url": "https://apify.com/khadinakbar/uspto-trademark-batch-search",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"cqhp2jfvyuc1z2\""
+      },
+      "file": "9.txt",
+      "bytes": 33492,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 562518
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/khadinakbar/uspto-trademark-batch-search/input-schema",
+      "fetched_at": "2026-11-11T17:13:29.598Z",
+      "status": 200,
+      "elapsed_ms": 181,
+      "final_url": "https://apify.com/khadinakbar/uspto-trademark-batch-search/input-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"22p7llr0xbb3sh\""
+      },
+      "file": "10.txt",
+      "bytes": 18525,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 518214
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/memo23/uspto-trademark-scraper",
+      "fetched_at": "2026-11-11T17:13:30.306Z",
+      "status": 200,
+      "elapsed_ms": 197,
+      "final_url": "https://apify.com/memo23/uspto-trademark-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"5opfl0akeyaotn\""
+      },
+      "file": "11.txt",
+      "bytes": 29459,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 499102
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/memo23/uspto-trademark-scraper/input-schema",
+      "fetched_at": "2026-11-11T17:13:31.013Z",
+      "status": 200,
+      "elapsed_ms": 272,
+      "final_url": "https://apify.com/memo23/uspto-trademark-scraper/input-schema",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"4pr4pv81t1a0ju\""
+      },
+      "file": "12.txt",
+      "bytes": 17108,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 467563
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tmdn.org/robots.txt",
+      "fetched_at": "2026-11-11T17:13:31.307Z",
+      "error": "fetch failed",
+      "elapsed_ms": 1049
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tmdn.org/tmview/",
+      "render": true,
+      "fetched_at": "2026-11-11T17:13:32.856Z",
+      "status": 200,
+      "final_url": "https://www.tmdn.org/tmview/#/tmview",
+      "title": "TMView",
+      "rendered": {
+        "network_idle": true,
+        "requests": 38,
+        "failed": [
+          "GET https://www.tmdn.org/tmview/api/users/details → 401"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 17 Jul 2026 08:16:38 GMT",
+        "etag": "\"6a59e4e6-213\""
+      },
+      "file": "14.txt",
+      "bytes": 5865,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 57026
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tmdn.org/tmview/",
+      "fetched_at": "2026-11-11T17:13:45.481Z",
+      "status": 200,
+      "elapsed_ms": 710,
+      "final_url": "https://www.tmdn.org/tmview/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "531",
+        "last-modified": "Fri, 17 Jul 2026 08:16:38 GMT",
+        "etag": "\"6a59e4e6-213\""
+      },
+      "file": "15.txt",
+      "bytes": 0,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 531
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tmdn.org/tmview/legal-notice",
+      "fetched_at": "2026-11-11T17:13:46.694Z",
+      "error": "fetch failed",
+      "elapsed_ms": 110
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tmdn.org/network/legal-notice",
+      "fetched_at": "2026-11-11T17:13:47.305Z",
+      "error": "fetch failed",
+      "elapsed_ms": 338
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tmdn.org/tmview/api/search/results?page=1&pageSize=1&criteria=C&basicSearch=gankdat",
+      "fetched_at": "2026-11-11T17:13:48.144Z",
+      "status": 200,
+      "elapsed_ms": 622,
+      "final_url": "https://www.tmdn.org/tmview/api/search/results?page=1&pageSize=1&criteria=C&basicSearch=gankdat",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "244"
+      },
+      "file": "18.txt",
+      "bytes": 119,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 244
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release",
+      "fetched_at": "2026-11-11T17:13:48.767Z",
+      "status": 200,
+      "elapsed_ms": 764,
+      "final_url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "12256",
+        "etag": "W/\"fd9e44d1a78f74eb680e8c5f41cefc15\""
+      },
+      "file": "19.txt",
+      "bytes": 11733,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 74159
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016",
+      "fetched_at": "2026-11-11T17:13:50.037Z",
+      "status": 200,
+      "elapsed_ms": 250,
+      "final_url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/ipo-data-explained-2016",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "14194",
+        "etag": "W/\"ea76a0bdf8762294629d2dc204dde533\""
+      },
+      "file": "20.txt",
+      "bytes": 28418,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 86784
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/open-data-explained-international",
+      "fetched_at": "2026-11-11T17:13:50.792Z",
+      "status": 200,
+      "elapsed_ms": 372,
+      "final_url": "https://www.gov.uk/government/publications/ipo-trade-mark-data-release/open-data-explained-international",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "13603",
+        "etag": "W/\"d62f29164b3a2b691a523d988ab6f456\""
+      },
+      "file": "21.txt",
+      "bytes": 24906,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 82628
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/publications/ipo-trade-mark-dataset",
+      "fetched_at": "2026-11-11T17:13:51.669Z",
+      "status": 410,
+      "elapsed_ms": 682,
+      "final_url": "https://www.gov.uk/government/publications/ipo-trade-mark-dataset",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "53838"
+      },
+      "file": "22.txt",
+      "bytes": 5253,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53838
+    },
+    {
+      "method": "GET",
+      "url": "https://assets.publishing.service.gov.uk/media/5a8006f140f0b62305b88baf/foi-2016-489-trade-mark-database-access.pdf",
+      "fetched_at": "2026-11-11T17:13:52.361Z",
+      "status": 410,
+      "elapsed_ms": 1255,
+      "final_url": "https://www.gov.uk/government/publications/trade-mark-database-access",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "53850"
+      },
+      "file": "23.txt",
+      "bytes": 5257,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53850
+    },
+    {
+      "method": "GET",
+      "url": "https://www.data.gov.uk/dataset/fc8a832f-b5e2-4c03-9ae4-10a5e74b467c/ipo-tmj",
+      "fetched_at": "2026-11-11T17:13:53.620Z",
+      "status": 200,
+      "elapsed_ms": 809,
+      "final_url": "https://www.data.gov.uk/dataset/fc8a832f-b5e2-4c03-9ae4-10a5e74b467c/ipo-tmj",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "19702"
+      },
+      "file": "24.txt",
+      "bytes": 2668,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 19702
+    },
+    {
+      "method": "GET",
+      "url": "https://www.data.gov.uk/search?q=trade+mark&filters%5Bpublisher%5D=Intellectual+Property+Office",
+      "fetched_at": "2026-11-11T17:13:54.931Z",
+      "status": 200,
+      "elapsed_ms": 614,
+      "final_url": "https://www.data.gov.uk/search?q=trade+mark&filters%5Bpublisher%5D=Intellectual+Property+Office",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "16907"
+      },
+      "file": "25.txt",
+      "bytes": 2154,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 16907
+    },
+    {
+      "method": "GET",
+      "url": "https://www.data.gov.uk/publisher/intellectual-property-office",
+      "fetched_at": "2026-11-11T17:13:56.048Z",
+      "status": 404,
+      "elapsed_ms": 529,
+      "final_url": "https://www.data.gov.uk/publisher/intellectual-property-office",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "10294"
+      },
+      "file": "26.txt",
+      "bytes": 1623,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 10294
+    },
+    {
+      "method": "GET",
+      "url": "https://search-for-intellectual-property.service.gov.uk/",
+      "render": true,
+      "fetched_at": "2026-11-11T17:13:56.579Z",
+      "error": "render: page.goto: net::ERR_NAME_NOT_RESOLVED at https://search-for-intellectual-property.service.gov.uk/\nCall log:\n  - navigating to \"https://search-for-intellectual-property.service.gov.uk/\", waiting until \"domcontentloaded\"\n"
+    },
+    {
+      "method": "GET",
+      "url": "https://search-for-intellectual-property.service.gov.uk/robots.txt",
+      "fetched_at": "2026-11-11T17:13:57.256Z",
+      "error": "fetch failed",
+      "elapsed_ms": 45
+    },
+    {
+      "method": "GET",
+      "url": "https://trademarks.ipo.gov.uk/robots.txt",
+      "fetched_at": "2026-11-11T17:13:57.302Z",
+      "status": 403,
+      "elapsed_ms": 176,
+      "final_url": "https://trademarks.ipo.gov.uk/robots.txt",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "29.txt",
+      "bytes": 1089,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 785906
+    },
+    {
+      "method": "GET",
+      "url": "https://trademarks.ipo.gov.uk/ipo-tmtext/",
+      "fetched_at": "2026-11-11T17:13:58.003Z",
+      "status": 403,
+      "elapsed_ms": 174,
+      "final_url": "https://trademarks.ipo.gov.uk/ipo-tmtext/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "30.txt",
+      "bytes": 1089,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 785909
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/search-for-trademark",
+      "fetched_at": "2026-11-11T17:13:58.197Z",
+      "status": 200,
+      "elapsed_ms": 52,
+      "final_url": "https://www.gov.uk/search-for-trademark",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "13002",
+        "etag": "W/\"4672e4e068796fe843dd0b75fe292dea\""
+      },
+      "file": "31.txt",
+      "bytes": 15534,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 85900
+    },
+    {
+      "method": "GET",
+      "url": "https://euipo.europa.eu/en/open-data",
+      "fetched_at": "2026-11-11T17:13:58.254Z",
+      "status": 404,
+      "elapsed_ms": 597,
+      "final_url": "https://euipo.europa.eu/en/open-data",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "content-length": "19"
+      },
+      "file": "32.txt",
+      "bytes": 19,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.euipo.europa.eu/en/the-office/open-data",
+      "fetched_at": "2026-11-11T17:13:58.852Z",
+      "status": 200,
+      "elapsed_ms": 685,
+      "final_url": "https://www.euipo.europa.eu/en/the-office/open-data",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "33.txt",
+      "bytes": 5749,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 239113
+    },
+    {
+      "method": "GET",
+      "url": "https://euipo.europa.eu/ohimportal/en/open-data",
+      "fetched_at": "2026-11-11T17:13:59.608Z",
+      "status": 200,
+      "elapsed_ms": 426,
+      "final_url": "https://www.euipo.europa.eu/bg",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "34.txt",
+      "bytes": 16814,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 484446
+    },
+    {
+      "method": "GET",
+      "url": "https://data.europa.eu/api/hub/search/search?q=EUIPO+trade+mark&limit=10",
+      "fetched_at": "2026-11-11T17:14:00.237Z",
+      "status": 200,
+      "elapsed_ms": 504,
+      "final_url": "https://data.europa.eu/api/hub/search/search?q=EUIPO+trade+mark&limit=10",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "470934"
+      },
+      "file": "35.json",
+      "bytes": 470934,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.euipo.europa.eu/getting-started",
+      "fetched_at": "2026-11-11T17:14:00.797Z",
+      "status": 200,
+      "elapsed_ms": 775,
+      "final_url": "https://dev.euipo.europa.eu/getting-started",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "36.txt",
+      "bytes": 3956,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 24778
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.euipo.europa.eu/faq",
+      "fetched_at": "2026-11-11T17:14:02.075Z",
+      "status": 200,
+      "elapsed_ms": 245,
+      "final_url": "https://dev.euipo.europa.eu/faq",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "37.txt",
+      "bytes": 12576,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 34725
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.euipo.europa.eu/product",
+      "fetched_at": "2026-11-11T17:14:02.822Z",
+      "status": 200,
+      "elapsed_ms": 278,
+      "final_url": "https://dev.euipo.europa.eu/product",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "38.txt",
+      "bytes": 5686,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 78846
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.uspto.gov/node/165463",
+      "fetched_at": "2026-11-11T17:14:03.103Z",
+      "status": 200,
+      "elapsed_ms": 640,
+      "final_url": "https://data.uspto.gov/home",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "20666",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "39.txt",
+      "bytes": 153,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 20666
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.uspto.gov/api-catalog/tsdr-data-api",
+      "fetched_at": "2026-11-11T17:14:04.265Z",
+      "status": 200,
+      "elapsed_ms": 254,
+      "final_url": "https://data.uspto.gov/home",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "20666",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "40.txt",
+      "bytes": 153,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 20666
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.uspto.gov/files/tsdr-api-key-manager-user-guide",
+      "fetched_at": "2026-11-11T17:14:05.020Z",
+      "status": 200,
+      "elapsed_ms": 239,
+      "final_url": "https://data.uspto.gov/home",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "20666",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "41.txt",
+      "bytes": 153,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 20666
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.uspto.gov/node/125",
+      "fetched_at": "2026-11-11T17:14:05.760Z",
+      "status": 200,
+      "elapsed_ms": 178,
+      "final_url": "https://data.uspto.gov/home",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "20666",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "42.txt",
+      "bytes": 153,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 20666
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.uspto.gov/product/trademark-annual-xml-applications",
+      "fetched_at": "2026-11-11T17:14:06.439Z",
+      "status": 200,
+      "elapsed_ms": 243,
+      "final_url": "https://data.uspto.gov/home",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "20666",
+        "last-modified": "Wed, 14 Oct 2026 00:01:17 GMT",
+        "etag": "\"23552f3b5617e02697f2e2f4078b1b8f\""
+      },
+      "file": "43.txt",
+      "bytes": 153,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 20666
+    }
+  ]
+}

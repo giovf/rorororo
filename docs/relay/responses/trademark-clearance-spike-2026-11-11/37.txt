@@ -1,0 +1,153 @@
+meta description: What languages can I use to invoke an API?Can I get a client for an API in my language of choice?What requirements are necessary to access the Production environment?What are the limitations of the Production environment?Are there any costs associated with the use of Production APIs?Can I
+FAQ | API Portal
+Skip to main content (#main-content)
+/
+API Portal
+Develop #IPtech applications with our API Catalog
+Toggle navigation
+Main navigation
+Getting started (/getting-started)
+Security (/security)
+API Products (/product)
+Problems registry (/problems-registry)
+Status (/status)
+FAQ (/faq)
+Sandbox (https://dev-sandbox.euipo.europa.eu/)
+Login
+Create account (/user/register)
+Sign in (/user/login)
+What languages can I use to invoke an API? (#guide-section-1)
+Can I get a client for an API in my language of choice? (#guide-section-2)
+What requirements are necessary to access the Production environment? (#guide-section-3)
+What are the limitations of the Production environment? (#guide-section-4)
+Are there any costs associated with the use of Production APIs? (#guide-section-5)
+Can I subscribe more than once to the same API through different applications? (#guide-section-6)
+Why am I getting a 302 redirect response to https://euipo.europa.eu/error/revise.html? (#guide-section-7)
+Why do I get a 401 error when I try to access the Sandbox and Production environment with the same token? (#guide-section-8)
+Why am I getting an error saying that my token has expired? (#guide-section-9)
+I forgot my client secret, how can I recover it? (#guide-section-10)
+Why don't I get results on the first page when I use pagination? (#guide-section-11)
+Why don't I receive the same responses when I make requests to the Sandbox and Production environment? (#guide-section-12)
+Why does the authorisation server show an error screen when my App tries to open the authorise form as part of the ‘access_code’ flow? (#guide-section-13)
+Why does the authorization server respond with 401 when my App requests the access token? (#guide-section-14)
+Why does the API gateway respond with 401 when my App calls to an API operation? (#guide-section-15)
+Why does the API gateway respond with 403 when my App calls to an API operation? (#guide-section-16)
+What languages can I use to invoke an API?
+The APIs exposed by EUIPO API follow open standards and be language and platform agnostic. Any system capable of forming a JSON string and issuing an HTTP request can be used to invoke a RESTful API. It is important to note that EUIPO does not restrict the technology you use to invoke the API.
+Can I get a client for an API in my language of choice?
+Clients usually take the form of generated source code, in the consumers language of choice, and provide a simpler mechanism for invoking the API without the need to build validation and/or data transformation mechanisms. EUIPO API does not provide clients for testing their APIs.
+If you would like to use an API client rather than crafting the JSON payload and issuing HTTP requests, the machine-readable nature of EUIPOs OpenAPI descriptors means that a client generator can be used for many programming languages - see the OpenAPI Initiative (openapis.org) project page for examples.
+What requirements are necessary to access the Production environment?
+You must meet basically two requirements:
+Have successfully completed the integration tests in the Sandbox environment.
+Provide the required documentation when requesting a subscription in production.
+Depending on the nature of the user, the required documentation is as follows:
+From natural person subscribers
+Proof of identity of the subscribing person: copy of national ID card or passport, and proof of address, if not included in the provided document.
+Proof of identity of the subscribing person: copy of national ID card or passport, and proof of address, if not included in the provided document.
+From legal person subscribers
+Copy of national ID card or passport of the acting person.
+Excerpt from the company register showing that the above person is entitled to act for the entity and the address of the entity.
+The subscription request will only be assessed upon receipt of the documentation in the docs.apiplatform@euipo.europa.eu (mailto:docs.apiplatform@euipo.europa.eu) mailbox. Please note that failure to provide the requested documentation in a timely manner will result in the cancellation of the subscription request.
+What are the limitations of the Production environment?
+Production limits are the same as those of the Sandbox and are defined by the subscription plan of each API in addition to those set out in the Terms of Use (https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/contentPdfs/law_and_practice/decisions_president/EX-22-05_en_annex_I_version_2_en.pdf) .
+Exceeding the maximum number of calls of a subscription plan will result in a '429' error, while failure to comply with the terms of our Terms of Use may result in cancellation of the subscription.
+Are there any costs associated with the use of Production APIs?
+Access to Production and Sandbox APIs is free of charge.
+Can I subscribe more than once to the same API through different applications?
+Our general policy is to allow only one subscription to the same API per organization, exceptions must be justified and will be analysed on a case-by-case basis.
+Also note that making more than one request to the same API through different applications does not speed up the approval process. The average response time for a subscription request is one day for Sandbox and up to one week for Production.
+Why am I getting a 302 redirect response to https://euipo.europa.eu/error/revise.html?
+This response does not indicate that the API call is incorrect, this can be caused by a number of factors, but is usually related to a reputation issue with your public IP.
+We suggest you contact BrightCloud for possible causes and solutions at BrightCloud - Look up URL or IP (https://www.brightcloud.com/tools/url-ip-lookup.php) . Once the issue is resolved, the integration should work as expected.
+Why do I get a 401 error when I try to access the Sandbox and Production environment with the same token?
+Sandbox and Production use different authentication servers, so accessing resources in one environment with tokens generated for the other will return such an authentication error.
+Why am I getting an error saying that my token has expired?
+TTL (time to live) is an essential security measure in token-based authentication systems. By limiting the lifetime of tokens, the risk of them being compromised and used for malicious purposes is significantly reduced.
+In our case, the TTL for the access and refresh token is 2 and 4 hours, respectively.
+I forgot my client secret, how can I recover it?
+The client secret can only be displayed at the time the application is created. However, if you have lost it, you do not need to create a new application, you can always reset it as follows:
+1. Go to the Apps page from the top navigation menu, and click on your App.
+2. Then, on the main App page, go to the Subscriptions tab. Here users will be able to copy again their API Key, and right below, users can verify their API Secret. To Reset the secret, go to the navigation icon in the top right corner, and click on reset API Secret.
+3. Users will be asked to confirm the API Secret reset, since this will invalidate previous API Secret. Click on reset.
+4. New application credentials will be generated and given to the user. Make sure to copy and save them both, especially the API secret since it will not be shown again. Once done, click on the Ok button.
+Why don't I get results on the first page when I use pagination?
+The APIs use a 0-based indexing system. Make sure you are using page “0” to access the first page instead of “1”. If there is not enough data to complete page “1” according to the configured page size, you may receive an empty response.
+For instance, if you use page 1 as the first page instead of 0, the most relevant results of a trademark search sorted by registration date will not be displayed.
+Why don't I receive the same responses when I make requests to the Sandbox and Production environment?
+There is no aim to align Sandbox and Production. They are different environments with different data. The purpose of the sandbox environment is to test the API functionality and it should never be integrated with production systems.
+Why does the authorisation server show an error screen when my App tries to open the authorise form as part of the ‘access_code’ flow?
+It usually happens when the ‘clientId’ or the ‘redirect_uri’ used in the ‘authorise URL’ are incorrect:
+https://auth-sandbox.euipo.europa.eu/oidc/authorize?response_type=code&client_id=<YOUR_CLIENT_ID>&redirect_uri=<YOUR_APP_CALLBACK>&scope=<SCOPE_LIST_SEPARATED_BY_SPACES> &redirect_uri= &scope=
+Please check your App configuration in the API Portal.
+Why does the authorization server respond with 401 when my App requests the access token?
+Your App is using an incorrect clientId or clientSecret. Please check your App configuration in the API Portal.
+{
+"timestamp": "2024-11-26T08:48:29.962+00:00",
+"status": 401,
+"error": "Unauthorized",
+"message": "",
+"path": "/oidc/accessToken"
+}
+Why does the API gateway respond with 401 when my App calls to an API operation?
+Several reasons may be behind this error:
+Your App request might be using an incorrect ‘clientId’ or it could be completely omitted from headers.
+{
+"type": "/problems/unauthorized",
+"title": "The request lacks valid authentication credentials for this resource",
+"detail": "Invalid client id or secret.",
+"status": 401
+}
+Your App didn’t include the Authorization header with the access token as part of the request, or it expired. In this scenario, the API gateway will respond with the following error:
+{
+"type": "/problems/unauthorized",
+"title": "The request lacks valid authentication credentials for this resource",
+"detail": "Cannot pass the security checks that are required by the target API or operation, Enable debug headers for more details.",
+"status": 401
+}
+The requested operation required some mandatory scopes that were not included in the access token. Please check API documentation.
+{
+"type": "/problems/unauthorized",
+"title": "The request lacks valid authentication credentials for this resource",
+"detail": "Cannot pass the security checks that are required by the target API or operation, Enable debug headers for more details.",
+"status": 401
+}
+Why does the API gateway respond with 403 when my App calls to an API operation?
+Several reasons may be behind this error:
+Your App is not registered to one of the plans offered by this API Product. Please check your subscriptions.
+{
+"type": "/problems/forbidden",
+"title": "Forbidden",
+"detail": "Not registered to plan.",
+"status": 403
+}
+This API operation required the ‘access_code’ flow and your App used ‘client_credentials’, so the identity of the final user is not available in the access token. Please check the API documentation.
+{
+"type": "/problems/forbidden",
+"title": "Forbidden",
+"detail": "Access is denied.",
+"status": 403
+}
+FAQ
+About EUIPO (https://euipo.europa.eu/ohimportal/about-euipo)
+European Union Intellectual Property Office
+Public procurement (https://euipo.europa.eu/ohimportal/public-procurement)
+Jobs (https://euipo.europa.eu/ohimportal/work-with-euipo)
+Press (https://euipo.europa.eu/ohimportal/press-room)
+Transparency Portal (https://euipo.europa.eu/ohimportal/transparency-portal)
+An Agency of the European Union (http://europa.eu/)
+EU Agencies network (https://euagencies.eu/)
+Conditions of Use (https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/contentPdfs/law_and_practice/decisions_president/EX-25-1_annex-1_v2_en.pdf)
+Data protection (https://dev.euipo.europa.eu/system/files/2026-02/API_Privacy%20Statement.pdf)
+Help & FAQs (https://euipo.europa.eu/ohimportal/help)
+Find the answers to all your questions on trade marks, designs and our online services
+Contact Us (https://euipo.europa.eu/ohimportal/contact-us)
+Our Information Centre staff can guide you before and during the application process
+Avenida de Europa, 4, 03008 Alicante, Spain
+Information centre: +34 965 139 100
+Follow on Social Media
+Twitter (https://twitter.com/EU_IPO)
+Linkedin (https://www.linkedin.com/company/euipo)
+Facebook (https://www.facebook.com/EUIPO.eu)
+Youtube (http://www.youtube.com/euipo)
+Instagram DesignEuropa (https://www.instagram.com/euipo)
