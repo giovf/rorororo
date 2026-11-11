@@ -2775,3 +2775,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 08:17 | exchange | Declined: nothing new; 6 spike files read since W45, their 5 parks and 1 promote stand
 - 2026-11-11 08:17 | exchange | Exchange file docs/exchange/2026-W46.md; relay round exchange-w46-2026-11-11 (22 lines, 60 s)
 - 2026-11-11 08:17 | exchange | Owner: nothing from this decision; 038, 039 and the GitHub permissions stay the open asks
+- 2026-11-11 09:20 | build | Main green at STEP 0; no new owner notes; first-runs: nothing owed; spike-us-trademark-filings-feed claimed 09:10
+- 2026-11-11 09:20 | build | Spike spike-us-trademark-filings-feed done: PARK — USPTO bulk files need an ID.me-verified key since 2026-06-18
+- 2026-11-11 09:20 | build | Relay 2 rounds: every Open Data Portal page is a sign-in wall (MFA); download API keyless 401; bulkdata host gone
+- 2026-11-11 09:20 | build | Terms: US public domain with attribution; web databases closed to automated bulk reads by the same terms
+- 2026-11-11 09:20 | build | Rivals: foxlabs 7, thoob 3, accountable_eel 1 users/30 d at US$4–6 per 1,000 rows, all scraping the web apps
+- 2026-11-11 09:20 | build | Bazaar: 33,492 resources, no keyword filter; newest 300 hold no trademark route; full read not spent
+- 2026-11-11 09:20 | build | Parked in exchange.json with a trigger; no owner ask (identity verification fails the owner-time rule)
+- 2026-11-11 09:20 | build | Lesson: RENDER a shell-answering source page in the exchange round before scoring a spike
