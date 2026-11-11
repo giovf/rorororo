@@ -1,0 +1,11 @@
+HEAD https://data.europa.eu/euodp/repository/agencies/euipo/tm.csv.gz
+HEAD https://data.europa.eu/euodp/repository/agencies/euipo/TM_GANDS.zip.gz
+HEAD https://data.europa.eu/euodp/repository/agencies/euipo/euipo.csv.gz
+GET RANGE=0-4095 https://data.europa.eu/euodp/repository/agencies/euipo/tm.csv.gz
+HEAD https://assets.publishing.service.gov.uk/media/5a82e5f4e5274a2e87dc387d/opendatadomestic.zip
+HEAD https://assets.publishing.service.gov.uk/media/5a82a5f4e5274a2e8ab589f5/opendataIR.zip
+GET https://api.apify.com/v2/store?search=uk+trademark&limit=20
+GET https://api.apify.com/v2/store?search=tmview&limit=20
+GET https://www.tmdn.org/tmview/api/search/results?page=1&pageSize=1&criteria=C&basicSearch=gankdat
+RENDER https://www.tmdn.org/network/legal-notices
+GET https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/contentPdfs/law_and_practice/decisions_president/EX-22-05_en_annex_I_version_2_en.pdf
