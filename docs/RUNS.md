@@ -2764,3 +2764,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-10 21:26 | burn-down | Correction to the item: uk-companies has no change feed (KV, no idOf); the gain is the Apify actor's week
 - 2026-11-10 21:26 | burn-down | Deploys on the next CI run; proof: 11-11 wave-1 reading shows snapshot_window, no snapshot_truncated
 - 2026-11-10 21:28 | burn-down | Stopping: 2 items built (v0.28.4, v0.28.5), 1 blocked; starved and cooled, pre-research done 19:36
+- 2026-11-11 00:06 | triage | notify owner dispatched: last run started 20:58 UTC, 3 h ago
