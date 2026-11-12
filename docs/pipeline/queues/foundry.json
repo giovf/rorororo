@@ -1461,9 +1461,9 @@
       "effort_days": 0.15,
       "proof": "a night or day whose first pre-research line parked shows a second `Exchange pre-research:` line in docs/RUNS.md within the same window, and the following build slot claims a spike instead of researching; `npm run slots` for the week after the change reads burn-down Cold below 11 with the same pipeline",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-12",
-      "doing_since": "2026-11-12"
+      "done_at": "2026-11-12"
     },
     {
       "id": "research-cooling-from-the-minute",

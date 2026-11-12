@@ -2837,3 +2837,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 00:20 | burn-down | Deploys on the next CI run; proof: 11-13 and 11-14 Daily rows with no stats_precompute_failed for either source
 - 2026-11-12 00:37 | burn-down | Pause applies at statsPaceRows (10k rows) so small fixtures stay fast; manifest 0.28.7.0, connector regenerated
 - 2026-11-12 00:38 | burn-down | Stopping at ~32 min: 3 research passes (4 items), 1 built (v0.28.7); next: foundry pre-research-second-pass-after-park
+- 2026-11-12 01:09 | burn-down | Main green at STEP 0; no new owner notes; first-runs: nothing owed; item claimed 01:06 before npm ci
+- 2026-11-12 01:09 | burn-down | Built foundry pre-research-second-pass-after-park: one seeded spike per window, at most two passes
+- 2026-11-12 01:09 | burn-down | preResearchSpent: a `seeded` pass line spends, two pass lines spend, one park or skip leaves one more
+- 2026-11-12 01:09 | burn-down | cold now says `(1 pass parked or skipped, one more allowed)`; live: tonight's 17:38 park reads that way
+- 2026-11-12 01:09 | burn-down | 5 tests (park, skip, seeded, two parks, window roll-over); build.md, burn-down.md, pipeline README reworded
+- 2026-11-12 01:09 | burn-down | Proof: the next window whose first pass parks shows a second pass line; `npm run slots` W47 Cold below 11

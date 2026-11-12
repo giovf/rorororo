@@ -9,6 +9,8 @@
 // 2026-10-10 (foundry `build-slot-pre-research`): the 09:00/17:00 build slot has the same one pass
 // per DAY window — since the most recent 07:00 UTC — asked with `--routine=build`; a pass by either
 // routine inside the window spends it, so the 17:00 burn-down and the 17:10 build do not both take one.
+// 2026-11-12 (foundry `pre-research-second-pass-after-park`): one SEEDED spike per window, at most
+// two passes — a pass that parked or skipped leaves one more pass to a later slot of the window.
 // (Node 22 runs .ts directly — keep syntax erasable)
 
 export const NIGHT_START_HOUR_UTC = 17;
@@ -83,24 +85,49 @@ export function lineStamp(line: string): string | undefined {
   return m?.[1];
 }
 
+/** A window spends its pre-research on one seeded spike or on this many passes, whichever first. */
+export const MAX_PRE_RESEARCH_PASSES = 2;
+/** The word a pass line carries when it seeded a spike (`… spike seeded (5); 1 spike was open`). */
+export const SEEDED_RE = /\bseeded\b/i;
+
 /**
- * True when a `| burn-down |` or `| build |` line stamped inside `routine`'s window (the night from
- * 17:00 for the burn-down, the day from 07:00 for the build) starts its sentence with the pass prefix.
+ * The sentences (third cell) of the `| burn-down |` or `| build |` lines stamped inside `routine`'s
+ * window (the night from 17:00 for the burn-down, the day from 07:00 for the build) that start with
+ * the pass prefix, in log order.
+ */
+export function preResearchPasses(
+  runs: string,
+  now: Date,
+  routine: PassRoutine = 'burn-down',
+): string[] {
+  const since = passWindowStart(routine, now);
+  const passes: string[] = [];
+  for (const line of runs.split('\n')) {
+    const stamp = lineStamp(line);
+    if (stamp === undefined || stamp < since) continue;
+    const cells = line.split(' | ');
+    const text = cells[2] ?? '';
+    if (PASS_ROUTINES.includes(cells[1] ?? '') && text.startsWith(PRE_RESEARCH_PREFIX))
+      passes.push(text);
+  }
+  return passes;
+}
+
+/**
+ * True when the window's exchange pre-research is spent: one seeded spike per window, at most
+ * MAX_PRE_RESEARCH_PASSES passes (2026-11-12, foundry `pre-research-second-pass-after-park`; one pass
+ * per window before). A pass line whose sentence says the spike was `seeded` spends the window on
+ * its own; a park or a skip leaves one more pass to a later slot of the same window (11-11: the
+ * 17:38 pass parked the ABN extract and six fires sat cold under the shelf cap); a second park or
+ * skip spends it too, so a run of parks cannot eat a night.
  */
 export function preResearchSpent(
   runs: string,
   now: Date,
   routine: PassRoutine = 'burn-down',
 ): boolean {
-  const since = passWindowStart(routine, now);
-  return runs.split('\n').some((line) => {
-    const stamp = lineStamp(line);
-    if (stamp === undefined || stamp < since) return false;
-    const cells = line.split(' | ');
-    return (
-      PASS_ROUTINES.includes(cells[1] ?? '') && (cells[2] ?? '').startsWith(PRE_RESEARCH_PREFIX)
-    );
-  });
+  const passes = preResearchPasses(runs, now, routine);
+  return passes.length >= MAX_PRE_RESEARCH_PASSES || passes.some((text) => SEEDED_RE.test(text));
 }
 
 /** How long a build slot's start marker counts as "in flight" for the burn-down's research deferral. */

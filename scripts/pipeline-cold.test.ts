@@ -11,6 +11,7 @@ import {
   lineStamp,
   nightStart,
   pacedStop,
+  preResearchPasses,
   preResearchSpent,
   reportStale,
   researchClaimActive,
@@ -21,8 +22,9 @@ import {
   workingSlots,
 } from './pipeline-cold.ts';
 
+// A seeded spike spends the window on its own (a park leaves one more pass, see the 11-12 cases below).
 const pass =
-  '- 2026-10-07 21:38 | burn-down | Exchange pre-research: EA waste carriers register parked';
+  '- 2026-10-07 21:38 | burn-down | Exchange pre-research: EA waste carriers register — spike seeded (4)';
 const stopping =
   '- 2026-10-07 18:25 | burn-down | Stopping: 2 items built; pipeline starved-and-cooled, pre-research spent';
 const runs = (...lines: string[]): string => `# Runs\n\n${lines.join('\n')}\n`;
@@ -78,25 +80,55 @@ describe('preResearchSpent', () => {
   });
   it("counts a build pass inside the burn-down's night (the 17:10 build and the 17:00 burn)", () => {
     const build =
-      '- 2026-10-07 17:25 | build | Exchange pre-research: EA waste carriers register parked';
+      '- 2026-10-07 17:25 | build | Exchange pre-research: EA waste carriers register — spike seeded (4)';
     expect(preResearchSpent(runs(build), new Date('2026-10-07T18:10:00Z'))).toBe(true);
   });
   it("reads the build's day window from 07:00 with --routine=build", () => {
     const morning =
-      '- 2026-10-07 09:40 | build | Exchange pre-research: EA waste carriers register parked';
+      '- 2026-10-07 09:40 | build | Exchange pre-research: EA waste carriers register — spike seeded (4)';
     expect(preResearchSpent(runs(morning), new Date('2026-10-07T17:15:00Z'), 'build')).toBe(true);
     expect(preResearchSpent(runs(morning), new Date('2026-10-08T09:15:00Z'), 'build')).toBe(false);
     // a burn-down pass of the night before (01:30) is outside the day that starts at 07:00
     const night =
-      '- 2026-10-08 01:30 | burn-down | Exchange pre-research: EA waste carriers register parked';
+      '- 2026-10-08 01:30 | burn-down | Exchange pre-research: EA waste carriers register — spike seeded (4)';
     expect(preResearchSpent(runs(night), new Date('2026-10-08T09:15:00Z'), 'build')).toBe(false);
     // but a burn-down pass at 17:21 spends the build's day too (the day runs to the next 07:00)
     const evening =
-      '- 2026-10-08 17:21 | burn-down | Exchange pre-research: VOA rating list declined';
+      '- 2026-10-08 17:21 | burn-down | Exchange pre-research: VOA rating list — spike seeded (3)';
     expect(preResearchSpent(runs(evening), new Date('2026-10-08T17:40:00Z'), 'build')).toBe(true);
   });
   it('is false on an empty log', () => {
     expect(preResearchSpent('', new Date('2026-10-07T22:10:00Z'))).toBe(false);
+  });
+  // 2026-11-12 (foundry pre-research-second-pass-after-park): one seeded spike per window, at most
+  // two passes — a park or a skip leaves one more pass to a later slot of the same window.
+  const seeded =
+    '- 2026-11-11 19:36 | burn-down | Exchange pre-research: HMRC monthly exchange rates — spike seeded (3); 1 spike was open';
+  const parked =
+    '- 2026-11-11 17:38 | burn-down | Exchange pre-research: ABN bulk extract read — parked (CC BY 3.0 AU; free API)';
+  const skipped = '- 2026-11-11 18:20 | build | Exchange pre-research: skipped (3 spikes open)';
+  it('one parked or skipped pass leaves the window unspent; a seeded spike spends it alone', () => {
+    const at = new Date('2026-11-11T20:10:00Z');
+    expect(preResearchSpent(runs(parked), at)).toBe(false);
+    expect(preResearchSpent(runs(skipped), at)).toBe(false);
+    expect(preResearchSpent(runs(seeded), at)).toBe(true);
+    expect(preResearchSpent(runs(parked, seeded), at)).toBe(true);
+    expect(preResearchSpent(runs(parked, seeded), at, 'build')).toBe(true);
+  });
+  it('two parked or skipped passes spend the window, by either routine', () => {
+    const at = new Date('2026-11-11T21:10:00Z');
+    expect(preResearchSpent(runs(parked, skipped), at)).toBe(true);
+    expect(preResearchSpent(runs(parked, skipped), at, 'build')).toBe(true);
+    const nextNight = parked.replace('2026-11-11 17:38', '2026-11-12 17:38');
+    expect(preResearchSpent(runs(parked, nextNight), new Date('2026-11-12T18:10:00Z'))).toBe(false);
+  });
+  it("lists the window's pass sentences in log order", () => {
+    const at = new Date('2026-11-11T21:10:00Z');
+    expect(preResearchPasses(runs(parked, stopping, skipped), at)).toEqual([
+      'Exchange pre-research: ABN bulk extract read — parked (CC BY 3.0 AU; free API)',
+      'Exchange pre-research: skipped (3 spikes open)',
+    ]);
+    expect(preResearchPasses(runs(parked), new Date('2026-11-12T17:10:00Z'))).toEqual([]);
   });
 });
 

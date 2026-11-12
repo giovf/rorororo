@@ -63,6 +63,7 @@ if (process.argv[2] === 'cold') {
     lastExchangeSlot,
     missedExchange,
     pacedStop,
+    preResearchPasses,
     preResearchSpent,
     researchClaimActive,
   } = await import('./pipeline-cold.ts');
@@ -149,10 +150,13 @@ if (process.argv[2] === 'cold') {
     if (inFlight !== undefined && !r.endsWith(': buildable item')) deferred.push(r.split(':')[0]!);
     else reasons.push(r);
   }
-  if (!preResearchSpent(runs, now, routine))
+  if (!preResearchSpent(runs, now, routine)) {
+    const taken = preResearchPasses(runs, now, routine).length;
     reasons.push(
-      `exchange: pre-research pass unspent this ${routine === 'build' ? 'day' : 'night'}`,
+      `exchange: pre-research pass unspent this ${routine === 'build' ? 'day' : 'night'}` +
+        (taken === 0 ? '' : ` (${taken} pass parked or skipped, one more allowed)`),
     );
+  }
   // A Wednesday exchange that left no trace is run by the Thursday–Saturday build slot before any
   // research or build (2026-10-24, foundry `exchange-missed-slot-fallback`): the gate prints that
   // reason first for `--routine=build`. Commit subjects since the slot come from git when the clone
