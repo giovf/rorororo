@@ -1,0 +1,9 @@
+GET https://gender-pay-gap.service.gov.uk/
+GET https://gender-pay-gap.service.gov.uk/viewing/download
+HEAD https://gender-pay-gap.service.gov.uk/viewing/download-data/2024
+GET RANGE=0-8191 https://gender-pay-gap.service.gov.uk/viewing/download-data/2024
+HEAD https://gender-pay-gap.service.gov.uk/viewing/download-data/2018
+GET https://modern-slavery-statement-registry.service.gov.uk/
+GET https://modern-slavery-statement-registry.service.gov.uk/download
+GET https://modern-slavery-statement-registry.service.gov.uk/viewing/download
+GET https://modern-slavery-statement-registry.service.gov.uk/data-about-modern-slavery-statement-registry
