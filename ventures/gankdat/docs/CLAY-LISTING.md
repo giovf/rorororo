@@ -79,6 +79,10 @@ plus contact and links. Shorten to the field's limit where one applies.
   Over the limit the API answers HTTP 429 with a Retry-After header; a briefly busy register answers 503
   with Retry-After. Monthly volume follows the user's plan: free 250 calls a month, paid plans from £5
   per 1,000 up to 100,000 a month.
+- **Do you want to sell data to Clay customers in our Marketplace?** (form field, 2026-11-12): **Yes** — it
+  asks to be considered for the paid credit-marketplace tier (Clay buys our calls on an annual API agreement); the fit
+  review still routes us, so the HTTP API listing remains the fallback. Any contract Clay offers comes back to the owner
+  as its own decision before signing.
 - **Customers today:** self-serve developers and AI agents (MCP + x402), the Excel add-in on
   AppSource; UK data buyers on the Apify Store.
 - **Why Clay:** 220 providers on the marketplace and none native to the UK registers — Beauhurst
