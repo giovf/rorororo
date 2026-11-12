@@ -1535,3 +1535,20 @@ retry per statement with the phase in the `stats_throttled` line, carry a single
 rather than the whole blob. Proof per the item: the first two Daily rows after its deploy with no
 `stats_precompute_failed` for either source and the journal's `dateModified` moving. `researched: 2026-11-12`; the
 queue has a buildable item, so no `research_after`.
+
+### 2026-11-12 burn-down — `stats-parent-scans-paced-per-statement` (score 5), built, v0.28.7
+
+From this slot's research pass above. `aggregateD1Stats` (`src/sources/d1store.ts`) takes the previous blob and runs
+the parent one scan at a time: `changes` (register sources), `monthly`, then `group <title>` per group column, each
+under its own `withOverloadRetry` (one 12 s wait, `stats_throttled` with that phase), `d1Pace.indexPauseMs` (2.5 s)
+between scans so the pass never crowds one window, and a scan the window refuses twice carries the previous blob's
+value for that part — logged `stats_part_carried` with `carried: true|false` — while the blob is still written fresh
+with a new `last_refreshed_at` around it; `precomputeStats` no longer wraps the parent as one unit, and its failure
+path (`stats_precompute_failed … retained`) is left for a non-throttle error. `test/d1store.spec.ts`: a throttled
+monthly scan retried after the window (phase `monthly`, no carried part), a monthly scan refused twice carried from
+the previous blob with the group scan still run after its pause and the blob fresh, and a first-night refusal with
+nothing to carry leaving the table empty. Deploys on this push's gankdat CI run. Proof per the item: the 11-13 and
+11-14 Daily numbers rows (the first two after the deploy) with no `stats_precompute_failed` for uk-food-hygiene or
+uk-trademark-journal, any `stats_throttled` line naming a statement phase, and `/stats/uk-trademark-journal`
+`dateModified` moving nightly; next-slot check: the 11-13 row's `uk-food-hygiene wave 05:45:` and
+`uk-trademark-journal wave 06:05:` clauses.

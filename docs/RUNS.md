@@ -2831,3 +2831,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 00:15 | burn-down | Queued gankdat stats-parent-scans-paced-per-statement (5): parent scans retried as one unit never fit a window
 - 2026-11-12 00:16 | burn-down | new-ventures research: unchanged — 52 spikes, 51 done, 8 promoted; 1 open (dated 11-17); research_after 11-18
 - 2026-11-12 00:16 | burn-down | Tonight's pre-research is spent (17:38 park); the 09:00 build's day pass and the W47 exchange seed next
+- 2026-11-12 00:20 | burn-down | Built gankdat stats-parent-scans-paced-per-statement: parent scans paced and retried one at a time, v0.28.7
+- 2026-11-12 00:20 | burn-down | aggregateD1Stats: changes, monthly and each group scan 2.5 s apart with their own retry; a refused one is carried
+- 2026-11-12 00:20 | burn-down | stats_part_carried names the phase; 3 tests (retry after the window, carried table + fresh blob, first night)
+- 2026-11-12 00:20 | burn-down | Deploys on the next CI run; proof: 11-13 and 11-14 Daily rows with no stats_precompute_failed for either source
+- 2026-11-12 00:37 | burn-down | Pause applies at statsPaceRows (10k rows) so small fixtures stay fast; manifest 0.28.7.0, connector regenerated

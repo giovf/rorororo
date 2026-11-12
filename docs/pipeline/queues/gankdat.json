@@ -1198,9 +1198,9 @@
       "effort_days": 0.3,
       "proof": "the item's own: two consecutive Daily numbers rows (the first after the deploy) with no `stats_precompute_failed` for uk-food-hygiene or uk-trademark-journal, `stats_throttled` lines naming a statement phase if any, and `/stats/uk-trademark-journal` `dateModified` moving nightly",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-12",
-      "doing_since": "2026-11-12"
+      "done_at": "2026-11-12"
     }
   ]
 }

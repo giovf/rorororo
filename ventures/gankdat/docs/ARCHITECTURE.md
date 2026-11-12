@@ -286,7 +286,15 @@ runs `check:root`.
   carried one and no stats page's `dateModified` moved. Now the parent aggregation (reads only, repeated whole) and
   each facet batch run under `withOverloadRetry` — one 12 s wait, one retry, logged `stats_throttled` with the phase
   (`parent`, `facet <segment>`) — and a window that refuses twice falls through to what was there: the parent to the
-  retained blob, a batch to its carried pages (`stats_facet_failed`), as before. Proof: three Daily numbers rows with no
+  retained blob, a batch to its carried pages (`stats_facet_failed`), as before. **The parent's scans are paced and
+  retried one at a time** (2026-11-12, `stats-parent-scans-paced-per-statement`, v0.28.7): the first night on v0.28.4
+  logged `stats_throttled phase=parent attempt=1` and `stats_precompute_failed` 21 s later on both sources (worker
+  logs, 05:49:57 / 05:50:18 and 06:09:19) — the change-day scan, the monthly scan and one GROUP BY per group column
+  over a 196k–600k-row register, repeated as one unit after the wait, never fit one window together. `aggregateD1Stats`
+  now runs each scan under its own `withOverloadRetry` (phase `changes`, `monthly`, `group <title>`),
+  `d1Pace.indexPauseMs` apart like the delta index, and a scan refused twice takes the previous blob's value for that
+  part (`stats_part_carried`, `carried: false` when there was none) while the blob is written fresh around it — a hot
+  scan costs a table for a night, not every page. Proof: the first two Daily numbers rows after the deploy with no
   `stats_precompute_failed` for either source and the journal's `dateModified` moving nightly.
 - **KV**: response cache per source (+ precomputed `/stats` blob and a
   best-effort refresh single-flight lock), monthly usage counters per account
