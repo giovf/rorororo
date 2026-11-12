@@ -2829,3 +2829,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 00:15 | burn-down | gankdat research: 11-11 row vs 11-10 — journal buyer repeated (30 of 37 calls), rest flat; day-7 read 11-17
 - 2026-11-12 00:15 | burn-down | Worker logs 00:14 (stats_, warn): 11-11 05:49:57 stats_throttled parent, 05:50:18 failed again; journal 06:09:19
 - 2026-11-12 00:15 | burn-down | Queued gankdat stats-parent-scans-paced-per-statement (5): parent scans retried as one unit never fit a window
+- 2026-11-12 00:16 | burn-down | new-ventures research: unchanged — 52 spikes, 51 done, 8 promoted; 1 open (dated 11-17); research_after 11-18
+- 2026-11-12 00:16 | burn-down | Tonight's pre-research is spent (17:38 park); the 09:00 build's day pass and the W47 exchange seed next

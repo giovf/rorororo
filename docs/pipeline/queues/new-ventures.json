@@ -2,10 +2,8 @@
   "venture": "new-ventures",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-11",
-  "researched": "2026-11-10",
-  "researching_since": "2026-11-12T00:14Z",
-  "researching_by": "burn-down",
+  "updated": "2026-11-12",
+  "researched": "2026-11-12",
   "weight": 2,
   "items": [
     {
@@ -603,5 +601,6 @@
       "added": "2026-11-11",
       "done_at": "2026-11-11"
     }
-  ]
+  ],
+  "research_after": "2026-11-18"
 }
