@@ -630,8 +630,9 @@
       "effort_days": 0.4,
       "proof": "docs/exchange/spikes/uk-esg-disclosure-fields.md with both licence quotes, the row and CompanyNumber counts from the full 2026 statements file and the 2024 and 2025 pay gap files, the rival price table (Beauhurst, Sedex, EcoVadis, the Apify pack) and a promote / park call; a promote adds the gankdat item with its day count, a park adds `uk-esg-disclosure-fields` to docs/pipeline/exchange.json with a trigger",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-12"
+      "status": "doing",
+      "added": "2026-11-12",
+      "doing_since": "2026-11-12"
     }
   ],
   "research_after": "2026-11-18"
