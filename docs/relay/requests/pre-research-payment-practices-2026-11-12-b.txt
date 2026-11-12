@@ -1,0 +1,10 @@
+HEAD https://check-payment-practices.service.gov.uk/export/csv/
+GET RANGE=0-8191 https://check-payment-practices.service.gov.uk/export/csv/
+GET https://check-payment-practices.service.gov.uk/privacy-notice
+GET https://check-payment-practices.service.gov.uk/report/111700
+GET https://api.apify.com/v2/store?search=payment%20practices&limit=20
+GET https://api.apify.com/v2/store?search=late%20payment&limit=20
+GET https://api.apify.com/v2/store?search=supplier%20payment&limit=20
+RENDER RAW https://rapidapi.com/193market/api/uk-supplier-payment-practices/pricing
+RENDER RAW https://api.market/store/193market/uk-supplier-payment-practices
+GET https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary
