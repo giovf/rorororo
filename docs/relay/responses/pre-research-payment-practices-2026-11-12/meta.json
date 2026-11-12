@@ -1,0 +1,261 @@
+{
+  "request": "pre-research-payment-practices-2026-11-12",
+  "fetched_at": "2026-11-12T01:25:02.494Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/",
+      "fetched_at": "2026-11-12T01:24:47.154Z",
+      "status": 200,
+      "elapsed_ms": 662,
+      "final_url": "https://www.gov.uk/check-when-businesses-pay-invoices",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "10692",
+        "etag": "W/\"22f59d28f9ce41e027a10bb2a1e1b3f0\""
+      },
+      "file": "1.txt",
+      "bytes": 9814,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 63241
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/",
+      "raw": true,
+      "fetched_at": "2026-11-12T01:24:48.327Z",
+      "status": 200,
+      "elapsed_ms": 239,
+      "final_url": "https://www.gov.uk/check-when-businesses-pay-invoices",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "10692",
+        "etag": "W/\"22f59d28f9ce41e027a10bb2a1e1b3f0\""
+      },
+      "file": "2.html",
+      "bytes": 63241,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/",
+      "render": true,
+      "raw": true,
+      "fetched_at": "2026-11-12T01:24:49.089Z",
+      "status": 200,
+      "final_url": "https://www.gov.uk/check-when-businesses-pay-invoices",
+      "title": "Check when large businesses pay their suppliers - GOV.UK",
+      "rendered": {
+        "network_idle": true,
+        "requests": 13,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"22f59d28f9ce41e027a10bb2a1e1b3f0\""
+      },
+      "file": "3.html",
+      "bytes": 73447,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://check-payment-practices.service.gov.uk/export",
+      "fetched_at": "2026-11-12T01:24:53.072Z",
+      "status": 405,
+      "elapsed_ms": 501,
+      "final_url": "https://check-payment-practices.service.gov.uk/export/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "0"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/export",
+      "range": "0-4095",
+      "fetched_at": "2026-11-12T01:24:54.075Z",
+      "status": 200,
+      "elapsed_ms": 392,
+      "final_url": "https://check-payment-practices.service.gov.uk/export/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "17608"
+      },
+      "file": "5.txt",
+      "bytes": 2041,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 17608
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/search",
+      "fetched_at": "2026-11-12T01:24:54.969Z",
+      "status": 200,
+      "elapsed_ms": 177,
+      "final_url": "https://check-payment-practices.service.gov.uk/search/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 1796,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 17560
+    },
+    {
+      "method": "HEAD",
+      "url": "https://check-payment-practices.service.gov.uk/terms-and-conditions",
+      "fetched_at": "2026-11-12T01:24:55.647Z",
+      "status": 404,
+      "elapsed_ms": 91,
+      "final_url": "https://check-payment-practices.service.gov.uk/terms-and-conditions",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "15534"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://check-payment-practices.service.gov.uk/terms",
+      "fetched_at": "2026-11-12T01:24:56.239Z",
+      "status": 404,
+      "elapsed_ms": 353,
+      "final_url": "https://check-payment-practices.service.gov.uk/terms",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "15504"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://check-payment-practices.service.gov.uk/privacy",
+      "fetched_at": "2026-11-12T01:24:57.093Z",
+      "status": 404,
+      "elapsed_ms": 103,
+      "final_url": "https://check-payment-practices.service.gov.uk/privacy",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "15508"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://check-payment-practices.service.gov.uk/accessibility",
+      "fetched_at": "2026-11-12T01:24:57.697Z",
+      "status": 404,
+      "elapsed_ms": 151,
+      "final_url": "https://check-payment-practices.service.gov.uk/accessibility",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "15520"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/guidance/duty-to-report-on-payment-practices-and-performance",
+      "fetched_at": "2026-11-12T01:24:57.849Z",
+      "status": 404,
+      "elapsed_ms": 564,
+      "final_url": "https://www.gov.uk/guidance/duty-to-report-on-payment-practices-and-performance",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "8508"
+      },
+      "file": "11.txt",
+      "bytes": 5007,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52491
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/collections/payment-practices-and-performance-reporting",
+      "fetched_at": "2026-11-12T01:24:58.916Z",
+      "status": 404,
+      "elapsed_ms": 167,
+      "final_url": "https://www.gov.uk/government/collections/payment-practices-and-performance-reporting",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "8508"
+      },
+      "file": "12.txt",
+      "bytes": 5007,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52491
+    },
+    {
+      "method": "GET",
+      "url": "https://www.legislation.gov.uk/uksi/2017/395/contents/made",
+      "fetched_at": "2026-11-12T01:24:59.086Z",
+      "status": 200,
+      "elapsed_ms": 2316,
+      "final_url": "https://www.legislation.gov.uk/uksi/2017/395/contents/made",
+      "headers": {
+        "content-type": "text/html;charset=utf-8",
+        "content-disposition": "inline; filename=\"uksi-2017-395-contents-made.htm\"",
+        "last-modified": "Thu, 15 Oct 2026 17:10:36 GMT"
+      },
+      "file": "13.txt",
+      "bytes": 11522,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 33889
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/store?search=payment%20practices",
+      "fetched_at": "2026-11-12T01:25:01.404Z",
+      "status": 200,
+      "elapsed_ms": 45,
+      "final_url": "https://apify.com/store?search=payment%20practices",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"cd6bv8im27cn1v\""
+      },
+      "file": "14.txt",
+      "bytes": 21175,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 589892
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/store?search=prompt%20payment",
+      "fetched_at": "2026-11-12T01:25:01.958Z",
+      "status": 200,
+      "elapsed_ms": 9,
+      "final_url": "https://apify.com/store?search=prompt%20payment",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"cd6bv8im27cn1v\""
+      },
+      "file": "15.txt",
+      "bytes": 21175,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 589892
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/store?search=late%20payment",
+      "fetched_at": "2026-11-12T01:25:02.476Z",
+      "status": 200,
+      "elapsed_ms": 6,
+      "final_url": "https://apify.com/store?search=late%20payment",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"cd6bv8im27cn1v\""
+      },
+      "file": "16.txt",
+      "bytes": 21175,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 589892
+    }
+  ]
+}

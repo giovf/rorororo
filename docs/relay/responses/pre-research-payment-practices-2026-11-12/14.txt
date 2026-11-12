@@ -1,0 +1,175 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+meta description: Ready-to-run tools for users and AI agents to scrape, crawl, and extract structured web data from social media, e-commerce, search engines, maps, or any site.
+meta og:title: Apify Store - 117,000+ web data and automation tools · Apify
+meta og:description: Ready-to-run tools for users and AI agents to scrape, crawl, and extract structured web data from social media, e-commerce, search engines, maps, or any site.
+meta og:url: https://apify.com/store
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/img/og/store.png
+meta og:image:type: image/png
+meta og:image:width: 1200
+meta og:image:height: 630
+meta og:image:alt: Apify Store - 117,000+ web data and automation tools
+meta og:type: website
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: Apify Store - 117,000+ web data and automation tools · Apify
+meta twitter:description: Ready-to-run tools for users and AI agents to scrape, crawl, and extract structured web data from social media, e-commerce, search engines, maps, or any site.
+meta twitter:image: https://apify.com/img/og/store.png
+meta twitter:image:alt: Apify Store - 117,000+ web data and automation tools
+meta twitter:image:type: image/png
+meta twitter:image:width: 1200
+meta twitter:image:height: 630
+Apify Store - 117,000+ web data and automation tools · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 117,381 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $1.7M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+Apify Store
+Search
+Social media (/store/categories/social-media-scrapers) AI (/store/categories/ai) Agents (/store/categories/agents) Lead generation (/store/categories/lead-generation) E-commerce (/store/categories/ecommerce-scrapers) SEO tools (/store/categories/seo-tools)
+...
+All Actors
+View all (/store/categories)
+TikTok Scraper clockworks/tiktok-scraper Extract data from TikTok videos, hashtags, and users. Use URLs or search queries to scrape TikTok profiles, hashtags, posts, URLs, shares, followers, hearts, names, video, and music-related data. Export scraped data, run the scraper via API, schedule and monitor runs or integrate with other tools. Clockworks 388K 4.8 (370) (/clockworks/tiktok-scraper) Instagram Scraper apify/instagram-scraper Extract Instagram posts, reels, profiles, places, hashtags, carousels, and comments. Get data from Instagram using one or more Instagram URLs or search queries: content, context, metrics, metadata. Export scraped data, run the scraper via API, schedule and monitor runs or integrate with other tools. Apify 479K 4.7 (608) (/apify/instagram-scraper) Google Maps Scraper compass/crawler-google-places Extract data from thousands of Google Maps locations and businesses, including reviews, reviewer details, images, contact info, including full name, email, and job title, opening hours, prices & more. Export data, run via API, schedule and monitor runs, or integrate with other tools. Compass 692K 4.7 (1,823) (/compass/crawler-google-places) Google Search Results Scraper apify/google-search-scraper Scrape Google Search Engine Results Pages (SERPs). Select the country or language and extract organic and paid results, AI Mode, AI overviews, ads, queries, People Also Ask, prices, reviews, like a Google SERP API. Export data, run the scraper via API, schedule runs, or integrate with other tools. Apify 233K 4.7 (218) (/apify/google-search-scraper) YouTube Scraper streamers/youtube-scraper YouTube crawler and video scraper. Alternative YouTube API with no limits or quotas. Extract and download channel name, likes, number of views, and number of subscribers. Streamers 206K 4.1 (198) (/streamers/youtube-scraper) E-commerce Scraping Tool apify/e-commerce-scraping-tool Scrape data from e-commerce websites with E-commerce Scraping Tool. Scrape almost any retail site in minutes, extract e-commerce data and use it to monitor price details over time or compare different e-commerce sites’ offerings. Apify 16K 4.3 (54) (/apify/e-commerce-scraping-tool) Facebook Ads Library Scraper apify/facebook-ads-scraper Extract advertising data from Facebook, Instagram, WhatsApp, Threads. Get ads, publishers, prices, reach estimates, impressions, links, images, IDs, timestamps, product info, and more from Facebook Ad Library. Export ad data, schedule runs via API, and integrate with other tools or AI workflows. Apify 52K 4.0 (59) (/apify/facebook-ads-scraper) Instagram Post Scraper apify/instagram-post-scraper Scrape Instagram posts. Just add one or more Instagram usernames and get your data in seconds including caption, metrics, images, mentions, coauthors, recent comments, sponsored status, video duration, views. Export scraped data, schedule scraper via API, integrate with other tools or AI workflows. Apify 156K 4.3 (139) (/apify/instagram-post-scraper)
+Data sources for trading agents
+Give your trading bots and AI agents real-time market data: stocks, crypto, on-chain activity, prediction markets, and sentiment.
+Explore finance tools (/store/collections/finance-tools)
+Lead generation
+View all (/store/categories/lead-generation)
+Tweet Scraper V2 - X Scraper / Twitter Scraper / X.com Scraper apidojo/tweet-scraper Lightning-fast search, URL, list, and profile scraping, with customizable filters. At $0.40 per 1000 tweets, and 30-80 tweets per second, it is ideal for researchers, entrepreneurs, and businesses! Get comprehensive insights from Twitter (X) now! API Dojo 132K 3.9 (196) (/apidojo/tweet-scraper) LinkedIn Profile Scraper + Email (No Cookies) harvestapi/linkedin-profile-scraper Extract detailed information from LinkedIn profiles in bulk, including complete work experience, education history, skills and more. No cookies or account required. HarvestAPI 96K 4.6 (93) (/harvestapi/linkedin-profile-scraper) LinkedIn Profile Search Scraper (No Cookies) Find all people harvestapi/linkedin-profile-search Search for LinkedIn profiles with filters and extract detailed profile information, including work experience, education history, location, and more. No cookies or account required. HarvestAPI 56K 4.4 (102) (/harvestapi/linkedin-profile-search) Instagram Profile Scraper apify/instagram-profile-scraper Scrape all Instagram profile info. Just add Instagram usernames, IDs or URLs and extract name, join date, number of followers, location, bio, website, related profiles, video&post count, latest posts. Export scraped data, schedule scraper via API, and integrate with other tools or AI workflows. Apify 285K 4.7 (176) (/apify/instagram-profile-scraper) Facebook Ad Library Scraper curious_coder/facebook-ads-library-scraper Scrape ads from facebook ads library search results and facebook pages. Cost: $0.75 per 1K ads Curious Coder 52K 4.8 (114) (/curious_coder/facebook-ads-library-scraper) LinkedIn Company Employees Scraper (No Cookies) harvestapi/linkedin-company-employees Extract all LinkedIn Company employees with filters and detailed profile information, including complete work experience, and more. No cookies or account required. This actor can try to find contact emails. HarvestAPI 43K 4.1 (48) (/harvestapi/linkedin-company-employees) LinkedIn Profile Posts Scraper (No Cookies) harvestapi/linkedin-profile-posts Extract posts from LinkedIn profiles, including content, media, engagement, reactions, comments, and more. No cookies or account required. HarvestAPI 48K 4.4 (55) (/harvestapi/linkedin-profile-posts) Linkedin Post Search Scraper (No Cookies) harvestapi/linkedin-post-search Search LinkedIn Posts with advanced filters by target profiles or companies. No cookies or account required. HarvestAPI 43K 5.0 (53) (/harvestapi/linkedin-post-search)
+Actors now work where you do
+MCP connectors are live. With a connector, an Actor can read and write to your external apps through a secure proxy in a single run.
+Connect your apps (/store/collections/mcp-connectors)
+[E-commerce tools illustration] [E-commerce tools illustration] [E-commerce tools illustration]
+Rising stars
+View all (/store/collections/rising-star)
+AliExpress Product Scraper - Prices, Variants & Reviews zen-studio/aliexpress-scraper Extract AliExpress products with exact sales counts, prices, every variant with its own stock, seller stats, and buyer reviews with photos. Pick your delivery country, currency and language: catalog, prices, VAT and delivery times all follow. 78 fields per product. Export to JSON, CSV, Excel. Zen Studio 962 (/zen-studio/aliexpress-scraper) Instagram Reels Transcript API – Reels & Video to Text, Whisper tubetext/instagram-reels-transcript Turn public Instagram Reels into a content research library. Get transcripts, opening lines and optional on-screen text from Reel or profile links. Export to a spreadsheet to compare creators and collect ideas for your next video. TubeText Labs 510 (/tubetext/instagram-reels-transcript) Threads Scraper — Posts, Profiles, Search & Replies, No Login lergassy/threads-scraper Threads scraper for Meta Threads: posts, replies, reposts, profiles and keyword or hashtag search with no login and no cookies. The free plan gets the full result. Flat rows with engagement, views, media, links and bio contacts. Monitoring returns only new posts. Export, API, schedules, AI agents. Matvey 517 4.9 (13) (/lergassy/threads-scraper) Instagram Followers Scraper | $0.5/1K on Starter publicsignallabs/instagram-followers Extract available followers from public Instagram profiles. Supports pagination and resumable exports where Instagram allows them. $0.50/1K on Starter. No login or cookies. Export JSON, CSV, or Excel. Public Signal Labs 521 (/publicsignallabs/instagram-followers) Pinterest Scraper — Pins & Boards by Pinterest Keyword Search afanasenko/pinterest-scraper Pinterest scraper for Pinterest search results and image search by keyword — Pinterest pins, video pins, boards, creator profiles, keyword suggestions, search autocomplete and Pinterest Trends: keywords for SEO and keyword research. Each pin: outbound link, board, creator, image sizes. CSV or JSON. Andrey Afanasenko 205 (/afanasenko/pinterest-scraper) Video Breakdown AI API – Hook Analysis, Shot List & Script tubetext/video-breakdown-ai Turn TikTok, Instagram and YouTube videos into references for your next creative brief. Get the opening hook, script, visual breakdown and pacing in structured output—ready to compare across videos or use with ChatGPT and Claude. TubeText Labs 197 (/tubetext/video-breakdown-ai) Video Frame Extractor - YouTube, TikTok & MP4 to Images seemuapps/video-frame-extractor Extract still frames from YouTube, TikTok, Instagram, Facebook, X or MP4 links: every N seconds, evenly spaced, scene changes, keyframes or exact times. Seemu Scraping 167 (/seemuapps/video-frame-extractor) Snapchat Profile & Spotlight Scraper parseforge/snapchat-scraper Scrape public Snapchat profiles, Spotlight videos with view, share, comment and boost counts, top comments, transcripts, stories, highlights and lenses. No login. Export to CSV, JSON, Excel or XML. ParseForge 186 (/parseforge/snapchat-scraper)
+Hospitality & travel data tools
+Check in to smarter data. Pull live rates, reviews, and listings from the platforms your guests use most.
+Browse Actors (/store/collections/hospitality-tools)
+[Marketing tools illustration] [Marketing tools illustration] [Marketing tools illustration]
+Popular Actors from the community
+View all (/store/categories?managedBy=COMMUNITY)
+Reddit Scraper | Enterprise Grade fatihtahta/reddit-scraper-search-fast Extract Reddit posts and full comment threads from searches, subreddits, user pages, and direct post URLs. Built for enterprise-grade speed, richest-in-class data coverage, advanced filtering, and clean JSON for market intelligence, sentiment analysis and analytics. Fatih Tahta 80K 4.1 (25) (/fatihtahta/reddit-scraper-search-fast) Linkedin Jobs Scraper curious_coder/linkedin-jobs-scraper Scrape Linkedin jobs from jobs search results using search URLs or filters. Get full job details, job poster and company details. Curious Coder 181K 4.5 (144) (/curious_coder/linkedin-jobs-scraper) Instagram Followers/Following Scraper | No Login | No Cookies scraping_solutions/instagram-scraper-followers-following-no-cookies Download Instagram followers or following from any public account. No login, no cookies required. Supports multiple usernames, auto-pagination, and continuation tokens for large exports. Export to JSON, CSV, Excel. Perfect for lead generation, influencer research, and competitor analysis. Scraping Solutions 20K 4.8 (16) (/scraping_solutions/instagram-scraper-followers-following-no-cookies) LinkedIn Company Details Scraper (No Cookies) harvestapi/linkedin-company Extract detailed information from LinkedIn Companies such as company name, address, phone numbers, website, employee count, and more. Find LinkedIn company URLs by name in Bulk. No cookies or account required. HarvestAPI 33K 4.9 (30) (/harvestapi/linkedin-company) LinkedIn Post Reactions Scraper (No Cookies) harvestapi/linkedin-post-reactions Extract reactions of LinkedIn posts or comments, such as likes, appreciations, etc. No cookies or account required. HarvestAPI 6.6K 5.0 (18) (/harvestapi/linkedin-post-reactions) Amazon Reviews Scraper axesso_data/amazon-reviews-scraper Our Amazon Reviews Scraper extracts real-time reviews from Amazon, including ratings, titles, descriptions, user reactions, review dates, images and many more. Download the data in formats like JSON, CSV, Excel, XML, or HTML. Fast, accurate, and ideal for in-depth insights. AxCrawler 7.8K 4.0 (42) (/axesso_data/amazon-reviews-scraper) Youtube Channel Email Scraper dataovercoffee/Youtube-Channel-Business-Email-Scraper 🚀🔒 Extract real YouTube channel emails at scale with logged-in accounts & CAPTCHA solving — No BS, Real Emails ✉️✨ Data Over Coffee 5.3K 4.4 (30) (/dataovercoffee/youtube-channel-business-email-scraper) LinkedIn Company Posts Scraper (No Cookies) harvestapi/linkedin-company-posts Extract posts from LinkedIn companies including content, media, engagement, reactions, comments and more. No cookies or account required. Concurrency + fast response times make mass scraping fast ⚡ HarvestAPI 18K 5.0 (21) (/harvestapi/linkedin-company-posts) Facebook Posts Search scraper_one/facebook-posts-search ✨ Search for Facebook posts using keywords or hashtags. Retrieve post URLs, content, publication dates, author details, and engagement metrics. Ideal for monitoring brand mentions on Facebook over time. Scraper One 27K 4.2 (14) (/scraper_one/facebook-posts-search) Tiktok Scraper (Pay Per Result) apidojo/tiktok-scraper Extract TikTok profiles, videos, hashtags, comments at 600 posts/sec. No proxy, 98% success rate. Scrape music, locations & user data with query builder. Export JSON/CSV, API integration. Perfect for influencer discovery, lead gen, market research. $0.30 per 1K posts. API Dojo 14K 4.4 (30) (/apidojo/tiktok-scraper) Threads Search Scraper igview-owner/threads-search-scraper Powerful Meta Threads search scraper for posts and users. Filter by keywords or usernames, export structured data for analytics, research, monitoring and reporting. Sachin Kumar Yadav 24K 3.5 (6) (/igview-owner/threads-search-scraper) ✨Mass Linkedin Profile Scraper with Email 📧 (No Cookies) dev_fusion/Linkedin-Profile-Scraper 🚀 Extract full LinkedIn profile insights: verified email 📧, phone number 📞, work history, education, and more... Dev Fusion 64K 3.0 (156) (/dev_fusion/linkedin-profile-scraper)
+Get started now #get-started-now
+Thousands of ready-to-run tools, no credit card needed.
+Sign up for free (https://console.apify.com) Build your own Actor (/templates)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)
