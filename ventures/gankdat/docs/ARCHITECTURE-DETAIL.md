@@ -1,0 +1,957 @@
+<!-- Full detail behind docs/ARCHITECTURE.md (the always-loaded summary). Not auto-loaded: read the section for the subsystem you are changing. New incident/fix narratives go here, under their subsystem. Split 2026-11-12. -->
+
+# gankdat — Architecture
+
+> Derived from `.taskmaster/docs/prd.md`. This file holds the *stable*
+> architectural decisions and is loaded into every Claude session via
+> CLAUDE.md. When the PRD changes, update **this** file — not `CLAUDE.md`.
+> Volatile detail (full data model, phasing, open questions) stays in the PRD;
+> this is the always-loaded summary.
+
+## What we're building
+A multi-niche data-API platform sold on usage/credit pricing to human
+developers (Stripe self-serve) and AI agents (MCP server + x402 USDC
+micropayments). Strategy (operator decision 2026-07-11): ship MANY datasets
+across niches in parallel — validation comes from shipped-product signal
+(signups, traffic analytics, the /feedback form) rather than a pre-launch
+gate; weak datasets are cheap to retire because everything dataset-specific
+sits behind the swappable `DataSource` abstraction (one file + registry
+entry; the exposure surface regenerates itself — see NICHE-LAUNCH-CHECKLIST).
+Live datasets: UK planning applications (`uk-planning`; **origin paused since 2026-10-10** — planning.data.gov.uk
+emptied its alpha planning-application dataset (entity-count 0, no replacement named), so the 10-09
+snapshot is served under a dated `notice` and the refresh fails loudly with that evidence; §7 clock in
+RESEARCH.md, weekly re-read queued), procurement
+notices (`uk-tenders`), UK sanctions designations (`uk-sanctions`,
+shipped 2026-07-11 with per-dataset terms; debarment list monitored —
+still empty upstream, see NICHE-NEXT-SANCTIONS.md), EU procurement
+notices (`eu-ted`, shipped 2026-07-12 — pairs with uk-tenders as the
+bid-intelligence bundle; niche pipeline in NICHE-RESEARCH-2026-07.md),
+US federal exclusions (`sam-exclusions`, shipped 2026-07-13, first
+`storage:'d1'` dataset; re-based 2026-09-20 on the keyless daily public extract ZIP —
+no SAM_API_KEY needed — counterparty-risk bundle with uk-sanctions),
+UK corporate insolvency notices (`uk-insolvency`, shipped 2026-07-13 —
+Gazette corporate-only slice, Blind Mode; same bundle), and UK new
+incorporations (`uk-companies`, shipped 2026-07-13 — Companies House
+advanced search; KYB/lead-gen, completes the counterparty bundle; since 2026-11-10 (`uk-companies-snapshot-window-cap`,
+v0.28.5) the KV snapshot holds the whole 7-day window — cap 15,000 rows, each day paged to its own `hits` under a 5-page
+guard, `snapshot_window` logging the per-day counts — where the 2,000-row cap had held ~1.2 days; no change feed, it is a
+KV source without `idOf`), and UK food
+hygiene ratings (`uk-food-hygiene`, shipped 2026-09-20 — FSA FHRS national file, D1, ~610k
+establishments; risk + lead-gen bundle; NICHE-RESEARCH-2026-09 §3), and UK licensed visa sponsors
+(`uk-sponsors`, shipped 2026-09-20 — Home Office register via the GOV.UK Content API, D1,
+~143k rows, no personal data; company-data bundle), and the Charity Commission register
+(`uk-charities`, shipped 2026-09-20 — keyless daily extract ZIP via the shared unwrapper in
+`src/sources/zip.ts`, D1, ~185k registered charities (removed ones surface via the change feed), contact details
+dropped), and the CQC care directory
+(`uk-care-locations`, shipped 2026-09-20 — weekly CSV resolved from CQC's data page, D1,
+~57k regulated locations, phone numbers dropped), and UK contract awards
+(`uk-contract-awards`, shipped 2026-09-21 — Contracts Finder OCDS awards, one row per award ×
+supplier with company numbers, KV window; bid-intelligence bundle; NICHE-RESEARCH-2026-09-B),
+and schools in England (`uk-schools`, shipped 2026-09-21 — DfE GIAS daily establishment extract
+joined by URN to Ofsted's monthly inspection outcomes, D1, ~50k establishments; the Ofsted join
+is best-effort enrichment over the Ofsted columns GIAS itself carries, so a moved Ofsted file
+costs a field, not the dataset; head-teacher names and telephone dropped, governors extract never
+ingested; lead-gen bundle; NICHE-RESEARCH-2026-09-B §1). Its size (~62 MB daily) added refresh
+**wave 5** (05:50) — waves stay one-trigger-one-budget under the 15-minute Cron Trigger limit.
+And the NHS organisation register (`nhs-ods`, shipped 2026-09-22 — NHS England Organisation Data
+Service nightly ZIPs, six organisation files (trusts, trust sites, GP practices, pharmacies, dental
+practices, independent providers) through one positional parser for ODS's standard 27-column
+layout, D1, ~45k organisations keyed by ODS code; every file is required so a moved file fails the
+load loudly instead of dropping a type into the change feed; telephone dropped, practitioner files
+never ingested; healthcare lead-gen + KYB bundle with uk-care-locations; NICHE-RESEARCH-2026-09-B
+§2). Own refresh **wave 6** (05:55), so an ingest written without live-file access (build container
+has no egress to NHS hosts; the current files come from odsdatasearchandexport.nhs.uk `getReport?report=<file>` as plain CSV since 2026-09-24, the old files.digital.nhs.uk ZIP path 403s) cannot take another dataset down with it.
+And the UK Trade Marks Journal (`uk-trademark-journal`, shipped 2026-09-23 — the IPO's weekly
+XML edition of applications accepted and published for opposition, UK filings and international
+registrations designating the UK; exchange 2026-W39 winner: watch services charge £180–320 per
+mark per year to scan the same journal). Rolling window of the newest 52 weekly issues in D1
+keyed by application number, so `/v1/changes` is each week's new publications; each issue is
+parsed once into a KV cache (`tmj:issue:<yyyy-nnn>`) and a refresh downloads at most four new
+issues, the window filling over the first runs. The journal schema is undocumented and the origin
+unreachable from the build container, so the reader is layout-tolerant (every assumption in one
+`LAYOUT` table; an issue with no recognisable application fails the refresh loudly, naming the
+element names it saw). Organisation-level only: applicant and representative names kept only with
+a corporate designator, addresses reduced to country, mark images never stored. Own refresh
+**wave 7** (06:05). A refresh starts no new issue download after six minutes
+(`DOWNLOAD_BUDGET_MS`, 2026-10-07): the 10-04 run took 13 min 42 s of the 15-minute Cron Trigger
+budget and the next two nights were killed before writing a `refresh_log` row; the issues cached
+before the cut-off still load and the window fills over the following runs. What actually kept
+dying (found 2026-10-07 through `/v1/health` and the relay) was the post-0014 full reload of the
+162k-row window, now replaced by the in-place hash backfill above. The IPO serves an unpublished
+issue's `jnl.xml` as its "Page Not Found" HTML with status 200 (and every `jnl.zip` as 403 HTML),
+so a `text/html` body counts as a missing issue, never as a journal to parse.
+And the Gambling Commission licence register (`uk-gambling-operators`, shipped 2026-09-24 —
+exchange 2026-W39 runner-up, OGL v3 confirmed on the data.gov.uk record; KYB/payments risk,
+affiliate compliance, sector suppliers; rival Apify actors price it from $8 per 1k rows). Five daily
+CSVs (businesses, licences, trading names, domain names, premises) joined into one D1 table with
+three record kinds told apart by `record_type`: one row per operating licence (the licences file is
+licence × activity, folded to one row with activities joined "|" and the operator's active trading
+names), one per registered website domain, one per licensed premises; ids `licence:<number>`,
+`domain:<account>:<domain>`, `premises:<account>:<activity>:<address>:<postcode>`, so the change
+feed is new licences, surrenders/revocations, new domains and premises. `is_active` is the boolean
+filter because "Inactive" contains "active". Every file is required (a moved file fails loudly).
+Organisation level: the personal licence registers are never fetched. Written without live-file
+access (gamblingcommission.gov.uk is unreachable from the build container; headers recorded by the
+interactive session), with a 90 s per-file timeout; ~15k rows. Ran in **wave 2** (05:15) until
+2026-11-11; now **wave 6** (05:55, with nhs-ods; `refresh-uk-gambling-operators`, v0.28.6): the
+Commission rewrites the five files at ~05:30 UTC (Last-Modified 05:30:14–05:30:23 on 11-10 and
+11-11, relay `gambling-register-2026-11-11`), so the 05:15 read took the previous day's files on a
+good night and answered 526 (Cloudflare's origin-certificate error, in front of the Commission's
+host) on 11-10 and 11-11 while a 17:11 read served all five with 200; the cause of the 05:15
+526s is not proven, only that they sit before the daily rewrite. A 5xx that outlasts the three
+reads (15 s and 30 s pauses) is thrown as `OriginUnavailableError`, so the night is a `skipped`
+row and the last generation keeps serving. The businesses file's BOM was gone on 11-11; the
+parser strips one when present.
+And the **Companies House company lookup** (`uk-company-profiles`, shipped 2026-10-07 — exchange
+2026-W41 winner: the one Apify category where UK-register buyers measurably pay has thirteen
+lookup actors and no monitor). The first **on-demand dataset** (`DataSource.lookup`,
+`src/sources/lookup.ts`): the 5.4M-company register is never mirrored; a request names one
+company by `company_number` (zero-padded like the register) or `company` (the search
+endpoint's top hit) and the Worker reads ≤ 4 resources of the official public-data API —
+profile, charges, filing history, persons with significant control — into one record, cached
+in KV per key for 24 h (a confirmed miss for 1 h), metered as one credit, rate-limited at
+30/min per account so a full-speed client stays inside the 600 req / 5 min key quota shared
+with `uk-companies`. No snapshot, no cron wave, no change feed; `/stats/<slug>` is a lookup
+page, not counts; `/v1/data` and `list_sources` carry `lookup: [keys]` and a keyless query
+answers 400 naming them. Blind Mode: officer resources never called, individual PSCs dropped
+whole at ingest (corporate/legal-person entries and counts kept), filing events keep the
+form type and description code (not `description_values`, where the officer's name is),
+charge holders and address lines dropped. The monitor is the Apify actor's `changes` mode
+(`runLookupActor`): the previous run's records in the actor's named key-value store are the
+baseline; a run pushes only `added` / `changed` (+ `changed_fields`) / `removed` companies.
+Layouts verified through the relay (`docs/relay/responses/ch-lookup-specs`, 2026-10-07).
+And the **UK payment practices reports** (`uk-payment-practices`, shipped 2026-11-12, v0.29.0 — spike
+`docs/exchange/spikes/uk-payment-practices-lookup.md` the same night: OGL v3 on every page of the GOV.UK
+service, no access terms; Experian sells the payment insight at £24.99 a report and an api.market API wraps
+the same export at US$49–399/month with one user, so the value is the join on the company number, not a new
+audience). The statutory twice-yearly report of every large UK company or LLP (≈ 9,000 reporters, ≈ 115k
+reports since 2017): average days to pay, the shares paid within 30 / 31–60 / over 60 days, paid late and
+disputed, standard and maximum terms, the yes/no policy answers; keyed by Report Id, so the change feed is
+each new report as it is filed. Origin: the service's one-click CSV export, generated per request (no
+Content-Length, HEAD 405, Range ignored — relay `payment-practices-spike-2026-11-12`), 52 columns, ≈ 100 MB,
+streamed in one pass through `csvRows()`; **wave 5** (05:50) beside uk-schools (the lightest big wave; the
+platform's waves are daily, and the delta writes only the day's filings). Blind Mode: every narrative column
+(terms text, retention-clause descriptions and amounts, the dispute-resolution process — free text that can
+name a person) and the total-value columns are dropped at ingest. The join: `uk-company-profiles` carries
+`payment_practices` — the latest report's figures and the report count, read from D1 at lookup time by
+`latestPaymentPractices` (exact number, newest period end; null for a non-reporter or before the register's
+first load; a failed read is logged `payment_practices_join_failed` and never fails the lookup) — and the
+/diligence agent reads the register as its eighth tool (`packages/landing/src/diligence-core.ts SOURCES`).
+Proof: a live lookup of a reporter carries the field and a non-reporter null; the day-30 read
+(`uk-payment-practices-day-30`) looks for the route or the field on ≥ 1 paid or keyed call.
+Solo-operator product: everything self-serve, <2 hrs/week ops.
+Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
+"faceless" survives only as the internal infra codename (Worker, D1, repo
+names — never rename those; see memory/git history for why).
+
+## Repo layout
+- `src/index.ts` — Hono app assembly; exports `fetch` + `scheduled` handlers
+- `src/sources/` — `DataSource` interface, registry, one file per dataset
+- `src/routes/` — `/v1/*` REST routes + `/openapi.json` + registry-generated
+  `/llms.txt` and `/stats/*` cite-bait pages
+- `src/auth/` — email accounts (identity), magic-link sign-in, KV sessions,
+  API-key verify/revoke (SHA-256 at rest, KV hot path)
+- `src/email/` — transactional email via Resend REST (dark until configured)
+- `src/metering/` — credit costs, KV monthly counters, top-up balance, one budget decision
+  (plan first, then top-up) for REST and MCP, quota headers
+- `src/billing/` — Stripe checkout/portal, webhooks → account plan + ledger; PayPal (sandbox)
+  credit packs → top-up balance + ledger (`paypal.ts`, `packs.json`)
+- `src/mcp/` — MCP server at `/mcp`, tools generated from the registry
+- `src/x402/` — x402 v2 pay-per-request routes (dark until configured); `bazaar.ts`
+  generates each route's Bazaar discovery declaration from the registry; since
+  2026-11-05 (`x402-change-feed-route`, v0.28.0) the same lane also sells each register's change
+  feed at `GET /x402/changes/<slug>` (the `since` cursor of /v1/changes, `handleChangesQuery`
+  shared with the keyed route, US$0.01 a call — `X402_CHANGES_PRICE_USD` — above the query
+  price because a delta is the product no rival sells; agents asked the MCP wall for
+  `get_changes` 14 times on 11-03). `bazaarRoutes` declares `changes/<slug>` beside the data
+  routes for every source with `hasChangeFeed`; the paywall text, llms.txt and the
+  `connect_account` description name it; the Daily numbers validate clause checks the change
+  resources as `changes/<slug>` and the weekly probe pays an unlisted one once so the Bazaar
+  lists it; `x402_paid` points carry the source slug in blob5 as before, so `x402 30d:` and
+  `datasets 30d external:` count change-feed calls by source. **Indexed by a forced dispatch
+  (2026-11-08, `x402-change-routes-bazaar-index`):** the weekly probe never paid them — its
+  fixed cap of 20 payments in 30 days was already spent by the 10-23 survey (29 counted) — so
+  the `gankdat metrics` job was dispatched with `x402_probe: true`, which since this date pays
+  every due route whatever the spacing and the cap say (nine one-cent calls, US$0.09, LEDGER
+  row), and the cap is sized from the live route count (`probeMonthlyCap`, below)
+- `public/` — landing page, docs (Scalar embed), robots/sitemap (Workers
+  Assets); `llms.txt` is Worker-generated from the source registry
+- `src/middleware/canonical.ts` — one URL per page: `www.` and `http://` and
+  trailing-slash variants 301 to `PUBLIC_BASE_URL` (308 for non-GET; API paths keep
+  their bytes), and the static files are served through `env.ASSETS` with
+  `run_worker_first` so the redirect covers them too (Search Console duplicate
+  fix, 2026-09-27)
+- `src/middleware/robots.ts` — every 401/402 the Worker sends carries `X-Robots-Tag:
+  noindex` (Search Console 2026-10-15 "Blocked due to unauthorised request (401)":
+  Googlebot followed the docs' /v1/data and /mcp links into the keyless walls). The
+  paths stay crawlable in robots.txt because agents read the wall bodies for the
+  sign-up and payment hints; only indexing is declined (2026-10-16)
+- `public/addin/` + `public/addin.html` — **gankdat for Excel** (2026-10-24, queue `appsource-excel-custom-functions-add-in`,
+  v0.26.0): an add-in-only Office manifest, six custom functions in the `GANKDAT` namespace (`UKCOMPANY`, `UKCHARITY`,
+  `CQC`, `SANCTIONS`, `TENDERS`, `QUERY`) that each make one bearer call to `/v1/data/<slug>` with the key the task pane
+  stored in `OfficeRuntime.storage`, and a task pane whose first section is the keyless MCP preview (five rows) — the
+  value before the key step. Static files on this domain only (AppSource policy 1120.5.2), no mobile form factor
+  (1120.2 bans purchase UI there), per-page CSP in `_headers` for Office.js and Office's frames. The store lists it free
+  with "Additional purchase may be required"; keys, plans and credit packs stay on gankdat.com — a distribution surface
+  over the existing API, nothing new to bill. Listing copy, certification notes and the owner's Partner Center steps:
+  `docs/APPSOURCE-ADDIN.md`; `test/addin.spec.ts` pins the certification facts. The add-in is dataset-agnostic (headers
+  are the record's own keys; `QUERY` takes any registered slug) so the isolation rule holds.
+- `connector/` + `src/connector/render.ts` — **Power Platform certified connector** (2026-10-25, queue
+  `power-platform-certified-connector`): the API rendered a third time from the registry, as the Swagger 2.0 package
+  Microsoft certifies — one `query_<slug>` action per dataset, one `changes_<slug>` action per register, `list_sources`,
+  `get_usage`; every response typed from the record schema (`toSwaggerSchema`: nullable → `x-nullable`, unions → the
+  branch, `const` → `enum`, no empty schema), `x-ms-summary` on every parameter and property, the bearer key as the one
+  API-key connection parameter entered `Bearer yourKey` (the shelf's pattern for bearer APIs), a 230 px icon on the
+  landing's `#0a0a0a`. `npm run connector` (esbuild + Node) writes the folder; `test/connector.spec.ts` pins Microsoft's
+  certification rules for every source and fails when the committed package no longer matches the registry. No Worker
+  change: the connector calls the live `/v1/data` and `/v1/changes` routes. Owner steps (the same Partner Center Seller
+  account as AppSource, the verified-publisher lane, Premium tier) in `docs/POWER-PLATFORM-CONNECTOR.md` and action 031
+  step 4.
+- `public/clay.html` + `skills/uk-company-register-check/` — **gankdat in Clay** (2026-11-09, queue `clay-http-api-listing`,
+  spike `docs/exchange/spikes/clay-data-provider-marketplace.md`): the five register checks (Companies House record,
+  charity, Gazette insolvency notices, UK sanctions, sponsor licence) as Clay **HTTP API** enrichment columns — endpoint,
+  the one query parameter mapped from the table's column, the `data.0.<field>` paths to return, the per-source rate
+  limit, a conditional-run rule (a blank filter on a register source is no filter and spends a credit on page 1) and a
+  CRM qualification walkthrough — on the user's own bearer key, stored as a Clay HTTP API (Headers) account; plus the
+  same checks as an Agent Skill (`SKILL.md`, the format Clay's community marketplace installs with `npx skills add`),
+  public through the gankdat mirror. No Worker change, no version bump: a distribution surface over the live
+  `/v1/data` routes, like the add-in and the connector. `test/clay.spec.ts` pins every documented source, parameter,
+  field path and rate limit to the registry. The owner submits Clay's Integrations Partner intake (HTTP API tier) and
+  the Skill (`docs/CLAY-LISTING.md`, action 039); proof reads Clay's UA family in `rest 7d by UA:` and keys named `clay`.
+- `docs/` — architecture, runbook, setup docs; `.taskmaster/` — PRD + backlog
+
+## Stack
+TypeScript (strict) · Hono on Cloudflare Workers (Paid plan since 2026-07-10)
+· zod (→ OpenAPI 3.1 → MCP tools; one schema source of truth) · Workers KV +
+D1 + Cron Triggers + Analytics Engine (`gankdat_traffic`: /mcp and /x402 adoption,
+and since 2026-09-29 the REST surface too — `src/middleware/traffic.ts` writes
+`rest_data`/`rest_changes` for every served `/v1/data/:source` and `/v1/changes/:source`,
+UA and source slug only, never an IP, denials excluded, so STRATEGY §4's weekly
+change-feed target is readable from the daily metrics row) ·
+stripe-node (fetch client) · official MCP TS SDK v2 (`@modelcontextprotocol/server`, since 2026-10-30; `@hono/mcp` + SDK 1.x before) · @x402/hono (x402 v2, since
+2026-10-14; x402-hono 1.2 before) · vitest with
+@cloudflare/vitest-pool-workers · ESLint + Prettier · npm · wrangler.
+The x402 packages (@x402/hono, @x402/core, @x402/evm, @x402/extensions,
+@coinbase/x402 — and viem beneath them, most of the bundle) are imported lazily
+on the first lit `/x402` request, so cold starts skip them while the lane ships
+dark; the resource server is then kept per configuration for the isolate's life.
+
+Tests (2026-10-06): pool-workers 0.18 has no isolated per-test storage — one runtime
+and one D1/KV store serve every spec file in turn — so `test/apply-migrations.ts`
+migrates once per file and empties every table and both KV namespaces before each
+test (the earlier `reset()` + full re-migration per test also logged a workerd
+"deleteAllDurableObjects" exception per test). The gate's cost was elsewhere: each of
+the 49 spec files loads the whole `src/index.ts` module graph afresh — ~2,600 modules
+a file before 2026-10-06, 1,194 of them viem via the x402 packages, 17 s a file. Now
+`vitest.config.ts` pre-bundles the heavy dependencies (deps.optimizer, node built-ins
+external) and the x402 packages load lazily, so a file loads ~250 modules and the
+suite runs in 80 s (was 261 s) on four cores; the whole gate in ~100 s.
+On CI the gate runs once per push, in `gankdat.yml` only; the root `check` workflow
+runs `check:root`.
+
+## Backend & data
+- **D1**: `accounts` (email = identity, holds plan), `api_keys` (belong to
+  accounts, inherit plan), `credit_ledger` (append-only audit; NOT the live
+  quota), `stripe_customers` (one per account), `waitlist`, `refresh_log`,
+  `magic_tokens` (single-use sign-in tokens — atomic consume via
+  `UPDATE … WHERE used_at IS NULL`), `agent_signups` (agent-side sign-up requests:
+  hashed claim secret, emailed approval token, human-check code; same atomic single-use),
+  `source_records`/`source_meta` (rows for `storage:'d1'` datasets too large
+  for a KV snapshot — SQL filters with applyQuery-parity semantics; task 44).
+  **Delta refresh** (2026-10-04, migration 0014 `record_hash`): a source with `idOf` is
+  refreshed in place — the live generation's (seq, id, hash) index is read into typed arrays,
+  the stream is compared row by row, and only changed rows are upserted, new ids appended and
+  vanished ids deleted, each chunk with its change-feed rows in one transactional batch. The
+  generation swap (a whole new generation inserted and the old one deleted every night, ~1M
+  rows written and ~1M deleted a day for registers that move < 1%) remains for first loads,
+  sources without ids — not any more for rows written before the migration: those are hashed in
+  place by a resumable **backfill** (`backfillHashes`, migration 0015, 2026-10-07) that pages the
+  live generation's unhashed rows, writes `record_id` and `record_hash` from the stored record
+  text, hands the rest to the next night with a `skipped` refresh_log row when its 8-minute budget
+  runs out, and lets the delta pass follow once complete (uk-trademark-journal's 162k-row "one last
+  full reload" never finished: wave 7 was killed at the Cron Trigger limit three nights running,
+  writing no row). The page update MATERIALIZES its 2,000 (seq, id, hash) entries so SQLite loops
+  over them and probes each row by primary key: written as `UPDATE … FROM` a `json_each` subquery
+  (10-07) the planner walked the whole generation and scanned the entries per row — 200 s a page
+  at 162k rows, so the budget check between pages never ran and 10-08/10-09 died silent too
+  (2026-10-09; plan asserted in `d1store.spec`). A backfill that took over three minutes
+  (`BACKFILL_HANDOVER_MS`) hands the delta to the next night even when complete, and a backfill
+  that throws writes an `error` row — a night is never silent again. The generation swap is what the 2026-10-01
+  Cloudflare budget alert (US$15 metered vs the US$5 plan) was traced to — D1 bills rows
+  written (measured 2026-10-08: ~6M writes a day before the delta refresh, 0.0–0.2M a day after). The trade: during a delta refresh a request sees today's version of some rows and
+  yesterday's of the rest (every row present, nothing partially loaded; `last_refreshed_at`
+  flips at the end, and a crash mid-way self-heals against the stored hashes). `refresh_log`
+  carries `delta +a ~c -r` per source. Migrations via `wrangler d1 migrations`.
+  **D1's 10-second throttle** (2026-11-05, `refresh-uk-food-hygiene-2026-11-05`, v0.27.2, `src/sources/d1pace.ts`):
+  `D1_ERROR: D1 DB is overloaded. Too many resources consumed within a 10 second window` first appeared on
+  10-28 and hit every night from 11-04: the stored-index read (50,000-row pages back to back; `record_id`
+  and `record_hash` sit at the end of a wide row, so a page reads its rows whole) crossed the line on the
+  three biggest registers (uk-care-locations 05:30, uk-food-hygiene 05:45, uk-trademark-journal 06:05),
+  the full-reload fallback's first statement and the refresh_log error row failed the same way within the
+  same second, and the Daily numbers row could only say "no successful refresh since 11-03"; the same
+  window refused the Apify QA run's second page of uk-food-hygiene (a 7 s full-register scan) with a bare
+  503, the actor's 2 s / 4 s retries landed inside it, and Apify flagged the actor. Now: the index is read
+  in 10,000-row pages 2.5 s apart (≤ ~40k rows a window), a throttled page is re-read after 12 s (four
+  hits at most, logged `delta_index_throttled`), a throttle that persists ends the night with an error row
+  (`delta index unreadable: …`, `DeltaIndexUnavailableError`) and the rows kept — never a full reload into
+  the same window; a throttled delta batch, full-reload chunk or refresh_log row waits the window out once;
+  `isTransientD1Error` matches D1's own wording ("D1 DB is overloaded", both variants) and `refreshOne`'s
+  retry waits 12 s; a throttled data read answers 503 with `Retry-After: 11` ("Source … is busy"), which
+  the shared Apify client honours (three retries, 3/6/12 s when no header). The cost of a filtered page
+  was COUNT + page, two full scans in parallel; since v0.28.1 (`filtered-page-count-cache`, 2026-11-05)
+  the filtered total is cached in KV per (slug, generation, `last_refreshed_at`, predicate) until the next
+  refresh — a delta or windowed refresh restamps the meta row inside one generation — so page 2+ of the same filters runs one scan (`filteredCountKey`, `COUNT_CACHE_TTL_S` in `d1store.ts`). **The stats pass waits the window out too** (2026-11-10, `stats-precompute-overload-wait`, v0.28.4):
+  from the pacing fix to 11-10 uk-food-hygiene (05:45) and uk-trademark-journal (06:05) wrote their ok row and then
+  logged `stats_precompute_failed … D1 DB is overloaded` every night — `precomputeStats` ran its full-register GROUP BY
+  scans in the seconds after the paced delta writes, in the same window, with no retry, so the night's blob was the
+  carried one and no stats page's `dateModified` moved. Now the parent aggregation (reads only, repeated whole) and
+  each facet batch run under `withOverloadRetry` — one 12 s wait, one retry, logged `stats_throttled` with the phase
+  (`parent`, `facet <segment>`) — and a window that refuses twice falls through to what was there: the parent to the
+  retained blob, a batch to its carried pages (`stats_facet_failed`), as before. **The parent's scans are paced and
+  retried one at a time** (2026-11-12, `stats-parent-scans-paced-per-statement`, v0.28.7): the first night on v0.28.4
+  logged `stats_throttled phase=parent attempt=1` and `stats_precompute_failed` 21 s later on both sources (worker
+  logs, 05:49:57 / 05:50:18 and 06:09:19) — the change-day scan, the monthly scan and one GROUP BY per group column
+  over a 196k–600k-row register, repeated as one unit after the wait, never fit one window together. `aggregateD1Stats`
+  now runs each scan under its own `withOverloadRetry` (phase `changes`, `monthly`, `group <title>`),
+  `d1Pace.indexPauseMs` apart like the delta index, and a scan refused twice takes the previous blob's value for that
+  part (`stats_part_carried`, `carried: false` when there was none) while the blob is written fresh around it — a hot
+  scan costs a table for a night, not every page. Proof: the first two Daily numbers rows after the deploy with no
+  `stats_precompute_failed` for either source and the journal's `dateModified` moving nightly.
+- **KV**: response cache per source (+ precomputed `/stats` blob and a
+  best-effort refresh single-flight lock), monthly usage counters per account
+  email (`usage:<email>:<yyyymm>`), the top-up balance (`topup:<email>`, no period, no TTL —
+  credit packs bought through PayPal, spent once the month's allowance is gone), key-hash → key-record hot-path lookup
+  (with short negative + revocation-tombstone entries), sessions (7 d idle,
+  30 d absolute cap).
+- **Auth**: bearer API key per request for data; passwordless magic-link
+  (Resend, Turnstile-gated when configured) + session cookie for the /account
+  dashboard. Key creation requires a signed-in session (public issuance
+  retired — keys inherit the account's plan, so unverified-email issuance was
+  a privilege leak). Quota = plan
+  monthly allowance per account (free 250/mo); KV-based best-effort (DO
+  upgrade path documented, not built). MCP: anonymous `initialize`/`tools/list`
+  so registries/directories can index tools (per-IP, in-isolate limiter —
+  zero KV ops); a presented key is always validated and bad ones 401 with
+  `WWW-Authenticate`. A cold key's D1 read (KV miss, isolate never saw it) is retried once after
+  200 ms on a transient D1 error — the `store.ts` regex the refresh waves use — before the
+  isolate-cache fallback and the 500 (2026-10-29, `apify-companies-house-qa-repair`: 29 such
+  blips in a day, every one on a cold key; Apify's one-shot QA call died on one for three days). **Keyless preview** (2026-09-30, `src/mcp/preview.ts`, for the
+  Claude Connectors Directory whose review requires every tool to answer without
+  credentials): a data tool called without a key returns page 1 with ≤ 5 rows, 20 calls
+  per UTC day per client (sha-256 of IP + UA, KV `preview:<id>:<day>`), then a tool error
+  naming the free plan and the cheapest paid one; `get_usage` reports the budget. Every
+  tool carries `title` + `readOnlyHint`/`destructiveHint` (the two sign-up tools are the
+  only writes, neither destructive). `/mcp` validates a present `Origin` (own host,
+  claude.ai/claude.com, loopback; else 403, CORS mirrors the list) — non-browser clients
+  send none. `test/mcp-directory.spec.ts` is the conformance test for any agent
+  directory. A bare `Authorization: Bearer` with no token counts as no key (2026-10-10,
+  `presentsCredential` in `routes/mcp.ts`): Docker's MCP gateway templates the header for every
+  Toolkit user and sends it empty until a key is pasted; a token after the scheme is still
+  validated. The Docker MCP Catalog entry (`docs/docker-mcp-catalog/`) ships keyless + optional key;
+  its `oauth` block is a second PR once the Worker's dynamic registration (below) is live and the
+  entry listed. KV rate limiters fail open on KV errors.
+  **One JSON body per POST, calls under a deadline** (2026-10-18, gankdat `refresh-mcp-probe`): the
+  keyless metrics probe of 10-18 07:10 timed out at 20 s on one `tools/call` (fresh 1,000-row
+  uk-tenders snapshot, no CPU limit in reach) while the keyed call a moment later answered at once,
+  and `/mcp` left no line to read. Two Worker-side guards: `routes/mcp.ts` builds the 2025-era
+  transport with `enableJsonResponse: true` — an SSE stream returned the Response at once and ran the tool
+  call after the fetch handler had returned, the one shape of work a Worker may drop (a dropped
+  call leaves the stream open until the client gives up); in JSON mode the call runs inside the
+  awaited handler and a death mid-call is an HTTP error a checker can read (the spec allows a
+  JSON answer to a POST; every client sends `Accept: application/json, text/event-stream`). And
+  every data tool (`query_*`, `get_changes`) runs under `TOOL_CALL_BUDGET_MS` (10 s,
+  `src/lib/deadline.ts`): a call that misses it answers a tool error naming the phase (gate /
+  query / settle) and logs `slow_tool_call`, a late keyed result is not charged and the late work
+  runs on under `ctx.waitUntil` so a cold-cache refresh it started still lands in KV. The probe
+  (`scripts/mcp-probe.ts`) now tells `body unread (headers arrived)` from no response and bounds
+  the body read itself. Cause of the 10-18 hang not proven; the next one is readable.
+  `test/mcp-deadline.spec.ts` is the probe's three calls, keyless then keyed, plus the hang.
+  **Protocol revision 2026-07-28** (2026-10-30, `mcp-protocol-2026-07-28`, v0.27.0): the current spec (changelog read
+  through the relay, `docs/relay/responses/mcp-spec-2026-07-28`) removed sessions and the `initialize` handshake — every
+  request carries `_meta` (`io.modelcontextprotocol/protocolVersion`, `clientCapabilities`, `clientInfo`) and the required
+  `MCP-Protocol-Version`, `Mcp-Method` and `Mcp-Name` headers, discovery is the mandatory `server/discover`, `ping` is gone.
+  Claude's current clients (claude.ai, Desktop, Cowork, Code via the directory) speak it, and `@hono/mcp` 0.3 on SDK 1.32
+  answered them 404 "Unsupported protocol version" before any handler for a month (the day-30 directory read: 31 of 55
+  Cowork POSTs on 10-30, the retries on 2025-11-25 never carrying a tool call). `/mcp` now runs the SDK v2 line: one
+  `buildMcpServer` factory, `isLegacyRequest` (the SDK's own classifier) routes a 2025-era body — `initialize`, or a
+  request with no envelope — to a stateless `WebStandardStreamableHTTPServerTransport` in JSON mode (the SDK's built-in
+  legacy fallback streams SSE, so that leg is wired by hand), and everything else to `createMcpHandler(factory,
+  { legacy: 'reject', responseMode: 'auto' })`, whose validation ladder rejects a malformed envelope or a header/body
+  mismatch with the spec's 400 and otherwise answers one JSON body. The gates in front (Origin, the keyless kinds, the
+  OAuth 401, the preview wall, analytics) read the JSON-RPC body as before and `server/discover` counts as introspection;
+  `requestShape` reads `Mcp-Method`/`Mcp-Name` when the body is unreadable. The metrics probe adds a keyless 2026-07-28
+  pass (`tools/list` + one `tools/call`, rendered `2026-07-28: tools 200 (N tools), call 200`) beside the 2025 handshake,
+  so either era regressing is the next morning's `mcp probe:` reading; `test/mcp-directory.spec.ts` pins both eras.
+  Proof: a 2026-07-28 request 200 in the Worker log and `claude tool callers` ≥ 1 client within a week of the deploy.
+  **Listen closes at once** (2026-11-07, `mcp-listen-graceful-close`, v0.28.3): the day-7 read found the proof failed —
+  the only Claude surface on 2026-07-28 (the owner's Cowork connector, five sessions) did `server/discover` (200) and then
+  `subscriptions/listen`, which the Worker held open for 177 s until Cowork cancelled it, and no `tools/list` followed all
+  week. The SDK's `listenRouter.serve` streams keepalives while any requested bit is honoured and closes gracefully
+  (`resultType: "complete"`) only when the honoured filter is empty; `McpServer.registerTool` advertises
+  `tools.listChanged: true` unless the capability is pre-set, so `buildMcpServer` now passes `{ capabilities: { tools:
+  { listChanged: false } } }` — a stateless Worker emits no server-initiated notification, so nothing is lost and a listen
+  is acknowledged and closed in one response. The probe's modern pass gained a third step (`listen 200 (N ms)`; a stream
+  without the complete frame inside the 20 s budget fails the run), and the spec pins the one-response listen. Proof:
+  the next Daily numbers row's `listen 200`, then a `request_id` read of the next Cowork session showing `tools/list`.
+  **Lazy OAuth** (2026-09-30, `src/auth/oauth.ts` + `src/routes/oauth.ts`, migration 0013
+  `oauth_grants`): Claude, Cursor and ChatGPT start sign-in only on an HTTP 401 with
+  `WWW-Authenticate: Bearer resource_metadata=…` (a 200 tool error never does), so the Worker
+  is its own authorization server — RFC 9728 `/.well-known/oauth-protected-resource[/mcp]`,
+  RFC 8414 `/.well-known/oauth-authorization-server` (S256 PKCE, `token_endpoint_auth_methods
+  none`, `client_id_metadata_document_supported`), `/authorize` (CIMD: the client_id is an
+  https URL whose document is fetched and must name itself and the redirect_uri, loopback
+  matched port-agnostically for Claude Code; consent rendered on the magic-link session, the
+  emailed link carrying `next` back to the request so the hop can finish in another tab) and
+  `/token` (form-urlencoded, 1 h access + 30 d rotating refresh tokens, `invalid_grant` on
+  replay with the whole family revoked). The gate in `routes/mcp.ts` sends the 401 for the one
+  protected tool `connect_account` and for a data tool once the preview budget is spent; free
+  tools (`list_sources`, `get_usage`) are never gated. An access token resolves to an API key on
+  the account named `oauth:<client host>` (created at consent, never shown, visible and
+  revocable at /account), so plan, credits, rate limits and metering are the key's — one
+  `KeyContext` for both credentials. Only hashes are stored; the daily numbers carry
+  `oauth: … connects` (D1 codes for real accounts) and the `oauth_token` analytics point per
+  client host. `test/oauth.spec.ts`.
+  **Connect funnel** (2026-10-09, queue `oauth-connect-funnel-check`): `connect_account` was the
+  most-wanted tool for a week (4–6 keyless calls a day) with `oauth: 0 connects`, and nothing between
+  the 401 and the code row said where a person stopped — no sandbox can POST to the live hop, and
+  the only end-to-end walk was the owner's (10-04). So every leg of `routes/oauth.ts` writes an
+  `oauth_funnel` analytics point (blob3 step: `authorize`, `authorize_rejected`, `signin_shown`,
+  `consent_shown`, `email_sent`, `approved`, `denied`, `expired`, `token`, `token_rejected`; blob4
+  the client host; blob5 the detail — a rejection cause, the email outcome, the grant type, the
+  token error) and the Daily numbers row carries `oauth funnel 7d: N challenges (…), N authorize,
+  … N token errors` plus `connect_account 7d by UA: …` (the user agents behind the 401s, read from
+  the existing `mcp_denied` points — a scanner's UA ends the question; `src/lib/oauth-funnel.ts`).
+  Claude's real client documents are `https://claude.ai/oauth/mcp-oauth-client-metadata` (hosted
+  apps, redirect `https://claude.ai/api/mcp/auth_callback`) and
+  `https://claude.ai/oauth/claude-code-client-metadata` (Claude Code, port-less loopbacks), both
+  verified through the relay on 2026-10-09; `/authorize` with either rendered the sign-in page live.
+  **Resource indicator variants** (2026-10-23, `oauth-resource-indicator-variants`, v0.25.5): the 10-20..10-23 rows read
+  `0 authorize, 2 rejected (invalid_target …)` — the only two /authorize calls in the window refused on a strict string
+  compare of RFC 8707 `resource`, and nothing recorded what they sent. The MCP authorization spec lists
+  `https://mcp.example.com/mcp`, `https://mcp.example.com` and the port form as valid canonical URIs for one server,
+  asks that an upper-case scheme and host be accepted and only discourages the trailing slash, so `resourceMatches`
+  (`auth/oauth.ts`) parses the value and accepts https, this host (`:443` and case folded by the URL parser), no
+  query or fragment, and a path of ``, `/` or `/mcp` with or without the slash — any other host, port or path is
+  still `invalid_target`. The grant stores the canonical form whatever spelling arrived, and the `authorize_rejected`
+  funnel detail reads `invalid_target: <value sent>` (parentheses and pipes replaced, 120 chars) so the row's
+  `rejected (…)` reading names the client's value instead of our own description.
+  **Preview wall next steps** (2026-10-11, queue `preview-wall-next-steps`, v0.24.1): the first client to
+  spend the preview budget (47 `preview_exhausted` challenges on 10-11, bid-intelligence tools) was told
+  only to sign in — a person's path — while the two agent paths went unnamed. The wall now names every
+  way on in the order an agent can act (`previewNextStep` in `src/mcp/preview.ts`, also the `preview.next`
+  meta and the `connect_account` description): pay per call at `/x402/data/<source>` (x402, from
+  `X402_DEFAULT_PRICE_USD`), the free key through `request_api_key` → `claim_api_key`, then `connect_account`
+  or /account; the 401's `WWW-Authenticate` headline says the same in 120 chars. The wall, the keyless `/mcp`
+  points, the `protected_tool` challenge and `x402_paid` carry the preview's hashed client id in blob6
+  (never an IP), and the Daily numbers row reads `after wall 1h (7d): N clients — request_api_key N, x402 N,
+  connect N, gone N` (`afterWallNote` in `src/lib/oauth-funnel.ts`) so the next row says what a wall-hitter
+  did next. Proof: a request, a payment or a connect from a wall-hitter within 30 days, or `gone` naming it.
+  **Dynamic client registration** (2026-10-10, queue `oauth-dynamic-client-registration`, migration
+  0016 `oauth_clients`, v0.23.0): only Claude carries a client-id metadata document — Docker's MCP
+  gateway (`PerformDCR`: "no registration endpoint found"), Cursor, ChatGPT and VS Code register
+  by RFC 7591 — so `POST /register` (JSON in, 201 out, 10 a minute per IP) stores a public
+  client's name and 1–10 redirect URIs (https with a dotted host, or http loopback; auth method
+  `none`, code + PKCE, no secret issued) under a random `gkcl_<label>_<hex>` client_id and the
+  RFC 8414 document names `registration_endpoint`. The label is the host of the first https
+  redirect_uri, else the client_name slugified without dots (a loopback-only client cannot call
+  itself `claude.ai`), and it is what `clientHost` returns, so the consent page, the
+  `oauth:<label>` key and the funnel points work unchanged; the consent page adds that the client
+  registered itself and nobody verified who runs it. `/authorize` resolves a registered id first,
+  then CIMD (`resolveClient`); `/token` is untouched (the code row carries the client_id). Funnel
+  steps `registered` (detail loopback/https) and `register_rejected`. Registered clients with no
+  grant row are swept after 90 days with the expired grants. Proof: a `token` step for a client
+  host other than claude.ai within 30 days; the Docker entry's oauth block merged.
+  **Agent-side sign-up** (2026-09-25, `src/auth/signup.ts`): the paywall's audience is
+  agents that cannot click a magic link, so the two keyless tools `request_api_key`
+  (user's email → approval email with a short code, RFC 8628-style) and `claim_api_key`
+  (poll with the claim secret → the key, once) — REST twins `POST /v1/auth/agent-signup`
+  and `/agent-signup/claim` — let the agent start sign-up and the human only approve
+  (`GET`-then-same-origin-`POST /v1/auth/approve`, like `/verify`). The approval token
+  goes only into the email, the raw key is minted at claim and never stored, keys are
+  named `agent:<client>` and inherit the account's plan (hence the human gate). Abuse
+  valves: login-sized per-IP budget (KV scope `signup`, shared by REST and MCP) and the
+  per-email hourly cap shared with browser login (`src/auth/emailcap.ts`). Every keyless
+  401 names the path. Proof number in the daily metrics row (`agent sign-up: …`).
+- **Refresh**: seven staggered Cron Triggers (05:00 KV sources, 05:15 exclusions + sponsors,
+  05:30 charities + care locations, 05:45 uk-food-hygiene, 05:50 uk-schools, 05:55 nhs-ods + gambling
+  operators (since 2026-11-11), 06:05 uk-trademark-journal;
+  `store.ts waveForCron`) pull sources, write `refresh_log`; responses
+  expose `last_refreshed_at`. D1 refreshes record what `DataSource.idOf` says was added,
+  removed or changed into `source_changes` (90 d; the delta refresh writes them as it goes,
+  the full reload diffs generations) — served at `/v1/changes/:source` and the MCP
+  `get_changes` tool. **Runner-fed sources** (`RefreshPolicy.runner`, 2026-10-04; uk-insolvency):
+  an origin that serves the Worker an empty body while a GitHub runner reads it in full (The
+  Gazette, every day from 09-28) is refreshed by `scripts/runner-refresh.mjs` in the `gankdat
+  metrics` job instead — the source's own `fetchFresh`, then the Worker's exact KV writes
+  (`cache.ts snapshotWrites`) and a `refresh_log` row via the REST API; the waves skip it
+  (`store.ts cronSources`) and a stale snapshot is served without an inline attempt. The Daily
+  numbers row lists any source with no `ok` refresh for two days, so a runner that never ran
+  still shows. KV sources only. **Origin unavailable** (2026-10-11): a source whose origin
+  answers 5xx on every read it allows throws `origin.ts OriginUnavailableError` (uk-insolvency:
+  four reads over ~13 s of growing fair-use pauses, up from two 2 s apart); the runner logs that
+  as a `skipped` refresh_log row, not `error` — the day is the origin's, the last snapshot stays
+  served, and a second such day surfaces through the stale `no successful refresh since …; last
+  run skipped: …` reading. **The Worker's own paths do the same since 2026-11-11**
+  (`refresh-uk-gambling-operators`, v0.28.6): `cache.ts` and both `d1store.ts` refresh paths wrote
+  `error` for every failure, so the typed error only ever reached the runner's row — now all three
+  and the runner take the status from `origin.ts failedRefreshStatus`, `store.ts refreshOne` logs
+  such a night as a warn-level `refresh_skipped` line (not the day's error line), and the gambling
+  register is the first cron-wave source to throw it. The `refresh errors` reading itself (`metrics.mjs`) counts an error row
+  only while no later `ok` row of the same source exists: The Gazette's one 503 of 2026-10-10
+  13:00 was still listed in the 10-11 row written 18 h later, right after a 1000-record refresh,
+  and the auto-filer read the two rows as two failures.
+  **Zero-record evidence** (2026-10-11): sources fetch their origin through `origin.ts
+  originFetch` and both stores run a refresh inside `traceOrigin`, so a refresh that yields
+  nothing fails with the first page the origin served — `refresh returned 0 records: GET 200
+  36 B keys entities,links,count from <url>` (status, Content-Length or bytes seen, top-level
+  JSON keys / array length / first 80 chars, plus a page count and the last page when there were
+  several) — and the Daily numbers row tells an emptied dataset from a 5xx page without a relay
+  round-trip. The body is peeked from a cancelled clone (4 kB), never consumed; no parentheses
+  or pipes in the text because `refresh-errors-to-queue` splits the row on them.
+  The feed is sold, not just served (2026-09-24): `registry.hasChangeFeed` is the one
+  predicate; the refresh precomputes 30 days of added/removed/changed per day into the
+  `/stats` blob (`SourceStats.changes`) so the public page shows the activity and the poll
+  command without touching D1; `/v1/data` and `list_sources` carry `change_feed`; llms.txt
+  has a "Change feeds" section. **The feed takes the source's own filters** (2026-09-28,
+  migration 0012: `search` + `record_lc` ride along from `source_records` at diff time):
+  `/v1/changes/<slug>?classes=09&q=<mark>` and `get_changes` `filter` apply the same
+  predicates as `/v1/data` to the changed record, so a watch is one call; unknown params 400.
+  A transient D1 failure ("internal error; reference", "Network connection lost") retries the
+  source once while the wave is under 6 minutes old (`store.ts refreshOne`); the insolvency
+  reader reports bytes/content-length/tail when the Gazette truncates a JSON page.
+- **Stats facets**: a `StatsSpec.facets` entry declares bounded sub-pages
+  `/stats/<slug>/<segment>/<value>` — one per value the source lists, never derived from the
+  data — each with its own headline, trend, breakdowns (a `groupBy` may `sort: 'value'` for
+  chronological issue/week tables) and the filtered query + change-feed poll; precomputed at
+  refresh with the parent (`aggregateFacets`, a 4-minute budget per source) and indexed from the
+  parent page and `sitemap.xml`. First use: 45 Nice-class pages for `uk-trademark-journal`
+  (`NICE_CLASSES` in the source). **The parent blob is written before the facets, and pages past the budget are
+  carried, not dropped** (2026-10-26, `sitemap-5xx-read`, v0.26.1): the one KV write of the stats
+  blob came after the facet pass, so once the ok row moved ahead of the stats (10-18) a wave killed
+  inside the journal's 45-page pass renewed nothing — invisibly, night after night — and the blob
+  expired with its 7-day retention: from 10-25 every journal stats page, the parent included, was a
+  JSON 503 "being prepared" (relay probe 19:17 UTC: `/stats/uk-trademark-journal`, `class/01`,
+  `class/25`, `class/42` all 503 after three retries; `/stats/uk-gambling-operators` and `/feedback`
+  200), and Search Console mailed "Server error (5xx)" for sitemap pages on 10-26. Now
+  `precomputeStats` writes the parent stats as soon as they exist with every facet page carried from
+  the previous blob, marks `stats facets` progress (started a second after the ok row, so the
+  stale-marker rule does not hide a kill there: it is the next night's `silent nights:` reading),
+  aggregates the facets stalest first (never computed, then the oldest carried page) under their
+  4-minute budget and `STATS_DEADLINE_MS` (11 min from the wave's start), and writes again; a value
+  the budget does not reach keeps the previous page with `FacetPage.as_of` (the `last_refreshed_at`
+  it was computed for, shown as the page's "last refreshed" and `dateModified`), the
+  `stats_facets_budget` log line counts `computed`, `carried` and `missing`, a failed aggregation
+  re-puts the previous blob with a fresh TTL (`stats_precompute_failed … retained`), and only a value
+  with no earlier page still 503s. A relay round that HEADs those 503 pages pays the Worker's
+  `Retry-After: 3600` as three 30 s retries per line (`scripts/fetch-relay.mjs`), ~95 s a line —
+  which is how the two 10-26 sitemap rounds died at the 12-minute step cap with nothing written
+  (foundry `relay-round-survives-stalled-host`).
+  **Pages are written as they are computed** (2026-10-27, `sitemap-5xx-verify`, v0.26.2): the first
+  wave on v0.26.1 (06:05) wrote the parent blob (the page answered 200 at 09:13, `dateModified`
+  06:05:45, no class links) and never the second write — `class/01`, `class/25` and `class/42` were
+  still a 503 with `Retry-After: 3600`, and with no previous blob there was no page to carry. Whether
+  the pass was killed or threw is unread: the journal had its ok row, so the runner queried no wave
+  log for it. Now `aggregateFacets` writes the blob after a computed page whenever 20 s have passed
+  since the last write (`FACETS_WRITE_GAP_MS`; finished facets, this facet's computed pages with the
+  rest carried, the facets not started carried whole), marks `stats facets` progress `page N of M
+  (<segment>/<value>)` per page so a silent night names the page it died on, logs
+  `stats_facets_done` (computed, of, interim_writes, elapsed_s) at the end, and the failure path
+  leaves an interim blob alone (`stats_precompute_failed … retained: "interim"`) instead of re-putting
+  the previous one over it. A pass that dies leaves the pages it finished, and stalest-first fills the
+  rest over the following nights. The metrics runner (`runner-refresh.mjs readWaveLogs`) also queries
+  the wave log of every facet source whose blob holds fewer pages than its spec lists, printing
+  `stats facets <slug>: N of M pages in the blob`, so the Daily numbers row reads the pass's own lines.
+  **The pass threw, and a page's failure is now its own** (same day, v0.26.3): the metrics run
+  dispatched after the push read the 06:05 invocation as `ok`, wall 167.3 s, CPU 4.4 s — the wave was
+  not killed; the parent blob landed at 45 s, then something in the first page's statements threw
+  and `stats_precompute_failed` took every page of the night with it — and the slug read showed only
+  request lines (a relay round and the morning's crawlers fill the 20 newest within minutes). So each
+  page's statements run in their own try: a failing page is logged `stats_facet_page_failed`
+  (segment, value, reason, elapsed_ms) and carried or left out while the pass goes on, three failures
+  in a row end the pass (`FACET_FAILURES_IN_A_ROW`), `stats_facets_budget` counts `failed`, and the
+  runner reads each queried source's structured lines with the needle `"source":"<slug>"` (how every
+  JSON event names its source) merged ahead of the request lines, so the 10-28 Daily numbers row
+  names the statement that fails instead of `no log line in 24 h (10 noise lines)`.
+  The second dispatched run (09:37) still read ten request lines and no structured one — the API
+  hands back ten lines newest first whatever the limit, and the `"source"` needle found nothing — so
+  the runner now also reads **the wave's own window** (`waveWindowQuery`, `lib/wave-logs.ts`): the
+  invocation it found (`WaveInvocation.at`) less its wall time, ten seconds either side, where the
+  Worker's lines for the source stand alone; those lines lead the merged reading.
+  The window read (09:48) then held one request line and none of the JSON lines the refresh logs
+  (`refresh_delta`, the ok row's phases, `stats_precompute_failed`): the needle search has never
+  returned a structured line (10-16 either), so where Workers Logs keeps a JSON `console.log` is
+  the open question — when a window shows no `event=` line the runner prints the raw rows of every
+  line the Worker wrote in it (no needle, ten rows), and the next query is written against that shape.
+  **Read** (09:59, metrics run 275): Workers Logs keeps what the Worker logged under `source` — a
+  string log as `{ level, message }`, a JSON log as the parsed object itself with no `message`
+  anywhere, which is why the needle search never returned a structured line; and every line an
+  invocation writes shares its `$metadata.requestId`. So `parseWaveLogEvents` reads a `source`
+  object as the message, `WaveInvocation` carries `requestId`, and the runner reads the wave's lines
+  with `invocationLinesQuery` (filter `$metadata.requestId`, no needle) over the invocation's window.
+  The line itself: `stats_precompute_failed … D1_ERROR: D1 DB exceeded its CPU time limit and was
+  reset.` at 06:08:18 — a facet page's statement over the 196k-row generation exceeds D1's
+  per-statement CPU limit, so no class page has been computable since the window filled; the pass is
+  rewritten as one scan per statement in `facet-aggregation-one-scan` (7).
+  **One scan per statement** (2026-10-29, `facet-aggregation-one-scan`, v0.26.4): `scanFacet` computes a
+  whole facet in 2 + groupBy.length statements — `json_each` over the facet field's elements
+  (`facetElementsExpr`: an array as it is, a comma-separated text split into items, any other
+  scalar wrapped) with `GROUP BY value` for the totals and the months (cut to the newest 12 per
+  value in the Worker) and a windowed top-N per breakdown (`ROW_NUMBER() OVER (PARTITION BY
+  value …)` so the result stays values × limit rows) — the journal's 45 Nice-class pages cost 7
+  statements, not 315, each linear in the generation. A value now selects the records whose field
+  equals it or whose list contains it (trimmed), the same set as `?classes=09`. The pass's budget,
+  stalest-first order, interim writes, carry and three-failures-in-a-row rule all work per facet
+  (`stats_facet_failed` names the segment; `stats_facets_budget` counts a carried facet's pages),
+  and the progress marker reads `facet <segment>: N pages in S statements`.
+  **Batches of values** (2026-10-30, `facet-scan-sqlite-nomem`, v0.27.1): the first wave on v0.26.4 (06:05)
+  ran D1 out of memory instead of time — `stats_facet_failed … D1_ERROR: out of memory: SQLITE_NOMEM
+  elapsed_ms=5547 values=45`, 0 of 45 computed, 15 carried, 30 class pages still a 503. SQLite sorts every
+  input row of a GROUP BY before it aggregates, and the window over a breakdown keeps the grouped rows as
+  well, so one statement over all 45 values held every (class, applicant) row of the 196k-row generation
+  at once. `aggregateFacets` now runs a facet's values in batches of `FACET_BATCH_VALUES` (9): each batch
+  is the same 2 + groupBy.length statements with `trim(e.value) IN (<batch>)`, so the journal costs 5
+  batches × 7 statements, each still one linear scan and bounded in memory by the batch; a batch that
+  still fails with `SQLITE_NOMEM` is split in two and retried (`scanFacetBatch`, logged
+  `stats_facet_batch_split`) down to one value, so the bound holds whatever the generation grows to.
+  The values run stalest first within the facet (never computed, then the oldest carried page), the
+  budget and the wave deadline are checked between batches, a batch the pass does not reach keeps its
+  previous page with `as_of`, the interim write and the progress marker (`facet <segment>: N of M pages
+  in S statements (batch B of K)`) land per batch, a failed batch is one `stats_facet_failed` (segment,
+  values, batch, first value) and one failure in the three-in-a-row count while the next batch goes on,
+  and `stats_facets_budget` counts a partly computed facet's `computed`, `carried`, `missing` and
+  `failed`. `test/d1store.spec.ts` asserts batches × statements and identical pages to the one-batch
+  scan on a 1,500-row fixture, the in-facet carry stalest first, and the split.
+- **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
+  `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
+  facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50
+  entries, newest first, each entry linking the stats page and the key sign-up — the change
+  feed on every RSS shelf (Feedly, Inoreader, Slack/Teams RSS, the Zapier/Make/n8n/Power
+  Automate triggers) with the key as the upgrade. Rendered from `source_changes` at most once
+  an hour per feed (KV `feed:*`), rate limited per IP like `/stats`, advertised by
+  `<link rel="alternate">` on the stats pages; `rest_feed` Analytics Engine point (UA, path,
+  hit/miss, slug) → `feeds 30d:` in the Daily numbers row. Entry titles are dataset-agnostic
+  (first two short string fields) — the isolation rule holds.
+  **Discovery page and OPML** (2026-11-05, `change-feed-shelf-listing`, v0.28.2): the day-30 read found 18 user
+  agents and no reader that had ever added a feed (Feedly's search empty), and the shelf read showed why — Feedly
+  and Inoreader list a feed only once a user subscribes, the Zapier and n8n triggers take one pasted URL, none
+  keeps a directory. So `GET /feeds` is the feeds' own page (every register feed with its URL and statistics link,
+  facet feeds folded under their register, `<link rel="alternate">` per register, how each shelf takes a feed) and
+  `GET /feeds/opml` one OPML 2.0 of every feed (`listFeeds`, `renderOpml`: registers as folders, facet feeds
+  nested, `text/x-opml`), both an hour in the edge cache and rate limited like the feeds; the stats index,
+  `llms.txt` and `sitemap.xml` link them. Nothing per dataset: the list is the registry's `hasChangeFeed` sources
+  and their listed facet values.
+- **Origin notice** (`DataSource.notice`, 2026-10-11): a dated plain sentence on a source whose origin is
+  paused or emptied, shown on `/stats/<slug>`, in `/v1/data` and `list_sources` (`notice`, null
+  otherwise). The refresh keeps failing with the evidence (`origin dataset empty: …`) so the Daily
+  numbers row and the auto-filer see the state every night, and the last snapshot stays served; the
+  source file owns the text (isolation rule). First use: uk-planning.
+  **Retention** (2026-10-17, queue `uk-planning-paused-snapshot-retention`): the KV snapshot and stats blob
+  expire at 7 × the cache TTL and a failing refresh wrote nothing, so uk-planning's 10-09 snapshot was gone on
+  10-16 and every REST, MCP, x402 and Apify call 503'd "retry later" while /stats/uk-planning was a JSON 503.
+  Now `cache.ts retainSnapshot` re-puts both keys with a fresh TTL after every failed refresh (no origin read),
+  the 503 / tool error for a `notice` source carries the notice (`store.ts unavailableMessage`), the tool
+  description ends with `Origin notice: …` so the metrics probe picks a live source, and `/stats/<slug>` with no
+  blob renders the notice as a page. The data itself returns only with the origin: a snapshot already expired
+  cannot be re-created, which is why uk-planning stays unavailable (with the notice) until planning.data.gov.uk
+  serves rows again or the §7 clock retires it.
+  **Surface pause** (2026-10-19, queue `uk-planning-apify-pause`): a `notice` source is paused on every
+  surface, and says so — `/stats/<slug>` carries a `state: paused` headline row (the index a `· paused`
+  mark) and names REST, MCP, x402 and the Apify actor as answering the notice with no records; the
+  actor's `main.mjs` ends a run that meets the API's 503 `Origin paused` answer cleanly (status message
+  = the dated notice, no items, no charge) instead of failing, which is what Apify's QA had flagged
+  as "under maintenance" on 10-17 (6 of 22 runs failed in 30 days, 18 outside users), and its README
+  opens with a dated `Paused` line. The actor stays public: unpublishing would drop the 18 users'
+  schedules and spend one of the 5 publications a day on the restore. Everything resumes by itself
+  with the first refresh after the origin republishes (the weekly re-read item); the notice text and
+  the catch stay dataset-owned (isolation rule).
+- **Wave log reading** (`lib/wave-logs.ts`, 2026-10-09): a wave killed at the 15-minute Cron
+  Trigger limit writes no `refresh_log` row, and no sandbox or relay can read Worker logs (the
+  journal's silent nights 10-05..10-08 were guessed at twice). So the metrics workflow's
+  `runner-refresh.mjs` step, which holds the deploy token, POSTs the Workers observability
+  Query Builder (`/workers/observability/telemetry/query`, service `faceless-api`, needle = the
+  slug, last 24 h, 20 lines) for every source with no `ok` row in 26 h or an error row today,
+  prints the lines in the job log and leaves `dist/wave-logs.json`; `metrics.mjs` reads it as
+  `wave log: <slug> [level] <newest line> <age> (N lines)` — `n/a (HTTP 403 …)` names the
+  missing token scope, `no stale source` a clean night. Pure parse + reading in the lib, tests
+  in `test/wave-logs.spec.ts`; never fails the job. **Cron outcome** (2026-10-17, `wave-log-cron-outcome-reading`):
+  the slug search's first real test (10-16) returned only the invocation request lines and @x402/hono's
+  per-isolate Ajv warning (workerd forbids code generation; the Bazaar extension is valid), and the
+  journal's 06:05 wave left no line at all. So `dropNoise` leaves those lines out (the row counts them,
+  `2 of 6 lines`), `pickReading` prefers a structured `event=` line over a newer bare one, and a second
+  query per Cron Trigger (`store.ts CRON_BY_WAVE`, `cronOfSource`; none for a runner-fed or lookup source)
+  reads the wave's own invocation log — the documented shape: `$metadata.type = cf-worker-event`, the
+  cron as the message, `$workers.outcome` / `wallTimeMs` when carried (relay cf-workers-logs-fields-2026-10-17)
+  — rendered `wave 06:05: exceededCpu 900.1s 18 h ago` or `no invocation in 26 h` ahead of the slug
+  reading. The runner prints the first invocation row when none parsed, so the next job log shows the
+  live shape. The warning itself is muted at the lane (`x402/routes.ts withoutCodegenWarning`, that one
+  message only), and so is the ERROR line the same compile writes (2026-10-18, `x402-ajv-compile-log-noise`):
+  Ajv's `compileSchema` logs `Error compiling schema, function code:` with the generated validator source
+  before rethrowing, 17 lines per isolate start, 11 of the 12 uk-planning lines in the 10-17 reading;
+  `withoutCodegenError` drops that one two-argument call (the compile cannot be skipped — `paymentMiddleware`
+  validates every route on start — and under workerd it fails only this way; CDP's daily validate is the
+  real schema check). **What the invocation query reads** (2026-10-22, `wave-log-cron-query-blind`; the 10-16 job
+  log, its first real read, carried no line from any wave though wave 1 refreshed 14 sources that
+  morning): the query is not blind — the 10-21 run returned two `ok` rows (wall 79.8 s and 79.0 s) and
+  10-22 one (104.0 s), a row's timestamp being the invocation's end (05:02:15.7 − 79.8 s = 05:00:56, the
+  second uk-planning's first error line was written), so `wave 05:00: ok 79.0s 1.9 h ago` is a real
+  reading. It is not complete: 10-18, 10-19 and 10-20 answered 200 with no row for a wave whose D1 rows
+  exist, and on 10-22 the 05:15 wave left no row where 10-21's did; the docs name no cause (sampling
+  default 1, 5 billion logs a day, 256 KB a log) and the cached 10-17 page says nothing about an
+  invocation the platform cut off. So the clause keeps `no invocation logged`, never "did not fire", and
+  the progress marker stays the reading of a silent wave. The live rows named no cron, and the needle is
+  a substring (`0 5 * * *` sits inside `30 5 * * *` and `50 5 * * *`) — the 10-21 reading was in fact the
+  05:15 wave's row — so `parseWaveInvocations` ranks a row whose cron matches ahead of a cron-less one, a
+  cron-less reading says `(cron unread)`, and the runner prints the first raw row whenever a parsed row
+  lacks its cron (where the live shape keeps it is the one open question; `test/wave-logs.spec.ts`). **Refresh progress marker** (`sources/progress.ts`,
+  2026-10-18, `refresh-uk-trademark-journal-2026-10-17`): the in-band reading of a silent wave. Every
+  attempt puts `refresh:progress:<slug>` in KV at start and at each phase (`backfill`, `index`,
+  `stream N records` every 25k, `written`, `stats`; one write a second per key, closer marks skipped)
+  and deletes it after its own `refresh_log` row; `store.ts recordSilentRefresh` turns a marker the
+  previous attempt left into that night's missing `error` row — `silent refresh started <when> died
+  after <phase> <detail> at <s> s, no row written` — before the new attempt starts, so every night
+  has a row by the next wave and the Daily numbers row names the phase (`silent nights: <slug> started
+  <when> died after <phase> …`, `metrics.mjs`, the day the row is written, even when the new attempt
+  then succeeded). With it, the `ok` row is
+  written before the best-effort stats in all three refresh paths (a kill inside the journal's
+  45-page facet aggregation no longer costs the row), and the journal's issue fetch aborts after
+  5 minutes (`ISSUE_FETCH_TIMEOUT_MS`) so a request the IPO never answers errors out instead of
+  holding the wave to the kill. **Stale marker** (2026-10-23, `refresh-marker-false-positive-2026-10-23`, v0.25.4): the lane's first
+  `silent nights:` reading (uk-sanctions, 10-22) was a phantom — the attempt wrote its ok row three seconds in and
+  only the marker's delete was lost (KV's one-write-a-second gap or a dropped delete) — so `recordSilentRefresh`
+  first reads the slug's newest `refresh_log` row (`refreshLogRowSince`): a row created at or after the marker's
+  `started_at` (floored to the second, `datetime('now')` precision) means the marker is stale — it is deleted and
+  logged `refresh_progress_stale`, no row written; a marker with no later row is still the silent night. And
+  `clearRefreshProgress` retries a failed delete once after the same-key gap. The reading can no longer send the
+  auto-filer after a healthy source.
+- **Worker error lines** (`lib/error-lines.ts`, 2026-10-29, `apify-companies-house-qa-repair`): `app.onError`
+  answers every uncaught throw with a bare `internal` 500 and logs `{ level: 'error', requestId, message, stack }`,
+  and nothing in the repo read that line — Apify's QA runner got the 500 from `/v1/data/uk-company-profiles` for
+  three days (flagged "under maintenance" 10-29) while every reading counted refresh errors only. The metrics job
+  now POSTs the Query Builder for the service's `$metadata.level = error` lines of the last 24 h, folds them by
+  message (the `source` object's `message`, as wave-logs reads it) and writes `worker errors 24h: N (<message>
+  ×n, …)` in the Daily numbers row (`n/a (<why>)` without the token scope), so a 500 on any route is diagnosable
+  from the repo the next morning; `test/error-lines.spec.ts`.
+  **Request events by route** (2026-10-30, `worker-errors-request-paths`): the 10-30 row read `worker errors 24h: 54
+  (… ×3, … ×1)` — 50 of the 54 lines were error-level invocation events (the platform marks a 5xx response's event
+  `level: error`; its message is the request line `GET https://gankdat.com/<path>` and the status sits at
+  `$workers.event.response.status`, the live shape read 2026-10-30 18:44) counted and never named. `foldErrorLines`
+  now folds them by `METHOD <path family> <status>` (`routeFamily`: the path's first three segments, anything after
+  them `*`, so the journal's 45 class pages read as one route) into `routes`, the clause ends `; requests: GET
+  /stats/uk-trademark-journal/class/* 503 ×44, GET /v1/data/uk-planning 503 ×5 +1 more` after the thrown messages
+  (each list cut to three), the job log prints one `worker request ×N:` line per route, and the named counts add up
+  to the line total — so a crawler retrying a known 503 is told from a new 500 by path.
+  **The `/stats` crawler lines are read from the kept object** (2026-10-30, `stats-crawlers-logs-source-object`):
+  `statsLineOf` (`lib/crawler-hits.ts`) parsed `$metadata.message` as a JSON string, which the platform never
+  writes for a JSON `console.log` — it keeps the parsed object under `source` (the 10-29 wave-log reading) — so
+  `stats crawlers: logs` read `0 fetches — 29 lines matched, none a request line` from the day it shipped while the
+  zone reading saw 3,320 requests and 670 AI-crawler fetches a month on the same pages. The reader now takes
+  `source.path` / `source.userAgent` first (a JSON text in `message` stays the fallback) and still drops the
+  invocation event the same needle matches, so a fetch is counted once; the logs and zone clauses should agree
+  on the AI families from the next row.
+  **Reading a Worker log on demand** (2026-10-29, foundry `worker-logs-dispatch-job`): the `worker logs` workflow
+  (`docs/ci/worker-logs.yml` → `.github/workflows/`, `workflow_dispatch` only) runs `scripts/worker-logs.mjs`, which POSTs
+  the same Query Builder for the service's lines in a window narrowed by a needle (a path, a slug, a message fragment),
+  a `$metadata.requestId` and/or a level, and prints them — folded lines, then the raw events — to the job log in under
+  a minute, committing nothing; a routine dispatches it with `actions_run_trigger` and reads `get_job_logs`. Nine Daily
+  numbers dispatches on 10-27 and 10-29 each read one such line at two minutes and a RESEARCH.md commit apiece.
+  **The metrics job's `probe` dispatch** (2026-11-02, foundry `metrics-probe-dispatch`): 19 of the job's 26 runs in the
+  week to 11-02 were dispatches made for a live /mcp probe or an error-line read after a push, each the full 4–5 min
+  pass. `gankdat-metrics.yml` now takes a boolean `probe` input: a true dispatch sets the short-circuit output at once
+  and runs only the self-heal, `scripts/mcp-probe.ts` and `scripts/error-lines.mjs` — the same Query Builder read and
+  the same `worker error ×N:` / `worker request ×N:` lines the Daily numbers step prints (`errorLinesReport`,
+  `lib/error-lines.ts`, tested) — node builtins only, no install, no row, nothing committed, read with `get_job_logs`;
+  the 07:00 routine's row dispatch leaves it false and the schedule never sees it.
+- **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
+  after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
+  stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in
+  KV — only the journal has them, 45 Nice classes, so a day it is stale submits one URL per source) to `api.indexnow.org` (≤ 10,000 a call, de-duplicated, never throws), proven by the key
+  file the Worker serves at `/<INDEXNOW_KEY>.txt` (a plain var — public by design, not a
+  secret). Never from the Worker: the endpoint rate-limits by source IP and answered 429 to
+  every wave-end ping from Workers' shared egress (10-05/06) while the runner's post got 200.
+  Bing's index feeds DuckDuckGo, Copilot and ChatGPT search, so this is the one indexing signal
+  that needs no account while the Search Console reading is owner-blocked. The runner leaves
+  `dist/indexnow.json`; `metrics.mjs` reads it → `indexnow: N urls S` in the Daily numbers row
+  (`n/a (<reason>)` on a push run).
+  **Written summaries on every stats page** (2026-11-05, `stats-page-content-depth`, v0.28.2): the day-30 read
+  found both engines crawling the pages (Bingbot 330 fetches in 30 d; Google `Discovered – currently not indexed ×7`)
+  and indexing 3 of 62 — a facet page was a title, one sentence and two number tables. `lib/narrative.ts` now writes
+  each page's prose from its own blob, nothing read per request: the dated headline with the share of the parent
+  and the page's rank among the facet's pages, this month against last with the busiest and quietest months in
+  view, one sentence per breakdown (the leaders of a top-N table, the latest rows of a chronological one), the
+  neighbouring and largest sibling pages, the change-feed totals on a parent, and the filter rule — ≥ 150 words on
+  every facet page, an empty value included, no paragraph shared between two pages (`test/narrative.spec.ts`,
+  `test/stats.spec.ts`). The facet page's `<title>` and h1 lead with the value (`Class 09 trade mark applications:
+  Scientific and electrical apparatus — <source title>`; `StatsFacet.noun`, falling back to `StatsSpec.noun`, then
+  'records' — the journal's spec says `trade mark applications`), and an `other <segment> pages` list links the page
+  before, the page after and the five largest, so the facet pages link each other and not only the parent. The
+  isolation rule holds: the prose reads titles, values and counts, never a dataset's fields by name. Proof is the
+  dated read `stats-index-day-30-read` (not before 2026-12-05).
+- **Apify run outcomes** (`lib/apify-outcomes.ts`, 2026-10-11): each actor's public 30-day run stats
+  are by status, so the Daily numbers row's `apify 30d by actor` carries `(F failed)` (failed +
+  timed-out, every account, Apify's QA runner included) and an actor whose F rose since the previous
+  row is listed under `refresh errors` as `apify-<name>`, which the auto-filer turns into
+  `refresh-apify-<name>` by its two-rows-in-four rule. Why rising, not non-zero: both maintenance
+  flags so far (09-25, 10-10) were learned from Apify's mail three days in, and a fixed actor must
+  drop out the next day rather than be re-filed for the 30 days its old failures stay in the window.
+  Notice (2026-10-31, `apify-notice-in-daily-row`): the same actor object carries `notice`
+  (`UNDER_MAINTENANCE` while Apify's QA flag is up, `NONE` otherwise), so the suffix also reads
+  `flagged <NOTICE>` and a flagged actor is listed under `refresh errors` every day the flag stands —
+  the day it lands and the day it clears are both read from the row, with no relay round (the third
+  flag, 10-29, cost three slots, the last only to read the flag).
+- **Live MCP probe** (`scripts/mcp-probe.ts`, 2026-10-08, queue `mcp-live-probe`): the metrics job's
+  runner does what an agent directory's health checker does — `initialize`, `tools/list`, one keyless
+  preview `tools/call` on the first listing data tool — against the live `/mcp` and the same with a
+  bearer key; `metrics.mjs` renders `mcp probe: …` in the Daily numbers row and lists a failed step
+  under `refresh errors` as `mcp-probe`, so the repeat rule files a fix item. Why: Glama's hourly
+  check mailed "HTTP 500 – Error connecting to MCP" on 2026-10-08 (and found the 2026-09-19 Bot
+  Fight Mode challenges) while no sandbox can reach gankdat.com and Worker logs are read nowhere —
+  the probe is the only reading of the edge as directories see it. Push runs probe too (node
+  builtins only); a dead probe is a reading, never a failed job. **One-run probe key** (2026-10-09,
+  queue `probe-key-from-runner`): the authed pass needs no repository secret — `api_keys` holds
+  only a key's SHA-256 and the job already holds `CLOUDFLARE_API_TOKEN`, so the probe inserts a fresh
+  key's hash under the internal `probe@gankdat.com` account through the D1 REST API, runs the three
+  calls with it, then deletes the row and the Worker's 60 s KV copy (`key:<hash>`); a row left by a
+  killed run is swept by the next mint, the raw key never leaves the process, and a failed mint is
+  itself a `refresh errors` entry. The account is an `@gankdat.com` address, so the accounts,
+  sign-up and OAuth readings skip it like the other internal mailboxes, and the traffic counts
+  (`MCP 24h`, change feed, `datasets 30d`) skip the probe's user agent. `GANKDAT_PROBE_KEY`, if ever
+  set, still takes precedence and nothing is minted. **External dataset demand** (2026-10-11, queue
+  `metrics-dataset-queries-external`): `datasets 30d` counted every authed call, and the Apify actors
+  (the repo's own key) plus the probe were every call on every register — §7's 60-day retirement clock
+  read our own automation. Authed `rest_data` (blob4) and `mcp_authed` (blob6) points now carry the
+  key's account id (an opaque D1 id, never an email), and the row adds `datasets 30d external: …`,
+  which leaves out every account with an internal mailbox (`INTERNAL_EMAIL_SQL` in `metrics.mjs`) and
+  the untagged points from before 10-11; the W42 review applies §7 from that line.
+- **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
+  params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
+  date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value
+  (null, '' and [] are absent; added 2026-09-21 for the "no website" lead feed — sources opt in
+  by declaring `website_present` in `queryParams`), `q` across all string fields.
+
+## External services
+- **Stripe** — **LIVE** since 2026-07-09: checkout, customer portal,
+  idempotent webhooks → account plan + ledger. Prices are GBP-default
+  multi-currency (USD/EUR auto-selected by location), resolved by
+  `lookup_key`; plan data lives in `src/billing/plans.json`. Plan KEYS are
+  stable slugs (saver £5/1k, starter £23/5k, growth £79/20k, scale £239/100k)
+  stored in D1/Stripe; customer-facing names are a display layer
+  (`displayName`: grep/cron/daemon/kernel). Secrets:
+  `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
+- **Resend** — magic-link email from `no-reply@mail.gankdat.com` (verified
+  domain); dark (503 on login) until `RESEND_API_KEY` is set.
+- **x402** (agent payments) — LIVE on Base mainnet via Coinbase CDP
+  facilitator; enabled only when `X402_WALLET_ADDRESS` is set. **x402 v2 since
+  2026-10-14** (v0.25.0, gankdat `x402-bazaar-listing`, exchange 2026-W42): the
+  402 carries the payment-required document in the `PAYMENT-REQUIRED` header
+  (base64 JSON: `accepts[]` with CAIP-2 networks `eip155:8453`/`84532`, the
+  resource, and an `extensions.bazaar` declaration per route — description,
+  query-parameter JSON Schema from the source's zod params, a schema-shaped
+  output example — generated in `src/x402/bazaar.ts` from the registry so a new
+  dataset is discoverable the day it ships); payment arrives in
+  `PAYMENT-SIGNATURE`, the receipt in `PAYMENT-RESPONSE`; the unpaid body is the
+  platform's `payment_required` error envelope. v1 clients (`X-PAYMENT`) are no
+  longer served (0 payments in three months). The CDP Bazaar indexes a resource
+  only after one settled payment: the owner's half-cent call (action 026) is the
+  onboarding step; the metrics runner dry-runs every route against CDP's keyless
+  validate endpoint daily (`x402 validate:` clause — v0.25.1, 2026-10-14 evening: the first
+  validate read rejected every route because the example query typed `per_page` as a string
+  under an integer property; example values now carry the schema's types) and counts payments under the
+  `gankdat-x402-probe/…` user agent as internal, never as sales. **Bazaar reading
+  (`metrics-bazaar-merchant-read`, 2026-10-14):** the same runner reads the receiving
+  wallet from the first route's 402 (`PAYMENT-REQUIRED`, keyless), asks CDP's keyless
+  `GET /platform/v2/x402/discovery/merchant?payTo=…` for every active resource under it
+  and writes `bazaar: N listed, C calls/30d, P payers, last <date>` from the catalogue's
+  own `quality` numbers (`bazaar: 0 listed` until indexed; parsing in
+  `scripts/x402-bazaar-read.ts`; the keyless reads in `scripts/x402-catalogue.mjs`).
+  **Per-route indexing (2026-10-23, `x402-bazaar-week-1-index-check`):** CDP indexes one
+  resource per settled payment and drops a resource 30 days after its last settlement
+  (seller docs, read 2026-10-23); a week after the first half-cent call only uk-tenders,
+  the route it paid, was listed of 17. With the `X402_PROBE_KEY` secret (action 026
+  option B) the metrics job's probe step (`scripts/x402-probe.mjs`) reads the catalogue
+  when no probe payment landed in 7 days and pays, through the test client, every route
+  it does not list and every listed route settled 23 days ago (`probeTargets`), inside a
+  30-day cap of one payment per live route plus three re-screens (`probeMonthlyCap`, since
+  2026-11-08: 25 routes = 28 payments, at most US$0.20 — a data route is half a cent, a
+  change feed one cent; the fixed cap of 20 before it was spent by the 10-23 survey and kept
+  the nine change feeds unlisted for three days). The `x402_probe` dispatch input pays the
+  due routes today whatever the spacing and the cap say (a decision taken in a run log,
+  bounded by the route count); `X402_PROBE_FORCE=all`, set by hand in the workflow, pays every
+  route (a re-screen after a metadata change is per resource too). The client prints the
+  facilitator's Bazaar verdict (`EXTENSION-RESPONSES`: success, processing, rejected) and
+  the facilitator's reason when a signed payment gets a 402. **Description cap (v0.25.3,
+  2026-10-23):** the CDP facilitator rejects verify and settle when the route description
+  exceeds 500 characters, so `bazaarDescription` never exceeds `DESCRIPTION_MAX = 500`
+  (the summary budget is what the title and shape sentence leave) — from v0.25.0 to
+  v0.25.2 thirteen routes were over it and could not take any payment, which validation
+  (`x402 validate: 17/17 valid`) never shows; the declaration test asserts the cap. The
+  probe calls each route with the query its declaration carries (the indexer's own call).
+  **What sold** (2026-10-19, `x402-paid-by-source-reading`): the `x402_paid`
+  point carries the UA, path, slug and hashed client id, so the row's sales cell reads
+  `3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients; python-requests 2, x402-fetch 1)`, a
+  `x402 30d:` clause follows the `bazaar:` one, the job log prints `bazaar resource: <url>
+  calls C payers P last <date>` per resource, and paid x402 calls count in `datasets 30d
+  external` as `<slug> N (x402 N)` — a settled payment is external demand §7's clock must
+  see (`src/lib/x402-sales.ts`; the probe's user agent excluded in SQL). The lane's first
+  three external payments (10-17/18) reached the row as a bare count.
+  **Buyers vs probers** (2026-10-25, `x402-buyer-vs-survey-split`): 15 of the 19 paid calls
+  of the 30 days to 10-25 were `lumiere-paycheck-prober` paying each unpaid route once — a
+  catalogue survey the day-30 reads and two exchange triggers would have read as demand. The
+  30-day read is grouped by UTC day too, and `splitX402Payers` classes each client: a user agent
+  naming itself a probe, prober, scout, observatory, survey or collector (`PROBER_UA`), or one
+  client paying every live route once in a day (the route count from `/v1/data`), is a prober;
+  the rest are buyers, and a buyer paying on two or more days is a repeat payer. The row reads
+  `x402 30d: 19 paid, 4 clients — buyers 4 paid, 3 clients, repeat 1 (…); probers 15 paid, 1 client
+  (lumiere-paycheck-prober 15)`, the sales cell sets probers apart (`0 by buyers; probers 15: …`),
+  and only buyers' calls reach `datasets 30d external`. The same filter grouped by user agent
+  renders `changes 7d by UA: python-requests 4 (rest)` (`src/lib/change-feed-callers.ts`), so the
+  weekly change-feed target names its callers and tags a scanner `prober`.
+  **REST callers by user agent** (2026-10-25, `rest-callers-by-user-agent-reading`): the Excel add-in's
+  and the Power Platform connector's proofs read "user agents on `rest_data`" and no clause did, so the
+  row adds `rest 7d by UA: python-requests 12 (2 datasets), azure-logic-apps 2 (1 dataset), SettledScout 1
+  (1 dataset, prober) +2 more` (`src/lib/rest-callers.ts`): authed `rest_data` points of the week,
+  external accounts only (the same NOT IN as `datasets 30d external`), probes excluded, top eight UA
+  families with the datasets each touched — it lists what arrives and never guesses a vendor's string.
+- **PayPal** (credit packs, **sandbox only**) — built 2026-10-11 as the PayPal AI Hackathon entry
+  (v0.24.0, migration 0017 `paypal_orders`, `docs/PAYPAL-SETUP.md`): Orders API v2 against
+  `api-m.sandbox.paypal.com` by construction, no live switch. One-off packs (`src/billing/packs.json`,
+  1k/5k/20k credits for US$8/35/120) add to the account's top-up balance (KV `topup:<email>`), which
+  `metering/budget.ts` spends only once the plan allowance is gone — `X-Credits-Source: plan|topup`,
+  no upgrade nudge on a top-up call; `/v1/usage`, `get_usage` and /account show `topup`. Surfaces:
+  `POST /v1/billing/paypal/orders` + `…/<id>/capture` (key), the MCP tools `buy_credits` /
+  `confirm_credit_purchase` (protected: the keyless 401 starts sign-in — the agent hands the human
+  PayPal's approval link and never sees a card), the /account "credit packs" buttons (session) with
+  PayPal returning the browser to `GET /v1/billing/paypal/return`, which captures. The
+  `paypal_orders` row's `created → completed` UPDATE is the capture guard (replays, a second return
+  hit and PayPal's `ORDER_ALREADY_CAPTURED` grant nothing); `credit_ledger` gets `paypal:<pack>`.
+  Dark (503 / tool error) until `PAYPAL_SANDBOX_CLIENT_ID` + `PAYPAL_SANDBOX_SECRET` are set.
+  `scripts/paypal-walkthrough.mjs` runs the five-call agent path from a terminal.
+- **Data origins** — official open-licence government APIs only
+  (planning.data.gov.uk, Find a Tender OCDS, FCDO UKSL — all OGL v3;
+  TED Search API — Commission Decision 2011/833/EU; SAM.gov Exclusions —
+  US public domain, D&B address fields stripped at ingest, read from the
+  keyless daily public extract (no API key since 2026-09-20); The Gazette
+  linked-data API — OGL v3, fair-use paced, corporate notices only;
+  Companies House advanced search and public-data API (company profile, charges,
+  filing history, PSC list, search — Crown copyright, public register,
+  needs `COMPANIES_HOUSE_API_KEY`, 600 req/5 min shared by both sources). No scraping.
+- **CI/CD** — GitHub Actions: lint/typecheck/test; deploy on main gated on
+  `CLOUDFLARE_API_TOKEN` secret existing.
+
+## Compliance & accessibility
+- UK GDPR: per-dataset data posture, stated in the terms licence table.
+  Current datasets run Blind Mode — personal fields dropped at ingest, never
+  stored. Personal-data datasets (e.g. sanctions lists) require their terms +
+  privacy entries BEFORE going live (task-38 framework). Waitlist/feedback
+  store email only. No purchased lists, no cold email in v1.
+- Landing/docs: plain fast HTML, core content works without JS.
+
+## Out of scope for v1 (do not scope-creep without re-baselining)
+- Council-portal long-tail scraping (Idox/Northgate) and any managed-scraping
+  integration
+- Regulatory-change/recall feed vertical; spatial search; webhooks
+- RapidAPI/Apify/MCP-directory listings (prep doc only)
+- Durable-Objects rate limiting; annual-plan automation; programmatic SEO at
+  scale (per-council/per-buyer pages — the per-SOURCE `/stats` pages shipped
+  with task 34 and the explicitly listed facet sub-pages are the bounded version)
+- Fuzzy-match sanctions *screening* (`/v1/screen`) before list-serving proves
+  demand and per-dataset legal terms exist (NICHE-NEXT-SANCTIONS Phase B)

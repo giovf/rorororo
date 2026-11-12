@@ -43,7 +43,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
 
 ## Sources of truth & drift control
 
-- Architecture: `docs/ARCHITECTURE.md` (auto-loaded below; the stable summary).
+- Architecture: `docs/ARCHITECTURE.md` (auto-loaded below; the stable summary, kept short — one to
+  three lines per item). Per-subsystem history, incidents and proof notes: `docs/ARCHITECTURE-DETAIL.md`
+  (not auto-loaded; read the section you are changing, and add new narratives there).
   Volatile detail: `.taskmaster/docs/prd.md`. Work plan: `.taskmaster/tasks/tasks.json`.
 - If a task conflicts with ARCHITECTURE.md, reconcile BEFORE implementing —
   usually by fixing the task; change the architecture doc only when the code

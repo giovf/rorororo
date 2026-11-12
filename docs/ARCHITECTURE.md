@@ -64,11 +64,6 @@ scripts/                 portfolio listing, ledger check, licence keygen
 src/ environment/ data/   legacy Python prior art — reference only
 ```
 
-## Stack
-TypeScript 6 strict / NodeNext ESM, Node 22, npm workspaces, ESLint 10 + Prettier
-+ Vitest. Per venture: WXT (extensions), Figma plugin API (plugins), Astro
-(landing), Hono (small APIs). Static hosting only (Cloudflare Pages / GitHub Pages).
-
 ## Backend & data
 No servers in v1 except gankdat (adopted, Worker + KV + D1, Workers Paid ≈ US$5/mo — the
 portfolio's only recurring cost) and the licence Worker. Persistent data: venture
