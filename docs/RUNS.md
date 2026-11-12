@@ -2887,6 +2887,14 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 13:07 | triage | notify owner dispatched: last run started 10:12 UTC, 2 h 54 min ago
 - 2026-11-12 13:06 | watchdog | ci-failed: gankdat-publish.yml run 95 11:58 — step Apify actors — push changed, price, pub…; no later run
 - 2026-11-12 16:08 | triage | notify owner dispatched: last run started 13:06 UTC, 3 h ago
+- 2026-11-12 17:19 | build | Main green at STEP 0; no new owner notes; first-runs: nothing owed; claimed new-ventures spike-uk-company-accounts
+- 2026-11-12 17:19 | build | Relay fix: .gitignore `*.zip` dropped every relay ZIP slice (the 09:13 5.zip); responses/**/*.zip now kept
+- 2026-11-12 17:19 | build | Relay: 11-11 ZIP 10,691 members, 7,713 B each, flags 0 (no descriptors), Range 206 on any byte
+- 2026-11-12 17:19 | build | Tags (87 members): net assets 72 % by the DBT rule, 98 % with Equity fallback; cash 57, creditors 82, staff 95 %
+- 2026-11-12 17:19 | build | Turnover/profit tagged in 2–7 % (filleted accounts); sizes 58–208 MiB a day, 597.6 MiB on 10-01; monthly 1.8–4.1 GiB
+- 2026-11-12 17:19 | build | Spike spike-uk-company-accounts-financials done: PROMOTE as a field + ninth diligence register, not a dataset
+- 2026-11-12 17:19 | build | Queued gankdat uk-company-accounts (3, 1.0 day) and uk-company-accounts-backfill (2, 0.5 day, not before 11-26)
+- 2026-11-12 17:19 | build | Exchange: uk-company-accounts-financials promoted; new-ventures spikes open: 1 (pay-per-crawl, dated 11-17)
 - 2026-11-12 17:17 | burn-down | Main green at STEP 0; no new owner notes; first-runs: nothing owed; next null, empty []; no majors PR open
 - 2026-11-12 17:17 | burn-down | Exchange pre-research: modern slavery registry + gender pay gap as ESG lookup fields — spike seeded (3); 2 spikes open
 - 2026-11-12 17:17 | burn-down | Relay ×3: OGL v3 on every page of both services; registry CSV 75 cols, CompanyNumber, 16.9 MB/yr, Range honoured
