@@ -1209,8 +1209,9 @@
       "effort_days": 0.6,
       "proof": "a live `/v1/data/uk-company-profiles` read for 10881715 carries `payment_practices` (31 days, 39 % late per /report/111700) and a non-reporter carries null; `/v1/data/uk-payment-practices?company_number=00519500` lists 16 reports; the weekly wave's refresh_log row shows the row count; day-30 read (gankdat `uk-payment-practices-day-30`, to queue at build): the route or the field on ≥ 1 paid or keyed call, else noted as a free field",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-12"
+      "status": "doing",
+      "added": "2026-11-12",
+      "doing_since": "2026-11-12"
     }
   ]
 }
