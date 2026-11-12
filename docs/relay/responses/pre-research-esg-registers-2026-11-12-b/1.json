@@ -1,0 +1,1598 @@
+{
+  "data": {
+    "total": 16,
+    "count": 16,
+    "offset": 0,
+    "limit": 50,
+    "desc": false,
+    "items": [
+      {
+        "title": "SiteVerdict — UK Gender Pay Gap Data & Benchmarks",
+        "name": "siteverdict-uk-gender-pay-gap",
+        "username": "siteverdict",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 16,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T23:14:32.890Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 8,
+            "TIMED-OUT": 0,
+            "TOTAL": 8
+          }
+        },
+        "description": "Official UK gender pay gap data (all years since 2017): employer search by name or company number, year-by-year trends, sector benchmarks and percentiles, possibly-missing filings, monitoring alerts and CSV export. Open data (OGL), no key needed.",
+        "categories": [
+          "BUSINESS",
+          "JOBS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Aman Thakran",
+        "userPictureUrl": "https://images.apifyusercontent.com/Xld-0V6VSmXq1fO65P5EqI6dPVDFAWPKmUhnEEnnjSM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZEprd01aSFUzNkNWS0tpb3ZkWVdPWTJrcnhac1lVcDJnclpRZzRZNkdaMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVTFSWkVwSVoxQkVNeTFhYzI5Mk1tSktUbHBHVG5obmNtZzBZVzA0UlY4M1ltNXpkMjlMTVdKelYwUkVRek5uUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "employer-report": {
+                "eventTitle": "Employer report",
+                "eventDescription": "One matched employer report (all years + trend + benchmark) is delivered",
+                "eventPriceUsd": 0.01
+              },
+              "sector-benchmark": {
+                "eventTitle": "Sector benchmark",
+                "eventDescription": "One sector benchmark (per-year statistics) is delivered",
+                "eventPriceUsd": 0.02
+              },
+              "missing-filing-flag": {
+                "eventTitle": "Missing filing flag",
+                "eventDescription": "One possibly-missing filing row is delivered",
+                "eventPriceUsd": 0.005
+              },
+              "filing-change-alert": {
+                "eventTitle": "Filing change alert",
+                "eventDescription": "Monitor mode finds a new or amended filing for a watched employer",
+                "eventPriceUsd": 0.01
+              },
+              "ai-brief": {
+                "eventTitle": "Ai brief",
+                "eventDescription": "The user's own AI key returned a brief (never charged on failure)",
+                "eventPriceUsd": 0.05
+              }
+            }
+          },
+          "createdAt": "2026-10-12T20:34:23.298Z",
+          "startedAt": "2026-10-12T20:34:23.298Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "jMPLJfJnbfYrGUsjd",
+        "url": "https://apify.com/siteverdict/siteverdict-uk-gender-pay-gap"
+      },
+      {
+        "title": "UK Gender Pay Gap Lookup: Employer Figures by Year",
+        "name": "uk-gender-pay-gap-lookup",
+        "username": "accountable_eel",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 7,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T07:30:28.376Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 5,
+            "TIMED-OUT": 0,
+            "TOTAL": 5
+          }
+        },
+        "description": "Look up UK gender pay gap reporting figures by employer name or company number: hourly wage and bonus pay gap percentages, quartiles, and submission history from gender-pay-gap.service.gov.uk.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/5fkxKq9OhCPrbTpkBerm2PYqU_uRbu6bKbGOIYrJ9UU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNkVMTUNxazg0eEpBSHU2SmQtYWN0b3ItSEVWSjVzZk5ua3A4ZndQT1ctVmd0bkZXU1hHci11ay1nZW5kZXItcGF5LWdhcC1sb29rdXAucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Adriana Voss",
+        "userPictureUrl": "https://images.apifyusercontent.com/CGe0bLNDet-YF5zEdso7hmRkv8G729sNu_uWbXRy0eU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdWEwVVBjRXJSeE5hSEx2WDBJMW9pSGk4Z0x0YWdOY2VTMEhzNlhBMXBjby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOa1ZNVFVOeGF6ZzBlRXBCU0hVMlNtUXRjSEp2Wm1sc1pTMXZPV2RHUVc5SWRqQjJMWEJsZUdWc2N5MWhiblJ2Ym1sdkxXSmhkR2x1YVdNdE1qVTNNelF6TkMwME1UWTBOREU0TG1wd1p3LmpwZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "employer-returned": {
+                "eventTitle": "Employer report returned",
+                "eventDescription": "Charged once per employer gender pay gap report returned in the dataset. A search with no matches is never charged.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001275
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000975
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00075
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00075
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00075
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-11-01T12:23:09.438Z",
+          "startedAt": "2026-11-01T12:23:09.438Z"
+        },
+        "id": "HEVJ5sfNnkp8fwPOW",
+        "url": "https://apify.com/accountable_eel/uk-gender-pay-gap-lookup"
+      },
+      {
+        "title": "UK Gender Pay Gap Reports API: Employer Filings",
+        "name": "uk-gender-pay-gap-reports",
+        "username": "tabulary",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 22,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T07:40:28.269Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 20,
+            "TIMED-OUT": 0,
+            "TOTAL": 20
+          }
+        },
+        "description": "UK employer gender pay gap disclosures from gender-pay-gap.service.gov.uk: pay gap %, bonus gap %, quartile pay bands, company number, SIC code and filing dates for employers with 250+ staff. Filter by name, SIC code or reporting year, with a new-since-last-run alert mode.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Fos_kCMD8k_AJOSQEr-FZXYIwNNoc_Wrfb7eCdpahrI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdkdJcFN6UWhHQkM2ZGpBTVctYWN0b3ItcEZ4ajZCUXMyRHRHRUpyUVYtSE42TGdzQmQ4Sy11ay1nZW5kZXItcGF5LWdhcC1yZXBvcnRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Tabulary",
+        "userPictureUrl": "https://images.apifyusercontent.com/1_tmh6iN0rNJA-0tWN-7VkK1j9o_DGqMF8QVkOT8dvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNEUweEVGa3F2U29JWmdQU1BLdWc3bTFMWlN5aXdvT3FNMmh4REw3V1VOby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZka2RKY0ZONlVXaEhRa00yWkdwQlRWY3RjSEp2Wm1sc1pTMXRXbGRpVkROemJVVkxMWFJoWW5Wc1lYSjVMV3h2WjI4dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Pay gap filing",
+                "eventDescription": "One pay gap filing saved to the dataset by UK Gender Pay Gap Reports API: Employer Filings.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-23T07:11:32.961Z",
+          "startedAt": "2026-10-23T07:11:32.961Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "pFxj6BQs2DtGEJrQV",
+        "url": "https://apify.com/tabulary/uk-gender-pay-gap-reports"
+      },
+      {
+        "title": "UK Gender Pay Gap Records — Employer Reports",
+        "name": "uk-gender-pay-gap-records",
+        "username": "nexgensignal",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 101,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T16:00:29.821Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Look up a UK employer's gender pay gap report by name or Companies House number: mean and median hourly and bonus gaps and pay quartiles for the year. Each match says whether the report name, current name or number matched. OGL v3.0; no person data.",
+        "categories": [
+          "NEWS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/OFeliYz2VphC5qT_GyW4RoBxTOgm00EBGhDsP4Xx_5s/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSFVFVlB2UEdTb3pJUmFoVHktYWN0b3ItYlBoS2NYS1o1ZVVOMXRrNm8tZDdwQXUzODh0Ui11ay1nZW5kZXItcGF5LWdhcC1yZWNvcmRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Signal",
+        "userPictureUrl": "https://images.apifyusercontent.com/E2AM6xIR3RFe1AIRY7pK-UJ_GvYpK4KjdTJNvRKmJj8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vS0lmSk1xRkFqZlVObzZfNkFoOEtwaWtaQUJXU0tma3U1RDlsdG90M2FHNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTRlZGVmxCMlVFZFRiM3BKVW1Gb1ZIa3RjSEp2Wm1sc1pTMXhUR3AzTjB0VVpXTnBMVTVIVXk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "PRICING ACTIVATION FIX: re-file identical amounts with the activation flag (isPriceChangeNotificationSuppressed) so the saved price actually bills customers.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "pay_gap_record": {
+                "eventTitle": "Pay-gap record",
+                "eventDescription": "One UK employer gender-pay-gap report delivered to your dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0335
+                  }
+                }
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "isPriceChangeNotificationSuppressed": true,
+          "createdAt": "2026-08-26T21:35:22.398Z",
+          "startedAt": "2026-08-26T21:35:22.398Z"
+        },
+        "id": "bPhKcXKZ5eUN1tk6o",
+        "url": "https://apify.com/nexgensignal/uk-gender-pay-gap-records"
+      },
+      {
+        "title": "UK Gender Pay Gap — Employer Pay Gap Data",
+        "name": "uk-gender-pay-gap",
+        "username": "noahadler",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 33,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T14:50:36.006Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Download official UK Gender Pay Gap employer reports by year: mean/median hourly gap, bonus gap, quartiles, SIC, company number. Open Government Licence CSV. No ResponsiblePerson PII. Filter by employer name or company number.",
+        "categories": [
+          "OTHER",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/UFZUShFYmbvOT7El6tfXxV34XAmZPRRuAVDmGf6Hebs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMHJJUUUzVVJ2d1JMWkZkc2EtYWN0b3ItZXRXczZhMlphdG55Z3VHbTQtRjI1OWVFSUk4US1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Noah Adler",
+        "userPictureUrl": "https://images.apifyusercontent.com/5rjZdV2lhBIqLa0gTEomKHAXmVPbxABjhZV-K_LeQSc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWV8zSjh1ZnlGRVRLd0JwdGludzF4NzV0c2k1alpfd0pSS0w5SVZmcUJpZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNSEpKVVVVelZWSjJkMUpNV2taa2MyRXRjSEp2Wm1sc1pTMTBRV2RKV1dkRGJWRlNMWEJsY21acGJGOXliM05oTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Employer",
+                "eventDescription": "One UK Gender Pay Gap employer submission row (gap %, quartiles, company number).",
+                "eventPriceUsd": 0.0015
+              }
+            }
+          },
+          "createdAt": "2026-10-03T11:35:38.641Z",
+          "startedAt": "2026-10-03T11:35:38.641Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "etWs6a2ZatnyguGm4",
+        "url": "https://apify.com/noahadler/uk-gender-pay-gap"
+      },
+      {
+        "title": "France Egapro Equality Index: Gender Pay Gap by Company",
+        "name": "france-egapro-equality-index",
+        "username": "datacraft-studio",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 14,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T20:42:29.623Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 6,
+            "TIMED-OUT": 0,
+            "TOTAL": 6
+          }
+        },
+        "description": "Official French gender equality index (Index Egapro) for every company and UES with 50+ employees: overall score out of 100, five indicator scores, headcount band, NAF, department, history since 2018. Pay per company.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Yahya Nouali",
+        "userPictureUrl": "https://images.apifyusercontent.com/W87h641sRDtCTTpNBB8b0VjXieSBLDCS4SAQ0o721v8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vb293b0p4Xy1xMzNYbzJTUDR5N0M1WkZzYmctblNvSmVBVE83TGhubXU4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTV051VEZoaWVXTjZYMWhMY1VsRlMxaERaVmhoUlhVNE1UTkZaa05MVjI1clFrRk5TV2hyTUZCdVozSmtaVlZIWlhodWR6MXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "equality-index": {
+                "eventTitle": "Equality index delivered",
+                "eventDescription": "One company or UES Egapro declaration delivered. Not charged for filtered-out rows or the summary row.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-11-05T20:07:54.000Z",
+          "reasonForChange": "Initial pay-per-event pricing",
+          "createdAt": "2026-11-05T20:07:55.137Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "XfKEPUTsDOxIxdgpi",
+        "url": "https://apify.com/datacraft-studio/france-egapro-equality-index"
+      },
+      {
+        "title": "UK Supplier Transparency Pack: Payment, Pay Gap, Slavery",
+        "name": "uk-supplier-transparency-pack",
+        "username": "wooden_scanner_c1n",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 8,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T09:38:34.801Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 3,
+            "TIMED-OUT": 0,
+            "TOTAL": 3
+          }
+        },
+        "description": "One profile per UK company from three GOV.UK open datasets: payment practices (average days to pay, % paid late), gender pay gap figures and modern slavery statements. Search by company name or Companies House number, or monitor new filings. Company-level only, OGL v3.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sean",
+        "userPictureUrl": "https://images.apifyusercontent.com/I_t1Im2omXDfHW_Gv_O7mLtbCovezhV_5gQVsENC9Bc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vY1N4TGlQejRCenA2a0d6ODBFOThQaklvam1BZUo3MThZazlISmpxS1RJUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSFZGYzNGaVNXWjRkVTQxTkc1NlVGVkdjblEzYzBZd2VqQlJNVEZaY1hoYVRsSm5UR1pQYkRJeU5HZE9WVWg2UkVnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005
+              },
+              "company-profile": {
+                "eventTitle": "Company profile",
+                "eventDescription": "One UK company profile joining payment practices, gender pay gap and modern slavery statement data. Not-found rows are free.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-11-03T21:48:35.149Z",
+          "startedAt": "2026-11-03T21:48:35.149Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "XLN6RVCEhYmL386Wi",
+        "url": "https://apify.com/wooden_scanner_c1n/uk-supplier-transparency-pack"
+      },
+      {
+        "title": "Comparably.com Reviews and Stats Scraper · Emails",
+        "name": "comparably-cheerio-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 88,
+          "totalRuns": 5929,
+          "totalUsers": 25,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 7,
+          "lastRunStartedAt": "2026-11-11T12:50:29.953Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 3,
+            "FAILED": 0,
+            "SUCCEEDED": 2031,
+            "TIMED-OUT": 1,
+            "TOTAL": 2035
+          },
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 2
+        },
+        "description": "Access detailed employee reviews, company culture metrics, and CEO approval ratings to make informed HR decisions and benchmark workplace satisfaction",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/s5UwOz4T_9AZY09Z7ZxQ9EuymlwClnsfCkk1KwH4vnY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItN3BSS2hhaktoOElJbEJWVnMtZVJkMmx0V1NFbi1jb21wYXJhYmx5LmpwZWc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 5.000000000000001,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Charged for additional data",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              },
+              "contact-email": {
+                "eventTitle": "Contact email found",
+                "eventDescription": "One contact email discovered for a row and attached to it. Charged only when an address is actually found — lookups that find nothing are free. Requires the enrichEmails option.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.05
+              }
+            }
+          },
+          "startedAt": "2026-11-03T08:36:33.802Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-10-19T08:36:34.011Z"
+        },
+        "id": "7pRKhajKh8IIlBVVs",
+        "url": "https://apify.com/memo23/comparably-cheerio-scraper"
+      },
+      {
+        "title": "Welcome to the Jungle Scraper: WTJ Tech Jobs FR/EU + Salaries",
+        "name": "welcome-to-the-jungle-scraper",
+        "username": "dltik",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 726,
+          "totalUsers": 28,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 13,
+          "lastRunStartedAt": "2026-11-11T16:50:31.038Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 105,
+            "TIMED-OUT": 0,
+            "TOTAL": 105
+          }
+        },
+        "description": "Scrape Welcome to the Jungle jobs by keyword, country, contract, city, remote. Get salary, native tech stack, benefits, apply URL + ATS vendor, company profile, and — uniquely — the employer's application-form screening questions. Optional AI fit-scoring + SIREN. $0.50/1K jobs.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "MARKETING"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/kG8zyzPDIQ0saDyrg9MnW6__510ohjzh7S08U6RTtlM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTVJNT3kwWXJhZzF1RE9oYkMtYWN0b3ItaWc0dkw3Y0VKQUFVVGNCRW0tWDdkNHNQRWlhMy13dGotc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Walid",
+        "userPictureUrl": "https://images.apifyusercontent.com/tO4Oc4n6FT14mzuI_C_IUeiYOhcpbiTVsfJ49jz2ne4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRzlNaFBPalNQZFZfQmhKMVF5Rk9jSlVJUFVQTC1IS3ozM3VTYnJ3d0ZFYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURlozV21wNlJrVmpYMFkwZUZOelkxRlhUazVNV1Roc2NXdFlkRmt3Y0haR1pWaEpNRmxhZDFKck5FTTJObWhS.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "job-scraped": {
+                "eventTitle": "Job scraped",
+                "eventDescription": "One WTJ job with full details: title, company, salary, native tech stack (skills/tools), benefits, apply URL + detected ATS vendor, and the full company profile (equality index, ESG labels, sectors, website).",
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              },
+              "company-enriched": {
+                "eventTitle": "Employer enriched (SIREN)",
+                "eventDescription": "Optional per-job company intelligence when enrichCompany=true: employer resolved to its French SIREN with legal name, size (headcount range), sector (NAF), category (PME/ETI/GE), age and administrative status (active vs. ceased). Free official register — data no WTJ-only scraper can produce. Charged ON TOP of job-scraped only for employers successfully resolved.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": false
+              },
+              "job-analyzed": {
+                "eventTitle": "AI job analysis (premium)",
+                "eventDescription": "Optional AI enrichment per job when analyzeJobs=true: plain-language summary, inferred seniority + remote, truly-required skills, red flags, and (with a candidate profile) a 0-100 fit_score + apply/maybe/skip action. Paid Apify plan only. Charged ON TOP of job-scraped when the user opts into AI analysis.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "startedAt": "2026-10-31T13:29:08.000Z",
+          "reasonForChange": "Per-job price rises $0.0005 -> $0.0015 ($1.50/1,000), still the cheapest Welcome to the Jungle scraper and under the $5/1,000 job-data norm. Employer SIREN enrichment stays included; AI analysis unchanged (OFF by default).",
+          "createdAt": "2026-10-16T13:29:04.179Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-10-16T13:29:24.534Z",
+          "notifiedAboutChangeAt": "2026-10-31T13:30:26.037Z"
+        },
+        "id": "ig4vL7cEJAAUTcBEm",
+        "url": "https://apify.com/dltik/welcome-to-the-jungle-scraper"
+      },
+      {
+        "title": "Official Company Headcount: US, UK, France, Norway & 6 more",
+        "name": "company-registry-headcount",
+        "username": "northbell",
+        "stats": {
+          "totalBuilds": 107,
+          "totalRuns": 212,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-11-12T05:10:23.879Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 45,
+            "TIMED-OUT": 0,
+            "TOTAL": 45
+          }
+        },
+        "description": "Company size and employee count from official registries, by name, number or website: US (Form 5500), UK (Companies House, size bands), France (INSEE), Norway (NAV), Latvia, Estonia, Czechia, Slovakia, Romania, Japan. Or US employers by state, size. Source and date on each row. No figure, $0.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/A1ajJhF3P7iwFM7Zt8Fpx07cA2p0ft7L3iG1k4qHhlY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQ0Z0Nll3UTMwbDA3NlREa0UtYWN0b3ItRkxaSlAzMmtjNHN0UXpnRmktWmNwRU93MlpONS1jb21wYW55LXJlZ2lzdHJ5LWhlYWRjb3VudC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Northbell",
+        "userPictureUrl": "https://images.apifyusercontent.com/4-1Ocpi96rKrO9FJ6uGOsD34ebcohIEYzFaaLMsDFyA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOUJzMFBQQkJnNW8wb3ZqLTBLRHIteUczYU9YX2x3Q0xNaDhxa1JmTUsyNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTWGhyVDA5NlQySktTRWRtWWtKd2VISkJVRlYwT1VJNGJsVmxTMmhWU0VGM2RsbFNiVFI0ZUVkTlJWaHVNMHhC.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Run started",
+                "eventDescription": "Charged once per run. Put all your companies in one run and you pay this once.",
+                "eventPriceUsd": 0.01
+              },
+              "company": {
+                "eventTitle": "Company",
+                "eventDescription": "One company with its registry number, the official headcount or band, its reference year, source and licence. $2.00 per 1,000. Error and not-found rows are not charged.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0016
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-17T23:09:02.753Z",
+          "startedAt": "2026-10-17T23:09:02.753Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "FLZJP32kc4stQzgFi",
+        "url": "https://apify.com/northbell/company-registry-headcount"
+      },
+      {
+        "title": "PayScale Company Benefits Scraper",
+        "name": "payscale-company-benefits-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 14,
+          "totalRuns": 69,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T12:54:29.964Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrape employee benefits, perks and pay by company from PayScale across 29 country editions: ranked benefits with sample sizes, 401(k), health, PTO and tuition flags, salary percentiles, ratings and reviews.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/EEK1jQOlJySyL_PVG0fZwY4Peq02yP-wPwonfkIClJM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItOU1QTG10UE8xdUtDSTdhTjEtUkROZERmM0xYRi1pbWFnZXNfJTI4NyUyOS5qcGVn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Enterprise discount: PLATINUM and DIAMOND plans now pay less per result than GOLD. All other prices are unchanged.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "employer-benefits": {
+                "eventTitle": "Employer benefits record",
+                "eventDescription": "One employer: the ranked employee-reported benefits with how many staff reported each, the health and retirement catalogues, 14 yes/no benefit flags, headline salary, total compensation, hourly rate and bonus medians. 40 fields.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.006734
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.006482
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00623
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.005607
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004984
+                  }
+                }
+              },
+              "directory-page": {
+                "eventTitle": "Directory page scanned",
+                "eventDescription": "One industry or industry-plus-letter page of the country directory, which yields up to 100 employers. This is the cost of discovering companies you did not name yourself.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003848
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003704
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00356
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00356
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00356
+                  }
+                }
+              },
+              "sitemap-scan": {
+                "eventTitle": "Sitemap file scanned",
+                "eventDescription": "One 5.8 MB research sitemap parsed when sitemap discovery is on. Reaches the 8,844 employers with published benefits across 64 country editions, including countries with no directory.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01924
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01852
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0178
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0178
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0178
+                  }
+                }
+              },
+              "company-profile": {
+                "eventTitle": "Company profile",
+                "eventDescription": "Website, domain, founding date, organisation type, employee count range, logo, Wikipedia link, former names and the headquarters address. Charged only when the profile actually came back.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001924
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001852
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00178
+                  }
+                }
+              },
+              "related-employers": {
+                "eventTitle": "Related employers",
+                "eventDescription": "The employers PayScale considers comparable by pay, each with its median and percentile spread. Charged only when the list is non-empty.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001924
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001852
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00178
+                  }
+                }
+              },
+              "peer-comparison": {
+                "eventTitle": "Peer comparison",
+                "eventDescription": "Job satisfaction, stress rating and gender split for this employer alongside named competitors. Charged only when PayScale publishes it.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001924
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001852
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00178
+                  }
+                }
+              },
+              "office-locations": {
+                "eventTitle": "Office locations",
+                "eventDescription": "Total number of locations with pay data plus the top cities and their report URLs. Charged only when locations came back.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001924
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001852
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00178
+                  }
+                }
+              },
+              "compensation-percentiles": {
+                "eventTitle": "Compensation percentiles",
+                "eventDescription": "The 10th, 25th, 50th, 75th and 90th percentile for salary, total compensation, hourly rate, bonus, profit sharing and commission, each with its sample size.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002886
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002778
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00267
+                  }
+                }
+              },
+              "employer-ratings": {
+                "eventTitle": "Employer ratings",
+                "eventDescription": "Nine scored dimensions with sample sizes: overall satisfaction, fair pay, pay transparency, pay policy, appreciation, company outlook, learning and development, manager communication and manager relationship. Needs an extra page load.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003848
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003704
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00356
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00356
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00356
+                  }
+                }
+              },
+              "pay-by-job": {
+                "eventTitle": "Pay by job title",
+                "eventDescription": "Median and percentile pay for each job title reported at the employer, paginated seven per page load. Charged once per employer that returned a job table.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005772
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005556
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00534
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00534
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00534
+                  }
+                }
+              },
+              "pay-by-location": {
+                "eventTitle": "Pay by location",
+                "eventDescription": "Median and percentile pay broken down by city and state, with sample sizes.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002886
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002778
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00267
+                  }
+                }
+              },
+              "pay-by-experience": {
+                "eventTitle": "Pay by experience",
+                "eventDescription": "Median and percentile pay by years-of-experience band, with sample sizes.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002886
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002778
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00267
+                  }
+                }
+              },
+              "pay-by-gender": {
+                "eventTitle": "Pay by gender",
+                "eventDescription": "Median and percentile pay for men and women with sample sizes, which is what a gender pay gap calculation needs.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002886
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002778
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00267
+                  }
+                }
+              },
+              "pay-by-degree": {
+                "eventTitle": "Pay by degree",
+                "eventDescription": "Median and percentile pay by degree major, with sample sizes.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002886
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002778
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00267
+                  }
+                }
+              },
+              "hourly-rate-report": {
+                "eventTitle": "Hourly rate report",
+                "eventDescription": "The hourly pay report: percentiles, hourly rate by job title and by location, plus the written summary. Needs an extra page load.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003848
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003704
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00356
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00356
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00356
+                  }
+                }
+              },
+              "bonus-report": {
+                "eventTitle": "Bonus report",
+                "eventDescription": "The bonus report: percentiles, bonus by job title and the written summary. Needs an extra page load.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003848
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003704
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00356
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00356
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00356
+                  }
+                }
+              },
+              "employee-reviews": {
+                "eventTitle": "Employee reviews",
+                "eventDescription": "Employee written reviews with job title, city, pros, cons and date, seven per page load. Charged once per employer that returned at least one review.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00481
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00463
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00445
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00445
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00445
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01924
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01852
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0178
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0178
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0178
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-10-27T22:21:15.543Z",
+          "startedAt": "2026-10-27T22:21:15.543Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-27T22:30:31.565Z"
+        },
+        "id": "9MPLmtPO1uKCI7aN1",
+        "url": "https://apify.com/parseforge/payscale-company-benefits-scraper"
+      },
+      {
+        "title": "Welcome to the Jungle Gender Equality Index Scores",
+        "name": "wttj-equality-index",
+        "username": "gubidonius",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 62,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T09:28:30.190Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Every French professional equality index published on Welcome to the Jungle, with all five indicators split out. The indicator fields are POINTS SCORED and not the size of a gap, so a pay gap field of 40 is a full mark. No filter exists for the score, so profiles are read to find it.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "JOBS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Gregory Bolshakov",
+        "userPictureUrl": "https://images.apifyusercontent.com/VDaxF2L52qNHxzs3WO8QWFt-Yo-MB4hfpttq8A1jcvk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRTI4QnRjWTM2UXZ1Z04zU1pHSmh0U0M4VWpEVTRfNmJwaHpkUmFObC1acy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZVGc1UlRSUlJqQXlkRkJMVDNWQmJUVXRjSEp2Wm1sc1pTMUZPRXRwV2sxcWNHaHpMVzFsTFhSaGFHOWxMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Run started",
+                "eventDescription": "Charged once per run, and only after published indexes are actually returned. A run that finds no company publishing one costs you nothing.",
+                "eventPriceUsd": 0.002
+              },
+              "index-returned": {
+                "eventTitle": "Published index returned",
+                "eventDescription": "Charged for each published equality index written to your dataset, after it is saved. Company profiles read that publish no index are never charged, and a company indexed on several storefronts is read once and charged once.",
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-09T16:30:50.559Z",
+          "startedAt": "2026-09-09T16:30:50.559Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "v2stc9tnQzb4KiVGH",
+        "url": "https://apify.com/gubidonius/wttj-equality-index"
+      },
+      {
+        "title": "Built In Tech Salaries, by Title, Metro Area and Experience",
+        "name": "builtin-salaries",
+        "username": "gubidonius",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 59,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T12:42:33.251Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "US tech salaries from builtin.com for 200 titles, nationally, remote or in any of 50 metro areas: average, median, range, percentiles, the histogram, and breakdowns by experience, gender and company size. Every row carries how many people answered.",
+        "categories": [
+          "JOBS",
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Gregory Bolshakov",
+        "userPictureUrl": "https://images.apifyusercontent.com/VDaxF2L52qNHxzs3WO8QWFt-Yo-MB4hfpttq8A1jcvk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRTI4QnRjWTM2UXZ1Z04zU1pHSmh0U0M4VWpEVTRfNmJwaHpkUmFObC1acy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZVGc1UlRSUlJqQXlkRkJMVDNWQmJUVXRjSEp2Wm1sc1pTMUZPRXRwV2sxcWNHaHpMVzFsTFhSaGFHOWxMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Run started",
+                "eventDescription": "Charged once per run, and only after at least one row is returned. A run naming only titles the pages do not know costs you nothing.",
+                "eventPriceUsd": 0.00001
+              },
+              "row-returned": {
+                "eventTitle": "Salary row returned",
+                "eventDescription": "Charged for each row written to your dataset, after it is saved. A page with no respondents is reported and not charged.",
+                "eventPriceUsd": 0.00001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-12T22:04:25.714Z",
+          "startedAt": "2026-09-12T22:04:25.714Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "qsjneyawzeYkxLee1",
+        "url": "https://apify.com/gubidonius/builtin-salaries"
+      },
+      {
+        "title": "Indeed Job Scraper - Salaries, Skills & Company Data",
+        "name": "indeed-scraper",
+        "username": "harvestlab",
+        "stats": {
+          "totalBuilds": 91,
+          "totalRuns": 867,
+          "totalUsers": 31,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 8,
+          "lastRunStartedAt": "2026-11-11T14:00:05.084Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 96,
+            "TIMED-OUT": 0,
+            "TOTAL": 96
+          }
+        },
+        "description": "Indeed job scraper for jobs, salaries, skills, company ratings, benefits, and remote-work data across 8 countries. Build role-location salary grids, exports, webhooks, and optional compensation briefs.",
+        "categories": [
+          "JOBS",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/VDutXWS6CN1-APScIcefh2xwRW38jNrkE74toBnBIeA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMDdDUHVhOWRIVzdlUTVjaUUtYWN0b3ItWU9EN0xvTWJTNlRtRmllQkMtQVZhelA4djZuMy1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "harvestlab",
+        "userPictureUrl": "https://images.apifyusercontent.com/X6YQAl0-P5O8FSbKK5ygLVacYSUSy09uH8SIq2xejPA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUzNwZDA2ZWF2aWxYd3NvdzJILVFFcDhiMUJOM3FaQmFFZzU2WUdmakdiMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNRGREVUhWaE9XUklWemRsVVRWamFVVXRjSEp2Wm1sc1pTMVNWWGxsU2xKbFZsZHJMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZk5qQnFkWEY1TmpCcWRYRjVOakJxZFM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "job-scraped": {
+                "eventTitle": "Job scraped",
+                "eventDescription": "Charged for each job listing successfully scraped.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0018
+                  }
+                }
+              },
+              "ai-analysis-completed": {
+                "eventTitle": "Ai analysis completed",
+                "eventDescription": "Charged when a single-query AI job market analysis report is generated.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.035
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.03
+                  }
+                }
+              },
+              "market-comparison-report": {
+                "eventTitle": "Market comparison report",
+                "eventDescription": "Charged when a cross-query/cross-location comparison report is generated (multi-query compare mode).",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.1
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.08
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.07
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.06
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.06
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.06
+                  }
+                }
+              },
+              "export-csv-generated": {
+                "eventTitle": "Export csv generated",
+                "eventDescription": "Charged when the compare-mode CSV salary-matrix artifact is generated and uploaded to the key-value store.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.006
+                  }
+                }
+              },
+              "export-markdown-generated": {
+                "eventTitle": "Export markdown generated",
+                "eventDescription": "Charged when the compare-mode Markdown executive-briefing artifact is generated and uploaded to the key-value store.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.006
+                  }
+                }
+              }
+            }
+          },
+          "isPriceChangeNotificationSuppressed": false,
+          "startedAt": "2026-11-04T19:06:13.752Z",
+          "reasonForChange": "Owner-authorized subscription-tier discounts for recurring paid usage, November 4, 2026. No event or usage-billing changes.",
+          "createdAt": "2026-11-04T19:06:14.207Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-11-04T19:30:29.943Z"
+        },
+        "id": "YOD7LoMbS6TmFieBC",
+        "url": "https://apify.com/harvestlab/indeed-scraper"
+      },
+      {
+        "title": "SEO Audit API - On-Page Score, Issues and Fixes",
+        "name": "seo-audit-api",
+        "username": "stas_k",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 4,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T19:16:28.165Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "Most SEO checkers fetch raw html, so a javascript page scores as an empty shell and you still pay for the row. This one opens every url in its own Chromium: a 0-100 score, each issue with severity and a fix, and a page it could not read comes back free with a reason.",
+        "categories": [
+          "SEO_TOOLS",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/kZO8c8F0S_IinwP_N17J0kwu9g75Vmjx9gDhwDQ907k/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vR2xGMjR6eTE0ZnlBWWgxaVQtYWN0b3ItQkt6RFE1UTY0cUlCYWxxSkYtVmhDNWdEdWNhTi0zMF9zZW8tYXVkaXQtYXBpLmpwZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Stas K",
+        "userPictureUrl": "https://images.apifyusercontent.com/5_FfyJQQz-eCC2RyinckAcXSGj72h4DK8h3ix1O2oiM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vc0hnYmZOaURZVXlmUHg4a0NUTkNTQnc5bGJXTmw3T1NWaHNUcGhnZ2xrWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbDlOYzBoaVFUTkdValJTWTBWSk1FeHpTVzFhZEZGbFdGQnBRMUJLWVRKQlVtRXdOVEl3WlVkSFRGUmxNMmhwU0RVOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": 0.05,
+          "reasonForChange": "Initial price: one audited page costs 0.01 USD. A page that could not be read, a duplicate, a cut line and everything after a stop cost nothing and say why.",
+          "startedAt": "2026-11-10T20:31:16.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "page-audited": {
+                "eventTitle": "Page audited",
+                "eventDescription": "Charged once per page delivered with a 0-100 score, its issues with weights and fixes. A page that could not be read, a duplicate, a cut line and everything after a stop cost nothing.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              }
+            }
+          },
+          "createdAt": "2026-11-10T20:36:22.490Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "BKzDQ5Q64qIBalqJF",
+        "url": "https://apify.com/stas_k/seo-audit-api"
+      }
+    ]
+  }
+}
