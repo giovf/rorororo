@@ -1,0 +1,159 @@
+{
+  "request": "pre-research-ch-accounts-2026-11-12-b",
+  "fetched_at": "2026-11-12T09:15:46.886Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://stream-read-xbrl.docs.trade.gov.uk/get-started/data-dictionary",
+      "fetched_at": "2026-11-12T09:15:43.333Z",
+      "status": 200,
+      "elapsed_ms": 380,
+      "final_url": "https://stream-read-xbrl.docs.trade.gov.uk/get-started/data-dictionary/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "67533",
+        "last-modified": "Wed, 04 Nov 2026 13:00:44 GMT",
+        "etag": "W/\"6aeb2c7c-2e4f8\""
+      },
+      "file": "1.txt",
+      "bytes": 11841,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 189688
+    },
+    {
+      "method": "GET",
+      "url": "https://stream-read-xbrl.docs.trade.gov.uk/",
+      "fetched_at": "2026-11-12T09:15:44.230Z",
+      "status": 200,
+      "elapsed_ms": 15,
+      "final_url": "https://stream-read-xbrl.docs.trade.gov.uk/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "64308",
+        "last-modified": "Wed, 04 Nov 2026 13:00:44 GMT",
+        "etag": "W/\"6aeb2c7c-28872\""
+      },
+      "file": "2.txt",
+      "bytes": 1740,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 166002
+    },
+    {
+      "method": "GET",
+      "url": "https://resources.companieshouse.gov.uk/infoAndGuide/faq/accountsDataProduct.shtml",
+      "fetched_at": "2026-11-12T09:15:44.262Z",
+      "status": 200,
+      "elapsed_ms": 520,
+      "final_url": "https://resources.companieshouse.gov.uk/infoAndGuide/faq/accountsDataProduct.shtml",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "16842",
+        "last-modified": "Fri, 09 Oct 2026 10:46:22 GMT",
+        "etag": "\"3f95b04e847c9a8768af184f69c4e664\""
+      },
+      "file": "3.txt",
+      "bytes": 7415,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 16842
+    },
+    {
+      "method": "GET",
+      "url": "https://companycheck.co.uk/company-credit-reports",
+      "fetched_at": "2026-11-12T09:15:44.787Z",
+      "status": 200,
+      "elapsed_ms": 218,
+      "final_url": "https://companycheck.co.uk/company-credit-reports",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.txt",
+      "bytes": 18496,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 109718
+    },
+    {
+      "method": "GET",
+      "url": "https://companyrecord.co.uk/blog/companies-house-free-data-stack-eleven-years-gaps",
+      "fetched_at": "2026-11-12T09:15:45.082Z",
+      "status": 404,
+      "elapsed_ms": 195,
+      "final_url": "https://companyrecord.co.uk/blog/companies-house-free-data-stack-eleven-years-gaps",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 3239,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 36528
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/acts/rein8~uk-company-financials",
+      "fetched_at": "2026-11-12T09:15:45.279Z",
+      "status": 200,
+      "elapsed_ms": 170,
+      "final_url": "https://api.apify.com/v2/acts/rein8~uk-company-financials",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"1cb4-FV2TTATgO2g/gxelp02/AE0I4/8\""
+      },
+      "file": "6.json",
+      "bytes": 7348,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/acts/ukdatakit~uk-company-accounts",
+      "fetched_at": "2026-11-12T09:15:45.950Z",
+      "status": 200,
+      "elapsed_ms": 48,
+      "final_url": "https://api.apify.com/v2/acts/ukdatakit~uk-company-accounts",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"1595-Cl+A1R2D0s4y74/EUAwlCCoNmdQ\""
+      },
+      "file": "7.json",
+      "bytes": 5525,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://data.globalmindsetmarketing.co.uk/docs",
+      "fetched_at": "2026-11-12T09:15:45.999Z",
+      "status": 200,
+      "elapsed_ms": 426,
+      "final_url": "https://data.globalmindsetmarketing.co.uk/docs",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 8036,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 26527
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/publications/companies-house-accreditation-to-information-fair-traders-scheme",
+      "fetched_at": "2026-11-12T09:15:46.544Z",
+      "status": 200,
+      "elapsed_ms": 339,
+      "final_url": "https://www.gov.uk/government/publications/companies-house-accreditation-to-information-fair-traders-scheme",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "11614",
+        "etag": "W/\"9fa03a7c947c97f65a0934e49f9c14c7\""
+      },
+      "file": "9.txt",
+      "bytes": 9574,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 69211
+    }
+  ]
+}

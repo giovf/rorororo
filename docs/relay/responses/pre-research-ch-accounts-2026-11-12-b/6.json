@@ -1,0 +1,122 @@
+{
+  "data": {
+    "id": "PRrOrlcFUePJ51K3D",
+    "userId": "vk3JOTa5wF7hjOryA",
+    "name": "uk-company-financials",
+    "username": "rein8",
+    "description": "Companies House accounts as company data, no API key: net assets, cash, creditors, employees, dormant flag and accounts type for every set of accounts filed (daily iXBRL files); turnover and profit when filed. No directors. Unofficial: not affiliated with or endorsed by Companies House.",
+    "isPublic": true,
+    "createdAt": "2026-09-26T17:40:16.808Z",
+    "modifiedAt": "2026-10-03T15:59:23.875Z",
+    "taggedBuilds": {
+      "latest": {
+        "buildId": "9sHuCOKeb3KLbE4Z9",
+        "finishedAt": "2026-09-26T21:51:44.712Z",
+        "buildNumberInt": 400001,
+        "buildNumber": "0.4.1"
+      }
+    },
+    "stats": {
+      "totalBuilds": 3,
+      "totalRuns": 58,
+      "totalUsers": 2,
+      "totalUsers7Days": 1,
+      "totalUsers30Days": 1,
+      "totalUsers90Days": 1,
+      "actorReviewCount": 2,
+      "actorReviewRating": 5,
+      "bookmarkCount": 0,
+      "lastRunStartedAt": "2026-11-11T11:48:31.486Z",
+      "publicActorRunStats30Days": {
+        "ABORTED": 0,
+        "FAILED": 0,
+        "SUCCEEDED": 29,
+        "TIMED-OUT": 0,
+        "TOTAL": 29
+      }
+    },
+    "versions": [
+      {
+        "versionNumber": "0.2",
+        "sourceType": "SOURCE_FILES",
+        "buildTag": "latest"
+      },
+      {
+        "versionNumber": "0.3",
+        "sourceType": "SOURCE_FILES",
+        "buildTag": "latest"
+      },
+      {
+        "versionNumber": "0.4",
+        "sourceType": "SOURCE_FILES",
+        "buildTag": "latest"
+      }
+    ],
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 1200,
+      "memoryMbytes": 2048
+    },
+    "exampleRunInput": {
+      "body": "{ \"helloWorld\": 123 }",
+      "contentType": "application/json; charset=utf-8"
+    },
+    "categories": [
+      "LEAD_GENERATION"
+    ],
+    "isDeprecated": false,
+    "title": "UK Company Accounts Data — Companies House Accounts, Net Assets",
+    "pictureUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/vk3JOTa5wF7hjOryA-actor-PRrOrlcFUePJ51K3D-JpOJuxn5JZ-icon.svg.png",
+    "seoTitle": "UK Company Accounts Data: Companies House Accounts, No Key",
+    "seoDescription": "Companies House accounts data, no API key: net assets, cash, creditors, employees and accounts type from every set of accounts filed (daily iXBRL files); turnover and profit when filed. No directors.",
+    "pricingInfos": [
+      {
+        "pricingModel": "PAY_PER_EVENT",
+        "createdAt": "2026-09-26T17:45:48.385Z",
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00005
+            },
+            "result": {
+              "eventTitle": "Accounts row",
+              "eventDescription": "One set of filed accounts delivered as figures (net assets, cash, creditors, employees, turnover when filed). 5 preview rows are free.",
+              "isOneTimeEvent": false,
+              "eventPriceUsd": 0.005,
+              "isPrimaryEvent": true
+            },
+            "scan": {
+              "eventTitle": "Daily file read",
+              "eventDescription": "One daily accounts file downloaded and read (charged once per file per run, never on a repeat of an unchanged file).",
+              "isOneTimeEvent": false,
+              "eventPriceUsd": 0.1
+            }
+          }
+        },
+        "startedAt": "2026-09-26T17:45:48.385Z",
+        "apifyMarginPercentage": 0.2,
+        "notifiedAboutChangeAt": "2026-09-26T18:05:52.389Z"
+      },
+      {
+        "pricingModel": "FREE",
+        "createdAt": "2026-10-03T15:59:23.888Z",
+        "startedAt": "2026-10-17T15:59:23.506Z",
+        "apifyMarginPercentage": 0,
+        "notifiedAboutFutureChangeAt": "2026-10-03T15:59:44.071Z",
+        "notifiedAboutChangeAt": "2026-10-17T16:00:22.073Z"
+      }
+    ],
+    "notice": "NONE",
+    "isCritical": false,
+    "isGeneric": false,
+    "hasNoDataset": false,
+    "isSourceCodeHidden": true,
+    "standbyUrl": null,
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "readmeSummary": "## UK Company Financials (rein8/uk-company-financials)\n\nParses Companies House daily bulk iXBRL accounts (the Free Accounts Data Product) to extract structured UK company accounting figures: one row per company and accounting period containing company identifiers, period start/end and balance-sheet totals (net assets, fixed and current assets), cash, debtors and creditors split by short/long term, average employee headcount, dormant declaration, accounts type and reporting standard, audit status, prior-year comparatives, filing date, source file and filing-history link, plus derived credit signals (negative-net-assets indicator, short-term-creditors vs current-assets ratio, cash change vs prior year, employee change vs prior year, filing lag days). It reads the iXBRL tags (not PDFs or the keyed Companies House API), handles group-tagged values where present, drops personal-data tags before output, supports date-window scans up to 60 days back and incremental runs that return only new or changed rows. Coverage and signal statistics are exposed (typical daily file ≈17k filings; electronic coverage ~75%; net-asset figures present ≈98% of rows; employee note ≈90%; cash ≈46%; turnover/profits present in ≈2–3% of filings). Outputs are numeric amounts in filing currency and include prior-year comparatives where tagged.\n\n## Use cases\n\n- Credit control and lending: detect liabilities-above-assets, shrinking cash, short-term creditor pressure and filing lag for recent filers.  \n- B2B sales and lead lists by company size: filter by headcount or balance-sheet size to build employer or target lists.  \n- Accountants, strike-off and company formation services: find dormant filings, benchmark clients by accounts standard and audit status.  \n- Brokers, M&A and invoice finance: surface larger filers that include turnover and profit (full FRS 102 / IFRS accounts).  \n- Customer / supplier monitoring: check an explicit list of company numbers for recent accounts or run incremental checks to be notified when new accounts arrive.  \n- Day-of-filing monitoring and bulk analysis: scan daily iXBRL bulk files for every set of accounts filed that day for market-data and research.  \n- Data joins and enrichment: combine extracted financial rows with register snapshots to add address, SIC codes or company status for geographic or sector filtering.  \n- Automated credit-risk sheets and employer/headcount reporting: produce credit-signal views and employer lists derived from balance-sheet and headcount tags.",
+    "deploymentKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUfnY+AHukJgm7pL82Bspo+o2e8lOAo05EabVbeHQBZ9SqlGPEZq9MF/NkDCrqSsHODurBbWlwtBoA1cXszbiP5am85kPFDbWSp0IGRYAW+tQyTSO6OoRIIQzyTuV69ELTut8NS4uqP3dz/I/xkbYRZCLtIXY9dUpyB5KnF7qC0oWadl9Fh35Ox5CEP7Nl91dC2XzUVm+aCvo826s22vCbev6tlUvh/8UUCco5Z/Oi3eVwLzbERomyOZ0MSrx7DTz2u/+tyGbNEuxqPyCqNsXY9G4gdkZu8eSlt166yzyghl3mGIFoKoF6qMCe3ZLwjhctwjC4B7plqi2XDw7yC5Ml \n"
+  }
+}

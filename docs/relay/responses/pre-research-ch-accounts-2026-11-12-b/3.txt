@@ -1,0 +1,66 @@
+Free Accounts Data Product FAQs
+https://www.gov.uk/companieshouse
+Companies House
+Free Accounts Data Product FAQs
+Show all
+Why has Companies House developed a free product?
+With the majority of accounts now filed electronically, Companies House has decided to make this information available in data format. For the first time, users will have the opportunity to manipulate accounts data to meet their own needs.
+The Free Accounts Data Product was developed with funding from the Public Sector Transparency Board (https://www.gov.uk/government/policy-advisory-groups/public-sector-transparency-board) .
+As a member of the Public Data Group (PDG) (https://www.gov.uk/government/groups/public-data-group) , Companies House is committed to its open data agenda and aims to make its information more easily accessible, and maximise the information that is made freely available.
+What accounts types are included?
+Full audited accounts (only those with a standard auditors report)
+Full unaudited accounts
+Abbreviated unaudited accounts
+Dormant company accounts
+All the accounts included will have been prepared to UK GAAP (Generally Accepted Accounting Practice) standard.
+Note: revised versions of these accounts are not included as these are not submitted electronically
+What file types are used within the data product?
+Approximately 97% of the individual data files will be in iXBRL (inline eXtensible Business Reporting Language) format (HTML file). The remaining 3% will be in XBRL format (XML file).
+The daily ZIP file (.zip) will have an average compressed file size of around 30Mb, while the monthly file will average around 500Mb. The uncompressed file size will usually be about 10 times greater.
+File sizes will vary throughout the month and tend to increase towards the end of the month, with substantial increases during the peak filing periods at the end of September and December.
+What type of validation is applied to the accounts data?
+Validation differs between XBRL and iXBRL formats, and whether accounts were filed using the Companies House WebFiling service or via third-party software.
+Accounts submissions using the Companies House WebFiling service are validated at the point of data entry to ensure the figures balance.
+Companies House will validate submissions to ensure core information is provided (e.g. Balance Sheet date, Date of Approval, Start of reporting period etc.).
+All submissions will refer to specific taxonomies, which define generic validation to be applied to data elements (e.g. monetary, numeric, Boolean etc.). iXBRL submissions currently refer to the UK GAAP (Generally Accepted Accounting Practice) 2009 taxonomy, for example ( http://www.xbrl.org/uk/gaap/core/2009-09-01/uk-gaap-full-2009-09-01.xsd ). XBRL submissions will refer to previous versions of the taxonomy.
+The following schemas may be referenced in XBRL instance documents:
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21/uk-gaap-ae-2009-06-21.xsd
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2008-04-06/uk-gaap-ae-2008-04-06.xsd
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/ae/2008-04-06/uk-gaap-ae-2008-04-06.xsd
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/ae/2005-06-01/uk-gaap-ae-2005-06-01.xsd
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/pt/2004-12-01/uk-gaap-pt-2004-12-01.xsd
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/gcd/2004-12-01/uk-gcd-2004-12 -01.xsd (http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/gcd/2004-12-01/uk-gcd-2004-12%20-01.xsd)
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/gcd/2004-12-01/uk-gcd-2004-12-01.xsd
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ci/2004-12-01/uk-gaap-ci-2004-12-01.xsd
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/pt/2004-12-01/uk-gaap-pt-2004-12-01.xsd
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/ci/2004-12-01/uk-gaap-ci-2004-12-01.xsd
+How are the data fields formatted?
+The format of Companies House WebFiling accounts is fixed (determined by Companies House), but the format will differ depending on which WebFiling template was used.
+For accounts filed via third-party software, the format of iXBRL submissions are defined by the presenter (in the HTML file), while XBRL will conform to a fixed format determined by style sheets
+The following style sheets may be referenced in XBRL instance documents:
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-10-01/stylesheet/CH-AE-stylesheet.xsl (/ef/xbrl/uk/fr/gaap/ae/2009-10-01/stylesheet/CH-AE-stylesheet.xsl)
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-10-01/stylesheet/CH-AE-dormant-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21/stylesheet/CH-AE-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2009-06-21/stylesheet/CH-AE-dormant-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2008-04-06/stylesheet/CH-AE-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2008-04-06/stylesheet/CH-AE-dormant-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/uk/fr/gaap/ae/2008-04-06/stylesheet/CH-AE-adobe-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/ae/2008-04-06/stylesheet/CH-AE-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/ae/2008-04-06/stylesheet/CH-AE-dormant-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/ae/2008-04-06/stylesheet/CH-AE-adobe-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/ae/2005-06-01/stylesheet/CH-AE-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/ae/2005-06-01/stylesheet/CH-AE-dormant-stylesheet.xsl
+http://www.companieshouse.gov.uk/ef/xbrl/gaap/ae/2005-06-01/stylesheet/CH-AE-adobe-stylesheet.xsl
+What accounting standard are the accounts prepared to?
+At present, only accounts prepared to UK GAAP (Generally Accepted Accounting Practice) standard can be submitted to Companies House electronically. Accounts prepared to IFRS (International Financial Reporting Standards) standard are not currently included.
+Is all the information provided in the accounts tagged?
+No, accounts will only contain tagged elements relevant to the information submitted. It is the responsibility of the software filer to tag to the level of detail that they feel is appropriate. However, a sample analysis identified that over 90% of the data submitted was indeed tagged appropriately.
+Does Companies House alter the data before it is made available?
+Yes, to preserve the security of the data presenter, a small number of elements are altered.
+For iXBRL (inline eXtensible Business Reporting Language) submissions, the content of the ‘NameAuthor’ and ‘DescriptionOrTitleAuthor’ elements are removed i.e. content replaced with null.
+For XBRL submissions the content of the 'CompaniesHouseDocumentAuthentication’ element is removed, i.e. replaced with spaces.
+Are revised or amending accounts included in the data product?
+No. All revised accounts must be submitted in paper format and are not currently included in the accounts data product, which only includes accounts filed electronically.
+To be certain that you have the latest accounts data for a company, please check the company’s filing history using our WebCheck (http://wck2.companieshouse.gov.uk/) service.
+More information about Free Accounts Data Product (http://download.companieshouse.gov.uk/en_monthlyaccountsdata.html)
+Our Cookie Policy (/legal/cookies.shtml)

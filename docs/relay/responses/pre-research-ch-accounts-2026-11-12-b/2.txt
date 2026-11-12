@@ -1,0 +1,25 @@
+meta og:title: Extract data from Companies House accounts in a streaming way.
+meta description: Use this Python package to convert the zipped XBRL format that Companies House supplies into a single data frame of 38 columns.
+meta og:image: https://stream-read-xbrl.docs.trade.gov.uk/assets/dbt-social.jpg
+Extract data from Companies House accounts in a streaming way. - stream-read-xbrl
+Skip to main content (#main-content)
+/
+stream-read-xbrl (/)
+Menu
+Get started (/get-started/)
+Contributing (/contributing/)
+Extract data from Companies House accounts in a streaming way.
+Use this Python package to convert the zipped XBRL format that Companies House supplies into a single data frame of 38 columns.
+Get started (get-started)
+Memory
+Companies House accounts files can be large, and stream-read-xbrl only needs a small amount to be in memory at once.
+Performance
+On a standard laptop with 8 CPU cores it takes approximately 10 seconds to convert a single day of Companies House accounts data.
+Contribute
+The repository for stream-read-xbrl is public and contributions are welcome though GitHub.
+stream-read-xbrl on GitHub (https://github.com/uktrade/stream-read-xbrl)
+Support links
+GitHub repository for stream-read-xbrl (https://github.com/uktrade/stream-read-xbrl)
+Created by the Department for Business and Trade (DBT) (https://www.gov.uk/government/organisations/department-for-business-and-trade)
+All content is available under the Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) , except where otherwise stated
+© Crown copyright (https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)

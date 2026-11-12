@@ -1,0 +1,127 @@
+meta description: UK company data API and MCP server: free key, curl examples, connect Companies House data and iXBRL financials to Claude, ChatGPT and Cursor.
+API and MCP docs: UK Company Data
+Skip to main content (#main)
+UK Company Accounts by Global Mindset Marketing (/accounts)
+Search companies (/accounts)
+Guides (/guides)
+Industries (/industries)
+Data (/data)
+Universities (/universities)
+Pricing (/pricing)
+API for developers (/docs)
+See plans &rarr; (/pricing)
+Developers
+UK Company Data API and MCP
+The Companies House register (about 5.7M companies) plus financials from filed iXBRL accounts, 2008 to 2026. One key works for REST and for MCP clients such as Claude and Cursor.
+1. Get a free key
+Get free key
+Your API key (shown once, save it now):
+Copy key
+The examples below now use your key.
+Free plan: 50 requests a month. Or with curl: curl -X POST https://data.globalmindsetmarketing.co.uk/v1/keys/free -H "Content-Type: application/json" -d '{"email":"you@company.co.uk"}'
+2. REST quickstart
+Base URL https://data.globalmindsetmarketing.co.uk . Send the key as Authorization: Bearer YOUR_KEY (or ?key=YOUR_KEY ). Responses are JSON in MCP tool-result shape: {"content":[{"type":"text","text":"..."}]} . Machine-readable spec: /openapi.json .
+GET /v1/company
+One company by Companies House number: register details, latest financials, risk signals. Add format=json (also on /v1/search-by-name and /v1/alerts) for typed JSON fields instead of Markdown text.
+curl -H "Authorization: Bearer YOUR_KEY" \
+"https://data.globalmindsetmarketing.co.uk/v1/company?number=00445790&format=json"
+GET /v1/search
+Filter by financials: risk_band, trajectory, size_class, min_total_assets, max_total_assets, min_employees, negative_net_assets, insolvency_proxy, sort_by, sort_order, limit.
+curl -H "Authorization: Bearer YOUR_KEY" \
+"https://data.globalmindsetmarketing.co.uk/v1/search?size_class=small&risk_band=low&sort_by=cash&limit=10"
+GET /v1/compare
+Two companies side by side (companies with parsed accounts).
+curl -H "Authorization: Bearer YOUR_KEY" \
+"https://data.globalmindsetmarketing.co.uk/v1/compare?a=SC316774&b=00590446"
+GET /v1/stats
+Aggregate statistics; group_by = risk_band | size_class | trajectory.
+curl -H "Authorization: Bearer YOUR_KEY" \
+"https://data.globalmindsetmarketing.co.uk/v1/stats?group_by=size_class"
+GET /v1/triggers
+Lead-gen triggers: rapid_growth, cash_rich, distressed, new_investment, deteriorating, improving, large_employer.
+curl -H "Authorization: Bearer YOUR_KEY" \
+"https://data.globalmindsetmarketing.co.uk/v1/triggers?trigger=cash_rich&limit=20"
+GET /v1/search-by-name
+Find companies by name (whole register). Returns numbers for /v1/company.
+curl -H "Authorization: Bearer YOUR_KEY" \
+"https://data.globalmindsetmarketing.co.uk/v1/search-by-name?name=tesco&limit=5"
+GET /v1/watchlist
+Your monitoring watchlist (5 companies on Free, 50 on Pro) with current status and accounts due dates.
+curl -H "Authorization: Bearer YOUR_KEY" \
+"https://data.globalmindsetmarketing.co.uk/v1/watchlist"
+POST /v1/watchlist/add
+Add companies to your watchlist. JSON body: company_numbers (array of Companies House numbers).
+curl -X POST -H "Authorization: Bearer YOUR_KEY" -H "Content-Type: application/json" \
+-d '{"company_numbers":["00445790"]}' "https://data.globalmindsetmarketing.co.uk/v1/watchlist/add"
+POST /v1/watchlist/remove
+Remove companies from your watchlist. Same body as add.
+curl -X POST -H "Authorization: Bearer YOUR_KEY" -H "Content-Type: application/json" \
+-d '{"company_numbers":["00445790"]}' "https://data.globalmindsetmarketing.co.uk/v1/watchlist/remove"
+GET /v1/alerts
+Alerts for watched companies: status changes, overdue accounts, new accounts, new charges, negative net assets, 30%+ drops in net assets or cash.
+curl -H "Authorization: Bearer YOUR_KEY" \
+"https://data.globalmindsetmarketing.co.uk/v1/alerts?since=2026-10-01&severity=medium"
+GET /v1/recent-changes
+Companies with newly filed accounts in the last N days (1-365).
+curl -H "Authorization: Bearer YOUR_KEY" \
+"https://data.globalmindsetmarketing.co.uk/v1/recent-changes?days=7&limit=30"
+3. MCP
+Endpoint: https://data.globalmindsetmarketing.co.uk/mcp (Streamable HTTP, stateless). Authenticate with the Authorization: Bearer header or the ?key= query parameter.
+claude.ai (custom connector)
+Settings &rarr; Connectors &rarr; Add custom connector, and paste this URL (claude.ai cannot send headers, so the key goes in the URL):
+https://data.globalmindsetmarketing.co.uk/mcp?key=YOUR_KEY
+Claude Desktop
+Add to claude_desktop_config.json (needs Node.js for mcp-remote ), then restart Claude Desktop:
+{
+"mcpServers": {
+"uk-company-data": {
+"command": "npx",
+"args": [
+"-y",
+"mcp-remote",
+"https://data.globalmindsetmarketing.co.uk/mcp",
+"--header",
+"Authorization: Bearer YOUR_KEY"
+]
+}
+}
+}
+Cursor
+Add to ~/.cursor/mcp.json (native Streamable HTTP):
+{
+"mcpServers": {
+"uk-company-data": {
+"url": "https://data.globalmindsetmarketing.co.uk/mcp",
+"headers": {
+"Authorization": "Bearer YOUR_KEY"
+}
+}
+}
+}
+Claude Code
+claude mcp add --transport http uk-company-data https://data.globalmindsetmarketing.co.uk/mcp --header "Authorization: Bearer YOUR_KEY"
+Tools
+Tool	What it does
+lookup_company	Look up a UK company by company number.
+search_companies	Search UK companies by financial criteria.
+compare_companies	Compare two UK companies side by side.
+market_stats	Get aggregate market statistics across all companies in the database.
+find_triggers	Find companies matching specific financial triggers useful for B2B lead generation.
+search_by_name	Search all UK companies (Companies House register, ~5.6M) by name.
+recent_changes	List companies whose iXBRL accounts were published at Companies House in the last N days (by publication date; each row also shows the balance sheet date).
+watch_add	Add UK companies (by company number) to your monitoring watchlist.
+watch_remove	Remove companies from your monitoring watchlist.
+watch_list	Show your monitoring watchlist with each company's current status, accounts due date and latest balance sheet date.
+get_alerts	Monitoring alerts for your watchlist: status changes (liquidation, administration, strike-off), overdue accounts, newly registered or published accounts, new charges, negative net assets, and drops of 30%+ in net assets or cash between the last two iXBRL accounts.
+4. Limits and plans
+Free	50 requests a month, no card, watchlist of 5 companies. Each REST call or MCP tool call counts as one request.
+Pro , £39 a month	5,000 requests a month, watchlist of 50 companies with alerts. Upgrade with Stripe checkout &rarr; (/v1/checkout) Your Pro key is shown after payment.
+Over the limit the API returns 429 ; a missing or invalid key returns 401 . Quotas reset on the 1st of each month (UTC).
+5. Data sources and licence
+Companies House basic company data (register of live and dissolved companies).
+Companies House accounts bulk data: iXBRL accounts filed from 2008 to 2026, parsed into balance sheet and profit and loss figures. Risk bands and trajectories are derived from those figures.
+Contains public sector information licensed under the Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) (source: Companies House). Figures are what companies filed; they can be late, restated or missing. This is not a credit rating and not financial advice.
+Questions: info@globalmindsetmarketing.co.uk (mailto:info@globalmindsetmarketing.co.uk)
+Global Mindset Marketing Ltd. (https://globalmindsetmarketing.co.uk)
+Search (/accounts) Guides (/guides) Glossary (/glossary) Data studies (/data) Industries (/industries) Developers (/developers) Dataset builder (/datasets) Universities (/universities) Pricing (/pricing) API (/docs) Contact (mailto:info@globalmindsetmarketing.co.uk)
+Company data from Companies House, used under the Open Government Licence v3.0. Not a credit rating. Global Mindset Marketing Limited, registered in England and Wales, company 15738438, Bartle House, 9 Oxford Court, Manchester M2 3WQ.

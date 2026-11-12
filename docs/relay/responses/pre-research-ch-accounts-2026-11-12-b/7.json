@@ -1,0 +1,97 @@
+{
+  "data": {
+    "id": "HpczouB962i8biTD5",
+    "userId": "uAGOkcW2pp4qN4ogw",
+    "name": "uk-company-accounts",
+    "username": "ukdatakit",
+    "description": "Headline financials from UK company accounts filed at Companies House: turnover, profit, cash, net assets, employees and last year's figures. Reads the free daily accounts files, so no Companies House API key. Filter by size or check company numbers.",
+    "isPublic": true,
+    "createdAt": "2026-11-10T01:51:17.190Z",
+    "modifiedAt": "2026-11-10T10:19:37.938Z",
+    "taggedBuilds": {
+      "latest": {
+        "buildId": "cylb3gYobedk1YteS",
+        "finishedAt": "2026-11-10T09:45:03.050Z",
+        "buildNumberInt": 10000003,
+        "buildNumber": "1.0.3"
+      }
+    },
+    "stats": {
+      "totalBuilds": 3,
+      "totalRuns": 5,
+      "totalUsers": 2,
+      "totalUsers7Days": 1,
+      "totalUsers30Days": 1,
+      "totalUsers90Days": 1,
+      "lastRunStartedAt": "2026-11-11T09:48:29.216Z",
+      "actorReviewCount": 0,
+      "actorReviewRating": 0,
+      "bookmarkCount": 0,
+      "publicActorRunStats30Days": {
+        "ABORTED": 0,
+        "FAILED": 0,
+        "SUCCEEDED": 2,
+        "TIMED-OUT": 0,
+        "TOTAL": 2
+      }
+    },
+    "versions": [
+      {
+        "versionNumber": "1.0",
+        "sourceType": "SOURCE_FILES",
+        "buildTag": "latest"
+      }
+    ],
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 3600,
+      "memoryMbytes": 4096
+    },
+    "exampleRunInput": {
+      "body": "{\"onlyWithTurnover\": true, \"maxResults\": 50}",
+      "contentType": "application/json; charset=utf-8"
+    },
+    "categories": [
+      "LEAD_GENERATION"
+    ],
+    "isDeprecated": false,
+    "title": "UK Company Accounts – Turnover, Profit & Net Assets",
+    "pictureUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/uAGOkcW2pp4qN4ogw-actor-HpczouB962i8biTD5-UaLMvPQjrb-uk-company-accounts.png",
+    "seoTitle": "UK Company Accounts – Turnover, Profit & Net Assets",
+    "seoDescription": "Headline financials from UK company accounts filed at Companies House: turnover, profit, cash, net assets and employees. No Companies House API key needed.",
+    "pricingInfos": [
+      {
+        "pricingModel": "PAY_PER_EVENT",
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00001
+            },
+            "company-accounts": {
+              "eventTitle": "Company accounts",
+              "eventDescription": "One company with parsed accounts figures saved to the dataset",
+              "isOneTimeEvent": false,
+              "eventPriceUsd": 0.005,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "createdAt": "2026-11-10T09:45:12.081Z",
+        "startedAt": "2026-11-10T09:45:12.081Z",
+        "apifyMarginPercentage": 0.2
+      }
+    ],
+    "notice": "NONE",
+    "isCritical": false,
+    "isGeneric": false,
+    "hasNoDataset": false,
+    "isSourceCodeHidden": true,
+    "standbyUrl": null,
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "readmeSummary": "## UK Company Accounts – Turnover, Profit & Net Assets (No API Key)\n\nExtracts headline financial figures from Companies House Accounts Data Product daily iXBRL bulk files: turnover, gross profit, operating profit, profit after tax, cash, debtors, stock, net assets, equity, average employees, previous-period comparatives and turnover growth. The Actor downloads and parses tagged iXBRL facts at scale (daily bulk files covering tens of thousands of filings), extracts numeric monetary values in GBP and employee counts, computes growth metrics, and provides filing metadata and source references. It supports filtering and selection by financial thresholds and company identifiers and operates without needing a Companies House API key.\n\n## Use cases\n\n- Build prospect lists by company size and recent filings (filter by turnover, net assets, cash, profit and headcount).  \n- Check the latest filed financial figures for specific company numbers.  \n- Filter fresh filers for B2B sales and lead generation based on recent accounts and headline metrics.  \n- Spot growing or cash-rich companies and identify new or changed year-ends for accountants, brokers, lenders and M&A advisers.  \n- Pull latest headline numbers for credit checks and supplier risk assessments across lists of companies.  \n- Bulk analysis of company performance across thousands of iXBRL filings for researchers and journalists.",
+    "deploymentKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQChMqWea7tXeV+1cGADDZ+sn74kesqfQA6x4wgo8dVoxhccPIH/Kuo69xa4fDnWFCzEhX62HGznzv9Ugmic5e8t7ttde/UVdVsjje+WfTGf+CHK3Bd1to8aa57dp8K4jhkD60eVmV6G7yp9GJthpzL4oApgt11xKegHtQJJqPj6G8mfH0VyfUUzKumGrs6NWUQGMdU8AUNfMP6fM2QVMXm3zfNa68WZHPLu61XGJAVfITbx6w6Q2D2IxOWA8v+pFdfICSQhWwnaCi37QoWbwcrTRM9B7wkCWL3lOh8e5iuh0XaZHP99gRkxvwUQqb8KsLVB+hI4ewp1MK48b7Q/gcHszIMpAuG9Iv2StG/m8ch0Jlm2XqJ+Ts9PL2r/+x5qPns6fZMKvbViN48tylnjbuGXUhjDO6vcrcWSpAzl3q/DwMzkusmbHDTmYtLEF7NBM20XSGytmDFDeqJYWS019ggaSmdwB+CdQmtAWGbJg32SKeWcIfqA2uZPXLgLWfDOjrXHFj+RMLvDqGOI0tz9LGJv0T3Aq7hYIyogTO7czcMs/Aq1kKidtNbwf0rDxggW1p15sAaC5vQR7kalL4P+EWQhz8xURz15bQn0Kh86Hwjmwp6teZeTOfXTOs7GthD11XzwOCDaDayQHG9eDasb+eZERyEcH4ryAOGxZtH1li/cIw== \n"
+  }
+}
