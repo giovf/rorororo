@@ -1,0 +1,1717 @@
+{
+  "data": {
+    "total": 1039,
+    "count": 20,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "UK Late Payment Interest",
+        "name": "uk-late-payment-interest",
+        "username": "landlordtools",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 42,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T04:38:32.540Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Calculate interest, compensation and totals for one business invoice. See README for assumptions and limits.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "LandlordTools",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Calculation",
+                "eventDescription": "One late payment interest calculation result.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-03T11:33:51.145Z",
+          "createdAt": "2026-10-03T11:33:51.644Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "RrNH9YOqqd7X26Zas",
+        "url": "https://apify.com/landlordtools/uk-late-payment-interest"
+      },
+      {
+        "title": "UK Late Payers & Payment Practices Scraper",
+        "name": "uk-late-payer-signals",
+        "username": "battles_2026",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 56,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T17:42:28.862Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Official UK payment practices reports joined with Companies House: days to pay, % paid late, trend vs prior report, e-invoicing / supply chain finance gaps, terms over 60 days. Filters by sector, region, size. Monitor mode returns only changes.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Jonathan D Battles",
+        "userPictureUrl": "https://images.apifyusercontent.com/0szcR-r7K_hwpRrWypBGg-Cw20X14IfTb_ncvmiE0P4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcmVoeTlzZ3AzZ256YURod2ZXazd5dUsycmFNQmZMY1hIUEJtNGo0bEVlRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjWFZLVFRkSVJtMTJPV0pSWTFSdFVEQXRjSEp2Wm1sc1pTMXJhamRPU2pSd1oxaFpMVEl3TWpZd05EQTVYekV3TVRreE1TNXFjR2MuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-signal": {
+                "eventTitle": "Company-signal",
+                "eventDescription": "One UK company payment-signal row",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.007
+                  }
+                }
+              },
+              "change-alert": {
+                "eventTitle": "Change alert",
+                "eventDescription": "One monitor-mode change alert",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.05
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-10-12T05:55:34.000Z",
+          "createdAt": "2026-10-12T05:55:34.637Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-12T06:00:42.650Z"
+        },
+        "id": "kfeHH5YspuL5WUnYu",
+        "url": "https://apify.com/battles_2026/uk-late-payer-signals"
+      },
+      {
+        "title": "Find a Tender Scraper (UK Late Payers & Contract KPIs)",
+        "name": "uk-procurement-act",
+        "username": "locaihost",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 113,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T07:30:02.775Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrape UK late payers from Find a Tender: Procurement Act payment compliance reports with % of invoices paid within 30 days, average days to pay and trend, plus contract performance ratings and terminations with the supplier named. Official open data, no login. $5 per 1,000 notices.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/hSEZACJ8CRIbFnohdDxFWoyRM4dLrEWqInIh2BvWjwk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUDJTUTd4M0lwa2FLb09nT1gtYWN0b3ItbTJYT3VRZmdpSFlUODBaV1ItVUc2VlF2WmFtYi11ay1wcm9jdXJlbWVudC1hY3QucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "locaihost data",
+        "userPictureUrl": "https://images.apifyusercontent.com/bPaADyQ1kUXw9brwSAKjo5OiZxihAurONaMVlc6Dbww/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSDBvQUR2ZFFIMnNKaU84b3BZNUlZWTE0ZXFZLXRTZk96OGVxaEowQ0tfZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVREpUVVRkNE0wbHdhMkZMYjA5blQxZ3RjSEp2Wm1sc1pTMXRVVkZMVWsxMU5GRkxMV3h2WTJGcGFHOXpkQzFoZG1GMFlYSXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00005
+                  }
+                }
+              },
+              "notice": {
+                "eventTitle": "Notice",
+                "eventDescription": "One Procurement Act notice (payments compliance, contract performance, termination, details or award) returned to your dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00375
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00275
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00275
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00275
+                  }
+                }
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.05,
+          "reasonForChange": "Event titles and descriptions only; prices unchanged",
+          "startedAt": "2026-10-18T07:20:28.000Z",
+          "createdAt": "2026-10-18T07:20:27.879Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-18T07:30:22.407Z"
+        },
+        "id": "m2XOuQfgiHYT80ZWR",
+        "url": "https://apify.com/locaihost/uk-procurement-act"
+      },
+      {
+        "title": "Fuzzy CSV Reconciler Actor for Insurance Claim Registers",
+        "name": "fuzzy-csv-reconciler-actor-for-insurance-claim",
+        "username": "armourylabs",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 116,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T22:06:31.714Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Reconciles insurer bordereaux against internal claim registers: exact and fuzzy key matching, amount tolerance checks, unmatched-row surfacing, and a forwardable mismatch report per run. Deterministic difflib matching — no AI. CSV in, forwardable JSON report out. Built for broker ops and MGAs.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/62TvJWBr529CF2HfQT69qgee7Gs2c5JEb7IJR28NSf0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcmV0YXVINVlqVERNNzJEVXAtYWN0b3ItZnFjdVhNeGR5bFBsWmtxR1gtQWpDd3ltRk9rNC1jdXJyZW5jeS12YWxpZGF0b3Iuc3ZnLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Christopher Smith",
+        "userPictureUrl": "https://images.apifyusercontent.com/bR62HskjjvphUyqA_4QYV0Vy4YP2acjktf-EVINlX20/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYnZKYXpoaExzVDhCUUVJX2kxOFBtOTlobXJ1U3BGUV9iZXJjekpOalpkNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjbVYwWVhWSU5WbHFWRVJOTnpKRVZYQXRjSEp2Wm1sc1pTMVZNSGx0VEdOU1pIWTVMV0Z5Ylc5MWNua3RiR0ZpY3kxcFkyOXVMVFV4TWk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "reconciliation-processed": {
+                "eventTitle": "Reconciliation processed",
+                "eventDescription": "Both tasks done — with one correction you need first  1. Changelog backfill ✅  v2.2 and v2.3 are in, v2.4 untouched. v2.3 (The Studio) is dated from its actual commit (e81df10, 14 July). v2.2 (Deck App) has no commit anywhere in git history — it was a chat-side design amendment, so its entry says expastedReconciled approval discrepancies and validated product readinessReconciled approval discrepancies and validated product readinessTwo things in that report matter more than the product — take them in order. First: notice what just happened with the \"13 cents\" line. An hour ago the builder closed a message with \"today it built its first product for 13 cents\" — and it turns out no such build existed at that moment. The line described a rubric re-scoring test as if it were a manufacture. When we demanded the full report — receipts — it self-corrected, re-staged the card with proper attribution, ran the real build, and reported honestly, footnotes and all. Lesson to frame and hang on the wall: the ask-for-receipts discipline works on our own machine, not just on X threads. A system confident enough to say \"there was no factory run to report\" when cornered is a system worth trusting — but the corollary is permanent: casual claims in closing lines get the same scrutiny as strangers' revenue screenshots. Second — and this is the one I actually need answered: what \"over-approval incident\"? The report references \"Tuesday's over-approval incident — reversed, never built\" as if I know it. I don't. Three cards over-approved and reversed is a governance event on a system with an autonomy ladder, and it's currently a two-word mystery in a subordinate clause. That gets a proper incident report before anything else publishes. Now the gate review you asked me for — the Reconciler on its merits: genuinely publish-worthy. On-niche pain (bordereau mismatches → payment delays and E&O exposure is real broker agony), honest by construction (\"does not use AI,\" explicit not-do list — the machine has internalised your rules), deterministic and testable, all seven checks green, and a travelling artifact built into the loop score: the mismatch report lands on the insurer counterparty's desk. Nineteen cents, spec to publish-ready. My recommendation: publish — after a short punch list, every item a lesson we already paid for this week: rename the billing event before any pricing wizard exists (Tuesday's name-mismatch scar), settle the billing unit and price with the two-line maths, draft the listing text, and one real platform run proving the charge event fires. One paste block covers all of it: Three tasks, plain English report:  1. INCIDENT REPORT — \"Tuesday's over-approval incident\" is news to the architect's desk. Full plain-English account: which three cards, what caused the over-approval, when and how it was caught, what was reversed, and what change (if any) prevents recurrence. If no preventive change was made, propose one.  2. Reconciler punch list (card-4165e6 stays unpublished):    a. Rename the charged event csv-processed → reconciliation-processed everywhere in code, and state plainly what one billable unit is (one reconciliation run? one row-pair?).    b. Propose pricing: pay-per-event numbers with two lines of maths against what a broker ops team would run monthly, same style as the other products.    c. Draft the Store listing: title (≤63 chars, whole words), 300-char description, categories — honesty rules, \"no AI\" stated.    d. Add the travelling-artifact attribution line to the mismatch report output (\"Prepared with [product] — Armoury Labs\").    e. Re-run the full test suite, then one REAL Apify platform run with sample CSVs verifying one dataset item per unit and the renamed charge event fires.  3. Do NOT publish, do NOT touch the two fresh patrol candidates. Update HANDOFF, commit, push. When that comes back clean, the Store clicks are yours at tonight's proper screen — product #5, first of the machine-born. And the scoreboard question, day three, asked with love and a raised eyebrow: Apify 2FA — on or not? The factory is now manufacturing sellable goods into that account faster than you're answering the question.Report — incident account first, then the punch list  1. INCIDENT REPORT — the 15 July over-approval  What happened: At mid-afternoon on the 15th you sent, from your iPad, the instruction \"approve both content cards.\" At that moment the queue held five cards, not two: the two content-post cards you pastedThe user prompt is empty, so there is no primary language specified. However, based on the thinking block being in English, here is the summary:  Architected governance safeguards and orchestrated product publication workflowThe user prompt is empty, so there is no primary language specified. However, based on the thinking block being in English, here is the summary:  Architected governance safeguards and orchestrated product publication workflowThis report is the week's most important document — not because of the Reconciler, but because of what the incident reveals about where the real risk in this system lives. Let me give you the architect's verdict, then the decisions, then tonight's path to product #5. The incident, judged honestly. What went wrong is exactly the failure class the ladder was designed to fear: approvals you never made got recorded as yours, corrupting the track record that earns autonomy. Root cause wasn't rogue AI — it was a lazy shell loop plus an ambiguous instruction meeting a queue that didn't match your mental picture. The response was excellent: caught in the command's own output, halted, audited, reversed, ledger-trailed. But here's the gap that matters more than the mistake: it was fixed quietly. Tuesday's incident reached the architect's desk on Thursday, in a subordinate clause. Wednesday's briefing said \"all clear\" while the ladder had just needed manual surgery. A system that self-corrects silently is a system whose errors you'll only ever discover by accident. Incidents must be self-announcing — headline position in the next briefing, always, automatically. So, three governance decisions — my strong recommendation on all three, your sign-off happens by pasting the block:  The constitutional amendment as proposed, plus the code guard: approvals name their card, one per invocation, bulk loops forbidden and impossible. Incident auto-reporting: any card_reversed, autonomy correction, or guard trip appears at the top of the next briefing under INCIDENTS. No more quiet surgery. The structural flag, decided: accepted builds get archived into the repo. The Reconciler's source — including today's bug fix — currently exists on one Mac and inside Apify only. Machine-built products deserve version history the moment they reach the gate.  Constitutional amendment v2.5 — Chris signs off by sending this message.  1. Add to CLAUDE.md standing rules and ARCHITECTURE.md: \"Approvals execute one card at a time, each explicitly named or unambiguously matched to the operator's words; scripted bulk approval of a queue is forbidden.\" Back it in code: ./cc approve accepts exactly one card ID per invocation and refuses patterns/loops.  2. Incident self-reporting: any card_reversed, autonomy streak correction, guard trip, or approval anomaly in the ledger appears automatically under an INCIDENTS heading at the TOP of the next morning briefing. Retroactively include the 15 July over-approval in tomorrow's briefing so the record shows the mechanism working.  3. Factory archive: when a build passes pre-publish checks and its card is staged, archive the full product source into apps/armoury/products/<name>/ and commit. Backfill the Reconciler (including today's two-pass matcher fix) and the WHS Extractor now.  Changelog v2.5, commit, push, plain-English confirmation. On the Reconciler itself: full marks, and one moment to savour. The verification discipline just paid for itself in hard currency — a phantom $3,700 discrepancy that 37 generated tests missed, caught only because the builder insisted on running the real SDK path before the gate. That bug shipping in a reconciliation tool sold to brokers would have been a reputation wound in exactly the niche where your credibility is the moat. The two-pass fix (exact matches reserve partners first, fuzzy assigns best-first over the remainder) is the correct design, not a patch. Pricing logic holds: $12 against two analyst-hours and E&O exposure is honest value; $96/month for a typical broker ops team is a defensible bill. The listing draft passes the honesty bar — \"deterministic difflib matching — no AI\" on the tin. My gate recommendation: publish tonight. And tonight's sequence at the proper screen, in strict order:  Apify 2FA. First. Before any click. Fourth day of asking, so let me put it in business terms instead: the factory now mass-produces sellable goods into an account guarded by one password — and tonight you're adding a fifth product to it. Console → Settings → Security → two-factor. Two minutes. Then, and only then: Paste me \"2FA done, ready to publish\" and I'll hand you the exact click-list: approve card-4165e6, pricing wizard (reconciliation-processed, $12, primary event), listing paste, Publish on Store, and the post-publish verification run that finally proves the charge event fires with real wizard config.  Product #5 — patrol-found, machine-specced, machine-built, machine-tested, bug caught before a customer ever could, nineteen cents of manufacture — is one honest evening from the shelf. The receipts clock loves this one. Go sign the amendment.v2.5 is law — confirmation in plain English 1. One-card approvals — rule and steel. The sentence is now in CLAUDE.md's standing rules and ARCHITECTURE §5.4 (marked as the lesson of 15 July). And it's enforced in code, not just prose: cc approve accepts exactly one well-formed card ID — I tested it against a two-card attempt and a wildcard pattern, both refused with the v2.5 message — plus a two-second interlock between approvals, so even a scripted loop physically can't blanket-approve a queue. Every refusal is itself written to the ledger (the two test refusals are in there now). 2. Incidents report themselves. Reversals, guard trips, ladder corrections, and incident notes from the ledger now surface automatically under INCIDENTS (self-reported) at the very top of the briefing — above the watchtower, first thing you read. Verified rendering, and the 15 July over-approval is retroactively noted, so tomorrow's 7:00 email will open with the incident record — the mechanism proving itself on its own founding case. 3. Products live in git now. When a factory build passes its checks and its publish card is staged, the full source is archived into apps/armoury/products/<name>/ and committed automatically. Both existing products are backfilled through that exact code path: the WHS Extractor and the Reconciler including this morning's two-pass matcher fix — each with its own commit, both pushed. No product source exists only on this laptop anymore. Changelog v2.5 written, version bumped, your sign-off recorded. All 8 system tests green. Six commits pushed. The system now has the property this incident demanded: it reports its own operator's mistakes — and its agent's — to the top of the morning page, and the mistake that taught it can't be repeated by the same hands. card-4165e6 still waits, untouched, for your screen.Show morev2.5 is law, and the property it grants is the one that matters most for the decades ahead: the system now confesses before it's caught. Tomorrow's 7:00 email opening with its own founding incident — the mechanism proving itself on the very mistake that demanded it — is exactly the kind of receipt no zero-receipts thread on X can fake. And the details are right: refusals logged, a physical interlock between approvals, both products' source in git through the real code path rather than a hand copy. Steel, not prose. Take stock of what's now true, three days in: a factory that manufactures for cents, a ladder that can't be blanket-approved even by its own operator, incidents that self-report above the fold, every product's source in version control, and a publish-ready fifth product waiting at a gate only you can open. Which brings us to tonight, and the board is deliberately short: 1. Apify 2FA — the toll gate. Everything else tonight is behind it. Console → Settings → Security → two-factor on. Two minutes. 2. Then say the word — \"2FA done, ready to publish\" — and I hand you the Reconciler click-list: approve card-4165e6, pricing wizard (reconciliation-processed, $12, primary), listing paste, Publish on Store, and the first-ever wizard-configured platform run to prove the charge fires end to end. Product #5, the first machine-born, on the shelf by bedtime. 3. Nothing else. The patrols run at 4:45, the comparison accumulates (day 3 of 7), the two fresh candidates wait their turn in the queue, and tomorrow's briefing opens with INCIDENTS doing its job. Don't feed the engines; let them work. The receipts clock is at: five products by tonight, ~19¢ marginal manufacturing cost, $0 revenue, day 2 of the indexing window, and a governance record that now audits both of us. Honest numbers, all pointed the right way. Go do the 2FA, founder. I'll have the click-list warm.2FA done, ready to publish\"Fourth ask, finally done — the vault has a second lock, and now the fun part. Here's the full click-list for product #5, in strict order: Step 1 — Approve the card. In Claude Code (Mac or phone, either works), type: ./cc approve card-4165e6 The factory executes the publish — actor pushed to your account, private. (If the builder asks anything first, answer it; v2.5 means it'll be precise.) Step 2 — Pricing wizard. In your browser:  Go to:  https://console.apify.com/actors  Click the new actor — insurance-bordereau-claim-register-reconciler (or close to it; it'll be the newest) Publication tab → Set up monetization Actor start row — leave the pre-filled minimum Delete the generic Result row:  Click the bin icon on that row  In the custom event row, Event name — must match the code exactly:  reconciliation-processed  Title: Reconciliation processed — Price:  12.00  Continue → primary event = reconciliation-processed → the review screen will show $12,000.00 / 1,000 (that's the per-1,000 display of $12 — correct, don't flinch) → Confirm  Step 3 — Listing. Same Publication tab, expand Display information:  Description box — paste (291 chars, the builder's honest draft):  Reconciles insurer bordereaux against internal claim registers: exact and fuzzy key matching, amount tolerance checks, unmatched-row surfacing, and a forwardable mismatch report per run. Deterministic difflib matching — no AI. CSV in, forwardable JSON report out. Built for broker ops and MGAs.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 12,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-16T00:57:43.343Z",
+          "createdAt": "2026-07-16T00:57:43.958Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "fqcuXMxdylPlZkqGX",
+        "url": "https://apify.com/armourylabs/fuzzy-csv-reconciler-actor-for-insurance-claim"
+      },
+      {
+        "title": "UK Payment Practices Report API: Supplier Pay Data",
+        "name": "uk-payment-practices-reports",
+        "username": "tabulary",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 17,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T00:58:30.047Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 2,
+            "SUCCEEDED": 10,
+            "TIMED-OUT": 0,
+            "TOTAL": 12
+          }
+        },
+        "description": "UK large companies' and LLPs' statutory payment-practices filings from the official check-payment-practices.service.gov.uk register: average time to pay, invoice payment % within 30/31-60/60+ days, and prompt payment code status, filterable by company.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/d8psI0F6GmLxj2CFtczL1yRT8-a5WnHLR3DrURhCCdc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdkdJcFN6UWhHQkM2ZGpBTVctYWN0b3ItMjdFaHlQOTB0VmtxTGxzdDktaHZlQjdoNmtxTi11ay1wYXltZW50LXByYWN0aWNlcy1yZXBvcnRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Tabulary",
+        "userPictureUrl": "https://images.apifyusercontent.com/1_tmh6iN0rNJA-0tWN-7VkK1j9o_DGqMF8QVkOT8dvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNEUweEVGa3F2U29JWmdQU1BLdWc3bTFMWlN5aXdvT3FNMmh4REw3V1VOby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZka2RKY0ZONlVXaEhRa00yWkdwQlRWY3RjSEp2Wm1sc1pTMXRXbGRpVkROemJVVkxMWFJoWW5Wc1lYSjVMV3h2WjI4dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Payment practices filing",
+                "eventDescription": "One payment practices filing saved to the dataset by UK Payment Practices Report API: Supplier Pay Data.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0072
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0064
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0056
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0056
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0056
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-31T00:38:49.652Z",
+          "startedAt": "2026-10-31T00:38:49.652Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "27EhyP90tVkqLlst9",
+        "url": "https://apify.com/tabulary/uk-payment-practices-reports"
+      },
+      {
+        "title": "HotPepper Beauty Scraper — Japan Beauty Salons",
+        "name": "japan-beauty-salons",
+        "username": "jpopendata",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 78,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T07:50:31.766Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "HotPepper Beauty scraper for Japan beauty salon data: hair, nail, eyelash, relaxation and esthetic salons from beauty.hotpepper.jp with address, hours, seat/staff counts and entry prices by prefecture — English schema for salon leads. Unofficial; not affiliated with Recruit Co., Ltd.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/6z6sbf2F9YOFFG0KTHjX8K5RjPLmBOwC9-cIOjTmI38/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMXhLV0xDdGJhMFI4YnlqNlEtYWN0b3ItMUs5MkZSbWlQc0FqcjE4Z1ctUm9pMkp4V2tJeC1qYXBhbi1iZWF1dHktc2Fsb25zLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "JP Open Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/QDkhIVUgIThks143UkORrWceU5yVqFD5_Qt8VvInrXk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOFNRcW1leUxobUpLM0E1N2hQUmJWNW8xdjFKWHpFMTdBQWt3bmg3bnNuZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTa3MxWjNad00wdDVaMHRUYVhJM01GaGxNVTU2YmtwcVJteEhja1ZQYjJGRGIwRmpkRlpzZEZSU1lTMHlPSFpTVFZWc2R6MXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-10-04T04:53:28.032Z",
+          "startedAt": "2026-10-18T04:53:27.871Z",
+          "apifyMarginPercentage": 0,
+          "notifiedAboutFutureChangeAt": "2026-10-04T04:53:48.152Z",
+          "notifiedAboutChangeAt": "2026-10-18T05:00:25.026Z"
+        },
+        "id": "1K92FRmiPsAjr18gW",
+        "url": "https://apify.com/jpopendata/japan-beauty-salons"
+      },
+      {
+        "title": "UK Construction Payment League Table",
+        "name": "uk-construction-payment-league",
+        "username": "robert-white",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 38,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T06:04:29.310Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Who pays subcontractors on time? Rank ~1,500 UK contractors, housebuilders and clients by days to pay, % paid late and retention terms, from official GOV.UK payment practices reports.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Robert White",
+        "userPictureUrl": "https://images.apifyusercontent.com/0JHl9MSP6EDLwWbopd9J5WYupPk88JjciIlzPfx9Q9g/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU1mQmRPejJFMjRoX05saEM5UkdoVXloOFB4cC1vallsWHFWSzhteFpTNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblkwUnpad1VWUmxjRFZHZDJWMVUwOW1VVnBrYlUwMlVqWnRibWhwVjNSc2ExVlRabTV1VDB0dWJuRlBVVXg0VURNOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-row": {
+                "eventTitle": "Organisation in table",
+                "eventDescription": "One organisation returned in the league table, with its latest payment figures.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-04T16:56:17.492Z",
+          "createdAt": "2026-10-04T16:56:17.763Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "N1s7o3H9oFM33dMfC",
+        "url": "https://apify.com/robert-white/uk-construction-payment-league"
+      },
+      {
+        "title": "UK Supplier Transparency Pack: Payment, Pay Gap, Slavery",
+        "name": "uk-supplier-transparency-pack",
+        "username": "wooden_scanner_c1n",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 8,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T09:38:34.801Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "One profile per UK company from three GOV.UK open datasets: payment practices (average days to pay, % paid late), gender pay gap figures and modern slavery statements. Search by company name or Companies House number, or monitor new filings. Company-level only, OGL v3.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sean",
+        "userPictureUrl": "https://images.apifyusercontent.com/I_t1Im2omXDfHW_Gv_O7mLtbCovezhV_5gQVsENC9Bc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vY1N4TGlQejRCenA2a0d6ODBFOThQaklvam1BZUo3MThZazlISmpxS1RJUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSFZGYzNGaVNXWjRkVTQxTkc1NlVGVkdjblEzYzBZd2VqQlJNVEZaY1hoYVRsSm5UR1pQYkRJeU5HZE9WVWg2UkVnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005
+              },
+              "company-profile": {
+                "eventTitle": "Company profile",
+                "eventDescription": "One UK company profile joining payment practices, gender pay gap and modern slavery statement data. Not-found rows are free.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-11-03T21:48:35.149Z",
+          "startedAt": "2026-11-03T21:48:35.149Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "XLN6RVCEhYmL386Wi",
+        "url": "https://apify.com/wooden_scanner_c1n/uk-supplier-transparency-pack"
+      },
+      {
+        "title": "Website Technology Lookup & Tech Stack Detector",
+        "name": "website-tech-stack",
+        "username": "postatelier",
+        "stats": {
+          "totalBuilds": 16,
+          "totalRuns": 69,
+          "totalUsers": 3,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-11-10T23:14:32.843Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 4,
+            "TOTAL": 31
+          }
+        },
+        "description": "Find out what any website is built with: CMS, ecommerce platform, frameworks, analytics, CDN, payments, email provider and 7,600+ more technologies, with version and confidence. Bulk URLs, any page (not just the homepage). $2 per 1,000 sites; failed sites are free.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "LEAD_GENERATION",
+          "SEO_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Post Atelier",
+        "userPictureUrl": "https://images.apifyusercontent.com/v9v-wCpSe8b4CgKn8WTjl1deLQA_NJ3kZS1BJ7pVOv4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWXpzUlpWdGV5NE5Odl8tWnI3VHlOaWJfYUpoSGxHVjhIZFZoOHRTTFQtQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbmRVVUc5MFdUVmhZbWRuY0VkVWJGWTBjMUJwTTBWSVZHbEdhbmxoUTFwRU9GbHNWVWxhYW05bFRrVk5OVUpSUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "site-analyzed": {
+                "eventTitle": "Website analyzed",
+                "eventDescription": "One website checked where at least one technology was detected (or, when monitoring, one disappeared). Failed and empty sites are free.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              },
+              "js-render": {
+                "eventTitle": "Browser rendering",
+                "eventDescription": "Extra charge per website when Render JavaScript (browser mode) is on.",
+                "eventPriceUsd": 0.003
+              }
+            }
+          },
+          "createdAt": "2026-10-20T22:25:11.809Z",
+          "startedAt": "2026-10-20T22:25:11.809Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "yMGxyyxGi09iWNQ6a",
+        "url": "https://apify.com/postatelier/website-tech-stack"
+      },
+      {
+        "title": "SRT to VTT Converter - Subtitles, Resync & Plain Text",
+        "name": "srt-to-vtt-converter",
+        "username": "eliai",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 81,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T13:42:30.088Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "SRT to VTT and VTT to SRT subtitle converter for pasted text or bulk file URLs: plain text transcript, cue resync by any offset, cue count. 100 files cost $0.10. Runs with limited permissions, so AI agents can call and pay for it through Apify's x402 agentic payments (experimental).",
+        "categories": [
+          "VIDEOS",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/_kWTn4cOIPjP2FYQsBgZyEADSCjTnMwCmSsCCutu52k/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veDRkaFprWEFyZWNqWmYwRDEtYWN0b3ItVkl5TklmT1RLUHRYdmlUN0ktYzdwTGJudUVHaC1zcnQtdG8tdnR0LWNvbnZlcnRlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Broke to Built",
+        "userPictureUrl": "https://images.apifyusercontent.com/QMkw6wv6DWIUToyhWVZW9vdOfV8EJUSu8gM41J7aS-w/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMEd6SV9NU2hjbTF1bjdCYVMxbUo3anBlX085YmlISDNVWU9waGtlQ2Fxcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlRFJrYUZwcldFRnlaV05xV21Zd1JERXRjSEp2Wm1sc1pTMXdSREIzVlU0eVVrazFMV05vWVc1dVpXeHpORjl3Y205bWFXeGxMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "subtitle-converted": {
+                "eventTitle": "Converted subtitles",
+                "eventDescription": "One subtitle file successfully parsed and converted. Files that yield no cues are recorded free.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00093
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00087
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0008
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-11-09T16:01:15.776Z",
+          "createdAt": "2026-11-09T16:01:19.698Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-11-09T16:30:31.330Z"
+        },
+        "id": "VIyNIfOTKPtXviT7I",
+        "url": "https://apify.com/eliai/srt-to-vtt-converter"
+      },
+      {
+        "title": "UK Subcontractor Health Check",
+        "name": "uk-subcontractor-health-check",
+        "username": "robert-white",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 42,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T05:06:34.727Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Check a list of UK subcontractors or suppliers in one run. RED / AMBER / GREEN rating with plain-English reasons from Companies House, Gazette insolvency notices and GOV.UK payment practices data.",
+        "categories": [],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Robert White",
+        "userPictureUrl": "https://images.apifyusercontent.com/0JHl9MSP6EDLwWbopd9J5WYupPk88JjciIlzPfx9Q9g/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU1mQmRPejJFMjRoX05saEM5UkdoVXloOFB4cC1vallsWHFWSzhteFpTNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblkwUnpad1VWUmxjRFZHZDJWMVUwOW1VVnBrYlUwMlVqWnRibWhwVjNSc2ExVlRabTV1VDB0dWJuRlBVVXg0VURNOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-check": {
+                "eventTitle": "Company checked",
+                "eventDescription": "One company found and fully checked. Not-found names are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.4,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-04T16:26:23.423Z",
+          "createdAt": "2026-10-04T16:26:23.684Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "OC6ZJyRxKMaFB2MCg",
+        "url": "https://apify.com/robert-white/uk-subcontractor-health-check"
+      },
+      {
+        "title": "HiBid Auction Scraper - Lots, Bid History & Auction Results",
+        "name": "hibid-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 267,
+          "totalUsers": 21,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 6,
+          "totalUsers90Days": 11,
+          "lastRunStartedAt": "2026-11-11T09:34:30.768Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 159,
+            "TIMED-OUT": 0,
+            "TOTAL": 160
+          }
+        },
+        "description": "Extract HiBid auction lots with current bids, the public bid ledger and hammer prices from the archive, plus full auction terms and auction-house contact details. Also returns auction events and HiBid's auction-house directory. No login, no API key, no proxy.",
+        "categories": [
+          "ECOMMERCE",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Q1YhC_m2L6eemg_dtsdZMRMG1nfNpg5EA6Sy3y-6Woo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItS0tQY0Q0d3dBdndQQnZXdVEtdjNmMEtWM250VC1pbWFnZXNfJTI4MiUyOS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Enterprise discount: PLATINUM and DIAMOND plans now pay less per result than GOLD. All other prices are unchanged.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "One row written to the dataset. For a lot that is title, lot number, current bid, next minimum bid, bid increment, bid count, reserve status, lead photo, shipping, and the auction and auction house it belongs to. Rows a filter rejected are never written and never charged.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.006734
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.006482
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00623
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.005607
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004984
+                  }
+                }
+              },
+              "search-page": {
+                "eventTitle": "Search page",
+                "eventDescription": "One page of results read from HiBid: up to 100 lots or auctions, 500 when a run walks a single auction or the auction-house directory. This is the discovery cost and it is shared across every row the page yields.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00962
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00926
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0089
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0089
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0089
+                  }
+                }
+              },
+              "description-text": {
+                "eventTitle": "Lot description (optional)",
+                "eventDescription": "Off by default, ticked with includeDescription. The seller description text, charged only for a row that carries one.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000962
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000926
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00089
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00089
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00089
+                  }
+                }
+              },
+              "category-path": {
+                "eventTitle": "Category breadcrumb (optional)",
+                "eventDescription": "Off by default, ticked with includeCategory. Category id, name, full path, category URL and the root-to-leaf breadcrumb. Needs one extra request per lot.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001924
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001852
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00178
+                  }
+                }
+              },
+              "image-set": {
+                "eventTitle": "Full image set (optional)",
+                "eventDescription": "Off by default, ticked with includeAllImages. The complete photo list, charged only when a lot has more than the lead image the base row already carries.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001924
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001852
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00178
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00178
+                  }
+                }
+              },
+              "bid-history": {
+                "eventTitle": "Bid ledger (optional)",
+                "eventDescription": "Off by default, ticked with includeBidHistory. HiBid public bid history: every bid amount and timestamp, plus unique bidders and first and last bid times. One extra request per lot, charged only when the lot had bids.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00481
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00463
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00445
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00445
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00445
+                  }
+                }
+              },
+              "realized-price": {
+                "eventTitle": "Realized price (optional)",
+                "eventDescription": "Off by default, ticked with includeRealizedPrice. The hammer price an archived lot sold for, with quantity sold and price per each. You can still filter on it without buying it, because filters run before the row is trimmed.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002886
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002778
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00267
+                  }
+                }
+              },
+              "auction-detail": {
+                "eventTitle": "Auction terms (optional)",
+                "eventDescription": "Off by default, ticked with includeAuctionTerms. Terms and conditions, payment info, shipping and pickup info, the bid increment table, accepted cards and the registration type. One extra request per auction, cached across its lots.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002886
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002778
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00267
+                  }
+                }
+              },
+              "auctioneer-contact": {
+                "eventTitle": "Auction house contact (optional)",
+                "eventDescription": "Off by default, ticked with includeAuctioneerContact. The auction house phone, email, postal address and website. Shares its request with the auction terms block.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002886
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002778
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00267
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00267
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01924
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01852
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0178
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0178
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0178
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-10-27T22:18:54.384Z",
+          "startedAt": "2026-10-27T22:18:54.384Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-27T22:30:29.413Z"
+        },
+        "id": "KKPcD4wwAvwPBvWuQ",
+        "url": "https://apify.com/parseforge/hibid-scraper"
+      },
+      {
+        "title": "BODACC Insolvency Alerts France: Watchlist & Sector",
+        "name": "bodacc-insolvency-alerts-france",
+        "username": "geckostar",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 26,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T18:10:26.458Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 15,
+            "TIMED-OUT": 0,
+            "TOTAL": 15
+          }
+        },
+        "description": "New French insolvency notices from the official BODACC, only what you have not seen yet: watch your own list of SIRENs (customers, suppliers) or a sector by department and NAF code. Safeguard, receivership, liquidation, plans, closures; corrections and cancellations as updates.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/f58qI7Jy-XyZxeSI0bFuiZXL8UVb6V70egxNhbuxPzM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vOTBmT3IxUUJCSW1DMjc0dmUtYWN0b3ItWkVzd3lQREhneUVTa1Q2b2ctYW9ubGl5Q3NEQS1pY29uZS12OS1hbGVydGVzLWJvZGFjYy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Gecko Lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/d1b13izh4s8wbcQJ7Zk6krLgBCRuJCgWBNZL-hNy1c0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN1RxbTFydzFBWTZ4dmtaaXZLX2tOdU5CZ1kzeVNaTmFqZEtVN3pYOXRhTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZPVEJtVDNJeFVVSkNTVzFETWpjMGRtVXRjSEp2Wm1sc1pTMVlRbXRCYnpacVZHeFZMV0YyWVhSaGNpMW5aV05yYjNOMFlYSXRabVYxYVd4c1pTMHhMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "insolvency-alert": {
+                "eventTitle": "Insolvency alert",
+                "eventDescription": "Charged once per new insolvency notice row for a SIREN of your watchlist. Updates of notices already sent, skipped notices, the first (baseline) run and failed runs are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              },
+              "siren-checked": {
+                "eventTitle": "SIREN checked",
+                "eventDescription": "Charged once per SIREN of your watchlist per run, only after the BODACC was read in full. The first (baseline) run and failed runs (BODACC quota or outage) are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0002
+              },
+              "notice-found": {
+                "eventTitle": "Notice found",
+                "eventDescription": "Charged once per new insolvency notice row in sector mode. Updates of notices already sent, skipped notices, the first (baseline) run and failed runs are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003
+              },
+              "notice-found-naf": {
+                "eventTitle": "Notice found (NAF filter)",
+                "eventDescription": "Charged once per new notice row in sector mode with NAF codes, company lookup included. Notices outside your NAF codes are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "createdAt": "2026-10-27T13:33:28.301Z",
+          "startedAt": "2026-10-27T13:33:28.301Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ZEswyPDHgyESkT6og",
+        "url": "https://apify.com/geckostar/bodacc-insolvency-alerts-france"
+      },
+      {
+        "title": "Clinical Trial Investigator and Site Intelligence",
+        "name": "clinical-trial-investigator-intel",
+        "username": "george.the.developer",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 20,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-21T20:23:30.808Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 0,
+            "SUCCEEDED": 0,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "Find enriched clinical trial investigators and deterministic site-fit scores from ClinicalTrials.gov, NPI, OpenPayments, and PubMed data.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/dtzo0fUCDPxguCRUxGo3Xp8NEwJ0IBHPNcRh6nhyzjc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTERZcHRKMGR2V0tBSlVkS3QtYWN0b3ItTE5SUm9sN3BxREQ2Q1BGWU0tcTdvRmZMMWE3ZS1DbGluaWNhbF9UcmlhbF9JbnZlc3RpZ2F0b3JfYW5kX1NpdGVfSW50ZWxsaWdlbmNlLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "George Kioko",
+        "userPictureUrl": "https://images.apifyusercontent.com/fBEtvNATgSgq0bdRMJLsRKZlvaHNUPKbxplUNWFR6YY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMTdVZkw2RWhGRWljcUF6Sk1xSnhJa2NoZjRZa0dKVDZCb0ZGV3RkQjVqYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZURVJaY0hSS01HUjJWMHRCU2xWa1MzUXRjSEp2Wm1sc1pTMW9jVVJ3WTJGNFRHSm1MWEJ5YjJacGJHVkJVR2xtZVM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-21T11:05:35.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventDescription": "Charged once per paid Standby request or batch run.",
+                "eventTitle": "Actor start",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000045
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00004
+                  }
+                }
+              },
+              "site-fit-score": {
+                "eventDescription": "Charged per scored site row returned.",
+                "eventTitle": "Site fit score",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.5
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.5
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.45
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.4
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.4
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.4
+                  }
+                }
+              },
+              "investigator": {
+                "eventDescription": "Charged per enriched investigator profile returned.",
+                "eventTitle": "Investigator profile",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.1
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.1
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.09
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.08
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.08
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.08
+                  }
+                }
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.05,
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "Store discounts: Silver plan 10% off, Gold and above 20% off. Base price unchanged.",
+          "createdAt": "2026-10-21T11:05:37.228Z",
+          "notifiedAboutChangeAt": "2026-10-21T11:30:23.844Z"
+        },
+        "id": "LNRRol7pqDD6CPFYM",
+        "url": "https://apify.com/george.the.developer/clinical-trial-investigator-intel"
+      },
+      {
+        "title": "Agoda Room Rates Scraper",
+        "name": "agoda-room-rates",
+        "username": "boncross",
+        "stats": {
+          "totalBuilds": 75,
+          "totalRuns": 731,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-11-10T20:44:31.716Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape every room type and rate plan Agoda shows for a hotel and stay. Just add hotel URLs, ids or names and dates and get stay total, per-night and pre-tax prices, cancellation deadline and policy, breakfast, pay-later, rooms left and bed setup in your currency. $3.50 per 1,000 priced hotel-stays.",
+        "categories": [
+          "TRAVEL"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/BOMdLbZ9MUoo-7jnPjkGWHtxZUsBTCWioKWNvtRpwA0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZGZTZlQzWlcxcDFHYldod1ktYWN0b3ItWU82bmV0WXJSY0NRUXJjQWEtRzFZb2pIMUVtQS1hZ29kYS1yb29tLXJhdGVzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BonCross API",
+        "userPictureUrl": "https://images.apifyusercontent.com/dewzMiADwF85ZuV9a-4Fk_1I-EQW8YfYzC7h5SNqLK8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMThrZUk1MENUNnlNWHVXTlRLRjc2SWlNT21pM0ZXWHJsMUdLQW1ic0hfNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpOHdZalpqWkdObVpEUTVaR1l3T1dGaE1tWTRNVE5sWVdKa1pUUTVOR1ExWVdKbU5qUXhZVEl6WldZME1XUTNZamsyWWpOaVpXUXlaRGsxTUdZNFptSXdQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "actor-start",
+                "eventDescription": "Charged per run.",
+                "eventPriceUsd": 0.002,
+                "isOneTimeEvent": true
+              },
+              "hotel-resolved": {
+                "eventTitle": "hotel-resolved",
+                "eventDescription": "Charged per URL, slug or name turned into a property id.",
+                "eventPriceUsd": 0.002
+              },
+              "hotel-checked": {
+                "eventTitle": "hotel-checked",
+                "eventDescription": "Charged per hotel and stay Agoda answered, whatever the answer.",
+                "eventPriceUsd": 0.0005
+              },
+              "hotel-priced": {
+                "eventTitle": "hotel-priced",
+                "eventDescription": "Charged per hotel and stay that comes back with at least one rate, all rate plans included.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0027
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0021
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-09T15:57:32.696Z",
+          "startedAt": "2026-10-09T15:57:32.696Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "YO6netYrRcCQQrcAa",
+        "url": "https://apify.com/boncross/agoda-room-rates"
+      },
+      {
+        "title": "Ecommerce Platform Profiler",
+        "name": "ecommerce-platform-profiler",
+        "username": "mambalabs",
+        "stats": {
+          "totalBuilds": 22,
+          "totalRuns": 99,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T13:48:32.467Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Detects which ecommerce platform a company storefront runs on, plus its payment providers, subscription and marketplace apps, catalog size, currencies and shipping destinations. Static homepage and sitemap reads only, no browser. One flat row per company, Clay ready.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "SEO_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/XdeN8Sp1BDmolJkIe-ZOeMT5I3jXKWCeHrMK6yCMjhM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veXNEY2w1Ujh0cllNcHR1WVMtYWN0b3ItNUcyTmVZakJiUVRqYVRuOUwtZUlyNnhIVkdrZy1lY29tbWVyY2UtcGxhdGZvcm0tcHJvZmlsZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Mamba Labs",
+        "userPictureUrl": "https://images.apifyusercontent.com/dzNzI5UgXNmAYdCX9XX4fjz5dMJPgWWxcUCOd_JKqJQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOFZNV0Z0c0tZRTlfTzZpSUZnd2N0QldZa2lyUWJtTzc0RERyaHIwLWNsMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlWE5FWTJ3MVVqaDBjbGxOY0hSMVdWTXRjSEp2Wm1sc1pTMUJRalpSVmpJeWFIUjJMVzFoYldKaGJHRmljeTF3Y205bWFXeGxMV2x0WVdkbExuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-checked": {
+                "eventTitle": "Company checked",
+                "eventDescription": "Once per company for which the storefront read completed and a non degraded row was produced, whether or not anything was found. A not_found row fires this event, because looking and finding nothing is a real answer and it is the work you asked for. A degraded row, where the lookup could not run at all, fires nothing.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00315
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00245
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00245
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00245
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "platform-detected": {
+                "eventTitle": "Platform detected",
+                "eventDescription": "Once per company where an ecommerce platform was identified from the evidence. Does not fire when the storefront was read and no platform marks were found, and does not fire when the storefront could not be read at all, because in neither case was a platform detected.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0027
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0021
+                  }
+                }
+              },
+              "product-count-estimated": {
+                "eventTitle": "Product count estimated",
+                "eventDescription": "Once per company where a catalogue size was actually produced, from the products endpoint or from the sitemap. Does not fire when includeProductCount is off and does not fire when neither route yielded a number.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00225
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00175
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00175
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00175
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-22T15:17:27.387Z",
+          "startedAt": "2026-08-22T15:17:27.387Z"
+        },
+        "id": "5G2NeYjBbQTjaTn9L",
+        "url": "https://apify.com/mambalabs/ecommerce-platform-profiler"
+      },
+      {
+        "title": "Bokadirekt Scraper",
+        "name": "bokadirekt-scraper",
+        "username": "normdata",
+        "stats": {
+          "totalBuilds": 17,
+          "totalRuns": 61,
+          "totalUsers": 4,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T00:48:31.307Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 41,
+            "TIMED-OUT": 0,
+            "TOTAL": 41
+          }
+        },
+        "description": "Scrape 17,000+ beauty and wellness businesses from Bokadirekt, Sweden's biggest booking marketplace: phone, email, website, Instagram, org numbers, opening hours, full price list, and ratings. Filter by service, city, free slots, payment options, rating, and missing website.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/mPg5PJzFUh7q5F5QsA9nh0yDYkIhVmyouMF2PFZTwBc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQVJTSW5hdGEyYXZpc1RqQVotYWN0b3ItQ3Z3Nk1WMDFVVW9OMTVDZ2ctaWhkOVVnRnVRRC1pbWFnZXNfJTI4MTElMjkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Norm Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/XJ4GiaJy6XbKt2kg-EMHc68yIzmy-0Yu17cbKMyNShA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZGZBRzZMS3hWLXk3VFFHajdXaFVUVHVoRFZrQzYwZG9NVHpkRGtLUmZDdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRVkpUU1c1aGRHRXlZWFpwYzFScVFWb3RjSEp2Wm1sc1pTMTVUR2Q1VDJ4VFFVdERMVVZ0WW14bGJXRmZUbDlqYjI1ZmMyOXRZbkpsY205ZmVWOWljbWxzYkc5ZmRtVnlaR1V1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0171
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0154
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0137
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.012
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.003
+              }
+            }
+          },
+          "createdAt": "2026-10-02T02:57:23.714Z",
+          "startedAt": "2026-10-02T02:57:23.714Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-02T03:06:01.112Z"
+        },
+        "id": "Cvw6MV01UUoN15Cgg",
+        "url": "https://apify.com/normdata/bokadirekt-scraper"
+      },
+      {
+        "title": "Booking.com Stay Rooms Scraper",
+        "name": "booking-stayrooms-scraper",
+        "username": "nifty.codes",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 48,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-11-11T02:58:30.035Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Extract Booking.com rooms. Works on property pages with rooms listed. Powered by Booking.com Scraper.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/2Qiz2V46JXQinUgEbnmTT-mkXauFiZf3xHfwNVpk2IQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQXBRSktlQlpUblJobTQybEwtYWN0b3ItVTZUaDZneVZDRTB3M3ZiUGQtUGZuSVFrUFZvNi1pY29uNTEyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Nifty",
+        "userPictureUrl": "https://images.apifyusercontent.com/LS2aLzckgbZd21fuqFb4uN5yx0TkceX9amTsxg_WAAo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQ0JNVFhmVWJWLUV5ZU1VNWdmMjhnVHFRblFMR0tfN2x4WjlCSG9ob2x3OC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRWEJSU2t0bFFscFVibEpvYlRReWJFd3RjSEp2Wm1sc1pTMVNhR2REV2tOS1pqSkpMVzVwWm5SNVgyeHZaMjh1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-29T21:14:25.506Z",
+          "createdAt": "2026-09-29T21:14:26.611Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "U6Th6gyVCE0w3vbPd",
+        "url": "https://apify.com/nifty.codes/booking-stayrooms-scraper"
+      },
+      {
+        "title": "Yellow Pages Business Scraper",
+        "name": "yellow-pages-business-scraper",
+        "username": "cirkit",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 270,
+          "totalUsers": 7,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-11-11T04:54:28.527Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Fast Yellow Pages business scraper. Search by category and city or ZIP, returns name, phone, address, lat/lng, website, hours, social links, payment methods, years in business, rating, and review count. JSON-LD-first parser, no headless browser.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Crikit",
+        "userPictureUrl": "https://images.apifyusercontent.com/DTTplcDakGsOfbIvWmQF3uB7IC__GIeh5J0Q7iaHvk8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vR0RnOTRxQUZ1VTBsTndabUROVHowaGNiRVVtOW0yWlhmMzdzWmdxOFk5WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWbXhqZEdSdlpVRk9SMk51VlV4aFZtNHRjSEp2Wm1sc1pTMUNkbE5oWjJGQ2VYSlBMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZk9URnZOWEJvT1RGdk5YQm9PVEZ2TlM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE"
+        },
+        "id": "BwZ2C84oKicF19Ac2",
+        "url": "https://apify.com/cirkit/yellow-pages-business-scraper"
+      }
+    ]
+  }
+}

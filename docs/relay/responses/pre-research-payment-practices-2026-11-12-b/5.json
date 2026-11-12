@@ -1,0 +1,1602 @@
+{
+  "data": {
+    "total": 73,
+    "count": 20,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "UK Payment Practices Report API: Supplier Pay Data",
+        "name": "uk-payment-practices-reports",
+        "username": "tabulary",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 17,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T00:58:30.047Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 2,
+            "SUCCEEDED": 10,
+            "TIMED-OUT": 0,
+            "TOTAL": 12
+          }
+        },
+        "description": "UK large companies' and LLPs' statutory payment-practices filings from the official check-payment-practices.service.gov.uk register: average time to pay, invoice payment % within 30/31-60/60+ days, and prompt payment code status, filterable by company.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/d8psI0F6GmLxj2CFtczL1yRT8-a5WnHLR3DrURhCCdc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdkdJcFN6UWhHQkM2ZGpBTVctYWN0b3ItMjdFaHlQOTB0VmtxTGxzdDktaHZlQjdoNmtxTi11ay1wYXltZW50LXByYWN0aWNlcy1yZXBvcnRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Tabulary",
+        "userPictureUrl": "https://images.apifyusercontent.com/1_tmh6iN0rNJA-0tWN-7VkK1j9o_DGqMF8QVkOT8dvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNEUweEVGa3F2U29JWmdQU1BLdWc3bTFMWlN5aXdvT3FNMmh4REw3V1VOby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZka2RKY0ZONlVXaEhRa00yWkdwQlRWY3RjSEp2Wm1sc1pTMXRXbGRpVkROemJVVkxMWFJoWW5Wc1lYSjVMV3h2WjI4dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Payment practices filing",
+                "eventDescription": "One payment practices filing saved to the dataset by UK Payment Practices Report API: Supplier Pay Data.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0072
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0064
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0056
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0056
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0056
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-31T00:38:49.652Z",
+          "startedAt": "2026-10-31T00:38:49.652Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "27EhyP90tVkqLlst9",
+        "url": "https://apify.com/tabulary/uk-payment-practices-reports"
+      },
+      {
+        "title": "UK Late Payers & Payment Practices Scraper",
+        "name": "uk-late-payer-signals",
+        "username": "battles_2026",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 56,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T17:42:28.862Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Official UK payment practices reports joined with Companies House: days to pay, % paid late, trend vs prior report, e-invoicing / supply chain finance gaps, terms over 60 days. Filters by sector, region, size. Monitor mode returns only changes.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Jonathan D Battles",
+        "userPictureUrl": "https://images.apifyusercontent.com/0szcR-r7K_hwpRrWypBGg-Cw20X14IfTb_ncvmiE0P4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcmVoeTlzZ3AzZ256YURod2ZXazd5dUsycmFNQmZMY1hIUEJtNGo0bEVlRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjWFZLVFRkSVJtMTJPV0pSWTFSdFVEQXRjSEp2Wm1sc1pTMXJhamRPU2pSd1oxaFpMVEl3TWpZd05EQTVYekV3TVRreE1TNXFjR2MuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-signal": {
+                "eventTitle": "Company-signal",
+                "eventDescription": "One UK company payment-signal row",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.007
+                  }
+                }
+              },
+              "change-alert": {
+                "eventTitle": "Change alert",
+                "eventDescription": "One monitor-mode change alert",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.05
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-10-12T05:55:34.000Z",
+          "createdAt": "2026-10-12T05:55:34.637Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-12T06:00:42.650Z"
+        },
+        "id": "kfeHH5YspuL5WUnYu",
+        "url": "https://apify.com/battles_2026/uk-late-payer-signals"
+      },
+      {
+        "title": "UK Subcontractor Health Check",
+        "name": "uk-subcontractor-health-check",
+        "username": "robert-white",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 42,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T05:06:34.727Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Check a list of UK subcontractors or suppliers in one run. RED / AMBER / GREEN rating with plain-English reasons from Companies House, Gazette insolvency notices and GOV.UK payment practices data.",
+        "categories": [],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Robert White",
+        "userPictureUrl": "https://images.apifyusercontent.com/0JHl9MSP6EDLwWbopd9J5WYupPk88JjciIlzPfx9Q9g/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU1mQmRPejJFMjRoX05saEM5UkdoVXloOFB4cC1vallsWHFWSzhteFpTNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblkwUnpad1VWUmxjRFZHZDJWMVUwOW1VVnBrYlUwMlVqWnRibWhwVjNSc2ExVlRabTV1VDB0dWJuRlBVVXg0VURNOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-check": {
+                "eventTitle": "Company checked",
+                "eventDescription": "One company found and fully checked. Not-found names are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.4,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-04T16:26:23.423Z",
+          "createdAt": "2026-10-04T16:26:23.684Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "OC6ZJyRxKMaFB2MCg",
+        "url": "https://apify.com/robert-white/uk-subcontractor-health-check"
+      },
+      {
+        "title": "UK Construction Payment League Table",
+        "name": "uk-construction-payment-league",
+        "username": "robert-white",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 38,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T06:04:29.310Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Who pays subcontractors on time? Rank ~1,500 UK contractors, housebuilders and clients by days to pay, % paid late and retention terms, from official GOV.UK payment practices reports.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Robert White",
+        "userPictureUrl": "https://images.apifyusercontent.com/0JHl9MSP6EDLwWbopd9J5WYupPk88JjciIlzPfx9Q9g/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU1mQmRPejJFMjRoX05saEM5UkdoVXloOFB4cC1vallsWHFWSzhteFpTNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblkwUnpad1VWUmxjRFZHZDJWMVUwOW1VVnBrYlUwMlVqWnRibWhwVjNSc2ExVlRabTV1VDB0dWJuRlBVVXg0VURNOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-row": {
+                "eventTitle": "Organisation in table",
+                "eventDescription": "One organisation returned in the league table, with its latest payment figures.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-04T16:56:17.492Z",
+          "createdAt": "2026-10-04T16:56:17.763Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "N1s7o3H9oFM33dMfC",
+        "url": "https://apify.com/robert-white/uk-construction-payment-league"
+      },
+      {
+        "title": "UK Supplier Transparency Pack: Payment, Pay Gap, Slavery",
+        "name": "uk-supplier-transparency-pack",
+        "username": "wooden_scanner_c1n",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 8,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T09:38:34.801Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "One profile per UK company from three GOV.UK open datasets: payment practices (average days to pay, % paid late), gender pay gap figures and modern slavery statements. Search by company name or Companies House number, or monitor new filings. Company-level only, OGL v3.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sean",
+        "userPictureUrl": "https://images.apifyusercontent.com/I_t1Im2omXDfHW_Gv_O7mLtbCovezhV_5gQVsENC9Bc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vY1N4TGlQejRCenA2a0d6ODBFOThQaklvam1BZUo3MThZazlISmpxS1RJUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSFZGYzNGaVNXWjRkVTQxTkc1NlVGVkdjblEzYzBZd2VqQlJNVEZaY1hoYVRsSm5UR1pQYkRJeU5HZE9WVWg2UkVnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005
+              },
+              "company-profile": {
+                "eventTitle": "Company profile",
+                "eventDescription": "One UK company profile joining payment practices, gender pay gap and modern slavery statement data. Not-found rows are free.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-11-03T21:48:35.149Z",
+          "startedAt": "2026-11-03T21:48:35.149Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "XLN6RVCEhYmL386Wi",
+        "url": "https://apify.com/wooden_scanner_c1n/uk-supplier-transparency-pack"
+      },
+      {
+        "title": "Wellness.com Scraper - Dentist, Doctor & Health Provider Leads",
+        "name": "wellness-com-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 25,
+          "totalRuns": 208,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T11:36:39.594Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "Scrape Wellness.com health & wellness providers by specialty and city. Get name, phone, full address, specialty, rating, reviews, hours, payment methods, website & lead score for dentists, doctors, chiropractors, vets and more. Independent tool, not affiliated with Wellness.com.",
+        "categories": [
+          "LEAD_GENERATION",
+          "OTHER",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/qgc-TDzXnPgGjjtb9WE4iZd_nPVcuPoLDZ04K4k8lmk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItbHJSblVKTFVwYnZkSTV0QVItSlZXZWdPM04ycy1XZWxsbmVzcy5jb20ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider": {
+                "eventTitle": "Provider scraped",
+                "eventDescription": "Name, specialty, phone, full address, description, price range, profile URL, lead score.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00256
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00166
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00114
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00075
+                  }
+                }
+              },
+              "profile-enrichment": {
+                "eventTitle": "Profile enrichment",
+                "eventDescription": "Rating, reviews, payment methods, opening hours, practice website (only charged on a successful profile fetch).",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0011
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00076
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0005
+                  }
+                }
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "introducing tiered pricing — FREE tier unchanged, higher plan tiers discounted",
+          "createdAt": "2026-08-13T00:20:52.470Z",
+          "startedAt": "2026-08-13T00:20:52.470Z",
+          "notifiedAboutChangeAt": "2026-08-19T08:06:14.838Z"
+        },
+        "id": "lrRnUJLUpbvdI5tAR",
+        "url": "https://apify.com/scrapesage/wellness-com-scraper"
+      },
+      {
+        "title": "Sanctions Screening API for OFAC EU UN and UK",
+        "name": "full-sanctions-screener",
+        "username": "george.the.developer",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 21,
+          "totalUsers": 4,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-21T13:13:43.271Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 0,
+            "TIMED-OUT": 1,
+            "TOTAL": 1
+          }
+        },
+        "description": "Use a sanctions checker for an OFAC sanctions check and screening against EU, UN, and UK lists. Match entity names and aliases, set similarity thresholds, and review scored potential matches.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ryqLBHZlETNDRpO8SYO6Y_agspW3SyTZcZS3EK93Ae8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTERZcHRKMGR2V0tBSlVkS3QtYWN0b3ItNlJ3QzhhVTNVcjRXcHpOekwtdzhaM1F6dW9VTS1zYW5jdGlvbnMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "George Kioko",
+        "userPictureUrl": "https://images.apifyusercontent.com/fBEtvNATgSgq0bdRMJLsRKZlvaHNUPKbxplUNWFR6YY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMTdVZkw2RWhGRWljcUF6Sk1xSnhJa2NoZjRZa0dKVDZCb0ZGV3RkQjVqYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZURVJaY0hSS01HUjJWMHRCU2xWa1MzUXRjSEp2Wm1sc1pTMW9jVVJ3WTJGNFRHSm1MWEJ5YjJacGJHVkJVR2xtZVM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-21T11:06:50.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "entity-screened": {
+                "eventTitle": "Entity screened",
+                "eventDescription": "Charged for each entity screened against sanctions lists",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0135
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.012
+                  }
+                }
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "Store discounts: Silver plan 10% off, Gold and above 20% off. Base price unchanged.",
+          "createdAt": "2026-10-21T11:06:52.234Z",
+          "notifiedAboutChangeAt": "2026-10-21T11:30:24.051Z"
+        },
+        "id": "6RwC8aU3Ur4WpzNzL",
+        "url": "https://apify.com/george.the.developer/full-sanctions-screener"
+      },
+      {
+        "title": "Dentists Google Maps Scraper",
+        "name": "dentists-google-maps-scraper",
+        "username": "mukeshrana90",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 210,
+          "totalUsers": 18,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-11-10T11:22:37.757Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 1,
+            "TOTAL": 30
+          }
+        },
+        "description": "Scrape dentists and dental practices from Google Maps with email, social, specialties, payment options, insurances accepted, languages spoken, services list, review sentiment, online-booking / new-patient-promo detection, metro area classification, and DSO/practice-type classification.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/QLeCQD9vptDJUftVPfCdGhgzSEetz9bLtSs68vwp-4E/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vejdtQ044MW1meVlJUDBGaTYtYWN0b3ItdnNMNWFHS1l5M3ZtWjRPS3ctcTdjazRjTllQSy1nb29nbGUtaWNvbi5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Mukesh Kumar",
+        "userPictureUrl": "https://images.apifyusercontent.com/zqYnfn4L289m7xOEqPzloA4bFEgYDZVjQt3KjgviPWo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZDhsbk9aWGlUd1FhN3lXbWVBd3pFLXBHbTJFWEUwakdHMHljLXBPN0ZSMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlamR0UTA0NE1XMW1lVmxKVURCR2FUWXRjSEp2Wm1sc1pTMXFlbmhCVWpkcFNWRlRMVzExYTJWemFDNXFjR2MuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "email-enrichment": {
+                "eventTitle": "Email enrichment",
+                "eventDescription": "Additional charge per result when a contact email is extracted from the practice website. Scoring prioritises appointments@, scheduling@, frontdesk@, and reception@ over generic addresses. Sentry / Wix /no-reply / placeholder emails are filtered out.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              },
+              "social-enrichment": {
+                "eventTitle": "Social media enrichment",
+                "eventDescription": "Additional charge per result when Instagram, Facebook, LinkedIn, or X/Twitter profile links are extracted. Widget-brand handles (Bolt, Stripe, Squarespace, etc.) and Facebook post / group / event URL prefixes are filtered out.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              },
+              "dentist-enrichment": {
+                "eventTitle": "Dentist data enrichment",
+                "eventDescription": "Additional charge per result when specialties (general / orthodontist / oral surgeon / endodontist / periodontist / pediatric / cosmetic / implant / emergency / sedation), payment options, insurances accepted (Delta Dental, Aetna, Cigna, MetLife, Humana, BCBS, UnitedHealthcare + 13 more), languages spoken, services list, appointment policy, and review sentiment analysis are added.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.013
+              },
+              "niche-enrichment": {
+                "eventTitle": "Niche classification",
+                "eventDescription": "Additional charge per result when online booking platform (NexHealth, Solutionreach, Weave, Yapi, Calendly, Acuity, Zocdoc, and 11 more), new-patient promo (\"$99 exam\" / \"free X-rays\" / \"complimentary consultation\"), metropolitan area, and practice type (solo / group / DSO chain — Aspen Dental, Heartland, Pacific Dental Services + 16 more) are detected.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "startedAt": "2026-05-25T12:09:22.726Z",
+          "createdAt": "2026-05-25T12:09:23.272Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "vsL5aGKYy3vmZ4OKw",
+        "url": "https://apify.com/mukeshrana90/dentists-google-maps-scraper"
+      },
+      {
+        "title": "Plastic Surgeon Directory Scraper (ASPS)",
+        "name": "plastic-surgeon-medspa-directory-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 221,
+          "totalUsers": 7,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-11-10T11:44:35.402Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 39,
+            "TIMED-OUT": 0,
+            "TOTAL": 40
+          }
+        },
+        "description": "Scrape board-certified plastic surgeons from the ASPS find-a-surgeon directory. Returns name, board certs, practice address, phone, email, website, languages, and lat/lon — structured for B2B lead-gen in aesthetic medicine.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/8SfVaoXyqT3_TYs76Yl5-mDamYBjXA7BrCdpYm3tnFg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItZE1lOGV0VlhJbGJpVEFPRmUtZWNxTXdGckNrai1wbGFzdGljLXN1cmdlb24tbWVkc3BhLWRpcmVjdG9yeS1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:35:12.475Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:35:12.456Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-19T09:35:32.722Z",
+          "notifiedAboutChangeAt": "2026-10-04T09:36:12.434Z"
+        },
+        "id": "dMe8etVXIlbiTAOFe",
+        "url": "https://apify.com/jungle_synthesizer/plastic-surgeon-medspa-directory-scraper"
+      },
+      {
+        "title": "CMS Open Payments Scraper - Pharma Payments & Doctor Leads",
+        "name": "open-payments-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 18,
+          "totalRuns": 134,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T19:34:30.012Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrape CMS Open Payments (Sunshine Act): pharma & device payments to physicians & teaching hospitals. Detailed transactions plus per-physician, per-manufacturer & per-hospital rollups with KOL & lead scores. Filter by state, specialty, NPI, company, year. Keyless US-gov API, no browser, monitoring.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9H5NeTmuy7EPRNCeSRxIeyS1DaL82eFOBRBvPO3kX_w/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItZ3FIS3ExWnJ1Y1l0Y1pIZEktTnl4bUxFc1RXbS1DTVNfT3Blbl9QYXltZW50c19TY3JhcGVyXy1fUGhhcm1hX1BheW1lbnRzX19fRG9jdG9yX0xlYWRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "payment": {
+                "eventTitle": "Payment record",
+                "eventDescription": "One detailed CMS Open Payments transaction: recipient (name, NPI, specialty, address), paying manufacturer/GPO, amount, date, nature & form of payment, and associated drug/device products.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0034
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0022
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00152
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                }
+              },
+              "profile": {
+                "eventTitle": "Intelligence profile",
+                "eventDescription": "One aggregated physician, manufacturer or teaching-hospital rollup: total payments, transaction & payment counts, payer/recipient breakdowns, top products & specialties, nature-of-payment mix, and KOL / lead score.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00851
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0055
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0038
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0025
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-13T00:20:32.019Z",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "introducing tiered pricing — FREE tier unchanged, higher plan tiers discounted",
+          "startedAt": "2026-08-13T00:20:32.019Z",
+          "notifiedAboutChangeAt": "2026-08-19T08:06:13.893Z"
+        },
+        "id": "gqHKq1ZrucYtcZHdI",
+        "url": "https://apify.com/scrapesage/open-payments-scraper"
+      },
+      {
+        "title": "CMS Open Payments Pro — Sunshine Act + NPI API",
+        "name": "cms-open-payments-physician-intelligence-pro",
+        "username": "nexgendata",
+        "stats": {
+          "totalBuilds": 20,
+          "totalRuns": 167,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T13:32:30.850Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Sunshine Act pharma-to-physician payments enriched with NPI Registry specialty + practice address. Per (physician × manufacturer) intensity signal. Consulting / speaking / meal / travel / research filters. Compliance, plaintiff law, payer audit, medical journalism.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/XZdXDOYfRaP0xN78_fe09UsdkCoYJc715nIJ_G3YPVs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFFZaExmMkt1NllxeUNXYngtYWN0b3ItZzNST2YzbFFoZ1FuT2FzQkotSDlZSmJnaXYxRC1jbXMtb3Blbi1wYXltZW50cy1waHlzaWNpYW4taW50ZWxsaWdlbmNlLXByby5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGenData",
+        "userPictureUrl": "https://images.apifyusercontent.com/DFoEfAV1iSBokBNjpIZdoeMlxK2y6UEav2Se4BxUDrI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU5Nancta2JUQ2FFN3lQUTNGZnR1SHBQX0FoWkVNVlVFLTdfSVFOTjNzby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVRkZaYUV4bU1rdDFObGx4ZVVOWFluZ3RjSEp2Wm1sc1pTMXVSMmRzVGxZeU5VVkRMVzVuWkMxemRHRmphMlZrTFd4dlkydDFjQzFrWVhKckxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Two-tier cut sheet reduction (Steve order 2026-08-04): physician-payment $0.15->$0.05",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": false
+              },
+              "physician-payment": {
+                "eventTitle": "Physician payment",
+                "eventDescription": "Per Open Payments record joined with NPI specialty + practice location",
+                "eventPriceUsd": 0.05,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-04T20:00:01.667Z",
+          "startedAt": "2026-08-04T20:00:01.667Z",
+          "notifiedAboutChangeAt": "2026-08-05T15:06:35.162Z"
+        },
+        "id": "g3ROf3lQhgQnOasBJ",
+        "url": "https://apify.com/nexgendata/cms-open-payments-physician-intelligence-pro"
+      },
+      {
+        "title": "Law Firm Lead Finder - Clio, MyCase, PracticePanther",
+        "name": "law-firm-lead-finder",
+        "username": "seibs.co",
+        "stats": {
+          "totalBuilds": 39,
+          "totalRuns": 202,
+          "totalUsers": 9,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-11-10T13:44:35.104Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "Enriched Google Maps leads for US small and mid-sized law firms across major practice areas. Detects practice management (Clio, MyCase, PracticePanther, Smokeball, Filevine), trust payments (LawPay), and intake CRM. BigLaw and AmLaw 100 firms pre-blocked.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/YxHL3QRuZfL2E6HV9e6iQ6jKjE51LwOu05724VNofWU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMmQ1eEdyU2NhOHhCQVNycmwtYWN0b3ItNGtSRXk4WnRRZDh4M1p1MlUtc1MxRDVNZTVMRC1sYXdfZmlybV9sZWFkX2ZpbmRlcl9sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Seibs.co",
+        "userPictureUrl": "https://images.apifyusercontent.com/29eXpPbTd32SJTXKk7DZBu2qvCw1Ik3IpgcctL20-Wk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZkhPQVpBcUt2RDRXaFlkVTJuUlkxamFJbF9sSjRfcmZpeVNWWDRLdEVhay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNbVExZUVkeVUyTmhPSGhDUVZOeWNtd3RjSEp2Wm1sc1pTMXphMUUxWkV4eVJrYzFMWE5sYVdKemJHOW5ieTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Tiered PPE: $0.004 per Maps record, +$0.004 when email scraped, +$0.007 when premium signals detected. ~$4-15 per 1k records by tier.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "base_record": {
+                "eventTitle": "Base lead record",
+                "eventDescription": "One Google Maps record matching law firm criteria — name, address, phone, website, rating, hours.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "email_enrichment": {
+                "eventTitle": "Email enrichment",
+                "eventDescription": "Additional charge when at least one verified email is scraped from the firm's website.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004
+              },
+              "premium_signals": {
+                "eventTitle": "Premium signals",
+                "eventDescription": "Additional charge when practice management (Clio, MyCase, PracticePanther, Smokeball, Filevine) or LawPay is detected.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.007
+              }
+            }
+          },
+          "createdAt": "2026-05-09T07:28:15.850Z",
+          "startedAt": "2026-05-09T07:28:15.850Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "4kREy8ZtQd8x3Zu2U",
+        "url": "https://apify.com/seibs.co/law-firm-lead-finder"
+      },
+      {
+        "title": "CMS Medicare Physician Fee Schedule Scraper",
+        "name": "cms-physician-fee-schedule-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 16,
+          "totalRuns": 178,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T04:26:28.046Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Scrapes Medicare Physician Fee Schedule data from the CMS API. Returns rates, RVU components, and GPCI values for any HCPCS code, year, modifier, and locality.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/kPISnOE_FNFix5R0EUelOzrnNtca1I11hTWTZKa3XZQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItZTFKYnZCcGJlUHdJeXgzSXctYnUwbFNoUmtJZC1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Enterprise discount: PLATINUM and DIAMOND plans now pay less per result than GOLD. All other prices are unchanged.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "Record",
+                "eventDescription": "Charged for each fee schedule record stored in the dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.04125
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0375
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.03375
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.030375
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.027
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.004583
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.004167
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00375
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00375
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00375
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-10-27T05:56:45.145Z",
+          "startedAt": "2026-10-27T05:56:45.145Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-27T06:00:48.326Z"
+        },
+        "id": "e1JbvBpbePwIyx3Iw",
+        "url": "https://apify.com/parseforge/cms-physician-fee-schedule-scraper"
+      },
+      {
+        "title": "Doctor Pharma Payments Lookup (Sunshine Act)",
+        "name": "cms-open-payments-monitor",
+        "username": "sovereign_workspace",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 47,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T23:52:29.781Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Search CMS Open Payments for industry payments to doctors and hospitals. Filter by manufacturer, NPI, state, specialty, or amount. Annual data — lookup/audit, not a daily feed.",
+        "categories": [],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Chase Mariano",
+        "userPictureUrl": "https://images.apifyusercontent.com/sKwoqZRWnYUhccG-0YDTPqEDiyr1vrMIirZ7E2kv-Dc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vR3ZoSngtZEZZalRfcDBGQ1J0U3BEV1RWeE1QSDB4VlJ3ZWZMMmd2U1ZmNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTM0ozTFZCWmRVNDFiVTAzT1RGRGJtSkxhemQ0TUZOMlF6aFpaVEpvVEVWMGMyUnZObms0Ulhoa1NqUkNSRlZSUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "payment-matched": {
+                "eventTitle": "Payment matched",
+                "eventDescription": "Charged per payment record.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.03,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-23T23:03:09.402Z",
+          "createdAt": "2026-09-23T23:03:09.912Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "aF7B4p1ETfx5Uiu6I",
+        "url": "https://apify.com/sovereign_workspace/cms-open-payments-monitor"
+      },
+      {
+        "title": "Dental & Clinic Enricher: Insurance, New Patients",
+        "name": "dental-practice-enricher",
+        "username": "emulative_capeskin",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 48,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T16:14:28.831Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "accepting_new_patients, insurance_accepted, accepts_medicaid, online_booking_url, hours, services, languages, providers, with evidence quotes for the key facts. Dental, ortho, chiro, vet, med spa, PT, optometry, derm, mental health. $0.02 per practice; free plan: 3 per run without a key.",
+        "categories": [],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sniper Search",
+        "userPictureUrl": "https://images.apifyusercontent.com/kvHHTuYKMD35zOKdnJcCkWdqrCOKUPnONOc45hbRctc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vejJuWUYyTHJhZGdpV1RFSE5lY2FxU1BrT3dFZU45TGhMR2JHWnRGVDFIVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVk5TZUZWVU9FdFFkMmQ0UjB4bE1XeGllVXM1Wm01M1JYWjZWRzFLVkc1blUwbHROMmRVUms5Q1ZscHVPR1pCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "practice-enriched": {
+                "eventTitle": "Enriched practice",
+                "eventDescription": "One dental practice whose own website was read and enriched. Practices whose site can't be found or read, or isn't the practice's own, are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-13T15:36:20.791Z",
+          "createdAt": "2026-10-13T15:36:21.280Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-13T16:00:26.184Z"
+        },
+        "id": "3Md1AD4cT6cT7l9DK",
+        "url": "https://apify.com/emulative_capeskin/dental-practice-enricher"
+      },
+      {
+        "title": "Healthcare Provider Payments Scraper - NPI & CMS Payments",
+        "name": "healthcare-provider-payments-scraper",
+        "username": "recordsdata",
+        "stats": {
+          "totalBuilds": 21,
+          "totalRuns": 171,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T15:42:29.754Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrape U.S. healthcare provider profiles from the NPPES NPI Registry and match each to CMS Open Payments: general, research and ownership/investment records across 7 program years (2019-2025). Filter by name, organization or state. Export CSV, Excel, JSON. No login or API key.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Kd6K5Vm65fn3dBvvycqRJ7bksFcXqxOEr-rGTS4MVuk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veEFlcmlrNm1PczUyNVN2cXItYWN0b3ItQ2NDY3FlUmZieUJrR3hYSzgtc0xoU0VDNWFFUy1IZWFsdGhjYXJlLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "RecordsData",
+        "userPictureUrl": "https://images.apifyusercontent.com/3t6fJXhIc3JynEiu9ZCGYabKjvFJWMdOpM9L_opHswY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSU1ROFVfcm84bElkN0d4blEtMEpRVDduNTd1YlZyTzkxMnBjT2dkcE5TUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlRUZsY21sck5tMVBjelV5TlZOMmNYSXRjSEp2Wm1sc1pTMXFSbTlrYTIxcU4zVXlMVkJwZUdWc1lYUmxaRjlTUkY5TWIyZHZYM2RwZEdoZlRHbHRaVjlCWTJObGJuUXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider-record": {
+                "eventTitle": "Provider record",
+                "eventDescription": "Base row: NPPES provider profile (NPI, name, credential, taxonomies/specialties, addresses, practice locations, other names, identifiers).",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01
+                  }
+                }
+              },
+              "general-payment-record": {
+                "eventTitle": "General payment record",
+                "eventDescription": "One row per general industry payment (food, travel, consulting, speaking, gifts) from drug/device companies, swept across every available CMS Open Payments program year.",
+                "isPrimaryEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01425
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0135
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01275
+                  }
+                }
+              },
+              "research-payment-record": {
+                "eventTitle": "Research payment record",
+                "eventDescription": "One row per research-related industry payment tied to a formal research agreement or protocol, swept across every available program year.",
+                "isPrimaryEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0171
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0162
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0153
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0153
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0153
+                  }
+                }
+              },
+              "ownership-interest-record": {
+                "eventTitle": "Ownership interest record",
+                "eventDescription": "One row per ownership or investment interest a physician (or immediate family member) holds in a reporting drug/device company, swept across every available program year.",
+                "isPrimaryEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.017
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.017
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.017
+                  }
+                }
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-10-01T14:37:42.301Z",
+          "startedAt": "2026-10-01T14:37:42.301Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-01T15:05:51.682Z"
+        },
+        "id": "CcCcqeRfbyBkGxXK8",
+        "url": "https://apify.com/recordsdata/healthcare-provider-payments-scraper"
+      },
+      {
+        "title": "Dentist Scraper - Google Maps Practices, Reviews & Contacts",
+        "name": "dentist-scraper",
+        "username": "gio21",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 179,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T18:40:29.799Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrape dental practices from Google Maps. Get name, address, phone, website, rating, specialty (cosmetic, pediatric, orthodontist), insurance accepted, and amenities.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/xFD8puVSFWFw0vnIVaNt5zU80EYvj7WDnA49PWftD-0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZm5TUVJHYUd0OFRhdjdRZkYtYWN0b3ItMHRyM2tKVkpORlNGSWdoOVYtbWFiVHRRdEVuNy1kZW50aXN0LmpwZWc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Gio",
+        "userPictureUrl": "https://images.apifyusercontent.com/wqQe2a-05KMWcEYRyaswgePG12qtblRrbQbimpNugPQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcEZITGhkemlYTUxPT3RqRXo0ZFp5MEoyWFZTSzJ1YTEwOHdtd1pWckJXMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZabTVUVVZKSFlVZDBPRlJoZGpkUlprWXRjSEp2Wm1sc1pTMXplbmhhZWpkdFF6UkJMV2RwYnk1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-05-31T19:07:58.000Z",
+          "reasonForChange": "Initial pricing for new actor.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "place": {
+                "eventTitle": "Dentist scraped",
+                "eventDescription": "One place successfully scraped.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.05,
+          "createdAt": "2026-05-31T19:07:59.567Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "0tr3kJVJNFSFIgh9V",
+        "url": "https://apify.com/gio21/dentist-scraper"
+      },
+      {
+        "title": "CMS Open Payments Scraper - Physician Payments",
+        "name": "cms-open-payments-physicians",
+        "username": "dataio",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 15,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-09-19T13:45:18.655Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "Scrape CMS Open Payments: which company paid which US physician, how much and in how many transactions. Filter by company, physician, NPI or recipient type, sorted by amount, which the source does not do. Sunshine Act data for compliance, sales and research.",
+        "categories": [
+          "LEAD_GENERATION",
+          "MCP_SERVERS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/v8c6zreKtjmvRx_DEnufKXB0t7W3fKW4JJ6Vv9pn4zo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRkR5Y3lvYXRncURPSDZKMmotYWN0b3ItQ0hMSzBWd09xV2NwYVZNc24tZmtlM2VUb01Vbi1jbXMtb3Blbi1wYXltZW50cy1waHlzaWNpYW5zLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Tom Awake",
+        "userPictureUrl": "https://images.apifyusercontent.com/rY_gJr6YqC_vm2Ik3JMVbo9Z1ro0toN0jQsjEj8SO6M/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaDRTSWxmSGpmZ3hFY2pNczZrMk42d015eGlSWlFxWU5DT05oMlFxM2xMby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTekF6Y0ZCS2RVSkpRM1pEUTNKRU0wdFNWRTQwWTBjdFJIZG5TVXRhT1hKWlgxWXlMVlJZV0ZZM05HZEtjejF6T1RZdFl3.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "relationship-extracted": {
+                "eventTitle": "Payment relationship",
+                "eventDescription": "One physician-company relationship returned, with its total and transaction count.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0027
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-19T13:18:41.661Z",
+          "startedAt": "2026-09-19T13:18:41.661Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-21T12:36:31.375Z"
+        },
+        "id": "CHLK0VwOqWcpaVMsn",
+        "url": "https://apify.com/dataio/cms-open-payments-physicians"
+      },
+      {
+        "title": "Healthcare Provider Intel: NPI, Pharma Payments, Rx",
+        "name": "healthcare-provider-intelligence",
+        "username": "themineworks",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 114,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-11-11T09:03:39.610Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "One row per US provider joined across three federal sources: NPPES identity, licence, address and phone, plus CMS Open Payments industry money received and Medicare Part D prescribing volume. 8M+ NPIs. No API key, no proxy.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "MCP_SERVERS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/72heil4t4c9rH7JunUOl88RI3jUubIBrhtlk2XddETk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMlNkdDA1UXlwQVN1bGJVbjEtYWN0b3ItcXBLUE9NbXlHSlNybG1pNUcteFExSEJKbDZZUC1oZWFsdGhjYXJlLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "The Mine Works",
+        "userPictureUrl": "https://images.apifyusercontent.com/1-r6dF1T_wzvAVHZxqUZuMULYNxNGWTt3wMnIuAiILo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vM3pGaEtVaVRxZmozWkJ0NXUtbVVtQ0FYNUJYSGx1NzRPU2dSZ1MzRWVUTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNbE5rZERBMVVYbHdRVk4xYkdKVmJqRXRjSEp2Wm1sc1pTMDViVWRvY3psd2NuSnpMVlJOVjE5TWIyZHZMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "startedAt": "2026-09-02T09:29:12.373Z",
+          "reasonForChange": "Repriced to $1.00/1,000 (FREE) down to $0.60/1,000 (GOLD+), matching the portfolio-wide 40%-off-at-GOLD convention. Cost to run this actor is under $0.10/1,000 results, so this is headroom, not a margin cut.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider-enriched": {
+                "eventTitle": "Provider",
+                "eventDescription": "Charged per healthcare provider record delivered, joined with payments and prescribing data.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00075
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  }
+                },
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.01
+              }
+            }
+          },
+          "createdAt": "2026-09-02T09:29:13.190Z",
+          "notifiedAboutChangeAt": "2026-09-02T09:35:53.564Z"
+        },
+        "id": "qpKPOMmyGJSrlmi5G",
+        "url": "https://apify.com/themineworks/healthcare-provider-intelligence"
+      },
+      {
+        "title": "AP Practice Target (Fire Drill)",
+        "name": "ap-practice-target",
+        "username": "shohabbos_m",
+        "stats": {
+          "totalBuilds": 16,
+          "totalRuns": 125,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-25T18:46:21.368Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "A sandboxed accounts-payable agent to run manipulation drills against. Verdicts are read from ledger state, never from the transcript.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Shokhabbos Mukhammatov",
+        "userPictureUrl": "https://images.apifyusercontent.com/lRKxZBIBRpZi0eaIDyCoKc0HpyKoAqFFnK3aHzpGbLI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vY1Q5SjhDVmJJVlVNWS10aThjVW1ISHVsRGRXRmdIZ0N6ZThSZ0t1THB1RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6ZzJOVFkyTWpneVAzWTlOQQ.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-24T14:52:55.529Z",
+          "createdAt": "2026-10-24T14:52:56.188Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "c2tHmrAQShJ2Rh8KF",
+        "url": "https://apify.com/shohabbos_m/ap-practice-target"
+      }
+    ]
+  }
+}

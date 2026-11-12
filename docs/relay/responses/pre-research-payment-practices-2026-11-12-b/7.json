@@ -1,0 +1,1367 @@
+{
+  "data": {
+    "total": 648,
+    "count": 20,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "CMS DMEPOS Supplier Payments Scraper API",
+        "name": "cms-dmepos-supplier-utilization-payments",
+        "username": "pink_comic",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 98,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T18:07:10.369Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Search CMS annual Medicare DMEPOS supplier utilization and payment aggregates by NPI, supplier, geography, specialty, volume, payment, and DME/POS/drug component.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/GXPiF3TW6Wp8qcEMZNegKvBS8tVksJvNrgj3DHm2g4Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcUhCNFdCdVdsUmtraUdIWXctYWN0b3ItY2ZEaE1VZ2FvakVrVkdMRm0tU2tXZ2dPU0pKMy1jbXMtZG1lcG9zLXN1cHBsaWVyLXV0aWxpemF0aW9uLXBheW1lbnRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ava Torres",
+        "userPictureUrl": "https://images.apifyusercontent.com/xHIQ8NPgSWhC7jbdKz1bniz5JDgrODfO99BuuEXmJbQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV19KMWN2OFBpYlc5enZjT2ZWUVcxTnNyQVk1eU9Sd0F3QkMwWWYzWGpRSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVWhDTkZkQ2RWZHNVbXRyYVVkSVdYY3RjSEp2Wm1sc1pTMW1NakYwYkdwVFFraDNMWE5qY21WbGJuTm9iM1JmTWpBeU5pMHdNeTB5TkY5aGRGODRMalExTGpFMVgwRk5MbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "CMS DMEPOS Supplier Payments Scraper API evidence item",
+                "eventDescription": "One source-linked result or explicit evidence-status item written to the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0019
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0016
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-11-11T17:50:52.994Z",
+          "startedAt": "2026-11-11T17:50:52.994Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-11-11T18:00:40.511Z"
+        },
+        "id": "cfDhMUgaojEkVGLFm",
+        "url": "https://apify.com/pink_comic/cms-dmepos-supplier-utilization-payments"
+      },
+      {
+        "title": "UK Supplier Transparency Pack: Payment, Pay Gap, Slavery",
+        "name": "uk-supplier-transparency-pack",
+        "username": "wooden_scanner_c1n",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 8,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T09:38:34.801Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "One profile per UK company from three GOV.UK open datasets: payment practices (average days to pay, % paid late), gender pay gap figures and modern slavery statements. Search by company name or Companies House number, or monitor new filings. Company-level only, OGL v3.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sean",
+        "userPictureUrl": "https://images.apifyusercontent.com/I_t1Im2omXDfHW_Gv_O7mLtbCovezhV_5gQVsENC9Bc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vY1N4TGlQejRCenA2a0d6ODBFOThQaklvam1BZUo3MThZazlISmpxS1RJUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSFZGYzNGaVNXWjRkVTQxTkc1NlVGVkdjblEzYzBZd2VqQlJNVEZaY1hoYVRsSm5UR1pQYkRJeU5HZE9WVWg2UkVnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005
+              },
+              "company-profile": {
+                "eventTitle": "Company profile",
+                "eventDescription": "One UK company profile joining payment practices, gender pay gap and modern slavery statement data. Not-found rows are free.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-11-03T21:48:35.149Z",
+          "startedAt": "2026-11-03T21:48:35.149Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "XLN6RVCEhYmL386Wi",
+        "url": "https://apify.com/wooden_scanner_c1n/uk-supplier-transparency-pack"
+      },
+      {
+        "title": "Alibaba Products Scraper",
+        "name": "alibaba-products-scraper",
+        "username": "devcake",
+        "stats": {
+          "totalBuilds": 38,
+          "totalRuns": 20510,
+          "totalUsers": 1179,
+          "totalUsers7Days": 34,
+          "totalUsers30Days": 126,
+          "totalUsers90Days": 347,
+          "lastRunStartedAt": "2026-11-11T07:32:05.948Z",
+          "actorReviewCount": 3,
+          "actorReviewRating": 2.943537206962273,
+          "bookmarkCount": 8,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 1,
+            "SUCCEEDED": 1853,
+            "TIMED-OUT": 4,
+            "TOTAL": 1860
+          }
+        },
+        "description": "Extract wholesale full product data, and pricing from Alibaba.com for sourcing and market research. Filter by price range, MOQ, Trade Assurance, Verified suppliers and Alibaba Guaranteed.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/B6jGWu_SofFs8mBnYIthC1UnqV0A9N76lyutbXCQI7I/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNmhtYWY2WlRlS3dsYVJGeVotYWN0b3ItRkpUMHlTZTd6VGZpZFlQTUQtYmdzOGFtYmNXai1TY3JlZW5zaG90XzEucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 8,
+        "actorReviewRating": 2.943537206962273,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "devcake",
+        "userPictureUrl": "https://images.apifyusercontent.com/dezWWD2-tCINy6K3c1ztnp_1D7en-r0PqgNY0kIcqUU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbjJVN3hzXzVjVzR0aENfbzBVcnlTVjd3LXAzZXZnay1fUzltRXNlY19rQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZObWh0WVdZMldsUmxTM2RzWVZKR2VWb3RjSEp2Wm1sc1pTMURZMkZ5T0ZOM1FuWjVMVE0yTUY5R1h6RXhNRE16TkRreE9WOXBObHB4VGxwT1NsQlFOME40U0hNMVoxVjFRbkpDV2sxcVVqZzJVME5ITUM1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0011
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00105
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-03-03T03:00:58.236Z",
+          "createdAt": "2026-03-03T03:00:59.192Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "FJT0ySe7zTfidYPMD",
+        "url": "https://apify.com/devcake/alibaba-products-scraper"
+      },
+      {
+        "title": "Google Maps Leads Scraper: No Website, Unclaimed",
+        "name": "google-maps-business-segments",
+        "username": "steady-scrape",
+        "stats": {
+          "totalBuilds": 17,
+          "totalRuns": 166,
+          "totalUsers": 4,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-11-11T13:19:15.338Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 7,
+            "SUCCEEDED": 130,
+            "TIMED-OUT": 0,
+            "TOTAL": 137
+          }
+        },
+        "description": "Google Maps leads scraper with filters: local businesses with no website, unclaimed profiles, low ratings, few reviews or recently listed, by category and area. Filters run server-side, so you pay only for matches. Freshness dates on every record, no emails. From $0.002 per business.",
+        "categories": [
+          "LEAD_GENERATION",
+          "MARKETING",
+          "SEO_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/uYTrlMA7pb5abAG5kMVrRCB7HISe2Q5nAcGWKyG_TwM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZWRjVkpjSTdya0tybmtmOEotYWN0b3ItMmJnaE5Nb2kyYnd5blFoR3UtSUx3anJJUjJBMS1zdGVhZHlzY3JhcGUtbG9nby5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SteadyScrape",
+        "userPictureUrl": "https://images.apifyusercontent.com/jSI1qAB2eWxXhicpN-hXKLcF7iMBkW81SMzhb6Pe8Eo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veXNCNFEtbmxfZE5rOFpsdW9yaXhZcDJxel9TOU5hV2huQnhwY1B0blZlTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaV1JqVmtwalNUZHlhMHR5Ym10bU9Fb3RjSEp2Wm1sc1pTMWtUR1l6TmxoSFVHeGxMWE4wWldGa2VYTmpjbUZ3WlMxc2IyZHZMWEp2ZDNNdWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "actor-start": {
+                "eventTitle": "Run start",
+                "eventPriceUsd": 0.015,
+                "eventDescription": "Charged once per run, only if at least one business is returned. Empty runs, bad input and provider errors don't pay it."
+              },
+              "business": {
+                "eventTitle": "Business",
+                "isPrimaryEvent": true,
+                "eventDescription": "One business record delivered, when no premium segment filter is used.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                }
+              },
+              "segment-business": {
+                "eventTitle": "Segment business",
+                "eventDescription": "One business record delivered when a premium segment filter is used (no website, unclaimed, rating below, fewer reviews, first seen).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00375
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00375
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00375
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-11-01T14:32:38.433Z",
+          "startedAt": "2026-11-01T14:32:38.433Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-11-01T15:00:26.601Z"
+        },
+        "id": "2bghNMoi2bwynQhGu",
+        "url": "https://apify.com/steady-scrape/google-maps-business-segments"
+      },
+      {
+        "title": "African Company Registry Search: Nigeria, Ghana + 16 More",
+        "name": "african-company-lookup",
+        "username": "mansalabs",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 409,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-11-11T03:12:29.184Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 5,
+            "FAILED": 0,
+            "SUCCEEDED": 397,
+            "TIMED-OUT": 0,
+            "TOTAL": 402
+          }
+        },
+        "description": "Search official company registries in 18 African countries at once: Nigeria (CAC), Ghana, Tanzania (BRELA), Senegal, Uganda, Zambia, Mauritius and more. Registration number, status, type, incorporation date, address, activity and officers where published. For KYB and AI agents.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Mansa Labs",
+        "userPictureUrl": "https://images.apifyusercontent.com/rLjHsLldU7vgWmAQj8xfLPhme4KKoJ1U502q0RZ9exQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbkh4OHVWYlRfU3hrR1J3NVZqM3MzaHlKUWJRa2k5ckFhd1ZpVWpiZHZXSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTM1V4WDNScmNFbHBjME0xYlVaRFlXbEVRekZhTURCMFVIbEVRbEptYTA1S1YxWndXblkxV1d4bFZGazJhR1EyZHoxek9UWXRZdw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-07T01:57:19.447Z",
+          "createdAt": "2026-10-07T01:57:20.433Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "5lcrxXypojt05OCrr",
+        "url": "https://apify.com/mansalabs/african-company-lookup"
+      },
+      {
+        "title": "ImportYeti Scraper: US Import Records, Bills of Lading",
+        "name": "importyeti-scraper",
+        "username": "scrapewise",
+        "stats": {
+          "totalBuilds": 20,
+          "totalRuns": 260,
+          "totalUsers": 15,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 6,
+          "totalUsers90Days": 8,
+          "lastRunStartedAt": "2026-11-11T04:32:34.117Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 84,
+            "TIMED-OUT": 0,
+            "TOTAL": 84
+          }
+        },
+        "description": "Scrape US import records from ImportYeti by company, address or HS code: importers, overseas suppliers, top partners, HS codes, shipping lanes, carriers and the 50 latest bills of lading. Bill of lading scraper with 100+ fields per profile. No login. Empty pages are never charged.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/LhA1vsw322rLY2RQpHegA_Otc5Y3eqXRI2u7Ykxq-mY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS1hwdnR0TDZmNnNWczRLNEEtYWN0b3ItckJRMmhoWUxnWWpESTFmRDUtNUJDZWd2WWt1Uy1pbXBvcnR5ZXRpLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapewise Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/oQisM1fURSdnqKAZ8fBYGi75f1a2kJNjlsRxVogLo0E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMlkxTmFlTHotUVpNejFQb19xZzVycjlOc3Q4bnlEdS1NelJTZ1FaZHRCYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMWh3ZG5SMFREWm1Obk5XY3pSTE5FRXRjSEp2Wm1sc1pTMTFkMGhVUWtKSGFuZzNMV3h2WjI4dFpHRmtiM05pY2kweExuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Launch price: Row delivered US$ 2 per 1,000 on Free, US$ 1.7 on Gold and above; Full profile delivered US$ 3 per 1,000 on Free, US$ 2.55 on Gold and above.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "resultado-entregue": {
+                "eventTitle": "Row delivered",
+                "eventDescription": "Charged once per unique search result row, trading-partner row or bill-of-lading row delivered to the dataset. Rows with an errorCode (not found, invalid link, no results, blocked request, run timeout), duplicates and rows outside your filters are never charged.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0019
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0017
+                  }
+                }
+              },
+              "perfil-entregue": {
+                "eventTitle": "Full profile delivered",
+                "eventDescription": "Charged once per unique company or supplier profile row (resultType 'profiles'): totals, top 50 trading partners, HS and HTS codes, shipping lanes, carriers, notify parties and the 50 most recent bills of lading in one row. Error rows and duplicates are never charged.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00285
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0027
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00255
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00255
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00255
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-29T22:42:33.743Z",
+          "startedAt": "2026-09-29T22:42:33.743Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "rBQ2hhYLgYjDI1fD5",
+        "url": "https://apify.com/scrapewise/importyeti-scraper"
+      },
+      {
+        "title": "Yellowpages Email Scraper – Advanced, Cheapest & Reliable 📧🎟️",
+        "name": "yellowpages-email-scraper---advanced-cheapest-reliable",
+        "username": "contactminerlabs",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 351,
+          "totalUsers": 11,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-11-10T17:28:27.679Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 1,
+            "TOTAL": 29
+          }
+        },
+        "description": "🔍 Scrape Mass/Bulk Yellowpages Emails\n\nEnter your search parameters to collect verified contact emails from Yellowpages profiles, along with profile title, bio, source URL & platform info 📊\nPerfect for lead generation, influencer outreach & data enrichment in tools like Google Sheets or CRMs🧩",
+        "categories": [
+          "ECOMMERCE",
+          "LEAD_GENERATION",
+          "SOCIAL_MEDIA"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/DdzgMD3yUx3aK4Pp9wAbPRC-UdhvWJab1iPkRwo3DDw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vR29Zc3pISEJWTVdkcXUxM0wtYWN0b3ItQ01ISkhtOXRzWEVhMHBKQ0UtTGg1eFJZTkd6Ui1ZUC5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "ContactMinerLabs",
+        "userPictureUrl": "https://images.apifyusercontent.com/uAAx-zMAdb_YT45_rqczfcSGYgw6RADw0cWu1PxXJ_Y/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWjcxclptSlZhRGJ3dE12VS1LMTZ0cTl6TXVER1pkVHFfLTBVRERsbndCay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSMjlaYzNwSVNFSldUVmRrY1hVeE0wd3RjSEp2Wm1sc1pTMWhWMXB5Y0hsMGEzQmlMVXh2WjI4dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00999
+              }
+            }
+          },
+          "startedAt": "2026-10-12T10:54:10.431Z",
+          "createdAt": "2026-10-12T10:54:09.873Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-12T11:00:26.892Z"
+        },
+        "id": "CMHJHm9tsXEa0pJCE",
+        "url": "https://apify.com/contactminerlabs/yellowpages-email-scraper---advanced-cheapest-reliable"
+      },
+      {
+        "title": "SECOP Contracts Colombia — Entity & Contractor History",
+        "name": "secop-contracts",
+        "username": "polyglot-data",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 59,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T11:17:37.003Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Colombian public contracts by contractor or entity, SECOP I + II: value, payments and % paid, funding sources such as royalties, standard bidding docs, yearly summaries and new-contract alerts.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/4pvmjQjj0l-CO-AOMKGr4y-oZZuNMyw7i8GeSHlMgNY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQjdXRzJRU1E1SGxHcVFCaXItYWN0b3ItWlpaMUtaYWR4VUNiQ0NNd1EtUEpjSHpRSmFWZS1zZWNvcC1jb250cmFjdHMtYWN0b3ItaWNvbi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Polyglot Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/eEeZk3KTXhuunWX7B52rYfOS7Z1vdzX-IMIxMkSKOpQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUnFuMFhxby1Eb3pVTVpXbDhyUDZvWmh2Sk03Sm5iTDd2Z0RqMEpHaUNiMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRamRYUnpKUlUxRTFTR3hIY1ZGQ2FYSXRjSEp2Wm1sc1pTMUhVV2hvWTJKTWFGQktMV3h2WjI4dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "contract": {
+                "eventTitle": "Contract Saved",
+                "eventDescription": "Charged once for eachcontract saved to de dataset",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-10T14:12:52.401Z",
+          "createdAt": "2026-10-10T14:12:52.697Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ZZZ1KZadxUCbCCMwQ",
+        "url": "https://apify.com/polyglot-data/secop-contracts"
+      },
+      {
+        "title": "EU Supplier & Invoice Check (IBAN, VAT, sanctions, Peppol)",
+        "name": "eu-supplier-invoice-check",
+        "username": "factline",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 32,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T17:40:28.883Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Check a supplier before paying its invoice: company registers, sanctions and PEP on company, directors and parents, VAT match, IBAN validity and country, Polish whitelist accounts, sender email, Peppol. One verdict: pass, review or hold.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Matthew Sammels",
+        "userPictureUrl": "https://images.apifyusercontent.com/jIsIYu7muVX7eieJSNqHeMQJjA40NXfZpnIKoC0A-5w/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVkxwRnZKSzdhQlJHMW05N3p2M3lzNmhvODBsLU9zMXFCVkQ0dmV4R0xkay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUR3A1WlU1c2JVOXhaVzFFWTIweVEwNWpSSGRGY0RoVmRYRlFTRlpxYW1aVVN6ZDNla0ZMUjBWcFgyb3llVTkzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "invoice-check": {
+                "eventTitle": "invoice checked",
+                "eventDescription": "invoice",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.08,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-22T23:38:16.392Z",
+          "startedAt": "2026-10-22T23:38:16.392Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-23T00:00:24.749Z"
+        },
+        "id": "VpeIYvnOh3nDqu83b",
+        "url": "https://apify.com/factline/eu-supplier-invoice-check"
+      },
+      {
+        "title": "UK Sort Code & Bank Account Validator",
+        "name": "uk-sortcode-checker",
+        "username": "sterlingverify",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 33,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T18:26:28.952Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Validate UK sort code and account number pairs with the official Vocalink (Pay.UK) modulus checking rules, including all exceptions, before you set up Direct Debits, payouts or Faster Payments.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Juo8A0EstgEvRN5M33ZQf6_X68HLMC3R2_bdfekBpMk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZmN0bG1iZ09NQWRSVzc4S2ItYWN0b3ItWTB3ZmVLRWE2WU1ZYldnYkgtM0FRY2FJOU1pWi1zdGVybGluZ3ZlcmlmeS1sb2dvLW5hdnkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Luke Mangan",
+        "userPictureUrl": "https://images.apifyusercontent.com/vyK5a4tNo15OHbvSpJIo--H6zr1P8AtbH1WQcPKXpqI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSzlMSElNT0lSbUNOQWJOWEJJUTJxVzNUcjBocFJ0RWw5NFdkZWprSGpBRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZabU4wYkcxaVowOU5RV1JTVnpjNFMySXRjSEp2Wm1sc1pTMTNUMGxVTldObk1Vd3lMWE4wWlhKc2FXNW5kbVZ5YVdaNUxXeHZaMjh0Ym1GMmVTNXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "account-checked": {
+                "eventTitle": "Account checked",
+                "eventDescription": "One sort code + account number checked",
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-12T14:39:27.670Z",
+          "startedAt": "2026-10-12T14:39:27.670Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "jtRUdLSnkwLvkUozu",
+        "url": "https://apify.com/sterlingverify/uk-sortcode-checker"
+      },
+      {
+        "title": "UK Payment Practices Report API: Supplier Pay Data",
+        "name": "uk-payment-practices-reports",
+        "username": "tabulary",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 17,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T00:58:30.047Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 2,
+            "SUCCEEDED": 10,
+            "TIMED-OUT": 0,
+            "TOTAL": 12
+          }
+        },
+        "description": "UK large companies' and LLPs' statutory payment-practices filings from the official check-payment-practices.service.gov.uk register: average time to pay, invoice payment % within 30/31-60/60+ days, and prompt payment code status, filterable by company.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/d8psI0F6GmLxj2CFtczL1yRT8-a5WnHLR3DrURhCCdc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdkdJcFN6UWhHQkM2ZGpBTVctYWN0b3ItMjdFaHlQOTB0VmtxTGxzdDktaHZlQjdoNmtxTi11ay1wYXltZW50LXByYWN0aWNlcy1yZXBvcnRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Tabulary",
+        "userPictureUrl": "https://images.apifyusercontent.com/1_tmh6iN0rNJA-0tWN-7VkK1j9o_DGqMF8QVkOT8dvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNEUweEVGa3F2U29JWmdQU1BLdWc3bTFMWlN5aXdvT3FNMmh4REw3V1VOby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZka2RKY0ZONlVXaEhRa00yWkdwQlRWY3RjSEp2Wm1sc1pTMXRXbGRpVkROemJVVkxMWFJoWW5Wc1lYSjVMV3h2WjI4dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Payment practices filing",
+                "eventDescription": "One payment practices filing saved to the dataset by UK Payment Practices Report API: Supplier Pay Data.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0072
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0064
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0056
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0056
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0056
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-31T00:38:49.652Z",
+          "startedAt": "2026-10-31T00:38:49.652Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "27EhyP90tVkqLlst9",
+        "url": "https://apify.com/tabulary/uk-payment-practices-reports"
+      },
+      {
+        "title": "New Liquor License Applications by State: NY, TX, MO",
+        "name": "state-liquor-license-new-applications",
+        "username": "transparent_meteorite",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 49,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T06:30:29.191Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 4,
+            "SUCCEEDED": 17,
+            "TIMED-OUT": 0,
+            "TOTAL": 21
+          }
+        },
+        "description": "Track new liquor license applications and pending records from official NY, TX and MO open-data portals to find bars and restaurants about to open. Each record has dates, address, venue category and a lead score in one schema, with state filters. No login, no proxy.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/VOuEyI6fjt4HW8rJznyDMMsWFaUeMfvGQr1ysuyYx2o/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veUFZRmZvNUdoNnc4RVJnMVItYWN0b3ItcnZMaWdVT3R6ckRLWDJhS0UtbncwSVBsWmlMeS1zdGF0ZS1saXF1b3ItbGljZW5zZS1uZXctYXBwbGljYXRpb25zLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Detroit Web Agent - Open Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/bM0FdC1lmesV7de9gAbgawuM4Q2lUYTLOmIwmGZ_Mpc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcUV5QWlQcU5rWjVlOUdUZ0ZYT0E4V1p2V1VjcWRQeXh2QWIyVG9IWDhMQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlVUZaUm1adk5VZG9ObmM0UlZKbk1WSXRjSEp2Wm1sc1pTMWhjVkZ6ZW1WaVJHUXpMV1IzWVMxd2NtOW1hV3hsTFdGMllYUmhjaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "license-record": {
+                "eventTitle": "License record",
+                "eventDescription": "Charged once per liquor license record delivered to the dataset. Records removed by your filters or already seen in monitor mode are never charged.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.0019
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": null,
+          "createdAt": "2026-10-25T02:01:36.643Z",
+          "startedAt": "2026-10-25T02:01:36.000Z",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "Price cut to stay the lowest on the Store.",
+          "notifiedAboutChangeAt": "2026-10-25T02:30:22.569Z"
+        },
+        "id": "rvLigUOtzrDKX2aKE",
+        "url": "https://apify.com/transparent_meteorite/state-liquor-license-new-applications"
+      },
+      {
+        "title": "Czech VAT Payer Check: Reliability & Bank Accounts",
+        "name": "cz-vat-bank-watchlist",
+        "username": "thatmike1",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 26,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T14:50:34.352Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 22,
+            "TIMED-OUT": 0,
+            "TOTAL": 22
+          }
+        },
+        "description": "Check Czech suppliers' VAT reliability status and published bank accounts by DIČ from the official register, with expected-account matching and changes.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/f72NOa6Lnn1Z69XWtiQS-mXnzmWrMLY_-vAQLqVwebI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWkdRZ1p6cmZQaUhhejNEYjgtYWN0b3Itd0g4aGFYRlk2Y3VtZjJUN1otQnZNeHRyNWNkVC1jei12YXQtYmFuay13YXRjaGxpc3QucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Michal Pšenčík",
+        "userPictureUrl": "https://images.apifyusercontent.com/ZIsEyfZqaxMK221k39llqcNTQMVX0ZLu73YNzviMKeo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMGZDbWdmQmZWSHVLb2RxYWpQZ2dmd2VhZDVGaWp3ZUhHWTVCSHdVWmlHdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVWa1JsUndObWxHYUdSVWFHbFpUbWRKYXkxcldrb3RObEpXZUdGNlREaFViRnBMYjJOTFRYVlpOVmwzUVE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Supplier check",
+                "eventDescription": "Charged once per found supplier check stored in the dataset, including unchanged checks.",
+                "eventPriceUsd": 0.002
+              }
+            }
+          },
+          "createdAt": "2026-10-20T14:09:55.228Z",
+          "startedAt": "2026-10-20T14:09:55.228Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "wH8haXFY6cumf2T7Z",
+        "url": "https://apify.com/thatmike1/cz-vat-bank-watchlist"
+      },
+      {
+        "title": "Chinese Supplier Check: USCC, UFLPA, Entity List, Sanctions",
+        "name": "chinese-supplier-check",
+        "username": "factline",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 22,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T00:10:28.873Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 20,
+            "TIMED-OUT": 0,
+            "TOTAL": 20
+          }
+        },
+        "description": "Check Chinese suppliers before you buy: validates the Unified Social Credit Code (province, entity type; Xinjiang flagged) and screens against the UFLPA Entity List, US Entity List and EU, UN, UK and US sanctions. One verdict per supplier.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Matthew Sammels",
+        "userPictureUrl": "https://images.apifyusercontent.com/jIsIYu7muVX7eieJSNqHeMQJjA40NXfZpnIKoC0A-5w/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVkxwRnZKSzdhQlJHMW05N3p2M3lzNmhvODBsLU9zMXFCVkQ0dmV4R0xkay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUR3A1WlU1c2JVOXhaVzFFWTIweVEwNWpSSGRGY0RoVmRYRlFTRlpxYW1aVVN6ZDNla0ZMUjBWcFgyb3llVTkzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "supplier-check": {
+                "eventTitle": "Supplier check",
+                "eventDescription": "One supplier checked (failed lookups are not charged)",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.03
+              }
+            }
+          },
+          "createdAt": "2026-10-22T23:38:10.795Z",
+          "startedAt": "2026-10-22T23:38:10.795Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-23T00:00:24.569Z"
+        },
+        "id": "dYd7qEcwwCMMQxLeq",
+        "url": "https://apify.com/factline/chinese-supplier-check"
+      },
+      {
+        "title": "Delaware Checkbook Archive Scraper",
+        "name": "delaware-checkbook-archive-scraper",
+        "username": "publicmoney",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 86,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-11-10T20:58:04.484Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "Extract state of delaware archived checkbook records: every column the portal publishes, with server-side keyword, date and amount filters. Export data, run via API, schedule and monitor runs, or integrate with other tools.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/cGLY8EbnJJ4XFP3ALK56-nXwBsuNdCekV533EjFDD6s/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTVhoU2drY3FBbDlyWUZsaXgtYWN0b3ItV1RXT2NVMUdiYXBscW1CSWktdmZDRUJuNEJtYy1kZWxhd2FyZS1jaGVja2Jvb2stYXJjaGl2ZS1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Public Money",
+        "userPictureUrl": "https://images.apifyusercontent.com/tkS0hY1Qdg_JjYtsldyvDLGHNqP9PQ1TsAd9y8NKzyo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTEVDck1VQjY1eEdRQ3M0bWJYVzRWajRzSnBieUctak1ObkowNXB6eEJ6US9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUVmhvVTJkclkzRkJiRGx5V1Vac2FYZ3RjSEp2Wm1sc1pTMVhPV2RXVFRWclpsbGhMWEIxWW14cFl5MXRiMjVsZVMxamIybHVMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": 0.01,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "tender-scraper": {
+                "eventTitle": "Tender",
+                "eventDescription": "Charged for each tender or quotation opportunity returned in the dataset.",
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00125
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00085
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0007
+                  }
+                }
+              },
+              "schema-org": {
+                "eventTitle": "Schema.org block",
+                "eventDescription": "Charged once per run, or once per Standby request, when `schemaOrg` is enabled. Each record then carries a `schemaOrg` object mapping it to schema.org. Nothing is charged when the flag is off.",
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 1
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.9
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.8
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.7
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.6
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.5
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-11T08:57:39.573Z",
+          "startedAt": "2026-09-11T08:57:39.573Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-11T09:05:58.141Z"
+        },
+        "id": "WTWOcU1GbaplqmBIi",
+        "url": "https://apify.com/publicmoney/delaware-checkbook-archive-scraper"
+      },
+      {
+        "title": "UAE VAT Supplier Verification — FTA Decision 13",
+        "name": "uae-vat-supplier-verification-decision13",
+        "username": "fifty50labs",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 36,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T20:52:29.544Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Check UAE suppliers for FTA Decision 13 (2026): upload a purchase ledger (CSV/XLSX) and get 12-month spend per supplier, AED 10k/100k/375k thresholds, TRN checks, checks owed with due dates, risk flags and an EN/AR policy draft.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Fifty50 Labs",
+        "userPictureUrl": "https://images.apifyusercontent.com/UqMK2Pu18sHeThUqWvD4uEbFMAWBlNXjE12Lb_0quPA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlNOVWdpdWxCanhDLVcyVGhIVjk2UENKbHZWcWZDa1R2Q0I3V1NZUDJWQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTakZqWHpWdWMwcFljMk5UWVVSbmFFbFFWRTkxZDBjNVdXRXhTVXhmYW10VlJUWkpXa2RUVW05bVZWZG9jVEJSUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-10-09T21:13:36.182Z",
+          "startedAt": "2026-10-09T21:13:35.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "supplier-checked": {
+                "eventTitle": "Supplier checked",
+                "eventDescription": "One supplier analysed against Decision 13 thresholds (first 20 per run free)",
+                "eventPriceUsd": 0.04,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-10-09T21:30:24.256Z"
+        },
+        "id": "n4xQSWPk3UcK9XHoh",
+        "url": "https://apify.com/fifty50labs/uae-vat-supplier-verification-decision13"
+      },
+      {
+        "title": "UK Subcontractor Health Check",
+        "name": "uk-subcontractor-health-check",
+        "username": "robert-white",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 42,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T05:06:34.727Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Check a list of UK subcontractors or suppliers in one run. RED / AMBER / GREEN rating with plain-English reasons from Companies House, Gazette insolvency notices and GOV.UK payment practices data.",
+        "categories": [],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Robert White",
+        "userPictureUrl": "https://images.apifyusercontent.com/0JHl9MSP6EDLwWbopd9J5WYupPk88JjciIlzPfx9Q9g/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU1mQmRPejJFMjRoX05saEM5UkdoVXloOFB4cC1vallsWHFWSzhteFpTNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblkwUnpad1VWUmxjRFZHZDJWMVUwOW1VVnBrYlUwMlVqWnRibWhwVjNSc2ExVlRabTV1VDB0dWJuRlBVVXg0VURNOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-check": {
+                "eventTitle": "Company checked",
+                "eventDescription": "One company found and fully checked. Not-found names are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.4,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-04T16:26:23.423Z",
+          "createdAt": "2026-10-04T16:26:23.684Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "OC6ZJyRxKMaFB2MCg",
+        "url": "https://apify.com/robert-white/uk-subcontractor-health-check"
+      },
+      {
+        "title": "GLEIF LEI Lookup API: Company Verification",
+        "name": "lei-lookup-api",
+        "username": "sourcing-data-studio",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 118,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T03:20:05.874Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "LEI lookup API: find companies in the public Global LEI Index (GLEIF) by name or LEI code and get the legal name, status, jurisdiction, registration number and registered address. Unofficial; not affiliated with the source.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/5u1Ko6lTT_ZqCTJkukoO4N2CoUZqZFQFxIiWtNpJMK8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vODYzd1VtRENHQW5NeW5HRVgtYWN0b3ItSnlZcWV3TnJyOXNqMURkU1otZHkwUjVPcE8zSC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sourcing Data Studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/iHAoCBpSqLS58ocTaBg6H7z3T8SGAw9BcbvTJ03Hzt4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vS2xFNld4clBUZk12bGhZckE4bV95RXV2NGdrc0pYUmtOVUJxd19TenNSby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZPRFl6ZDFWdFJFTkhRVzVOZVc1SFJWZ3RjSEp2Wm1sc1pTMVpRMHAzWmpWallXSkVMV0YyWVhSaGNpNXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "lei-record": {
+                "eventTitle": "LEI record",
+                "eventDescription": "One legal entity record saved to the dataset. Failed requests, duplicates and names with no record are never charged.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0027
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0024
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.1,
+          "startedAt": "2026-10-06T04:58:12.450Z",
+          "createdAt": "2026-10-06T04:57:12.642Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "JyYqewNrr9sj1DdSZ",
+        "url": "https://apify.com/sourcing-data-studio/lei-lookup-api"
+      }
+    ]
+  }
+}

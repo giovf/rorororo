@@ -1,0 +1,469 @@
+{ "@context": "http://schema.org", "@type": "FAQPage", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary" }, "name": "Large businesses' payment practices and performance statistics 2025: commentary", "datePublished": "2026-07-14T09:30:03+01:00", "dateModified": "2026-07-14T09:30:02+01:00", "text": null, "publisher": { "@type": "Organization", "name": "GOV.UK", "url": "https://www.gov.uk", "logo": { "@type": "ImageObject", "url": "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-logo-b8553f688131fad665e52a8c2df7633f9cd1c0fffb9f69703cc68c728e7b3b74.png" } }, "image": [ "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-1x1-2672c0fb7a5d5f947d880522c509ebe7f2be090885883cc94418f6860e812e15.png", "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-4x3-194fde4197f00e669f6f52c182df2ed707bfb2024c9ef39f7a2ed20da62b90eb.png", "https://www.gov.uk/assets/frontend/govuk_publishing_components/govuk-schema-placeholder-16x9-30e6c0e035636ee6b9dc72ae254bcd4a925182805afe7c5b7170cf2394894b28.png" ], "author": { "@type": "Organization", "name": "Department for Business and Trade", "url": "https://www.gov.uk/government/organisations/department-for-business-and-trade" }, "mainEntity": [ { "@type": "Question", "name": "Headline findings", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#headline-findings", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#headline-findings", "text": "\u003ch3 id=\"long-run-trends\"\u003eLong-run trends\u003c/h3\u003e\u003cp\u003eSince reporting started in 2018\u003csup id=\"fnref:1\"\u003e\u003ca href=\"#fn:1\" class=\"footnote\" rel=\"footnote\" role=\"doc-noteref\"\u003e[footnote 1]\u003c/a\u003e\u003c/sup\u003e: \u003c/p\u003e\u003cul\u003e\n \u003cli\u003ethe time large businesses take to pay their suppliers has decreased. In 2025, large businesses paid their suppliers in 32 days, down from 35 days in 2018\u003c/li\u003e\n \u003cli\u003ethe proportion of invoices paid late by large businesses has been steadily decreasing. In 2025, large businesses paid 15% of invoices late, down from 25% in 2018, a 10 percentage point decrease\u003c/li\u003e\n \u003cli\u003ethe number of valid reports submitted by large businesses has decreased, with notable drops in 2020 and 2025. There were 11,178 valid reports submitted in 2025, down from 13,175 in 2018, a 15.2% decrease\u003c/li\u003e\n \u003cli\u003elarge businesses in the ’Manufacturing’ sector have consistently had the longest payment times and among the highest proportions of invoices paid late, compared with other sectors\u003csup id=\"fnref:2\"\u003e\u003ca href=\"#fn:2\" class=\"footnote\" rel=\"footnote\" role=\"doc-noteref\"\u003e[footnote 2]\u003c/a\u003e\u003c/sup\u003e\n\u003c/li\u003e\n \u003cli\u003elarge businesses in London have consistently had the shortest payment times and among the lowest proportions of invoices paid late, compared with other regions\u003c/li\u003e\n\u003c/ul\u003e\u003ch3 id=\"latest-data-and-recent-changes\"\u003eLatest data and recent changes\u003c/h3\u003e\u003cp\u003eIn 2025:\u003c/p\u003e\u003cul\u003e\n \u003cli\u003elarge businesses paid their suppliers in 32 days, unchanged from 2023 and 2024\u003c/li\u003e\n \u003cli\u003e15% of invoices were paid late by large businesses, a 1 percentage point decrease from 2024\u003c/li\u003e\n \u003cli\u003e14% of the total value of invoices was paid late by large businesses. This metric is new and only available for 2025\u003c/li\u003e\n \u003cli\u003elarge businesses submitted 11,178 valid reports, a 6.5% decrease from 2024. This decrease reflects a change in the scope of the reporting requirements, which reduced the number of businesses meeting the size thresholds for reporting in 2025\u003csup id=\"fnref:3\"\u003e\u003ca href=\"#fn:3\" class=\"footnote\" rel=\"footnote\" role=\"doc-noteref\"\u003e[footnote 3]\u003c/a\u003e\u003c/sup\u003e\n\u003c/li\u003e\n\u003c/ul\u003e" } }, { "@type": "Question", "name": "Introduction", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#introduction", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#introduction", "text": "\u003ch3 id=\"about-these-statistics\"\u003eAbout these statistics\u003c/h3\u003e\u003cp\u003eThis commentary accompanies the most recent UK large business payment practices and performance statistics data tables, published on 14 July 2026. It highlights and summarises recent trends in large UK business payment performance, including how long businesses take to pay their suppliers and the extent to which invoices are paid late. \u003c/p\u003e\u003cp\u003eThe statistics are based on data reported by businesses under \u003ca rel=\"external\" href=\"https://www.legislation.gov.uk/ukdsi/2017/9780111153598/contents\"\u003eThe Reporting on Payment Practices and Performance Regulations 2017\u003c/a\u003e, which require large UK businesses to report on their payment practices, policies and performance twice-yearly. This information is publicly available on GOV.UK’s \u003ca rel=\"external\" href=\"https://check-payment-practices.service.gov.uk/export/\"\u003ePayment practices reporting webpage\u003c/a\u003e.\u003c/p\u003e\u003ch3 id=\"definition-of-large-businesses\"\u003eDefinition of large businesses\u003c/h3\u003e\u003cp\u003eThe reporting regulations define a large business as one that has exceeded 2 of the following thresholds on its last 2 balance sheet dates: \u003c/p\u003e\u003cul\u003e\n \u003cli\u003e£54 million annual turnover \u003c/li\u003e\n \u003cli\u003e£27 million balance sheet total \u003c/li\u003e\n \u003cli\u003e250 employees\u003c/li\u003e\n\u003c/ul\u003e\u003ch3 id=\"metrics\"\u003eMetrics\u003c/h3\u003e\u003cp\u003eThe statistics include 3 main performance metrics, which describe overall large business performance: \u003c/p\u003e\u003cul\u003e\n \u003cli\u003etime to pay (days): how long large businesses take to pay their suppliers \u003c/li\u003e\n \u003cli\u003eproportion of invoices paid late, by number (%): how often invoices are paid late \u003c/li\u003e\n \u003cli\u003eproportion of invoices paid late, by value (%): how much of the total value of invoices is paid late \u003c/li\u003e\n\u003c/ul\u003e\u003cp\u003eThe statistics also include a contextual measure of reporting coverage as follows, which helps users understand the size of the reporting population and where breakdowns have been calculated using low numbers of reports:\u003c/p\u003e\u003cul\u003e\n \u003cli\u003enumber of valid reports: how many reports large businesses submitted, after removing incomplete and invalid reports\u003c/li\u003e\n\u003c/ul\u003e\u003cp\u003eThe statistics present headline figures with additional breakdowns by sector and region. \u003c/p\u003e\u003ch3 id=\"use-of-medians\"\u003eUse of medians\u003c/h3\u003e\u003cp\u003eThe statistics present median values, which describe average large business performance. Medians are used instead of means to limit the impact of extreme values. The use of medians is explained further in the ‘Approach’ section of the \u003ca href=\"https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology\"\u003eaccompanying methodology\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eThe number of valid reports statistic is a simple count.\u003c/p\u003e\u003ch3 id=\"uses-of-the-statistics\"\u003eUses of the statistics\u003c/h3\u003e\u003cp\u003eThe statistics support policy development, monitoring and evaluation, and wider public discussion of large businesses’ payment practices and performance.\u003c/p\u003e" } }, { "@type": "Question", "name": "Summary of results", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#summary-of-results", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#summary-of-results", "text": "\u003ch3 id=\"time-to-pay\"\u003eTime to pay\u003c/h3\u003e\u003cp\u003eTime to pay shows how long on average large businesses take to pay their suppliers. \u003c/p\u003e\u003cp\u003eThese times can be considered relative to established benchmarks. The \u003ca rel=\"external\" href=\"https://www.smallbusinesscommissioner.gov.uk/fpc/code-criteria/\"\u003eFair Payment Code\u003c/a\u003e, a voluntary scheme that recognises good payment practices, sets a benchmark of paying suppliers within 30 days. Payment terms exceeding 60 days are subject to legislative restrictions. For more information, read the \u003ca rel=\"external\" href=\"https://www.legislation.gov.uk/ukpga/1998/20/contents\"\u003eLate Payment of Commercial Debts (Interest) Act 1998\u003c/a\u003e.\u003c/p\u003e\u003ch4 id=\"figure1-time-to-pay-days-2018-to-2025\"\u003eFigure 1: Time to pay (days), 2018 to 2025 \u003c/h4\u003e\u003cfigure class=\"image embedded\"\u003e\u003cdiv class=\"img\"\u003e\u003cimg src=\"https://assets.publishing.service.gov.uk/media/6a50d026c3d64d94cacab761/figure-1.svg\" alt=\"\"\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003ca href=\"#figure-1\"\u003eView the web accessible version of Figure 1\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eThe line graph in Figure 1 shows that large businesses’ average time to pay was 32 days in 2025. It has remained unchanged since 2023, after a gradual decrease from 35 days in 2018.\u003c/p\u003e\u003ch4 id=\"figure-2-time-to-pay-days-uk-region-breakdown-2025\"\u003eFigure 2: Time to pay (days), UK region breakdown, 2025\u003c/h4\u003e\u003cfigure class=\"image embedded\"\u003e\u003cdiv class=\"img\"\u003e\u003cimg src=\"https://assets.publishing.service.gov.uk/media/6a50d02d9e9c95844ae64cab/figure-2.svg\" alt=\"\"\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003ca href=\"#figure-2\"\u003eView the web accessible version of Figure 2\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eThe bar chart in Figure 2 shows that, in 2025, large businesses in the East Midlands and West Midlands took the longest to pay their suppliers, averaging 38 days. Large businesses in London paid their suppliers in the shortest time, averaging 27 days.\u003c/p\u003e\u003cp\u003eThis figure excludes reports that could not be assigned to a region, which are categorised as ‘Unknown’.\u003c/p\u003e\u003ch4 id=\"figure-3time-topay-daysstandard-industrial-classification-sic-sectionbreakdown-2025\"\u003eFigure 3: Time to pay (days), Standard Industrial Classification (\u003cabbr title=\"Standard Industrial Classification\"\u003eSIC\u003c/abbr\u003e) section breakdown, 2025\u003c/h4\u003e\u003cfigure class=\"image embedded\"\u003e\u003cdiv class=\"img\"\u003e\u003cimg src=\"https://assets.publishing.service.gov.uk/media/6a50d0351228eb26a4cab765/figure-3.svg\" alt=\"\"\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003ca href=\"#figure-3\"\u003eView the web accessible version of Figure 3\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eThe bar chart in Figure 3 shows that, in 2025, large businesses in the ’Manufacturing’ sector took the longest to pay their suppliers, averaging 45 days. This may reflect the more predominant role of physical goods and the complexity of supply chains in this sector. Large businesses in the ’Finance and insurance activities’ sector paid their suppliers in the shortest time, averaging 21 days. This may reflect the more predominant role of services and payment practices that are less influenced by cash flow considerations in this sector.\u003c/p\u003e\u003cp\u003eThis figure excludes reports that could not be assigned to a sector, which are categorised as ‘Unknown’. It also excludes ‘Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use’ and ‘Activities of extraterritorial organisations and bodies’, due to low numbers of reports which limit reliability and interpretability.\u003c/p\u003e\u003ch3 id=\"proportion-of-invoices-paid-late\"\u003eProportion of invoices paid late\u003c/h3\u003e\u003cp\u003eProportion of invoices paid late shows on average how many invoices large businesses pay after the agreed terms. This is presented both in terms of the number of invoices paid late, and the value of invoices paid late. \u003c/p\u003e\u003ch4 id=\"figure-4proportion-of-invoices-paid-late-by-number-and-value--2018-to-2025\"\u003eFigure 4: Proportion of invoices paid late, by number and value (%), 2018 to 2025\u003c/h4\u003e\u003cfigure class=\"image embedded\"\u003e\u003cdiv class=\"img\"\u003e\u003cimg src=\"https://assets.publishing.service.gov.uk/media/6a50d03cc3d64d94cacab762/figure-4.svg\" alt=\"\"\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003ca href=\"#figure-4\"\u003eView the web accessible version of Figure 4\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eThe line graph in Figure 4 shows that the proportion of invoices paid late, by number, was 15% in 2025. This is a 1 percentage point decrease from 2024 and follows a gradual decrease from 25% in 2018. While the proportion of invoices paid late has decreased from 2018, nearly 1 in 6 invoices were paid late in 2025.\u003c/p\u003e\u003cp\u003eThe proportion of invoices paid late, by value, was 14% in 2025. This metric is new and only available for 2025. \u003c/p\u003e\u003cp\u003eThe proportions of invoices paid late, by number and value, were similar in 2025. This suggests that on average late payment did not vary substantially between lower and higher-value invoices, although differences may exist across the distribution.\u003c/p\u003e\u003ch4 id=\"figure-5-proportion-of-invoices-paid-late-by-number-and-value--2025-uk-regions-breakdown\"\u003eFigure 5: Proportion of invoices paid late, by number and value (%), 2025, UK regions breakdown\u003c/h4\u003e\u003cfigure class=\"image embedded\"\u003e\u003cdiv class=\"img\"\u003e\u003cimg src=\"https://assets.publishing.service.gov.uk/media/6a50d0432467584757371cfb/figure-5.svg\" alt=\"\"\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003ca href=\"#figure-5\"\u003eView the web accessible version of Figure 5\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eThe bar chart in Figure 5 shows that, in 2025, large businesses in the West Midlands had the highest proportion of invoices paid late by number, at 19%. Large businesses in the North East had the lowest proportion of invoices paid late by number, at 12%. \u003c/p\u003e\u003cp\u003eIn 2025, large businesses in the West Midlands had the highest proportion of invoices paid late by value, at 18%. Large businesses in Northern Ireland had the lowest proportion of invoices paid late by value, at 11%.\u003c/p\u003e\u003ch4 id=\"figure-6-proportion-of-invoices-paid-late-by-number-and-value--2025-uk-sic-section-breakdown\"\u003eFigure 6: Proportion of invoices paid late, by number and value (%), 2025, UK \u003cabbr title=\"Standard Industrial Classification\"\u003eSIC\u003c/abbr\u003e section breakdown\u003c/h4\u003e\u003cfigure class=\"image embedded\"\u003e\u003cdiv class=\"img\"\u003e\u003cimg src=\"https://assets.publishing.service.gov.uk/media/6a50d0499e9c95844ae64cac/figure-6.svg\" alt=\"\"\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003ca href=\"#figure-6\"\u003eView the web accessible version of Figure 6\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eThe bar chart in Figure 6 shows that large businesses in the ‘Manufacturing’ sector had the highest proportion of invoices paid late by number in 2025, at 21%. Large businesses in the ‘Accommodation and food service activities’ sector had the lowest proportion of invoices paid late by number, at 9%. \u003c/p\u003e\u003cp\u003eLarge businesses in the ‘Water supply; sewerage, waste management and remediation activities’ sector had the highest proportion of invoices paid late by value in 2025, at 22%. Large businesses in the ‘Electricity, gas, steam and air conditioning supply’ sector had the lowest proportion, at 8%.\u003c/p\u003e\u003ch3 id=\"number-of-valid-reports\"\u003eNumber of valid reports\u003c/h3\u003e\u003cp\u003eNumber of valid reports shows how many reports large businesses submitted, after removing incomplete and invalid reports. For further information on how valid reports are determined, read the ‘Annex: Data preparation’ section of the \u003ca href=\"https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology\"\u003eaccompanying methodology\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eNumber of valid reports counts individual reports rather than reporting businesses. Businesses must report twice-yearly, but not every business submits 2 reports each year.\u003c/p\u003e\u003cp\u003eThese numbers can be considered in the context of estimated full reporting compliance. Before the 2025 changes to the large business size thresholds, DBT analysis estimates that between 14,000 and 16,000 businesses were required to report in 2024. If each business submitted 2 reports annually, this would equate to between 28,000 and 32,000 expected reports. For further details, read the ‘Late payments: impact assessment on primary legislation’ on the \u003ca href=\"https://www.gov.uk/government/consultations/late-payments-tackling-poor-payment-practices\"\u003eLate payments: tackling poor payment practices consultation webpage\u003c/a\u003e.\u003c/p\u003e\u003ch4 id=\"figure-7-number-of-valid-reports-2018-to-2025\"\u003eFigure 7: Number of valid reports, 2018 to 2025\u003c/h4\u003e\u003cfigure class=\"image embedded\"\u003e\u003cdiv class=\"img\"\u003e\u003cimg src=\"https://assets.publishing.service.gov.uk/media/6a50d04fc3d64d94cacab763/figure-7.svg\" alt=\"\"\u003e\u003c/div\u003e\u003c/figure\u003e\u003cp\u003e\u003ca href=\"#figure-7\"\u003eView the web accessible version of Figure 7\u003c/a\u003e.\u003c/p\u003e\u003cp\u003eThe line graph in figure 7 shows that the number of valid reports submitted by large businesses was 11,178 in 2025. This represents a decrease from 2024, and is 15.2% lower than the peak of 13,177 reports in 2019. \u003c/p\u003e\u003cp\u003eThere are 2 notable decreases in the number of valid reports submitted by large businesses since 2018: \u003c/p\u003e\u003cul\u003e\n \u003cli\u003e\n \u003cp\u003ebetween 2019 and 2020, there was a 6.1% decrease. This coincided with the COVID-19 pandemic, which disrupted many businesses and may have affected reporting behaviour \u003c/p\u003e\n \u003c/li\u003e\n \u003cli\u003e\n \u003cp\u003ebetween 2024 and 2025, there was a 6.5% decrease. This decrease reflects a change in the scope of the reporting requirements, which reduced the number of businesses meeting the size thresholds for reporting in 2025\u003c/p\u003e\n \u003c/li\u003e\n\u003c/ul\u003e" } }, { "@type": "Question", "name": "Technical information", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#technical-information", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#technical-information", "text": "\u003cp\u003eThe following technical information applies to these statistics:\u003c/p\u003e\u003cul\u003e\n \u003cli\u003ethe statistics use median values, rather than means, to reduce the influence of extreme values on the results \u003c/li\u003e\n \u003cli\u003ethe statistics include only valid reports. Reports that do not meet data validation or consistency checks are excluded, including reports with missing values and duplicate entries. For further information on the impact of this change, read the ‘Approach: Data preparation’ section of the \u003ca href=\"https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology\"\u003eaccompanying methodology\u003c/a\u003e\n\u003c/li\u003e\n \u003cli\u003eunder the reporting regulations, businesses are required to submit reports every 6 months. This means that, in most cases, a business can submit up to 2 reports in a calendar year. The statistics are based on individual reports, rather than aggregating reports to the company level first \u003c/li\u003e\n \u003cli\u003ethe reporting data is self-reported by businesses. Businesses are legally required to report correct information, but there is no independent verification of the data \u003c/li\u003e\n \u003cli\u003ebusinesses’ financial years and reporting periods vary. To produce consistent annual statistics, each report is assigned to a calendar year based on where most of the reporting period falls. For further information on the impact of this change, read the ‘Approach: Reporting Year Assignment’ section of the \u003ca href=\"https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology\"\u003eaccompanying methodology\u003c/a\u003e\n\u003c/li\u003e\n \u003cli\u003ethe statistics include measures of late payment by both number and value of invoices. The measure by number shows the proportion of invoices paid late. From 2025 onwards, businesses are also required to report the total value of invoices paid and the value of invoices paid late, which is used to produce the measure by value \u003c/li\u003e\n \u003cli\u003ethe scope of The Reporting on Payment Practices and Performance Regulations 2017 changed in 2025, which coincided with a 6.5% decrease in the number of valid reports submitted by businesses, compared with 2024. Despite this, headline statistics have been minimally affected, remaining largely stable\u003c/li\u003e\n \u003cli\u003ewhere the region or sector of a reporting business cannot be matched to the Companies House data, these are classified as ‘Unknown’. These breakdowns are excluded from the commentary around sector and region breakdowns\u003c/li\u003e\n\u003c/ul\u003e" } }, { "@type": "Question", "name": "Publication ", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#publication", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#publication", "text": "\u003cp\u003eThese statistics were published on 14 July 2026. The next release is planned for July 2027. \u003c/p\u003e" } }, { "@type": "Question", "name": "Revisions ", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#revisions", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#revisions", "text": "\u003cp\u003eThe reporting data is a live data source, and businesses can submit backdated reports. This means that previously published statistics may change if new data becomes available. The revisions policy is further explained in the \u003ca href=\"https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology\"\u003eaccompanying methodology\u003c/a\u003e.\u003c/p\u003e" } }, { "@type": "Question", "name": "Pre-release access ", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#pre-release-access", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#pre-release-access", "text": "\u003cp\u003ePre-release access is provided for these statistics. For details, see \u003ca href=\"https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-pre-release-access\"\u003eLarge businesses’ payment practices and performance statistics: pre-release access\u003c/a\u003e.\u003c/p\u003e" } }, { "@type": "Question", "name": "Web accessible tables", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#web-accessible-tables", "acceptedAnswer": { "@type": "Answer", "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary#web-accessible-tables", "text": "\u003ch3 id=\"figure-1\"\u003eFigure 1: Time to pay (days), 2018 to 2025\u003c/h3\u003e\u003ctable\u003e\n \u003cthead\u003e\n \u003ctr\u003e\n \u003cth scope=\"col\"\u003eReporting Year\u003c/th\u003e\n \u003cth scope=\"col\"\u003eTime to pay (days)\u003c/th\u003e\n \u003c/tr\u003e\n \u003c/thead\u003e\n \u003ctbody\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2018\u003c/th\u003e\n \u003ctd\u003e35\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2019\u003c/th\u003e\n \u003ctd\u003e34\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2020\u003c/th\u003e\n \u003ctd\u003e34\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2021\u003c/th\u003e\n \u003ctd\u003e33\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2022\u003c/th\u003e\n \u003ctd\u003e33\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2023\u003c/th\u003e\n \u003ctd\u003e32\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2024\u003c/th\u003e\n \u003ctd\u003e32\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2025\u003c/th\u003e\n \u003ctd\u003e32\u003c/td\u003e\n \u003c/tr\u003e\n \u003c/tbody\u003e\n\u003c/table\u003e\u003ch3 id=\"figure-2\"\u003eFigure 2: Time to pay (days), UK region breakdown, 2025\u003c/h3\u003e\u003ctable\u003e\n \u003cthead\u003e\n \u003ctr\u003e\n \u003cth scope=\"col\"\u003e\n\u003cabbr title=\"International Territorial Level 1\"\u003eITL1\u003c/abbr\u003e region\u003c/th\u003e\n \u003cth scope=\"col\"\u003eTime to pay (days)\u003c/th\u003e\n \u003c/tr\u003e\n \u003c/thead\u003e\n \u003ctbody\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eEast Midlands\u003c/th\u003e\n \u003ctd\u003e38\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eEast of England\u003c/th\u003e\n \u003ctd\u003e33\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eLondon\u003c/th\u003e\n \u003ctd\u003e27\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eNorth East\u003c/th\u003e\n \u003ctd\u003e35\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eNorth West\u003c/th\u003e\n \u003ctd\u003e34\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eNorthern Ireland\u003c/th\u003e\n \u003ctd\u003e33\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eScotland\u003c/th\u003e\n \u003ctd\u003e32\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eSouth East\u003c/th\u003e\n \u003ctd\u003e32\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eSouth West\u003c/th\u003e\n \u003ctd\u003e31\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eWales\u003c/th\u003e\n \u003ctd\u003e30\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eWest Midlands\u003c/th\u003e\n \u003ctd\u003e38\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eYorkshire and The Humber\u003c/th\u003e\n \u003ctd\u003e37\u003c/td\u003e\n \u003c/tr\u003e\n \u003c/tbody\u003e\n\u003c/table\u003e\u003ch3 id=\"figure-3\"\u003eFigure 3: Time to pay (days), Standard Industrial Classification (\u003cabbr title=\"Standard Industrial Classification\"\u003eSIC\u003c/abbr\u003e) section breakdown, 2025\u003c/h3\u003e\u003ctable\u003e\n \u003cthead\u003e\n \u003ctr\u003e\n \u003cth scope=\"col\"\u003e\n\u003cabbr title=\"Standard Industrial Classification\"\u003eSIC\u003c/abbr\u003e section\u003c/th\u003e\n \u003cth scope=\"col\"\u003eTime to pay (days)\u003c/th\u003e\n \u003c/tr\u003e\n \u003c/thead\u003e\n \u003ctbody\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eA – Agriculture, forestry and fishing\u003c/th\u003e\n \u003ctd\u003e32\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eB – Mining and quarrying\u003c/th\u003e\n \u003ctd\u003e31\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eC – Manufacturing\u003c/th\u003e\n \u003ctd\u003e45\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eD – Electricity, gas, steam and air conditioning supply\u003c/th\u003e\n \u003ctd\u003e25\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eE – Water supply; sewerage, waste management and remediation activities\u003c/th\u003e\n \u003ctd\u003e37\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eF – Construction\u003c/th\u003e\n \u003ctd\u003e33\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eG – Wholesale and retail trade; repair of motor vehicles and motorcycles\u003c/th\u003e\n \u003ctd\u003e37\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eH – Transportation and storage\u003c/th\u003e\n \u003ctd\u003e35\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eI – Accommodation and food service activities\u003c/th\u003e\n \u003ctd\u003e35\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eJ – Information and communication\u003c/th\u003e\n \u003ctd\u003e29\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eK – Financial and insurance activities\u003c/th\u003e\n \u003ctd\u003e21\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eL – Real estate activities\u003c/th\u003e\n \u003ctd\u003e28\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eM – Professional, scientific and technical activities\u003c/th\u003e\n \u003ctd\u003e31\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eN – Administrative and support service activities\u003c/th\u003e\n \u003ctd\u003e27\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eO – Public administration and defence; compulsory social security\u003c/th\u003e\n \u003ctd\u003e27\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eP – Education\u003c/th\u003e\n \u003ctd\u003e25\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eQ – Human health and social work activities\u003c/th\u003e\n \u003ctd\u003e26\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eR – Arts, entertainment and recreation\u003c/th\u003e\n \u003ctd\u003e30\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eS – Other service activities\u003c/th\u003e\n \u003ctd\u003e31\u003c/td\u003e\n \u003c/tr\u003e\n \u003c/tbody\u003e\n\u003c/table\u003e\u003ch3 id=\"figure-4\"\u003eFigure 4: Proportion of invoices paid late, by number and value (%), 2018 to 2025\u003c/h3\u003e\u003ctable\u003e\n \u003cthead\u003e\n \u003ctr\u003e\n \u003cth scope=\"col\"\u003eReporting Year\u003c/th\u003e\n \u003cth scope=\"col\"\u003eProportion of invoices paid late, by number (%)\u003c/th\u003e\n \u003cth scope=\"col\"\u003eProportion of invoices paid late, by value (%)\u003c/th\u003e\n \u003c/tr\u003e\n \u003c/thead\u003e\n \u003ctbody\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2018\u003c/th\u003e\n \u003ctd\u003e25\u003c/td\u003e\n \u003ctd\u003eNo data available\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2019\u003c/th\u003e\n \u003ctd\u003e23\u003c/td\u003e\n \u003ctd\u003eNo data available\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2020\u003c/th\u003e\n \u003ctd\u003e23\u003c/td\u003e\n \u003ctd\u003eNo data available\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2021\u003c/th\u003e\n \u003ctd\u003e20\u003c/td\u003e\n \u003ctd\u003eNo data available\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2022\u003c/th\u003e\n \u003ctd\u003e20\u003c/td\u003e\n \u003ctd\u003eNo data available\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2023\u003c/th\u003e\n \u003ctd\u003e18\u003c/td\u003e\n \u003ctd\u003eNo data available\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2024\u003c/th\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003ctd\u003eNo data available\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2025\u003c/th\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003ctd\u003e14\u003c/td\u003e\n \u003c/tr\u003e\n \u003c/tbody\u003e\n\u003c/table\u003e\u003ch3 id=\"figure-5\"\u003eFigure 5: Proportion of invoices paid late, by number and value (%), 2025, UK regions breakdown\u003c/h3\u003e\u003ctable\u003e\n \u003cthead\u003e\n \u003ctr\u003e\n \u003cth scope=\"col\"\u003e\n\u003cabbr title=\"International Territorial Level 1\"\u003eITL1\u003c/abbr\u003e region\u003c/th\u003e\n \u003cth scope=\"col\"\u003eProportion of invoices paid late, by number (%)\u003c/th\u003e\n \u003cth scope=\"col\"\u003eProportion of invoices paid late, by value (%)\u003c/th\u003e\n \u003c/tr\u003e\n \u003c/thead\u003e\n \u003ctbody\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eEast Midlands\u003c/th\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eEast of England\u003c/th\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003ctd\u003e14\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eLondon\u003c/th\u003e\n \u003ctd\u003e14\u003c/td\u003e\n \u003ctd\u003e13\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eNorth East\u003c/th\u003e\n \u003ctd\u003e12\u003c/td\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eNorth West\u003c/th\u003e\n \u003ctd\u003e14\u003c/td\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eNorthern Ireland\u003c/th\u003e\n \u003ctd\u003e14\u003c/td\u003e\n \u003ctd\u003e11\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eScotland\u003c/th\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003ctd\u003e14\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eSouth East\u003c/th\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003ctd\u003e13\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eSouth West\u003c/th\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eWales\u003c/th\u003e\n \u003ctd\u003e18\u003c/td\u003e\n \u003ctd\u003e13\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eWest Midlands\u003c/th\u003e\n \u003ctd\u003e19\u003c/td\u003e\n \u003ctd\u003e18\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eYorkshire and The Humber\u003c/th\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003c/tr\u003e\n \u003c/tbody\u003e\n\u003c/table\u003e\u003ch3 id=\"figure-6\"\u003eFigure 6: Proportion of invoices paid late, by number and value (%), 2025, UK \u003cabbr title=\"Standard Industrial Classification\"\u003eSIC\u003c/abbr\u003e section breakdown\u003c/h3\u003e\u003ctable\u003e\n \u003cthead\u003e\n \u003ctr\u003e\n \u003cth scope=\"col\"\u003e\n\u003cabbr title=\"Standard Industrial Classification\"\u003eSIC\u003c/abbr\u003e section\u003c/th\u003e\n \u003cth scope=\"col\"\u003eProportion of invoices paid late, by number (%)\u003c/th\u003e\n \u003cth scope=\"col\"\u003eProportion of invoices paid late, by value (%)\u003c/th\u003e\n \u003c/tr\u003e\n \u003c/thead\u003e\n \u003ctbody\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eA – Agriculture, forestry and fishing\u003c/th\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eB – Mining and quarrying\u003c/th\u003e\n \u003ctd\u003e12.5\u003c/td\u003e\n \u003ctd\u003e11\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eC – Manufacturing\u003c/th\u003e\n \u003ctd\u003e21\u003c/td\u003e\n \u003ctd\u003e21\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eD – Electricity, gas, steam and air conditioning supply\u003c/th\u003e\n \u003ctd\u003e11\u003c/td\u003e\n \u003ctd\u003e8\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eE – Water supply; sewerage, waste management and remediation activities\u003c/th\u003e\n \u003ctd\u003e18.5\u003c/td\u003e\n \u003ctd\u003e22\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eF – Construction\u003c/th\u003e\n \u003ctd\u003e14\u003c/td\u003e\n \u003ctd\u003e13\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eG – Wholesale and retail trade; repair of motor vehicles and motorcycles\u003c/th\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003ctd\u003e11\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eH – Transportation and storage\u003c/th\u003e\n \u003ctd\u003e12\u003c/td\u003e\n \u003ctd\u003e14\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eI – Accommodation and food service activities\u003c/th\u003e\n \u003ctd\u003e9\u003c/td\u003e\n \u003ctd\u003e10\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eJ – Information and communication\u003c/th\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eK – Financial and insurance activities\u003c/th\u003e\n \u003ctd\u003e13\u003c/td\u003e\n \u003ctd\u003e12\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eL – Real estate activities\u003c/th\u003e\n \u003ctd\u003e17\u003c/td\u003e\n \u003ctd\u003e19\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eM – Professional, scientific and technical activities\u003c/th\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eN – Administrative and support service activities\u003c/th\u003e\n \u003ctd\u003e12\u003c/td\u003e\n \u003ctd\u003e11\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eO – Public administration and defence; compulsory social security\u003c/th\u003e\n \u003ctd\u003e14.5\u003c/td\u003e\n \u003ctd\u003e14\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eP – Education\u003c/th\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003ctd\u003e16\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eQ – Human health and social work activities\u003c/th\u003e\n \u003ctd\u003e10\u003c/td\u003e\n \u003ctd\u003e12\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eR – Arts, entertainment and recreation\u003c/th\u003e\n \u003ctd\u003e15\u003c/td\u003e\n \u003ctd\u003e13\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003eS – Other service activities\u003c/th\u003e\n \u003ctd\u003e12\u003c/td\u003e\n \u003ctd\u003e12\u003c/td\u003e\n \u003c/tr\u003e\n \u003c/tbody\u003e\n\u003c/table\u003e\u003ch3 id=\"figure-7\"\u003eFigure 7: Number of valid reports, 2018 to 2025\u003c/h3\u003e\u003ctable\u003e\n \u003cthead\u003e\n \u003ctr\u003e\n \u003cth scope=\"col\"\u003eReporting Year\u003c/th\u003e\n \u003cth scope=\"col\"\u003eNumber of valid reports submitted\u003c/th\u003e\n \u003c/tr\u003e\n \u003c/thead\u003e\n \u003ctbody\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2018\u003c/th\u003e\n \u003ctd\u003e13,175\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2019\u003c/th\u003e\n \u003ctd\u003e13,177\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2020\u003c/th\u003e\n \u003ctd\u003e12,371\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2021\u003c/th\u003e\n \u003ctd\u003e12,130\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2022\u003c/th\u003e\n \u003ctd\u003e11,830\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2023\u003c/th\u003e\n \u003ctd\u003e11,918\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2024\u003c/th\u003e\n \u003ctd\u003e11,954\u003c/td\u003e\n \u003c/tr\u003e\n \u003ctr\u003e\n \u003cth scope=\"row\"\u003e2025\u003c/th\u003e\n \u003ctd\u003e11,178\u003c/td\u003e\n \u003c/tr\u003e\n \u003c/tbody\u003e\n\u003c/table\u003e\u003cdiv class=\"footnotes\" role=\"doc-endnotes\"\u003e\n \u003col\u003e\n \u003cli id=\"fn:1\"\u003e\n \u003cp\u003eThe reporting regulations were introduced in 2017, but the statistics consider data from 2018 only, due to data quality issues. \u003ca href=\"#fnref:1\" class=\"reversefootnote\" role=\"doc-backlink\" aria-label=\"go to where this is referenced\"\u003e↩\u003c/a\u003e\u003c/p\u003e\n \u003c/li\u003e\n \u003cli id=\"fn:2\"\u003e\n \u003cp\u003eThis comparison excludes ’Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use’ and ‘Activities of extraterritorial organisations and bodies’, due to low numbers of reports which limit reliability and interpretability. \u003ca href=\"#fnref:2\" class=\"reversefootnote\" role=\"doc-backlink\" aria-label=\"go to where this is referenced\"\u003e↩\u003c/a\u003e\u003c/p\u003e\n \u003c/li\u003e\n \u003cli id=\"fn:3\"\u003e\n \u003cp\u003eThe impact of this change is further explained in the ‘Changes to the reporting regulations’ section of the \u003ca href=\"https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology\"\u003eaccompanying methodology\u003c/a\u003e. \u003ca href=\"#fnref:3\" class=\"reversefootnote\" role=\"doc-backlink\" aria-label=\"go to where this is referenced\"\u003e↩\u003c/a\u003e\u003c/p\u003e\n \u003c/li\u003e\n \u003c/ol\u003e\n\u003c/div\u003e" } } ] }
+{ "@context": "http://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "item": { "name": "Home", "@id": "https://www.gov.uk/" } }, { "@type": "ListItem", "position": 2, "item": { "name": "Business and industry", "@id": "https://www.gov.uk/business-and-industry" } }, { "@type": "ListItem", "position": 3, "item": { "name": "Running a business", "@id": "https://www.gov.uk/business-and-industry/running-a-business" } }, { "@type": "ListItem", "position": 4, "item": { "name": "Business auditing, accounting and reporting", "@id": "https://www.gov.uk/business-and-industry/business-auditing-accounting-reporting" } }, { "@type": "ListItem", "position": 5, "item": { "name": "Large businesses' payment practices and performance statistics: 2025", "@id": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025" } } ] }
+meta og:image: https://www.gov.uk/assets/frontend/govuk-opengraph-image-4196a4d6333cf92aaf720047f56cfd91b3532d7635fc21ebcf0d5897df6b5f77.png
+meta og:site_name: GOV.UK
+meta og:type: article
+meta og:url: https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary
+meta og:title: Large businesses' payment practices and performance statistics 2025: commentary
+meta twitter:card: summary
+Large businesses' payment practices and performance statistics 2025: commentary - GOV.UK
+Cookies on GOV.UK
+We use some essential cookies to make this website work.
+We’d like to set additional cookies to understand how you use GOV.UK, remember your settings and improve government services.
+We also use cookies set by other sites to help us deliver content from their services.
+You have accepted additional cookies. You can change your cookie settings (/help/cookies) at any time.
+You have rejected additional cookies. You can change your cookie settings (/help/cookies) at any time.
+Accept additional cookies
+Reject additional cookies
+View cookies (/help/cookies)
+Hide cookie message
+Skip to main content (#content)
+/
+Navigation menu
+Menu (/browse)
+Menu
+Services and information
+Benefits (/browse/benefits)
+Births, death, marriages and care (/browse/births-deaths-marriages)
+Business and self-employed (/browse/business)
+Childcare and parenting (/browse/childcare-parenting)
+Citizenship and living in the UK (/browse/citizenship)
+Crime, justice and the law (/browse/justice)
+Disabled people (/browse/disabilities)
+Driving and transport (/browse/driving)
+Education and learning (/browse/education)
+Employing people (/browse/employing-people)
+Environment and countryside (/browse/environment-countryside)
+Housing and local services (/browse/housing-local-services)
+Money and tax (/browse/tax)
+Passports, travel and living abroad (/browse/abroad)
+Visas and immigration (/browse/visas-immigration)
+Working, jobs and pensions (/browse/working)
+Government activity
+Departments (/government/organisations)
+Departments, agencies and public bodies
+News (/search/news-and-communications)
+News stories, speeches, letters and notices
+Guidance and regulation (/search/guidance-and-regulation)
+Detailed guidance, regulations and rules
+Research and statistics (/search/research-and-statistics)
+Reports, analysis and official statistics
+Policy papers and consultations (/search/policy-papers-and-consultations)
+Consultations and strategy
+Transparency (/search/transparency-and-freedom-of-information-releases)
+Data, Freedom of Information releases and corporate reports
+Search GOV.UK
+×
+Search GOV.UK (/search)
+Search
+Search GOV.UK
+Search
+Home (/)
+Business and industry (/business-and-industry)
+Running a business (/business-and-industry/running-a-business)
+Business auditing, accounting and reporting (/business-and-industry/business-auditing-accounting-reporting)
+Large businesses' payment practices and performance statistics: 2025 (/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025)
+Department for Business & Trade (/government/organisations/department-for-business-and-trade)
+Official Statistics
+Large businesses' payment practices and performance statistics 2025: commentary
+Published 14 July 2026
+Contents
+Headline findings (#headline-findings)
+Introduction (#introduction)
+Summary of results (#summary-of-results)
+Technical information (#technical-information)
+Publication (#publication)
+Revisions (#revisions)
+Pre-release access (#pre-release-access)
+Web accessible tables (#web-accessible-tables)
+Print this page
+© Crown copyright 2026
+This publication is licensed under the terms of the Open Government Licence v3.0 except where otherwise stated. To view this licence, visit nationalarchives.gov.uk/doc/open-government-licence/version/3 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3) or write to the Information Policy Team, The National Archives, Kew, London TW9 4DU, or email: psi@nationalarchives.gov.uk (mailto:psi@nationalarchives.gov.uk) .
+Where we have identified any third party copyright information you will need to obtain permission from the copyright holders concerned.
+This publication is available at https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary
+Headline findings
+Long-run trends
+Since reporting started in 2018 [footnote 1] (#fn:1) :
+the time large businesses take to pay their suppliers has decreased. In 2025, large businesses paid their suppliers in 32 days, down from 35 days in 2018
+the proportion of invoices paid late by large businesses has been steadily decreasing. In 2025, large businesses paid 15% of invoices late, down from 25% in 2018, a 10 percentage point decrease
+the number of valid reports submitted by large businesses has decreased, with notable drops in 2020 and 2025. There were 11,178 valid reports submitted in 2025, down from 13,175 in 2018, a 15.2% decrease
+large businesses in the ’Manufacturing’ sector have consistently had the longest payment times and among the highest proportions of invoices paid late, compared with other sectors [footnote 2] (#fn:2)
+large businesses in London have consistently had the shortest payment times and among the lowest proportions of invoices paid late, compared with other regions
+Latest data and recent changes
+In 2025:
+large businesses paid their suppliers in 32 days, unchanged from 2023 and 2024
+15% of invoices were paid late by large businesses, a 1 percentage point decrease from 2024
+14% of the total value of invoices was paid late by large businesses. This metric is new and only available for 2025
+large businesses submitted 11,178 valid reports, a 6.5% decrease from 2024. This decrease reflects a change in the scope of the reporting requirements, which reduced the number of businesses meeting the size thresholds for reporting in 2025 [footnote 3] (#fn:3)
+Introduction
+About these statistics
+This commentary accompanies the most recent UK large business payment practices and performance statistics data tables, published on 14 July 2026. It highlights and summarises recent trends in large UK business payment performance, including how long businesses take to pay their suppliers and the extent to which invoices are paid late.
+The statistics are based on data reported by businesses under The Reporting on Payment Practices and Performance Regulations 2017 (https://www.legislation.gov.uk/ukdsi/2017/9780111153598/contents) , which require large UK businesses to report on their payment practices, policies and performance twice-yearly. This information is publicly available on GOV.UK’s Payment practices reporting webpage (https://check-payment-practices.service.gov.uk/export/) .
+Definition of large businesses
+The reporting regulations define a large business as one that has exceeded 2 of the following thresholds on its last 2 balance sheet dates:
+£54 million annual turnover
+£27 million balance sheet total
+250 employees
+Metrics
+The statistics include 3 main performance metrics, which describe overall large business performance:
+time to pay (days): how long large businesses take to pay their suppliers
+proportion of invoices paid late, by number (%): how often invoices are paid late
+proportion of invoices paid late, by value (%): how much of the total value of invoices is paid late
+The statistics also include a contextual measure of reporting coverage as follows, which helps users understand the size of the reporting population and where breakdowns have been calculated using low numbers of reports:
+number of valid reports: how many reports large businesses submitted, after removing incomplete and invalid reports
+The statistics present headline figures with additional breakdowns by sector and region.
+Use of medians
+The statistics present median values, which describe average large business performance. Medians are used instead of means to limit the impact of extreme values. The use of medians is explained further in the ‘Approach’ section of the accompanying methodology (https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology) .
+The number of valid reports statistic is a simple count.
+Uses of the statistics
+The statistics support policy development, monitoring and evaluation, and wider public discussion of large businesses’ payment practices and performance.
+Summary of results
+Time to pay
+Time to pay shows how long on average large businesses take to pay their suppliers.
+These times can be considered relative to established benchmarks. The Fair Payment Code (https://www.smallbusinesscommissioner.gov.uk/fpc/code-criteria/) , a voluntary scheme that recognises good payment practices, sets a benchmark of paying suppliers within 30 days. Payment terms exceeding 60 days are subject to legislative restrictions. For more information, read the Late Payment of Commercial Debts (Interest) Act 1998 (https://www.legislation.gov.uk/ukpga/1998/20/contents) .
+Figure 1: Time to pay (days), 2018 to 2025
+View the web accessible version of Figure 1 (#figure-1) .
+The line graph in Figure 1 shows that large businesses’ average time to pay was 32 days in 2025. It has remained unchanged since 2023, after a gradual decrease from 35 days in 2018.
+Figure 2: Time to pay (days), UK region breakdown, 2025
+View the web accessible version of Figure 2 (#figure-2) .
+The bar chart in Figure 2 shows that, in 2025, large businesses in the East Midlands and West Midlands took the longest to pay their suppliers, averaging 38 days. Large businesses in London paid their suppliers in the shortest time, averaging 27 days.
+This figure excludes reports that could not be assigned to a region, which are categorised as ‘Unknown’.
+Figure 3: Time to pay (days), Standard Industrial Classification ( SIC ) section breakdown, 2025
+View the web accessible version of Figure 3 (#figure-3) .
+The bar chart in Figure 3 shows that, in 2025, large businesses in the ’Manufacturing’ sector took the longest to pay their suppliers, averaging 45 days. This may reflect the more predominant role of physical goods and the complexity of supply chains in this sector. Large businesses in the ’Finance and insurance activities’ sector paid their suppliers in the shortest time, averaging 21 days. This may reflect the more predominant role of services and payment practices that are less influenced by cash flow considerations in this sector.
+This figure excludes reports that could not be assigned to a sector, which are categorised as ‘Unknown’. It also excludes ‘Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use’ and ‘Activities of extraterritorial organisations and bodies’, due to low numbers of reports which limit reliability and interpretability.
+Proportion of invoices paid late
+Proportion of invoices paid late shows on average how many invoices large businesses pay after the agreed terms. This is presented both in terms of the number of invoices paid late, and the value of invoices paid late.
+Figure 4: Proportion of invoices paid late, by number and value (%), 2018 to 2025
+View the web accessible version of Figure 4 (#figure-4) .
+The line graph in Figure 4 shows that the proportion of invoices paid late, by number, was 15% in 2025. This is a 1 percentage point decrease from 2024 and follows a gradual decrease from 25% in 2018. While the proportion of invoices paid late has decreased from 2018, nearly 1 in 6 invoices were paid late in 2025.
+The proportion of invoices paid late, by value, was 14% in 2025. This metric is new and only available for 2025.
+The proportions of invoices paid late, by number and value, were similar in 2025. This suggests that on average late payment did not vary substantially between lower and higher-value invoices, although differences may exist across the distribution.
+Figure 5: Proportion of invoices paid late, by number and value (%), 2025, UK regions breakdown
+View the web accessible version of Figure 5 (#figure-5) .
+The bar chart in Figure 5 shows that, in 2025, large businesses in the West Midlands had the highest proportion of invoices paid late by number, at 19%. Large businesses in the North East had the lowest proportion of invoices paid late by number, at 12%.
+In 2025, large businesses in the West Midlands had the highest proportion of invoices paid late by value, at 18%. Large businesses in Northern Ireland had the lowest proportion of invoices paid late by value, at 11%.
+Figure 6: Proportion of invoices paid late, by number and value (%), 2025, UK SIC section breakdown
+View the web accessible version of Figure 6 (#figure-6) .
+The bar chart in Figure 6 shows that large businesses in the ‘Manufacturing’ sector had the highest proportion of invoices paid late by number in 2025, at 21%. Large businesses in the ‘Accommodation and food service activities’ sector had the lowest proportion of invoices paid late by number, at 9%.
+Large businesses in the ‘Water supply; sewerage, waste management and remediation activities’ sector had the highest proportion of invoices paid late by value in 2025, at 22%. Large businesses in the ‘Electricity, gas, steam and air conditioning supply’ sector had the lowest proportion, at 8%.
+Number of valid reports
+Number of valid reports shows how many reports large businesses submitted, after removing incomplete and invalid reports. For further information on how valid reports are determined, read the ‘Annex: Data preparation’ section of the accompanying methodology (https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology) .
+Number of valid reports counts individual reports rather than reporting businesses. Businesses must report twice-yearly, but not every business submits 2 reports each year.
+These numbers can be considered in the context of estimated full reporting compliance. Before the 2025 changes to the large business size thresholds, DBT analysis estimates that between 14,000 and 16,000 businesses were required to report in 2024. If each business submitted 2 reports annually, this would equate to between 28,000 and 32,000 expected reports. For further details, read the ‘Late payments: impact assessment on primary legislation’ on the Late payments: tackling poor payment practices consultation webpage (https://www.gov.uk/government/consultations/late-payments-tackling-poor-payment-practices) .
+Figure 7: Number of valid reports, 2018 to 2025
+View the web accessible version of Figure 7 (#figure-7) .
+The line graph in figure 7 shows that the number of valid reports submitted by large businesses was 11,178 in 2025. This represents a decrease from 2024, and is 15.2% lower than the peak of 13,177 reports in 2019.
+There are 2 notable decreases in the number of valid reports submitted by large businesses since 2018:
+between 2019 and 2020, there was a 6.1% decrease. This coincided with the COVID-19 pandemic, which disrupted many businesses and may have affected reporting behaviour
+between 2024 and 2025, there was a 6.5% decrease. This decrease reflects a change in the scope of the reporting requirements, which reduced the number of businesses meeting the size thresholds for reporting in 2025
+Technical information
+The following technical information applies to these statistics:
+the statistics use median values, rather than means, to reduce the influence of extreme values on the results
+the statistics include only valid reports. Reports that do not meet data validation or consistency checks are excluded, including reports with missing values and duplicate entries. For further information on the impact of this change, read the ‘Approach: Data preparation’ section of the accompanying methodology (https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology)
+under the reporting regulations, businesses are required to submit reports every 6 months. This means that, in most cases, a business can submit up to 2 reports in a calendar year. The statistics are based on individual reports, rather than aggregating reports to the company level first
+the reporting data is self-reported by businesses. Businesses are legally required to report correct information, but there is no independent verification of the data
+businesses’ financial years and reporting periods vary. To produce consistent annual statistics, each report is assigned to a calendar year based on where most of the reporting period falls. For further information on the impact of this change, read the ‘Approach: Reporting Year Assignment’ section of the accompanying methodology (https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology)
+the statistics include measures of late payment by both number and value of invoices. The measure by number shows the proportion of invoices paid late. From 2025 onwards, businesses are also required to report the total value of invoices paid and the value of invoices paid late, which is used to produce the measure by value
+the scope of The Reporting on Payment Practices and Performance Regulations 2017 changed in 2025, which coincided with a 6.5% decrease in the number of valid reports submitted by businesses, compared with 2024. Despite this, headline statistics have been minimally affected, remaining largely stable
+where the region or sector of a reporting business cannot be matched to the Companies House data, these are classified as ‘Unknown’. These breakdowns are excluded from the commentary around sector and region breakdowns
+Publication
+These statistics were published on 14 July 2026. The next release is planned for July 2027.
+Revisions
+The reporting data is a live data source, and businesses can submit backdated reports. This means that previously published statistics may change if new data becomes available. The revisions policy is further explained in the accompanying methodology (https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology) .
+Pre-release access
+Pre-release access is provided for these statistics. For details, see Large businesses’ payment practices and performance statistics: pre-release access (https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-pre-release-access) .
+Web accessible tables
+Figure 1: Time to pay (days), 2018 to 2025
+Reporting Year
+Time to pay (days)
+2018
+35
+2019
+34
+2020
+34
+2021
+33
+2022
+33
+2023
+32
+2024
+32
+2025
+32
+Figure 2: Time to pay (days), UK region breakdown, 2025
+ITL1 region
+Time to pay (days)
+East Midlands
+38
+East of England
+33
+London
+27
+North East
+35
+North West
+34
+Northern Ireland
+33
+Scotland
+32
+South East
+32
+South West
+31
+Wales
+30
+West Midlands
+38
+Yorkshire and The Humber
+37
+Figure 3: Time to pay (days), Standard Industrial Classification ( SIC ) section breakdown, 2025
+SIC section
+Time to pay (days)
+A – Agriculture, forestry and fishing
+32
+B – Mining and quarrying
+31
+C – Manufacturing
+45
+D – Electricity, gas, steam and air conditioning supply
+25
+E – Water supply; sewerage, waste management and remediation activities
+37
+F – Construction
+33
+G – Wholesale and retail trade; repair of motor vehicles and motorcycles
+37
+H – Transportation and storage
+35
+I – Accommodation and food service activities
+35
+J – Information and communication
+29
+K – Financial and insurance activities
+21
+L – Real estate activities
+28
+M – Professional, scientific and technical activities
+31
+N – Administrative and support service activities
+27
+O – Public administration and defence; compulsory social security
+27
+P – Education
+25
+Q – Human health and social work activities
+26
+R – Arts, entertainment and recreation
+30
+S – Other service activities
+31
+Figure 4: Proportion of invoices paid late, by number and value (%), 2018 to 2025
+Reporting Year
+Proportion of invoices paid late, by number (%)
+Proportion of invoices paid late, by value (%)
+2018
+25
+No data available
+2019
+23
+No data available
+2020
+23
+No data available
+2021
+20
+No data available
+2022
+20
+No data available
+2023
+18
+No data available
+2024
+16
+No data available
+2025
+15
+14
+Figure 5: Proportion of invoices paid late, by number and value (%), 2025, UK regions breakdown
+ITL1 region
+Proportion of invoices paid late, by number (%)
+Proportion of invoices paid late, by value (%)
+East Midlands
+16
+15
+East of England
+15
+14
+London
+14
+13
+North East
+12
+16
+North West
+14
+16
+Northern Ireland
+14
+11
+Scotland
+15
+14
+South East
+15
+13
+South West
+16
+15
+Wales
+18
+13
+West Midlands
+19
+18
+Yorkshire and The Humber
+16
+15
+Figure 6: Proportion of invoices paid late, by number and value (%), 2025, UK SIC section breakdown
+SIC section
+Proportion of invoices paid late, by number (%)
+Proportion of invoices paid late, by value (%)
+A – Agriculture, forestry and fishing
+15
+15
+B – Mining and quarrying
+12.5
+11
+C – Manufacturing
+21
+21
+D – Electricity, gas, steam and air conditioning supply
+11
+8
+E – Water supply; sewerage, waste management and remediation activities
+18.5
+22
+F – Construction
+14
+13
+G – Wholesale and retail trade; repair of motor vehicles and motorcycles
+15
+11
+H – Transportation and storage
+12
+14
+I – Accommodation and food service activities
+9
+10
+J – Information and communication
+15
+16
+K – Financial and insurance activities
+13
+12
+L – Real estate activities
+17
+19
+M – Professional, scientific and technical activities
+16
+16
+N – Administrative and support service activities
+12
+11
+O – Public administration and defence; compulsory social security
+14.5
+14
+P – Education
+16
+16
+Q – Human health and social work activities
+10
+12
+R – Arts, entertainment and recreation
+15
+13
+S – Other service activities
+12
+12
+Figure 7: Number of valid reports, 2018 to 2025
+Reporting Year
+Number of valid reports submitted
+2018
+13,175
+2019
+13,177
+2020
+12,371
+2021
+12,130
+2022
+11,830
+2023
+11,918
+2024
+11,954
+2025
+11,178
+The reporting regulations were introduced in 2017, but the statistics consider data from 2018 only, due to data quality issues. ↩ (#fnref:1)
+This comparison excludes ’Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use’ and ‘Activities of extraterritorial organisations and bodies’, due to low numbers of reports which limit reliability and interpretability. ↩ (#fnref:2)
+The impact of this change is further explained in the ‘Changes to the reporting regulations’ section of the accompanying methodology (https://www.gov.uk/government/publications/large-businesses-payment-practices-and-performance-statistics-methodology) . ↩ (#fnref:3)
+Back to top (#contents)
+Is this page useful?
+Maybe (/contact/govuk)
+Yes this page is useful
+No this page is not useful
+Thank you for your feedback
+Report a problem with this page
+Help us improve GOV.UK
+Do not include personal or financial information like your National Insurance number or credit card details.
+This field is for robots only. Please leave blank
+What were you doing?
+What went wrong?
+Send
+Cancel
+Help us improve GOV.UK
+To help us improve GOV.UK, we’d like to know more about your visit today.
+Please fill in this survey (opens in a new tab ) (https://www.smartsurvey.co.uk/s/gov-uk-banner/?c=no-js) .
+Cancel
+Services and information
+Benefits (/browse/benefits)
+Births, death, marriages and care (/browse/births-deaths-marriages)
+Business and self-employed (/browse/business)
+Childcare and parenting (/browse/childcare-parenting)
+Citizenship and living in the UK (/browse/citizenship)
+Crime, justice and the law (/browse/justice)
+Disabled people (/browse/disabilities)
+Driving and transport (/browse/driving)
+Education and learning (/browse/education)
+Employing people (/browse/employing-people)
+Environment and countryside (/browse/environment-countryside)
+Housing and local services (/browse/housing-local-services)
+Money and tax (/browse/tax)
+Passports, travel and living abroad (/browse/abroad)
+Visas and immigration (/browse/visas-immigration)
+Working, jobs and pensions (/browse/working)
+Government activity
+Departments (/government/organisations)
+News (/search/news-and-communications)
+Guidance and regulation (/search/guidance-and-regulation)
+Research and statistics (/search/research-and-statistics)
+Policy papers and consultations (/search/policy-papers-and-consultations)
+Transparency (/search/transparency-and-freedom-of-information-releases)
+How government works (/government/how-government-works)
+Get involved (/government/get-involved)
+Support links
+Help (/help)
+Privacy (/help/privacy-notice)
+Cookies (/help/cookies)
+Accessibility statement (/help/accessibility-statement)
+Contact (/contact)
+Terms and conditions (/help/terms-conditions)
+Rhestr o Wasanaethau Cymraeg (/cymraeg)
+Government Digital Service (/government/organisations/government-digital-service)
+All content is available under the Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) , except where otherwise stated
+© Crown copyright (https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/)

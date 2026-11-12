@@ -1,0 +1,211 @@
+{
+  "request": "pre-research-payment-practices-2026-11-12-b",
+  "fetched_at": "2026-11-12T01:27:21.815Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://check-payment-practices.service.gov.uk/export/csv/",
+      "fetched_at": "2026-11-12T01:26:27.685Z",
+      "status": 405,
+      "elapsed_ms": 426,
+      "final_url": "https://check-payment-practices.service.gov.uk/export/csv/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "0"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/export/csv/",
+      "range": "0-8191",
+      "fetched_at": "2026-11-12T01:26:28.612Z",
+      "status": 200,
+      "elapsed_ms": 298,
+      "final_url": "https://check-payment-practices.service.gov.uk/export/csv/",
+      "headers": {
+        "content-type": "text/csv",
+        "content-disposition": "attachment; filename=\"2026-11-12-0126-prompt-payments.csv\""
+      },
+      "file": "2.csv",
+      "bytes": 2097152,
+      "truncated": true
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/privacy-notice",
+      "fetched_at": "2026-11-12T01:26:30.228Z",
+      "status": 200,
+      "elapsed_ms": 431,
+      "final_url": "https://check-payment-practices.service.gov.uk/privacy-notice/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 7469,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 26228
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/report/111700",
+      "fetched_at": "2026-11-12T01:26:31.164Z",
+      "status": 200,
+      "elapsed_ms": 534,
+      "final_url": "https://check-payment-practices.service.gov.uk/report/111700/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 4273,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 21912
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=payment%20practices&limit=20",
+      "fetched_at": "2026-11-12T01:26:31.700Z",
+      "status": 200,
+      "elapsed_ms": 148,
+      "final_url": "https://api.apify.com/v2/store?search=payment%20practices&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"127ce-Mi5IHv7CiRcxod/p2VJvV8pxCL8\""
+      },
+      "file": "5.json",
+      "bytes": 75726,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=late%20payment&limit=20",
+      "fetched_at": "2026-11-12T01:26:32.363Z",
+      "status": 200,
+      "elapsed_ms": 60,
+      "final_url": "https://api.apify.com/v2/store?search=late%20payment&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"16dd3-CUHGEn1ni7eHOinFf+firpePTYA\""
+      },
+      "file": "6.json",
+      "bytes": 93651,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=supplier%20payment&limit=20",
+      "fetched_at": "2026-11-12T01:26:32.925Z",
+      "status": 200,
+      "elapsed_ms": 53,
+      "final_url": "https://api.apify.com/v2/store?search=supplier%20payment&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"fb8b-cZmbR8JneZdJHbZIElxpthqLVv0\""
+      },
+      "file": "7.json",
+      "bytes": 64395,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://rapidapi.com/193market/api/uk-supplier-payment-practices/pricing",
+      "render": true,
+      "raw": true,
+      "fetched_at": "2026-11-12T01:26:32.979Z",
+      "status": 200,
+      "final_url": "https://rapidapi.com/server-error?code=NOT_FOUND&message=API%20not%20found.",
+      "title": "API Hub",
+      "rendered": {
+        "network_idle": true,
+        "requests": 150,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=12&_ng=1&frm=0&apvc=1&tid=AW-932847351&en=page_view&dl=https%3A%2F%2Frapidapi.com%2Fserver-error%3Fcode%3DNOT_FOUND%26message%3DAPI%2520not%2"
+        ],
+        "console_errors": [
+          "PageNotFoundError: API not found.\n    at https://rapidapi.com/hub/_next/static/chunks/app/(platform)/server-error/page-d039c1d1310abd24.js:2:3454\n    at https://rapidapi.com/hub/_next/static/chunks/ap",
+          "[GSI_LOGGER]: FedCM get() rejects with TypeError: Failed to execute 'get' on 'CredentialsContainer': Failed to read the 'identity' property from 'CredentialRequestOptions': Failed to read the 'mode' p",
+          "requestStorageAccess: Permission denied.",
+          "requestStorageAccess: Permission denied."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 394869,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.market/store/193market/uk-supplier-payment-practices",
+      "render": true,
+      "raw": true,
+      "fetched_at": "2026-11-12T01:26:38.856Z",
+      "status": 200,
+      "final_url": "https://api.market/store/193market/uk-supplier-payment-practices",
+      "title": "UK Supplier Payment Practices API — days to pay & late.",
+      "rendered": {
+        "network_idle": false,
+        "requests": 363,
+        "failed": [
+          "GET https://api.market/_next/data/bC_r1uWAOO4Yi6h_Ptfvg/store/magicapi/screenshot-api.json?site=magicapi&productSlug=screenshot-api → 404",
+          "GET https://api.market/_next/data/bC_r1uWAOO4Yi6h_Ptfvg/store/magicapi/wan-text-to-image.json?site=magicapi&productSlug=wan-text-to-image → 404",
+          "POST https://api.market/api/analytics/consent → 401",
+          "POST https://api.market/api/newsletter/signal → 401",
+          "POST https://api.market/api/newsletter/signal → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=14&_ng=1&frm=0&apvc=1&ae=g&auid=1565910595.1794446802&dt=UK%20Supplier%20Payment%20Practices%20API%20%E2%80%94%20days%20to%20pay%20%26%20late.&en=page_view&",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=gtm.js → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=gtm.init → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=gtm.dom → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=gtm.init_consent → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=gtag.config → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=gtag.config → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=web_vitals → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=scroll → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=web_vitals → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=gtm.load → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=gtm.scrollDepth → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=gtm.scrollDepth → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_hzxhi96ha5zo&event=scroll → net::ERR_ABORTED",
+          "POST https://o4505694270324736.ingest.us.sentry.io/api/4506934509109248/envelope/?sentry_version=7&sentry_key=0b4edc7b558bac6f736199cfba4c8f42&sentry_client=sentry.javascript.nextjs%2F9.47.1 → 429"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 429 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.html",
+      "bytes": 331735,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary",
+      "fetched_at": "2026-11-12T01:27:21.470Z",
+      "status": 200,
+      "elapsed_ms": 338,
+      "final_url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025/large-businesses-payment-practices-and-performance-statistics-2025-commentary",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "19184",
+        "etag": "W/\"41441d7a4ff5846ccde449ba45cd94e8\""
+      },
+      "file": "10.txt",
+      "bytes": 70975,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 142042
+    }
+  ]
+}
