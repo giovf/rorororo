@@ -1,0 +1,141 @@
+{
+  "request": "pre-research-esg-registers-2026-11-12",
+  "fetched_at": "2026-11-12T17:14:41.133Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://gender-pay-gap.service.gov.uk/",
+      "fetched_at": "2026-11-12T17:14:33.940Z",
+      "status": 200,
+      "elapsed_ms": 364,
+      "final_url": "https://gender-pay-gap.service.gov.uk/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 3541,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 33073
+    },
+    {
+      "method": "GET",
+      "url": "https://gender-pay-gap.service.gov.uk/viewing/download",
+      "fetched_at": "2026-11-12T17:14:34.890Z",
+      "status": 200,
+      "elapsed_ms": 313,
+      "final_url": "https://gender-pay-gap.service.gov.uk/viewing/download",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 6847,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 37417
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gender-pay-gap.service.gov.uk/viewing/download-data/2024",
+      "fetched_at": "2026-11-12T17:14:35.708Z",
+      "status": 405,
+      "elapsed_ms": 101,
+      "final_url": "https://gender-pay-gap.service.gov.uk/viewing/download-data/2024",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://gender-pay-gap.service.gov.uk/viewing/download-data/2024",
+      "range": "0-8191",
+      "fetched_at": "2026-11-12T17:14:36.329Z",
+      "status": 200,
+      "elapsed_ms": 409,
+      "final_url": "https://gender-pay-gap.service.gov.uk/viewing/download-data/2024",
+      "headers": {
+        "content-type": "text/csv",
+        "content-length": "4462788",
+        "content-disposition": "attachment; filename=\"UK Gender Pay Gap Data - 2024 to 2025.csv\"; filename*=UTF-8''UK%20Gender%20Pay%20Gap%20Data%20-%202024%20to%202025.csv"
+      },
+      "file": "4.csv",
+      "bytes": 2097152,
+      "truncated": true
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gender-pay-gap.service.gov.uk/viewing/download-data/2018",
+      "fetched_at": "2026-11-12T17:14:38.380Z",
+      "status": 405,
+      "elapsed_ms": 159,
+      "final_url": "https://gender-pay-gap.service.gov.uk/viewing/download-data/2018",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://modern-slavery-statement-registry.service.gov.uk/",
+      "fetched_at": "2026-11-12T17:14:38.539Z",
+      "status": 200,
+      "elapsed_ms": 556,
+      "final_url": "https://modern-slavery-statement-registry.service.gov.uk/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 4550,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 34686
+    },
+    {
+      "method": "GET",
+      "url": "https://modern-slavery-statement-registry.service.gov.uk/download",
+      "fetched_at": "2026-11-12T17:14:39.597Z",
+      "status": 200,
+      "elapsed_ms": 112,
+      "final_url": "https://modern-slavery-statement-registry.service.gov.uk/download",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 3171,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 31234
+    },
+    {
+      "method": "GET",
+      "url": "https://modern-slavery-statement-registry.service.gov.uk/viewing/download",
+      "fetched_at": "2026-11-12T17:14:40.210Z",
+      "status": 200,
+      "elapsed_ms": 135,
+      "final_url": "https://modern-slavery-statement-registry.service.gov.uk/viewing/download",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 3171,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 31259
+    },
+    {
+      "method": "GET",
+      "url": "https://modern-slavery-statement-registry.service.gov.uk/data-about-modern-slavery-statement-registry",
+      "fetched_at": "2026-11-12T17:14:40.846Z",
+      "status": 200,
+      "elapsed_ms": 283,
+      "final_url": "https://modern-slavery-statement-registry.service.gov.uk/data-about-modern-slavery-statement-registry",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 11873,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 115981
+    }
+  ]
+}
