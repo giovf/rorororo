@@ -1,0 +1,343 @@
+{
+  "data": {
+    "total": 4,
+    "count": 4,
+    "offset": 0,
+    "limit": 50,
+    "desc": false,
+    "items": [
+      {
+        "title": "UK Modern Slavery Statement Registry Search · SiteVerdict",
+        "name": "siteverdict-uk-modern-slavery-statements",
+        "username": "siteverdict",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 16,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T21:52:35.140Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 10,
+            "TIMED-OUT": 0,
+            "TOTAL": 10
+          }
+        },
+        "description": "Search the official UK Home Office Modern Slavery Statement Registry (open data, OGL) by company, sector or turnover, score statement completeness, check supplier lists for missing or outdated statements and monitor changes with alerts.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/bmnBAO5D7o3or4i-RJ3Jct8Ri3f3t9ORlbgoVNDlhwM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMGdUNFBGZ0RxemlOeWlwZEEtYWN0b3ItZ01oYzhqNVlaZFRTQU9hbEQtT0R6R3VCbHFMai11ay1tb2Rlcm4tc2xhdmVyeS1zdGF0ZW1lbnRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Aman Thakran",
+        "userPictureUrl": "https://images.apifyusercontent.com/Xld-0V6VSmXq1fO65P5EqI6dPVDFAWPKmUhnEEnnjSM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZEprd01aSFUzNkNWS0tpb3ZkWVdPWTJrcnhac1lVcDJnclpRZzRZNkdaMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVTFSWkVwSVoxQkVNeTFhYzI5Mk1tSktUbHBHVG5obmNtZzBZVzA0UlY4M1ltNXpkMjlMTVdKelYwUkVRek5uUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "statement-record": {
+                "eventTitle": "Statement record",
+                "eventDescription": "Each statement row returned in `search` mode",
+                "eventPriceUsd": 0.002
+              },
+              "supplier-checked": {
+                "eventTitle": "Supplier checked",
+                "eventDescription": "Each valid supplier checked in `supplier-check` / `monitor` (all statuses including NOT_FOUND, which is a documented result)",
+                "eventPriceUsd": 0.01
+              },
+              "change-alert": {
+                "eventTitle": "Change alert",
+                "eventDescription": "Each supplier with a real change in `monitor` mode (baseline never charged)",
+                "eventPriceUsd": 0.02
+              }
+            }
+          },
+          "createdAt": "2026-10-12T20:34:15.491Z",
+          "startedAt": "2026-10-12T20:34:15.491Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "gMhc8j5YZdTSAOalD",
+        "url": "https://apify.com/siteverdict/siteverdict-uk-modern-slavery-statements"
+      },
+      {
+        "title": "UK Modern Slavery Statement Registry API",
+        "name": "uk-modern-slavery-statements",
+        "username": "tabulary",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 19,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T01:20:28.348Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 17,
+            "TIMED-OUT": 0,
+            "TOTAL": 17
+          }
+        },
+        "description": "UK organisations' modern slavery statements from the Home Office's official statement registry: sector type, turnover band, which of the Modern Slavery Act's six recommended statement elements are covered, and a link to the PDF. Filter by organisation, sector or year, with an alert mode.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/axqCkQPKz-ZCUb12lKGuCcAW-QGOCYf7gB8_JGdO9eY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdkdJcFN6UWhHQkM2ZGpBTVctYWN0b3IteWFQVG9oWGZWN0lqZGJldWUtUjRSNk52VjZqVi11ay1tb2Rlcm4tc2xhdmVyeS1zdGF0ZW1lbnRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Tabulary",
+        "userPictureUrl": "https://images.apifyusercontent.com/1_tmh6iN0rNJA-0tWN-7VkK1j9o_DGqMF8QVkOT8dvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNEUweEVGa3F2U29JWmdQU1BLdWc3bTFMWlN5aXdvT3FNMmh4REw3V1VOby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZka2RKY0ZONlVXaEhRa00yWkdwQlRWY3RjSEp2Wm1sc1pTMXRXbGRpVkROemJVVkxMWFJoWW5Wc1lYSjVMV3h2WjI4dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Statement",
+                "eventDescription": "One statement saved to the dataset by UK Modern Slavery Statement Registry API.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-26T00:52:57.275Z",
+          "startedAt": "2026-10-26T00:52:57.275Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "yaPTohXfV7Ijdbeue",
+        "url": "https://apify.com/tabulary/uk-modern-slavery-statements"
+      },
+      {
+        "title": "Global RegTech Compliance Feed - Sanctions & Enforcement",
+        "name": "global-regtech-compliance-feed",
+        "username": "stefano_seggio",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 26,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T01:04:29.721Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 9,
+            "TIMED-OUT": 0,
+            "TOTAL": 9
+          }
+        },
+        "description": "Six public regulatory sources in one Actor: OFAC sanctioned vessels, World Bank Other Sanctions, UK Modern Slavery statements, SEC enforcement releases, AI-crawler permissions and FDA/EMA drug-safety records. Choose sources per run and receive only new or changed records.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Stefano Seggio",
+        "userPictureUrl": "https://images.apifyusercontent.com/J6xWXZy_JlJoSyxRRWpQja2Tf8RMh5zSo-5ncNlrps0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdDF4MVVKdGlhOTJBNHJCTlZWaGZkcXpCenRTWUpNWGlYSHJ5YWdmdnlHQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNR2xIZEVKSU5rcDVkamh4Y0U1d1NEY3RjSEp2Wm1sc1pTMTZSVEZMWmxKYVdHa3pMV1JsYkhSaFgzSmxaMmx6ZEhKNVgyeHZaMjlmYldGeWF5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": true
+              },
+              "vessel-record": {
+                "eventTitle": "Sanctioned vessel record",
+                "eventDescription": "One OFAC SDN sanctioned-vessel record delivered to the dataset.",
+                "eventPriceUsd": 0.0005,
+                "isPrimaryEvent": true
+              },
+              "debarment-record": {
+                "eventTitle": "World Bank sanction record",
+                "eventDescription": "One World Bank \"Other Sanctions\" record delivered to the dataset.",
+                "eventPriceUsd": 0.003
+              },
+              "statement-new": {
+                "eventTitle": "New modern slavery statement",
+                "eventDescription": "A UK Modern Slavery Statement Registry statement never delivered before.",
+                "eventPriceUsd": 0.02
+              },
+              "statement-updated": {
+                "eventTitle": "Updated modern slavery statement",
+                "eventDescription": "A previously delivered UK statement whose content changed, or one re-sent unchanged by a full-snapshot run.",
+                "eventPriceUsd": 0.01
+              },
+              "enforcement-release": {
+                "eventTitle": "New SEC enforcement release",
+                "eventDescription": "A SEC litigation release or administrative proceeding not delivered before.",
+                "eventPriceUsd": 0.05
+              },
+              "enforcement-update": {
+                "eventTitle": "Updated SEC enforcement release",
+                "eventDescription": "A previously delivered SEC release whose content changed, or one re-sent unchanged by a full-snapshot run.",
+                "eventPriceUsd": 0.02
+              },
+              "crawler-signal": {
+                "eventTitle": "AI crawler permission snapshot",
+                "eventDescription": "A domain's AI-crawler permission and Content-Signal state delivered for the first time.",
+                "eventPriceUsd": 0.015
+              },
+              "crawler-signal-change": {
+                "eventTitle": "AI crawler signal change",
+                "eventDescription": "A previously delivered domain whose crawler permissions, Content-Signal or llms.txt changed, or one re-sent unchanged by a full-snapshot run.",
+                "eventPriceUsd": 0.006
+              },
+              "recall-record": {
+                "eventTitle": "Drug safety record",
+                "eventDescription": "One FDA enforcement or EMA safety record delivered to the dataset.",
+                "eventPriceUsd": 0.001
+              },
+              "watchlist-hit": {
+                "eventTitle": "Watchlist hit",
+                "eventDescription": "Charged once for each delivered regulatory record whose text matches a keyword of the caller's own watchlist. Never charged when no valid keyword was supplied.",
+                "eventPriceUsd": 0.15
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.16,
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-11-03T00:48:59.842Z",
+          "startedAt": "2026-11-03T00:48:54.000Z",
+          "reasonForChange": "Consolidation of single-source Actors into global-regtech-compliance-feed: each legacy source keeps its own per-record price as a separate event, and the start event is set to $0.005."
+        },
+        "id": "nS6MXtaihg93tGTj0",
+        "url": "https://apify.com/stefano_seggio/global-regtech-compliance-feed"
+      },
+      {
+        "title": "UK Supplier Transparency Pack: Payment, Pay Gap, Slavery",
+        "name": "uk-supplier-transparency-pack",
+        "username": "wooden_scanner_c1n",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 8,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T09:38:34.801Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 3,
+            "TIMED-OUT": 0,
+            "TOTAL": 3
+          }
+        },
+        "description": "One profile per UK company from three GOV.UK open datasets: payment practices (average days to pay, % paid late), gender pay gap figures and modern slavery statements. Search by company name or Companies House number, or monitor new filings. Company-level only, OGL v3.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sean",
+        "userPictureUrl": "https://images.apifyusercontent.com/I_t1Im2omXDfHW_Gv_O7mLtbCovezhV_5gQVsENC9Bc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vY1N4TGlQejRCenA2a0d6ODBFOThQaklvam1BZUo3MThZazlISmpxS1RJUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSFZGYzNGaVNXWjRkVTQxTkc1NlVGVkdjblEzYzBZd2VqQlJNVEZaY1hoYVRsSm5UR1pQYkRJeU5HZE9WVWg2UkVnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005
+              },
+              "company-profile": {
+                "eventTitle": "Company profile",
+                "eventDescription": "One UK company profile joining payment practices, gender pay gap and modern slavery statement data. Not-found rows are free.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-11-03T21:48:35.149Z",
+          "startedAt": "2026-11-03T21:48:35.149Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "XLN6RVCEhYmL386Wi",
+        "url": "https://apify.com/wooden_scanner_c1n/uk-supplier-transparency-pack"
+      }
+    ]
+  }
+}
