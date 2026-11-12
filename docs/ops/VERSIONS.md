@@ -9,7 +9,7 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
 
 | What | Pinned | Where | Source of truth | Kept current by |
 | --- | --- | --- | --- | --- |
-| Claude model, build / burn-down / exchange / review routines | `claude-fable-5-1` | cloud routine configs (`docs/routines/README.md`) | https://platform.claude.com/docs/en/about-claude/models/overview | versions check → handoff → interactive session updates the routines |
+| Claude model, build / burn-down / exchange / review routines | `claude-fable-5-2` | cloud routine configs (`docs/routines/README.md`) | https://platform.claude.com/docs/en/about-claude/models/overview | versions check → handoff → interactive session updates the routines |
 | Claude model, build fallback | `claude-opus-5-5` | `trig_01GraXN5FPXmq5M9wJSYYeHN` | same | same |
 | Claude model, metrics / triage / report / retro routines | `claude-sonnet-5-5` | their routine configs | same | same |
 | Node on GitHub runners | `24` | `.github/workflows/*.yml` (`node-version`) | https://nodejs.org/dist/index.json (active LTS) | versions check → handoff; the repo moves one LTS at a time |
@@ -52,3 +52,9 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
   not from the registry tarball. Rule from today: a green majors PR is reviewed and merged (or closed with a lift condition)
   by the burn-down within 7 days; the burn-down prompt carries the method, the `dependabot` workflow comment says so.
 - 2026-10-30 (burn-down, gankdat `mcp-protocol-2026-07-28`): gankdat's MCP server moved from `@hono/mcp` ^0.3 + `@modelcontextprotocol/sdk` ^1.32 to the SDK v2 line — `@modelcontextprotocol/server` ^2.4.0 (dependency) and `@modelcontextprotocol/client` ^2.4.0 (tests only). v2 implements protocol revision 2026-07-28 and serves 2025-era clients by era detection; the 1.x line (latest 1.32.2, 10-23) still lists 2025-11-25 as its newest revision and 404s the current Claude clients. `@hono/mcp` 0.3.5 (10-28) still peers on SDK ^1.29; take it back only if it ships a v2-based release.
+- 2026-11-12 — **Fable 5.1 → 5.2** on all five Fable routines (build `trig_01P9WT733fg3qnuJeKUHE8fx`, evening burns
+  `trig_011mbqaUzm3qTK2ZdevCuYpH` and `trig_013tLPWgysoiHWpciYGgXJQ2`, exchange `trig_01CaSyBqwyKVL6NiPqPzhM8L`, review
+  `trig_01Mv7z5Ae9gEGq9zBnrfDH6R`), interactive session on the owner's note. `claude-fable-5-2` is on the models page (US$8/40 per
+  MTok, below 5.1's 10/50; retirement not before 2027-11-09); the old Opus probe routine was repointed and answered `model ok` in 2 s
+  before the switch (left disabled). The monthly check (3rd of the month) would not have seen it until 12-03 — the owner did first;
+  foundry `routine-models-auto-update` makes the check daily and the apply step a routine's.
