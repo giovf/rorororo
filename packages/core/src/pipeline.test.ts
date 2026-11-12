@@ -269,6 +269,26 @@ describe('scheduling', () => {
     expect(() => parseQueue(queue('t', [], { researched: '5 Oct' }))).toThrow(/researched/);
   });
 
+  it('cools 48 h from the minute of the pass, a plain day from 00:00 (research-cooling-from-the-minute)', () => {
+    // 2026-11-12 00:06: foundry, gankdat and new-ventures left cooling at the same midnight, 28–31 h
+    // after their 11-10 evening passes, and one slot re-read all three.
+    const evening = parseQueue(
+      queue('gankdat', [item('sc', 'blocked', 4)], { updated: '2026-11-10', researched: '2026-11-10T20:26Z' }),
+    );
+    expect(isCooling(evening, '2026-11-12', new Date('2026-11-12T00:06:00Z'))).toBe(true);
+    expect(isCooling(evening, '2026-11-12', new Date('2026-11-12T20:25:00Z'))).toBe(true);
+    expect(isCooling(evening, '2026-11-12', new Date('2026-11-12T20:27:00Z'))).toBe(false);
+    expect(starved([evening], { now: new Date('2026-11-12T00:06:00Z') })).toEqual([]);
+    expect(starved([evening], { now: new Date('2026-11-12T21:00:00Z') }).map((q) => q.venture)).toEqual(['gankdat']);
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [evening] }, { now: new Date('2026-11-12T00:06:00Z') });
+    expect(text).toContain('cooling: gankdat (researched 2026-11-10T20:26Z)');
+    // A plain day still parses and counts from 00:00 UTC: cooling through the next day, free from the second midnight.
+    const day = parseQueue(queue('toolkit', [item('sc', 'blocked', 4)], { updated: '2026-11-10', researched: '2026-11-10' }));
+    expect(isCooling(day, '2026-11-11', new Date('2026-11-11T23:59:00Z'))).toBe(true);
+    expect(isCooling(day, '2026-11-12', new Date('2026-11-12T00:01:00Z'))).toBe(false);
+    expect(() => parseQueue(queue('t', [], { researched: '2026-11-10T20:26:00Z' }))).toThrow(/researched/);
+  });
+
   it('treats a queue claimed for research within 2 h as cooling (research-claim-marker)', () => {
     // 2026-11-03: the 17:00 build and the 17:00 burn-down both researched the starved
     // tax-workbook queue and pushed at 17:17 — research had no marker for `next`/`empty` to see.

@@ -93,10 +93,8 @@ export function claimResearch(
   const today = now.toISOString().slice(0, 10);
   if (queue.status !== 'open')
     throw new Error(`claim-research: ${queue.venture} is ${queue.status}`);
-  if (
-    queue.researched !== undefined &&
-    Date.parse(today) - Date.parse(queue.researched) < 2 * DAY_MS
-  ) {
+  // 48 h from the pass's minute, a plain day from 00:00 (2026-11-12, research-cooling-from-the-minute).
+  if (queue.researched !== undefined && now.getTime() - Date.parse(queue.researched) < 2 * DAY_MS) {
     throw new Error(
       `claim-research: ${queue.venture} was researched ${queue.researched} — cooling, research is not due`,
     );

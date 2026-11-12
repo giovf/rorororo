@@ -63,7 +63,10 @@ export interface VentureQueue {
   /** Why the queue is finished (required when status is `finished`). */
   finished_reason?: string;
   updated: string;
-  /** Day of the last research run for this venture (YYYY-MM-DD); within 48 h the queue is cooling. */
+  /**
+   * The last research run for this venture: its minute (YYYY-MM-DDTHH:MMZ, since 2026-11-12) or its
+   * day (YYYY-MM-DD, read as 00:00 UTC); for 48 h from it the queue is cooling.
+   */
   researched?: string;
   /**
    * Set by a research run that found no new evidence (YYYY-MM-DD, normally the next dated reading
@@ -146,7 +149,8 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
   const finished_reason = str(where, o, 'finished_reason', true);
   if (status === 'finished' && finished_reason === '') fail(where, 'finished queues need finished_reason');
   const researched = str(where, o, 'researched', true);
-  if (researched !== '' && !ISO_DATE.test(researched)) fail(where, 'researched must be YYYY-MM-DD');
+  if (researched !== '' && !ISO_DATE.test(researched) && !ISO_MINUTE.test(researched))
+    fail(where, 'researched must be YYYY-MM-DD or YYYY-MM-DDTHH:MMZ');
   const research_after = str(where, o, 'research_after', true);
   if (research_after !== '' && !ISO_DATE.test(research_after)) fail(where, 'research_after must be YYYY-MM-DD');
   const researching_since = str(where, o, 'researching_since', true);
@@ -346,16 +350,32 @@ export function isEmpty(queue: VentureQueue): boolean {
   return !queue.items.some((it) => it.status === 'todo' || it.status === 'doing' || it.status === 'blocked');
 }
 
+/** Hours a research pass holds its queue as cooling. */
+export const RESEARCH_COOLING_HOURS = 48;
+
 /**
- * A queue researched within the last 48 h (`researched` today or yesterday) is cooling: the
- * starvation fallback does not offer it again. 2026-10-05 had five research runs and the next
- * morning's build was offered the same venture eleven hours later because nothing recorded it.
+ * True while `researched` is under RESEARCH_COOLING_HOURS old at `now` (2026-11-12, foundry
+ * `research-cooling-from-the-minute`): a minute (`YYYY-MM-DDTHH:MMZ`) counts from that minute, a day
+ * from 00:00 UTC — so a pass at 20:26 cools until 20:26 two days on, not until the second midnight
+ * (the 00:06 slot of 11-12 found three queues released at once, 28–31 h after their passes).
+ */
+export function researchedWithin(researched: string | undefined, now: Date): boolean {
+  if (researched === undefined) return false;
+  const at = Date.parse(researched);
+  return !Number.isNaN(at) && now.getTime() - at < RESEARCH_COOLING_HOURS * 3_600_000;
+}
+
+/**
+ * A queue researched within the last 48 h is cooling: the starvation fallback does not offer it
+ * again. 2026-10-05 had five research runs and the next morning's build was offered the same
+ * venture eleven hours later because nothing recorded it. `now` defaults to `today` at noon (tests).
  */
 export function isCooling(queue: VentureQueue, today: string = utcToday(), now?: Date): boolean {
+  const at = now ?? new Date(`${today}T12:00:00Z`);
   return (
-    (queue.researched !== undefined && Date.parse(today) - Date.parse(queue.researched) < 2 * DAY_MS) ||
+    researchedWithin(queue.researched, at) ||
     (queue.research_after !== undefined && queue.research_after > today) ||
-    isResearchClaimed(queue, now ?? new Date(`${today}T12:00:00Z`))
+    isResearchClaimed(queue, at)
   );
 }
 
@@ -375,11 +395,11 @@ export function isResearchClaimed(queue: VentureQueue, now: Date): boolean {
 }
 
 /** The `cooling:` line's reason for one queue. */
-function coolingReason(queue: VentureQueue, today: string): string {
+function coolingReason(queue: VentureQueue, now: Date): string {
+  const today = utcToday(now);
   const waiting = queue.research_after !== undefined && queue.research_after > today;
   if (waiting) return `researched ${queue.researched ?? '—'}, waiting until ${queue.research_after!}`;
-  if (queue.researched !== undefined && Date.parse(today) - Date.parse(queue.researched) < 2 * DAY_MS)
-    return `researched ${queue.researched}`;
+  if (researchedWithin(queue.researched, now)) return `researched ${queue.researched}`;
   return `research claimed ${queue.researching_since!.slice(11, 16)} UTC by ${queue.researching_by!}`;
 }
 
@@ -473,7 +493,7 @@ export function formatPipeline(pipeline: Pipeline, options: ClockOptions = {}): 
           ? 'next: nothing to build — pipeline starved and every starved queue was researched within 48 h or waits for dated evidence: write one run-log line and stop'
           : 'next: nothing to build — research needed',
   );
-  if (cool.length > 0) lines.push(`cooling: ${cool.map((q) => `${q.venture} (${coolingReason(q, today)})`).join(', ')}`);
+  if (cool.length > 0) lines.push(`cooling: ${cool.map((q) => `${q.venture} (${coolingReason(q, now)})`).join(', ')}`);
   const scheduled = pipeline.queues
     .filter((q) => q.status === 'open')
     .flatMap((q) =>

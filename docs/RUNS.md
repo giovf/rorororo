@@ -2843,3 +2843,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 01:09 | burn-down | cold now says `(1 pass parked or skipped, one more allowed)`; live: tonight's 17:38 park reads that way
 - 2026-11-12 01:09 | burn-down | 5 tests (park, skip, seeded, two parks, window roll-over); build.md, burn-down.md, pipeline README reworded
 - 2026-11-12 01:09 | burn-down | Proof: the next window whose first pass parks shows a second pass line; `npm run slots` W47 Cold below 11
+- 2026-11-12 01:15 | burn-down | Built foundry research-cooling-from-the-minute: `researched` takes the pass's minute, cooling 48 h from it
+- 2026-11-12 01:15 | burn-down | isCooling, cold and claim-research measure from `now`; a plain date still parses and counts from 00:00
+- 2026-11-12 01:15 | burn-down | build.md and burn-down.md: the research commit writes `date -u +%FT%H:%MZ`; README field reworded; 3 tests
+- 2026-11-12 01:15 | burn-down | Proof: a queue researched at HH:MM on D stays on the cooling line past 00:00 on D+2 until HH:MM

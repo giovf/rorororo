@@ -88,10 +88,12 @@ if (process.argv[2] === 'cold') {
         Date.parse(today) - Date.parse(it.doing_since ?? it.added) > dayMs));
   const open = (it: ColdItem): boolean =>
     it.status === 'todo' || it.status === 'doing' || it.status === 'blocked';
+  // Cooling counts 48 h from the pass's minute, a plain day from 00:00 (2026-11-12, foundry
+  // research-cooling-from-the-minute: three queues left cooling at the same midnight, 28–31 h in).
   // A research claim under 2 h old is cooling too (2026-11-03, foundry research-claim-marker):
   // the other slot pushed `researching_since` with `claim-research` and is researching now.
   const cooling = (q: ColdQueue): boolean =>
-    (q.researched !== undefined && Date.parse(today) - Date.parse(q.researched) < 2 * dayMs) ||
+    (q.researched !== undefined && now.getTime() - Date.parse(q.researched) < 2 * dayMs) ||
     (q.research_after !== undefined && q.research_after > today) ||
     researchClaimActive(q.researching_since, now);
   // Research reasons first (2026-10-22, foundry claim-only-when-buildable): a flagged queue out of

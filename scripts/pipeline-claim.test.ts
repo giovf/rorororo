@@ -148,6 +148,13 @@ describe('claimResearch', () => {
     expect(() => claimResearch(rq({ researched: '2026-11-02' }), 'build', at)).toThrow(
       'cooling, research is not due',
     );
+    // the minute form cools from its minute (2026-11-12): 47 h in is refused, 49 h in is due
+    expect(() => claimResearch(rq({ researched: '2026-11-01T18:01Z' }), 'build', at)).toThrow(
+      'cooling, research is not due',
+    );
+    expect(claimResearch(rq({ researched: '2026-11-01T16:01Z' }), 'build', at).since).toBe(
+      '2026-11-03T17:01Z',
+    );
     expect(() => claimResearch(rq({ research_after: '2026-12-03' }), 'build', at)).toThrow(
       'waits until 2026-12-03',
     );

@@ -1472,9 +1472,9 @@
       "effort_days": 0.15,
       "proof": "a queue researched at HH:MM on day D is listed on `npm run pipeline`'s `cooling:` line at 00:00–02:00 on day D+2 and leaves it after HH:MM; the pipeline tests cover the date and the minute form; `npm run check` green",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-12",
-      "doing_since": "2026-11-12"
+      "done_at": "2026-11-12"
     },
     {
       "id": "always-loaded-context-trim",
