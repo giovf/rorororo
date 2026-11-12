@@ -2886,3 +2886,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 10:07 | watchdog | ci-minutes: 398 billed min/7d (~1706/mo; public, no cap) top: notify owner 78, gankdat metrics 59, gankdat 46
 - 2026-11-12 13:07 | triage | notify owner dispatched: last run started 10:12 UTC, 2 h 54 min ago
 - 2026-11-12 13:06 | watchdog | ci-failed: gankdat-publish.yml run 95 11:58 — step Apify actors — push changed, price, pub…; no later run
+- 2026-11-12 16:08 | triage | notify owner dispatched: last run started 13:06 UTC, 3 h ago
