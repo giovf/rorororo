@@ -2882,3 +2882,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 09:18 | build | Wrappers: Apify 466 hits, accounts actors at 0–2 users/30 d; npm 0 parsers; GitHub 6 repos at 0 stars
 - 2026-11-12 09:18 | build | Spike question: figures as a field of the company lookup and a ninth /diligence register, not a standalone dataset
 - 2026-11-12 09:18 | build | Hosts endole, companycheck, creditsafe, companyrecord, globalmindsetmarketing added to the relay list
+- 2026-11-12 10:06 | triage | notify owner dispatched: last run started 07:06 UTC, 3 h ago
