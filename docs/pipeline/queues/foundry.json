@@ -2,10 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-11",
-  "researched": "2026-11-10",
-  "researching_since": "2026-11-12T00:06Z",
-  "researching_by": "burn-down",
+  "updated": "2026-11-12",
+  "researched": "2026-11-12",
   "items": [
     {
       "id": "fetch-relay",
@@ -1455,6 +1453,36 @@
       "status": "done",
       "added": "2026-11-11",
       "done_at": "2026-11-11"
+    },
+    {
+      "id": "pre-research-second-pass-after-park",
+      "title": "The exchange pre-research rule becomes 'one seeded spike per window, at most two passes' instead of 'one pass per window': when the window's first `Exchange pre-research:` line parked or skipped its candidate and fewer than three `new-ventures` spikes are open, a later slot in the same night (17:00 UTC) or day (07:00 UTC) window takes one more pass; a seeded spike or a second park spends the window. Change `preResearchSpent` in scripts/pipeline-cold.ts (a line containing 'spike seeded' spends; two lines spend) with tests, and the one-pass sentence in docs/routines/build.md, docs/routines/burn-down.md and docs/pipeline/README.md.",
+      "why": "`npm run slots` for 2026-11-05..11-11: burn-down 70 hourly fires, 9 built, 11 cold, 45 silent, 5 missed (built 15 %, idle 87 %); build 14 slots, 11 built. The 11-11 night ran two working slots (17:18 and 17:38) and the 17:38 pre-research pass parked the ABN extract; the six fires from 18:00 to 23:00 were cold with one open spike (dated 11-17), because the night had spent its one pass on a park while the shelf cap (fewer than three open, 11-11) would have let it seed. Spikes are the work the next slots take: the two W46 exchange spikes (08:17) were done at 09:20 and 17:19 the same day, the 11-10 19:36 HMRC spike at 20:17. A park costs one slot and a relay round and the 11-11 terms-first rule makes a bad candidate park within its first relay round, so a retry after a park is cheap; a second park still ends the window, so a run of parks cannot eat a night (review W42: ten passes, ten parks, no spike).",
+      "effort_days": 0.15,
+      "proof": "a night or day whose first pre-research line parked shows a second `Exchange pre-research:` line in docs/RUNS.md within the same window, and the following build slot claims a spike instead of researching; `npm run slots` for the week after the change reads burn-down Cold below 11 with the same pipeline",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-12"
+    },
+    {
+      "id": "research-cooling-from-the-minute",
+      "title": "`researched` accepts the minute form `YYYY-MM-DDTHH:MMZ` (the shape `researching_since` already has) and the 48 h research cooling counts from it, so a queue researched at 20:00 UTC cools until 20:00 two days later rather than until the second midnight; the plain date stays valid (read as 00:00). Change the `ISO_DATE` check and `cooling`/`starved` maths in packages/core/src/pipeline.ts, the `researched` comparison in scripts/pipeline.ts and scripts/pipeline-cold.ts, the research commits' instruction in build.md and burn-down.md (`researched` = the pass's minute) with tests on both forms.",
+      "why": "Cooling is measured on a date, so it ends at midnight UTC: tonight the 00:06 burn-down took foundry, gankdat and new-ventures out of cooling at once, 31, 28 and 29 h after their 11-10 passes (17:15, 20:26 and 19:36 UTC), and the 11-10 20:26 slot took hackathons and tax-workbook the same way, each researched on 11-08. Every such pass but one in the last four nights ended `unchanged … research_after` (hackathons 11-24, tax-workbook 12-03, claude-code-kit 11-17), i.e. a slot spent re-reading evidence under 36 h old. The night window is 17:00–02:59, so the midnight boundary always falls inside it: the first six fires see the queues cooling and the last three research all of them together, in the slot with the least time before the day reset at 03:00. A 48 h clock from the minute spreads the passes back over the nights and keeps a pass at least two nights apart.",
+      "effort_days": 0.15,
+      "proof": "a queue researched at HH:MM on day D is listed on `npm run pipeline`'s `cooling:` line at 00:00–02:00 on day D+2 and leaves it after HH:MM; the pipeline tests cover the date and the minute form; `npm run check` green",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-12"
+    },
+    {
+      "id": "always-loaded-context-trim",
+      "title": "Drop the `@./.taskmaster/CLAUDE.md` import (15 KB, the Task Master CLI and MCP reference) from CLAUDE.md and replace it with a three-line pointer (`npm run task -- add|done|list` edits tasks.json offline; the file stays in .taskmaster/ for an interactive machine that runs the MCP server), so every slot — the eleven cold burn-down fires of 11-10 22:00 to 11-11 23:00 included — loads 9 KB of conventions and the 8 KB architecture summary instead of 32 KB; keep `docs/ARCHITECTURE.md` as it is. Check `npm run check` and the scripts that read CLAUDE.md (`grep -rn 'CLAUDE.md' scripts packages`) still pass.",
+      "why": "CLAUDE.md's own first line says 'it's part of every prompt, so verbosity costs tokens', and its largest import is a 15 KB Task Master guide (commands, MCP tool tiers, API-key setup, worktree recipes) for a tool the routines never run: `.mcp.json` has not been checked in since 2026-10-06 (foundry `mcp-sandbox-timeout`) and the routines edit tasks.json with `npm run task`. The week's 95 slots (`npm run slots`, 11-05..11-11) each paid for it, 61 of them idle (11 cold, 45 silent, 6 missed) — an idle fire reads the three CLAUDE files plus the 31 KB routine prompt before `npm run pipeline cold` ends it, so the always-loaded text is the whole cost of a cold slot. Roughly 4k tokens × 95 slots ≈ 400k tokens a week of the owner's allowance, the resource the stale-report pacing rations (BURN.json, report 2026-10-04).",
+      "effort_days": 0.05,
+      "proof": "CLAUDE.md under 10 KB with no `.taskmaster/CLAUDE.md` import; `npm run check` green; the next build and burn-down slots run as before (their run-log lines land); `npm run task -- list` still works",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-12"
     }
   ]
 }

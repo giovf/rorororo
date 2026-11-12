@@ -2819,3 +2819,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-11 18:01 | watchdog | ci-minutes: 401 billed min/7d (~1719/mo; public, no cap) top: notify owner 82, gankdat metrics 61, fetch relay 47
 - 2026-11-11 21:06 | triage | notify owner dispatched: last run started 18:00 UTC, 3 h ago
 - 2026-11-12 00:06 | triage | notify owner dispatched: last run started 21:06 UTC, 3 h ago
+- 2026-11-12 00:12 | burn-down | Main green at STEP 0; no new owner notes; first-runs: nothing owed; foundry research claimed 00:06
+- 2026-11-12 00:12 | burn-down | Foundry research: slots 11-05..11-11 — burn-down 9 of 70 fires built, 11 cold, 45 silent; build 11 of 14
+- 2026-11-12 00:12 | burn-down | 11-11 night: the 17:38 pre-research parked ABN, then six cold fires with one open spike under the cap of three
+- 2026-11-12 00:12 | burn-down | Queued foundry pre-research-second-pass-after-park (4): one seeded spike per window, at most two passes
+- 2026-11-12 00:12 | burn-down | Queued foundry research-cooling-from-the-minute (3): date cooling ends at midnight; 3 passes fell on this slot
+- 2026-11-12 00:12 | burn-down | Queued foundry always-loaded-context-trim (3): the 15 KB Task Master import rides every slot, 61 of 95 idle
+- 2026-11-12 00:12 | burn-down | Verified: the 11-10 cutoff fix held — 11-11 17:00 burn-down ran; the night's idle fires now read cold, not silent
