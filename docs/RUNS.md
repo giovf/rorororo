@@ -2874,3 +2874,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 02:27 | burn-down | Stopping at ~21 min: 1 item built (v0.29.0); pipeline starved and cooled, both pre-research passes spent
 - 2026-11-12 04:06 | triage | notify owner dispatched: last run started 00:57 UTC, 3 h ago
 - 2026-11-12 07:07 | triage | notify owner dispatched: last run started 04:05 UTC, 3 h ago
+- 2026-11-12 09:18 | build | Main green at STEP 0 after the sandbox fix: npm ci dropped @cloudflare/workerd-linux-64 again, installed --no-save
+- 2026-11-12 09:18 | build | No new owner notes; first-runs: nothing owed; next null, empty [], cold: pre-research pass unspent this day
+- 2026-11-12 09:18 | build | Exchange pre-research: Companies House accounts as company-lookup financials — spike seeded (3); 1 spike was open
+- 2026-11-12 09:18 | build | Relay ×2: OGL v3 and 'no rules on use'; daily ZIPs 58–208 MiB Tue–Sat, kept 60 d; Range honoured; DBT parser 38 cols
+- 2026-11-12 09:18 | build | Rivals: Endole £39/user/mo, Company Check £35+VAT/mo, Creditsafe unpublished (~£24.99), Global Mindset MCP free/£39
+- 2026-11-12 09:18 | build | Wrappers: Apify 466 hits, accounts actors at 0–2 users/30 d; npm 0 parsers; GitHub 6 repos at 0 stars
+- 2026-11-12 09:18 | build | Spike question: figures as a field of the company lookup and a ninth /diligence register, not a standalone dataset
+- 2026-11-12 09:18 | build | Hosts endole, companycheck, creditsafe, companyrecord, globalmindsetmarketing added to the relay list
