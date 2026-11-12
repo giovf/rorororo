@@ -1,0 +1,170 @@
+{
+  "request": "payment-practices-spike-2026-11-12",
+  "fetched_at": "2026-11-12T01:33:12.822Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/export/csv/",
+      "range": "0-1023",
+      "fetched_at": "2026-11-12T01:33:02.281Z",
+      "status": 200,
+      "elapsed_ms": 458,
+      "final_url": "https://check-payment-practices.service.gov.uk/export/csv/",
+      "headers": {
+        "content-type": "text/csv",
+        "content-disposition": "attachment; filename=\"2026-11-12-0133-prompt-payments.csv\""
+      },
+      "file": "1.csv",
+      "bytes": 2097152,
+      "truncated": true
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/export/csv/",
+      "range": "104857600-104861695",
+      "fetched_at": "2026-11-12T01:33:04.081Z",
+      "status": 200,
+      "elapsed_ms": 465,
+      "final_url": "https://check-payment-practices.service.gov.uk/export/csv/",
+      "headers": {
+        "content-type": "text/csv",
+        "content-disposition": "attachment; filename=\"2026-11-12-0133-prompt-payments.csv\""
+      },
+      "file": "2.csv",
+      "bytes": 2097152,
+      "truncated": true
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/export/csv/",
+      "range": "52428800-52432895",
+      "fetched_at": "2026-11-12T01:33:05.797Z",
+      "status": 200,
+      "elapsed_ms": 385,
+      "final_url": "https://check-payment-practices.service.gov.uk/export/csv/",
+      "headers": {
+        "content-type": "text/csv",
+        "content-disposition": "attachment; filename=\"2026-11-12-0133-prompt-payments.csv\""
+      },
+      "file": "3.csv",
+      "bytes": 2097152,
+      "truncated": true
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/company/10881715/reports",
+      "fetched_at": "2026-11-12T01:33:07.506Z",
+      "status": 200,
+      "elapsed_ms": 946,
+      "final_url": "https://check-payment-practices.service.gov.uk/company/10881715/reports/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 1725,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 17372
+    },
+    {
+      "method": "GET",
+      "url": "https://check-payment-practices.service.gov.uk/company/00519500/reports",
+      "fetched_at": "2026-11-12T01:33:08.957Z",
+      "status": 200,
+      "elapsed_ms": 513,
+      "final_url": "https://check-payment-practices.service.gov.uk/company/00519500/reports/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 2373,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 25022
+    },
+    {
+      "method": "GET",
+      "url": "https://experian.co.uk/business-express/faq",
+      "fetched_at": "2026-11-12T01:33:09.472Z",
+      "status": 200,
+      "elapsed_ms": 1607,
+      "final_url": "https://www.experian.co.uk/business-express/credit-report/company-credit-check/",
+      "headers": {
+        "content-type": "text/html;charset=utf-8",
+        "content-length": "50438"
+      },
+      "file": "6.txt",
+      "bytes": 17825,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 195738
+    },
+    {
+      "method": "GET",
+      "url": "https://www.experian.co.uk/business-express/credit-report/uk/",
+      "fetched_at": "2026-11-12T01:33:11.322Z",
+      "status": 200,
+      "elapsed_ms": 287,
+      "final_url": "https://www.experian.co.uk/business-express/credit-report/company-credit-check/",
+      "headers": {
+        "content-type": "text/html;charset=utf-8",
+        "content-length": "50219"
+      },
+      "file": "7.txt",
+      "bytes": 17825,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 195439
+    },
+    {
+      "method": "GET",
+      "url": "https://blog.companywatch.net/resources/payment-practices-now-available",
+      "fetched_at": "2026-11-12T01:33:11.615Z",
+      "status": 404,
+      "elapsed_ms": 828,
+      "final_url": "https://blog.companywatch.net/resources/payment-practices-now-available",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 10046,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 57832
+    },
+    {
+      "method": "GET",
+      "url": "https://www.capterra.co.uk/software/1059554/company-watch",
+      "fetched_at": "2026-11-12T01:33:12.453Z",
+      "status": 403,
+      "elapsed_ms": 66,
+      "final_url": "https://www.capterra.co.uk/software/1059554/company-watch",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.txt",
+      "bytes": 809,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5663
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025",
+      "fetched_at": "2026-11-12T01:33:12.521Z",
+      "status": 200,
+      "elapsed_ms": 298,
+      "final_url": "https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "12211",
+        "etag": "W/\"1e7d18c193638c23312dcdc43dc1ff40\""
+      },
+      "file": "10.txt",
+      "bytes": 12241,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 72174
+    }
+  ]
+}
