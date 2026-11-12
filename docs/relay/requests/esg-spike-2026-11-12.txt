@@ -1,7 +1,0 @@
-GET RANGE=0-2097151 https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv
-GET RANGE=8388608-10485759 https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv
-GET RANGE=14777216-16875090 https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv
-HEAD https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2025.csv
-HEAD https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2024.csv
-HEAD https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2020.csv
-GET https://gender-pay-gap.service.gov.uk/viewing/download-data/2025

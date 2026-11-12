@@ -1,0 +1,117 @@
+{
+  "request": "esg-spike-2026-11-12",
+  "fetched_at": "2026-11-12T17:24:25.085Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv",
+      "range": "0-2097151",
+      "fetched_at": "2026-11-12T17:24:14.109Z",
+      "status": 206,
+      "elapsed_ms": 1032,
+      "final_url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv",
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-length": "2097152",
+        "last-modified": "Thu, 12 Nov 2026 17:16:41 GMT",
+        "etag": "0x8DF40E0B7E87FF5"
+      },
+      "file": "1.bin",
+      "bytes": 2097152,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv",
+      "range": "8388608-10485759",
+      "fetched_at": "2026-11-12T17:24:16.526Z",
+      "status": 206,
+      "elapsed_ms": 894,
+      "final_url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv",
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-length": "2097152",
+        "last-modified": "Thu, 12 Nov 2026 17:16:41 GMT",
+        "etag": "0x8DF40E0B7E87FF5"
+      },
+      "file": "2.bin",
+      "bytes": 2097152,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv",
+      "range": "14777216-16875090",
+      "fetched_at": "2026-11-12T17:24:18.840Z",
+      "status": 206,
+      "elapsed_ms": 5,
+      "final_url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv",
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-length": "2097875",
+        "last-modified": "Thu, 12 Nov 2026 17:16:41 GMT",
+        "etag": "0x8DF40E0B7E87FF5"
+      },
+      "file": "3.bin",
+      "bytes": 2097152,
+      "truncated": true
+    },
+    {
+      "method": "HEAD",
+      "url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2025.csv",
+      "fetched_at": "2026-11-12T17:24:19.851Z",
+      "status": 200,
+      "elapsed_ms": 341,
+      "final_url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2025.csv",
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-length": "18980536",
+        "last-modified": "Thu, 12 Nov 2026 17:16:03 GMT",
+        "etag": "0x8DF40E0A1B38AA4"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2024.csv",
+      "fetched_at": "2026-11-12T17:24:20.693Z",
+      "status": 200,
+      "elapsed_ms": 468,
+      "final_url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2024.csv",
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-length": "17830777",
+        "last-modified": "Thu, 12 Nov 2026 17:15:24 GMT",
+        "etag": "0x8DF40E089FD8029"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2020.csv",
+      "fetched_at": "2026-11-12T17:24:21.663Z",
+      "status": 200,
+      "elapsed_ms": 2413,
+      "final_url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2020.csv",
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-length": "8503687",
+        "last-modified": "Thu, 12 Nov 2026 17:15:22 GMT",
+        "etag": "0x8DF40E0891F6679"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://gender-pay-gap.service.gov.uk/viewing/download-data/2025",
+      "fetched_at": "2026-11-12T17:24:24.152Z",
+      "status": 200,
+      "elapsed_ms": 407,
+      "final_url": "https://gender-pay-gap.service.gov.uk/viewing/download-data/2025",
+      "headers": {
+        "content-type": "text/csv",
+        "content-disposition": "attachment; filename=\"UK Gender Pay Gap Data - 2025 to 2026.csv\"; filename*=UTF-8''UK%20Gender%20Pay%20Gap%20Data%20-%202025%20to%202026.csv"
+      },
+      "file": "7.csv",
+      "bytes": 2097152,
+      "truncated": true
+    }
+  ]
+}
