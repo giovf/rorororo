@@ -1,0 +1,12 @@
+GET https://download.companieshouse.gov.uk/en_accountsdata.html
+GET https://download.companieshouse.gov.uk/en_monthlyaccountsdata.html
+GET https://download.companieshouse.gov.uk/en_output.html
+HEAD https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip
+GET RANGE=0-4095 https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip
+GET https://www.gov.uk/guidance/companies-house-data-products
+GET https://api.apify.com/v2/store?search=companies%20house%20accounts&limit=20
+GET https://api.apify.com/v2/store?search=companies%20house&limit=50
+GET https://api.apify.com/v2/store?search=ixbrl&limit=20
+GET https://www.endole.co.uk/pricing
+GET https://companycheck.co.uk/pricing
+GET https://www.creditsafe.com/gb/en/pricing.html
