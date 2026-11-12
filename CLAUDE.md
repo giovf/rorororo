@@ -122,6 +122,7 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
 **Import the architecture overview; treat as if inlined here.**
 @./docs/ARCHITECTURE.md
 
-## Task Master AI Instructions
-**Import Task Master's development workflow commands and guidelines, treat as if import is in the main CLAUDE.md file.**
-@./.taskmaster/CLAUDE.md
+## Task Master
+- Routines edit `.taskmaster/tasks/tasks.json` offline with `npm run task -- add|done|list`; no CLI or MCP in a sandbox.
+- The Task Master CLI and MCP reference stays in `.taskmaster/CLAUDE.md` for an interactive machine that runs the server
+  (not imported since 2026-11-12, foundry `always-loaded-context-trim`: 15 KB rode every slot for a tool the routines never run).

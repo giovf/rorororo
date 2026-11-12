@@ -2847,3 +2847,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 01:15 | burn-down | isCooling, cold and claim-research measure from `now`; a plain date still parses and counts from 00:00
 - 2026-11-12 01:15 | burn-down | build.md and burn-down.md: the research commit writes `date -u +%FT%H:%MZ`; README field reworded; 3 tests
 - 2026-11-12 01:15 | burn-down | Proof: a queue researched at HH:MM on D stays on the cooling line past 00:00 on D+2 until HH:MM
+- 2026-11-12 01:19 | burn-down | Built foundry always-loaded-context-trim: the 15 KB Task Master import left CLAUDE.md, 3-line pointer
+- 2026-11-12 01:19 | burn-down | gankdat's CLAUDE.md carried the same 14 KB import; same pointer there (every burn-down reads that file)
+- 2026-11-12 01:19 | burn-down | Always-loaded text 32 KB → 17 KB; `npm run task -- list` still works; .taskmaster/CLAUDE.md kept on disk
