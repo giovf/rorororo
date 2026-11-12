@@ -2905,3 +2905,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 17:17 | burn-down | Host www.beauhurst.com added to the relay list
 - 2026-11-12 17:25 | interactive | Five Fable routines moved to claude-fable-5-2 after a probe answered model ok
 - 2026-11-12 17:25 | interactive | Queued foundry routine-models-auto-update (7) and gankdat clay-intro-video (3); 039 closed
+- 2026-11-12 17:25 | burn-down | foundry routine-models-auto-update held to 11-13: needs the trigger connector only build/review carry
