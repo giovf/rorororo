@@ -841,6 +841,17 @@
       "why": "Exchange pre-research 2026-11-11 (burn-down, relay pre-research-abn-2026-11-11): the source is lawful and keyless — the ABN Bulk Extract on data.gov.au is CC BY 3.0 Australia (schema:license on the dataset page), updated 11/11/2026 (weekly XML parts) — but the demand reading says park: the Store's `abn` search returns 129 actors and the fourteen ABN/ABR lookup actors at the top hold 1–2 users/30 d each (ryanclinton 49 lifetime users, parseforge 4, foxlabs 5, the rest 2–3), the `australia business` search is led by Yellow Pages scrapers (abotapi 13 users/30 d, 147 total) which gankdat will not copy; the official ABN Lookup web service is free (a GUID on registration), npm already carries two free ABN MCP servers (@pipeworx/mcp-abn-lookup, @ljdigital/au-bizintel-mcp) and an API wrapper, and GitHub 73 'abn lookup' repos led by the ABR's own sample code (86 stars). A gankdat register would be the fifteenth paid ABN actor behind a free official API, with the bulk ingest (the whole register, weekly) as the only shape rivals lack and nobody asking for it. Evidence 1 × reach 2 ÷ 1 day ≈ 2 after the free-rival discount.",
       "trigger": "An ABN actor on the Store reaches ≥ 10 users/30 d, or a gankdat buyer, inbox mail or owner note asks for Australian company data beside a UK register read, or the ABN Lookup web service goes paid — then spike the bulk-extract register (0.3 day: part count and size, the weekly diff as a change feed, one rival's price)",
       "added": "2026-11-11"
+    },
+    {
+      "id": "uk-payment-practices-lookup",
+      "title": "UK large-company payment practices reports (check-payment-practices.service.gov.uk, OGL v3) on gankdat — a lookup by company number, a `payment_practices` field on the company lookup and an eighth register for the /diligence agent, from the one-click CSV export (≈ 115k reports, ≈ 9,000 reporters)",
+      "status": "promoted",
+      "why": "Spike 2026-11-12 (burn-down, docs/exchange/spikes/uk-payment-practices-lookup.md, three relay rounds plus registry reads): OGL v3 on every page, no terms restricting automated reads; `/export/csv/` streams the whole register (52 columns, ≈ 863 bytes a row, Report Id up to 118366 on 2026-10-30, Range not honoured so one pass of ≈ 100 MB — under the charity extract's 160 MB). The series is priced — Experian Business Express £24.99 ex VAT per report with days beyond terms, Companywatch's add-on inside a £354/month platform, 193market's API at US$49–399/month — but no shelf has found a buyer (1 user on that API in eight weeks, four Apify actors at 1 user/30 d), so the standalone dataset would park; the promoted shape is the field on the calls gankdat's buyers already make, keyed on the Companies House number the seven diligence registers share.",
+      "trigger": "Promoted to gankdat `uk-payment-practices` (3, 0.6 day): the dataset route, the profile field, the diligence register, the actor, a weekly wave. Day-30 proof: the route or the field read on at least one paid or keyed call, else it stays as a free field and the actor is left to the Store.",
+      "added": "2026-11-12",
+      "spiked": "2026-11-12",
+      "updated": "2026-11-12",
+      "venture": "gankdat"
     }
   ]
 }

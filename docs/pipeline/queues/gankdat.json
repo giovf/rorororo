@@ -1201,6 +1201,16 @@
       "status": "done",
       "added": "2026-11-12",
       "done_at": "2026-11-12"
+    },
+    {
+      "id": "uk-payment-practices",
+      "title": "UK payment practices reports on gankdat: `src/sources/uk-payment-practices.ts` streams `https://check-payment-practices.service.gov.uk/export/csv/` (one generated CSV, 52 columns, ≈ 115k rows / 100 MB, no Range — one pass through `csvRows()`), keeps per report the Report Id, company number and name, period start/end, filing date, average time to pay, % paid within 30 / 31–60 / 60+ days, % not paid within agreed terms, % disputed, shortest and longest standard payment period, the yes/no policy answers and the report URL (Blind Mode: drop the narrative, approver and value columns), D1 by `idOf(report_id)` paced with `d1Pace`, weekly wave; route `/v1/data/uk-payment-practices` by company number (latest + history); `payment_practices` on `uk-company-profiles` (latest five numbers and filing date, null for a non-reporter); the slug added to `REGISTERS` in packages/landing/src/diligence-core.ts; fixtures, `test/uk-payment-practices.spec.ts`, landing card, terms row (OGL v3, attribute the Department for Business and Trade), sitemap, `server.json` + constants version bump, ARCHITECTURE note; Apify actor `uk-payment-practices` copied from a register actor",
+      "why": "Spike 2026-11-12 (docs/exchange/spikes/uk-payment-practices-lookup.md): OGL v3 on every page and no access terms; the export is one streamed 100 MB file (Range not honoured), the size the charity wave already handles; Experian sells the payment insight at £24.99 a report, 193market's API on the same CSV at US$49–399/month, Companywatch as a platform add-on — but every standalone shelf shows 1 user, so the value is the join: gankdat's seven diligence registers and the company lookup share the Companies House number, and `pays in N days, M % late` is the diligence field no free page gives in one read. 0.6 day, no key, no owner minutes.",
+      "effort_days": 0.6,
+      "proof": "a live `/v1/data/uk-company-profiles` read for 10881715 carries `payment_practices` (31 days, 39 % late per /report/111700) and a non-reporter carries null; `/v1/data/uk-payment-practices?company_number=00519500` lists 16 reports; the weekly wave's refresh_log row shows the row count; day-30 read (gankdat `uk-payment-practices-day-30`, to queue at build): the route or the field on ≥ 1 paid or keyed call, else noted as a free field",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-12"
     }
   ]
 }

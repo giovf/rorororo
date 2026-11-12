@@ -2856,3 +2856,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 01:33 | burn-down | Rivals: 193market API US$49–399/mo (1 user, 16 runs; RapidAPI twin gone), Experian DBT reports, Companywatch
 - 2026-11-12 01:33 | burn-down | Wrappers: Apify 4 UK actors at 1 user/30 d, npm 0, GitHub 9 repos; hosts rapidapi.com and api.market added
 - 2026-11-12 01:33 | burn-down | Spike question: payment practices as a field of the company lookup and /diligence, not a new audience
+- 2026-11-12 01:40 | burn-down | Spike spike-uk-payment-practices-lookup done: promote as the narrow shape, gankdat uk-payment-practices (3)
+- 2026-11-12 01:40 | burn-down | Relay 3: Range not honoured on the export (one 100 MB pass); latest report 118366 of 2026-10-30; Tesco 16 reports
+- 2026-11-12 01:40 | burn-down | Experian £24.99 ex VAT per report with days beyond terms; Companywatch 404, Capterra 403 (price from search)
+- 2026-11-12 01:40 | burn-down | Call: no park condition holds; value is the join on the company number for the lookup and /diligence
+- 2026-11-12 01:40 | burn-down | exchange.json: uk-payment-practices-lookup promoted; hosts experian, companywatch, capterra added
