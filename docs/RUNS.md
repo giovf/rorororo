@@ -2895,3 +2895,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 17:17 | burn-down | Wrappers: Apify 5 pay gap + 2 registry actors at 1 user/30 d, one 'transparency pack' bundling both; npm 0
 - 2026-11-12 17:17 | burn-down | Spike question: two fields on the company lookup and a tenth /diligence register, not a standalone dataset
 - 2026-11-12 17:17 | burn-down | Host www.beauhurst.com added to the relay list
+- 2026-11-12 17:25 | interactive | Five Fable routines moved to claude-fable-5-2 after a probe answered model ok
+- 2026-11-12 17:25 | interactive | Queued foundry routine-models-auto-update (7) and gankdat clay-intro-video (3); 039 closed
