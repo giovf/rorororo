@@ -1,4 +1,0 @@
-HEAD https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2027.csv
-GET RANGE=0-16383 https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2027.csv
-HEAD https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv
-GET https://modern-slavery-statement-registry.service.gov.uk/search

@@ -1,0 +1,68 @@
+{
+  "request": "pre-research-esg-registers-2026-11-12-c",
+  "fetched_at": "2026-11-12T17:16:36.011Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2027.csv",
+      "fetched_at": "2026-11-12T17:16:32.088Z",
+      "status": 200,
+      "elapsed_ms": 741,
+      "final_url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2027.csv",
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-length": "263925",
+        "last-modified": "Thu, 12 Nov 2026 17:00:04 GMT",
+        "etag": "0x8DF40DE658C13E8"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2027.csv",
+      "range": "0-16383",
+      "fetched_at": "2026-11-12T17:16:33.330Z",
+      "status": 206,
+      "elapsed_ms": 1008,
+      "final_url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2027.csv",
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-length": "16384",
+        "last-modified": "Thu, 12 Nov 2026 17:00:04 GMT",
+        "etag": "0x8DF40DE658C13E8"
+      },
+      "file": "2.bin",
+      "bytes": 16384,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv",
+      "fetched_at": "2026-11-12T17:16:34.841Z",
+      "status": 200,
+      "elapsed_ms": 591,
+      "final_url": "https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries2026.csv",
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-length": "16875091",
+        "last-modified": "Thu, 12 Nov 2026 17:00:03 GMT",
+        "etag": "0x8DF40DE6580CAE7"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://modern-slavery-statement-registry.service.gov.uk/search",
+      "fetched_at": "2026-11-12T17:16:35.433Z",
+      "status": 200,
+      "elapsed_ms": 573,
+      "final_url": "https://modern-slavery-statement-registry.service.gov.uk/search",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 3170,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46604
+    }
+  ]
+}
