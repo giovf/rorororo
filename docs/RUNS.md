@@ -2826,3 +2826,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 00:12 | burn-down | Queued foundry research-cooling-from-the-minute (3): date cooling ends at midnight; 3 passes fell on this slot
 - 2026-11-12 00:12 | burn-down | Queued foundry always-loaded-context-trim (3): the 15 KB Task Master import rides every slot, 61 of 95 idle
 - 2026-11-12 00:12 | burn-down | Verified: the 11-10 cutoff fix held — 11-11 17:00 burn-down ran; the night's idle fires now read cold, not silent
+- 2026-11-12 00:15 | burn-down | gankdat research: 11-11 row vs 11-10 — journal buyer repeated (30 of 37 calls), rest flat; day-7 read 11-17
+- 2026-11-12 00:15 | burn-down | Worker logs 00:14 (stats_, warn): 11-11 05:49:57 stats_throttled parent, 05:50:18 failed again; journal 06:09:19
+- 2026-11-12 00:15 | burn-down | Queued gankdat stats-parent-scans-paced-per-statement (5): parent scans retried as one unit never fit a window

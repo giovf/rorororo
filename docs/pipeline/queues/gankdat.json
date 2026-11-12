@@ -2,10 +2,8 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-11",
-  "researched": "2026-11-10",
-  "researching_since": "2026-11-12T00:12Z",
-  "researching_by": "burn-down",
+  "updated": "2026-11-12",
+  "researched": "2026-11-12",
   "items": [
     {
       "id": "nhs-ods",
@@ -1192,6 +1190,16 @@
       "status": "todo",
       "not_before": "2026-12-11",
       "added": "2026-11-11"
+    },
+    {
+      "id": "stats-parent-scans-paced-per-statement",
+      "title": "The stats parent aggregation fits D1's 10-second window statement by statement: `aggregateD1Stats` runs `aggregateChangeDays`, `aggregateMonthly` and one `aggregateGroups` scan per group column back to back over the whole register, and `precomputeStats` retries the whole parent as one unit — so the 11-10 wait-once retry (v0.28.4) re-ran every scan into a fresh window and tripped again. Pace the parent like the delta index (`d1Pace.indexPauseMs` between statements), give each statement its own `withOverloadRetry` (logged `stats_throttled` with the phase: `changes`, `monthly`, `group <column>`), carry the previous blob's value for a single statement that still refuses rather than the whole blob, and write the parent after the facets' deadline rule; tests drive the statements through the throttle facade.",
+      "why": "First night of the 11-10 fix, read with one `worker logs` dispatch (00:14 UTC, needle `stats_`, level warn, 1200 min): uk-food-hygiene wave 05:45 on 11-11 logged `stats_throttled phase=parent attempt=1` at 05:49:57 and `stats_precompute_failed … D1 DB is overloaded` (`retained: true`) at 05:50:18 — 21 s later, i.e. after the 12 s wait the repeated parent crossed the line again; uk-trademark-journal's 06:05 wave the same (`stats_throttled parent attempt 1` at 06:09:19). The 11-11 Daily numbers row carries both failures, as every row since 11-05. The parent phase is the only one that trips: `aggregateFacets` already batches and paces (`facet-aggregation-one-scan`, `facet-scan-sqlite-nomem`), while the parent's change-day, monthly and per-column GROUP BY scans of 196k (journal) and ~600k (hygiene) rows run with no pause and are retried as one, so a window that fits any one of them never fits all. Until this lands no /stats page of either source moves (`stats-page-content-depth`'s 12-05 index read measures pages whose dateModified is stuck at the pacing fix), and the journal's 45 class pages are the x402 buyer's landing pages (usetested-harness: 30 of 37 buyer calls/30 d on 11-11).",
+      "effort_days": 0.3,
+      "proof": "the item's own: two consecutive Daily numbers rows (the first after the deploy) with no `stats_precompute_failed` for uk-food-hygiene or uk-trademark-journal, `stats_throttled` lines naming a statement phase if any, and `/stats/uk-trademark-journal` `dateModified` moving nightly",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-11-12"
     }
   ]
 }

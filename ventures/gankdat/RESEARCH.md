@@ -1502,3 +1502,36 @@ touches them, so the publisher now syncs both from each repo actor's current tit
 values differ (a generic rule, every actor). CI pushes the actor on this commit. After-read: `trademark-actor-store-rank-day-30`
 (not before 2026-12-11) repeats the three relay lines and reads `apify 30d by actor:`; proof per the item — a top-50
 rank for one term or ≥ 3 users/30 d.
+
+## Research pass 2026-11-12 (burn-down, 00:12 UTC)
+
+`npm run pipeline empty` listed gankdat (starved: every open item dated — x402-bazaar-day-30 11-14, the planning
+re-read 11-15, x402-journal-buyer-day-7-read 11-17 — or blocked). Read: the 11-11 Daily numbers row against the 11-10
+one, the `gankdat` CI runs of 11-10 (v0.28.4 deployed 21:22 UTC, v0.28.5 21:29) and 11-11 (17:24, 17:36), and one
+`worker logs` dispatch for the night after the stats fix. Changed since 11-10: the journal's x402 buyer repeated —
+`usetested-harness` 21 of the month's 37 buyer calls, `uk-trademark-journal 30`, repeat 2 (11-10: 10 / 27 / 20 / 1); that
+is the 11-17 day-7 read's evidence, not a new item. Unchanged: 5 accounts, 0 paid; feeds 30d 658 fetches / 54 user agents
+(639 / 53); Apify 527 runs by others / 30 d, 19 users, failed counts flat; `tool callers: 30d 0`; search 7d to 11-10
+39 impressions, 0 clicks (41 / 0); refresh errors the two known origins (gambling 526 — v0.28.6's skipped-night rule
+deploys for the 11-12 wave; planning 503, dated 11-15). Worker errors 24h 6 (7), the same two origins and the planning
+503 requests.
+
+One new item, from the first night of `stats-precompute-overload-wait` (11-10, v0.28.4): the 11-11 row still reads
+`stats_precompute_failed` for uk-food-hygiene (05:45) and uk-trademark-journal (06:05). The log read (needle `stats_`,
+level warn, 1200 min, run 43125757080) shows the retry ran and was refused again:
+
+| Wave | Line | UTC |
+| --- | --- | --- |
+| uk-food-hygiene 05:45 | `stats_throttled source=uk-food-hygiene phase=parent attempt=1` | 05:49:57 |
+| uk-food-hygiene 05:45 | `stats_precompute_failed … D1 DB is overloaded. Too many resources consumed within a 10 second window.` (`retained: true`) | 05:50:18 |
+| uk-trademark-journal 06:05 | `stats_throttled source=uk-trademark-journal phase=parent attempt=1` | 06:09:19 |
+
+Twenty-one seconds between the throttle and the failure is the 12 s wait plus a repeated parent that crossed the line
+on its own: `aggregateD1Stats` runs the change-day scan, the monthly scan and one GROUP BY per group column over the whole
+register back to back, and `precomputeStats` wraps the whole parent in one `withOverloadRetry`, so a fresh window never
+fits all of them. The facet pass is already batched and paced and is not what trips. Queued
+`stats-parent-scans-paced-per-statement` (5, 0.3 d): pause between the parent's statements as the delta index does,
+retry per statement with the phase in the `stats_throttled` line, carry a single refused statement's previous value
+rather than the whole blob. Proof per the item: the first two Daily rows after its deploy with no
+`stats_precompute_failed` for either source and the journal's `dateModified` moving. `researched: 2026-11-12`; the
+queue has a buildable item, so no `research_after`.
