@@ -1117,7 +1117,7 @@
     {
       "id": "clay-listing-day-90-read",
       "title": "Clay day-90 read: 90 days after the owner's Integrations Partner submission (action 039), read whether clay.com/integrations or its docs list gankdat (relay: the integrations page and a site search), whether marketplace.clay.com lists uk-company-register-check, and the Daily numbers `rest 7d by UA:` clause plus a D1 count of api_keys named `clay`; on a listing, add the shared-table template link to public/clay.html; on none, park the line in the exchange with 'reapply at the first paying UK account'",
-      "why": "Spike 2026-11-08 kill rule (docs/exchange/spikes/clay-data-provider-marketplace.md §5): the listing is at Clay's discretion with a stated 30–60 day review, so the read is dated 90 days after the earliest the owner can submit; the item is blocked on nothing but the date. Evidence 1 × reach 1 ÷ 0.1 day, capped at 3 because it is a reading, not a build.",
+      "why": "Spike 2026-11-08 kill rule (docs/exchange/spikes/clay-data-provider-marketplace.md §5): the listing is at Clay's discretion with a stated 30–60 day review, so the read is dated 90 days after the earliest the owner can submit; the item is blocked on nothing but the date. Evidence 1 × reach 1 ÷ 0.1 day, capped at 3 because it is a reading, not a build. — Owner submitted step 1 on 2026-11-12 (Yes to selling through Clay's marketplace, wholesale US$0.004 a returned record quoted, no table, no video; the Skill step not taken), so 2027-02-10 is the day-90 date.",
       "effort_days": 0.1,
       "proof": "one dated paragraph in ventures/gankdat/RESEARCH.md naming listed/not listed for both shelves, the UA family and key count, and the decision taken (template link added, or parked in the exchange)",
       "score": 3,
@@ -1244,6 +1244,16 @@
       "status": "todo",
       "added": "2026-11-12",
       "not_before": "2026-11-26"
+    },
+    {
+      "id": "clay-intro-video",
+      "title": "Clay intro video: a captioned 60–90 s recording (no voice) for Clay's partner team — what gankdat is, the five register endpoints with credit pricing and rate limits (gankdat.com/clay), one live lookup of a real company across Companies House, sanctions, insolvency and charity with the JSON fields a Clay column maps, and why Clay (220 providers, none native to the UK registers) — recorded with the hackathon demo pipeline (Playwright + ffmpeg) and hosted at apps.gankdat.com/demo/clay-intro.mp4; the link goes into CLAY-LISTING.md and is sent in reply to Clay's first mail",
+      "why": "The Integrations Partner Typeform (action 039, submitted by the owner 2026-11-12) asked for a Loom introducing the product, key specs and why an integration helps; the field was left empty to submit the same day (owner: 'add the video to the pipeline, dont make it now'). Clay's fit review takes 30–60 days and answers by mail, so the video has a use when that mail arrives or when the review asks for more. Reuses the Meta entry's recorder (apps.gankdat.com/demo/meta-diligence.mp4); £0, no owner time. Score: evidence 1 × reach 1.5 ÷ 0.3 d ≈ 5, held to 3 because Clay has not asked yet.",
+      "effort_days": 0.3,
+      "proof": "apps.gankdat.com/demo/clay-intro.mp4 answers 200 (video/mp4, 60–90 s); CLAY-LISTING.md names it; the reply to Clay's first mail carries it",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-12"
     }
   ]
 }

@@ -1,7 +1,7 @@
 # Owner action request #039 — Clay: submit the Integrations Partner form (~10 min) and, if you like, the Skill (~5 min)
 
 - **Date:** 2026-11-09
-- **Status:** pending
+- **Status:** done 2026-11-12 (step 1 submitted: Yes to marketplace selling, wholesale price quoted, no Clay table, no video; step 2 not taken)
 - **Your time:** ~10 minutes for step 1; step 2 is ~5 minutes more and optional
 - **Cost:** £0 (two web forms; no card, no identity check)
 - **Blocks:** `gankdat/clay-listing-day-90-read` (the 90-day read dates from your submission)

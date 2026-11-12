@@ -2895,3 +2895,13 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 17:19 | build | Spike spike-uk-company-accounts-financials done: PROMOTE as a field + ninth diligence register, not a dataset
 - 2026-11-12 17:19 | build | Queued gankdat uk-company-accounts (3, 1.0 day) and uk-company-accounts-backfill (2, 0.5 day, not before 11-26)
 - 2026-11-12 17:19 | build | Exchange: uk-company-accounts-financials promoted; new-ventures spikes open: 1 (pay-per-crawl, dated 11-17)
+- 2026-11-12 17:17 | burn-down | Main green at STEP 0; no new owner notes; first-runs: nothing owed; next null, empty []; no majors PR open
+- 2026-11-12 17:17 | burn-down | Exchange pre-research: modern slavery registry + gender pay gap as ESG lookup fields — spike seeded (3); 2 spikes open
+- 2026-11-12 17:17 | burn-down | Relay ×3: OGL v3 on every page of both services; registry CSV 75 cols, CompanyNumber, 16.9 MB/yr, Range honoured
+- 2026-11-12 17:17 | burn-down | Pay gap files 4.0–4.3 MB a year 2017–2026, 27 cols, CompanyNumber on private-sector rows (61 % of first 7,713)
+- 2026-11-12 17:17 | burn-down | Rivals: Beauhurst bundles the pay gap data; Sedex £195/site/yr, buyers from £2,900; EcoVadis US$15–40k quoted
+- 2026-11-12 17:17 | burn-down | Wrappers: Apify 5 pay gap + 2 registry actors at 1 user/30 d, one 'transparency pack' bundling both; npm 0
+- 2026-11-12 17:17 | burn-down | Spike question: two fields on the company lookup and a tenth /diligence register, not a standalone dataset
+- 2026-11-12 17:17 | burn-down | Host www.beauhurst.com added to the relay list
+- 2026-11-12 17:25 | interactive | Five Fable routines moved to claude-fable-5-2 after a probe answered model ok
+- 2026-11-12 17:25 | interactive | Queued foundry routine-models-auto-update (7) and gankdat clay-intro-video (3); 039 closed
