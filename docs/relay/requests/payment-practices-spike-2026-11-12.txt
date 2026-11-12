@@ -1,0 +1,10 @@
+GET RANGE=0-1023 https://check-payment-practices.service.gov.uk/export/csv/
+GET RANGE=104857600-104861695 https://check-payment-practices.service.gov.uk/export/csv/
+GET RANGE=52428800-52432895 https://check-payment-practices.service.gov.uk/export/csv/
+GET https://check-payment-practices.service.gov.uk/company/10881715/reports
+GET https://check-payment-practices.service.gov.uk/company/00519500/reports
+GET https://experian.co.uk/business-express/faq
+GET https://www.experian.co.uk/business-express/credit-report/uk/
+GET https://blog.companywatch.net/resources/payment-practices-now-available
+GET https://www.capterra.co.uk/software/1059554/company-watch
+GET https://www.gov.uk/government/statistics/large-businesses-payment-practices-and-performance-statistics-2025
