@@ -1,0 +1,47 @@
+Companies House
+http://www.companieshouse.gov.uk/
+Free Accounts Data Product
+Previous Year's Monthly Files
+What is it?
+The Accounts Data Product is a free downloadable ZIP file, which contains the individual data files (instance documents) of company accounts filed electronically.
+Accounts data for the previous year can be downloaded from the monthly files provided here, whilst the most recent accounts data is available from the daily files. (en_accountsdata.html)
+The individual data files within the ZIP file will be in one of two formats, either:
+inline XBRL format (.html file extension) or;
+XBRL format (.xml file extension).
+a ZIP file of iXBRL (.zip file extension).
+Each data file is provided free of charge and is not supported. Due to its size, each file can take several minutes to download.
+When will each file be updated?
+A new monthly file will be added within 5 working days of the previous month end.
+How long is each file available to download?
+Each monthly file will only be available to download for 12 months, after which it will be replaced by the corresponding file for the following year.
+What information is in the monthly file name?
+The monthly ZIP file name identifies the month and year the accounts data relates to.
+The individual filenames within will identify the company number (e.g. 01234567) and balance sheet date (e.g. 31/12/2012). The file type indicates if it is iXBRL (html), XBRL (xml) or a ZIP (zip).
+e.g. Prod224_0009_01234567_20121231
+Prod224_0009 are internal run processes.
+Additional Information
+Data is only available for electronically filed accounts, which currently stands at about 75% of the 2.2 million accounts we expect to be filed each year.
+You can view the data using Notepad, or a similar text based program. A rendered image of the accounts can be viewed when opened via a web browser. To view the data within your browser, use right-click and "View Source".
+Both iXBRL and XBRL are difficult to manipulate without specialised software. Below are examples of the data format.
+Sample of iXBRL (https://resources.companieshouse.gov.uk/toolsToHelp/pdf/inlineXBRLsample.pdf)
+Sample of XBRL (https://resources.companieshouse.gov.uk/toolsToHelp/pdf/XBRLsample.pdf)
+The taxonomies referenced by the accounts data in the monthly files may have changed over the year. For more information on referenced taxonomies,validation and formatting, please read our Free Accounts Data Product FAQs (https://resources.companieshouse.gov.uk/infoAndGuide/faq/accountsDataProduct.shtml) .
+Monthly Download:
+Accounts_Monthly_Data-October2025.zip (2.2GiB) (Accounts_Monthly_Data-October2025.zip)
+Accounts_Monthly_Data-November2025.zip (2.1GiB) (Accounts_Monthly_Data-November2025.zip)
+Accounts_Monthly_Data-December2025.zip (4.1GiB) (Accounts_Monthly_Data-December2025.zip)
+Accounts_Monthly_Data-January2026.zip (2.0GiB) (Accounts_Monthly_Data-January2026.zip)
+Accounts_Monthly_Data-February2026.zip (1.8GiB) (Accounts_Monthly_Data-February2026.zip)
+Accounts_Monthly_Data-March2026.zip (2.5GiB) (Accounts_Monthly_Data-March2026.zip)
+Accounts_Monthly_Data-April2026.zip (1.8GiB) (Accounts_Monthly_Data-April2026.zip)
+Accounts_Monthly_Data-May2026.zip (1.8GiB) (Accounts_Monthly_Data-May2026.zip)
+Accounts_Monthly_Data-June2026.zip (2.2GiB) (Accounts_Monthly_Data-June2026.zip)
+Accounts_Monthly_Data-July2026.zip (2.1GiB) (Accounts_Monthly_Data-July2026.zip)
+Accounts_Monthly_Data-August2026.zip (1.8GiB) (Accounts_Monthly_Data-August2026.zip)
+Accounts_Monthly_Data-September2026.zip (3.1GiB) (Accounts_Monthly_Data-September2026.zip)
+Accounts_Monthly_Data-October2026.zip (2.0GiB) (Accounts_Monthly_Data-October2026.zip)
+Last Updated: 10/11/2026
+Looking for older Accounts data files?
+Older accounts data is available from the archive files. (historicmonthlyaccountsdata.html)
+Email enquiries@companieshouse.gov.uk (mailto:enquiries@companieshouse.gov.uk)
+Telephone +44 (0)303 1234 500 8:30am to 6pm (UK time) Monday to Friday

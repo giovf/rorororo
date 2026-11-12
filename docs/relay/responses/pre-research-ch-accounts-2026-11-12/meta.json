@@ -1,0 +1,206 @@
+{
+  "request": "pre-research-ch-accounts-2026-11-12",
+  "fetched_at": "2026-11-12T09:13:27.998Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://download.companieshouse.gov.uk/en_accountsdata.html",
+      "fetched_at": "2026-11-12T09:13:19.546Z",
+      "status": 200,
+      "elapsed_ms": 558,
+      "final_url": "https://download.companieshouse.gov.uk/en_accountsdata.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "16568",
+        "last-modified": "Thu, 12 Nov 2026 07:46:53 GMT",
+        "etag": "\"69d97e057feeaab8d35f27d8f8056959\""
+      },
+      "file": "1.txt",
+      "bytes": 7362,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 16568
+    },
+    {
+      "method": "GET",
+      "url": "https://download.companieshouse.gov.uk/en_monthlyaccountsdata.html",
+      "fetched_at": "2026-11-12T09:13:20.707Z",
+      "status": 200,
+      "elapsed_ms": 266,
+      "final_url": "https://download.companieshouse.gov.uk/en_monthlyaccountsdata.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "10715",
+        "last-modified": "Tue, 10 Nov 2026 10:00:48 GMT",
+        "etag": "\"0ab924d3256df5ddf69532c18c0a0590\""
+      },
+      "file": "2.txt",
+      "bytes": 3964,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 10715
+    },
+    {
+      "method": "GET",
+      "url": "https://download.companieshouse.gov.uk/en_output.html",
+      "fetched_at": "2026-11-12T09:13:21.578Z",
+      "status": 200,
+      "elapsed_ms": 245,
+      "final_url": "https://download.companieshouse.gov.uk/en_output.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "7442",
+        "last-modified": "Sat, 07 Nov 2026 09:20:34 GMT",
+        "etag": "\"ed5ffe0e1cbccbea1d3f65c50bd9414f\""
+      },
+      "file": "3.txt",
+      "bytes": 2259,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 7442
+    },
+    {
+      "method": "HEAD",
+      "url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip",
+      "fetched_at": "2026-11-12T09:13:22.323Z",
+      "status": 200,
+      "elapsed_ms": 243,
+      "final_url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip",
+      "headers": {
+        "content-type": "application/zip",
+        "content-length": "82462615",
+        "last-modified": "Wed, 11 Nov 2026 13:55:21 GMT",
+        "etag": "\"a9c21d7d9e82fcef71c22a37388f877a-10\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip",
+      "range": "0-4095",
+      "fetched_at": "2026-11-12T09:13:23.066Z",
+      "status": 206,
+      "elapsed_ms": 394,
+      "final_url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip",
+      "headers": {
+        "content-type": "application/zip",
+        "content-length": "4096",
+        "last-modified": "Wed, 11 Nov 2026 13:55:21 GMT",
+        "etag": "\"a9c21d7d9e82fcef71c22a37388f877a-10\""
+      },
+      "file": "5.zip",
+      "bytes": 4096,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/guidance/companies-house-data-products",
+      "fetched_at": "2026-11-12T09:13:23.461Z",
+      "status": 200,
+      "elapsed_ms": 887,
+      "final_url": "https://www.gov.uk/guidance/companies-house-data-products",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "14332",
+        "etag": "W/\"23657e72b51274028bb16261a89e7cc9\""
+      },
+      "file": "6.txt",
+      "bytes": 23985,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 86308
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=companies%20house%20accounts&limit=20",
+      "fetched_at": "2026-11-12T09:13:24.355Z",
+      "status": 200,
+      "elapsed_ms": 283,
+      "final_url": "https://api.apify.com/v2/store?search=companies%20house%20accounts&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"f83c-T4R8F/01aRpzl2+BWqKJYWO58Nc\""
+      },
+      "file": "7.json",
+      "bytes": 63548,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=companies%20house&limit=50",
+      "fetched_at": "2026-11-12T09:13:25.139Z",
+      "status": 200,
+      "elapsed_ms": 98,
+      "final_url": "https://api.apify.com/v2/store?search=companies%20house&limit=50",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"2a848-yMecfgSyNdIqnQ8W2EPVKO1bbsk\""
+      },
+      "file": "8.json",
+      "bytes": 174152,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=ixbrl&limit=20",
+      "fetched_at": "2026-11-12T09:13:25.782Z",
+      "status": 200,
+      "elapsed_ms": 85,
+      "final_url": "https://api.apify.com/v2/store?search=ixbrl&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"fe3d-bVAm3I81xBW0IGt6SmoBZN2OF8o\""
+      },
+      "file": "9.json",
+      "bytes": 65085,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.endole.co.uk/pricing",
+      "fetched_at": "2026-11-12T09:13:25.868Z",
+      "status": 200,
+      "elapsed_ms": 1034,
+      "final_url": "https://www.endole.co.uk/pricing/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "10.txt",
+      "bytes": 11023,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54063
+    },
+    {
+      "method": "GET",
+      "url": "https://companycheck.co.uk/pricing",
+      "fetched_at": "2026-11-12T09:13:27.034Z",
+      "status": 404,
+      "elapsed_ms": 273,
+      "final_url": "https://companycheck.co.uk/pricing",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "11.txt",
+      "bytes": 5437,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 71483
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creditsafe.com/gb/en/pricing.html",
+      "fetched_at": "2026-11-12T09:13:27.389Z",
+      "status": 404,
+      "elapsed_ms": 604,
+      "final_url": "https://www.creditsafe.com/gb/en/pricing.html",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 17408,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 91678
+    }
+  ]
+}

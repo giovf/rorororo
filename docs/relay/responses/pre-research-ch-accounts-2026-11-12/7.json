@@ -1,0 +1,1304 @@
+{
+  "data": {
+    "total": 466,
+    "count": 20,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "UK Company Financials (Companies House accounts as JSON)",
+        "name": "uk-company-financials-json",
+        "username": "registrum",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 75,
+          "totalUsers": 1,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T07:02:30.857Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 63,
+            "TIMED-OUT": 0,
+            "TOTAL": 63
+          }
+        },
+        "description": "Turnover, profit, net assets, cash, employees and more parsed from UK companies' latest filed iXBRL accounts at Companies House, with the prior year, profile and current directors, one flat row per company.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Eugene Registrum",
+        "userPictureUrl": "https://images.apifyusercontent.com/CVzOvZu9VU1EKC4xqLkPjLwl-D2GatxaTf721EOaIdI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYlhQVWFzOE9vX1MwRkVvNUd3b3JIZUdIRHhBZFdKOHEyRlhoeWJ1ZDRBTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpOWpOak0zWWpBMlpHSXpOMkZqTkdRMk5tUTRZalk0TW1JNE9XTmpaRGMzWmpJM1pETmtaall4TkRJd1pEQmlNemc0WldSbE9EbGpOMlEzTm1NMVptTTJQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-financials": {
+                "eventTitle": "Company with financials",
+                "eventDescription": "One UK company returned with parsed accounts (companies without parsable accounts are free)",
+                "eventPriceUsd": 0.02
+              }
+            }
+          },
+          "createdAt": "2026-10-18T06:22:37.163Z",
+          "startedAt": "2026-10-18T06:22:37.163Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "1BPAQJVt7oQ6bVfd5",
+        "url": "https://apify.com/registrum/uk-company-financials-json"
+      },
+      {
+        "title": "UK Companies House Accounts: Company Financials",
+        "name": "uk-annual-accounts",
+        "username": "nordicdata",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 27,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-11-10T19:28:29.854Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 23,
+            "TIMED-OUT": 0,
+            "TOTAL": 23
+          }
+        },
+        "description": "UK company financial statements from Companies House accounts (iXBRL): equity, net assets, total assets, cash, current assets, employees, and turnover and profit when filed. Reads the official daily bulk files, no API key. One JSON row per set of accounts, with the prior year.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Mikkel Jeppesen Juhl",
+        "userPictureUrl": "https://images.apifyusercontent.com/zdT-hpBQU16bTNB-aOxfle8-Ql1t7WVlkIc1hUJNTlU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUVJLYnYwT3N5aVBuLU40RlMxMW5odXBBc2hSYkdBMUQ5OTJsdUExZFNKRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpOWpNak0xT1RSbU16TTBZemxtWXpRMU5HVmxOREk1TmpKa01qRmhaR00wWW1ZME1Ea3dOMlZoWkdFM1pETTNPVGxsWkRJNFpEVXhPR0V3T0RGbVlUTTFQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "annual-account": {
+                "eventTitle": "Accounts with figures",
+                "eventDescription": "One set of UK company accounts parsed into structured financial figures.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-21T18:55:54.413Z",
+          "startedAt": "2026-10-21T18:55:54.413Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "WQlxeYJjmFdw4c8Tr",
+        "url": "https://apify.com/nordicdata/uk-annual-accounts"
+      },
+      {
+        "title": "Companies House Financials: accounts, filings, iXBRL data",
+        "name": "companies-house-financials",
+        "username": "spongy_frame",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 44,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T10:52:34.695Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Extract UK company profiles, accounts filing history and parsed iXBRL financials (turnover, profit, net assets, cash) from Companies House. No personal data.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Spongy Frame Tools",
+        "userPictureUrl": "https://images.apifyusercontent.com/nl6JCY7ZsNS_9hpuBh421cngpnK2iQUG6-zIBmji9pA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vamhPWU5SOHhtWmtMX2FzeThxbzBNQVhVcDRjSDBTVjFoQU9YV0Jnd2RGcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMmRhVldOaE5XNU1WSGQ1Y1hwSmVVTnBVVUp3VVU5dlJraFNURXBhTW1KME1uVlFaRVZhWlhOblpHdFBlVmQ2U3pjOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-profile": {
+                "eventTitle": "Company profile",
+                "eventDescription": "One company: profile, status, SIC codes, registered address, accounts and confirmation dates, accounts filing history with document links.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              },
+              "accounts-parsed": {
+                "eventTitle": "Accounts parsed",
+                "eventDescription": "One set of filed accounts parsed from iXBRL into turnover, profit, net assets, cash, employees and more (current and prior period). Not charged when only a PDF exists.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02
+              }
+            }
+          },
+          "startedAt": "2026-10-02T12:12:13.510Z",
+          "createdAt": "2026-10-02T12:12:13.774Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "WdHGbUIQhHIoNiise",
+        "url": "https://apify.com/spongy_frame/companies-house-financials"
+      },
+      {
+        "title": "UK Company Accounts Data — Companies House Accounts, Net Assets",
+        "name": "uk-company-financials",
+        "username": "rein8",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 57,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-11-10T11:46:32.585Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Companies House accounts as company data, no API key: net assets, cash, creditors, employees, dormant flag and accounts type for every set of accounts filed (daily iXBRL files); turnover and profit when filed. No directors. Unofficial: not affiliated with or endorsed by Companies House.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/aOionKrN-ZTDiuqNwir-hqK9TLPavGB7CKW6LJjUjc4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdmszSk9UYTV3Rjdoak9yeUEtYWN0b3ItUFJyT3JsY0ZVZVBKNTFLM0QtSnBPSnV4bjVKWi1pY29uLnN2Zy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Rein X",
+        "userPictureUrl": "https://images.apifyusercontent.com/XPX_gxzoDSRPSTAovpKDoys9neCzYzkJ8m96x5Tu2mM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcGVrLW9xVEEtb011UDBTdnZMZGl4MjEyUmVxR3ZNUjlzMWtQdEd4d2dKRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkbXN6U2s5VVlUVjNSamRvYWs5eWVVRXRjSEp2Wm1sc1pTMTZSMmQ2T0dOWU16ZGFMVU5vWVhSSFVGUmZTVzFoWjJWZlUyVndYekkxWDE4eU1ESTJYMTh3TWw4MU1sOHpNVjlRVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-10-03T15:59:23.888Z",
+          "startedAt": "2026-10-17T15:59:23.506Z",
+          "apifyMarginPercentage": 0,
+          "notifiedAboutFutureChangeAt": "2026-10-03T15:59:44.071Z",
+          "notifiedAboutChangeAt": "2026-10-17T16:00:22.073Z"
+        },
+        "id": "PRrOrlcFUePJ51K3D",
+        "url": "https://apify.com/rein8/uk-company-financials"
+      },
+      {
+        "title": "UK Company Financials: Companies House Accounts",
+        "name": "uk-company-financials",
+        "username": "frenchdatalab",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 48,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-11-10T13:06:34.694Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "UK companies that just filed accounts at Companies House: employees, net assets, cash, debts, turnover and profit when published, plus SIC sector, address and status. Filter by sector, postcode, town, headcount and net assets; get new filings on a schedule.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ZXxtANfOIBRVxuJ6omOnQ_ROYMuugid6RUFoj-bpKdI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTjhHMW8zM2pYYUdHeHFjcjMtYWN0b3ItVDdmaFFPVHpLSkNlcjJVU0EtR3d5QVRIVXdzVC1pY29uLXVrLWNvbXBhbnktYWNjb3VudHMtNTEyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "French Data lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/x88KnwCbMORfbW_RXPWDrCkl2sJdOyOlVZtxHCbmIAU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdk4zZXBUdm1ZMU5GNW5uVC1BNGhyTGpvZTFKZGJ3a3dJU2NEb3lzT0h6RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUamhITVc4ek0ycFlZVWRIZUhGamNqTXRjSEp2Wm1sc1pTMHdRbEZyWjI0NVZUVnVMV2x0WVdkbExURTNPVEEzTmpJd016YzRNRFV1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-10-07T14:32:53.160Z",
+          "startedAt": "2026-10-07T14:32:52.000Z",
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "company-accounts": {
+                "eventTitle": "Company with accounts",
+                "eventDescription": "One UK company returned with the figures of its latest filed accounts and its register details.",
+                "eventPriceUsd": 0.006,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          }
+        },
+        "id": "T7fhQOTzKJCer2USA",
+        "url": "https://apify.com/frenchdatalab/uk-company-financials"
+      },
+      {
+        "title": "UK Company Accounts & Financials — Companies House Data",
+        "name": "uk-companies-house-accounts-financial-records",
+        "username": "nexgensignal",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 63,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T17:24:30.382Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "UK company balance sheets from recently filed accounts: net assets, cash, employees, debtors, creditors, prior year; turnover where filed. Official Companies House daily files. Part of NexGen Signal — official-source data products",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ejO5UH0v20-W6axOl2L3ylzCnhZDTxPo_hxOGrGZwRE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSFVFVlB2UEdTb3pJUmFoVHktYWN0b3ItMGdudEt0WUppb0x6NlozdzUtNERydzJaU1BrVy11ay1jb21wYW5pZXMtaG91c2UtYWNjb3VudHMtZmluYW5jaWFsLXJlY29yZHMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Signal",
+        "userPictureUrl": "https://images.apifyusercontent.com/E2AM6xIR3RFe1AIRY7pK-UJ_GvYpK4KjdTJNvRKmJj8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vS0lmSk1xRkFqZlVObzZfNkFoOEtwaWtaQUJXU0tma3U1RDlsdG90M2FHNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTRlZGVmxCMlVFZFRiM3BKVW1Gb1ZIa3RjSEp2Wm1sc1pTMXhUR3AzTjB0VVpXTnBMVTVIVXk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": true,
+          "reasonForChange": "Initial pay-per-record pricing (GOLD ladder) at birth.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "uk_accounts_record": {
+                "eventTitle": "UK company accounts record",
+                "eventDescription": "One set of filed company accounts (financial figures and company facts) delivered to your dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0335
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-26T17:22:06.008Z",
+          "startedAt": "2026-09-26T17:22:06.008Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "0gntKtYJioLz6Z3w5",
+        "url": "https://apify.com/nexgensignal/uk-companies-house-accounts-financial-records"
+      },
+      {
+        "title": "UK Business Tax and Filing Deadlines",
+        "name": "uk-business-deadlines",
+        "username": "landlordtools",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 40,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T12:04:33.277Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "UK statutory deadlines from a date: Companies House accounts and confirmation statements, Corporation Tax, VAT returns, Self Assessment, MTD Income Tax quarters, and the tax week and month. See README for limits.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "LandlordTools",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-03T19:09:56.063Z",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Deadline result",
+                "eventDescription": "One business's set of filing and payment deadlines.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-03T19:09:58.138Z"
+        },
+        "id": "flgybOxHdvmlx2qvM",
+        "url": "https://apify.com/landlordtools/uk-business-deadlines"
+      },
+      {
+        "title": "Companies House Deadlines: Overdue Accounts & Filings Due",
+        "name": "companies-house-deadlines",
+        "username": "pikoulas",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 40,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T20:30:31.401Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "UK companies with overdue or upcoming Companies House deadlines: accounts and confirmation statements, each checked live, with due dates, days overdue, address, SIC codes and directors. Filter by postcode, town, industry and company type. For accountants, lenders and B2B sales.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/PEj7T9EzwK_DnlD0CiFE1N05C8mlnHhxYn2c038_X64/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vOTNETzR0cVdJOXdGVGkzclgtYWN0b3IteTdhVk5pcEdkYTlZemxEODEtZEZjUlhBYnhZdS1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Spyridon Pikoulas",
+        "userPictureUrl": "https://images.apifyusercontent.com/s-Nbfn6s1VchigSSkkRWmT0PWtoy-Gk2pdhKQBkGyMY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQXE5ZjhIQlRvaDQ1aWNlTTAtajFvNzZES0tnaHBJX1RuQ0pZcHNXVVA3TS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZPVE5FVHpSMGNWZEpPWGRHVkdremNsZ3RjSEp2Wm1sc1pTMW9NV0p4TUZsdlUzWlBMV0YyWVhSaGNpNXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-10-24T19:54:57.985Z",
+          "startedAt": "2026-10-24T19:54:58.974Z",
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company": {
+                "eventTitle": "Company",
+                "eventDescription": "One company with a matching deadline: its accounts and confirmation statement due dates, days left or overdue, status, type, registered address, SIC codes and, on request, directors.",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              },
+              "register-scan": {
+                "eventTitle": "Register search",
+                "eventDescription": "Once a run: reading Companies House's file of 5.7 million companies for the ones that match.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": false
+              },
+              "residential-traffic": {
+                "eventTitle": "Residential proxy traffic",
+                "eventDescription": "Each 100 KB fetched through Apify's residential proxy, only in runs that use it.",
+                "eventPriceUsd": 0.0012,
+                "isPrimaryEvent": false
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-10-24T20:00:29.958Z"
+        },
+        "id": "y7aVNipGda9YzlD81",
+        "url": "https://apify.com/pikoulas/companies-house-deadlines"
+      },
+      {
+        "title": "UK Company Accounts - Balance Sheet Data (Companies House)",
+        "name": "uk-company-accounts",
+        "username": "j0401",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 45,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T22:16:30.177Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 16,
+            "TIMED-OUT": 0,
+            "TOTAL": 16
+          }
+        },
+        "description": "Accounts filed with Companies House in the latest 14 working days (149,235 filings, OGL v3), parsed from the official iXBRL: company, accounts form, dormancy and audit flags, period dates, balance sheet, equity, cash, profit/loss, turnover and employees. Search or aggregate.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/J0WYuRECLxFfGC4KiW6fAMOGQUgvgYC1BAMu2KyQR2M/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc3FNTklCYUhhdldZaTdDYUYtYWN0b3ItY3RlWGQwVld6YTFMcDh5OUYtMmJvWFpFejBHdi11ay5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Wenhao Yang",
+        "userPictureUrl": "https://images.apifyusercontent.com/qkAdDcChcb_U557AqXFV_TNxrWts52F2sLC9HQtjBj4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaXdNV2Nkb3Z4UWJVRmNEbGpKbFoxclN2QmtSR0dXalZkU3NDVXlfWHlxOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjM0ZOVGtsQ1lVaGhkbGRaYVRkRFlVWXRjSEp2Wm1sc1pTMVBiM0kyVlcxTlpXdzVMWFJ2ZFhocFlXNW5MbXB3WldjLmpwZWc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-accounts-record": {
+                "eventTitle": "UK company accounts record",
+                "eventDescription": "Charged per accounts filing or aggregate row delivered: company number and name, accounts form, dormancy and audit flags, accounting standard, period and filing dates, balance-sheet values, equity, cash, profit/loss, turnover and average employees.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00003
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-10-26T21:47:45.355Z",
+          "startedAt": "2026-10-26T21:47:23.000Z"
+        },
+        "id": "cteXd0VWza1Lp8y9F",
+        "url": "https://apify.com/j0401/uk-company-accounts"
+      },
+      {
+        "title": "UK Overdue Accounts Leads (Companies House)",
+        "name": "uk-overdue-accounts-leads",
+        "username": "best_actors",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 31,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T06:23:03.941Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 7,
+            "TIMED-OUT": 5,
+            "TOTAL": 12
+          }
+        },
+        "description": "UK companies that have missed, or are about to miss, their accounts or confirmation statement deadline, with director, website and email details. Built for accountants and bookkeepers. Pay only for leads delivered.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/_m7vOc16MHzSwM2lcG_7eOqH6mYMAi8qKUvXoM6b-hk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQWFGcWd0d1gzZlV5Zlk2Ym4tYWN0b3ItR0Y5T3V1SjhBR05CclF4YVctUlMxWXphRTI5Yy1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Lewis O'Rorke",
+        "userPictureUrl": "https://images.apifyusercontent.com/MRFGqrVtMCD-RIQjNmc1alZhymteMmR-muZ1d0poup8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOElucS1UWnpDNGxuMjFKZlpLRXBaQjB3d3BIWjZEcWV5a1dYLV9KeVhnby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTemhXY21WSk1uYzFhMnh3UjA5UFVqQTNjRUpIZGkwMGFYZ3RWVmhUVUdscVRESnpabE0zWWxsSU5rbGlXR2RCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "lead": {
+                "eventTitle": "Lead",
+                "eventDescription": "One UK company overdue or due soon on its Companies House filings, with director, website and email details.",
+                "eventPriceUsd": 0.02
+              }
+            }
+          },
+          "createdAt": "2026-10-30T20:08:57.642Z",
+          "startedAt": "2026-10-30T20:08:57.642Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "GF9OuuJ8AGNBrQxaW",
+        "url": "https://apify.com/best_actors/uk-overdue-accounts-leads"
+      },
+      {
+        "title": "UK Companies House Filing Monitor",
+        "name": "uk-companies-house-filing-monitor",
+        "username": "titan_coder",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 39,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-01T20:26:22.245Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 7,
+            "TIMED-OUT": 0,
+            "TOTAL": 7
+          }
+        },
+        "description": "Companies House tools let you look a company up; none of them tells you when something lands. This one watches your list and reports only filings that appeared since your last check — accounts, charges, officer changes, insolvency notices. Official free API, quiet days cost nothing.",
+        "categories": [
+          "MCP_SERVERS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Radu Furtuna",
+        "userPictureUrl": "https://images.apifyusercontent.com/bGlr9Gz9Mf30cUNKZIVVq9jGKZEEIVjQ63WI4w08KMU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZXQ1cDExLUNhZGRkem1kcGR2SVpXTWg1MkFBVXF3Nkx2OGVuZzlfLVZ4cy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSEo2VlU1TU1rUnZibXBTVURoa1JubDBhMlY2VFhSb2FuQlpaRVZyTldabGVtSktOR0puTVMxRGFVcENkR05IWms1Zlp6MXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "new-filing-detected": {
+                "eventTitle": "New filing detected",
+                "eventDescription": "One filing genuinely new since the previous check of this watched company.",
+                "eventPriceUsd": 0.015,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-08T13:00:03.819Z",
+          "startedAt": "2026-09-08T13:00:03.819Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "14fDv4VK6FZ2RvIcH",
+        "url": "https://apify.com/titan_coder/uk-companies-house-filing-monitor"
+      },
+      {
+        "title": "Official Company Headcount: US, UK, France, Norway & 6 more",
+        "name": "company-registry-headcount",
+        "username": "northbell",
+        "stats": {
+          "totalBuilds": 107,
+          "totalRuns": 212,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-11-12T05:10:23.879Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 45,
+            "TIMED-OUT": 0,
+            "TOTAL": 45
+          }
+        },
+        "description": "Company size and employee count from official registries, by name, number or website: US (Form 5500), UK (Companies House, size bands), France (INSEE), Norway (NAV), Latvia, Estonia, Czechia, Slovakia, Romania, Japan. Or US employers by state, size. Source and date on each row. No figure, $0.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/A1ajJhF3P7iwFM7Zt8Fpx07cA2p0ft7L3iG1k4qHhlY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQ0Z0Nll3UTMwbDA3NlREa0UtYWN0b3ItRkxaSlAzMmtjNHN0UXpnRmktWmNwRU93MlpONS1jb21wYW55LXJlZ2lzdHJ5LWhlYWRjb3VudC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Northbell",
+        "userPictureUrl": "https://images.apifyusercontent.com/4-1Ocpi96rKrO9FJ6uGOsD34ebcohIEYzFaaLMsDFyA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOUJzMFBQQkJnNW8wb3ZqLTBLRHIteUczYU9YX2x3Q0xNaDhxa1JmTUsyNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTWGhyVDA5NlQySktTRWRtWWtKd2VISkJVRlYwT1VJNGJsVmxTMmhWU0VGM2RsbFNiVFI0ZUVkTlJWaHVNMHhC.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Run started",
+                "eventDescription": "Charged once per run. Put all your companies in one run and you pay this once.",
+                "eventPriceUsd": 0.01
+              },
+              "company": {
+                "eventTitle": "Company",
+                "eventDescription": "One company with its registry number, the official headcount or band, its reference year, source and licence. $2.00 per 1,000. Error and not-found rows are not charged.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0016
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-17T23:09:02.753Z",
+          "startedAt": "2026-10-17T23:09:02.753Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "FLZJP32kc4stQzgFi",
+        "url": "https://apify.com/northbell/company-registry-headcount"
+      },
+      {
+        "title": "UK Companies House Scraper",
+        "name": "uk-companies-house-scraper",
+        "username": "zapticx",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 99,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T13:32:28.235Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Look up UK companies by company number or Companies House URL, or search the register by name, SIC code, status, address text and incorporation date. Returns company profiles, registered office, accounts dates, directors and PSC beneficial owners from the official API. No API key needed to start.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/zAnQn2NUcs1UskdkZG1vpgH9ADzEW-sxZIalOqeXEw0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2pGOWRBdXJqWDIyblVNZjEtYWN0b3ItWm9lQmRrdEZFd25zUHVtdU4taHYzVVVnTDBiZy1VS19Db21wYW5pZXNfSG91c2VfU2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Zapticx",
+        "userPictureUrl": "https://images.apifyusercontent.com/a9pvto1boBVANvpX_9YFgILm30v9iBrRjxygjYkP2DQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vM2hDRERqczFDdjR2VVM1ZGFpVldzbVEtVVF5cDF6U01IOE56R2t5WVJGZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMnBHT1dSQmRYSnFXREl5YmxWTlpqRXRjSEp2Wm1sc1pTMXlhRVY2ZWxSTWRqZ3lMVUZ3YVdaNVgxQnliMlpwYkdVdWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "createdAt": "2026-09-07T21:03:26.871Z",
+          "startedAt": "2026-09-07T21:03:25.994Z",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "Initial pricing for the three non-stacking per-company tiers.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-basic": {
+                "eventTitle": "Company (basic)",
+                "eventDescription": "One company with register profile data only: name, number, status, type, incorporation date, registered office, SIC codes and, when the full profile is on, accounts and confirmation statement dates.",
+                "eventPriceUsd": 0.002,
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true
+              },
+              "company-enriched": {
+                "eventTitle": "Company (with directors and/or PSC)",
+                "eventDescription": "One company including directors/officers and/or Persons with Significant Control and PSC statements. Charged instead of, never in addition to, the basic event.",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": false
+              },
+              "company-deep": {
+                "eventTitle": "Company (with filings, charges or insolvency)",
+                "eventDescription": "One company including filing history, charges or insolvency data. Charged instead of, never in addition to, the basic and enriched events.",
+                "eventPriceUsd": 0.008,
+                "isOneTimeEvent": false
+              }
+            }
+          }
+        },
+        "id": "ZoeBdktFEwnsPumuN",
+        "url": "https://apify.com/zapticx/uk-companies-house-scraper"
+      },
+      {
+        "title": "UK Company Accounts – Turnover, Profit & Net Assets",
+        "name": "uk-company-accounts",
+        "username": "ukdatakit",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 5,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T09:48:29.216Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "Headline financials from UK company accounts filed at Companies House: turnover, profit, cash, net assets, employees and last year's figures. Reads the free daily accounts files, so no Companies House API key. Filter by size or check company numbers.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Kg4J_1ci9nn3G2ZVMZPn_oAQWkT2yrHoT9E8a6xYF1U/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdUFHT2tjVzJwcDRxTjRvZ3ctYWN0b3ItSHBjem91Qjk2Mmk4YmlURDUtVWFMTXZQUWpyYi11ay1jb21wYW55LWFjY291bnRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Christopher Brown",
+        "userPictureUrl": "https://images.apifyusercontent.com/3iR2uNg4wTi16Gb7TI65Camomct9h7oPWI0qXDzuT8E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNnBXdXZKS3JlV3N6XzlYTkdjUjR5UVg0cUw0cHZWdjBPNG94RlBzc2FmSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkVUZIVDJ0alZ6SndjRFJ4VGpSdlozY3RjSEp2Wm1sc1pTMWlaMFZDWWpsaWJHdDBMV2xqYjI0dGJXRnphMkZpYkdVdE5URXlMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00001
+              },
+              "company-accounts": {
+                "eventTitle": "Company accounts",
+                "eventDescription": "One company with parsed accounts figures saved to the dataset",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-11-10T09:45:12.081Z",
+          "startedAt": "2026-11-10T09:45:12.081Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "HpczouB962i8biTD5",
+        "url": "https://apify.com/ukdatakit/uk-company-accounts"
+      },
+      {
+        "title": "UK Companies House Search: New Companies & Status Checks",
+        "name": "uk-companies-house",
+        "username": "jp-data-lab",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 20,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T12:04:33.647Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 9,
+            "TIMED-OUT": 0,
+            "TOTAL": 9
+          }
+        },
+        "description": "Verify UK companies by number or list new incorporations by SIC code, location and date from the official Companies House API: status, overdue accounts, insolvency flags. Fast, no browser. No director names or street addresses.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/edlJLx1CrCj6CqBigLtJJM1GLZcF2odAZx5rSOpa9OA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2tGUXpjWE5WaUhPVkJDczktYWN0b3ItdmdWdUNMSHl6Z1hkSldtUGgtYXMzU3lGU3VYdS1pY29uLXVrLWNvbXBhbmllcy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "JP Data Lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/HbFFKd1WkjK3YxP0_4EkOHdTNvNxPU6Y3QSWWRYX0Ss/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdXJIUGllVkhMVHRlOEx6WnZNeTdCOVQ1RzJQT01vbU9BeU0tSTFNbWtqby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMnRHVVhwaldFNVdhVWhQVmtKRGN6a3RjSEp2Wm1sc1pTMVZUM1p4Um1kYVVEVnZMV2xqYjI0dGNISnZabWxzWlM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Company",
+                "eventDescription": "One company in the output",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-11-01T23:11:51.675Z",
+          "startedAt": "2026-11-01T23:11:51.675Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "vgVuCLHyzgXdJWmPh",
+        "url": "https://apify.com/jp-data-lab/uk-companies-house"
+      },
+      {
+        "title": "Company Profile: financials, filings, events",
+        "name": "company-profile",
+        "username": "companyfacts",
+        "stats": {
+          "totalBuilds": 31,
+          "totalRuns": 432,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T11:39:41.842Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 0,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "US, UK and Indian company profiles by name, ticker, CIK, Companies House number or CIN: financials, filings, officers, beneficial owners, group structure, sanctions screening and change alerts — every fact with its source. Standby REST API + MCP server.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/praZuftyG9gS32-SRBixV8VUPWk54UEpd3CDxG79EMs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ1dJa1hSMG9qZDlsa05udG8tYWN0b3Itc2UyT2ZHa3lCclV5cDBUSHgtWHVoNzRCS1NYdC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Jhutan Debnath",
+        "userPictureUrl": "https://images.apifyusercontent.com/6k3OQhs1-1EXzYSJYrUPEEDpZBVWPIaZGBNznQFo6ZQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQUE1Z21VSE9lY0loOFlpbGNBLW9pNVNQSkZnY0JTcHBXQ1VNOFB1VWY2MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTME0zTTJ0NFJGaHFjRmhKZEV4eGNWOU5lVTkwVUVKTmVVUjZaazVOWDB3dFdFUnlXRWxPU2xsclgzQTVWVmt3TVhjOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "profile-us": {
+                "eventTitle": "US company profile",
+                "eventDescription": "One resolved US company profile: identity, business details, 10-year financials, filings, events. Unresolved queries are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "profile-uk": {
+                "eventTitle": "UK company profile",
+                "eventDescription": "One resolved UK company profile with Companies House financials, officers and PSC. Coming in the next release.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.03
+              },
+              "person": {
+                "eventTitle": "Officer / person record",
+                "eventDescription": "One officer, director or insider record attached to a profile. Coming in the next release.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              },
+              "change-detected": {
+                "eventTitle": "Change detected",
+                "eventDescription": "One change event emitted by monitoring: new filing, name, status, officer or PSC change. Coming in the next release.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              },
+              "profile-in": {
+                "eventTitle": "India company profile",
+                "eventDescription": "One resolved Indian company profile: MCA identity, capital, and quarterly/annual financials for listed companies (NSE + BSE filings).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              },
+              "resolve-match": {
+                "eventTitle": "Batch name match",
+                "eventDescription": "One matched record in batch entity resolution (CSV/list matching to registry ids). Unresolved queries are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              },
+              "screen": {
+                "eventTitle": "Company screen query",
+                "eventDescription": "One screening query (find companies by criteria: country, industry, financial ranges, risk flags).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              }
+            }
+          },
+          "startedAt": "2026-08-31T13:25:18.613Z",
+          "createdAt": "2026-08-31T13:25:19.988Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-31T13:35:50.338Z"
+        },
+        "id": "se2OfGkyBrUyp0THx",
+        "url": "https://apify.com/companyfacts/company-profile"
+      },
+      {
+        "title": "UK Companies House Lookup: status, accounts, SIC codes",
+        "name": "uk-companies-house-lookup",
+        "username": "factline",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 13,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-10T20:00:32.393Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 10,
+            "TIMED-OUT": 0,
+            "TOTAL": 10
+          }
+        },
+        "description": "Look up UK companies by name or company number in the official Companies House register: status, type, incorporation date, registered address, SIC codes, accounts and confirmation statement due dates, insolvency history and charges. Bulk list or dataset ID. Pay per company.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Matthew Sammels",
+        "userPictureUrl": "https://images.apifyusercontent.com/jIsIYu7muVX7eieJSNqHeMQJjA40NXfZpnIKoC0A-5w/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVkxwRnZKSzdhQlJHMW05N3p2M3lzNmhvODBsLU9zMXFCVkQ0dmV4R0xkay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUR3A1WlU1c2JVOXhaVzFFWTIweVEwNWpSSGRGY0RoVmRYRlFTRlpxYW1aVVN6ZDNla0ZMUjBWcFgyb3llVTkzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "company-record": {
+                "eventTitle": "Company record",
+                "eventDescription": "One company checked (failed lookups are not charged)",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00255
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0021
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-10-31T20:28:10.761Z",
+          "startedAt": "2026-10-31T20:28:10.761Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "DC29F8bvzgXkXMt1Q",
+        "url": "https://apify.com/factline/uk-companies-house-lookup"
+      },
+      {
+        "title": "UK Company Distress Check: Status, Filings, Insolvency",
+        "name": "uk-company-distress-check",
+        "username": "accountable_eel",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 16,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T07:50:32.379Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 14,
+            "TIMED-OUT": 0,
+            "TOTAL": 14
+          }
+        },
+        "description": "Check if a UK company is insolvent or in distress. One row per company number: Companies House status, overdue accounts, charges, insolvency cases and Gazette insolvency notices, with a distress level. No API key needed. Unknown numbers are never charged.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/uPKAmUGB0cVFpezo2FtLJfDzaqYDYyrMbhNYPJyRTKE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNkVMTUNxazg0eEpBSHU2SmQtYWN0b3ItRWEwajFUbGt3aXpjZTA3UVgtWHQzaG1Vd29WWS11ay1jb21wYW55LWRpc3RyZXNzLWNoZWNrLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Adriana Voss",
+        "userPictureUrl": "https://images.apifyusercontent.com/CGe0bLNDet-YF5zEdso7hmRkv8G729sNu_uWbXRy0eU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdWEwVVBjRXJSeE5hSEx2WDBJMW9pSGk4Z0x0YWdOY2VTMEhzNlhBMXBjby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOa1ZNVFVOeGF6ZzBlRXBCU0hVMlNtUXRjSEp2Wm1sc1pTMXZPV2RHUVc5SWRqQjJMWEJsZUdWc2N5MWhiblJ2Ym1sdkxXSmhkR2x1YVdNdE1qVTNNelF6TkMwME1UWTBOREU0TG1wd1p3LmpwZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.002
+              },
+              "company-checked": {
+                "eventTitle": "Company checked",
+                "eventDescription": "Charged once per UK company whose Companies House record was read and checked for insolvency status, overdue filings, charges, insolvency cases and Gazette insolvency notices. An unknown or badly formed company number, a duplicate and a company whose page could not be read are never charged.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0051
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0039
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              }
+            }
+          },
+          "reasonForChange": "The per-run start fee is increasing to cover the platform and proxy cost of runs that return no results.",
+          "createdAt": "2026-10-18T23:37:20.240Z",
+          "startedAt": "2026-10-18T23:37:20.240Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Ea0j1Tlkwizce07QX",
+        "url": "https://apify.com/accountable_eel/uk-company-distress-check"
+      },
+      {
+        "title": "UK Company Lookup: Profile, Directors, Owners & Filings",
+        "name": "uk-company-lookup",
+        "username": "best_actors",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 5,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-11T06:23:20.937Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "Look up any UK company on Companies House: status, industry, accounts and confirmation statement due dates, directors, owners (PSC), recent filings and charges. Also search companies by name and see every company a person is a director of.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/z2PmISlza4EUxMkfIJBus9rkdJ0bk4QIyK6BiXd8fjw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQWFGcWd0d1gzZlV5Zlk2Ym4tYWN0b3ItVktTQ3h1dVFNUFZNd0tUZUUtdWRUVUI0UElVSC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Lewis O'Rorke",
+        "userPictureUrl": "https://images.apifyusercontent.com/MRFGqrVtMCD-RIQjNmc1alZhymteMmR-muZ1d0poup8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOElucS1UWnpDNGxuMjFKZlpLRXBaQjB3d3BIWjZEcWV5a1dYLV9KeVhnby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTemhXY21WSk1uYzFhMnh3UjA5UFVqQTNjRUpIZGkwMGFYZ3RWVmhUVUdscVRESnpabE0zWWxsSU5rbGlXR2RCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-profile": {
+                "eventTitle": "Company profile",
+                "eventDescription": "One company's full profile: status, deadlines, directors, owners, filings and charges.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              },
+              "search-result": {
+                "eventTitle": "Search result",
+                "eventDescription": "One company returned by a name search.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              },
+              "officer": {
+                "eventTitle": "Person's appointments",
+                "eventDescription": "One person returned with every company they are or were an officer of.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              }
+            }
+          },
+          "startedAt": "2026-11-09T19:59:40.688Z",
+          "createdAt": "2026-11-09T19:59:41.230Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "VKSCxuuQMPVMwKTeE",
+        "url": "https://apify.com/best_actors/uk-company-lookup"
+      }
+    ]
+  }
+}
