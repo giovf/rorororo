@@ -2836,3 +2836,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 00:20 | burn-down | stats_part_carried names the phase; 3 tests (retry after the window, carried table + fresh blob, first night)
 - 2026-11-12 00:20 | burn-down | Deploys on the next CI run; proof: 11-13 and 11-14 Daily rows with no stats_precompute_failed for either source
 - 2026-11-12 00:37 | burn-down | Pause applies at statsPaceRows (10k rows) so small fixtures stay fast; manifest 0.28.7.0, connector regenerated
+- 2026-11-12 00:38 | burn-down | Stopping at ~32 min: 3 research passes (4 items), 1 built (v0.28.7); next: foundry pre-research-second-pass-after-park
