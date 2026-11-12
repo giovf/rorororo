@@ -1,4 +1,0 @@
-HEAD https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip
-HEAD https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-12.zip
-GET RANGE=0-1048575 https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip
-GET RANGE=82397079-82462614 https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip
