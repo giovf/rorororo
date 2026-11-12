@@ -2872,3 +2872,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 02:27 | burn-down | Deploys on the next CI run; first wave 05:50 11-13: the Daily numbers row shows the refresh_log row and count
 - 2026-11-12 02:27 | burn-down | Queued gankdat uk-payment-practices-day-30 (2, not before 12-12): route or field on ≥ 1 paid or keyed call
 - 2026-11-12 02:27 | burn-down | Stopping at ~21 min: 1 item built (v0.29.0); pipeline starved and cooled, both pre-research passes spent
+- 2026-11-12 04:06 | triage | notify owner dispatched: last run started 00:57 UTC, 3 h ago
