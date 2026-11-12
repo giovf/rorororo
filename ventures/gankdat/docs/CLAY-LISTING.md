@@ -63,6 +63,22 @@ plus contact and links. Shorten to the field's limit where one applies.
   (30/min for the company record, 60/min otherwise, `Retry-After` on 429), field paths and
   conditional-run guidance on https://gankdat.com/clay. Also an MCP server (/mcp) and x402
   pay-per-call for agents. Pricing: free 250 calls a month; £5 per 1,000; plans to 100k.
+- **Which Endpoint(s) do you want to turn into Clay actions?** (form field, seen by the owner 2026-11-12)
+  Five GET endpoints, one per UK register check. Each takes one query parameter mapped from a Clay
+  column and returns JSON { ok, data[], meta.total }: 1. Companies House company record — GET
+  https://gankdat.com/v1/data/uk-company-profiles?company_number={number} (or ?company={name}); status,
+  incorporation date, SIC codes, overdue accounts/confirmation statement, charges, insolvency history.
+  2. Charity Commission register — GET https://gankdat.com/v1/data/uk-charities?company_number={number}.
+  3. Gazette corporate insolvency notices — GET https://gankdat.com/v1/data/uk-insolvency?company={name}.
+  4. UK Sanctions List (FCDO/OFSI) — GET https://gankdat.com/v1/data/uk-sanctions?name={name}.
+  5. Home Office licensed visa sponsors — GET https://gankdat.com/v1/data/uk-sponsors?organisation={name}.
+  Auth: Authorization: Bearer <user's gankdat API key>. Field paths and Clay column configs:
+  https://gankdat.com/clay
+- **Rate Limit of the endpoint(s)** (form field): Per API key: 30 requests/minute for
+  uk-company-profiles (it reads the Companies House API live), 60 requests/minute for the other four.
+  Over the limit the API answers HTTP 429 with a Retry-After header; a briefly busy register answers 503
+  with Retry-After. Monthly volume follows the user's plan: free 250 calls a month, paid plans from £5
+  per 1,000 up to 100,000 a month.
 - **Customers today:** self-serve developers and AI agents (MCP + x402), the Excel add-in on
   AppSource; UK data buyers on the Apify Store.
 - **Why Clay:** 220 providers on the marketplace and none native to the UK registers — Beauhurst
