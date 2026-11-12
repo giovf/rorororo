@@ -80,6 +80,9 @@ dist-release/
 dist-free/
 ventures/*/read-focus.zip
 *.zip
+# a relay Range slice of a ZIP (≤ 2 MB, docs/relay/README.md) must reach the repo: the 2026-11-12 09:13
+# round saved Accounts_Bulk_Data-2026-11-11.zip bytes 0-4095 as 5.zip and this rule dropped it
+!docs/relay/responses/**/*.zip
 
 # ── Owner screen recordings (large); extracted PNG frames are committed
 ventures/*/assets/screenshots/*.mov
