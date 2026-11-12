@@ -305,3 +305,4 @@
 - 2026-11-07 23:59 (backlog) | notification | google.com | Report domain: gankdat.com Submitter: google.com Report-ID: 7438034353565875505 | Google DMARC aggregate report for gankdat.com | logged
 - 2026-11-11 14:14 | notification | trycoinstancy.com | Show what gankdat can do | cold paid-placement/launch-package pitch from Coinstancy (4th); no customer ask | logged
 - 2026-11-12 09:02 | store | apify.com | Important security update (Action required) | Apify breach 9-10 Nov: all API tokens and Proxy passwords rotated, old tokens invalid; no sign our data affected; our publish-actors CI token now fails | needs owner (new token into GitHub secret)
+- 2026-11-12 11:58 | notification | github.com | Run failed: gankdat publish - main (4dc9b25) | gankdat-publish.yml run 43213683738 failed at step 'Apify actors — push changed, price, publish' (17 s), consistent with the rotated Apify token; watchdog line pending | logged (owner: line of 09:02 already open)
