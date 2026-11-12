@@ -2861,3 +2861,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 01:40 | burn-down | Experian £24.99 ex VAT per report with days beyond terms; Companywatch 404, Capterra 403 (price from search)
 - 2026-11-12 01:40 | burn-down | Call: no park condition holds; value is the join on the company number for the lookup and /diligence
 - 2026-11-12 01:40 | burn-down | exchange.json: uk-payment-practices-lookup promoted; hosts experian, companywatch, capterra added
+- 2026-11-12 01:39 | burn-down | Stopping at ~33 min: 3 foundry items built, 1 spike seeded and done; next: gankdat uk-payment-practices
