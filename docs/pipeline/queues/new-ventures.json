@@ -619,8 +619,9 @@
       "effort_days": 0.5,
       "proof": "docs/exchange/spikes/uk-company-accounts-financials.md with the licence quote, the member count and bytes-per-member of one daily ZIP, the tag-coverage table of ten inflated iXBRL members, the rival price table (Endole, Company Check, Creditsafe, Global Mindset Marketing) and a promote / park call; a promote adds the gankdat item with its day count and the dated backfill item, a park adds `uk-company-accounts-financials` to docs/pipeline/exchange.json with a trigger",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-12"
+      "status": "doing",
+      "added": "2026-11-12",
+      "doing_since": "2026-11-12"
     }
   ],
   "research_after": "2026-11-18"
