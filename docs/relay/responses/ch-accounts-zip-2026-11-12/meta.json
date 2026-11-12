@@ -1,0 +1,70 @@
+{
+  "request": "ch-accounts-zip-2026-11-12",
+  "fetched_at": "2026-11-12T17:12:21.842Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip",
+      "fetched_at": "2026-11-12T17:12:17.473Z",
+      "status": 200,
+      "elapsed_ms": 735,
+      "final_url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip",
+      "headers": {
+        "content-type": "application/zip",
+        "content-length": "82462615",
+        "last-modified": "Wed, 11 Nov 2026 13:55:21 GMT",
+        "etag": "\"a9c21d7d9e82fcef71c22a37388f877a-10\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-12.zip",
+      "fetched_at": "2026-11-12T17:12:18.709Z",
+      "status": 200,
+      "elapsed_ms": 330,
+      "final_url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-12.zip",
+      "headers": {
+        "content-type": "application/zip",
+        "content-length": "81360119",
+        "last-modified": "Thu, 12 Nov 2026 07:45:21 GMT",
+        "etag": "\"1eb81dfd6eec13637ea8712c214705f8-10\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip",
+      "range": "0-1048575",
+      "fetched_at": "2026-11-12T17:12:19.540Z",
+      "status": 206,
+      "elapsed_ms": 345,
+      "final_url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip",
+      "headers": {
+        "content-type": "application/zip",
+        "content-length": "1048576",
+        "last-modified": "Wed, 11 Nov 2026 13:55:21 GMT",
+        "etag": "\"a9c21d7d9e82fcef71c22a37388f877a-10\""
+      },
+      "file": "3.zip",
+      "bytes": 1048576,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip",
+      "range": "82397079-82462614",
+      "fetched_at": "2026-11-12T17:12:21.262Z",
+      "status": 206,
+      "elapsed_ms": 324,
+      "final_url": "https://download.companieshouse.gov.uk/Accounts_Bulk_Data-2026-11-11.zip",
+      "headers": {
+        "content-type": "application/zip",
+        "content-length": "65536",
+        "last-modified": "Wed, 11 Nov 2026 13:55:21 GMT",
+        "etag": "\"a9c21d7d9e82fcef71c22a37388f877a-10\""
+      },
+      "file": "4.zip",
+      "bytes": 65536,
+      "truncated": false
+    }
+  ]
+}
