@@ -2883,3 +2883,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 09:18 | build | Spike question: figures as a field of the company lookup and a ninth /diligence register, not a standalone dataset
 - 2026-11-12 09:18 | build | Hosts endole, companycheck, creditsafe, companyrecord, globalmindsetmarketing added to the relay list
 - 2026-11-12 10:06 | triage | notify owner dispatched: last run started 07:06 UTC, 3 h ago
+- 2026-11-12 10:07 | watchdog | ci-minutes: 398 billed min/7d (~1706/mo; public, no cap) top: notify owner 78, gankdat metrics 59, gankdat 46
