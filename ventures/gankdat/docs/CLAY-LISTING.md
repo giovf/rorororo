@@ -83,6 +83,13 @@ plus contact and links. Shorten to the field's limit where one applies.
   asks to be considered for the paid credit-marketplace tier (Clay buys our calls on an annual API agreement); the fit
   review still routes us, so the HTTP API listing remains the fallback. Any contract Clay offers comes back to the owner
   as its own decision before signing.
+- **How much do you charge for this data (per endpoint)?** (form field, 2026-11-12): Same price for all five
+  endpoints: one credit per call. Retail today (self-serve, user's own key): free 250 calls/month; then US$6 per 1,000
+  (US$0.006/call), down to US$299 per 100,000 (US$0.003/call). GBP: £5/1k to £239/100k. For Clay's marketplace
+  (wholesale, Clay billing its users): US$0.004 per call that returns a record, no charge for empty results; US$0.0025
+  per call above 1M calls/month. Monthly invoice in arrears, no minimum commitment. Why: Clay resells at ~US$0.045–0.05
+  a Data Credit (≥ 10× margin at one credit); between our two top plan rates; marginal cost ≈ 0 — the one ceiling is
+  uk-company-profiles' shared Companies House quota (600 req / 5 min ≈ 170k a day), raised only if a contract comes.
 - **Customers today:** self-serve developers and AI agents (MCP + x402), the Excel add-in on
   AppSource; UK data buyers on the Apify Store.
 - **Why Clay:** 220 providers on the marketplace and none native to the UK registers — Beauhurst
