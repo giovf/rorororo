@@ -608,8 +608,9 @@
       "effort_days": 0.4,
       "proof": "docs/exchange/spikes/uk-payment-practices-lookup.md with the licence quote, the row count and latest filing date from the full export, the rival price table (Experian, Companywatch, 193market) and a promote / park call; a promote adds the gankdat item with its day count, a park adds `uk-payment-practices-lookup` to docs/pipeline/exchange.json with a trigger",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-12"
+      "status": "doing",
+      "added": "2026-11-12",
+      "doing_since": "2026-11-12"
     }
   ],
   "research_after": "2026-11-18"
