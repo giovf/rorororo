@@ -2898,3 +2898,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 17:25 | interactive | Five Fable routines moved to claude-fable-5-2 after a probe answered model ok
 - 2026-11-12 17:25 | interactive | Queued foundry routine-models-auto-update (7) and gankdat clay-intro-video (3); 039 closed
 - 2026-11-12 17:25 | burn-down | foundry routine-models-auto-update held to 11-13: needs the trigger connector only build/review carry
+- 2026-11-12 17:30 | burn-down | Spike spike-uk-esg-disclosure-fields done: promote as gankdat uk-esg-disclosures (3, 0.8 day)
+- 2026-11-12 17:30 | burn-down | Relay 4: 2026 statements file sampled 4,241 rows (3 × 2 MB Range): 92 % of private rows carry a company number
+- 2026-11-12 17:30 | burn-down | Files regenerate hourly (Last-Modified 17:00 → 17:16); 2020–2027 files 0.3–19 MB; pay gap 2025: 88 % keyed
+- 2026-11-12 17:30 | burn-down | Call: no park condition holds; value is the join for /diligence and the company lookup, as payment practices
+- 2026-11-12 17:30 | burn-down | exchange.json: uk-esg-disclosure-fields promoted; gankdat uk-esg-disclosures queued (backfill, day-30 at build)
+- 2026-11-12 17:31 | burn-down | Stopping at ~21 min: pre-research spike seeded and done, foundry item held; next: gankdat clay-intro-video (3)

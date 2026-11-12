@@ -852,6 +852,17 @@
       "spiked": "2026-11-12",
       "updated": "2026-11-12",
       "venture": "gankdat"
+    },
+    {
+      "id": "uk-esg-disclosure-fields",
+      "title": "UK modern slavery statement registry (Home Office, OGL v3) and gender pay gap service (GEO, OGL v3) on gankdat — an `esg` field on the company lookup, two lookups by company number and a tenth register for the /diligence agent, from the yearly statement summaries CSVs (≈ 11–14k statements a registry year, 92 % with a company number) and the yearly pay gap files (≈ 10.7k employers, 88 % with a company number)",
+      "status": "promoted",
+      "why": "Spike 2026-11-12 (burn-down, docs/exchange/spikes/uk-esg-disclosure-fields.md, four relay rounds plus registry reads): OGL v3 on every page of both services, no access terms; the statement summaries are one CSV a registry year (17–19 MB, Range honoured, regenerated hourly, 75 columns with CompanyNumber on 92 % of private-sector rows in a 4,241-statement sample), the pay gap files 4.0–4.3 MB a year with CompanyNumber on 88 % of rows and a 94 % year-on-year employer overlap. Buyers pay for the series inside platforms (Beauhurst bundles the pay gap data; Sedex £195 a site a year and buyers from £2,900; EcoVadis quoted US$15–40k) while every shelf copy of the files sits at 1 user/30 d (Apify 5 + 2 actors and a pack bundling payment practices, pay gap and slavery), so the standalone dataset would park; the promoted shape is the two fields on the calls gankdat's buyers already make, keyed on the Companies House number the diligence registers share.",
+      "trigger": "Promoted to gankdat `uk-esg-disclosures` (3, 0.8 day): the two routes, the `esg` profile field, the diligence register, the actor, one wave over the open registry-year files; the 2017–2025 backfill and the day-30 read are queued at build. Day-30 proof: a route or the field on ≥ 1 paid or keyed external call, else they stay free fields and the actor is left to the Store.",
+      "added": "2026-11-12",
+      "spiked": "2026-11-12",
+      "updated": "2026-11-12",
+      "venture": "gankdat"
     }
   ]
 }
