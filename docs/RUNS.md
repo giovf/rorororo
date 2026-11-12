@@ -2912,3 +2912,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 17:30 | burn-down | Call: no park condition holds; value is the join for /diligence and the company lookup, as payment practices
 - 2026-11-12 17:30 | burn-down | exchange.json: uk-esg-disclosure-fields promoted; gankdat uk-esg-disclosures queued (backfill, day-30 at build)
 - 2026-11-12 17:31 | burn-down | Stopping at ~21 min: pre-research spike seeded and done, foundry item held; next: gankdat clay-intro-video (3)
+- 2026-11-12 21:05 | triage | notify owner dispatched: last run started 18:33 UTC, 2 h ago
+- 2026-11-12 21:05 | triage | inbox not read: Gmail connector needs re-sign-in
