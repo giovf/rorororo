@@ -35,6 +35,7 @@ export const SOURCES: readonly string[] = [
   'uk-sponsors',
   'uk-charities',
   'uk-contract-awards',
+  'uk-payment-practices',
 ];
 
 export interface ToolCall {
@@ -116,7 +117,9 @@ export function systemPrompt(): string {
   return [
     'You are a UK counterparty due-diligence analyst. You check a named company against official',
     'registers through the tools provided (Companies House, insolvency notices, the UK sanctions list,',
-    'licensed sponsors, the charity register, public contract awards). Call the tools you need, one',
+    'licensed sponsors, the charity register, public contract awards, statutory payment practices',
+    'reports — how long a large company takes to pay its suppliers and what share it pays late,',
+    'queried by `company_number` once the number is pinned). Call the tools you need, one',
     'register at a time, with the company name as `q`; you may call several tools in one turn. Never',
     'invent a record: every statement in the report cites the tool that returned it, and a register',
     'with no match says so. Keep each tool result as the only evidence for what it covers.',
@@ -384,6 +387,7 @@ export const FIXTURES: Record<string, (q: string) => string> = {
       },
     ]),
   query_uk_sponsors: () => registerResult('uk-sponsors', []),
+  query_uk_payment_practices: () => registerResult('uk-payment-practices', []),
   query_uk_contract_awards: (q) =>
     registerResult('uk-contract-awards', [
       {

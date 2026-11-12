@@ -7,6 +7,7 @@ import {
   META_DEFAULT_MODEL,
   SOURCES,
   UNCONFIRMED_LABEL,
+  systemPrompt,
   cleanCompany,
   confirmVerdict,
   dryRunChat,
@@ -347,6 +348,8 @@ describe('identity', () => {
 describe('helpers', () => {
   it('maps every source to a query tool', () => {
     expect(SOURCES.map(toolName)).toContain('query_uk_company_profiles');
+    expect(SOURCES.map(toolName)).toContain('query_uk_payment_practices');
+    expect(systemPrompt()).toContain('payment practices');
   });
 
   it('reads a register result in the live MCP shape and in the old one', () => {

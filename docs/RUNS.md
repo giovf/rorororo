@@ -2862,3 +2862,13 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 01:40 | burn-down | Call: no park condition holds; value is the join on the company number for the lookup and /diligence
 - 2026-11-12 01:40 | burn-down | exchange.json: uk-payment-practices-lookup promoted; hosts experian, companywatch, capterra added
 - 2026-11-12 01:39 | burn-down | Stopping at ~33 min: 3 foundry items built, 1 spike seeded and done; next: gankdat uk-payment-practices
+- 2026-11-12 02:09 | burn-down | Main green at STEP 0; no new owner notes; first-runs: nothing owed; item claimed 02:07 before npm ci
+- 2026-11-12 02:27 | burn-down | Built gankdat uk-payment-practices: statutory payment practices reports as a D1 register, v0.29.0
+- 2026-11-12 02:27 | burn-down | Source streams the 100 MB generated export CSV (52 cols verified in relay 1.csv); narrative columns dropped
+- 2026-11-12 02:27 | burn-down | Wave 5 beside uk-schools, daily delta (no weekly wave exists; a day writes only its new filings)
+- 2026-11-12 02:27 | burn-down | payment_practices on uk-company-profiles: latest report + count by exact number, null for non-reporters
+- 2026-11-12 02:27 | burn-down | /diligence reads the register as its eighth tool; actor uk-payment-practices; connector regenerated
+- 2026-11-12 02:27 | burn-down | 13-record fixture from the relay CSV; 7 tests (parse, filters, fallback, join, agent); landing, terms, sitemap
+- 2026-11-12 02:27 | burn-down | Deploys on the next CI run; first wave 05:50 11-13: the Daily numbers row shows the refresh_log row and count
+- 2026-11-12 02:27 | burn-down | Queued gankdat uk-payment-practices-day-30 (2, not before 12-12): route or field on ≥ 1 paid or keyed call
+- 2026-11-12 02:27 | burn-down | Stopping at ~21 min: 1 item built (v0.29.0); pipeline starved and cooled, both pre-research passes spent

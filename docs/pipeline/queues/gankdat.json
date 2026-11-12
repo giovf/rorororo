@@ -1205,13 +1205,24 @@
     {
       "id": "uk-payment-practices",
       "title": "UK payment practices reports on gankdat: `src/sources/uk-payment-practices.ts` streams `https://check-payment-practices.service.gov.uk/export/csv/` (one generated CSV, 52 columns, ≈ 115k rows / 100 MB, no Range — one pass through `csvRows()`), keeps per report the Report Id, company number and name, period start/end, filing date, average time to pay, % paid within 30 / 31–60 / 60+ days, % not paid within agreed terms, % disputed, shortest and longest standard payment period, the yes/no policy answers and the report URL (Blind Mode: drop the narrative, approver and value columns), D1 by `idOf(report_id)` paced with `d1Pace`, weekly wave; route `/v1/data/uk-payment-practices` by company number (latest + history); `payment_practices` on `uk-company-profiles` (latest five numbers and filing date, null for a non-reporter); the slug added to `REGISTERS` in packages/landing/src/diligence-core.ts; fixtures, `test/uk-payment-practices.spec.ts`, landing card, terms row (OGL v3, attribute the Department for Business and Trade), sitemap, `server.json` + constants version bump, ARCHITECTURE note; Apify actor `uk-payment-practices` copied from a register actor",
-      "why": "Spike 2026-11-12 (docs/exchange/spikes/uk-payment-practices-lookup.md): OGL v3 on every page and no access terms; the export is one streamed 100 MB file (Range not honoured), the size the charity wave already handles; Experian sells the payment insight at £24.99 a report, 193market's API on the same CSV at US$49–399/month, Companywatch as a platform add-on — but every standalone shelf shows 1 user, so the value is the join: gankdat's seven diligence registers and the company lookup share the Companies House number, and `pays in N days, M % late` is the diligence field no free page gives in one read. 0.6 day, no key, no owner minutes.",
+      "why": "Spike 2026-11-12 (docs/exchange/spikes/uk-payment-practices-lookup.md): OGL v3 on every page and no access terms; the export is one streamed 100 MB file (Range not honoured), the size the charity wave already handles; Experian sells the payment insight at £24.99 a report, 193market's API on the same CSV at US$49–399/month, Companywatch as a platform add-on — but every standalone shelf shows 1 user, so the value is the join: gankdat's seven diligence registers and the company lookup share the Companies House number, and `pays in N days, M % late` is the diligence field no free page gives in one read. 0.6 day, no key, no owner minutes. Built 2026-11-12 02:07–02:3x burn-down: D1 register in wave 5 (daily delta, the item said weekly — the platform has no weekly wave and the delta writes only the day's filings), 13-record fixture from the relay CSV, 6 + 1 tests, the `payment_practices` join on uk-company-profiles, eighth /diligence tool, actor, connector regenerated, v0.29.0.",
       "effort_days": 0.6,
       "proof": "a live `/v1/data/uk-company-profiles` read for 10881715 carries `payment_practices` (31 days, 39 % late per /report/111700) and a non-reporter carries null; `/v1/data/uk-payment-practices?company_number=00519500` lists 16 reports; the weekly wave's refresh_log row shows the row count; day-30 read (gankdat `uk-payment-practices-day-30`, to queue at build): the route or the field on ≥ 1 paid or keyed call, else noted as a free field",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-12",
-      "doing_since": "2026-11-12"
+      "done_at": "2026-11-12"
+    },
+    {
+      "id": "uk-payment-practices-day-30",
+      "title": "Day-30 read of uk-payment-practices (built 2026-11-12, v0.29.0): from the Daily numbers rows, does `/v1/data/uk-payment-practices` or the `payment_practices` field on a `uk-company-profiles` lookup appear on ≥ 1 paid or keyed external call (`datasets 30d external`, `x402 30d`, the actor's 30-day users), and did the wave-5 refresh land every night (refresh_log ok rows, row count ≈ 115k, no silent night); record in RESEARCH.md and decide: keep as a free field of the lookup, or note it as a field that costs nothing and leave the actor to the Store",
+      "why": "The item's own proof (spike docs/exchange/spikes/uk-payment-practices-lookup.md §4): every standalone shelf of this series shows 1 user, so the value claimed is the join on the company number — a dated read of the live calls is the only honest test. Also the first live check that a 100 MB generated CSV streams inside wave 5 beside uk-schools (the proof of the first wave is the 11-13 Daily numbers row, read by the next slot).",
+      "effort_days": 0.1,
+      "proof": "a RESEARCH.md row dated ≥ 2026-12-12 quoting the clause lines and a decision",
+      "score": 2,
+      "status": "todo",
+      "added": "2026-11-12",
+      "not_before": "2026-12-12"
     }
   ]
 }

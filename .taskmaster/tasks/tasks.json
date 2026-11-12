@@ -1483,13 +1483,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-11-08T09:18:35.941Z"
+      },
+      {
+        "id": "47",
+        "title": "uk-payment-practices: statutory payment practices reports as a D1 register (wave 5), the payment_practices join on uk-company-profiles, eighth /diligence tool, Apify actor, v0.29.0",
+        "description": "Pipeline item gankdat/uk-payment-practices (spike docs/exchange/spikes/uk-payment-practices-lookup.md, 2026-11-12). Source src/sources/uk-payment-practices.ts streams the GOV.UK export CSV (52 columns, ~115k reports, ~100 MB, generated per request) through csvRows; Blind Mode drops every narrative and total-value column; idOf report_id; fixtures from the relay CSV; test/uk-payment-practices.spec.ts; latestPaymentPractices joins the latest report onto the company lookup; landing card, terms row, sitemap, connector regenerated.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-11-12T02:19:26.927Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-11-08T09:18:35.941Z",
-      "taskCount": 46,
-      "completedCount": 39,
+      "lastModified": "2026-11-12T02:19:26.927Z",
+      "taskCount": 47,
+      "completedCount": 40,
       "tags": [
         "master"
       ]

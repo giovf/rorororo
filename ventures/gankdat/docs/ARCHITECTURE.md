@@ -118,6 +118,25 @@ charge holders and address lines dropped. The monitor is the Apify actor's `chan
 (`runLookupActor`): the previous run's records in the actor's named key-value store are the
 baseline; a run pushes only `added` / `changed` (+ `changed_fields`) / `removed` companies.
 Layouts verified through the relay (`docs/relay/responses/ch-lookup-specs`, 2026-10-07).
+And the **UK payment practices reports** (`uk-payment-practices`, shipped 2026-11-12, v0.29.0 — spike
+`docs/exchange/spikes/uk-payment-practices-lookup.md` the same night: OGL v3 on every page of the GOV.UK
+service, no access terms; Experian sells the payment insight at £24.99 a report and an api.market API wraps
+the same export at US$49–399/month with one user, so the value is the join on the company number, not a new
+audience). The statutory twice-yearly report of every large UK company or LLP (≈ 9,000 reporters, ≈ 115k
+reports since 2017): average days to pay, the shares paid within 30 / 31–60 / over 60 days, paid late and
+disputed, standard and maximum terms, the yes/no policy answers; keyed by Report Id, so the change feed is
+each new report as it is filed. Origin: the service's one-click CSV export, generated per request (no
+Content-Length, HEAD 405, Range ignored — relay `payment-practices-spike-2026-11-12`), 52 columns, ≈ 100 MB,
+streamed in one pass through `csvRows()`; **wave 5** (05:50) beside uk-schools (the lightest big wave; the
+platform's waves are daily, and the delta writes only the day's filings). Blind Mode: every narrative column
+(terms text, retention-clause descriptions and amounts, the dispute-resolution process — free text that can
+name a person) and the total-value columns are dropped at ingest. The join: `uk-company-profiles` carries
+`payment_practices` — the latest report's figures and the report count, read from D1 at lookup time by
+`latestPaymentPractices` (exact number, newest period end; null for a non-reporter or before the register's
+first load; a failed read is logged `payment_practices_join_failed` and never fails the lookup) — and the
+/diligence agent reads the register as its eighth tool (`packages/landing/src/diligence-core.ts SOURCES`).
+Proof: a live lookup of a reporter carries the field and a non-reporter null; the day-30 read
+(`uk-payment-practices-day-30`) looks for the route or the field on ≥ 1 paid or keyed call.
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo
