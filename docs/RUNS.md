@@ -2850,3 +2850,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 01:19 | burn-down | Built foundry always-loaded-context-trim: the 15 KB Task Master import left CLAUDE.md, 3-line pointer
 - 2026-11-12 01:19 | burn-down | gankdat's CLAUDE.md carried the same 14 KB import; same pointer there (every burn-down reads that file)
 - 2026-11-12 01:19 | burn-down | Always-loaded text 32 KB → 17 KB; `npm run task -- list` still works; .taskmaster/CLAUDE.md kept on disk
+- 2026-11-12 01:33 | burn-down | Exchange pre-research: UK payment practices reports as a gankdat lookup — spike seeded (3); 1 spike was open
+- 2026-11-12 01:33 | burn-down | Second pass of the night under the new rule: the 17:38 ABN park left one; fewer than 3 spikes open
+- 2026-11-12 01:33 | burn-down | Relay ×2: OGL v3 on every page, one-click CSV export (52 cols, ~115k reports, ~100 MB), /company/<n>/reports
+- 2026-11-12 01:33 | burn-down | Rivals: 193market API US$49–399/mo (1 user, 16 runs; RapidAPI twin gone), Experian DBT reports, Companywatch
+- 2026-11-12 01:33 | burn-down | Wrappers: Apify 4 UK actors at 1 user/30 d, npm 0, GitHub 9 repos; hosts rapidapi.com and api.market added
+- 2026-11-12 01:33 | burn-down | Spike question: payment practices as a field of the company lookup and /diligence, not a new audience
