@@ -1483,8 +1483,9 @@
       "effort_days": 0.05,
       "proof": "CLAUDE.md under 10 KB with no `.taskmaster/CLAUDE.md` import; `npm run check` green; the next build and burn-down slots run as before (their run-log lines land); `npm run task -- list` still works",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-12"
+      "status": "doing",
+      "added": "2026-11-12",
+      "doing_since": "2026-11-12"
     }
   ]
 }
