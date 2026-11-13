@@ -309,3 +309,4 @@
 - 2026-11-12 16:18 | store | apify.com | Security incident update: your account and payout information were accessed | Apify confirms the 9-10 Nov intruder viewed our account, billing and payout details (IBAN/PayPal/Wise, tax ID); no ID images, actors or code touched; 2FA reset, sessions ended | needs owner (2FA re-set, phishing watch)
 - 2026-11-12 22:52 | notification | devpost.com | The Nebius x NVIDIA Global AI Hackathon gallery is now open | Devpost newsletter: gallery open while results pending; no action | logged
 - 2026-11-13 00:28 (backlog) | store | github.com | [GitHub] Claude is requesting updated permissions | GitHub App Claude (installed on owner account) asks for extra permissions; accept/ignore is the owner's call, link not opened | needs owner
+- 2026-11-13 03:03 | notification | devpost.com | Submissions are in! Thank you and good luck - PayPal AI Hackathon | Devpost newsletter: submissions closed, judging under way; no action | logged
