@@ -2924,3 +2924,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-13 09:40 | build | docs/ci/gankdat-metrics.yml: daily versions step, commit also adds ALERTS.md and foundry.json
 - 2026-11-13 09:40 | build | All 12 routines read live: models match the register; models page has nothing newer; none pending
 - 2026-11-13 10:06 | triage | notify owner dispatched: last run started 07:09 UTC, 2 h 57 min ago
+- 2026-11-13 15:06 | triage | notify owner dispatched: last run started 10:05 UTC, 5 h ago
