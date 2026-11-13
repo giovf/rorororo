@@ -2938,3 +2938,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-13 17:29 | build | 17 tests (walker, parser, append, resume, re-published file, filters, fallback, join); landing, terms, sitemap
 - 2026-11-13 17:29 | build | Deploys on the next CI run; first wave 08:10 11-14: next slot reads its refresh_log row (append +N, files named)
 - 2026-11-13 17:29 | build | Queued gankdat uk-company-accounts-day-30 (2, not before 12-13): month-end resume rows and a paid or keyed call
+- 2026-11-13 19:06 | triage | notify owner dispatched: last run started 16:42 UTC, 2 h 24 m ago
