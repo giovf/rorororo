@@ -184,12 +184,22 @@ jobs:
         # US$49 of D1 writes nobody read until Cloudflare's email; the owner's rule makes any metered
         # charge a bug to fix the day it shows). Only node builtins, no secrets.
         run: npm run cf-overage
+      - name: 'Versions check: routine model ids against the models page, Node against the active LTS'
+        if: steps.row.outputs.skip != 'true'
+        # scripts/versions-check.ts, daily here since 2026-11-13 (foundry routine-models-auto-update; the
+        # monthly `versions` workflow stays as the fallback): Fable 5.2 came out around 11-09 and the owner
+        # saw it before the check of the 3rd would have. A newer id on a role's line (docs/ops/VERSIONS.md
+        # "Model roles") is one `handoff: models:` line in docs/ALERTS.md, once per id, which the next build
+        # slot probes; a model line nobody reviewed is one foundry queue item. Only node builtins, no
+        # secrets; a models page that does not answer must not lose the row, hence continue-on-error.
+        run: node --disable-warning=ExperimentalWarning scripts/versions-check.ts
+        continue-on-error: true
       - name: Commit
         if: steps.row.outputs.skip != 'true'
         run: |
           git config user.name "foundry-metrics[bot]"
           git config user.email "info@gankdat.com"
-          git add ventures/gankdat/RESEARCH.md docs/pipeline/queues/gankdat.json
+          git add ventures/gankdat/RESEARCH.md docs/pipeline/queues/gankdat.json docs/ALERTS.md docs/pipeline/queues/foundry.json
           git diff --cached --quiet && { echo "no change"; exit 0; }
           git commit -m "metrics(gankdat): $(date -u +%F) daily numbers"
           # Retried: a routine's push in the same second rejected the one-shot push (relay run 143, 2026-10-22;
