@@ -2915,3 +2915,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 21:05 | triage | notify owner dispatched: last run started 18:33 UTC, 2 h ago
 - 2026-11-12 21:05 | triage | inbox not read: Gmail connector needs re-sign-in
 - 2026-11-13 02:07 | triage | notify owner dispatched: last run started 23:50 UTC, 2 h 15 min ago
+- 2026-11-13 05:07 | triage | notify owner dispatched: last run started 02:05 UTC, 3 h ago
