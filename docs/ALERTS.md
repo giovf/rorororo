@@ -359,3 +359,4 @@ closed entries older than 30 days (git keeps the history).
 - 2026-11-09 owner: gankdat is ready for Clay's partner listing — fill in Clay's partner form with our page link, ~10 min, £0 — docs/for-owner/actions/039-clay-integrations-partner-form.md — Done 2026-11-12 (interactive): owner submitted the intake 2026-11-12 (step 1 only); answers in CLAY-LISTING.md §1; day-90 read 2027-02-10; intro video queued as gankdat clay-intro-video
 - 2026-11-12 owner: Apify rotated every API token after a breach; make a new token in Apify and replace it in GitHub secrets (actor publishing is stopped until then)
 - 2026-11-12 owner: Apify says the breach exposed your payout details (bank/PayPal) - set up Apify 2FA again, watch for phishing, check your bank
+- 2026-11-13 owner: GitHub says the Claude app asks for new permissions; review it in GitHub Settings > Applications, accept only if expected
