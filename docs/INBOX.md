@@ -310,3 +310,4 @@
 - 2026-11-12 22:52 | notification | devpost.com | The Nebius x NVIDIA Global AI Hackathon gallery is now open | Devpost newsletter: gallery open while results pending; no action | logged
 - 2026-11-13 00:28 (backlog) | store | github.com | [GitHub] Claude is requesting updated permissions | GitHub App Claude (installed on owner account) asks for extra permissions; accept/ignore is the owner's call, link not opened | needs owner
 - 2026-11-13 03:03 | notification | devpost.com | Submissions are in! Thank you and good luck - PayPal AI Hackathon | Devpost newsletter: submissions closed, judging under way; no action | logged
+- 2026-11-13 16:18 | store | clay.com | Your Integration Request | Clay partnerships asks about the five endpoints, German/French registers, dataset licensing; matches SELF-CAUSED Clay row (action 039) | draft created (owner reviews and sends)

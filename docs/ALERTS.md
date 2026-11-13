@@ -360,3 +360,4 @@ closed entries older than 30 days (git keeps the history).
 - 2026-11-12 owner: Apify rotated every API token after a breach; make a new token in Apify and replace it in GitHub secrets (actor publishing is stopped until then)
 - 2026-11-12 owner: Apify says the breach exposed your payout details (bank/PayPal) - set up Apify 2FA again, watch for phishing, check your bank
 - 2026-11-13 owner: GitHub says the Claude app asks for new permissions; review it in GitHub Settings > Applications, accept only if expected
+- 2026-11-13 owner: Clay replied to our listing; a draft answer is in info@gankdat.com Gmail - read it and press send
