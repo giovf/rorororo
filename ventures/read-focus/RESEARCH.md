@@ -181,6 +181,7 @@ _Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10
 | 2026-11-10 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 2 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 11-09: 28 impressions, 1 clicks, avg pos 10.0, top /reading-ruler.html 26, indexed 3/3; sales: 0 keys (2 test) |
 | 2026-11-11 | Daily check | 3 | — | 0 | via store-metrics CI: chrome: 3 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 11-10: 18 impressions, 1 clicks, avg pos 5.9, top /reading-ruler.html 18, indexed 1/3, not: Crawled - currently not indexed ×2; sales: 0 keys (2 test) |
 | 2026-11-12 | Daily check | 3 | — | 0 | via store-metrics CI: chrome: 3 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 11-11: 17 impressions, 1 clicks, avg pos 5.8, top /reading-ruler.html 17, indexed 1/3, not: Crawled - currently not indexed ×2; sales: 0 keys (2 test) |
+| 2026-11-13 | Daily check | 3 | — | 0 | via store-metrics CI: chrome: 3 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 11-12: 10 impressions, 1 clicks, avg pos 5.9, top /reading-ruler.html 10, indexed 1/3, not: Crawled - currently not indexed ×2; sales: 0 keys (2 test) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
