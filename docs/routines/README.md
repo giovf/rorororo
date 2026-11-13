@@ -32,6 +32,11 @@ A pull refused on a fresh sandbox is usually lag, not divergence (2026-10-10, fo
 | weekly report | `weekly-report.md` | `trig_01PjxdBAcvYSAT32fCyzcvQg` | Sonnet 5.5 (was Sonnet 5 until 2026-10-16) | bootstrap (swapped 2026-10-01) |
 | ops retro | `ops-retro.md` | `trig_015Uvn63XZUVqx1TAiWZrZL6` | Sonnet 5.5 (was Sonnet 5 until 2026-10-16) | bootstrap (swapped 2026-10-01) |
 
+Models: the Model column above is the line each routine follows; the id it runs today is in `docs/ops/VERSIONS.md` "Model
+roles", which also says how a new id reaches a routine. A routine can read every routine (`list_triggers`) but cannot change
+one it did not create — `update_trigger` refused the model of an `http_api`-created routine on 2026-11-13 exactly as it
+refused prompts on 2026-09-29 — so a model change is the owner's click on the routines page, asked for once by the build slot.
+
 Provenance: `burn-down.md`, `inbox-triage.md`, `weekly-report.md` and `ops-retro.md` are verbatim
 copies of their stored prompts (plus the sentences queued for them since). `build.md`, `fallback.md`,
 `exchange.md`, `review.md` and `metrics.md` were written 2026-09-30 from the repo's record of each

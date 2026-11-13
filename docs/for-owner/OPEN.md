@@ -5,7 +5,7 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (4)
+## Requests (5)
 
 1. **Claude Code handbook ready for Leanpub** — ~15 min, since 2026-11-05; unblocks claude-code-kit `leanpub-copies-reading` (4). Steps: [038](actions/038-leanpub-kit.md).
    Claude Code handbook ready for Leanpub: sign up, upload, publish, ~15 min, £0 — docs/for-owner/actions/038-leanpub-kit.md
@@ -18,6 +18,9 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 4. **Apify says the breach exposed your payout details** — time not stated, since 2026-11-12; nothing queued waits on it.
    Apify says the breach exposed your payout details (bank/PayPal) - set up Apify 2FA again, watch for phishing, check your bank
+
+5. **GitHub says the Claude app asks for new permissions; review…** — time not stated, since 2026-11-13; nothing queued waits on it.
+   GitHub says the Claude app asks for new permissions; review it in GitHub Settings > Applications, accept only if expected
 
 ## Waiting on an attended Claude session, not you (2)
 

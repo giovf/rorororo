@@ -2916,3 +2916,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-12 21:05 | triage | inbox not read: Gmail connector needs re-sign-in
 - 2026-11-13 02:07 | triage | notify owner dispatched: last run started 23:50 UTC, 2 h 15 min ago
 - 2026-11-13 05:07 | triage | notify owner dispatched: last run started 02:05 UTC, 3 h ago
+- 2026-11-13 09:40 | build | Built foundry routine-models-auto-update: model check runs daily, roles are a table in VERSIONS.md
+- 2026-11-13 09:40 | build | versions-check: models finding once per id, unreviewed model line files a queue item, 5 tests
+- 2026-11-13 09:40 | build | Platform refuses a routine changing a routine's model: the switch stays one owner click, asked once
+- 2026-11-13 09:40 | build | Probe method proven: child session on claude-fable-5-2 answered model ok in 5 s (get_session)
+- 2026-11-13 09:40 | build | build.md gained MODELS: npm run versions -- pending, probe, owner line, record; never update_trigger
+- 2026-11-13 09:40 | build | docs/ci/gankdat-metrics.yml: daily versions step, commit also adds ALERTS.md and foundry.json
+- 2026-11-13 09:40 | build | All 12 routines read live: models match the register; models page has nothing newer; none pending
