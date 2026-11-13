@@ -1494,9 +1494,10 @@
       "effort_days": 0.5,
       "proof": "the next new model id on the models page reaches the routines within 48 h with no attended session — a VERSIONS.md log line written by a routine, the probe's `model ok` run and the switched routines' next run logs showing `init: model=<new id>`; a dry run against a fixture page in versions-check.test.ts",
       "score": 7,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-11-12",
-      "not_before": "2026-11-13"
+      "not_before": "2026-11-13",
+      "doing_since": "2026-11-13"
     }
   ]
 }
