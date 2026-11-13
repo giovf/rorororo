@@ -36,6 +36,7 @@ export const SOURCES: readonly string[] = [
   'uk-charities',
   'uk-contract-awards',
   'uk-payment-practices',
+  'uk-company-accounts',
 ];
 
 export interface ToolCall {
@@ -119,7 +120,11 @@ export function systemPrompt(): string {
     'registers through the tools provided (Companies House, insolvency notices, the UK sanctions list,',
     'licensed sponsors, the charity register, public contract awards, statutory payment practices',
     'reports — how long a large company takes to pay its suppliers and what share it pays late,',
-    'queried by `company_number` once the number is pinned). Call the tools you need, one',
+    'queried by `company_number` once the number is pinned, and the headline figures of the accounts',
+    'a company filed — net assets, cash, creditors due within a year, employees and the prior period,',
+    'also by `company_number`; treat negative net assets, cash down 30 % or more on the prior period',
+    'and accounts marked overdue on the company record as red flags, and say so when no accounts are',
+    'held rather than assuming health). Call the tools you need, one',
     'register at a time, with the company name as `q`; you may call several tools in one turn. Never',
     'invent a record: every statement in the report cites the tool that returned it, and a register',
     'with no match says so. Keep each tool result as the only evidence for what it covers.',
@@ -388,6 +393,7 @@ export const FIXTURES: Record<string, (q: string) => string> = {
     ]),
   query_uk_sponsors: () => registerResult('uk-sponsors', []),
   query_uk_payment_practices: () => registerResult('uk-payment-practices', []),
+  query_uk_company_accounts: () => registerResult('uk-company-accounts', []),
   query_uk_contract_awards: (q) =>
     registerResult('uk-contract-awards', [
       {

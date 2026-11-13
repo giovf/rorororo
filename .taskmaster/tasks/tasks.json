@@ -1495,13 +1495,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-11-12T02:19:26.927Z"
+      },
+      {
+        "id": "48",
+        "title": "uk-company-accounts: Companies House daily accounts ZIP (iXBRL) as an append-only D1 register (wave 8), zipMembers walker, DataSource.append/commit, the financials join on uk-company-profiles, ninth /diligence tool, Apify actor, v0.30.0",
+        "description": "Pipeline item gankdat/uk-company-accounts (2026-11-13 build). src/sources/uk-company-accounts.ts + zip.ts zipMembers/inflateRaw + d1store refreshD1Append/readD1ByIdPrefix + types append/commit + wave 8 (10 8 * * *) in store.ts and wrangler.jsonc; test/uk-company-accounts.spec.ts.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-11-13T17:29:05.843Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-11-12T02:19:26.927Z",
-      "taskCount": 47,
-      "completedCount": 40,
+      "lastModified": "2026-11-13T17:29:05.843Z",
+      "taskCount": 48,
+      "completedCount": 41,
       "tags": [
         "master"
       ]

@@ -2925,3 +2925,16 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-13 09:40 | build | All 12 routines read live: models match the register; models page has nothing newer; none pending
 - 2026-11-13 10:06 | triage | notify owner dispatched: last run started 07:09 UTC, 2 h 57 min ago
 - 2026-11-13 15:06 | triage | notify owner dispatched: last run started 10:05 UTC, 5 h ago
+- 2026-11-13 17:29 | build | Main green at STEP 0; models: nothing pending; no new owner notes; item claimed 17:10 before npm ci
+- 2026-11-13 17:29 | build | gankdat-metrics.yml first run: success (schedule run 320 at 14:52, after the 09:17 installer; short-circuit path)
+- 2026-11-13 17:29 | build | gankdat-metrics versions step first runs in the 11-14 07:07 dispatch (the 14:52 run skipped it: row was written)
+- 2026-11-13 17:29 | build | Built gankdat uk-company-accounts: Companies House accounts headline figures as an append-only D1 register, v0.30.0
+- 2026-11-13 17:29 | build | zip.ts zipMembers: walks a many-member ZIP from any header offset through Range reads; inflateRaw per member
+- 2026-11-13 17:29 | build | d1store refreshD1Append + DataSource.append/commit: upsert by id, nothing removed, quiet day ok, cursor after rows
+- 2026-11-13 17:29 | build | Wave 8 at 08:10 UTC (cron 10 8 * * *): 7-day file window, ETag-checked resume, 256 MiB or 8 min a wave
+- 2026-11-13 17:29 | build | Parser checked on the relay's 87 real filings: net assets 86, employees 83, creditors 67, cash 50, dormant 87
+- 2026-11-13 17:29 | build | financials on uk-company-profiles through an indexed id-prefix read; /diligence reads accounts as its ninth tool
+- 2026-11-13 17:29 | build | Actor uk-company-accounts added; its push waits for the owner's new Apify token (ALERTS 11-12), no new request
+- 2026-11-13 17:29 | build | 17 tests (walker, parser, append, resume, re-published file, filters, fallback, join); landing, terms, sitemap
+- 2026-11-13 17:29 | build | Deploys on the next CI run; first wave 08:10 11-14: next slot reads its refresh_log row (append +N, files named)
+- 2026-11-13 17:29 | build | Queued gankdat uk-company-accounts-day-30 (2, not before 12-13): month-end resume rows and a paid or keyed call

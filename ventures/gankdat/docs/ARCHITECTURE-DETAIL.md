@@ -139,6 +139,38 @@ first load; a failed read is logged `payment_practices_join_failed` and never fa
 /diligence agent reads the register as its eighth tool (`packages/landing/src/diligence-core.ts SOURCES`).
 Proof: a live lookup of a reporter carries the field and a non-reporter null; the day-30 read
 (`uk-payment-practices-day-30`) looks for the route or the field on ≥ 1 paid or keyed call.
+And the **UK company accounts** (`uk-company-accounts`, shipped 2026-11-13, v0.30.0 — spike
+`docs/exchange/spikes/uk-company-accounts-financials.md`: OGL v3 and "no rules or requirements on how the
+information on the public register is used"; Endole £39/user/mo, Company Check £35+VAT/mo and Global Mindset
+£39/mo price the series and every standalone wrapper shows 0–2 users, so the value is the join on the company
+number). Origin: `download.companieshouse.gov.uk/Accounts_Bulk_Data-<date>.zip`, one file Tuesday to Saturday
+with the previous day's electronically filed accounts as individual iXBRL documents (58–100 MiB, ≈ 8,000–
+11,000 members on a normal day; 208 MiB at a month end, 598 MiB on 1 October). Three mechanisms are new and
+generic: (1) `zip.ts zipMembers` walks a many-member ZIP from any local-header offset through a caller-supplied
+Range reader (sizes in the local header required; a data descriptor, ZIP64 or an unknown method is rejected
+loudly) and `inflateRaw` inflates one member; (2) `DataSource.append` → `d1store refreshD1Append`: the stream
+is only what the origin published since the last refresh, each chunk's ids are looked up through the
+(slug, generation, record_id) index (never the whole stored index — the register only grows), new ids are
+appended, changed ones rewritten in place with their change-feed rows, nothing is removed for being absent,
+and an empty stream is an `ok` row `append +0`; (3) `DataSource.commit`, called after the last chunk is
+stored and before the `ok` row, where the source persists its cursor and returns the note the refresh_log
+message carries. The source keeps `{ files: { <date>: { offset, etag, size, members, done } } }` in KV
+(`source:uk-company-accounts:cursor`): each wave HEADs the last 7 dated files it has not finished (a 404 is a
+day without a file, so a late file is picked up the next day), resumes an unfinished one at its offset when
+the ETag and size still match, and stops opening members at 256 MiB read or 8 minutes — a month-end file is a
+backlog the next waves finish, and the row says `paused at … resumes next wave`. **Wave 8** (`10 8 * * *`):
+the day's file lands around 07:45 UTC. Parsing is a regex pass (the DBT `stream-read-xbrl` rules, MIT): an
+`ix:nonFraction` whose name ends in a known tag, sign × text × 10^scale with `format` deciding separators,
+dated by its context; a balance-sheet fact counts only in a dimensionless context, creditors only where every
+dimension member is within-one-year; net assets fall back to total `Equity`, labelled in `net_assets_source`.
+On the 87 real members of the 11-11 file's first MiB (relay `ch-accounts-zip-2026-11-12`, walked end to end
+by the shipped code): net assets 86, dormant flag 87, name 87, employees 83, creditors 67, cash 50, profit 6,
+turnover 2. `.xml` (old XBRL) and nested `.zip` members are counted as skipped. The `ix:nonNumeric` regex is
+anchored on the two names read (dormant flag, registered name) because the element nests. The join:
+`uk-company-profiles.financials` via `latestFinancials` → `d1store readD1ByIdPrefix` (an indexed range read
+on `<number>_`, not the generic substring scan); null for a paper filer or before the first load, a failed
+read logged `financials_join_failed`. The /diligence agent reads the register as its ninth tool. The 12
+monthly archives are a separate runner-fed backfill (`uk-company-accounts-backfill`).
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo

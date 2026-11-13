@@ -350,6 +350,8 @@ describe('helpers', () => {
     expect(SOURCES.map(toolName)).toContain('query_uk_company_profiles');
     expect(SOURCES.map(toolName)).toContain('query_uk_payment_practices');
     expect(systemPrompt()).toContain('payment practices');
+    expect(SOURCES.map(toolName)).toContain('query_uk_company_accounts');
+    expect(systemPrompt()).toContain('negative net assets');
   });
 
   it('reads a register result in the live MCP shape and in the old one', () => {
