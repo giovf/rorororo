@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "researched": "2026-11-12",
   "items": [
     {
@@ -1498,6 +1498,26 @@
       "added": "2026-11-12",
       "not_before": "2026-11-13",
       "done_at": "2026-11-13"
+    },
+    {
+      "id": "node-26-runners",
+      "title": "Move every workflow's node-version from 24 to the active LTS 26 through docs/ci/ (installer moves them), after the root and gankdat gates pass on Node 26 in the sandbox; make `npm run versions` file a foundry queue item (not a `handoff:` line) for a runner-Node finding, as routine-models-auto-update does for models; close the 2026-11-03 handoff with a Done suffix.",
+      "why": "Retro 2026-W46: the 2026-11-03 handoff (workflows pin Node 24, active LTS 26) is 11 days old and says \"an attended session\", but the 2026-10-20 node-24-runners item (16 docs/ci files, gates run on the new Node first) was built by a routine in one slot. Routine-buildable work was filed as a handoff, step-4 defect.",
+      "effort_days": 0.4,
+      "proof": "every workflow node-version is 26, the 2026-11-03 handoff has a Done suffix, check.yml green on the installer push",
+      "score": 6,
+      "added": "2026-11-14",
+      "status": "todo"
+    },
+    {
+      "id": "apify-publish-token-gate",
+      "title": "gankdat-publish.yml: probe the Apify token first (GET /v2/users/me); on 401 write one `wait: apify token` RUNS line per day plus a ::warning:: and skip the actor step with exit 0, so a rotated third-party token does not turn main red; any other error still fails.",
+      "why": "Retro 2026-W46: run 95 (11-12 11:58) failed at \"Apify actors — push changed, price, publish\" after the Apify breach rotation (INBOX 11-12, ALERTS owner 11-12); the 11-13 build added the uk-company-accounts actor whose push waits for the owner token, so the next actor change repeats the red run, a Run failed mail and a watchdog ci-failed line until the owner acts. Second owner-held-secret stall in a month.",
+      "effort_days": 0.2,
+      "proof": "the next actor-changing push with the old token shows publish green with the wait line; no ci-failed for it for 7 days",
+      "score": 6,
+      "added": "2026-11-14",
+      "status": "todo"
     }
   ]
 }

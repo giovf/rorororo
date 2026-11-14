@@ -2943,3 +2943,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-13 22:06 | triage | notify owner dispatched: last run started 19:06 UTC, 3 h ago
 - 2026-11-14 02:06 | triage | notify owner dispatched: last run started 23:48 UTC, 2 h 17 min ago
 - 2026-11-14 05:07 | triage | notify owner dispatched: last run started 02:05 UTC, 3 h ago
+- 2026-11-14 08:05 | retro | Slot reliability: 91 of 95 slots traced; 4 burn-down 17:00s missed 11-07..10, fixed 11-10
+- 2026-11-14 08:05 | retro | Repeat blocker: usage pacing, fourth week; 11-13 week budget read 4 of 2, six fires silent
+- 2026-11-14 08:05 | retro | Repeat blocker: owner-held secrets; Apify token rotation turned gankdat-publish red 11-12
+- 2026-11-14 08:05 | retro | Defect: Node 26 LTS filed as a handoff 11 d old although a routine built Node 24 the same way
+- 2026-11-14 08:05 | retro | Queued foundry node-26-runners (6) and apify-publish-token-gate (6); week-budget learner retro-only
+- 2026-11-14 08:05 | retro | Owner: nothing new; median open age of owner asks 2 d; Highlight Keep upload handoff 40 d is identity-bound
+- 2026-11-14 08:06 | retro | Decision log roll: 76 October entries moved to docs/decisions/2026-10.md
