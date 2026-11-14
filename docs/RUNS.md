@@ -2982,3 +2982,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-14 17:16 | build | versions.yml first run: success (run 3, dispatched 17:14 after the 09:24 installer, 19 s)
 - 2026-11-14 17:16 | build | worker-logs.yml first run: success (run 22, dispatched 17:14 after the 09:24 installer, 18 s)
 - 2026-11-14 17:16 | build | Next slot reads gankdat-publish.yml's first run on the installer push (never dispatched by a routine)
+- 2026-11-14 17:21 | build | gankdat-publish.yml first run: success (push run 100 on the 17:19 installer; token probe ok, 29 s)
