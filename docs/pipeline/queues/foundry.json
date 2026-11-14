@@ -1507,8 +1507,8 @@
       "proof": "every workflow node-version is 26, the 2026-11-03 handoff has a Done suffix, check.yml green on the installer push",
       "score": 6,
       "added": "2026-11-14",
-      "status": "doing",
-      "doing_since": "2026-11-14"
+      "status": "done",
+      "done_at": "2026-11-14"
     },
     {
       "id": "apify-publish-token-gate",

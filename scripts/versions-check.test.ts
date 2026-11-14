@@ -1,11 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import {
   activeLtsMajor,
-  alreadyOpen,
   closeFinding,
   fileLineReviews,
   fileModelFindings,
-  handoffLine,
+  fileNodeRunners,
   markProbed,
   modelFindings,
   modelRoles,
@@ -159,18 +158,30 @@ describe('versions-check', () => {
     expect(() => closeFinding(closed, '2026-12-02', 'deep work', 'claude-fable-5-3')).toThrow();
   });
 
-  it('writes one Node handoff line, and none when current', () => {
+  it('files one Node runners queue item, and none when current or already filed', () => {
     expect(
       activeLtsMajor([
         { version: 'v25.1.0', lts: false },
         { version: 'v24.22.0', lts: 'Krypton' },
       ]),
     ).toBe(24);
-    const line = handoffLine('2026-10-16', [22], 24)!;
-    expect(line).toMatch(/^- 2026-10-16 handoff: versions check/);
-    expect(line).toMatch(/Node 22 while the active LTS is 24/);
-    expect(handoffLine('2026-10-16', [24], 24)).toBeUndefined();
-    expect(alreadyOpen(`${line}\n`)).toBe(true);
-    expect(alreadyOpen(`${line} — Done 2026-10-17 (interactive): updated\n`)).toBe(false);
+    const queue = {
+      venture: 'foundry',
+      status: 'open',
+      needs_research: false,
+      updated: '2026-10-01',
+      items: [],
+    };
+    const filed = fileNodeRunners(queue, [22], 24, '2026-10-16');
+    expect(filed.items).toHaveLength(1);
+    expect(filed.items[0]).toMatchObject({ id: 'node-24-runners', status: 'todo', score: 5 });
+    expect(filed.items[0]?.title).toMatch(/from 22 to the active LTS 24/);
+    expect(filed.updated).toBe('2026-10-16');
+    // Current, unknown LTS, or the item exists in any status: the same queue object comes back.
+    expect(fileNodeRunners(queue, [24], 24, '2026-10-16')).toBe(queue);
+    expect(fileNodeRunners(queue, [22], undefined, '2026-10-16')).toBe(queue);
+    expect(fileNodeRunners(filed, [22], 24, '2026-10-17')).toBe(filed);
+    const done = { ...filed, items: filed.items.map((it) => ({ ...it, status: 'done' })) };
+    expect(fileNodeRunners(done, [22], 24, '2026-11-01')).toBe(done);
   });
 });

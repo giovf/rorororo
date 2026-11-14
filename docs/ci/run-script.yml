@@ -1,0 +1,75 @@
+name: run script
+
+# One dispatch runs an allow-listed npm script on a GitHub runner and prints its output to the job
+# log (foundry `runner-script-dispatch`, 2026-11-06). The sandbox refuses some tools outright — a
+# downloaded Java jar (epubcheck, two slots lost on 2026-11-05), LibreOffice (the tax workbook's
+# recalculation), ffmpeg — and until now each needed its own workflow, an installer commit and a
+# first-run check in the next slot (epubcheck.yml, worker-logs.yml, demo-video.yml in three weeks).
+# Now a tool is one line in the allow-list below: the step refuses any other workspace/script pair,
+# installs the apt packages that line names, runs `npm ci` for that workspace only when the line says
+# so, then runs the script with the arguments. A routine reads the result with the GitHub MCP
+# `get_job_logs`. Manual only, 10-minute cap, no secret, nothing committed. (demo video keeps its
+# own workflow: it needs secrets and uploads an artifact.)
+# Run 2 (2026-11-06 17:20, recalc): `apt-get install -qq libreoffice-calc >/dev/null` pulled every
+# recommended package in silence and was cancelled at the cap, so the apt step installs no recommends
+# and prints its sizes and set-up lines.
+
+on:
+  workflow_dispatch:
+    inputs:
+      workspace:
+        description: "npm workspace the script belongs to (@foundry/tax-workbook), or 'root'"
+        type: string
+        default: 'root'
+      script:
+        description: 'npm script to run; must be a line of the allow-list in the workflow file'
+        type: string
+        required: true
+      args:
+        description: 'Arguments passed after `--`, split on spaces (optional)'
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      WORKSPACE: ${{ inputs.workspace }}
+      SCRIPT: ${{ inputs.script }}
+      ARGS: ${{ inputs.args }}
+    steps:
+      - name: 'Allow-list (one line per tool: workspace script -> apt packages, install yes|no)'
+        run: |
+          case "$WORKSPACE $SCRIPT" in
+            'root epubcheck') apt=''; install=no ;;
+            '@foundry/tax-workbook recalc') apt='libreoffice-calc'; install=yes ;;
+            *) echo "::error::'$WORKSPACE $SCRIPT' is not on the allow-list in run-script.yml"; exit 1 ;;
+          esac
+          echo "allowed: $WORKSPACE $SCRIPT (apt: ${apt:-none}, npm ci: $install)"
+          echo "APT=$apt" >> "$GITHUB_ENV"
+          echo "INSTALL=$install" >> "$GITHUB_ENV"
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+          cache: npm
+      - name: Install the tool the line names (apt, no recommends — libreoffice-calc with them ran past the cap)
+        if: env.APT != ''
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends $APT | grep -E '^(Need to get|After this|Setting up)' || true
+          for p in $APT; do dpkg -s "$p" >/dev/null 2>&1 || { echo "::error::$p did not install"; exit 1; }; done
+      - name: Install the workspace (npm ci for that workspace only)
+        if: env.INSTALL == 'yes'
+        run: |
+          if [ "$WORKSPACE" = root ]; then npm ci --no-audit --no-fund; else npm ci --no-audit --no-fund -w "$WORKSPACE"; fi
+      - name: Run the script (its output is this log)
+        run: |
+          set -f
+          if [ "$WORKSPACE" = root ]; then npm run -s "$SCRIPT" -- $ARGS; else npm run -s "$SCRIPT" -w "$WORKSPACE" -- $ARGS; fi

@@ -10,7 +10,9 @@
 // A routine cannot switch a routine's model itself: `update_trigger` refuses every routine not
 // created by an agent (read 2026-11-13). A model line the register has never reviewed (not a role's
 // line, not on the "reviewed and not used" list) files one foundry review item, never a switch.
-// Node findings stay one `handoff: versions check` line.
+// A Node finding is one foundry queue item, `node-<lts>-runners`, never a `handoff:` line
+// (2026-11-14, foundry `node-26-runners`): a routine moves the pins through docs/ci/ once the gates
+// pass on the new Node, as it did for 24 and 26, and the 2026-11-03 handoff sat 11 days unread.
 //
 // Run: npm run versions                          the check (network; the gankdat metrics job, daily)
 //      npm run versions -- pending               offline: the open model findings and what each needs
@@ -293,26 +295,28 @@ export function activeLtsMajor(
   return lts ? Number(lts.version.replace(/^v/, '').split('.')[0]) : undefined;
 }
 
-/** The Node handoff line, or undefined when the workflows are on the active LTS. */
-export function handoffLine(
-  today: string,
+/** Pure: one `node-<lts>-runners` item when a workflow pins an older major, never twice in any status. */
+export function fileNodeRunners(
+  queue: Queue,
   nodePinned: number[],
   lts: number | undefined,
-): string | undefined {
-  const oldNode = nodePinned.filter((n) => lts !== undefined && n < lts);
-  if (!oldNode.length) return undefined;
-  return `- ${today} handoff: versions check (docs/ops/VERSIONS.md): workflows pin Node ${oldNode.join('/')} while the active LTS is ${lts} — a routine moves every workflow's \`node-version\` through docs/ci/ once the gates pass on it, or records why not.`;
-}
-
-/** True when an open (unclosed) versions-check handoff already exists. */
-export function alreadyOpen(alertsMd: string): boolean {
-  return alertsMd
-    .split('\n')
-    .some(
-      (l) =>
-        /^- \d{4}-\d{2}-\d{2} handoff: versions check/.test(l) &&
-        !/—\s*(Done|Superseded)\b/.test(l),
-    );
+  today: string,
+): Queue {
+  if (lts === undefined) return queue;
+  const oldNode = nodePinned.filter((n) => n < lts);
+  const id = `node-${lts}-runners`;
+  if (!oldNode.length || queue.items.some((it) => it.id === id)) return queue;
+  const item: QueueItem = {
+    id,
+    title: `Move every workflow's node-version from ${oldNode.join('/')} to the active LTS ${lts} through docs/ci/ (installer moves them), after the root and gankdat gates pass on Node ${lts} in the sandbox; update the Node row and log of docs/ops/VERSIONS.md`,
+    why: `Filed by the daily versions check (scripts/versions-check.ts) on ${today}: ${NODE_INDEX_URL} names ${lts} as the active LTS while the workflows pin ${oldNode.join('/')}. A routine builds this (node-24-runners 2026-10-20, node-26-runners 2026-11-14: the Node tarball from nodejs.org in the scratchpad, \`npm ci\` and both gates on it, one line per workflow file), so it is a queue item and not a handoff. The devcontainer is not part of it (CLAUDE.md: ask before \`.devcontainer/\`).`,
+    effort_days: 0.3,
+    proof: `every workflow node-version is ${lts}, check.yml green on the installer push, VERSIONS.md Node row reads ${lts}`,
+    score: 5,
+    status: 'todo',
+    added: today,
+  };
+  return { ...queue, items: [...queue.items, item], updated: today };
 }
 
 const read = (file: string): string => readFileSync(path.join(ROOT, file), 'utf8');
@@ -341,21 +345,20 @@ async function check(today: string): Promise<void> {
     `versions ${today}: newest ${[...newest.values()].map((v) => v.id).join(', ')}; node LTS ${lts}, pinned ${nodePinned.join('/')}; model findings ${found.length}, unreviewed lines ${unreviewed.length}`,
   );
   const alerts = read(ALERTS_FILE);
-  let next = fileModelFindings(alerts, today, found);
-  const line = handoffLine(today, nodePinned, lts);
-  if (line && !alreadyOpen(next)) next = `${next.trimEnd()}\n${line}\n`;
+  const next = fileModelFindings(alerts, today, found);
   if (next !== alerts) {
     write(ALERTS_FILE, next);
     console.log(`written to ${ALERTS_FILE}:\n${next.slice(alerts.trimEnd().length).trim()}`);
   }
   const queue = JSON.parse(read(FOUNDRY_QUEUE_FILE)) as Queue;
   const reviewed = fileLineReviews(queue, unreviewed, today);
-  if (reviewed !== queue) {
-    write(FOUNDRY_QUEUE_FILE, serialize(reviewed));
+  const filed = fileNodeRunners(reviewed, nodePinned, lts, today);
+  if (filed !== queue) write(FOUNDRY_QUEUE_FILE, serialize(filed));
+  if (reviewed !== queue)
     console.log(
       `review items filed: ${unreviewed.map((v) => `model-line-${v.family}`).join(', ')}`,
     );
-  }
+  if (filed !== reviewed) console.log(`queue item filed: node-${lts}-runners`);
 }
 
 function pendingFor(role: string | undefined, to: string | undefined): PendingFinding {

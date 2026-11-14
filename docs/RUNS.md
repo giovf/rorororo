@@ -2950,3 +2950,14 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-14 08:05 | retro | Queued foundry node-26-runners (6) and apify-publish-token-gate (6); week-budget learner retro-only
 - 2026-11-14 08:05 | retro | Owner: nothing new; median open age of owner asks 2 d; Highlight Keep upload handoff 40 d is identity-bound
 - 2026-11-14 08:06 | retro | Decision log roll: 76 October entries moved to docs/decisions/2026-10.md
+- 2026-11-14 09:22 | build | Main green at STEP 0; models: nothing pending; first runs: nothing owed; item claimed 09:09 before npm ci
+- 2026-11-14 09:22 | build | Built foundry node-26-runners: 19 workflows dropped in docs/ci/ with node-version 26 (installer moves them)
+- 2026-11-14 09:22 | build | npm ci, root gate and gankdat gate passed on Node 26.13.1 (nodejs.org tarball, checksum ok); green on 22 too
+- 2026-11-14 09:22 | build | versions check: a Node finding now files foundry node-<lts>-runners once per LTS, no handoff line; test
+- 2026-11-14 09:22 | build | VERSIONS.md Node row 26 with a log entry; the 2026-11-03 handoff closed with a Done suffix
+- 2026-11-14 09:22 | build | Devcontainer kept on Node 24 (ask-first path): one handoff, rides the next owner request, no new ask
+- 2026-11-14 09:22 | build | Owner note 11-13 21:07 answered: Clay draft in Gmail no longer offers a call; three wrapped links cleaned
+- 2026-11-14 09:22 | build | Owner note 11-13 21:11 answered: triage step 4 says AI-operated plainly when asked; never offers a call
+- 2026-11-14 09:22 | build | uk-company-accounts 08:10 wave: routes live (402 on /x402/data, log run 21); refresh row not read, see next
+- 2026-11-14 09:22 | build | worker logs prints whole events, cron lines buried: 11-15 Daily numbers row is the wave's reading
+- 2026-11-14 09:22 | build | Next slot reads the first runs of the Node 26 installer commit (npm run first-runs lists them)

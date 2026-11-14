@@ -10,7 +10,7 @@ compares them with the public sources named.
 | --- | --- | --- | --- | --- |
 | Claude models of the cloud routines | see **Model roles** below | cloud routine configs (`docs/routines/README.md`) | https://platform.claude.com/docs/en/about-claude/models/overview | daily check → `handoff: models:` line → a build slot probes the new id → the owner picks it on the routines page → a build slot reads it back and records it |
 | Claude Code CLI inside a routine's container | platform-managed (`2.1.323` on 2026-11-13) | `get_session` → `external_metadata.container_cc_version` | the platform | nothing to do: the platform updates it; no pin of ours exists |
-| Node on GitHub runners | `24` | `.github/workflows/*.yml` (`node-version`) | https://nodejs.org/dist/index.json (active LTS) | daily check → handoff; the repo moves one LTS at a time |
+| Node on GitHub runners | `26` | `.github/workflows/*.yml` (`node-version`) | https://nodejs.org/dist/index.json (active LTS) | daily check → foundry queue item `node-<lts>-runners` → a build slot runs the gates on the new Node and moves the pins through `docs/ci/`; the repo moves one LTS at a time |
 | npm packages (hono, wrangler, vitest, playwright, …) | `package-lock.json` | root | npm registry | Dependabot monthly, grouped; minor/patch auto-merged when the gate is green (`dependabot` workflow), majors reviewed and merged — or closed with a lift condition — by the burn-down within 7 days (2026-10-24, foundry `dependabot-majors-review-by-routine`); a red gate files foundry `dependabot-pr-<N>` and a `watchdog | dependabot:` line within 6 h (`scripts/dependabot-gate.ts`, 2026-10-18) |
 | GitHub Actions (`actions/checkout`, `setup-node`, `upload-artifact`) | per workflow | `.github/workflows/*.yml` | GitHub | Dependabot monthly, grouped, same merge rule |
 | Playwright Chromium | `npx playwright install` at run time | demo video / media jobs | Playwright | follows the `playwright` package version |
@@ -101,3 +101,8 @@ routine's run history, and the tool itself reserves a model change for the perso
   models page's newest ids are those three plus `claude-haiku-5-5` and `claude-mythos-5-2`, so nothing is pending. The two old
   probe routines (`trig_011oCQKcRaMpb4EBoNm76jWT`, `trig_01GuRg5sAo65bKPmLRoEwoD3`, both disabled) are no longer used and can be
   deleted on the routines page.
+- 2026-11-14 — Node 26 on the runners (build, foundry `node-26-runners`): every workflow's `node-version` moved 24 → 26
+  through `docs/ci/` (19 files, one line each) after `npm ci`, the root gate and the gankdat gate passed on Node 26.13.1
+  (nodejs.org tarball, checksum verified, in the sandbox's scratchpad). The check's Node finding had been a `handoff:` line
+  that waited 11 days for an attended session (retro W46); it now files a foundry queue item (`fileNodeRunners`), once per
+  LTS. The devcontainer stays on 24 until the owner's yes (ask-first path; `engines.node >=22` covers both).
