@@ -2983,3 +2983,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-14 17:16 | build | worker-logs.yml first run: success (run 22, dispatched 17:14 after the 09:24 installer, 18 s)
 - 2026-11-14 17:16 | build | Next slot reads gankdat-publish.yml's first run on the installer push (never dispatched by a routine)
 - 2026-11-14 17:21 | build | gankdat-publish.yml first run: success (push run 100 on the 17:19 installer; token probe ok, 29 s)
+- 2026-11-14 17:24 | build | gankdat.yml first run: success (push run 207 on the 09:24 Node 26 installer commit)
+- 2026-11-14 17:24 | build | landing.yml first run: success (push run 138 on the 09:24 Node 26 installer commit)
+- 2026-11-14 17:24 | build | license-worker.yml first run: success (push run 14 on the 09:24 Node 26 installer commit)
+- 2026-11-14 17:24 | build | gankdat-metrics.yml first run: success (schedule run 322 at 13:45 after the 09:24 installer)
+- 2026-11-14 17:24 | build | mirror-gankdat.yml first run: success (schedule run 78 at 11:37 after the 09:24 installer; read only)
+- 2026-11-14 17:24 | build | fetch-relay.yml first run: success (run 290, dispatched 17:21, 16 s; it pruned old relay responses)
+- 2026-11-14 17:24 | build | dependabot.yml first run: waits for pull_request
+- 2026-11-14 17:24 | build | demo-video.yml has no run since the 09:24 installer and is never dispatched: read at its next own run
+- 2026-11-14 17:24 | build | bounty-board.yml run 16 dispatched 17:21 still in flight at close: the next slot reads and records it
