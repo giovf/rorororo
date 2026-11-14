@@ -2964,3 +2964,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-14 09:27 | build | check.yml first run: success (push run 488 on the 09:24 Node 26 installer commit, 59 s)
 - 2026-11-14 09:27 | build | Other 18 Node 26 workflows: push runs in flight, the rest on cron or dispatch; the next slot reads them
 - 2026-11-14 10:06 | triage | notify owner dispatched: last run started 06:56 UTC, 3 h ago
+- 2026-11-14 13:06 | triage | notify owner dispatched: last run started 10:05 UTC, 3 h ago
