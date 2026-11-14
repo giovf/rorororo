@@ -2965,3 +2965,20 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-14 09:27 | build | Other 18 Node 26 workflows: push runs in flight, the rest on cron or dispatch; the next slot reads them
 - 2026-11-14 10:06 | triage | notify owner dispatched: last run started 06:56 UTC, 3 h ago
 - 2026-11-14 13:06 | triage | notify owner dispatched: last run started 10:05 UTC, 3 h ago
+- 2026-11-14 17:16 | build | Main green at STEP 0; models: nothing pending; item claimed 17:09 before npm ci; no new owner note
+- 2026-11-14 17:16 | build | Built foundry apify-publish-token-gate: token probe before the actor step, 401 waits, other errors fail
+- 2026-11-14 17:16 | build | scripts/apify-token-gate.ts with 11 tests: one wait line a day, full actor push on the first ok after a wait
+- 2026-11-14 17:16 | build | gankdat-publish.yml dropped in docs/ci/ (installer moves it): gate step, contents write, run-log commit step
+- 2026-11-14 17:16 | build | Finding: the new Apify token is already in CI — publish runs 96-99 green since 11-13 11:41; owner line closed
+- 2026-11-14 17:16 | build | Run 95's log read: apify-cli login 'API token is not valid'; api.apify.com unreachable here, 401 not live-read
+- 2026-11-14 17:16 | build | Finding: Apify keeps 2 new actors private (more-public-actors-require-verified-owner), run 99; no owner ask
+- 2026-11-14 17:16 | build | Queued gankdat apify-verified-owner-public-cap blocked (1): identity step below the STRATEGY §3 bar
+- 2026-11-14 17:16 | build | notify-owner.yml first run: success (dispatch run 607 at 13:06 after the 09:24 installer, 55 s)
+- 2026-11-14 17:16 | build | store-metrics.yml first run: success (schedule run 218 at 13:48 after the 09:24 installer)
+- 2026-11-14 17:16 | build | owner-notes.yml first run: success (run 611, dispatched 17:14 after the 09:24 installer, 16 s)
+- 2026-11-14 17:16 | build | pr-relay.yml first run: success (run 4, dispatched 17:14 after the 09:24 installer, 18 s)
+- 2026-11-14 17:16 | build | run-script.yml first run: success (run 4, root epubcheck, dispatched 17:14 after the 09:24 installer, 26 s)
+- 2026-11-14 17:16 | build | run-watchdog.yml first run: success (run 163, dispatched 17:14 after the 09:24 installer, 53 s)
+- 2026-11-14 17:16 | build | versions.yml first run: success (run 3, dispatched 17:14 after the 09:24 installer, 19 s)
+- 2026-11-14 17:16 | build | worker-logs.yml first run: success (run 22, dispatched 17:14 after the 09:24 installer, 18 s)
+- 2026-11-14 17:16 | build | Next slot reads gankdat-publish.yml's first run on the installer push (never dispatched by a routine)

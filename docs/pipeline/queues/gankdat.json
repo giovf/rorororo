@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "researched": "2026-11-12",
   "items": [
     {
@@ -1276,6 +1276,17 @@
       "score": 3,
       "status": "todo",
       "added": "2026-11-12"
+    },
+    {
+      "id": "apify-verified-owner-public-cap",
+      "title": "Apify refuses to make more actors public until the account owner is verified: uk-payment-practices-reports and uk-company-accounts-financials stay private on the Store (pushed and priced, not listed).",
+      "why": "gankdat publish run 99 (2026-11-14 11:03, schedule): both actors answer `ERR more-public-actors-require-verified-owner` on the isPublic PUT while the other 16 read `priced, public`; the script exits 0 on it, so nothing reported it. Verification is an identity step on the owner's Apify account. Apify's whole line has earned US$0.17 (October developer summary, INBOX 11-04), so two more listings score far below the 10 that STRATEGY §3 asks before a new identity verification is requested: no owner line is written. Both datasets stay sold through gankdat.com, the MCP registry and x402. Reopen if Apify income passes US$5 in a month or the owner verifies for another reason.",
+      "effort_days": 0.1,
+      "proof": "publish log shows both actors `priced, public`",
+      "score": 1,
+      "status": "blocked",
+      "blocked_on": "owner identity verification on Apify (not requested: below the STRATEGY §3 bar)",
+      "added": "2026-11-14"
     }
   ]
 }

@@ -1513,13 +1513,13 @@
     {
       "id": "apify-publish-token-gate",
       "title": "gankdat-publish.yml: probe the Apify token first (GET /v2/users/me); on 401 write one `wait: apify token` RUNS line per day plus a ::warning:: and skip the actor step with exit 0, so a rotated third-party token does not turn main red; any other error still fails.",
-      "why": "Retro 2026-W46: run 95 (11-12 11:58) failed at \"Apify actors — push changed, price, publish\" after the Apify breach rotation (INBOX 11-12, ALERTS owner 11-12); the 11-13 build added the uk-company-accounts actor whose push waits for the owner token, so the next actor change repeats the red run, a Run failed mail and a watchdog ci-failed line until the owner acts. Second owner-held-secret stall in a month.",
+      "why": "Retro 2026-W46: run 95 (11-12 11:58) failed at \"Apify actors — push changed, price, publish\" after the Apify breach rotation (INBOX 11-12, ALERTS owner 11-12); the 11-13 build added the uk-company-accounts actor whose push waits for the owner token, so the next actor change repeats the red run, a Run failed mail and a watchdog ci-failed line until the owner acts. Second owner-held-secret stall in a month. Built 2026-11-14 (build): `scripts/apify-token-gate.ts` probes GET /v2/users/me before the actor step (200 ok, 401 wait, anything else fails), 11 tests; the workflow dropped in docs/ci/. The owner's new token was already in CI (runs 96-99 green since 11-13 11:41), so the gate is a guard for the next rotation; a push skipped while waiting is recovered by one full push on the first ok run.",
       "effort_days": 0.2,
       "proof": "the next actor-changing push with the old token shows publish green with the wait line; no ci-failed for it for 7 days",
       "score": 6,
       "added": "2026-11-14",
-      "status": "doing",
-      "doing_since": "2026-11-14"
+      "status": "done",
+      "done_at": "2026-11-14"
     }
   ]
 }

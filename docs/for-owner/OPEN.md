@@ -5,7 +5,7 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (6)
+## Requests (5)
 
 1. **Claude Code handbook ready for Leanpub** — ~15 min, since 2026-11-05; unblocks claude-code-kit `leanpub-copies-reading` (4). Steps: [038](actions/038-leanpub-kit.md).
    Claude Code handbook ready for Leanpub: sign up, upload, publish, ~15 min, £0 — docs/for-owner/actions/038-leanpub-kit.md
@@ -13,16 +13,13 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 2. **GitHub says the Claude app wants new permissions; review an…** — time not stated, since 2026-11-06; nothing queued waits on it.
    GitHub says the Claude app wants new permissions; review and accept or ignore in GitHub settings, Apps.
 
-3. **Apify rotated every API token after a breach; make a new to…** — time not stated, since 2026-11-12; nothing queued waits on it.
-   Apify rotated every API token after a breach; make a new token in Apify and replace it in GitHub secrets (actor publishing is stopped until then)
-
-4. **Apify says the breach exposed your payout details** — time not stated, since 2026-11-12; nothing queued waits on it.
+3. **Apify says the breach exposed your payout details** — time not stated, since 2026-11-12; nothing queued waits on it.
    Apify says the breach exposed your payout details (bank/PayPal) - set up Apify 2FA again, watch for phishing, check your bank
 
-5. **GitHub says the Claude app asks for new permissions; review…** — time not stated, since 2026-11-13; nothing queued waits on it.
+4. **GitHub says the Claude app asks for new permissions; review…** — time not stated, since 2026-11-13; nothing queued waits on it.
    GitHub says the Claude app asks for new permissions; review it in GitHub Settings > Applications, accept only if expected
 
-6. **Clay replied to our listing; a draft answer is in info@gank…** — time not stated, since 2026-11-13; nothing queued waits on it.
+5. **Clay replied to our listing; a draft answer is in info@gank…** — time not stated, since 2026-11-13; nothing queued waits on it.
    Clay replied to our listing; a draft answer is in info@gankdat.com Gmail - read it and press send
 
 ## Waiting on an attended Claude session, not you (2)
