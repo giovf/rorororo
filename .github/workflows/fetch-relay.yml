@@ -33,7 +33,7 @@ jobs:
           ref: main
       - uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: 26
       # RENDER lines (foundry relay-rendered-fetch, 2026-10-22): a request that asks for a page as
       # Chromium renders it needs the playwright package and the browser; an ordinary run stays
       # dependency-free (~15 s), so both are installed only when `needs-render` prints true.
