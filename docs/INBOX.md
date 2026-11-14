@@ -312,3 +312,4 @@
 - 2026-11-13 03:03 | notification | devpost.com | Submissions are in! Thank you and good luck - PayPal AI Hackathon | Devpost newsletter: submissions closed, judging under way; no action | logged
 - 2026-11-13 16:18 | store | clay.com | Your Integration Request | Clay partnerships asks about the five endpoints, German/French registers, dataset licensing; matches SELF-CAUSED Clay row (action 039) | draft created (owner reviews and sends)
 - 2026-11-14 00:09 | notification | amazon.com | Your shortcut to savings | Amazon store promo newsletter; no action | logged
+- 2026-11-14 14:15 | notification | trycoinstancy.com | Where gankdat fits in the workflow | cold pitch from Coinstancy agent-service catalogue (5th), asks for one task to highlight; no customer ask | logged
