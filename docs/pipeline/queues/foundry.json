@@ -1518,7 +1518,8 @@
       "proof": "the next actor-changing push with the old token shows publish green with the wait line; no ci-failed for it for 7 days",
       "score": 6,
       "added": "2026-11-14",
-      "status": "todo"
+      "status": "doing",
+      "doing_since": "2026-11-14"
     }
   ]
 }
