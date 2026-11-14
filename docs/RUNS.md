@@ -2993,3 +2993,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-14 17:24 | build | demo-video.yml has no run since the 09:24 installer and is never dispatched: read at its next own run
 - 2026-11-14 17:24 | build | bounty-board.yml run 16 dispatched 17:21 still in flight at close: the next slot reads and records it
 - 2026-11-14 18:06 | triage | notify owner dispatched: last run started 15:18 UTC, 2 h 48 min ago
+- 2026-11-14 20:53 | watchdog | paced: burn-down slot 2026-11-14 17:00 UTC stopped by the gate — usage report 2026-10-04 is stale; week budget: 6 of 2 …
