@@ -136,6 +136,18 @@ describe('shelfRows / appendMetricsRows', () => {
     expect(lines[sale + 4]).toBe('## 8. Owner steps');
   });
 
+  it('writes one Kindle row for the Kindle-only note the ask now quotes', () => {
+    const kindle = parseNoteLine('- 2026-11-30 10:12 | kindle 2 sold');
+    if (!kindle) throw new Error('note expected');
+    expect(parseShelfNote(kindle.text)).toEqual({ kindleSold: 2 });
+    const rows = shelfRows(kindle, lastSales(research));
+    expect(rows).toHaveLength(1);
+    expect(rows[0]).toContain(
+      '| 2026-11-30 | Kindle sold | — | — | 1 | 2 copies sold in KDP Reports',
+    );
+    expect(metricsRows(appendMetricsRows(research, rows))).toHaveLength(4);
+  });
+
   it('leaves a file without the table untouched', () => {
     expect(appendMetricsRows('# no table', ['| x |'])).toBe('# no table');
   });

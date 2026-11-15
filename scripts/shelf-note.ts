@@ -1,12 +1,14 @@
 // Shelf readings only the owner can see (tax-workbook `shelf-stats-owner-note`, 2026-11-01).
 //
-// Why: RESEARCH §6 of the tax workbook kills the Etsy listing at 0 sales with "≥ 5 listing views a
-// day in Shop Manager" and judges the Kindle guide on KDP Reports' copies sold, but nothing could read
-// either: Etsy forbids automated reads, the sandbox never opens kdp.amazon.com, and sale mail counts
-// sales, not views. So once a month the Monday report's digest line asks the owner for one Telegram
-// note — `etsy views 4/day kindle 2 sold` — (`shelfAsk` in scripts/handoffs.ts) and the owner-notes
-// poller (scripts/owner-notes.mjs) turns each figure in a note into a row of the RESEARCH §7 Metrics
-// table (`Etsy views`, `Kindle sold`) the run it arrives, so the dated reads cite numbers, not guesses.
+// Why: RESEARCH §6 of the tax workbook judges the Kindle guide on KDP Reports' copies sold, but
+// nothing could read it: the sandbox never opens kdp.amazon.com and sale mail counts sales on other
+// shelves. So once a month the Monday report's digest line asks the owner for one Telegram note —
+// `kindle 2 sold` — (`shelfAsk` in scripts/handoffs.ts) and the owner-notes poller
+// (scripts/owner-notes.mjs) turns the figure into a `Kindle sold` row of the RESEARCH §7 Metrics
+// table the run it arrives, so the dated reads cite numbers, not guesses. Until 2026-11-15 the ask
+// also named Etsy Shop Manager's views a day (`etsy views 4/day kindle 2 sold`); the owner closed
+// the Etsy shop on 2026-11-09, so it is no longer asked for, but a note carrying it still parses
+// and still writes its `Etsy views` row (tax-workbook `shelf-ask-kindle-only`).
 //
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -19,7 +21,7 @@ export const KINDLE_FILE = path.join('ventures', 'tax-workbook', 'KINDLE.md');
 export const STATUS_HEADING = /^## Status\b/;
 
 export interface ShelfNote {
-  /** Etsy Shop Manager listing views per day. */
+  /** Etsy Shop Manager listing views per day (not asked for since 2026-11-15; still parsed). */
   etsyViews?: number;
   /** Copies sold on KDP Reports (all time, as the owner reads it). */
   kindleSold?: number;
@@ -41,7 +43,8 @@ const num = (s: string): number => Number(s.replace(',', '.'));
 
 /**
  * The figures a note carries, or undefined when it names neither. Accepts the asked shape
- * (`etsy views 4/day kindle 2 sold`), the §6 shape (`kindle: 2 sold`) and small variations
+ * (`kindle 2 sold`), the older two-part shape (`etsy views 4/day kindle 2 sold`), the §6 shape
+ * (`kindle: 2 sold`) and small variations
  * (`Etsy: 12 views a day`, `kindle sold 3`); never a bare number.
  */
 export function parseShelfNote(text: string): ShelfNote | undefined {

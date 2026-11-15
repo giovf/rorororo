@@ -3031,3 +3031,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 17:16 | build | Highlight Keep 0.4.0 upload handoff closed (41 days); listings stay live at no cost on 0.2.0
 - 2026-11-15 17:16 | build | Owner's question answered: the other job is the dev container's Node 26 bump, nothing asked of them
 - 2026-11-15 17:16 | build | demo-video.yml still has no run since the 11-14 installer; never dispatched, read at its own run
+- 2026-11-15 17:15 | burn-down | Built tax-workbook shelf-ask-kindle-only: the 11-30 owner ask quotes "kindle 2 sold" and names no Etsy
+- 2026-11-15 17:15 | burn-down | shelf-note.ts still parses an old "etsy views N/day" note; a Kindle-only note writes one row (test)
+- 2026-11-15 17:15 | burn-down | handoffs gained --today YYYY-MM-DD for a dated dry look; 11-30 prints the Kindle-only shelf ask
+- 2026-11-15 17:15 | burn-down | weekly-report.md, SCHEDULERS.md, RESEARCH §6 and etsy-day-60-read drop the Etsy views reading

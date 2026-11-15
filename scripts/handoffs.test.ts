@@ -370,13 +370,17 @@ describe('shelfAsk (tax-workbook shelf-stats-owner-note)', () => {
   it('prints one plain sentence with the dedupe words, within the phone limit', () => {
     const ask = shelfAsk(new Date('2026-11-30T07:30:00Z'), runs);
     expect(ask).toContain(SHELF_ASK_MARK);
-    expect(ask).toContain('etsy views 4/day kindle 2 sold');
+    expect(ask).toContain('"kindle 2 sold" from KDP Reports');
+    // the Etsy shop closed 2026-11-09 (tax-workbook `shelf-ask-kindle-only`): no Etsy wording at all
+    expect(ask).not.toMatch(/etsy/i);
+    expect(shelfAsk(new Date('2026-11-30T07:30:00Z'), runs, false)).not.toMatch(/etsy/i);
+    expect(shelfAsk(new Date('2026-11-30T07:30:00Z'), runs, false)).toContain('Amazon link');
     expect(ask?.length ?? 99).toBeLessThanOrEqual(DIGEST_MAX_CHARS);
     expect(shelfAsk(new Date('2026-11-23T07:30:00Z'), runs)).toBeUndefined();
   });
 
   it('stays quiet for three weeks after a notify line carried the words', () => {
-    const asked = `${runs}- 2026-11-30 07:41 | notify | Monthly ${SHELF_ASK_MARK}: "etsy views 4/day kindle 2 sold"\n`;
+    const asked = `${runs}- 2026-11-30 07:41 | notify | Monthly ${SHELF_ASK_MARK}: "kindle 2 sold" from KDP Reports\n`;
     expect(shelfAsk(new Date('2026-12-01T07:30:00Z'), asked)).toBeUndefined();
     expect(shelfAsk(new Date('2026-12-28T07:30:00Z'), asked)).toBeDefined();
     expect(notifyLines(asked)).toHaveLength(2);

@@ -386,20 +386,22 @@ export function renderOpen(
 }
 
 // ---------------------------------------------------------------------------------------------
-// Shelf-stats ask (2026-11-01, tax-workbook `shelf-stats-owner-note`): the tax workbook's §6 kill
-// rule needs Etsy Shop Manager's listing views a day and KDP Reports' copies sold, readings only the
-// owner can see (Etsy forbids automated reads; the sandbox never opens kdp.amazon.com). Once a
-// month — the week of the last Monday, first 2026-11-30 — `npm run handoffs` prints one
-// `shelf-ask:` sentence that the Monday report appends to its `| notify |` digest line (or sends
-// alone); the owner answers with one Telegram note, `etsy views 4/day kindle 2 sold`, which
-// scripts/shelf-note.ts turns into RESEARCH §7 rows the run it arrives. The words SHELF_ASK_MARK
+// Shelf-stats ask (2026-11-01, tax-workbook `shelf-stats-owner-note`): the tax workbook's §6 Kindle
+// proof needs KDP Reports' copies sold, a reading only the owner can see (the sandbox never opens
+// kdp.amazon.com). Once a month — the week of the last Monday, first 2026-11-30 — `npm run
+// handoffs` prints one `shelf-ask:` sentence that the Monday report appends to its `| notify |`
+// digest line (or sends alone); the owner answers with one Telegram note, `kindle 2 sold`, which
+// scripts/shelf-note.ts turns into a RESEARCH §7 row the run it arrives. Kindle only since
+// 2026-11-15 (tax-workbook `shelf-ask-kindle-only`): the owner closed the Etsy shop on 2026-11-09,
+// so the ask no longer names Etsy; a note that still carries `etsy views N/day` is parsed as before.
+// The words SHELF_ASK_MARK
 // are the dedupe record: a `| notify |` line carrying them within SHELF_ASK_DEDUPE_DAYS keeps the
 // script quiet, so a report run twice in a week asks once.
 
 export const RUNS_FILE = path.join('docs', 'RUNS.md');
 /** Phrase every shelf ask carries — the dedupe record in RUNS.md, like the usage ask's. */
 export const SHELF_ASK_MARK = 'shelf note';
-/** The first Monday report that asks (the Etsy listing's day 32; the Kindle's day 30). */
+/** The first Monday report that asks (the Kindle guide's day 30). */
 export const SHELF_ASK_FIRST = '2026-11-30';
 /** One ask per month-window: a line within this many days keeps the script quiet. */
 export const SHELF_ASK_DEDUPE_DAYS = 21;
@@ -433,7 +435,7 @@ export function notifyLines(runsText: string): { at: number; text: string }[] {
 }
 
 /**
- * The one-sentence monthly ask for the two shelf readings, or undefined outside the ask week or
+ * The one-sentence monthly ask for the Kindle shelf reading, or undefined outside the ask week or
  * when RUNS.md already carries a `| notify |` line with SHELF_ASK_MARK from the last
  * SHELF_ASK_DEDUPE_DAYS days. ≤ DIGEST_MAX_CHARS: it rides the Monday report's digest line.
  */
@@ -449,8 +451,8 @@ export function shelfAsk(
   // Until KINDLE.md carries the book's page (kdp-listing-live, 2026-11-03: the live mail names no
   // ASIN and amazon.co.uk is never read), the same note brings the Amazon link once.
   return kindleLinkKnown
-    ? `Monthly ${SHELF_ASK_MARK}: "etsy views 4/day kindle 2 sold" from Etsy stats and KDP Reports`
-    : `Monthly ${SHELF_ASK_MARK}: "etsy views 4/day kindle 2 sold" + the Kindle book's Amazon link`;
+    ? `Monthly ${SHELF_ASK_MARK}: "kindle 2 sold" from KDP Reports`
+    : `Monthly ${SHELF_ASK_MARK}: "kindle 2 sold" + the Kindle book's Amazon link`;
 }
 
 /** The Kindle guide's listing pack (its Status table takes the book's page from the owner's note). */
@@ -528,7 +530,10 @@ function main(): void {
   const { command, positional, flags } = parseArgs(process.argv.slice(2));
   const file = path.resolve(ALERTS_FILE);
   const md = readFileSync(file, 'utf8');
-  const today = new Date();
+  // `--today YYYY-MM-DD` reads the book as of a date (a dry look at a dated ask, e.g. the shelf ask
+  // of 2026-11-30); pair it with `--no-write` so OPEN.md is not rebuilt with future ages.
+  const today = typeof flags.today === 'string' ? new Date(`${flags.today}T07:30:00Z`) : new Date();
+  if (Number.isNaN(today.getTime())) throw new Error('usage: handoffs -- --today YYYY-MM-DD');
   switch (command) {
     case 'list': {
       const staleDays = typeof flags.stale === 'string' ? Number(flags.stale) : DEFAULT_STALE_DAYS;
