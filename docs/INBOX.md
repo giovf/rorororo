@@ -313,3 +313,5 @@
 - 2026-11-13 16:18 | store | clay.com | Your Integration Request | Clay partnerships asks about the five endpoints, German/French registers, dataset licensing; matches SELF-CAUSED Clay row (action 039) | draft created (owner reviews and sends)
 - 2026-11-14 00:09 | notification | amazon.com | Your shortcut to savings | Amazon store promo newsletter; no action | logged
 - 2026-11-14 14:15 | notification | trycoinstancy.com | Where gankdat fits in the workflow | cold pitch from Coinstancy agent-service catalogue (5th), asks for one task to highlight; no customer ask | logged
+- 2026-11-15 19:23 | notification | github.com | [giovf/rorororo] Run failed: gankdat - main (8ad455a) | gankdat workflow run 43751784266 failed in 3m04s; watchdog ci-failed line pending; burn-down RUNS 19:38 says main healed twice | logged
+- 2026-11-15 19:30 | notification | github.com | [giovf/rorororo] Run failed: gankdat - main (d721dd2) | gankdat workflow failed in 2m12s; watchdog ci-failed line pending; burn-down RUNS 19:38 says main healed twice | logged
