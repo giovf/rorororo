@@ -1,0 +1,118 @@
+{
+  "request": "clay-intro-video-2026-11-15",
+  "fetched_at": "2026-11-15T18:15:13.025Z",
+  "results": [
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_company_profiles\",\"arguments\":{\"company_number\":\"00612172\"}}}",
+      "fetched_at": "2026-11-15T18:14:59.109Z",
+      "status": 200,
+      "elapsed_ms": 4677,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 12254,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_charities\",\"arguments\":{\"company_number\":\"00612172\"}}}",
+      "fetched_at": "2026-11-15T18:15:04.290Z",
+      "status": 200,
+      "elapsed_ms": 4905,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 149,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_insolvency\",\"arguments\":{\"company\":\"Oxfam\"}}}",
+      "fetched_at": "2026-11-15T18:15:09.697Z",
+      "status": 200,
+      "elapsed_ms": 373,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 1848,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_sanctions\",\"arguments\":{\"name\":\"Oxfam\"}}}",
+      "fetched_at": "2026-11-15T18:15:10.572Z",
+      "status": 200,
+      "elapsed_ms": 681,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "4.json",
+      "bytes": 1846,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_sponsors\",\"arguments\":{\"organisation\":\"Oxfam\"}}}",
+      "fetched_at": "2026-11-15T18:15:11.755Z",
+      "status": 200,
+      "elapsed_ms": 284,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 148,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/clay",
+      "fetched_at": "2026-11-15T18:15:12.541Z",
+      "status": 200,
+      "elapsed_ms": 142,
+      "final_url": "https://gankdat.com/clay",
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://apps.gankdat.com/demo/meta-diligence.mp4",
+      "fetched_at": "2026-11-15T18:15:12.683Z",
+      "status": 200,
+      "elapsed_ms": 280,
+      "final_url": "https://apps.gankdat.com/demo/meta-diligence.mp4",
+      "headers": {
+        "content-type": "video/mp4",
+        "etag": "\"d9c884bfc2b23e8e092bf518285a56d4\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/v1/data",
+      "fetched_at": "2026-11-15T18:15:12.964Z",
+      "status": 200,
+      "elapsed_ms": 60,
+      "final_url": "https://gankdat.com/v1/data",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "8.json",
+      "bytes": 16999,
+      "truncated": false
+    }
+  ]
+}
