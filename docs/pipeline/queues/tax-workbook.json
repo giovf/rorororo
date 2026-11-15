@@ -340,7 +340,8 @@
       "proof": "`npm run handoffs` dated 2026-11-30 prints a shelf ask with no Etsy wording; a `kindle 2 sold` note writes one RESEARCH §7 `Kindle sold` row (test); the old two-part note still parses",
       "score": 2,
       "added": "2026-11-15",
-      "status": "todo"
+      "status": "doing",
+      "doing_since": "2026-11-15"
     }
   ]
 }
