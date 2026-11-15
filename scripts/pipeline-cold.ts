@@ -409,12 +409,22 @@ function cutoffAt(line: string): Date | undefined {
   return new Date(`${(m?.[1] ?? stamp).replace(' ', 'T')}:00Z`);
 }
 
+/** A week's first usage-limit cutoff and the working slots it ran before it. */
+export interface LearntWeek {
+  /** Working slots between the reset and the first cutoff slot. */
+  slots: number;
+  /** The first slot a watchdog `usage limit?` line of the week names. */
+  cutoff: Date;
+  /** The cutoff's day of the allowance week: 1 = the first 24 h after the Thursday 03:00 reset. */
+  day: number;
+}
+
 /**
  * A week's capacity read from its own trace: the working slots between its Thursday 03:00 `reset`
- * and the first slot a watchdog `usage limit?` line of that week names, or undefined when the week
- * saw no cutoff (W44: 26 slots before the 2026-10-27 17:00 build stalled and the burn-down was missed).
+ * and the first slot a watchdog `usage limit?` line of that week names, with that cutoff and its
+ * day of the week, or undefined when the week saw no cutoff.
  */
-export function learntWeekSlots(runs: string, reset: Date): number | undefined {
+export function learntWeek(runs: string, reset: Date): LearntWeek | undefined {
   const end = new Date(reset.getTime() + 7 * 86_400_000);
   const a = stampOf(reset);
   const b = stampOf(end);
@@ -425,15 +435,74 @@ export function learntWeekSlots(runs: string, reset: Date): number | undefined {
     const at = cutoffAt(line);
     if (at !== undefined && at >= reset && (first === undefined || at < first)) first = at;
   }
-  return first === undefined ? undefined : workingSlots(runs, reset, first);
+  if (first === undefined) return undefined;
+  return {
+    slots: workingSlots(runs, reset, first),
+    cutoff: first,
+    day: Math.floor((first.getTime() - reset.getTime()) / 86_400_000) + 1,
+  };
+}
+
+/**
+ * `learntWeek`'s slot count alone (W44: 26 slots before the 2026-10-27 17:00 build stalled and the
+ * burn-down was missed), or undefined when the week saw no cutoff.
+ */
+export function learntWeekSlots(runs: string, reset: Date): number | undefined {
+  return learntWeek(runs, reset)?.slots;
+}
+
+/** A first cutoff before this day of the allowance week (Sunday 03:00 UTC) is a stall, not a capacity reading. */
+export const LEARNT_MIN_DAY = 4;
+
+/** The week's capacity in working slots and, in words, the rule that set it. */
+export interface WeekCapacity {
+  slots: number;
+  source: string;
+}
+
+/**
+ * The capacity the week budget spends from (2026-11-15, foundry `week-budget-learnt-floor`). The
+ * previous week's learnt count is a capacity reading only when that week ran at least three full
+ * days before the allowance showed — its first cutoff on day LEARNT_MIN_DAY or later; an earlier
+ * cutoff is one stalled session, and the budget falls back to BURN.json `week_slots`. Either way
+ * the capacity is never below half of `week_slots`. Why: the 2026-11-06 09:09 build stalled once
+ * on day 2 of its week, the next week learnt 5 slots (2 to spend) against a measured 26–33, and
+ * the burn-down was gated every night from 11-13 with buildable items open. Undefined when there
+ * is neither a usable reading nor `week_slots`.
+ */
+export function weekCapacity(
+  runs: string,
+  previous: Date,
+  budget: WeekBudget = {},
+): WeekCapacity | undefined {
+  const learnt = learntWeek(runs, previous);
+  const week = `the week of ${previous.toISOString().slice(0, 10)}`;
+  const base = budget.week_slots;
+  if (learnt === undefined)
+    return base === undefined ? undefined : { slots: base, source: 'BURN.json' };
+  if (learnt.day < LEARNT_MIN_DAY) {
+    if (base === undefined) return undefined;
+    return {
+      slots: base,
+      source: `BURN.json; ${week} stalled on day ${learnt.day}, not a capacity reading`,
+    };
+  }
+  const floor = base === undefined ? 0 : Math.ceil(base / 2);
+  if (learnt.slots < floor)
+    return {
+      slots: floor,
+      source: `half of BURN.json week_slots; ${week} showed ${learnt.slots} before its day-${learnt.day} cutoff`,
+    };
+  return { slots: learnt.slots, source: `${week}, first cutoff on day ${learnt.day}` };
 }
 
 /**
  * Why the burn-down stops for the week's budget, or undefined (2026-10-29, foundry
  * `burn-weekly-slot-budget`). Two weeks running the Fable allowance ran out on Tuesday and every
  * Wednesday slot — the exchange, the week's decision — was rejected: the Monday/Tuesday cap could not
- * see Friday's ten slots. The budget is the capacity the previous week showed (`learntWeekSlots`),
- * else BURN.json `week_slots`; `week_reserve` slots stay for Wednesday; the rest is spent as the
+ * see Friday's ten slots. The budget is the capacity the previous week showed when its first cutoff
+ * came on day 4 or later, never below half of BURN.json `week_slots`, else `week_slots` itself
+ * (`weekCapacity`, which also words the rule the stop line names); `week_reserve` slots stay for Wednesday; the rest is spent as the
  * week's working slots (build and burn-down) since the last reset, and each Thursday-to-Tuesday
  * night runs at most its share of what the two daily build slots leave. Wednesday night, hours from
  * the reset, keeps no nightly cap.
@@ -445,14 +514,12 @@ export function weekBudgetStop(
 ): string | undefined {
   const reset = lastWeeklyReset(now);
   const previous = new Date(reset.getTime() - 7 * 86_400_000);
-  const learnt = learntWeekSlots(runs, previous);
-  const slots = learnt ?? budget.week_slots;
-  if (slots === undefined) return undefined;
+  const capacity = weekCapacity(runs, previous, budget);
+  if (capacity === undefined) return undefined;
+  const { slots, source } = capacity;
   const reserve = budget.week_reserve ?? WEEK_RESERVE_DEFAULT;
   const spend = Math.max(0, slots - reserve);
   const used = workingSlots(runs, reset, now);
-  const source =
-    learnt === undefined ? 'BURN.json' : `the week of ${previous.toISOString().slice(0, 10)}`;
   if (used >= spend)
     return `week budget: ${used} of ${spend} working slots used since the ${stampOf(reset)} reset (${slots} from ${source}, ${reserve} kept for Wednesday)`;
   const night = nightStart(now);

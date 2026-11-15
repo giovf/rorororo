@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
   buildSlotInFlight,
@@ -17,7 +18,9 @@ import {
   researchClaimActive,
   datedWithinDay,
   isCutoffSignal,
+  learntWeek,
   learntWeekSlots,
+  weekCapacity,
   weekBudgetStop,
   workingSlots,
 } from './pipeline-cold.ts';
@@ -557,8 +560,12 @@ describe('week budget (foundry burn-weekly-slot-budget)', () => {
       '- 2026-10-30 09:20 | build | Built i',
       '- 2026-10-30 17:20 | build | Built j',
     );
-    expect(weekBudgetStop(next, new Date('2026-10-30T18:03:00Z'), { week_slots: 40 })).toBe(
-      'week budget: 4 of 3 working slots used since the 2026-10-29 03:00 reset (6 from the week of 2026-10-22, 3 kept for Wednesday)',
+    expect(weekBudgetStop(next, new Date('2026-10-30T18:03:00Z'), { week_slots: 8 })).toBe(
+      'week budget: 4 of 3 working slots used since the 2026-10-29 03:00 reset (6 from the week of 2026-10-22, first cutoff on day 6, 3 kept for Wednesday)',
+    );
+    // no week_slots: the day-6 reading stands on its own
+    expect(weekBudgetStop(next, new Date('2026-10-30T18:03:00Z'), {})).toBe(
+      'week budget: 4 of 3 working slots used since the 2026-10-29 03:00 reset (6 from the week of 2026-10-22, first cutoff on day 6, 3 kept for Wednesday)',
     );
     // BURN.json's week_slots is the fallback when the previous week saw no cutoff
     expect(weekBudgetStop(runs(), new Date('2026-10-30T18:03:00Z'), {})).toBeUndefined();
@@ -615,3 +622,98 @@ describe('week budget (foundry burn-weekly-slot-budget)', () => {
     ).toBeUndefined();
   });
 });
+
+describe('week capacity (foundry week-budget-learnt-floor)', () => {
+  const burn = { week_slots: 33, week_reserve: 3 };
+  // docs/RUNS.md 2026-11-05..11-15, cut down to the build, burn-down and watchdog pacing lines.
+  const replay = readFileSync(
+    new URL('./fixtures/runs-2026-11-05-to-11-15.txt', import.meta.url),
+    'utf8',
+  );
+  const w45 = new Date('2026-11-05T03:00:00Z');
+  it('reads the 11-06 09:00 build stall as day 2 of its week: 5 slots, not a capacity', () => {
+    const learnt = learntWeek(replay, w45);
+    expect(learnt?.slots).toBe(5);
+    expect(learnt?.day).toBe(2);
+    expect(learnt?.cutoff.toISOString()).toBe('2026-11-06T09:00:00.000Z');
+    expect(weekCapacity(replay, w45, burn)).toEqual({
+      slots: 33,
+      source: 'BURN.json; the week of 2026-11-05 stalled on day 2, not a capacity reading',
+    });
+    // with no week_slots there is nothing to fall back to: no budget rather than a 5-slot one
+    expect(weekCapacity(replay, w45, {})).toBeUndefined();
+  });
+  it('no longer gates the 11-13 and 11-14 burn-down nights the 5-slot budget stopped', () => {
+    // before: `week budget: 4 of 2` (11-13) and `6 of 2` (11-14) with three gankdat items open
+    expect(weekBudgetStop(replay, new Date('2026-11-13T17:03:00Z'), burn)).toBeUndefined();
+    expect(weekBudgetStop(replay, new Date('2026-11-14T17:03:00Z'), burn)).toBeUndefined();
+    expect(
+      pacedStop('2026-10-04', replay, slotsFor(replay), new Date('2026-11-14T17:33:00Z'), burn),
+    ).toBeUndefined();
+  });
+  it('names the fallback rule when the week does reach the BURN.json budget', () => {
+    const lines = replay.split('\n').filter((l) => l.startsWith('- '));
+    for (let h = 0; h < 24; h += 1)
+      lines.push(`- 2026-11-15 ${String(h).padStart(2, '0')}:30 | burn-down | work`);
+    expect(weekBudgetStop(lines.join('\n'), new Date('2026-11-16T17:03:00Z'), burn)).toMatch(
+      /^week budget: \d+ of 30 working slots used since the 2026-11-12 03:00 reset \(33 from BURN\.json; the week of 2026-11-05 stalled on day 2, not a capacity reading, 3 kept for Wednesday\)$/,
+    );
+  });
+  // W44: 26 working slots, then the Tuesday 10-27 17:00 build stalled — day 6, a real reading.
+  const w44lines: string[] = [];
+  for (const day of ['22', '23', '24', '25', '26'])
+    for (const hour of ['09', '17', '18', '19', '20'])
+      w44lines.push(
+        `- 2026-10-${day} ${hour}:30 | ${hour === '09' ? 'build' : 'burn-down'} | work`,
+      );
+  w44lines.push(
+    '- 2026-10-27 09:30 | build | work',
+    '- 2026-10-27 21:07 | watchdog | stalled: build slot 2026-10-27 17:00 UTC started 17:12, no push by 19:00; usage limit? claude.ai/code/routines',
+  );
+  const w44 = w44lines.join('\n');
+  const reset44 = new Date('2026-10-22T03:00:00Z');
+  it('keeps a learnt value whose first cutoff fell on day 4 or later (W44, day 6)', () => {
+    expect(learntWeek(w44, reset44)?.day).toBe(6);
+    expect(weekCapacity(w44, reset44, burn)).toEqual({
+      slots: 26,
+      source: 'the week of 2026-10-22, first cutoff on day 6',
+    });
+  });
+  it('draws the line at Sunday 03:00: day 3 is a stall, day 4 a reading', () => {
+    const cut = (slot: string): string =>
+      [
+        '- 2026-10-22 09:30 | build | work',
+        `- 2026-10-25 12:00 | watchdog | stalled: build slot ${slot} UTC started, no push; usage limit? claude.ai/code/routines`,
+      ].join('\n');
+    expect(weekCapacity(cut('2026-10-24 17:00'), reset44, { week_slots: 2 })?.source).toBe(
+      'BURN.json; the week of 2026-10-22 stalled on day 3, not a capacity reading',
+    );
+    expect(weekCapacity(cut('2026-10-25 09:00'), reset44, { week_slots: 2 })).toEqual({
+      slots: 1,
+      source: 'the week of 2026-10-22, first cutoff on day 4',
+    });
+  });
+  it('never lets a kept reading fall below half of week_slots', () => {
+    const low = [
+      '- 2026-10-22 09:30 | build | work',
+      '- 2026-10-27 21:07 | watchdog | stalled: build slot 2026-10-27 17:00 UTC started 17:12, no push by 19:00; usage limit? claude.ai/code/routines',
+    ].join('\n');
+    expect(weekCapacity(low, reset44, burn)).toEqual({
+      slots: 17,
+      source:
+        'half of BURN.json week_slots; the week of 2026-10-22 showed 1 before its day-6 cutoff',
+    });
+    expect(weekCapacity('', reset44, burn)).toEqual({ slots: 33, source: 'BURN.json' });
+    expect(weekCapacity('', reset44, {})).toBeUndefined();
+  });
+});
+
+/** A SLOTS.md with a start marker for every build hour the replay logged, so `cutoffSeen` stays quiet. */
+function slotsFor(runsText: string): string {
+  const out = new Set<string>();
+  for (const line of runsText.split('\n')) {
+    const m = /^- (\d{4}-\d{2}-\d{2}) (\d{2}):\d{2} \| build \|/.exec(line);
+    if (m) out.add(`- ${m[1]} ${m[2]}:10 | build | started`);
+  }
+  return [...out].join('\n');
+}

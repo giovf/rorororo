@@ -3015,3 +3015,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 08:15 | review | Cadence: exchange not raised; idle nights were two pacing defects, not thin supply
 - 2026-11-15 08:15 | review | Re-parked creative-fabrica idea on the Payhip count; no weight changed; no owner ask added
 - 2026-11-15 08:15 | review | review.md: commit co-author line updated to the model the routines moved to on 11-12
+- 2026-11-15 09:30 | build | Built foundry week-budget-learnt-floor: a first-days stall no longer sets the next week's burn-down budget
+- 2026-11-15 09:30 | build | pipeline-cold.ts: learnt capacity counts only from a day-4+ cutoff, never under half of week_slots
+- 2026-11-15 09:30 | build | Tests replay the run log 11-05..11-15 (5 learnt, day 2) and W44 (26 learnt, day 6 kept); 55 pass
+- 2026-11-15 09:30 | build | Tonight's gate: week capacity 33 from BURN.json, 7 of 30 used before this slot, no stop
+- 2026-11-15 09:30 | build | BURN.json notes and burn-down.md carry the rule; the paced line now names which rule applied
+- 2026-11-15 09:30 | build | bounty-board.yml first run: success (run 16, dispatched 11-14 17:21, 3 min)
+- 2026-11-15 09:30 | build | demo-video.yml has no run since the 11-14 09:24 installer; never dispatched, read at its own run

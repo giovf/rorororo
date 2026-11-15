@@ -45,6 +45,7 @@ Changes: 2026-11-10 — CI WORKFLOWS: `first-runs` prints `waits for <event>` fo
 Changes: 2026-11-11 — pre-research pass: seeds a spike when `new-ventures.json` holds fewer than THREE open spikes (was two), and searches npm, GitHub and the Apify Store for a series' name before seeding a dataset spike (foundry `pre-research-shelf-cap-three`, review W45 §4).
 Changes: 2026-11-12 — pre-research pass: one seeded spike per window, at most two passes — a pass that parked or skipped leaves a later slot of the same window one more; `cold` counts `spike seeded` lines and pass lines (foundry `pre-research-second-pass-after-park`).
 Changes: 2026-11-12 — LOOP step 1: `researched` is the pass's minute (`YYYY-MM-DDTHH:MMZ`); the 48 h cooling counts from it, a plain date from 00:00 (foundry `research-cooling-from-the-minute`).
+Changes: 2026-11-15 — GATE: the week budget reads the previous week's capacity only from a first cutoff on day 4 or later, never below half of `week_slots`; an earlier stall falls back to `week_slots` and the `paced:` line says which (foundry `week-budget-learnt-floor`).
 
 ---
 
