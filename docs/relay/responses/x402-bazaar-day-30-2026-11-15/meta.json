@@ -1,0 +1,128 @@
+{
+  "request": "x402-bazaar-day-30-2026-11-15",
+  "fetched_at": "2026-11-15T17:23:22.217Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://x402scan.com/facilitator/coinbase",
+      "render": true,
+      "fetched_at": "2026-11-15T17:23:09.854Z",
+      "status": 200,
+      "final_url": "https://www.x402scan.com/facilitator/coinbase",
+      "title": "Coinbase | x402scan",
+      "rendered": {
+        "network_idle": true,
+        "requests": 108,
+        "failed": [
+          "POST https://api.cdp.coinbase.com/platform/v2/embedded-wallet-api/projects/f324a33d-13ec-4990-8339-b8b7627fa043/auth/refresh → 401",
+          "POST https://api.cdp.coinbase.com/platform/v2/embedded-wallet-api/projects/f324a33d-13ec-4990-8339-b8b7627fa043/auth/logout → 401",
+          "GET https://www.x402scan.com/?_rsc=1if63 → net::ERR_ABORTED",
+          "GET https://www.x402scan.com/facilitator/coinbase/transactions?_rsc=1on8m → net::ERR_ABORTED",
+          "GET https://www.x402scan.com/server/4fd75bf8-a58b-43b5-9b61-c7cf1f4ca4bd?_rsc=1uuqn → net::ERR_ABORTED",
+          "GET https://www.x402scan.com/recipient/0xbedb1b6d81e708c5e7b09255664680bfb267639e?_rsc=psgzu → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 3172,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 289666
+    },
+    {
+      "method": "GET",
+      "url": "https://x402scan.com/facilitator/payAI",
+      "render": true,
+      "fetched_at": "2026-11-15T17:23:15.925Z",
+      "status": 200,
+      "final_url": "https://www.x402scan.com/facilitator/payAI",
+      "title": "PayAI | x402scan",
+      "rendered": {
+        "network_idle": true,
+        "requests": 108,
+        "failed": [
+          "POST https://api.cdp.coinbase.com/platform/v2/embedded-wallet-api/projects/f324a33d-13ec-4990-8339-b8b7627fa043/auth/refresh → 401",
+          "POST https://api.cdp.coinbase.com/platform/v2/embedded-wallet-api/projects/f324a33d-13ec-4990-8339-b8b7627fa043/auth/logout → 401",
+          "GET https://www.x402scan.com/server/e0cfe85b-abf6-49fa-9f26-2a07c9ab5d7d?_rsc=1d884 → net::ERR_ABORTED",
+          "GET https://www.x402scan.com/server/4e7a72e6-aba4-4e02-b271-da1b6f7019eb?_rsc=19e2g → net::ERR_ABORTED",
+          "GET https://www.x402scan.com/server/1f61adca-8704-4c09-906b-db3326ef40f6?_rsc=1r9x7 → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 3265,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 287326
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/search?query=UK%20company%20lookup&limit=20",
+      "fetched_at": "2026-11-15T17:23:19.849Z",
+      "status": 200,
+      "elapsed_ms": 289,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/search?query=UK%20company%20lookup&limit=20",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 66530,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/search?query=sanctions%20list&limit=20",
+      "fetched_at": "2026-11-15T17:23:20.649Z",
+      "status": 200,
+      "elapsed_ms": 230,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/search?query=sanctions%20list&limit=20",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "4.json",
+      "bytes": 64353,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/search?query=public%20tenders&limit=20",
+      "fetched_at": "2026-11-15T17:23:21.383Z",
+      "status": 200,
+      "elapsed_ms": 218,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/search?query=public%20tenders&limit=20",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 69056,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/x402/data/uk-tenders",
+      "fetched_at": "2026-11-15T17:23:21.609Z",
+      "status": 402,
+      "elapsed_ms": 607,
+      "final_url": "https://gankdat.com/x402/data/uk-tenders",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "301"
+      },
+      "file": "6.json",
+      "bytes": 301,
+      "truncated": false
+    }
+  ]
+}
