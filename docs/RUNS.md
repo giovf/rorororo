@@ -3078,3 +3078,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 19:34 | burn-down | gankdat run 210 failed too: duplicate column lookup_keyed, so run 209's statements had committed unrecorded
 - 2026-11-15 19:34 | burn-down | Migration 0018 is now state-independent: IF NOT EXISTS tables only, the keyed flag in source_key_state
 - 2026-11-15 19:34 | burn-down | Production keeps two unused NULL columns from run 209; the empty index is dropped; noted in the migration
+- 2026-11-15 19:38 | burn-down | gankdat run 211 green: migration 0018 applied, Worker deployed with the lookup-key code
+- 2026-11-15 19:38 | burn-down | Live after deploy: charities by 00612172 200 in 5.8 s (OXFAM), sponsors by Oxfam 200 in 1.6 s (Oxfam GB)
+- 2026-11-15 19:38 | burn-down | Those reads still scan: the registers are keyed by the 05:15-08:10 waves; live-round item reads it 11-16
+- 2026-11-15 19:38 | burn-down | Stopping for time: 1 item done, main healed twice; uk-esg-disclosures (a dataset build) left unclaimed
