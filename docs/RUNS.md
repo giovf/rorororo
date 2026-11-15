@@ -3056,3 +3056,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 18:27 | burn-down | queryD1Source takes the total from a short page: a lookup by number or name is one scan, not two (2 specs)
 - 2026-11-15 18:27 | burn-down | Deploys on this push's CI run; this slot sends a ten-call relay burst after it and records the answers
 - 2026-11-15 18:27 | burn-down | Queued gankdat d1-lookup-key-index (6): filters scan the whole register, no index on record fields
+- 2026-11-15 18:35 | burn-down | Clay intro video live: HEAD apps.gankdat.com/demo/clay-intro.mp4 200 video/mp4, 2,173,713 bytes
+- 2026-11-15 18:35 | burn-down | d1-register-burst-reads live (gankdat run 208): ten back-to-back reads, 7 answered, 3 said busy, retry in 11 s
+- 2026-11-15 18:35 | burn-down | Cause confirmed as D1's 10-second throttle; before the fix 2 of 7 answered and none said why
+- 2026-11-15 18:35 | burn-down | Baseline for d1-lookup-key-index: a filtered register read takes 0.9-4.2 s, throttled by the 4th in a row
+- 2026-11-15 18:35 | burn-down | Relay saved 2 MB of the mp4 (RANGE not honoured by the asset host); the slice is removed from the tree
+- 2026-11-15 18:35 | burn-down | demo-video.yml: no run since the 11-14 installer; never dispatched (the Clay video was recorded locally)
+- 2026-11-15 18:35 | burn-down | Stopping for time: 2 items done; d1-lookup-key-index (0.8 d, a D1 migration) left unclaimed for a full slot
