@@ -3035,3 +3035,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 17:15 | burn-down | shelf-note.ts still parses an old "etsy views N/day" note; a Kindle-only note writes one row (test)
 - 2026-11-15 17:15 | burn-down | handoffs gained --today YYYY-MM-DD for a dated dry look; 11-30 prints the Kindle-only shelf ask
 - 2026-11-15 17:15 | burn-down | weekly-report.md, SCHEDULERS.md, RESEARCH §6 and etsy-day-60-read drop the Etsy views reading
+- 2026-11-15 17:24 | burn-down | Built gankdat x402-bazaar-day-30: 39 buyer calls, 10 clients, 2 repeat in 30 d; proof half met
+- 2026-11-15 17:24 | burn-down | Bazaar search rank: 4th UK company lookup, 5th public tenders, outside 17 for sanctions list
+- 2026-11-15 17:24 | burn-down | Rivals ranked above us sell 1-5 calls a month each; listing left as is, not extended
+- 2026-11-15 17:24 | burn-down | x402scan re-read: PayAI 140 daily buyers against Coinbase 2,970 (4.7 %); no second rail
+- 2026-11-15 17:24 | burn-down | Ledger: first revenue row, 0.24 GBP (US$0.33 of x402 receipts, USDC in the seller wallet)
+- 2026-11-15 17:24 | burn-down | Queued gankdat x402-bazaar-day-60 (3) for 12-15; x402-aggregator-mcp stays parked

@@ -643,15 +643,16 @@
     {
       "id": "x402-bazaar-day-30",
       "title": "Day-30 read of the x402 Bazaar listing: resources indexed, calls and payers by resource from the `bazaar:` clause and the discovery API, our rank for a sample intent search (searchX402Resources 'UK company lookup', 'sanctions list', 'public tenders'), x402_paid excluding internal; record in RESEARCH.md and decide: extend (more routes, curation tier, the aggregator idea's trigger) or leave listed; plus x402scan's facilitator page (Coinbase vs PayAI buyers, 24 h and cumulative) as the monthly re-read of the second-rail question (spike 2026-11-04)",
-      "why": "Exchange 2026-W42 proof (≥ 50 paid calls from ≥ 5 payers in 30 days). The reading also settles the parked x402-aggregator-mcp trigger (our listing converts) and whether compliance/register data has buyers in the catalogue at all (EDGAR 69 calls / 29 payers and an OFAC screen 12 / 10 were the only compliance-shaped resources in the top 200 on 2026-10-14). Ledger convention (review W42, 2026-10-18): x402 receipts are USDC in the seller wallet, below the ledger's pence at half a cent a call — at each day-30 Bazaar read, record the period's receipts (excluding our probe) as one `revenue` row in docs/LEDGER.md at the GBP rate when they reach £0.01, else carry the running USDC total in RESEARCH.md; the first three external paid calls landed 10-17/18 (US$0.015).",
+      "why": "Exchange 2026-W42 proof (≥ 50 paid calls from ≥ 5 payers in 30 days). The reading also settles the parked x402-aggregator-mcp trigger (our listing converts) and whether compliance/register data has buyers in the catalogue at all (EDGAR 69 calls / 29 payers and an OFAC screen 12 / 10 were the only compliance-shaped resources in the top 200 on 2026-10-14). Ledger convention (review W42, 2026-10-18): x402 receipts are USDC in the seller wallet, below the ledger's pence at half a cent a call — at each day-30 Bazaar read, record the period's receipts (excluding our probe) as one `revenue` row in docs/LEDGER.md at the GBP rate when they reach £0.01, else carry the running USDC total in RESEARCH.md; the first three external paid calls landed 10-17/18 (US$0.015). Done 2026-11-15 (burn-down): proof half met — buyers 39 paid calls / 10 clients / 2 repeat in 30 d (payers pass, calls miss), 32 of 39 on uk-trademark-journal, 21 from one client; search rank 4th (UK company lookup), 5th (public tenders), outside 17 (sanctions list), with every rival above at 1–5 calls; PayAI 4.7 % of Coinbase's daily buyers. Left listed, not extended; US$0.33 receipts booked as £0.24; x402-bazaar-day-60 queued for 12-15.",
       "effort_days": 0.1,
       "proof": "numbers recorded in RESEARCH.md; keep/extend decision in STRATEGY §8; parked ideas re-triggered or left with the reason",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-11-14",
       "added": "2026-10-14",
       "updated": "2026-11-04",
-      "doing_since": "2026-11-15"
+      "done_at": "2026-11-15",
+      "doing_by": "burn-down"
     },
     {
       "id": "googlebot-401-noindex",
@@ -1288,6 +1289,17 @@
       "status": "blocked",
       "blocked_on": "owner identity verification on Apify (not requested: below the STRATEGY §3 bar)",
       "added": "2026-11-14"
+    },
+    {
+      "id": "x402-bazaar-day-60",
+      "title": "Day-60 read of the x402 Bazaar listing: buyers' paid calls, clients and repeat payers from the Daily numbers `x402 30d:` clause, calls and payers by resource from the job log's `bazaar resource:` lines, rank for the same three intent searches (CDP `discovery/search`: 'UK company lookup', 'sanctions list', 'public tenders') with the rivals' call counts, x402scan's Coinbase vs PayAI buyers; book the period's receipts; decide leave listed or stop the weekly probe",
+      "why": "The day-30 read (2026-11-15, RESEARCH.md) found the W42 proof half met — 39 buyer calls from 10 clients, 32 on one dataset and 21 from one client, none since 11-11 — and a catalogue where no register or compliance route sells more than 8 calls a month. The listing costs £0, so the question a second read answers is whether buyer calls excluding the single heavy client grow (18 in the first 30 days) or the category has no buyers on this rail; at fewer than 18 the probe payments stop and the line is left to run untouched. Evidence 2 × reach 2 ÷ 0.1 d, capped at the dated-read score.",
+      "effort_days": 0.1,
+      "proof": "numbers and the three ranks recorded in RESEARCH.md beside the 11-15 ones; receipts booked or carried; the leave/stop decision in STRATEGY §8",
+      "score": 3,
+      "status": "todo",
+      "not_before": "2026-12-15",
+      "added": "2026-11-15"
     }
   ]
 }

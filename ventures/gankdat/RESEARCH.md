@@ -1576,3 +1576,54 @@ nothing to carry leaving the table empty. Deploys on this push's gankdat CI run.
 uk-trademark-journal, any `stats_throttled` line naming a statement phase, and `/stats/uk-trademark-journal`
 `dateModified` moving nightly; next-slot check: the 11-13 row's `uk-food-hygiene wave 05:45:` and
 `uk-trademark-journal wave 06:05:` clauses.
+
+## Build 2026-11-15 — x402 Bazaar day-30 read (`x402-bazaar-day-30`, burn-down)
+
+Read: the 11-15 Daily numbers row (run 323, 07:07) and its job log's `bazaar resource:` lines; relay
+`x402-bazaar-day-30-2026-11-15` (CDP's keyless discovery search for three intents; x402scan's Coinbase and PayAI
+facilitator pages, rendered 17:23 UTC).
+
+**The proof (exchange W42: ≥ 50 paid calls from ≥ 5 payers in 30 days) is half met.** The Worker's own count, which
+splits buyers from catalogue probers, reads `x402 30d: 66 paid, 19 clients — buyers 39 paid, 10 clients, repeat 2`:
+payers pass (10 ≥ 5), calls miss (39 < 50). The 27 other paid calls came from six third-party probers (crawlers that
+pay once per route to verify a listing is live) — real USDC, not demand. The buyer side is narrow: 32 of the 39 calls
+are uk-trademark-journal, 21 of the 39 are one client (`usetested-harness`), and the last buyer call was 11-11 — four
+days of zero since. Two repeat payers in 30 days is the line's first repeat signal and the only one.
+
+| Resource (CDP's count, 30 d, includes our probe and the probers) | Calls | Payers | Last |
+| --- | --- | --- | --- |
+| data/uk-trademark-journal | 35 | 8 | 11-11 |
+| data/uk-tenders | 8 | 6 | 11-01 |
+| data/eu-ted | 6 | 5 | 11-01 |
+| data/nhs-ods | 4 | 4 | 11-02 |
+| data/uk-care-locations, data/uk-sanctions | 3 each | 3 each | 10-27, 10-29 |
+| eleven other list routes and changes/uk-charities | 2 each | 2 each | 10-24 (changes: 11-09) |
+| eight other change routes | 1 each | 1 each | 11-08 (our indexing call) |
+
+`bazaar: 25 listed, 89 calls/30d, 59 payers`; `x402 validate: 30/30 valid`. Listed 25 of 30 valid routes; the nine
+change feeds priced on 11-05 have sold nothing beyond the indexing call and one prober (`changes 7d: 0`).
+
+**Intent search (CDP `discovery/search`, hybrid, top 17 each):** "UK company lookup" — `uk-company-profiles` is
+**4th**; "public tenders" — `uk-tenders` is **5th**; "sanctions list" — **not in the 17** (uk-sanctions has 3 calls and
+ranks behind seven screening routes). The finding that matters more than the rank: the routes above ours have 1–5 calls
+and 1–3 payers in 30 days each (pennydatahq 4/1, boscolabs 5/1, vextorium eu-tenders 4/3). Nobody in the catalogue
+sells register or compliance data in volume; uk-tenders at 8 calls / 6 payers is the busiest tenders route listed.
+So being found is not the constraint — the catalogue's buyers do not want this category yet.
+
+**x402scan, second-rail re-read:** Coinbase facilitator 3.93M requests, US$1.00M, 27.08K buyers, 8.58K sellers
+cumulative; past 24 h 222.82K transactions, US$20.08K, 2.97K buyers. PayAI 548.01K requests, US$29.37K, 1.95K buyers,
+1.45K sellers; past 24 h 18.14K transactions, US$774.18, 140 buyers. PayAI's daily buyers are **4.7 %** of Coinbase's
+(4 % on 11-04); the spike's re-open line is 25 %. No second rail.
+
+**Receipts:** 66 external paid calls at US$0.005 = **US$0.33** in the seller wallet (every external call to date falls
+in this window; the first landed 10-17; no external call hit a US$0.01 change route). That passes the £0.01 line of the
+W42 convention, so it is one `revenue` row in `docs/LEDGER.md`: £0.24 at ~1.35. It is USDC on Base, not a payout —
+computed from the Worker's settled-payment count, not from a wallet read.
+
+**Decision: leave listed, do not extend.** The listing costs £0 and nothing a month to keep (the probe is inside CDP's
+free 1,000 settlements), so there is no kill to make; but 39 buyer calls, one dominant client and four silent days do
+not justify more routes, a curation tier or work on rank. `x402-aggregator-mcp` stays parked: its own-listing trigger
+(≥ 50 paid calls/30 d) is not met on buyer calls, and the top-500 proxyable-spend count was not re-run in this read.
+`x402-journal-buyer-day-7-read` (11-17) reads whether the journal's one heavy client came back; `x402-bazaar-day-60`
+(12-15) is the next catalogue read and re-runs the same three searches.
+
