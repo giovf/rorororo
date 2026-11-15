@@ -2998,3 +2998,20 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-14 23:06 | notify | 2 jobs for your next Claude Code session, oldest 40 days: sign and upload Highlight Keep…
 - 2026-11-15 05:07 | triage | notify owner dispatched: last run started 02:05 UTC, 3 h ago
 - 2026-11-15 08:06 | triage | notify owner dispatched: last run started 05:05 UTC, 3 h ago
+- 2026-11-15 08:15 | review | W46 scorecard: every money target still zero; x402 buyers 17 to 39 calls, quiet since 11-11
+- 2026-11-15 08:15 | review | gankdat: keep; reposition not brought forward (two repeat payers), due end of January
+- 2026-11-15 08:15 | review | variables-toolkit: keep; first Figma install, verdict 12-20
+- 2026-11-15 08:15 | review | read-focus: stays killed (owner 11-09); listings live at no cost
+- 2026-11-15 08:15 | review | highlight-keep: keep; one Firefox user, verdict 12-21
+- 2026-11-15 08:15 | review | hackathons: keep; Meta not placed, PayPal read 12-16 decides the line
+- 2026-11-15 08:15 | review | tax-workbook: keep to the 12-28 read; Etsy closed by the owner, 0 sales on three shelves
+- 2026-11-15 08:15 | review | claude-code-kit: keep; built, waits on the owner's Leanpub step (day 10)
+- 2026-11-15 08:15 | review | oss-bounties: stays killed; fifth board with no free funded code row
+- 2026-11-15 08:15 | review | foundry: fix; week-budget gate has stopped every burn-down night since 11-13
+- 2026-11-15 08:15 | review | Queued foundry week-budget-learnt-floor (6): one early stall no longer paces a whole week
+- 2026-11-15 08:15 | review | Queued tax-workbook shelf-ask-kindle-only (2): the 11-30 owner ask drops the closed Etsy shop
+- 2026-11-15 08:15 | review | Ledger: booked Cloudflare's 11-10 invoice, 3.70 GBP; spent 62.30, headroom 29.70 (8 months)
+- 2026-11-15 08:15 | review | STRATEGY: §4 refreshed to 11-15, tax row renamed, §7 reposition names the paying buyer type
+- 2026-11-15 08:15 | review | Cadence: exchange not raised; idle nights were two pacing defects, not thin supply
+- 2026-11-15 08:15 | review | Re-parked creative-fabrica idea on the Payhip count; no weight changed; no owner ask added
+- 2026-11-15 08:15 | review | review.md: commit co-author line updated to the model the routines moved to on 11-12

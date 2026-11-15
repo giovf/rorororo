@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "researched": "2026-11-12",
   "items": [
     {
@@ -1520,6 +1520,16 @@
       "added": "2026-11-14",
       "status": "done",
       "done_at": "2026-11-14"
+    },
+    {
+      "id": "week-budget-learnt-floor",
+      "title": "Week budget: one early stall must not pace the whole next week. In scripts/pipeline-cold.ts, a capacity learnt from the previous week (learntWeekSlots) is used only when its first cutoff fell on or after the fourth day of that week (Sunday 03:00 UTC, i.e. the week ran at least three full days before the allowance showed) — an earlier cutoff is a stall, not a capacity reading, and the budget falls back to BURN.json week_slots; in either case the capacity is never below half of week_slots. The paced line names which rule applied. Tests replay docs/RUNS.md 2026-11-05..11-15 (learnt 5 from the 11-06 09:09 build stall, 2 to spend, burn-down gated 11-13 and 11-14 with buildable items open) and the W44 case (cutoff on day 6, learnt value kept).",
+      "why": "Review 2026-W46: the retro (W46 proposal 3) left this retro-only until a second instance; it arrived the same week. The week of 11-05 stalled once on its first day (the 11-06 09:09 build), so the week from 11-12 03:00 learnt 5 working slots, kept 3 for Wednesday and had 2 to spend — used up by Thursday 17:00. The watchdog wrote `paced: … week budget: 4 of 2` (11-13) and `6 of 2` (11-14); the burn-down has built nothing since 11-12 17:31 while gankdat held three open buildable items (clay-intro-video, uk-esg-disclosures, x402-bazaar-day-30 due 11-14) and the gate holds every night to the 11-19 03:00 reset, Wednesday included (the week check runs before the Wednesday exemption). The usage report is 42 days old (BURN.json report 2026-10-04), so the learner is the only pacing input and it read one stall as a 5-slot allowance against a measured 26–33. Evidence 2 × reach 3 (every night of a paced week) ÷ 0.2 → 6 (cap).",
+      "effort_days": 0.2,
+      "proof": "`npm run pipeline cold` on the night after the push prints no `week budget` stop while the week has used fewer than 13 working slots; the next watchdog trace shows the 17:00 burn-down slot ran; the tests above pass",
+      "score": 6,
+      "added": "2026-11-15",
+      "status": "todo"
     }
   ]
 }
