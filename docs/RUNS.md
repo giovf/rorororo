@@ -2997,3 +2997,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-14 23:06 | triage | notify owner dispatched: last run started 20:53 UTC, 2 h 12 min ago
 - 2026-11-14 23:06 | notify | 2 jobs for your next Claude Code session, oldest 40 days: sign and upload Highlight Keep…
 - 2026-11-15 05:07 | triage | notify owner dispatched: last run started 02:05 UTC, 3 h ago
+- 2026-11-15 08:06 | triage | notify owner dispatched: last run started 05:05 UTC, 3 h ago
