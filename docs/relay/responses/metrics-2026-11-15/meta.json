@@ -1,0 +1,37 @@
+{
+  "request": "metrics-2026-11-15",
+  "fetched_at": "2026-11-15T07:10:03.895Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/pciignkojfpgmfcmjchmpdhonpjkfepc/reviews?hl=en",
+      "fetched_at": "2026-11-15T07:10:03.430Z",
+      "status": 200,
+      "elapsed_ms": 251,
+      "final_url": "https://chromewebstore.google.com/detail/highlight-keep-%E2%80%94-web-high/pciignkojfpgmfcmjchmpdhonpjkfepc/reviews?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 2258,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 649804
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717/comments?page_size=50",
+      "fetched_at": "2026-11-15T07:10:03.757Z",
+      "status": 200,
+      "elapsed_ms": 137,
+      "final_url": "https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "2.json",
+      "bytes": 127,
+      "truncated": false
+    }
+  ]
+}
