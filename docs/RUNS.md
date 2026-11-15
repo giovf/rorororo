@@ -3043,3 +3043,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 17:24 | burn-down | Queued gankdat x402-bazaar-day-60 (3) for 12-15; x402-aggregator-mcp stays parked
 - 2026-11-15 17:28 | burn-down | Highlight Keep retirement: the build slot's commit landed first; my duplicate was not pushed
 - 2026-11-15 17:28 | burn-down | Stopping for time: 2 items done; clay-intro-video (0.3 d, records in CI) left unclaimed for a full slot
+- 2026-11-15 18:22 | burn-down | Built gankdat clay-intro-video: 83 s captioned mp4 for Clay's partner team, 7 shots, no voice
+- 2026-11-15 18:22 | burn-down | scripts/demo-clay-intro.ts + 7 tests: pages from public/, register answers from relay rounds, no secret
+- 2026-11-15 18:22 | burn-down | Live read for the video: Oxfam 00612172 active, charity 202918, 0 insolvency, 0 sanctions, 5 sponsor rows
+- 2026-11-15 18:22 | burn-down | Relay POST now names text/event-stream in Accept: gankdat /mcp answered 200 (was a 406 by the transport)
+- 2026-11-15 18:22 | burn-down | Hosted as landing site demo/clay-intro.mp4; deploys on this push, next slot HEADs apps.gankdat.com for 200
+- 2026-11-15 18:22 | burn-down | CLAY-LISTING §3 has the link and reply sentence; triage adds it to the next clay.com draft, no owner ask
+- 2026-11-15 18:22 | burn-down | Found: D1 registers refuse back-to-back reads (charities 2 of 3, sponsors 3 of 3 at 0.5 s); alone it answers
+- 2026-11-15 18:22 | burn-down | Queued gankdat d1-register-burst-reads (8): Clay tables run 60 a minute and MCP logs no error for these

@@ -11,6 +11,9 @@ GitHub runner to fetch for it:
    or `POST <https url> <json>` (2026-10-14, foundry `relay-post-json`) — the JSON body is the rest of
    the line, e.g. `POST https://mainnet.base.org {"jsonrpc":"2.0","id":1,"method":"eth_blockNumber","params":[]}`
    or `POST https://api.cdp.coinbase.com/platform/v2/x402/validate {"resource":"https://gankdat.com/x402/data/uk-tenders","method":"GET"}`.
+   A POST's `Accept` names `application/json, text/event-stream` (2026-11-15), so a Streamable HTTP MCP
+   endpoint answers a `tools/call` line — `POST https://gankdat.com/mcp {"jsonrpc":"2.0","id":1,"method":"tools/call","params":{…}}`
+   reads a register through gankdat's keyless preview (5 rows a call, 20 calls a day for the runner).
    The body must be valid JSON under 4 kB and is sent as `application/json`; the response is saved
    like a GET's (same 2 MB cap). A line whose body has a credential-shaped key (`token`, `secret`,
    `password`, `api_key`, `private_key`, `authorization`, `cookie` …) or value (a JWT, a Stripe,

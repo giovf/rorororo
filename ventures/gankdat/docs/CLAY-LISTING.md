@@ -12,6 +12,7 @@ Skill page, which showed the Skill format and the install command).
 | Docs page: five HTTP API column configs + CRM walkthrough   | https://gankdat.com/clay (`public/clay.html`; sitemap row; strict CSP in `public/_headers`)   |
 | Landing card                                                | https://gankdat.com/ → "built for ai agents" → _clay (http api)_                              |
 | The Skill (Agent Skills format)                             | `skills/uk-company-register-check/SKILL.md`, public at https://github.com/giovf/gankdat/tree/main/skills/uk-company-register-check after the next mirror sync |
+| Intro video for Clay's partner team (83 s, captions, no voice) | https://apps.gankdat.com/demo/clay-intro.mp4 (`scripts/demo-clay-intro.ts`; §3) |
 | Test pinning the page and the Skill to the registry         | `test/clay.spec.ts` (every documented source, parameter, field path and rate limit is real)  |
 
 No Worker change: the columns call the live `/v1/data/<source>` routes with the user's bearer key,
@@ -140,6 +141,37 @@ Fields mirror what a listing shows on marketplace.clay.com (read 2026-11-09).
 - **Links:** https://gankdat.com/clay · https://gankdat.com/docs ·
   https://github.com/giovf/gankdat/tree/main/skills/uk-company-register-check
 - **Creator:** the owner's name; company gankdat.
+
+## §3 — Intro video (queue `clay-intro-video`, 2026-11-15)
+
+The intake form's Loom field was left empty on 2026-11-12; this is what it asked for — the product,
+its key specs and why an integration helps — as an 83-second captioned recording with no voice:
+**https://apps.gankdat.com/demo/clay-intro.mp4** (1280×720, 2.2 MB).
+
+| Shot | Seconds | What is on screen                                                                                   |
+| ---- | ------- | --------------------------------------------------------------------------------------------------- |
+| 1    | 8       | gankdat.com: official UK public registers as one API                                                |
+| 2    | 10      | gankdat.com/clay: five register checks as HTTP API columns                                          |
+| 3    | 12      | The column configs, then "What a row costs": the user's own key, 250 calls a month free, £5 per 1,000 |
+| 4    | 14      | Oxfam by its company number 00612172: the Companies House record's field paths and values           |
+| 5    | 14      | The same company on the charity, insolvency, sanctions and sponsor registers: `meta.total` and fields |
+| 6    | 11      | Why Clay: 220 providers, none native to the UK registers; rate limits; no personal data             |
+| 7    | 7       | Links: gankdat.com/clay, /docs, /openapi.json, info@gankdat.com                                     |
+
+How it is made: `node --disable-warning=ExperimentalWarning scripts/demo-clay-intro.ts` (the hackathon
+recorder, `scripts/demo-video.ts`), no network and no secret. The pages are `public/` served on a
+local port; the register answers are real ones read from gankdat.com on 2026-11-15 by a GitHub runner
+(relay rounds `clay-intro-video-2026-11-15`, `-b`, `-c`: one keyless MCP preview call per register),
+printed under the REST request a Clay column sends for the same record. The terminal's title bar
+says the day read and the route. To re-record after the page or the registers change: a new relay
+round, its folder in `DEMO_LOOKUP_DIR`, then copy `dist/demo/clay-intro.mp4` to
+`packages/landing/site/demo/` (the landing workflow deploys it).
+
+**For a reply to Clay** (one sentence, paste-ready): "A short captioned walkthrough of the five
+endpoints, with one real company read across the registers, is at
+https://apps.gankdat.com/demo/clay-intro.mp4 (83 seconds, no sound)." The reply drafted on 2026-11-13
+is the owner's to send as it stands; the inbox triage adds the sentence to the next draft on a
+clay.com thread. Nothing new is asked of the owner.
 
 ## Proof and kill (from the spike)
 

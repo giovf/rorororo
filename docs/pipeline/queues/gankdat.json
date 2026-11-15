@@ -1262,13 +1262,13 @@
     {
       "id": "clay-intro-video",
       "title": "Clay intro video: a captioned 60–90 s recording (no voice) for Clay's partner team — what gankdat is, the five register endpoints with credit pricing and rate limits (gankdat.com/clay), one live lookup of a real company across Companies House, sanctions, insolvency and charity with the JSON fields a Clay column maps, and why Clay (220 providers, none native to the UK registers) — recorded with the hackathon demo pipeline (Playwright + ffmpeg) and hosted at apps.gankdat.com/demo/clay-intro.mp4; the link goes into CLAY-LISTING.md and is sent in reply to Clay's first mail",
-      "why": "The Integrations Partner Typeform (action 039, submitted by the owner 2026-11-12) asked for a Loom introducing the product, key specs and why an integration helps; the field was left empty to submit the same day (owner: 'add the video to the pipeline, dont make it now'). Clay's fit review takes 30–60 days and answers by mail, so the video has a use when that mail arrives or when the review asks for more. Reuses the Meta entry's recorder (apps.gankdat.com/demo/meta-diligence.mp4); £0, no owner time. Score: evidence 1 × reach 1.5 ÷ 0.3 d ≈ 5, held to 3 because Clay has not asked yet.",
+      "why": "The Integrations Partner Typeform (action 039, submitted by the owner 2026-11-12) asked for a Loom introducing the product, key specs and why an integration helps; the field was left empty to submit the same day (owner: 'add the video to the pipeline, dont make it now'). Clay's fit review takes 30–60 days and answers by mail, so the video has a use when that mail arrives or when the review asks for more. Reuses the Meta entry's recorder (apps.gankdat.com/demo/meta-diligence.mp4); £0, no owner time. Score: evidence 1 × reach 1.5 ÷ 0.3 d ≈ 5, held to 3 because Clay has not asked yet. Built 2026-11-15 (burn-down): scripts/demo-clay-intro.ts records 7 captioned shots, 82.9 s, 1280×720 h264, with no network or secret — the two pages are ventures/gankdat/public served locally, the register answers are three relay rounds of keyless MCP preview calls for Oxfam (company 00612172: active since 1958, charity 202918 registered, 0 insolvency notices, 0 sanctions hits, 5 sponsor-licence rows), and the terminal title says the day read and the route. Hosted as packages/landing/site/demo/clay-intro.mp4 (2.2 MB, deployed by the landing workflow); CLAY-LISTING.md §3 carries the link and the sentence for the reply; the reply already drafted on 11-13 is the owner's, so the inbox triage puts the link in the next draft on a clay.com thread (docs/routines/inbox-triage.md step 4). Found while reading: back-to-back keyless reads of the D1 registers answered 'temporarily unavailable' (queued as d1-register-burst-reads).",
       "effort_days": 0.3,
       "proof": "apps.gankdat.com/demo/clay-intro.mp4 answers 200 (video/mp4, 60–90 s); CLAY-LISTING.md names it; the reply to Clay's first mail carries it",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-12",
-      "doing_since": "2026-11-15"
+      "done_at": "2026-11-15"
     },
     {
       "id": "uk-esg-disclosures",
@@ -1300,6 +1300,16 @@
       "score": 3,
       "status": "todo",
       "not_before": "2026-12-15",
+      "added": "2026-11-15"
+    },
+    {
+      "id": "d1-register-burst-reads",
+      "title": "D1 register reads fail in a burst: find why uk-charities and uk-sponsors answer 'temporarily unavailable' when calls arrive half a second apart, and make a Clay-paced table run (60 a minute per key) answer every row — log the swallowed error in the MCP data tools (src/mcp/server.ts catches the read error and logs nothing, so the Worker's error lines show none of the five failures), give the MCP tool the REST route's 'busy, retry in 11 s' answer on a D1 overload, check uk-sponsors' organisation substring match and uk-charities' company_number match against their indexes (a LIKE '%name%' over 143k rows is a full scan a call), and prove it with a relay round of ten back-to-back calls",
+      "why": "Measured 2026-11-15 while reading the registers for the Clay intro video (relay rounds clay-intro-video-2026-11-15, -b, -c): keyless MCP calls sent 0.5 s apart — uk-charities failed 2 of 3 and uk-sponsors 3 of 3 with 'Source … is temporarily unavailable, retry later', while uk-insolvency and uk-sanctions in the same burst answered and a single uk-sponsors call sent alone at 18:18 UTC answered 5 rows. The probe dispatch (run 43745965529) shows one 'D1 DB is overloaded' line in 24 h and none for these calls, because the MCP handler discards the error. gankdat.com/clay and the partner form tell Clay users 60 requests a minute on these routes; a Clay table runs its columns row after row at that pace, so the first real table would hit this, during a fit review whose first mail (11-13) asked about exactly these five endpoints. Evidence 2 (measured, repeatable) × reach 1.5 (every keyed table run and agent loop on the D1 registers) ÷ 0.4 d ≈ 8.",
+      "effort_days": 0.4,
+      "proof": "a relay round of ten back-to-back calls (five uk-sponsors by organisation, five uk-charities by company_number) answers ten results, or the ones refused say 'busy, retry in N s'; the Worker's error lines name any read that failed",
+      "score": 8,
+      "status": "todo",
       "added": "2026-11-15"
     }
   ]
