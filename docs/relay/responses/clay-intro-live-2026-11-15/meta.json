@@ -1,0 +1,35 @@
+{
+  "request": "clay-intro-live-2026-11-15",
+  "fetched_at": "2026-11-15T18:30:19.709Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://apps.gankdat.com/demo/clay-intro.mp4",
+      "fetched_at": "2026-11-15T18:30:18.623Z",
+      "status": 200,
+      "elapsed_ms": 480,
+      "final_url": "https://apps.gankdat.com/demo/clay-intro.mp4",
+      "headers": {
+        "content-type": "video/mp4",
+        "etag": "\"74d23b61096ee0e8077a1305a4e2f248\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://apps.gankdat.com/demo/clay-intro.mp4",
+      "range": "0-63",
+      "fetched_at": "2026-11-15T18:30:19.604Z",
+      "status": 200,
+      "elapsed_ms": 73,
+      "final_url": "https://apps.gankdat.com/demo/clay-intro.mp4",
+      "headers": {
+        "content-type": "video/mp4",
+        "content-length": "2173713",
+        "etag": "\"74d23b61096ee0e8077a1305a4e2f248\""
+      },
+      "file": "2.bin",
+      "bytes": 2097152,
+      "truncated": true
+    }
+  ]
+}
