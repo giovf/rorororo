@@ -1291,7 +1291,7 @@ describe('d1store lookup key', () => {
     ).results.map((r) => r.lookup_key);
   const keyedFlag = async (slug: string): Promise<string | null> =>
     (
-      await env.DB.prepare('SELECT lookup_keyed FROM source_meta WHERE source_slug = ?1')
+      await env.DB.prepare('SELECT lookup_keyed FROM source_key_state WHERE source_slug = ?1')
         .bind(slug)
         .first<{ lookup_keyed: string | null }>()
     )?.lookup_keyed ?? null;

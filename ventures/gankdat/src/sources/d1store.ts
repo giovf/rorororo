@@ -84,13 +84,18 @@ interface SourceMeta {
   generation: number;
   last_refreshed_at: string;
   total: number;
-  /** The field the live rows' lookup_key holds (migration 0018); null until keyed. */
+  /** The field source_keys holds for every live row (source_key_state, migration 0018); null until keyed. */
   lookup_keyed?: string | null;
 }
 
+const KEY_STATE_SQL = `INSERT INTO source_key_state (source_slug, lookup_keyed) VALUES (?1, ?2)
+   ON CONFLICT (source_slug) DO UPDATE SET lookup_keyed = ?2`;
+
 async function readMeta(env: CloudflareBindings, slug: string): Promise<SourceMeta | null> {
   return env.DB.prepare(
-    'SELECT generation, last_refreshed_at, total, lookup_keyed FROM source_meta WHERE source_slug = ?1',
+    `SELECT m.generation, m.last_refreshed_at, m.total, k.lookup_keyed
+     FROM source_meta m LEFT JOIN source_key_state k ON k.source_slug = m.source_slug
+     WHERE m.source_slug = ?1`,
   )
     .bind(slug)
     .first<SourceMeta>();
@@ -445,7 +450,7 @@ function keyBackfillSql(field: string): string {
  * 2026-11-15): the delta refresh rewrites well under 1 % of a register a night, so the rows
  * stored before migration 0018 would never get a key from ingest alone. One INSERT … SELECT per
  * seq span, pure SQL (no record text leaves D1); once the whole generation is covered
- * `source_meta.lookup_keyed` names the field and reads start using source_keys. Best-effort by
+ * `source_key_state.lookup_keyed` names the field and reads start using source_keys. Best-effort by
  * contract: a throttle or the budget leaves the flag unset (reads keep scanning as before) and
  * the next night starts over — key rows already written are ignored, not rewritten.
  * A changed `lookupKey` adds the new field's keys beside the old ones (stale rows only cost a
@@ -489,9 +494,7 @@ async function backfillLookupKeys(
       );
       keyed += result.meta.changes;
     }
-    await env.DB.prepare('UPDATE source_meta SET lookup_keyed = ?2 WHERE source_slug = ?1')
-      .bind(source.slug, field)
-      .run();
+    await env.DB.prepare(KEY_STATE_SQL).bind(source.slug, field).run();
     previous.lookup_keyed = field;
     console.log(
       JSON.stringify({
@@ -1055,20 +1058,17 @@ async function refreshD1Append(
       lookup_keyed: previous ? (previous.lookup_keyed ?? null) : (source.lookupKey ?? null),
     };
     await env.DB.batch([
-      // lookup_keyed is set only when this run creates the register (every row then carries
-      // its key); an existing register's flag belongs to the key backfill.
       env.DB.prepare(
-        `INSERT INTO source_meta (source_slug, generation, last_refreshed_at, total, lookup_keyed)
-         VALUES (?1, ?2, ?3, ?4, ?5)
+        `INSERT INTO source_meta (source_slug, generation, last_refreshed_at, total)
+         VALUES (?1, ?2, ?3, ?4)
          ON CONFLICT (source_slug) DO UPDATE
          SET generation = ?2, last_refreshed_at = ?3, total = ?4`,
-      ).bind(
-        source.slug,
-        meta.generation,
-        meta.last_refreshed_at,
-        meta.total,
-        source.lookupKey ?? null,
-      ),
+      ).bind(source.slug, meta.generation, meta.last_refreshed_at, meta.total),
+      // The keyed flag is written only when this run creates the register (every row then has
+      // its key row); an existing register's flag belongs to the key backfill.
+      ...(previous
+        ? []
+        : [env.DB.prepare(KEY_STATE_SQL).bind(source.slug, source.lookupKey ?? null)]),
       env.DB.prepare(
         "DELETE FROM source_changes WHERE source_slug = ?1 AND changed_at < datetime('now', ?2)",
       ).bind(source.slug, `-${CHANGES_RETENTION_DAYS} days`),
@@ -1321,14 +1321,15 @@ async function refreshD1Full(
     };
     // Every row of the new generation was written with its key, so the flip also says so.
     meta.lookup_keyed = source.lookupKey ?? null;
-    await env.DB.prepare(
-      `INSERT INTO source_meta (source_slug, generation, last_refreshed_at, total, lookup_keyed)
-       VALUES (?1, ?2, ?3, ?4, ?5)
-       ON CONFLICT (source_slug) DO UPDATE
-       SET generation = ?2, last_refreshed_at = ?3, total = ?4, lookup_keyed = ?5`,
-    )
-      .bind(source.slug, meta.generation, meta.last_refreshed_at, meta.total, meta.lookup_keyed)
-      .run();
+    await env.DB.batch([
+      env.DB.prepare(
+        `INSERT INTO source_meta (source_slug, generation, last_refreshed_at, total)
+         VALUES (?1, ?2, ?3, ?4)
+         ON CONFLICT (source_slug) DO UPDATE
+         SET generation = ?2, last_refreshed_at = ?3, total = ?4`,
+      ).bind(source.slug, meta.generation, meta.last_refreshed_at, meta.total),
+      env.DB.prepare(KEY_STATE_SQL).bind(source.slug, meta.lookup_keyed),
+    ]);
     // Readers are on the new generation now. Before the old generation goes,
     // diff it against the new one for the change feed (best-effort).
     if (source.idOf && previous) {

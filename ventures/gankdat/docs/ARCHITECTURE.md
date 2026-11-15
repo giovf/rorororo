@@ -117,7 +117,7 @@ heavy deps. On CI the gate runs once per push, in `gankdat.yml` only.
   throttled statements wait the window out once (`withOverloadRetry`), a throttled data read answers
   503 `Retry-After: 11`; filtered totals are cached per generation. A source's `lookupKey` field (a company
   number, an organisation name) is written lowercased to the narrow `source_keys` table and a filter on it
-  walks those short rows, not the wide ones — same substring meaning; `source_meta.lookup_keyed` gates it
+  walks those short rows, not the wide ones — same substring meaning; `source_key_state.lookup_keyed` gates it
   (migration 0018). Never build an index on `source_records` in a migration (D1 resets it at 60 s). Never retry a throttle into the
   same window with a full reload.
 - **KV**: response cache per source (+ precomputed `/stats` blob, refresh single-flight lock),

@@ -14,7 +14,16 @@
 -- (ALTER TABLE source_records ADD COLUMN lookup_key + CREATE INDEX) failed in CI run 209 —
 -- building an index walks all ~1.5M wide rows and D1 reset the statement at 60 s
 -- ("storage operation exceeded timeout", code 7429). Nothing here reads source_records.
-CREATE TABLE source_keys (
+--
+-- Every statement here is IF [NOT] EXISTS, because production's state after run 209 was not what
+-- the error said: the API call timed out, but the statements went on and committed server-side
+-- without the migration being recorded — run 210's `ALTER TABLE source_meta ADD COLUMN
+-- lookup_keyed` then failed with "duplicate column name". So production carries two unused
+-- leftovers a fresh database does not: `source_records.lookup_key` (NULL in every row) and
+-- `source_meta.lookup_keyed` (NULL). Nothing reads or writes either; SQLite has no
+-- DROP COLUMN IF EXISTS, so they stay. The empty partial index is dropped below.
+DROP INDEX IF EXISTS idx_source_records_lookup;
+CREATE TABLE IF NOT EXISTS source_keys (
   source_slug TEXT NOT NULL,
   generation INTEGER NOT NULL,
   lookup_key TEXT NOT NULL,
@@ -24,4 +33,8 @@ CREATE TABLE source_keys (
 -- The field every live row of the source is keyed by; set once the in-place key backfill
 -- (or a full reload) has covered the generation. Reads use source_keys only when it names
 -- the source's current lookupKey, so a half-keyed register is never answered from it.
-ALTER TABLE source_meta ADD COLUMN lookup_keyed TEXT;
+-- A table of its own for the reason above (not a column on source_meta).
+CREATE TABLE IF NOT EXISTS source_key_state (
+  source_slug TEXT PRIMARY KEY,
+  lookup_keyed TEXT
+);

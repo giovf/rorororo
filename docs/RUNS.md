@@ -3075,3 +3075,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 19:25 | burn-down | Fix forward: keys live in a narrow table of their own (source_keys), filled at ingest and by the backfill
 - 2026-11-15 19:25 | burn-down | Stale key rows are harmless: the record's own filter still runs; rows are swept with their generation
 - 2026-11-15 19:25 | burn-down | Rule recorded in gankdat ARCHITECTURE: never build an index on source_records in a migration
+- 2026-11-15 19:34 | burn-down | gankdat run 210 failed too: duplicate column lookup_keyed, so run 209's statements had committed unrecorded
+- 2026-11-15 19:34 | burn-down | Migration 0018 is now state-independent: IF NOT EXISTS tables only, the keyed flag in source_key_state
+- 2026-11-15 19:34 | burn-down | Production keeps two unused NULL columns from run 209; the empty index is dropped; noted in the migration

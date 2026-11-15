@@ -338,7 +338,7 @@ runs `check:root`.
   ever added in place and swept with their generation. The narrowing works with any other filters and for the
   COUNT. Rows stored before the migration are keyed at the source's next refresh (`backfillLookupKeys`: one
   INSERT … SELECT per 5,000-seq span, 3-minute budget, best-effort); only when the whole generation is covered
-  does `source_meta.lookup_keyed` name the field, and reads use `source_keys` only while it equals the source's
+  does `source_key_state.lookup_keyed` name the field, and reads use `source_keys` only while it equals the source's
   current `lookupKey` — a half-keyed register is never answered from it. A full reload sets the flag at the flip.
   The plan (key-table range, records by primary key, no scan of `source_records`) and parity with the JS engine
   are asserted in `test/d1store.spec.ts`. Every other filter still scans.
@@ -347,6 +347,12 @@ runs `check:root`.
   statement at 60 s (`storage operation exceeded timeout which caused object to be reset`, code 7429), the
   deploy was skipped and the live Worker kept the previous version. A new access path goes in a table of its
   own that ingest and a paced backfill fill; migration 0010's index dates from a far smaller table.
+  **A D1 migration that times out may still have committed** (CI run 210): the 7429 was the API call giving
+  up, not the statements — they ran on and committed without the migration being recorded, so the replacement
+  0018 failed on `duplicate column name: lookup_keyed`. Production therefore carries two unused leftovers a
+  fresh database lacks (`source_records.lookup_key`, `source_meta.lookup_keyed`, both NULL; nothing reads them).
+  After a failed migration assume nothing about the remote schema: the next one uses only
+  `CREATE … IF NOT EXISTS` / `DROP … IF EXISTS` and new tables, never `ADD COLUMN` again for the same name.
   **D1's 10-second throttle** (2026-11-05, `refresh-uk-food-hygiene-2026-11-05`, v0.27.2, `src/sources/d1pace.ts`):
   `D1_ERROR: D1 DB is overloaded. Too many resources consumed within a 10 second window` first appeared on
   10-28 and hit every night from 11-04: the stored-index read (50,000-row pages back to back; `record_id`
