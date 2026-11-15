@@ -1507,13 +1507,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-11-13T17:29:05.843Z"
+      },
+      {
+        "id": "49",
+        "title": "D1 register reads: log failed reads, busy answer on MCP, one scan for a short page",
+        "description": "gankdat d1-register-burst-reads (2026-11-15): readFailure in store.ts logs the cause on REST and MCP and says busy/retry on a D1 throttle; queryD1Source takes the total from a short page instead of a second full scan.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-11-15T18:27:25.233Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-11-13T17:29:05.843Z",
-      "taskCount": 48,
-      "completedCount": 41,
+      "lastModified": "2026-11-15T18:27:25.233Z",
+      "taskCount": 49,
+      "completedCount": 42,
       "tags": [
         "master"
       ]

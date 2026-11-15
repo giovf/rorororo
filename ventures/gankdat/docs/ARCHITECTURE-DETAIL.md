@@ -314,6 +314,15 @@ runs `check:root`.
   yesterday's of the rest (every row present, nothing partially loaded; `last_refreshed_at`
   flips at the end, and a crash mid-way self-heals against the stored hashes). `refresh_log`
   carries `delta +a ~c -r` per source. Migrations via `wrangler d1 migrations`.
+  **Read failures are logged and a short page is one scan** (2026-11-15, `d1-register-burst-reads`): keyless MCP
+  reads of uk-charities and uk-sponsors sent 0.5 s apart answered "temporarily unavailable" (5 of 7) while a
+  single read answered, and the Worker's error lines showed none — the MCP data tools caught the read error
+  and logged nothing. `store.ts readFailure` is now the one place a failed read is logged (`read failed: <slug>
+  via <surface>: <cause>`) and worded: a D1 throttle says "busy, retry in 11 s" on MCP as on REST. `queryD1Source`
+  runs the page first and takes the total from a short page (fewer rows than asked ends the result set), so a
+  lookup-shaped read — a company number, a name, 0–5 hits — is one full scan of the register, not a page scan
+  and a COUNT scan side by side. Filters still scan (`json_extract` over `record`, no index on record fields):
+  an indexed lookup key is queued as `d1-lookup-key-index`.
   **D1's 10-second throttle** (2026-11-05, `refresh-uk-food-hygiene-2026-11-05`, v0.27.2, `src/sources/d1pace.ts`):
   `D1_ERROR: D1 DB is overloaded. Too many resources consumed within a 10 second window` first appeared on
   10-28 and hit every night from 11-04: the stored-index read (50,000-row pages back to back; `record_id`

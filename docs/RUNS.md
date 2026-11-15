@@ -3051,3 +3051,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 18:22 | burn-down | CLAY-LISTING §3 has the link and reply sentence; triage adds it to the next clay.com draft, no owner ask
 - 2026-11-15 18:22 | burn-down | Found: D1 registers refuse back-to-back reads (charities 2 of 3, sponsors 3 of 3 at 0.5 s); alone it answers
 - 2026-11-15 18:22 | burn-down | Queued gankdat d1-register-burst-reads (8): Clay tables run 60 a minute and MCP logs no error for these
+- 2026-11-15 18:27 | burn-down | Built gankdat d1-register-burst-reads: failed register reads are logged with their cause on REST and MCP
+- 2026-11-15 18:27 | burn-down | MCP data tools answer busy, retry in 11 s on a D1 throttle (was temporarily unavailable, nothing logged)
+- 2026-11-15 18:27 | burn-down | queryD1Source takes the total from a short page: a lookup by number or name is one scan, not two (2 specs)
+- 2026-11-15 18:27 | burn-down | Deploys on this push's CI run; this slot sends a ten-call relay burst after it and records the answers
+- 2026-11-15 18:27 | burn-down | Queued gankdat d1-lookup-key-index (6): filters scan the whole register, no index on record fields
