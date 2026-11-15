@@ -3024,3 +3024,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 09:30 | build | demo-video.yml has no run since the 11-14 09:24 installer; never dispatched, read at its own run
 - 2026-11-15 12:07 | triage | notify owner dispatched: last run started 09:49 UTC, 2 h ago
 - 2026-11-15 15:06 | triage | notify owner dispatched: last run started 12:05 UTC, 3 h ago
+- 2026-11-15 17:16 | build | gankdat refresh-uk-planning-reread-2026-10-18 done: platform still 503 on day 9, next read 11-22
+- 2026-11-15 17:16 | build | MHCLG's 11 Nov update expects the planning API back soon, no date; paused notice unchanged, no code
+- 2026-11-15 17:16 | build | uk-planning demand: paused actor 28 runs in 30 days, external reads 0; nothing retires
+- 2026-11-15 17:16 | build | Owner note 11-15 answered: Highlight Keep retired, venture killed, queue finished, two items dropped
+- 2026-11-15 17:16 | build | Highlight Keep 0.4.0 upload handoff closed (41 days); listings stay live at no cost on 0.2.0
+- 2026-11-15 17:16 | build | Owner's question answered: the other job is the dev container's Node 26 bump, nothing asked of them
+- 2026-11-15 17:16 | build | demo-video.yml still has no run since the 11-14 installer; never dispatched, read at its own run

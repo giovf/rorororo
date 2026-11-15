@@ -298,7 +298,7 @@ closed entries older than 30 days (git keeps the history).
   import and merging Restore) the same way as 0.2.0: `bash scripts/amo-publish.sh ventures/highlight-keep` (release notes already in
   `assets/amo-metadata.json`), then `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
   CWS rejects an upload while 0.2.0 is still in review — wait for that mail (or it is published) first; AMO accepts it now.
-  Record the dates in `ventures/highlight-keep/STORE.md`, then write the `notify` line ("Highlight Keep 0.4 submitted …: imports Weava highlights"). ~5 min.
+  Record the dates in `ventures/highlight-keep/STORE.md`, then write the `notify` line ("Highlight Keep 0.4 submitted …: imports Weava highlights"). ~5 min. — Superseded 2026-11-15 (build): owner note 2026-11-15: Highlight Keep retired from the pipeline; venture killed, listings stay live at 0.2.0, no further uploads
 - 2026-10-07 owner: **let CI read Google Search Console** (~10 min, £0, no new account): create a read-only service account in
   Google Cloud, add its email as a *Restricted* user on the gankdat.com and apps.gankdat.com Search Console properties, and paste
   its JSON key as the `SEARCH_CONSOLE_KEY` repository secret. From then on the 06:45 job writes search impressions, clicks and the

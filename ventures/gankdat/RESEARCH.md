@@ -649,6 +649,22 @@ demand carried by the actor's users) does not start and nothing retires. Next re
 moved a week): the outage page first, then the dataset page — if the platform returns with `entity-count 0`
 the clock continues; if it names a `replacement-dataset` the re-read re-points.
 
+Re-read 2026-11-15 (build, relay `planning-origin-2026-11-15`, `refresh-uk-planning-reread-2026-10-18`): the
+platform is still down on day 9, so the dataset state could not be read for a second week — both
+`/dataset/planning-application.json` and `entity.json?dataset=planning-application&limit=5` answer 503 (after
+three retries) with the same gov.uk outage page, which gained one update: "11 November 2026 — We expect to
+restore public access to the Planning Data Platform including the Planning Data API … as soon as possible.
+However, some services including Check and Provide … will take longer to reappear" (still no date; page
+last-modified 11-11 16:52 UTC). On our side nothing moved: the nightly refresh reads
+`planning.data.gov.uk responded 503` on every row since 11-08 and every surface answers the 10-19 paused notice,
+so no code change. Demand: the 11-15 Daily numbers row has the paused Apify actor at 28 runs in 30 days for
+outside users (3 failed, clean-exit pause holding), `datasets 30d` lists uk-planning at 0 (the internal reads
+have aged out; the four `GET /v1/data/uk-planning 503` request lines of the day are the notice answering
+probes), external 0, x402 unlisted; so the §7 clock (external-query clock from 10-12, demand carried by the
+actor's users) does not start and nothing retires. Next read 2026-11-22 (`not_before` moved a week): the outage
+page first, then the dataset page — MHCLG says the API comes back before the submission tools, so the next
+read may be the first to see whether the dataset returns populated, empty, or re-pointed.
+
 ## Research 2026-10-13 (pipeline starved — burn-down)
 
 Read: the 10-10 → 10-12 Daily numbers rows, `docs/INBOX.md` to 10-12 23:12, `docs/ALERTS.md`, the

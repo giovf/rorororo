@@ -385,3 +385,14 @@ listing went live; Chrome's exact approval day is unknown, 12-29 at the latest) 
 review, a Google click to a Highlight Keep page, a support mail, or ≥ 5 users on either store keeps it; none of those
 sets the venture to `killed` and keeps the code and the listings (a live listing costs nothing and a later sale still
 pays).
+
+## Retired (owner, 2026-11-15)
+
+The owner's note of 2026-11-15 ("highlight keep should be retired from the pipeline. it is not worth pursuing") ends
+the effort before the §7 date: `venture.json` is `killed` as of 2026-11-15, the queue is `finished` (the
+owner-blocked Chrome listing item and the day-90 verdict dropped), and the 0.4.0 upload handoff — open 41 days for
+an attended session — is closed, so 0.4.0 stays unshipped and the stores keep 0.2.0. What stays: the code, the tests
+in the root gate, and the live Chrome and Firefox listings — a listing costs nothing and a later sale still pays
+through the licence Worker. Final reading at retirement (Daily check 2026-11-15): 0 keys sold, Chrome 0 users on
+every row since launch, Firefox 1 average daily user, 0 search impressions, no rating or review. No routine reads
+this venture again unless a sale, a rating or a support mail reaches the inbox.

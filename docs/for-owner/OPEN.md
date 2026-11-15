@@ -22,7 +22,6 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 5. **Clay replied to our listing; a draft answer is in info@gank…** — time not stated, since 2026-11-13; nothing queued waits on it.
    Clay replied to our listing; a draft answer is in info@gankdat.com Gmail - read it and press send
 
-## Waiting on an attended Claude session, not you (2)
+## Waiting on an attended Claude session, not you (1)
 
-- since 2026-10-05 — sign and upload Highlight Keep 0.4.0 (imports from Weava/Glasp .csv and Hypothesis exports, the "On for every site" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the…
 - since 2026-11-14 — devcontainer still installs Node 24 (`.devcontainer/Dockerfile`, nodesource `setup_24.x`) while the runners moved to 26 — ask-first path, harmless meanwhile (`engines.node >=22`): put the one-line bu…
