@@ -325,20 +325,28 @@ runs `check:root`.
   an indexed lookup key is queued as `d1-lookup-key-index`.
   **Indexed lookup key** (2026-11-15, `d1-lookup-key-index`, migration 0018): a D1 source names one string
   field as `DataSource.lookupKey` (uk-charities, uk-payment-practices and uk-company-accounts `company_number`,
-  uk-sponsors `organisation`, uk-schools `urn`); ingest writes its JS-lowercased value to
-  `source_records.lookup_key` ('' when the record has none, NULL for a source without a key) and the partial
-  index `idx_source_records_lookup (source_slug, generation, lookup_key, seq) WHERE lookup_key IS NOT NULL`
-  covers it. A filter on that field adds `seq IN (SELECT seq … INDEXED BY idx_source_records_lookup … instr(lookup_key, ?) > 0)`
-  to the WHERE (`LOOKUP_NARROW_SQL`): the walk is over short index entries, the matching rows are reached by
-  primary key, and the field's ordinary substring predicate stays in place — so the query language did NOT
-  change (the queued item proposed exact-match seeks; an exact `organisation` would have lost "oxfam" → "Oxfam GB",
-  and a miss — most Clay rows are not charities — would still have needed the scan to keep the substring rule).
-  The narrowing works with any other filters and for the COUNT. Rows stored before the migration are keyed in
-  place at the source's next refresh (`backfillLookupKeys`: one SQL UPDATE per 5,000-seq span, 3-minute budget,
-  resumable, best-effort); only when the whole generation is covered does `source_meta.lookup_keyed` name the
-  field, and reads use the index only while it equals the source's current `lookupKey` — a half-keyed register
-  is never answered from the index. A full reload sets the flag at the flip. The plan (covering index, no table
-  scan) and parity with the JS engine are asserted in `test/d1store.spec.ts`. Every other filter still scans.
+  uk-sponsors `organisation`, uk-schools `urn`); ingest writes its JS-lowercased value as one short row of
+  `source_keys (source_slug, generation, lookup_key, seq)` (WITHOUT ROWID, that tuple the primary key; no row
+  for a record without a value), in the same batch as the record. A filter on that field adds
+  `seq IN (SELECT seq FROM source_keys WHERE source_slug = ? AND generation = ? AND instr(lookup_key, ?) > 0)`
+  to the WHERE (`LOOKUP_NARROW_SQL`): the walk is one primary-key range of short rows, the matching records are
+  reached by their primary key, and the field's ordinary substring predicate stays in place — so the query
+  language did NOT change (the queued item proposed exact-match seeks; an exact `organisation` would have lost
+  "oxfam" → "Oxfam GB", and a miss — most Clay rows are not charities — would still have needed the scan to keep
+  the substring rule). Because the record's own predicate still runs, a stale key row (a key that changed, a
+  record the delta removed) is a candidate that is rejected, never a wrong answer; key rows are therefore only
+  ever added in place and swept with their generation. The narrowing works with any other filters and for the
+  COUNT. Rows stored before the migration are keyed at the source's next refresh (`backfillLookupKeys`: one
+  INSERT … SELECT per 5,000-seq span, 3-minute budget, best-effort); only when the whole generation is covered
+  does `source_meta.lookup_keyed` name the field, and reads use `source_keys` only while it equals the source's
+  current `lookupKey` — a half-keyed register is never answered from it. A full reload sets the flag at the flip.
+  The plan (key-table range, records by primary key, no scan of `source_records`) and parity with the JS engine
+  are asserted in `test/d1store.spec.ts`. Every other filter still scans.
+  **Never build an index on `source_records` in a migration** (CI run 209, 2026-11-15): the first form of 0018
+  added a `lookup_key` column and a partial index on it; `CREATE INDEX` walks all ~1.5M wide rows, D1 reset the
+  statement at 60 s (`storage operation exceeded timeout which caused object to be reset`, code 7429), the
+  deploy was skipped and the live Worker kept the previous version. A new access path goes in a table of its
+  own that ingest and a paced backfill fill; migration 0010's index dates from a far smaller table.
   **D1's 10-second throttle** (2026-11-05, `refresh-uk-food-hygiene-2026-11-05`, v0.27.2, `src/sources/d1pace.ts`):
   `D1_ERROR: D1 DB is overloaded. Too many resources consumed within a 10 second window` first appeared on
   10-28 and hit every night from 11-04: the stored-index read (50,000-row pages back to back; `record_id`

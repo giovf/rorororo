@@ -3070,3 +3070,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 19:14 | burn-down | Stored rows are keyed in place at each register's next wave (5,000-seq spans, 3 min budget, resumable)
 - 2026-11-15 19:14 | burn-down | 6 specs: ingest keys, covering-index plan, parity with the JS engine, backfill, budget, registry check
 - 2026-11-15 19:14 | burn-down | Deploys on this push's CI run; queued gankdat d1-lookup-key-live-round (6) for 11-16: twenty-read round
+- 2026-11-15 19:25 | burn-down | gankdat run 209 failed at the migration: D1 reset the index build on source_records at 60 s (code 7429)
+- 2026-11-15 19:25 | burn-down | Deploy was skipped, the live Worker kept run 208's version; nothing was half-applied to reads
+- 2026-11-15 19:25 | burn-down | Fix forward: keys live in a narrow table of their own (source_keys), filled at ingest and by the backfill
+- 2026-11-15 19:25 | burn-down | Stale key rows are harmless: the record's own filter still runs; rows are swept with their generation
+- 2026-11-15 19:25 | burn-down | Rule recorded in gankdat ARCHITECTURE: never build an index on source_records in a migration

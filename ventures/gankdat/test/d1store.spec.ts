@@ -1281,13 +1281,13 @@ describe('d1store under the D1 throttle', () => {
 // gankdat d1-lookup-key-index (2026-11-15): a source's `lookupKey` field is stored lowercased in
 // an indexed column and a filter on it walks the index, not the register's wide rows.
 describe('d1store lookup key', () => {
-  const keysOf = async (slug: string): Promise<(string | null)[]> =>
+  const keysOf = async (slug: string): Promise<string[]> =>
     (
       await env.DB.prepare(
-        'SELECT lookup_key FROM source_records WHERE source_slug = ?1 ORDER BY seq',
+        'SELECT lookup_key FROM source_keys WHERE source_slug = ?1 ORDER BY seq, lookup_key',
       )
         .bind(slug)
-        .all<{ lookup_key: string | null }>()
+        .all<{ lookup_key: string }>()
     ).results.map((r) => r.lookup_key);
   const keyedFlag = async (slug: string): Promise<string | null> =>
     (
@@ -1327,13 +1327,11 @@ describe('d1store lookup key', () => {
       'delta vessel',
       'epsilon firm',
       'josé müller sl',
-      '',
-      '',
-    ]);
+    ]); // the two records without a string name have no key row
     await expectParity(source, records);
   });
 
-  it('reads a keyed filter through the covering index, the matching rows by primary key', async () => {
+  it('reads a keyed filter through the key table’s primary key, the matching rows by theirs', async () => {
     const source: DataSource = { ...makeSource('d1-key-plan'), lookupKey: 'name' };
     await refreshD1Source(env, source);
     const plan = await env.DB.prepare(
@@ -1343,12 +1341,18 @@ describe('d1store lookup key', () => {
       .all<{ detail: string }>();
     const details = plan.results.map((r) => r.detail);
     expect(
-      details.some((d) => /USING COVERING INDEX idx_source_records_lookup/.test(d)),
+      details.some((d) =>
+        /^SEARCH source_keys USING PRIMARY KEY \(source_slug=\? AND generation=\?\)/.test(d),
+      ),
       details.join(' | '),
     ).toBe(true);
-    // no walk of the table itself: every access is an index search
     expect(
-      details.some((d) => /^SCAN source_records\b(?!.*USING)/.test(d)),
+      details.some((d) => /^SEARCH source_records USING .*seq=\?/.test(d)),
+      details.join(' | '),
+    ).toBe(true);
+    // no walk of the wide rows
+    expect(
+      details.some((d) => /^SCAN source_records\b/.test(d)),
       details.join(' | '),
     ).toBe(false);
   });
@@ -1357,7 +1361,7 @@ describe('d1store lookup key', () => {
     const source = makeSource('d1-nokey');
     await refreshD1Source(env, source);
     expect(await keyedFlag('d1-nokey')).toBeNull();
-    expect(new Set(await keysOf('d1-nokey'))).toEqual(new Set([null]));
+    expect(await keysOf('d1-nokey')).toEqual([]);
     // the key is declared later: until a refresh keys the rows, reads scan and stay right
     const keyed: DataSource = { ...source, lookupKey: 'name' };
     await expectParity(keyed, RECORDS);
@@ -1381,9 +1385,13 @@ describe('d1store lookup key', () => {
     ];
     await refreshD1Source(env, { ...source, fetchFresh: () => Promise.resolve(day2) });
     expect((await metaOf('d1-key-backfill'))?.generation).toBe(1); // still the delta path
+    // a stale key row (a record since removed, a key since changed) is a candidate, never an answer
+    await env.DB.prepare(
+      "INSERT INTO source_keys (source_slug, generation, lookup_key, seq) VALUES ('d1-key-backfill', 1, 'zeta ghost', 9999), ('d1-key-backfill', 1, 'zeta stale', 1)",
+    ).run();
     expect(await keyedFlag('d1-key-backfill')).toBe('name');
-    expect((await keysOf('d1-key-backfill')).sort()).toEqual(
-      [
+    expect(new Set(await keysOf('d1-key-backfill'))).toEqual(
+      new Set([
         'alpha corp',
         'beta llc',
         'charlie person',
@@ -1391,14 +1399,21 @@ describe('d1store lookup key', () => {
         'epsilon firm',
         'josé müller sl',
         'zeta gmbh',
-      ].sort(),
+        'zeta ghost',
+        'zeta stale',
+      ]),
     );
     const schema = buildQuerySchema(source);
     for (const query of [{ name: 'zeta' }, { name: 'ALPHA' }, { name: 'josé' }, { name: 'e' }]) {
       const parsed = schema.parse(query);
       const got = await queryD1Source(env, source, parsed);
       expect(got.page.total, JSON.stringify(query)).toBe(applyQuery(day2, parsed).total);
+      expect(got.page.records, JSON.stringify(query)).toEqual(applyQuery(day2, parsed).records);
     }
+    // a full reload starts a clean generation and sweeps the old one's key rows
+    await refreshD1Source(env, { ...source, idOf: undefined });
+    expect((await metaOf('d1-key-backfill'))?.generation).toBe(2);
+    expect(await keysOf('d1-key-backfill')).toHaveLength(RECORDS.length);
   });
 
   it('does not claim a register keyed when the backfill ran out of budget', async () => {

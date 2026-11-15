@@ -108,16 +108,17 @@ heavy deps. On CI the gate runs once per push, in `gankdat.yml` only.
 - **D1**: `accounts` (email = identity, holds plan), `api_keys` (inherit plan), `credit_ledger`
   (append-only audit; NOT the live quota), `stripe_customers`, `waitlist`, `refresh_log`,
   `magic_tokens` (atomic single-use consume), `agent_signups`, `oauth_grants`, `oauth_clients`,
-  `paypal_orders`, `source_records`/`source_meta` (rows for `storage:'d1'` datasets),
+  `paypal_orders`, `source_records`/`source_meta` (rows for `storage:'d1'` datasets), `source_keys`,
   `source_changes` (90 d change feed). Migrations via `wrangler d1 migrations`.
   **Delta refresh**: a source with `idOf` is refreshed in place (hash compare, upsert/append/delete
   per chunk with its change-feed rows); the generation swap remains for first loads and sources
   without ids. D1 bills rows written — the swap was the 2026-10 budget overrun.
   **D1's 10-second throttle** ("D1 DB is overloaded"): index reads are paced (`src/sources/d1pace.ts`),
   throttled statements wait the window out once (`withOverloadRetry`), a throttled data read answers
-  503 `Retry-After: 11`; filtered totals are cached per generation. A source's `lookupKey` field (a company number, an
-  organisation name) is stored lowercased in the indexed `lookup_key` column and a filter on it walks that
-  index, not the wide rows — same substring meaning; `source_meta.lookup_keyed` gates it (migration 0018). Never retry a throttle into the
+  503 `Retry-After: 11`; filtered totals are cached per generation. A source's `lookupKey` field (a company
+  number, an organisation name) is written lowercased to the narrow `source_keys` table and a filter on it
+  walks those short rows, not the wide ones — same substring meaning; `source_meta.lookup_keyed` gates it
+  (migration 0018). Never build an index on `source_records` in a migration (D1 resets it at 60 s). Never retry a throttle into the
   same window with a full reload.
 - **KV**: response cache per source (+ precomputed `/stats` blob, refresh single-flight lock),
   monthly usage counters per account email (`usage:<email>:<yyyymm>`), top-up balance

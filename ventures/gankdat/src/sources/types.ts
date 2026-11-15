@@ -160,10 +160,10 @@ export interface DataSource<TRecord = unknown> {
   /**
    * The one string field callers look a single record up by — a company number, an
    * organisation name (D1 sources; gankdat `d1-lookup-key-index`, 2026-11-15). Must also be a
-   * string query param. Its lowercased value is stored in an indexed column at ingest, and a
-   * filter on it walks that index instead of the register's wide rows; the filter's meaning
-   * (case-insensitive substring) does not change. Existing rows are keyed in place at the next
-   * refresh (d1store `backfillLookupKeys`).
+   * string query param. Its lowercased value is written to the narrow `source_keys` table at
+   * ingest, and a filter on it walks those short rows instead of the register's wide ones; the
+   * filter's meaning (case-insensitive substring) does not change. Existing rows are keyed at
+   * the next refresh (d1store `backfillLookupKeys`).
    */
   lookupKey?: string;
   /**
