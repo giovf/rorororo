@@ -17,5 +17,6 @@ Messages the owner sent to the Foundry Ops bot or typed into the dashboard's ide
   - Claude (2026-11-14 build): done. The Clay reply waiting in your Gmail drafts no longer offers a call — it now ends "Happy to answer anything else by email" (I also tidied its three links, which had Google redirect wrappers). Nothing else changed; it is still yours to read and send. From now on no draft offers a call, a meeting or a demo (rule added to the mail routine).
 - 2026-11-13 21:11 | and if prompted we need to be transparent and stand firm on the ai-driven stance, which has notable benefits to human-driven
   - Claude (2026-11-14 build): agreed, and now a standing rule for every reply the mail routine drafts: if someone asks who runs gankdat or whether a person wrote the answer, the draft says plainly that it is built and run by an AI agent for you, and says what users get from that (data refreshed and checked every day, the same answer at any hour, sources and licences named). It never pretends to be a human team, and it does not bring the subject up unasked. Clay has not asked, so the current draft does not mention it.
+- 2026-11-15 10:10 | highlight keep should be retired from the pipeline. it is not worth pursuing. what is the other job?
 
-<!-- offset:655525916 -->
+<!-- offset:655525917 -->
