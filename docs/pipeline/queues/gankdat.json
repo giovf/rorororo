@@ -1309,8 +1309,9 @@
       "effort_days": 0.4,
       "proof": "a relay round of ten back-to-back calls (five uk-sponsors by organisation, five uk-charities by company_number) answers ten results, or the ones refused say 'busy, retry in N s'; the Worker's error lines name any read that failed",
       "score": 8,
-      "status": "todo",
-      "added": "2026-11-15"
+      "status": "doing",
+      "added": "2026-11-15",
+      "doing_since": "2026-11-15"
     }
   ]
 }
