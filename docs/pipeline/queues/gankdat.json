@@ -1320,8 +1320,9 @@
       "effort_days": 0.8,
       "proof": "a relay round of twenty back-to-back keyless reads by key (ten uk-charities company numbers, ten uk-sponsors exact names) answers twenty results, and EXPLAIN QUERY PLAN in the spec shows the index for a key-only filter",
       "score": 6,
-      "status": "todo",
-      "added": "2026-11-15"
+      "status": "doing",
+      "added": "2026-11-15",
+      "doing_since": "2026-11-15"
     }
   ]
 }
