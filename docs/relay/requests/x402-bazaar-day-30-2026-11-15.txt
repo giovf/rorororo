@@ -1,0 +1,6 @@
+RENDER https://x402scan.com/facilitator/coinbase
+RENDER https://x402scan.com/facilitator/payAI
+GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/search?query=UK%20company%20lookup&limit=20
+GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/search?query=sanctions%20list&limit=20
+GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/search?query=public%20tenders&limit=20
+GET https://gankdat.com/x402/data/uk-tenders
