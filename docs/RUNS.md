@@ -3085,3 +3085,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 20:08 | triage | notify owner dispatched: last run started 17:22 UTC, 2 h 44 min ago
 - 2026-11-15 20:07 | watchdog | ci-failed: gankdat.yml run 209 19:19 — step Apply D1 migrations (before the code th…; later run 210 failure
 - 2026-11-15 20:07 | watchdog | ci-failed: gankdat.yml run 210 19:27 — step Apply D1 migrations (before the code th…; later run 211 ok
+- 2026-11-15 23:07 | triage | notify owner dispatched: last run started 20:06 UTC, 3 h ago
