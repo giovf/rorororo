@@ -215,7 +215,9 @@ async function fetchOne(req, outDir, index, stalls) {
   if (req.range) headers.range = `bytes=${req.range}`;
   if (req.method === 'POST') {
     headers['content-type'] = 'application/json';
-    headers.accept = 'application/json, */*';
+    // text/event-stream is named so a Streamable HTTP MCP endpoint answers (its transport refuses
+    // a POST whose Accept lacks it with 406, 2026-11-15); the body still comes back as JSON.
+    headers.accept = 'application/json, text/event-stream, */*';
   }
   const startedAt = Date.now();
   try {
