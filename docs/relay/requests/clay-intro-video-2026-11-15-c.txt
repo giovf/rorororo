@@ -1,1 +1,0 @@
-POST https://gankdat.com/mcp {"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"query_uk_sponsors","arguments":{"organisation":"Oxfam"}}}

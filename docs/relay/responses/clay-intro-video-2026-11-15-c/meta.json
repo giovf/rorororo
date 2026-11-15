@@ -1,0 +1,21 @@
+{
+  "request": "clay-intro-video-2026-11-15-c",
+  "fetched_at": "2026-11-15T18:18:14.954Z",
+  "results": [
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_sponsors\",\"arguments\":{\"organisation\":\"Oxfam\"}}}",
+      "fetched_at": "2026-11-15T18:18:12.208Z",
+      "status": 200,
+      "elapsed_ms": 2742,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 3512,
+      "truncated": false
+    }
+  ]
+}
