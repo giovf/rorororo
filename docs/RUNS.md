@@ -3023,3 +3023,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 09:30 | build | bounty-board.yml first run: success (run 16, dispatched 11-14 17:21, 3 min)
 - 2026-11-15 09:30 | build | demo-video.yml has no run since the 11-14 09:24 installer; never dispatched, read at its own run
 - 2026-11-15 12:07 | triage | notify owner dispatched: last run started 09:49 UTC, 2 h ago
+- 2026-11-15 15:06 | triage | notify owner dispatched: last run started 12:05 UTC, 3 h ago
