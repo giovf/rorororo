@@ -3041,3 +3041,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 17:24 | burn-down | x402scan re-read: PayAI 140 daily buyers against Coinbase 2,970 (4.7 %); no second rail
 - 2026-11-15 17:24 | burn-down | Ledger: first revenue row, 0.24 GBP (US$0.33 of x402 receipts, USDC in the seller wallet)
 - 2026-11-15 17:24 | burn-down | Queued gankdat x402-bazaar-day-60 (3) for 12-15; x402-aggregator-mcp stays parked
+- 2026-11-15 17:28 | burn-down | Highlight Keep retirement: the build slot's commit landed first; my duplicate was not pushed
+- 2026-11-15 17:28 | burn-down | Stopping for time: 2 items done; clay-intro-video (0.3 d, records in CI) left unclaimed for a full slot
