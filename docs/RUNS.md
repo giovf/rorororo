@@ -3024,3 +3024,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 09:30 | build | demo-video.yml has no run since the 11-14 09:24 installer; never dispatched, read at its own run
 - 2026-11-15 12:07 | triage | notify owner dispatched: last run started 09:49 UTC, 2 h ago
 - 2026-11-15 15:06 | triage | notify owner dispatched: last run started 12:05 UTC, 3 h ago
+- 2026-11-15 17:15 | burn-down | Built tax-workbook shelf-ask-kindle-only: the 11-30 owner ask quotes "kindle 2 sold" and names no Etsy
+- 2026-11-15 17:15 | burn-down | shelf-note.ts still parses an old "etsy views N/day" note; a Kindle-only note writes one row (test)
+- 2026-11-15 17:15 | burn-down | handoffs gained --today YYYY-MM-DD for a dated dry look; 11-30 prints the Kindle-only shelf ask
+- 2026-11-15 17:15 | burn-down | weekly-report.md, SCHEDULERS.md, RESEARCH §6 and etsy-day-60-read drop the Etsy views reading
