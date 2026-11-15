@@ -1529,7 +1529,8 @@
       "proof": "`npm run pipeline cold` on the night after the push prints no `week budget` stop while the week has used fewer than 13 working slots; the next watchdog trace shows the 17:00 burn-down slot ran; the tests above pass",
       "score": 6,
       "added": "2026-11-15",
-      "status": "todo"
+      "status": "doing",
+      "doing_since": "2026-11-15"
     }
   ]
 }
