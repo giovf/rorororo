@@ -158,6 +158,15 @@ export interface DataSource<TRecord = unknown> {
    */
   idOf?(record: TRecord): string;
   /**
+   * The one string field callers look a single record up by — a company number, an
+   * organisation name (D1 sources; gankdat `d1-lookup-key-index`, 2026-11-15). Must also be a
+   * string query param. Its lowercased value is stored in an indexed column at ingest, and a
+   * filter on it walks that index instead of the register's wide rows; the filter's meaning
+   * (case-insensitive substring) does not change. Existing rows are keyed in place at the next
+   * refresh (d1store `backfillLookupKeys`).
+   */
+  lookupKey?: string;
+  /**
    * An accumulating register (2026-11-13, uk-company-accounts): each refresh yields only the
    * records the origin published since the last one (a daily file of yesterday's filings), so
    * the store upserts them by `idOf` and never removes a row for being absent from the stream;

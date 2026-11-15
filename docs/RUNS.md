@@ -3063,3 +3063,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 18:35 | burn-down | Relay saved 2 MB of the mp4 (RANGE not honoured by the asset host); the slice is removed from the tree
 - 2026-11-15 18:35 | burn-down | demo-video.yml: no run since the 11-14 installer; never dispatched (the Clay video was recorded locally)
 - 2026-11-15 18:35 | burn-down | Stopping for time: 2 items done; d1-lookup-key-index (0.8 d, a D1 migration) left unclaimed for a full slot
+- 2026-11-15 19:14 | burn-down | Built gankdat d1-lookup-key-index: a register read by company number or name walks an index, not the rows
+- 2026-11-15 19:14 | burn-down | Migration 0018: lookup_key column, partial covering index with seq, source_meta.lookup_keyed gate
+- 2026-11-15 19:14 | burn-down | Kept the substring meaning (not the queued exact seek): exact names lose Oxfam GB, misses would still scan
+- 2026-11-15 19:14 | burn-down | Keyed: charities, payment practices, company accounts by company number; sponsors by name; schools by URN
+- 2026-11-15 19:14 | burn-down | Stored rows are keyed in place at each register's next wave (5,000-seq spans, 3 min budget, resumable)
+- 2026-11-15 19:14 | burn-down | 6 specs: ingest keys, covering-index plan, parity with the JS engine, backfill, budget, registry check
+- 2026-11-15 19:14 | burn-down | Deploys on this push's CI run; queued gankdat d1-lookup-key-live-round (6) for 11-16: twenty-read round

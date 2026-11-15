@@ -1519,13 +1519,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-11-15T18:27:25.233Z"
+      },
+      {
+        "id": "50",
+        "title": "gankdat: indexed lookup key for D1 registers (migration 0018)",
+        "description": "DataSource.lookupKey, source_records.lookup_key + partial covering index, source_meta.lookup_keyed, in-place backfill, narrowed reads; pipeline gankdat/d1-lookup-key-index",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-11-15T19:14:47.439Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-11-15T18:27:25.233Z",
-      "taskCount": 49,
-      "completedCount": 42,
+      "lastModified": "2026-11-15T19:14:47.439Z",
+      "taskCount": 50,
+      "completedCount": 43,
       "tags": [
         "master"
       ]

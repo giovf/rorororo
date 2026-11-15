@@ -1316,13 +1316,24 @@
     {
       "id": "d1-lookup-key-index",
       "title": "Indexed lookup keys for the D1 registers: a `lookup_key` column on source_records (migration + index on source_slug, generation, lookup_key) filled at ingest from a per-source `DataSource.keyOf` (uk-charities company_number, uk-sponsors and uk-insolvency the lower-cased organisation name, uk-care-locations and uk-schools their ids), and an exact-match fast path in queryD1Source when the request filters only on that key — so a Clay column or an agent loop reading one company a row is an index seek, not a json_extract scan of the register; the substring semantics stay for every other filter, and gankdat.com/clay says which parameters are exact",
-      "why": "gankdat d1-register-burst-reads (2026-11-15): reads of uk-charities by company_number and uk-sponsors by organisation sent 0.5 s apart failed 5 of 7 while a single read answered; source_records has no index on record fields, so each filtered read scans the whole register and D1's 10-second throttle, shared by every caller and the refresh waves, bounds throughput far below the 60 requests a minute the Clay page and the partner form state. The burst fix halves the scans of a lookup; it does not make them seeks. Evidence 2 (measured; the first Clay table or agent batch hits it) × reach 1.5 ÷ 0.8 d ≈ 4, raised to 6 while Clay's fit review (30–60 days from 2026-11-12) may test the five endpoints. The post-deploy ten-call round's result is the baseline to beat. Baseline 2026-11-15 18:34 UTC (relay round d1-burst-2026-11-15, after the one-scan fix): 7 of 10 back-to-back reads answered, 3 were throttled between the 4th and 6th call; one filtered read takes 0.9–4.2 s.",
+      "why": "gankdat d1-register-burst-reads (2026-11-15): reads of uk-charities by company_number and uk-sponsors by organisation sent 0.5 s apart failed 5 of 7 while a single read answered; source_records has no index on record fields, so each filtered read scans the whole register and D1's 10-second throttle, shared by every caller and the refresh waves, bounds throughput far below the 60 requests a minute the Clay page and the partner form state. The burst fix halves the scans of a lookup; it does not make them seeks. Evidence 2 (measured; the first Clay table or agent batch hits it) × reach 1.5 ÷ 0.8 d ≈ 4, raised to 6 while Clay's fit review (30–60 days from 2026-11-12) may test the five endpoints. The post-deploy ten-call round's result is the baseline to beat. Baseline 2026-11-15 18:34 UTC (relay round d1-burst-2026-11-15, after the one-scan fix): 7 of 10 back-to-back reads answered, 3 were throttled between the 4th and 6th call; one filtered read takes 0.9–4.2 s. Done 2026-11-15 (burn-down): built as an indexed substring walk, not an exact seek — `lookup_key` (migration 0018) holds the key field lowercased, a partial covering index carries it with seq, and a filter on the field narrows through that index while keeping its substring meaning (an exact organisation name would have lost 'oxfam' → 'Oxfam GB', and misses would still have scanned), so nothing on gankdat.com/clay changes. Keys: uk-charities, uk-payment-practices and uk-company-accounts company_number, uk-sponsors organisation, uk-schools urn (uk-insolvency is a KV source; uk-care-locations has no id param). Stored rows are keyed in place by each register's next refresh wave (05:15–08:10 UTC), so the twenty-read relay round is the dated item d1-lookup-key-live-round; the spec asserts the covering-index plan and parity with the JS engine.",
       "effort_days": 0.8,
       "proof": "a relay round of twenty back-to-back keyless reads by key (ten uk-charities company numbers, ten uk-sponsors exact names) answers twenty results, and EXPLAIN QUERY PLAN in the spec shows the index for a key-only filter",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-15",
-      "doing_since": "2026-11-15"
+      "done_at": "2026-11-15"
+    },
+    {
+      "id": "d1-lookup-key-live-round",
+      "title": "Live proof of the indexed lookup key: after the 2026-11-16 refresh waves have keyed the stored rows, one relay round of twenty back-to-back keyless reads (ten uk-charities company numbers, ten uk-sponsors organisation names, some hits and some misses) — record how many answered and the slowest; if a register is still unkeyed, read the `lookup_key_backfill` lines with one `worker logs` dispatch and fix what stopped it",
+      "why": "d1-lookup-key-index (2026-11-15) shipped the index with the code and migration, but rows stored before migration 0018 get their key from the in-place backfill at each register's next refresh wave (uk-sponsors 05:15, uk-charities 05:30 UTC), so the item's live proof could not be read the night it was built. Baseline to beat (relay round d1-burst-2026-11-15): 7 of 10 answered, 0.9–4.2 s a read. Clay's fit review may test these endpoints at 60 a minute. Evidence 2 × reach 1.5 ÷ 0.1 d, capped at the parent's score.",
+      "effort_days": 0.1,
+      "proof": "docs/RUNS.md line with the round's count (twenty of twenty) and slowest read; ARCHITECTURE-DETAIL's lookup-key note carries the measured figure",
+      "score": 6,
+      "status": "todo",
+      "not_before": "2026-11-16",
+      "added": "2026-11-15"
     }
   ]
 }
