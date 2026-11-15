@@ -1,0 +1,156 @@
+{
+  "request": "d1-burst-2026-11-15",
+  "fetched_at": "2026-11-15T18:34:48.110Z",
+  "results": [
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_sponsors\",\"arguments\":{\"organisation\":\"Oxfam\"}}}",
+      "fetched_at": "2026-11-15T18:34:29.974Z",
+      "status": 200,
+      "elapsed_ms": 2045,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 3512,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_charities\",\"arguments\":{\"company_number\":\"00612172\"}}}",
+      "fetched_at": "2026-11-15T18:34:32.524Z",
+      "status": 200,
+      "elapsed_ms": 4155,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 3604,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_sponsors\",\"arguments\":{\"organisation\":\"Tesco\"}}}",
+      "fetched_at": "2026-11-15T18:34:37.181Z",
+      "status": 200,
+      "elapsed_ms": 1557,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 3460,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_charities\",\"arguments\":{\"company_number\":\"00213890\"}}}",
+      "fetched_at": "2026-11-15T18:34:39.240Z",
+      "status": 200,
+      "elapsed_ms": 262,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "4.json",
+      "bytes": 132,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_sponsors\",\"arguments\":{\"organisation\":\"Barclays\"}}}",
+      "fetched_at": "2026-11-15T18:34:40.005Z",
+      "status": 200,
+      "elapsed_ms": 247,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 131,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_charities\",\"arguments\":{\"company_number\":\"00445642\"}}}",
+      "fetched_at": "2026-11-15T18:34:40.754Z",
+      "status": 200,
+      "elapsed_ms": 265,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "6.json",
+      "bytes": 132,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_sponsors\",\"arguments\":{\"organisation\":\"Unilever\"}}}",
+      "fetched_at": "2026-11-15T18:34:41.521Z",
+      "status": 200,
+      "elapsed_ms": 887,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "7.json",
+      "bytes": 2962,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":8,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_charities\",\"arguments\":{\"company_number\":\"01056394\"}}}",
+      "fetched_at": "2026-11-15T18:34:42.910Z",
+      "status": 200,
+      "elapsed_ms": 1415,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "8.json",
+      "bytes": 1846,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":9,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_sponsors\",\"arguments\":{\"organisation\":\"Rolls-Royce\"}}}",
+      "fetched_at": "2026-11-15T18:34:44.826Z",
+      "status": 200,
+      "elapsed_ms": 1409,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "9.json",
+      "bytes": 3476,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":10,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_charities\",\"arguments\":{\"company_number\":\"02291857\"}}}",
+      "fetched_at": "2026-11-15T18:34:46.737Z",
+      "status": 200,
+      "elapsed_ms": 1371,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "10.json",
+      "bytes": 1847,
+      "truncated": false
+    }
+  ]
+}
