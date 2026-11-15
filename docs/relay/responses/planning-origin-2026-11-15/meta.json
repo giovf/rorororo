@@ -1,0 +1,46 @@
+{
+  "request": "planning-origin-2026-11-15",
+  "fetched_at": "2026-11-15T17:10:14.168Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.planning.data.gov.uk/dataset/planning-application.json",
+      "fetched_at": "2026-11-15T17:09:55.483Z",
+      "retries": 3,
+      "status": 503,
+      "elapsed_ms": 9294,
+      "final_url": "https://www.planning.data.gov.uk/dataset/planning-application.json",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "12010",
+        "last-modified": "Wed, 11 Nov 2026 16:52:49 GMT",
+        "etag": "\"1348a8c98ec23b4706cfd72f554101ca\""
+      },
+      "file": "1.txt",
+      "bytes": 1908,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 12010
+    },
+    {
+      "method": "GET",
+      "url": "https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=5",
+      "fetched_at": "2026-11-15T17:10:05.283Z",
+      "retries": 3,
+      "status": 503,
+      "elapsed_ms": 8884,
+      "final_url": "https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=5",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "12010",
+        "last-modified": "Wed, 11 Nov 2026 16:52:49 GMT",
+        "etag": "\"1348a8c98ec23b4706cfd72f554101ca\""
+      },
+      "file": "2.txt",
+      "bytes": 1908,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 12010
+    }
+  ]
+}
