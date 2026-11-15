@@ -1531,6 +1531,17 @@
       "added": "2026-11-15",
       "status": "done",
       "done_at": "2026-11-15"
+    },
+    {
+      "id": "ci-gankdat-failing",
+      "title": "The gankdat workflow (gankdat.yml) failed 2 times this week: root-cause and fix it",
+      "why": "Filed by scripts/ci-failed-runs.ts (2026-11-15): gankdat.yml failed 2 times in 7 days — run 209 (2026-11-15 19:19 UTC, step \"Apply D1 migrations (before the code that needs them)\", later run 210 failure) — https://github.com/giovf/rorororo/actions/runs/43751784266; run 210 (2026-11-15 19:27 UTC, step \"Apply D1 migrations (before the code that needs them)\", later run 211 ok) — https://github.com/giovf/rorororo/actions/runs/43752551882. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/gankdat.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done.",
+      "effort_days": 0.2,
+      "proof": "seven days of gankdat.yml runs with no ci-failed line in docs/RUNS.md",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-11-15",
+      "updated": "2026-11-15"
     }
   ]
 }

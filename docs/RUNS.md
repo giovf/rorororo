@@ -3083,3 +3083,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-15 19:38 | burn-down | Those reads still scan: the registers are keyed by the 05:15-08:10 waves; live-round item reads it 11-16
 - 2026-11-15 19:38 | burn-down | Stopping for time: 1 item done, main healed twice; uk-esg-disclosures (a dataset build) left unclaimed
 - 2026-11-15 20:08 | triage | notify owner dispatched: last run started 17:22 UTC, 2 h 44 min ago
+- 2026-11-15 20:07 | watchdog | ci-failed: gankdat.yml run 209 19:19 — step Apply D1 migrations (before the code th…; later run 210 failure
+- 2026-11-15 20:07 | watchdog | ci-failed: gankdat.yml run 210 19:27 — step Apply D1 migrations (before the code th…; later run 211 ok
