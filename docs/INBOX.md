@@ -319,3 +319,4 @@
 - 2026-11-16 11:34 | store | google.com | You need to verify your identity | Google Payments: government photo ID check needed to publish to Google Play, may take days | needs owner (identity verification)
 - 2026-11-16 11:34 | store | google.com | Google: Thank you | Google Play developer registration fee US$25.00; not in ledger, row added (~£18.50) | logged (ledger cost row)
 - 2026-11-16 11:42 | store | google.com | Trader status declaration confirmed | Play Console: account declared as trader | logged
+- 2026-11-16 12:18 (backlog) | notification | e.recall.ai | Welcome to Recall.ai! | signup welcome mail to info@; no action asked | logged
