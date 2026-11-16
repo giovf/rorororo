@@ -362,3 +362,5 @@ closed entries older than 30 days (git keeps the history).
 - 2026-11-13 owner: GitHub says the Claude app asks for new permissions; review it in GitHub Settings > Applications, accept only if expected
 - 2026-11-13 owner: Clay replied to our listing; a draft answer is in info@gankdat.com Gmail - read it and press send
 - 2026-11-14 handoff: devcontainer still installs Node 24 (`.devcontainer/Dockerfile`, nodesource `setup_24.x`) while the runners moved to 26 — ask-first path, harmless meanwhile (`engines.node >=22`): put the one-line bump in the next owner request that is already going out, never a request of its own.
+- 2026-11-16 owner: Google Play wants your photo ID check (Payments profile); only you can do it, it can take days
+- 2026-11-16 Google Play: developer account registered (US$25 fee, ledger row added), trader status confirmed; identity verification pending (owner)

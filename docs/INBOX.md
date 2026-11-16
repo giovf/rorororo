@@ -315,3 +315,7 @@
 - 2026-11-14 14:15 | notification | trycoinstancy.com | Where gankdat fits in the workflow | cold pitch from Coinstancy agent-service catalogue (5th), asks for one task to highlight; no customer ask | logged
 - 2026-11-15 19:23 | notification | github.com | [giovf/rorororo] Run failed: gankdat - main (8ad455a) | gankdat workflow run 43751784266 failed in 3m04s; watchdog ci-failed line pending; burn-down RUNS 19:38 says main healed twice | logged
 - 2026-11-15 19:30 | notification | github.com | [giovf/rorororo] Run failed: gankdat - main (d721dd2) | gankdat workflow failed in 2m12s; watchdog ci-failed line pending; burn-down RUNS 19:38 says main healed twice | logged
+- 2026-11-16 11:26 | notification | github.com | [GitHub] Please download your two-factor recovery codes | owner enabled GitHub 2FA; reminder to save recovery codes | logged
+- 2026-11-16 11:34 | store | google.com | You need to verify your identity | Google Payments: government photo ID check needed to publish to Google Play, may take days | needs owner (identity verification)
+- 2026-11-16 11:34 | store | google.com | Google: Thank you | Google Play developer registration fee US$25.00; not in ledger, row added (~£18.50) | logged (ledger cost row)
+- 2026-11-16 11:42 | store | google.com | Trader status declaration confirmed | Play Console: account declared as trader | logged
