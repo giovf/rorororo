@@ -1331,9 +1331,10 @@
       "effort_days": 0.1,
       "proof": "docs/RUNS.md line with the round's count (twenty of twenty) and slowest read; ARCHITECTURE-DETAIL's lookup-key note carries the measured figure",
       "score": 6,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-11-16",
-      "added": "2026-11-15"
+      "added": "2026-11-15",
+      "doing_since": "2026-11-16"
     }
   ]
 }
