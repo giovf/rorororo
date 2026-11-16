@@ -3103,3 +3103,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-16 17:20 | build | Workflow file unchanged: the fault was the migration text, and the gate now refuses it before deploy
 - 2026-11-16 17:20 | build | demo-video.yml: no run since the 11-14 install, read only (it publishes), so no first-run line yet
 - 2026-11-16 21:06 | triage | notify owner dispatched: last run started 18:50 UTC, 2 h 16 min ago
+- 2026-11-16 21:06 | watchdog | paced: burn-down slot 2026-11-16 17:00 UTC stopped by the gate — usage report 2026-10-04 is stale; cutoff seen — watchd…
