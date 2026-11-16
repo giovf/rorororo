@@ -320,3 +320,7 @@
 - 2026-11-16 11:34 | store | google.com | Google: Thank you | Google Play developer registration fee US$25.00; not in ledger, row added (~£18.50) | logged (ledger cost row)
 - 2026-11-16 11:42 | store | google.com | Trader status declaration confirmed | Play Console: account declared as trader | logged
 - 2026-11-16 12:18 (backlog) | notification | e.recall.ai | Welcome to Recall.ai! | signup welcome mail to info@; no action asked | logged
+- 2026-11-16 14:06 | store | clay.com | Re: Your Integration Request | Clay partnerships declines the integration for now; would revisit if German/French registers are added; no action asked | logged
+- 2026-11-16 14:16 | notification | trycoinstancy.com | Your place in the November 16 launch | cold pitch for paid directory placement/featured spot; paid marketing is out of scope | logged
+- 2026-11-16 14:27 | notification | recall.ai | Welcome to Recall.ai! | sales intro from Recall rep after the signup; no action asked | logged
+- 2026-11-16 15:06 | notification | github.com | [giovf/robin] PR run failed: CI - Robin v1 (a9bae5d) | Run failed mail for the separate robin repo, job CI / check, 2m08s; not a foundry workflow | logged
