@@ -324,3 +324,4 @@
 - 2026-11-16 14:16 | notification | trycoinstancy.com | Your place in the November 16 launch | cold pitch for paid directory placement/featured spot; paid marketing is out of scope | logged
 - 2026-11-16 14:27 | notification | recall.ai | Welcome to Recall.ai! | sales intro from Recall rep after the signup; no action asked | logged
 - 2026-11-16 15:06 | notification | github.com | [giovf/robin] PR run failed: CI - Robin v1 (a9bae5d) | Run failed mail for the separate robin repo, job CI / check, 2m08s; not a foundry workflow | logged
+- 2026-11-15 23:59 (backlog) | notification | google.com | Report domain: gankdat.com Submitter: google.com Report-ID: 8067254499051480601 | Google DMARC aggregate report for gankdat.com | logged
