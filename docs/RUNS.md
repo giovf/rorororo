@@ -3093,3 +3093,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-16 09:13 | build | Worker logs run 24: all five registers keyed by this morning's waves (sponsors 142k, charities 31k keys)
 - 2026-11-16 09:13 | build | demo-video.yml: no run since the 11-14 install, read only (it publishes), so no first-run line yet
 - 2026-11-16 10:07 | triage | notify owner dispatched: last run started 07:11 UTC, 2 h 55 min ago
+- 2026-11-16 10:06 | watchdog | missed: report slot 2026-11-16 07:30 UTC left no commit or run line by 09:30; usage limit? claude.ai/code/routines
