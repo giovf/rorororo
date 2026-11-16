@@ -359,6 +359,10 @@ runs `check:root`.
   fresh database lacks (`source_records.lookup_key`, `source_meta.lookup_keyed`, both NULL; nothing reads them).
   After a failed migration assume nothing about the remote schema: the next one uses only
   `CREATE … IF NOT EXISTS` / `DROP … IF EXISTS` and new tables, never `ADD COLUMN` again for the same name.
+  **Migration guard** (2026-11-16, foundry `ci-gankdat-failing`, `test/migration-guard.spec.ts`): both rules are now a
+  test, so the gate fails before production is touched — from 0018 on a migration may not name `source_records`
+  or `source_changes`, and carries only `CREATE … IF NOT EXISTS` / `DROP … IF EXISTS` (no `ALTER`); a needed
+  exception is a named line with its reason in the spec's `EXCEPTIONS`.
   **D1's 10-second throttle** (2026-11-05, `refresh-uk-food-hygiene-2026-11-05`, v0.27.2, `src/sources/d1pace.ts`):
   `D1_ERROR: D1 DB is overloaded. Too many resources consumed within a 10 second window` first appeared on
   10-28 and hit every night from 11-04: the stored-index read (50,000-row pages back to back; `record_id`

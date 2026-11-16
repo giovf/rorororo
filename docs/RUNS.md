@@ -3096,3 +3096,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-16 10:06 | watchdog | missed: report slot 2026-11-16 07:30 UTC left no commit or run line by 09:30; usage limit? claude.ai/code/routines
 - 2026-11-16 13:07 | triage | notify owner dispatched: last run started 10:06 UTC, 3 h ago
 - 2026-11-16 16:06 | triage | notify owner dispatched: last run started 13:06 UTC, 3 h ago
+- 2026-11-16 17:20 | build | Built foundry ci-gankdat-failing: both gankdat failures traced in their job logs, guard test added
+- 2026-11-16 17:20 | build | Run 209 cause: migration 0018 built an index on source_records; D1 reset the statement at 60 s (7429)
+- 2026-11-16 17:20 | build | Run 210 cause: run 209 had committed unrecorded, so ADD COLUMN lookup_keyed met a duplicate column
+- 2026-11-16 17:20 | build | New gankdat test migration-guard: from 0018 on, no big-table statement and nothing that cannot rerun
+- 2026-11-16 17:20 | build | Workflow file unchanged: the fault was the migration text, and the gate now refuses it before deploy
+- 2026-11-16 17:20 | build | demo-video.yml: no run since the 11-14 install, read only (it publishes), so no first-run line yet
