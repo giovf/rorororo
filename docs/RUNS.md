@@ -3102,3 +3102,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-16 17:20 | build | New gankdat test migration-guard: from 0018 on, no big-table statement and nothing that cannot rerun
 - 2026-11-16 17:20 | build | Workflow file unchanged: the fault was the migration text, and the gate now refuses it before deploy
 - 2026-11-16 17:20 | build | demo-video.yml: no run since the 11-14 install, read only (it publishes), so no first-run line yet
+- 2026-11-16 21:06 | triage | notify owner dispatched: last run started 18:50 UTC, 2 h 16 min ago
