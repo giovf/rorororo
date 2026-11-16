@@ -342,6 +342,12 @@ runs `check:root`.
   current `lookupKey` — a half-keyed register is never answered from it. A full reload sets the flag at the flip.
   The plan (key-table range, records by primary key, no scan of `source_records`) and parity with the JS engine
   are asserted in `test/d1store.spec.ts`. Every other filter still scans.
+  Measured live 2026-11-16 (`d1-lookup-key-live-round`, relay round `d1-lookup-round-2026-11-16`): the morning's
+  refresh waves keyed all five registers in place (`lookup_key_backfill done=true`: uk-sponsors 142,202 keys,
+  uk-charities 31,252, uk-schools 52,622, uk-payment-practices 116,806, uk-company-accounts 53,513), and twenty
+  keyless MCP reads sent half a second apart — charities by company number and sponsors by name alternating, 12
+  hits and 8 misses — answered twenty of twenty in 0.79–1.57 s (median 0.85 s, runner to Worker and back), none
+  throttled; the scan it replaced answered 7 of 10 at 0.9–4.2 s and hit D1's 10-second throttle by the 4th read.
   **Never build an index on `source_records` in a migration** (CI run 209, 2026-11-15): the first form of 0018
   added a `lookup_key` column and a partial index on it; `CREATE INDEX` walks all ~1.5M wide rows, D1 reset the
   statement at 60 s (`storage operation exceeded timeout which caused object to be reset`, code 7429), the
