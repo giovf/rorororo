@@ -1551,9 +1551,9 @@
       "effort_days": 0.3,
       "proof": "the next same-queue double finish merges with `pipeline resolve` and no hand edit, named in a run-log line; `npm run pipeline` validates the result",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-17",
-      "doing_since": "2026-11-17"
+      "done_at": "2026-11-17"
     },
     {
       "id": "decision-log-union-merge",

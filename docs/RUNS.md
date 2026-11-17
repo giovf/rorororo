@@ -3142,3 +3142,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 17:42 | burn-down | Queued foundry decision-log-union-merge (4): decisions in an append-only file that merges itself
 - 2026-11-17 17:42 | burn-down | Queued foundry routine-attribution-from-session (3): routine files name a model the session no longer is
 - 2026-11-17 17:42 | burn-down | Queued foundry gankdat-actor-scaffold (3): actor folders generated from the source schema, not hand-copied
+- 2026-11-17 17:45 | burn-down | Built foundry queue-merge-by-item-id: npm run pipeline resolve merges a conflicted queue file by item id
+- 2026-11-17 17:45 | burn-down | Replayed tonight's gankdat.json conflict in a throwaway clone: the command's output equals the hand merge
+- 2026-11-17 17:45 | burn-down | Routine files (build, burn-down, exchange) and the pipeline README now say resolve, never a hand edit

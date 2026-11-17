@@ -1,6 +1,7 @@
 // Reads the work pipeline (docs/pipeline/) and prints it; fails on any invalid file.
 // Run: npm run pipeline [status|next|empty|cold [--routine=build]|claim <venture>/<id> [--by=<routine>]
-//                        |claim-research <venture> [--by=<routine>]|research-landed <venture> --since=<ISO>]
+//                        |claim-research <venture> [--by=<routine>]|research-landed <venture> --since=<ISO>
+//                        |resolve [<venture> …]]
 // `cold -- --routine=build` also prints `exchange missed: <Wednesday> — run docs/routines/exchange.md`
 // first, Thursday to Saturday, when the Wednesday 08:00 exchange left no trace (2026-10-24).
 // A plain `cold` (the burn-down) prints `paced: <why>` alone and nothing else when the owner's usage
@@ -35,6 +36,18 @@ const dir = path.resolve(import.meta.dirname, '..', 'docs', 'pipeline');
 // `claim-research` and `research-landed` (2026-11-03, foundry research-claim-marker): the same
 // one-line push for a research pass (`researching_since`/`researching_by` on the queue, cooling
 // for 2 h), and the fetch-and-abort a research commit runs first — both in pipeline-claim.ts.
+// `resolve` (2026-11-17, foundry queue-merge-by-item-id): a queue file a pull left conflicted is
+// rewritten from git's three versions by item id (scripts/pipeline-resolve.ts) — plain node too.
+if (process.argv[2] === 'resolve') {
+  const { main } = await import('./pipeline-resolve.ts');
+  try {
+    process.exit(main(process.argv.slice(3)));
+  } catch (err) {
+    console.error(err instanceof Error ? err.message : String(err));
+    process.exit(2);
+  }
+}
+
 if (
   process.argv[2] === 'claim' ||
   process.argv[2] === 'claim-research' ||
