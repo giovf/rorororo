@@ -3136,3 +3136,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 17:24 | burn-down | New actors will stay private on the Store like the last two (Apify owner verification, item already blocked)
 - 2026-11-17 17:40 | burn-down | Built gankdat x402-harness-ua-as-prober: a user agent naming itself a harness now counts as a prober, with a test
 - 2026-11-17 17:40 | burn-down | Proof is the next Daily numbers row: usetested-harness under probers, the buyer count down by its 21 calls
+- 2026-11-17 17:40 | burn-down | claude-code-kit research: unchanged since 11-10, both items wait on the owner's Leanpub step; next pass after 12-01

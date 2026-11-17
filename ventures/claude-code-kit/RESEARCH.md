@@ -152,3 +152,9 @@ says plainly that the reader needs a Claude subscription, a terminal and judgeme
   venture since; the 11-08 review kept its weight at 2 for the same reason. The next signal is the owner's note, which the
   build routine answers in place and which unblocks the listing item without a research pass; `research_after` is set to
   2026-11-17 so the nightly fallback does not reread an unchanged shelf before then.
+- **2026-11-17 17:40 (burn-down, research pass):** no change — no items added. Nothing names this venture since the 11-10
+  pass: no `leanpub done <url>` note (the owner's 11-09 note says the open actions will be done when there is time), no
+  Leanpub mail in the inbox, no metrics row. Both open items still wait on action 038, and both second shelves (the KDP
+  twin, Whop) stay parked on the Leanpub day-60 trigger, which cannot start before a listing exists. The owner's note
+  unblocks the listing item without a research pass, so `research_after` moves to 2026-12-01; no reminder is sent — the
+  request is open and the rule is one request per channel, nothing appended.
