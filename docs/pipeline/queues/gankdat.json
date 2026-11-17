@@ -1156,9 +1156,10 @@
       "effort_days": 0.05,
       "proof": "the client's calls by day and route recorded in RESEARCH.md; a lever queued or 'nothing' in STRATEGY §8",
       "score": 3,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-11-17",
-      "added": "2026-11-10"
+      "added": "2026-11-10",
+      "doing_since": "2026-11-17"
     },
     {
       "id": "refresh-uk-gambling-operators",
