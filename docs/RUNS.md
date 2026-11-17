@@ -3107,3 +3107,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 00:06 | triage | notify owner dispatched: last run started 21:06 UTC, 3 h ago
 - 2026-11-17 06:06 | triage | notify owner dispatched: last run started 03:05 UTC, 3 h ago
 - 2026-11-17 09:07 | triage | notify owner dispatched: last run started 06:06 UTC, 3 h ago
+- 2026-11-17 09:14 | build | Spike spike-pay-per-crawl-reread done: Cloudflare Pay Per Crawl still a closed beta; idea stays parked
+- 2026-11-17 09:14 | build | Plan table left the analytics page; no plan lists charging. Next read uses the FAQ, not before 12-17
+- 2026-11-17 09:14 | build | AI crawler fetches on the zone: 1,290 in 30 days (630 Bingbot), 43 % of the 3,000 threshold, up from 830
+- 2026-11-17 09:14 | build | new-ventures queue is now empty: marked for research
+- 2026-11-17 09:14 | build | demo-video.yml: no run since the 11-14 install, read only (it publishes), so no first-run line yet

@@ -84,3 +84,19 @@ whose charging the FAQ warns costs indexing.
   `/stats…` ≥ 3,000 / 30 d (≈ 100 a day, the W42 threshold) so that US$0.01 a crawl is ≥ US$30 a month. TollBit
   (the alternative the W42 exchange named) was not read this run: its terms were not in the spike and it needs a
   DNS/proxy change on the zone, which is a build, not a toggle — it gets its own spike only if (2) fires first.
+
+## Re-read 2026-11-17 (monthly, new-ventures `spike-pay-per-crawl-reread`)
+
+Both pages fetched through the relay at 09:13 UTC (`docs/relay/responses/pay-per-crawl-reread-2026-11-17/`, HTTP 200 each).
+
+| Trigger                                                                    | Reading 2026-11-17                                                                                                                                                                                                                                                                                                                              | Met? |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| (1a) `what-is-pay-per-crawl` no longer says closed/private beta            | Unchanged, word for word: "Pay per crawl is currently in closed beta. To find out how to join the beta program, reach out to us at Pay per crawl signup, or contact your account executive if you are an existing Enterprise customer." The docs menu still labels the section "Pay Per Crawl Beta".                                             | No   |
+| (1b) `analyze-ai-traffic` lists charging on Free or Pro plans              | The page changed shape: the plan comparison read on 10-17 (charging for "Enterprise plans with Bot Management") is gone. It now describes the Overview, Crawlers and Metrics tabs; plan wording is limited to referrals and Top referrers ("paid plans only") and detection IDs ("Bot Management customers"). Charging is not offered on any plan here. | No   |
+| (2) Daily numbers `stats crawlers: zone` AI count ≥ 3,000 / 30 d           | Row 2026-11-17: zone 7,530 requests / 30 d, AI families **1,290** (Bingbot 630, PetalBot 350, CCBot 100, ClaudeBot 80, OAI-SearchBot 50, Amazonbot 40); Worker logs 179 fetches / 7 d, AI 40. Up from 830 on 11-04 and 670 on 10-30, still 43 % of the threshold — and 630 of the 1,290 are Bingbot, a search crawler the FAQ says to keep on Allow. | No   |
+
+**Call: stays parked.** Neither half of trigger (1) moved and trigger (2) is under half way. At US$0.01 a crawl the
+chargeable share today (1,290 − 630 Bingbot = 660 / 30 d) would be US$6.60 a month if the programme were open to a Free
+zone, which it is not. One change to carry forward: the plan table no longer lives on `analyze-ai-traffic`, so the next
+monthly read (not before 2026-12-17) takes `what-is-pay-per-crawl` and the Pay Per Crawl FAQ
+(`ai-crawl-control/features/pay-per-crawl/faq/`) instead of the analytics page.

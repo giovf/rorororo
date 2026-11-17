@@ -1,8 +1,8 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": false,
-  "updated": "2026-11-12",
+  "needs_research": true,
+  "updated": "2026-11-17",
   "researched": "2026-11-12",
   "weight": 2,
   "items": [
@@ -531,10 +531,10 @@
       "effort_days": 0.1,
       "proof": "the two pages quoted in pay-per-crawl.md with the date; the exchange.json trigger updated with the reading",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-11-17",
       "added": "2026-11-04",
-      "doing_since": "2026-11-17"
+      "done_at": "2026-11-17"
     },
     {
       "id": "spike-kdp-kindle-claude-code-handbook",
