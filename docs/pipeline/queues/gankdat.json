@@ -1278,8 +1278,9 @@
       "effort_days": 0.8,
       "proof": "a live `/v1/data/uk-company-profiles` read for a sampled company carries `esg.modern_slavery` (statement year, group/parent) and `esg.gender_pay_gap` (mean/median %), a company in neither carries null; `/v1/data/uk-modern-slavery-statements?company_number=<n>` lists its statements by year; the wave's refresh_log row shows both row counts; day-30 read (`uk-esg-disclosures-day-30`, queued at build): a route or the field on ≥ 1 paid or keyed external call, else noted as free fields",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-12"
+      "status": "doing",
+      "added": "2026-11-12",
+      "doing_since": "2026-11-17"
     },
     {
       "id": "apify-verified-owner-public-cap",
