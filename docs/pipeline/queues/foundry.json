@@ -1584,9 +1584,9 @@
       "effort_days": 0.3,
       "proof": "the next dataset build creates its actor folder with the command and `test/apify-schemas.spec.ts` passes on the first run, noted in its run-log line",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-17",
-      "doing_since": "2026-11-17"
+      "done_at": "2026-11-17"
     }
   ]
 }

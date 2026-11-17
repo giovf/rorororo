@@ -3154,3 +3154,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 18:14 | burn-down | Build, burn-down, fallback, exchange, review and retro files append to current.md and read its tail, not §8
 - 2026-11-17 18:20 | burn-down | Built foundry routine-attribution-from-session: five routine files sign commits with the session's own lines
 - 2026-11-17 18:20 | burn-down | A test fails the check when a routine prompt names a model in its trailer; Changes history lines are exempt
+- 2026-11-17 18:28 | burn-down | Built foundry gankdat-actor-scaffold: npm run actor writes an Apify actor folder from a source's own schemas
+- 2026-11-17 18:28 | burn-down | Scaffold test: same fields and order as all 21 shipped actors; exact match for the four built since 11-12
+- 2026-11-17 18:28 | burn-down | Title over 63 or description over 300 chars is refused at write time; unwritten lines carry TODO, which fails the test
+- 2026-11-17 18:28 | burn-down | Actor schema test now accepts an integer input for an integer API param (gender pay gap employer_id was left out)
+- 2026-11-17 18:28 | burn-down | Build and burn-down routine files and the apify README say to run the command, never copy a folder by hand
