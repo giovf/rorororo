@@ -1573,8 +1573,9 @@
       "effort_days": 0.05,
       "proof": "`grep -rn 'Fable 5\\.' docs/routines` is empty; the next build and burn-down commits carry the session's own trailer",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-17"
+      "status": "doing",
+      "added": "2026-11-17",
+      "doing_since": "2026-11-17"
     },
     {
       "id": "gankdat-actor-scaffold",
