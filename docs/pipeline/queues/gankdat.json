@@ -1156,10 +1156,10 @@
       "effort_days": 0.05,
       "proof": "the client's calls by day and route recorded in RESEARCH.md; a lever queued or 'nothing' in STRATEGY §8",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-11-17",
       "added": "2026-11-10",
-      "doing_since": "2026-11-17"
+      "done_at": "2026-11-17"
     },
     {
       "id": "refresh-uk-gambling-operators",
@@ -1337,6 +1337,16 @@
       "not_before": "2026-11-16",
       "added": "2026-11-15",
       "done_at": "2026-11-16"
+    },
+    {
+      "id": "x402-harness-ua-as-prober",
+      "title": "Class a user agent that names itself a test harness (`harness`) as a prober in the x402 buyers/probers split (`PROBER_UA` in `src/lib/x402-sales.ts`, with a test), so `usetested-harness` leaves the buyer count and the `x402 30d` clause reads demand only",
+      "why": "Day-7 read 2026-11-17 (build): `usetested-harness/0.1 (+https://usetested.com)` is 21 of the 42 buyer calls of the month, and the one `worker logs` read shows a test run, not an integration — a 25-second burst on 11-11 02:08 UTC of bare `GET /x402/data/uk-trademark-journal` calls with no query string (402, 200, 200, 402, 402, 402), no change-route call, nothing since 11-11. Counted as a buyer it carries the journal to 33 of 42 and is the lane`s `repeat` signal; the 12-15 day-60 read and the parked x402-aggregator-mcp trigger (>= 50 buyer calls/30 d) quote that clause. Evidence 1 (our own logs) x reach 1 / 0.1 day, discounted to 3 as measurement hygiene (x402-buyer-vs-survey-split was 4).",
+      "effort_days": 0.1,
+      "proof": "the next Daily numbers row lists usetested-harness under probers and the buyer count falls by its calls",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-17"
     },
     {
       "id": "uk-esg-disclosures-live-read",

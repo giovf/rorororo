@@ -3114,6 +3114,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 09:14 | build | demo-video.yml: no run since the 11-14 install, read only (it publishes), so no first-run line yet
 - 2026-11-17 12:06 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-11-17 16:06 | triage | notify owner dispatched: last run started 13:46 UTC, 2 h 20 min ago
+- 2026-11-17 17:16 | build | gankdat x402-journal-buyer-day-7-read done: the heavy journal payer was a test harness, gone since 11-11
+- 2026-11-17 17:16 | build | Its 21 paid calls were bare first-page fetches in short bursts; no filter, no change-route call
+- 2026-11-17 17:16 | build | Net of it the month has 21 buyer calls from 10 clients; no journal lever built
+- 2026-11-17 17:16 | build | Queued gankdat x402-harness-ua-as-prober (3): count a self-named harness as a prober, not a buyer
+- 2026-11-17 17:16 | build | demo-video.yml first run: waits for a manual dispatch by the owner's session (it publishes)
 - 2026-11-17 17:24 | burn-down | Built gankdat uk-esg-disclosures: two registers by company number, joined into the company lookup as esg, v0.31.0
 - 2026-11-17 17:24 | burn-down | New source uk-modern-slavery-statements: three registry-year files streamed whole, append-only, wave 2
 - 2026-11-17 17:24 | burn-down | New source uk-gender-pay-gap: the two latest reporting-year files, append-only, wave 2, id employer + year

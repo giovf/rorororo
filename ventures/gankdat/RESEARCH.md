@@ -1631,3 +1631,40 @@ not justify more routes, a curation tier or work on rank. `x402-aggregator-mcp` 
 `x402-journal-buyer-day-7-read` (11-17) reads whether the journal's one heavy client came back; `x402-bazaar-day-60`
 (12-15) is the next catalogue read and re-runs the same three searches.
 
+
+## x402 journal buyer — day-7 read 2026-11-17 (build, 17:10 UTC)
+
+Item `x402-journal-buyer-day-7-read`. Read: the Daily numbers rows 11-04 to 11-17 and one `worker logs` dispatch
+(run 25, needle `usetested-harness`, 8-day window, limit 200).
+
+**Calls by day** (the `x402 30d` clause's `usetested-harness` count, row to row; a row covers the 24 h to ~06:30 UTC):
+
+| Row | 24 h by this client | 30 d total | Route |
+| --- | --- | --- | --- |
+| 11-04 | 1 | 1 | data/uk-trademark-journal |
+| 11-10 | 10 | 11 | data/uk-trademark-journal |
+| 11-11 | 10 | 21 | data/uk-trademark-journal |
+| 11-12 … 11-17 | 0 | 21 | — |
+
+**It did not return.** 21 paid calls on three days (US$0.105), the last on 11-11; six rows of zero since.
+
+**What it queried.** The log read returned 6 lines, all on 2026-11-11 between 02:08:22 and 02:08:47 UTC (the 11-10
+burst is past Workers Logs' retention; the rest of the 11-11 ten were not returned): every one a bare
+`GET https://gankdat.com/x402/data/uk-trademark-journal` with **no query string** — no mark, class, owner or date
+filter, no page cursor — in the order 402, 200 (1.3 s), 200 (1.3 s), 402, 402, 402. User agent
+`usetested-harness/0.1 (+https://usetested.com)`, one client, a hosted network in Madrid; the two 402 invocation
+records carry no payment header and one sends `content-type: application/json` on a GET. **No call to
+`/x402/changes/uk-trademark-journal`** or to any other path; `changes 7d` is 0 on every row.
+
+**Reading: a test harness, not an integration.** The name says so, and the behaviour agrees: the default first page
+fetched again and again inside half a minute, paid and unpaid attempts mixed, nothing that selects a mark or follows
+the journal week to week, and no visit after the second run. The 11-10 research pass read ten calls in a day as "the
+lane's first sign of a working integration"; it was the same endpoint check run ten times. Net of this client the
+month's buyers are **21 paid calls from 10 clients** (journal 12, eu-ted 4, uk-tenders 3, nhs-ods 1,
+uk-care-locations 1), and the row's `repeat 3` falls to 2 (most likely among the `node` and `axios` callers, one or two calls a day).
+
+**Decision: nothing for the journal.** No per-mark watch bundle and no cheaper paged query — nobody has asked the
+journal a question a lever would answer (no filter was ever sent), and the change route built for exactly this use
+(11-05) has taken 0 paid calls in twelve days. One measurement fix is queued, `x402-harness-ua-as-prober` (3): a UA
+naming itself a harness is classed with the probers, so the buyer clause the 12-15 day-60 read and the parked
+aggregator trigger quote stops counting it as demand.
