@@ -20,7 +20,7 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 | Time (UTC) | Kind | Name / id | Invokes | Writes |
 | --- | --- | --- | --- | --- |
 | 05:00 | Cloudflare cron `0 5 * * *` | wave 1 | `scheduled` handler → `refreshAllSources(env, cron)` → KV snapshot sources (planning, tenders, contract awards, sanctions, EU TED, insolvency, companies) | KV snapshots, `refresh_log` |
-| 05:15 | Cloudflare cron `15 5 * * *` | wave 2 | D1 sources: sam-exclusions, uk-sponsors, uk-gambling-operators (added 2026-09-24, ~15k rows, five small CSVs) | D1 `source_records`, `source_changes`, `refresh_log` |
+| 05:15 | Cloudflare cron `15 5 * * *` | wave 2 | D1 sources: sam-exclusions, uk-sponsors, uk-gambling-operators (added 2026-09-24, ~15k rows, five small CSVs; in wave 6 since 2026-11-11), uk-modern-slavery-statements and uk-gender-pay-gap (added 2026-11-17: three registry-year CSVs ≈ 36 MB and two pay gap CSVs ≈ 4.4 MB streamed whole, append-only — a day writes only new and changed rows) | D1 `source_records`, `source_changes`, `refresh_log` |
 | 05:30 | Cloudflare cron `30 5 * * *` | wave 3 | uk-charities, uk-care-locations | same |
 | 05:45 | Cloudflare cron `45 5 * * *` | wave 4 | uk-food-hygiene (largest) | same |
 | 05:50 | Cloudflare cron `50 5 * * *` | wave 5 | uk-schools, uk-payment-practices (added 2026-11-12, ≈ 115k reports streamed from one ≈ 100 MB generated CSV; delta writes only the day's new reports) | same |

@@ -176,6 +176,33 @@ Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo
 names — never rename those; see memory/git history for why).
 
+**`uk-modern-slavery-statements` and `uk-gender-pay-gap`** (2026-11-17, queue item `uk-esg-disclosures`, spike
+`docs/exchange/spikes/uk-esg-disclosure-fields.md`, v0.31.0): two OGL v3 registers keyed on the Companies House
+number, built for the join, not as standalone shelves. Statements: one CSV per registry year
+(`…/publicdownloads/StatementSummaries<year>.csv`, 75 columns, quoted multi-line cells, 17–19 MB, regenerated about
+hourly); a refresh reads last year's, this year's and next year's file whole (`registryYears`; a 403/404 on next
+year's is skipped, any other failure is the night's error row). The spike's "2 MB Range chunks resumed by byte
+offset across waves" was not built: a file rewritten hourly has no stable offsets between waves, and 17 MB streams
+in one pass. One row is one organisation covered by one statement — a group statement repeats per member with
+`parent_name` naming the submitter (null on the submitter's own row), and members of one group can each file a
+statement covering the others — so the id is `<statement code>/<year>|<company number or organisation>`, not
+number + year, which would fold a group's rows into one. Pay gap: `…/viewing/download-data/<snapshot year>`
+(27 quoted columns, ≈ 4.2 MB, Range ignored); a refresh reads the two latest years (`reportingYears`, the year
+turns on 5 April; a 404 on the newest is skipped), id `EmployerId|year`. Both are `append` registers in **wave 2**
+(05:15): unchanged rows cost no write, a year no longer read stays, and the backfill of earlier years (queue item
+`uk-esg-disclosures-backfill`) writes into the same tables. Tick-box lists are stored as `; `-separated strings
+(D1 sources filter scalars only). Blind Mode: the approving / responsible person, emails, addresses, every
+`No…Reason`, "other" box, risk narrative and the employer's own pay-gap link are never ingested. The join:
+`uk-company-profiles.esg` = `{ modern_slavery, gender_pay_gap }` from `latestModernSlavery` (latest registry year,
+the company's own submission preferred to a group row, `statement_years` listing its history) and
+`latestGenderPayGap` (latest year, `reports` = years held); `esg` is null when the company is in neither, and since
+the registry is voluntary no surface words that as non-compliance. The /diligence agent reads both as its tenth
+and eleventh tools. Side effects of the two new tools: the keyless MCP preview budget went 20 → 30 calls a day
+(one call of every data tool must fit — `test/mcp-directory.spec.ts`), and an x402 Bazaar output schema over
+6 KB keeps nested record objects as bare `object` (`bazaar.ts slimNestedObjects`; the company lookup's
+PAYMENT-REQUIRED document had reached 13 KB). Proof owed: the first 05:15 wave's two `append +N` refresh_log rows
+and a live lookup carrying `esg` (queue item `uk-esg-disclosures-live-read`).
+
 ## Repo layout
 - `src/index.ts` — Hono app assembly; exports `fetch` + `scheduled` handlers
 - `src/sources/` — `DataSource` interface, registry, one file per dataset
@@ -418,7 +445,8 @@ runs `check:root`.
   isolate-cache fallback and the 500 (2026-10-29, `apify-companies-house-qa-repair`: 29 such
   blips in a day, every one on a cold key; Apify's one-shot QA call died on one for three days). **Keyless preview** (2026-09-30, `src/mcp/preview.ts`, for the
   Claude Connectors Directory whose review requires every tool to answer without
-  credentials): a data tool called without a key returns page 1 with ≤ 5 rows, 20 calls
+  credentials): a data tool called without a key returns page 1 with ≤ 5 rows, 30 calls (20 until
+  2026-11-17, when the registry passed 20 data tools and the every-tool walk hit the wall)
   per UTC day per client (sha-256 of IP + UA, KV `preview:<id>:<day>`), then a tool error
   naming the free plan and the cheapest paid one; `get_usage` reports the budget. Every
   tool carries `title` + `readOnlyHint`/`destructiveHint` (the two sign-up tools are the

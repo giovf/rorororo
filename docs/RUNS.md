@@ -3114,3 +3114,18 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 09:14 | build | demo-video.yml: no run since the 11-14 install, read only (it publishes), so no first-run line yet
 - 2026-11-17 12:06 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-11-17 16:06 | triage | notify owner dispatched: last run started 13:46 UTC, 2 h 20 min ago
+- 2026-11-17 17:24 | burn-down | Built gankdat uk-esg-disclosures: two registers by company number, joined into the company lookup as esg, v0.31.0
+- 2026-11-17 17:24 | burn-down | New source uk-modern-slavery-statements: three registry-year files streamed whole, append-only, wave 2
+- 2026-11-17 17:24 | burn-down | New source uk-gender-pay-gap: the two latest reporting-year files, append-only, wave 2, id employer + year
+- 2026-11-17 17:24 | burn-down | Statement id is statement code + year + organisation: a group statement is one row per member
+- 2026-11-17 17:24 | burn-down | Not built as specified: Range chunks across waves; the files are rewritten hourly, so each is read in one pass
+- 2026-11-17 17:24 | burn-down | Blind Mode: approver and responsible person, emails, addresses and all narrative answers dropped at ingest
+- 2026-11-17 17:24 | burn-down | Lookup gains esg (modern_slavery, gender_pay_gap); null in neither register, never worded as non-compliance
+- 2026-11-17 17:24 | burn-down | Tests: 13 in uk-esg-disclosures.spec plus the lookup join; fixtures are 14 + 13 real rows from the 11-12 relay
+- 2026-11-17 17:24 | burn-down | Diligence agent reads both registers as tools ten and eleven, facts only, never a compliance verdict
+- 2026-11-17 17:24 | burn-down | Two Apify actor folders, landing cards, terms rows, sitemap, connector regenerated, SCHEDULERS and ARCHITECTURE
+- 2026-11-17 17:24 | burn-down | Keyless MCP preview budget 20 to 30 calls a day: one call of each of the 22 data tools must fit
+- 2026-11-17 17:24 | burn-down | x402 Bazaar: an output schema over 6 KB keeps nested objects bare; the lookup's 402 document had reached 13 KB
+- 2026-11-17 17:24 | burn-down | Nothing live read yet (sandbox cannot reach the origins): deploys on this push; live-read item dated 11-18
+- 2026-11-17 17:24 | burn-down | Queued gankdat uk-esg-disclosures-live-read (11-18), -backfill (11-24) and -day-30 (12-17)
+- 2026-11-17 17:24 | burn-down | New actors will stay private on the Store like the last two (Apify owner verification, item already blocked)

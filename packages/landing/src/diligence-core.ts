@@ -37,6 +37,8 @@ export const SOURCES: readonly string[] = [
   'uk-contract-awards',
   'uk-payment-practices',
   'uk-company-accounts',
+  'uk-modern-slavery-statements',
+  'uk-gender-pay-gap',
 ];
 
 export interface ToolCall {
@@ -124,7 +126,12 @@ export function systemPrompt(): string {
     'a company filed — net assets, cash, creditors due within a year, employees and the prior period,',
     'also by `company_number`; treat negative net assets, cash down 30 % or more on the prior period',
     'and accounts marked overdue on the company record as red flags, and say so when no accounts are',
-    'held rather than assuming health). Call the tools you need, one',
+    'held rather than assuming health; and two statutory disclosures by `company_number`: the',
+    'government modern slavery statement registry and the gender pay gap reports. State those as',
+    'facts only — "statement on the registry for <year>" (naming the parent for a group statement)',
+    'or "no statement on the registry; the registry is voluntary and section 54 applies at £36m',
+    'turnover", and the mean and median hourly pay gap with its reporting year — never as a',
+    'compliance verdict and never as a red flag on their own). Call the tools you need, one',
     'register at a time, with the company name as `q`; you may call several tools in one turn. Never',
     'invent a record: every statement in the report cites the tool that returned it, and a register',
     'with no match says so. Keep each tool result as the only evidence for what it covers.',
@@ -394,6 +401,8 @@ export const FIXTURES: Record<string, (q: string) => string> = {
   query_uk_sponsors: () => registerResult('uk-sponsors', []),
   query_uk_payment_practices: () => registerResult('uk-payment-practices', []),
   query_uk_company_accounts: () => registerResult('uk-company-accounts', []),
+  query_uk_modern_slavery_statements: () => registerResult('uk-modern-slavery-statements', []),
+  query_uk_gender_pay_gap: () => registerResult('uk-gender-pay-gap', []),
   query_uk_contract_awards: (q) =>
     registerResult('uk-contract-awards', [
       {

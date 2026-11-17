@@ -47,6 +47,10 @@ Live datasets (slug — origin — storage/wave; detail per dataset in ARCHITECT
   officers never called, individual PSCs dropped.
 - `uk-payment-practices` — statutory payment practices CSV export (~115k reports) — D1, **wave 5**;
   narrative columns dropped; joined into `uk-company-profiles` as `payment_practices`.
+- `uk-modern-slavery-statements` (Home Office registry, one CSV per registry year, last/this/next year
+  read whole each day) and `uk-gender-pay-gap` (GOV.UK service, the two latest reporting-year CSVs) — D1,
+  **wave 2**, both **append-only**; people, addresses and narrative dropped; joined into
+  `uk-company-profiles` as `esg` (null when the company is in neither; the registry is voluntary).
 - `uk-company-accounts` — Companies House daily accounts ZIP (iXBRL), headline figures per company and
   balance-sheet date — D1, **wave 8** (08:10), **append-only** (`DataSource.append`: upsert by id, nothing
   removed, a quiet day is `ok`); walked member by member in Range slices with a KV resume cursor; joined
@@ -131,7 +135,7 @@ heavy deps. On CI the gate runs once per push, in `gankdat.yml` only.
   transient error.
   **MCP**: anonymous `initialize`/`tools/list`; a presented key is always validated (bad → 401 with
   `WWW-Authenticate`); a bare `Bearer` with no token counts as no key. **Keyless preview**: a data tool
-  without a key returns ≤ 5 rows, 20 calls/day per client (hashed IP+UA), then a wall naming x402, the
+  without a key returns ≤ 5 rows, 30 calls/day per client (hashed IP+UA; 20 until 2026-11-17), then a wall naming x402, the
   agent sign-up tools and `connect_account`. `/mcp` validates a present `Origin`. One JSON body per
   POST; data tools run under a 10 s deadline (`src/lib/deadline.ts`), late keyed results not charged.
   Both protocol eras are served: 2025 (`initialize`) through a stateless JSON-mode transport, and
@@ -145,7 +149,7 @@ heavy deps. On CI the gate runs once per push, in `gankdat.yml` only.
   `/v1/auth/agent-signup`); keys named `agent:<client>`; per-IP and per-email caps.
   `test/mcp-directory.spec.ts` is the conformance test for any agent directory; `test/oauth.spec.ts`.
 - **Refresh**: staggered Cron Triggers, one budget each under the 15-minute limit (`store.ts
-  waveForCron`): 05:00 KV sources, 05:15 exclusions + sponsors, 05:30 charities + care locations,
+  waveForCron`): 05:00 KV sources, 05:15 exclusions + sponsors + the two ESG disclosure registers, 05:30 charities + care locations,
   05:45 food hygiene, 05:50 schools + payment practices, 05:55 nhs-ods + gambling operators, 06:05
   trade mark journal, 08:10 company accounts (after Companies House publishes the day's file). Responses expose `last_refreshed_at`. An origin answering 5xx on every allowed
   read throws `OriginUnavailableError` → a `skipped` refresh_log row (last generation keeps serving);

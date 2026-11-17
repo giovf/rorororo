@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-15",
+  "updated": "2026-11-17",
   "researched": "2026-11-12",
   "items": [
     {
@@ -1274,13 +1274,13 @@
     {
       "id": "uk-esg-disclosures",
       "title": "UK ESG disclosures on gankdat: `src/sources/uk-modern-slavery-statements.ts` reads the open registry-year files `https://downloads.modern-slavery-statement-registry.service.gov.uk/publicdownloads/StatementSummaries<year>.csv` (the two open registry years — today 2026 and 2027; 75 columns, quoted multi-line addresses, ≈ 1.5 KB a statement, 17–19 MB a year, Range honoured, regenerated hourly) in 2 MB Range chunks resumable by byte offset across paced waves, keeping per statement the registry year, organisation name, sector type, company number, group submission and parent name, period start/end, turnover band, sectors, years producing, the six includes-flags, policies/training/audits/grievance lists, statement URL and registry PDF URL (Blind Mode drops ApprovingPerson, EmailAddressNoURL, every `No…Reason` text and the three risk narratives), D1 register keyed `idOf(company_number|statement_year)` (organisation name when the number is blank); `src/sources/uk-gender-pay-gap.ts` reads the two latest `https://gender-pay-gap.service.gov.uk/viewing/download-data/<year>` files (27 columns, ≈ 400 bytes a row, 4.2 MB, Range ignored — one pass each) keeping employer id and name, company number, SIC codes, the mean/median hourly and bonus gaps, bonus shares, the eight quartile shares, employer size, late flag, due and submitted dates (drops ResponsiblePerson and Address), D1 register keyed `idOf(employer_id|reporting_year)`; routes `/v1/data/uk-modern-slavery-statements` and `/v1/data/uk-gender-pay-gap` by company number with history; an `esg` field on uk-company-profiles (latest modern_slavery and gender_pay_gap blocks, null for a company in neither); a tenth /diligence register that states the facts (statement on the registry for <year>, group under <parent>; or 'no statement on the registry — voluntary registry, section 54 applies at £36m turnover'; the pay gap figures) and never a compliance verdict; one daily wave in the lightest slot; fixtures from the relay chunks, tests (parse with quoted newlines, Range resume, join, null, agent), landing cards, terms rows, sitemap, server.json and constants version bump, ARCHITECTURE note, Apify actor `uk-esg-disclosures`; at build queue `uk-esg-disclosures-backfill` (dated, the 2020–2025 statement files ≈ 90 MB and the 2017–2023 pay gap files ≈ 28 MB, once) and `uk-esg-disclosures-day-30`",
-      "why": "Spike 2026-11-12 (docs/exchange/spikes/uk-esg-disclosure-fields.md): OGL v3 on every page and file of both services, no access terms; both series are yearly CSVs keyed on the Companies House number (92 % of private-sector statements and 88 % of pay gap rows carry one in the sampled chunks), small (17–19 MB and 4 MB a year), Range-readable or one-pass, and regenerated hourly. Buyers pay for both inside platforms (Beauhurst bundles the pay gap data; Sedex £195 a site a year, buyers from £2,900; EcoVadis US$15–40k quoted) while every shelf copy has 1 user, so — as with payment practices — the value is the join on the company number for the diligence page, the company lookup and the trademark-journal buyers, not a new audience. Score 3 (demand priced by three platforms, reach = gankdat's own lanes, 0.8 day; the 1-user shelves cap it).",
+      "why": "Spike 2026-11-12 (docs/exchange/spikes/uk-esg-disclosure-fields.md): OGL v3 on every page and file of both services, no access terms; both series are yearly CSVs keyed on the Companies House number (92 % of private-sector statements and 88 % of pay gap rows carry one in the sampled chunks), small (17–19 MB and 4 MB a year), Range-readable or one-pass, and regenerated hourly. Buyers pay for both inside platforms (Beauhurst bundles the pay gap data; Sedex £195 a site a year, buyers from £2,900; EcoVadis US$15–40k quoted) while every shelf copy has 1 user, so — as with payment practices — the value is the join on the company number for the diligence page, the company lookup and the trademark-journal buyers, not a new audience. Score 3 (demand priced by three platforms, reach = gankdat's own lanes, 0.8 day; the 1-user shelves cap it). Built 2026-11-17 (burn-down, v0.31.0) with three decisions that differ from the title: the statement files are streamed whole, not in Range chunks resumed across waves (a file rewritten hourly has no stable offsets, and 17 MB is one pass); the statement id is the registry's statement code + year + organisation, not number + year (a group statement is one row per member, and members file for each other); and the Apify shelf is one actor per register (the schema test's rule), not one `uk-esg-disclosures` actor. Both registers are append-only in wave 2; last year's statement file is read too.",
       "effort_days": 0.8,
       "proof": "a live `/v1/data/uk-company-profiles` read for a sampled company carries `esg.modern_slavery` (statement year, group/parent) and `esg.gender_pay_gap` (mean/median %), a company in neither carries null; `/v1/data/uk-modern-slavery-statements?company_number=<n>` lists its statements by year; the wave's refresh_log row shows both row counts; day-30 read (`uk-esg-disclosures-day-30`, queued at build): a route or the field on ≥ 1 paid or keyed external call, else noted as free fields",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-12",
-      "doing_since": "2026-11-17"
+      "done_at": "2026-11-17"
     },
     {
       "id": "apify-verified-owner-public-cap",
@@ -1337,6 +1337,39 @@
       "not_before": "2026-11-16",
       "added": "2026-11-15",
       "done_at": "2026-11-16"
+    },
+    {
+      "id": "uk-esg-disclosures-live-read",
+      "title": "First live read of uk-esg-disclosures after its first 05:15 wave: one `worker logs` dispatch (needle `refresh_append`) for the two registers' `append +N` rows, then through the relay `GET https://gankdat.com/stats/uk-modern-slavery-statements`, `…/stats/uk-gender-pay-gap` and a keyless MCP preview or relay read of `uk-company-profiles` for one company number seen in both sample files — `esg.modern_slavery` and `esg.gender_pay_gap` filled, and null for a small company; a wave that ran past its budget or an error row is fixed in the same slot (move the statements register to its own wave)",
+      "why": "The build's own proof (item `uk-esg-disclosures`): the sandbox cannot reach gankdat.com or the two origins, so the parsers were written from the 11-12 relay samples and nothing live has been read yet. Wave 2 gained ≈ 40 MB of CSV; its duration on the first night is the number that says whether the registers stay there.",
+      "effort_days": 0.05,
+      "proof": "both refresh_log rows with their counts (≈ 25k statements across three registry years, ≈ 11k pay gap rows) and one live `esg` read quoted in docs/RUNS.md",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-17",
+      "not_before": "2026-11-18"
+    },
+    {
+      "id": "uk-esg-disclosures-backfill",
+      "title": "Backfill the two ESG registers once: the 2020–2024 statement summaries files (≈ 60 MB; 2025 is already read daily) and the 2017–2023 pay gap files (≈ 28 MB) — a one-off pass that sets the year lists (`registryYears` / `reportingYears`) wide for a single dispatch-triggered refresh, or a runner script that streams each file through the same normalisers into the append registers; unchanged rows cost no write afterwards",
+      "why": "Queued at build (item `uk-esg-disclosures`): the daily wave reads only the open years, so history by company number starts at 2025 until the older files are read once. Both registers are append-only, so the backfill is additive and safe to repeat.",
+      "effort_days": 0.3,
+      "proof": "row counts by statement_year and reporting_year after the pass (the registry's home page counts: 2020 8,486 … 2024 13,063) and a lookup whose `statement_years` reaches back before 2025",
+      "score": 2,
+      "status": "todo",
+      "added": "2026-11-17",
+      "not_before": "2026-11-24"
+    },
+    {
+      "id": "uk-esg-disclosures-day-30",
+      "title": "Day-30 read of uk-esg-disclosures (built 2026-11-17, v0.31.0): from the Daily numbers rows, do `/v1/data/uk-modern-slavery-statements`, `/v1/data/uk-gender-pay-gap` or the `esg` field on a lookup show on ≥ 1 paid or keyed external call (`datasets 30d external`, the x402 clause, the two actors' users on the Store)? If not, they stay free fields of the lookup and the actors are left to the Store",
+      "why": "The item's own proof (spike docs/exchange/spikes/uk-esg-disclosure-fields.md §4): every standalone shelf of both series shows 1 user, so the value claimed is the join on the company number for the diligence page and the lookup's buyers; the day-30 row says whether anyone outside called it.",
+      "effort_days": 0.1,
+      "proof": "a RESEARCH.md row dated ≥ 2026-12-17 quoting the clause lines and a decision",
+      "score": 2,
+      "status": "todo",
+      "added": "2026-11-17",
+      "not_before": "2026-12-17"
     }
   ]
 }

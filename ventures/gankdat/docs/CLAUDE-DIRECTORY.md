@@ -6,7 +6,7 @@ account, no money. Sources: claude.com/docs/connectors/building/{submission,revi
 
 What the server does to pass (shipped in v0.20.0, `test/mcp-directory.spec.ts` keeps it true):
 every tool has a `title` + `readOnlyHint`/`destructiveHint`; a foreign `Origin` gets 403; every
-data tool answers without credentials (the keyless preview — 5 rows, 20 calls/day per client).
+data tool answers without credentials (the keyless preview — 5 rows, 30 calls/day per client).
 Since v0.21.0 (2026-09-30) the server also does **lazy OAuth** exactly as
 claude.com/docs/connectors/building/lazy-authentication describes: the one protected tool
 (`connect_account`) and a spent preview budget answer HTTP 401 with `WWW-Authenticate: Bearer
@@ -47,7 +47,7 @@ flags a missing title or annotation, the deploy is stale — check `/mcp` `tools
   > mention solar?", "Has this supplier been excluded or sanctioned?", "Is this company a
   > licensed visa sponsor?", "What trade marks in class 9 were published this week?".
   >
-  > Works without an account: every tool returns a preview (up to 5 rows per call, 20 calls a
+  > Works without an account: every tool returns a preview (up to 5 rows per call, 30 calls a
   > day). A free API key gives 250 credits a month with full pages; Claude can request it for you
   > (request_api_key emails you one approval link). Paid plans from £5/month. Organisation-level
   > data only: personal fields are dropped at ingest and never stored.
@@ -97,7 +97,7 @@ Paste as the reviewer instructions:
 > No credentials needed: connect `https://gankdat.com/mcp` with no authentication and every
 > data tool answers. Try `list_sources` (all datasets and their filters), `query_uk_tenders` with
 > `{"q":"solar","per_page":5}`, `get_changes` with `{"source":"uk-charities"}`, and `get_usage`
-> (shows the preview budget). Without an account the data tools return up to 5 rows and 20 calls
+> (shows the preview budget). Without an account the data tools return up to 5 rows and 30 calls
 > per day per client. `connect_account` is the one tool that deliberately asks for sign-in (lazy
 > authentication per your docs): it answers 401 with `resource_metadata` so Claude shows the
 > Connect card; sign in with any email you can read — a free account is created on the fly, no

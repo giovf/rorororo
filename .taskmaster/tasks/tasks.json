@@ -1531,13 +1531,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-11-15T19:14:47.439Z"
+      },
+      {
+        "id": "51",
+        "title": "gankdat: uk-esg-disclosures — modern slavery statements and gender pay gap registers, esg join on the company lookup",
+        "description": "Two append-only D1 registers in wave 2 (uk-modern-slavery-statements, uk-gender-pay-gap), the esg field on uk-company-profiles, /diligence tools ten and eleven, two Apify actors, preview budget 30, Bazaar schema slimming, v0.31.0. Pipeline item gankdat/uk-esg-disclosures.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-11-17T17:23:53.310Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-11-15T19:14:47.439Z",
-      "taskCount": 50,
-      "completedCount": 43,
+      "lastModified": "2026-11-17T17:23:53.310Z",
+      "taskCount": 51,
+      "completedCount": 44,
       "tags": [
         "master"
       ]

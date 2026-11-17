@@ -351,6 +351,10 @@ describe('helpers', () => {
     expect(SOURCES.map(toolName)).toContain('query_uk_payment_practices');
     expect(systemPrompt()).toContain('payment practices');
     expect(SOURCES.map(toolName)).toContain('query_uk_company_accounts');
+    expect(SOURCES.map(toolName)).toContain('query_uk_modern_slavery_statements');
+    expect(SOURCES.map(toolName)).toContain('query_uk_gender_pay_gap');
+    expect(systemPrompt()).toContain('never as a compliance verdict');
+    expect(systemPrompt()).toContain('registry is voluntary');
     expect(systemPrompt()).toContain('negative net assets');
   });
 
