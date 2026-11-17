@@ -1006,7 +1006,7 @@ runs `check:root`.
   of the 30 days to 10-25 were `lumiere-paycheck-prober` paying each unpaid route once — a
   catalogue survey the day-30 reads and two exchange triggers would have read as demand. The
   30-day read is grouped by UTC day too, and `splitX402Payers` classes each client: a user agent
-  naming itself a probe, prober, scout, observatory, survey or collector (`PROBER_UA`), or one
+  naming itself a probe, prober, scout, observatory, survey, collector or — since 2026-11-17 — harness (`PROBER_UA`), or one
   client paying every live route once in a day (the route count from `/v1/data`), is a prober;
   the rest are buyers, and a buyer paying on two or more days is a repeat payer. The row reads
   `x402 30d: 19 paid, 4 clients — buyers 4 paid, 3 clients, repeat 1 (…); probers 15 paid, 1 client
