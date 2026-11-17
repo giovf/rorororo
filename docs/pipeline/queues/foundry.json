@@ -1562,8 +1562,9 @@
       "effort_days": 0.2,
       "proof": "two commits appending a decision in the same window merge without a conflict (a test over a temporary repo with the attribute), `npm run runs` counts the entries in the new file, 14 days with no STRATEGY.md conflict noted in docs/RUNS.md",
       "score": 4,
-      "status": "todo",
-      "added": "2026-11-17"
+      "status": "doing",
+      "added": "2026-11-17",
+      "doing_since": "2026-11-17"
     },
     {
       "id": "routine-attribution-from-session",
