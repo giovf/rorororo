@@ -3152,3 +3152,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 18:14 | burn-down | decisions-roll rolls current.md and sweeps any entry still written under §8; npm run runs names such entries
 - 2026-11-17 18:14 | burn-down | Test: two branches appending a decision in a temporary repo with the attribute merge without a conflict
 - 2026-11-17 18:14 | burn-down | Build, burn-down, fallback, exchange, review and retro files append to current.md and read its tail, not §8
+- 2026-11-17 18:20 | burn-down | Built foundry routine-attribution-from-session: five routine files sign commits with the session's own lines
+- 2026-11-17 18:20 | burn-down | A test fails the check when a routine prompt names a model in its trailer; Changes history lines are exempt

@@ -27,6 +27,22 @@ import { serialize, type Queue, type QueueItem } from './refresh-errors-to-queue
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const VERSIONS_FILE = path.join('docs', 'ops', 'VERSIONS.md');
 export const ALERTS_FILE = path.join('docs', 'ALERTS.md');
+/**
+ * Lines of a routine file's prompt that name a model in a commit trailer (`Co-Authored-By: Claude
+ * Fable 5.1 …`). The trailer is the session's own attribution lines: on 2026-11-17 the harness said
+ * Fable 5.2 while three routine files still said 5.1, and `main` carried both on one routine
+ * (foundry `routine-attribution-from-session`). The `Changes:` header lines are history and may
+ * name one; the prompt below the header may not. Returns 1-based line numbers.
+ */
+export function trailerModelLines(routineMd: string): number[] {
+  const out: number[] = [];
+  routineMd.split('\n').forEach((line, i) => {
+    if (line.startsWith('Changes:')) return;
+    if (/Co-Authored-By:\s*Claude\s+[A-Z][a-z]+\s+\d/.test(line)) out.push(i + 1);
+  });
+  return out;
+}
+
 export const MODELS_URL = 'https://platform.claude.com/docs/en/about-claude/models/overview';
 export const NODE_INDEX_URL = 'https://nodejs.org/dist/index.json';
 export const FOUNDRY_QUEUE_FILE = path.join('docs', 'pipeline', 'queues', 'foundry.json');

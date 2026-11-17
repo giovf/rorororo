@@ -1,3 +1,5 @@
+import { readdirSync, readFileSync } from 'node:fs';
+import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   activeLtsMajor,
@@ -16,6 +18,7 @@ import {
   pinnedModels,
   recordSwitch,
   reviewedLines,
+  trailerModelLines,
   unreviewedLines,
 } from './versions-check.ts';
 
@@ -183,5 +186,28 @@ describe('versions-check', () => {
     expect(fileNodeRunners(filed, [22], 24, '2026-10-17')).toBe(filed);
     const done = { ...filed, items: filed.items.map((it) => ({ ...it, status: 'done' })) };
     expect(fileNodeRunners(done, [22], 24, '2026-11-01')).toBe(done);
+  });
+});
+
+describe('routine files name no model in the commit trailer (foundry routine-attribution-from-session)', () => {
+  it('finds a hardcoded model in a prompt line and ignores the Changes header', () => {
+    const md = [
+      'Changes: 2026-11-15 — the co-author line names Co-Authored-By: Claude Fable 5.2 <noreply@anthropic.com>.',
+      '---',
+      'message `x (build)` ending with `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`;',
+      'ending with the attribution lines this session supplies (its own `Co-Authored-By` and `Claude-Session` lines)',
+      'ending with `Co-Authored-By: Claude <noreply@anthropic.com>`',
+    ].join('\n');
+    expect(trailerModelLines(md)).toEqual([3]);
+  });
+
+  it('holds for every file in docs/routines', () => {
+    const dir = path.resolve('docs', 'routines');
+    const offenders = readdirSync(dir)
+      .filter((f) => f.endsWith('.md'))
+      .flatMap((f) =>
+        trailerModelLines(readFileSync(path.join(dir, f), 'utf8')).map((n) => `${f}:${n}`),
+      );
+    expect(offenders).toEqual([]);
   });
 });
