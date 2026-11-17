@@ -1,0 +1,38 @@
+{
+  "request": "pay-per-crawl-reread-2026-11-17",
+  "fetched_at": "2026-11-17T09:13:19.174Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/what-is-pay-per-crawl/",
+      "fetched_at": "2026-11-17T09:13:18.501Z",
+      "status": 200,
+      "elapsed_ms": 106,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/what-is-pay-per-crawl/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "1.txt",
+      "bytes": 12662,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 107193
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/analyze-ai-traffic/",
+      "fetched_at": "2026-11-17T09:13:19.120Z",
+      "status": 200,
+      "elapsed_ms": 48,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/features/analyze-ai-traffic/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "2.txt",
+      "bytes": 18377,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 129746
+    }
+  ]
+}
