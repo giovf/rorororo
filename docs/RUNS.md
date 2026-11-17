@@ -3171,3 +3171,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 19:17 | burn-down | State API warns public clouds of a per-network limit; bulk stock is 985 MB + 2.9 GB monthly, no directors
 - 2026-11-17 19:17 | burn-down | Clay already lists a French SIREN action (Enrich-CRM); Germany still closed; no reply to Clay drafted
 - 2026-11-17 19:17 | burn-down | Stopping: 1 spike seeded and done (parked), nothing buildable left; night cap 3 of 3 slots used
+- 2026-11-17 22:06 | triage | notify owner dispatched: last run started 19:06 UTC, 3 h ago
