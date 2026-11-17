@@ -875,6 +875,14 @@
       "spiked": "2026-11-12",
       "updated": "2026-11-12",
       "venture": "gankdat"
+    },
+    {
+      "id": "uk-vehicle-operator-licences",
+      "title": "The Traffic Commissioners' goods and public service vehicle operator licence records (data.gov.uk, DVSA / Office of the Traffic Commissioner, OGL) as a gankdat register and a /diligence check — every HGV and bus operator licence in Great Britain with licence type and status, vehicles and trailers authorised, operating centres, by licence number and operator name",
+      "status": "parked",
+      "why": "Exchange pre-research 2026-11-17 (burn-down, three web searches; apify.com is outside the sandbox and the relay was not spent on a candidate the search already answered): the source is lawful and keyless — the data.gov.uk dataset 'Traffic Commissioners: goods and public service vehicle operator licence records' is OGL, one OLBSLicenceReport CSV per traffic area (columns GeographicRegion, LicenceNumber, LicenceType, OperatorName, OperatorType, CorrespondenceAddress, OCAddress, TransportManager, NumberOfVehiclesAuthorised, NumberOfTrailersAuthorised, VehiclesSpecified, TrailersSpecified), refreshed every Sunday evening per the DfT's statement of administrative sources — but the shelf is taken at a price nobody can undercut: the Apify Store already carries `j0401/uk-operator-licences` (the same files as one record per licence, 69,027 licences from 179,401 source rows, from US$0.03 per 1,000 records) and `dthen/uk-fleet-leads-dvsa` (the register as fleet and transport-manager leads with Companies House enrichment, weekly). The paid rival with a real price is Motor Transport's Fleet Data subscription, an editorial product gankdat does not resemble. The published header shows no Companies House number, so the register would join the company lookup by name only (the `UNCONFIRMED — name match only` class /diligence refuses to rate), and its TransportManager column is a named person gankdat would not ingest. The three register fields promoted on 11-12 (payment practices, accounts, ESG) have no day-30 reading yet, so a fourth of the same shape adds cost before evidence. Evidence 1 × reach 2 ÷ 0.6 day ≈ 3, discounted to 1 for a near-free Store rival and a name-only join.",
+      "trigger": "A day-30 read of the 11-12 register fields (uk-payment-practices 2026-12-12, uk-company-accounts 2026-12-13, uk-esg-disclosures 2026-12-17) shows paid lookup calls that read them, or a /diligence user, inbox mail or owner note asks about a haulier or bus operator, or either Store actor reaches ≥ 10 users/30 d — then spike it (0.3 day through the relay: one area file's header and row count, whether any column carries a company number, the two rivals' user counts, the name-match rate against uk-companies)",
+      "added": "2026-11-17"
     }
   ]
 }

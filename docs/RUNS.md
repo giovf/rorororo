@@ -3159,3 +3159,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 18:28 | burn-down | Title over 63 or description over 300 chars is refused at write time; unwritten lines carry TODO, which fails the test
 - 2026-11-17 18:28 | burn-down | Actor schema test now accepts an integer input for an integer API param (gender pay gap employer_id was left out)
 - 2026-11-17 18:28 | burn-down | Build and burn-down routine files and the apify README say to run the command, never copy a folder by hand
+- 2026-11-17 18:35 | burn-down | Exchange pre-research: HGV and bus operator licence register read — parked (Store rival at $0.03/1,000, name-only join)
+- 2026-11-17 18:35 | burn-down | CI after the pushes: check 507 and 508 green; check 509, gankdat 215 and publish 105 were still running at 18:35
+- 2026-11-17 18:35 | burn-down | Stopping: 3 items built, 1 pre-research pass parked; nothing buildable left, one more pass allowed this night
