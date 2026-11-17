@@ -3112,3 +3112,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 09:14 | build | AI crawler fetches on the zone: 1,290 in 30 days (630 Bingbot), 43 % of the 3,000 threshold, up from 830
 - 2026-11-17 09:14 | build | new-ventures queue is now empty: marked for research
 - 2026-11-17 09:14 | build | demo-video.yml: no run since the 11-14 install, read only (it publishes), so no first-run line yet
+- 2026-11-17 12:06 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
