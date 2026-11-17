@@ -3164,3 +3164,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 18:35 | burn-down | Stopping: 3 items built, 1 pre-research pass parked; nothing buildable left, one more pass allowed this night
 - 2026-11-17 19:07 | triage | notify owner dispatched: last run started 16:06 UTC, 3 h ago
 - 2026-11-17 19:07 | watchdog | ci-minutes: 406 billed min/7d (~1740/mo; public, no cap) top: notify owner 89, gankdat metrics 63, check 52
+- 2026-11-17 19:13 | burn-down | Exchange pre-research: French company register after Clay's 11-16 reply — spike seeded (fr-company-register)
+- 2026-11-17 19:13 | burn-down | State API keyless, 7 calls/s, 30 fields; top French actor 38 users/30 d (was 4); Clay lists no French register
+- 2026-11-17 19:13 | burn-down | Germany stays declined: EU portal still tags 5 German company datasets, none the Handelsregister
