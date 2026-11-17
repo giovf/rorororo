@@ -3167,3 +3167,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 19:13 | burn-down | Exchange pre-research: French company register after Clay's 11-16 reply — spike seeded (fr-company-register)
 - 2026-11-17 19:13 | burn-down | State API keyless, 7 calls/s, 30 fields; top French actor 38 users/30 d (was 4); Clay lists no French register
 - 2026-11-17 19:13 | burn-down | Germany stays declined: EU portal still tags 5 German company datasets, none the Handelsregister
+- 2026-11-17 19:17 | burn-down | Spike fr-company-register done: parked — prospecting opt-out on 84 of 180 sampled French companies
+- 2026-11-17 19:17 | burn-down | State API warns public clouds of a per-network limit; bulk stock is 985 MB + 2.9 GB monthly, no directors
+- 2026-11-17 19:17 | burn-down | Clay already lists a French SIREN action (Enrich-CRM); Germany still closed; no reply to Clay drafted
+- 2026-11-17 19:17 | burn-down | Stopping: 1 spike seeded and done (parked), nothing buildable left; night cap 3 of 3 slots used

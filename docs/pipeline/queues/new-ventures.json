@@ -1,7 +1,7 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": false,
+  "needs_research": true,
   "updated": "2026-11-17",
   "researched": "2026-11-12",
   "weight": 2,
@@ -642,9 +642,9 @@
       "effort_days": 0.4,
       "proof": "docs/exchange/spikes/fr-company-register.md with the licence quotes (API, Base Sirene, RNE), the opposition-flag share on a 200-SIREN sample, the 20-call burst result, the rival price table (Pappers, the Apify actors, Clay) and a promote / park call; a promote adds the gankdat item with its day count and the note for the next clay.com draft, a park adds `fr-company-register` to docs/pipeline/exchange.json with a trigger",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-17",
-      "doing_since": "2026-11-17"
+      "done_at": "2026-11-17"
     }
   ],
   "research_after": "2026-11-18"
