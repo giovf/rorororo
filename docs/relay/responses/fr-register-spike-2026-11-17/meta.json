@@ -1,0 +1,523 @@
+{
+  "request": "fr-register-spike-2026-11-17",
+  "fetched_at": "2026-11-17T19:15:33.358Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/docs/",
+      "fetched_at": "2026-11-17T19:14:55.329Z",
+      "status": 200,
+      "elapsed_ms": 687,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/docs/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 36,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 908
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/docs/",
+      "render": true,
+      "fetched_at": "2026-11-17T19:14:56.525Z",
+      "status": 200,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/docs/",
+      "title": "API Recherche d'entreprises - ReDoc",
+      "rendered": {
+        "network_idle": true,
+        "requests": 7,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 30017,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 162726
+    },
+    {
+      "method": "GET",
+      "url": "https://annuaire-entreprises.data.gouv.fr/donnees/api-entreprises",
+      "fetched_at": "2026-11-17T19:15:02.742Z",
+      "status": 200,
+      "elapsed_ms": 371,
+      "final_url": "https://annuaire-entreprises.data.gouv.fr/donnees/api-entreprises",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "212"
+      },
+      "file": "3.txt",
+      "bytes": 0,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 212
+    },
+    {
+      "method": "GET",
+      "url": "https://annuaire-entreprises.data.gouv.fr/faq",
+      "fetched_at": "2026-11-17T19:15:03.616Z",
+      "status": 200,
+      "elapsed_ms": 116,
+      "final_url": "https://annuaire-entreprises.data.gouv.fr/faq",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "212"
+      },
+      "file": "4.txt",
+      "bytes": 0,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 212
+    },
+    {
+      "method": "GET",
+      "url": "https://annuaire-entreprises.data.gouv.fr/donnees/sources",
+      "fetched_at": "2026-11-17T19:15:04.235Z",
+      "status": 200,
+      "elapsed_ms": 241,
+      "final_url": "https://annuaire-entreprises.data.gouv.fr/donnees/sources",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "212"
+      },
+      "file": "5.txt",
+      "bytes": 0,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 212
+    },
+    {
+      "method": "GET",
+      "url": "https://www.data.gouv.fr/api/1/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/",
+      "fetched_at": "2026-11-17T19:15:04.477Z",
+      "status": 200,
+      "elapsed_ms": 1205,
+      "final_url": "https://www.data.gouv.fr/api/1/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "6.json",
+      "bytes": 63090,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.data.gouv.fr/api/1/dataservices/672cf684c3488a0c533f7094/",
+      "fetched_at": "2026-11-17T19:15:06.186Z",
+      "status": 200,
+      "elapsed_ms": 341,
+      "final_url": "https://www.data.gouv.fr/api/1/dataservices/672cf684c3488a0c533f7094/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "7.json",
+      "bytes": 7148,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://files.data.gouv.fr/insee-sirene/StockUniteLegale_utf8.zip",
+      "fetched_at": "2026-11-17T19:15:06.528Z",
+      "status": 404,
+      "elapsed_ms": 358,
+      "final_url": "https://files.data.gouv.fr/insee-sirene/StockUniteLegale_utf8.zip",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "548"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://files.data.gouv.fr/insee-sirene/StockEtablissement_utf8.zip",
+      "fetched_at": "2026-11-17T19:15:07.387Z",
+      "status": 404,
+      "elapsed_ms": 347,
+      "final_url": "https://files.data.gouv.fr/insee-sirene/StockEtablissement_utf8.zip",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "548"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://www.insee.fr/fr/information/3591226",
+      "fetched_at": "2026-11-17T19:15:07.735Z",
+      "status": 200,
+      "elapsed_ms": 506,
+      "final_url": "https://www.insee.fr/fr/information/3591226",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "10.txt",
+      "bytes": 16525,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53124
+    },
+    {
+      "method": "GET",
+      "url": "https://data.inpi.fr/content/editorial/Acces_API_Entreprises",
+      "fetched_at": "2026-11-17T19:15:08.246Z",
+      "status": 403,
+      "elapsed_ms": 274,
+      "final_url": "https://data.inpi.fr/content/editorial/Acces_API_Entreprises",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "11.txt",
+      "bytes": 808,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5948
+    },
+    {
+      "method": "GET",
+      "url": "https://www.pappers.fr/api",
+      "render": true,
+      "fetched_at": "2026-11-17T19:15:08.522Z",
+      "status": 200,
+      "final_url": "https://www.pappers.fr/api",
+      "title": "Intégrez toutes les données de Pappers avec notre API Entreprise",
+      "rendered": {
+        "network_idle": true,
+        "requests": 169,
+        "failed": [
+          "GET https://static.hsappstatic.net/MeetingsPublic/static-1.61544/html/public-$hublet.html → net::ERR_BLOCKED_BY_ORB",
+          "GET https://static.hsappstatic.net/MeetingsPublic/static-1.61544/html/public-$hublet.html → net::ERR_BLOCKED_BY_ORB",
+          "GET https://metrics-fe-na1.hubspot.com/hs-open-telemetry-public/v1/public/sample-ratios?serviceName=conversations-visitor-ui&hublet=eu1 → net::ERR_FAILED"
+        ],
+        "console_errors": [
+          "Access to fetch at 'https://metrics-fe-na1.hubspot.com/hs-open-telemetry-public/v1/public/sample-ratios?serviceName=conversations-visitor-ui&hublet=eu1' from origin 'https://app-eu1.hubspot.com' has b"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 16081,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 165942
+    },
+    {
+      "method": "GET",
+      "url": "https://societeinfo.com/tarifs",
+      "fetched_at": "2026-11-17T19:15:16.993Z",
+      "status": 200,
+      "elapsed_ms": 476,
+      "final_url": "https://societeinfo.com/tarifs",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Mon, 16 Nov 2026 00:08:23 GMT"
+      },
+      "file": "13.txt",
+      "bytes": 22805,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 204763
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/integrations/action/find-french-siren-number-enrich-crm-",
+      "fetched_at": "2026-11-17T19:15:17.565Z",
+      "status": 200,
+      "elapsed_ms": 105,
+      "final_url": "https://www.clay.com/integrations/action/find-french-siren-number-enrich-crm-",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 17 Nov 2026 19:15:17 GMT"
+      },
+      "file": "14.txt",
+      "bytes": 14893,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 465053
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=GE&per_page=25&page=1",
+      "fetched_at": "2026-11-17T19:15:17.680Z",
+      "status": 200,
+      "elapsed_ms": 581,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=GE&per_page=25&page=1",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "15.json",
+      "bytes": 131791,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=ETI&per_page=25&page=1",
+      "fetched_at": "2026-11-17T19:15:18.762Z",
+      "status": 200,
+      "elapsed_ms": 235,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=ETI&per_page=25&page=1",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "16.json",
+      "bytes": 95315,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=ETI&per_page=25&page=120",
+      "fetched_at": "2026-11-17T19:15:19.498Z",
+      "status": 200,
+      "elapsed_ms": 192,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=ETI&per_page=25&page=120",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "17.json",
+      "bytes": 94888,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=PME&per_page=25&page=1",
+      "fetched_at": "2026-11-17T19:15:20.191Z",
+      "status": 200,
+      "elapsed_ms": 380,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=PME&per_page=25&page=1",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "18.json",
+      "bytes": 77593,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=PME&per_page=25&page=300",
+      "fetched_at": "2026-11-17T19:15:21.074Z",
+      "status": 200,
+      "elapsed_ms": 2221,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=PME&per_page=25&page=300",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "19.json",
+      "bytes": 129332,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?nature_juridique=5710&per_page=25&page=1",
+      "fetched_at": "2026-11-17T19:15:23.798Z",
+      "status": 200,
+      "elapsed_ms": 333,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?nature_juridique=5710&per_page=25&page=1",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "20.json",
+      "bytes": 89245,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?nature_juridique=5710&per_page=25&page=350",
+      "fetched_at": "2026-11-17T19:15:24.634Z",
+      "status": 200,
+      "elapsed_ms": 245,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?nature_juridique=5710&per_page=25&page=350",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "21.json",
+      "bytes": 85599,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?nature_juridique=5499&per_page=25&page=200",
+      "fetched_at": "2026-11-17T19:15:25.382Z",
+      "status": 200,
+      "elapsed_ms": 373,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?nature_juridique=5499&per_page=25&page=200",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "22.json",
+      "bytes": 81593,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=552032534",
+      "fetched_at": "2026-11-17T19:15:26.258Z",
+      "status": 200,
+      "elapsed_ms": 119,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=552032534",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "23.json",
+      "bytes": 5373,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=542065479",
+      "fetched_at": "2026-11-17T19:15:26.882Z",
+      "status": 200,
+      "elapsed_ms": 116,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=542065479",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "24.json",
+      "bytes": 3434,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=775670417",
+      "fetched_at": "2026-11-17T19:15:27.533Z",
+      "status": 200,
+      "elapsed_ms": 111,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=775670417",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "25.json",
+      "bytes": 6368,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=552100554",
+      "fetched_at": "2026-11-17T19:15:28.175Z",
+      "status": 200,
+      "elapsed_ms": 116,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=552100554",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "26.json",
+      "bytes": 4386,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=542051180",
+      "fetched_at": "2026-11-17T19:15:28.793Z",
+      "status": 200,
+      "elapsed_ms": 155,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=542051180",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "27.json",
+      "bytes": 6004,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=552081317",
+      "fetched_at": "2026-11-17T19:15:29.451Z",
+      "status": 200,
+      "elapsed_ms": 113,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=552081317",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "28.json",
+      "bytes": 6891,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=380129866",
+      "fetched_at": "2026-11-17T19:15:30.065Z",
+      "status": 200,
+      "elapsed_ms": 128,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=380129866",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "29.json",
+      "bytes": 6210,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=356000000",
+      "fetched_at": "2026-11-17T19:15:30.698Z",
+      "status": 200,
+      "elapsed_ms": 110,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=356000000",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "30.json",
+      "bytes": 7170,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=572015246",
+      "fetched_at": "2026-11-17T19:15:31.309Z",
+      "status": 200,
+      "elapsed_ms": 133,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=572015246",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "31.json",
+      "bytes": 6291,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=652014051",
+      "fetched_at": "2026-11-17T19:15:31.947Z",
+      "status": 200,
+      "elapsed_ms": 113,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=652014051",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "32.json",
+      "bytes": 6241,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=421106709",
+      "fetched_at": "2026-11-17T19:15:32.562Z",
+      "status": 200,
+      "elapsed_ms": 117,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=421106709",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "33.json",
+      "bytes": 3460,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=boulangerie%20martin&per_page=5",
+      "fetched_at": "2026-11-17T19:15:33.180Z",
+      "status": 200,
+      "elapsed_ms": 177,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=boulangerie%20martin&per_page=5",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "34.json",
+      "bytes": 24005,
+      "truncated": false
+    }
+  ]
+}

@@ -1,0 +1,942 @@
+API Recherche d'entreprises - ReDoc
+Bienvenue sur la documentation interactive d'API Recherche d’entreprises !
+Données accessibles dans l'API
+Commencer à utiliser l'API
+Limite des requêtes
+Monitoring de l'API
+Données disponibles sur data.gouv
+Contact
+Recherche textuelle
+get Recherche textuelle
+Recherche géographique
+get Recherche géographique
+API docs by Redocly (https://redocly.com/redoc/)
+API Recherche d’entreprises (1.0.0)
+Download OpenAPI specification: Download (https://recherche-entreprises.api.gouv.fr/openapi.json)
+License: MIT License (https://opensource.org/licenses/MIT)
+#section/Bienvenue-sur-la-documentation-interactive-d'API-Recherche-d'entreprises-! Bienvenue sur la documentation interactive d'API Recherche d’entreprises !
+L’API Recherche d’Entreprises permet à tout le monde retrouver une entreprise,
+une association, ou un service public en France. Elle propose un grand nombre de
+critères de recherche, en particulier la dénomination, l’adresse et les
+dirigeants ou élus.
+#section/Bienvenue-sur-la-documentation-interactive-d'API-Recherche-d'entreprises-!/Donnees-accessibles-dans-l'API Données accessibles dans l'API
+L’API étant totalement ouverte d'accès, elle comporte des limitations. Ainsi
+ne sont pas accessibles dans l'API :
+les entreprises non-diffusibles
+les entreprises qui se sont vues refuser leurs immatriculation au RCS
+Attention : cette API ne permet pas d'accèder aux données complètes de
+la base Sirene, mais uniquement de rechercher une entreprise par sa
+dénomination ou son adresse. Pour savoir comment obtenir les données
+complètes, consultez notre fiche explicative. (https://api.gouv.fr/guides/quelle-api-sirene)
+#section/Bienvenue-sur-la-documentation-interactive-d'API-Recherche-d'entreprises-!/Commencer-a-utiliser-l'API Commencer à utiliser l'API
+L'API est accessible à partir de cette adresse : https://recherche-entreprises.api.gouv.fr
+Attention : Vous devez rajouter votre requête sur l'adresse.
+#section/Bienvenue-sur-la-documentation-interactive-d'API-Recherche-d'entreprises-!/Limite-des-requetes Limite des requêtes
+L'API accepte au maximum 7 requêtes par seconde par adresse IP. Une limite de 30 requêtes par seconde par ASN est aussi en place. Il est donc probable de faire face à cette limite sur les cloud publics.
+Cette valeur correspond à une limite maximale et ne constitue pas un débit garanti.
+En cas d'usage excessif, notamment en période de forte activité, l'accès à l'API
+peut être temporairement restreint afin d'assurer un accès équitable à l'ensemble
+des utilisateurs. La priorité est alors donnée aux systèmes internes et aux
+services publics.
+Lorsque la limite est dépassée, le serveur renvoie une réponse
+HTTP 429 – Too Many Requests .
+L'en-tête Retry-After indique le délai à respecter avant d'effectuer
+une nouvelle requête.
+Il est recommandé d'inclure un en-tête User-Agent explicite et descriptif
+dans toutes les requêtes.
+#section/Bienvenue-sur-la-documentation-interactive-d'API-Recherche-d'entreprises-!/Monitoring-de-l'API Monitoring de l'API
+Une supervision du service en temps réel est
+disponible ici (https://annuaire-entreprises.data.gouv.fr/donnees/api#recherche-entreprise) .
+#section/Bienvenue-sur-la-documentation-interactive-d'API-Recherche-d'entreprises-!/Donnees-disponibles-sur-data.gouv Données disponibles sur data.gouv
+Une partie des données issues de la base de données utilisée par l'API est accessible sur data.gouv. Vous pouvez les consulter ici (https://www.data.gouv.fr/fr/datasets/donnees-des-entreprises-utilisees-dans-lannuaire-des-entreprises/#/resources) .
+#section/Bienvenue-sur-la-documentation-interactive-d'API-Recherche-d'entreprises-!/Contact Contact
+Pour toute question, vous pouvez contacter l'équipe en remplissant ce formulaire (https://annuaire-entreprises.data.gouv.fr/faq/parcours?question=contact) !
+#tag/Recherche-textuelle Recherche textuelle
+#tag/Recherche-textuelle/paths/~1search/get Recherche textuelle
+Cet endpoint permet de récupérer les unités légales et les établissements correspondants à la recherche effectuée sur la dénomination, l'adresse, les dirigeants et les élus. Ou bien par numéro SIREN / SIRET.
+Deux modes de recherche selon la valeur du paramètre q :
+Recherche textuelle classique (dénomination, adresse, dirigeants, élus) : tous les filtres optionnels ( code_commune , code_postal , departement , region , epci , etc.) sont appliqués en combinaison avec la recherche.
+Recherche directe par SIREN ou SIRET : si q contient exactement 9 chiffres (SIREN) ou 14 chiffres (SIRET), l'API effectue une recherche directe et ignore tous les autres filtres . Combiner un SIREN ou SIRET avec des filtres géographiques ou thématiques ne produira pas d'erreur, mais ces filtres seront silencieusement ignorés.
+query Parameters
+q
+string
+Termes pour une recherche textuelle (dénomination et/ou adresse, dirigeants, élus) ou recherche directe (SIREN, SIRET).
+activite_principale
+string
+Example: activite_principale=01.12Z,28.15Z
+Le code NAF ou code APE, un code d'activité suivant la nomenclature de l'INSEE (https://www.insee.fr/fr/information/2406147) . Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules. Il ne s'applique qu'à l'unité légale, et non à ses établissements.
+categorie_entreprise
+string
+Enum: "PME" "ETI" "GE"
+Example: categorie_entreprise=PME
+Catégorie d'entreprise de l'unité légale (https://www.insee.fr/fr/metadonnees/definition/c1057) .
+Ce paramètre accepte une valeur unique ou une liste de valeurs
+séparées par des virgules.
+code_collectivite_territoriale
+string
+Example: code_collectivite_territoriale=75C
+Code affilié à une collectivité territoriale (Commune - code INSEE, EPCI - n° SIREN, Département - Code INSEE + "D" (sauf cas particulier), Région - Code INSEE)
+convention_collective_renseignee
+boolean
+Enum: true false
+Entreprises ayant au moins un établissement dont la convention collective est renseignée.
+code_postal
+string
+Example: code_postal=38540,38189
+Code postal en 5 chiffres. Ce paramètre filtre sur les établissements et accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+code_commune
+string
+Example: code_commune=01247,01111
+Code commune (INSEE) en 5 caractères (https://www.insee.fr/fr/information/8377162) . Ce paramètre filtre sur les établissements et accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+departement
+string \b([013-8]\d?|2[aAbB1-9]?|9[0-59]?|97[12346])...
+Show pattern
+Example: departement=02,89
+Code de département en deux ou trois chiffres (https://www.insee.fr/fr/information/6051727) . Ce paramètre filtre sur les établissements et accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+region
+string
+Example: region=11,76
+Code de région en deux chiffres (https://www.insee.fr/fr/information/6051727) . Ce paramètre filtre sur les établissements et accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+epci
+string
+Example: epci=200058519,248100737
+Liste des epci valides (https://www.insee.fr/fr/information/2510634) . Ce paramètre filtre sur les établissements et accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+egapro_renseignee
+boolean
+Enum: true false
+Uniquement les entreprises ayant un index égapro renseigné
+est_achats_responsables
+boolean
+Enum: true false
+Uniquemement les entreprises ayant le label Relations Fournisseurs et Achats Responsables (RFAR).
+est_alim_confiance
+boolean
+Enum: true false
+Uniquement les entreprises ayant au moins un établissement avec un résultat de contrôle sanitaire Alim'Confiance.
+est_association
+boolean
+Enum: true false
+Uniquement les entreprises ayant un identifiant d'association ou une nature juridique avec mention "association" (5195, 9210, 9220, 9221, 9222, 9223, 9224, 9230, 9240, 9260).
+est_bio
+boolean
+Enum: true false
+Uniquement les entreprises ayant un établissement certifié par l'agence bio
+est_collectivite_territoriale
+boolean
+Enum: true false
+Uniquement les collectivités territoriales.
+est_entrepreneur_individuel
+boolean
+Enum: true false
+Uniquement les entreprises individuelles.
+est_entrepreneur_spectacle
+boolean
+Enum: true false
+Uniquement les entreprises ayant une licence d'entrepreneur du spectacle.
+est_ess
+boolean
+Enum: true false
+Uniquement les entreprises appartenant au champ de l'économie sociale et solidaire.
+est_finess
+boolean
+Enum: true false
+Uniquement les entreprises du domaine sanitaire et social (FINESS). Recherche à la fois dans les identifiants FINESS Géographiques des établissements et FINESS Juridiques des entreprises.
+est_organisme_formation
+boolean
+Enum: true false
+Uniquement les entreprises ayant un établissement organisme de formation
+est_patrimoine_vivant
+boolean
+Enum: true false
+Uniquement les entreprises ayant le label Entreprise du Patrimoine Vivant (EPV)
+est_qualiopi
+boolean
+Enum: true false
+Uniquement les entreprises ayant ayant une certification de la marque « Qualiopi »
+est_rge
+boolean
+Enum: true false
+Uniquement les entreprises reconnues garantes de l'Environnement (RGE).
+est_siae
+boolean
+Enum: true false
+Uniquement les structures d'insertion par l'activité économique (SIAE).
+est_administration
+boolean
+Enum: true false
+Uniquement les structures reconnues comme administration.
+Attention : Ce filtre se base sur cette liste ici (https://www.data.gouv.fr/datasets/liste-des-administrations-ayant-acces-a-lespace-agent-de-lannuaire-des-entreprises/) .
+Ce filtre n'est pas exhaustif et peut retourner des faux positifs.
+est_societe_mission
+boolean
+Enum: true false
+Uniquement les sociétés qui appartiennent au champ des sociétés à mission.
+est_uai
+boolean
+Enum: true false
+Uniquement les entreprises ayant un établissement UAI (Unité Administrative Immatriculée).
+etat_administratif
+string
+Enum: "A" "C"
+État administratif de l'unité légale. "A" pour Active, "C" pour Cessée.
+id_convention_collective
+string
+Example: id_convention_collective=1090
+Identifiant de Convention Collective d'un établissement d'une entreprise.
+id_finess
+string
+Example: id_finess=010003853
+Identifiant FINESS Géographique d'un établissement (9 chiffres). Cette recherche interroge uniquement les FINESS Géographiques des établissements.
+id_rge
+string
+Example: id_rge=8611M10D109
+Identifiant RGE (reconnues garantes de l'Environnement) d'un établissement d'une entreprise.
+id_uai
+string
+Example: id_uai=0022004T
+Identifiant UAI d'un établissement d'une entreprise.
+nature_juridique
+string
+Example: nature_juridique=7344,6544
+Catégorie juridique de l'unité légale. (https://www.insee.fr/fr/information/2028129) Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+section_activite_principale
+string
+Example: section_activite_principale=A,J,U
+Section de l'activité principale : (https://www.insee.fr/fr/information/2120875)
+A - Agriculture, sylviculture et pêche
+B - Industries extractives
+C - Industrie manufacturière
+D - Production et distribution d'électricité, de gaz, de vapeur et
+d'air conditionné
+E - Production et distribution d'eau ; assainissement, gestion des
+déchets et dépollution
+F - Construction
+G - Commerce ; réparation d'automobiles et de motocycles
+H - Transports et entreposage
+I - Hébergement et restauration
+J - Information et communication
+K - Activités financières et d'assurance
+L - Activités immobilières
+M - Activités spécialisées, scientifiques et techniques
+N - Activités de services administratifs et de soutien
+O - Administration publique
+P - Enseignement
+Q - Santé humaine et action sociale
+R - Arts, spectacles et activités récréatives
+S - Autres activités de services
+T - Activités des ménages en tant qu'employeurs ; activités
+indifférenciées des ménages en tant que producteurs de biens et services pour usage propre
+U - Activités extra-territoriales
+Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+tranche_effectif_salarie
+string
+Example: tranche_effectif_salarie=NN,00,01
+Tranche d'effectif salarié de l'entreprise (https://github.com/annuaire-entreprises-data-gouv-fr/search-api/blob/main/app/labels/tranches-effectifs.json) . Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+nom_personne
+string
+Example: nom_personne=Dupont
+Nom d'une personne partie prenante de l'entreprise (dirigeant ou élu).
+prenoms_personne
+string
+Example: prenoms_personne=Monsieur
+Prenom(s) d'une personne partie prenante de l'entreprise (dirigeant ou élu).
+date_naissance_personne_min
+string
+Example: date_naissance_personne_min=1960-01
+Valeur minimale de la date de naissance d'une personne partie prenante de l'entreprise (dirigeant ou élu). Formats acceptés : aaaa-mm-jj ou aaaa-mm. Le jour, s'il est fourni, est ignoré : la recherche s'effectue au mois près.
+date_naissance_personne_max
+string
+Example: date_naissance_personne_max=1990-01
+Valeur maximale de la date de naissance d'une personne partie prenante de l'entreprise (dirigeant ou élu). Formats acceptés : aaaa-mm-jj ou aaaa-mm. Le jour, s'il est fourni, est ignoré : la recherche s'effectue au mois près.
+type_personne
+string
+Enum: "dirigeant" "elu"
+Type de la partie prenante de l'entreprise, dirigeant ou élu.
+ca_min
+integer
+Example: ca_min=100000
+Valeur minimale du chiffre d'affaire de l'entreprise
+ca_max
+integer
+Example: ca_max=100000
+Valeur maximale du chiffre d'affaire de l'entreprise
+resultat_net_min
+integer
+Example: resultat_net_min=100000
+Valeur minimale du résultat net de l'entreprise
+resultat_net_max
+integer
+Example: resultat_net_max=100000
+Valeur maximale du résultat net de l'entreprise
+limite_matching_etablissements
+integer
+Default: 10
+Nombre d'établissements connexes inclus dans la réponse (matching_etablissements). Valeur entre 1 et 100.
+minimal
+boolean
+Enum: true false
+Permet de retourner une réponse minmale, qui exclut les champs secondaires. Voir "include" pour en savoir plus.
+include
+string
+Example: include=siege,complements
+ATTENTION : Ce paramètre ne peut être appelé qu'avec le champ "minimal=True".
+Permet de ne demander que certains des champs secondaires.
+Valeurs possibles :
+complements
+dirigeants
+finances
+matching_etablissements
+siege
+score
+tva
+Par défaut tous les champs sont inclus sauf le score.
+Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+page
+integer
+Default: 1
+Le numéro de la page à retourner.
+per_page
+integer
+Default: 10
+Le nombre de résultats par page, limité à 25.
+page_etablissements
+integer
+Default: 1
+Numéro de page pour la pagination des établissements connexes (matching_etablissements).
+sort_by_size
+boolean
+Enum: true false
+Permet de trier les résultats par taille d'entreprise (nombre d'établissements).
+Responses
+200
+La liste des unités légale et leurs établissements correspondants à la recherche.
+400
+Requête incorrecte.
+get /search
+Serveur de production
+https://recherche-entreprises.api.gouv.fr /search
+Request samples
+Ligne de commande
+Copy
+curl - X GET "https://recherche-entreprises.api.gouv.fr/search?q=la%20poste&page=1&per_page=1" - H "accept: application/json"
+Response samples
+200
+400
+Content type
+application/json
+Copy
+Expand all
+Collapse all
+{
+"results" :
+[
+{
+"siren" : "356000000" ,
+"siren_conserve" : "552100554" ,
+"nom_complet" : "la poste" ,
+"nom_raison_sociale" : "LA POSTE" ,
+"sigle" : null ,
+"nombre_etablissements" : 12734 ,
+"nombre_etablissements_ouverts" : 9524 ,
+"siege" :
+{
+"activite_principale" : "53.10Z" ,
+"activite_principale_naf25" : "53.10A" ,
+"activite_principale_registre_metier" : null ,
+"annee_tranche_effectif_salarie" : "2020" ,
+"adresse" : "19 RUE DE LA POSTE 31700 CORNEBARRIEU" ,
+"caractere_employeur" : "O" ,
+"cedex" : null ,
+"code_pays_etranger" : null ,
+"code_postal" : "75015" ,
+"commune" : "75115" ,
+"complement_adresse" : "DIRECTION GENERALE DE LA POSTE" ,
+"coordonnees" : "43.292154,5.359134" ,
+"date_creation" : "2019-08-24" ,
+"date_debut_activite" : "2014-04-29" ,
+"date_fermeture" : "2019-08-24" ,
+"date_mise_a_jour" : "2023-09-21T03:34:50" ,
+"date_mise_a_jour_insee" : "2023-09-21T03:34:50" ,
+"departement" : "75" ,
+"distribution_speciale" : null ,
+"epci" : "200058519" ,
+"est_siege" : false ,
+"etat_administratif" : "A" ,
+"geo_adresse" : "string" ,
+"geo_id" : "string" ,
+"indice_repetition" : null ,
+"latitude" : "48.83002" ,
+"libelle_cedex" : null ,
+"libelle_commune" : "PARIS 15" ,
+"libelle_commune_etranger" : null ,
+"libelle_pays_etranger" : null ,
+"libelle_voie" : "DU COLONEL PIERRE AVIA" ,
+"liste_enseignes" :
+[
+"LA POSTE"
+] ,
+"liste_finess" :
+[
+"950000364"
+] ,
+"liste_id_bio" :
+[
+"0923"
+] ,
+"liste_idcc" :
+[
+"0923"
+] ,
+"a_opco" : true ,
+"liste_id_organisme_formation" :
+[
+"string"
+] ,
+"liste_rge" :
+[
+"4131D111" ,
+"7122D111"
+] ,
+"liste_uai" :
+[
+"0170100S"
+] ,
+"longitude" : "2.275688" ,
+"nom_commercial" : null ,
+"numero_voie" : "9" ,
+"dernier_numero_voie" : "10" ,
+"region" : "11" ,
+"siret" : "35600000000048" ,
+"statut_diffusion_etablissement" : "O" ,
+"tranche_effectif_salarie" : "12" ,
+"type_voie" : "RUE"
+} ,
+"activite_principale" : "53.10Z" ,
+"activite_principale_naf25" : "53.10A" ,
+"categorie_entreprise" : "GE" ,
+"caractere_employeur" : "O" ,
+"annee_categorie_entreprise" : "2020" ,
+"date_creation" : "1991-01-01" ,
+"date_fermeture" : "2019-08-24" ,
+"date_mise_a_jour" : "2023-09-21T03:34:50" ,
+"date_mise_a_jour_insee" : "2023-09-21T03:34:50" ,
+"date_mise_a_jour_rne" : "2023-09-20T02:15:30" ,
+"dirigeants" :
+[
+{
+"nom" : "Dupont" ,
+"prenoms" : "John" ,
+"annee_de_naissance" : "1964" ,
+"date_de_naissance" : "1964-09" ,
+"qualite" : "Directeur général" ,
+"nationalite" : "Française" ,
+"type_dirigeant" : "personne physique"
+}
+] ,
+"etat_administratif" : "A" ,
+"nature_juridique" : "5510" ,
+"section_activite_principale" : "H" ,
+"tranche_effectif_salarie" : "53" ,
+"annee_tranche_effectif_salarie" : "2020" ,
+"statut_diffusion" : "O" ,
+"opposition_diffusion_commerciale" : false ,
+"matching_etablissements" :
+[
+{
+"activite_principale" : "53.10Z" ,
+"activite_principale_naf25" : "53.10A" ,
+"ancien_siege" : false ,
+"annee_tranche_effectif_salarie" : "2020" ,
+"adresse" : "19 RUE DE LA POSTE 31700 CORNEBARRIEU" ,
+"caractere_employeur" : "O" ,
+"code_postal" : "75015" ,
+"commune" : "75115" ,
+"date_creation" : "2019-08-24" ,
+"date_debut_activite" : "2014-04-29" ,
+"date_fermeture" : "2019-08-24" ,
+"epci" : "200058519" ,
+"est_siege" : false ,
+"etat_administratif" : "A" ,
+"geo_id" : "string" ,
+"latitude" : "48.83002" ,
+"libelle_commune" : "PARIS 15" ,
+"liste_enseignes" :
+[
+"LA POSTE"
+] ,
+"liste_finess" :
+[
+"950000364"
+] ,
+"liste_id_bio" :
+[
+"0923"
+] ,
+"liste_idcc" :
+[
+"0923"
+] ,
+"a_opco" : true ,
+"liste_id_organisme_formation" :
+[
+"string"
+] ,
+"liste_rge" :
+[
+"4131D111" ,
+"7122D111"
+] ,
+"liste_uai" :
+[
+"0170100S"
+] ,
+"longitude" : "2.275688" ,
+"nom_commercial" : null ,
+"region" : "11" ,
+"siret" : "35600000000048" ,
+"statut_diffusion_etablissement" : "O" ,
+"tranche_effectif_salarie" : "12"
+}
+] ,
+"finances" :
+{
+"annee_existence1" :
+{
+"ca" : 0 ,
+"resultat_net" : 0
+} ,
+"annee_existence2" :
+{
+"ca" : 0 ,
+"resultat_net" : 0
+}
+} ,
+"complements" :
+{
+"collectivite_territoriale" :
+{
+"code" : "01" ,
+"code_insee" : "01" ,
+"elus" :
+[
+{
+"nom" : "string" ,
+"prenoms" : "string" ,
+"annee_de_naissance" : "1964" ,
+"fonction" : "Maire" ,
+"sexe" : "F"
+}
+] ,
+"niveau" : "département"
+} ,
+"convention_collective_renseignee" : true ,
+"liste_idcc" :
+[
+"string"
+] ,
+"liste_finess_juridique" :
+[
+"string"
+] ,
+"numero_rnf" : "string" ,
+"egapro_renseignee" : true ,
+"est_achats_responsables" : true ,
+"est_alim_confiance" : true ,
+"est_association" : false ,
+"est_avocat" : true ,
+"est_bio" : true ,
+"est_entrepreneur_individuel" : false ,
+"est_entrepreneur_spectacle" : false ,
+"est_ess" : false ,
+"est_finess" : false ,
+"est_organisme_formation" : true ,
+"est_qualiopi" : true ,
+"liste_id_organisme_formation" :
+[
+"7423P001123"
+] ,
+"est_rge" : false ,
+"est_service_public" : null ,
+"est_administration" : false ,
+"est_l100_3" : null ,
+"est_siae" : false ,
+"est_societe_mission" : false ,
+"est_uai" : false ,
+"est_patrimoine_vivant" : true ,
+"bilan_ges_renseigne" : false ,
+"identifiant_association" : null ,
+"statut_entrepreneur_spectacle" : "string" ,
+"type_siae" : "string"
+} ,
+"tva" :
+[
+"string"
+]
+}
+] ,
+"total_results" : 0 ,
+"page" : 1 ,
+"per_page" : 10 ,
+"total_pages" : 1000
+}
+#tag/Recherche-geographique Recherche géographique
+#tag/Recherche-geographique/paths/~1near_point/get Recherche géographique
+Cet endpoint prend en paramètre une latitude (:lat) et une longitude (:long) et renvoie les unités légales et leurs établissements autour de ces coordonnées.
+Vous pouvez également préciser un paramètre radius en km(défaut: 5 km).
+Paramètres d'appel : latitude, longitude, radius, activité principale et section d'activité principale de l'entreprise.
+query Parameters
+lat
+required
+number <float>
+Latitude de l’établissement (source : la majorité des SIRET utilisent le géocodage provenant de la base SIRENE géocodée par l’INSEE pour les études statistiques, à l’exception des entreprises créées au cours des derniers mois, pour lesquelles la géolocalisation est directement extraite de la base SIRENE).
+long
+required
+number <float>
+Longitude de l'établissement (source : la majorité des SIRET utilisent le géocodage provenant de la base SIRENE géocodée par l’INSEE pour les études statistiques, à l’exception des entreprises créées au cours des derniers mois, pour lesquelles la géolocalisation est directement extraite de la base SIRENE).
+radius
+number <float>
+Default: 5
+Radius de recherche, inférieur ou égal à 50km.
+activite_principale
+string
+Example: activite_principale=01.12Z,28.15Z
+<a https://www.insee.fr/fr/information/2406147>Le (https://www.insee.fr/fr/information/2406147%3ELe) code NAF ou code APE, un code d'activité suivant la nomenclature de l'INSEE. Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+section_activite_principale
+string
+Example: section_activite_principale=A,J,U
+Section de l'activité principale : (https://www.insee.fr/fr/information/2120875)
+A - Agriculture, sylviculture et pêche
+B - Industries extractives
+C - Industrie manufacturière
+D - Production et distribution d'électricité, de gaz, de vapeur et
+d'air conditionné
+E - Production et distribution d'eau ; assainissement, gestion des
+déchets et dépollution
+F - Construction
+G - Commerce ; réparation d'automobiles et de motocycles
+H - Transports et entreposage
+I - Hébergement et restauration
+J - Information et communication
+K - Activités financières et d'assurance
+L - Activités immobilières
+M - Activités spécialisées, scientifiques et techniques
+N - Activités de services administratifs et de soutien
+O - Administration publique
+P - Enseignement
+Q - Santé humaine et action sociale
+R - Arts, spectacles et activités récréatives
+S - Autres activités de services
+T - Activités des ménages en tant qu'employeurs ; activités
+indifférenciées des ménages en tant que producteurs de biens et services pour usage propre
+U - Activités extra-territoriales
+Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+limite_matching_etablissements
+integer
+Default: 10
+Nombre d'établissements connexes inclus dans la réponse (matching_etablissements). Valeur entre 1 et 100.
+minimal
+boolean
+Enum: true false
+Permet de retourner une réponse minmale, qui exclut les champs secondaires. Voir "include" pour en savoir plus.
+include
+string
+Example: include=siege,complements
+ATTENTION : Ce paramètre ne peut être appelé qu'avec le champ "minimal=True".
+Permet de ne demander que certains des champs secondaires.
+Valeurs possibles :
+complements
+dirigeants
+finances
+matching_etablissements
+siege
+score
+Par défaut tous les champs sont inclus sauf le score.
+Ce paramètre accepte une valeur unique ou une liste de valeurs séparées par des virgules.
+page
+integer
+Default: 1
+Le numéro de la page à retourner
+per_page
+integer
+Default: 10
+Le nombre de résultats par page, limité à 25
+page_etablissements
+integer
+Default: 1
+Numéro de page pour la pagination des établissements connexes (matching_etablissements).
+sort_by_size
+boolean
+Enum: true false
+Permet de trier les résultats par taille d'entreprise (nombre d'établissements).
+Responses
+200
+La liste des unités légale et leurs établissements correspondants à la recherche.
+400
+Requête incorrecte.
+get /near_point
+Serveur de production
+https://recherche-entreprises.api.gouv.fr /near_point
+Request samples
+Ligne de commande
+Copy
+curl - X GET "https://recherche-entreprises.api.gouv.fr/near_point?lat=45.0428&long=-0.679&radius=5&page=1&per_page=10" - H "accept: application/json"
+Response samples
+200
+400
+Content type
+application/json
+Copy
+Expand all
+Collapse all
+{
+"results" :
+[
+{
+"siren" : "356000000" ,
+"siren_conserve" : "552100554" ,
+"nom_complet" : "la poste" ,
+"nom_raison_sociale" : "LA POSTE" ,
+"sigle" : null ,
+"nombre_etablissements" : 12734 ,
+"nombre_etablissements_ouverts" : 9524 ,
+"siege" :
+{
+"activite_principale" : "53.10Z" ,
+"activite_principale_naf25" : "53.10A" ,
+"activite_principale_registre_metier" : null ,
+"annee_tranche_effectif_salarie" : "2020" ,
+"adresse" : "19 RUE DE LA POSTE 31700 CORNEBARRIEU" ,
+"caractere_employeur" : "O" ,
+"cedex" : null ,
+"code_pays_etranger" : null ,
+"code_postal" : "75015" ,
+"commune" : "75115" ,
+"complement_adresse" : "DIRECTION GENERALE DE LA POSTE" ,
+"coordonnees" : "43.292154,5.359134" ,
+"date_creation" : "2019-08-24" ,
+"date_debut_activite" : "2014-04-29" ,
+"date_fermeture" : "2019-08-24" ,
+"date_mise_a_jour" : "2023-09-21T03:34:50" ,
+"date_mise_a_jour_insee" : "2023-09-21T03:34:50" ,
+"departement" : "75" ,
+"distribution_speciale" : null ,
+"epci" : "200058519" ,
+"est_siege" : false ,
+"etat_administratif" : "A" ,
+"geo_adresse" : "string" ,
+"geo_id" : "string" ,
+"indice_repetition" : null ,
+"latitude" : "48.83002" ,
+"libelle_cedex" : null ,
+"libelle_commune" : "PARIS 15" ,
+"libelle_commune_etranger" : null ,
+"libelle_pays_etranger" : null ,
+"libelle_voie" : "DU COLONEL PIERRE AVIA" ,
+"liste_enseignes" :
+[
+"LA POSTE"
+] ,
+"liste_finess" :
+[
+"950000364"
+] ,
+"liste_id_bio" :
+[
+"0923"
+] ,
+"liste_idcc" :
+[
+"0923"
+] ,
+"a_opco" : true ,
+"liste_id_organisme_formation" :
+[
+"string"
+] ,
+"liste_rge" :
+[
+"4131D111" ,
+"7122D111"
+] ,
+"liste_uai" :
+[
+"0170100S"
+] ,
+"longitude" : "2.275688" ,
+"nom_commercial" : null ,
+"numero_voie" : "9" ,
+"dernier_numero_voie" : "10" ,
+"region" : "11" ,
+"siret" : "35600000000048" ,
+"statut_diffusion_etablissement" : "O" ,
+"tranche_effectif_salarie" : "12" ,
+"type_voie" : "RUE"
+} ,
+"activite_principale" : "53.10Z" ,
+"activite_principale_naf25" : "53.10A" ,
+"categorie_entreprise" : "GE" ,
+"caractere_employeur" : "O" ,
+"annee_categorie_entreprise" : "2020" ,
+"date_creation" : "1991-01-01" ,
+"date_fermeture" : "2019-08-24" ,
+"date_mise_a_jour" : "2023-09-21T03:34:50" ,
+"date_mise_a_jour_insee" : "2023-09-21T03:34:50" ,
+"date_mise_a_jour_rne" : "2023-09-20T02:15:30" ,
+"dirigeants" :
+[
+{
+"nom" : "Dupont" ,
+"prenoms" : "John" ,
+"annee_de_naissance" : "1964" ,
+"date_de_naissance" : "1964-09" ,
+"qualite" : "Directeur général" ,
+"nationalite" : "Française" ,
+"type_dirigeant" : "personne physique"
+}
+] ,
+"etat_administratif" : "A" ,
+"nature_juridique" : "5510" ,
+"section_activite_principale" : "H" ,
+"tranche_effectif_salarie" : "53" ,
+"annee_tranche_effectif_salarie" : "2020" ,
+"statut_diffusion" : "O" ,
+"opposition_diffusion_commerciale" : false ,
+"matching_etablissements" :
+[
+{
+"activite_principale" : "53.10Z" ,
+"activite_principale_naf25" : "53.10A" ,
+"ancien_siege" : false ,
+"annee_tranche_effectif_salarie" : "2020" ,
+"adresse" : "19 RUE DE LA POSTE 31700 CORNEBARRIEU" ,
+"caractere_employeur" : "O" ,
+"code_postal" : "75015" ,
+"commune" : "75115" ,
+"date_creation" : "2019-08-24" ,
+"date_debut_activite" : "2014-04-29" ,
+"date_fermeture" : "2019-08-24" ,
+"epci" : "200058519" ,
+"est_siege" : false ,
+"etat_administratif" : "A" ,
+"geo_id" : "string" ,
+"latitude" : "48.83002" ,
+"libelle_commune" : "PARIS 15" ,
+"liste_enseignes" :
+[
+"LA POSTE"
+] ,
+"liste_finess" :
+[
+"950000364"
+] ,
+"liste_id_bio" :
+[
+"0923"
+] ,
+"liste_idcc" :
+[
+"0923"
+] ,
+"a_opco" : true ,
+"liste_id_organisme_formation" :
+[
+"string"
+] ,
+"liste_rge" :
+[
+"4131D111" ,
+"7122D111"
+] ,
+"liste_uai" :
+[
+"0170100S"
+] ,
+"longitude" : "2.275688" ,
+"nom_commercial" : null ,
+"region" : "11" ,
+"siret" : "35600000000048" ,
+"statut_diffusion_etablissement" : "O" ,
+"tranche_effectif_salarie" : "12"
+}
+] ,
+"finances" :
+{
+"annee_existence1" :
+{
+"ca" : 0 ,
+"resultat_net" : 0
+} ,
+"annee_existence2" :
+{
+"ca" : 0 ,
+"resultat_net" : 0
+}
+} ,
+"complements" :
+{
+"collectivite_territoriale" :
+{
+"code" : "01" ,
+"code_insee" : "01" ,
+"elus" :
+[
+{
+"nom" : "string" ,
+"prenoms" : "string" ,
+"annee_de_naissance" : "1964" ,
+"fonction" : "Maire" ,
+"sexe" : "F"
+}
+] ,
+"niveau" : "département"
+} ,
+"convention_collective_renseignee" : true ,
+"liste_idcc" :
+[
+"string"
+] ,
+"liste_finess_juridique" :
+[
+"string"
+] ,
+"numero_rnf" : "string" ,
+"egapro_renseignee" : true ,
+"est_achats_responsables" : true ,
+"est_alim_confiance" : true ,
+"est_association" : false ,
+"est_avocat" : true ,
+"est_bio" : true ,
+"est_entrepreneur_individuel" : false ,
+"est_entrepreneur_spectacle" : false ,
+"est_ess" : false ,
+"est_finess" : false ,
+"est_organisme_formation" : true ,
+"est_qualiopi" : true ,
+"liste_id_organisme_formation" :
+[
+"7423P001123"
+] ,
+"est_rge" : false ,
+"est_service_public" : null ,
+"est_administration" : false ,
+"est_l100_3" : null ,
+"est_siae" : false ,
+"est_societe_mission" : false ,
+"est_uai" : false ,
+"est_patrimoine_vivant" : true ,
+"bilan_ges_renseigne" : false ,
+"identifiant_association" : null ,
+"statut_entrepreneur_spectacle" : "string" ,
+"type_siae" : "string"
+} ,
+"tva" :
+[
+"string"
+]
+}
+] ,
+"total_results" : 0 ,
+"page" : 1 ,
+"per_page" : 10 ,
+"total_pages" : 1000
+}
