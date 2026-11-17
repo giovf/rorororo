@@ -33,7 +33,7 @@ if [ -n "$code" ]; then
   npm run -s entry-imports \
     || { echo "pre-push: an extensionless relative import would kill the Node-run workflow on the runner"; exit 1; }
 fi
-case "$files" in *docs/RUNS.md*|*docs/STRATEGY.md*) npm run -s runs || exit 1 ;; esac
+case "$files" in *docs/RUNS.md*|*docs/STRATEGY.md*|*docs/decisions/*) npm run -s runs || exit 1 ;; esac
 case "$files" in *docs/pipeline/*) npm run -s pipeline >/dev/null || exit 1 ;; esac
 case "$files" in *docs/ci/*|*.github/workflows/*) npm run -s ci-yaml || { echo "pre-push: GitHub would refuse this workflow file (No jobs were run) — fix it in docs/ci/"; exit 1; } ;; esac
 exit 0

@@ -30,6 +30,12 @@
 // moves STRATEGY §8 entries older than 30 days into docs/decisions/<YYYY-MM>.md, so the `strategy`
 // floor counts the §8 bullets plus every month file's — a roll moves lines, the count never falls.
 //
+// Current decision log (2026-11-17, foundry `decision-log-union-merge`): new entries are appended to
+// docs/decisions/current.md (`merge=union`; STRATEGY.md §8 keeps a pointer line), because the build
+// and the burn-down conflicted on §8 that evening and union is unsafe for a file whose other
+// sections are rewritten in place. The `strategy` floor counts STRATEGY.md, current.md and every
+// month file together, and `check` names any entry still written under §8 (the roll sweeps it).
+//
 // Run: npm run runs                       → check lines dated >= CAP_FROM and the floor, exit 1 on a violation
 //      npm run runs -- check [--from YYYY-MM-DD] [--cap 120]
 //      npm run runs -- list  [--from YYYY-MM-DD] [--cap 120]   → every offender, never fails
@@ -39,7 +45,7 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { decisionsFileCount } from './decisions-roll.ts';
+import { CURRENT_FILE, decisionsFileCount, splitDecisionLog } from './decisions-roll.ts';
 
 export const RUNS_FILE = path.join('docs', 'RUNS.md');
 export const STRATEGY_FILE = path.join('docs', 'STRATEGY.md');
@@ -158,6 +164,15 @@ export function formatViolation(v: Violation, cap = CAP): string {
       : `${RUNS_FILE}:${v.line}: not \`- YYYY-MM-DD HH:MM | <routine> | <text>\`: ${head}`;
 }
 
+/** Entries still written under STRATEGY.md §8 since the log moved to docs/decisions/current.md; 0 without the heading. */
+export function strayDecisions(strategyMd: string): number {
+  try {
+    return splitDecisionLog(strategyMd).entries.length;
+  } catch {
+    return 0;
+  }
+}
+
 /** Dated bullets (`- YYYY-MM-DD …`) in a file: run lines, or decision-log entries. */
 export function datedLineCount(md: string): number {
   return md.split('\n').filter((l) => DATED.test(l)).length;
@@ -166,7 +181,7 @@ export function datedLineCount(md: string): number {
 export interface Floor {
   /** Dated bullets in docs/RUNS.md the last time the check ran. */
   runs: number;
-  /** Dated bullets in docs/STRATEGY.md §8 plus docs/decisions/*.md (the decision log) the last time the check ran. */
+  /** Dated bullets in docs/STRATEGY.md plus docs/decisions/current.md and its month files (the decision log) the last time the check ran. */
   strategy: number;
   updated: string;
 }
@@ -342,13 +357,18 @@ function main(): void {
         if (hint) console.error(hint);
         process.exitCode = 1;
       }
+      const strategyMd = existsSync(path.resolve(STRATEGY_FILE))
+        ? readFileSync(path.resolve(STRATEGY_FILE), 'utf8')
+        : '';
       const counts = {
         runs: datedLineCount(md),
-        strategy:
-          (existsSync(path.resolve(STRATEGY_FILE))
-            ? datedLineCount(readFileSync(path.resolve(STRATEGY_FILE), 'utf8'))
-            : 0) + decisionsFileCount(),
+        strategy: datedLineCount(strategyMd) + decisionsFileCount(),
       };
+      const stray = strayDecisions(strategyMd);
+      if (stray > 0)
+        console.log(
+          `runs: ${stray} decision-log entr${stray === 1 ? 'y' : 'ies'} under ${STRATEGY_FILE} §8 — new entries go at the end of ${CURRENT_FILE} (it merges itself); \`npm run decisions-roll\` sweeps these`,
+        );
       const floorPath = path.resolve(FLOOR_FILE);
       const floorText = existsSync(floorPath) ? readFileSync(floorPath, 'utf8') : '';
       const floor = floorText ? parseFloor(floorText) : { runs: 0, strategy: 0, updated: '' };

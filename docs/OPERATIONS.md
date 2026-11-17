@@ -81,7 +81,8 @@ on the licence worker).
 research → plan → build → distribute → measure → review. The plan is `docs/STRATEGY.md`; the
 monthly strategy review is a cloud routine (first Monday, 08:00 UTC) writing `docs/reviews/YYYY-MM.md`
 with a scorecard, keep/kill verdicts per venture, market signals, research gaps and the next three
-moves. Claude rewrites STRATEGY.md after each review and logs decisions in its §8.
+moves. Claude rewrites STRATEGY.md after each review and logs decisions in
+`docs/decisions/current.md` (the decision log; §8 points to it).
 
 ## Routines (cloud, run without anyone present)
 

@@ -94,7 +94,8 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   live, owner action needed — and `owner:` ALERTS lines; all short, plain, non-technical.
 - Plan of record: `docs/STRATEGY.md` (thesis, 90-day targets, prioritisation rule, kill
   criteria). Research before build, distribution before new features, monthly review
-  (`docs/reviews/`). Rewrite STRATEGY.md when the facts change; log decisions in its §8.
+  (`docs/reviews/`). Rewrite STRATEGY.md when the facts change; log decisions at the end of
+  `docs/decisions/current.md` (append-only, merges itself; §8 is a pointer to it).
 - The owner has delegated all product and strategy decisions. Decide, log the
   decision (task notes, `RESEARCH.md`, ARCHITECTURE.md), keep going. Batch the rare
   owner-only actions (accounts, payments, keys) into one request per channel. Keep the owner's part minimal

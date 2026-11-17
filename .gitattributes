@@ -10,3 +10,7 @@
 docs/RUNS.md merge=union
 docs/INBOX.md merge=union
 docs/ops/RUNS-COUNT.json merge=union
+# The decision log too (2026-11-17, foundry `decision-log-union-merge`): entries are appended to
+# docs/decisions/current.md, never to docs/STRATEGY.md §8 — STRATEGY.md's other sections are
+# rewritten in place, so it keeps the default driver and only carries a pointer line.
+docs/decisions/current.md merge=union

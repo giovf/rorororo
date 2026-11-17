@@ -11,6 +11,7 @@ Changes: 2026-10-05 — RELAY: poll for the response commit up to 20 min instead
 
 Changes: 2026-10-05 — RELAY: a dead relay run (cancelled unstarted) is re-fired by `workflow_dispatch`, not waited on or handed off (foundry `ci-runs-never-acquired`).
 Changes: 2026-10-10 — CLONE: unshallow the depth-50 sandbox clone before any `git log --since` or push (foundry `sandbox-clone-unshallow`).
+Changes: 2026-11-17 — the decision entry is appended to `docs/decisions/current.md` (`merge=union`), not STRATEGY §8; the read is that file's tail (foundry `decision-log-union-merge`).
 ---
 
 CLONE (2026-10-10, foundry `sandbox-clone-unshallow`): the sandbox clone is `--depth 50` and its snapshot days old, so `git fetch` prints `forced update`, `git pull` refuses a plain fast-forward as `divergent branches` (that is why you may be on `work`: stay there, it tracks `origin/main`) and any `git log --since` under-counts silently. Before any `git log`, read of history or push: `[ "$(git rev-parse --is-shallow-repository)" = true ] && git fetch --unshallow origin` (a no-op once the clone is complete).
@@ -19,9 +20,9 @@ You are the build FALLBACK routine for Foundry, a portfolio of small self-runnin
 
 FIRST, before `npm ci`: run `npm run slot -- check build`. If it prints `running` or `done`, stop — the slot is taken (a `… started (build)` marker, a `| build |` line in `docs/RUNS.md` or a `(build)` commit in the last 2 h all count). Print one line saying so and end the run without committing anything. Only `missed` continues.
 
-STEP 0 — heal before building: run `npm ci` then `npm run check` at the repo root. If it fails, your ONLY job this run is to make `main` green (fix forward or `git revert` the offending commit), commit, push, log it in STRATEGY.md §8 and stop.
+STEP 0 — heal before building: run `npm ci` then `npm run check` at the repo root. If it fails, your ONLY job this run is to make `main` green (fix forward or `git revert` the offending commit), commit, push, log it in `docs/decisions/current.md` (one line appended at the end) and stop.
 
-Read first: `CLAUDE.md`, `docs/OWNER-NOTES.md` (answer each new note in place with a `  - Claude: …` line), `docs/pipeline/README.md`, `docs/STRATEGY.md` (§5, §8), `docs/ALERTS.md`, `docs/RUNS.md` (what ran today — never redo it), `ventures/gankdat/CLAUDE.md` when the item is gankdat's.
+Read first: `CLAUDE.md`, `docs/OWNER-NOTES.md` (answer each new note in place with a `  - Claude: …` line), `docs/pipeline/README.md`, `docs/STRATEGY.md` (§5), the newest entries of `docs/decisions/current.md` (the decision log since 2026-11-17: `tail -n 40`; the file holds 30 days), `docs/ALERTS.md`, `docs/RUNS.md` (what ran today — never redo it), `ventures/gankdat/CLAUDE.md` when the item is gankdat's.
 
 THE ITEM: `npm run pipeline -- next --max-effort=0.3` is the item. If it prints nothing buildable, do a RESEARCH run only when `npm run pipeline empty` lists an open queue needing research and the research is cheap (a foundry ops research from the repo's own logs; never a market study — leave that to Fable), otherwise write ONE run-log line saying nothing small was buildable and stop. Set the item `doing`, build it completely, set it `done` with `done_at`; if that empties its queue (nothing todo/doing/blocked) and the queue is not finished, set `needs_research: true`. If you cannot build it (account, key, third party) set it `blocked` with `blocked_on`; if it is not worth doing set it `dropped` and say why in `why`.
 
@@ -33,7 +34,7 @@ Facts you must not misread: accounts ending in @gankdat.com, @1402celsius.com, @
 
 Never take a larger item, never start a new dataset or actor, never research a venture from scratch — those wait for Fable.
 
-RUN LOG (repo log only — these lines do NOT reach the owner's phone): append to `docs/RUNS.md` (newest last) one line saying why this run filled the slot, then ONE LINE PER PIECE OF WORK DONE, each `- YYYY-MM-DD HH:MM | fallback | <one plain sentence, ≤ 120 chars>`. Append one line to `docs/STRATEGY.md` §8: `- YYYY-MM-DD fallback: <what and why>`. `npm run runs` (part of `npm run check`) fails the push if any new `docs/RUNS.md` line's text exceeds 120 chars — run it before you commit.
+RUN LOG (repo log only — these lines do NOT reach the owner's phone): append to `docs/RUNS.md` (newest last) one line saying why this run filled the slot, then ONE LINE PER PIECE OF WORK DONE, each `- YYYY-MM-DD HH:MM | fallback | <one plain sentence, ≤ 120 chars>`. Append one line at the END of `docs/decisions/current.md` (the decision log; it merges itself — never under `docs/STRATEGY.md` §8, which holds only a pointer since 2026-11-17): `- YYYY-MM-DD fallback: <what and why>`. `npm run runs` (part of `npm run check`) fails the push if any new `docs/RUNS.md` line's text exceeds 120 chars — run it before you commit.
 
 NOTIFY (the only run-log lines that reach the owner's phone): add `- YYYY-MM-DD HH:MM | notify | <one plain sentence, ≤ 90 chars, no jargon, no file names, no scores>` to `docs/RUNS.md` ONLY when (1) a new version of an existing product was submitted to a store or app directory — name the product and what users get, e.g. "ReadFocus 0.2 submitted to Chrome and Firefox: reads web PDFs" (gankdat's dataset and registry version bumps do not count, only a major version); (2) a new product went live on a shelf; or (3) the owner must do something — then also write the `owner:` line in `docs/ALERTS.md` as one plain sentence saying what and where, ≤ 120 chars. Nothing else is sent: not builds, datasets, research, fixes or metrics.
 

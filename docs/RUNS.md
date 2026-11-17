@@ -3147,3 +3147,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 17:45 | burn-down | Routine files (build, burn-down, exchange) and the pipeline README now say resolve, never a hand edit
 - 2026-11-17 17:45 | burn-down | CI after the pushes: gankdat runs 213 and 214 deployed green, landing 147, publish 104 and check 504-505 green
 - 2026-11-17 17:45 | burn-down | Stopping for time: 3 items built, 2 queues researched; foundry decision-log-union-merge is next, unclaimed
+- 2026-11-17 18:14 | burn-down | Built foundry decision-log-union-merge: decisions are appended to docs/decisions/current.md, which merges itself
+- 2026-11-17 18:14 | burn-down | STRATEGY §8 is now a pointer line; its 323 entries moved (297 to current.md, 26 older than 30 days to 2026-10.md)
+- 2026-11-17 18:14 | burn-down | decisions-roll rolls current.md and sweeps any entry still written under §8; npm run runs names such entries
+- 2026-11-17 18:14 | burn-down | Test: two branches appending a decision in a temporary repo with the attribute merge without a conflict
+- 2026-11-17 18:14 | burn-down | Build, burn-down, fallback, exchange, review and retro files append to current.md and read its tail, not §8
