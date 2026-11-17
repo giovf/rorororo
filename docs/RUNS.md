@@ -3113,3 +3113,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 09:14 | build | new-ventures queue is now empty: marked for research
 - 2026-11-17 09:14 | build | demo-video.yml: no run since the 11-14 install, read only (it publishes), so no first-run line yet
 - 2026-11-17 12:06 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
+- 2026-11-17 16:06 | triage | notify owner dispatched: last run started 13:46 UTC, 2 h 20 min ago
