@@ -327,3 +327,4 @@
 - 2026-11-15 23:59 (backlog) | notification | google.com | Report domain: gankdat.com Submitter: google.com Report-ID: 8067254499051480601 | Google DMARC aggregate report for gankdat.com | logged
 - 2026-11-17 02:06 | notification | recall.ai | Send your agent to meetings | Recall.ai marketing newsletter; no action asked | logged
 - 2026-11-17 04:59 | store | google.com | Your identity has been verified | Google Play Console identity verification succeeded | logged (ALERTS line added)
+- 2026-11-17 12:18 (backlog) | notification | recall.ai | Need a hand with your first bot? | Recall.ai marketing onboarding mail; no action asked | logged
