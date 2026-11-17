@@ -3137,3 +3137,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 17:40 | burn-down | Built gankdat x402-harness-ua-as-prober: a user agent naming itself a harness now counts as a prober, with a test
 - 2026-11-17 17:40 | burn-down | Proof is the next Daily numbers row: usetested-harness under probers, the buyer count down by its 21 calls
 - 2026-11-17 17:40 | burn-down | claude-code-kit research: unchanged since 11-10, both items wait on the owner's Leanpub step; next pass after 12-01
+- 2026-11-17 17:42 | burn-down | Foundry research: tonight's two-slot window conflicted on the gankdat queue file and the decision log
+- 2026-11-17 17:42 | burn-down | Queued foundry queue-merge-by-item-id (4): queue files merged by item id instead of by hand
+- 2026-11-17 17:42 | burn-down | Queued foundry decision-log-union-merge (4): decisions in an append-only file that merges itself
+- 2026-11-17 17:42 | burn-down | Queued foundry routine-attribution-from-session (3): routine files name a model the session no longer is
+- 2026-11-17 17:42 | burn-down | Queued foundry gankdat-actor-scaffold (3): actor folders generated from the source schema, not hand-copied

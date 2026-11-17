@@ -2,10 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-15",
-  "researched": "2026-11-12",
-  "researching_since": "2026-11-17T17:38Z",
-  "researching_by": "burn-down",
+  "updated": "2026-11-17",
+  "researched": "2026-11-17T17:39Z",
   "items": [
     {
       "id": "fetch-relay",
@@ -1545,6 +1543,46 @@
       "added": "2026-11-15",
       "updated": "2026-11-16",
       "done_at": "2026-11-16"
+    },
+    {
+      "id": "queue-merge-by-item-id",
+      "title": "Queue files merge themselves: `npm run pipeline resolve` (plain Node, like `claim`) rewrites a conflicted `docs/pipeline/queues/<venture>.json` from the two sides by item id — an item only one side has is kept, an item both changed takes the side with the later status step (`done`/`blocked`/`dropped` over `doing` over `todo`, then the later `done_at`/`updated`), queue-level fields take the later `updated`/`researched` and drop a `researching_*` marker the other side removed — and the three routine files say to run it when `git pull --no-rebase` reports a conflict in a queue file; tests on the 11-17 pair of commits",
+      "why": "Research pass 2026-11-17 (burn-down). Two sessions finished an item of the same queue inside one window tonight: the 17:10 build marked gankdat `x402-journal-buyer-day-7-read` done and appended an item at 17:16, the 17:00 burn-down marked `uk-esg-disclosures` done and appended three at 17:34, and the pull conflicted on `gankdat.json` (both sides append at the end of `items`). It was resolved by hand with a throwaway script. `.gitattributes` says why union cannot cover these files (edited in place), 21 of the last 14 days' commits are merges, and every evening has a build and a burn-down on the busiest queue. A routine cut off between the conflict and the hand-merge loses the whole item (atomic push rule). Evidence 1 (own logs, first seen in this shape) × reach 1 (every two-slot evening) ÷ 0.3 day.",
+      "effort_days": 0.3,
+      "proof": "the next same-queue double finish merges with `pipeline resolve` and no hand edit, named in a run-log line; `npm run pipeline` validates the result",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-17"
+    },
+    {
+      "id": "decision-log-union-merge",
+      "title": "The decision log merges itself: STRATEGY §8's dated entries move to an append-only `docs/decisions/current.md` (`merge=union` in `.gitattributes`, the rollover script and `runs-check` reading it in place of §8, §8 keeping one pointer line), and the routine files append there — so two slots logging a decision in the same window no longer conflict on `docs/STRATEGY.md`",
+      "why": "Research pass 2026-11-17 (burn-down). `docs/STRATEGY.md` conflicted tonight when the build's 17:16 line and the burn-down's 17:34 line both landed at the end of §8; RUNS.md and INBOX.md have merged themselves since 2026-10-12 (`append-only-union-merge`), but STRATEGY.md was left out because its other sections are rewritten in place, so union is unsafe for the file as a whole. Every finished item appends one §8 line by rule, so this conflicts whenever the queue file does and also when two different queues' items finish together. Evidence 1 × reach 1 ÷ 0.2 day.",
+      "effort_days": 0.2,
+      "proof": "two commits appending a decision in the same window merge without a conflict (a test over a temporary repo with the attribute), `npm run runs` counts the entries in the new file, 14 days with no STRATEGY.md conflict noted in docs/RUNS.md",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-17"
+    },
+    {
+      "id": "routine-attribution-from-session",
+      "title": "Routine files stop hardcoding the model in the commit trailer: `docs/routines/build.md`, `burn-down.md` and `exchange.md` say `ending with Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`; replace with 'end with the attribution lines the session supplies (its Co-Authored-By and Claude-Session lines), never a model name written here', and add the files to the versions check's list of places a model id may not be hardcoded",
+      "why": "Research pass 2026-11-17 (burn-down). Tonight's session was told by its harness to sign commits as Claude Fable 5.2 while the routine text asked for 5.1; the burn-down used the session's lines, so `main` now has both spellings on the same routine and the next slot may follow either. `routine-models-auto-update` (2026-11) keeps the routine configs current but not the prose. A wrong model in the trailer is a wrong record, and the retro's slot table reads trailers when a line is missing. Evidence 1 × reach 1 ÷ 0.05 day, discounted to 3 as record hygiene.",
+      "effort_days": 0.05,
+      "proof": "`grep -rn 'Fable 5\\.' docs/routines` is empty; the next build and burn-down commits carry the session's own trailer",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-17"
+    },
+    {
+      "id": "gankdat-actor-scaffold",
+      "title": "`npm run actor -w @foundry/gankdat -- <slug>`: write `apify/<slug>/` for a registered source — `dataset_schema.json` from the record schema (types and nullability as `test/apify-schemas.spec.ts` reads them, the change fields when the source has a feed), an `input_schema.json` skeleton from `queryParams` (date pattern, checkbox, number editors; titles and descriptions left as TODO lines the test refuses), `main.mjs`, `package.json`, the shared client and Dockerfile, and the `apify/README.md` row; title ≤ 63 and description ≤ 300 checked at write time",
+      "why": "Research pass 2026-11-17 (burn-down). Three dataset builds in six days (uk-payment-practices 11-12, uk-company-accounts 11-13, the two ESG registers 11-17) each copied a neighbouring actor folder by hand; tonight's build wrote a 120-line throwaway generator for two folders and still failed the schema test twice (a 304-character description, an integer param the test reads as number). The dataset schema is fully derivable from the zod record schema the test already walks. Saves roughly 10 minutes of a 25-minute dataset build and removes the two failure shapes. Evidence 1 × reach 1 (each dataset build; the exchange has more registers parked) ÷ 0.3 day, discounted to 3 while no dataset is queued.",
+      "effort_days": 0.3,
+      "proof": "the next dataset build creates its actor folder with the command and `test/apify-schemas.spec.ts` passes on the first run, noted in its run-log line",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-17"
     }
   ]
 }
