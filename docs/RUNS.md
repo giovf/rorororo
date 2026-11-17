@@ -3162,3 +3162,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 18:35 | burn-down | Exchange pre-research: HGV and bus operator licence register read — parked (Store rival at $0.03/1,000, name-only join)
 - 2026-11-17 18:35 | burn-down | CI after the pushes: check 507 and 508 green; check 509, gankdat 215 and publish 105 were still running at 18:35
 - 2026-11-17 18:35 | burn-down | Stopping: 3 items built, 1 pre-research pass parked; nothing buildable left, one more pass allowed this night
+- 2026-11-17 19:07 | triage | notify owner dispatched: last run started 16:06 UTC, 3 h ago
