@@ -1,0 +1,179 @@
+meta twitter:image: https://www.data.gouv.fr/_og/d/c_ObjectPage.takumi%2CobjectTitle_~QVBJIFJlY2hlcmNoZSBk4oCZRW50cmVwcmlzZXM%2CorgName_~RGlyZWN0aW9uIGludGVybWluaXN0w6lyaWVsbGUgZHUgbnVtw6lyaXF1ZQ%2CorgLogo_~aHR0cHM6Ly91ZGF0YS1hdmF0YXJzLnMzLnJieC5pby5jbG91ZC5vdmgubmV0L2EwLzE2ZWIwNGQ3NzU0Yjk4OWI3ZGNkMjFkNzc2OTliZC0xMDAucG5n%2Cviews_846629%2Creuses_57%2Cfollowers_86%2Cp_Ii9kYXRhc2VydmljZXMvYXBpLXJlY2hlcmNoZS1kZW50cmVwcmlzZXMi%2Cs_2o9_D9DwpylFBnTP.png
+meta og:image: https://www.data.gouv.fr/_og/d/c_ObjectPage.takumi%2CobjectTitle_~QVBJIFJlY2hlcmNoZSBk4oCZRW50cmVwcmlzZXM%2CorgName_~RGlyZWN0aW9uIGludGVybWluaXN0w6lyaWVsbGUgZHUgbnVtw6lyaXF1ZQ%2CorgLogo_~aHR0cHM6Ly91ZGF0YS1hdmF0YXJzLnMzLnJieC5pby5jbG91ZC5vdmgubmV0L2EwLzE2ZWIwNGQ3NzU0Yjk4OWI3ZGNkMjFkNzc2OTliZC0xMDAucG5n%2Cviews_846629%2Creuses_57%2Cfollowers_86%2Cp_Ii9kYXRhc2VydmljZXMvYXBpLXJlY2hlcmNoZS1kZW50cmVwcmlzZXMi%2Cs_2o9_D9DwpylFBnTP.png
+meta og:image:type: image/png
+meta og:image:width: 1200
+meta og:image:height: 600
+meta description: L’API Recherche d’entreprises permet à tout le monde de rechercher et de trouver une entreprise française. A quoi sert l’API Recherche d’entreprises ? L'API permet de rechercher une entreprise de deu…
+meta og:type: website
+meta og:url: https://www.data.gouv.fr/dataservices/api-recherche-dentreprises
+meta og:site_name: data.gouv.fr
+meta og:locale: fr_FR
+meta twitter:card: summary_large_image
+meta twitter:site: @datagouvfr
+meta og:title: API - API Recherche d’Entreprises | data.gouv.fr
+meta og:description: L’API Recherche d’entreprises permet à tout le monde de rechercher et de trouver une entreprise française. A quoi sert l’API Recherche d’entreprises ? L'API permet de rechercher une entreprise de deu…
+API - API Recherche d’Entreprises | data.gouv.fr
+République
+Française
+/
+Se connecter (/login?next=/dataservices/api-recherche-dentreprises)
+S'enregistrer (/register?next=/dataservices/api-recherche-dentreprises)
+Rechercher
+Données (/datasets)
+API (/dataservices)
+Réutilisations (/reuses)
+Organisations (/organizations)
+Nouveautés (/posts)
+Nous écrire (/support)
+Accueil (/)
+API (/dataservices)
+API Recherche d’Entreprises
+API Recherche d’Entreprises
+L’API Recherche d’entreprises permet à tout le monde de rechercher et de trouver une entreprise française.
+A quoi sert l’API Recherche d’entreprises ?
+L'API permet de rechercher une entreprise de deux manières :
+Recherche textuelle (dénomination, adresse, dirigeants et élus)
+Recherche géographique
+Données accessibles dans l'API
+L’API étant totalement ouverte d'accès, elle comporte des limitations. Ainsi ne sont pas accessibles dans l'API :
+les prédécesseurs et successeurs d'un établissement
+les entreprises non-diffusibles
+les entreprises qui se sont vues refuser leurs immatriculation au RCS
+Attention, cette API ne permet pas d'accèder aux données complètes de la base Sirene, mais uniquement de rechercher une entreprise, par sa dénomination ou son adresse. Pour savoir comment obtenir les données complètes, consultez notre fiche explication (https://annuaire-entreprises.data.gouv.fr/donnees/api-entreprises) .
+L'API permet de rechercher une entreprise et retourne pour chaque résultat :
+Donnée	Description
+dénomination	le nom de l'entreprise
+SIREN	le numero unique de l'entreprise
+SIRET	le numero unique de l'établissement
+NAF	le code NAF ou code APE, un code d'activité suivant la nomenclature de l'INSEE
+Filtres et utilisation avancée
+Filtre	Description
+NAF	filtrer les entreprises par code NAF
+Code postal	filtrer les entreprises par un code postal
+Effectif salarié	filtrer par tranche effectif salarié
+Entreprises individuelles	uniquement les entreprises individuelles
+Pour en savoir plus sur les filtres avancés, consultez la documentation (https://recherche-entreprises.api.gouv.fr/docs/) .
+Politique de confidentialité
+Consulter la politique de confidentialité (https://annuaire-entreprises.data.gouv.fr/vie-privee) .
+Lien des documentations supplémentaires (https://recherche-entreprises.api.gouv.fr/docs/)
+Partenaires de l'API
+Institut national de la statistique et des études économiques (Insee)
+Institut national de la propriété industrielle (INPI)
+Producteur
+Direction interministérielle du numérique (/organizations/direction-interministerielle-du-numerique)
+Contact
+Formulaire de contact Annuaire des Entreprises (https://annuaire-entreprises.data.gouv.fr/faq/parcours?question=contact) (Contact)
+Conditions d'accès
+Accès
+Ouvert
+Qualité des métadonnées
+Bon (86 %)
+Documentation technique manquante
+Licence non renseignée
+Caractéristiques techniques
+URL de base de l'API
+https://recherche-entreprises.api.gouv.fr
+Limite d'appels
+7 appels / seconde. L’administration s'autorise à baisser cette limite en cas de surcharge des serveurs
+Taux de disponibilité
+100%
+Documentation métier (https://recherche-entreprises.api.gouv.fr/docs/)
+Swagger
+Données renvoyées
+Swagger
+Informations (/dataservices/api-recherche-dentreprises)
+Réutilisations ( 57 ) (/dataservices/api-recherche-dentreprises/reuses)
+Discussions ( 20 ) (/dataservices/api-recherche-dentreprises/discussions)
+4 jeux de données associés
+Liste des entreprises RGE (/datasets/liste-des-entreprises-rge)
+ADEME
+L'identité de ce service public est certifiée par data.gouv.fr
+Mis à jour aujourd’hui
+Métadonnées
+Bon (78 %)
+179K 179386 vues
+19K 18777 téléchargements des ressources
+47 47 réutilisations
+6 6 abonnés
+Licences et demandes de licences d'entrepreneurs de spectacles vivants (/datasets/licences-et-demandes-de-licences-dentrepreneurs-de-spectacles-vivants)
+Ministère de la Culture
+L'identité de ce service public est certifiée par data.gouv.fr
+Mis à jour aujourd’hui
+Métadonnées
+Bon (89 %)
+49K 48796 vues
+14K 13727 téléchargements des ressources
+3 3 réutilisations
+3 3 abonnés
+Répertoire national des élus RNE (/datasets/repertoire-national-des-elus-1)
+Ministère de l'intérieur
+L'identité de ce service public est certifiée par data.gouv.fr
+Mis à jour le 11 août 2026
+Métadonnées
+Bon (89 %)
+400K 399939 vues
+5M 4570198 téléchargements des ressources
+73 73 réutilisations
+78 78 abonnés
+Base Sirene des entreprises et de leurs établissements (SIREN, SIRET) (/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret)
+Institut national de la statistique et des études économiques (Insee)
+L'identité de ce service public est certifiée par data.gouv.fr
+Mis à jour il y a 12 jours
+Métadonnées
+Bon (100 %)
+2M 1775241 vues
+4M 3634380 téléchargements des ressources
+304 304 réutilisations
+206 206 abonnés
+Informations techniques
+Voir les informations techniques
+Abonnez-vous à notre lettre d'information
+Pour ne rien manquer de l’actualité de data.gouv.fr et de l’open data, inscrivez-vous à notre infolettre et suivez nos événements.
+Abonnez-vous (https://qvo970cr.sibpages.com/) Voir nos prochains évènements (/events/rentree-data-gouv)
+Suivez-nous
+sur les réseaux sociaux
+https://www.linkedin.com/company/data-gouv-fr/
+https://social.numerique.gouv.fr/@datagouvfr
+https://bsky.app/profile/datagouvfr.bsky.social
+https://www.youtube.com/@data-gouv-fr
+https://github.com/datagouv/data.gouv.fr
+/datasets/recent.atom
+Données ouvertes
+Thématiques (/pages/thematiques-a-la-une)
+Données de référence (/pages/spd/reference)
+Catalogue de données (/datasets/5d13a8b6634f41070a43dff3)
+Suivre les publications des données (/suivi-de-publication)
+Portail des données européennes (https://data.europa.eu)
+schema.data.gouv.fr (https://schema.data.gouv.fr/)
+Plateforme
+Guides (https://guides.data.gouv.fr/)
+Feuille de route et nouveautés (/products/datagouv?tab=roadmap)
+Nous écrire (/support)
+Échangez avec la communauté (https://forum.data.gouv.fr/)
+Statistiques (/dashboard)
+Verticales thématiques
+simplifions.data.gouv.fr (https://simplifions.data.gouv.fr)
+meteo.data.gouv.fr (https://meteo.data.gouv.fr)
+transport.data.gouv.fr (https://transport.data.gouv.fr)
+ecologie.data.gouv.fr (https://ecologie.data.gouv.fr)
+defis.data.gouv.fr (https://defis.data.gouv.fr)
+culture.data.gouv.fr (https://culture.data.gouv.fr)
+logistique.data.gouv.fr (https://logistique.data.gouv.fr)
+Développement
+API du portail (https://guides.data.gouv.fr/api-de-data.gouv.fr/reference)
+Moteur open source : udata (17.26.0) (https://github.com/opendatateam/udata/)
+Interface utilisateur de data.gouv.fr : cdata (87607a1) (https://github.com/datagouv/cdata/commit/87607a1)
+république
+française
+/
+https://www.numerique.gouv.fr/offre-accompagnement/numeriquegouv-charte-utilisation/
+Un produit de la Direction Interministérielle du Numérique (DINUM).
+legifrance.gouv.fr (https://legifrance.gouv.fr)
+info.gouv.fr (https://www.info.gouv.fr)
+service-public.fr (https://www.service-public.fr)
+Licences (/pages/legal/licences)
+Modalités d'utilisation (/pages/legal/cgu)
+Politique de confidentialité (/pages/suivi)
+Mentions légales (/pages/legal/legal-notice)
+Accessibilité : partiellement conforme (/pages/legal/accessibility)
+Sauf indication contraire, tout le contenu de ce site est disponible sous la licence Open Licence 2.0 (https://github.com/etalab/licence-ouverte/blob/master/LO.md#licence-ouverte-20open-licence-20)

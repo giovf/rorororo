@@ -1,0 +1,234 @@
+{
+  "request": "pre-research-fr-register-2026-11-17",
+  "fetched_at": "2026-11-17T19:12:13.878Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=sirene&limit=100",
+      "fetched_at": "2026-11-17T19:12:03.646Z",
+      "status": 200,
+      "elapsed_ms": 151,
+      "final_url": "https://api.apify.com/v2/store?search=sirene&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"4b8fd-oZP76S7ZgwSZ+inv9S7PLvfHEXE\""
+      },
+      "file": "1.json",
+      "bytes": 309501,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=siret&limit=100",
+      "fetched_at": "2026-11-17T19:12:04.318Z",
+      "status": 200,
+      "elapsed_ms": 81,
+      "final_url": "https://api.apify.com/v2/store?search=siret&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"4d5ab-3QytIxYHmfWD0xCGV55B/GyGnr8\""
+      },
+      "file": "2.json",
+      "bytes": 316843,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=pappers&limit=100",
+      "fetched_at": "2026-11-17T19:12:04.902Z",
+      "status": 200,
+      "elapsed_ms": 78,
+      "final_url": "https://api.apify.com/v2/store?search=pappers&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"524d1-vaguNe1C7xMGoWzj4E761MJkUak\""
+      },
+      "file": "3.json",
+      "bytes": 337105,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=french%20company&limit=100",
+      "fetched_at": "2026-11-17T19:12:05.483Z",
+      "status": 200,
+      "elapsed_ms": 77,
+      "final_url": "https://api.apify.com/v2/store?search=french%20company&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"4af31-qAcDBZQmN9dDGRo5yORBziQK7Rk\""
+      },
+      "file": "4.json",
+      "bytes": 306993,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=recherche%20entreprises&limit=100",
+      "fetched_at": "2026-11-17T19:12:06.063Z",
+      "status": 200,
+      "elapsed_ms": 104,
+      "final_url": "https://api.apify.com/v2/store?search=recherche%20entreprises&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"4181b-YfDawEbbyCvNsabcA9RFnetHopg\""
+      },
+      "file": "5.json",
+      "bytes": 268315,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=bodacc&limit=100",
+      "fetched_at": "2026-11-17T19:12:06.913Z",
+      "status": 200,
+      "elapsed_ms": 74,
+      "final_url": "https://api.apify.com/v2/store?search=bodacc&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"4d255-JJWWUk3LsilyLVq5i2P0Szbo3ds\""
+      },
+      "file": "6.json",
+      "bytes": 315989,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=handelsregister&limit=100",
+      "fetched_at": "2026-11-17T19:12:07.491Z",
+      "status": 200,
+      "elapsed_ms": 98,
+      "final_url": "https://api.apify.com/v2/store?search=handelsregister&limit=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"53e90-7gucVirCHqDaN0/x6LHJOBBIwFs\""
+      },
+      "file": "7.json",
+      "bytes": 343696,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=danone&per_page=1",
+      "fetched_at": "2026-11-17T19:12:07.653Z",
+      "status": 200,
+      "elapsed_ms": 882,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=danone&per_page=1",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "8.json",
+      "bytes": 13268,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://recherche-entreprises.api.gouv.fr/search?q=552032534",
+      "fetched_at": "2026-11-17T19:12:09.037Z",
+      "status": 200,
+      "elapsed_ms": 169,
+      "final_url": "https://recherche-entreprises.api.gouv.fr/search?q=552032534",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "9.json",
+      "bytes": 5373,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.gouv.fr/les-api/api-recherche-entreprises",
+      "fetched_at": "2026-11-17T19:12:09.272Z",
+      "status": 200,
+      "elapsed_ms": 1386,
+      "final_url": "https://www.data.gouv.fr/dataservices/api-recherche-dentreprises",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 9224,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 171317
+    },
+    {
+      "method": "GET",
+      "url": "https://www.pappers.fr/api",
+      "fetched_at": "2026-11-17T19:12:10.767Z",
+      "status": 403,
+      "elapsed_ms": 393,
+      "final_url": "https://www.pappers.fr/api",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "11.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5637
+    },
+    {
+      "method": "GET",
+      "url": "https://www.pappers.fr/api/tarifs",
+      "fetched_at": "2026-11-17T19:12:11.918Z",
+      "status": 403,
+      "elapsed_ms": 101,
+      "final_url": "https://www.pappers.fr/api/tarifs",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "12.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5658
+    },
+    {
+      "method": "GET",
+      "url": "https://www.clay.com/integrations",
+      "fetched_at": "2026-11-17T19:12:12.021Z",
+      "status": 200,
+      "elapsed_ms": 112,
+      "final_url": "https://www.clay.com/integrations",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 17 Nov 2026 16:17:21 GMT"
+      },
+      "file": "13.txt",
+      "bytes": 64828,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 2786210
+    },
+    {
+      "method": "GET",
+      "url": "https://data.europa.eu/api/hub/search/search?filter=dataset&limit=0&facets=%7B%22is_hvd%22%3A%5B%22true%22%5D%2C%22hvdCategory%22%3A%5B%22c_a9135398%22%5D%2C%22country%22%3A%5B%22de%22%5D%7D",
+      "fetched_at": "2026-11-17T19:12:12.170Z",
+      "status": 200,
+      "elapsed_ms": 541,
+      "final_url": "https://data.europa.eu/api/hub/search/search?filter=dataset&limit=0&facets=%7B%22is_hvd%22%3A%5B%22true%22%5D%2C%22hvdCategory%22%3A%5B%22c_a9135398%22%5D%2C%22country%22%3A%5B%22de%22%5D%7D",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "11260"
+      },
+      "file": "14.json",
+      "bytes": 11260,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://data.europa.eu/api/hub/search/search?filter=dataset&limit=10&facets=%7B%22is_hvd%22%3A%5B%22true%22%5D%2C%22hvdCategory%22%3A%5B%22c_a9135398%22%5D%2C%22country%22%3A%5B%22fr%22%5D%7D",
+      "fetched_at": "2026-11-17T19:12:13.212Z",
+      "status": 200,
+      "elapsed_ms": 446,
+      "final_url": "https://data.europa.eu/api/hub/search/search?filter=dataset&limit=10&facets=%7B%22is_hvd%22%3A%5B%22true%22%5D%2C%22hvdCategory%22%3A%5B%22c_a9135398%22%5D%2C%22country%22%3A%5B%22fr%22%5D%7D",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "325891"
+      },
+      "file": "15.json",
+      "bytes": 325891,
+      "truncated": false
+    }
+  ]
+}
