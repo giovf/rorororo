@@ -4,6 +4,9 @@
   "needs_research": false,
   "updated": "2026-11-10",
   "researched": "2026-11-10",
+  "research_after": "2026-11-17",
+  "researching_since": "2026-11-17T17:38Z",
+  "researching_by": "burn-down",
   "weight": 2,
   "items": [
     {
@@ -64,6 +67,5 @@
       "blocked_on": "leanpub-listing-live — the live book URL (the owner's `leanpub done <url>` note, action 038); the item is taken by the run that records the listing",
       "added": "2026-11-08"
     }
-  ],
-  "research_after": "2026-11-17"
+  ]
 }
