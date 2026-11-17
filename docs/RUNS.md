@@ -3106,3 +3106,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-16 21:06 | watchdog | paced: burn-down slot 2026-11-16 17:00 UTC stopped by the gate — usage report 2026-10-04 is stale; cutoff seen — watchd…
 - 2026-11-17 00:06 | triage | notify owner dispatched: last run started 21:06 UTC, 3 h ago
 - 2026-11-17 06:06 | triage | notify owner dispatched: last run started 03:05 UTC, 3 h ago
+- 2026-11-17 09:07 | triage | notify owner dispatched: last run started 06:06 UTC, 3 h ago
