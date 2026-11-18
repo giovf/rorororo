@@ -1356,10 +1356,10 @@
       "effort_days": 0.05,
       "proof": "both refresh_log rows with their counts (≈ 25k statements across three registry years, ≈ 11k pay gap rows) and one live `esg` read quoted in docs/RUNS.md",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-17",
       "not_before": "2026-11-18",
-      "doing_since": "2026-11-18"
+      "done_at": "2026-11-18"
     },
     {
       "id": "uk-esg-disclosures-backfill",
@@ -1393,6 +1393,16 @@
       "status": "done",
       "added": "2026-11-18",
       "done_at": "2026-11-18"
+    },
+    {
+      "id": "feeds-d1-overload-answer",
+      "title": "A change feed answers a sweep without a 500: `serveFeed` reads `queryD1Changes` with no overload handling, so one client fetching every `/feeds/*.xml` in a burst trips D1's 10-second window and the rest answer HTTP 500. Wrap the read in the existing overload retry/pace helper (`d1pace.ts`), answer 503 with `Retry-After` when it still fails, and serve the rendered feed from the edge cache or KV for a few minutes so a sweep costs one D1 read per feed per window; test with a stubbed overloaded D1",
+      "why": "Read 2026-11-18 (burn-down, item uk-esg-disclosures-live-read): probe run 332's error lines carried `D1_ERROR: D1 DB is overloaded` ×23 on 23 feed paths (uk-trademark-journal classes 28–45 and five register feeds) and `GET /feeds/uk-trademark-journal/class/* 500 ×18`; `worker logs` run 35 dates one at 14:03:00 UTC with the stack `queryD1Changes ← serveFeed`. Feeds are the surface the readers and crawlers of `feeds 30d: 1093 fetches, 75 user agents` poll; a reader that meets a 500 may drop the feed.",
+      "effort_days": 0.3,
+      "proof": "a test where D1 throws the overload error and the feed answers 503 with Retry-After (or the cached body), and seven Daily numbers rows with no `/feeds/` path under `worker errors 24h`",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-18"
     }
   ]
 }

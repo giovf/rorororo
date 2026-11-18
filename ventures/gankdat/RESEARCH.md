@@ -1738,3 +1738,25 @@ signal to read again.
 One side reading for whoever next reads errors by dispatch: run 332 printed `worker errors: 160 lines` and run 333,
 ninety seconds later with the same query, `worker errors: 0 lines` with a successful body — the log query can answer
 empty while the lines exist, so an empty error read is taken twice before it is believed.
+
+
+## uk-esg-disclosures — first live read 2026-11-18 (burn-down, 17:30 UTC)
+
+Item `uk-esg-disclosures-live-read`. Read: `worker logs` run 35 (needle `uk-gender-pay-gap`, 1,500 min; run 34 for the
+statements needle answered Cloudflare's own 504) and relay rounds `esg-live-read-2026-11-18` and `-b`.
+
+- **Wave 2 on its first night with both registers: about 3.5 minutes.** `refresh_wave` 05:15:18 UTC (sam-exclusions,
+  uk-sponsors, uk-modern-slavery-statements, uk-gender-pay-gap); `/v1/health` refresh stamps 05:16:19, 05:17:17,
+  05:18:17 and 05:18:41; the pay gap line `refresh_append … streamed 11784, added 11784, changed 0` at 05:18:41. The
+  two registers stay in wave 2.
+- **Counts as built for.** `/stats/uk-modern-slavery-statements`: 25,668 statement summaries (expected ≈ 25k);
+  `/stats/uk-gender-pay-gap`: 11,784 reports (expected ≈ 11k); both pages 200, dated 2026-11-18.
+- **The join on the lookup works.** `query_uk_company_profiles` 00519500 (Tesco Stores Limited): `esg.modern_slavery`
+  statement year 2026 (years 2025, 2026) and `esg.gender_pay_gap` 2025/26, median hourly gap 4.8 %, the same figure
+  the pay gap register returns for that number. 00445790 (Tesco PLC): the statement, and `gender_pay_gap: null` — the
+  PLC is not the reporting employer. 08064685 and SC016876: a pay gap report and `modern_slavery: null`. A company in
+  neither register (`esg: null`) was not read live; the unit tests hold that case.
+- **One defect seen on the way, not in these sources:** `/stats/…` answered 503 four times before the first wave had
+  loaded the tables (expected, gone since 05:18), and at 14:03 UTC one browser-shaped client swept the change feeds
+  and 23 of them answered 500 with `D1_ERROR: D1 DB is overloaded` (`queryD1Changes` in `serveFeed`). Queued as
+  `feeds-d1-overload-answer`.

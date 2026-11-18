@@ -3197,3 +3197,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 17:23 | burn-down | Workers Logs hold ~1 in 100 requests (140 of ~12,000 /mcp); 8 log reads found neither event
 - 2026-11-18 17:23 | burn-down | Probe dispatch now prints door events 7d from Analytics Engine; run 333 printed 47 points
 - 2026-11-18 17:23 | burn-down | Daily numbers wanted: clause tags a client calling 2+ protected tools as a tool-list walk
+- 2026-11-18 17:34 | burn-down | gankdat uk-esg-disclosures-live-read done: both registers live, wave 2 took about 3.5 min
+- 2026-11-18 17:34 | burn-down | Live counts: 25,668 modern slavery statements, 11,784 pay gap reports (append +11784 at 05:18:41)
+- 2026-11-18 17:34 | burn-down | Live esg read, Tesco Stores 00519500: statement 2026 and pay gap 2025/26, median 4.8 %
+- 2026-11-18 17:34 | burn-down | Queued gankdat feeds-d1-overload-answer (3): a feed sweep at 14:03 got 23 HTTP 500s from D1
+- 2026-11-18 17:34 | burn-down | Relay rounds esg-live-read-2026-11-18 and -b (10 lines); worker logs runs 34 (504) and 35
