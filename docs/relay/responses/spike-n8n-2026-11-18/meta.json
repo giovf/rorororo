@@ -1,0 +1,407 @@
+{
+  "request": "spike-n8n-2026-11-18",
+  "fetched_at": "2026-11-18T17:24:48.287Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.n8n.io/contribute/create-templates/sticky-note-guidelines",
+      "fetched_at": "2026-11-18T17:24:31.657Z",
+      "status": 200,
+      "elapsed_ms": 366,
+      "final_url": "https://docs.n8n.io/contribute/create-templates/sticky-note-guidelines",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"11jfakak7z390c6\""
+      },
+      "file": "1.txt",
+      "bytes": 7266,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 420394
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.n8n.io/contribute/create-templates/workflow-template-ideas",
+      "fetched_at": "2026-11-18T17:24:32.534Z",
+      "status": 200,
+      "elapsed_ms": 222,
+      "final_url": "https://docs.n8n.io/contribute/create-templates/workflow-template-ideas",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"rcso74t488co4n\""
+      },
+      "file": "2.txt",
+      "bytes": 13707,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 591179
+    },
+    {
+      "method": "GET",
+      "url": "https://n8n.io/legal/",
+      "fetched_at": "2026-11-18T17:24:32.767Z",
+      "status": 200,
+      "elapsed_ms": 209,
+      "final_url": "https://n8n.io/legal/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 4981,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 245589
+    },
+    {
+      "method": "GET",
+      "url": "https://n8n.io/legal/terms/",
+      "fetched_at": "2026-11-18T17:24:33.484Z",
+      "status": 404,
+      "elapsed_ms": 69,
+      "final_url": "https://n8n.io/legal/terms/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 0,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 0
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.n8n.io/n8n-community-license",
+      "fetched_at": "2026-11-18T17:24:33.555Z",
+      "status": 200,
+      "elapsed_ms": 107,
+      "final_url": "https://docs.n8n.io/n8n-community-license",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"qosvoauo42aezw\""
+      },
+      "file": "5.txt",
+      "bytes": 14293,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 486064
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.n8n.io/hosting/cli-commands/",
+      "fetched_at": "2026-11-18T17:24:34.171Z",
+      "status": 200,
+      "elapsed_ms": 395,
+      "final_url": "https://docs.n8n.io/deploy/host-n8n/configure-n8n/use-the-command-line",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"s82ubocps1kect\""
+      },
+      "file": "6.txt",
+      "bytes": 21176,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 951769
+    },
+    {
+      "method": "GET",
+      "url": "https://n8n.io/creators/",
+      "fetched_at": "2026-11-18T17:24:34.579Z",
+      "status": 200,
+      "elapsed_ms": 93,
+      "final_url": "https://n8n.io/creators/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 3213,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1007873
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/workflows/11709",
+      "fetched_at": "2026-11-18T17:24:34.722Z",
+      "status": 200,
+      "elapsed_ms": 297,
+      "final_url": "https://api.n8n.io/api/templates/workflows/11709",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:35 GMT"
+      },
+      "file": "8.json",
+      "bytes": 56488,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&sort=createdAt:desc",
+      "fetched_at": "2026-11-18T17:24:35.521Z",
+      "status": 200,
+      "elapsed_ms": 262,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&sort=createdAt:desc",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:35 GMT"
+      },
+      "file": "9.json",
+      "bytes": 392495,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=enrichment&sort=createdAt:desc",
+      "fetched_at": "2026-11-18T17:24:36.287Z",
+      "status": 200,
+      "elapsed_ms": 239,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=enrichment&sort=createdAt:desc",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:36 GMT"
+      },
+      "file": "10.json",
+      "bytes": 397747,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=enrichment",
+      "fetched_at": "2026-11-18T17:24:37.030Z",
+      "status": 200,
+      "elapsed_ms": 224,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=enrichment",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:37 GMT"
+      },
+      "file": "11.json",
+      "bytes": 425494,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=lookup",
+      "fetched_at": "2026-11-18T17:24:37.761Z",
+      "status": 200,
+      "elapsed_ms": 271,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=lookup",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:38 GMT"
+      },
+      "file": "12.json",
+      "bytes": 269976,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=verify",
+      "fetched_at": "2026-11-18T17:24:38.535Z",
+      "status": 200,
+      "elapsed_ms": 464,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=verify",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:38 GMT"
+      },
+      "file": "13.json",
+      "bytes": 312076,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=monitor",
+      "fetched_at": "2026-11-18T17:24:39.502Z",
+      "status": 200,
+      "elapsed_ms": 238,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=monitor",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:39 GMT"
+      },
+      "file": "14.json",
+      "bytes": 339336,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=registry",
+      "fetched_at": "2026-11-18T17:24:40.245Z",
+      "status": 200,
+      "elapsed_ms": 238,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=registry",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:40 GMT"
+      },
+      "file": "15.json",
+      "bytes": 74707,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=compliance",
+      "fetched_at": "2026-11-18T17:24:40.985Z",
+      "status": 200,
+      "elapsed_ms": 229,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=compliance",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:41 GMT"
+      },
+      "file": "16.json",
+      "bytes": 355573,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=lead",
+      "fetched_at": "2026-11-18T17:24:41.718Z",
+      "status": 200,
+      "elapsed_ms": 236,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=lead",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:41 GMT"
+      },
+      "file": "17.json",
+      "bytes": 423983,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=scrape",
+      "fetched_at": "2026-11-18T17:24:42.459Z",
+      "status": 200,
+      "elapsed_ms": 232,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=scrape",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:42 GMT"
+      },
+      "file": "18.json",
+      "bytes": 376748,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=API",
+      "fetched_at": "2026-11-18T17:24:43.195Z",
+      "status": 200,
+      "elapsed_ms": 233,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=API",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:43 GMT"
+      },
+      "file": "19.json",
+      "bytes": 313624,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=2",
+      "fetched_at": "2026-11-18T17:24:43.931Z",
+      "status": 200,
+      "elapsed_ms": 259,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=2",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:44 GMT"
+      },
+      "file": "20.json",
+      "bytes": 351350,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=3",
+      "fetched_at": "2026-11-18T17:24:44.694Z",
+      "status": 200,
+      "elapsed_ms": 226,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=3",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:44 GMT"
+      },
+      "file": "21.json",
+      "bytes": 477359,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=4",
+      "fetched_at": "2026-11-18T17:24:45.428Z",
+      "status": 200,
+      "elapsed_ms": 271,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=4",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:45 GMT"
+      },
+      "file": "22.json",
+      "bytes": 390389,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=5",
+      "fetched_at": "2026-11-18T17:24:46.207Z",
+      "status": 200,
+      "elapsed_ms": 257,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=5",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:46 GMT"
+      },
+      "file": "23.json",
+      "bytes": 462976,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=6",
+      "fetched_at": "2026-11-18T17:24:46.971Z",
+      "status": 200,
+      "elapsed_ms": 248,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=6",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 17:24:47 GMT"
+      },
+      "file": "24.json",
+      "bytes": 425796,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/categories",
+      "fetched_at": "2026-11-18T17:24:47.724Z",
+      "status": 200,
+      "elapsed_ms": 34,
+      "final_url": "https://api.n8n.io/api/templates/categories",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 16:00:44 GMT"
+      },
+      "file": "25.json",
+      "bytes": 3966,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/collections",
+      "fetched_at": "2026-11-18T17:24:48.260Z",
+      "status": 200,
+      "elapsed_ms": 26,
+      "final_url": "https://api.n8n.io/api/templates/collections",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 16:00:45 GMT"
+      },
+      "file": "26.json",
+      "bytes": 2013,
+      "truncated": false
+    }
+  ]
+}

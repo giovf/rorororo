@@ -1,0 +1,102 @@
+meta description: Document template behavior, setup, and workflow sections with sticky notes.
+meta og:title: Add sticky notes to templates | Contribute | n8n Docs
+meta og:description: Document template behavior, setup, and workflow sections with sticky notes.
+meta og:image: https://docs.n8n.io/~gitbook/image?url=https%3A%2F%2F2083420238-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FgkeAaBEvbwHB2NmepVHG%252Fsites%252Fsite_Qp7QM%252Fsocialpreview%252FBJYuJLS829e7wvgPdf5m%252FGitBook%25201280x630.png%3Falt%3Dmedia%26token%3D535a1998-3467-4390-aef9-2f68fdbe688f&width=1200&height=630&sign=66c16ad3aef77b2b228614fe76c6c3a3&sv=3
+meta twitter:card: summary_large_image
+meta twitter:title: Add sticky notes to templates | Contribute | n8n Docs
+meta twitter:description: Document template behavior, setup, and workflow sections with sticky notes.
+meta twitter:image: https://docs.n8n.io/~gitbook/image?url=https%3A%2F%2F2083420238-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FgkeAaBEvbwHB2NmepVHG%252Fsites%252Fsite_Qp7QM%252Fsocialpreview%252FBJYuJLS829e7wvgPdf5m%252FGitBook%25201280x630.png%3Falt%3Dmedia%26token%3D535a1998-3467-4390-aef9-2f68fdbe688f&width=1200&height=630&sign=66c16ad3aef77b2b228614fe76c6c3a3&sv=3
+Add sticky notes to templates | Contribute | n8n Docs
+For the complete documentation index, see llms.txt (https://docs.n8n.io/llms.txt) . Markdown versions of documentation pages are available by appending .md to page URLs.
+Skip to content (#gitbook-main-content)
+n8n Docs (/)
+⌘ Ctrl k
+Forum (https://community.n8n.io/) Changelog (/changelog)
+More
+Get started (/)
+Deploy (/deploy)
+Build (/build)
+Nodes (/integrations)
+Connect (/connect)
+Administer (/administer)
+Contribute (/contribute)
+n8n Docs (/)
+Contribute to n8n (/contribute)
+Contribution guide for n8n Docs (/contribute/contribution-guide-for-n8n-docs)
+Create workflow templates (/contribute/create-templates)
+Template submission guidelines (/contribute/create-templates/submission-guidelines)
+Add sticky notes to templates (/contribute/create-templates/sticky-note-guidelines)
+Workflow template ideas (/contribute/create-templates/workflow-template-ideas)
+Where to get help (/contribute/where-to-get-help)
+On this page
+Copy
+On this page
+Contribute (/contribute)
+Create workflow templates (/contribute/create-templates)
+Add sticky notes to templates
+Add sticky notes so someone can understand and set up your template from the workflow canvas.
+Every template needs one main overview note. Workflows with four or more nodes also need section notes to group related nodes.
+Add the main overview note #add-the-main-overview-note
+Use one yellow note in the top-left corner of the canvas. Write from 100 to 300 words, using these headings:
+### How it works : Describe the workflow's purpose, trigger, main stages, and result.
+### Setup : List required accounts, credentials, resources, and values to configure.
+### Customization : Optionally explain useful changes someone can make.
+Include enough context to use the workflow without returning to its library page. Explain who the workflow helps, what result it produces, and any limitations.
+The following example shows the structure for a lead intake workflow. Adapt it to your own workflow and verify every step:
+Copy
+### How it works
+This workflow helps sales teams process incoming lead submissions. It checks
+required fields, looks for an existing contact in HubSpot, and creates or updates
+the matching record. It sends qualified leads to a Slack channel and routes
+incomplete submissions for manual review. Matching by email avoids creating a
+new contact for each submission from the same person.
+### Setup
+Connect your HubSpot and Slack credentials. In the configuration node, set the
+destination channel and qualification rules. Configure your form to send the
+expected name, email, and company fields to the workflow. Send a test submission,
+then check the HubSpot record and Slack message. Also test an existing contact
+and a submission with a missing email address before publishing the workflow.
+### Customization
+Change the qualification rules to match your sales process. Update the Slack
+message to include the fields your team uses when reviewing a lead.
+Group nodes with section notes #group-nodes-with-section-notes
+For workflows with four or more nodes, use white notes, which appear gray in dark mode, to identify related sections.
+Stretch each note to cover or label multiple nodes. Use a short heading, such as ## Validate lead data , and up to two short lines if needed. Keep each note under 50 words.
+Explain the purpose of a section rather than repeating every node's name. For example, describe which records qualify for a branch or why the workflow transforms a field.
+Highlight a critical setup step #highlight-a-critical-setup-step
+You can use a red warning note to draw attention to a critical setup step or risk. Place it over the single node it concerns. Use warning notes sparingly.
+For example, explain that someone must change a destination before running a node that sends a message.
+Add a walkthrough video #add-a-walkthrough-video
+For a complex workflow or one aimed at beginners, consider adding a setup video. Keep the written instructions complete so someone can use the template without watching it.
+To embed a YouTube video in a sticky note, use @[youtube](RScKsGfrhs4) , replacing RScKsGfrhs4 with your video's ID.
+You can use the sticky note generation workflow (https://n8n.io/workflows/13868-auto-generate-sticky-notes-and-rename-nodes/) as a starting point. Review generated notes and node names against these requirements before submitting.
+After adding notes, follow the submission guidelines (/contribute/create-templates/submission-guidelines) to test and prepare your template.
+Related resources #related-resources
+Create workflow templates (/contribute/create-templates)
+Template submission guidelines (/contribute/create-templates/submission-guidelines)
+Workflow template ideas (/contribute/create-templates/workflow-template-ideas)
+Add notes and documentation (/build/understand-workflows/workflow-components/add-notes-and-documentation)
+Previous Template submission guidelines (/contribute/create-templates/submission-guidelines) Next Workflow template ideas (/contribute/create-templates/workflow-template-ideas)
+Last updated 19 days ago
+Was this helpful?
+Company
+n8n.io (https://n8n.io/)
+Careers (https://n8n.io/careers)
+Blog (https://blog.n8n.io/)
+Resources
+Templates (https://n8n.io/workflows/)
+Academy (https://learn.n8n.io/)
+Changelog (/changelog)
+Legal and privacy
+Security (https://n8n.io/legal/security/)
+Privacy (/privacy-and-security)
+n8n community license
+Sustainable use license (/n8n-community-license)
+https://x.com/n8n_io https://github.com/n8n-io/n8n https://discord.com/invite/n8n https://linkedin.com/company/n8n https://youtube.com/@n8n-io
+© 2026 n8n | All rights reserved
+Add the main overview note (#add-the-main-overview-note)
+Group nodes with section notes (#group-nodes-with-section-notes)
+Highlight a critical setup step (#highlight-a-critical-setup-step)
+Add a walkthrough video (#add-a-walkthrough-video)
+Related resources (#related-resources)
+Was this helpful?
