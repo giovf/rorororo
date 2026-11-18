@@ -1,0 +1,274 @@
+{
+  "request": "exchange-w47-2026-11-18-b",
+  "fetched_at": "2026-11-18T08:11:44.812Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://superteam.fun/earn/skill.md",
+      "fetched_at": "2026-11-18T08:10:40.573Z",
+      "status": 404,
+      "elapsed_ms": 257,
+      "final_url": "https://superteam.fun/earn/skill.md",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"g6gmqm7x0h5cg\""
+      },
+      "file": "1.txt",
+      "bytes": 69,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 6928
+    },
+    {
+      "method": "GET",
+      "url": "https://superteam.fun/earn/api/agents/listings/live?take=50",
+      "fetched_at": "2026-11-18T08:10:41.338Z",
+      "status": 404,
+      "elapsed_ms": 65,
+      "final_url": "https://superteam.fun/earn/api/agents/listings/live?take=50",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline; filename=\"404\"",
+        "last-modified": "Tue, 17 Nov 2026 14:30:57 GMT",
+        "etag": "W/\"1918c49a3924ac4390aad289ae39d938\""
+      },
+      "file": "2.txt",
+      "bytes": 69,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 6926
+    },
+    {
+      "method": "GET",
+      "url": "https://superteam.fun/earn/agents",
+      "render": true,
+      "fetched_at": "2026-11-18T08:10:41.905Z",
+      "status": 404,
+      "final_url": "https://superteam.fun/earn/agents",
+      "title": "404: This page could not be found.",
+      "rendered": {
+        "network_idle": true,
+        "requests": 14,
+        "failed": [
+          "GET https://superteam.fun/earn/agents → 404"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"h6ue1kmifq5ce\""
+      },
+      "file": "3.txt",
+      "bytes": 69,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 7794
+    },
+    {
+      "method": "GET",
+      "url": "https://superteam.fun/earn/agents/listings",
+      "render": true,
+      "fetched_at": "2026-11-18T08:10:46.862Z",
+      "status": 404,
+      "final_url": "https://superteam.fun/earn/agents/listings",
+      "title": "404: This page could not be found.",
+      "rendered": {
+        "network_idle": true,
+        "requests": 14,
+        "failed": [
+          "GET https://superteam.fun/earn/agents/listings → 404"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 17 Nov 2026 14:30:57 GMT",
+        "etag": "W/\"1918c49a3924ac4390aad289ae39d938\""
+      },
+      "file": "4.txt",
+      "bytes": 69,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 7794
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tes.com/teaching-resources/author-code",
+      "fetched_at": "2026-11-18T08:10:49.408Z",
+      "status": 200,
+      "elapsed_ms": 407,
+      "final_url": "https://www.tes.com/teaching-resources/author-code",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "23149",
+        "last-modified": "Wed, 18 Nov 2026 08:10:49 GMT",
+        "etag": "\"1794989449\""
+      },
+      "file": "5.txt",
+      "bytes": 10542,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 85374
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tes.com/policies/help/selling-resources-faq",
+      "fetched_at": "2026-11-18T08:10:50.321Z",
+      "status": 200,
+      "elapsed_ms": 1585,
+      "final_url": "https://www.tes.com/policies/help/selling-resources-faq",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "49489",
+        "last-modified": "Wed, 18 Nov 2026 08:10:50 GMT",
+        "etag": "\"1794989450\""
+      },
+      "file": "6.txt",
+      "bytes": 36389,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 259061
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tes.com/policies/additional-terms-tes-resources-and-tes-teach-formerl",
+      "fetched_at": "2026-11-18T08:10:52.415Z",
+      "status": 200,
+      "elapsed_ms": 192,
+      "final_url": "https://www.tes.com/policies/additional-terms-tes-resources-and-tes-teach-formerl",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "45227",
+        "last-modified": "Wed, 18 Nov 2026 08:10:52 GMT",
+        "etag": "\"1794989452\""
+      },
+      "file": "7.txt",
+      "bytes": 30626,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 194829
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tes.com/teaching-resources/search/?q=tracker%20spreadsheet",
+      "render": true,
+      "fetched_at": "2026-11-18T08:10:53.113Z",
+      "status": 200,
+      "final_url": "https://www.tes.com/resources/search/?q=tracker%20spreadsheet",
+      "title": "Search Tes Resources",
+      "rendered": {
+        "network_idle": false,
+        "requests": 82,
+        "failed": [
+          "POST https://pba.aws.lijit.com/analytics → net::ERR_NAME_NOT_RESOLVED"
+        ],
+        "console_errors": [
+          "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html",
+        "etag": "3hQ4c/B/VZ+3KnIXTIP5fyf+SGY"
+      },
+      "file": "8.txt",
+      "bytes": 32508,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 495617
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.n8n.io/contribute/create-templates/submission-guidelines",
+      "fetched_at": "2026-11-18T08:11:38.631Z",
+      "status": 200,
+      "elapsed_ms": 255,
+      "final_url": "https://docs.n8n.io/contribute/create-templates/submission-guidelines",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"wva3jemo5m9qeq\""
+      },
+      "file": "9.txt",
+      "bytes": 10688,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 454234
+    },
+    {
+      "method": "GET",
+      "url": "https://creators.n8n.io/register",
+      "render": true,
+      "fetched_at": "2026-11-18T08:11:38.896Z",
+      "status": 200,
+      "final_url": "https://creators.n8n.io/register",
+      "title": "Register - n8n.io",
+      "rendered": {
+        "network_idle": true,
+        "requests": 68,
+        "failed": [],
+        "console_errors": [
+          "This version of the RudderStack JavaScript SDK is deprecated and no longer maintained. While your events are still being tracked and delivered, we strongly recommend you to migrate to the latest versi"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 1021,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 87046
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=company%20enrichment",
+      "range": "0-500000",
+      "fetched_at": "2026-11-18T08:11:43.022Z",
+      "status": 200,
+      "elapsed_ms": 236,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=company%20enrichment",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 08:11:43 GMT"
+      },
+      "file": "11.json",
+      "bytes": 182004,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=due%20diligence",
+      "range": "0-500000",
+      "fetched_at": "2026-11-18T08:11:43.769Z",
+      "status": 200,
+      "elapsed_ms": 241,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=due%20diligence",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 08:11:43 GMT"
+      },
+      "file": "12.json",
+      "bytes": 192120,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=tenders",
+      "range": "0-500000",
+      "fetched_at": "2026-11-18T08:11:44.526Z",
+      "status": 200,
+      "elapsed_ms": 284,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=20&page=1&search=tenders",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 08:11:44 GMT"
+      },
+      "file": "13.json",
+      "bytes": 139979,
+      "truncated": false
+    }
+  ]
+}
