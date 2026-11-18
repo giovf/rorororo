@@ -3,9 +3,7 @@
   "status": "open",
   "needs_research": false,
   "updated": "2026-11-18",
-  "researched": "2026-11-12",
-  "researching_since": "2026-11-18T17:40Z",
-  "researching_by": "burn-down",
+  "researched": "2026-11-18T17:42Z",
   "items": [
     {
       "id": "nhs-ods",
@@ -1406,6 +1404,36 @@
       "status": "done",
       "added": "2026-11-18",
       "done_at": "2026-11-18"
+    },
+    {
+      "id": "x402-init-failure-answer",
+      "title": "The x402 lane never answers a bare 500 for a failed start-up: in `paidLane` (`src/x402/routes.ts`) a throw from the payment middleware before the route handler ran (the resource server's facilitator handshake, `initializeHttpServer`) is retried once, then answered 503 + `Retry-After` with one structured `x402_init_failed` line carrying the error's name and message; a throw after the handler ran passes through unchanged; test both with a stubbed middleware",
+      "why": "Research pass 2026-11-18 (burn-down): `worker errors 24h` carries the stack `paidLane → initializeHttpServer` ×1 on 11-13, ×2 on 11-16, ×17 on 11-17, ×52 on 11-18 and 45 in the 24 h to 17:19 on 11-18 across 14 x402 routes (probe run 332; `worker logs` run 36 dates four inside seven seconds at 17:25 on four routes). The logged line holds only stack frames, so the cause is unread; the lane is the one shelf where strangers pay (22 buyer calls / 30 d) and a client that meets a 500 gets no payment terms.",
+      "effort_days": 0.2,
+      "proof": "tests for the retry, the 503 and the pass-through; the next probe dispatch's error lines show `x402_init_failed` with a message (the cause, then fixed or queued) and no `initializeHttpServer` stack at 500",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-11-18"
+    },
+    {
+      "id": "worker-logs-read-completeness",
+      "title": "Find out why a Workers Logs read returns a fraction of the requests and sometimes none: read Cloudflare's Workers Observability / telemetry query documentation through the relay (developers.cloudflare.com is allowed) for sampling, the events view's scan limits, pagination (`offset`, `offsetBy`, `limit`) and the needle's scope; then either fix `workerLogsQuery` / `errorLogQuery` (paginate, narrow the timeframe per page, set the documented flag) or print the limit in both scripts' head line (`… sampled/partial: N of M scanned`) so a routine never again reads silence as absence; also pass the workflow's needle through an env var so double quotes survive the shell",
+      "why": "2026-11-18 (burn-down, item mcp-buy-attempt-read-2026-11-16): eight `worker logs` reads returned 140 POST /mcp records for a window the rows count at about 12,000, none of three sign-in page loads, and a request one needle found was absent from the wider set; probe run 333 printed `worker errors: 0 lines` ninety seconds after run 332 printed 160 with the same query; the 11-17 harness read's '6 of 21 lines' was taken as retention. `wrangler.jsonc` sets `observability.enabled` with no sampling rate, so the loss is in the read. Every log-based decision since 10-29 rests on this read.",
+      "effort_days": 0.2,
+      "proof": "the documented cause quoted in ARCHITECTURE-DETAIL.md, and two dispatches of the same needle a minute apart returning the same count — or the head line naming the limit",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-18"
+    },
+    {
+      "id": "stats-page-before-first-load",
+      "title": "A register's `/stats/<slug>` page (and its feed) before the first wave has loaded it answers a short dated page — the dataset's description, 'first load tonight at HH:MM UTC' — with 503 + `Retry-After` to the wave, `X-Robots-Tag: noindex`, and the page is left out of `sitemap.xml` and the IndexNow submission until `source_meta` has a generation; today it is a bare 503",
+      "why": "2026-11-18 (burn-down, item uk-esg-disclosures-live-read): `worker logs` run 35 shows `GET /stats/uk-gender-pay-gap 503` four times between the v0.31.0 deploy and the first 05:15 wave (11-17 23:42 ×2, 11-18 05:02 Amazonbot, 05:09 AhrefsBot), and the probe's error lines carry the same for the statements page ×3 — the sitemap and IndexNow advertised both pages the evening they deployed. Search is the slowest channel here (indexed 15/23); a first crawl that meets a 503 is a wasted one. Happens once per new register.",
+      "effort_days": 0.1,
+      "proof": "a test: a registered D1 source with no generation answers the page with Retry-After and is absent from the sitemap; the next new register's first night shows no 5xx on its stats path",
+      "score": 2,
+      "status": "todo",
+      "added": "2026-11-18"
     }
   ]
 }

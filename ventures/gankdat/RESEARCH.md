@@ -1760,3 +1760,41 @@ statements needle answered Cloudflare's own 504) and relay rounds `esg-live-read
   loaded the tables (expected, gone since 05:18), and at 14:03 UTC one browser-shaped client swept the change feeds
   and 23 of them answered 500 with `D1_ERROR: D1 DB is overloaded` (`queryD1Changes` in `serveFeed`). Queued as
   `feeds-d1-overload-answer`.
+
+
+## Research pass 2026-11-18 (burn-down, 17:41 UTC)
+
+`npm run pipeline empty` listed gankdat (starved: three items finished this slot, every other open item dated —
+planning re-read 11-22, ESG backfill 11-24, accounts backfill 11-26 — or blocked). Read: the Daily numbers rows 11-12
+to 11-18, probe runs 332–333, `worker logs` runs 26–36, the inbox since 11-12.
+
+Unchanged since 11-12: 0 paid accounts (the sixth account is a crawler's sign-up call, read above); `tool callers:
+30d 0`; search 42 impressions / 0 clicks; Apify 510 runs by others / 30 d, 19 users; feeds 1,093 fetches / 75 user
+agents (989 / 71 a day earlier — the one number still climbing). Changed: Clay declined the listing on 11-16 (the
+French register it named was read and parked on 11-17); x402 buyers net of the harness are 22 paid calls / 10
+clients / 30 d.
+
+**The finding: the x402 routes answer HTTP 500 while the payment server starts, more every day.** `worker errors
+24h` by row: 11-13 ×1 (`at x402ResourceServer.initialize … x402HTTPResourceServer.initi…`), 11-16 ×2, 11-17 ×17,
+11-18 ×52, and 45 more in the 24 h to 17:19 today (probe run 332: 14 routes, `/x402/data/uk-tenders` 13,
+`uk-sponsors` 7, `uk-trademark-journal` 6). Run 36 dates six of them — 13:52, 16:23 and four inside seven seconds
+at 17:25 on four different routes, across two deployed versions — all with the same stack: `paidLane →
+initializeHttpServer`, no query string. The logged line starts at the stack frames, so the error's own sentence is
+not in the log; the path says it is the resource server's start-up handshake with the facilitator (`GET /supported`,
+run once per isolate) failing, and `paidLane` lets the throw out as a bare 500. The same day's row still shows
+`x402 validate: 34/34 valid` and one paid call, so the lane works between failures. This is the one shelf where
+strangers pay (22 calls a month), and a client that meets a 500 on its first request has no terms to pay against.
+
+Items added (STRATEGY §5 scores):
+
+- `x402-init-failure-answer` (6, 0.2 d) — a start-up failure before the handler ran is retried once, then answered
+  503 + `Retry-After` with one structured line carrying the error's message, never a bare 500.
+- `worker-logs-read-completeness` (3, 0.2 d) — why a log read returns about one request in a hundred and can answer
+  empty (140 of ~12,000 `/mcp` requests; run 333's `0 lines` ninety seconds after run 332's 160): read Cloudflare's
+  query documentation through the relay, fix the query or write the limit into the two scripts' output.
+- `stats-page-before-first-load` (2, 0.1 d) — a new register's `/stats/<slug>` answered 503 to four crawlers between
+  its deploy and its first wave (11-17 23:42 → 11-18 05:09); answer a dated "first load tonight" page with
+  `Retry-After` and keep it out of the sitemap until loaded.
+
+Not added: anything for the door (read above — machines), a French or German register for Clay (parked 11-17 on its
+own numbers), uk-contract-awards' `refresh returned 0 records` (one row; the metrics job files it at the second).
