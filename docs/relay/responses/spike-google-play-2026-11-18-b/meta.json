@@ -1,0 +1,822 @@
+{
+  "request": "spike-google-play-2026-11-18-b",
+  "fetched_at": "2026-11-18T09:15:41.673Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.ilyas.ilyasapps.resellerprofittracker&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:08.146Z",
+      "status": 200,
+      "elapsed_ms": 179,
+      "final_url": "https://play.google.com/store/apps/details?id=com.ilyas.ilyasapps.resellerprofittracker&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 9361,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1117617
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.enders.myreselllog&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:08.917Z",
+      "status": 200,
+      "elapsed_ms": 105,
+      "final_url": "https://play.google.com/store/apps/details?id=com.enders.myreselllog&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 10327,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1149694
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.kutirsoft.dailysalesrecord&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:09.622Z",
+      "status": 200,
+      "elapsed_ms": 95,
+      "final_url": "https://play.google.com/store/apps/details?id=com.kutirsoft.dailysalesrecord&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 9188,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1209061
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.shrey_businessx.android&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:10.334Z",
+      "status": 200,
+      "elapsed_ms": 85,
+      "final_url": "https://play.google.com/store/apps/details?id=com.shrey_businessx.android&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 11083,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1161209
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.sellerbook2.production&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:10.980Z",
+      "status": 200,
+      "elapsed_ms": 106,
+      "final_url": "https://play.google.com/store/apps/details?id=com.sellerbook2.production&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 8893,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1067555
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.fulcra.thriftai&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:11.628Z",
+      "status": 200,
+      "elapsed_ms": 122,
+      "final_url": "https://play.google.com/store/apps/details?id=com.fulcra.thriftai&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 9197,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1130019
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.market.profitTrack98&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:12.311Z",
+      "status": 200,
+      "elapsed_ms": 89,
+      "final_url": "https://play.google.com/store/apps/details?id=com.market.profitTrack98&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 10250,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1140868
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.simplysoftsolutions.eprofit&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:12.962Z",
+      "status": 200,
+      "elapsed_ms": 93,
+      "final_url": "https://play.google.com/store/apps/details?id=com.simplysoftsolutions.eprofit&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 9231,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1118017
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.boobcherradi.ebaysalescalculator2021&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:13.647Z",
+      "status": 200,
+      "elapsed_ms": 89,
+      "final_url": "https://play.google.com/store/apps/details?id=com.boobcherradi.ebaysalescalculator2021&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 7159,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1129237
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.netmaxservice.ebaycalc&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:14.301Z",
+      "status": 200,
+      "elapsed_ms": 111,
+      "final_url": "https://play.google.com/store/apps/details?id=com.netmaxservice.ebaycalc&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 8162,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1122578
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.cfs365network.tools.ebayprofitcalculator&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:14.980Z",
+      "status": 200,
+      "elapsed_ms": 88,
+      "final_url": "https://play.google.com/store/apps/details?id=com.cfs365network.tools.ebayprofitcalculator&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 8330,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1107093
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.buzmasol.profitcalc.app&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:15.626Z",
+      "status": 200,
+      "elapsed_ms": 90,
+      "final_url": "https://play.google.com/store/apps/details?id=com.buzmasol.profitcalc.app&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 8227,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1055204
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.solosoft.feetally&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:16.287Z",
+      "status": 200,
+      "elapsed_ms": 90,
+      "final_url": "https://play.google.com/store/apps/details?id=com.solosoft.feetally&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 8402,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1116142
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.aistudio.resellprofit.ywtgsp&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:16.957Z",
+      "status": 200,
+      "elapsed_ms": 91,
+      "final_url": "https://play.google.com/store/apps/details?id=com.aistudio.resellprofit.ywtgsp&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.txt",
+      "bytes": 7336,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1106723
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.rechnerknallerfalke.app&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:17.605Z",
+      "status": 200,
+      "elapsed_ms": 90,
+      "final_url": "https://play.google.com/store/apps/details?id=com.rechnerknallerfalke.app&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.txt",
+      "bytes": 6685,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1078725
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.driversnote.driversnote&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:18.240Z",
+      "status": 200,
+      "elapsed_ms": 106,
+      "final_url": "https://play.google.com/store/apps/details?id=com.driversnote.driversnote&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 13129,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1184032
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.mileagewise.mileagewiseonline&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:18.928Z",
+      "status": 200,
+      "elapsed_ms": 126,
+      "final_url": "https://play.google.com/store/apps/details?id=com.mileagewise.mileagewiseonline&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.txt",
+      "bytes": 9933,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1151331
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.bizlog.triplog&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:19.592Z",
+      "status": 200,
+      "elapsed_ms": 111,
+      "final_url": "https://play.google.com/store/apps/details?id=com.bizlog.triplog&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.txt",
+      "bytes": 12868,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1167864
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=pl.gswierczynski.motolog&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:20.265Z",
+      "status": 200,
+      "elapsed_ms": 115,
+      "final_url": "https://play.google.com/store/apps/details?id=pl.gswierczynski.motolog&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.txt",
+      "bytes": 10751,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1161915
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.mileclear.app&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:20.952Z",
+      "status": 200,
+      "elapsed_ms": 108,
+      "final_url": "https://play.google.com/store/apps/details?id=com.mileclear.app&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.txt",
+      "bytes": 10282,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1079839
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.hjsapps.mileage&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:21.604Z",
+      "status": 200,
+      "elapsed_ms": 88,
+      "final_url": "https://play.google.com/store/apps/details?id=com.hjsapps.mileage&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "21.txt",
+      "bytes": 8829,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1099296
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.antiddigital.logbook&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:22.284Z",
+      "status": 200,
+      "elapsed_ms": 109,
+      "final_url": "https://play.google.com/store/apps/details?id=com.antiddigital.logbook&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "22.txt",
+      "bytes": 9238,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1061663
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.kawaii.mileagetracker&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:22.944Z",
+      "status": 200,
+      "elapsed_ms": 80,
+      "final_url": "https://play.google.com/store/apps/details?id=com.kawaii.mileagetracker&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "23.txt",
+      "bytes": 9145,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1104511
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.zoho.expense&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:23.581Z",
+      "status": 200,
+      "elapsed_ms": 80,
+      "final_url": "https://play.google.com/store/apps/details?id=com.zoho.expense&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "24.txt",
+      "bytes": 11276,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1219819
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=org.me.mobiexpensifyg&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:24.239Z",
+      "status": 200,
+      "elapsed_ms": 104,
+      "final_url": "https://play.google.com/store/apps/details?id=org.me.mobiexpensifyg&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "25.txt",
+      "bytes": 11467,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1178421
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.droid4you.application.wallet&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:24.912Z",
+      "status": 200,
+      "elapsed_ms": 84,
+      "final_url": "https://play.google.com/store/apps/details?id=com.droid4you.application.wallet&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "26.txt",
+      "bytes": 14558,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1216629
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.theaccessgroup.expense&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:25.575Z",
+      "status": 200,
+      "elapsed_ms": 111,
+      "final_url": "https://play.google.com/store/apps/details?id=com.theaccessgroup.expense&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "27.txt",
+      "bytes": 7317,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1134762
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.sage.sbca&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:26.252Z",
+      "status": 200,
+      "elapsed_ms": 87,
+      "final_url": "https://play.google.com/store/apps/details?id=com.sage.sbca&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "28.txt",
+      "bytes": 11813,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1203950
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.ktech.expense&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:26.933Z",
+      "status": 200,
+      "elapsed_ms": 84,
+      "final_url": "https://play.google.com/store/apps/details?id=com.ktech.expense&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "29.txt",
+      "bytes": 6460,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1060654
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=expense.tracker.income.receipt.budget&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:27.559Z",
+      "status": 200,
+      "elapsed_ms": 88,
+      "final_url": "https://play.google.com/store/apps/details?id=expense.tracker.income.receipt.budget&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "30.txt",
+      "bytes": 11906,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1172579
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.kaushikbaruah.quickexpensemanagerfree&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:28.224Z",
+      "status": 200,
+      "elapsed_ms": 96,
+      "final_url": "https://play.google.com/store/apps/details?id=com.kaushikbaruah.quickexpensemanagerfree&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "31.txt",
+      "bytes": 11650,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1176265
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=companies.house&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:28.897Z",
+      "status": 200,
+      "elapsed_ms": 80,
+      "final_url": "https://play.google.com/store/apps/details?id=companies.house&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "32.txt",
+      "bytes": 8911,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1095948
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.companieshouse.pro&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:29.528Z",
+      "status": 200,
+      "elapsed_ms": 90,
+      "final_url": "https://play.google.com/store/apps/details?id=com.companieshouse.pro&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "33.txt",
+      "bytes": 9522,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1121287
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=companieshouseuk.app&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:30.175Z",
+      "status": 200,
+      "elapsed_ms": 104,
+      "final_url": "https://play.google.com/store/apps/details?id=companieshouseuk.app&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "34.txt",
+      "bytes": 9739,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1130225
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.companiesonthe.go&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:30.852Z",
+      "status": 200,
+      "elapsed_ms": 118,
+      "final_url": "https://play.google.com/store/apps/details?id=com.companiesonthe.go&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "35.txt",
+      "bytes": 5416,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1061507
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.ukcompanieshouse.search&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:31.505Z",
+      "status": 200,
+      "elapsed_ms": 119,
+      "final_url": "https://play.google.com/store/apps/details?id=com.ukcompanieshouse.search&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "36.txt",
+      "bytes": 6749,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1081435
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=net.smartysoftware.companycheck&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:32.179Z",
+      "status": 200,
+      "elapsed_ms": 81,
+      "final_url": "https://play.google.com/store/apps/details?id=net.smartysoftware.companycheck&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "37.txt",
+      "bytes": 6084,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1077214
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=marcaria.com.marcaria.uk&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:32.840Z",
+      "status": 200,
+      "elapsed_ms": 133,
+      "final_url": "https://play.google.com/store/apps/details?id=marcaria.com.marcaria.uk&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "38.txt",
+      "bytes": 7047,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1072090
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=marcaria.com.marcaria.eu&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:33.541Z",
+      "status": 200,
+      "elapsed_ms": 89,
+      "final_url": "https://play.google.com/store/apps/details?id=marcaria.com.marcaria.eu&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "39.txt",
+      "bytes": 7081,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1076924
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=app.ai.trademark.checker&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:34.190Z",
+      "status": 200,
+      "elapsed_ms": 120,
+      "final_url": "https://play.google.com/store/apps/details?id=app.ai.trademark.checker&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "40.txt",
+      "bytes": 9657,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1118635
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.worldwidetrademarks.app&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:34.875Z",
+      "status": 200,
+      "elapsed_ms": 112,
+      "final_url": "https://play.google.com/store/apps/details?id=com.worldwidetrademarks.app&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "41.txt",
+      "bytes": 5831,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1050526
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.jsksoftware.classfinder&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:35.519Z",
+      "status": 200,
+      "elapsed_ms": 83,
+      "final_url": "https://play.google.com/store/apps/details?id=com.jsksoftware.classfinder&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "42.txt",
+      "bytes": 6192,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1048652
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.biddingsource.tenders&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:36.177Z",
+      "status": 200,
+      "elapsed_ms": 103,
+      "final_url": "https://play.google.com/store/apps/details?id=com.biddingsource.tenders&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "43.txt",
+      "bytes": 8053,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1074510
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.jojolapatech.tendernotice&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:36.843Z",
+      "status": 200,
+      "elapsed_ms": 83,
+      "final_url": "https://play.google.com/store/apps/details?id=com.jojolapatech.tendernotice&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "44.txt",
+      "bytes": 7130,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1061675
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.birdbird.sanctionslist&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:37.501Z",
+      "status": 200,
+      "elapsed_ms": 118,
+      "final_url": "https://play.google.com/store/apps/details?id=com.birdbird.sanctionslist&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "45.txt",
+      "bytes": 6241,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1082960
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.setsailgo.sti&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:38.198Z",
+      "status": 200,
+      "elapsed_ms": 100,
+      "final_url": "https://play.google.com/store/apps/details?id=com.setsailgo.sti&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "46.txt",
+      "bytes": 7319,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1057022
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=com.ArqTechs.CharityCheckProd&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:38.863Z",
+      "status": 200,
+      "elapsed_ms": 87,
+      "final_url": "https://play.google.com/store/apps/details?id=com.ArqTechs.CharityCheckProd&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "47.txt",
+      "bytes": 6158,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1055035
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=uk.fsyay&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:39.542Z",
+      "status": 200,
+      "elapsed_ms": 103,
+      "final_url": "https://play.google.com/store/apps/details?id=uk.fsyay&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "48.txt",
+      "bytes": 11395,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1111779
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=fi.oivakartta.app&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:40.180Z",
+      "status": 200,
+      "elapsed_ms": 85,
+      "final_url": "https://play.google.com/store/apps/details?id=fi.oivakartta.app&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "49.txt",
+      "bytes": 9983,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1079720
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=uk.taxpie&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:40.803Z",
+      "status": 200,
+      "elapsed_ms": 109,
+      "final_url": "https://play.google.com/store/apps/details?id=uk.taxpie&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "50.txt",
+      "bytes": 10461,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1173099
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/apps/details?id=uk.gov.hmrc.ptcalc&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:15:41.478Z",
+      "status": 200,
+      "elapsed_ms": 89,
+      "final_url": "https://play.google.com/store/apps/details?id=uk.gov.hmrc.ptcalc&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "51.txt",
+      "bytes": 9900,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1167133
+    }
+  ]
+}
