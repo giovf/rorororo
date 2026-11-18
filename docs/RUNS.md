@@ -3191,3 +3191,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 12:07 | triage | notify owner dispatched: last run started 09:05 UTC, 3 h ago
 - 2026-11-18 16:07 | triage | notify owner dispatched: last run started 13:21 UTC, 2 h 45 min ago
 - 2026-11-18 16:07 | watchdog | ci-minutes: 400 billed min/7d (~1714/mo; public, no cap) top: notify owner 94, gankdat metrics 64, check 45
+- 2026-11-18 17:31 | build | Spike spike-n8n-template-library done: parked — new templates get no views (102 of 104 vendor ones at 0)
+- 2026-11-18 17:31 | build | n8n library read: about 31 templates a day; 134 of 140 newest at 0 views; register templates 0–8
+- 2026-11-18 17:31 | build | n8n paid templates: 31 of 585 (5 %), US$5–99, link-outs; best-viewed one shows one Gumroad rating
+- 2026-11-18 17:31 | build | n8n terms: vendor templates and paid third-party accounts allowed when declared; AI-assisted work welcome
+- 2026-11-18 17:31 | build | n8n test: runs free on a hosted runner bar destination credentials; sketch in the spike, not run
+- 2026-11-18 17:31 | build | Relay rounds spike-n8n-2026-11-18, -b and -c (59 lines); spike file n8n-template-library.md
+- 2026-11-18 17:31 | build | Owner: nothing asked. new-ventures queue is empty and marked for research
