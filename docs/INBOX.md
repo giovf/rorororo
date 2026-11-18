@@ -329,3 +329,4 @@
 - 2026-11-17 04:59 | store | google.com | Your identity has been verified | Google Play Console identity verification succeeded | logged (ALERTS line added)
 - 2026-11-17 12:18 (backlog) | notification | recall.ai | Need a hand with your first bot? | Recall.ai marketing onboarding mail; no action asked | logged
 - 2026-11-17 13:20 | suspicious | agentmail.to | gankdat.com: no_well_known — measured 2026-11-13 | Unsolicited paid-audit pitch with payment links from unknown sender | logged
+- 2026-11-18 17:30 | notification | github.com | [giovf/rorororo] Run failed: worker logs - main (20f4380) | worker logs workflow, job logs failed in 43 s (our gate/job red; watchdog ci-failed line pending) | logged
