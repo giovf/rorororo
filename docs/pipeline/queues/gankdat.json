@@ -1401,8 +1401,9 @@
       "effort_days": 0.3,
       "proof": "a test where D1 throws the overload error and the feed answers 503 with Retry-After (or the cached body), and seven Daily numbers rows with no `/feeds/` path under `worker errors 24h`",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-18"
+      "status": "doing",
+      "added": "2026-11-18",
+      "doing_since": "2026-11-18"
     }
   ]
 }
