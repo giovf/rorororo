@@ -941,6 +941,16 @@
       "trigger": "Tes's Author code drops or narrows the AI clause so that disclosed, tested AI-built resources qualify (re-read only if a Tes policy mail or announcement says so)",
       "added": "2026-11-18",
       "updated": "2026-11-18"
+    },
+    {
+      "id": "scotland-care-services-register",
+      "title": "Scotland's care services register (the Care Inspectorate's monthly datastore CSV, OGL v3, 117 columns, ~12 MB, grades and inspections per service) as a second nation of gankdat's `uk-care-locations`",
+      "status": "parked",
+      "why": "Spike 2026-11-18 (burn-down, docs/exchange/spikes/scotland-care-services-register.md, two relay rounds). The source is open and clean — OGL v3 stated on the datastore page and every monthly page, a keyless 12 MB CSV with a stable CS number — and no wrapper of it exists on Apify or GitHub. But the register it would extend has no demand: gankdat's England register had one external call in 30 days (an x402 route, where probers call), the two CQC actors on the Apify Store have 1 and 2 total users, and the paid rivals (LaingBuisson £3,150 + VAT a year, Oscar Research from £2,500) sell named contacts and group ownership, which Blind Mode drops. Not read: the childminder share (individuals), Wales and Northern Ireland.",
+      "trigger": "A second external caller on `uk-care-locations` in any 30-day Daily numbers row, a user on its Apify actor beyond the daily health run, or a /feedback or inbox line asking for Scottish, Welsh or UK-wide care services — then read the childminder share first; the build is about half a day.",
+      "added": "2026-11-18",
+      "spiked": "2026-11-18",
+      "updated": "2026-11-18"
     }
   ]
 }

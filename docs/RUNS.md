@@ -3245,3 +3245,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 18:39 | burn-down | Exchange pre-research: Scotland's care services register — spike seeded (scotland-care-services-register)
 - 2026-11-18 18:39 | burn-down | Rivals sell the UK-wide care file at £2,500–3,150 a year; no wrapper of the Scottish file on Apify or GitHub
 - 2026-11-18 18:39 | burn-down | Dropped before seeding: DVSA MOT history — five Apify actors at $3–6 per 1,000, owner API sign-up needed
+- 2026-11-18 18:42 | burn-down | Spike scotland-care-services-register done: parked — the England care register had 1 outside call in 30 days
+- 2026-11-18 18:42 | burn-down | The Scottish file is open (OGL v3), 12 MB monthly CSV, 117 columns, stable id, grades; no wrapper exists
+- 2026-11-18 18:42 | burn-down | Rival actors for the England register have 1 and 2 users; paid rivals sell contacts we drop
+- 2026-11-18 18:42 | burn-down | Relay rounds spike-scot-care-2026-11-18 and -b (10 lines); two hosts added; Wales and NI not read
+- 2026-11-18 18:42 | burn-down | Stopping: 3 items done, 1 fix and 1 spike seeded and parked, stopped for time; nothing buildable is left
