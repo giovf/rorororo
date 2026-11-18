@@ -1,0 +1,121 @@
+{
+  "request": "spike-scot-care-2026-11-18",
+  "fetched_at": "2026-11-18T18:40:27.140Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.careinspectorate.scot/resources-data/data-and-statistics/datastore",
+      "fetched_at": "2026-11-18T18:40:21.002Z",
+      "status": 200,
+      "elapsed_ms": 787,
+      "final_url": "https://www.careinspectorate.scot/resources-data/data-and-statistics/datastore",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 19513,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 335063
+    },
+    {
+      "method": "GET",
+      "url": "https://www.careinspectorate.scot/resources-data/publications-and-statistics/library/datastore-31-10-2025",
+      "fetched_at": "2026-11-18T18:40:22.303Z",
+      "status": 200,
+      "elapsed_ms": 206,
+      "final_url": "https://www.careinspectorate.scot/resources-data/publications-and-statistics/library/datastore-31-10-2025",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 16520,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 307224
+    },
+    {
+      "method": "GET",
+      "url": "https://www.careinspectorate.scot/resources-data/publications-and-statistics/library/datastore-31-01-2026",
+      "fetched_at": "2026-11-18T18:40:23.016Z",
+      "status": 200,
+      "elapsed_ms": 466,
+      "final_url": "https://www.careinspectorate.scot/resources-data/publications-and-statistics/library/datastore-31-01-2026",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 16955,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 307670
+    },
+    {
+      "method": "GET",
+      "url": "https://www.careinspectorate.scot/",
+      "fetched_at": "2026-11-18T18:40:24.093Z",
+      "status": 200,
+      "elapsed_ms": 1373,
+      "final_url": "https://www.careinspectorate.scot/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 24754,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 381461
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/yappman/cqc-register",
+      "fetched_at": "2026-11-18T18:40:25.472Z",
+      "status": 200,
+      "elapsed_ms": 315,
+      "final_url": "https://apify.com/yappman/cqc-register",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"ovxxlba4qsaklw\""
+      },
+      "file": "5.txt",
+      "bytes": 26836,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 493314
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/danielainsworth/cqc-register",
+      "fetched_at": "2026-11-18T18:40:26.312Z",
+      "status": 200,
+      "elapsed_ms": 250,
+      "final_url": "https://apify.com/danielainsworth/cqc-register",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"1251nape4rl9wjs\""
+      },
+      "file": "6.txt",
+      "bytes": 19667,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 462202
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/store?search=care%20inspectorate",
+      "fetched_at": "2026-11-18T18:40:27.125Z",
+      "status": 200,
+      "elapsed_ms": 6,
+      "final_url": "https://apify.com/store?search=care%20inspectorate",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"ptr4asysy4cmyz\""
+      },
+      "file": "7.txt",
+      "bytes": 21425,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 589821
+    }
+  ]
+}

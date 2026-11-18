@@ -1,0 +1,412 @@
+{ "@context": "https://schema.org", "@graph": [ { "@type": "GovernmentOrganization", "@id": "https://www.careinspectorate.scot/#organization", "name": "Care Inspectorate", "url": "https://www.careinspectorate.scot/", "telephone": "0345 600 9527", "description": "The Care Inspectorate is the national assurance and improvement support body for social care services and social work in Scotland.", "areaServed": { "@type": "Country", "name": "Scotland" }, "sameAs": [ "https://www.linkedin.com/company/care-inspectorate/", "https://www.facebook.com/careinspectorate", "https://www.youtube.com/user/CareInspectorate" ] }, { "@type": "WebSite", "@id": "https://www.careinspectorate.scot/#website", "url": "https://www.careinspectorate.scot/", "name": "Care Inspectorate", "publisher": { "@id": "https://www.careinspectorate.scot/#organization" } }, { "@type": "WebPage", "@id": "https://www.careinspectorate.scot/#webpage", "url": "https://www.careinspectorate.scot/", "name": "Care Services, Inspections & Reports | Care Inspectorate", "description": "The Care Inspectorate supports high-quality, compassionate care across Scotland through assurance, improvement support, inspections and guidance.", "isPartOf": { "@id": "https://www.careinspectorate.scot/#website" }, "about": { "@id": "https://www.careinspectorate.scot/#organization" } } ]}
+meta description: The Care Inspectorate regulates care services in Scotland. Find inspection reports, search care services, raise complaints and access guidance.
+meta og:type: website
+meta og:title: Home
+meta og:description: The Care Inspectorate regulates care services in Scotland. Find inspection reports, search care services, raise complaints and access guidance.
+meta og:url: https://www.careinspectorate.scot
+meta og:site_name: Care Inspectorate
+meta og:locale: en
+meta twitter:card: summary_large_image
+meta twitter:title: Home
+meta twitter:description: The Care Inspectorate regulates care services in Scotland. Find inspection reports, search care services, raise complaints and access guidance.
+meta og:image: https://ci-web-media-production-bucket.s3.eu-west-2.amazonaws.com/glide-cache/containers/assets/logos/ci-og-image.png/d18dae631ba748453165af6c8b5ffcd9/ci-og-image.png
+meta og:image:width: 1146
+meta og:image:height: 600
+meta twitter:image: https://ci-web-media-production-bucket.s3.eu-west-2.amazonaws.com/glide-cache/containers/assets/logos/ci-og-image.png/3d7fa36696030ef6d8644595449dd976/ci-og-image.png
+Care Services, Inspections & Reports | Care Inspectorate | Care Inspectorate
+Home
+Skip to main content (#main)
+$refs.menuTrigger?.focus()); } else if (searchOpen) { searchOpen = false; $nextTick(() => $refs.searchTrigger?.focus()); }"
+x-trap.inert.noreturn="navOpen || searchOpen"
+class="relative z-50"
+>
+/
+Digital portal (https://portal.careinspectorate.gov.scot/account/login)
+Search
+Find care
+Find and view provider info
+For providers
+Manage a service
+Complaints and feedback
+Report an issue
+Quality improvement
+Supporting services to improve
+Strategic scrutiny
+Supporting partnerships to improve
+Resources and data
+Publications, resources and statistics from the Care Inspectorate
+About us
+Information about the Care Inspectorate
+News and media (/news-and-media)
+Events and webinars (/events-and-webinars)
+My dashboard (/my-dashboard)
+Contact us (/contact-us)
+FAQs (https://www.careinspectorate.scot/advice)
+Find care
+View all (/find-care)
+Search for care (/find-care/search-for-care)
+Find a care service on the register (/find-care/search-for-care/care-services)
+Latest inspection reports (/latest-inspection-reports)
+Understanding a care service profile (/find-care/search-for-care/care-service-profiles)
+How to find an inspection report for a service (/find-care/search-for-care/how-to-find-inspection-report)
+Help to choose a care service (/find-care/help-to-choose-service-in-scotland)
+Information to help you choose a service (/find-care/help-to-choose-service-in-scotland/information-to-help-choose-a-service)
+Types of services we regulate (/find-care/help-to-choose-service-in-scotland/understanding-the-different-types-of-services)
+What are the health and social care standards? (/find-care/help-to-choose-service-in-scotland/what-are-the-hscs)
+Need help
+We can support you with care service enquiries
+Contact us (https://www.careinspectorate.scot/contact-us)
+For providers
+View all (/for-providers)
+Your registration (/for-providers/registration)
+Register a care service (excluding childminders) (/for-providers/registration/register-a-care-service)
+Register a childminding service (/for-providers/registration/register-a-childminding-service)
+Registering school holiday, activity and food provision programmes (/for-providers/registration/school-holiday-activity-and-food-provision)
+Registration fees (/for-providers/registration/fees)
+Inspections and enforcements (/for-providers/inspections-and-enforcements)
+What to expect when we inspect (/for-providers/inspections-and-enforcements/what-to-expect-when-we-inspect)
+What our evaluations (grades) mean (/for-providers/inspections-and-enforcements/what-to-expect-when-we-inspect/evaluations-grades)
+Error response form (/for-providers/inspections-and-enforcements/what-to-expect-when-we-inspect/error-response-form)
+Enforcements process (/for-providers/inspections-and-enforcements/enforcements-process)
+Updates to your service (/for-providers/updates-to-your-service)
+Notifications and record keeping (/for-providers/updates-to-your-service/notifications)
+Make changes to your conditions of registration (/for-providers/updates-to-your-service/vary-conditions-registration)
+Cancel your registration (/for-providers/updates-to-your-service/cancel-registration)
+Annual returns (/for-providers/updates-to-your-service/annual-returns)
+Quality frameworks and self-evaluation tools (/for-providers/quality-frameworks)
+Adults social care sector (/for-providers/quality-frameworks/qf-adults-social-care)
+Early learning and childcare sector (/for-providers/quality-frameworks/early-learning-and-childcare-sector)
+Children and young people sector (/for-providers/quality-frameworks/qf-cyp-services)
+Strategic scrutiny frameworks (/for-providers/quality-frameworks/strategic-scrutiny-frameworks)
+Digital portal and eForms (/for-providers/digital-portal-and-eforms)
+Digital portal (/for-providers/digital-portal-and-eforms/ci-digital-portal)
+eForms guidance (/for-providers/digital-portal-and-eforms/eforms-guidance)
+Information for child contact services (/for-providers/information-for-child-contact-services)
+Child contact services (/for-providers/information-for-child-contact-services/child-contact-service)
+Need help?
+If you need any assistance or can't find what you need, please get in touch with our Contact Centre
+Contact us (https://www.careinspectorate.scot/contact-us)
+Complaints and feedback
+View all (/complaints-and-feedback)
+Complaints about registered services (/complaints-and-feedback/complaints-about-registered-services)
+Make a complaint about a registered care service (/complaints-and-feedback/complaints-about-registered-services/complain-about-a-service)
+How children and young people can get in touch (/complaints-and-feedback/complaints-about-registered-services/complain-about-a-service/how-children-and-young-people-can-get-in-touch)
+How we deal with complaints about care (/complaints-and-feedback/complaints-about-registered-services/how-we-deal-with-complaints-about-care)
+Complaints about the Care Inspectorate (/complaints-and-feedback/complaints-about-the-ci)
+How to make a complaint about the Care Inspectorate (/complaints-and-feedback/complaints-about-the-ci/complain-about-care-inspectorate)
+Procedure for managing complaints about the Care Inspectorate (/complaints-and-feedback/complaints-about-the-ci/complain-about-care-inspectorate/managing-complaints-about-the-care-inspectorate)
+Providing feedback about a care service (/complaints-and-feedback/feedback)
+Our care surveys (/complaints-and-feedback/feedback/csq)
+Whistleblowing (/complaints-and-feedback/whistleblowing)
+Need help?
+Get in touch with our contact centre (https://www.careinspectorate.scot/contact-us)
+Quality improvement
+View all (/quality-improvement)
+How we support quality improvement (/quality-improvement/support-quality-improvement)
+Quality improvement and participation (/quality-improvement/support-quality-improvement/quality-improvement)
+Quality improvement resources (/quality-improvement/support-quality-improvement/quality-improvement-resources)
+Quality improvement learning resources (/quality-improvement/support-quality-improvement/quality-improvement-learning-resources)
+Quality improvement programmes (/quality-improvement/quality-improvement-programmes)
+Care home improvement programme (/quality-improvement/quality-improvement-programmes/chip)
+Digital social care (/quality-improvement/quality-improvement-programmes/digital-social-care)
+Early learning and childcare improvement programme (/quality-improvement/quality-improvement-programmes/elc-improvement-programme)
+Safe staffing programme (/quality-improvement/quality-improvement-programmes/safe-staffing-programme)
+Visiting, meaningful connection, Anne’s Law (/quality-improvement/quality-improvement-programmes/annes-law)
+Dementia resources and guidance (/quality-improvement/quality-improvement-programmes/dementia-resources-and-guidance)
+Need help?
+If you need any assistance or can't find what you need, please get in touch with our Contact Centre
+Contact us (https://www.careinspectorate.scot/contact-us)
+Strategic scrutiny
+View all (/strategic-scrutiny)
+Strategic scrutiny reports (/strategic-scrutiny/library/strategic-reports)
+Library (/strategic-scrutiny/library/strategic-reports)
+Children and young people reports (https://www.careinspectorate.scot/strategic-scrutiny/library/strategic-reports?areas=children-and-young-people)
+Adults reports (https://www.careinspectorate.scot/strategic-scrutiny/library/strategic-reports?areas=adult-social-care)
+Justice reports (https://www.careinspectorate.scot/strategic-scrutiny/library/strategic-reports?areas=justice)
+About us (/strategic-scrutiny/about-us)
+Who we are and what we do (/strategic-scrutiny/about-us/strategic-scrutiny-teams)
+Strategic inspection (/strategic-scrutiny/our-inspections)
+Overview of inspections (/strategic-scrutiny/our-inspections/inspection-overview)
+Inspections of services for adults (/strategic-scrutiny/our-inspections/inspections-of-services-for-adults)
+Inspections of adult support and protection (/strategic-scrutiny/our-inspections/inspections-of-adult-support-and-protection)
+Inspections of services for children and young people (/strategic-scrutiny/our-inspections/children-and-young-people)
+Justice (/strategic-scrutiny/our-inspections/justice)
+Quality assurance (/strategic-scrutiny/our-quality-assurance-role)
+Our role in quality assurance (/strategic-scrutiny/our-quality-assurance-role/our-role-in-quality-assurance)
+Local partnerships (/strategic-scrutiny/local-partnerships)
+Our support to local partnerships (/strategic-scrutiny/local-partnerships/our-support-to-local-partnerships)
+National reviews (/strategic-scrutiny/national-reviews)
+National review of group-based child sexual abuse and exploitation and child criminal exploitation (/strategic-scrutiny/national-reviews/about-the-national-review)
+Resources and data
+View all (/resources-data)
+Our publications and statistics (/resources-data/publications-and-statistics)
+Library (/resources-data/publications-and-statistics/library)
+Shared practice examples (https://www.careinspectorate.scot/resources-data/publications-and-statistics/library?resource_types=shared-practice)
+Consultations (/resources-data/publications-and-statistics/consultations)
+Guidance for your sector (/resources-data/publications-and-statistics/guidance-for-your-sector)
+Data and statistics (/resources-data/data-and-statistics)
+Datastore (/resources-data/data-and-statistics/datastore)
+Quarterly statistical summary reports (/resources-data/data-and-statistics/quarterly-statistical-summary-reports)
+Statistical publications (/resources-data/data-and-statistics/statistical-publications)
+Cancelled services (/resources-data/data-and-statistics/cancelled-services)
+Covid-19 adult care home statistics (https://www.careinspectorate.scot/resources-data/publications-and-statistics/library/covid-19-adult-care-home-statistics)
+Self-directed support (/resources-data/self-directed-support)
+SDS-Library (/resources-data/self-directed-support/sds-library)
+Legislation (/resources-data/legislation)
+Care Inspectorate (/resources-data/legislation/legislation-care-inspectorate)
+Adults (/resources-data/legislation/legislation-adults)
+Social care/health care (/resources-data/legislation/legislation-social-care-healthcare)
+Children and young people (/resources-data/legislation/primary-legislation-children-and-young-people)
+Criminal justice (/resources-data/legislation/primary-legislation-criminal-justice)
+Other (/resources-data/legislation/legislation-other)
+About us
+View all (/about-us)
+Our organisation (/about-us/who-we-are)
+Our staff (/about-us/who-we-are/our-staff)
+Our values (/about-us/who-we-are/our-values)
+Our Board and committees (/about-us/who-we-are/our-board-and-committees)
+Information Governance (/about-us/who-we-are/information-governance)
+Procurement (/about-us/who-we-are/procurement)
+Work with us (/about-us/join-our-team/work-with-us)
+Vacancies (/about-us/join-our-team/vacancies)
+How we recruit (/about-us/join-our-team/work-with-us/how-we-recruit)
+Total rewards package (/about-us/join-our-team/work-with-us/total-rewards-package)
+Take part and volunteer with us (/about-us/take-part-and-volunteer)
+Join us an inspection volunteer (/about-us/take-part-and-volunteer/join-us-an-inspection-volunteer)
+Participation (/about-us/take-part-and-volunteer/participation)
+Advocacy in Scotland (/about-us/take-part-and-volunteer/advocacy-in-scotland)
+Our digital transformation (/about-us/our-digital-transformation)
+Manage my service (/about-us/our-digital-transformation/manage-my-service)
+Digital Portal (/for-providers/digital-portal-and-eforms/ci-digital-portal)
+eForms guidance (/for-providers/digital-portal-and-eforms/eforms-guidance)
+Our commitment to equalities (/about-us/our-commitment-to-equalities)
+Human rights in social care (/about-us/our-commitment-to-equalities/human-rights-social-care)
+Equalities and human rights (/about-us/our-commitment-to-equalities/equalities-and-human-rights)
+Equalities resources (/about-us/our-commitment-to-equalities/equalities-resources)
+Equality impact assessments (/about-us/our-commitment-to-equalities/equality-impact-assessments)
+Protecting rights, care and accountability (/about-us/protecting-rights)
+The Promise (/about-us/protecting-rights/the-promise)
+Corporate parenting (/about-us/protecting-rights/corporate-parenting)
+Bairns’ Hoose (Barnahus) (/about-us/protecting-rights/bairns-hoose-barnahus)
+Duty of Candour (/about-us/protecting-rights/duty-of-candour)
+National Preventive Mechanism (/about-us/protecting-rights/npm)
+Accreditations and charters (/about-us/accreditations-charters)
+Accreditations (/about-us/accreditations-charters/accreditations)
+Charters (/about-us/accreditations-charters/charters)
+0" x-cloak class="bg-accent-pastel-purple shrink-0">
+Digital portal (https://portal.careinspectorate.gov.scot/account/login)
+News and media (/news-and-media)
+Events and webinars (/events-and-webinars)
+My dashboard (/my-dashboard)
+Contact us (/contact-us)
+FAQs (https://www.careinspectorate.scot/advice)
+Search
+0" x-cloak>
+Recent searches
+Supporting quality care in Scotland
+We are the national assurance and improvement support body for social care services and social work in Scotland.
+Our vision is that everyone in Scotland experiences high-quality, compassionate care, support and learning when they need it, which upholds their rights and choices.
+Read our corporate plan and find out more about who we are (/resources-data/publications-and-statistics/library/corporate-plan-26-31)
+1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => current = (current + 1) % total, 5000)"
+>
+[teenage girl with coloured hair]
+[carer leading fitness class with older people]
+[happy teacher and young child holding a stick with leaves hanging]
+Popular links
+Manage My Service (/about-us/our-digital-transformation/manage-my-service)
+Shared practice (https://www.careinspectorate.scot/resources-data/publications-and-statistics/library?resource_types=shared-practice)
+Register a care service (/for-providers/registration)
+eForms system (https://eforms.careinspectorate.com/)
+Complaints and feedback (/complaints-and-feedback)
+Quality improvement (/quality-improvement)
+Quality frameworks and self-evaluation tools (/for-providers/quality-frameworks)
+Resources, publications and statistics (/resources-data/publications-and-statistics/library)
+Find care services in your area
+Are you looking for a care service for yourself or someone you care for? Search for care services near you, get insights into service quality, evaluations and reports of our inspections, complaints and enforcements activity.
+Use our care service register to help you to make the right decision for your care.
+Search the care register (/find-care/search-for-care/care-services)
+Find out more about the types of services we register. (/find-care/help-to-choose-service-in-scotland/understanding-the-different-types-of-services)
+My Dashboard
+1"
+x-cloak
+role="group"
+aria-label="Carousel controls"
+>
+li>*]:h-full flex">
+Adult social care (/my-dashboard?areas=adult-social-care&service_types=)
+Children and young people (/my-dashboard?areas=children-and-young-people&service_types=)
+Early learning and childcare (/my-dashboard?areas=early-learning-and-childcare&service_types=)
+Statistics and data (/my-dashboard?areas=statistics-and-data&service_types=)
+Strategic scrutiny (/my-dashboard?areas=strategic-scrutiny&service_types=)
+1"
+x-cloak
+:class="totalPages > 1 ? 'mt-6' : ''"
+role="group"
+aria-label="Carousel controls"
+>
+Spotlight
+1"
+x-cloak
+role="group"
+aria-label="Carousel controls"
+>
+Manage My Service
+Our new online portal will replace our current digital portal
+Find out more (/about-us/our-digital-transformation/manage-my-service)
+Join our reference group
+Help shape the regulation of child contact services in Scotland
+Find out more (/news-and-media/help-shape-the-regulation-of-child-contact-services-in-scotland)
+1"
+x-cloak
+:class="totalPages > 1 ? 'mt-6' : ''"
+role="group"
+aria-label="Carousel controls"
+>
+Latest
+{ selectedTab = parseInt(value) } })"
+x-effect="
+let val = String(selectedTab);
+if (val !== selectedValue) {
+let opt = options.find(o => o.value === val);
+if (opt) {
+selectedValue = val;
+selectedLabel = opt.label;
+updateSelectedStyles();
+}
+}
+"
+>
+Latest news
+Latest events
+Latest podcasts
+Latest inspection reports
+{
+const idx = $data.__tabs.indexOf($el);
+$el.id = $id('ds-tabs') + '-tab-' + idx;
+$el.setAttribute('aria-controls', $id('ds-tabs') + '-panel-' + idx);
+})"
+:aria-selected="$tab.isSelected"
+class="focus-visible:ds-focus px-4 py-2 text-base transition-colors"
+:class="$tab.isSelected ? 'border border-border-light border-b-[3px] border-b-primary text-text-main font-bold bg-white' : 'border border-border-light bg-surface-primary hover:bg-white'"
+>
+Latest news
+{
+const idx = $data.__tabs.indexOf($el);
+$el.id = $id('ds-tabs') + '-tab-' + idx;
+$el.setAttribute('aria-controls', $id('ds-tabs') + '-panel-' + idx);
+})"
+:aria-selected="$tab.isSelected"
+class="focus-visible:ds-focus px-4 py-2 text-base transition-colors"
+:class="$tab.isSelected ? 'border border-border-light border-b-[3px] border-b-primary text-text-main font-bold bg-white' : 'border border-border-light bg-surface-primary hover:bg-white'"
+>
+Latest events
+{
+const idx = $data.__tabs.indexOf($el);
+$el.id = $id('ds-tabs') + '-tab-' + idx;
+$el.setAttribute('aria-controls', $id('ds-tabs') + '-panel-' + idx);
+})"
+:aria-selected="$tab.isSelected"
+class="focus-visible:ds-focus px-4 py-2 text-base transition-colors"
+:class="$tab.isSelected ? 'border border-border-light border-b-[3px] border-b-primary text-text-main font-bold bg-white' : 'border border-border-light bg-surface-primary hover:bg-white'"
+>
+Latest podcasts
+{
+const idx = $data.__tabs.indexOf($el);
+$el.id = $id('ds-tabs') + '-tab-' + idx;
+$el.setAttribute('aria-controls', $id('ds-tabs') + '-panel-' + idx);
+})"
+:aria-selected="$tab.isSelected"
+class="focus-visible:ds-focus px-4 py-2 text-base transition-colors"
+:class="$tab.isSelected ? 'border border-border-light border-b-[3px] border-b-primary text-text-main font-bold bg-white' : 'border border-border-light bg-surface-primary hover:bg-white'"
+>
+Latest inspection reports
+{
+const idx = $data.__panels.indexOf($el);
+$el.id = $id('ds-tabs') + '-panel-' + idx;
+$el.setAttribute('aria-labelledby', $id('ds-tabs') + '-tab-' + idx);
+})"
+class="focus-visible:ds-focus py-8 outline-none"
+>
+The first draft of ‘A quality improvement framework for child contact services.’ (/news-and-media/first-draft-qi-child-contact-services)
+The journey to trauma-informed restrictive practice in Scotland’s secure accommodation services (/news-and-media/the-journey-to-trauma-informed-restrictive-practice-in-scotlands-secure-accommodation-services)
+Statement on Craigielea Care Home, Renfrew (/news-and-media/statement-on-craigielea-care-home-renfrew)
+{
+const idx = $data.__panels.indexOf($el);
+$el.id = $id('ds-tabs') + '-panel-' + idx;
+$el.setAttribute('aria-labelledby', $id('ds-tabs') + '-tab-' + idx);
+})"
+class="focus-visible:ds-focus py-8 outline-none"
+>
+IDDSI awareness webinar (/events-and-webinars/iddsi-awareness-webinar)
+In-person workshops for day care of children services: self-evaluation and meaningful, child-centred personal planning (/events-and-webinars/workshops-for-dcoc)
+{
+const idx = $data.__panels.indexOf($el);
+$el.id = $id('ds-tabs') + '-panel-' + idx;
+$el.setAttribute('aria-labelledby', $id('ds-tabs') + '-tab-' + idx);
+})"
+class="focus-visible:ds-focus py-8 outline-none"
+>
+New podcast series on the implementation of the Health and Care (Staffing) (Scotland) Act 2019 (/news-and-media/safe-staffing-podcast-series)
+New podcast series on reducing inappropriate use of psychoactive medicines in care homes (/news-and-media/podcast-reducing-inappropriate-use-phsychoactive-medicines)
+{
+const idx = $data.__panels.indexOf($el);
+$el.id = $id('ds-tabs') + '-panel-' + idx;
+$el.setAttribute('aria-labelledby', $id('ds-tabs') + '-tab-' + idx);
+})"
+class="focus-visible:ds-focus py-8 outline-none"
+>
+Kyle Court Nursing Home (https://ci-web-media-production-bucket.s3.eu-west-2.amazonaws.com/inspection-reports/CS2011300847/329988.pdf)
+Fort Early Years Centre (https://ci-web-media-production-bucket.s3.eu-west-2.amazonaws.com/inspection-reports/CS2003015652/330000.pdf)
+Southview (https://ci-web-media-production-bucket.s3.eu-west-2.amazonaws.com/inspection-reports/CS2003010439/329987.pdf)
+0"
+:href="tabLinks[activeTab]?.url"
+x-text="tabLinks[activeTab]?.label"
+class="ds-primary-link order-1 self-start whitespace-nowrap md:order-2 md:mt-px md:self-auto"
+>
+Thank you for subscribing!
+Did you find what you were looking for?
+Yes
+No
+Provide feedback on this page
+Help us improve
+We'd like your help to improve this service. Please share your feedback below.
+Enter your feedback
+Send
+Cancel
+Thank you for your feedback
+Close
+/
+Website
+Contact us (/contact-us)
+Find care (/)
+For providers (/for-providers)
+Complaints and feedback (/complaints-and-feedback)
+Quality improvement (/quality-improvement)
+Strategic scrutiny (/strategic-scrutiny)
+Resources, publications and statistics (/resources-data)
+Quick links
+Find a care service on the register (/find-care/search-for-care/care-services)
+Your provider registration (/for-providers/registration)
+Digital portal (https://portal.careinspectorate.gov.scot/account/login)
+eForms (https://eforms.careinspectorate.com/)
+Complain about a care service (/complaints-and-feedback/complaints-about-registered-services/complain-about-a-service)
+News and media (/news-and-media)
+Jobs and opportunities (/about-us/join-our-team/vacancies)
+Useful information
+Core privacy notice (/core-privacy-notice)
+Publication scheme (/publication-scheme)
+Accessibility statement (/accessibility-statement)
+Privacy and cookies (/privacy-and-cookies)
+Advice (/advice)
+Newsletter
+Email address
+Subscribe
+Error:
+To sign up for updates or to access your subscriber preferences, please enter
+your email address.
+Follow us
+Facebook (https://www.facebook.com/careinspectorate)
+Linkedin (https://www.linkedin.com/company/care-inspectorate)
+Youtube (https://www.youtube.com/user/careinspectorate)
+Instagram (https://www.instagram.com/careinspectorate)
+Care Inspectorate © All rights reserved 2026

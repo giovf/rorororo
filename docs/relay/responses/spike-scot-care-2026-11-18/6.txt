@@ -1,0 +1,273 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CQC Care Register Scraper","description":"Search 100,000+ CQC-regulated care locations in England. Filter by area, rating, service type. Official open data, updated monthly.","url":"https://apify.com/danielainsworth/cqc-register","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/qka3_PaRs3ZOASmMyaVtiB9bLNZwmpXdjwpIFPVlpFE/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSlJMdjRYUmdScnloZ1FJWE8tYWN0b3Itd3VZbW9TeW9vTEhYN3U5V04tdXBHZHYyWFBxVi1jcWNfcmVnaXN0ZXJfYWN0b3IucG5n.webp","offers":{"@type":"Offer","description":"Pay per usage","price":0,"priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apify.com/"},{"@type":"ListItem","position":2,"name":"Store","item":"https://apify.com/store"},{"@type":"ListItem","position":3,"name":"Daniel Ainsworth","item":"https://apify.com/danielainsworth"},{"@type":"ListItem","position":4,"name":"CQC Care Register Scraper","item":"https://apify.com/danielainsworth/cqc-register"}]}
+meta description: Search 100,000+ CQC-regulated care locations in England. Filter by area, rating, service type. Official open data, updated monthly.
+meta og:title: CQC Care Register Scraper · Apify
+meta og:description: Search 100,000+ CQC-regulated care locations in England. Filter by area, rating, service type. Official open data, updated monthly.
+meta og:url: https://apify.com/danielainsworth/cqc-register
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=CQC+Care+Register+Scraper&uniqueName=danielainsworth%2Fcqc-register&categories=DEVELOPER_TOOLS%2CAUTOMATION%2COTHER&users=2&runs=172&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FJRLv4XRgRryhgQIXO-actor-wuYmoSyooLHX7u9WN-upGdv2XPqV-cqc_register_actor.png&authorName=Daniel+Ainsworth&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FB_VclyqrvCqSQPwhN7-k1zM5ZBMA4CK59zcET0NQYnc%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSXFrdFlFYnpJQkUwN01XSHFhWFhydTdpYVByTVVhX3Z1ZGNLSWNVQ04wdmJ6Z2N3.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: CQC Care Register Scraper · Apify
+meta twitter:description: Search 100,000+ CQC-regulated care locations in England. Filter by area, rating, service type. Official open data, updated monthly.
+meta twitter:image: https://apify.com/og-image/actor?actorName=CQC+Care+Register+Scraper&uniqueName=danielainsworth%2Fcqc-register&categories=DEVELOPER_TOOLS%2CAUTOMATION%2COTHER&users=2&runs=172&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FJRLv4XRgRryhgQIXO-actor-wuYmoSyooLHX7u9WN-upGdv2XPqV-cqc_register_actor.png&authorName=Daniel+Ainsworth&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FB_VclyqrvCqSQPwhN7-k1zM5ZBMA4CK59zcET0NQYnc%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSXFrdFlFYnpJQkUwN01XSHFhWFhydTdpYVByTVVhX3Z1ZGNLSWNVQ04wdmJ6Z2N3.webp
+CQC Care Register Scraper · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 125,490 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $2M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[CQC Care Register Scraper avatar]
+CQC Care Register Scraper
+Pricing
+Pay per usage
+Try for free (https://console.apify.com/actors/wuYmoSyooLHX7u9WN?addFromActorId=wuYmoSyooLHX7u9WN)
+Go to Apify Store (/store)
+[CQC Care Register Scraper]
+CQC Care Register Scraper
+danielainsworth/cqc-register
+Try for free (https://console.apify.com/actors/wuYmoSyooLHX7u9WN?addFromActorId=wuYmoSyooLHX7u9WN)
+Copy setup prompt Copied
+Search 100,000+ CQC-regulated care locations in England. Filter by area, rating, service type. Official open data, updated monthly.
+Pricing
+Pay per usage
+Rating
+0.0
+(0)
+Developer
+Daniel Ainsworth (/danielainsworth) Maintained by Community
+Actor stats
+0
+Bookmarked
+2
+Total users
+0
+Monthly active users
+3 months ago
+Last modified
+Categories
+Developer tools (/store/categories/developer-tools) Automation (/store/categories/automation) Other (/store/categories/other)
+Features
+Limited permissions
+Share
+README (/danielainsworth/cqc-register) Input (/danielainsworth/cqc-register/input-schema) Pricing (/danielainsworth/cqc-register/pricing) API (/danielainsworth/cqc-register/api/python) Issues (/danielainsworth/cqc-register/issues/open)
+Search the CQC Care Register — UK Care Provider Data #search-the-cqc-care-register-uk-care-provider-data
+Search and filter the full Care Quality Commission (CQC) register of regulated care providers in England. Find care homes, GP surgeries, dental practices, home care agencies and hospitals by location, rating, service type or provider name — all in one structured API call.
+Data comes directly from the CQC's official open-data publication, updated monthly, under the Open Government Licence v3.0.
+What you get #what-you-get
+Each result is a CQC-registered location with:
+Identity : CQC Location ID, name, registration date
+Rating : Latest overall CQC rating (Outstanding / Good / Requires improvement / Inadequate), publication date
+Service classification : Primary inspection category, service types (e.g. "Care home service with nursing"), service user bands (e.g. "Dementia", "Older People")
+Location : Full address, postcode, local authority, region, latitude/longitude
+Contact : Phone number, website
+Provider details : Provider name, ownership type, Companies House number, charity number, nominated individual
+Brand chain : Brand ID and name (identifies Bupa, HC-One, Anchor and other multi-site operators)
+CQC profile link : Direct URL to the location's CQC page
+Two operating modes #two-operating-modes
+searchLocations (default) #searchlocations-default
+Filter the full register using any combination of:
+Parameter	Description
+nameQuery	Partial location name match (case-insensitive)
+localAuthority	Local authority name (partial match) — e.g. Manchester , Leeds
+region	CQC region (partial match) — e.g. North West , London
+postcode	Postcode prefix — e.g. M1 , LS1 , SW1A
+overallRating	Exact match: Outstanding , Good , Requires improvement , Inadequate
+primaryCategory	Inspection category partial match — e.g. nursing , dental , GP
+careHomeOnly	true to return only care home locations
+maxResults	Cap on results (default: 1000; use 0 for all matching)
+All filters are optional and combinable. Omitting all filters returns all 56,000+ active locations up to your maxResults limit.
+lookupProviders #lookupproviders
+Fetch all locations registered to one or more CQC Provider IDs:
+Parameter	Description
+providerIds	Array of CQC Provider IDs (e.g. ["1-102642895"] )
+maxResults	Cap on results; use 0 for unlimited
+Use this mode to pull a complete location portfolio for a specific operator — for competitive analysis, acquisition targeting, or tracking a group's CQC performance across all their sites.
+Output example #output-example
+{
+"locationId" : "1-10758997851" ,
+"locationName" : "Lightbowne Hall" ,
+"careHome" : true ,
+"careHomeBeds" : 52 ,
+"typeSector" : "Social Care Org" ,
+"primaryInspectionCategory" : "Residential social care" ,
+"overallRating" : "Good" ,
+"ratingPublicationDate" : "2023-04-12" ,
+"registrationDate" : "2021-05-05" ,
+"street" : "262 Lightbowne Road" ,
+"city" : "Manchester" ,
+"county" : "Greater Manchester" ,
+"postcode" : "M40 5HQ" ,
+"localAuthority" : "Manchester" ,
+"region" : "North West" ,
+"latitude" : 53.511193 ,
+"longitude" : -2.188509 ,
+"phone" : "01616833170" ,
+"website" : null ,
+"serviceTypes" : [ "Care home service without nursing" ] ,
+"serviceUserBands" : [ "Dementia" , "Older People" , "Younger Adults" ] ,
+"brandId" : "BD223" ,
+"brandName" : "BRAND Anchor" ,
+"providerId" : "1-102642895" ,
+"providerName" : "Anchor Hanover Group" ,
+"providerOwnershipType" : "Organisation" ,
+"providerCompaniesHouseNumber" : "RS007843" ,
+"providerCharityNumber" : null ,
+"nominatedIndividual" : "Ryan, Daniel" ,
+"cqcUrl" : "https://www.cqc.org.uk/location/1-10758997851" ,
+"scrapedAt" : "2026-05-28T10:26:00.218Z"
+}
+Pricing #pricing
+Event	Price	Notes
+Actor start	$1.00	Covers ODS file download (~23 MB) and parse
+Per location	$0.05	Per record written to the dataset
+Most searches return a few hundred to a few thousand results. A typical filtered search (e.g. care homes in one region) costs $1–$5 total.
+B2B use cases #b2b-use-cases
+Care sector SaaS products
+Build competitor intelligence or market sizing features into your care management platform. Find all care homes in a postcode area, their bed counts, ratings and operator names — structured and ready to import.
+M&A and acquisition research
+Use lookupProviders mode to pull every location owned by a specific provider group. Instantly see their full portfolio, ratings spread, and geographic footprint — data that takes hours to gather manually from the CQC website.
+Compliance and due diligence
+Insurers, lenders and commissioners verify CQC registration and rating before engaging a care provider. This actor gives you a structured API alternative to manual CQC website searches.
+Care home procurement and referrals
+Discharge coordinators, social workers and NHS commissioners matching patients to appropriate care settings need to search providers by location, service type and bed availability. Filter by postcode + service user band + rating in a single call.
+Sales intelligence for care sector suppliers
+If you sell into care homes (staffing, laundry, food, technology), this actor builds your prospect list filtered by location, size and rating band. 52k+ sites with phone numbers, postcodes and operator names.
+Data source and freshness #data-source-and-freshness
+This actor uses the CQC's official HSCA Active Locations open-data file, published monthly at cqc.org.uk/about-us/transparency/using-cqc-data (https://www.cqc.org.uk/about-us/transparency/using-cqc-data) under the Open Government Licence v3.0.
+The file is discovered dynamically on each run — you always get the latest published version without needing to update the actor. The dataset covers approximately 56,000 active regulated locations.
+Attribution: Contains public sector information licensed under the Open Government Licence v3.0.
+See also #see-also
+FCA Register Scraper (/danielainsworth/fca-register) — Extract UK FCA-regulated firm profiles: authorisation status, permissions, addresses, and approved individuals. Free API key, no proxy needed.
+Ofsted School Register Scraper (/danielainsworth/ofsted-register) — Search 22,000+ UK state-funded schools with Ofsted inspection grades. Filter by local authority, region, or postcode.
+You might also like
+UK CQC Care Provider Leads Scraper - Care Homes, GPs & Dentists scrapesage/uk-cqc-care-provider-leads Scrape every CQC-registered care provider in England - care homes, home care, GP & dental practices, hospitals & hospices: phone, website, registered manager, beds, CQC rating, provider & Companies House details, geo + lead score. Filter by region, service & rating. Official CQC data + monitor. Scrape Sage 13 (/scrapesage/uk-cqc-care-provider-leads)
+NZ Companies Office Register Scraper jungle_synthesizer/nz-companies-office-register-scraper Scrape company records from the New Zealand Companies Office register. Search by company name, number, or NZBN to get full KYC data: company number, NZBN, status, directors, shareholders, and addresses. BowTiedRaccoon 12 (/jungle_synthesizer/nz-companies-office-register-scraper)
+FCA Register Scraper danielainsworth/fca-register Extract firm profiles, permissions, addresses and compliance status from the UK Financial Services Register. Built for B2B prospecting, KYC and fintech. Daniel Ainsworth 6 (/danielainsworth/fca-register)
+CQC Care Services Scraper alkausari_mujahid/care-quality-commission-scraper Get ratings, registered managers and inspection reports for any CQC-registered care service in England: care homes, homecare, GPs, dentists, hospitals. Filter by type, area and rating, or schedule it to catch new reports and rating changes. Alkausari M 7 (/alkausari_mujahid/care-quality-commission-scraper)
+Vezeeta Doctors Scraper black_rose/vezeeta-doctors-scraper Extract structured doctor and clinic data from `Vezeeta` listings and profiles. Handles pagination and returns specialties, locations, contacts, fees, ratings, and profile URLs in JSON. Supports start URLs, limit, and proxy configuration. Black Rose 18 5.0 (1) (/black_rose/vezeeta-doctors-scraper)
+Yellow Pages Scraper 🦘 AUSTRALIA jupri/yellowpages-au 💫 Scrape YellowPages Australia cat 440 5.0 (1) (/jupri/yellowpages-au)
+Google Maps Company Extractor keinproblem/google-maps-company-extractor Extract comprehensive Google Places business data at scale. Get accurate contact info, ratings, reviews & locations using official Google API. Perfect for lead generation & market research. $22/1000 businesses. Alan Smithee 29 (/keinproblem/google-maps-company-extractor)
+EV Charging Stations Scraper – OpenStreetMap Charger Data dataquarry/ev-charging-stations Extract EV charging station locations from OpenStreetMap by area, radius, or name. Get operator, network, connector/socket types (Type 2, CCS, CHAdeMO, Tesla), power kW to spot fast DC chargers, capacity, fee and access. No API key; open (ODbL) data. Daniel Brenner 9 (/dataquarry/ev-charging-stations)
+Bbb Business Search Scraper (Without limitation) ecomscrape/bbb-business-search-scraper BBB.org Business Search Scraper extracts business listings from BBB.org without limit (up to thousands per query). The output includes business name, address, and more—making it ideal for market research, competitor analysis, and lead generation. Perfect for data-driven business insights. ecomscrape 107 5.0 (1) (/ecomscrape/bbb-business-search-scraper)
+GuiaMais Business Scraper powerai/guiamais-search-scraper Scrape local business listings from GuiaMais.com.br with automatic pagination and comprehensive business data extraction. PowerAI 15 (/powerai/guiamais-search-scraper)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)

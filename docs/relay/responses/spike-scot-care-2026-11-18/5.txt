@@ -1,0 +1,324 @@
+{"@context":"https://schema.org","@type":"Organization","@id":"https://apify.com/#organization","name":"Apify","legalName":"Apify Technologies s.r.o.","url":"https://apify.com/","logo":{"@type":"ImageObject","url":"https://apify.com/img/apify-logo/apify-symbol-200x200.svg"},"description":"Thousands of tools to automate your business. Get real-time web data, track competitors, generate leads, and integrate your apps and AI agents.","foundingDate":"2015","vatID":"CZ04788290","address":{"@type":"PostalAddress","streetAddress":"Na Příkopě 959/27","addressLocality":"Prague","postalCode":"11000","addressCountry":"CZ"},"sameAs":["https://github.com/apify","https://www.linkedin.com/company/apify","https://x.com/apify","https://www.youtube.com/apify","https://www.tiktok.com/@apifytech","https://discord.com/invite/jyEM2PRvMU","https://www.wikidata.org/wiki/Q112502991","https://cs.wikipedia.org/wiki/Apify"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@apify.com"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CQC Register: England Care Homes, Locations and Changes","description":"Search and look up care locations in CQC's England directory, and list what changed between its files. Locations whose names could be a person's are left out and counted. CQC data under the Open Government Licence. Not affiliated with CQC.","url":"https://apify.com/yappman/cqc-register","applicationCategory":"BrowserApplication","image":"https://images.apifyusercontent.com/9VWIdt13p6cx84eBa-orDYk4FYzPIaoOujfKMyDRL6U/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWnQyd1hjQW5ZOWdWMlpoeTItYWN0b3ItT08wYXdSa2k3TktCcHR3WXctMEs4MnN2TXU2NC1jcWMtcmVnaXN0ZXItRklOQUwucG5n.webp","offers":{"@type":"Offer","description":"from $4.00 / 1,000 locations","price":4,"priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":4,"priceCurrency":"USD","referenceQuantity":{"@type":"QuantitativeValue","value":1000,"unitText":"locations"}}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apify.com/"},{"@type":"ListItem","position":2,"name":"Store","item":"https://apify.com/store"},{"@type":"ListItem","position":3,"name":"Russell Yapp","item":"https://apify.com/yappman"},{"@type":"ListItem","position":4,"name":"CQC Register: England Care Homes, Locations and Changes","item":"https://apify.com/yappman/cqc-register"}]}
+meta description: Search, look up and track changes to care locations in CQC's England directory. Person-like names are left out where the rule applies. Not affiliated wi...
+meta og:title: CQC Care Homes and Services in England: Search and Changes · Apify
+meta og:description: Search, look up and track changes to care locations in CQC's England directory. Person-like names are left out where the rule applies. Not affiliated wi...
+meta og:url: https://apify.com/yappman/cqc-register
+meta og:site_name: Apify
+meta og:locale: en_US
+meta og:image: https://apify.com/og-image/actor?actorName=CQC+Register%3A+England+Care+Homes%2C+Locations+and+Changes&uniqueName=yappman%2Fcqc-register&categories=BUSINESS%2CAUTOMATION&users=1&runs=36&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FZt2wXcAnY9gV2Zhy2-actor-OO0awRki7NKBptwYw-0K82svMu64-cqc-register-FINAL.png&authorName=Russell+Yapp&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FfherYUlwzjZ6PEVXMcOG8GxBs_G-nIHdUivA6gvG9gM%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWnQyd1hjQW5ZOWdWMlpoeTItcHJvZmlsZS1JOHltOTJ3ZmVPLXlvdXR1YmUtcHJvZmlsZS5wbmc.webp
+meta og:type: article
+meta twitter:card: summary_large_image
+meta twitter:creator: @apify
+meta twitter:title: CQC Care Homes and Services in England: Search and Changes · Apify
+meta twitter:description: Search, look up and track changes to care locations in CQC's England directory. Person-like names are left out where the rule applies. Not affiliated wi...
+meta twitter:image: https://apify.com/og-image/actor?actorName=CQC+Register%3A+England+Care+Homes%2C+Locations+and+Changes&uniqueName=yappman%2Fcqc-register&categories=BUSINESS%2CAUTOMATION&users=1&runs=36&pictureUrl=https%3A%2F%2Fapify-image-uploads-prod.s3.us-east-1.amazonaws.com%2FZt2wXcAnY9gV2Zhy2-actor-OO0awRki7NKBptwYw-0K82svMu64-cqc-register-FINAL.png&authorName=Russell+Yapp&userPictureUrl=https%3A%2F%2Fimages.apifyusercontent.com%2FfherYUlwzjZ6PEVXMcOG8GxBs_G-nIHdUivA6gvG9gM%2Frs%3Afill%3A224%3A224%2Fcb%3A1%2FaHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWnQyd1hjQW5ZOWdWMlpoeTItcHJvZmlsZS1JOHltOTJ3ZmVPLXlvdXR1YmUtcHJvZmlsZS5wbmc.webp
+CQC Care Homes and Services in England: Search and Changes · Apify
+Skip to content (#main)
+/
+Get started (https://console.apify.com/sign-up) Log in (https://console.apify.com/sign-in)
+Solutions
+Back
+MCP server configuration Configure your Apify MCP server with Actors and tools for seamless integration with MCP clients. Start building (https://mcp.apify.com/)
+Apify for
+Enterprise (/enterprise)
+Startups (/resources/startups)
+Universities (/resources/universities)
+Nonprofits (/resources/nonprofits)
+Use cases
+Data for generative AI (/use-cases/data-for-generative-ai)
+Data for AI agents (/use-cases/data-for-ai-agents)
+Lead generation (/use-cases/lead-generation)
+Market research (/use-cases/market-research)
+View more → (/use-cases)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Product
+Back
+Start here! Ready-to-run tools for your AI agents and apps. Just pick one and go. Browse 125,490 Actors (/store)
+Apify platform
+Apify Store Actors for any job on the web (/store)
+Actors Build and run tools for AI agents and automation (/actors)
+Integrations Connect with apps and services (/integrations)
+MCP Give your AI access to Actors (https://mcp.apify.com/)
+Anti-blocking
+Anti-blocking Scrape without getting blocked (/anti-blocking)
+Proxy Rotate scraper IP addresses (/proxy)
+Open source
+Crawlee Web scraping and crawling library (https://crawlee.dev/)
+Developers
+Back
+Documentation Full reference for the Apify platform (https://docs.apify.com/)
+Get started
+Actor templates Python, JavaScript, and TypeScript (/templates)
+Web scraping academy Courses for beginners and experts (https://docs.apify.com/academy)
+Monetize your code Publish your Actors and get paid (/partners/actor-developers)
+Learn
+API reference (https://docs.apify.com/api)
+CLI (https://docs.apify.com/cli/)
+SDK (https://docs.apify.com/sdk)
+MCP (https://docs.apify.com/platform/integrations/mcp)
+Crawlee (https://crawlee.dev/)
+Earn from your code $2M paid out last month. Many developers earn over $3k. Start earning now (/partners/actor-developers)
+Resources
+Back
+Help and support Advice and answers about Apify (https://help.apify.com/en/)
+Actor ideas Get inspired to build Actors (/ideas)
+Changelog See what’s new on Apify (/change-log)
+Customer stories Find out how others use Apify (/success-stories)
+Company
+About Apify (/about)
+Contact us (/contact)
+Blog (https://blog.apify.com/)
+Live events (https://lu.ma/apify)
+Doing Good (/doing-good)
+Jobs We're hiring! (/jobs)
+Join our Discord Talk to other builders (https://discord.com/invite/jyEM2PRvMU)
+Pricing (/pricing)
+Contact sales (/contact-sales)
+[CQC Register: England Care Homes, Locations and Changes avatar]
+CQC Register: England Care Homes, Locations and Changes
+Pricing
+from $4.00 / 1,000 locations
+Try for free (https://console.apify.com/actors/OO0awRki7NKBptwYw?addFromActorId=OO0awRki7NKBptwYw)
+Go to Apify Store (/store)
+[CQC Register: England Care Homes, Locations and Changes]
+CQC Register: England Care Homes, Locations and Changes
+yappman/cqc-register
+Try for free (https://console.apify.com/actors/OO0awRki7NKBptwYw?addFromActorId=OO0awRki7NKBptwYw)
+Copy setup prompt Copied
+Search and look up care locations in CQC's England directory, and list what changed between its files. Locations whose names could be a person's are left out and counted. CQC data under the Open Government Licence. Not affiliated with CQC.
+Pricing
+from $4.00 / 1,000 locations
+Rating
+0.0
+(0)
+Developer
+Russell Yapp (/yappman) Maintained by Community
+Actor stats
+0
+Bookmarked
+1
+Total users
+1
+Monthly active users
+5 days ago
+Last modified
+Categories
+Business (/store/categories/business) Automation (/store/categories/automation)
+Features
+Limited permissions
+Share
+README (/yappman/cqc-register) Input (/yappman/cqc-register/input-schema) Output (/yappman/cqc-register/output-schema) Pricing (/yappman/cqc-register/pricing) API (/yappman/cqc-register/api/python) Issues (/yappman/cqc-register/issues/open) Tasks 4 (/yappman/cqc-register/examples)
+Not affiliated with, endorsed by or sponsored by the Care Quality Commission (CQC). CQC's name is used only to say where the data comes from.
+CQC England Care Locations #cqc-england-care-locations
+Search and look up care locations in CQC's England directory, and list what changed between its files. One fixed row per location or per change. Locations whose names could be a person's are left out and counted.
+Contains CQC information, licensed under the Open Government Licence v3.0. We acknowledge that we are using CQC information.
+What it does #what-it-does
+lookup : up to 500 CQC location ids or provider ids together; one row per location shown. A provider id returns the locations of that provider that are shown. Ids not found or left out are counted, not listed. The filter inputs below apply to search and changes only; lookup ignores them.
+search : filter by local authority, region, outward postcode (for example SW11), service type (for example Homecare agencies or Nursing homes) and registration status.
+changes : events since a date: listed , no_longer_listed , details_changed . The first file's baseline ( first_seen ) is off unless you ask for it with includeFirstSeen .
+Filters match exact values (case ignored). Local authority names must be written as CQC publishes them.
+What it does not do #what-it-does-not-do
+It shows only some of the locations in CQC's file. On the CQC file of 22 October 2026 it showed 9,787 of 57,107 rows, about 17%. About 83% were left out because the location's name or its provider's name could be a person's, or is not clearly an organisation's. Left-out locations are counted in RUN_SUMMARY and never shown, with or without a name. The share for the file behind your run is withheldInFile in RUN_SUMMARY ; the 22 October figures are a dated example only.
+It has no ratings in this version. The rating columns are present in location rows and are empty. A rating filter ( overallRating ) or a care-home filter ( careHome ) is refused and a refusal costs nothing. The care-home flag, the number of beds and the key-question and report-date columns are empty on this route, because the directory file has no such columns.
+It is not a record of what CQC knows today. Results come from CQC's directory file of the date shown in RUN_SUMMARY.fileDate ( historyStart is the first file we hold). A change means CQC's published file changed, not that care changed. A location missing from a later file is "no longer listed", not "closed". It is intended to be refreshed weekly; a week can be skipped.
+It does not give advice or say anything about quality or safety. No score, ranking or reason is given.
+Input #input
+Only mode is required. Refusals happen before any row is read.
+Field	Type	Applies to	Notes
+mode	string	any mode	lookup , search or changes . Default search .
+locationIds	list of strings	lookup	CQC location ids. Up to 500 together with providerIds .
+providerIds	list of strings	lookup	CQC provider ids. Lookup needs locationIds or providerIds .
+localAuthorities	list of strings	search, changes	Exact local authority names as CQC publishes them.
+regions	list of strings	search, changes	CQC regions, for example London or North West.
+postcodeDistricts	list of strings	search, changes	Outward codes such as SW11.
+serviceTypes	list of strings	search	CQC service types. Refused in changes mode.
+careHome	boolean	search	Refused in this version (no care-home flag in the directory file).
+registrationStatus	string	search	Registered or Deregistered . Deregistered is refused (registered locations only). Refused in changes mode.
+overallRating	string	search	Outstanding , Good , Requires improvement , Inadequate or No rating . Refused in this version.
+since	string	changes	Required in changes mode. A date such as 2026-10-22, not before historyStart in RUN_SUMMARY .
+events	list of strings	changes	Event kinds to keep. Empty means no event-kind filter. On this route only listed , no_longer_listed , details_changed and first_seen are produced; registered , deregistered and rating_changed are accepted and return no rows.
+includeFirstSeen	boolean	changes	The baseline rows of the first file. Default false .
+maxItems	integer	any mode	1 to 10,000. Default 1,000; the input form prefills 20. At most this many rows are returned and charged.
+Each list filter takes at most 50 values of at most 80 characters.
+Example input:
+{
+"mode" : "search" ,
+"serviceTypes" : [ "Homecare agencies" ] ,
+"regions" : [ "North West" ] ,
+"maxItems" : 20
+}
+Output fields #output-fields
+Rows go to the run's dataset. Each key is present; a missing value is null (or an empty list).
+Location rows (lookup, search) #location-rows-lookup-search
+Field	Type	Meaning
+locationId	string	CQC location id.
+providerId	string	CQC provider id.
+name	string	Location name (shown only when it and its provider pass the organisation rule).
+nameWithheld	boolean	false on rows returned.
+postcode	string	Outward part of the postcode only, such as SW11.
+localAuthority	string	Local authority.
+region	string	CQC region.
+careHome	boolean or null	Empty on this route: the directory file has no care-home flag.
+numberOfBeds	integer or null	Empty on this route: the directory file has no bed count.
+serviceTypes	list of strings	Service types.
+regulatedActivities	list of strings	Empty on this route: the CQC directory file has no such column.
+specialisms	list of strings	Specialisms.
+registrationStatus	string	Registration status.
+registrationDate	string	Empty on this route: the CQC directory file carries no registration date.
+deregistrationDate	string	Empty on this route.
+ratingOverall , ratingSafe , ratingEffective , ratingCaring , ratingResponsive , ratingWellLed	string	Rating columns. Empty in this version.
+ratingOverallReportDate , ratingSafeReportDate , ratingEffectiveReportDate , ratingCaringReportDate , ratingResponsiveReportDate , ratingWellLedReportDate	string	Report dates for the rating columns. Empty in this version.
+source	string	The route that produced the row (from the store's manifest).
+observedAt	string	When the store was observed (from the store's manifest), as a UTC timestamp such as 2026-10-22T09:00:00Z.
+Event rows (changes) #event-rows-changes
+Field	Type	Meaning
+eventId	string	Event id.
+event	string	listed , no_longer_listed , details_changed or first_seen .
+locationId , providerId , name , nameWithheld , postcode , localAuthority , region , careHome	as above	As in location rows.
+keyQuestion , oldRating , newRating , reportDate	string	Rating-event fields. Empty in this version.
+field	string	The field that changed, for details_changed .
+old , new	string	The value before and after. A postcode is cut to its outward part here too.
+registrationDate , deregistrationDate	string	Dates as held for the location.
+cqcChangeTime	string	The date the change is dated by (CQC's file date). Rows are sorted by it.
+observedAt	string	When the store was observed.
+historyStart	string	The first file we hold.
+source	string	The route that produced the row.
+Sample row #sample-row
+Illustrative, not a real record. The organisation, ids and values are invented.
+{
+"locationId" : "EXAMPLE-LOC-1" ,
+"providerId" : "EXAMPLE-PRV-1" ,
+"name" : "Sample Homecare Services Ltd" ,
+"nameWithheld" : false ,
+"postcode" : "XX1" ,
+"localAuthority" : "Exampleshire" ,
+"region" : "North West" ,
+"careHome" : null ,
+"numberOfBeds" : null ,
+"serviceTypes" : [ "Homecare agencies" ] ,
+"regulatedActivities" : [ ] ,
+"specialisms" : [ "Dementia" ] ,
+"registrationStatus" : "Registered" ,
+"registrationDate" : null ,
+"deregistrationDate" : null ,
+"ratingOverall" : null ,
+"ratingOverallReportDate" : null ,
+"source" : "directory-csv" ,
+"observedAt" : "2026-10-22T09:00:00Z"
+}
+The other rating columns ( ratingSafe to ratingWellLedReportDate ) are null and are left out of this sample for length.
+RUN_SUMMARY #runsummary
+Each run writes RUN_SUMMARY to its key-value store.
+Field	Meaning
+status	ok , refused or failed .
+reason	Why a run was refused or failed. Present when status is not ok .
+error	The error type name, when a run failed on an exception.
+mode	The mode that ran.
+route	The route behind the store ( directory-csv ).
+fileDate	The date of the CQC directory file behind your rows.
+historyStart	The first file we hold; the earliest since you can use.
+storeObservedAt	When the store was observed.
+withheldInFile	Locations in that file that were left out. A count of 1 to 4 is shown as the text <5 ; 0 and 5 or more are shown as numbers.
+locationsInFile	Locations shown from that file.
+counts	notFoundOrWithheld (lookup ids with no row), notOutput , alreadyDelivered , matched , cappedByMaxItems , duplicateKey .
+pushed	Rows returned and charged.
+runCharged , readData , payPerEvent , restarted	Charging state of the run.
+chargeLimitReached	true when your maximum-charge setting left rows out.
+runFeeRefusedByLimit	true when the run fee did not fit your maximum-charge setting and was not charged.
+alreadyStored	Rows a restarted run already held; they are not returned or charged again.
+startedAt , finishedAt	Run times.
+attribution	The attribution string below.
+wording	A standing note on what a change means.
+Only withheldInFile is shown as <5 in the code; the figures in counts are exact. The counts are taken over the whole file (tens of thousands of rows), so a small figure cannot single out a location.
+What you pay #what-you-pay
+Pay per event, flat on each plan: run $0.005, location $0.004, event $0.003 .
+The run fee is charged each time a run reads the register's data, even if no row matches. A search with no matches, a changes run whose event files hold no matching event, and a lookup where each id is not found or left out each still cost the $0.005 run fee. A run refused before anything is read (a bad input, a rating or care-home filter, too many ids, a since date earlier than historyStart ) costs nothing, and so does a changes run whose since is later than every event file (it reads only the store's index).
+If the register store cannot be used, the run fails and nothing more is charged; try again later.
+Locations (lookup and search): $0.004 per row returned. 20 rows: $0.085. 1,000 rows: $4.005.
+Events (changes): $0.003 per row returned. 20 rows: $0.065. 1,000 rows: $3.005.
+If you leave out maxItems the cap is 1,000 rows (up to $4.005 for locations, $3.005 for events); the input form prefills 20. Set maxItems and Apify's maximum-charge setting for the run. If the maximum is reached, the run stops and RUN_SUMMARY.chargeLimitReached is true .
+Personal data and removal #personal-data-and-removal
+Each row has these field groups: the location's name (only when it and its provider pass an organisation rule), CQC's location and provider ids, the outward part of the postcode (such as SW11) and not the full postcode, local authority, region, service types, specialisms, the registration status, and the date of the CQC file and of our observation. It never reads or returns address lines, phone numbers, websites, registered managers or nominated individuals, contact details, coordinates, inspection report text, reviews or residents.
+A location that is not clearly an organisation's is left out whole. An organisation-named location in a small area can still point to the household that runs it, and a rule that leaves names out is not a guarantee that none gets through. The Open Government Licence does not cover personal data.
+To ask for a location to be removed, email info@yappman.com (mailto:info@yappman.com) . A removal cannot recall rows already returned to you.
+Use of this data #use-of-this-data
+Do not use rows to contact individuals. This cannot be enforced against rows already in your account, so it rests on you.
+Source and licence #source-and-licence
+The data is CQC's directory of registered care locations in England, read from a file CQC publishes, and reproduced here as one fixed row per location or change.
+Contains CQC information, licensed under the Open Government Licence v3.0. We acknowledge that we are using CQC information.
+Ratings and reviews #ratings-and-reviews
+Ratings and reviews on the Store page help other buyers judge whether this Actor fits their use, whatever your experience.
+You might also like
+Aldi Australia Price Scraper & Tracker: Special Buys yappman/au-supermarket-price-scraper Aldi Australia shelf prices by keyword, category or product page, Special Buys drops, and a watch mode that returns only added or changed prices. Add woolworths to retailers for Woolworths prices; Coles is not available at the moment. Russell Yapp 8 (/yappman/au-supermarket-price-scraper)
+Telegram Phone Number Info – Register Check + Carrier scrapepilot/telegram-phone-number-info---register-check-carrier Check if any phone number is on Telegram. Get carrier, country, line type (mobile/VoIP), name & photo (public), registration status. Bulk lookup, no login. Residential proxy ready. $5/1K numbers Scrape Pilot 339 1.0 (1) (/scrapepilot/telegram-phone-number-info---register-check-carrier)
+A Place for Mom Scraper - Senior Living & Home Care Leads jungle_synthesizer/aplaceformom-senior-living-scraper Scrape senior-living communities and home-care agencies from APlaceForMom.com. Extract name, care types, address, phone, rating and reviews across 55,539 communities and 31,854 home-care agencies. Filter by segment, state, country or care type. BowTiedRaccoon 9 (/jungle_synthesizer/aplaceformom-senior-living-scraper)
+CQC Care Services Scraper alkausari_mujahid/care-quality-commission-scraper Get ratings, registered managers and inspection reports for any CQC-registered care service in England: care homes, homecare, GPs, dentists, hospitals. Filter by type, area and rating, or schedule it to catch new reports and rating changes. Alkausari M 7 (/alkausari_mujahid/care-quality-commission-scraper)
+Target Store Locator Scraper axlymxp/target-store-scraper Export Target store locations near any city, ZIP code or coordinates: address, phone, opening hours, services (pharmacy, Drive Up, Starbucks) and GPS. Up to 20 nearest stores per location, no login, results as JSON, CSV or Excel. axly 19 (/axlymxp/target-store-scraper)
+Federal Register Deadline Monitor challenge_logic/federal-register-deadline-monitor Find open Federal Register comment deadlines and effective dates from the official Federal Register API. Paul P 3 (/challenge_logic/federal-register-deadline-monitor)
+UK Importers and Exporters: HMRC Trade Data yappman/uk-importers-exporters Find UK businesses that imported or exported goods by HS code and month, look companies up, and get alerts on traders new to a commodity. HMRC UK Trade Info data under the OGL. Names that are not clearly an organisation's are left out. Not affiliated with HMRC. Russell Yapp 3 (/yappman/uk-importers-exporters)
+Google Hotels Scraper: Prices, Vendor Rates, History yappman/google-hotels-prices Google Hotels prices for any destination and dates as structured data: price per night, each booking vendor's price, a sweep of check-in dates, and stored price history for tracked hotels (no longer refreshed weekly). Not affiliated with Google. Russell Yapp 3 (/yappman/google-hotels-prices)
+UK Property Listings Scraper: Rightmove, Sold Prices, Yield yappman/uk-property-listings Scrape UK homes for sale and to rent from Rightmove (plus OnTheMarket, optional) in one format. Track new listings and price drops daily, get a free rental yield summary by outcode, and sold prices for England and Wales. Not affiliated with Rightmove or OnTheMarket. Russell Yapp 3 (/yappman/uk-property-listings)
+QBCC Licence Search Scraper - Queensland Builders & Trades scrapersdelight/qbcc-qld-licensee-register-scraper Every QBCC-licensed Queensland builder and trade contractor: ABN, ACN, business address, licence classes, status, trading names, revenue category - plus optional directors, licensed-since date and insured building-work record. 111,000+ licensees. $0.0016 per licensee. Scrapers Delight 7 (/scrapersdelight/qbcc-qld-licensee-register-scraper)
+Product
+Apify Store (/store)
+Integrations (/integrations)
+Proxy (/proxy)
+MCP (https://mcp.apify.com/)
+Crawlee (https://crawlee.dev/)
+Developers
+Documentation (https://docs.apify.com/)
+Actor templates (/templates)
+API reference (https://docs.apify.com/api)
+Get paid on Apify (/partners/actor-developers)
+Consulting
+Professional services (/professional-services)
+Apify Partners (/partners)
+Resources
+Help & support (https://help.apify.com/en/)
+Submit your ideas (/ideas)
+Forum (https://discord.apify.com/)
+Agent interface (https://agi.apify.com)
+Onboard your AI agent (/agents.md)
+Spotlight
+APIs (/api)
+What is web scraping? (https://blog.apify.com/what-is-web-scraping/)
+Best web scraping tools (https://blog.apify.com/best-web-scraping-tools/)
+Python web scraping libraries (https://blog.apify.com/what-are-the-best-python-web-scraping-libraries/)
+Scrapers (/scrapers)
+Company
+About Apify (/about)
+Contact us (/contact)
+Events (https://lu.ma/apify)
+Blog (https://blog.apify.com/)
+Jobs We're hiring! (/jobs)
+Brand (/resources/brand)
+/
+Socials
+http://linkedin.com/company/apify/
+https://x.com/intent/follow?screen_name=apify
+https://github.com/apify
+https://www.youtube.com/apify
+https://discord.com/invite/jyEM2PRvMU
+https://www.tiktok.com/@apifytech
+Add to Preferred Sources (https://www.google.com/preferences/source?q=apify.com)
+Security
+https://docs.apify.com/legal/gdpr-information
+https://trust.apify.com/
+Reviews
+https://www.getapp.com/business-intelligence-analytics-software/a/apify/
+https://www.softwareadvice.com/data-extraction/apify-profile/
+https://www.capterra.com/p/150854/Apify/
+https://www.g2.com/products/apify/reviews
+https://www.trustradius.com/products/apify/reviews
+https://crozdesk.com/software/apify
+Loading status... (https://status.apify.com/)
+Imprint (https://docs.apify.com/legal)
+Terms of use (https://docs.apify.com/legal/general-terms-and-conditions)
+Privacy policy (https://docs.apify.com/legal/privacy-policy)
+Cookie policy (https://docs.apify.com/legal/cookie-policy)
+Cookies
+© 2026 Apify (https://docs.apify.com/legal)
