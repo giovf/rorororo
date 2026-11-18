@@ -1,0 +1,766 @@
+{"@context":"https://schema.org","@type":"TechArticle","@id":"https://developers.cloudflare.com/workers/observability/query-builder/#page","headline":"Query Builder","description":"Write structured queries to investigate and visualize your telemetry data.","url":"https://developers.cloudflare.com/workers/observability/query-builder/","inLanguage":"en","image":"https://developers.cloudflare.com/workers/observability/query-builder/og.png?v=5bd66159bbb69501","dateModified":"2026-10-02","publisher":{"@type":"Organization","name":"Cloudflare","description":"One platform for your apps, agents, and workforce. Build, secure, and scale without managing infrastructure","url":"https://www.cloudflare.com/","sameAs":["https://github.com/cloudflare","https://www.linkedin.com/company/cloudflare","https://x.com/cloudflare"],"logo":{"@type":"ImageObject","url":"https://developers.cloudflare.com/logo.svg"},"address":{"@type":"PostalAddress","streetAddress":"101 Townsend St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94107","addressCountry":"US"},"contactPoint":[{"@type":"ContactPoint","contactType":"Customer Support","url":"https://support.cloudflare.com/","availableLanguage":["English"]},{"@type":"ContactPoint","contactType":"Sales","url":"https://www.cloudflare.com/contact/","availableLanguage":["English"]}]},"isPartOf":{"@type":"WebSite","@id":"https://developers.cloudflare.com/#website","name":"Cloudflare Docs","url":"https://developers.cloudflare.com/"}}
+meta description: Write structured queries to investigate and visualize your telemetry data.
+meta og:title: Query Builder
+meta og:title: Query Builder · Cloudflare Workers docs
+meta og:type: article
+meta og:site_name: Cloudflare Docs
+meta og:locale: en
+meta og:description: Write structured queries to investigate and visualize your telemetry data.
+meta og:url: https://developers.cloudflare.com/workers/observability/query-builder/
+meta og:image: https://developers.cloudflare.com/workers/observability/query-builder/og.png?v=5bd66159bbb69501
+meta twitter:card: summary_large_image
+meta twitter:site: @cloudflare
+meta twitter:image: https://developers.cloudflare.com/workers/observability/query-builder/og.png?v=5bd66159bbb69501
+Query Builder · Cloudflare Workers docs
+Skip to content (#main-content)
+Documentation Index
+Fetch the complete documentation index at: https://developers.cloudflare.com/workers/llms.txt
+Use this file to discover all available pages before exploring further.
+Docs (/)
+Directory (/directory/) API (/api/) SDKs (/fundamentals/api/reference/sdks/) Changelog (/changelog/)
+Search Ctrl K
+https://github.com/cloudflare/cloudflare-docs
+Log in Dashboard (https://dash.cloudflare.com/)
+Home (/)
+/ Workers (/workers/)
+/ Observability (/workers/observability/)
+/ Query Builder
+Query Builder
+Last updated Oct 2, 2026 |
+Copy as Markdown
+| View as Markdown (index.md) | Agent setup (/agent-setup/)
+Overview
+Enable Query Builder
+Write a query in the Cloudflare dashboard
+Query composition
+Visualization
+Filter
+Search
+Group By
+Order By
+Limit
+Select time range
+Viewing query results
+Visualizations tab
+Invocations tab
+Events tab
+Save queries
+Delete queries
+Share queries
+Example: Composing a query
+The Query Builder helps you write structured queries to investigate and visualize your telemetry data. The Query Builder searches the Workers Observability dataset, which currently includes all logs stored by Workers Logs (/workers/observability/logs/workers-logs/) .
+You can also run the same queries programmatically using the Workers Observability REST API (/api/resources/workers/subresources/observability/) , which exposes endpoints to list dataset keys, run a query, and list the values for a key.
+The Query Builder can be found in the Observability page of the Cloudflare dashboard:
+Go to Observability ↗ (https://dash.cloudflare.com/?to=/:account/workers-and-pages/observability)
+Enable Query Builder
+#enable-query-builder
+The Query Builder is available to all developers and requires no enablement. Queries search all Workers Logs stored by Cloudflare. If you have not yet enabled Workers Logs, you can do so by adding the following setting to your Worker's Wrangler file (/workers/observability/logs/workers-logs/#enable-workers-logs) and redeploying your Worker.
+{
+"observability" : {
+"enabled" : true ,
+"logs" : {
+"invocation_logs" : true ,
+"head_sampling_rate" : 1 // optional. default = 1.
+}
+}
+}
+[ observability ]
+enabled = true
+[ observability . logs ]
+invocation_logs = true
+head_sampling_rate = 1
+Write a query in the Cloudflare dashboard
+#write-a-query-in-the-cloudflare-dashboard
+In the Cloudflare dashboard, go to the Workers & Pages page.
+Go to Workers & Pages ↗ (https://dash.cloudflare.com/?to=/:account/workers-and-pages)
+Select your Worker.
+Select Observability in the left-hand navigation panel, and then the Overview tab.
+Select a Visualization .
+Optional: Add fields to Filter, Group By, Order By, and Limit. For more information, see what composes a query (/workers/observability/query-builder/#query-composition) .
+Optional: Select the appropriate time range.
+Select Run . The query will automatically run whenever changes are made.
+Query composition
+#query-composition
+Visualization
+#visualization
+The Query Builder supports many visualization operators, including:
+Function
+Arguments
+Description
+Count
+n/a
+The total number of rows matching the query conditions
+Count Distinct
+any field
+The number of occurrences of the unique values in the dataset
+Min
+numeric field
+The smallest value for the field in the dataset
+Max
+numeric field
+The largest value for the field in the dataset
+Sum
+numeric field
+The total of all of the values for the field in the dataset
+Average
+numeric field
+The average of the field in the dataset
+Standard Deviation
+numeric field
+The standard deviation of the field in the dataset
+Variance
+numeric field
+The variance of the field in the dataset
+P001
+numeric field
+The value of the field below which 0.1% of the data falls
+P01
+numeric field
+The value of the field below with 1% of the data falls
+P05
+numeric field
+The value of the field below with 5% of the data falls
+P10
+numeric field
+The value of the field below with 10% of the data falls
+P25
+numeric field
+The value of the field below with 25% of the data falls
+Median (P50)
+numeric field
+The value of the field below with 50% of the data falls
+P75
+numeric field
+The value of the field below with 75% of the data falls
+P90
+numeric field
+The value of the field below with 90% of the data falls
+P95
+numeric field
+The value of the field below with 95% of the data falls
+P99
+numeric field
+The value of the field below with 99% of the data falls
+P999
+numeric field
+The value of the field below with 99.9% of the data falls
+You can add multiple visualizations in a single query. Each visualization renders a graph. A single summary table is also returned, which shows the raw query results.
+[Example of showing the Query Builder with multiple visualization]
+All methods are aggregate functions. Most methods operate on a specific field in the log event. Count is an exception, and is an aggregate function that returns the number of log events matching the filter conditions.
+Filter
+#filter
+Filters help return the columns that match the specified conditions. Filters have three components: a key, an operator, and a value.
+The key is any field in a log event. For example, you may choose $workers.cpuTimeMs or $metadata.message .
+The operator is a logical condition that evaluates to true or false. See the table below for supported conditions:
+Data Type
+Valid Conditions (Operators)
+Numeric
+Equals, Does not equal, Greater, Greater or equals, Less, Less or equals, Exists, Does not exist
+String
+Equals, Does not equal, Includes, Does not include, Regex, Exists, Does not exist, Starts with
+The value for a numeric field is an integer. The value for a string field is any string.
+To add a filter:
+Select + in the Filter section. 2. Select Select key... and
+input a key name. For example, $workers.cpuTimeMs . 3. Select the operator
+and change it to the operator best suited. For example, Greater than . 4.
+Select Select value... and input a value. For example, 100 .
+When you run the query with the filter specified above, only log events where $workers.cpuTimeMs > 100 will be returned.
+Adding multiple filters combines them with an AND operator, meaning that only events matching all the filters will be returned.
+Search
+#search
+Search is a text filter that returns only events containing the specified text. Search can be helpful as a quick filtering mechanism, or to search for unique identifiable values in your logs.
+Group By
+#group-by
+Group By combines rows that have the same value into summary rows. For example, if a query adds $workers.event.request.cf.country as a Group By field, then the summary table will group by country.
+Order By
+#order-by
+Order By affects how the results are sorted in the summary table. If asc is selected, the results are sorted in ascending order - from least to greatest. If desc is selected, the results are sorted in descending order - from greatest to least.
+Limit
+#limit
+Limit restricts the number of results returned. When paired with Order By (/workers/observability/query-builder/#order-by) , it can be used to return the "top" or "first" N results.
+Select time range
+#select-time-range
+When you select a time range, you specify the time interval where you want to look for matching events. Logs and traces are retained for seven days.
+Viewing query results
+#viewing-query-results
+There are three views for queries: Visualizations, Invocations, and Events.
+Visualizations tab
+#visualizations-tab
+The Visualizations tab shows graphs and a summary table for the query.
+[Visualization Overview]
+Invocations tab
+#invocations-tab
+The Invocations tab shows all logs, grouped by the invocation, and ordered by timestamp. Only invocations matching the query criteria are returned.
+[Invocations Overview]
+Events tab
+#events-tab
+The Events tab shows all logs, ordered by timestamp. Only events matching the query criteria are returned. The Events tab can be customized to add additional fields in the view.
+[Overview]
+Save queries
+#save-queries
+It is recommended to save queries that may be reused for future investigations. You can save a query with a name, description, and custom tags by selecting Save Query . Queries are saved at the account-level and are accessible to all users in the account.
+Saved queries can be re-run by selecting the relevant query from the Queries tab. You can edit the query and save edits.
+Queries can be starred by users. Starred queries are unique to the user, and not to the account.
+Delete queries
+#delete-queries
+Saved queries can be deleted from the Queries tab. If you delete a query, the query is deleted for all users in the account.
+In the Cloudflare dashboard, go to the Observability page.
+Go to Observability ↗ (https://dash.cloudflare.com/?to=/:account/workers-and-pages/observability)
+Select the Queries tab.
+On the right-hand side, select the three dots for additional actions.
+Select Delete Query and follow the instructions.
+Share queries
+#share-queries
+Saved queries are assigned a unique URL and can be shared with any user in the account.
+Example: Composing a query
+#example-composing-a-query
+In this example, we will construct a query to find and debug all paths that respond with 5xx errors. First, we create a base query. In this base query, we want to visualize by
+the raw event count. We can add a filter for $workers.event.response.status that is greater than 500.
+Then, we group by $workers.event.request.path and $workers.event.response.status to identify the number of requests that were
+affected by this behavior.
+[Constructing a query]
+The results show that the /agents/chat/default path has been experiencing 404s and 500s. Now, we can apply a filter for this path and investigate.
+[Adding an additional field to the query]
+Now, we can investigate by selecting the Invocations tab. We can see that there were two logged invocations of this error.
+[Examining the Invocations tab in the Query Builder]
+We can expand a single invocation to view the relevant logs, and continue to debug.
+[Viewing the logs for a single Invocation]
+Previous Profiling Memory (/workers/observability/dev-tools/memory-usage/) Next Overview (/workers/observability/issues/)
+Was this helpful?
+Yes
+No
+Edit page (https://github.com/cloudflare/cloudflare-docs/edit/production/src/content/docs/workers/observability/query-builder.mdx) Report issue (https://github.com/cloudflare/cloudflare-docs/issues/new/choose)
+On this page
+Overview (#_top)
+Enable Query Builder (#enable-query-builder)
+Write a query in the Cloudflare dashboard (#write-a-query-in-the-cloudflare-dashboard)
+Query composition (#query-composition)
+Visualization (#visualization)
+Filter (#filter)
+Search (#search)
+Group By (#group-by)
+Order By (#order-by)
+Limit (#limit)
+Select time range (#select-time-range)
+Viewing query results (#viewing-query-results)
+Visualizations tab (#visualizations-tab)
+Invocations tab (#invocations-tab)
+Events tab (#events-tab)
+Save queries (#save-queries)
+Delete queries (#delete-queries)
+Share queries (#share-queries)
+Example: Composing a query (#example-composing-a-query)
+Edit page (https://github.com/cloudflare/cloudflare-docs/edit/production/src/content/docs/workers/observability/query-builder.mdx) Report issue (https://github.com/cloudflare/cloudflare-docs/issues/new/choose)
+/ Workers (/workers/)
+/
+Overview (/workers/)
+Getting started
+CLI (/workers/get-started/guide/)
+Dashboard (/workers/get-started/dashboard/)
+Prompting (/workers/get-started/prompting/)
+Templates (/workers/get-started/quickstarts/)
+Examples (/workers/examples/)
+Tutorials (/workers/tutorials/)
+Best practices
+Workers Best Practices (/workers/best-practices/workers-best-practices/)
+Demos and architectures
+Overview (/workers/demos/)
+Build an Interactive ChatGPT App (/workers/demos/chatgpt-app/)
+Local development
+Overview (/workers/local-development/)
+Environment variables and secrets (/workers/local-development/environment-variables/)
+Vite Plugin ↗︎ (/workers/vite-plugin/)
+Choosing between Wrangler & Vite (/workers/local-development/wrangler-vs-vite/)
+Developing with multiple Workers (/workers/local-development/multi-workers/)
+Adding local data (/workers/local-development/local-data/)
+Supported bindings per development mode (/workers/local-development/bindings-per-env/)
+Local Explorer (/workers/local-development/local-explorer/)
+Share a local dev server (/workers/local-development/local-dev-tunnels/)
+Playground (/workers/playground/)
+Configuration
+Overview (/workers/configuration/)
+Programmatic configuration ↗︎ (/cf/projects/cloudflare-config/)
+Workers Sites
+Overview (/workers/configuration/sites/)
+Start from existing (/workers/configuration/sites/start-from-existing/)
+Start from scratch (/workers/configuration/sites/start-from-scratch/)
+Start from Worker (/workers/configuration/sites/start-from-worker/)
+Workers Sites configuration (/workers/configuration/sites/configuration/)
+Bindings ↗︎ (/workers/runtime-apis/bindings/)
+Cloudflare Access (/workers/configuration/cloudflare-access/)
+Compatibility dates (/workers/configuration/compatibility-dates/)
+Compatibility flags (/workers/configuration/compatibility-flags/)
+Cron Triggers (/workers/configuration/cron-triggers/)
+Environment variables (/workers/configuration/environment-variables/)
+Integrations
+Overview (/workers/configuration/integrations/)
+APIs (/workers/configuration/integrations/apis/)
+External Services (/workers/configuration/integrations/external-services/)
+Multipart upload metadata (/workers/configuration/multipart-upload-metadata/)
+Page Rules (/workers/configuration/workers-with-page-rules/)
+Placement Beta (/workers/configuration/placement/)
+Routes and domains
+Overview (/workers/configuration/routing/)
+Custom Domains (/workers/configuration/routing/custom-domains/)
+Routes (/workers/configuration/routing/routes/)
+workers.dev (/workers/configuration/routing/workers-dev/)
+Secrets (/workers/configuration/secrets/)
+Previews
+Overview (/workers/previews/)
+Get started (/workers/previews/get-started/)
+Configuration (/workers/previews/configuration/)
+Resources and isolation (/workers/previews/resources/)
+Custom domains (/workers/previews/custom-domains/)
+Test and debug (/workers/previews/test-and-debug/)
+Compare workflows (/workers/previews/compare-workflows/)
+Examples (/workers/previews/examples/)
+Roles and permissions
+Overview (/workers/authorization/)
+Workers (/workers/authorization/workers/)
+Durable Objects (/workers/authorization/durable-objects/)
+Versions & deployments
+Overview (/workers/versions-and-deployments/)
+Deployment management (/workers/versions-and-deployments/deployment-management/)
+Version skew (/workers/versions-and-deployments/version-skew/)
+Gradual deployments
+Overview (/workers/versions-and-deployments/gradual-deployments/)
+Version affinity (/workers/versions-and-deployments/gradual-deployments/version-affinity/)
+With Durable Objects (/workers/versions-and-deployments/gradual-deployments/with-durable-objects/)
+Version overrides (/workers/versions-and-deployments/version-overrides/)
+Rollbacks (/workers/versions-and-deployments/rollbacks/)
+Version URLs (/workers/versions-and-deployments/version-urls/)
+CI/CD
+Overview (/workers/ci-cd/)
+Builds
+Overview (/workers/ci-cd/builds/)
+Configuration (/workers/ci-cd/builds/configuration/)
+Automatic pull requests (/workers/ci-cd/builds/automatic-prs/)
+Git integration
+Overview (/workers/ci-cd/builds/git-integration/)
+Artifacts integration (/workers/ci-cd/builds/git-integration/artifacts-integration/)
+GitHub integration (/workers/ci-cd/builds/git-integration/github-integration/)
+GitLab integration (/workers/ci-cd/builds/git-integration/gitlab-integration/)
+Cursor Origin integration (/workers/ci-cd/builds/git-integration/cursor-origin-integration/)
+Build image (/workers/ci-cd/builds/build-image/)
+Build caching (/workers/ci-cd/builds/build-caching/)
+Build branches (/workers/ci-cd/builds/build-branches/)
+Build watch paths (/workers/ci-cd/builds/build-watch-paths/)
+Deploy Hooks (/workers/ci-cd/builds/deploy-hooks/)
+Advanced setups (/workers/ci-cd/builds/advanced-setups/)
+Event subscriptions (/workers/ci-cd/builds/event-subscriptions/)
+Troubleshooting builds (/workers/ci-cd/builds/troubleshoot/)
+Builds API reference (/workers/ci-cd/builds/api-reference/)
+Limits & pricing (/workers/ci-cd/builds/limits-and-pricing/)
+External CI/CD
+Overview (/workers/ci-cd/external-cicd/)
+GitHub Actions (/workers/ci-cd/external-cicd/github-actions/)
+GitLab CI/CD (/workers/ci-cd/external-cicd/gitlab-cicd/)
+Workers Cache
+Overview (/workers/cache/)
+Configuration (/workers/cache/configuration/)
+Cache keys (/workers/cache/cache-keys/)
+Purge and invalidate the cache (/workers/cache/purge/)
+Examples (/workers/cache/examples/)
+Debugging (/workers/cache/debugging/)
+Limitations (/workers/cache/limitations/)
+Runtime APIs
+Overview (/workers/runtime-apis/)
+Remote-procedure call (RPC)
+Overview (/workers/runtime-apis/rpc/)
+Lifecycle (/workers/runtime-apis/rpc/lifecycle/)
+Reserved Methods (/workers/runtime-apis/rpc/reserved-methods/)
+Visibility and Security Model (/workers/runtime-apis/rpc/visibility/)
+TypeScript (/workers/runtime-apis/rpc/typescript/)
+Error handling (/workers/runtime-apis/rpc/error-handling/)
+WebAssembly (Wasm)
+Overview (/workers/runtime-apis/webassembly/)
+Wasm in JavaScript (/workers/runtime-apis/webassembly/javascript/)
+Bindings (env)
+Overview (/workers/runtime-apis/bindings/)
+AI ↗︎ (/workers-ai/get-started/workers-wrangler/#2-connect-your-worker-to-workers-ai)
+AI Search ↗︎ (/ai-search/api/search/workers-binding/)
+Analytics Engine ↗︎ (/analytics/analytics-engine/)
+Analytics SQL binding (/workers/runtime-apis/bindings/analytics-sql/)
+Assets ↗︎ (/workers/static-assets/binding/)
+Browser Run ↗︎ (/browser-run/)
+D1 ↗︎ (/d1/worker-api/)
+Dispatcher (Workers for Platforms) ↗︎ (/cloudflare-for-platforms/workers-for-platforms/configuration/dynamic-dispatch/)
+Durable Objects ↗︎ (/durable-objects/api/)
+Dynamic Worker Loaders (/workers/runtime-apis/bindings/worker-loader/)
+Environment Variables ↗︎ (/workers/configuration/environment-variables/)
+Hyperdrive ↗︎ (/hyperdrive/)
+Images ↗︎ (/images/optimization/binding/)
+KV ↗︎ (/kv/api/)
+Media Transformations ↗︎ (/stream/transform-videos/bindings/)
+mTLS (/workers/runtime-apis/bindings/mtls/)
+Queues ↗︎ (/queues/configuration/javascript-apis/)
+R2 ↗︎ (/r2/api/workers/workers-api-reference/)
+Rate Limiting (/workers/runtime-apis/bindings/rate-limit/)
+Secrets ↗︎ (/workers/configuration/secrets/)
+Secrets Store ↗︎ Beta (/secrets-store/integrations/workers/)
+Service bindings
+Overview (/workers/runtime-apis/bindings/service-bindings/)
+HTTP (/workers/runtime-apis/bindings/service-bindings/http/)
+RPC (WorkerEntrypoint) (/workers/runtime-apis/bindings/service-bindings/rpc/)
+Stream ↗︎ (/stream/manage-video-library/bindings/)
+Vectorize ↗︎ (/vectorize/reference/client-api/)
+Version metadata Beta (/workers/runtime-apis/bindings/version-metadata/)
+Workflows ↗︎ (/workflows/)
+Cache (/workers/runtime-apis/cache/)
+Console (/workers/runtime-apis/console/)
+Context (ctx) (/workers/runtime-apis/context/)
+Encoding (/workers/runtime-apis/encoding/)
+EventSource (/workers/runtime-apis/eventsource/)
+Fetch (/workers/runtime-apis/fetch/)
+Handlers
+Overview (/workers/runtime-apis/handlers/)
+Alarm Handler ↗︎ (/durable-objects/api/alarms/)
+Connect Handler (/workers/runtime-apis/handlers/connect/)
+Email Handler ↗︎ (/email-service/api/route-emails/email-handler/)
+Fetch Handler (/workers/runtime-apis/handlers/fetch/)
+Queue Handler ↗︎ (/queues/configuration/javascript-apis/#consumer)
+Scheduled Handler (/workers/runtime-apis/handlers/scheduled/)
+Tail Handler (/workers/runtime-apis/handlers/tail/)
+Headers (/workers/runtime-apis/headers/)
+HTMLRewriter (/workers/runtime-apis/html-rewriter/)
+MessageChannel (/workers/runtime-apis/messagechannel/)
+Node.js compatibility
+Overview (/workers/runtime-apis/nodejs/)
+assert (/workers/runtime-apis/nodejs/assert/)
+AsyncLocalStorage (/workers/runtime-apis/nodejs/asynclocalstorage/)
+Buffer (/workers/runtime-apis/nodejs/buffer/)
+crypto (/workers/runtime-apis/nodejs/crypto/)
+Diagnostics Channel (/workers/runtime-apis/nodejs/diagnostics-channel/)
+dns (/workers/runtime-apis/nodejs/dns/)
+EventEmitter (/workers/runtime-apis/nodejs/eventemitter/)
+fs (/workers/runtime-apis/nodejs/fs/)
+http (/workers/runtime-apis/nodejs/http/)
+https (/workers/runtime-apis/nodejs/https/)
+net (/workers/runtime-apis/nodejs/net/)
+path (/workers/runtime-apis/nodejs/path/)
+process (/workers/runtime-apis/nodejs/process/)
+Streams (/workers/runtime-apis/nodejs/streams/)
+StringDecoder (/workers/runtime-apis/nodejs/string-decoder/)
+test (/workers/runtime-apis/nodejs/test/)
+timers (/workers/runtime-apis/nodejs/timers/)
+tls (/workers/runtime-apis/nodejs/tls/)
+url (/workers/runtime-apis/nodejs/url/)
+util (/workers/runtime-apis/nodejs/util/)
+zlib (/workers/runtime-apis/nodejs/zlib/)
+Performance and timers (/workers/runtime-apis/performance/)
+Request (/workers/runtime-apis/request/)
+Response (/workers/runtime-apis/response/)
+Scheduler (/workers/runtime-apis/scheduler/)
+Streams
+Overview (/workers/runtime-apis/streams/)
+ReadableStream (/workers/runtime-apis/streams/readablestream/)
+ReadableStream BYOBReader (/workers/runtime-apis/streams/readablestreambyobreader/)
+ReadableStream DefaultReader (/workers/runtime-apis/streams/readablestreamdefaultreader/)
+TransformStream (/workers/runtime-apis/streams/transformstream/)
+WritableStream (/workers/runtime-apis/streams/writablestream/)
+WritableStream DefaultWriter (/workers/runtime-apis/streams/writablestreamdefaultwriter/)
+TCP sockets (/workers/runtime-apis/tcp-sockets/)
+Web Crypto (/workers/runtime-apis/web-crypto/)
+Web standards (/workers/runtime-apis/web-standards/)
+WebSockets (/workers/runtime-apis/websockets/)
+Static Assets
+Overview (/workers/static-assets/)
+Get Started (/workers/static-assets/get-started/)
+Configuration and Bindings (/workers/static-assets/binding/)
+Routing
+Full-stack application (/workers/static-assets/routing/full-stack-application/)
+Single Page Application (SPA) (/workers/static-assets/routing/single-page-application/)
+Static Site Generation (SSG) and custom 404 pages (/workers/static-assets/routing/static-site-generation/)
+Worker script (/workers/static-assets/routing/worker-script/)
+Advanced
+Deployments and version skew ↗︎ (/workers/versions-and-deployments/version-skew/)
+HTML handling (/workers/static-assets/routing/advanced/html-handling/)
+Serving a subdirectory (/workers/static-assets/routing/advanced/serving-a-subdirectory/)
+Headers (/workers/static-assets/headers/)
+Redirects (/workers/static-assets/redirects/)
+Direct Uploads (/workers/static-assets/direct-upload/)
+Billing and Limitations (/workers/static-assets/billing-and-limitations/)
+Migration Guides
+Migrate from Vercel to Cloudflare Workers
+Overview (/workers/static-assets/migration-guides/vercel-to-workers/)
+Astro (/workers/static-assets/migration-guides/vercel-to-workers/astro/)
+Next.js (/workers/static-assets/migration-guides/vercel-to-workers/nextjs/)
+Nuxt (/workers/static-assets/migration-guides/vercel-to-workers/nuxt/)
+Remix and React Router (/workers/static-assets/migration-guides/vercel-to-workers/react-router/)
+SvelteKit (/workers/static-assets/migration-guides/vercel-to-workers/sveltekit/)
+TanStack Start (/workers/static-assets/migration-guides/vercel-to-workers/tanstack-start/)
+Static site or SPA (/workers/static-assets/migration-guides/vercel-to-workers/static-site/)
+Migrate from Pages to Workers (/workers/static-assets/migration-guides/migrate-from-pages/)
+Migrate from Netlify to Workers (/workers/static-assets/migration-guides/netlify-to-workers/)
+Framework guides
+Deploy an existing project (/workers/framework-guides/automatic-configuration/)
+Web applications
+React + Vite (/workers/framework-guides/web-apps/react/)
+Astro (/workers/framework-guides/web-apps/astro/)
+EmDash (/workers/framework-guides/web-apps/emdash/)
+React Router (formerly Remix) (/workers/framework-guides/web-apps/react-router/)
+Remix 3 (/workers/framework-guides/web-apps/remix/)
+Next.js (/workers/framework-guides/web-apps/nextjs/)
+OpenNext adapter (/workers/framework-guides/web-apps/opennext/)
+Vue (/workers/framework-guides/web-apps/vue/)
+RedwoodSDK (/workers/framework-guides/web-apps/redwoodsdk/)
+TanStack Start (/workers/framework-guides/web-apps/tanstack-start/)
+Microfrontends (/workers/framework-guides/web-apps/microfrontends/)
+SvelteKit (/workers/framework-guides/web-apps/sveltekit/)
+Vike (/workers/framework-guides/web-apps/vike/)
+Foldkit (/workers/framework-guides/web-apps/foldkit/)
+fate (/workers/framework-guides/web-apps/fate/)
+More guides...
+Analog (/workers/framework-guides/web-apps/more-web-frameworks/analog/)
+Angular (/workers/framework-guides/web-apps/more-web-frameworks/angular/)
+Docusaurus (/workers/framework-guides/web-apps/more-web-frameworks/docusaurus/)
+Gatsby (/workers/framework-guides/web-apps/more-web-frameworks/gatsby/)
+Hono (/workers/framework-guides/web-apps/more-web-frameworks/hono/)
+Nuxt (/workers/framework-guides/web-apps/more-web-frameworks/nuxt/)
+Qwik (/workers/framework-guides/web-apps/more-web-frameworks/qwik/)
+Solid Beta (/workers/framework-guides/web-apps/more-web-frameworks/solid/)
+Waku (/workers/framework-guides/web-apps/more-web-frameworks/waku/)
+Mobile applications
+Expo (https://docs.expo.dev/eas/hosting/reference/worker-runtime/)
+APIs
+FastAPI ↗︎ (/workers/languages/python/packages/fastapi/)
+Flask ↗︎ (/workers/languages/python/packages/flask/)
+Hono ↗︎ (/workers/framework-guides/web-apps/more-web-frameworks/hono/)
+AI & agents
+Agents SDK ↗︎ (/agents/)
+LangChain ↗︎ (/workers/languages/python/packages/langchain/)
+Databases
+Connect to databases (/workers/databases/connecting-to-databases/)
+Analytics Engine ↗︎ (/analytics/analytics-engine/)
+Vectorize (vector database) ↗︎ (/vectorize/)
+Cloudflare D1 ↗︎ (/d1/)
+Hyperdrive ↗︎ (/hyperdrive/)
+3rd Party Integrations
+Overview (/workers/databases/third-party-integrations/)
+MongoDB (/workers/databases/third-party-integrations/mongodb/)
+Neon (/workers/databases/third-party-integrations/neon/)
+PlanetScale (/workers/databases/third-party-integrations/planetscale/)
+Supabase (/workers/databases/third-party-integrations/supabase/)
+Turso (/workers/databases/third-party-integrations/turso/)
+Upstash (/workers/databases/third-party-integrations/upstash/)
+Xata (/workers/databases/third-party-integrations/xata/)
+Observability
+Overview (/workers/observability/)
+Metrics and analytics (/workers/observability/metrics-and-analytics/)
+Logs
+Overview (/workers/observability/logs/)
+Workers Logs (/workers/observability/logs/workers-logs/)
+Real-time logs (/workers/observability/logs/real-time-logs/)
+Tail Workers (/workers/observability/logs/tail-workers/)
+Workers Logpush (/workers/observability/logs/logpush/)
+Traces Beta
+Overview (/workers/observability/traces/)
+Custom spans Beta (/workers/observability/traces/custom-spans/)
+Spans and attributes (/workers/observability/traces/spans-and-attributes/)
+Known limitations (/workers/observability/traces/known-limitations/)
+DevTools
+Overview (/workers/observability/dev-tools/)
+Breakpoints (/workers/observability/dev-tools/breakpoints/)
+Profiling CPU usage (/workers/observability/dev-tools/cpu-usage/)
+Profiling Memory (/workers/observability/dev-tools/memory-usage/)
+Query Builder (/workers/observability/query-builder/)
+Issues Beta
+Overview (/workers/observability/issues/)
+Investigate issues (/workers/observability/issues/investigate/)
+Set up an automation (/workers/observability/issues/automations/)
+OpenTelemetry export (/workers/observability/opentelemetry-export/)
+Errors and exceptions (/workers/observability/errors/)
+Integrations
+Sentry (https://docs.sentry.io/platforms/javascript/guides/cloudflare/)
+Profiling in production (/workers/observability/profiling-in-production/)
+Source maps and stack traces (/workers/observability/source-maps/)
+Testing
+Overview (/workers/testing/)
+Vitest integration
+Overview (/workers/testing/vitest-integration/)
+Write your first test (/workers/testing/vitest-integration/write-your-first-test/)
+Recipes and examples (/workers/testing/vitest-integration/recipes/)
+Configuration (/workers/testing/vitest-integration/configuration/)
+Mock outbound requests (/workers/testing/vitest-integration/mock-outbound-requests/)
+Test APIs (/workers/testing/vitest-integration/test-apis/)
+Isolation and concurrency (/workers/testing/vitest-integration/isolation-and-concurrency/)
+Debugging (/workers/testing/vitest-integration/debugging/)
+Known issues (/workers/testing/vitest-integration/known-issues/)
+Migration guides
+Migrate to Vitest plugin (/workers/testing/vitest-integration/migration-guides/migrate-to-vitest-plugin/)
+Migrate from Vitest 3 to Vitest 4 (/workers/testing/vitest-integration/migration-guides/migrate-from-vitest-3-to-vitest-4/)
+Migrate from Miniflare 2's test environments (/workers/testing/vitest-integration/migration-guides/migrate-from-miniflare-2/)
+Migrate from unstable_dev (/workers/testing/vitest-integration/migration-guides/migrate-from-unstable-dev/)
+Integration test harness
+Overview (/workers/testing/test-harness/)
+Get started (/workers/testing/test-harness/get-started/)
+Configure the test harness (/workers/testing/test-harness/configure/)
+Prepare test state (/workers/testing/test-harness/prepare-test-state/)
+Interact with Workers (/workers/testing/test-harness/interact-with-workers/)
+Integrations (/workers/testing/test-harness/integrations/)
+Miniflare
+Overview (/workers/testing/miniflare/)
+Get Started (/workers/testing/miniflare/get-started/)
+Writing tests (/workers/testing/miniflare/writing-tests/)
+Core
+Compatibility Dates (/workers/testing/miniflare/core/compatibility/)
+Fetch Events (/workers/testing/miniflare/core/fetch/)
+Modules (/workers/testing/miniflare/core/modules/)
+Multiple Workers (/workers/testing/miniflare/core/multiple-workers/)
+Queues (/workers/testing/miniflare/core/queues/)
+Scheduled Events (/workers/testing/miniflare/core/scheduled/)
+Variables and Secrets (/workers/testing/miniflare/core/variables-secrets/)
+Web Standards (/workers/testing/miniflare/core/standards/)
+WebSockets (/workers/testing/miniflare/core/web-sockets/)
+Developing
+Attaching a Debugger (/workers/testing/miniflare/developing/debugger/)
+Live Reload (/workers/testing/miniflare/developing/live-reload/)
+Migrations
+Migrating from Version 2 (/workers/testing/miniflare/migrations/from-v2/)
+Storage
+Cache (/workers/testing/miniflare/storage/cache/)
+D1 (/workers/testing/miniflare/storage/d1/)
+Durable Objects (/workers/testing/miniflare/storage/durable-objects/)
+KV (/workers/testing/miniflare/storage/kv/)
+R2 (/workers/testing/miniflare/storage/r2/)
+Wrangler's unstable_startWorker() (/workers/testing/unstable_startworker/)
+Wrangler
+Overview (/workers/wrangler/)
+Install/Update Wrangler (/workers/wrangler/install-and-update/)
+Migrations
+Migrate from Wrangler v3 to v4 (/workers/wrangler/migration/update-v3-to-v4/)
+Migrate from Wrangler v2 to v3 (/workers/wrangler/migration/update-v2-to-v3/)
+Migrate from Wrangler v1 to v2
+Wrangler v1 (legacy)
+Overview (/workers/wrangler/migration/v1-to-v2/wrangler-legacy/)
+Install / Update (/workers/wrangler/migration/v1-to-v2/wrangler-legacy/install-update/)
+Authentication (/workers/wrangler/migration/v1-to-v2/wrangler-legacy/authentication/)
+Commands (/workers/wrangler/migration/v1-to-v2/wrangler-legacy/commands/)
+Configuration (/workers/wrangler/migration/v1-to-v2/wrangler-legacy/configuration/)
+Webpack (/workers/wrangler/migration/v1-to-v2/wrangler-legacy/webpack/)
+1. Migrate webpack projects (/workers/wrangler/migration/v1-to-v2/eject-webpack/)
+2. Update to Wrangler v2 (/workers/wrangler/migration/v1-to-v2/update-v1-to-v2/)
+API (/workers/wrangler/api/)
+Commands
+Overview (/workers/wrangler/commands/)
+Workers (/workers/wrangler/commands/workers/)
+General commands (/workers/wrangler/commands/general/)
+Artifacts (/workers/wrangler/commands/artifacts/)
+Basin Pipelines (/workers/wrangler/commands/pipelines/)
+Browser (/workers/wrangler/commands/browser/)
+Certificates (/workers/wrangler/commands/certificates/)
+Containers (/workers/wrangler/commands/containers/)
+D1 (/workers/wrangler/commands/d1/)
+Flagship (/workers/wrangler/commands/flagship/)
+Hyperdrive (/workers/wrangler/commands/hyperdrive/)
+KV (/workers/wrangler/commands/kv/)
+Pages (/workers/wrangler/commands/pages/)
+Queues (/workers/wrangler/commands/queues/)
+R2 (/workers/wrangler/commands/r2/)
+Secrets Store (/workers/wrangler/commands/secrets-store/)
+Tunnel (/workers/wrangler/commands/tunnel/)
+Vectorize (/workers/wrangler/commands/vectorize/)
+VPC (/workers/wrangler/commands/vpc/)
+Workers for Platforms (/workers/wrangler/commands/workers-for-platforms/)
+Workflows (/workers/wrangler/commands/workflows/)
+Authentication profiles (/workers/wrangler/profiles/)
+Bundling (/workers/wrangler/bundling/)
+Configuration (/workers/wrangler/configuration/)
+Custom builds (/workers/wrangler/custom-builds/)
+Deprecations (/workers/wrangler/deprecations/)
+Environments (/workers/wrangler/environments/)
+System environment variables (/workers/wrangler/system-environment-variables/)
+Vite plugin
+Overview (/workers/vite-plugin/)
+Get started (/workers/vite-plugin/get-started/)
+Tutorial - React SPA with an API (/workers/vite-plugin/tutorial/)
+v2 beta Beta (/workers/vite-plugin/v2-beta/)
+Vite+ on Workers (/workers/vite-plugin/vite-plus/)
+Reference
+API (/workers/vite-plugin/reference/api/)
+Static Assets (/workers/vite-plugin/reference/static-assets/)
+Debugging (/workers/vite-plugin/reference/debugging/)
+Migrating from wrangler dev (/workers/vite-plugin/reference/migrating-from-wrangler-dev/)
+Secrets (/workers/vite-plugin/reference/secrets/)
+Vite Environments (/workers/vite-plugin/reference/vite-environments/)
+Cloudflare Environments (/workers/vite-plugin/reference/cloudflare-environments/)
+Non-JavaScript modules (/workers/vite-plugin/reference/non-javascript-modules/)
+Programmatic configuration (/workers/vite-plugin/reference/programmatic-configuration/)
+Languages
+Overview (/workers/languages/)
+JavaScript
+Overview (/workers/languages/javascript/)
+Examples ↗︎ (/workers/examples/?languages=JavaScript)
+TypeScript
+Overview (/workers/languages/typescript/)
+Examples ↗︎ (/workers/examples/?languages=TypeScript)
+Python Workers
+Overview (/workers/languages/python/)
+The Basics (/workers/languages/python/basics/)
+How Python Workers Work (/workers/languages/python/how-python-workers-work/)
+Foreign Function Interface (FFI) (/workers/languages/python/ffi/)
+Standard Library (/workers/languages/python/stdlib/)
+Examples (/workers/languages/python/examples/)
+Packages
+Overview (/workers/languages/python/packages/)
+Django (/workers/languages/python/packages/django/)
+FastAPI (/workers/languages/python/packages/fastapi/)
+Flask (/workers/languages/python/packages/flask/)
+Langchain (/workers/languages/python/packages/langchain/)
+Rust Beta
+Overview (/workers/languages/rust/)
+Supported crates (/workers/languages/rust/crates/)
+Platform
+Overview (/workers/platform/)
+Pricing (/workers/platform/pricing/)
+Changelog
+Overview (/workers/platform/changelog/)
+Workers (Historic) (/workers/platform/changelog/historical-changelog/)
+Wrangler (https://github.com/cloudflare/workers-sdk/releases)
+Limits (/workers/platform/limits/)
+Choose a data or storage product (/workers/platform/storage-options/)
+Spending limits (/workers/platform/spend-management/)
+Betas (/workers/platform/betas/)
+Deploy to Cloudflare buttons (/workers/platform/deploy-buttons/)
+Claim deployments (temporary accounts) (/workers/platform/claim-deployments/)
+Built with Cloudflare button (/workers/platform/built-with-cloudflare/)
+Known issues (/workers/platform/known-issues/)
+Workers for Platforms ↗︎ (/cloudflare-for-platforms/workers-for-platforms/)
+Infrastructure as Code (IaC) (/workers/platform/infrastructure-as-code/)
+Glossary (/workers/glossary/)
+Reference
+How the Cache works (/workers/reference/how-the-cache-works/)
+How Workers works (/workers/reference/how-workers-works/)
+Migrate from Service Workers to ES Modules (/workers/reference/migrate-to-module-workers/)
+Protocols (/workers/reference/protocols/)
+Security model (/workers/reference/security-model/)
+Agent resources
+Agent setup ↗︎ (/agent-setup/)
+Cloudflare Skills ↗︎ (https://github.com/cloudflare/skills)
+Code Mode MCP Server ↗︎ (https://github.com/cloudflare/mcp)
+Domain-specific MCP Servers ↗︎ MCP (https://github.com/cloudflare/mcp-server-cloudflare)
+Workers llms.txt ↗︎ (/workers/llms.txt)
+Workers llms-full.txt ↗︎ (/workers/llms-full.txt)
+Cloudflare Docs llms.txt ↗︎ (/llms.txt)
+Cloudflare Docs llms-full.txt ↗︎ (/llms-full.txt)
+Getting started
+Plans (https://www.cloudflare.com/plans/) Contact sales (https://www.cloudflare.com/resource/contact-enterprise-sales/) Partners (https://www.cloudflare.com/partners/) Find a partner (https://partnerlocator.cloudflare.com/dashboard) Startups (https://www.cloudflare.com/startups/) Under attack? (https://www.cloudflare.com/under-attack-hotline/) Domain name search (https://domains.cloudflare.com/)
+Company
+About (https://www.cloudflare.com/about/) Careers (https://www.cloudflare.com/careers/) Investors (https://cloudflare.net/) Press (https://www.cloudflare.com/press/) Press kit (https://www.cloudflare.com/press/press-kit/) Global network (https://www.cloudflare.com/network/)
+Public interest
+Project Galileo (https://www.cloudflare.com/galileo/) Athenian Project (https://www.cloudflare.com/athenian/) Cloudflare for Campaigns (https://www.cloudflare.com/campaigns/) Project Fairshot (https://www.cloudflare.com/fair-shot/) Impact/ESG (https://www.cloudflare.com/impact/)
+Compliance
+Compliance resources (https://www.cloudflare.com/trust-hub/compliance-resources/) Trust Hub (https://www.cloudflare.com/trust-hub/) Data Protection (https://www.cloudflare.com/trust-hub/gdpr/) Responsible AI (https://www.cloudflare.com/trust-hub/responsible-ai/) Transparency report (https://www.cloudflare.com/transparency/) Report abuse (https://www.cloudflare.com/trust-hub/abuse-approach/)
+Resources
+App innovation report (https://www.cloudflare.com/resource/app-innovation-report/) Cloudflare Radar (https://radar.cloudflare.com/) Case studies (https://www.cloudflare.com/case-studies/) Status (https://www.cloudflarestatus.com/) Support (https://support.cloudflare.com/) Events (https://www.cloudflare.com/events/) Blog (https://blog.cloudflare.com/)
+Developers
+Documentation (https://developers.cloudflare.com/) Learning center (https://www.cloudflare.com/learning/) Community (https://community.cloudflare.com/)
+Solutions
+SSE and SASE platform (https://www.cloudflare.com/sase/) Cloudflare AI Cloud (https://www.cloudflare.com/solutions/ai/) AI Security (https://www.cloudflare.com/solutions/ai-security/) Frontend Development Platform (https://www.cloudflare.com/solutions/frontends/) Multi-Tenant Platform Development (https://www.cloudflare.com/solutions/platforms/) Web Security Platform (https://www.cloudflare.com/solutions/security/)
+Start Building (https://dash.cloudflare.com/sign-up) Log In (https://dash.cloudflare.com/login)
+© 2026 Cloudflare, Inc.
+Privacy policy (https://www.cloudflare.com/policies/privacy/) | Report security issues (https://www.cloudflare.com/disclosure/) | Terms of use (https://www.cloudflare.com/policies/terms/) | Trademark (https://www.cloudflare.com/trademark/)
+|
+[privacy options]
+Your privacy choices
+Docs (/)
