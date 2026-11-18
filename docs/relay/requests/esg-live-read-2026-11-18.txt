@@ -1,6 +1,0 @@
-GET https://gankdat.com/stats/uk-modern-slavery-statements
-GET https://gankdat.com/stats/uk-gender-pay-gap
-POST https://gankdat.com/mcp {"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"query_uk_company_profiles","arguments":{"company_number":"00445790"}}}
-POST https://gankdat.com/mcp {"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"query_uk_modern_slavery_statements","arguments":{"limit":2}}}
-POST https://gankdat.com/mcp {"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"query_uk_gender_pay_gap","arguments":{"limit":2}}}
-GET https://gankdat.com/v1/health

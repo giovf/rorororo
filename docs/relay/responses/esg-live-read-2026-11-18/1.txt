@@ -1,0 +1,66 @@
+{"@context":"https://schema.org","@type":"Dataset","name":"UK modern slavery statements (government registry) — statistics","description":"Statement summaries from the UK government modern slavery statement registry — organisation, Companies House number, registry year and statement period, whether it is a group statement and under which parent, turnover band, sectors, how long the organisation has produced statements, the six \"statement includes\" answers (structure, policies, risk assessment, due diligence, training, goals), the policy, training, audit and grievance tick-boxes, and links to the statement and the registry PDF. By company number with history; refreshed daily. The registry is voluntary, so a company with no row is not thereby non-compliant. Signatory names, contact emails and narrative answers are never ingested.","url":"https://gankdat.com/stats/uk-modern-slavery-statements","license":"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/","isAccessibleForFree":true,"dateModified":"2026-11-18T05:17:18.163Z","creator":{"@type":"Organization","name":"gankdat","url":"https://gankdat.com"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://gankdat.com/v1/data/uk-modern-slavery-statements"},{"@type":"DataDownload","name":"daily change feed","encodingFormat":"application/json","contentUrl":"https://gankdat.com/v1/changes/uk-modern-slavery-statements"}]}
+meta description: UK modern slavery statements (government registry): 25,668 modern slavery statement summaries, updated 2026-11-18. What moved this month and the top movers, computed from the official feed. Free JSON API.
+meta og:type: article
+meta og:site_name: gankdat
+meta og:title: UK modern slavery statements (government registry) — statistics
+meta og:description: UK modern slavery statements (government registry): 25,668 modern slavery statement summaries, updated 2026-11-18. What moved this month and the top movers, computed from the official feed. Free JSON API.
+meta og:url: https://gankdat.com/stats/uk-modern-slavery-statements
+UK modern slavery statements (government registry) — statistics | gankdat
+gankdat (/) / stats (/stats)
+UK modern slavery statements (government registry) — statistics
+Statement summaries from the UK government modern slavery statement registry — organisation, Companies House number, registry year and statement period, whether it is a group statement and under which parent, turnover band, sectors, how long the organisation has produced statements, the six "statement includes" answers (structure, policies, risk assessment, due diligence, training, goals), the policy, training, audit and grievance tick-boxes, and links to the statement and the registry PDF. By company number with history; refreshed daily. The registry is voluntary, so a company with no row is not thereby non-compliant. Signatory names, contact emails and narrative answers are never ingested.
+headline
+records in dataset	25,668
+last refreshed	2026-11-18
+summary
+As of 18 November 2026, UK modern slavery statements (government registry) holds 25,668 modern slavery statement summaries in its current window, published between December 2025 and November 2026.
+In November 2026 so far, 268 modern slavery statement summaries have been published, down 565 (67.8%) on the 833 of October 2026. Across the 12 months in view the average is 1,112 a month; the busiest was June 2026 with 2,898 and the quietest November 2026 with 268.
+Looking at statements by turnover band, Over £500 million leads with 9,572 modern slavery statement summaries (37.3% of the total), followed by £100 million to £500 million (9,432) and £60 million to £100 million (3,196). Looking at years producing statements, More than 5 years leads with 17,652 modern slavery statement summaries (68.8% of the total), followed by 1 to 5 years (7,354) and This is the first time (662). Looking at private and public sector, Private leads with 25,292 modern slavery statement summaries (98.5% of the total), followed by Public (376).
+Over the last 1 refresh days the register gained 25,668 modern slavery statement summaries, lost 0 and changed 2; the latest refresh, on 18 November 2026, added 25,668, removed 0 and changed 2.
+Statement summaries by month last updated
+month	count
+2025-12	586
+2026-01	516
+2026-02	392
+2026-03	879
+2026-04	1,118
+2026-05	2,186
+2026-06	2,898
+2026-07	1,450
+2026-08	1,099
+2026-09	1,120
+2026-10	833
+2026-11	268
+Statements by turnover band
+value	records
+Over £500 million	9,572
+£100 million to £500 million	9,432
+£60 million to £100 million	3,196
+£36 million to £60 million	2,457
+Under £36 million	1,011
+Years producing statements
+value	records
+More than 5 years	17,652
+1 to 5 years	7,354
+This is the first time	662
+Private and public sector
+value	records
+Private	25,292
+Public	376
+what changed (last 30 days)
+Last 30 days: 25,668 added, 0 removed, 2 changed — the rows a re-download would make you find yourself.
+refresh day	added	removed	changed
+2026-11-18	25,668	0	2
+This register diffs itself every morning. Poll the delta instead of the whole
+dataset: GET /v1/changes/uk-modern-slavery-statements?since=2026-11-18 (add
+change=added|removed|changed ), or the MCP tool get_changes . One
+credit per page, 90-day history — a daily diff of every register fits the free tier.
+methodology
+Computed from the same records the gankdat API serves — official
+government feeds, refreshed daily, no scraping. This dataset's licence and
+personal-data posture are stated in the terms (/terms) . Counts
+reflect the current dataset window, not all-time totals. Cite this page with
+its URL and the last-refreshed date.
+Get this data as JSON
+free tier, 250 req/mo — or MCP for agents
+docs (/docs) get a key (/account) llms.txt (/llms.txt)

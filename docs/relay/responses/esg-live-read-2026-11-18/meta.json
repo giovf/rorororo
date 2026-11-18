@@ -1,0 +1,97 @@
+{
+  "request": "esg-live-read-2026-11-18",
+  "fetched_at": "2026-11-18T17:30:07.427Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/stats/uk-modern-slavery-statements",
+      "fetched_at": "2026-11-18T17:29:56.186Z",
+      "status": 200,
+      "elapsed_ms": 484,
+      "final_url": "https://gankdat.com/stats/uk-modern-slavery-statements",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.txt",
+      "bytes": 5819,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 10197
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/stats/uk-gender-pay-gap",
+      "fetched_at": "2026-11-18T17:29:57.179Z",
+      "status": 200,
+      "elapsed_ms": 181,
+      "final_url": "https://gankdat.com/stats/uk-gender-pay-gap",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.txt",
+      "bytes": 4820,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 9032
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_company_profiles\",\"arguments\":{\"company_number\":\"00445790\"}}}",
+      "fetched_at": "2026-11-18T17:29:57.863Z",
+      "status": 200,
+      "elapsed_ms": 6434,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 15642,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_modern_slavery_statements\",\"arguments\":{\"limit\":2}}}",
+      "fetched_at": "2026-11-18T17:30:04.799Z",
+      "status": 200,
+      "elapsed_ms": 564,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "4.json",
+      "bytes": 19484,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_gender_pay_gap\",\"arguments\":{\"limit\":2}}}",
+      "fetched_at": "2026-11-18T17:30:05.865Z",
+      "status": 200,
+      "elapsed_ms": 837,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 9044,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/v1/health",
+      "fetched_at": "2026-11-18T17:30:07.204Z",
+      "status": 200,
+      "elapsed_ms": 222,
+      "final_url": "https://gankdat.com/v1/health",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "6.json",
+      "bytes": 1867,
+      "truncated": false
+    }
+  ]
+}
