@@ -1,0 +1,147 @@
+{
+  "request": "exchange-w47-2026-11-18-c",
+  "fetched_at": "2026-11-18T08:14:44.219Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/check-the-patents-journal",
+      "fetched_at": "2026-11-18T08:14:38.388Z",
+      "status": 200,
+      "elapsed_ms": 1434,
+      "final_url": "https://www.gov.uk/check-the-patents-journal",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "11520",
+        "etag": "W/\"42f24108e5831284cc2ec0c01379dc93\""
+      },
+      "file": "1.txt",
+      "bytes": 13473,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 69279
+    },
+    {
+      "method": "GET",
+      "url": "https://www.ipo.gov.uk/types/patent/p-os/p-journal/p-pj-download.htm",
+      "fetched_at": "2026-11-18T08:14:39.832Z",
+      "status": 403,
+      "elapsed_ms": 139,
+      "final_url": "https://www.ipo.gov.uk/types/patent/p-os/p-journal/p-pj-download.htm",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.txt",
+      "bytes": 927,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 717857
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/api/search.json?q=designs+journal&count=6",
+      "fetched_at": "2026-11-18T08:14:39.994Z",
+      "status": 200,
+      "elapsed_ms": 241,
+      "final_url": "https://www.gov.uk/api/search.json?q=designs+journal&count=6",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "1928"
+      },
+      "file": "3.json",
+      "bytes": 14087,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/api/search.json?q=patents+journal+data+download&count=6",
+      "fetched_at": "2026-11-18T08:14:40.969Z",
+      "status": 200,
+      "elapsed_ms": 568,
+      "final_url": "https://www.gov.uk/api/search.json?q=patents+journal+data+download&count=6",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "1894"
+      },
+      "file": "4.json",
+      "bytes": 13593,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=patent&limit=15&sortBy=popularity",
+      "fetched_at": "2026-11-18T08:14:41.539Z",
+      "status": 200,
+      "elapsed_ms": 306,
+      "final_url": "https://api.apify.com/v2/store?search=patent&limit=15&sortBy=popularity",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"a903-oHqhPqBfDQA6b3gGGFhUupcjtKQ\""
+      },
+      "file": "5.json",
+      "bytes": 43267,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=registered%20design&limit=10&sortBy=popularity",
+      "fetched_at": "2026-11-18T08:14:42.346Z",
+      "status": 200,
+      "elapsed_ms": 91,
+      "final_url": "https://api.apify.com/v2/store?search=registered%20design&limit=10&sortBy=popularity",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"a1bb-e8qZmjQNMO7k6T2jhSH99zovavg\""
+      },
+      "file": "6.json",
+      "bytes": 41403,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=trademark&limit=12&sortBy=popularity",
+      "fetched_at": "2026-11-18T08:14:42.939Z",
+      "status": 200,
+      "elapsed_ms": 88,
+      "final_url": "https://api.apify.com/v2/store?search=trademark&limit=12&sortBy=popularity",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"dffa-kJIovuOHC7m1Jy8PREYvD8dGdio\""
+      },
+      "file": "7.json",
+      "bytes": 57338,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=self%20assessment%20tax%20calculator&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T08:14:43.029Z",
+      "status": 200,
+      "elapsed_ms": 96,
+      "final_url": "https://play.google.com/store/search?q=self%20assessment%20tax%20calculator&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 4754,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1184975
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=sole%20trader%20tax&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T08:14:43.921Z",
+      "status": 200,
+      "elapsed_ms": 54,
+      "final_url": "https://play.google.com/store/search?q=sole%20trader%20tax&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 3911,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1129817
+    }
+  ]
+}

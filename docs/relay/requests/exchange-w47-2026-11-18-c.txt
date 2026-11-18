@@ -1,9 +1,0 @@
-GET https://www.gov.uk/check-the-patents-journal
-GET https://www.ipo.gov.uk/types/patent/p-os/p-journal/p-pj-download.htm
-GET https://www.gov.uk/api/search.json?q=designs+journal&count=6
-GET https://www.gov.uk/api/search.json?q=patents+journal+data+download&count=6
-GET https://api.apify.com/v2/store?search=patent&limit=15&sortBy=popularity
-GET https://api.apify.com/v2/store?search=registered%20design&limit=10&sortBy=popularity
-GET https://api.apify.com/v2/store?search=trademark&limit=12&sortBy=popularity
-GET https://play.google.com/store/search?q=self%20assessment%20tax%20calculator&c=apps&hl=en_GB&gl=GB
-GET https://play.google.com/store/search?q=sole%20trader%20tax&c=apps&hl=en_GB&gl=GB

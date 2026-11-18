@@ -1,0 +1,915 @@
+{
+  "data": {
+    "total": 18,
+    "count": 10,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "Print on Demand T-Shirt Design & Listing Generator",
+        "name": "t-shirt-design-and-listing-generator",
+        "username": "sian.agency",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 125,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-17T03:00:51.059Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Score print-on-demand niches, screen every brand and slogan against the US trademark registry, write copy validated against your platform’s own character limits, and generate print-ready transparent artwork. Supports Amazon Merch on Demand, Etsy, Redbubble and Zazzle.",
+        "categories": [
+          "ECOMMERCE",
+          "AI",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/aOkFLD936ljbt1O_3q7AGlxsIG99NXMcy0JrFpKkkIc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vU0hhYnZOYkU3NlUxYVFhR2QtYWN0b3ItcDN2dWdpUkUzTXRJWDZUUzctNVE3Rm1QNlV6ZS10LXNoaXJ0LWRlc2lnbi1hbmQtbGlzdGluZy1nZW5lcmF0b3IucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SIÁN OÜ",
+        "userPictureUrl": "https://images.apifyusercontent.com/3-IKZ7tIOa05lY7MEtwSbfqDeQBl6ukkcNU3pSphMaY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaU1mYTktaWVrWlVUTHJKci1jcV9tcDFPdGRkU2lUXzEtZVc5MjJ5ek92NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVMGhoWW5aT1lrVTNObFV4WVZGaFIyUXRjSEp2Wm1sc1pTMTVlSFYyYWtwNVkyWmxMVFV1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-07T17:16:55.453Z",
+          "startedAt": "2026-08-07T17:16:50.500Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.005
+                  }
+                }
+              },
+              "trademark-phrase-cleared": {
+                "eventTitle": "Trademark clearance screening",
+                "eventDescription": "One brand, title or slogan screened against the US trademark register, returning a three-state risk verdict and the conflicting marks.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 1.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.35
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.33
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.32
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.3
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.28
+                  }
+                }
+              },
+              "niche-signal-analyzed": {
+                "eventTitle": "Niche demand & competition analysis",
+                "eventDescription": "One scored niche: demand, competition and opportunity derived from live marketplace competitor data.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 1.95
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.65
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.62
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.59
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.55
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.52
+                  }
+                }
+              },
+              "listing-pack-generated": {
+                "eventTitle": "Platform-compliant listing pack",
+                "eventDescription": "Brand, title, bullet points, description and tags, validated against the selected platform's published character limits.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 5.55
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 1.85
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 1.76
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 1.67
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 1.57
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 1.48
+                  }
+                }
+              },
+              "design-print-ready": {
+                "eventTitle": "Print-ready artwork",
+                "eventDescription": "One full-resolution 300-DPI transparent PNG, validated for dimensions, real transparency and file size before it is charged.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 15
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 5
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 4.75
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 4.5
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 4.25
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 4
+                  }
+                }
+              },
+              "design-print-ready-native-alpha": {
+                "eventTitle": "Print-ready artwork, native transparency",
+                "eventDescription": "One full-resolution 300-DPI print file generated with real alpha from the start — no background-removal step, so nothing can be cut away wrongly.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 20.25
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 6.75
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 6.41
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 6.08
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 5.74
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 5.4
+                  }
+                }
+              },
+              "niche-source-mined": {
+                "eventTitle": "Niche discovery from a source channel",
+                "eventDescription": "One print-on-demand creator channel mined for fresh niche ideas: recent videos transcribed, niches extracted, and each one filtered to those a designer can actually act on.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 2.7
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.9
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.86
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.81
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.77
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.72
+                  }
+                }
+              },
+              "slogan-set-generated": {
+                "eventTitle": "Slogan set",
+                "eventDescription": "One niche turned into screened slogan candidates, each with the emotion it targets and why it converts. Every slogan returned is checked against the US trademark register.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 1.35
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.45
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.43
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.41
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.38
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.36
+                  }
+                }
+              },
+              "design-text-print-ready": {
+                "eventTitle": "Print-ready text artwork",
+                "eventDescription": "One full-resolution 300-DPI transparent PNG rendered from a real font file. The wording is exact by construction — no image model interprets it — and it is validated for dimensions, transparency and file size.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 3.6
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 1.2
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 1.14
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 1.08
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 1.02
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.96
+                  }
+                }
+              }
+            }
+          }
+        },
+        "id": "p3vugiRE3MtIX6TS7",
+        "url": "https://apify.com/sian.agency/t-shirt-design-and-listing-generator"
+      },
+      {
+        "title": "EUIPO Designs Scraper: EU Registered Designs (DesignView)",
+        "name": "euipo-designs-scraper",
+        "username": "dltik",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 74,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-17T06:10:28.155Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Search EU registered designs (EUIPO RCD) + WIPO/national offices via the official DesignView. Product, Locarno class, status, owner, dates, design image. Applicant→company. No API key. $0.01/result.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Walid",
+        "userPictureUrl": "https://images.apifyusercontent.com/tO4Oc4n6FT14mzuI_C_IUeiYOhcpbiTVsfJ49jz2ne4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRzlNaFBPalNQZFZfQmhKMVF5Rk9jSlVJUFVQTC1IS3ozM3VTYnJ3d0ZFYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURlozV21wNlJrVmpYMFkwZUZOelkxRlhUazVNV1Roc2NXdFlkRmt3Y0haR1pWaEpNRmxhZDFKck5FTTJObWhS.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "design-result": {
+                "eventTitle": "Design result",
+                "eventDescription": "Charged per registered design extracted from the official EU DesignView backend (indication of product, status, office, holder, application/registration/expiry dates, design image + thumbnail). Defaults to EUIPO (RCD); can include WIPO Hague + national offices.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              },
+              "design-detail": {
+                "eventTitle": "Design detail enrichment",
+                "eventDescription": "Charged per result when enrichDetails is enabled — one extra DesignView detail request adding Locarno classes with descriptions, designers, full holder info (address, nationality), representatives, renewals and publication data.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": false
+              },
+              "applicant-enriched": {
+                "eventTitle": "Holder → company link",
+                "eventDescription": "Charged per result when enrichApplicant is enabled AND the holder is resolved to a real company record (French holders matched live to SIREN via the official register; holders from other countries get a free registry pointer and are NOT charged).",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-09-02T17:08:19.614Z",
+          "startedAt": "2026-09-02T17:08:19.614Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "He6dii6KKhluWNjah",
+        "url": "https://apify.com/dltik/euipo-designs-scraper"
+      },
+      {
+        "title": "EUIPO Registered Community Designs Scraper: Owner & Locarno",
+        "name": "euipo-designs-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 105,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-17T08:50:33.765Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Search EU Registered Community Designs (RCD) from the EUIPO register: design and application numbers, indication of product, Locarno classes, status, owner company and full address, designer, representative, filing/registration/expiry dates, priority and design images. Export to JSON, CSV or Excel.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/10UW1T2ms_ifJAeGnkYVJeYtnH3ZOo0xIfZLM8yBucc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItR2Q4OXJ5ZncxMWI0RjA1am8tdHhOMllwbGJnZy1ldWlwby5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "A data record returned by the scraper.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01425
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0135
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01275
+                  }
+                }
+              },
+              "ai_classify": {
+                "eventTitle": "AI design classification",
+                "eventDescription": "AI normalizes the design's product indication and Locarno classes into a market taxonomy (product category, market sector, searchable tags). Charged only when a classification is produced. Opt-in.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.012
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-08-29T07:41:03.000Z",
+          "createdAt": "2026-08-14T07:41:04.574Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-08-14T07:41:24.756Z",
+          "notifiedAboutChangeAt": "2026-08-29T08:05:51.192Z"
+        },
+        "id": "Gd89ryfw11b4F05jo",
+        "url": "https://apify.com/scrapers_lat/euipo-designs-scraper"
+      },
+      {
+        "title": "Canadian Registered Charities (CRA) – Open Data",
+        "name": "cra-charities",
+        "username": "loudtzu",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 36,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-16T17:22:32.771Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 24,
+            "TIMED-OUT": 0,
+            "TOTAL": 24
+          }
+        },
+        "description": "Registered charities in Canada from the CRA T3010 open data: BN, name, designation, category, city, province. No directors or contact details.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "LOUDTZU TZULOUD",
+        "userPictureUrl": "https://images.apifyusercontent.com/f7pCUYtV1PrPQN0rzASMfyulCeBIcN5zGLb6R48sojs/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcWtTQzk5NXpSRnRnV2pwNm1YdW03TTVlTm1VX2dfaVgxM0lBMkdtZ1ctay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVXhGWkVac1JHNWtibEIyUkdkbmMwY3RjSEp2Wm1sc1pTMDFhV1JuU0RSWlIwTnZMVlJhVlV4UFZVUmZVRVpRTG1wd1p3LmpwZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Charity",
+                "eventDescription": "One registered charity in the dataset.",
+                "eventPriceUsd": 0.003
+              }
+            }
+          },
+          "startedAt": "2026-10-29T21:10:06.000Z",
+          "createdAt": "2026-10-29T21:10:07.027Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "H8sTkb8XVc8O2wpNf",
+        "url": "https://apify.com/loudtzu/cra-charities"
+      },
+      {
+        "title": "Canadian Charities with Financials (CRA T3010)",
+        "name": "canada-charity-register",
+        "username": "tapedawn",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 49,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-17T00:20:33.440Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 2,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Every Canadian registered charity that filed a T3010 return, with revenue, donations, government funding, expenses, assets, staff, and website. Filter by category, province, city, designation, or revenue.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ed Tan",
+        "userPictureUrl": "https://images.apifyusercontent.com/dP0C3hJ_VHMWcKx9HYE5aCaNrYyLwg71K_gcruPleuA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSEIydzZQNU5CVkpWdkFiT2dETndKTnotSGdjbDZDdWxaVmZxa3lObzAzRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TTBNelUxTWpnMlAzWTlOQQ.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "charity": {
+                "eventTitle": "Charity record",
+                "eventDescription": "Charity record",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-26T06:01:56.885Z",
+          "startedAt": "2026-09-26T06:01:56.885Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-26T06:05:41.152Z"
+        },
+        "id": "vCTWv7uvUA8bJrhuk",
+        "url": "https://apify.com/tapedawn/canada-charity-register"
+      },
+      {
+        "title": "New Businesses Without a Website (State Registry Leads)",
+        "name": "new-business-no-website",
+        "username": "dennydevelops",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 19,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-17T01:32:33.896Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 14,
+            "TIMED-OUT": 0,
+            "TOTAL": 14
+          }
+        },
+        "description": "Businesses registered in the last days (official state registries) whose obvious .com domains aren't taken: prime leads for web designers, agencies and local marketers. Official data, no scraping, no personal data.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Musedenny",
+        "userPictureUrl": "https://images.apifyusercontent.com/9szIsATjlVzK2kp8N64LK19y6--Ob-GzxzoPqi2nlVU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSmtfaFRpWTJ3eVg5YnpUeXV4NzY3ZlNCdVhXbTV0OGFBeHhhYllaR1ludy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSEpFWHpKb1lYQlZaRm80WWpsbVlUaDVkRzlWWlRNMWJXVkdXREpMU2tRM00wOUlOVEkxVkZGQ2QzVXlSbkpSUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.001
+              },
+              "lead": {
+                "eventTitle": "Lead",
+                "eventDescription": "One new business returned (by default only those that likely have no website).",
+                "eventPriceUsd": 0.003
+              },
+              "business-checked": {
+                "eventTitle": "Business checked",
+                "eventDescription": "One new business whose .com candidates were looked up, lead or not.",
+                "eventPriceUsd": 0.0005
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.005,
+          "isPPEPlatformUsagePaidByUser": true,
+          "createdAt": "2026-11-01T21:32:10.147Z",
+          "startedAt": "2026-11-01T21:32:10.147Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "FTcZKgQ8amVRBNW7l",
+        "url": "https://apify.com/dennydevelops/new-business-no-website"
+      },
+      {
+        "title": "No Website Leads Scraper & API: New Businesses Without Website",
+        "name": "no-website-leads",
+        "username": "euroscrape",
+        "stats": {
+          "totalBuilds": 61,
+          "totalRuns": 210,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-11-17T08:03:49.259Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "New companies CSV, new companies JSON: newly incorporated companies, newly formed companies, newly registered companies without website (UK Companies House), new companies France. Web agency leads, web agency prospects, US new business leads, New York, Colorado, Oregon, Connecticut business leads.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/OdVBXNZkMsG2xdWKoSawAKPZtzOANdoJ5I6WOKIrgf4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQkVXb2FlclFXbDduV05HQnAtYWN0b3ItM1U3MDFWOEQ0akMxcHdlcVYtVkxoZFBnZDZDOC1uby13ZWJzaXRlLWxlYWRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "EuroScrape",
+        "userPictureUrl": "https://images.apifyusercontent.com/Je0-nu8zLg19YixXF1yZ0KIfQ04uA-Czi8dix2oOnPE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUklja0Y5V1ZNRWVZTWtwY2kwcWhFM1ZQZHNIb0lSdF93Wnc3a2R6WFpEQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRa1ZYYjJGbGNsRlhiRGR1VjA1SFFuQXRjSEp2Wm1sc1pTMURXa2xqTkU1alptWkhMWEJ5YjJacGJDMWxkWEp2YzJOeVlYQmxMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.003
+              },
+              "lead": {
+                "eventTitle": "No-website lead",
+                "eventDescription": "A newly registered company with no website at its name: name, activity, address, registration date, and the domain check (with the creation date of the domain when one exists). Companies that are skipped, undecided or already have a website are free.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0035
+                  }
+                }
+              },
+              "company": {
+                "eventTitle": "New company with a website, or undecided",
+                "eventDescription": "Only with \"All new companies\": a new company that already has a website (with the emails and phones found on it), or where a site at its name could not be attributed to it.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-10-04T05:03:07.395Z",
+          "createdAt": "2026-10-04T05:03:07.797Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-04T05:05:49.786Z"
+        },
+        "id": "3U701V8D4jC1pweqV",
+        "url": "https://apify.com/euroscrape/no-website-leads"
+      },
+      {
+        "title": "Federal Register SDN / Sanctions Watch",
+        "name": "public-debarment-sanctions-lite-monitor",
+        "username": "zentrafoundry",
+        "stats": {
+          "totalBuilds": 70,
+          "totalRuns": 187,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-11-16T15:50:32.223Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Federal Register docs matching Specially Designated Nationals. Not the 29MB OFAC XML dump. $0.02.",
+        "categories": [
+          "NEWS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Zentra",
+        "userPictureUrl": "https://images.apifyusercontent.com/xhZGAd3ceXm8pLfppQSITi5l6p7MhYejQ_cvpwjNi_A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTGwxb0d0Znc5cXZyQUFmSm0wVEoycVFFa25weUJWT3hlZFdWbHVVVnJORS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaSEpTVVZveFNIRmhWMDVIVEZkNldEVXRjSEp2Wm1sc1pTMTRPSGhLU1dGRFYwbGxMWHBsYm5SeVlWOXBZMjl1WDI5dWJIa3VVRTVITG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Unstack PPE to $0.02 / FR document",
+          "minimalMaxTotalChargeUsd": 0.5,
+          "startedAt": "2026-10-01T17:06:22.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-delivered": {
+                "eventTitle": "Result delivered",
+                "eventDescription": "$0.02 / FR document",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-16T17:06:28.312Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-16T17:06:49.951Z",
+          "notifiedAboutChangeAt": "2026-10-01T17:35:57.261Z"
+        },
+        "id": "jeGSO7L9nvakWmMgJ",
+        "url": "https://apify.com/zentrafoundry/public-debarment-sanctions-lite-monitor"
+      },
+      {
+        "title": "UK Companies House Scraper",
+        "name": "uk-companies-house-scraper",
+        "username": "santamaria-automations",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 26,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-16T11:04:34.982Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 20,
+            "TIMED-OUT": 0,
+            "TOTAL": 20
+          }
+        },
+        "description": "Search UK Companies House for company records. Returns company name, number, type, status, registered address, and current and resigned officers. Pay per delivered company.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/yXMOANlNLIMkCNdkVfVk77tMseQ401VmWyiVwFakZ9o/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSlBUdXNDcmFZcGFic2pEWHEtYWN0b3IteDVGRllpZkdEcFpLMXF5MFktbWtHWXh3dllCSi1pY29uLXVrLWNvbXBhbmllcy1ob3VzZS1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NanoScrape",
+        "userPictureUrl": "https://images.apifyusercontent.com/7aoyvDSYVKjMBDKkOZ5CweA9eg0v0pvmfmOcxCsBHxE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTmpRYW1hMjd4cDNUdlVEeXZwWUNteV9scWFpcWJ2QmVmakJfdkFSMEg0TS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTbEJVZFhORGNtRlpjR0ZpYzJwRVdIRXRjSEp2Wm1sc1pTMTRkRUZ0T1dGRFNFcDVMWGx2ZFhSMVltVXRZWFpoZEdGeUxUZ3dNQzV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor run started",
+                "eventDescription": "Charged once per run, after the first company is delivered",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              },
+              "uk-company-result": {
+                "eventTitle": "Company delivered",
+                "eventDescription": "One UK company record from the public register search",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              },
+              "uk-company-officers-enriched": {
+                "eventTitle": "Officers added",
+                "eventDescription": "Current officers added to a company (when includeOfficers is on)",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              }
+            }
+          },
+          "createdAt": "2026-10-26T08:38:05.126Z",
+          "startedAt": "2026-10-26T08:38:05.126Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "x5FFYifGDpZK1qy0Y",
+        "url": "https://apify.com/santamaria-automations/uk-companies-house-scraper"
+      },
+      {
+        "title": "UK Company Officer Changes: Director & PSC Alerts",
+        "name": "uk-company-officer-changes",
+        "username": "offerastudio",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 42,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-16T12:56:36.134Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 1,
+            "TOTAL": 28
+          }
+        },
+        "description": "Watch up to 2,000 UK companies for director appointments and resignations, PSC (owner) changes, registered office, status and filing changes from the official Companies House API. First run saves a baseline, later runs return only changes. For KYC, AML and credit monitoring.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/hr31Rv0U_vxGgsSO0SlMp5nEXNGThDf87J16a19C_Ak/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWXJIdXhrVDVJM0dPalM2amUtYWN0b3ItZ2Y3WENDbVpDVEM4MzlkbXQtTjJFV1V2bWN6MC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SiteCheck Tools",
+        "userPictureUrl": "https://images.apifyusercontent.com/RRx576zeNI5HvYs5IQX2ZZB3FZmQkQ8Qv7xB_GxAXSA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZ05zLTkxS093NE15VXRXWVUydmVUNWI0T0hZSHV4cmFrMUk1MzlvX041NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZXWEpJZFhoclZEVkpNMGRQYWxNMmFtVXRjSEp2Wm1sc1pTMVdiR0ZPZEZKbVIwMVFMWE5wZEdWamFHVmpheTFzYjJkdkxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-checked": {
+                "eventTitle": "Company checked",
+                "eventDescription": "One UK company checked on Companies House (profile, officers, persons with significant control and filings read and compared with the last run). Charged whether or not it changed. Companies that do not exist or cannot be checked, info rows and sample data are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-07T11:41:51.726Z",
+          "startedAt": "2026-10-07T11:41:51.726Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "gf7XCCmZCTC839dmt",
+        "url": "https://apify.com/offerastudio/uk-company-officer-changes"
+      }
+    ]
+  }
+}

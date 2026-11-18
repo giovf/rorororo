@@ -1,0 +1,876 @@
+{
+  "data": {
+    "total": 973,
+    "count": 15,
+    "offset": 0,
+    "limit": 15,
+    "desc": false,
+    "items": [
+      {
+        "title": "Traffic Generator (Youtube, Web, Etsy, Behance and many more!)",
+        "name": "traffic-generator",
+        "username": "epctex",
+        "stats": {
+          "totalBuilds": 2054,
+          "totalRuns": 214917,
+          "totalUsers": 45970,
+          "totalUsers7Days": 190,
+          "totalUsers30Days": 404,
+          "totalUsers90Days": 493,
+          "lastRunStartedAt": "2026-11-17T10:20:02.866Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 1836,
+            "FAILED": 1261,
+            "SUCCEEDED": 9288,
+            "TIMED-OUT": 8674,
+            "TOTAL": 21059
+          },
+          "actorReviewCount": 25,
+          "actorReviewRating": 4.251264602894786,
+          "bookmarkCount": 368
+        },
+        "description": "Maximize your website's performance and visibility with our Traffic Generator. Drive targeted traffic, simulate page views, and stress-test against potential threats. With the power to generate millions of visits, it's the ultimate solution for boosting your online presence.",
+        "categories": [
+          "AUTOMATION",
+          "SEO_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/8tx-C6VzduVIxVPIVZrk7-qvfjC0ObQSi5sDOlLiezs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMuYW1hem9uYXdzLmNvbS84RXJHRDYwM2xraUNDZFdVdy9tc29YMkdyNWliSzlObmhxUy1pc3RvY2twaG90by0xMTQxOTQxMDI2LTYxMng2MTIuanBn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 368,
+        "actorReviewRating": 4.251264602894786,
+        "actorReviewCount": 25,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "epctex",
+        "userPictureUrl": "https://images.apifyusercontent.com/8mPoO24sM5-ntL8gkoqmL7u3aUNKuBebtvTVMQstXxM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vd3ZxTW02YUlwVDdvay00NFN6N1M2RElGVnhKbHZwTXhwQVhGdklmeENscy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11WVcxaGVtOXVZWGR6TG1OdmJTOHpjV2hCWTFNeldsSktTelJoTjNWT1J5OW9jelpyTlhvMmFrTk5Oa3BIWTNVMFFpMXpjWFZoY21VdFlteGhZMnN1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Hello! Apify is deprecating rental pricing, so we're switching this actor to pay-per-event in 15 days. You'll pay per result, plus a very small actor start fee. This helps us keep the actor stable and continuously improve it.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0009,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-01T20:37:16.026Z",
+          "createdAt": "2026-09-17T20:37:16.428Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutRentalToPpePriceChangeAt": "2026-09-17T20:37:36.791Z",
+          "notifiedAboutFutureChangeAt": "2026-09-17T20:38:10.013Z",
+          "notifiedAboutChangeAt": "2026-10-01T21:05:58.788Z"
+        },
+        "id": "8ErGD603lkiCCdWUw",
+        "url": "https://apify.com/epctex/traffic-generator"
+      },
+      {
+        "title": "Businesses Without Websites Leads Scraper (Google Maps)",
+        "name": "businesses-without-websites-leads-scraper-google-maps",
+        "username": "xmiso_scrapers",
+        "stats": {
+          "totalBuilds": 32,
+          "totalRuns": 5712,
+          "totalUsers": 1783,
+          "totalUsers7Days": 11,
+          "totalUsers30Days": 51,
+          "totalUsers90Days": 153,
+          "lastRunStartedAt": "2026-11-16T20:18:11.210Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 1,
+            "SUCCEEDED": 341,
+            "TIMED-OUT": 0,
+            "TOTAL": 343
+          },
+          "actorReviewCount": 9,
+          "actorReviewRating": 4.974383031334667,
+          "bookmarkCount": 53
+        },
+        "description": "Get unique leads of various businesses which don't seem to have their own website yet. Offer them web related services, SEO, design  etc. This is list of potential candidates, not guaranteed for 100% accuracy",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "SEO_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/R0gPEJy0aRUxX7rlGSn3TqGTk7Rg-iirK2_x33WBG9o/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMWNWb2xkVFd5bGdHcHVaVGgtYWN0b3ItQ3ZIdUZzQmJhZEMxTElnTTUtTDhhS1JhQVd1NC1ub193ZWJzaXRlLmpwZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 53,
+        "actorReviewRating": 4.974383031334666,
+        "actorReviewCount": 9,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Miso",
+        "userPictureUrl": "https://images.apifyusercontent.com/ge22f03Lz1HsxWvof7qtQEUwXqj8EvED_LVq438M15U/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSDV3UWhCWEkwTldjZlJ1WFh2ZG0zVXB2ZzEzYzlqaExDMGhjR29LdEh2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMW93VkhSeWQyVnNhRkphU0hwSE5sWnpRa0ZFUmtkWlVsaEtja3BGVWxCaU1tMWxjSGRuTkZJMlRqZFhiR2gz.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "createdAt": "2026-02-26T08:01:10.793Z",
+          "startedAt": "2026-02-26T08:01:10.793Z",
+          "apifyMarginPercentage": 0.2,
+          "isPriceChangeNotificationSuppressed": true,
+          "reasonForChange": "Migration from Pay Per Result to Pay Per Event with apify-default-dataset-item event",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0099
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0079
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005900000000000001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.004900000000000001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.004900000000000001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004900000000000001
+                  }
+                }
+              }
+            }
+          },
+          "forceContainsSignificantPriceChange": false
+        },
+        "id": "CvHuFsBbadC1LIgM5",
+        "url": "https://apify.com/xmiso_scrapers/businesses-without-websites-leads-scraper-google-maps"
+      },
+      {
+        "title": "OSINT Scraper",
+        "name": "osint-scraper",
+        "username": "epctex",
+        "stats": {
+          "totalBuilds": 1923,
+          "totalRuns": 5042,
+          "totalUsers": 1476,
+          "totalUsers7Days": 5,
+          "totalUsers30Days": 20,
+          "totalUsers90Days": 56,
+          "lastRunStartedAt": "2026-11-16T23:58:38.024Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 34,
+            "FAILED": 3,
+            "SUCCEEDED": 22,
+            "TIMED-OUT": 19,
+            "TOTAL": 78
+          },
+          "actorReviewCount": 7,
+          "actorReviewRating": 5.000000000000001,
+          "bookmarkCount": 44
+        },
+        "description": "Harness the power of OSINT data with our advanced OSINT Scraper. Discover keywords and leaked information from platforms like Ideone, Dumpz, Github Gist, Pastebin, Pasteorg and Textbin. You can specify search terms, customize and retrieve OSINT data out of the box.",
+        "categories": [
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9dbDTB62-Cur8PuxdYTGI_qnqNJIU6TwIMuVqe7IJLQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMuYW1hem9uYXdzLmNvbS9MakF1cHdoVWVyVkJPcmVsMS9FNHhjWUFHcnFRWmhidTM0dS0wMC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 45,
+        "actorReviewRating": 5,
+        "actorReviewCount": 7,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "epctex",
+        "userPictureUrl": "https://images.apifyusercontent.com/8mPoO24sM5-ntL8gkoqmL7u3aUNKuBebtvTVMQstXxM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vd3ZxTW02YUlwVDdvay00NFN6N1M2RElGVnhKbHZwTXhwQVhGdklmeENscy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11WVcxaGVtOXVZWGR6TG1OdmJTOHpjV2hCWTFNeldsSktTelJoTjNWT1J5OW9jelpyTlhvMmFrTk5Oa3BIWTNVMFFpMXpjWFZoY21VdFlteGhZMnN1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Hello! Apify is deprecating rental pricing, so we're switching this actor to pay-per-event in 15 days. You'll pay per result, plus a very small actor start fee. This helps us keep the actor stable and continuously improve it.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0036,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-01T20:33:14.132Z",
+          "createdAt": "2026-09-17T20:33:14.549Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutRentalToPpePriceChangeAt": "2026-09-17T20:33:34.978Z",
+          "notifiedAboutFutureChangeAt": "2026-09-17T20:33:36.398Z",
+          "notifiedAboutChangeAt": "2026-10-01T20:36:02.835Z"
+        },
+        "id": "LjAupwhUerVBOrel1",
+        "url": "https://apify.com/epctex/osint-scraper"
+      },
+      {
+        "title": "Apartments.com Scraper 🏡",
+        "name": "apartments-scraper",
+        "username": "epctex",
+        "stats": {
+          "totalBuilds": 2129,
+          "totalRuns": 4476188,
+          "totalUsers": 1035,
+          "totalUsers7Days": 10,
+          "totalUsers30Days": 15,
+          "totalUsers90Days": 25,
+          "lastRunStartedAt": "2026-11-17T05:13:01.406Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 311,
+            "TIMED-OUT": 0,
+            "TOTAL": 311
+          },
+          "actorReviewCount": 11,
+          "actorReviewRating": 5.000000000000001,
+          "bookmarkCount": 38
+        },
+        "description": "Scrape Apartments.com to crawl millions of real estate properties nationwide. Specify any US location and extract data on all available properties in that area. Our real estate scraper lets you filter and limit the results by page or total number. You can also target a specific property or area.",
+        "categories": [
+          "TRAVEL",
+          "REAL_ESTATE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/LDkIC2dZ2n5FyEB6I6gHqT17-fX9Cpv-iHXOVmisMHA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMuYW1hem9uYXdzLmNvbS8wbUZvT0dGdzdLNGhwMXYwZi9nY2c0ZE5RU3BXSDk5NldLaC11bm5hbWVkLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 38,
+        "actorReviewRating": 4.999999999999999,
+        "actorReviewCount": 11,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "epctex",
+        "userPictureUrl": "https://images.apifyusercontent.com/8mPoO24sM5-ntL8gkoqmL7u3aUNKuBebtvTVMQstXxM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vd3ZxTW02YUlwVDdvay00NFN6N1M2RElGVnhKbHZwTXhwQVhGdklmeENscy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11WVcxaGVtOXVZWGR6TG1OdmJTOHpjV2hCWTFNeldsSktTelJoTjNWT1J5OW9jelpyTlhvMmFrTk5Oa3BIWTNVMFFpMXpjWFZoY21VdFlteGhZMnN1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-10-02T12:08:07.809Z",
+          "startedAt": "2026-10-02T12:08:07.809Z",
+          "apifyMarginPercentage": 0,
+          "forceContainsSignificantPriceChange": false,
+          "reasonForChange": "[Automatic migration]: This Actor was automatically switched to pay-per-usage during the rental sunset.",
+          "notifiedAboutChangeAt": "2026-10-02T12:36:05.140Z"
+        },
+        "id": "0mFoOGFw7K4hp1v0f",
+        "url": "https://apify.com/epctex/apartments-scraper"
+      },
+      {
+        "title": "Google Search Scraper ($0.35/1000 results)",
+        "name": "google-search-scraper",
+        "username": "api-ninja",
+        "stats": {
+          "totalBuilds": 38,
+          "totalRuns": 19658,
+          "totalUsers": 458,
+          "totalUsers7Days": 5,
+          "totalUsers30Days": 20,
+          "totalUsers90Days": 137,
+          "lastRunStartedAt": "2026-11-16T19:44:33.859Z",
+          "actorReviewCount": 6,
+          "actorReviewRating": 4.548829865514901,
+          "bookmarkCount": 17,
+          "publicActorRunStats30Days": {
+            "ABORTED": 5,
+            "FAILED": 8,
+            "SUCCEEDED": 174,
+            "TIMED-OUT": 1,
+            "TOTAL": 188
+          }
+        },
+        "description": "Extract structured Google results across Search, Images, Videos, Places, Maps, News, Shopping, Scholar, Autocomplete, and Patents. Supports query/category batching, localization, pagination, retries, and clean dataset output.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "SEO_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Hgy69mCLyudNVB77Z-6LrjUFoKatpUXTcmxtjnbIQ4s/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdGNwSkhHUW82Y0g5cDZDZ2EtYWN0b3ItWWRuNG1hRmhDVzFMU1M5WTctU1hHeEVsWFo3ei1Hb29nbGVfU2VhcmNoX0ljb25fJTI4MiUyOS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 17,
+        "actorReviewRating": 4.5488298655149,
+        "actorReviewCount": 6,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "API ninja",
+        "userPictureUrl": "https://images.apifyusercontent.com/A0R7_M3xFqGrFUNDPvzk-2Nz0VzV874RRVYWu3CJixo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWllqWDZobUs0N0t1M2Z6Tkd6eUtucGVRbVJUSEJxMXJTZjhDbU5aSnVrQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkR053U2toSFVXODJZMGc1Y0RaRFoyRXRjSEp2Wm1sc1pTMWpjVWRsUm5OT2MyNDFMVU4xZEdWZlRtbHVhbUZmVEdGd2RHOXdYMGxqYjI1ZlRHRnlaMlV1YW5CbFp3LmpwZWc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": 0.1,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00035
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00035
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00035
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00035
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00035
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-08-31T09:29:00.547Z",
+          "createdAt": "2026-08-31T09:29:00.886Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-31T09:36:00.915Z"
+        },
+        "id": "Ydn4maFhCW1LSS9Y7",
+        "url": "https://apify.com/api-ninja/google-search-scraper"
+      },
+      {
+        "title": "Instagram Reels Scraper from any keyword - No Login - No cookie",
+        "name": "instagram-search-reels",
+        "username": "patient_discovery",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 276355,
+          "totalUsers": 3523,
+          "totalUsers7Days": 176,
+          "totalUsers30Days": 455,
+          "totalUsers90Days": 917,
+          "lastRunStartedAt": "2026-11-17T10:19:30.898Z",
+          "actorReviewCount": 4,
+          "actorReviewRating": 4.17278515039664,
+          "bookmarkCount": 16,
+          "publicActorRunStats30Days": {
+            "ABORTED": 39,
+            "FAILED": 1,
+            "SUCCEEDED": 73952,
+            "TIMED-OUT": 68,
+            "TOTAL": 74060
+          }
+        },
+        "description": "The Instagram Reels Keyword Scraper is a no cookie data extraction tool. It retrieves rich metadata from Reels based on keyword searches, including engagement metrics, creator profiles, and audio details. It delivers structured JSON/CSV data perfect for discovering trending content seamlessly.",
+        "categories": [
+          "SOCIAL_MEDIA",
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/RMmg-CtINvoJvxIYFtIRCYVe-Hwl-CO_PyzaA_DydZ8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNmI0ODhCTTYzd000RzlnY2UtYWN0b3ItVHhVMFpCUUlIZFIyMGRyOUMtenFiOVhpMXhNTS1JbWFnZV9EZWNlbWJlcl8xNV8yMDI1XzdfMjBfQU1fJTI4MSUyOS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 16,
+        "actorReviewRating": 4.172785150396639,
+        "actorReviewCount": 4,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Surge Street",
+        "userPictureUrl": "https://images.apifyusercontent.com/2lnW9C7sLKEUK03JqkOqD903EXRfFtPO-uFGyV5ICH4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQUFKMkh3LTNvT00yR3hDbUJFeXRMVTdRMExZTUltdThJMWhHSWV2MXFJOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZObUkwT0RoQ1RUWXpkMDAwUnpsblkyVXRjSEp2Wm1sc1pTMXJiRGR3Vm14clZVSlRMVU5zWldGdVUyaHZkRjh5TURJMkxUQXlMVEkzWDJGMFh6RXpMakU0TGpJeFh6SjRMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.002
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00217
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00183
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2025-12-19T10:52:07.296Z",
+          "createdAt": "2025-12-19T10:52:07.791Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "TxU0ZBQIHdR20dr9C",
+        "url": "https://apify.com/patient_discovery/instagram-search-reels"
+      },
+      {
+        "title": "Comments Analyzer Agent",
+        "name": "comments-analyzer-agent",
+        "username": "apify",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 3523,
+          "totalUsers": 365,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 13,
+          "lastRunStartedAt": "2026-11-17T02:37:01.092Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 28,
+            "SUCCEEDED": 108,
+            "TIMED-OUT": 1,
+            "TOTAL": 138
+          },
+          "actorReviewCount": 2,
+          "actorReviewRating": 5.000000000000001,
+          "bookmarkCount": 14
+        },
+        "description": "Prevent PR disasters with AI sentiment analysis. Monitor comments across TikTok, YouTube, and Instagram to detect negative sentiment, toxic content, and potential crises before they escalate. Automate your workflow and send a message when something needs your immediate attention.",
+        "categories": [
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/wy1yQLtNFMKHm5siZgwI_A6offffZUvk4XiQE-mU8us/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWnNjTXdGUjVIN2VDdFd0eWgtYWN0b3ItTDhGTWRpS3BoVU9KTXg5dnAteW5vYUthRmUwNi1QUl9jcmlzaXMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 14,
+        "actorReviewRating": 5,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Apify",
+        "userPictureUrl": "https://images.apifyusercontent.com/W831qifiDbg1ltpsHQIGyWH55ztmmv7T4EILHVqoFU4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSTdzZWx3YUVOam9GRG9Td3J3ODFQYXc2SEpXSjJRZk0tNzhMa1ZxcEtEQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZXbk5qVFhkR1VqVklOMlZEZEZkMGVXZ3RjSEp2Wm1sc1pTMVBiamhzU0U1bGJrSnZMV0Z3YVdaNUxYTjViV0p2YkMxamIyeHZjbk10YldGeVoybHVMbk4yWnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": null,
+          "reasonForChange": "You're already paying for the run on the other Actors, no need to pay an Actor Start extra.",
+          "startedAt": "2025-12-12T14:48:16.860Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "comment": {
+                "eventTitle": "Comment",
+                "eventDescription": "Comnent",
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2025-12-12T14:48:16.860Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2025-06-17T07:35:17.346Z"
+        },
+        "id": "L8FMdiKphUOJMx9vp",
+        "url": "https://apify.com/apify/comments-analyzer-agent"
+      },
+      {
+        "title": "Workday Jobs",
+        "name": "myworkdayjobs",
+        "username": "gooyer.co",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 363657,
+          "totalUsers": 263,
+          "totalUsers7Days": 10,
+          "totalUsers30Days": 14,
+          "totalUsers90Days": 18,
+          "lastRunStartedAt": "2026-11-17T08:51:01.531Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 4708,
+            "TIMED-OUT": 1,
+            "TOTAL": 4710
+          },
+          "actorReviewCount": 3,
+          "actorReviewRating": 4.806403466788049,
+          "bookmarkCount": 13
+        },
+        "description": "Unlock the potential of the Workday Jobs landscape with our advanced scraper, designed to meticulously gather detailed job listings from Workday platforms. Ideal for data analytics and project enrichment, it navigates through search results to fetch exhaustive job details efficiently.",
+        "categories": [
+          "JOBS",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ZhE84HyLxOK0N_37llz3G95r_OIqD9Y6D9KbSyWvi5o/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20va21hOThoUzY3cUJrUEM2dWIvSGNGYnpuSHl3RUhEck1ua1AtNjJjNmM5NTBlZWU5NDEwZmUxMzdkOTNlLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 13,
+        "actorReviewRating": 4.80640346678805,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Gooyer",
+        "userPictureUrl": "https://images.apifyusercontent.com/Yd7AV3hX8fOdUQE7JUXTM86TXZ1usPADie5TJzy0T5g/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNW5heDBtWkVKNXM3cVJYNjA3aEdGcGJwSjVlMkZ6bUUtaGI3VVJTVm9VYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZURWROWkRKbk9WSjNVM1ZwV1RaNWVHWXZTbmhPVUZoVE9EWm5jV2xOWW1wbFdHUXRkMlZpWTJ4cGNDNVFUa2M.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-10-06T09:22:00.858Z",
+          "startedAt": "2026-10-06T09:22:00.858Z",
+          "apifyMarginPercentage": 0,
+          "forceContainsSignificantPriceChange": false,
+          "reasonForChange": "[Automatic migration]: This Actor was automatically switched to pay-per-usage during the rental sunset.",
+          "notifiedAboutChangeAt": "2026-10-06T09:30:33.086Z"
+        },
+        "id": "kma98hS67qBkPC6ub",
+        "url": "https://apify.com/gooyer.co/myworkdayjobs"
+      },
+      {
+        "title": "Discord Message Scraper",
+        "name": "discord-scraper",
+        "username": "louisdeconinck",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 63468,
+          "totalUsers": 192,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-11-17T10:00:13.915Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1425,
+            "TIMED-OUT": 0,
+            "TOTAL": 1425
+          },
+          "actorReviewCount": 2,
+          "actorReviewRating": 4.999999999999999,
+          "bookmarkCount": 13
+        },
+        "description": "Effortlessly extract and analyze complete message histories from channels and DMs. Gain insights into community engagement, track communication patterns, and export valuable content—all in a clean, structured JSON format. Unlock the full potential of your Discord data with our advanced scraper!",
+        "categories": [
+          "SOCIAL_MEDIA",
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Nq3SdlH5JSa2ggLIiQ6wLHt_U5CVW5Y3VuIVKj9KULM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaWpMcmgweERXWTJJZmRjYWsvM3lsZEdRV3l4MVRCZGpKVGgtUFJ5d1VYY3FnMHY1REQ2czdDM0x5US5qcGVn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 13,
+        "actorReviewRating": 5,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Louis Deconinck",
+        "userPictureUrl": "https://images.apifyusercontent.com/auQnpdSJPT7qtggdEAxxuvOELkme0mwPRyvLBALu5WI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWjVSZEJyTTJVZjVQRnk5X0pfdUZtMENHczQ0cW14OEFDcWZCSWx0VlNhYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVWa1JsUndOMHBLUlhOVFptbFNTazVZZVMxcmJFcEZibXhOUmtGbE5XeFhjWE5IVUU0dGRVUTRiVEZXVVE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-10-06T09:22:01.117Z",
+          "startedAt": "2026-10-06T09:22:01.117Z",
+          "apifyMarginPercentage": 0,
+          "forceContainsSignificantPriceChange": false,
+          "reasonForChange": "[Automatic migration]: This Actor was automatically switched to pay-per-usage during the rental sunset.",
+          "notifiedAboutChangeAt": "2026-10-06T09:30:34.373Z"
+        },
+        "id": "ijLrh0xDWY2Ifdcak",
+        "url": "https://apify.com/louisdeconinck/discord-scraper"
+      },
+      {
+        "title": "Airbnb Advanced Scraper",
+        "name": "airbnb",
+        "username": "gooyer.co",
+        "stats": {
+          "totalBuilds": 16,
+          "totalRuns": 6562,
+          "totalUsers": 314,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 10,
+          "lastRunStartedAt": "2026-11-17T03:30:43.995Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 113,
+            "TIMED-OUT": 0,
+            "TOTAL": 113
+          },
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 11
+        },
+        "description": "Unlock the full potential of Airbnb data with our advanced scraper on Apify. Dive deep into listings and experiences, effortlessly collecting detailed insights to empower your market analysis or project. Try now!\"",
+        "categories": [
+          "TRAVEL"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/dhMkbSeLVRpkZHjnPnGDZX2eEUS-b4AqWOlDpCwZhYQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSUpieTQzV1lPUG5yYzZkVnQvT0JReWlYdFJPOHZtYllsMHItYWlyYm5iX3RpbGVfbG9nb19pY29uXzE2ODY4MC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 11,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Gooyer",
+        "userPictureUrl": "https://images.apifyusercontent.com/Yd7AV3hX8fOdUQE7JUXTM86TXZ1usPADie5TJzy0T5g/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNW5heDBtWkVKNXM3cVJYNjA3aEdGcGJwSjVlMkZ6bUUtaGI3VVJTVm9VYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZURWROWkRKbk9WSjNVM1ZwV1RaNWVHWXZTbmhPVUZoVE9EWm5jV2xOWW1wbFdHUXRkMlZpWTJ4cGNDNVFUa2M.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.02
+              },
+              "stays-search-item": {
+                "eventTitle": "Stay Search Result",
+                "eventDescription": "er listing returned from a stays search results page.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              },
+              "stays-pdp-item": {
+                "eventTitle": "Stay Detail",
+                "eventDescription": "Full detail page scraped for a single stay listing (title, price, amenities, host info, etc.).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.006
+              },
+              "stays-pdp-reviews": {
+                "eventTitle": "Stay Reviews",
+                "eventDescription": "Per batch of reviews scraped from a stay's detail page.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003
+              },
+              "stays-pdp-calendar": {
+                "eventTitle": "Stay Calendar",
+                "eventDescription": "Availability calendar scraped for a single stay listing.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              },
+              "stays-pdp-similar": {
+                "eventTitle": "Similar Stays",
+                "eventDescription": "Similar/recommended listings scraped from a stay's detail page.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              },
+              "experiences-search-item": {
+                "eventTitle": "Experience Search Result",
+                "eventDescription": "Per listing returned from an experiences search results page.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015
+              },
+              "experiences-pdp-item": {
+                "eventTitle": "Experience Detail",
+                "eventDescription": "Full detail page scraped for a single experience (description, price, host, availability, etc.).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.008
+              },
+              "experiences-pdp-reviews": {
+                "eventTitle": "Experience Reviews",
+                "eventDescription": "Per batch of reviews scraped from an experience's detail page.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015
+              },
+              "services-search-item": {
+                "eventTitle": "Service Search Result",
+                "eventDescription": "Per listing returned from a services search results page.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015
+              },
+              "services-pdp-item": {
+                "eventTitle": "Service Detail",
+                "eventDescription": "Full detail page scraped for a single service listing.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.008
+              },
+              "services-pdp-reviews": {
+                "eventTitle": "Service Reviews",
+                "eventDescription": "Per batch of reviews scraped from a service's detail page.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015
+              }
+            }
+          },
+          "startedAt": "2026-05-06T00:06:46.751Z",
+          "createdAt": "2026-04-22T00:06:47.399Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-04-22T00:07:07.820Z"
+        },
+        "id": "IJby43WYOPnrc6dVt",
+        "url": "https://apify.com/gooyer.co/airbnb"
+      },
+      {
+        "title": "Amazon Seller Data Extractor",
+        "name": "amazon-seller-extractor",
+        "username": "pratikdani",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 271702,
+          "totalUsers": 393,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 14,
+          "lastRunStartedAt": "2026-11-16T16:34:37.319Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 95,
+            "TIMED-OUT": 0,
+            "TOTAL": 95
+          },
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 11
+        },
+        "description": "This actor efficiently scrapes Amazon seller data, including storefront details, ratings, product listings, and contact information. It helps analyze competition and identify potential partners on the Amazon marketplace.",
+        "categories": [
+          "ECOMMERCE",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/O5c7mpKJUb1lsLshaQXUCn_80n5EuV7TGQv4wJTiD1I/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZWh5QWJ0RXExWE9kbkVNVzQtYWN0b3ItRVhRZm52bmg0U1pIS0xIQ2stZ3l3M2lLb3Q2ZC1hbWF6b24tc2VsbGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 11,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Pratik Dani",
+        "userPictureUrl": "https://images.apifyusercontent.com/LN2ZfOhvFei-kA52ajrtuoOH_cB3NhyQssIdnRjKshM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vajRwTzhlb0tsSEpyX2pDUXRCQllYbEEwaC03Q29WUnRTRzhHSEQ3dWtyTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaV2g1UVdKMFJYRXhXRTlrYmtWTlZ6UXZNazlWUWxsV00xSnZTREJ5WkZnMldYa3RjR1ZsY0M1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Changing the pricing to pay per event as Apify is discontinuing subscribtion pricing.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.002
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-03-07T05:50:03.348Z",
+          "createdAt": "2026-02-21T05:50:03.913Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-02-21T05:50:24.536Z"
+        },
+        "id": "EXQfnvnh4SZHKLHCk",
+        "url": "https://apify.com/pratikdani/amazon-seller-extractor"
+      },
+      {
+        "title": "🔍 Long-Tail Keyword Discovery",
+        "name": "long-tail-keyword-discovery",
+        "username": "powerai",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 692,
+          "totalUsers": 102,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-11-17T02:06:29.615Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          },
+          "actorReviewCount": 1,
+          "actorReviewRating": 1,
+          "bookmarkCount": 10
+        },
+        "description": "Harness the power of AI to discover high-potential long-tail keywords for your SEO strategy. Get comprehensive keyword analysis with search volume, competition metrics, and ranking difficulty in multiple formats (PDF, HTML, Markdown).",
+        "categories": [
+          "AGENTS",
+          "AI",
+          "SEO_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/-6ONm86lCNI7xW58z_ZMPM8wtJF8IfklV8HldVOxONA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdEoyaURLT296VkNmM012MW8tYWN0b3ItUWNDZkF5a3BKT1VNb3doUnctOWF6MWZsNXB1Zi1MaW5laWNvbnNLZXl3b3JkUmVzZWFyY2hfJTI4MyUyOS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 10,
+        "actorReviewRating": 1,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "PowerAI",
+        "userPictureUrl": "https://images.apifyusercontent.com/URc_PKyDeazsn4EVB6Zx9Pw-bWG-gUaYykmKTTVCzf0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdzVEMjRab1VuMzV3R19abUJnWEtvdlZGQkw2SHB3dHIxRm5wblVQbzNSTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkRW95YVVSTFQyOTZWa05tTTAxMk1XOHRjSEp2Wm1sc1pTMVhRVzQxVmxRMmVrSllMVk5wYlhCc1pVbGpiMjV6UTI5a1pXMWhaMmxqWHlVeU9ERWxNamt1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": 0.5,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "per-result": {
+                "eventTitle": "Per success result",
+                "eventDescription": "Per success result",
+                "eventPriceUsd": 3.99,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2025-04-04T08:27:20.251Z",
+          "startedAt": "2025-04-04T08:27:20.251Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2025-04-04T08:35:19.896Z"
+        },
+        "id": "QcCfAykpJOUMowhRw",
+        "url": "https://apify.com/powerai/long-tail-keyword-discovery"
+      }
+    ]
+  }
+}

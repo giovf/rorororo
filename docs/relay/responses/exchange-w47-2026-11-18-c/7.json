@@ -1,0 +1,1234 @@
+{
+  "data": {
+    "total": 213,
+    "count": 12,
+    "offset": 0,
+    "limit": 12,
+    "desc": false,
+    "items": [
+      {
+        "title": "USPTO Trademark Search — Lookup, Availability & Data",
+        "name": "uspto-trademark-scraper",
+        "username": "sian.agency",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 338,
+          "totalUsers": 36,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 15,
+          "lastRunStartedAt": "2026-11-17T08:40:38.981Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 41,
+            "TIMED-OUT": 0,
+            "TOTAL": 41
+          }
+        },
+        "description": "Search and extract USPTO trademark data — keyword search, brand-name availability checks, owner and full-text search, serial-number lookups, class suggestions, and expiring-mark discovery. Seven operations, one clean dataset per run. No API key, no setup.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/07VabBipzQ9EZoJ42uH59tRrt32p30c52sDErRntHIc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vU0hhYnZOYkU3NlUxYVFhR2QtYWN0b3ItekhOcmFoYW85ZjZURHU2bk8tMldPQ2R4eEhJSi12YXJpYW50LTEuc3ZnLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SIÁN OÜ",
+        "userPictureUrl": "https://images.apifyusercontent.com/3-IKZ7tIOa05lY7MEtwSbfqDeQBl6ukkcNU3pSphMaY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaU1mYTktaWVrWlVUTHJKci1jcV9tcDFPdGRkU2lUXzEtZVc5MjJ5ek92NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVMGhoWW5aT1lrVTNObFV4WVZGaFIyUXRjSEp2Wm1sc1pTMTVlSFYyYWtwNVkyWmxMVFV1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-06-11T08:57:48.963Z",
+          "startedAt": "2026-06-11T08:57:45.014Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.005
+                  }
+                }
+              },
+              "trademark-record": {
+                "eventTitle": "Trademark Record",
+                "eventDescription": "Charged per trademark record returned from a keyword, owner, full-text, or expiring-marks search.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00225
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "trademark-detail": {
+                "eventTitle": "Trademark Detail",
+                "eventDescription": "Charged per full trademark record retrieved by serial number (owners, classification, status history).",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.06
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0175
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.015
+                  }
+                }
+              },
+              "availability-check": {
+                "eventTitle": "Availability Check",
+                "eventDescription": "Charged per brand-name availability result, including the available/unavailable class breakdown.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.06
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0175
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.015
+                  }
+                }
+              },
+              "class-suggestion": {
+                "eventTitle": "Class Suggestion",
+                "eventDescription": "Charged per Nice-class recommendation returned for a description or keyword.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0045
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              }
+            }
+          }
+        },
+        "id": "zHNrahao9f6TDu6nO",
+        "url": "https://apify.com/sian.agency/uspto-trademark-scraper"
+      },
+      {
+        "title": "USPTO Trademark Status Checker: Bulk TSDR Lookup",
+        "name": "uspto-trademark-checker",
+        "username": "sheshinmcfly",
+        "stats": {
+          "totalBuilds": 23,
+          "totalRuns": 301,
+          "totalUsers": 12,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "lastRunStartedAt": "2026-11-17T04:14:30.073Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Check US trademarks by serial number, registration number or TSDR link: status, owner, attorney, classes, goods and services, first-use dates, prosecution history and next renewal deadline. Check hundreds per run and track only what changed in your portfolio.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/iDa8xcK9oSW3iZpne1LKllQOcZWZJvhU0GzhEq_1RR4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaXl0em5mSFo5RHhTT2YwNGYtYWN0b3Itd1hmTFpFRE1hSjRJRUtWOXktbUwwRTEyVVUxOC11c3B0by10cmFkZW1hcmstY2hlY2tlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sheshinmcfly",
+        "userPictureUrl": "https://images.apifyusercontent.com/qQUMyY8Mgw6pto3cCL_3bjSmr1XX8c9KzkSn-8pEAig/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vM2xoaldPZWhZYVFCX1p4TXBHSG11OTN4Wm1CMHRXUC1iX1d5RTlsc3gzWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURWc1YjNCRlRXSkRXSGhYWWxJdGRGaDJPRkYxYlVkWWNFNTROMnQyYlUxbWVXNVdkV2N6ZVdZd2RESmlVM0JaTkQxek9UWXRZdw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-04-23T19:04:33.994Z",
+          "createdAt": "2026-04-23T19:04:34.432Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "wXfLZEDMaJ4IEKV9y",
+        "url": "https://apify.com/sheshinmcfly/uspto-trademark-checker"
+      },
+      {
+        "title": "Uspto Trademark Search Status Scraper",
+        "name": "uspto-trademark-search-status-scraper",
+        "username": "sian.agency",
+        "stats": {
+          "totalBuilds": 35,
+          "totalRuns": 215,
+          "totalUsers": 4,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-11-17T03:01:37.133Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 38,
+            "TIMED-OUT": 0,
+            "TOTAL": 38
+          }
+        },
+        "description": "Search the USPTO register by keyword, owner or class, and pull full TSDR dossiers by serial number: prosecution status and history, owners with addresses, attorneys, goods & services. No API key.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/4ayXZNFZNv5DbC9oR8lhRIHWz3LUgv6u_iX35C5tHcg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vU0hhYnZOYkU3NlUxYVFhR2QtYWN0b3ItaUNoY01wUzBiT0tPczJKaHMtNVNpa3l1TW9Tby1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SIÁN OÜ",
+        "userPictureUrl": "https://images.apifyusercontent.com/3-IKZ7tIOa05lY7MEtwSbfqDeQBl6ukkcNU3pSphMaY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaU1mYTktaWVrWlVUTHJKci1jcV9tcDFPdGRkU2lUXzEtZVc5MjJ5ek92NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVMGhoWW5aT1lrVTNObFV4WVZGaFIyUXRjSEp2Wm1sc1pTMTVlSFYyYWtwNVkyWmxMVFV1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-16T01:52:19.956Z",
+          "startedAt": "2026-08-16T01:52:19.682Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "search-result": {
+                "eventTitle": "Search result",
+                "eventDescription": "One trademark record returned by a search.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00282
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00264
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00249
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00234
+                  }
+                }
+              },
+              "dossier-result": {
+                "eventTitle": "Dossier",
+                "eventDescription": "One full TSDR trademark dossier: prosecution status, owners with addresses, attorney, correspondent, classes with dates, prosecution history.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.08
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0188
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0176
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0166
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0156
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004
+                  }
+                }
+              }
+            }
+          }
+        },
+        "id": "iChcMpS0bOKOs2Jhs",
+        "url": "https://apify.com/sian.agency/uspto-trademark-search-status-scraper"
+      },
+      {
+        "title": "EUIPO Trademarks Scraper — 100M+ Trademarks TMview",
+        "name": "euipo-trademarks-scraper",
+        "username": "rbbscrap",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 15,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "lastRunStartedAt": "2026-11-16T19:06:34.501Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 12,
+            "TIMED-OUT": 3,
+            "TOTAL": 15
+          }
+        },
+        "description": "Search 100M+ trademarks from EUIPO and 70 IP offices via TMview. Status, Nice classes, applicants, application dates on 256MB micro-container.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/W46xqMx0mdELvniepL1k43JZL5q7468CfGagL2rse2E/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veTBoNVhoNFpMWUw4ZDhZTzctYWN0b3ItWmhxMDA1aVByaWUwb2I2Z2ctZDZ2QzhLaFdERC1mYXN0LWV1aXBvLXRyYWRlbWFya3Mtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Hector",
+        "userPictureUrl": "https://images.apifyusercontent.com/cXzpUfremjp0EGCf6oyzzHHsHm6nB1F1JuEDhJbUNUE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZVJxNzVtOWFtUkJTcVNNNGR6c3B1QjF6NHoydFdRSEJSSHRnOTlZcTM3OC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbFJXVWpBNGFUQnNSQzF4V1dKbVVIZE9ZVTFWV0VOdVpUVllWV0pzWVdwTlRtNURiblpMT0Vad1kySXRWVVF6WTNr.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "5x cheaper than niche #1 ($1.74/1k vs $8.70/1k) + 1st run 100% free",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "trademark-result": {
+                "eventTitle": "Trademark result",
+                "eventDescription": "Charged per verified record extracted ($1.74 / 1,000 items — 5x cheaper than niche #1, 1st run 100% free)",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.00174
+              }
+            }
+          },
+          "createdAt": "2026-11-13T08:36:46.294Z",
+          "startedAt": "2026-11-13T08:36:46.294Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-11-13T09:00:27.336Z"
+        },
+        "id": "Zhq005iPrie0ob6gg",
+        "url": "https://apify.com/rbbscrap/euipo-trademarks-scraper"
+      },
+      {
+        "title": "USPTO Trademark Scraper — TSDR Status, Serials & Owners",
+        "name": "uspto-trademark-scraper",
+        "username": "rbbscrap",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 22,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "lastRunStartedAt": "2026-11-16T20:58:32.087Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 18,
+            "TIMED-OUT": 3,
+            "TOTAL": 21
+          }
+        },
+        "description": "Ultra-fast USPTO federal trademark scraper. Extract trademark wordmarks, serial/registration numbers, LIVE/DEAD TSDR status, Nice classes, brand owners, and attorney leads without browser bloat.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/344rZSuc3xyr2OPS9extGhB19q3RGc9l8fxGcI6f7RU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veTBoNVhoNFpMWUw4ZDhZTzctYWN0b3ItV2plTzFKcVgySUpIVEw3MjUtb0dBYk1GSlNBdS1mYXN0LXVzcHRvLXRyYWRlbWFyay1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Hector",
+        "userPictureUrl": "https://images.apifyusercontent.com/cXzpUfremjp0EGCf6oyzzHHsHm6nB1F1JuEDhJbUNUE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZVJxNzVtOWFtUkJTcVNNNGR6c3B1QjF6NHoydFdRSEJSSHRnOTlZcTM3OC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbFJXVWpBNGFUQnNSQzF4V1dKbVVIZE9ZVTFWV0VOdVpUVllWV0pzWVdwTlRtNURiblpMT0Vad1kySXRWVVF6WTNr.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "5x cheaper than niche #1 ($0.90/1k vs $4.50/1k) + 1st run 100% free",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "USPTO trademark record extracted",
+                "eventDescription": "Charged per verified record extracted ($0.90 / 1,000 items — 5x cheaper than niche #1, 1st run 100% free)",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00081
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00072
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00063
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00063
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00063
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-11-13T08:36:32.250Z",
+          "startedAt": "2026-11-13T08:36:32.250Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-11-13T09:00:26.866Z"
+        },
+        "id": "WjeO1JqX2IJHTL725",
+        "url": "https://apify.com/rbbscrap/uspto-trademark-scraper"
+      },
+      {
+        "title": "EUIPO Trademark Search — EU Trade Mark Lookup & Clearance",
+        "name": "euipo-esearch-trademarks",
+        "username": "nexgendata",
+        "stats": {
+          "totalBuilds": 45,
+          "totalRuns": 1574,
+          "totalUsers": 50,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 8,
+          "totalUsers90Days": 14,
+          "lastRunStartedAt": "2026-11-17T08:47:04.606Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 81,
+            "TIMED-OUT": 0,
+            "TOTAL": 82
+          }
+        },
+        "description": "EU trademark due diligence and clearance: search the EUIPO register by brand name, applicant or Nice class. JSON — mark, type, application/registration number, status, applicant, filing/registration dates, Nice classes, plus a similarity score and clearance risk. Official source. Pay per record.",
+        "categories": [
+          "BUSINESS",
+          "MARKETING",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/uPd9F3UqTjvck2jlEK9R63-_P_E2hE-Z-md2JZVqQs0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFFZaExmMkt1NllxeUNXYngtYWN0b3ItR1RNd0UxTHhNU2t2SUtkYUEtTFl0UXB2TWl2ZS1ldWlwby1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGenData",
+        "userPictureUrl": "https://images.apifyusercontent.com/DFoEfAV1iSBokBNjpIZdoeMlxK2y6UEav2Se4BxUDrI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU5Nancta2JUQ2FFN3lQUTNGZnR1SHBQX0FoWkVNVlVFLTdfSVFOTjNzby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVRkZaYUV4bU1rdDFObGx4ZVVOWFluZ3RjSEp2Wm1sc1pTMXVSMmRzVGxZeU5VVkRMVzVuWkMxemRHRmphMlZrTFd4dlkydDFjQzFrWVhKckxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Owner reprice 2026-10-07: apify-default-dataset-item $0.1 -> $0.05",
+          "startedAt": "2026-10-07T19:10:41.000Z",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Trademark",
+                "eventDescription": "Single EUIPO / TMview trademark record (application #, mark, applicant, Nice classes, status).",
+                "eventPriceUsd": 0.05,
+                "isPrimaryEvent": true
+              },
+              "watch-check": {
+                "eventTitle": "Watch check",
+                "eventDescription": "One monitoring check per watch-mode run — diffs current EUIPO filings against the saved baseline to surface new or changed marks. Watch mode only; Search mode is unaffected.",
+                "eventPriceUsd": 0.05,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-10-07T19:10:41.753Z",
+          "notifiedAboutChangeAt": "2026-10-07T19:30:30.580Z"
+        },
+        "id": "GTMwE1LxMSkvIKdaA",
+        "url": "https://apify.com/nexgendata/euipo-esearch-trademarks"
+      },
+      {
+        "title": "EUIPO Trademarks Scraper: 100M+ EU/Global Trademarks via TMview",
+        "name": "euipo-trademarks-scraper",
+        "username": "dltik",
+        "stats": {
+          "totalBuilds": 14,
+          "totalRuns": 10665,
+          "totalUsers": 179,
+          "totalUsers7Days": 12,
+          "totalUsers30Days": 39,
+          "totalUsers90Days": 86,
+          "lastRunStartedAt": "2026-11-17T07:51:51.272Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 1573,
+            "TIMED-OUT": 37,
+            "TOTAL": 1611
+          }
+        },
+        "description": "Search 100M+ trademarks from EUIPO + 70 IP offices (USPTO, INPI, DPMA, WIPO Madrid). Nice class, status, dates, goods & services. AI brand-clearance + applicant→company. No API key. $0.01/result.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/_VwqGLdbs2AyFRPgFZ67o_q1NbtOrWXcpSYZDFH_3nw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTVJNT3kwWXJhZzF1RE9oYkMtYWN0b3ItRnpEUVpGejN4WXdyYzRZdkUtV0RLSmlRWW1vQS1ldWlwby10cmFkZW1hcmtzLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Walid",
+        "userPictureUrl": "https://images.apifyusercontent.com/tO4Oc4n6FT14mzuI_C_IUeiYOhcpbiTVsfJ49jz2ne4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRzlNaFBPalNQZFZfQmhKMVF5Rk9jSlVJUFVQTC1IS3ozM3VTYnJ3d0ZFYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURlozV21wNlJrVmpYMFkwZUZOelkxRlhUazVNV1Roc2NXdFlkRmt3Y0haR1pWaEpNRmxhZDFKck5FTTJObWhS.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": true
+              },
+              "trademark-result": {
+                "eventTitle": "Trademark result",
+                "eventDescription": "Charged per EU trademark record extracted from EUIPO TMview (markName, applicant, status, nice classes, vienna classes, application date, territories, image + thumbnail URL, office of origin). 70+ national/EUTM/WIPO offices supported.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": false
+              },
+              "trademark-detail": {
+                "eventTitle": "Trademark detail enrichment",
+                "eventDescription": "Charged per result when enrichDetails is enabled — one extra TMview detail request that adds registration & expiration dates, opposition periods, full goods & services descriptions per Nice class, detailed applicant info (address, nationality), legal representatives and renewal history.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": false
+              },
+              "applicant-enriched": {
+                "eventTitle": "Applicant → company link",
+                "eventDescription": "Charged per result when enrichApplicant is enabled AND the applicant is resolved to a real company record — French applicants matched live to their SIREN + size + sector + active/ceased status via the official register (recherche-entreprises). Non-FR applicants get a free registry pointer and are NOT charged.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": false
+              },
+              "clearance-analyzed": {
+                "eventTitle": "AI brand-clearance (likelihood of confusion)",
+                "eventDescription": "Optional AI enrichment per mark when analyzeClearance=true: semantic similarity, goods & services conflict, an overall likelihood-of-confusion 0-100, verdict (clear/caution/high_risk), recommended action and reasoning vs your referenceMark — the EU-examiner brand-clearance test. Screening triage, not legal advice. Charged ON TOP of trademark-result only when the user opts into AI clearance (paying plans).",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "startedAt": "2026-09-17T12:23:45.000Z",
+          "reasonForChange": "2 new optional events: applicant->company link ($0.005, FR-resolved only) and AI brand-clearance / likelihood-of-confusion ($0.02/mark). Both OFF by default, billed only if enabled - the base $0.01/result and the $0.01 detail event are unchanged.",
+          "createdAt": "2026-09-02T12:23:45.192Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-02T12:24:05.904Z",
+          "notifiedAboutChangeAt": "2026-09-17T12:35:58.347Z"
+        },
+        "id": "FzDQZFz3xYwrc4YvE",
+        "url": "https://apify.com/dltik/euipo-trademarks-scraper"
+      },
+      {
+        "title": "Patent Trademark Search",
+        "name": "patent-trademark-search",
+        "username": "hanamira",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 10514,
+          "totalUsers": 85,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 8,
+          "lastRunStartedAt": "2026-11-16T19:26:32.498Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 143,
+            "TIMED-OUT": 0,
+            "TOTAL": 143
+          }
+        },
+        "description": "Search patents and trademarks by keyword, company, or inventor. Get structured data with patent IDs, titles, abstracts, and direct URLs. Perfect for IP research, brand checks, and competitive intelligence.",
+        "categories": [
+          "AGENTS",
+          "OTHER",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Z_Plhi5-XIxdu6OptyTJA2exoBgKnDSfr5kSzOMjBno/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcHFuT1FEQlM1Sm5PTXJXQTEtYWN0b3ItRjd0OGtyUWdRcHM0SXp5V0YtN1FHemNoeUpSWS1lbW9qaXMuY29tX3NoaWVsZC1ydXNzaWEucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "hannah mira",
+        "userPictureUrl": "https://images.apifyusercontent.com/LGxV00nicTrsH6djloBaAvvj055UVwhNU8tQPLURJks/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vREl3cUh0N2Q4eFRPZzhDdVNROFpwejNCbFpIbi1oZTFUeWNUMEp4dWhZdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjSEZ1VDFGRVFsTTFTbTVQVFhKWFFURXRjSEp2Wm1sc1pTMTVNVTlHUjJOTFoyeG1MVzFoWW1Wc0xuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2025-12-08T17:14:17.176Z",
+          "createdAt": "2025-12-08T17:14:17.433Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "F7t8krQgQps4IzyWF",
+        "url": "https://apify.com/hanamira/patent-trademark-search"
+      },
+      {
+        "title": "USPTO Trademark Scraper - Brand-Owner & Attorney Leads",
+        "name": "uspto-trademark-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 16,
+          "totalRuns": 412,
+          "totalUsers": 25,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 13,
+          "lastRunStartedAt": "2026-11-17T06:40:29.097Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 118,
+            "TIMED-OUT": 0,
+            "TOTAL": 118
+          }
+        },
+        "description": "Scrape USPTO trademarks by keyword, owner, class or serial number. Get mark, status, Nice classes, owner name & address, goods & services, dates, plus the filing attorney's name & email. Export brand-owner and IP-attorney leads. Monitor new filings. No API key, no browser.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/EALRVKiwMOT1FHYvoQYctWQhz_y5EPudffRbhxYbCr0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItNDNGQ2RDWkxWcXFVUTVaWHUtTGZCeWxwQkdlZS1VU1BUTy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "trademark": {
+                "eventTitle": "Trademark record",
+                "eventDescription": "A trademark record – mark, status, Nice classes, owner, dates.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "detailEnrichment": {
+                "eventTitle": "Detail enrichment",
+                "eventDescription": "Added per US mark when full TSDR detail (owner address, attorney email, goods & services) is fetched.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              },
+              "ownerLead": {
+                "eventTitle": "Brand-owner lead",
+                "eventDescription": "A deduplicated brand-owner lead with portfolio count, address & lead score.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004
+              },
+              "attorneyLead": {
+                "eventTitle": "IP-attorney lead",
+                "eventDescription": "A deduplicated IP-attorney/firm lead with email, firm website & lead score.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "startedAt": "2026-06-30T01:01:44.450Z",
+          "createdAt": "2026-06-30T01:01:45.185Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "43FCdCZLVqqUQ5ZXu",
+        "url": "https://apify.com/scrapesage/uspto-trademark-scraper"
+      },
+      {
+        "title": "Patents and Brands (INPI) - Brazil API by CNPJ (Tax ID)",
+        "name": "cnpj-trademarks-patents",
+        "username": "brasildados",
+        "stats": {
+          "totalBuilds": 19,
+          "totalRuns": 117,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-11-16T17:02:34.663Z",
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Brands and patents (INPI) for any Brazilian company by CNPJ (Tax ID): aggregate counts plus brands and patents arrays, each with status, INPI process number, classes, dates and last INPI movement. Standby API POST /check. | Marcas e patentes (INPI) por CNPJ (Tax ID).",
+        "categories": [
+          "ECOMMERCE",
+          "AI",
+          "REAL_ESTATE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/gqFpsxfD9ekahewuPnd2n7FKyeoM51WsFXX657vvwvw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWkQwTGNuYnBRSkNpQmpRdFctYWN0b3ItNGUxd2pmQzZCckQ1U2ttRFotWVpiSGEwRlpZZC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 5.000000000000001,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "brasildados.org - API de Dados Abertos",
+        "userPictureUrl": "https://images.apifyusercontent.com/_J_u4VElhhGXk4WKZKLYqNj8NJnHk-XjueZfIxhATME/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYkdpZnAxdGJnYXZ5RXFyRFpvWGpMajBOLWxPVlhsQ2hMajJfdmNyWXhCby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZXa1F3VEdOdVluQlJTa05wUW1wUmRGY3RjSEp2Wm1sc1pTMXRTRkEwT0dRME9XZFZMV0p5WVhOcGJHUmhaRzl6TFd4dloyOHROVEF3TG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Per CNPJ (Tax ID) queried success result",
+                "eventDescription": "One charge per CNPJ queried, a single charge per company, no matter how many trademarks or patents are returned. Invalid or not-found CNPJs are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.3,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.1
+              }
+            }
+          },
+          "startedAt": "2026-09-24T04:55:09.239Z",
+          "createdAt": "2026-09-24T04:54:52.943Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-24T05:05:52.946Z"
+        },
+        "id": "4e1wjfC6BrD5SkmDZ",
+        "url": "https://apify.com/brasildados/cnpj-trademarks-patents"
+      },
+      {
+        "title": "Print on Demand T-Shirt Design & Listing Generator",
+        "name": "t-shirt-design-and-listing-generator",
+        "username": "sian.agency",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 125,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-11-17T03:00:51.059Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Score print-on-demand niches, screen every brand and slogan against the US trademark registry, write copy validated against your platform’s own character limits, and generate print-ready transparent artwork. Supports Amazon Merch on Demand, Etsy, Redbubble and Zazzle.",
+        "categories": [
+          "ECOMMERCE",
+          "AI",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/aOkFLD936ljbt1O_3q7AGlxsIG99NXMcy0JrFpKkkIc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vU0hhYnZOYkU3NlUxYVFhR2QtYWN0b3ItcDN2dWdpUkUzTXRJWDZUUzctNVE3Rm1QNlV6ZS10LXNoaXJ0LWRlc2lnbi1hbmQtbGlzdGluZy1nZW5lcmF0b3IucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SIÁN OÜ",
+        "userPictureUrl": "https://images.apifyusercontent.com/3-IKZ7tIOa05lY7MEtwSbfqDeQBl6ukkcNU3pSphMaY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaU1mYTktaWVrWlVUTHJKci1jcV9tcDFPdGRkU2lUXzEtZVc5MjJ5ek92NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVMGhoWW5aT1lrVTNObFV4WVZGaFIyUXRjSEp2Wm1sc1pTMTVlSFYyYWtwNVkyWmxMVFV1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-07T17:16:55.453Z",
+          "startedAt": "2026-08-07T17:16:50.500Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.005
+                  }
+                }
+              },
+              "trademark-phrase-cleared": {
+                "eventTitle": "Trademark clearance screening",
+                "eventDescription": "One brand, title or slogan screened against the US trademark register, returning a three-state risk verdict and the conflicting marks.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 1.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.35
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.33
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.32
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.3
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.28
+                  }
+                }
+              },
+              "niche-signal-analyzed": {
+                "eventTitle": "Niche demand & competition analysis",
+                "eventDescription": "One scored niche: demand, competition and opportunity derived from live marketplace competitor data.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 1.95
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.65
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.62
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.59
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.55
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.52
+                  }
+                }
+              },
+              "listing-pack-generated": {
+                "eventTitle": "Platform-compliant listing pack",
+                "eventDescription": "Brand, title, bullet points, description and tags, validated against the selected platform's published character limits.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 5.55
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 1.85
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 1.76
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 1.67
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 1.57
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 1.48
+                  }
+                }
+              },
+              "design-print-ready": {
+                "eventTitle": "Print-ready artwork",
+                "eventDescription": "One full-resolution 300-DPI transparent PNG, validated for dimensions, real transparency and file size before it is charged.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 15
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 5
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 4.75
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 4.5
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 4.25
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 4
+                  }
+                }
+              },
+              "design-print-ready-native-alpha": {
+                "eventTitle": "Print-ready artwork, native transparency",
+                "eventDescription": "One full-resolution 300-DPI print file generated with real alpha from the start — no background-removal step, so nothing can be cut away wrongly.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 20.25
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 6.75
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 6.41
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 6.08
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 5.74
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 5.4
+                  }
+                }
+              },
+              "niche-source-mined": {
+                "eventTitle": "Niche discovery from a source channel",
+                "eventDescription": "One print-on-demand creator channel mined for fresh niche ideas: recent videos transcribed, niches extracted, and each one filtered to those a designer can actually act on.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 2.7
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.9
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.86
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.81
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.77
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.72
+                  }
+                }
+              },
+              "slogan-set-generated": {
+                "eventTitle": "Slogan set",
+                "eventDescription": "One niche turned into screened slogan candidates, each with the emotion it targets and why it converts. Every slogan returned is checked against the US trademark register.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 1.35
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.45
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.43
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.41
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.38
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.36
+                  }
+                }
+              },
+              "design-text-print-ready": {
+                "eventTitle": "Print-ready text artwork",
+                "eventDescription": "One full-resolution 300-DPI transparent PNG rendered from a real font file. The wording is exact by construction — no image model interprets it — and it is validated for dimensions, transparency and file size.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 3.6
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 1.2
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 1.14
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 1.08
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 1.02
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.96
+                  }
+                }
+              }
+            }
+          }
+        },
+        "id": "p3vugiRE3MtIX6TS7",
+        "url": "https://apify.com/sian.agency/t-shirt-design-and-listing-generator"
+      },
+      {
+        "title": "Job Listings & Salary Scraper for ZipRecruiter (US, UK, IE, CA)",
+        "name": "ziprecruiter-scraper",
+        "username": "haketa",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 313,
+          "totalUsers": 25,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 8,
+          "lastRunStartedAt": "2026-11-16T12:58:29.474Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 64,
+            "TIMED-OUT": 0,
+            "TOTAL": 64
+          }
+        },
+        "description": "ZipRecruiter job & salary scraper/API (US, UK, Ireland, Canada): search by keyword/location; export title, company, salary, location, type, date, description, apply URL. No login. Independent tool, not affiliated with or endorsed by ZipRecruiter; trademarks belong to their owners.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": null,
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Haketa",
+        "userPictureUrl": "https://images.apifyusercontent.com/v3INZBe8i9FXs3yDWNyES48f4AFPoPUh94BdLRQfLb4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT284Rms2eVdKT3A0OG9NOUxmeDExWGppY1VhNm5sbTJkZzhQdl9NcXRHRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhRXhsVm1VeFdFeFFiRTgwYjNodGFYb3RjSEp2Wm1sc1pTMUJUREpzTUdRMlQzRktMVmRvWVhSelFYQndYMGx0WVdkbFh6SXdNall0TURRdE1UUmZZWFJmTVRjdU5ETXVNVGN1YW5CbFp3LmpwZWc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0023
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-07-26T13:04:54.931Z",
+          "createdAt": "2026-07-12T13:04:55.254Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-12T13:05:15.541Z",
+          "notifiedAboutChangeAt": "2026-07-26T13:05:36.741Z"
+        },
+        "id": "g9ExX88Tc0hcOdOit",
+        "url": "https://apify.com/haketa/ziprecruiter-scraper"
+      }
+    ]
+  }
+}
