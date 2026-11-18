@@ -166,6 +166,8 @@ heavy deps. On CI the gate runs once per push, in `gankdat.yml` only.
   per page from `lib/narrative.ts` (dataset-agnostic).
 - **Keyless Atom feeds** (`routes/feeds.ts`): `/feeds/<slug>.xml` and facet feeds, last 7 days of
   changes, ≤ 50 entries, rendered ≤ hourly; `/feeds` page and `/feeds/opml`.
+  The KV copy is kept 7 days with its build time (2026-11-18): when D1's throttle refuses the hourly
+  rebuild the last copy is served (`stale`), and with no copy the answer is 503 + `Retry-After`, never a 500.
 - **Origin notice** (`DataSource.notice`): a dated sentence on a paused/emptied origin, shown on
   stats, `/v1/data`, `list_sources`, tool descriptions and 503s; the snapshot is retained
   (`cache.ts retainSnapshot`) and every surface (REST, MCP, x402, Apify actor) answers paused.

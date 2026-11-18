@@ -3209,3 +3209,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 17:34 | burn-down | Live esg read, Tesco Stores 00519500: statement 2026 and pay gap 2025/26, median 4.8 %
 - 2026-11-18 17:34 | burn-down | Queued gankdat feeds-d1-overload-answer (3): a feed sweep at 14:03 got 23 HTTP 500s from D1
 - 2026-11-18 17:34 | burn-down | Relay rounds esg-live-read-2026-11-18 and -b (10 lines); worker logs runs 34 (504) and 35
+- 2026-11-18 17:40 | burn-down | Built gankdat feeds-d1-overload-answer: a throttled feed serves its last copy, else 503 + Retry-After
+- 2026-11-18 17:40 | burn-down | Feed copies stay in KV 7 days with their build time; rebuilt hourly as before; 3 tests added (787 pass)
+- 2026-11-18 17:40 | burn-down | Deploys on the next CI run; next slot: probe dispatch error lines show no /feeds/ path at 500
