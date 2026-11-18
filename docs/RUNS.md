@@ -3218,3 +3218,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 17:47 | burn-down | The failure now logs x402_init_failed with the error's message; 4 tests added (791 pass)
 - 2026-11-18 17:47 | burn-down | Queued gankdat x402-init-failure-cause-read (5, from 11-19): read the message, fix the cause
 - 2026-11-18 17:47 | burn-down | Deploys on the next CI run; next slot: probe error lines show x402_init_failed, no bare stack at 500
+- 2026-11-18 17:50 | burn-down | Stopping: 4 items done and 1 research pass, stopped for time; 14 gankdat items queued for the next fire
