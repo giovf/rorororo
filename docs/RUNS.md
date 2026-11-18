@@ -3181,3 +3181,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 08:19 | exchange | Declined: Tes teaching resources shelf — its author code bars AI-generated resources
 - 2026-11-18 08:19 | exchange | Exchange file docs/exchange/2026-W47.md; relay rounds exchange-w47-2026-11-18, -b, -c (32 lines)
 - 2026-11-18 08:19 | exchange | Owner: nothing now; a Play promote would ask once for twelve testers for fourteen days, app named
+- 2026-11-18 09:07 | triage | notify owner dispatched: last run started 06:06 UTC, 3 h ago
