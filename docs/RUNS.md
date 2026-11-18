@@ -3230,3 +3230,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 18:25 | burn-down | Live: store holds 177 error lines in 24 h, sample interval 1 — nothing is lost at ingest
 - 2026-11-18 18:25 | burn-down | Live: a page's own count equals the page (5 of 177), so reads are now measured against the store count
 - 2026-11-18 18:25 | burn-down | The 17:23 "1 in 100" line was query sampling on a wide window, not log retention; 1 test added (800)
+- 2026-11-18 18:30 | burn-down | Live: probe run 334 read all 177 error lines of 24 h in one request, head line "complete"
+- 2026-11-18 18:30 | burn-down | Built gankdat stats-page-before-first-load: an unloaded register's stats page says when it loads
+- 2026-11-18 18:30 | burn-down | That page answers 503 with Retry-After to just past its wave and noindex, as HTML not bare JSON
+- 2026-11-18 18:30 | burn-down | Sitemap is served by the Worker without the stats pages of registers not yet loaded; 2 tests (802)
+- 2026-11-18 18:30 | burn-down | Feeds not changed: every logged feed error was a D1 throttle (answered since 17:40), none an unloaded register
+- 2026-11-18 18:30 | burn-down | Deploys on the next CI run; next slot: probe error lines show no bare /stats/<slug> 503 from a new register

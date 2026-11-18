@@ -1434,9 +1434,9 @@
       "effort_days": 0.1,
       "proof": "a test: a registered D1 source with no generation answers the page with Retry-After and is absent from the sitemap; the next new register's first night shows no 5xx on its stats path",
       "score": 2,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-18",
-      "doing_since": "2026-11-18"
+      "done_at": "2026-11-18"
     },
     {
       "id": "x402-init-failure-cause-read",

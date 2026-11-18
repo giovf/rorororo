@@ -164,6 +164,9 @@ heavy deps. On CI the gate runs once per push, in `gankdat.yml` only.
   the parent blob is written first, facet values run in batches of 9 with one scan per statement
   (D1 CPU and SQLITE_NOMEM limits), pages past the budget are carried with `as_of`. Prose summaries
   per page from `lib/narrative.ts` (dataset-agnostic).
+  A register with nothing loaded yet answers a short dated page — 503, `Retry-After` to just past its wave,
+  `X-Robots-Tag: noindex` — and `/sitemap.xml` (the static file, filtered by `routes/sitemap.ts`) leaves its
+  stats URLs out until it has loaded (2026-11-18).
 - **Keyless Atom feeds** (`routes/feeds.ts`): `/feeds/<slug>.xml` and facet feeds, last 7 days of
   changes, ≤ 50 entries, rendered ≤ hourly; `/feeds` page and `/feeds/opml`.
   The KV copy is kept 7 days with its build time (2026-11-18): when D1's throttle refuses the hourly
