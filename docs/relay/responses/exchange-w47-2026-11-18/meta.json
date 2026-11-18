@@ -1,0 +1,174 @@
+{
+  "request": "exchange-w47-2026-11-18",
+  "fetched_at": "2026-11-18T08:08:19.781Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/14151465?hl=en-GB",
+      "fetched_at": "2026-11-18T08:08:15.251Z",
+      "status": 200,
+      "elapsed_ms": 362,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/14151465?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "483184"
+      },
+      "file": "1.txt",
+      "bytes": 24817,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1665223
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/112622?hl=en-GB",
+      "fetched_at": "2026-11-18T08:08:16.180Z",
+      "status": 200,
+      "elapsed_ms": 235,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/112622?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "476856"
+      },
+      "file": "2.txt",
+      "bytes": 11348,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1631457
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9858738?hl=en-GB",
+      "fetched_at": "2026-11-18T08:08:16.983Z",
+      "status": 200,
+      "elapsed_ms": 168,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/9858738?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "476965"
+      },
+      "file": "3.txt",
+      "bytes": 11183,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1630912
+    },
+    {
+      "method": "GET",
+      "url": "https://superteam.fun/skill.md",
+      "fetched_at": "2026-11-18T08:08:17.216Z",
+      "status": 404,
+      "elapsed_ms": 111,
+      "final_url": "https://superteam.fun/skill.md",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline; filename=\"404\"",
+        "last-modified": "Fri, 13 Nov 2026 19:24:11 GMT",
+        "etag": "W/\"1918c49a3924ac4390aad289ae39d938\""
+      },
+      "file": "4.txt",
+      "bytes": 69,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 6926
+    },
+    {
+      "method": "GET",
+      "url": "https://superteam.fun/earn/agents",
+      "fetched_at": "2026-11-18T08:08:17.829Z",
+      "status": 404,
+      "elapsed_ms": 75,
+      "final_url": "https://superteam.fun/earn/agents",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"h6ue1kmifq5ce\""
+      },
+      "file": "5.txt",
+      "bytes": 69,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 6926
+    },
+    {
+      "method": "GET",
+      "url": "https://superteam.fun/api/agents/listings/live?take=50",
+      "fetched_at": "2026-11-18T08:08:18.435Z",
+      "status": 401,
+      "elapsed_ms": 62,
+      "final_url": "https://superteam.fun/api/agents/listings/live?take=50",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "24",
+        "etag": "\"12cyln96apxo\""
+      },
+      "file": "6.json",
+      "bytes": 24,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.n8n.io/contribute/create-templates/",
+      "fetched_at": "2026-11-18T08:08:18.497Z",
+      "status": 200,
+      "elapsed_ms": 223,
+      "final_url": "https://docs.n8n.io/contribute/create-templates",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"i7vsf60w868ttq\""
+      },
+      "file": "7.txt",
+      "bytes": 6485,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 411958
+    },
+    {
+      "method": "GET",
+      "url": "https://n8n.io/creators/",
+      "fetched_at": "2026-11-18T08:08:18.731Z",
+      "status": 200,
+      "elapsed_ms": 128,
+      "final_url": "https://n8n.io/creators/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 3277,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1012981
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=100&page=1",
+      "range": "0-600000",
+      "fetched_at": "2026-11-18T08:08:18.876Z",
+      "status": 200,
+      "elapsed_ms": 169,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=100&page=1",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 08:08:19 GMT"
+      },
+      "file": "9.json",
+      "bytes": 2097152,
+      "truncated": true
+    },
+    {
+      "method": "GET",
+      "url": "https://api.n8n.io/api/templates/search?rows=50&page=1&search=companies%20house",
+      "range": "0-300000",
+      "fetched_at": "2026-11-18T08:08:19.633Z",
+      "status": 200,
+      "elapsed_ms": 147,
+      "final_url": "https://api.n8n.io/api/templates/search?rows=50&page=1&search=companies%20house",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 08:08:19 GMT"
+      },
+      "file": "10.json",
+      "bytes": 27601,
+      "truncated": false
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+meta description: Create, test, and submit workflow templates to the n8n template library.
+meta og:title: Create workflow templates | Contribute | n8n Docs
+meta og:description: Create, test, and submit workflow templates to the n8n template library.
+meta og:image: https://docs.n8n.io/~gitbook/image?url=https%3A%2F%2F2083420238-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FgkeAaBEvbwHB2NmepVHG%252Fsites%252Fsite_Qp7QM%252Fsocialpreview%252FBJYuJLS829e7wvgPdf5m%252FGitBook%25201280x630.png%3Falt%3Dmedia%26token%3D535a1998-3467-4390-aef9-2f68fdbe688f&width=1200&height=630&sign=66c16ad3aef77b2b228614fe76c6c3a3&sv=3
+meta twitter:card: summary_large_image
+meta twitter:title: Create workflow templates | Contribute | n8n Docs
+meta twitter:description: Create, test, and submit workflow templates to the n8n template library.
+meta twitter:image: https://docs.n8n.io/~gitbook/image?url=https%3A%2F%2F2083420238-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FgkeAaBEvbwHB2NmepVHG%252Fsites%252Fsite_Qp7QM%252Fsocialpreview%252FBJYuJLS829e7wvgPdf5m%252FGitBook%25201280x630.png%3Falt%3Dmedia%26token%3D535a1998-3467-4390-aef9-2f68fdbe688f&width=1200&height=630&sign=66c16ad3aef77b2b228614fe76c6c3a3&sv=3
+Create workflow templates | Contribute | n8n Docs
+Skip to content (#gitbook-main-content)
+n8n Docs (/)
+⌘ Ctrl k
+Forum (https://community.n8n.io/) Changelog (/changelog)
+More
+Get started (/)
+Deploy (/deploy)
+Build (/build)
+Nodes (/integrations)
+Connect (/connect)
+Administer (/administer)
+Contribute (/contribute)
+n8n Docs (/)
+Contribute to n8n (/contribute)
+Contribution guide for n8n Docs (/contribute/contribution-guide-for-n8n-docs)
+Create workflow templates (/contribute/create-templates)
+Template submission guidelines (/contribute/create-templates/submission-guidelines)
+Add sticky notes to templates (/contribute/create-templates/sticky-note-guidelines)
+Workflow template ideas (/contribute/create-templates/workflow-template-ideas)
+Where to get help (/contribute/where-to-get-help)
+On this page
+For the complete documentation index, see llms.txt (https://docs.n8n.io/llms.txt) . This page is also available as Markdown (https://docs.n8n.io/contribute/create-templates.md) .
+Copy
+On this page
+Contribute (/contribute)
+Create workflow templates
+Share workflows that solve practical problems by submitting them to the n8n template library (https://n8n.io/workflows/) .
+A template includes a workflow and setup instructions. Someone else should be able to import it, follow your instructions, and get the expected result. The Creator portal generates the title and description automatically, so you don't need to write them.
+In this section #in-this-section
+Template submission guidelines (/contribute/create-templates/submission-guidelines) : Choose a useful problem, review your work, and test the workflow before submitting it.
+Add sticky notes to templates (/contribute/create-templates/sticky-note-guidelines) : Explain the workflow and its setup on the canvas.
+Workflow template ideas (/contribute/create-templates/workflow-template-ideas) : Find a use case and develop it into a complete solution.
+Submit a template #submit-a-template
+You need a creator account (https://creators.n8n.io/register) to submit templates.
+Check the submission guidelines (/contribute/create-templates/submission-guidelines) and choose a use case that adds value to the library.
+Build your workflow. Give nodes descriptive names and add the required sticky notes.
+Test the workflow from start to finish, including the paths and inputs your instructions cover.
+Export the workflow as JSON (/build/manage-workflows/export-and-import) . Remove secrets, personal data, and references to your accounts or resources.
+Import that JSON into a fresh workflow. Follow your own setup instructions and check the output. Fix any missing setup steps or dependencies.
+Sign in to the Creator portal (https://creators.n8n.io/login) and submit the JSON.
+AI assistance is welcome
+You can use AI to build workflows and write setup instructions. Review every part, test the exported workflow, and correct the instructions before submitting. You're responsible for the result.
+Template review #template-review
+n8n reviews submissions against the template guidelines. If your template meets the requirements, n8n publishes it and sends you a confirmation email. If it needs changes, n8n sends feedback by email.
+New creators can submit one template at a time. Wait until n8n approves your submission before submitting another.
+After n8n approves three of your templates, you become a verified creator. Verified creators receive a badge on the website, can submit batches of up to four templates, and can offer paid templates.
+Offer paid templates #offer-paid-templates
+You must become a verified creator before you can offer paid templates. The same quality, testing, and documentation requirements apply to free and paid templates.
+You're responsible for tracking payments, delivering the template after someone buys it, and keeping it accessible to the buyer. Failure to deliver a paid template may result in account suspension or a ban.
+Related resources #related-resources
+Contribute to n8n (/contribute)
+Create nodes (/connect/create-nodes)
+Contribution guide for n8n Docs (/contribute/contribution-guide-for-n8n-docs)
+Where to get help (/contribute/where-to-get-help)
+Use workflow templates (/build/ways-of-building-workflows/use-templates)
+Previous Agent-friendly docs (/contribute/contribution-guide-for-n8n-docs/agent-friendly-docs) Next Template submission guidelines (/contribute/create-templates/submission-guidelines)
+Last updated 18 days ago
+Was this helpful?
+Company
+n8n.io (https://n8n.io/)
+Careers (https://n8n.io/careers)
+Blog (https://blog.n8n.io/)
+Resources
+Templates (https://n8n.io/workflows/)
+Academy (https://learn.n8n.io/)
+Changelog (/changelog)
+Legal and privacy
+Security (https://n8n.io/legal/security/)
+Privacy (/privacy-and-security)
+n8n community license
+Sustainable use license (/n8n-community-license)
+https://x.com/n8n_io https://github.com/n8n-io/n8n https://discord.com/invite/n8n https://linkedin.com/company/n8n https://youtube.com/@n8n-io
+© 2026 n8n | All rights reserved
+In this section (#in-this-section)
+Submit a template (#submit-a-template)
+Template review (#template-review)
+Offer paid templates (#offer-paid-templates)
+Related resources (#related-resources)
+Was this helpful?

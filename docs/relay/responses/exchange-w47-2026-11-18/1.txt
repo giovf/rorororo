@@ -1,0 +1,299 @@
+App testing requirements for new personal developer accounts - Play Console Help
+Skip to main content (#hcfe-content)
+/?tab=uu
+Play Console Help (/googleplay/android-developer)
+https://www.google.com/intl/en-GB/about/products?tab=uh
+Sign in (https://accounts.google.com/ServiceLogin?hl=en-GB&passive=true&continue=http://support.google.com/googleplay/android-developer/answer/14151465%3Fhl%3Den-GB&ec=GAZAdQ)
+/?tab=uu
+Google Help (/)
+Help Center (/googleplay/android-developer/?hl=en-GB)
+Help (/googleplay/android-developer/topic/3308856?hl=en-GB&ref_topic=9857238,2856718,) Policy Centre (/googleplay/android-developer/topic/9858052?hl=en-GB&ref_topic=9857238,2856718,)
+Community (/googleplay/android-developer/community?hl=en-GB&help_center_link=CKne3wYSPEFwcCB0ZXN0aW5nIHJlcXVpcmVtZW50cyBmb3IgbmV3IHBlcnNvbmFsIGRldmVsb3BlciBhY2NvdW50cw) Play Console (//play.google.com/apps/publish/)
+Privacy Policy (//www.google.com/intl/en-GB/privacy.html) Terms of Service (https://www.google.com/accounts/TOS)
+Submit feedback
+Send feedback on…
+This help content & information
+General Help Centre experience
+Close
+Next
+Help Center (/googleplay/android-developer/?hl=en-GB)
+Community (/googleplay/android-developer/community?hl=en-GB&help_center_link=CKne3wYSPEFwcCB0ZXN0aW5nIHJlcXVpcmVtZW50cyBmb3IgbmV3IHBlcnNvbmFsIGRldmVsb3BlciBhY2NvdW50cw)
+Announcements (/googleplay/android-developer/announcements/13412212)
+Play Console (//play.google.com/apps/publish/)
+Help
+Get started (/googleplay/android-developer/topic/3450769?hl=en-GB&ref_topic=3308856,9857238,2856718,) Popular articles (/googleplay/android-developer/topic/12233401?hl=en-GB&ref_topic=3308856,9857238,2856718,) Manage your developer account (/googleplay/android-developer/topic/16285?hl=en-GB&ref_topic=3308856,9857238,2856718,) Create, upload and publish (/googleplay/android-developer/topic/7072031?hl=en-GB&ref_topic=3308856,9857238,2856718,) Distribute your app (/googleplay/android-developer/topic/7071529?hl=en-GB&ref_topic=3308856,9857238,2856718,) Test your app & check performance (/googleplay/android-developer/topic/7071528?hl=en-GB&ref_topic=3308856,9857238,2856718,) Protect your app (/googleplay/android-developer/topic/13878452?hl=en-GB&ref_topic=3308856,9857238,2856718,) Comply with Google Play policies (/googleplay/android-developer/topic/2364761?hl=en-GB&ref_topic=3308856,9857238,2856718,) Fix an issue (/googleplay/android-developer/topic/15868?hl=en-GB&ref_topic=3308856,9857238,2856718,) Android developer verification (/googleplay/android-developer/topic/16689288?hl=en-GB&ref_topic=3308856,9857238,2856718,) Design for multiple form factors (/googleplay/android-developer/topic/18106546?hl=en-GB&ref_topic=3308856,9857238,2856718,) Central Play Help Center (/googleplay/android-developer/topic/14160281?hl=en-GB&ref_topic=3308856,9857238,2856718,)
+Policy Centre
+Restricted content (/googleplay/android-developer/topic/9877466?hl=en-GB&ref_topic=9858052,9857238,2856718,) Intellectual property (/googleplay/android-developer/topic/9876963?hl=en-GB&ref_topic=9858052,9857238,2856718,) Privacy, deception and device abuse (/googleplay/android-developer/topic/9877467?hl=en-GB&ref_topic=9858052,9857238,2856718,) Use of SDKs in apps (/googleplay/android-developer/topic/15406736?hl=en-GB&ref_topic=9858052,9857238,2856718,) Malware (/googleplay/android-developer/topic/9975838?hl=en-GB&ref_topic=9858052,9857238,2856718,) Impersonation (/googleplay/android-developer/topic/9969539?hl=en-GB&ref_topic=9858052,9857238,2856718,) Mobile unwanted software (/googleplay/android-developer/topic/9969691?hl=en-GB&ref_topic=9858052,9857238,2856718,) Monetisation and ads (/googleplay/android-developer/topic/9857752?hl=en-GB&ref_topic=9858052,9857238,2856718,) Store Listing and promotion (/googleplay/android-developer/topic/9877064?hl=en-GB&ref_topic=9858052,9857238,2856718,) Spam, functionality and user experience (/googleplay/android-developer/topic/9876964?hl=en-GB&ref_topic=9858052,9857238,2856718,) Other programmes (/googleplay/android-developer/topic/9876660?hl=en-GB&ref_topic=9858052,9857238,2856718,) Families (/googleplay/android-developer/topic/9877766?hl=en-GB&ref_topic=9858052,9857238,2856718,) Enforcement (/googleplay/android-developer/topic/9877468?hl=en-GB&ref_topic=9858052,9857238,2856718,) Updates and other resources (/googleplay/android-developer/topic/9877065?hl=en-GB&ref_topic=9858052,9857238,2856718,) How Google Play works for developers (/googleplay/android-developer/topic/9958765?hl=en-GB&ref_topic=9858052,9857238,2856718,)
+Notification
+You can now request help from the Help (https://play.google.com/console/developers/help-and-support) page in your Play Console account. If you don't have access to Play Console, ask your account admin for an invite.
+App testing requirements for new personal developer accounts
+This article provides developers with personal Google Play Console accounts created after 13 November 2023 with an overview of required testing workflows, available testing tracks and guidance for applying for production access. Before you can make your app publicly available to users on Google Play, you must fulfil minimum testing requirements and complete your app setup in Play Console.
+Testing requirements for personal accounts
+Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behaviour and usability before releasing it publicly. This minimises technical and user experience issues and helps you to release the best version of your app. Developers who regularly use Play Console testing tools prior to publishing provide higher-quality experiences that can lead to higher ratings and greater success on Google Play.
+Google Play requires personal developer accounts created after 13 November 2023 to test their apps before those apps are eligible for distribution on Google Play. Certain features in Play Console, such as Production (https://play.google.com/console/developers/app/tracks/production) ( Test and release
+> Production ) and Pre-registration (https://play.google.com/console/developers/app/pre-registration) ( Test and release
+> Testing > Pre-registration ), remain disabled until developers meet these testing requirements.
+Overview of testing requirements
+Developers with personal accounts created after 13 November 2023 must run a closed test for their app with a minimum of 12 testers who have been opted in continuously for at least 14 days. When you meet these criteria, you can apply for production access on the Dashboard (https://play.google.com/console/developers/app/app-dashboard) in Play Console to distribute your app on Google Play. When you apply, you answer questions to help clarify your app design, testing process and production readiness.
+Review the following sections for details about testing tracks, track requirements and the production access process.
+Testing tracks and requirements
+Play Console provides different testing tracks so that you can gradually ramp up testing and improve your app before reaching users on Google Play.
+Internal testing: Before completing your app setup, you can quickly distribute builds to a small group of Trusted Testers. This helps identify issues and gather early feedback. Builds are normally available to testers within seconds of being added in Play Console. Internal testing is optional, but recommended as a starting point.
+Closed testing: With closed testing, you can share your app with a targeted group of users that you control. This allows you to fix issues and ensure that your app complies with Google Play policy before launch. You must run a closed test before applying to publish your app to production. At least 12 testers must be opted in to your closed test when you apply for production access, and they must have been opted in continuously for the preceding 14 days. You can start a closed test after completing your app setup.
+Open testing: Surfaces your app's test version on Google Play, allowing anyone to join your testing programme and submit private feedback. Before selecting this option, verify that your app and store listing are ready for public visibility on Google Play. Open testing becomes available after you gain production access.
+Production: Makes your app available to users on Google Play. Before applying for production access, you must run a closed test that meets Google Play criteria. When applying, you must answer questions about your closed test. At least 12 testers must be opted in to your closed test continuously for the preceding 14 days when you apply for production access.
+Summary of testing requirements per track
+Refer to the following table to review the purpose and access requirements for each testing track.
+Track type
+Purpose
+Requirements to access track
+Internal testing
+Distribute builds to a small group of Trusted Testers to identify issues and get early feedback (before or after completing app setup).
+None.
+Closed testing
+Share your app with a wide group of users that you control to fix issues and ensure compliance with Google Play policies before launch.
+Complete app setup.
+Open testing
+Surface your app's test version on Google Play so that anyone can join your test and submit private feedback.
+Gain access to production.
+Production
+Make your app available to users on Google Play.
+Run a closed test with at least 12 opted-in testers continuously for 14 days. Once criteria are met, apply for production access in Play Console by answering some questions about your testing, your app and its production readiness.
+Best practices for closed testing
+To design, develop and distribute Android apps, refer to the following resources and guidance:
+Tester recruitment
+The most common way to recruit testers is to use personal and professional networks. Get in touch with friends, family, colleagues or classmates to ask them to test your app. Connect with communities where potential users exist to recruit active testers. For example, if you build an app for fitness enthusiasts, consider approaching local clubs or connecting with your target users in online groups. You can also post about your app on social media and invite followers to sign up for testing.
+Recruit a diverse group of testers to identify bugs and usability issues that might affect specific user groups or device types. Recruit testers who represent your app's intended future audience. For example, if you develop a productivity app for businesses, recruit business professionals from various target industries. The closer your test users align with your target audience, the more useful feedback you receive.
+Tester engagement
+Provide beta testers with clear instructions on how to test your app and report bugs. Specify the type of feedback that you want to collect. Encourage testers to use as many features as possible to provide holistic feedback.
+Provide a clear feedback channel, such as email, a website or a messaging forum. Testers can also provide private feedback directly through Google Play.
+Important: Inform your testers that they need to remain opted in to your closed test continuously for at least 14 days.
+User feedback collection and review
+To view and respond to user feedback in Play Console, follow these steps:
+Sign in to Play Console, select your app and go to the Testing feedback (https://play.google.com/console/developers/app/user-feedback/beta-feedback) page ( Monitor and improve > Ratings and reviews > Testing feedback ).
+Select how you want to browse feedback:
+Filter: To view feedback based on criteria such as date, language, reply state, app version or device type, select from the available filter options.
+Search: To search for specific keywords in user feedback, use the search box.
+Tip: Maintain a record of received feedback. Reviewing feedback regularly helps identify recurring themes and prioritise future improvements. You must summarise your testing feedback when applying for production access.
+Act on user feedback
+Throughout your testing period, respond to tester feedback and resolve identified bugs to achieve the following goals:
+Improve your app's user experience
+Increase the likelihood of a successful production access application
+Reduce negative reviews when distributing your app on Google Play
+Advanced testing resources
+The guidance in this article serves as a baseline for understanding core testing workflows. Explore advanced testing techniques to optimise app quality as your development process evolves. For details, see testing apps on Android (https://developer.android.com/training/testing) and the fundamentals of testing (https://developer.android.com/training/testing/fundamentals) on the Android Developers site.
+Play Console provides tools to help identify technical issues. Set up and run a pre-launch report (https://support.google.com/googleplay/android-developer/answer/9842757) to proactively identify issues before reaching users through a detailed report (https://support.google.com/googleplay/android-developer/answer/9844487) listing warnings, errors and performance issues.
+Run closed tests
+To learn how to set up and configure a closed test, see Set up an open, closed or internal test (https://support.google.com/googleplay/android-developer/answer/9845334) .
+Apply for production access
+To apply for production access after fulfilling closed testing requirements, do the following:
+Open the Dashboard (https://play.google.com/console/developers/app/app-dashboard) in Play Console.
+Click Apply for production .
+Answer the required questions about your closed test, your app and its production readiness. The application form contains three sections:
+'About your closed test'
+'About your app/game'
+'About your production readiness'
+Refer to the following sections for details on completing each part of the application.
+Part 1: About your closed test
+Information provided in the 'About your closed test' section helps verify that apps have been thoroughly tested before publication on Google Play. This process protects users from low-quality apps, prevents malware distribution and reduces fraud.
+To complete this section, follow these steps:
+Select an option indicating how easy it was to recruit testers for your app.
+Provide details about tester engagement during your closed test, including:
+Whether testers used all available app features
+Whether tester usage matched expected production user behaviour, including details on any observed differences
+Summarise the feedback received from testers and describe how feedback was collected.
+Click Next .
+Important: If you click Discard or leave the page without clicking Next , your changes are not saved.
+Part 2: About your app/game
+Information provided in the 'About your app/game' section provides context about your app or game. Your answers are not displayed publicly on Google Play and do not affect app visibility, Play Console feature access or eligibility for developer programmes.
+To complete this section, follow these steps:
+Specify the target audience for your app or game. Be as specific as possible.
+Describe your app or game value proposition:
+For apps: Describe how your app provides value to users. For details, see app quality on Google Play (https://developer.android.com/quality) on the Android Developers site.
+For games: Describe what makes your game unique.
+Select an estimated install range for your app or game during its first year.
+Click Next .
+Important: If you click Discard or leave the page without clicking Next , your changes are not saved.
+Part 3: About your production readiness
+Information provided in the 'About your production readiness' section helps evaluate whether your app or game is prepared for production release.
+To complete this section, follow these steps:
+Describe any changes made to your app or game based on what you learned from your closed test.
+Describe how you determined that your app or game was ready for production.
+Click Apply .
+Important: If you click Discard or quit without applying for production access, your changes won't be saved.
+Important: If you click Discard or leave the page without clicking Apply , your changes are not saved.
+Next steps after applying for production access
+After you submit your application for production access, Google reviews your submission. When the review completes, an email notification is sent to the account owner. Review usually takes seven days or less, but can occasionally take longer.
+If your app requires additional testing, you may need to continue running your closed test. Reasons for required continued testing include having fewer than 12 opted-in testers or insufficient tester engagement during the testing period.
+Ensure policy compliance
+It is your responsibility to ensure that your app is fully compliant with all Google Play developer content policies (https://play.google/developer-content-policy/) before submitting it for production access. Google evaluates production apps for policy adherence, but review is not a troubleshooting step. Submitting non-compliant apps expecting reviewers to identify issues leads to rejections, review delays and lengthier appeal processes.
+Before applying, double-check that your app adheres to all policy requirements, paying close attention to these common areas:
+App content and features: Verify that all content, features and monetisation models comply with Google Play policies.
+App targeting and content rating: Confirm that your target age group and store listing settings accurately reflect your app's target audience and content.
+Functional reliability: Ensure that your app is stable and without broken functionality, crashes or missing screens.
+Test credentials: If your app requires user authentication, provide valid, working login credentials in Play Console so that reviewers can fully test your app's features.
+Application review outcomes
+When your application is approved, you can access your app's Production (https://play.google.com/console/developers/app/tracks/production) page ( Test and release
+> Production ) and distribute your app to users on Google Play. You can also access Open testing (https://play.google.com/console/developers/app/tracks/open-testing) ( Test and release
+> Testing > Open testing ). Continue testing your app thoroughly before publishing production updates.
+Frequently asked questions
+What does continuous 14-day opt-in mean for testers?
+Testers who opt in, test for fewer than 14 days and then opt out do not count towards the requirement. If a tester opts out and opts back in later, the 14 days must be consecutive to count towards the minimum requirement of 12 continuous opted-in testers.
+Are there additional testing best practices?
+Continue running closed tests while resolving user-reported issues and bugs. Updating your app in closed testing before releasing to production helps minimise low ratings and negative reviews.
+Consider inviting closed testers to a messaging group where feedback can be shared among participants. Testers can provide context that helps you prioritise app or game updates.
+In addition to fixing crashes and technical bugs, evaluate the overall user experience. For details, see Build high-quality apps and games (https://developer.android.com/quality) .
+Are there Play Console resources to help me succeed on Google Play?
+To explore Play Console's features and news, visit the Google Play Console site (https://play.google.com/console/about/) . You can also complete free-of-charge online training courses for app developers on Google Play Academy (https://playacademy.withgoogle.com/) .
+Was this helpful?
+How can we improve it?
+Yes
+No
+Submit
+Need more help?
+Try these next steps:
+Post to the Help Community Get answers from community members (/googleplay/android-developer/community?hl=en-GB&help_center_link=CKne3wYSPEFwcCB0ZXN0aW5nIHJlcXVpcmVtZW50cyBmb3IgbmV3IHBlcnNvbmFsIGRldmVsb3BlciBhY2NvdW50cw) Contact us Tell us more and we’ll help you get there (/googleplay/android-developer/gethelp)
+true
+Help (/googleplay/android-developer?hl=en-GB#topic=7072031)
+1 of 30
+Create and set up your app (/googleplay/android-developer/answer/9859152?hl=en-GB&ref_topic=7072031)
+2 of 30
+App testing requirements for new personal developer accounts
+3 of 30
+Device verification requirements for new developer accounts (/googleplay/android-developer/answer/14316361?hl=en-GB&ref_topic=7072031)
+4 of 30
+Set up your app on the app dashboard (/googleplay/android-developer/answer/9859454?hl=en-GB&ref_topic=7072031)
+5 of 30
+Inspect app versions on the Latest releases and bundles page (/googleplay/android-developer/answer/9844279?hl=en-GB&ref_topic=7072031)
+6 of 30
+Prepare and roll out a release (/googleplay/android-developer/answer/9859348?hl=en-GB&ref_topic=7072031)
+7 of 30
+About your submission activity (/googleplay/android-developer/answer/17118609?hl=en-GB&ref_topic=7072031)
+8 of 30
+Halting a fully rolled-out release (/googleplay/android-developer/answer/16285429?hl=en-GB&ref_topic=7072031)
+9 of 30
+Detect app issues early with pre-review checks (/googleplay/android-developer/answer/14807773?hl=en-GB&ref_topic=7072031)
+10 of 30
+Publish your app (/googleplay/android-developer/answer/9859751?hl=en-GB&ref_topic=7072031)
+11 of 30
+Helpful tips to get your app published on Google Play (/googleplay/android-developer/answer/15191715?hl=en-GB&ref_topic=7072031)
+12 of 30
+Best practices for white-label developers (/googleplay/android-developer/answer/15884185?hl=en-GB&ref_topic=7072031)
+13 of 30
+Update or unpublish your app (/googleplay/android-developer/answer/9859350?hl=en-GB&ref_topic=7072031)
+14 of 30
+Control when app changes are reviewed and published (/googleplay/android-developer/answer/9859654?hl=en-GB&ref_topic=7072031)
+15 of 30
+Release app updates with staged roll-outs (/googleplay/android-developer/answer/6346149?hl=en-GB&ref_topic=7072031)
+16 of 30
+Prompt users to update to your latest app version (/googleplay/android-developer/answer/13812041?hl=en-GB&ref_topic=7072031)
+17 of 30
+Manage your store listings (/googleplay/android-developer/topic/3450987?hl=en-GB&ref_topic=7072031)
+18 of 30
+Distribute your instant experience (/googleplay/android-developer/answer/7381861?hl=en-GB&ref_topic=7072031)
+19 of 30
+Manage different form factor releases on dedicated tracks (/googleplay/android-developer/answer/13295490?hl=en-GB&ref_topic=7072031)
+20 of 30
+Add or test APK expansion files (/googleplay/android-developer/answer/2481797?hl=en-GB&ref_topic=7072031)
+21 of 30
+Google Play game services (/googleplay/android-developer/topic/7071327?hl=en-GB&ref_topic=7072031)
+22 of 30
+Using third-party SDKs in your app (/googleplay/android-developer/answer/10358880?hl=en-GB&ref_topic=7072031)
+23 of 30
+Target API level requirements for Google Play apps (/googleplay/android-developer/answer/11926878?hl=en-GB&ref_topic=7072031)
+24 of 30
+Create and distribute a watch face on Google Play (/googleplay/android-developer/answer/13560201?hl=en-GB&ref_topic=7072031)
+25 of 30
+Declare permissions for your app (/googleplay/android-developer/answer/9214102?hl=en-GB&ref_topic=7072031)
+26 of 30
+Prepare your app for review (/googleplay/android-developer/answer/9859455?hl=en-GB&ref_topic=7072031)
+27 of 30
+Request more time to complete a policy declaration (/googleplay/android-developer/answer/15644220?hl=en-GB&ref_topic=7072031)
+28 of 30
+Manage your store listing, experiment and event graphics with the asset library (/googleplay/android-developer/answer/16386748?hl=en-GB&ref_topic=7072031)
+29 of 30
+Version codes (/googleplay/android-developer/answer/17367361?hl=en-GB&ref_topic=7072031)
+30 of 30
+Developer guide: Getting started with Google Play Shorts (/googleplay/android-developer/answer/18611720?hl=en-GB&ref_topic=7072031)
+©2026 Google
+Privacy Policy (//www.google.com/intl/en-GB/privacy.html)
+Terms of Service (https://www.google.com/accounts/TOS)
+Language
+Afrikaans
+català
+dansk
+Deutsch
+eesti
+English
+español
+español (Latinoamérica)
+Filipino
+français
+français (Canada)
+Gaeilge
+hrvatski
+Indonesia
+isiZulu
+italiano
+Kiswahili
+latviešu
+lietuvių
+magyar
+Malti
+Melayu
+Nederlands
+norsk
+polski
+português
+português (Brasil)
+română
+slovenčina
+slovenščina
+suomi
+svenska
+Tiếng Việt
+Türkçe
+čeština
+Ελληνικά
+български
+русский
+српски
+українська
+עברית
+اردو
+العربية
+हिन्दी
+தமிழ்
+ಕನ್ನಡ
+ไทย
+አማርኛ
+中文（简体）
+中文（繁體）
+中文（香港）
+日本語
+한국어
+English (United Kingdom)
+Enable Dark Mode
+Send feedback on…
+This help content & information
+General Help Centre experience
+Search
+Clear search
+Close search
+Google apps
+Main menu
+9787804153695307514
+true
+Search Help Centre
+false
+true
+true
+true
+true
+true
+92637
+false
+false
+false
+false
+false
