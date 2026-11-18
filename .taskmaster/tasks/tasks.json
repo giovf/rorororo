@@ -1543,13 +1543,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-11-17T17:23:53.310Z"
+      },
+      {
+        "id": "52",
+        "title": "gankdat: Workers Logs read completeness (lib/log-read.ts)",
+        "description": "Paged, ABR-aware log read with a completeness head line for worker-logs.mjs, error-lines.mjs and metrics.mjs; queue item gankdat/worker-logs-read-completeness",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-11-18T18:20:28.693Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-11-17T17:23:53.310Z",
-      "taskCount": 51,
-      "completedCount": 44,
+      "lastModified": "2026-11-18T18:20:28.693Z",
+      "taskCount": 52,
+      "completedCount": 45,
       "tags": [
         "master"
       ]

@@ -179,6 +179,8 @@ heavy deps. On CI the gate runs once per push, in `gankdat.yml` only.
   (`lib/apify-outcomes.ts`), a live MCP probe of both protocol eras with a one-run minted key
   (`scripts/mcp-probe.ts`), external-vs-internal dataset demand (`datasets 30d external`).
   Workers Logs keeps a JSON `console.log` as the parsed object under `source`, never as `message`.
+  The error-line read and the `worker logs` dispatch go through `lib/log-read.ts` (2026-11-18): paged by cursor, a sampled window (ABR level > 1)
+  re-read in halves, and headed `log read: N returned of M matched — complete | PARTIAL: <why>` — never read silence as absence.
 - **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
   params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
   date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value,

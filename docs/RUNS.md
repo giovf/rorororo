@@ -3219,3 +3219,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 17:47 | burn-down | Queued gankdat x402-init-failure-cause-read (5, from 11-19): read the message, fix the cause
 - 2026-11-18 17:47 | burn-down | Deploys on the next CI run; next slot: probe error lines show x402_init_failed, no bare stack at 500
 - 2026-11-18 17:50 | burn-down | Stopping: 4 items done and 1 research pass, stopped for time; 14 gankdat items queued for the next fire
+- 2026-11-18 18:20 | burn-down | Built gankdat worker-logs-read-completeness: a log read now says how much of the log it returned
+- 2026-11-18 18:20 | burn-down | Cause, from Cloudflare's query reference: sampled answers (ABR level), one page of 2000, no match count read
+- 2026-11-18 18:20 | burn-down | Reads follow the page cursor and halve a sampled window; head line says complete or PARTIAL and why
+- 2026-11-18 18:20 | burn-down | Daily numbers error clause carries "partial read" when short; needle reaches the script by env var
+- 2026-11-18 18:20 | burn-down | Relay round cf-logs-query-2026-11-18 (7 lines); 8 tests added (799 pass); worker-logs.yml in docs/ci
+- 2026-11-18 18:20 | burn-down | Next in this slot: two worker logs dispatches a minute apart, head lines compared

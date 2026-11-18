@@ -870,6 +870,26 @@ runs `check:root`.
   the same `worker error ×N:` / `worker request ×N:` lines the Daily numbers step prints (`errorLinesReport`,
   `lib/error-lines.ts`, tested) — node builtins only, no install, no row, nothing committed, read with `get_job_logs`;
   the 07:00 routine's row dispatch leaves it false and the schedule never sees it.
+  **A log read says how complete it is** (2026-11-18, gankdat `worker-logs-read-completeness`, `lib/log-read.ts`):
+  eight `worker logs` reads on 11-18 returned 140 POST /mcp records for a window the traffic rows count at about
+  12,000, a request one needle found was absent from the wider set, and probe run 333 printed `worker errors: 0 lines`
+  ninety seconds after run 332 printed 160 with the same query. `wrangler.jsonc` sets no `head_sampling_rate`
+  ("If `head_sampling_rate` is unspecified, it is configured to a default value of 1 (100%)", Workers Logs docs), so
+  the Worker does not sample. Cloudflare's "Run a query" reference (relay round `cf-logs-query-2026-11-18`, 4.txt) names
+  where a line goes missing, and each has a field we never read: (1) `statistics.abr_level` — "The level of Adaptive
+  Bit Rate (ABR) sampling used for the query. If empty the ABR level is 1" — the database may answer a wide query from
+  a sampled copy, which is how one query returns 160 lines and then none; "Narrower timeframes produce faster responses
+  and more specific results". (2) `events.count` — "Total number of events matching the query (may exceed the number
+  returned due to limits)"; `limit` is at most 2000 and the next page is `offset` = "the $metadata.id of the last
+  event" with `offsetDirection: 'next'` — we sent one page and never looked at the count. (3) a `count` calculation's
+  `sampleInterval` — "1 / (the sampling rate applied when it was ingested): the Worker's head_sampling_rate multiplied
+  by any platform sampling applied to the account or script" — above 1 the events were never stored. (Also: a log over
+  256 KB is truncated, retention is 7 days.) `readLogEvents` now halves a window whose answer came back above ABR level
+  1 and reads both halves (≤ 16 requests a read), follows the cursor up to the caller's cap (error lines 6,000, the
+  dispatch's `limit` ≤ 5,000), and both scripts print `log read: N returned of M matched — complete | PARTIAL: <why>`
+  and `log store: … sample interval S` before anything else; the Daily numbers clause carries `partial read: <why>`
+  when the reading is not whole. Which of the three it was on 11-18 is the first live head line's to say (RUNS 11-18).
+  The workflow's inputs reach the script as `WORKER_LOGS_*` env vars, so a needle with double quotes survives the shell.
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
   after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
   stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in
