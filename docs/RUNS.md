@@ -3191,3 +3191,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 12:07 | triage | notify owner dispatched: last run started 09:05 UTC, 3 h ago
 - 2026-11-18 16:07 | triage | notify owner dispatched: last run started 13:21 UTC, 2 h 45 min ago
 - 2026-11-18 16:07 | watchdog | ci-minutes: 400 billed min/7d (~1714/mo; public, no cap) top: notify owner 94, gankdat metrics 64, check 45
+- 2026-11-18 17:23 | burn-down | gankdat mcp-buy-attempt-read-2026-11-16 done: crawler — nothing filed
+- 2026-11-18 17:23 | burn-down | The buy_credits call: one python-httpx2 client called four tools in 3 s on 11-15 07:19, stopped at 401
+- 2026-11-18 17:23 | burn-down | The 3 sign-in page loads: api.okou.ai, 11-17 04:26–05:15, one headless browser, no email posted
+- 2026-11-18 17:23 | burn-down | Workers Logs hold ~1 in 100 requests (140 of ~12,000 /mcp); 8 log reads found neither event
+- 2026-11-18 17:23 | burn-down | Probe dispatch now prints door events 7d from Analytics Engine; run 333 printed 47 points
+- 2026-11-18 17:23 | burn-down | Daily numbers wanted: clause tags a client calling 2+ protected tools as a tool-list walk
