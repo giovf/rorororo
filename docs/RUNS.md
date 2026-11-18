@@ -3174,3 +3174,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 22:06 | triage | notify owner dispatched: last run started 19:06 UTC, 3 h ago
 - 2026-11-18 01:06 | triage | notify owner dispatched: last run started 22:36 UTC, 2 h 30 min ago
 - 2026-11-18 06:06 | triage | notify owner dispatched: last run started 03:49 UTC, 2 h 17 min ago
+- 2026-11-18 08:19 | exchange | No new venture; no build beats the queue — the owner opened Google Play unasked, taken as a spike (4)
+- 2026-11-18 08:19 | exchange | Queued new-ventures: Google Play Android shelf spike 4, n8n template library spike 3
+- 2026-11-18 08:19 | exchange | Queued gankdat mcp-buy-attempt-read-2026-11-16 (5): first buy_credits call and first sign-in page loads
+- 2026-11-18 08:19 | exchange | Parked: Superteam Earn agent bounties (site 404s the runner), IPO patents and designs journals (no file)
+- 2026-11-18 08:19 | exchange | Declined: Tes teaching resources shelf — its author code bars AI-generated resources
+- 2026-11-18 08:19 | exchange | Exchange file docs/exchange/2026-W47.md; relay rounds exchange-w47-2026-11-18, -b, -c (32 lines)
+- 2026-11-18 08:19 | exchange | Owner: nothing now; a Play promote would ask once for twelve testers for fourteen days, app named

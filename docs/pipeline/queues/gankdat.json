@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "researched": "2026-11-12",
   "items": [
     {
@@ -1381,6 +1381,16 @@
       "status": "todo",
       "added": "2026-11-17",
       "not_before": "2026-12-17"
+    },
+    {
+      "id": "mcp-buy-attempt-read-2026-11-16",
+      "title": "Read who asked to buy: the 2026-11-16 Daily numbers row carries `wanted: … buy_credits 1, confirm_credit_purchase 1` — the first keyless calls those two tools have taken since they shipped on 10-11 — a sixth account (`+1/24h`), and the 11-17 row's `oauth funnel 7d: … 3 authorize, 3 sign-in, 0 email`, the first loads the sign-in page has ever logged. One `worker logs` dispatch (needles `buy_credits`, `confirm_credit_purchase`, `oauth_authorize`, `sign-in`; 11-16 00:00 → 11-18) and the accounts table's newest row (created-at, plan, source — no email in the repo): name the client by user agent and call pattern (a catalogue crawler walking the tool list, as `agent-collector/0.1 … capability survey` and `MCPYP-Incremental/1.0` in the same rows suggest, or a person's client following the 401 to the door), say where the sequence stopped, and write it in RESEARCH.md. Then file what the reading supports and nothing more: a crawler → no item, and the two tools join the prober note in the Daily numbers `wanted:` clause; a person who stopped at sign-in → one item on that step; a signed-in client that reached `buy_credits` → item `credit-packs-live-checkout` (the credit path ends at a PayPal sandbox order — `src/billing/paypal.ts` \"SANDBOX ONLY\", tool title \"Buy a credit pack with PayPal (sandbox)\" — so a real buyer cannot pay; the packs move to the live Stripe checkout the plans use, the PayPal tools stay for the hackathon entry until its 12-16 result).",
+      "why": "Exchange 2026-W47 (docs/exchange/2026-W47.md §3): in 60 days of 3,400–4,000 anonymous MCP calls a day nobody had asked to buy or opened the sign-in page; both happened within 24 hours of each other and nobody has read them. The logs reach back about a week (the 11-17 harness read reached 11-10), so the read is worth 0.1 day before 11-23 rather than at Sunday's review, and the last time a buyer signal was taken at face value it was a test harness (11-17) — the read comes before any build.",
+      "effort_days": 0.1,
+      "proof": "the client named with its user agent, call sequence and stopping point in RESEARCH.md; either a follow-up item filed with its score or the line `crawler — nothing filed` in docs/RUNS.md",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-11-18"
     }
   ]
 }
