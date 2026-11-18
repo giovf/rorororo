@@ -3198,3 +3198,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 17:31 | build | n8n test: runs free on a hosted runner bar destination credentials; sketch in the spike, not run
 - 2026-11-18 17:31 | build | Relay rounds spike-n8n-2026-11-18, -b and -c (59 lines); spike file n8n-template-library.md
 - 2026-11-18 17:31 | build | Owner: nothing asked. new-ventures queue is empty and marked for research
+- 2026-11-18 17:23 | burn-down | gankdat mcp-buy-attempt-read-2026-11-16 done: crawler — nothing filed
+- 2026-11-18 17:23 | burn-down | The buy_credits call: one python-httpx2 client called four tools in 3 s on 11-15 07:19, stopped at 401
+- 2026-11-18 17:23 | burn-down | The 3 sign-in page loads: api.okou.ai, 11-17 04:26–05:15, one headless browser, no email posted
+- 2026-11-18 17:23 | burn-down | Workers Logs hold ~1 in 100 requests (140 of ~12,000 /mcp); 8 log reads found neither event
+- 2026-11-18 17:23 | burn-down | Probe dispatch now prints door events 7d from Analytics Engine; run 333 printed 47 points
+- 2026-11-18 17:23 | burn-down | Daily numbers wanted: clause tags a client calling 2+ protected tools as a tool-list walk

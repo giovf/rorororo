@@ -1670,3 +1670,71 @@ journal a question a lever would answer (no filter was ever sent), and the chang
 (11-05) has taken 0 paid calls in twelve days. One measurement fix is queued, `x402-harness-ua-as-prober` (3): a UA
 naming itself a harness is classed with the probers, so the buyer clause the 12-15 day-60 read and the parked
 aggregator trigger quote stops counting it as demand.
+
+
+## Who asked to buy, who opened the sign-in page — read 2026-11-18 (burn-down, 17:10 UTC)
+
+Item `mcp-buy-attempt-read-2026-11-16`. Read: the Daily numbers rows 11-14 to 11-18, eight `worker logs` dispatches
+(runs 26–33) and two `gankdat metrics` probe dispatches (runs 332–333).
+
+**Workers Logs could not answer.** Needles `/oauth/`, `authorize`, `gankdat.com/authorize`, `gankdat.com/register`,
+`MCPYP`, `agent-collector` and `POST https://gankdat.com/mcp` over 5,000 minutes returned **140 POST /mcp records
+for a window the rows count at about 12,000**, one 401 (11-18), no `/authorize` load and no `POST /register` — and a
+request one needle found (MCPYP, 11-17 00:01:13) was absent from the full `/mcp` set. The log keeps about one request
+in a hundred, so a rare event is not in it; the 11-17 harness read's "6 of 21 lines" was the same thing. (A needle
+containing double quotes also reaches the script without them — the workflow's shell strips them.) The points the
+Worker writes to Analytics Engine are complete, so the probe dispatch now prints them in time order
+(`src/lib/door-events.ts`, `scripts/error-lines.mjs`: `door events 7d:` — every keyless call to a protected or
+sign-up tool with its hashed client id, every OAuth leg with its client host). Run 333 printed 47 points for
+11-11 22:52 → 11-18 11:23 UTC.
+
+**The request to buy was a crawler walking the tool list.** One client, `python-httpx2/2.14.0`, hashed id `80ecdbcc`:
+
+| UTC | Tool | Answer |
+| --- | --- | --- |
+| 11-12 16:23:32 | connect_account | 401 |
+| 11-13 07:22:20 | connect_account | 401 |
+| 11-15 07:19:23 | buy_credits | 401 |
+| 11-15 07:19:24 | request_api_key | keyless tool |
+| 11-15 07:19:26 | confirm_credit_purchase | 401 |
+| 11-15 07:19:26 | claim_api_key | keyless tool |
+
+Four tools in three seconds, in an order no buyer takes (confirming a purchase two seconds after asking for one,
+with no sign-in between), from a client that had touched `connect_account` on two earlier days. It stopped at the
+401: no OAuth leg carries its trace. The row's `agent sign-up: 1 req/24h, 0 keys` is its `request_api_key` call, and
+the sixth account (`+1/24h` on the 11-16 row) lands in the same 24 hours — most likely the pending account that call
+opens; the accounts table was not read (no email belongs in this file) and no key was ever claimed. The other 32
+protected-tool points of the week are all `connect_account`: `python-requests/2.34.2` 20 (a new client id each time,
+about three a day), `BrickBlueBot` 4, `agent-collector` 2, `MCPYP-Incremental` 2, `undici` 2 — catalogue crawlers.
+
+**The sign-in page loads were one automated client, a day later, unrelated.** OAuth legs of the week:
+
+| UTC | Step | Client host | User agent |
+| --- | --- | --- | --- |
+| 11-16 02:33:34 | registered | api.toffu.ai | python-httpx/0.28.1 |
+| 11-16 10:13:35 | registered ×2 | attacker-alpha / attacker-beta .example.com | curl/8.20.0 |
+| 11-17 04:05:54 | registered ×2 | attacker-alpha1 / attacker-beta2 .example.com | curl/8.20.0 |
+| 11-17 04:26:23 | authorize → sign-in shown | api.okou.ai | `Mozilla/5.0` (bare) |
+| 11-17 04:39:41 | authorize → sign-in shown | api.okou.ai | Chrome 156, macOS |
+| 11-17 05:15:54 | authorize → sign-in shown | api.okou.ai | HeadlessChrome 156, Linux |
+
+`api.okou.ai` opened a valid authorization request three times in fifty minutes under three user agents, one a bare
+string and one a headless browser, and never posted an email (`0 email`): a hosted agent platform's connector
+following the 401 by itself and meeting a form only a person can fill — an email address and a link in a mailbox.
+Nobody typed anything, so there is no step to fix for it. `api.toffu.ai` registered a client and never opened the
+page. The four `attacker-*.example.com` registrations are someone testing the open registration endpoint with
+made-up redirect hosts; each got what any client gets (a public client id, no secret, 10 registrations per address
+per window, and a consent page that names the client before anything is granted) and none went on to `authorize`.
+
+**Decision: crawler — nothing filed.** No `credit-packs-live-checkout`: nobody signed in, so nobody reached a
+PayPal sandbox order, and the packs stay as they are until the hackathon result on 12-16. No sign-in item: the one
+client at the door was a machine. Two things changed instead: (1) the `wanted:` clause of the Daily numbers row tags
+a client that called two or more different protected tools in a day — `(tool-list walk: 1 client — buy_credits,
+confirm_credit_purchase)` — so the next walk is not read as demand; (2) the door is readable event by event from one
+probe dispatch, which is where the next "who was that" starts instead of the request log. A person at the door will
+show as `email` ≥ 1 on the funnel clause; that, or `api.okou.ai` / `api.toffu.ai` returning with a token, is the
+signal to read again.
+
+One side reading for whoever next reads errors by dispatch: run 332 printed `worker errors: 160 lines` and run 333,
+ninety seconds later with the same query, `worker errors: 0 lines` with a successful body — the log query can answer
+empty while the lines exist, so an empty error read is taken twice before it is believed.

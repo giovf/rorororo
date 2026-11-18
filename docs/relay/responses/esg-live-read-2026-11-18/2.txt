@@ -1,0 +1,62 @@
+{"@context":"https://schema.org","@type":"Dataset","name":"UK gender pay gap reports (employers of 250+) — statistics","description":"The gender pay gap figures UK employers of 250 or more publish each year — employer, Companies House number, SIC codes, reporting year, mean and median hourly pay gap, mean and median bonus gap, the share of men and women paid a bonus and in each pay quartile, employer size band, due and submission dates and whether the report was late. By company number with history across years; from the official GOV.UK gender pay gap service, refreshed daily. The responsible person and the address are never ingested.","url":"https://gankdat.com/stats/uk-gender-pay-gap","license":"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/","isAccessibleForFree":true,"dateModified":"2026-11-18T05:18:29.685Z","creator":{"@type":"Organization","name":"gankdat","url":"https://gankdat.com"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://gankdat.com/v1/data/uk-gender-pay-gap"},{"@type":"DataDownload","name":"daily change feed","encodingFormat":"application/json","contentUrl":"https://gankdat.com/v1/changes/uk-gender-pay-gap"}]}
+meta description: UK gender pay gap reports (employers of 250+): 11,784 gender pay gap reports, updated 2026-11-18. What moved this month and the top movers, computed from the official feed. Free JSON API.
+meta og:type: article
+meta og:site_name: gankdat
+meta og:title: UK gender pay gap reports (employers of 250+) — statistics
+meta og:description: UK gender pay gap reports (employers of 250+): 11,784 gender pay gap reports, updated 2026-11-18. What moved this month and the top movers, computed from the official feed. Free JSON API.
+meta og:url: https://gankdat.com/stats/uk-gender-pay-gap
+UK gender pay gap reports (employers of 250+) — statistics | gankdat
+gankdat (/) / stats (/stats)
+UK gender pay gap reports (employers of 250+) — statistics
+The gender pay gap figures UK employers of 250 or more publish each year — employer, Companies House number, SIC codes, reporting year, mean and median hourly pay gap, mean and median bonus gap, the share of men and women paid a bonus and in each pay quartile, employer size band, due and submission dates and whether the report was late. By company number with history across years; from the official GOV.UK gender pay gap service, refreshed daily. The responsible person and the address are never ingested.
+headline
+records in dataset	11,784
+last refreshed	2026-11-18
+summary
+As of 18 November 2026, UK gender pay gap reports (employers of 250+) holds 11,784 gender pay gap reports in its current window, published between December 2025 and November 2026.
+In November 2026 so far, 57 gender pay gap reports have been published, down 59 (50.9%) on the 116 of October 2026. Across the 12 months in view the average is 937 a month; the busiest was March 2026 with 5,426 and the quietest November 2026 with 57.
+Looking at reports by employer size, 250 to 499 leads with 5,089 gender pay gap reports (43.2% of the total), followed by 500 to 999 (3,026) and 1000 to 4999 (2,549). Looking at reports by reporting year, 2025/26 leads with 11,202 gender pay gap reports (95.1% of the total), followed by 2026/27 (582).
+Over the last 1 refresh days the register gained 11,784 gender pay gap reports, lost 0 and changed 0; the latest refresh, on 18 November 2026, added 11,784, removed 0 and changed 0.
+Reports submitted by month
+month	count
+2025-12	361
+2026-01	535
+2026-02	821
+2026-03	5,426
+2026-04	3,249
+2026-05	182
+2026-06	187
+2026-07	123
+2026-08	114
+2026-09	72
+2026-10	116
+2026-11	57
+Reports by employer size
+value	records
+250 to 499	5,089
+500 to 999	3,026
+1000 to 4999	2,549
+5000 to 19,999	568
+Less than 250	484
+20,000 or more	68
+Reports by reporting year
+value	records
+2025/26	11,202
+2026/27	582
+what changed (last 30 days)
+Last 30 days: 11,784 added, 0 removed, 0 changed — the rows a re-download would make you find yourself.
+refresh day	added	removed	changed
+2026-11-18	11,784	0	0
+This register diffs itself every morning. Poll the delta instead of the whole
+dataset: GET /v1/changes/uk-gender-pay-gap?since=2026-11-18 (add
+change=added|removed|changed ), or the MCP tool get_changes . One
+credit per page, 90-day history — a daily diff of every register fits the free tier.
+methodology
+Computed from the same records the gankdat API serves — official
+government feeds, refreshed daily, no scraping. This dataset's licence and
+personal-data posture are stated in the terms (/terms) . Counts
+reflect the current dataset window, not all-time totals. Cite this page with
+its URL and the last-refreshed date.
+Get this data as JSON
+free tier, 250 req/mo — or MCP for agents
+docs (/docs) get a key (/account) llms.txt (/llms.txt)

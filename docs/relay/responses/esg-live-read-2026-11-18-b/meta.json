@@ -1,0 +1,66 @@
+{
+  "request": "esg-live-read-2026-11-18-b",
+  "fetched_at": "2026-11-18T17:31:04.242Z",
+  "results": [
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_company_profiles\",\"arguments\":{\"company_number\":\"00519500\"}}}",
+      "fetched_at": "2026-11-18T17:30:46.248Z",
+      "status": 200,
+      "elapsed_ms": 6903,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 23308,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_company_profiles\",\"arguments\":{\"company_number\":\"08064685\"}}}",
+      "fetched_at": "2026-11-18T17:30:53.653Z",
+      "status": 200,
+      "elapsed_ms": 4619,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 13516,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_company_profiles\",\"arguments\":{\"company_number\":\"SC016876\"}}}",
+      "fetched_at": "2026-11-18T17:30:58.774Z",
+      "status": 200,
+      "elapsed_ms": 4157,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 16438,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"tools/call\",\"params\":{\"name\":\"query_uk_gender_pay_gap\",\"arguments\":{\"company_number\":\"00519500\"}}}",
+      "fetched_at": "2026-11-18T17:31:03.433Z",
+      "status": 200,
+      "elapsed_ms": 808,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "4.json",
+      "bytes": 3312,
+      "truncated": false
+    }
+  ]
+}

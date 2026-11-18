@@ -1356,9 +1356,10 @@
       "effort_days": 0.05,
       "proof": "both refresh_log rows with their counts (≈ 25k statements across three registry years, ≈ 11k pay gap rows) and one live `esg` read quoted in docs/RUNS.md",
       "score": 3,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-11-17",
-      "not_before": "2026-11-18"
+      "not_before": "2026-11-18",
+      "doing_since": "2026-11-18"
     },
     {
       "id": "uk-esg-disclosures-backfill",
@@ -1389,9 +1390,9 @@
       "effort_days": 0.1,
       "proof": "the client named with its user agent, call sequence and stopping point in RESEARCH.md; either a follow-up item filed with its score or the line `crawler — nothing filed` in docs/RUNS.md",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-18",
-      "doing_since": "2026-11-18"
+      "done_at": "2026-11-18"
     }
   ]
 }
