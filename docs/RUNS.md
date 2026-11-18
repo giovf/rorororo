@@ -3251,3 +3251,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 18:42 | burn-down | Relay rounds spike-scot-care-2026-11-18 and -b (10 lines); two hosts added; Wales and NI not read
 - 2026-11-18 18:42 | burn-down | Stopping: 3 items done, 1 fix and 1 spike seeded and parked, stopped for time; nothing buildable is left
 - 2026-11-18 19:06 | triage | notify owner dispatched: last run started 16:06 UTC, 3 h ago
+- 2026-11-18 19:06 | watchdog | ci-failed: worker-logs.yml run 34 17:29 — step Read the Worker's lines (no install: th…; later run 35 ok
