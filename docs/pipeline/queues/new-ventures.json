@@ -678,8 +678,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/scotland-care-services-register.md with the licence quote, the CSV header table and row count, the childminder share, the rival price table, the England register's 30-day external queries and a promote / park call; a promote adds the gankdat item with its day count, a park adds `scotland-care-services-register` to docs/pipeline/exchange.json with a trigger",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-18"
+      "status": "doing",
+      "added": "2026-11-18",
+      "doing_since": "2026-11-18"
     }
   ]
 }
