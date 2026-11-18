@@ -1,0 +1,54 @@
+{
+  "request": "spike-scot-care-b-2026-11-18",
+  "fetched_at": "2026-11-18T18:41:27.594Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://ci-web-media-production-bucket.s3.eu-west-2.amazonaws.com/assets/resources/datastore/260131datastoreexternal.csv",
+      "fetched_at": "2026-11-18T18:41:25.289Z",
+      "status": 200,
+      "elapsed_ms": 449,
+      "final_url": "https://ci-web-media-production-bucket.s3.eu-west-2.amazonaws.com/assets/resources/datastore/260131datastoreexternal.csv",
+      "headers": {
+        "content-type": "text/csv",
+        "content-length": "12049170",
+        "last-modified": "Tue, 12 May 2026 20:54:19 GMT",
+        "etag": "\"e7560e489ac1f9bd377fbb328bce615f\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://ci-web-media-production-bucket.s3.eu-west-2.amazonaws.com/assets/resources/datastore/260131datastoreexternal.csv",
+      "range": "0-8191",
+      "fetched_at": "2026-11-18T18:41:26.243Z",
+      "status": 206,
+      "elapsed_ms": 458,
+      "final_url": "https://ci-web-media-production-bucket.s3.eu-west-2.amazonaws.com/assets/resources/datastore/260131datastoreexternal.csv",
+      "headers": {
+        "content-type": "text/csv",
+        "content-length": "8192",
+        "last-modified": "Tue, 12 May 2026 20:54:19 GMT",
+        "etag": "\"e7560e489ac1f9bd377fbb328bce615f\""
+      },
+      "file": "2.csv",
+      "bytes": 8192,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.careinspectorate.scot/resources-data/publications-and-statistics/library/datastore-31-03-2026",
+      "fetched_at": "2026-11-18T18:41:26.703Z",
+      "status": 200,
+      "elapsed_ms": 883,
+      "final_url": "https://www.careinspectorate.scot/resources-data/publications-and-statistics/library/datastore-31-03-2026",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 16362,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 307056
+    }
+  ]
+}
