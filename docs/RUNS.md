@@ -3190,3 +3190,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 09:18 | build | Relay rounds spike-google-play-2026-11-18 and -b (72 lines); spike file google-play-android-shelf.md
 - 2026-11-18 12:07 | triage | notify owner dispatched: last run started 09:05 UTC, 3 h ago
 - 2026-11-18 16:07 | triage | notify owner dispatched: last run started 13:21 UTC, 2 h 45 min ago
+- 2026-11-18 16:07 | watchdog | ci-minutes: 400 billed min/7d (~1714/mo; public, no cap) top: notify owner 94, gankdat metrics 64, check 45
