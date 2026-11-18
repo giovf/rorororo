@@ -1412,9 +1412,9 @@
       "effort_days": 0.2,
       "proof": "tests for the retry, the 503 and the pass-through; the next probe dispatch's error lines show `x402_init_failed` with a message (the cause, then fixed or queued) and no `initializeHttpServer` stack at 500",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-18",
-      "doing_since": "2026-11-18"
+      "done_at": "2026-11-18"
     },
     {
       "id": "worker-logs-read-completeness",
@@ -1435,6 +1435,17 @@
       "score": 2,
       "status": "todo",
       "added": "2026-11-18"
+    },
+    {
+      "id": "x402-init-failure-cause-read",
+      "title": "Read why the x402 payment server fails to start: one probe dispatch (or `worker logs`, needle `x402_init_failed`, 1,500 min) after a night on v with `guardedLane` — quote the `name`, `message` and `cause` of the `x402_init_failed` lines, count them against the day's x402 requests, say whether the single retry absorbed them (attempt 1 with no attempt 2) and fix the cause in the same slot when it is ours (a handshake repeated per request instead of per isolate, a facilitator limit a sweep trips — cache `/supported` in KV for the hour, or initialise once behind a shared promise); a CDP outage is recorded with its dates and nothing built",
+      "why": "`x402-init-failure-answer` (2026-11-18) made the failure a retried 503 and a readable log line but did not find its cause: the old line held only stack frames (`paidLane → initializeHttpServer`), ×1 on 11-13, ×2 on 11-16, ×17 on 11-17, ×52 on 11-18, four inside seven seconds on four routes at 17:25. A 503 still sells nothing; the count is rising daily on the one lane strangers pay on.",
+      "effort_days": 0.2,
+      "proof": "the message quoted in RESEARCH.md with the day's count, and either the fix's test or the outage's dates; then three Daily numbers rows with no `x402_init_failed` attempt 2",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-11-18",
+      "not_before": "2026-11-19"
     }
   ]
 }

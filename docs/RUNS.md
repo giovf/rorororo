@@ -3214,3 +3214,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 17:40 | burn-down | Deploys on the next CI run; next slot: probe dispatch error lines show no /feeds/ path at 500
 - 2026-11-18 17:42 | burn-down | gankdat research: x402 routes answer 500 during payment-server start-up, 52 in a day and rising
 - 2026-11-18 17:42 | burn-down | Queued gankdat x402-init-failure-answer (6), worker-logs-read-completeness (3), stats-page-before-first-load (2)
+- 2026-11-18 17:47 | burn-down | Built gankdat x402-init-failure-answer: a failed payment-server start is retried, then 503 + Retry-After
+- 2026-11-18 17:47 | burn-down | The failure now logs x402_init_failed with the error's message; 4 tests added (791 pass)
+- 2026-11-18 17:47 | burn-down | Queued gankdat x402-init-failure-cause-read (5, from 11-19): read the message, fix the cause
+- 2026-11-18 17:47 | burn-down | Deploys on the next CI run; next slot: probe error lines show x402_init_failed, no bare stack at 500

@@ -1046,6 +1046,15 @@ runs `check:root`.
 - **CI/CD** — GitHub Actions: lint/typecheck/test; deploy on main gated on
   `CLOUDFLARE_API_TOKEN` secret existing.
 
+- **x402 start-up failures** (2026-11-18, `x402-init-failure-answer`): `paidLane` runs the payment
+  middleware through `guardedLane` (`src/x402/routes.ts`). A throw before the route handler was
+  entered — the lazy lane build or the resource server's facilitator handshake
+  (`initializeHttpServer`, once per isolate) — logs `x402_init_failed` with the error's name,
+  message and cause, is tried once more, then answers 503 + `Retry-After: 5`; a throw after the
+  handler ran passes through and is never repeated. Before: a bare 500 on 1, 2, 17 and 52 requests a
+  day from 11-13 on every route, with a logged line that held only stack frames (the cause is read
+  from the new line: item `x402-init-failure-cause-read`). `test/x402-guarded-lane.spec.ts`.
+
 ## Compliance & accessibility
 - UK GDPR: per-dataset data posture, stated in the terms licence table.
   Current datasets run Blind Mode — personal fields dropped at ingest, never

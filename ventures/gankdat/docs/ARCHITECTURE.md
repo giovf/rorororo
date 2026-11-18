@@ -202,7 +202,8 @@ heavy deps. On CI the gate runs once per push, in `gankdat.yml` only.
   Bazaar indexes a resource only after one settled payment and drops it 30 days after the last, so the
   metrics job's probe (`scripts/x402-probe.mjs`, `X402_PROBE_KEY`) pays unlisted/expiring routes within
   a 30-day cap sized from the route count. Payments under the probe's user agent are internal; probers
-  and buyers are split in the Daily numbers (`src/lib/x402-sales.ts`).
+  and buyers are split in the Daily numbers (`src/lib/x402-sales.ts`). A start-up failure of the payment
+  server (facilitator handshake) is retried once, then answered 503 + `Retry-After`, logged `x402_init_failed`.
 - **PayPal** (credit packs, **sandbox only**, Orders API v2, no live switch): packs add to the top-up
   balance, spent once the plan allowance is gone; REST, MCP `buy_credits`/`confirm_credit_purchase`,
   /account buttons; the `created → completed` UPDATE is the capture guard. `docs/PAYPAL-SETUP.md`.
