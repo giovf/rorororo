@@ -666,8 +666,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/n8n-template-library.md with the creator-terms quotes, a table of ≥ 40 recent vendor-API templates with views per day, the paid-template count and prices, the runner test finding and a promote / park call; a promote adds gankdat `n8n-templates` with its day count, a park updates `n8n-template-library` in docs/pipeline/exchange.json with the trigger",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-18"
+      "status": "doing",
+      "added": "2026-11-18",
+      "doing_since": "2026-11-18"
     }
   ]
 }
