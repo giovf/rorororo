@@ -282,3 +282,4 @@ api.n8n.io  # n8n public templates API: price, purchase URL and view counts per 
 www.tes.com  # Tes Resources author code, selling FAQ, additional terms and a shelf search: AI rule, royalty tiers, visible buyers (exchange 2026-W47)
 creators.n8n.io  # n8n Creator portal registration page: what an account asks for (exchange 2026-W47)
 www.careinspectorate.scot  # Care Inspectorate datastore, Scotland's care services register (spike scotland-care-services-register, 2026-11-18)
+ci-web-media-production-bucket.s3.eu-west-2.amazonaws.com  # the Care Inspectorate's own file bucket: the monthly datastore CSV its library pages link (spike scotland-care-services-register, 2026-11-18)
