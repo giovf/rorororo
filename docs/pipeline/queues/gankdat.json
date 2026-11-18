@@ -1423,8 +1423,9 @@
       "effort_days": 0.2,
       "proof": "the documented cause quoted in ARCHITECTURE-DETAIL.md, and two dispatches of the same needle a minute apart returning the same count — or the head line naming the limit",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-18"
+      "status": "doing",
+      "added": "2026-11-18",
+      "doing_since": "2026-11-18"
     },
     {
       "id": "stats-page-before-first-load",
