@@ -3242,3 +3242,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 18:37 | burn-down | The library's logged Error is kept for the x402_init_failed line, so the 11-19 cause read has a message
 - 2026-11-18 18:37 | burn-down | Worker logs runs 39 and 40 (13 error lines in 60 min, complete); 3 tests added (805 pass)
 - 2026-11-18 18:37 | burn-down | Deploys on the next CI run; next slot: error lines show x402_init_failed and x402 503s, no x402 500
+- 2026-11-18 18:39 | burn-down | Exchange pre-research: Scotland's care services register — spike seeded (scotland-care-services-register)
+- 2026-11-18 18:39 | burn-down | Rivals sell the UK-wide care file at £2,500–3,150 a year; no wrapper of the Scottish file on Apify or GitHub
+- 2026-11-18 18:39 | burn-down | Dropped before seeding: DVSA MOT history — five Apify actors at $3–6 per 1,000, owner API sign-up needed
