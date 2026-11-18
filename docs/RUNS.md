@@ -3236,3 +3236,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 18:30 | burn-down | Sitemap is served by the Worker without the stats pages of registers not yet loaded; 2 tests (802)
 - 2026-11-18 18:30 | burn-down | Feeds not changed: every logged feed error was a D1 throttle (answered since 17:40), none an unloaded register
 - 2026-11-18 18:30 | burn-down | Deploys on the next CI run; next slot: probe error lines show no bare /stats/<slug> 503 from a new register
+- 2026-11-18 18:37 | burn-down | Next-slot check of x402-init-failure-answer: failed — six x402 requests still got 500 after its deploy
+- 2026-11-18 18:37 | burn-down | Cause: the payment library logs its start-up failure and returns a 500 itself; it never throws
+- 2026-11-18 18:37 | burn-down | Fixed gankdat x402 guard: a 500 or 502 answered before the handler ran is retried, then 503 + Retry-After
+- 2026-11-18 18:37 | burn-down | The library's logged Error is kept for the x402_init_failed line, so the 11-19 cause read has a message
+- 2026-11-18 18:37 | burn-down | Worker logs runs 39 and 40 (13 error lines in 60 min, complete); 3 tests added (805 pass)
+- 2026-11-18 18:37 | burn-down | Deploys on the next CI run; next slot: error lines show x402_init_failed and x402 503s, no x402 500
