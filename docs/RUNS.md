@@ -3172,3 +3172,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-17 19:17 | burn-down | Clay already lists a French SIREN action (Enrich-CRM); Germany still closed; no reply to Clay drafted
 - 2026-11-17 19:17 | burn-down | Stopping: 1 spike seeded and done (parked), nothing buildable left; night cap 3 of 3 slots used
 - 2026-11-17 22:06 | triage | notify owner dispatched: last run started 19:06 UTC, 3 h ago
+- 2026-11-18 01:06 | triage | notify owner dispatched: last run started 22:36 UTC, 2 h 30 min ago
