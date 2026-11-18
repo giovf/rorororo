@@ -6,6 +6,8 @@ name: worker logs
 # This job asks Workers Logs for the gankdat Worker's lines in a window (narrowed by a path or other
 # needle, a request id and/or a level), prints them to the job log and writes nothing; a routine reads
 # them with the GitHub MCP `get_job_logs`. Manual only: nothing scheduled, nothing committed.
+# The log's first lines say how complete the read is: `log read: N returned of M matched — complete | PARTIAL: <why>`
+# and `log store: … sample interval S` (2026-11-18); `no lines` under a PARTIAL head is not absence.
 
 on:
   workflow_dispatch:
@@ -27,7 +29,7 @@ on:
         type: string
         default: '60'
       limit:
-        description: 'Most lines to print (newest first, max 1000)'
+        description: 'Most lines to print (newest first, max 5000; read in pages of 2000)'
         type: string
         default: '50'
 
@@ -46,9 +48,13 @@ jobs:
         with:
           node-version: 26
       - name: "Read the Worker's lines (no install: the script imports only the venture's own lib)"
-        run: >
-          node --disable-warning=ExperimentalWarning ventures/gankdat/scripts/worker-logs.mjs
-          "--needle=${{ inputs.needle }}" "--request-id=${{ inputs.request_id }}" "--level=${{ inputs.level }}"
-          "--since-minutes=${{ inputs.since_minutes }}" "--limit=${{ inputs.limit }}"
+        # Inputs travel as env vars (gankdat worker-logs-read-completeness, 2026-11-18): interpolated into the
+        # command line, a needle holding double quotes ("event":"x402_init_failed") closed the shell's own quotes.
+        run: node --disable-warning=ExperimentalWarning ventures/gankdat/scripts/worker-logs.mjs
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          WORKER_LOGS_NEEDLE: ${{ inputs.needle }}
+          WORKER_LOGS_REQUEST_ID: ${{ inputs.request_id }}
+          WORKER_LOGS_LEVEL: ${{ inputs.level }}
+          WORKER_LOGS_SINCE_MINUTES: ${{ inputs.since_minutes }}
+          WORKER_LOGS_LIMIT: ${{ inputs.limit }}
