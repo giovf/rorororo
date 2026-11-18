@@ -1412,8 +1412,9 @@
       "effort_days": 0.2,
       "proof": "tests for the retry, the 503 and the pass-through; the next probe dispatch's error lines show `x402_init_failed` with a message (the cause, then fixed or queued) and no `initializeHttpServer` stack at 500",
       "score": 6,
-      "status": "todo",
-      "added": "2026-11-18"
+      "status": "doing",
+      "added": "2026-11-18",
+      "doing_since": "2026-11-18"
     },
     {
       "id": "worker-logs-read-completeness",
