@@ -3225,3 +3225,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 18:20 | burn-down | Daily numbers error clause carries "partial read" when short; needle reaches the script by env var
 - 2026-11-18 18:20 | burn-down | Relay round cf-logs-query-2026-11-18 (7 lines); 8 tests added (799 pass); worker-logs.yml in docs/ci
 - 2026-11-18 18:20 | burn-down | Next in this slot: two worker logs dispatches a minute apart, head lines compared
+- 2026-11-18 18:25 | burn-down | worker-logs.yml first run: success (run 38, needle and level through env vars)
+- 2026-11-18 18:25 | burn-down | Live: runs 37 and 38, same query 66 s apart — 37 answered from sampled data and was halved, 38 was not
+- 2026-11-18 18:25 | burn-down | Live: store holds 177 error lines in 24 h, sample interval 1 — nothing is lost at ingest
+- 2026-11-18 18:25 | burn-down | Live: a page's own count equals the page (5 of 177), so reads are now measured against the store count
+- 2026-11-18 18:25 | burn-down | The 17:23 "1 in 100" line was query sampling on a wide window, not log retention; 1 test added (800)

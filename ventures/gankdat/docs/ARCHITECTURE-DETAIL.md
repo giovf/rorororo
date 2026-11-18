@@ -888,7 +888,16 @@ runs `check:root`.
   1 and reads both halves (≤ 16 requests a read), follows the cursor up to the caller's cap (error lines 6,000, the
   dispatch's `limit` ≤ 5,000), and both scripts print `log read: N returned of M matched — complete | PARTIAL: <why>`
   and `log store: … sample interval S` before anything else; the Daily numbers clause carries `partial read: <why>`
-  when the reading is not whole. Which of the three it was on 11-18 is the first live head line's to say (RUNS 11-18).
+  when the reading is not whole.
+  **First live reads** (11-18 18:21 and 18:22, worker logs runs 37 and 38, the same query — error level, 24 h, limit 5 —
+  66 s apart): run 37's whole-window answer came back above ABR level 1 and was halved (`2 requests`), run 38's came
+  back at level 1 in one request (12.7 M and 13.9 M rows scanned). So the same query is sometimes answered from sampled
+  data and sometimes not — the 160-then-0 of runs 332/333 — and the store itself loses nothing: `log store: 177 events,
+  sample interval 1 (nothing dropped at ingest)` both times. The "about 1 in 100" written at 17:23 was this sampling
+  on a wide window, not retention. Both runs also answered `events.count: 5` for a `limit: 5` page while the count
+  calculation said 177: the page's count is bounded by the page, whatever the reference says, so `withStoredCount`
+  measures a read against the count calculation and the head line reads `5 returned of 177 matched — PARTIAL: limit 5
+  reached`.
   The workflow's inputs reach the script as `WORKER_LOGS_*` env vars, so a needle with double quotes survives the shell.
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
   after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
