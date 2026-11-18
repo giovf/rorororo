@@ -653,9 +653,11 @@
       "effort_days": 0.5,
       "proof": "docs/exchange/spikes/google-play-android-shelf.md with the policy lines quoted, a table of ≥ 5 niches × top-8 listings (install band, ratings, price), the CI build finding and a promote / park call; a promote adds the venture folder, its queue and the single owner request, a park updates `google-play-android-apps` in docs/pipeline/exchange.json with the trigger",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-18",
-      "doing_since": "2026-11-18"
+      "doing_since": "2026-11-18",
+      "done_at": "2026-11-18",
+      "doing_by": "build"
     },
     {
       "id": "spike-n8n-template-library",

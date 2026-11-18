@@ -3182,3 +3182,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-18 08:19 | exchange | Exchange file docs/exchange/2026-W47.md; relay rounds exchange-w47-2026-11-18, -b, -c (32 lines)
 - 2026-11-18 08:19 | exchange | Owner: nothing now; a Play promote would ask once for twelve testers for fourteen days, app named
 - 2026-11-18 09:07 | triage | notify owner dispatched: last run started 06:06 UTC, 3 h ago
+- 2026-11-18 09:18 | build | Spike spike-google-play-android-shelf done: parked — no niche with a paying rival and room in 51 listings
+- 2026-11-18 09:18 | build | Play shelf read: paying niches led by 100K–10M-install apps; thin ones sit at 0–1K installs, unrated
+- 2026-11-18 09:18 | build | Play policy read: own-page wrapper allowed, checkout links barred (Play Billing only), target API 36
+- 2026-11-18 09:18 | build | Play bundle: Bubblewrap can build and sign on a hosted runner at £0; sketch in the spike, not run
+- 2026-11-18 09:18 | build | Owner: nothing asked — a Play launch needs twelve testers for fourteen days and the line scores 2
+- 2026-11-18 09:18 | build | Relay rounds spike-google-play-2026-11-18 and -b (72 lines); spike file google-play-android-shelf.md
