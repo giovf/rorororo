@@ -1,0 +1,351 @@
+{
+  "request": "spike-google-play-2026-11-18",
+  "fetched_at": "2026-11-18T09:14:27.765Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9898783?hl=en-GB",
+      "fetched_at": "2026-11-18T09:14:09.531Z",
+      "status": 200,
+      "elapsed_ms": 411,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/9898783?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "477931"
+      },
+      "file": "1.txt",
+      "bytes": 8382,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1635543
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9899034?hl=en-GB",
+      "fetched_at": "2026-11-18T09:14:10.717Z",
+      "status": 200,
+      "elapsed_ms": 238,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/9899034?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "477186"
+      },
+      "file": "2.txt",
+      "bytes": 7906,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1632937
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/13985936?hl=en-GB",
+      "fetched_at": "2026-11-18T09:14:11.723Z",
+      "status": 200,
+      "elapsed_ms": 232,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/13985936?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "476167"
+      },
+      "file": "3.txt",
+      "bytes": 8948,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1630626
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/11926878?hl=en-GB",
+      "fetched_at": "2026-11-18T09:14:12.728Z",
+      "status": 200,
+      "elapsed_ms": 279,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/11926878?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "481158"
+      },
+      "file": "4.txt",
+      "bytes": 22186,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1665653
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9842756?hl=en-GB",
+      "fetched_at": "2026-11-18T09:14:13.779Z",
+      "status": 200,
+      "elapsed_ms": 345,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/9842756?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "482141"
+      },
+      "file": "5.txt",
+      "bytes": 21281,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1652558
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9845334?hl=en-GB",
+      "fetched_at": "2026-11-18T09:14:14.896Z",
+      "status": 200,
+      "elapsed_ms": 268,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/9845334?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "484835"
+      },
+      "file": "6.txt",
+      "bytes": 32826,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1669830
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/10787469?hl=en-GB",
+      "fetched_at": "2026-11-18T09:14:15.941Z",
+      "status": 200,
+      "elapsed_ms": 329,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/10787469?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "498630"
+      },
+      "file": "7.txt",
+      "bytes": 76124,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1732209
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9859152?hl=en-GB",
+      "fetched_at": "2026-11-18T09:14:17.052Z",
+      "status": 200,
+      "elapsed_ms": 281,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/9859152?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "481733"
+      },
+      "file": "8.txt",
+      "bytes": 21566,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1661515
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9888170?hl=en-GB",
+      "fetched_at": "2026-11-18T09:14:18.116Z",
+      "status": 200,
+      "elapsed_ms": 623,
+      "final_url": "https://support.google.com/googleplay/android-developer/answer/16558241?hl=en-GB&visit_id=639305900581511325-283413542&rd=2",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "493023"
+      },
+      "file": "9.txt",
+      "bytes": 62079,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1715047
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=reseller%20profit%20tracker&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:19.013Z",
+      "status": 200,
+      "elapsed_ms": 75,
+      "final_url": "https://play.google.com/store/search?q=reseller%20profit%20tracker&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 4958,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1226577
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=ebay%20profit%20calculator%20fees&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:19.806Z",
+      "status": 200,
+      "elapsed_ms": 36,
+      "final_url": "https://play.google.com/store/search?q=ebay%20profit%20calculator%20fees&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 5102,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1207311
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=vinted%20seller%20tracker&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:20.566Z",
+      "status": 200,
+      "elapsed_ms": 50,
+      "final_url": "https://play.google.com/store/search?q=vinted%20seller%20tracker&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 4826,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1244913
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=mileage%20tracker%20uk&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:21.336Z",
+      "status": 200,
+      "elapsed_ms": 37,
+      "final_url": "https://play.google.com/store/search?q=mileage%20tracker%20uk&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 4943,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1252245
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=self%20employed%20expenses%20mtd&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:22.140Z",
+      "status": 200,
+      "elapsed_ms": 39,
+      "final_url": "https://play.google.com/store/search?q=self%20employed%20expenses%20mtd&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.txt",
+      "bytes": 4270,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1146335
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=companies%20house%20company%20check&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:22.931Z",
+      "status": 200,
+      "elapsed_ms": 44,
+      "final_url": "https://play.google.com/store/search?q=companies%20house%20company%20check&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.txt",
+      "bytes": 4677,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1198671
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=sanctions%20check&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:23.704Z",
+      "status": 200,
+      "elapsed_ms": 50,
+      "final_url": "https://play.google.com/store/search?q=sanctions%20check&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 4606,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1184576
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=trademark%20search%20uk&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:24.486Z",
+      "status": 200,
+      "elapsed_ms": 42,
+      "final_url": "https://play.google.com/store/search?q=trademark%20search%20uk&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.txt",
+      "bytes": 2801,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 996445
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=uk%20tenders%20contracts%20finder&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:25.204Z",
+      "status": 200,
+      "elapsed_ms": 46,
+      "final_url": "https://play.google.com/store/search?q=uk%20tenders%20contracts%20finder&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.txt",
+      "bytes": 4781,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1194286
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=food%20hygiene%20rating&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:25.980Z",
+      "status": 200,
+      "elapsed_ms": 46,
+      "final_url": "https://play.google.com/store/search?q=food%20hygiene%20rating&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.txt",
+      "bytes": 4635,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1218581
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=charity%20check%20uk&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:26.733Z",
+      "status": 200,
+      "elapsed_ms": 50,
+      "final_url": "https://play.google.com/store/search?q=charity%20check%20uk&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.txt",
+      "bytes": 4614,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1194711
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=mtd%20income%20tax%20quarterly&c=apps&hl=en_GB&gl=GB",
+      "fetched_at": "2026-11-18T09:14:27.499Z",
+      "status": 200,
+      "elapsed_ms": 48,
+      "final_url": "https://play.google.com/store/search?q=mtd%20income%20tax%20quarterly&c=apps&hl=en_GB&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "21.txt",
+      "bytes": 4625,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 1209348
+    }
+  ]
+}
