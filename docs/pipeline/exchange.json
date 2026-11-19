@@ -951,6 +951,15 @@
       "added": "2026-11-18",
       "spiked": "2026-11-18",
       "updated": "2026-11-18"
+    },
+    {
+      "id": "mulerun-agent-marketplace",
+      "title": "MuleRun (mulerun.com) as a pay-per-run agent marketplace — one agent of ours (the /diligence counterparty check) priced per run, the platform billing the buyer and paying the creator",
+      "status": "parked",
+      "why": "Spike 2026-11-19 (new-ventures spike-mulerun-agent-marketplace, docs/exchange/spikes/mulerun-agent-marketplace.md, burn-down; two relay rounds, 27 lines). The shelf no longer exists on the site. Search results still quote a creator marketplace (price per run, 80 % to the creator, withdrawals from the 15th of the next month), but the three creator-guide pages they cite and `/creator` answer 404, the docs index lists no page on publishing, pricing or payout, the main sitemap is seven URLs (home, pricing, chat, use cases, ambassadors), robots.txt closes `/agents/` and `/creator/`, and the home page sells one hosted agent on a subscription (US$16 a month, credits at US$1 = 100). The creator forum dates the change: staff described per-run earnings in December 2025, a January 2026 bonus ladder started at US$20 earned from two paying users, the last creator question (11 March 2026) has no reply, and the forum has had four unanswered bug reports since April. The live Terms of Use say nothing on creators and bar scripted reads of the service, so no listing table was attempted.",
+      "trigger": "mulerun.com/docs/llms.txt lists a page on publishing or selling an agent or skill with a stated creator share, or the main sitemap gains a creator or marketplace URL → a 0.2-day read of that page and the terms (fee, payout route, what an individual signs) before any build; no dated re-read",
+      "added": "2026-11-19",
+      "updated": "2026-11-19"
     }
   ]
 }

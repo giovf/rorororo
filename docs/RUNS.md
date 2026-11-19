@@ -3272,3 +3272,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-19 17:13 | burn-down | Exchange pre-research: MuleRun paid agent marketplace — spike seeded (mulerun-agent-marketplace); 0 spikes open
 - 2026-11-19 17:13 | burn-down | Its pages say creators price each run and keep 80 %; host unreachable from the sandbox, so the spike reads by relay
 - 2026-11-19 17:13 | burn-down | Dropped before seeding: Coda Packs (new sellers paused since July) and MCPize (no sales evidence beyond $0.21)
+- 2026-11-19 17:17 | burn-down | Spike mulerun-agent-marketplace done: parked — the creator marketplace is gone from the site
+- 2026-11-19 17:17 | burn-down | Creator guide and /creator answer 404; the site sells one hosted agent by subscription ($16 a month)
+- 2026-11-19 17:17 | burn-down | Forum dates it: last creator question 11 March 2026 unanswered; terms bar scripted reads, no listing read
+- 2026-11-19 17:17 | burn-down | Relay rounds mulerun-2026-11-19 and -b (27 lines); four hosts added; idea parked in the exchange
+- 2026-11-19 17:17 | burn-down | Queued foundry pre-research-primary-read-before-seed: read the live page by relay before seeding

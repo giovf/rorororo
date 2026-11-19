@@ -1599,6 +1599,16 @@
       "added": "2026-11-19",
       "updated": "2026-11-19",
       "done_at": "2026-11-19"
+    },
+    {
+      "id": "pre-research-primary-read-before-seed",
+      "title": "Exchange pre-research reads the candidate's own live page before it seeds a spike: when the sandbox cannot open the shelf's or source's host (WebFetch fails to resolve it), the pass sends one relay round first — the home page, the sitemap or docs index and the one terms or creator page the seed would quote — and seeds only if those pages still say what the search results said; a dead page parks the idea in the pass itself. One sentence in the pre-research paragraph of docs/routines/burn-down.md and the same in the build routine's starved branch, with a dated `Changes:` line in each.",
+      "why": "Burn-down 2026-11-19: the night's pass seeded `spike-mulerun-agent-marketplace` from search-result summaries (80 % to creators, payouts on the 15th) of pages that have answered 404 since about March 2026 — the marketplace had become a single hosted agent. The spike's first relay round showed it in under two minutes, but by then a seed commit, a claim, a spike document and a park had been spent on it, and the night's one seeded-spike allowance with them. Search summaries describe a page as it was indexed; the relay reads it as it is. Cost of the fix: one relay round (~1–2 min) inside a pass that already waits on searches.",
+      "effort_days": 0.1,
+      "proof": "docs/routines/burn-down.md and docs/routines/build.md carry the sentence and a dated Changes line; the next pre-research run-log line for a host the sandbox cannot open names the relay round it read before seeding or parking",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-19"
     }
   ]
 }
