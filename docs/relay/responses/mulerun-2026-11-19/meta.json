@@ -1,0 +1,276 @@
+{
+  "request": "mulerun-2026-11-19",
+  "fetched_at": "2026-11-19T17:15:24.506Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/docs/creator-guide/quickstart/manage-your-business",
+      "fetched_at": "2026-11-19T17:15:07.068Z",
+      "status": 404,
+      "elapsed_ms": 1272,
+      "final_url": "https://mulerun.com/docs/creator-guide/quickstart/manage-your-business",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 1394,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 78188
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/docs/creator-guide/marketing/creator-program-rules",
+      "fetched_at": "2026-11-19T17:15:08.849Z",
+      "status": 404,
+      "elapsed_ms": 983,
+      "final_url": "https://mulerun.com/docs/creator-guide/marketing/creator-program-rules",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 1394,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 78192
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/docs/creator-guide/creator-studio/creator-balance/credit-types",
+      "fetched_at": "2026-11-19T17:15:10.343Z",
+      "status": 404,
+      "elapsed_ms": 1154,
+      "final_url": "https://mulerun.com/docs/creator-guide/creator-studio/creator-balance/credit-types",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 1394,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 78216
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/creator",
+      "fetched_at": "2026-11-19T17:15:12.008Z",
+      "status": 404,
+      "elapsed_ms": 319,
+      "final_url": "https://mulerun.com/creator",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 133,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 8637
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/",
+      "fetched_at": "2026-11-19T17:15:12.829Z",
+      "status": 200,
+      "elapsed_ms": 901,
+      "final_url": "https://mulerun.com/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 14291,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 127685
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/robots.txt",
+      "fetched_at": "2026-11-19T17:15:14.313Z",
+      "status": 200,
+      "elapsed_ms": 296,
+      "final_url": "https://mulerun.com/robots.txt",
+      "headers": {
+        "content-type": "text/plain",
+        "last-modified": "Mon, 03 Aug 2026 14:14:33 GMT",
+        "etag": "W/\"2022-1785766473000\""
+      },
+      "file": "6.txt",
+      "bytes": 2022,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/sitemap.xml",
+      "fetched_at": "2026-11-19T17:15:15.111Z",
+      "status": 200,
+      "elapsed_ms": 270,
+      "final_url": "https://mulerun.com/sitemap.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "content-length": "481"
+      },
+      "file": "7.xml",
+      "bytes": 481,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/docs",
+      "fetched_at": "2026-11-19T17:15:15.882Z",
+      "status": 200,
+      "elapsed_ms": 445,
+      "final_url": "https://mulerun.com/docs",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 20:40:32 GMT"
+      },
+      "file": "8.txt",
+      "bytes": 2781,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 99031
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/terms",
+      "fetched_at": "2026-11-19T17:15:16.839Z",
+      "status": 404,
+      "elapsed_ms": 306,
+      "final_url": "https://mulerun.com/terms",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 133,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 8637
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/terms-of-service",
+      "fetched_at": "2026-11-19T17:15:17.647Z",
+      "status": 404,
+      "elapsed_ms": 312,
+      "final_url": "https://mulerun.com/terms-of-service",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 133,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 8637
+    },
+    {
+      "method": "GET",
+      "url": "https://blog.mulerun.com/",
+      "fetched_at": "2026-11-19T17:15:17.960Z",
+      "status": 200,
+      "elapsed_ms": 262,
+      "final_url": "https://blog.mulerun.com/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 3347,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 19052
+    },
+    {
+      "method": "GET",
+      "url": "https://blog.mulerun.com/p/mulerun-creator-studio-is-live-our-technical-journey-from-0-to-millions-of-agent-calls",
+      "fetched_at": "2026-11-19T17:15:18.724Z",
+      "status": 200,
+      "elapsed_ms": 412,
+      "final_url": "https://blog.mulerun.com/p/mulerun-creator-studio-is-live-our-technical-journey-from-0-to-millions-of-agent-calls/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 25700,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 43146
+    },
+    {
+      "method": "GET",
+      "url": "https://blog.mulerun.com/p/monetize-your-ai-agent-in-minutes-introducing-mulerun-creator-studio-beta",
+      "fetched_at": "2026-11-19T17:15:19.644Z",
+      "status": 200,
+      "elapsed_ms": 364,
+      "final_url": "https://blog.mulerun.com/p/monetize-your-ai-agent-in-minutes-introducing-mulerun-creator-studio-beta/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 10642,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 26565
+    },
+    {
+      "method": "GET",
+      "url": "https://community.mulerun.com/t/topic/45",
+      "fetched_at": "2026-11-19T17:15:20.010Z",
+      "status": 200,
+      "elapsed_ms": 1016,
+      "final_url": "https://community.mulerun.com/t/topic/45",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.txt",
+      "bytes": 1726,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 140971
+    },
+    {
+      "method": "GET",
+      "url": "https://community.mulerun.com/t/topic/50",
+      "fetched_at": "2026-11-19T17:15:21.601Z",
+      "status": 200,
+      "elapsed_ms": 322,
+      "final_url": "https://community.mulerun.com/t/topic/50",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.txt",
+      "bytes": 1134,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 137017
+    },
+    {
+      "method": "GET",
+      "url": "https://community.mulerun.com/t/topic/58",
+      "fetched_at": "2026-11-19T17:15:22.668Z",
+      "status": 200,
+      "elapsed_ms": 979,
+      "final_url": "https://community.mulerun.com/t/topic/58",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 1950,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 145293
+    },
+    {
+      "method": "GET",
+      "url": "https://community.mulerun.com/latest.json",
+      "fetched_at": "2026-11-19T17:15:24.214Z",
+      "status": 200,
+      "elapsed_ms": 291,
+      "final_url": "https://community.mulerun.com/latest.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "17.json",
+      "bytes": 40174,
+      "truncated": false
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+meta og:title: MuleRun Creator Studio is Live: Our Technical Journey from 0 to Millions of Agent Calls
+meta og:url: https://blog.mulerun.com/p/mulerun-creator-studio-is-live-our-technical-journey-from-0-to-millions-of-agent-calls/
+meta og:site_name: MuleRun's Tech Blog
+meta og:type: article
+meta og:image: https://blog.mulerun.com/img/studio_official_1.jpg
+meta twitter:site: @mulerun_ai
+meta twitter:creator: @mulerun_ai
+meta twitter:title: MuleRun Creator Studio is Live: Our Technical Journey from 0 to Millions of Agent Calls
+meta twitter:card: summary_large_image
+meta twitter:image: https://blog.mulerun.com/img/studio_official_1.jpg
+MuleRun Creator Studio is Live: Our Technical Journey from 0 to Millions of Agent Calls
+MuleRun's Tech Blog (/)
+https://community.mulerun.com/
+https://discord.gg/KK3zXcMkhg
+https://github.com/openmule
+https://x.com/mulerun_ai
+Archives (/archives/)
+Search (/search/)
+Back To MuleRun (https://mulerun.com)
+Table of contents
+Agent Creation Without Lock‑in: Any Framework, Any Model (#agent-creation-without-lockin-any-framework-any-model)
+Creator’s Pain: Setting up Infra is Harder than Building the Agent (#creators-pain-setting-up-infra-is-harder-than-building-the-agent)
+MuleRun’s Capability: Framework-Agnostic + All-in-One Provisioning (#muleruns-capability-framework-agnostic--all-in-one-provisioning)
+All-in-One LLM & Multimodal API Provisioning (#all-in-one-llm--multimodal-api-provisioning)
+Support for a Wide Range of Agent Building Tools (#support-for-a-wide-range-of-agent-building-tools)
+Safe and Seamless Agent Versioning & Upgrades (#safe-and-seamless-agent-versioning--upgrades)
+Making Money from Agents: from Agent Demo to Paid Product (#making-money-from-agents-from-agent-demo-to-paid-product)
+Creator’s pain: a Working Demo ≠ a Sellable Product (#creators-pain-a-working-demo--a-sellable-product)
+MuleRun’s Capability: AI-Powered Assessment System + Commercial Guidance (#muleruns-capability-ai-powered-assessment-system--commercial-guidance)
+Reliable Agent Operation: Sub-Second Access for Global Users (#reliable-agent-operation-sub-second-access-for-global-users)
+Creator’s Pain: You Have Users and Revenue, but the Service is Unstable (#creators-pain-you-have-users-and-revenue-but-the-service-is-unstable)
+MuleRun’s Capability: Sub-Second Startup & a Consistent Global Experience (#muleruns-capability-sub-second-startup--a-consistent-global-experience)
+Beyond a Single Agent: Calling Agents Across Platforms (#beyond-a-single-agent-calling-agents-across-platforms)
+Future Roadmap (#future-roadmap)
+A Next‑Gen Agent Building Paradigm (#a-nextgen-agent-building-paradigm)
+Agent Discovery and Communication Protocol (#agent-discovery-and-communication-protocol)
+End‑to‑end Agent Observability (#endtoend-agent-observability)
+LLM Arena for Agent Scenarios (#llm-arena-for-agent-scenarios)
+Intelligent Agent Distribution (#intelligent-agent-distribution)
+Customizable, Persistent Agent Runtime (#customizable-persistent-agent-runtime)
+Try MuleRun! (#try-mulerun)
+/p/mulerun-creator-studio-is-live-our-technical-journey-from-0-to-millions-of-agent-calls/
+Product (/categories/product/) Ecosystem (/categories/ecosystem/) Tech (/categories/tech/)
+MuleRun Creator Studio is Live: Our Technical Journey from 0 to Millions of Agent Calls (/p/mulerun-creator-studio-is-live-our-technical-journey-from-0-to-millions-of-agent-calls/)
+Dec 22, 2025
+15 minute read
+Junliang Shu
+TL;DR: Today MuleRun Creator Studio (https://mulerun.com/creator/studio) is officially live! Now anyone can create, list, and share their own agents on MuleRun (https://mulerun.com/) — and get paid.
+In this post, we’ll walk through how we built MuleRun’s technical foundation, including how we unify agent creation and integration in a heterogeneous ecosystem, use AI to assess the commercial viability of agents, and leverage pre‑warming and resource pooling to support high concurrency and sub‑second startup times.
+On top of that foundation, we’re continuously iterating and exploring next‑generation capabilities , including new paradigms for agent building , cross‑platform agent invocation, multi‑agent autonomous collaboration, end‑to‑end agent observability, model evaluation in agent scenarios, agent supply‑demand matching, and persistent runtimes for agents.
+Hi everyone — we’re the MuleRun engineering team. We’re excited to share that the MuleRun Creator Studio is now officially live (https://mulerun.com/creator/studio) ! Now anyone can build, publish, and share agents on MuleRun, and start earning revenue from them.
+It’s been three months since we launched the MuleRun Creator Studio Beta, and in that time we’ve really felt how much people care about agents. As of December, over one million users have registered on MuleRun — far beyond what we initially expected — which meant a big part of our engineering time in the last few months was literally just adding more servers to the clusters. :)
+As an AI agent marketplace, this level of growth and attention wouldn’t be possible without a special group of users: our agent creators. On day one, there were only a dozen agents on the platform, almost all from the seed creators in our private beta. Today, over 1,000 Agents have been created, with more than 250 listed on the marketplace.
+As the world’s first market-driven AI agent platform, MuleRun’s “Create - Distribute - Earn” model has been a killer proposition for many creators. Within the first week of our launch, we were flooded with requests to open up the ability to build and list agents. Our engineering team worked around the clock to launch the MuleRun Creator Studio Beta in September. During the three-month beta, we collaborated closely with hundreds of creators worldwide, using cutting-edge infra and tools to build thousands of unique Agents and bring them to a global audience through MuleRun.
+Along the way, we got a lot of useful feedback and iterated on the Creator Studio constantly. Its core capabilities have now been battle‑tested in real use cases. It’s no longer an experimental tool; it’s a production‑grade platform shaped by the community. That’s why we’re removing the Beta gate and opening it up to everyone. And with this launch, we want to share, from the engineering side, some of the interesting (and occasionally pretty hardcore) challenges we ran into — and how we built the underlying tech stack that powers agents on MuleRun.
+In today’s AI landscape, an individual creator already has everything they need to run a commercial agent. A successful agent product usually spans multiple phases: building, operating, running in production, and iterating. With MuleRun Creator Studio, we try to help across a few key dimensions:
+Agent creation: Build your agent freely with any tool or model you want.
+Agent monetization: Turn your agent into a product with our automated assessment system and commercial guidance.
+Agent operation: Run agents 24/7 for users worldwide, with stable service and sub‑3‑second startup.
+Beyond a single agent: Keep pushing what agents can do through new platform‑level capabilities.
+#agent-creation-without-lockin-any-framework-any-model Agent Creation Without Lock‑in: Any Framework, Any Model
+#creators-pain-setting-up-infra-is-harder-than-building-the-agent Creator’s Pain: Setting up Infra is Harder than Building the Agent
+For creators wanting to build an agent, the first step isn’t usually “What should I build?” but rather a mountain of infrastructure problems:
+Account juggling: OpenAI, Gemini, Claude&mldr; each requires separate sign-ups, payments, and API key management, all with different billing rules.
+Environment setup: Configuring Docker, servers, and proxies just to get the models and toolchains running.
+Heterogeneous hell: Different frameworks (ADK, LangGraph, n8n, Flowise, custom-built sites) all have their pros and cons. The learning curve is steep, and it’s easy to get overwhelmed by the choices.
+The result? Creators spend most of their energy on infrastructure, leaving little for the agent itself. We want creators to focus their energy on building great agents, not on wrangling a whole infrastructure stack. At MuleRun, our job is to provide a unified and open foundation to handle that for you.
+#muleruns-capability-framework-agnostic--all-in-one-provisioning MuleRun’s Capability: Framework-Agnostic + All-in-One Provisioning
+With the explosion of the AI ecosystem, we now have a ton of options when building agents. You might use Claude for coding tasks, Gemini for image generation, ElevenLabs for audio. You might wire things up with n8n for simple but robust workflows, or use LangGraph to build a more complex ReAct Agent.
+In such a diverse ecosystem, forcing creators to use a single API or framework stifles creativity. That’s why, from day one, MuleRun has been a framework-agnostic platform (https://blog.mulerun.com/p/agnostic-by-design-how-mulerun-accelerates-innovation-in-the-ai-agent-marketplace/) . Here are the core capabilities we provide in MuleRun Creator Studio:
+#all-in-one-llm--multimodal-api-provisioning All-in-One LLM & Multimodal API Provisioning
+MuleRun provides access to multiple LLMs and multimodal APIs (https://mulerun.com/docs/api-reference/quickstart) , and all usage goes through a unified billing and credits system. Creators no longer need to buy separate OpenAI, Gemini, Claude accounts. Under the hood, we’ve done a few things to make this work:
+High‑availability API pools with automatic failover: Given compute shortages and global network volatility, any single API provider can face stability issues. We maintain large, pooled token resources behind each API, allowing us to automatically failover to a more stable route when performance degrades.
+Unified calling semantics: there are multiple “standard” LLM APIs out there, and multimodal/async generation adds even more complexity. We’ve added an adaptation layer so creators can call different providers using a relatively unified format and not worry about migration cost.
+#support-for-a-wide-range-of-agent-building-tools Support for a Wide Range of Agent Building Tools
+Whether you’re building a native agent with ADK or LangGraph, wiring workflows with n8n or Flowise, or running your own standalone deployment, you can integrate it into MuleRun in a unified way. We provide standardized solutions for user interaction, lifecycle management, metering, billing, debugging, and maintenance.
+From an infrastructure perspective, agents built with different tools are completely heterogeneous. How to start them, manage their processes, pass user input, handle memory, implement Human-in-the-Loop (HITL), detect termination signals, and persist outputs—these are just some of the “small issues” we’ve tackled. Driven by our creators, we are continuously optimizing our unified integration solution to allow our infra to interface with any type of Agent, using a standardized message format for all events.
+#safe-and-seamless-agent-versioning--upgrades Safe and Seamless Agent Versioning & Upgrades
+Another real-world problem is versioning. Creators constantly update and iterate on their agents, but users might be running older versions. To ensure a smooth experience for both sides, we manage different versions for each agent, keeping active tasks on their current version while launching new tasks on the latest one, all while ensuring data continuity.
+#making-money-from-agents-from-agent-demo-to-paid-product Making Money from Agents: from Agent Demo to Paid Product
+#creators-pain-a-working-demo--a-sellable-product Creator’s pain: a Working Demo ≠ a Sellable Product
+For many creators, shipping a demo is easy. Turning it into a real business is the hard part:
+Market viability: The demo works, but will anyone actually pay for it?
+Payment hassles: Stripe setup, tax handling, revenue splits… a lot of overhead
+Little product/commercial experience: What makes a product “sellable”? How do you price it? How do you write a compelling description?
+Crucially, there’s a huge gap between an impressive demo and a product that can reliably serve global users 24/7.
+Most of our creators are independent developers and small teams. They have incredible execution speed and wildly creative ideas but often lack experience in productization and commercialization. This means MuleRun needs to be more than just a platform to run agents; it must provide standardized support for turning ideas into viable products.
+#muleruns-capability-ai-powered-assessment-system--commercial-guidance MuleRun’s Capability: AI-Powered Assessment System + Commercial Guidance
+Unlike platforms like Coze, GPTs, or n8n that don’t have a built‑in transaction layer, development and usage on MuleRun is directly tied to monetization and credits. This financial loop fuels creator enthusiasm but also raises user expectations for quality.
+To help creators bridge the gap from “good demo” to “paid product” while ensuring a quality user experience, our operations team initially provided manual reviews and guidance during the listing process. But as the number of agents in the pipeline grew, manual review became unscalable. This pushed our engineering team to develop a universal agent evaluation system capable of assessing heterogeneous agents, evaluating not just stability but also product-market fit, and even providing actionable suggestions for improvement.
+This is tricky because there are a lot of dimensions to evaluate. These agents vary wildly not just in their tech stacks but also in their interaction patterns and deliverables. In such a scenario, only AI is really capable of understanding and judging across different modalities and stacks. So we built an LLM-based automated evaluation system for heterogeneous agents. When an agent is submitted for review, the system scores and analyzes it from multiple angles, including success rate, stability, feature-description match, economics, safety, and more.
+During this evaluation, we also incorporate insights derived from MuleRun’s business data, such as which types of agents have higher conversion rates or what pricing models lead to a healthier user experience. This system helps us maintain a high bar for quality on the platform and, more importantly, empowers creators to improve their product and business skills. Together, we’re building a truly vibrant and living Agent ecosystem.
+#reliable-agent-operation-sub-second-access-for-global-users Reliable Agent Operation: Sub-Second Access for Global Users
+#creators-pain-you-have-users-and-revenue-but-the-service-is-unstable Creator’s Pain: You Have Users and Revenue, but the Service is Unstable
+Once your agent finds its first paying users, congratulations! Your money-printing machine is running. But now the real challenges begin:
+Performance bottlenecks: Will your service crash during traffic spikes?
+Global latency: will users in the US or Europe feel like they’re back on dial‑up?
+Cost blow‑ups: are you over‑provisioning just to survive peaks, and eating idle capacity the rest of the time?
+Keeping this “money-printing machine” running smoothly and reliably is a problem every creator faces. That’s why at the operational level, MuleRun aims to provide a “one-click-deploy, globally-available” experience.
+#muleruns-capability-sub-second-startup--a-consistent-global-experience MuleRun’s Capability: Sub-Second Startup & a Consistent Global Experience
+For a global platform like MuleRun, ensuring that thousands of agents can be accessed stably and quickly by users worldwide is a massive technical challenge.
+Compared to traditional web services, the AI Agent business in 2025 is fundamentally different. Each Agent run is no longer a simple “call an API -> wait for the model to respond”. It requires real-time interaction with other software (like a serverless browser) or even virtual environments (for computer use). This means every agent execution involves dynamically creating, scheduling, and releasing multiple cloud resources.
+MuleRun’s situation is even more complex. Agents on the platform are heterogeneous, and different types require different runtime resources. As platform usage grew, this architectural complexity posed a significant challenge for our cloud-native team. We had to guarantee agent success rates while delivering a “click-and-run” experience.
+Early on, our average agent startup time was around 10 seconds. In those 10 seconds, the platform had to:
+Prepare the agent runtime environment
+Start up any dependent software and their environments
+Get MCP tools and supporting capabilities ready
+Pull images, assign IPs, update k8s routes&mldr; all the small but necessary steps
+We initially used some frontend tricks to reduce the user’s perception of latency, but 10 seconds was still too long and hurt conversion and experience. So, we deeply optimized and refactored this pipeline, which included:
+Pre-warming and pooling: We prepare runtime environments for frequently used agents in advance and keep high-traffic agents in a “warm” state for near-instant responses.
+Global deployment: By combining multi-region deployment with intelligent routing, we ensure user requests are always handled by the nearest node, significantly reducing network latency.
+With these optimizations, we successfully brought the startup time for the vast majority of agents on our platform down from 10s to under 3s. This means the wait time from a user clicking “run” to starting an interaction is now close to a standard web application experience, which we see as fundamental for helping creators run a real business.
+#beyond-a-single-agent-calling-agents-across-platforms Beyond a Single Agent: Calling Agents Across Platforms
+In 2025, Agent capabilities have advanced significantly, but it feels like there’s still a final barrier to break through before a true explosion happens. As an engineering-driven platform, we’re always thinking: beyond helping people build good agents, what unique capabilities can we provide to help them break out of single-scenario limitations? Our answer is calling agents across platforms.
+As an AI agent marketplace, MuleRun encourages agents targeting specific scenarios to enter the market. Whether an agent is simple or complex, whether it generates a report or books a hotel, as long as it solves a real problem, we want it to be discoverable and used by more people.
+But we believe interacting with agents only through traditional web pages or mobile apps isn’t AI-native enough, nor is it cool enough. Often, the places where users truly interact with AI have shifted to daily touchpoints like chat tools and voice assistants.
+That’s why we designed a unified API protocol for all agents on the platform. This protocol allows authorized users to call any agent’s capabilities from anywhere. Based on this, we’ve created entry points on Discord, Telegram, Siri, and other platforms, allowing users to directly invoke any agent on MuleRun via voice or text and get results.
+For creators, this means your agent iisn’t tied to a single web page anymore — it can show up wherever your users actually live.
+Combined with MuleRun’s OAuth capabilities, creators can also embed MuleRun’s agent capabilities into their own products, bringing them to any corner of the world in any form.
+#future-roadmap Future Roadmap
+The above are some of the interesting technical challenges and solutions we encountered while building MuleRun Creator Studio. We hope you found them interesting too. Next, we want to give you a sneak peek at a few areas we’re currently investing in. These will also deeply impact the creator experience, and we’ll share more details once they are more mature:
+#a-nextgen-agent-building-paradigm A Next‑Gen Agent Building Paradigm
+We’re exploring a new paradigm for building Agents — the Mule Agent Builder (https://community.mulerun.com/t/topic/74) — aimed at enabling domain experts with no engineering background to build powerful, complex agents just through natural language. Its core advantages are:
+Embracing a next‑gen agent pattern: we’re adopting a “base agent + skills” model as the core paradigm . This idea was originally pushed forward by Anthropic and has proven to be highly extensible and capable through continued Claude Code iterations. We chose this approach as the foundation for the Mule Agent Builder, and extended it with Knowledge and Runtime management to offer creators an agent-native building experience that is distinct from traditional workflows or direct coding. We believe this native approach will become a dominant paradigm in the future agent market and the default for complex, next-gen agents on MuleRun.
+- Low floor, high ceiling: This will be the first agent builder for the general public that supports one-click marketplace listing. Based on the new “ Base Agent + Skills + Knowledge + Runtime ” paradigm, creators can build without code. Simply select the necessary Skills (like Excel, Web Browser, Database Ops) and a Runtime, and MuleRun Agent Builder will automatically handle environment setup and tool deployment. It can then autonomously complete complex user tasks based on the provided knowledge. Previously, agents with similar capabilities would have required a lot of custom code.
+Seamless integration with MuleRun’s commercial ecosystem: Agents built in Mule Agent Builder can be listed on the MuleRun marketplace with a single click, instantly connecting to our existing billing, settlement, evaluation, and supply-demand matching systems. This creates a continuous “Build → List → Monetize” pipeline, not a patchwork of separate tools.
+Mule Agent Builder is currently in internal preview. We plan to open the first round of invite-only testing on January 15, 2026 . If you’re excited about agents, we’d love to have you on board to help shape the early ecosystem around this new paradigm — and become one of its first co‑builders in real‑world scenarios.
+#agent-discovery-and-communication-protocol Agent Discovery and Communication Protocol
+In the future, agents should behave more like today’s websites: they should be able to discover each other, communicate, and collaborate. We’re designing an open protocol that lets agents on the platform call each other safely and efficiently, forming a truly dynamic network.
+#endtoend-agent-observability End‑to‑end Agent Observability
+As agent logic gets more complex, traditional logging and monitoring aren’t enough. We’re building a full observability stack for agents, so creators can see each “thought” step, each tool call, and each state change clearly — and debug and optimize with real insight.
+#llm-arena-for-agent-scenarios LLM Arena for Agent Scenarios
+Which LLM is “smarter” for complex tasks? We will launch an LLM Arena that runs in real-world agent business scenarios. It evaluates models based on how they perform on actual tasks, giving creators practical, scenario‑based guidance for choosing the right model.
+#intelligent-agent-distribution Intelligent Agent Distribution
+We’re building more than just a search box. It’s an intelligent matching engine that understands both the user’s implicit needs and the real capabilities of agents. In the future, when a user presents a vague request, we will not only recommend the most suitable single agent but may even dynamically combine multiple agents to provide a solution.
+#customizable-persistent-agent-runtime Customizable, Persistent Agent Runtime
+Future agents will have long-term memory and evolve through interaction with users. We are building Runtimes that support persistent storage and state, enabling creators to build truly living, personalized intelligent agents.
+We look forward to working with all of you to turn these ideas into features that are not just usable, but truly indispensable.
+#try-mulerun Try MuleRun!
+If you’ve read this far and want to try it out, we invite you to try the MuleRun Creator Studio (https://mulerun.com/creator/studio) ! In just three steps, you can publish an agent to users around the world. MuleRun Creator Studio provides more comprehensive infrastructure support and intelligent business features to help you turn your ideas into profitable products.
+If you want to connect with creators globally, welcome to join the MuleRun Community (https://community.mulerun.com/) ! You’ll find monetization showcases, incentive programs, and lots of technical and product experiences. We’re excited to continue exploring the possibilities of next-generation agent products with all of you on MuleRun.
+Agent (/tags/agent/)
+Marketplace (/tags/marketplace/)
+Studio (/tags/studio/)
+Related content
+Agnostic by Design: How MuleRun Accelerates Innovation in the AI Agent Marketplace (/p/agnostic-by-design-how-mulerun-accelerates-innovation-in-the-ai-agent-marketplace/)
+No More Brains in Vats: Why Agent Runtime Matters and How MuleRun Unlocks It (/p/no-more-brains-in-vats-why-agent-runtime-matters-and-how-mulerun-unlocks-it/)
+Respect to the Man Chasing AI Immortality, Even Though He's Freeloading Off Our Platform (/p/ai-immortality-postmortem/)
+Monetize Your AI Agent in Minutes: Introducing MuleRun Creator Studio (Beta) (/p/monetize-your-ai-agent-in-minutes-introducing-mulerun-creator-studio-beta/)
+©
+2025 -
+2026 MuleRun's Tech Blog
+Built with Hugo (https://gohugo.io/)
+Theme Stack (https://github.com/CaiJimmy/hugo-theme-stack) designed by Jimmy (https://jimmycai.com)
