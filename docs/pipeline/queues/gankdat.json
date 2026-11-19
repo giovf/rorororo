@@ -1445,9 +1445,10 @@
       "effort_days": 0.2,
       "proof": "the message quoted in RESEARCH.md with the day's count, and either the fix's test or the outage's dates; then three Daily numbers rows with no `x402_init_failed` attempt 2",
       "score": 5,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-11-18",
-      "not_before": "2026-11-19"
+      "not_before": "2026-11-19",
+      "doing_since": "2026-11-19"
     }
   ]
 }
