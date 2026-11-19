@@ -336,3 +336,7 @@
 - 2026-11-19 13:53 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Catch-up for Tasks 195-218 (54cd340) | other repo's PR ci, a job failed | logged
 - 2026-11-19 14:00 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Task 222 step 1 (22f20f0) | other repo's PR ci, a job failed | logged
 - 2026-11-19 14:03 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Catch-up for Tasks 195-218 (7f17eaa) | other repo's PR ci, backend job not successful | logged
+- 2026-11-19 14:06 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Catch-up for Tasks 195-218 (c98a5c4) | other repo's PR ci, backend job not successful | logged
+- 2026-11-19 14:06 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Task 222 step 1 (9089d83) | other repo's PR ci, backend job failed | logged
+- 2026-11-19 14:25 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Catch-up for Tasks 195-218 (90fd861) | other repo's PR ci, frontend job not successful | logged
+- 2026-11-19 14:56 | notification | github.com | [giovf/text-to-audio] Run failed: ci - develop (d18dc37) | other repo's ci run, backend job not successful; not a Foundry workflow | logged
