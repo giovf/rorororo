@@ -1,0 +1,91 @@
+User-agent: *
+
+Allow: /
+Allow: /recent
+Allow: /pricing
+Allow: /referral
+Allow: /@
+Allow: /skillshub
+Allow: /skillshub/
+
+Disallow: /signin
+Disallow: /signup
+Disallow: /verify-email
+Disallow: /forgot-password
+Disallow: /set-username
+Disallow: /confirm-invitation
+Disallow: /oauth-callback/
+Disallow: /user-settings
+Disallow: /sessions/
+Disallow: /agents/
+Disallow: /workspace/
+Disallow: /collections
+Disallow: /drive
+Disallow: /settings
+Disallow: /creator/
+
+Sitemap: https://mulerun.com/sitemap.xml
+
+# GPT Model-training crawler.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+# User-driven browsing from ChatGPT and Custom GPTs. Acts after a human click.
+User-agent: ChatGPT-User
+User-agent: ChatGPT-User/2.0
+# ——— ANTHROPIC (Claude) ———
+User-agent: anthropic-ai
+User-agent: ClaudeBot
+User-agent: claude-web
+# ——— PERPLEXITY ———
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+# ——— GOOGLE (Gemini) ———
+User-agent: Google-Extended
+# ——— MICROSOFT (Bing / Copilot) ———
+User-agent: BingBot
+# ——— AMAZON ———
+User-agent: Amazonbot
+# ——— APPLE ———
+User-agent: Applebot
+User-agent: LinkedInBot
+User-agent: Bytespider
+User-agent: omgili
+User-agent: YouBot
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /recent
+Allow: /pricing
+Allow: /referral
+Allow: /@
+Allow: /skillshub
+Allow: /skillshub/
+
+Disallow: /signin
+Disallow: /signup
+Disallow: /verify-email
+Disallow: /forgot-password
+Disallow: /set-username
+Disallow: /confirm-invitation
+Disallow: /oauth-callback/
+Disallow: /user-settings
+Disallow: /sessions/
+Disallow: /agents/
+Disallow: /workspace/
+Disallow: /collections
+Disallow: /drive
+Disallow: /settings
+Disallow: /creator/
+
+# ===== avoid other Model-training crawler =====
+# ——— ALLEN INSTITUTE / COMMON CRAWL / OTHER RESEARCH ———
+User-agent: FacebookBot
+User-agent: CCBot
+User-agent: cohere-ai
+User-agent: AI2Bot
+User-agent: Diffbot
+User-agent: Applebot-Extended
+Disallow: /

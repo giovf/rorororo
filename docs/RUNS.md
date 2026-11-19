@@ -3269,3 +3269,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-19 17:14 | build | Built foundry ci-worker-logs-failing: a Workers Logs read retries a 429 or 5xx three times
 - 2026-11-19 17:14 | build | Cause of worker logs run 41: Cloudflare answered HTTP 500 to the 1,500-min query; run 34 was a 504
 - 2026-11-19 17:14 | build | withTransientRetry in gankdat log-read.ts, used by the dispatch script and the error-line read; 2 tests
+- 2026-11-19 17:13 | burn-down | Exchange pre-research: MuleRun paid agent marketplace — spike seeded (mulerun-agent-marketplace); 0 spikes open
+- 2026-11-19 17:13 | burn-down | Its pages say creators price each run and keep 80 %; host unreachable from the sandbox, so the spike reads by relay
+- 2026-11-19 17:13 | burn-down | Dropped before seeding: Coda Packs (new sellers paused since July) and MCPize (no sales evidence beyond $0.21)
