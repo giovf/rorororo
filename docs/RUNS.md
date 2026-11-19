@@ -3281,3 +3281,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-19 17:21 | burn-down | Proof owed: the next pre-research line for an unreachable host names the relay round it read first
 - 2026-11-19 17:24 | burn-down | Stopping: 2 items done (1 spike seeded and parked, 1 routine fix); nothing buildable left, night cap reached
 - 2026-11-19 19:06 | triage | notify owner dispatched: last run started 16:06 UTC, 3 h ago
+- 2026-11-19 22:07 | triage | notify owner dispatched: last run started 19:06 UTC, 3 h ago
