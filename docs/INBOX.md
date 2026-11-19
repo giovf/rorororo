@@ -331,3 +331,8 @@
 - 2026-11-17 13:20 | suspicious | agentmail.to | gankdat.com: no_well_known — measured 2026-11-13 | Unsolicited paid-audit pitch with payment links from unknown sender | logged
 - 2026-11-18 17:30 | notification | github.com | [giovf/rorororo] Run failed: worker logs - main (20f4380) | worker logs workflow, job logs failed in 43 s (our gate/job red; watchdog ci-failed line pending) | logged
 - 2026-11-19 09:10 | notification | github.com | [giovf/rorororo] Run failed: worker logs - main (b707f07) | worker logs workflow, job logs failed in 19 s (our job red; same workflow as 11-18 ci-failed line, watchdog line for this run pending) | logged
+- 2026-11-19 13:52 | notification | github.com | [giovf/text-to-audio] Run failed: ci - develop (16d64df) | other repo's ci run, frontend ok; not a Foundry workflow | logged
+- 2026-11-19 13:52 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Task 222 step 1 (472210e) | other repo's PR ci, backend job failed in 1m45s | logged
+- 2026-11-19 13:53 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Catch-up for Tasks 195-218 (54cd340) | other repo's PR ci, a job failed | logged
+- 2026-11-19 14:00 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Task 222 step 1 (22f20f0) | other repo's PR ci, a job failed | logged
+- 2026-11-19 14:03 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Catch-up for Tasks 195-218 (7f17eaa) | other repo's PR ci, backend job not successful | logged
