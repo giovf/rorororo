@@ -3279,3 +3279,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-19 17:17 | burn-down | Queued foundry pre-research-primary-read-before-seed: read the live page by relay before seeding
 - 2026-11-19 17:21 | burn-down | foundry pre-research-primary-read-before-seed done: build and burn-down prompts read by relay before seeding
 - 2026-11-19 17:21 | burn-down | Proof owed: the next pre-research line for an unreachable host names the relay round it read first
+- 2026-11-19 17:24 | burn-down | Stopping: 2 items done (1 spike seeded and parked, 1 routine fix); nothing buildable left, night cap reached
