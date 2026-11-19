@@ -1591,14 +1591,14 @@
     {
       "id": "ci-worker-logs-failing",
       "title": "The worker logs workflow (worker-logs.yml) failed 1 times this week: root-cause and fix it",
-      "why": "Filed by scripts/ci-failed-runs.ts (2026-11-19): worker-logs.yml failed 1 times in 7 days — run 41 (2026-11-19 09:09 UTC, step \"Read the Worker's lines (no install: the script imports only the venture's own lib)\", later run 42 ok) — https://github.com/giovf/rorororo/actions/runs/44493868929. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/worker-logs.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done.",
+      "why": "Filed by scripts/ci-failed-runs.ts (2026-11-19): worker-logs.yml failed 1 times in 7 days — run 41 (2026-11-19 09:09 UTC, step \"Read the Worker's lines (no install: the script imports only the venture's own lib)\", later run 42 ok) — https://github.com/giovf/rorororo/actions/runs/44493868929. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/worker-logs.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done. Cause (build 2026-11-19): Cloudflare's Workers Logs query API answered one-off 5xx — HTTP 500 \"Internal error\" 9 s into the 1,500-minute read of run 41, HTTP 504 on run 34 the day before — and the script failed on the first refusal. Fix: `withTransientRetry` in ventures/gankdat/src/lib/log-read.ts tries a 429 or 5xx three times (3 s, 10 s) for the dispatch script and the metrics job's error-line read; a 4xx still fails at once.",
       "effort_days": 0.2,
       "proof": "seven days of worker-logs.yml runs with no ci-failed line in docs/RUNS.md",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-19",
       "updated": "2026-11-19",
-      "doing_since": "2026-11-19"
+      "done_at": "2026-11-19"
     }
   ]
 }

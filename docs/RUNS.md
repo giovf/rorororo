@@ -3266,3 +3266,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-19 12:06 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-11-19 12:06 | watchdog | ci-failed: worker-logs.yml run 41 09:09 — step Read the Worker's lines (no install: th…; later run 42 ok
 - 2026-11-19 16:07 | triage | notify owner dispatched: last run started 13:47 UTC, 2 h 20 min ago
+- 2026-11-19 17:14 | build | Built foundry ci-worker-logs-failing: a Workers Logs read retries a 429 or 5xx three times
+- 2026-11-19 17:14 | build | Cause of worker logs run 41: Cloudflare answered HTTP 500 to the 1,500-min query; run 34 was a 504
+- 2026-11-19 17:14 | build | withTransientRetry in gankdat log-read.ts, used by the dispatch script and the error-line read; 2 tests

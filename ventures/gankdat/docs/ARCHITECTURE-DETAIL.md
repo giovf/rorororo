@@ -870,6 +870,9 @@ runs `check:root`.
   the same `worker error ×N:` / `worker request ×N:` lines the Daily numbers step prints (`errorLinesReport`,
   `lib/error-lines.ts`, tested) — node builtins only, no install, no row, nothing committed, read with `get_job_logs`;
   the 07:00 routine's row dispatch leaves it false and the schedule never sees it.
+  **A log POST the API answers 429 or 5xx is tried three times** (2026-11-19, foundry `ci-worker-logs-failing`, `lib/log-read.ts withTransientRetry`):
+  `worker logs` run 41 failed on one `HTTP 500 Internal error` to a 1,500-minute read and run 34 on a 504, each gone at the next dispatch.
+  Waits 3 s then 10 s; a 4xx is thrown at once; the last error says `(after 3 tries)`. Used by `scripts/worker-logs.mjs` and `readErrorLines`.
   **A log read says how complete it is** (2026-11-18, gankdat `worker-logs-read-completeness`, `lib/log-read.ts`):
   eight `worker logs` reads on 11-18 returned 140 POST /mcp records for a window the traffic rows count at about
   12,000, a request one needle found was absent from the wider set, and probe run 333 printed `worker errors: 0 lines`
