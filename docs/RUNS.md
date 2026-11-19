@@ -3277,3 +3277,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-19 17:17 | burn-down | Forum dates it: last creator question 11 March 2026 unanswered; terms bar scripted reads, no listing read
 - 2026-11-19 17:17 | burn-down | Relay rounds mulerun-2026-11-19 and -b (27 lines); four hosts added; idea parked in the exchange
 - 2026-11-19 17:17 | burn-down | Queued foundry pre-research-primary-read-before-seed: read the live page by relay before seeding
+- 2026-11-19 17:21 | burn-down | foundry pre-research-primary-read-before-seed done: build and burn-down prompts read by relay before seeding
+- 2026-11-19 17:21 | burn-down | Proof owed: the next pre-research line for an unreachable host names the relay round it read first
