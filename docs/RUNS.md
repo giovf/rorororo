@@ -3266,3 +3266,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-19 12:06 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-11-19 12:06 | watchdog | ci-failed: worker-logs.yml run 41 09:09 — step Read the Worker's lines (no install: th…; later run 42 ok
 - 2026-11-19 16:07 | triage | notify owner dispatched: last run started 13:47 UTC, 2 h 20 min ago
+- 2026-11-19 17:13 | burn-down | Exchange pre-research: MuleRun paid agent marketplace — spike seeded (mulerun-agent-marketplace); 0 spikes open
+- 2026-11-19 17:13 | burn-down | Its pages say creators price each run and keep 80 %; host unreachable from the sandbox, so the spike reads by relay
+- 2026-11-19 17:13 | burn-down | Dropped before seeding: Coda Packs (new sellers paused since July) and MCPize (no sales evidence beyond $0.21)
