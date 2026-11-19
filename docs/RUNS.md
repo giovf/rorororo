@@ -3263,3 +3263,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-19 09:17 | build | Fix: each cold x402 request runs its own facilitator handshake until one succeeds; 3 tests added
 - 2026-11-19 09:17 | build | Deploys on this push's CI run; next-slot check is item x402-init-fix-live-read (three clean rows, 11-22)
 - 2026-11-19 09:17 | build | Workers Logs answered HTTP 500 to the 1,500-min read and the probe at 09:10; the 900-min read was complete
+- 2026-11-19 12:06 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
