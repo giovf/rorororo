@@ -689,8 +689,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/mulerun-agent-marketplace.md with the creator-terms quotes (fee, payout, sign-up requirements, AI rule), a table of ≥ 40 agents with price per run and runs, the per-run margin sum for a /diligence report, the 2.0 finding and a promote / park call; a promote adds the item with its day count to its venture's queue, a park adds `mulerun-agent-marketplace` to docs/pipeline/exchange.json with a trigger",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-19"
+      "status": "doing",
+      "added": "2026-11-19",
+      "doing_since": "2026-11-19"
     }
   ]
 }
