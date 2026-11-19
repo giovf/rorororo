@@ -1,0 +1,159 @@
+{
+  "request": "mulerun-2026-11-19-b",
+  "fetched_at": "2026-11-19T17:16:16.019Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/docs/llms.txt",
+      "fetched_at": "2026-11-19T17:16:06.485Z",
+      "status": 200,
+      "elapsed_ms": 1674,
+      "final_url": "https://mulerun.com/docs/llms.txt",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "last-modified": "Thu, 19 Nov 2026 17:16:08 GMT"
+      },
+      "file": "1.txt",
+      "bytes": 8903,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/docs/legal/terms-of-use",
+      "fetched_at": "2026-11-19T17:16:08.665Z",
+      "status": 200,
+      "elapsed_ms": 357,
+      "final_url": "https://mulerun.com/docs/legal/terms-of-use",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Wed, 18 Nov 2026 20:08:41 GMT"
+      },
+      "file": "2.txt",
+      "bytes": 57258,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 233066
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/pricing",
+      "fetched_at": "2026-11-19T17:16:09.545Z",
+      "status": 200,
+      "elapsed_ms": 532,
+      "final_url": "https://mulerun.com/pricing/plan",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 3479,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 79900
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/skillshub",
+      "fetched_at": "2026-11-19T17:16:10.583Z",
+      "status": 200,
+      "elapsed_ms": 471,
+      "final_url": "https://mulerun.com/skillshub",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 40322,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 657460
+    },
+    {
+      "method": "GET",
+      "url": "https://mulerun.com/sitemap-main.xml",
+      "fetched_at": "2026-11-19T17:16:12.032Z",
+      "status": 200,
+      "elapsed_ms": 232,
+      "final_url": "https://mulerun.com/sitemap-main.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "content-length": "547"
+      },
+      "file": "5.xml",
+      "bytes": 547,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://community.mulerun.com/t/92.json",
+      "fetched_at": "2026-11-19T17:16:12.265Z",
+      "status": 200,
+      "elapsed_ms": 1048,
+      "final_url": "https://community.mulerun.com/t/92.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "6.json",
+      "bytes": 53995,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://community.mulerun.com/t/45.json",
+      "fetched_at": "2026-11-19T17:16:13.815Z",
+      "status": 200,
+      "elapsed_ms": 314,
+      "final_url": "https://community.mulerun.com/t/45.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "7.json",
+      "bytes": 13696,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://community.mulerun.com/t/128.json",
+      "fetched_at": "2026-11-19T17:16:14.631Z",
+      "status": 200,
+      "elapsed_ms": 516,
+      "final_url": "https://community.mulerun.com/t/128.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "8.json",
+      "bytes": 110934,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://blog.mulerun.com/categories/creator/",
+      "fetched_at": "2026-11-19T17:16:15.150Z",
+      "status": 200,
+      "elapsed_ms": 229,
+      "final_url": "https://blog.mulerun.com/categories/creator/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 1626,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 11344
+    },
+    {
+      "method": "GET",
+      "url": "https://blog.mulerun.com/tags/marketplace/",
+      "fetched_at": "2026-11-19T17:16:15.881Z",
+      "status": 200,
+      "elapsed_ms": 136,
+      "final_url": "https://blog.mulerun.com/tags/marketplace/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 1828,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 11920
+    }
+  ]
+}

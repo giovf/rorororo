@@ -1,0 +1,87 @@
+# MuleRun Docs
+
+## Docs
+
+- [Get Started](https://mulerun.com/docs/creator-guide/quickstart/get-started.md)
+- [Chat](https://mulerun.com/docs/creator-guide/quickstart/chat.md)
+- [Computer](https://mulerun.com/docs/creator-guide/quickstart/computer.md)
+- [Drive](https://mulerun.com/docs/creator-guide/quickstart/drive.md)
+- [Knowledge](https://mulerun.com/docs/creator-guide/quickstart/knowledge.md)
+- [Pages](https://mulerun.com/docs/creator-guide/quickstart/pages.md)
+- [Datasources](https://mulerun.com/docs/creator-guide/quickstart/datasources.md)
+- [Browser Connector](https://mulerun.com/docs/creator-guide/quickstart/browser-connector.md)
+- [Scheduled Tasks](https://mulerun.com/docs/creator-guide/quickstart/scheduled-tasks.md)
+- [Quickstart](https://mulerun.com/docs/cli/quickstart.md): Install the MuleRun CLI, log in, and run your first coding-agent and Studio commands
+- [Introduction](https://mulerun.com/docs/cli/introduction.md): Command-line interface for the MuleRun platform
+- [Installation](https://mulerun.com/docs/cli/installation.md): Install the mulerun CLI globally, per-project, or run it on demand
+- [Configuration](https://mulerun.com/docs/cli/configuration.md): Configure authentication, base URL, proxy, and output format
+- [Code](https://mulerun.com/docs/cli/commands/code.md): Launch a coding-agent CLI wired to your MuleRun account
+- [Studio](https://mulerun.com/docs/cli/commands/studio.md): Generate images, videos, speech, and music from the terminal
+- [Session](https://mulerun.com/docs/cli/commands/session.md): Create, manage, and chat with AI task sessions
+- [Computer](https://mulerun.com/docs/cli/commands/computer.md): Manage compute instances — lifecycle, SSH, shell, exec, and ACP chat
+- [Drive](https://mulerun.com/docs/cli/commands/drive.md): Upload, download, list, and share files in your MuleRun Drive (Barn)
+- [Page](https://mulerun.com/docs/cli/commands/page.md): Create, publish, and manage deployed Pages
+- [User](https://mulerun.com/docs/cli/commands/user.md): View profile, balance, and wallet info for the logged-in user
+- [Login & Logout](https://mulerun.com/docs/cli/commands/login.md): Authenticate via browser OAuth and clear cached credentials
+- [Upgrade](https://mulerun.com/docs/cli/commands/upgrade.md): Upgrade the MuleRun CLI to the latest published version
+- [Doctor](https://mulerun.com/docs/cli/commands/doctor.md): Print environment and configuration diagnostics
+- [Troubleshooting](https://mulerun.com/docs/cli/troubleshooting.md): Common errors and how to fix them
+- [Terms of Use](https://mulerun.com/docs/legal/terms-of-use.md)
+- [Privacy Policy](https://mulerun.com/docs/legal/privacy-policy.md)
+- [iOS App - Privacy Policy (USA)](https://mulerun.com/docs/legal/user-privacy-policy-iosapp-usa.md)
+- [iOS App - Terms of Service (USA)](https://mulerun.com/docs/legal/user-terms-of-use-iosapp-usa.md)
+- [Data Processing Addendum](https://mulerun.com/docs/legal/dpa.md)
+- [使用条款](https://mulerun.com/docs/legal/zh/terms-of-use.md)
+- [隐私政策](https://mulerun.com/docs/legal/zh/privacy-policy.md)
+- [数据处理附录](https://mulerun.com/docs/legal/zh/dpa.md)
+
+## OpenAPI Specs
+
+- [sora](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/openai/sora/sora.yaml)
+- [sora-2](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/openai/sora-2/sora-2.yaml)
+- [sora-2-pro](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/openai/sora-2-pro/sora-2-pro.yaml)
+- [responses](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/openai/responses.yaml)
+- [openai](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/openai/openai.yaml)
+- [openapi](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/components/openapi.yaml)
+- [metering](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/mulerun/sessions/metering.yaml)
+- [wan2.6-t2v-spark](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/mulerouter/wan2.6-t2v-spark/wan2.6-t2v-spark.yaml)
+- [wan2.6-i2v-spark](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/mulerouter/wan2.6-i2v-spark/wan2.6-i2v-spark.yaml)
+- [wan2.5-t2v-spark](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/mulerouter/wan2.5-t2v-spark/wan2.5-t2v-spark.yaml)
+- [wan2.5-i2v-spark](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/mulerouter/wan2.5-i2v-spark/wan2.5-i2v-spark.yaml)
+- [midjourney](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/midjourney/midjourney.yaml)
+- [videos](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/klingai/videos.yaml)
+- [kling-v2.6](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/klingai/kling-v2.6/kling-v2.6.yaml)
+- [kling-v2.5-turbo](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/klingai/kling-v2.5-turbo/kling-v2.5-turbo.yaml)
+- [kling-v2.1-master](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/klingai/kling-v2.1-master/kling-v2.1-master.yaml)
+- [veo3](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/google/veo3/veo3.yaml)
+- [veo-3.1](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/google/veo-3.1/veo-3.1.yaml)
+- [veo-3.1-fast](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/google/veo-3.1-fast/veo-3.1-fast.yaml)
+- [veo-3.0](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/google/veo-3.0/veo-3.0.yaml)
+- [seedance-2.0-text-to-video](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/bytedance/seedance-2.0/text-to-video/seedance-2.0-text-to-video.yaml)
+- [seedance-2.0-reference-to-video](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/bytedance/seedance-2.0/reference-to-video/seedance-2.0-reference-to-video.yaml)
+- [seedance-2.0-image-to-video](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/bytedance/seedance-2.0/image-to-video/seedance-2.0-image-to-video.yaml)
+- [seedance-2.0-fast-text-to-video](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/bytedance/seedance-2.0-fast/text-to-video/seedance-2.0-fast-text-to-video.yaml)
+- [seedance-2.0-fast-reference-to-video](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/bytedance/seedance-2.0-fast/reference-to-video/seedance-2.0-fast-reference-to-video.yaml)
+- [seedance-2.0-fast-image-to-video](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/bytedance/seedance-2.0-fast/image-to-video/seedance-2.0-fast-image-to-video.yaml)
+- [anthropic](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/anthropic/anthropic.yaml)
+- [wan2.6-t2v](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.6-t2v/wan2.6-t2v.yaml)
+- [wan2.6-t2i](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.6-t2i/wan2.6-t2i.yaml)
+- [wan2.6-image](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.6-image/wan2.6-image.yaml)
+- [wan2.6-i2v](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.6-i2v/wan2.6-i2v.yaml)
+- [wan2.5-t2v-preview](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.5-t2v-preview/wan2.5-t2v-preview.yaml)
+- [wan2.5-t2i-preview](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.5-t2i-preview/wan2.5-t2i-preview.yaml)
+- [wan2.5-i2v-preview](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.5-i2v-preview/wan2.5-i2v-preview.yaml)
+- [wan2.5-i2i-preview](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.5-i2i-preview/wan2.5-i2i-preview.yaml)
+- [wan2.2-t2v-plus](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.2-t2v-plus/wan2.2-t2v-plus.yaml)
+- [wan2.2-i2v-plus](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.2-i2v-plus/wan2.2-i2v-plus.yaml)
+- [wan2.2-i2v-flash](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.2-i2v-flash/wan2.2-i2v-flash.yaml)
+- [wan2.1-vace-plus](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.1-vace-plus/wan2.1-vace-plus.yaml)
+- [wan2.1-kf2v-plus](https://mulerun.com/docs/api-reference-internal-1585752d51de1232/endpoint/alibaba/wan2.1-kf2v-plus/wan2.1-kf2v-plus.yaml)
+
+## Optional
+
+- [Blog](https://blog.mulerun.com)
+- [Community](https://community.mulerun.com/)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.
