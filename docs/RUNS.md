@@ -3257,3 +3257,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-19 01:07 | watchdog | ci-minutes: 427 billed min/7d (~1830/mo; public, no cap) top: notify owner 89, gankdat 64, gankdat metrics 60
 - 2026-11-19 06:07 | triage | notify owner dispatched: last run started 03:47 UTC, 2 h ago
 - 2026-11-19 09:07 | triage | notify owner dispatched: last run started 06:06 UTC, 3 h ago
+- 2026-11-19 09:17 | build | gankdat x402-init-failure-cause-read done: cause read from the live log and fixed in the same slot
+- 2026-11-19 09:17 | build | Cause: the payment library's start-up promise died with the request that made it; 11 of 11 log lines
+- 2026-11-19 09:17 | build | All 11 failures in 15 h were served by yesterday's retry (attempt 1 only); none reached a client
+- 2026-11-19 09:17 | build | Fix: each cold x402 request runs its own facilitator handshake until one succeeds; 3 tests added
+- 2026-11-19 09:17 | build | Deploys on this push's CI run; next-slot check is item x402-init-fix-live-read (three clean rows, 11-22)
+- 2026-11-19 09:17 | build | Workers Logs answered HTTP 500 to the 1,500-min read and the probe at 09:10; the 900-min read was complete

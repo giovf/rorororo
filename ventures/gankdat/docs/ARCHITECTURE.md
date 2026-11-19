@@ -209,6 +209,8 @@ heavy deps. On CI the gate runs once per push, in `gankdat.yml` only.
   a 30-day cap sized from the route count. Payments under the probe's user agent are internal; probers
   and buyers are split in the Daily numbers (`src/lib/x402-sales.ts`). A start-up failure of the payment
   server (facilitator handshake) is retried once, then answered 503 + `Retry-After`, logged `x402_init_failed`.
+  The handshake is run by `routes.ts`, each cold request its own until one succeeds (2026-11-19): the library's
+  shared start-up promise died with the request that created it (workerd settles a promise only in its own request).
 - **PayPal** (credit packs, **sandbox only**, Orders API v2, no live switch): packs add to the top-up
   balance, spent once the plan allowance is gone; REST, MCP `buy_credits`/`confirm_credit_purchase`,
   /account buttons; the `created → completed` UPDATE is the capture guard. `docs/PAYPAL-SETUP.md`.

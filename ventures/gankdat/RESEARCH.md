@@ -1800,3 +1800,47 @@ Items added (STRATEGY §5 scores):
 
 Not added: anything for the door (read above — machines), a French or German register for Clay (parked 11-17 on its
 own numbers), uk-contract-awards' `refresh returned 0 records` (one row; the metrics job files it at the second).
+
+## Why the x402 payment server failed to start — read and fixed 2026-11-19 (build, 09:10 UTC)
+
+Item `x402-init-failure-cause-read`. One `worker logs` read after a night on the guarded lane (run 42, needle
+`x402_init_failed`, 900 min, script version `e79a6eba`): `log read: 11 returned of 11 matched — complete (1 request,
+1 window, ABR level 1, 18,890,420 rows scanned)`, `log store: 11 events, sample interval 1`.
+
+**The message, 11 of 11** (`name` `Error`, no `cause`):
+
+> This promise was created by a request that has since ended, so it can never settle. With the
+> handle_cross_request_promise_resolution compatibility flag, a promise can only settle in the request that created
+> it, and settling it after that request ends is dropped.
+
+**The count.** 11 lines between 11-18 18:51 and 11-19 07:45 UTC, all `attempt: 1`, no `attempt: 2` and no request id
+twice: the single retry built on 11-18 absorbed every one, so none of the 11 went out as a 503 or a 500. They come in
+bursts 1–4 s apart on different routes (18:51 ×2, 00:24 ×3, 00:53 ×2, 01:26, 01:43 ×2, 07:45): `/x402/data/uk-tenders`
+4, `/x402/changes/uk-charities` 3, four routes once each. Against the day's requests: the 06:30 Daily numbers row
+counts 30 `initializeHttpServer` error lines in its 24 h (16 through the guard, 14 before it deployed) and 1 paid
+call; the x402 request total itself was not read — a needle searches line text, and a served request writes no line
+(run 43, needle `GET /x402/`: 0 matched).
+
+**The cause is ours to fix, not a CDP outage and not a rate limit.** `@x402/hono` 2.29 starts the facilitator
+handshake (`httpServer.initialize()` → `GET /supported`) at the moment `paymentMiddleware` is built — inside the first
+request that meets a cold isolate — and every request after it awaits that one promise. workerd lets a promise settle
+only in the request that created it. A sweeping client that opens several routes at once and hangs up on the first
+ends that request before the facilitator has answered; the requests queued behind it are then waiting on a promise
+that can never settle, and each fails once. That is why the failures arrive in bursts across routes, why they rose
+with the sweeps (1, 2, 17, 52 a day) and why a second attempt — which starts a fresh handshake in its own request —
+always worked.
+
+**Fix (same slot).** The lane is built with the library's start-up sync off and `routes.ts` runs the handshake
+itself: `startedPerRequest` calls `httpServer.initialize()` in each request's own context until one has succeeded,
+then never again. No request awaits another request's promise; a handful of concurrent cold requests each pay one
+`GET /supported` (the cost of the fix, a few calls per isolate start). `guardedLane` stays for a real facilitator
+refusal. Tests: `test/x402-guarded-lane.spec.ts` (`startedPerRequest`: a second caller is served while the first
+caller's start never settles; no call after the first success; a failed start is not remembered) and the existing
+402 / verify / settle flow in `test/x402.spec.ts`, unchanged and green.
+
+**Proof still owed** (`x402-init-fix-live-read`, not before 11-22): three Daily numbers rows whose error lines hold
+no `initializeHttpServer` / "can never settle" line and no `x402_init_failed` attempt 2.
+
+Also met: at 09:10 Workers Logs answered `HTTP 500 Internal error` to the 1,500-minute read (run 41) and to the
+probe dispatch's error-line step (metrics run 336); the 900-minute read a minute later was complete. One occurrence,
+nothing queued.

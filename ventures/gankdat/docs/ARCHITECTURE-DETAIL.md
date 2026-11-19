@@ -1083,6 +1083,25 @@ runs `check:root`.
   handler ran passes through and is never repeated. Before: a bare 500 on 1, 2, 17 and 52 requests a
   day from 11-13 on every route, with a logged line that held only stack frames (the cause is read
   from the new line: item `x402-init-failure-cause-read`). `test/x402-guarded-lane.spec.ts`.
+- **x402 start-up failures, the cause** (2026-11-19, `x402-init-failure-cause-read`): worker logs run 42
+  (needle `x402_init_failed`, 900 min, `11 returned of 11 matched — complete`) — every line is
+  `Error: This promise was created by a request that has since ended, so it can never settle. With the
+  handle_cross_request_promise_resolution compatibility flag, a promise can only settle in the request
+  that created it, and settling it after that request ends is dropped.` All 11 are attempt 1 with no
+  attempt 2 (the retry served them), in bursts 1–4 s apart on different routes. `@x402/hono` 2.29
+  starts `httpServer.initialize()` when `paymentMiddleware` is BUILT — inside the first request of a
+  cold isolate — and every later request awaits that one promise; when the first request ends before
+  the facilitator answers (a sweeping client that hangs up), the requests queued behind it fail. Not a
+  CDP outage and not a rate limit. Fix: the lane is built with `paymentMiddlewareFromHTTPServer(…,
+  syncFacilitatorOnStart = false)` and `startedPerRequest` runs `httpServer.initialize()` in each
+  request's own context until one has succeeded — no request awaits another's promise; a few
+  concurrent cold requests each pay one `GET /supported`. Safe to overlap: `initialize()` clears its
+  maps only at its start and nobody starts one after the first success. `guardedLane` stays (a real
+  facilitator refusal is still retried once, then 503). The lazy `import()` promise in `lanes` is
+  still shared across requests: it resolves without I/O and no line has named it — if one ever does,
+  build it per request the same way. The same day the 1,500-minute read (run 41) and the probe's
+  error-line step (metrics run 336) were both answered `HTTP 500 Internal error` by Workers Logs at
+  09:10; the 900-minute read a minute later was complete.
 
 ## Compliance & accessibility
 - UK GDPR: per-dataset data posture, stated in the terms licence table.

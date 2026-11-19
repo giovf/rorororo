@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "researched": "2026-11-18T17:42Z",
   "items": [
     {
@@ -1445,10 +1445,21 @@
       "effort_days": 0.2,
       "proof": "the message quoted in RESEARCH.md with the day's count, and either the fix's test or the outage's dates; then three Daily numbers rows with no `x402_init_failed` attempt 2",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-18",
       "not_before": "2026-11-19",
-      "doing_since": "2026-11-19"
+      "done_at": "2026-11-19"
+    },
+    {
+      "id": "x402-init-fix-live-read",
+      "title": "Confirm the x402 start-up fix live: read three Daily numbers rows (11-20 to 11-22) — no `initializeHttpServer` or \"can never settle\" error line and no `x402_init_failed` attempt 2; if one remains, quote it (one `worker logs` read, needle `x402_init_failed`, 900 min) and build the lazy-import promise per request too",
+      "why": "`x402-init-failure-cause-read` (2026-11-19) found the cause — the library's shared start-up promise died with the request that created it, 11 of 11 lines — and moved the handshake into each request; the proof it left owed is three clean rows on the one lane strangers pay on.",
+      "effort_days": 0.1,
+      "proof": "the three rows' error readings quoted in RESEARCH.md, or the remaining line and its fix",
+      "score": 2,
+      "status": "todo",
+      "added": "2026-11-19",
+      "not_before": "2026-11-22"
     }
   ]
 }
