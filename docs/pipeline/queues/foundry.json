@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "researched": "2026-11-17T17:39Z",
   "items": [
     {
@@ -1611,6 +1611,16 @@
       "added": "2026-11-19",
       "doing_since": "2026-11-19",
       "done_at": "2026-11-19"
+    },
+    {
+      "id": "cloudflare-observability-pricing-read",
+      "title": "Read Cloudflare's Workers Observability pricing change (in force 2026-12-01, notice mailed 2026-11-20 05:49) against what gankdat and the two other Workers write: through the relay (developers.cloudflare.com is allowed) read the Workers Logs pricing page and the change notice's linked page for the included volume on Workers Paid and the price per million events or GB beyond it; count our own volume from the `worker logs` reader's `events.count` for 24 h and 7 d (gankdat, the licence Worker, the landing Worker) and multiply to a month; write the sum in docs/LEDGER.md's recurring-cost note. If the month's figure passes the included volume, set `observability.head_sampling_rate` (or drop `invocation_logs`) in the Worker's wrangler.jsonc in the same commit so the bill stays at the base plan, keeping the lines the metrics job and triage read; if it does not, say so with the two numbers.",
+      "why": "Build 2026-11-20 (new-ventures research slot, read of docs/INBOX.md): Cloudflare mailed '[Notice] Cloudflare Observability pricing changes starting December 1, 2026' — volume-based pricing for logs and traces; the triage logged it with 'no figure billed to us' and nothing reads it against our volume. The ledger's headroom is about £11 (3.1 months at £3.70), the Worker logs every request unsampled (head_sampling_rate defaults to 1, read 11-18) and a crawler sweep can write tens of thousands of lines a day; the one earlier Cloudflare overage (US$49 on 10-10) was found on the invoice, after the fact. Eleven days remain to read it before it bills. Score 4 = a dated cost risk on the only recurring line ÷ 0.1 day.",
+      "effort_days": 0.1,
+      "proof": "docs/LEDGER.md names the included volume, our measured events a month and the resulting charge (or 'none'); if over, wrangler.jsonc carries the sampling change and one `gankdat metrics` probe dispatch after the deploy still prints the error lines and the door events",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-11-20"
     }
   ]
 }

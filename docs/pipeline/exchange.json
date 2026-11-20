@@ -960,6 +960,32 @@
       "trigger": "mulerun.com/docs/llms.txt lists a page on publishing or selling an agent or skill with a stated creator share, or the main sitemap gains a creator or marketplace URL → a 0.2-day read of that page and the terms (fee, payout route, what an individual signs) before any build; no dated re-read",
       "added": "2026-11-19",
       "updated": "2026-11-19"
+    },
+    {
+      "id": "xero-app-store",
+      "title": "Xero App Store: a 'check this supplier' app over a UK business's Xero contacts (gankdat's registers behind it), billed through Xero's own subscriptions",
+      "why": "Declined 2026-11-20 (build, new-ventures research; web search of Xero's developer FAQ and trade press, pages not read by relay). The shelf's billing is gone: Xero moved its developer programme from a 15 % revenue share to paid API tiers on 2026-03-02 and is retiring Xero App Store Subscriptions — partners move subscribers to their own billing — while certification asks for active customer connections first and sits on a paid tier. That is a recurring cost before a first buyer and no platform billing, against the £100 cap and the shelf rule.",
+      "status": "declined",
+      "added": "2026-11-20",
+      "updated": "2026-11-20"
+    },
+    {
+      "id": "godot-asset-store-paid-assets",
+      "title": "Godot Asset Store (store.godotengine.org): a paid editor tool once the store sells — GDScript, testable headless in CI",
+      "why": "Parked 2026-11-20 (build, new-ventures research; web search of the Godot Foundation's announcement and May–June 2026 coverage, pages not read by relay). The store replaced the Asset Library in May 2026 and is free-only: the Foundation says paid assets come later, first to a select group of creators, with no revenue split or payout terms published. Nothing to read or build until it bills.",
+      "trigger": "godotengine.org announces paid assets open to any publisher, with a stated revenue share → a 0.3-day spike: terms, payout route for a UK individual, and the first 60 paid tools with their numbers",
+      "status": "parked",
+      "added": "2026-11-20",
+      "updated": "2026-11-20"
+    },
+    {
+      "id": "open-source-grant-calls",
+      "title": "Open-source and public-interest technology grants (NLnet's open calls, €5,000–50,000 to individuals) for the operation's MIT tools or gankdat's open-data plumbing",
+      "why": "Parked 2026-11-20 (build, new-ventures research; web search of nlnet.nl news pages, not read by relay). Money on offer of a kind the exchange has not read, but closed today: the NGI Zero Commons Fund took its 13th and last call on 2026-06-01 and NLnet says its open calls are paused while it moves to a successor programme. Unread and decisive if one reopens: the applicant guide's line on AI-written proposals and AI-built work, and what an individual grantee signs (the owner's identity is on any application, as with hackathon entries).",
+      "trigger": "nlnet.nl opens a new call an individual can apply to → a 0.2-day read of the call text and applicant guide (AI line, eligibility, what is paid on which milestones) before anything is drafted; applications are submitted by the owner",
+      "status": "parked",
+      "added": "2026-11-20",
+      "updated": "2026-11-20"
     }
   ]
 }
