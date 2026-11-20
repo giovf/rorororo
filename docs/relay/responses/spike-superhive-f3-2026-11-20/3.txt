@@ -1,0 +1,158 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/renderroster","name":"Render Roster","image":["https://assets.superhivemarket.com/store/product/263996/image/xlarge-813118d5242ed2f748abd1a2dd1f1d0d.jpg"],"description":"Batch render combinations. Manage cameras, worlds, view layers and render presets in one dedicated Blender window.","mpn":"263996","brand":{"@type":"Thing","name":"Urushigusa Software"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"6.99","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Junki Inou"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Render Roster","item":"https://superhivemarket.com/products/renderroster"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/263996/image/xlarge-813118d5242ed2f748abd1a2dd1f1d0d.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/263996/image/xlarge-813118d5242ed2f748abd1a2dd1f1d0d.jpg
+meta description: Batch render combinations. Manage cameras, worlds, view layers and render presets in one dedicated Blender window.
+meta og:url: https://superhivemarket.com/products/renderroster
+meta og:title: Render Roster
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Batch render combinations. Manage cameras, worlds, view layers and render presets in one dedicated Blender window.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Render Roster
+meta twitter:description: Batch render combinations. Manage cameras, worlds, view layers and render presets in one dedicated Blender window.
+meta twitter:domain: https://superhivemarket.com/products/renderroster
+meta og:image: https://assets.superhivemarket.com/store/product/263996/image/xlarge-813118d5242ed2f748abd1a2dd1f1d0d.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/263996/image/xlarge-813118d5242ed2f748abd1a2dd1f1d0d.jpg
+Render Roster - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Render Roster
+Urushigusa Software (/creators/urushigusa-software)
+in Rendering (/categories/rendering-scripts-and-addons)
+https://assets.superhivemarket.com/store/product/263996/image/xlarge_og-dfbe34e62e0d00b276bd5e19d7bd9bf5.jpg
+https://assets.superhivemarket.com/store/productimage/1339635/image/xlarge_og-30b330549b1a90883de39639120cbc5d.jpg
+https://assets.superhivemarket.com/store/productimage/1339636/image/xlarge_og-c93a267cc235f9806bdcec38c29a84e8.jpg
+https://assets.superhivemarket.com/store/productimage/1339633/image/xlarge_og-9755165b59d5a2e901d8c9db8f11437b.jpg
+https://assets.superhivemarket.com/store/productimage/1339634/image/xlarge_og-3bbf997cc9be5b1e5da67d78fadb4174.jpg
+https://assets.superhivemarket.com/store/productimage/1339632/image/xlarge_og-b0827d06b9a91a4fba7ca437b58562be.jpg
+About (/products/renderroster)
+FAQ (/products/renderroster/faq)
+Documentation (/products/renderroster/docs)
+Ratings (/products/renderroster/ratings)
+RenderRoster
+Batch render combinations. Manage them in one dedicated window.
+RenderRoster is a batch render manager for Blender. Choose your View Layers, Worlds, Cameras and Render Presets, then render their combinations in sequence. A spacious dedicated window keeps your selections, generated jobs and progress together, so batch management does not have to fit into a narrow sidebar or a long properties panel.
+Choose the combinations. See the results.
+Need the same scene from three cameras under two lighting environments? Select one View Layer, two Worlds, three Cameras and one Render Preset: RenderRoster prepares six jobs. Review the list, choose your output settings and run the batch.
+The gallery shows six actual outputs from this setup: Day and Morning, each rendered from Front, Detail and Low Angle cameras.
+Keep the whole batch in view
+Choose items across all four axes while keeping the generated job list visible. Organize related items into groups within each axis. Switch a group off to exclude its contents temporarily, then switch it back on with the individual selections preserved.
+Follow each job's progress and result in the same window.
+Put the names that matter first
+Arrange filename components to suit how you browse your outputs. Put Camera first when comparing viewpoints, or World first when comparing lighting. Select a row and use the Up / Down buttons to reorder it; omit names you do not need, add text before or after the names, and choose a separator.
+Check a filename example before saving. The job identifier, Version and Pass are added automatically at the end. Filename order does not change job execution order.
+You can leave camera or world names out of your filenames without losing the distinction between jobs. RenderRoster automatically appends a job ID that identifies the full combination of View Layer, World, Camera and Render Preset. Different combinations remain distinguishable even when the names you choose to display are the same.
+Review settings before applying
+Save render settings as named presets for different resolutions or quality levels. Compare a preset's saved values with the current scene, see which settings changed, and apply the preset when ready. You can also update a preset from the current settings.
+Follow a batch through interruptions
+Stop takes effect after the current job finishes. Within the same batch setup and Blender session, Continue runs pending or stopped jobs, while Retry runs failed jobs after you correct the cause. Both skip completed jobs, so you do not have to render the whole batch again. When a job fails, RenderRoster records the reason and continues where possible.
+Continue and Retry do not restore a batch after Blender has been closed or restarted.
+Versioned output names preserve earlier renders. Settings temporarily changed for rendering are restored as far as Blender allows.
+Compatibility and scope
+Windows; Blender 4.5 LTS and 5.2 LTS. Tested versions: 4.5.13 and 5.2.0. macOS and Linux are untested.
+Dedicated-window UI in English, Japanese, Simplified Chinese, Korean, Spanish, Russian and French. Choose a language in RenderRoster or follow Blender's language setting.
+PNG output. Jobs render sequentially; distributed and parallel job rendering are not included.
+Continue and Retry use the current session; there is no history browser for resuming an old run after restarting Blender.
+Use one Blender process per output directory at a time.
+Presets that change the file Working Space affect the whole blend file; review the warning before applying.
+On Windows, drag the supplied Extension ZIP from File Explorer into Blender and follow the installation prompt. Keep the ZIP unextracted. Alternatively, use Blender's Install from Disk command. After installing RenderRoster, save your blend file and set it up from the RenderRoster tab in the sidebar. The included guide walks you through your first batch.
+Support and updates
+Your Superhive purchase includes 12 months of support, maintenance and product updates. An optional additional 12 months costs 50% of the product price at renewal; there is no automatic renewal. Versions received during coverage remain usable afterward. Access to releases published after expiry and individual support require renewal. Japanese and English support covers installation, product use and troubleshooting. For Superhive purchases, please contact us through the product page on Superhive; we handle these conversations in our Superhive Inbox. Alternatively, contact Urushigusa via https://urushigusa.com/contact or [email protected] (/cdn-cgi/l/email-protection) .
+Demo scene: Blue Wall by Greg Zaal / Poly Haven (CC0) , adjusted for these examples. Rendered examples illustrate RenderRoster's output; the scene is not included with the add-on.
+License and asset terms
+The add-on source code is licensed under GPL-3.0-or-later. The guide and product icon have separate terms stated in the included README.md; normal use with RenderRoster, including commercial production, is permitted. Our original promotional text and images are not offered for unrestricted reuse. Other uses require permission unless permitted by applicable law or an existing license. These terms do not restrict GPL-covered code or your own rendered output. Third-party materials retain their respective terms.
+Back to top
+Discover more products like this
+view layer (/tags/view-layer) camera (/tags/camera) Workflow (/tags/workflow) render-preset (/tags/render-preset) world (/tags/world) render manager (/tags/render-manager) batch render (/tags/batch-render)
+Seats:
+&minus;
++
+$6.99
+[Support Period]
+Included
+Includes 12 months of
+Support from Urushigusa Software (/creators/urushigusa-software)
+Product updates
+Extend this product’s Support Period +12 months: 50% of product price
+Have questions before purchasing?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Published
+2 months ago
+Blender Version
+4.5 - 5.2
+Extension Type
+Add-on
+Render Engine Used
+Cycles, Eevee
+License
+GPL (/page/gpl-license)
+Urushigusa Software
+Visit Website (https://urushigusa.com/) See all items by this creator (/creators/urushigusa-software)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#b1c2c4c1c1dec3c5f1c2c4c1d4c3d9d8c7d4dcd0c3dad4c59fd2dedc)
+Made by the humans of Autotroph (https://autotroph.com)

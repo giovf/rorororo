@@ -1,0 +1,326 @@
+{
+  "request": "spike-superhive-f3-2026-11-20",
+  "fetched_at": "2026-11-20T17:45:22.802Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/brittle",
+      "fetched_at": "2026-11-20T17:45:06.632Z",
+      "status": 200,
+      "elapsed_ms": 337,
+      "final_url": "https://superhivemarket.com/products/brittle",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 9709,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 51877
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/entropy-designer-engine",
+      "fetched_at": "2026-11-20T17:45:07.537Z",
+      "status": 200,
+      "elapsed_ms": 159,
+      "final_url": "https://superhivemarket.com/products/entropy-designer-engine",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 8577,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45358
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/renderroster",
+      "fetched_at": "2026-11-20T17:45:08.318Z",
+      "status": 200,
+      "elapsed_ms": 236,
+      "final_url": "https://superhivemarket.com/products/renderroster",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 12380,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 48268
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/place-director-pro",
+      "fetched_at": "2026-11-20T17:45:09.117Z",
+      "status": 200,
+      "elapsed_ms": 232,
+      "final_url": "https://superhivemarket.com/products/place-director-pro",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 9528,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 43852
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/note-scatter--notes-stickers--magnets",
+      "fetched_at": "2026-11-20T17:45:09.913Z",
+      "status": 200,
+      "elapsed_ms": 421,
+      "final_url": "https://superhivemarket.com/products/note-scatter--notes-stickers--magnets",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 11190,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3069316
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/ascii-render",
+      "fetched_at": "2026-11-20T17:45:11.319Z",
+      "status": 200,
+      "elapsed_ms": 217,
+      "final_url": "https://superhivemarket.com/products/ascii-render",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 11884,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 48877
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/blender-preview",
+      "fetched_at": "2026-11-20T17:45:12.100Z",
+      "status": 200,
+      "elapsed_ms": 187,
+      "final_url": "https://superhivemarket.com/products/blender-preview",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 12523,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 71097
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/lightstudio-quick",
+      "fetched_at": "2026-11-20T17:45:12.791Z",
+      "status": 200,
+      "elapsed_ms": 235,
+      "final_url": "https://superhivemarket.com/products/lightstudio-quick",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 8448,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 43850
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/3d2ai",
+      "fetched_at": "2026-11-20T17:45:13.588Z",
+      "status": 200,
+      "elapsed_ms": 226,
+      "final_url": "https://superhivemarket.com/products/3d2ai",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 7261,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 43825
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/velocity-blur",
+      "fetched_at": "2026-11-20T17:45:14.405Z",
+      "status": 200,
+      "elapsed_ms": 164,
+      "final_url": "https://superhivemarket.com/products/velocity-blur",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 8692,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46496
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/stack-motion-pro",
+      "fetched_at": "2026-11-20T17:45:15.193Z",
+      "status": 200,
+      "elapsed_ms": 238,
+      "final_url": "https://superhivemarket.com/products/stack-motion-pro",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 19704,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 91607
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/cveld-tradingholic",
+      "fetched_at": "2026-11-20T17:45:16.058Z",
+      "status": 200,
+      "elapsed_ms": 214,
+      "final_url": "https://superhivemarket.com/products/cveld-tradingholic",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 6863,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 41369
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/on-screen-key",
+      "fetched_at": "2026-11-20T17:45:16.835Z",
+      "status": 200,
+      "elapsed_ms": 239,
+      "final_url": "https://superhivemarket.com/products/on-screen-key",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 6857,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45699
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/render-pass-bar-octane-cycles-eevee",
+      "fetched_at": "2026-11-20T17:45:17.641Z",
+      "status": 200,
+      "elapsed_ms": 249,
+      "final_url": "https://superhivemarket.com/products/render-pass-bar-octane-cycles-eevee",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.txt",
+      "bytes": 8977,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54052
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/oneclick_asset",
+      "fetched_at": "2026-11-20T17:45:18.454Z",
+      "status": 200,
+      "elapsed_ms": 183,
+      "final_url": "https://superhivemarket.com/products/oneclick_asset",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.txt",
+      "bytes": 9376,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 48761
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/sidebar-order",
+      "fetched_at": "2026-11-20T17:45:19.263Z",
+      "status": 200,
+      "elapsed_ms": 176,
+      "final_url": "https://superhivemarket.com/products/sidebar-order",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 11514,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 71053
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/simulation-to-shapekeys",
+      "fetched_at": "2026-11-20T17:45:20.121Z",
+      "status": 200,
+      "elapsed_ms": 233,
+      "final_url": "https://superhivemarket.com/products/simulation-to-shapekeys",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.txt",
+      "bytes": 9947,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46729
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/horizontal-sidebar-navigator",
+      "fetched_at": "2026-11-20T17:45:20.920Z",
+      "status": 200,
+      "elapsed_ms": 218,
+      "final_url": "https://superhivemarket.com/products/horizontal-sidebar-navigator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.txt",
+      "bytes": 9361,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44835
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/colorize--rename-rigid-body-constraints",
+      "fetched_at": "2026-11-20T17:45:21.703Z",
+      "status": 200,
+      "elapsed_ms": 183,
+      "final_url": "https://superhivemarket.com/products/colorize--rename-rigid-body-constraints",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.txt",
+      "bytes": 7260,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 41614
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/blockxq",
+      "fetched_at": "2026-11-20T17:45:22.511Z",
+      "status": 200,
+      "elapsed_ms": 228,
+      "final_url": "https://superhivemarket.com/products/blockxq",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.txt",
+      "bytes": 13202,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 63508
+    }
+  ]
+}

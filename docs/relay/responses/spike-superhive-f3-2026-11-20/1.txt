@@ -1,0 +1,149 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/brittle","name":"Brittle","image":["https://assets.superhivemarket.com/cache/f36b1607ee4f7a8fccad3fad9984b72d.webp"],"description":"Most glass add-ons only crack flat panes. Brittle breaks any glass object in Blender: windshields, bottles, domes. Realistic crack webs, damage states at the quality you choose, timed hits and animated shatters.","mpn":"263933","brand":{"@type":"Thing","name":"Marco Maria Rossi"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"29.99","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Marco Maria Rossi"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Brittle","item":"https://superhivemarket.com/products/brittle"}]}
+meta og:image: https://assets.superhivemarket.com/cache/f36b1607ee4f7a8fccad3fad9984b72d.webp
+meta twitter:image: https://assets.superhivemarket.com/cache/f36b1607ee4f7a8fccad3fad9984b72d.webp
+meta description: Most glass add-ons only crack flat panes. Brittle breaks any glass object in Blender: windshields, bottles, domes. Realistic crack webs, damage states at the quality you choose, timed hits and animated shatters.
+meta og:url: https://superhivemarket.com/products/brittle
+meta og:title: Brittle
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Most glass add-ons only crack flat panes. Brittle breaks any glass object in Blender: windshields, bottles, domes. Realistic crack webs, damage states at the quality you choose, timed hits and animated shatters.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Brittle
+meta twitter:description: Most glass add-ons only crack flat panes. Brittle breaks any glass object in Blender: windshields, bottles, domes. Realistic crack webs, damage states at the quality you choose, timed hits and animated shatters.
+meta twitter:domain: https://superhivemarket.com/products/brittle
+meta og:image: https://assets.superhivemarket.com/cache/f36b1607ee4f7a8fccad3fad9984b72d.webp
+meta twitter:image: https://assets.superhivemarket.com/cache/f36b1607ee4f7a8fccad3fad9984b72d.webp
+Brittle - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Brittle
+Marco Maria Rossi (/creators/mrm)
+in Modeling (/categories/modeling)
+https://assets.superhivemarket.com/cache/f36b1607ee4f7a8fccad3fad9984b72d.webp
+https://assets.superhivemarket.com/store/productimage/1340191/image/xlarge_og-fc1c46ee11f85b5a585869298c9b3d92.png
+https://assets.superhivemarket.com/store/productimage/1340256/image/xlarge_og-1acd8daa65af641e9dc0a7e766de2f5b.png
+https://assets.superhivemarket.com/store/productimage/1340257/image/xlarge_og-2f4d8c25ed9e14460496cb6ca2bd2f22.png
+https://assets.superhivemarket.com/store/productimage/1340258/image/xlarge_og-2e5f210f6f9a08b705bae958e839ac97.png
+https://assets.superhivemarket.com/store/productimage/1340341/image/xlarge_og-b7a56110d013470343cd2eee99aa05bf.png
+About (/products/brittle)
+FAQ (/products/brittle/faq)
+Documentation (/products/brittle/docs)
+Ratings (/products/brittle/ratings)
+Brittle fractures any glass object in Blender, not only flat panes. Place the hits, press Break, and get clean broken-glass meshes in damage states, all cut from one crack pattern so they swap without a pop. Preview live, break it as an animation, render it as glass.
+Flat sheets with any outline, curved panels, hollow objects. The cracks grow on the surface of whatever you select.
+The crack web draws on your mesh as you change a setting. The damage slider shows which pieces leave at every level, in the order they fall if you require.
+Click where the glass gets hit; drag to hit harder. Or use random hits with a seed, the 3D cursor, empties, a painted vertex group, or a dropped object.
+Intact, Cracked, Holed, Destroyed by default; edit the ladder to any number of states. Every state is one watertight mesh with real crack gaps, rim faces, UVs and per-face attributes.
+Localized impacts, Full shatter, Blast, Shrapnel, Tempered and Laminated, with a seed and multipliers for fine tuning. Radial cracks, stepped rings, dead-end secondaries, forks and kinks: the way glass fails.
+The fallen pieces can be discarded, kept in place, made into separate shards, or dropped onto a floor or any mesh with physics and joined into a pile. Chips below a size you choose can be made to skip the physics and land on the pile afterwards.
+Whole until the break frame, the crack web for a few frames, then every piece flies, tumbles and settles as a keyframed object. Give each hit its own frame and blow direction, and the hits play one after another. Turn on Recoil and the object takes the hit: a shot bottle jerks, tips and falls.
+Quality you choose
+One slider from lean to full detail, with a triangle estimate before you Break. The pattern stays the same, so a hero asset and its light version break alike.
+Real glass materials
+Clear window, Bottle green, Amber bottle, Smoked grey, Frosted and Antique wavy, each with a matching rim material for the broken edges. They render as glass in Cycles and EEVEE.
+Double glazing and backed glass
+Two panes break differently behind each other. Glass glued to a backing cracks in place.
+Non-Destructive
+The original is never touched. Results go into their own collection with clean names, carry their settings, and Break again rebuilds them from a changed seed or preset.
+Blender 5.2 or newer.
+Windows 10 or 11, 64-bit. Mac and Linux are not supported yet.
+The fracture engine is bundled. Nothing else to install.
+Back to top
+Discover more products like this
+shatter (/tags/shatter) cracks (/tags/cracks) damage states (/tags/damage-states) window (/tags/window) fracture (/tags/fracture) physics (/tags/physics) animation (/tags/animation) bottle (/tags/bottle) debris (/tags/debris) destruction (/tags/destruction) Glass (/tags/glass) broken glass (/tags/broken-glass)
+Indie
+Commercial use for personal, indie, or freelance use
+$19.99
+Studio
+Commercial use for a team or studio with up to 10 employees.
+$39.99
+Enterprise
+Commercial use for team, studio, or enterprise with more than 10 employees.
+$99.99
+Seats:
+&minus;
++
+$19.99
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Dev Fund Contributor
+Published
+2 months ago
+Blender Version
+5.2
+Extension Type
+Add-on
+Render Engine Used
+Cycles, Eevee
+License
+GPL (/page/gpl-license)
+Marco Maria Rossi
+See all items by this creator (/creators/mrm)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#88fbfdf8f8e7fafcc8fbfdf8edfae0e1feede5e9fae3edfca6ebe7e5)
+Made by the humans of Autotroph (https://autotroph.com)

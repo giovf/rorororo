@@ -1,0 +1,179 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/ascii-render","name":"ASCII Render","image":["https://assets.superhivemarket.com/store/product/263998/image/xlarge-c5b6ab9ca4638f11c0a98b58b760bfb1.png"],"description":"Turn any Blender render—still or animation—into living ASCII art with 13 palettes, real transparency, an independent CRT layer and one-click output.","mpn":"263998","brand":{"@type":"Thing","name":"alastorv"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"9.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Alastor"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"ASCII Render","item":"https://superhivemarket.com/products/ascii-render"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/263998/image/xlarge-c5b6ab9ca4638f11c0a98b58b760bfb1.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/263998/image/xlarge-c5b6ab9ca4638f11c0a98b58b760bfb1.png
+meta description: Turn any Blender render—still or animation—into living ASCII art with 13 palettes, real transparency, an independent CRT layer and one-click output.
+meta og:url: https://superhivemarket.com/products/ascii-render
+meta og:title: Ascii Render
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Turn any Blender render—still or animation—into living ASCII art with 13 palettes, real transparency, an independent CRT layer and one-click output.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Ascii Render
+meta twitter:description: Turn any Blender render—still or animation—into living ASCII art with 13 palettes, real transparency, an independent CRT layer and one-click output.
+meta twitter:domain: https://superhivemarket.com/products/ascii-render
+meta og:image: https://assets.superhivemarket.com/store/product/263998/image/xlarge-c5b6ab9ca4638f11c0a98b58b760bfb1.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/263998/image/xlarge-c5b6ab9ca4638f11c0a98b58b760bfb1.png
+ASCII Render - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Ascii Render
+alastorv (/creators/alastorv)
+in Rendering (/categories/rendering-scripts-and-addons)
+https://assets.superhivemarket.com/store/product/263998/image/xlarge_og-76000847500e794bba9094e89573fd7b.png
+https://www.youtube.com/embed/lu0ymOVBwpY?start=0
+https://assets.superhivemarket.com/store/productimage/1339641/image/xlarge_og-83b62f2c8d729a2106068beed69a25b9.png
+https://assets.superhivemarket.com/store/productimage/1339642/image/xlarge_og-216dcb34a6a4ebf1251ef937e81f2614.png
+https://assets.superhivemarket.com/store/productimage/1339643/image/xlarge_og-f59fe2798efedeb2d2516dbe0fd8edce.png
+https://assets.superhivemarket.com/store/productimage/1339644/image/xlarge_og-9b76328dd7b1fa046f442801cff00f42.png
+About (/products/ascii-render)
+FAQ (/products/ascii-render/faq)
+Documentation (/products/ascii-render/docs)
+Ratings (/products/ascii-render/ratings)
+Version History (/products/ascii-render/versions)
+What is ASCII Render?
+ASCII Render converts Blender render pixels into a grid of drawn characters. Choose the character set, control the grid density and color, then add CRT effects for a terminal, console or printed look. It works with still images and animation frames.
+Render your scene. Change its visual language.
+ASCII Render 0.2.1 — Blender 4.2+
+See it in Blender
+Watch the full demo in the gallery above. The demonstrations use real Blender add-on output. See the animated previews below for each feature in motion.
+Included in 0.2.1
+Four color modes: Mono, Dualtone, Original and Palette
+Six character modes: Letters, Symbols, Letters + Symbols, Blocks, Braille and Custom
+13 built-in palettes: ANSI16, C64, CGA, Game Boy, Acid, PICO-8, NES, Vaporwave, Cyberpunk, Thermal, Sepia, Nord and Dracula
+Seven look presets: Terminal Green, Amber CRT, Gameboy, C64, Newspaper, Matrix and Acid
+Custom characters, custom palettes and user-saved presets
+Edge Glyphs, Bayer 4x4/8x8 dithering, Detail, Auto Levels and tone controls
+Independent CRT processing; PNG stills and animation frame sequences
+Choose how much detail survives
+Control grid columns and glyph size, from a coarse character silhouette to a dense image. Brightness, contrast, gamma, Detail and Auto Levels help keep the subject readable.
+[Choose how much detail survives — ASCII Render]
+Show animated preview — Choose how much detail survives
+[Moving Blender demonstration of Choose how much detail survives]
+Choose the color language
+Use Mono, Dualtone, Original or Palette color. Start with 13 built-in palettes, or define your own custom palette.
+[Choose the color language — ASCII Render]
+Show animated preview — Choose the color language
+[Moving Blender demonstration of Choose the color language]
+Give the image its vocabulary
+Choose Letters, Symbols, Letters + Symbols, Blocks, Braille or Custom. Type a custom character set for a particular visual style. Edge Glyphs and Bayer 4x4/8x8 dithering offer more ways to shape detail.
+[Give the image its vocabulary — ASCII Render]
+Show animated preview — Give the image its vocabulary
+[Moving Blender demonstration of Give the image its vocabulary]
+Keep attention on the subject
+Enable Film Transparent in the source render and use Subject Only to mask the source background to a chosen flat color. The new example is a real Cycles render converted with ASCII Render 0.2.1.
+[Keep attention on the subject — ASCII Render]
+Show animated preview — Keep attention on the subject
+[Moving Blender demonstration of Keep attention on the subject]
+Finish with CRT character
+Add scanlines, curvature, chromatic aberration, vignette, glow, noise and flicker. CRT can run independently of ASCII conversion. Seven built-in presets provide starting looks, and you can save your own.
+[Finish with CRT character — ASCII Render]
+Show animated preview — Finish with CRT character
+[Moving Blender demonstration of Finish with CRT character]
+Questions before you start
+Which Blender version do I need?
+The package requires Blender 4.2 or later. The new Subject Only demonstration was tested with ASCII Render 0.2.1 in Blender 5.2.
+Does it work with still images and animation?
+Yes. Convert the Render Result, use optional automatic conversion after rendering, or convert an animation to a PNG frame sequence for video editing.
+How many modes and presets are included?
+Four color modes, six character-set modes, 13 built-in palettes and seven built-in look presets. You can enter custom characters, create a custom palette and save your own presets.
+Does Subject Only export a transparent PNG?
+In version 0.2.1, Subject Only uses source alpha to isolate the subject against your chosen flat background color. The exported PNG is opaque; transparent output alpha is not retained.
+Is the viewport preview identical to the final ASCII image?
+The viewport compositor is a visual approximation. Final conversion draws the actual character glyphs into the output image.
+Can I use CRT without ASCII conversion?
+Yes. CRT has its own enable control and can run independently. It includes scanlines, curvature, chromatic aberration, vignette, glow, noise and flicker.
+How do I install it?
+Download ascii_render-0.2.1.zip. Open Edit > Preferences > Get Extensions, choose Install from Disk, select the ZIP and enable ASCII Render. Open Render Properties > ASCII Render. Render a frame, choose your settings and convert the Render Result.
+Install and start
+Download ascii_render-0.2.1.zip. Open Edit > Preferences > Get Extensions, choose Install from Disk, select the ZIP and enable ASCII Render. Open Render Properties > ASCII Render. Render a frame, choose your settings and convert the Render Result.
+The purchase delivers the add-on package. Promotional scenes are demonstration material.
+License: GPL-3.0-or-later. Use your rendered images and videos commercially.
+Back to top
+Discover more products like this
+pixel art (/tags/pixel-art) CRT (/tags/crt) ascii art (/tags/ascii-art) compositor (/tags/compositor) animation (/tags/animation) terminal (/tags/terminal) stylized rendering (/tags/stylized-rendering) transparency (/tags/transparency) text-art (/tags/text-art) retro (/tags/retro) glitch (/tags/glitch) render effect (/tags/render-effect)
+Seats:
+&minus;
++
+$9
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Published
+2 months ago
+Blender Version
+4.2 - 5.1
+Extension Type
+Add-on
+Render Engine Used
+Cycles, Eevee
+License
+GPL (/page/gpl-license)
+alastorv
+See all items by this creator (/creators/alastorv)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#ee9d9b9e9e819c9aae9d9b9e8b9c8687988b838f9c858b9ac08d8183)
+Made by the humans of Autotroph (https://autotroph.com)

@@ -1,0 +1,142 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/place-director-pro","name":"Place Director Pro","image":["https://assets.superhivemarket.com/store/product/264325/image/xlarge-13d9922a6e9a8870c9a747f9b5f3e55a.png"],"description":"Drop, align, distribute, stack and scatter objects in one click. Drop on Surface, Set Origin to bottom center, Snap Rotation, seeded Randomize. For Blender 4.2+.","mpn":"264325","brand":{"@type":"Thing","name":"Steven Seidler (Blendscapes3D)"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"7.49","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Blendscapes3D"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Place Director Pro","item":"https://superhivemarket.com/products/place-director-pro"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/264325/image/xlarge-13d9922a6e9a8870c9a747f9b5f3e55a.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/264325/image/xlarge-13d9922a6e9a8870c9a747f9b5f3e55a.png
+meta description: Drop, align, distribute, stack and scatter objects in one click. Drop on Surface, Set Origin to bottom center, Snap Rotation, seeded Randomize. For Blender 4.2+.
+meta og:url: https://superhivemarket.com/products/place-director-pro
+meta og:title: Place Director Pro
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Drop, align, distribute, stack and scatter objects in one click. Drop on Surface, Set Origin to bottom center, Snap Rotation, seeded Randomize. For Blender 4.2+.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Place Director Pro
+meta twitter:description: Drop, align, distribute, stack and scatter objects in one click. Drop on Surface, Set Origin to bottom center, Snap Rotation, seeded Randomize. For Blender 4.2+.
+meta twitter:domain: https://superhivemarket.com/products/place-director-pro
+meta og:image: https://assets.superhivemarket.com/store/product/264325/image/xlarge-13d9922a6e9a8870c9a747f9b5f3e55a.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/264325/image/xlarge-13d9922a6e9a8870c9a747f9b5f3e55a.png
+Place Director Pro - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Place Director Pro
+Steven Seidler (Blendscapes3D) (/creators/blendscapes)
+in Modeling (/categories/modeling)
+https://assets.superhivemarket.com/store/product/264325/image/xlarge_og-9043506bf45c3538ddfe995d440d40d7.png
+https://assets.superhivemarket.com/store/productimage/1343138/image/xlarge_og-6f9c4e2fe4eb0ebd6a56414fb1bef65a.png
+https://assets.superhivemarket.com/store/productimage/1343139/image/xlarge_og-0e58e7621f09948350db20651192f628.png
+https://assets.superhivemarket.com/store/productimage/1343136/image/xlarge_og-33fa6da09b65c5f005dba0d4960d6f92.png
+https://assets.superhivemarket.com/store/productimage/1343137/image/xlarge_og-e1fdc79a1cff9f32a91bfebf93a54577.png
+About (/products/place-director-pro)
+FAQ (/products/place-director-pro/faq)
+Documentation (/products/place-director-pro/docs)
+Ratings (/products/place-director-pro/ratings)
+Tired of props floating an inch above the table?
+Every scene needs the same boring placement work. Put this crate on the floor. Line those barrels up. Space the fence posts evenly. Set the origin to the bottom so the lamp actually stands on the ground. Stop that box from clipping into the terrain.
+Blender can do all of it, but only one axis and one object at a time: snapping, typing numbers, eyeballing it from three angles.
+Place Director Pro turns each of those jobs into one click.
+Drop to Floor & Drop on Surface
+Send objects straight down to a floor height, or let them fall onto whatever is below them: terrain, tables, shelves, other props. Drop on Surface samples the whole footprint, so a crate that hangs half over a table rests on the table, and objects that sank into the ground come back up. Turn on Align to Surface and props tilt to match the slope without spinning around.
+Align, Distribute, Stack
+Align Min, Center or Max on X, Y, Z or all axes, to the active object, the selection bounds, the world origin or the 3D cursor
+Distribute with equal gaps, equal centre distances or a fixed spacing
+Stack objects on the active one along any axis, with a gap and centred on the base, without overlap
+Set Origin that just works
+Bottom Center for everything that stands on the floor, plus Bounds Center, Geometry, 3D Cursor and World Origin. The geometry and any child objects stay exactly where they are. Meshes shared by several objects are skipped with a clear message instead of silently moving every copy.
+Clean up and scatter
+Snap Rotation to 90°, 45° or 15° (Euler, quaternion and axis-angle)
+Randomize location, rotation and scale within limits. Seeded, so the same seed always gives the same layout, no matter the selection order
+Zero Transforms , Copy Transform from Active and Center in World
+Built to be exact
+Measures real world-space bounding boxes, so rotated, scaled and parented objects land correctly
+Modifiers count: a subdivided or displaced mesh lands on its visible surface, not its cage (switchable)
+Select a parent and its child together and the child still moves only once
+Every tool has a redo panel to tweak values after clicking, and all tools are also in the Object menu
+Sidebar tab Place , renameable in the preferences
+Blender 4.2 and newer. Tested on Blender 4.5 LTS and 5.2 LTS with an automated test suite of 72 numeric checks.
+Back to top
+Discover more products like this
+Set Origin (/tags/set-origin) placement (/tags/placement) align (/tags/align) blender (/tags/blender) drop to floor (/tags/drop-to-floor) distribute (/tags/distribute) snap to surface (/tags/snap-to-surface) scatter (/tags/scatter) productivity (/tags/productivity) stack (/tags/stack) randomize (/tags/randomize) addon (/tags/addon)
+Seats:
+&minus;
++
+$7.49
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Published
+2 months ago
+Blender Version
+4.2 - 5.2
+Extension Type
+Add-on
+Render Engine Used
+Cycles, Eevee
+License
+GPL (/page/gpl-license)
+Steven Seidler (Blendscapes3D)
+Visit Website (https://www.linkedin.com/in/steven-seidler-339102273/) See all items by this creator (/creators/blendscapes)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#493a3c3939263b3d093a3c392c3b21203f2c24283b222c3d672a2624)
+Made by the humans of Autotroph (https://autotroph.com)
