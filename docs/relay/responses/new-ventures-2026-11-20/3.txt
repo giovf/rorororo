@@ -1,0 +1,90 @@
+meta description: Open a Microsoft Store developer account, submit and certify Windows apps and games, and manage listings, updates, and performance.
+meta twitter:card: summary_large_image
+meta twitter:site: @MicrosoftLearn
+meta og:type: website
+meta og:image:alt: Microsoft Learn
+meta og:image: https://learn.microsoft.com/en-us/media/open-graph-image.png
+meta og:title: Publish apps and games to Microsoft Store
+meta og:url: https://learn.microsoft.com/en-us/windows/apps/publish/
+meta og:description: Open a Microsoft Store developer account, submit and certify Windows apps and games, and manage listings, updates, and performance.
+Publish apps and games to Microsoft Store
+Skip to main content (#main)
+This browser is no longer supported.
+Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+Download Microsoft Edge (https://go.microsoft.com/fwlink/p/?LinkID=2092881)
+More info about Internet Explorer and Microsoft Edge (https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge)
+Table of contents
+Read in English
+Publish Windows apps and games to Microsoft Store
+Reach Windows 10 and Windows 11 customers through Microsoft Store. Set up your developer account, submit your app or game, and manage it after release.
+Get ready to publish
+Decide whether Microsoft Store fits your app, then create the account you need to submit it.
+Understand the benefits of Microsoft Store (publish-your-app/why-distribute-through-store)
+Learn how Microsoft Store helps customers discover, install, and update your apps and games.
+Get started with Microsoft Store (get-started)
+Review the publishing process, the supported package types, and what to prepare before your first submission.
+Open a developer account (partner-center/open-a-developer-account)
+Create an individual or company developer account in Partner Center.
+Submit and manage your app
+Work through submission, certification, release, and ongoing management for your app or game.
+[A package with an upward arrow.]
+Submit your app
+Reserve a name and create a submission that matches your package type.
+Submit an MSIX app (publish-your-app/msix/reserve-your-apps-name)
+Submit an MSI or EXE app (publish-your-app/msi/reserve-your-apps-name)
+Submit a PWA (publish-your-app/pwa/reserve-your-apps-name)
+[A puzzle piece representing app features.]
+Get your app certified
+Understand how Microsoft Store certifies submissions and how to resolve common errors.
+MSIX certification process (publish-your-app/msix/app-certification-process)
+MSI or EXE certification process (publish-your-app/msi/app-certification-process)
+Resolve MSIX submission errors (publish-your-app/msix/resolve-submission-errors)
+[A collection of app windows.]
+Manage and update your app
+Publish updates, manage packages, and control how releases reach your customers.
+Publish an MSIX app update (publish-your-app/msix/publish-update-to-your-app-on-store)
+Beta testing and targeted distribution (beta-testing-and-targeted-distribution)
+Gradual package rollout (gradual-package-rollout)
+[A dashboard window showing app data.]
+Monitor your app performance
+Use Partner Center reports to track acquisitions, usage, health, ratings, and reviews.
+Analytics overview (analyze-app-performance/msix)
+Health report (analyze-app-performance/health-report)
+Insights report (actionable-analytics-insights)
+[Code brackets.]
+Automate publishing
+Script submissions and updates with the Microsoft Store Developer CLI, the submission API, and GitHub Actions.
+Microsoft Store Developer CLI (msstore-dev-cli/overview)
+Submission API for MSI or EXE apps (store-submission-api)
+Publish updates with GitHub Actions (msstore-dev-cli/github-actions)
+[A person with outstretched arms.]
+Manage your account and follow policies
+Manage account users and review the policies and quality expectations that apply to Store products.
+Manage account users (partner-center/manage-account-users)
+Microsoft Store Policies (store-policies)
+App quality (store-app-quality)
+Continue your Windows app journey
+Connect Store publishing to your app's packaging decisions, distribution options, and the latest Store updates.
+[A package with an upward arrow.]
+Package and deploy (../package-and-deploy/)
+[A collection of app windows.]
+Choose a distribution path (../package-and-deploy/choose-distribution-path)
+[A puzzle piece representing app features.]
+Publish PC games to Microsoft Store (whats-new-game-publishing)
+[A support conversation window.]
+Contact Microsoft Store support (contact-us)
+en-us
+Your Privacy Choices (https://aka.ms/yourcaliforniaprivacychoices)
+Theme
+Light
+Dark
+High contrast
+AI Disclaimer (https://learn.microsoft.com/en-us/principles-for-ai-generated-content)
+Previous Versions (https://learn.microsoft.com/en-us/previous-versions/)
+Blog (https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog)
+Contribute (https://learn.microsoft.com/en-us/contribute)
+Privacy (https://go.microsoft.com/fwlink/?LinkId=521839)
+Consumer Health Privacy (https://go.microsoft.com/fwlink/?linkid=2259814)
+Terms of Use (https://learn.microsoft.com/en-us/legal/termsofuse)
+Trademarks (https://www.microsoft.com/legal/intellectualproperty/Trademarks/)
+© Microsoft 2026
