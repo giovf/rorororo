@@ -1,0 +1,145 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/branch-poly-line","name":"Branch Poly line","image":["https://assets.superhivemarket.com/store/product/266188/image/xlarge-d46a36eae0f384ca871faf9444098c87.webp"],"description":"","mpn":"266188","brand":{"@type":"Thing","name":"TunaEra"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"20.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Tuna ERA"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Branch Poly line","item":"https://superhivemarket.com/products/branch-poly-line"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/266188/image/xlarge-d46a36eae0f384ca871faf9444098c87.webp
+meta twitter:image: https://assets.superhivemarket.com/store/product/266188/image/xlarge-d46a36eae0f384ca871faf9444098c87.webp
+meta description: A Unique Market for Creators that love Blender
+meta og:url: https://superhivemarket.com/products/branch-poly-line
+meta og:title: Branch Poly Line
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: A Unique Market for Creators that love Blender
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Branch Poly Line
+meta twitter:description: A Unique Market for Creators that love Blender
+meta twitter:domain: https://superhivemarket.com/products/branch-poly-line
+meta og:image: https://assets.superhivemarket.com/store/product/266188/image/xlarge-d46a36eae0f384ca871faf9444098c87.webp
+meta twitter:image: https://assets.superhivemarket.com/store/product/266188/image/xlarge-d46a36eae0f384ca871faf9444098c87.webp
+Branch Poly line - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Branch Poly Line
+TunaEra (/creators/tunaera)
+in Modeling (/categories/modeling)
+https://assets.superhivemarket.com/store/product/266188/image/xlarge_og-54d644702e7489fac2b0d54619f0fab1.webp
+https://assets.superhivemarket.com/store/productimage/1366878/image/xlarge_og-ee5f2600194bf3cde65a3db253dc156b.webp
+https://assets.superhivemarket.com/store/productimage/1366877/image/xlarge_og-c2c28752fc43a8436e01ecea2b7a034e.webp
+https://assets.superhivemarket.com/store/productimage/1366879/image/xlarge_og-45461feb5903d53eb7e386355923b3bf.webp
+https://assets.superhivemarket.com/store/productimage/1366880/image/xlarge_og-f3a849862118c3b3ee3bd5ce143ca41d.webp
+About (/products/branch-poly-line)
+FAQ (/products/branch-poly-line/faq)
+Documentation (/products/branch-poly-line/docs)
+Ratings (/products/branch-poly-line/ratings)
+Version History (/products/branch-poly-line/versions)
+Create tapered, branching quad meshes from edge-only polylines
+Branch Poly Line turns a connected edge tree into a branch mesh with quad tubes, junctions, rounded tips and an open root end. Draw or edit a simple polyline, press Generate , and get clean all-quad geometry for vines, roots, cables, coral, veins and other branching shapes.
+The original polyline is kept, so you can press D at any time to go back, edit the line and rebuild. Use Make Mesh when you want an independent mesh copy.
+Features
+Taper control : Whole Tree and Per Branch modes, with adjustable root and tip radii and viewport radius handles.
+Quad junctions : branching points with up to six connections are built from quads, not triangles or n-gons.
+Ground fitting : fit the tube to ground surfaces, and draw directly on surfaces with Stick to Surface.
+Ready for texturing : UV strips, smoothing and procedural noise.
+Fast editing : live preview, a compact settings popup ( Shift+F ) and drawing from the 3D cursor.
+Requirements
+Blender 4.2 LTS to 5.3, Windows. Tested on 4.2, 4.5, 5.2 and 5.3.
+macOS and Linux are not supported in version 1.0.
+Input and limitations
+Use one connected edge tree without loops, with at most six edges meeting at a vertex.
+Crowded branches, tight bends and overlaps may need source editing. Optional local shrinking does not guarantee intersection-free output.
+Root ends stay open. UV strips are a starting point for texturing, not a finished unwrap for every use case.
+License, support and updates
+The source code is provided under GPL-3.0-or-later. A purchase funds development, maintenance, documentation and support. For questions and bug reports, send a message from this product page; we aim to reply within one week. All 1.x updates are free for existing buyers.
+Installation and usage are in the Documentation tab.
+Back to top
+Discover more products like this
+vein (/tags/vein) Vessel (/tags/vessel) quad mesh (/tags/quad-mesh) Polyline (/tags/polyline) tree (/tags/tree) organic (/tags/organic) anatomy (/tags/anatomy) procedural (/tags/procedural) tube (/tags/tube) blood vessel (/tags/blood-vessel) artery (/tags/artery) branching (/tags/branching)
+Personal
+For one user. Personal and commercial use.
+$20
+Studio (up to 5 users)
+One purchase covers up to 5 users in the same studio or team.
+$80
+Seats:
+&minus;
++
+$20
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Published
+about 1 month ago
+Blender Version
+4.2 - 5.3
+Extension Type
+Add-on
+Render Engine Used
+Cycles, Eevee
+License
+GPL (/page/gpl-license)
+TunaEra
+Visit Website (https://www.youtube.com/@Blind_sheeples) See all items by this creator (/creators/tunaera)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#90e3e5e0e0ffe2e4d0e3e5e0f5e2f8f9e6f5fdf1e2fbf5e4bef3fffd)
+Made by the humans of Autotroph (https://autotroph.com)

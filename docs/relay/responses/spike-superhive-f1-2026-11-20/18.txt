@@ -1,0 +1,162 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/minimap","name":"Minimap","image":["https://assets.superhivemarket.com/store/product/266268/image/xlarge-5bb9ef61212a643b28678ffe31ad4f89.png"],"description":"A live top-down map of your scene in the corner of the 3D viewport, like in a game. See where you are, click to fly there, drop pins to save views and click a camera to look through it.","mpn":"266268","brand":{"@type":"Thing","name":"nice mesh"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"6.99","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"nicemesh"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Minimap","item":"https://superhivemarket.com/products/minimap"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/266268/image/xlarge-5bb9ef61212a643b28678ffe31ad4f89.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/266268/image/xlarge-5bb9ef61212a643b28678ffe31ad4f89.png
+meta description: A live top-down map of your scene in the corner of the 3D viewport, like in a game. See where you are, click to fly there, drop pins to save views and click a camera to look through it.
+meta og:url: https://superhivemarket.com/products/minimap
+meta og:title: Minimap
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: A live top-down map of your scene in the corner of the 3D viewport, like in a game. See where you are, click to fly there, drop pins to save views and click a camera to look through it.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Minimap
+meta twitter:description: A live top-down map of your scene in the corner of the 3D viewport, like in a game. See where you are, click to fly there, drop pins to save views and click a camera to look through it.
+meta twitter:domain: https://superhivemarket.com/products/minimap
+meta og:image: https://assets.superhivemarket.com/store/product/266268/image/xlarge-5bb9ef61212a643b28678ffe31ad4f89.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/266268/image/xlarge-5bb9ef61212a643b28678ffe31ad4f89.png
+Minimap - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Minimap
+nice mesh (/creators/nice-mesh)
+in Interface (/categories/interface)
+https://assets.superhivemarket.com/store/product/266268/image/xlarge_og-26c9ace950fbef4ce8ccae217f7f43de.png
+https://www.youtube.com/embed/HI1EH_oNRsM?start=0
+https://assets.superhivemarket.com/store/productimage/1363296/image/xlarge_og-1379f7ebc7e09b9329097bb80a619d8e.png
+https://assets.superhivemarket.com/store/productimage/1363295/image/xlarge_og-393198a4f394b4576e79ae90735b8bab.png
+https://assets.superhivemarket.com/store/productimage/1363294/image/xlarge_og-516c3a7916a6675d1b05ce6f6e577a5f.png
+https://assets.superhivemarket.com/store/productimage/1363293/image/xlarge_og-b6d69708c44ba988cfa4bb74f8d7b09e.png
+About (/products/minimap)
+FAQ (/products/minimap/faq)
+Documentation (/products/minimap/docs)
+Ratings (/products/minimap/ratings)
+🗺️ Minimap
+A game-style minimap for Blender's viewport. Click it to fly there.
+Minimap puts a live top-down map of your scene in the corner of the 3D viewport. See where you are and where you are looking, click the map to fly there, drop pins to save views, and click a camera to look through it.
+The problem
+Big scenes are easy to get lost in. You orbit, pan, zoom out, squint, zoom back in, and still can't find the prop or the camera you placed an hour ago. Top view (Numpad 7) throws away your angle, and the Outliner gives you names, not places.
+What it does
+A live map in the corner. A top-down picture of your scene that updates by itself when you move, add or delete things.
+You are the arrow. A gold arrow and a soft view cone show where your view is and which way it faces.
+Click to fly. The view glides to that spot and lands at the right height: it finds the roof, the hill or the ground under your click. Long trips pull back a little mid-flight, like a map app.
+Drag to glide. Hold the mouse on the map and drag: the view follows your cursor across the scene.
+Hover to see what's there. A name tag shows the object under the cursor and its X / Y position.
+Pins. Ctrl+Click drops a pin that remembers the view, angle and zoom included. Click it later to go right back. Pins are saved in the .blend.
+Cameras on the map. Every camera shows up as an icon. Click one to look through it.
+Follow and Rotate. Turn on Follow My View and Rotate With View and the map follows you and turns with you, like a game minimap.
+On the map (mouse)
+Click : fly there. Drag : glide. Scroll : zoom the map around your cursor. Middle drag : slide the map.
+Double-click : fly to the object and fill the view with it.
+Ctrl+Click : drop a pin. Alt+Click : move the 3D cursor there. Shift+Click : select the object.
+Right-click : Fly Here, Zoom to Object Here, Select Object Here, Drop Pin Here, Place 3D Cursor Here, Follow My View, Rotate With View, Fit Whole Scene, Hide Minimap.
+Settings
+Settings are in 3D Viewport > Sidebar (N) > Minimap tab (Look settings also in Preferences > Add-ons > Minimap ). Show or hide it with Ctrl+Alt+M , the View menu or the Viewport Overlays popover.
+Follow / Rotate : centre the map on your view, and turn it so your heading is up.
+Follow Range / Map Range : how much ground the map covers. Fit Whole Scene / Fit Selected reset it.
+Pins : a list with colour, name and a Go button. Pin This View saves the current view.
+Shape / Corner / Size / Opacity : Round or Square, any corner, 110 to 640 px (default 230, follows your UI scale).
+Look / Colors : Map, Paper or Shaded (hill shading). Textures, Materials, Object, Random or Single colours.
+Show : cameras, lights, 3D cursor, pins, pin names, compass, scale bar, grid.
+Fly Time / Map Refresh (in Preferences): seconds per flight (default 0.55, 0 = jump) and the most map redraws per second (default 10).
+Good to know
+The map moves out of the way of the toolbar, sidebar, header and navigation gizmo by itself.
+Heavy scenes get fewer map refreshes on their own, so the viewport doesn't slow down because of the map. In our 300 x 300 m demo valley (1,996 objects), a refresh took about 4 ms.
+Pins, cameras and your arrow stay on the rim when they are off the map, on the side where they are.
+Clicking a camera on the map also makes it the scene's active camera.
+Look settings are saved in your preferences. Pins and map range are saved per scene.
+Tips
+Everything is green? Set Colors to Random to tell objects apart.
+Pins keep the angle too, so they work like camera bookmarks you can click.
+A huge ground or ocean plane makes the map tiny: scroll on the map or use Fit Selected .
+Requirements and install
+Blender 5.2 or newer (tested on 5.2, Windows). No internet, no external libraries.
+Download minimap_v1.0.0.zip (do not unzip it).
+In Blender: Edit > Preferences > Add-ons , open the drop-down arrow at the top right, choose Install from Disk... and pick the zip.
+Tick Minimap . That's it.
+Limits
+It is a top-down view, so for buildings you see the roofs, not the rooms. In Rendered view with Cycles or EEVEE the map picture pauses (redrawing it would restart your render); your arrow, pins and cameras stay live. Names and click heights come from the top surface, so a tree canopy wins over what is under it. In Quad View the map shows in the perspective view only, and in a very small viewport it hides itself. While Minimap is enabled, Blender's timed auto-save does not run, so save with Ctrl+S.
+Made by one99addons.
+Back to top
+Discover more products like this
+viewport (/tags/viewport) bookmarks (/tags/bookmarks) navigation (/tags/navigation) environment (/tags/environment) interface (/tags/interface) camera (/tags/camera) map (/tags/map) scene overview (/tags/scene-overview) minimap (/tags/minimap) Level Design (/tags/level-design)
+Seats:
+&minus;
++
+$6.99
+Have questions about this product?
+Login to message (/login)
+Details
+Published
+about 1 month ago
+Blender Version
+5.2
+Extension Type
+N/A
+License
+GPL (/page/gpl-license)
+nice mesh
+Visit Website (https://one99addons.netlify.app/) See all items by this creator (/creators/nice-mesh)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#84f7f1f4f4ebf6f0c4f7f1f4e1f6ecedf2e1e9e5f6efe1f0aae7ebe9)
+Made by the humans of Autotroph (https://autotroph.com)
