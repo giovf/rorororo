@@ -1,0 +1,326 @@
+{
+  "request": "spike-superhive-f1-2026-11-20",
+  "fetched_at": "2026-11-20T17:42:33.353Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/quick-presentation---create-your-presentation-exports-fast",
+      "fetched_at": "2026-11-20T17:42:19.195Z",
+      "status": 200,
+      "elapsed_ms": 319,
+      "final_url": "https://superhivemarket.com/products/quick-presentation---create-your-presentation-exports-fast",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 10283,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46279
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/branch-poly-line",
+      "fetched_at": "2026-11-20T17:42:20.048Z",
+      "status": 200,
+      "elapsed_ms": 149,
+      "final_url": "https://superhivemarket.com/products/branch-poly-line",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 8519,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45051
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/tweenkit---blender-",
+      "fetched_at": "2026-11-20T17:42:20.761Z",
+      "status": 200,
+      "elapsed_ms": 159,
+      "final_url": "https://superhivemarket.com/products/tweenkit---blender-",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 17577,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 56307
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/scanforge",
+      "fetched_at": "2026-11-20T17:42:21.483Z",
+      "status": 200,
+      "elapsed_ms": 167,
+      "final_url": "https://superhivemarket.com/products/scanforge",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 10831,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44984
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/traverse",
+      "fetched_at": "2026-11-20T17:42:22.184Z",
+      "status": 200,
+      "elapsed_ms": 152,
+      "final_url": "https://superhivemarket.com/products/traverse",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 12479,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 66967
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/audio-react--audio-reactive-animation-for-blender",
+      "fetched_at": "2026-11-20T17:42:22.898Z",
+      "status": 200,
+      "elapsed_ms": 190,
+      "final_url": "https://superhivemarket.com/products/audio-react--audio-reactive-animation-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 12992,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 73537
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/storyflow",
+      "fetched_at": "2026-11-20T17:42:23.653Z",
+      "status": 200,
+      "elapsed_ms": 157,
+      "final_url": "https://superhivemarket.com/products/storyflow",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 10170,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46617
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/curve-merge-by-distance",
+      "fetched_at": "2026-11-20T17:42:24.345Z",
+      "status": 200,
+      "elapsed_ms": 137,
+      "final_url": "https://superhivemarket.com/products/curve-merge-by-distance",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 11268,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46919
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/fastener-generator",
+      "fetched_at": "2026-11-20T17:42:25.012Z",
+      "status": 200,
+      "elapsed_ms": 328,
+      "final_url": "https://superhivemarket.com/products/fastener-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 9844,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45000
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/xbox-theme",
+      "fetched_at": "2026-11-20T17:42:25.914Z",
+      "status": 200,
+      "elapsed_ms": 136,
+      "final_url": "https://superhivemarket.com/products/xbox-theme",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 6654,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 40060
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/uv-rectipack",
+      "fetched_at": "2026-11-20T17:42:26.615Z",
+      "status": 200,
+      "elapsed_ms": 160,
+      "final_url": "https://superhivemarket.com/products/uv-rectipack",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 34552,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 122847
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/dopesheetflow",
+      "fetched_at": "2026-11-20T17:42:27.410Z",
+      "status": 200,
+      "elapsed_ms": 155,
+      "final_url": "https://superhivemarket.com/products/dopesheetflow",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 9538,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45968
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/boxwright",
+      "fetched_at": "2026-11-20T17:42:28.100Z",
+      "status": 200,
+      "elapsed_ms": 142,
+      "final_url": "https://superhivemarket.com/products/boxwright",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 12253,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 55834
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/curve-doctor",
+      "fetched_at": "2026-11-20T17:42:28.777Z",
+      "status": 200,
+      "elapsed_ms": 163,
+      "final_url": "https://superhivemarket.com/products/curve-doctor",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.txt",
+      "bytes": 19934,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 59145
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/bonesculptpro",
+      "fetched_at": "2026-11-20T17:42:29.570Z",
+      "status": 200,
+      "elapsed_ms": 204,
+      "final_url": "https://superhivemarket.com/products/bonesculptpro",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.txt",
+      "bytes": 8034,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46655
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/fold-box",
+      "fetched_at": "2026-11-20T17:42:30.311Z",
+      "status": 200,
+      "elapsed_ms": 172,
+      "final_url": "https://superhivemarket.com/products/fold-box",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 10791,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52433
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/obssidian-mcp-doctor",
+      "fetched_at": "2026-11-20T17:42:31.051Z",
+      "status": 200,
+      "elapsed_ms": 160,
+      "final_url": "https://superhivemarket.com/products/obssidian-mcp-doctor",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.txt",
+      "bytes": 10284,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 47990
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/minimap",
+      "fetched_at": "2026-11-20T17:42:31.745Z",
+      "status": 200,
+      "elapsed_ms": 147,
+      "final_url": "https://superhivemarket.com/products/minimap",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.txt",
+      "bytes": 11430,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 47305
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/archcore-city",
+      "fetched_at": "2026-11-20T17:42:32.457Z",
+      "status": 200,
+      "elapsed_ms": 141,
+      "final_url": "https://superhivemarket.com/products/archcore-city",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.txt",
+      "bytes": 7698,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44171
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/sequencerflow-pro",
+      "fetched_at": "2026-11-20T17:42:33.131Z",
+      "status": 200,
+      "elapsed_ms": 162,
+      "final_url": "https://superhivemarket.com/products/sequencerflow-pro",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.txt",
+      "bytes": 11282,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 48541
+    }
+  ]
+}
