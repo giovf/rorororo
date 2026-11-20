@@ -962,6 +962,16 @@
       "updated": "2026-11-19"
     },
     {
+      "id": "superhive-blender-addons",
+      "title": "Superhive (formerly Blender Market, superhivemarket.com): one small single-job Blender add-on in Python, tested headless in CI, sold on the free creator plan",
+      "status": "parked",
+      "why": "Spike 2026-11-20 (new-ventures spike-superhive-blender-addons, docs/exchange/spikes/superhive-blender-addons.md, burn-down; eight relay rounds, 216 lines). The door is open — no application, a PayPal address is enough to be paid, US$25 payout floor, 70 % after a 5.5 % and US$0.49 fee (US$6.27 net on US$9.99), no line on AI-written code in the Creator Terms, Creator Policy or product guidelines, first product reviewed in 3–5 days — but the shelf's own counts say a new small add-on from an unknown creator does not sell. Of 60 add-ons read at one to two months old, 51 show no sales count (the badge starts at 10 sales) and only 3 have a rating; of the 43 under US$15, 6 show one. The 30 best-selling add-ons priced US$1–15 are all more than a year old (2,300+ to 17,200+ sales earned over 1–12 years). About 28 add-ons are listed a day (291 browse pages of 24; page 20 is 17 days old) and one shop listed 30 of the 71 read at 10–17 days. The candidate job (a pre-export naming, scale and budget check) already has three listings this quarter. Median outcome under US$56 in two months, against a week of build, five product images, on-page documentation and a customer inbox only the owner can read with a 72-hour reply duty. Blender's own free extensions site was not read per job: its robots.txt disallows Claude-named agents, so one page was read and the host dropped.",
+      "trigger": "A Blender tool need that reaches us from a buyer (a /feedback or inbox line, or a paying customer asking), or a named job with no Superhive listing and no free extension → a 0.2-day read of that job's nearest five listings before any build; no dated re-read",
+      "added": "2026-11-20",
+      "spiked": "2026-11-20",
+      "updated": "2026-11-20"
+    },
+    {
       "id": "xero-app-store",
       "title": "Xero App Store: a 'check this supplier' app over a UK business's Xero contacts (gankdat's registers behind it), billed through Xero's own subscriptions",
       "why": "Declined 2026-11-20 (build, new-ventures research; web search of Xero's developer FAQ and trade press, pages not read by relay). The shelf's billing is gone: Xero moved its developer programme from a 15 % revenue share to paid API tiers on 2026-03-02 and is retiring Xero App Store Subscriptions — partners move subscribers to their own billing — while certification asks for active customer connections first and sits on a paid tier. That is a recurring cost before a first buyer and no platform billing, against the £100 cap and the shelf rule.",

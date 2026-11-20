@@ -3302,3 +3302,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-20 17:15 | build | Kept for the trigger: non-game apps may use their own checkout at 0 % fee; a web app is packaged from its URL
 - 2026-11-20 17:15 | build | Relay rounds ms-store-spike-2026-11-20 and -b (22 lines); idea parked in the exchange, no owner request
 - 2026-11-20 17:15 | build | Queued foundry relay-render-request-urls (3): a rendered shell page should name the data calls it made
+- 2026-11-20 17:48 | burn-down | Spike superhive-blender-addons done: parked — new small add-ons on the shelf do not sell
+- 2026-11-20 17:48 | burn-down | 51 of 60 add-ons aged 1–2 months show no sales count; the 30 best sellers under $15 are all over a year old
+- 2026-11-20 17:48 | burn-down | Terms would have passed: PayPal address only, $25 payout floor, 70 % share, no line on AI-written code
+- 2026-11-20 17:48 | burn-down | About 28 add-ons are listed a day; median outcome under $56 in two months for a week of build
+- 2026-11-20 17:48 | burn-down | Eight relay rounds (216 lines); six reads answered 429, so later rounds went 20 at a time
+- 2026-11-20 17:48 | burn-down | Blender's free extensions site bars Claude-named agents in robots.txt: one page read, host dropped
+- 2026-11-20 17:48 | burn-down | Idea parked in the exchange; trigger is a buyer asking for a Blender tool, no dated re-read
