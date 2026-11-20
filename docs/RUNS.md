@@ -3295,3 +3295,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-20 09:17 | build | Queued foundry cloudflare-observability-pricing-read (4): log pricing changes 1 Dec, unread against our volume
 - 2026-11-20 09:17 | build | Four relay hosts added (blogs.windows.com, apps.microsoft.com, superhivemarket.com and its support site)
 - 2026-11-20 12:06 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
+- 2026-11-20 16:07 | triage | notify owner dispatched: last run started 13:30 UTC, 2 h ago
