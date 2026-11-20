@@ -1,0 +1,146 @@
+meta og:url: https://extensions.blender.org/terms-of-service/
+meta og:site_name: Blender Extensions
+meta og:locale: en_US
+meta og:type: website
+meta og:title: Blender Extensions
+meta twitter:title: Blender Extensions
+meta description: Blender Extensions is a web based service developed by Blender Foundation that allows people to share open source add-ons for Blender.
+meta og:description: Blender Extensions is a web based service developed by Blender Foundation that allows people to share open source add-ons for Blender.
+meta twitter:description: Blender Extensions is a web based service developed by Blender Foundation that allows people to share open source add-ons for Blender.
+meta og:image: https://extensions.blender.org/static/common/images/extensions-website-og-image-placeholder.jpg
+meta og:image:alt: Blender Extensions
+Terms of Service — Blender Extensions
+November 20 : Pay it forward.
+Someone’s donation made Blender free for you. The next artist who opens Blender for the first time is counting on the same thing.
+Now it’s your turn to invest in a brighter future. For everyone.
+Today, we're asking for $10.
+That's it. If every active Blender user contributed $10 this month, the Blender Foundation would meet its entire funding goal for 2027.
+I already donated
+Remind me later
+/
+Extensions
+Home (/)
+Add-ons (/add-ons/)
+Asset Libraries (/asset-libraries/)
+Themes (/themes/)
+Approval Queue (/approval-queue/)
+About (/about/)
+Upload Extension (/submit/)
+Sign in (/oauth/login)
+BLENDER.ORG (https://www.blender.org/?utm_medium=nav-global)
+Download Get the latest Blender, older versions, or experimental builds. (https://www.blender.org/download/?utm_medium=nav-global)
+What's New Stay up-to-date with the new features in the latest Blender releases. (https://www.blender.org/download/releases/?utm_medium=nav-global)
+DEVELOPMENT (https://projects.blender.org/?utm_medium=nav-global)
+Roadmap See which projects are currently being worked on and what's next. (https://code.blender.org/roadmap/?utm_medium=nav-global)
+Documentation Guidelines, release notes and development docs. (https://developer.blender.org/docs/?utm_medium=nav-global)
+LEARNING & RESOURCES (https://studio.blender.org/?utm_medium=nav-global)
+Blender Studio Access production assets and knowledge from the open movies. (https://studio.blender.org/?utm_medium=nav-global)
+Manual Documentation on the usage and features in Blender. (https://docs.blender.org/manual/en/latest/?utm_medium=nav-global)
+Benchmark A platform to collect and share results of the Blender Benchmark. (https://opendata.blender.org/?utm_medium=nav-global)
+Blender Conference The yearly event that brings the community together. (https://conference.blender.org/?utm_medium=nav-global)
+DONATE (https://fund.blender.org/?utm_medium=nav-global)
+Development Fund Support core development with a monthly contribution. (https://fund.blender.org/?utm_medium=nav-global)
+One-time Donations Perform a single donation with more payment options available. (https://www.blender.org/about/donations/?utm_medium=nav-global)
+Terms of Service
+(1) License & Copyright
+(1.1) Uploaded add-ons must be wholly compliant with the GNU General Public License, version 3 or later (https://spdx.org/licenses/GPL-3.0-or-later.html) . Other extensions (themes) must be compatible with the GNU General Public License, version 3 or later. See all compatible licenses (https://docs.blender.org/manual/en/dev/advanced/extensions/licenses.html) .
+(1.2) Binary files or other types of assets included in the extension (images, SVG files, fonts, etc.) must be licensed as Public Domain (CC0) (https://creativecommons.org/publicdomain/zero/1.0/) .
+(1.3) If the extension bundles copyrighted code (or other materials) all copyright holders should be properly credited in blender_manifest ( copyright section (https://docs.blender.org/manual/en/latest/advanced/extensions/getting_started.html#manifest) ).
+(2) Branding
+(2.1) The name "Blender" should not be included in the name of the extension.
+(2.2) Blender logo or icon should not be used in extensions thumbnails, icons, or preview images. Blender logo guidelines (https://www.blender.org/about/logo/) should be respected.
+(2.3) Extensions should not make statements that give a false impression to users that they're supported or endorsed by Blender, or affiliated with it in some way.
+(2.4) Logo or other trademarked images of third-party software/companies should only be used if guidelines of that software/company allow it and extension authors can provide evidence of that.
+(3) Content of the Extension
+(3.1) No surprises: An extension must have an easy-to-read description mentioning everything it does. It must be abundantly clear from the extensions listing what functionality it offers, and users should not be presented with unexpected experiences when they download and install the extension.
+(3.2) Extension listings must not do anything illegal or otherwise violate applicable law.
+(3.3) Extensions offered on extensions.blender.org should be fully functional, documented and actively maintained products.
+(3.4) Extensions that are intended for internal or private use or are only accessible to a closed user group may not be listed on extensions.blender.org.
+(3.5) Extension code must be reviewable: no obfuscated code or byte code is allowed.
+(3.6) Source code of the extension must be fully written in Python. Depending on external, pre-compiled packages is not allowed.
+(3.7) Extension must not negatively impact performance or stability of Blender.
+(3.8) If the extension is a fork of another extension, the name must clearly distinguish it from the original and provide a significant difference in functionality and/or code. It must credit creators, contributors, and other copyright holders of the original extension.
+(3.9) Extension must not temper with operating system, third-party softwares, other extensions, Blender’s internal modules, or sensitive user data (within or outside of Blender).
+(3.10) It is not allowed to have additional requirements (such as purchasing additional content, registration on external service, payments or keys, etc.) blocking functionality of the extension.
+(4) Connecting to Internet
+(4.1) Extension that connects to the internet should request the permission for it in blender_manifest and clearly state the reason for the request.
+(4.2) Extension should respect the "Allow Internet Access" user preference ( bpy.app.online_access ) and only connect to the internet if it is enabled.
+(4.3) Extensions that (need to) connect to internet services outside of blender.org ecosystem should offer access to these sites without additional restrictions (such as login or registration). Extensions can connect to other websites requiring a login (account), provided the offering on that website is complete and aligned with Blenders mission. If the offering is a mixed product (for example with optional commercial extras), it will not be accepted.
+(4.4) Online access and network permission aren't required for buttons that open the browser from inside the Blender (i.e. Online Manual, Report a Bug...) if the button makes it clear that it will open the browser.
+(4.5) Extension must not send data to any remote locations without authorization from the user.
+(5) Third-Party Applications
+(5.1) Extension must be self-contained and not load remote code for execution.
+(5.2) Extension should not require any external functional components (other than Blender itself) that need to be downloaded from elsewhere to access any of its features, even if those features are considered optional.
+(5.3) No functionality of the extension should be dependant on other extensions, even if that functionality is considered optional.
+(6) Advertisment
+(6.1) Advertisements (links to commercial and funding websites, donation buttons, images or text labels prompting users to purchase anything) are not allowed inside the Blender UI. Linking to external funding platforms is allowed on the platform (in the extension's description).
+(6.2) The description and images on the platform should only showcase features that are available in the version that is available on the platform. Showcasing features from commercial versions will be considered an advertisement and is not allowed.
+(6.3) Extension must not use Blender's UI elements to promote its updates, commercial versions, or other extensions.
+Last updated: 10 August 2026
+About (/about/)
+Privacy Policy (https://www.blender.org/privacy-policy)
+Terms of Service (/terms-of-service/)
+About (https://www.blender.org/about/)
+Blender Foundation (https://www.blender.org/about/foundation/)
+Blender Institute (https://www.blender.org/about/institute/)
+Blender Studio (https://www.blender.org/about/studio/)
+License (https://www.blender.org/about/license/)
+Logo & Trademark (https://www.blender.org/about/logo/)
+Credits (https://www.blender.org/about/credits/)
+Privacy Policy (https://www.blender.org/privacy-policy/)
+Code of Conduct (https://developer.blender.org/docs/handbook/communication/code_of_conduct/)
+Organization
+People (https://www.blender.org/about/people/)
+Jobs (https://www.blender.org/jobs/)
+Blender Network (https://network.blender.org/)
+Download (https://www.blender.org/download/)
+Latest Blender (https://www.blender.org/download/)
+Blender LTS (https://www.blender.org/download/lts/)
+Previous Versions (https://www.blender.org/download/previous-versions/)
+Experimental Builds (https://builder.blender.org/download/daily/?utm_medium=www-footer)
+Source Code (https://projects.blender.org/blender/blender?utm_medium=www-footer)
+Requirements (https://www.blender.org/download/requirements/)
+Benchmark (https://opendata.blender.org/?utm_medium=www-footer)
+Flamenco (https://flamenco.blender.org/?utm_medium=www-footer)
+Extensions (https://extensions.blender.org/?utm_medium=www-footer)
+Add-ons (https://extensions.blender.org/add-ons/?utm_medium=www-footer)
+Themes (https://extensions.blender.org/themes/?utm_medium=www-footer)
+Developers (https://developer.blender.org/?utm_medium=www-footer)
+Get Started (https://developer.blender.org/?utm_medium=www-footer)
+Roadmap (https://code.blender.org/roadmap/?utm_medium=www-footer)
+Projects (https://projects.blender.org/?utm_medium=www-footer)
+Docs (https://developer.blender.org/docs/?utm_medium=www-footer)
+Blog (https://code.blender.org/?utm_medium=www-footer)
+Forum (https://devtalk.blender.org/?utm_medium=www-footer)
+YouTube (https://www.youtube.com/blenderdevelopers)
+Python API (https://docs.blender.org/api/current/?utm_medium=www-footer)
+Blender Studio (https://studio.blender.org/?utm_medium=www-footer)
+Films (https://studio.blender.org/films/?utm_medium=www-footer)
+Training (https://studio.blender.org/training/?utm_medium=www-footer)
+Tools & Pipeline (https://studio.blender.org/tools/?utm_medium=www-footer)
+Support (https://www.blender.org/support/)
+Manual (https://docs.blender.org/manual/?utm_medium=www-footer)
+Community (https://www.blender.org/community/)
+FAQ (https://www.blender.org/support/faq/)
+Get Involved (https://www.blender.org/get-involved/)
+Documentation (https://www.blender.org/get-involved/documenters/)
+Education (https://www.blender.org/get-involved/)
+News (https://www.blender.org/news/)
+Press Releases (https://www.blender.org/category/press/)
+User Stories (https://www.blender.org/get-involved/user-stories/)
+Blender Conference (https://conference.blender.org/)
+Follow Blender (https://bsky.app/profile/blender.org)
+https://youtube.com/BlenderFoundation
+https://video.blender.org/
+https://bsky.app/profile/blender.org
+https://instagram.com/blender.official/
+https://www.facebook.com/YourOwn3DSoftware/
+https://www.linkedin.com/company/blender-org/
+https://mastodon.social/@blender
+https://www.tiktok.com/@blender_org
+https://space.bilibili.com/3546814074587443
+Support Blender (https://fund.blender.org/?utm_medium=www-footer)
+Donate (https://fund.blender.org/?utm_medium=www-footer)
+One-time Donation (https://fund.blender.org/donate-once/?utm_medium=www-footer)
+Artistic freedom starts with Blender The Free and Open
+Source 3D Creation Suite

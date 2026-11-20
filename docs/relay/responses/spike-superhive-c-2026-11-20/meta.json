@@ -1,0 +1,261 @@
+{
+  "request": "spike-superhive-c-2026-11-20",
+  "fetched_at": "2026-11-20T17:35:22.249Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=1",
+      "fetched_at": "2026-11-20T17:35:06.712Z",
+      "status": 200,
+      "elapsed_ms": 453,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=1",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 10050,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 76415
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=4",
+      "fetched_at": "2026-11-20T17:35:07.681Z",
+      "status": 200,
+      "elapsed_ms": 343,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=4",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 10221,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 77621
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=8",
+      "fetched_at": "2026-11-20T17:35:08.534Z",
+      "status": 200,
+      "elapsed_ms": 332,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=8",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 10910,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 78892
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=12",
+      "fetched_at": "2026-11-20T17:35:09.378Z",
+      "status": 200,
+      "elapsed_ms": 354,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=12",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 10596,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 77363
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=16",
+      "fetched_at": "2026-11-20T17:35:10.241Z",
+      "status": 200,
+      "elapsed_ms": 635,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=16",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 10863,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 80849
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=20",
+      "fetched_at": "2026-11-20T17:35:11.379Z",
+      "status": 200,
+      "elapsed_ms": 368,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=20",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 10804,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 77995
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=25",
+      "fetched_at": "2026-11-20T17:35:12.255Z",
+      "status": 200,
+      "elapsed_ms": 428,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=25",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 11035,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 77453
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=30",
+      "fetched_at": "2026-11-20T17:35:13.191Z",
+      "status": 200,
+      "elapsed_ms": 335,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=30",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 10144,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 77785
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_range=1%2C15&sort_sales=desc&page=1",
+      "fetched_at": "2026-11-20T17:35:14.037Z",
+      "status": 200,
+      "elapsed_ms": 341,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_range=1%2C15&sort_sales=desc&page=1",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 9748,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 79180
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_range=1%2C15&sort_sales=desc&page=2",
+      "fetched_at": "2026-11-20T17:35:14.886Z",
+      "status": 200,
+      "elapsed_ms": 347,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_range=1%2C15&sort_sales=desc&page=2",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 10066,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 79411
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_range=1%2C15&sort_sales=desc&page=3",
+      "fetched_at": "2026-11-20T17:35:15.741Z",
+      "status": 200,
+      "elapsed_ms": 303,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_range=1%2C15&sort_sales=desc&page=3",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 9739,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 80110
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/import-export/browse?sort_date=desc",
+      "fetched_at": "2026-11-20T17:35:16.552Z",
+      "status": 200,
+      "elapsed_ms": 306,
+      "final_url": "https://superhivemarket.com/categories/import-export/browse?sort_date=desc",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 9043,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 73994
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/import-export/browse?sort_sales=desc",
+      "fetched_at": "2026-11-20T17:35:17.364Z",
+      "status": 200,
+      "elapsed_ms": 411,
+      "final_url": "https://superhivemarket.com/categories/import-export/browse?sort_sales=desc",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 8889,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 75828
+    },
+    {
+      "method": "GET",
+      "url": "https://extensions.blender.org/robots.txt",
+      "fetched_at": "2026-11-20T17:35:17.783Z",
+      "status": 200,
+      "elapsed_ms": 231,
+      "final_url": "https://extensions.blender.org/robots.txt",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "content-length": "2749"
+      },
+      "file": "14.txt",
+      "bytes": 2749,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://extensions.blender.org/add-ons/?sort_by=-download_count",
+      "fetched_at": "2026-11-20T17:35:18.514Z",
+      "status": 200,
+      "elapsed_ms": 1072,
+      "final_url": "https://extensions.blender.org/add-ons/?sort_by=-download_count",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.txt",
+      "bytes": 11941,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 203247
+    },
+    {
+      "method": "GET",
+      "url": "https://extensions.blender.org/terms-of-service/",
+      "fetched_at": "2026-11-20T17:35:20.091Z",
+      "status": 200,
+      "elapsed_ms": 2155,
+      "final_url": "https://extensions.blender.org/terms-of-service/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 12105,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44572
+    }
+  ]
+}
