@@ -1,0 +1,54 @@
+{
+  "request": "spike-superhive-e-2026-11-20",
+  "fetched_at": "2026-11-20T17:41:51.112Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=40",
+      "fetched_at": "2026-11-20T17:41:48.781Z",
+      "status": 200,
+      "elapsed_ms": 415,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=40",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 9991,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 77964
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=50",
+      "fetched_at": "2026-11-20T17:41:49.711Z",
+      "status": 200,
+      "elapsed_ms": 440,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=50",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 10642,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 79019
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=60",
+      "fetched_at": "2026-11-20T17:41:50.660Z",
+      "status": 200,
+      "elapsed_ms": 448,
+      "final_url": "https://superhivemarket.com/categories/addons/browse?sort_date=desc&page=60",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 10116,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 77432
+    }
+  ]
+}
