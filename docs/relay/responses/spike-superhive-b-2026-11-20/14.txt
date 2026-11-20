@@ -1,0 +1,176 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/quicksnap","name":"QuickSnap","image":["https://assets.superhivemarket.com/store/product/181564/image/xlarge-f93b921642684d24dbac4cf77707bbc0.png"],"description":"QuickSnap is a free blender addon that allows to quickly snap from/to objects origins/vertices/curve points/face centers/edge midpoints, by picking the source and the destination point, similar to how vertex snap works in Maya/3Dsmax.","mpn":"181564","brand":{"@type":"Thing","name":"Julien Heijmans"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"1.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Julien Heijmans"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"48"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"QuickSnap","item":"https://superhivemarket.com/products/quicksnap"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/181564/image/xlarge-f93b921642684d24dbac4cf77707bbc0.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/181564/image/xlarge-f93b921642684d24dbac4cf77707bbc0.png
+meta description: QuickSnap is a free blender addon that allows to quickly snap from/to objects origins/vertices/curve points/face centers/edge midpoints, by picking the source and the destination point, similar to how vertex snap works in Maya/3Dsmax.
+meta og:url: https://superhivemarket.com/products/quicksnap
+meta og:title: QuickSnap
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: QuickSnap is a free blender addon that allows to quickly snap from/to objects origins/vertices/curve points/face centers/edge midpoints, by picking the source and the destination point, similar to how vertex snap works in Maya/3Dsmax.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: QuickSnap
+meta twitter:description: QuickSnap is a free blender addon that allows to quickly snap from/to objects origins/vertices/curve points/face centers/edge midpoints, by picking the source and the destination point, similar to how vertex snap works in Maya/3Dsmax.
+meta twitter:domain: https://superhivemarket.com/products/quicksnap
+meta og:image: https://assets.superhivemarket.com/store/product/181564/image/xlarge-f93b921642684d24dbac4cf77707bbc0.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/181564/image/xlarge-f93b921642684d24dbac4cf77707bbc0.png
+QuickSnap - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+QuickSnap
+Julien Heijmans (/creators/julienh)
+in Modeling (/categories/modeling)
+https://assets.superhivemarket.com/store/product/181564/image/xlarge_og-76b2ed726e35978c93c9f34f03042f96.png
+https://assets.superhivemarket.com/store/productimage/357655/image/21461d8d725a0ec705158eee1fe7955b.gif
+https://assets.superhivemarket.com/store/productimage/357659/image/34b59d11bab49aa370e1fc1c73e40cea.gif
+https://assets.superhivemarket.com/store/productimage/357656/image/bb900f1fd6ba0f77485c4124a94a2151.gif
+https://assets.superhivemarket.com/store/productimage/357657/image/05b2791ef8aec92148d528d71064f5ca.gif
+https://assets.superhivemarket.com/store/productimage/357658/image/8ba4355bee0f3415bf7e3157776ea5f8.png
+About (/products/quicksnap)
+FAQ (/products/quicksnap/faq)
+Documentation (/products/quicksnap/docs)
+Ratings (/products/quicksnap/ratings)
+Version History (/products/quicksnap/versions)
+QuickSnap is a free blender addon that allows to quickly snap objects/vertices/points to object origins/vertices/points, by picking the source and the destination point, similar to how vertex snap works in Maya/3Dsmax.
+It is also available as an extension on the official blender extentions portal (https://extensions.blender.org/add-ons/quicksnap/) .
+Features:
+Snap From/To:
+Scene cursor
+Object origins
+Vertices and Curve points
+Edges mid-points
+Face centers
+A pie menu allows you to change the type of point you snap from/to. Use the same hotkey as the one you use to start the tool to display the menu.
+With the option 'Use vertices Auto-Merge in Edit mode' enabled, vertices will merge automatically with vertices at the same location after a snap. It can be completely disabled in the addon preferences.
+Constrain the translation on a single axis or a plane using (Shift+)X,Y,Z hotkeys
+Automatically display wireframe of the mesh you are snapping to and the wireframe of the object right under the mouse (Can be turned off)
+Snap onto visible and non visible points (Points closer to the camera are prioritized)
+Highlight target vertex edges, as well as potential target edge midpoint and target facecenters for better readability
+The addon includes the Blender Addon Updater (https://github.com/CGCookie/blender-addon-updater) that allows to update the addon easily from within Blender. You will also be notified if a new version has been released. You can enable/disable that behaviour in the addon preferences.
+Add-On hotkey and settings:
+By default, enable the tool by using Ctrl+Shift+V (For Vertex). Watch out if you have multiple keyboards to your windows settings, Ctrl+Shift will cycle the active keyboard.
+Use the same hotkey to display the pie menu
+Change the tool hotkey from the Add-On settings window
+Discover the other hotkeys in the add-on settings, and tweak your own preferences
+Use the tool:
+Select the object or the vertices/edges/faces/curve points you want to move
+Enable the tool using the hotkey (Ctrl+Shift+V by default)
+With the tool enabled use the same hotkey (Ctrl+Shift+V by default) to open the pie menu and chose what you snap from*to (Vertices and curve points / edge midpoints / face centers)
+Finally, to snap you have two options:
+Click and drag:
+Move the mouse over the point you want to snap FROM
+Click an hold the right mouse button, mouve the mouse over the point you want to snap TO
+Release the mouse
+Two-Clicks:
+Click on the point you want to snap FROM
+Click on the point you want to snap TO
+If you want to cancel the operation:
+Press Right Mouse Button or ESC key to cancel the translation
+Important notes:
+This tool is not made to use on very high poly objects, and performance might get poor when many really heavy objects are under the mouse. Look at the documentation page to find more information about this.
+Update the Add-On:
+In the Add-on preferences, scroll down, click on "Check now for QuickSnap update"
+If the same button now says: "Update now to (x,y,z)" it means that a new version exists. Click that button to update, then restart Blender.
+Here is a video showing how ot update the add-on from within blender: (You need to click on the play icon in the top right corner)
+Bug Report:
+If you have an issue, first check that you have the last version of the addon (Instructions above)
+If the problem persists with the latest version of the addon:
+Please create an issue here, and I will try to fix the issue asap: https://github.com/JulienHeijmans/quicksnap/issues
+Do not forget to explain what you were doing and what was in your scene when the issue happened. If you can share the scene, you can also do so.
+Suggestion/Feature requests:
+If you have some feature ideas or suggestions, feel free to send me a message here, or to post it here: https://github.com/JulienHeijmans/quicksnap/discussions/categories/ideas https://github.com/JulienHeijmans/quicksnap/discussions/categories/ideas
+Since I am not making any money from this addon I can't promise I will have time to implement it, but I will definitely consider it.
+Known issues / limitation:
+Target highlighting does not work with 'Ignore modifiers' enabled. I plan to investigate new ways to ignore modifiers that might allow highlighting in that situation.
+In edit mode, the tool will always use the original points of the mesh (Without modifiers)
+Back to top
+Discover more products like this
+3DsMax (/tags/3dsmax) snap (/tags/snap) vertex snap (/tags/vertex-snap) vertex snapping (/tags/vertex-snapping) maya (/tags/maya) snapping (/tags/snapping)
+Seats:
+&minus;
++
+$1
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Sales
+4300+
+Rating
+48 ratings (/products/quicksnap/ratings)
+Dev Fund Contributor
+Published
+about 4 years ago
+Blender Version
+2.93 - 5.2
+Extension Type
+Add-on
+License
+Mit (/page/mit-license)
+Julien Heijmans
+Visit Website (http://www.julienheijmans.be) See all items by this creator (/creators/julienh)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#46353336362934320635333623342e2f30232b27342d23326825292b)
+Made by the humans of Autotroph (https://autotroph.com)

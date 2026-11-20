@@ -1,0 +1,60 @@
+{"@context":"https://schema.org","@type":"WebSite","url":"https://support.superhivemarket.com","potentialAction":{"@type":"SearchAction","target":"https://support.superhivemarket.com/search?query={query}","query-input":"required name=query"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Superhive Documentation","item":"https://support.superhivemarket.com"},{"@type":"ListItem","position":2,"name":"Creators","item":"https://support.superhivemarket.com/collection/1-creators"},{"@type":"ListItem","position":3,"name":"API Access Instructions","item":"https://support.superhivemarket.com/article/321-api-access-instructions"}]}
+meta description: Accessing the API All API endpoints are publicly available via HTTPS. Base URL (example): https://superhivemarket.com/api/v1/... Each endpoint is documented in
+meta twitter:card: summary
+meta twitter:title: API Access Instructions
+meta twitter:description: Accessing the API All API endpoints are publicly available via HTTPS. Base URL (example): https://superhivemarket.com/api/v1/... Each endpoint is documented in
+API Access Instructions - Superhive Documentation
+https://superhivemarket.com
+Toggle Navigation
+Home (/)
+Customers (/collection/6-customers)
+Creators (/collection/1-creators)
+Affiliates (/collection/147-affiliates)
+Contact
+Contact
+API Access Instructions
+Accessing the API
+All API endpoints are publicly available via HTTPS.
+Base URL (example):
+https://superhivemarket.com/api/v1/...
+Each endpoint is documented in our API Reference (https://superhivemarket.com/api-docs/index.html) .
+Authentication
+All requests must include your personal authentication token in a custom header:
+1. Generate Your Token
+Log into your Superhive account (https://superhivemarket.com/account)
+Navigate to:
+Account → API Tokens
+Click Create Token , naming the token and specifying the scope as needed
+Upon creating a token, copy the secret to your clipboard and paste it where needed. The secret will never again be shown, if you lose it you'll need to create a new token.
+2. Use the Header
+Include your token with every request:
+SH-Auth-Token: YOUR_TOKEN_HERE
+Important Notes
+Treat your auth token like a password.
+Anyone with the token can access data available to your Creator account.
+If your token is ever compromised, revoke it and generate a new one immediately from the same page.
+Still need help?
+Contact Us
+Contact Us
+Last updated on July 20, 2026
+Toggle Search
+Categories
+Affiliates (/category/159-affiliates)
+Asset Libraries (/category/360-asset-libraries)
+Developers (/category/349-developers)
+Analytics and Data (/category/178-analytics-and-data)
+Blender Market Basics (/category/165-blender-market-basics)
+Growing Your Business (/category/169-growing-your-business)
+Legal (/category/166-legal)
+Privacy and Security (/category/181-privacy-and-security)
+Supporting Your Customers (/category/175-supporting-your-customers)
+Licenses (/category/132-licenses)
+Products (/category/141-product-management)
+Revenue and Earnings (/category/140-revenue-and-earnings)
+Support and Marketing (/category/142-support-and-marketing)
+Taxes (/category/14-taxes)
+No results found
+©
+Autotroph (https://superhivemarket.com)
+2026. Powered by Help Scout (https://www.helpscout.com/docs-refer/?co=Autotroph&utm_source=docs&utm_medium=footerlink&utm_campaign=Docs+Branding)

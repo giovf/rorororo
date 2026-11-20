@@ -1,0 +1,72 @@
+{"@context":"https://schema.org","@type":"WebSite","url":"https://support.superhivemarket.com","potentialAction":{"@type":"SearchAction","target":"https://support.superhivemarket.com/search?query={query}","query-input":"required name=query"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Superhive Documentation","item":"https://support.superhivemarket.com"},{"@type":"ListItem","position":2,"name":"Creators","item":"https://support.superhivemarket.com/collection/1-creators"},{"@type":"ListItem","position":3,"name":"How Merchant and Transaction Fees Are Calculated","item":"https://support.superhivemarket.com/article/185-how-merchant-and-transaction-fees-are-calculated"}]}
+meta description: Merchant fees and transaction fees are charged by transaction processing companies every time a transaction goes through. Merchant fees are a percentage of the
+meta twitter:card: summary
+meta twitter:title: How Merchant and Transaction Fees Are Calculated
+meta twitter:description: Merchant fees and transaction fees are charged by transaction processing companies every time a transaction goes through. Merchant fees are a percentage of the
+How Merchant and Transaction Fees Are Calculated - Superhive Documentation
+https://superhivemarket.com
+Toggle Navigation
+Home (/)
+Customers (/collection/6-customers)
+Creators (/collection/1-creators)
+Affiliates (/collection/147-affiliates)
+Contact
+Contact
+How Merchant and Transaction Fees Are Calculated
+Merchant fees and transaction fees are charged by transaction processing companies every time a transaction goes through. Merchant fees are a percentage of the transaction amount while transaction fees are a fixed amount.
+The merchant fee rate that you pay will depend upon whether or not you have a Superhive (formerly Blender Market) Subscription (http://superhivemarket.com/pricing) plan, and which plan you have.
+Free
+Pro
+Ultimate
+Monthly Charge
+$0
+$49
+$199
+Commission Rate
+70%
+80%
+90%
+Transaction Fee
+$0.49
+$0.49
+$0.49
+Merchant Fee
+5.5%
+5.0%
+4.0%
+The merchant fee that you pay is calculated as a function of the price of your product and then subtracted from your product price.
+(price - (price * merchant_fee) - transaction_fee) * commission_rate = initial commission
+If you were to sell a $25 product, for example, the merchant fee would be the following:
+Free plan (5.5%): $1.38
+Pro subscription (5.0%): $1.25
+Ultimate subscription (4.0%): $1.00
+Are Merchant Fees Charged on Products or Transactions?
+Merchant fees are calculated on a per-product basis. That means that if a customer adds two of your products to their cart and checks out, the merchant fee will be calculated for each product individually, rather than for the combined cost of the products.
+Still need help?
+Contact Us
+Contact Us
+Last updated on September 30, 2026
+Related Articles
+How Your Commission Earnings Are Calculated (/article/32-how-commission-earnings-are-calculated)
+How Coupons Affect Your Commission Earnings (/article/184-how-coupons-affect-your-commission-earnings)
+Toggle Search
+Categories
+Affiliates (/category/159-affiliates)
+Asset Libraries (/category/360-asset-libraries)
+Developers (/category/349-developers)
+Analytics and Data (/category/178-analytics-and-data)
+Blender Market Basics (/category/165-blender-market-basics)
+Growing Your Business (/category/169-growing-your-business)
+Legal (/category/166-legal)
+Privacy and Security (/category/181-privacy-and-security)
+Supporting Your Customers (/category/175-supporting-your-customers)
+Licenses (/category/132-licenses)
+Products (/category/141-product-management)
+Revenue and Earnings (/category/140-revenue-and-earnings)
+Support and Marketing (/category/142-support-and-marketing)
+Taxes (/category/14-taxes)
+No results found
+©
+Autotroph (https://superhivemarket.com)
+2026. Powered by Help Scout (https://www.helpscout.com/docs-refer/?co=Autotroph&utm_source=docs&utm_medium=footerlink&utm_campaign=Docs+Branding)

@@ -1,0 +1,261 @@
+{
+  "request": "spike-superhive-b-2026-11-20",
+  "fetched_at": "2026-11-20T17:34:04.924Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/253-general-product-guidelines-for-uploading-products",
+      "fetched_at": "2026-11-20T17:33:49.553Z",
+      "status": 200,
+      "elapsed_ms": 229,
+      "final_url": "https://support.superhivemarket.com/article/253-general-product-guidelines-for-uploading-products",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 10820,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 25214
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/277-creator-seller-policy",
+      "fetched_at": "2026-11-20T17:33:50.291Z",
+      "status": 200,
+      "elapsed_ms": 108,
+      "final_url": "https://support.superhivemarket.com/article/277-creator-seller-policy",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 15633,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 29124
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/388-one-product-at-a-time-for-new-creators",
+      "fetched_at": "2026-11-20T17:33:50.902Z",
+      "status": 200,
+      "elapsed_ms": 99,
+      "final_url": "https://support.superhivemarket.com/article/388-one-product-at-a-time-for-new-creators",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 5651,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 18310
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/15-value-added-tax-vat-handling",
+      "fetched_at": "2026-11-20T17:33:51.504Z",
+      "status": 200,
+      "elapsed_ms": 106,
+      "final_url": "https://support.superhivemarket.com/article/15-value-added-tax-vat-handling",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 4493,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 16892
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/321-api-access-instructions",
+      "fetched_at": "2026-11-20T17:33:52.112Z",
+      "status": 200,
+      "elapsed_ms": 238,
+      "final_url": "https://support.superhivemarket.com/article/321-api-access-instructions",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 3382,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 15381
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/185-how-merchant-and-transaction-fees-are-calculated",
+      "fetched_at": "2026-11-20T17:33:52.853Z",
+      "status": 200,
+      "elapsed_ms": 101,
+      "final_url": "https://support.superhivemarket.com/article/185-how-merchant-and-transaction-fees-are-calculated",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 3981,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 16752
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons?sort_date=desc",
+      "raw": true,
+      "fetched_at": "2026-11-20T17:33:52.955Z",
+      "status": 200,
+      "elapsed_ms": 1045,
+      "final_url": "https://superhivemarket.com/categories/addons?sort_date=desc",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 136770,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons?sort_date=desc&page=2",
+      "fetched_at": "2026-11-20T17:33:54.684Z",
+      "status": 200,
+      "elapsed_ms": 929,
+      "final_url": "https://superhivemarket.com/categories/addons?sort_date=desc&page=2",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 17906,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 136887
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons?sort_date=desc&page=10",
+      "fetched_at": "2026-11-20T17:33:56.300Z",
+      "status": 200,
+      "elapsed_ms": 904,
+      "final_url": "https://superhivemarket.com/categories/addons?sort_date=desc&page=10",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 17768,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 136287
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons?sort_date=desc&page=20",
+      "fetched_at": "2026-11-20T17:33:57.894Z",
+      "status": 200,
+      "elapsed_ms": 789,
+      "final_url": "https://superhivemarket.com/categories/addons?sort_date=desc&page=20",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 17918,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 136614
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons?sort_date=desc&page=30",
+      "fetched_at": "2026-11-20T17:33:59.366Z",
+      "status": 200,
+      "elapsed_ms": 798,
+      "final_url": "https://superhivemarket.com/categories/addons?sort_date=desc&page=30",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 17913,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 136484
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/categories/addons?sort_sales=desc",
+      "fetched_at": "2026-11-20T17:34:00.854Z",
+      "status": 200,
+      "elapsed_ms": 911,
+      "final_url": "https://superhivemarket.com/categories/addons?sort_sales=desc",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 17900,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 136760
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/msculpt",
+      "fetched_at": "2026-11-20T17:34:02.447Z",
+      "status": 200,
+      "elapsed_ms": 185,
+      "final_url": "https://superhivemarket.com/products/msculpt",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 8149,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 43417
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/quicksnap",
+      "fetched_at": "2026-11-20T17:34:03.194Z",
+      "status": 200,
+      "elapsed_ms": 173,
+      "final_url": "https://superhivemarket.com/products/quicksnap",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.txt",
+      "bytes": 11669,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 50446
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/n-panel-sub-tabs",
+      "fetched_at": "2026-11-20T17:34:03.925Z",
+      "status": 200,
+      "elapsed_ms": 204,
+      "final_url": "https://superhivemarket.com/products/n-panel-sub-tabs",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.txt",
+      "bytes": 12623,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 50795
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/creators/mattias-lind",
+      "fetched_at": "2026-11-20T17:34:04.690Z",
+      "status": 200,
+      "elapsed_ms": 176,
+      "final_url": "https://superhivemarket.com/creators/mattias-lind",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 4773,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 35583
+    }
+  ]
+}

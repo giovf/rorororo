@@ -1,0 +1,127 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/msculpt","name":"mSculpt - HD geometry sculpting for Blender","image":["https://assets.superhivemarket.com/store/product/270349/image/xlarge-e0bd644109436493a3efc5e30bbcd4c8.jpeg"],"description":"Bake multires displacement and ZBrush-style HD geometry in Blender. 32-bit EXR, UDIMs, multi-object bakes.","mpn":"270349","brand":{"@type":"Thing","name":"Mattias Lind"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"5.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Mattias Lind"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"mSculpt - HD geometry sculpting for Blender","item":"https://superhivemarket.com/products/msculpt"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/270349/image/xlarge-e0bd644109436493a3efc5e30bbcd4c8.jpeg
+meta twitter:image: https://assets.superhivemarket.com/store/product/270349/image/xlarge-e0bd644109436493a3efc5e30bbcd4c8.jpeg
+meta description: Bake multires displacement and ZBrush-style HD geometry in Blender. 32-bit EXR, UDIMs, multi-object bakes.
+meta og:url: https://superhivemarket.com/products/msculpt
+meta og:title: mSculpt - HD Geometry Sculpting for Blender
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Bake multires displacement and ZBrush-style HD geometry in Blender. 32-bit EXR, UDIMs, multi-object bakes.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: mSculpt - HD Geometry Sculpting for Blender
+meta twitter:description: Bake multires displacement and ZBrush-style HD geometry in Blender. 32-bit EXR, UDIMs, multi-object bakes.
+meta twitter:domain: https://superhivemarket.com/products/msculpt
+meta og:image: https://assets.superhivemarket.com/store/product/270349/image/xlarge-e0bd644109436493a3efc5e30bbcd4c8.jpeg
+meta twitter:image: https://assets.superhivemarket.com/store/product/270349/image/xlarge-e0bd644109436493a3efc5e30bbcd4c8.jpeg
+mSculpt - HD geometry sculpting for Blender - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+mSculpt - HD Geometry Sculpting for Blender
+Mattias Lind (/creators/mattias-lind)
+in Addons (/categories/addons)
+https://assets.superhivemarket.com/store/product/270349/image/xlarge_og-a8aa8afd973796177724879c63c7d93b.jpeg
+https://www.youtube.com/embed/LSeDw1O9WeU?start=0
+https://assets.superhivemarket.com/store/productimage/1415546/image/xlarge_og-89fa7f0ace50950c0529f58c80464ea0.jpeg
+https://assets.superhivemarket.com/store/productimage/1415547/image/xlarge_og-628ab0f92177609ee8c3f18e3981038d.jpeg
+https://assets.superhivemarket.com/store/productimage/1415548/image/xlarge_og-0628fe3fa857ce3e148ca90f5e26d0ac.jpeg
+https://assets.superhivemarket.com/store/productimage/1415549/image/xlarge_og-2cfedbe160f2f713692c8cbd30a5489d.jpeg
+https://assets.superhivemarket.com/store/productimage/1416226/image/xlarge_og-d263e649b77ca961d879098c1b464e46.jpeg
+About (/products/msculpt)
+FAQ (/products/msculpt/faq)
+Documentation (/products/msculpt/docs)
+Ratings (/products/msculpt/ratings)
+What if Blender had one button that bakes displacement maps from multires, easily? And what if that same addon also gave you HD geometry, like in ZBrush, with baking included?
+This add-on does both.
+HD Geometry: sculpt high-res detail and bake it out. Hover the mesh and press Y to pick the HD region you want to work on. HD bakes are saved with a 0.5 midlevel and the suffix "bump".
+Everything is lossless. You can jump between HD regions as much as you want and no detail gets softened or lost along the way. HD data is saved to disk next to your .blend file, so you can save incremental HD versions separately and go back to an earlier one when you want.
+Multires displacement baking: bake regular displacement from your multires levels. You can set the midlevel and resolution, and combine several objects into the same map in one bake. These are saved with the suffix "displacement".
+All baking goes through Multiresolution. Both bake as 32-bit EXR and support UDIMs.
+Since the two maps are saved separately, you can combine them in your shader and decide how much of the HD detail should show, or amplify it if you want more.
+Watch the demo video (https://www.youtube.com/watch?v=LSeDw1O9WeU)
+Back to top
+Discover more products like this
+baking (/tags/baking) Multires (/tags/multires) udim (/tags/udim) displacement (/tags/displacement) hd geometry (/tags/hd-geometry) blender (/tags/blender) 3d (/tags/3d) sculpting (/tags/sculpting) blender addon (/tags/blender-addon)
+Seats:
+&minus;
++
+$5
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Published
+about 9 hours ago
+Blender Version
+5.2 - 5.3
+Extension Type
+Add-on
+License
+GPL (/page/gpl-license)
+Mattias Lind
+Visit Website (http://mattiaslind.com) See all items by this creator (/creators/mattias-lind)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#82f1f7f2f2edf0f6c2f1f7f2e7f0eaebf4e7efe3f0e9e7f6ace1edef)
+Made by the humans of Autotroph (https://autotroph.com)
