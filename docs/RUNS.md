@@ -3296,3 +3296,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-20 09:17 | build | Four relay hosts added (blogs.windows.com, apps.microsoft.com, superhivemarket.com and its support site)
 - 2026-11-20 12:06 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-11-20 16:07 | triage | notify owner dispatched: last run started 13:30 UTC, 2 h ago
+- 2026-11-20 17:15 | build | Spike microsoft-store-pwa-shelf done: parked — a sole trader's app must sit on the Store's Company account
+- 2026-11-20 17:15 | build | The agreement's own clause says so; that account wants a D-U-N-S number or business papers, a new verification
+- 2026-11-20 17:15 | build | Demand read from the Store's listing feed: 5 GB searches, 89 apps; one relevant paid app, £3.99, no rating
+- 2026-11-20 17:15 | build | Kept for the trigger: non-game apps may use their own checkout at 0 % fee; a web app is packaged from its URL
+- 2026-11-20 17:15 | build | Relay rounds ms-store-spike-2026-11-20 and -b (22 lines); idea parked in the exchange, no owner request
+- 2026-11-20 17:15 | build | Queued foundry relay-render-request-urls (3): a rendered shell page should name the data calls it made

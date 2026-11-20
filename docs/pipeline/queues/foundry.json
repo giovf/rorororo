@@ -1621,6 +1621,16 @@
       "score": 4,
       "status": "todo",
       "added": "2026-11-20"
+    },
+    {
+      "id": "relay-render-request-urls",
+      "title": "A RENDER line records which data calls the page made: `scripts/fetch-relay.mjs` keeps only a count in `rendered.requests`; add `rendered.data_requests` — the URL (query kept, capped at 300 chars), method, status and content-type of each XHR or fetch response whose content-type is JSON, at most 40 per page, same-host first — so a page that renders as a shell names its own listing API in meta.json. Update docs/relay/README.md (the 'stays a shell' paragraph) and the relay tests.",
+      "why": "Build 2026-11-20 (spike microsoft-store-pwa-shelf): the Microsoft Store search pages are web components, rendered to 1 kB of text over 204 requests, and the spike item told the reader to find the listing API in 'the rendered.requests list' — which is a number. The API was found by a guess that happened to be right (`/api/products/search`). Third shell of this kind after the Wix App Market (10-22) and the Notion gallery; each cost a relay round or a guess. Score 3 = saves one round per shell shelf, about two a month, ÷ 0.3 day.",
+      "effort_days": 0.3,
+      "proof": "a RENDER of https://apps.microsoft.com/search?query=invoice&hl=en-GB&gl=GB whose meta.json lists the /api/products/search call under rendered.data_requests; the relay tests cover the cap and the JSON filter",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-11-20"
     }
   ]
 }
