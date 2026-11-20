@@ -3309,3 +3309,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-20 17:48 | burn-down | Eight relay rounds (216 lines); six reads answered 429, so later rounds went 20 at a time
 - 2026-11-20 17:48 | burn-down | Blender's free extensions site bars Claude-named agents in robots.txt: one page read, host dropped
 - 2026-11-20 17:48 | burn-down | Idea parked in the exchange; trigger is a buyer asking for a Blender tool, no dated re-read
+- 2026-11-20 17:51 | burn-down | Stopping: 1 item done (Superhive spike, parked); night cap reached, the mileage log book spike is next
