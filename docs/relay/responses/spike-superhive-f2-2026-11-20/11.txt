@@ -1,0 +1,205 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/reference-remapper","name":"Reference Remapper","image":["https://assets.superhivemarket.com/store/product/264312/image/xlarge-5fbada115db7afe7627ca489ed38cc8e.png"],"description":"Preview object references, choose exactly what changes, and selectively retarget them to another object. Supports parenting, modifiers, constraints, drivers, and Geometry Nodes inputs.","mpn":"264312","brand":{"@type":"Thing","name":"Tesselune"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"7.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Masahiro Kikuchi"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Reference Remapper","item":"https://superhivemarket.com/products/reference-remapper"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/264312/image/xlarge-5fbada115db7afe7627ca489ed38cc8e.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/264312/image/xlarge-5fbada115db7afe7627ca489ed38cc8e.png
+meta description: Preview object references, choose exactly what changes, and selectively retarget them to another object. Supports parenting, modifiers, constraints, drivers, and Geometry Nodes inputs.
+meta og:url: https://superhivemarket.com/products/reference-remapper
+meta og:title: Reference Remapper
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Preview object references, choose exactly what changes, and selectively retarget them to another object. Supports parenting, modifiers, constraints, drivers, and Geometry Nodes inputs.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Reference Remapper
+meta twitter:description: Preview object references, choose exactly what changes, and selectively retarget them to another object. Supports parenting, modifiers, constraints, drivers, and Geometry Nodes inputs.
+meta twitter:domain: https://superhivemarket.com/products/reference-remapper
+meta og:image: https://assets.superhivemarket.com/store/product/264312/image/xlarge-5fbada115db7afe7627ca489ed38cc8e.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/264312/image/xlarge-5fbada115db7afe7627ca489ed38cc8e.png
+Reference Remapper - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Reference Remapper
+Tesselune (/creators/tesselune)
+in Interface (/categories/interface)
+https://assets.superhivemarket.com/store/product/264312/image/xlarge_og-a6f8da35e57b1ede141de7031ef2c246.png
+https://assets.superhivemarket.com/store/productimage/1342957/image/xlarge_og-9c0979971990b6ed54150f7921651ae9.png
+https://assets.superhivemarket.com/store/productimage/1342959/image/xlarge_og-e0a546565aaf184ee76857f2a948bf20.png
+https://assets.superhivemarket.com/store/productimage/1342958/image/xlarge_og-eaf8a701d6967a6e4de8d69987dd49e8.png
+https://assets.superhivemarket.com/store/productimage/1342961/image/xlarge_og-545ec69ca944a4263e1df3646bf9f53e.png
+https://assets.superhivemarket.com/store/productimage/1342960/image/xlarge_og-3f2e1c7d36d858c9d20221d7ccd00e72.png
+https://assets.superhivemarket.com/store/productimage/1342962/image/xlarge_og-bf3c889f5f8b4bab6803548d333cab36.png
+https://assets.superhivemarket.com/store/productimage/1342963/image/xlarge_og-b887102263be7844c2b3a2ca750f2136.png
+About (/products/reference-remapper)
+FAQ (/products/reference-remapper/faq)
+Documentation (/products/reference-remapper/docs)
+Ratings (/products/reference-remapper/ratings)
+Replace Object References Without Remapping Everything
+Reference Remapper lets you find references to one object, preview exactly what will change, and selectively retarget only the references you choose to another object.
+Instead of globally replacing every user of an object, you can review Parenting, Modifiers, Constraints, Drivers, Geometry Nodes inputs, and more before making the change.
+It fits directly into Blender's Object Properties workflow and leaves the source object itself intact.
+Why Reference Remapper Exists
+Blender can remap datablock users globally, but sometimes you do not want every reference to move to the same replacement.
+A single object may be used by a Boolean modifier, a constraint, a driver, a parent relationship, and a Geometry Nodes input at the same time.
+Reference Remapper gives you a preview of those references first, so you can decide which ones should move to the new object and which ones should stay where they are.
+The source object is not deleted. Only the selected reference targets are changed.
+See Supported References in One Preview
+Reference Remapper scans the selected source object and groups supported references by type.
+V1 supports:
+- Parenting
+- Modifiers
+- Object Constraints
+- Pose Bone Constraints
+- Driver targets
+- Geometry Nodes Modifier public Object inputs
+The Preview shows how many supported references were found and how many are currently selected for replacement.
+Choose Exactly What Changes
+You are not limited to an all-or-nothing replacement.
+Whole categories can be enabled or disabled, and individual reference slots can be toggled independently.
+This makes it possible to leave one relationship pointing to the original object while moving other references to the replacement.
+For example, you can replace Modifier and Constraint targets while leaving Parenting untouched.
+Replace Only the References You Select
+Once the Preview looks correct, use Replace Selected to retarget only the checked references.
+Unchecked references remain unchanged.
+Reference Remapper performs a fresh scan before applying the change, so a Preview that no longer matches the current scene is not silently applied.
+Review Potentially Risky Changes Before Applying
+Not every reference has the same consequences.
+Parenting can change object hierarchy, while Driver targets may depend on properties or data paths that do not exist on the replacement object.
+Reference Remapper keeps these cases visible instead of hiding them.
+- Parenting starts deselected by default.
+- Review states highlight references that deserve extra attention.
+- Read-only or unsupported changes are blocked rather than forced.
+- Parent replacement preserves world transform by default.
+Safe to Try, Easy to Undo
+A completed replacement is treated as a single Blender Undo step.
+If the result is not what you expected, one standard Ctrl+Z restores the previous reference state.
+The replacement process is also applied atomically: if a selected mutation cannot complete safely, the transaction is rolled back instead of intentionally leaving a partial replacement.
+Typical Workflow
+Watch Demo Video (https://youtu.be/7x8jDhYmUzY)
+1. Select the object whose references you want to replace.
+2. Choose the Replace With object.
+3. Click Preview Changes.
+4. Review the detected reference categories and individual slots.
+5. Enable only the references you want to retarget.
+6. Click Replace Selected.
+The original source object remains in the scene unless you choose to manage it separately.
+Works With Blender's Existing Reference System
+Reference Remapper does not create a separate reference system.
+It edits the existing Blender references used by Modifiers, Constraints, Drivers, Parenting, and supported Geometry Nodes inputs.
+That means the result remains ordinary Blender data after the replacement is complete.
+Who It Is For
+Reference Remapper is useful for:
+- Artists replacing temporary or outdated helper objects
+- Technical artists managing scenes with many object dependencies
+- Users working with Boolean, Armature, Lattice, or other object-based modifiers
+- Rigging and animation workflows that rely on Constraints or Driver targets
+- Geometry Nodes setups that expose Object inputs
+- Anyone who needs more control than a global remap
+Compatibility
+Runtime tested with:
+- Blender 4.5.13 LTS
+- Blender 5.0.1
+- Blender 5.1.2
+- Blender 5.2.1 LTS
+Reference Remapper 1.0.0 is designed for the Blender 4.5–5.2 API range represented by these tested versions.
+V1 Scope and Limitations
+Reference Remapper 1.0 focuses on Object → Object reference replacement.
+The following are not included in V1:
+- References inside the Geometry Nodes node tree itself, such as internal Object Info nodes
+- Collection reference remapping
+- Material remapping
+- Action remapping
+- Automatic Make Local
+- Automatic Library Override creation
+- Automatic deletion of the source object
+Geometry Nodes support applies to public Object inputs on the Geometry Nodes Modifier.
+Linked/read-only owners are not modified directly.
+A Focused Tool for Selective Retargeting
+Reference Remapper is intended for one specific job:
+Find where an object is referenced, choose exactly which references should change, and retarget them safely to another object.
+Back to top
+Discover more products like this
+constraints (/tags/constraints) object references (/tags/object-references) Scene Management (/tags/scene-management) geometry nodes (/tags/geometry-nodes) reference (/tags/reference) retarget (/tags/retarget) dependency (/tags/dependency) remap (/tags/remap) drivers (/tags/drivers) utility (/tags/utility) Workflow (/tags/workflow) modifiers (/tags/modifiers)
+Seats:
+&minus;
++
+$7
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Published
+about 2 months ago
+Blender Version
+4.5 - 5.2
+Extension Type
+Add-on
+Render Engine Used
+Cycles
+License
+GPL (/page/gpl-license)
+Tesselune
+See all items by this creator (/creators/tesselune)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#1f6c6a6f6f706d6b5f6c6a6f7a6d7776697a727e6d747a6b317c7072)
+Made by the humans of Autotroph (https://autotroph.com)
