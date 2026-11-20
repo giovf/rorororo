@@ -131,6 +131,7 @@ _Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10
 | 2026-11-17 | Daily check | 1 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 11-16: 0 impressions, 0 clicks, indexed 0/2, not: Crawled - currently not indexed ×2; sales: 0 keys |
 | 2026-11-18 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 11-17: 0 impressions, 0 clicks, indexed 0/2, not: Crawled - currently not indexed ×2; sales: 0 keys |
 | 2026-11-19 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 11-18: 0 impressions, 0 clicks, indexed 0/2, not: Crawled - currently not indexed ×2; sales: 0 keys |
+| 2026-11-20 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 11-19: 0 impressions, 0 clicks, indexed 0/1, not: Crawled - currently not indexed ×1, 1 inspection failed; sales: 0 keys |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
