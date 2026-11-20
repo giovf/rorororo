@@ -1,0 +1,16 @@
+GET https://support.superhivemarket.com/article/253-general-product-guidelines-for-uploading-products
+GET https://support.superhivemarket.com/article/277-creator-seller-policy
+GET https://support.superhivemarket.com/article/388-one-product-at-a-time-for-new-creators
+GET https://support.superhivemarket.com/article/15-value-added-tax-vat-handling
+GET https://support.superhivemarket.com/article/321-api-access-instructions
+GET https://support.superhivemarket.com/article/185-how-merchant-and-transaction-fees-are-calculated
+GET RAW https://superhivemarket.com/categories/addons?sort_date=desc
+GET https://superhivemarket.com/categories/addons?sort_date=desc&page=2
+GET https://superhivemarket.com/categories/addons?sort_date=desc&page=10
+GET https://superhivemarket.com/categories/addons?sort_date=desc&page=20
+GET https://superhivemarket.com/categories/addons?sort_date=desc&page=30
+GET https://superhivemarket.com/categories/addons?sort_sales=desc
+GET https://superhivemarket.com/products/msculpt
+GET https://superhivemarket.com/products/quicksnap
+GET https://superhivemarket.com/products/n-panel-sub-tabs
+GET https://superhivemarket.com/creators/mattias-lind
