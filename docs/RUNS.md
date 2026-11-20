@@ -3285,3 +3285,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-20 01:07 | triage | notify owner dispatched: last run started 22:24 UTC, 2 h 42 min ago
 - 2026-11-20 01:07 | watchdog | ci-minutes: 410 billed min/7d (~1757/mo; public, no cap) top: notify owner 89, gankdat 64, gankdat metrics 55
 - 2026-11-20 06:08 | triage | notify owner dispatched: last run started 03:41 UTC, 2 h 27 min ago
+- 2026-11-20 09:06 | triage | notify owner dispatched: last run started 06:06 UTC, 3 h ago
