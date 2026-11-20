@@ -1,0 +1,78 @@
+{
+  "request": "ms-store-spike-2026-11-20-b",
+  "fetched_at": "2026-11-20T17:13:40.793Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/whats-new-company-developer",
+      "fetched_at": "2026-11-20T17:13:38.177Z",
+      "status": 200,
+      "elapsed_ms": 375,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/whats-new-company-developer",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 16:52:39 GMT",
+        "etag": "\"Nlg9Y97HcjW22IvFWx6facNugME=\""
+      },
+      "file": "1.txt",
+      "bytes": 13447,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 64427
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/upload-app-packages",
+      "fetched_at": "2026-11-20T17:13:39.098Z",
+      "status": 200,
+      "elapsed_ms": 192,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/upload-app-packages",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 16:52:39 GMT",
+        "etag": "\"cZPp5zowN0wPuB0ysT/yQ2uxbRs=\""
+      },
+      "file": "2.txt",
+      "bytes": 8410,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 56823
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/payment-thresholds-methods-timeframes",
+      "fetched_at": "2026-11-20T17:13:39.808Z",
+      "status": 200,
+      "elapsed_ms": 160,
+      "final_url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/payment-thresholds-methods-timeframes",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 24 Aug 2026 16:02:31 GMT",
+        "etag": "\"TnLY7k62xJnrgzxF1zishsPs9LI=\""
+      },
+      "file": "3.txt",
+      "bytes": 8394,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 60385
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/support-info",
+      "fetched_at": "2026-11-20T17:13:40.483Z",
+      "status": 200,
+      "elapsed_ms": 299,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/support-info",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 16:52:39 GMT",
+        "etag": "\"r4qQ5gY27EiW7C+yR+tQ161bP5c=\""
+      },
+      "file": "4.txt",
+      "bytes": 5866,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53505
+    }
+  ]
+}
