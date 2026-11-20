@@ -1,0 +1,150 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/powersave","name":"PowerSave","image":["https://assets.superhivemarket.com/store/product/158409/image/xlarge-598cd95a4ec2f0efa2e249f2bfab56f9.png"],"description":"PowerSave is a tool intended to streamline saving and make saving itself more accessible, friendly and more artist streamlined.","mpn":"158409","brand":{"@type":"Thing","name":"bonjorno7"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"1.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Jorijn de Graaf"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"15"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"PowerSave","item":"https://superhivemarket.com/products/powersave"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/158409/image/xlarge-598cd95a4ec2f0efa2e249f2bfab56f9.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/158409/image/xlarge-598cd95a4ec2f0efa2e249f2bfab56f9.png
+meta description: PowerSave is a tool intended to streamline saving and make saving itself more accessible, friendly and more artist streamlined.
+meta og:url: https://superhivemarket.com/products/powersave
+meta og:title: PowerSave
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: PowerSave is a tool intended to streamline saving and make saving itself more accessible, friendly and more artist streamlined.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: PowerSave
+meta twitter:description: PowerSave is a tool intended to streamline saving and make saving itself more accessible, friendly and more artist streamlined.
+meta twitter:domain: https://superhivemarket.com/products/powersave
+meta og:image: https://assets.superhivemarket.com/store/product/158409/image/xlarge-598cd95a4ec2f0efa2e249f2bfab56f9.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/158409/image/xlarge-598cd95a4ec2f0efa2e249f2bfab56f9.png
+PowerSave - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+PowerSave
+bonjorno7 (/creators/bonjorno7)
+in Addons (/categories/addons)
+https://assets.superhivemarket.com/store/product/158409/image/original-24ede31621e4591cafd4a1775260de41.png
+https://www.youtube.com/embed/8C-N4BZjesA?start=0
+https://assets.superhivemarket.com/store/productimage/101682/image/original-38c26d54e8e76d6a5a4e599c015403a9.png
+https://superhive.448fc3f012d5808ec29efa9517610d34.r2.cloudflarestorage.com/cache/f244abce18291242368eed04a867781f.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=7b67f68c53e946d27ac08934af5bc546%2F20261120%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261120T174034Z&X-Amz-Expires=43200&X-Amz-SignedHeaders=host&X-Amz-Signature=069f1cc607cec9c2f32de2e41c30f76e3f9b73fc190f653e5fbdcd5a70376204
+About (/products/powersave)
+FAQ (/products/powersave/faq)
+Documentation (/products/powersave/docs)
+Ratings (/products/powersave/ratings)
+Introducing PowerSave
+PowerSave is a tool intended to streamline saving and make saving itself more accessible, friendly and more artist streamlined. Hit the powersave button and save instantly. No additional thought required. Well maybe a little.
+How to use PowerSave?
+After installing PowerSave and configuring the default folder you are good to go. In fact you can use it out the box without configuring anything but your PowerSaves will be saved to a temp location on your computer. In the 3D View options area you should see an icon for PowerSave and its color alone lets you know the status of your current scene.
+Red - Never saved.
+Grey - Saved but with unsaved changes.
+Green - Saved latest changes.
+Isn't save good enough?
+Yes. Save is perfectly fine. But our aim is a saving utility similar to what a sketchbook would offer. Autosave can be useful however occasionally the temp gets cleared which loses your work. What if you work autosaved in a special folder on another location. Then you'd lose nothing. Then you'd be PowerSaving.
+Why do I need this?
+- Sometimes you need to just save and restart with no dialog or additional typing. This tool has you covered.
+- Other times you might need to save to a sketch location without dialog and plans to revisit later.
+- It's free, quiet, and versatile.
+- I made this in collaboration with TeamC so it was a team effort further refining the quality and ensuring it works on most systems.
+What are the benefits of PowerSave?
+- Ability to save instantly similar to save states without dialog or interaction needed once installed.
+- Generic naming system capable of avoiding unintended overwrites ensuring progress is never lost.
+- 3D viewport notification icon nestled near the topbar for a visual awareness of save status always.
+- HardOps integration via the settings menu.
+- Built in autosave support with exposed prefs to make autosave internal more accessible.
+- Options to save automatically on startup, only via autosave interval or even via the PowerSave button.
+Does this support my OS?
+Should be safe on any OS. Let us know if any support issues occur.
+Why did you make this?
+Saving seemed to be able to be capable of refinement. I still love Ctrl + S. Just wanted to help it out a little.
+Open Source
+PowerSave is available for free on GitHub: https://github.com/bonjorno7/PowerSave
+Community
+Join the discord server: https://discord.com/invite/xSj7jhRqRQ
+Back to top
+Discover more products like this
+free (/tags/free) addon (/tags/addon) save (/tags/save) free addon (/tags/free-addon)
+Seats:
+&minus;
++
+$1
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Sales
+3100+
+Rating
+15 ratings (/products/powersave/ratings)
+Dev Fund Contributor
+Published
+over 6 years ago
+Blender Version
+2.8 - 5.2
+Extension Type
+Add-on
+License
+GPL (/page/gpl-license)
+bonjorno7
+Visit Website (https://jorijn.webflow.io) See all items by this creator (/creators/bonjorno7)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#15666065657a67615566606570677d7c63707874677e70613b767a78)
+Made by the humans of Autotroph (https://autotroph.com)

@@ -1,0 +1,190 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/layerpainter","name":"Layer Painter","image":["https://assets.superhivemarket.com/store/product/154086/image/xlarge-2352e4968e6e41e470cb933cafd18753.jpg"],"description":"Layer Painter is an addon for Blender 2.8x, that allows you to use a Layer-System for creating materials with painting and procedurals. The layers include masks, filters and much more.","mpn":"154086","brand":{"@type":"Thing","name":"Joshua Knauber"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"1.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Joshua Knauber"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4","reviewCount":"29"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Layer Painter","item":"https://superhivemarket.com/products/layerpainter"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/154086/image/xlarge-2352e4968e6e41e470cb933cafd18753.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/154086/image/xlarge-2352e4968e6e41e470cb933cafd18753.jpg
+meta description: Layer Painter is an addon for Blender 2.8x, that allows you to use a Layer-System for creating materials with painting and procedurals. The layers include masks, filters and much more.
+meta og:url: https://superhivemarket.com/products/layerpainter
+meta og:title: Layer Painter
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Layer Painter is an addon for Blender 2.8x, that allows you to use a Layer-System for creating materials with painting and procedurals. The layers include masks, filters and much more.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Layer Painter
+meta twitter:description: Layer Painter is an addon for Blender 2.8x, that allows you to use a Layer-System for creating materials with painting and procedurals. The layers include masks, filters and much more.
+meta twitter:domain: https://superhivemarket.com/products/layerpainter
+meta og:image: https://assets.superhivemarket.com/store/product/154086/image/xlarge-2352e4968e6e41e470cb933cafd18753.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/154086/image/xlarge-2352e4968e6e41e470cb933cafd18753.jpg
+Layer Painter - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Layer Painter
+Joshua Knauber (/creators/joshua-knauber)
+in Addons (/categories/addons)
+https://assets.superhivemarket.com/store/product/154086/image/original-3e1f6c7b8600ef9a5e102114061e4a6f.jpg
+https://www.youtube.com/embed/nMlgKx_25BU?start=0
+https://assets.superhivemarket.com/store/productimage/131291/image/original-ae57e8f1921fd333364141cabfec8042.jpg
+https://assets.superhivemarket.com/store/productimage/131289/image/original-dbfef3b143b4e7acf575bf2574c6beb2.jpg
+https://assets.superhivemarket.com/store/productimage/131290/image/original-48bd6fabc320ef4ce913ffee11ed256f.jpg
+About (/products/layerpainter)
+FAQ (/products/layerpainter/faq)
+Documentation (/products/layerpainter/docs)
+Ratings (/products/layerpainter/ratings)
+Layer Painter is now open source!
+Discord for more information (https://discord.com/invite/s9dawzV5JU)
+Open Source Version GitHub (https://github.com/joshuaKnauber/layer_painter)
+This is the legacy version of Layer Painter, it will not be updated anymore. If you still want to use this version you can but the open-source version will be updated from now on by the community.
+Layer Painter is an addon for Blender 2.82+, that allows you to use a Layer-System for creating materials with painting and procedurals. The layers include masks, filters and much more. Even though the addon is designed with a PBR workflow in mind, you can also use it for stylized painting.
+You can also use any texture site with Layer Painter. Even most of Extreme PBRs materials can be used as a base!
+[IMG]
+Aidy Burrows:
+" A much desired and much required set of PBR texturing tools, very impressive and pretty complex materials can be achieved without even entering a node graph once!! "
+[IMG] CG Matter (Caleb Mat hers):
+"Texture painting (PBR) maps in blender has quite frankly been a pain; LayerPainter gives blender a lot of the functionality you'd expect from a dedicated texturing program like Substance."
+Layer System instead of complex node systems
+Layer Painter adds a layer system which generates the node tree for you in the background. This means you can create complex materials much faster then if you were to set up your own node trees!
+The concept is of course similar to Substance Painter and similar apps, but Layer Painter is meant for simpler tasks. It allows you to have all the basics of this specialized software but right inside blender, meaning you don't need to switch between applications. The Eevee viewport can then give you realtime feedback for painting and editing materials.
+[IMG]
+The Interface is designed to allow you to quickly customize your workspace the way you want to work with the addon. You can use the build in workspace to quickly get you started, but you can also create your own.
+Basic Features
+[IMG]
+The layer stack allows you to add, move and group layers. You can hide channels, change blending modes and the opacity.
+You can also see what masks and filters are added to each channel.
+[IMG]
+The layers are based on the principled BDSFs PBR channels. You can add channels to a layer and then use values, textures or node groups for each channel.
+The settings offer multiple ways of adding textures including custom texture libraries and other import functions.
+Here you can also quickly create textures to paint on.
+[IMG]
+The mask system allows you to quickly add masks to your different channels. These can be hand painted, baked or procedural. You can also create custom mask node groups to perfectly support your workflow.
+[IMG]
+The filters allow you to quickly change things like the Hue of a texture. They can be customized the same way that masks can.
+There are also vector fx which allow for things like pixelating or bluring textures. This also includes a Anti-Tile effect to avoid repetition in textures.
+Baking
+You can use the addon to bake Ambient Occlusion and Bevel Masks. Those can then be used by masks. You can also bake a normal map based on the bevel shader and a normal map from a high poly mesh.
+Finally you can bake the entire material to PBR textures for further use in blender or other software.
+Links
+Documentation (https://joshuaknauber.github.io/layerpainter/getting_started/)
+Blenderartist thread (https://blenderartists.org/t/layer-painter-material-editing-with-layers-released/1141382)
+Discord (https://discord.com/invite/jCMMVsy)
+Changelog
+v1.3
+Full refactor of the entire addon
+Improved layer interface
+Added option to add custom channels
+Added channel presets
+Allow editing of the material nodes
+Add help information with right click
+Added filters and vectorfx for the layer channels and folders
+Improved filter layers
+Added duplicate for layers
+Added option to show layer settings in their folders
+New mask assets
+Added vertex paint for channels and mask textures
+Added brush preset pie menu
+Improved custom asset import and creation
+Improved texture assets
+Removed material layers
+Lots of bugfixes
+v1.2.1
+Added displacement channel
+Added shortcut to enable an eraser in texture paint mode (Ctrl+X)
+Added option to choose which maps to import from texture assets
+Added a preview for baking masks and bevel normal map
+Added option to keep the base material for materials with a principled bsdf
+Changed LayerPainter pause button to remove all unused groups
+Added proper blending for normal maps
+Renamed Diffuse channel to Albedo
+Added margin option to baking
+Added strength for normal maps
+Added texture list panel to material settings popover
+Improved baking for ao, bevel and bevel normal map
+Improved functionality of organize button in node editor
+Fixed missing textures when auto packing was enabled
+Fixed saving of textures in some cases
+Sync the active material with the material selected in LayerPainter
+Fixed problems with the Interface Splitter addon
+Back to top
+Discover more products like this
+spring21 (/tags/spring21) Texturing (/tags/texturing) baking (/tags/baking) uv (/tags/uv) Material (/tags/material) bats (/tags/bats) Shader (/tags/shader) texture (/tags/texture) Node (/tags/node) painting (/tags/painting) substance (/tags/substance) painter (/tags/painter) eevee (/tags/eevee) spring24 (/tags/spring24) addon (/tags/addon) 2.8 (/tags/28)
+Seats:
+&minus;
++
+$1
+Have questions about this product?
+Login to message (/login)
+Details
+Sales
+2400+
+Rating
+29 ratings (/products/layerpainter/ratings)
+Published
+almost 8 years ago
+Blender Version
+2.82, 2.83, 2.9
+License
+GPL (/page/gpl-license)
+Joshua Knauber
+See all items by this creator (/creators/joshua-knauber)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#becdcbceced1cccafecdcbcedbccd6d7c8dbd3dfccd5dbca90ddd1d3)
+Made by the humans of Autotroph (https://autotroph.com)

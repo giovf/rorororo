@@ -1,0 +1,145 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/rain-generator","name":"Baga Rain Generator","image":["https://assets.superhivemarket.com/store/product/180275/image/63f98be3bdb067542032cbfe370c288e.png"],"description":"Realistic rain generator for Blender based on Geometry Nodes","mpn":"180275","brand":{"@type":"Thing","name":"antoine bagattini"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"12.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"AnBaga"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"24"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Baga Rain Generator","item":"https://superhivemarket.com/products/rain-generator"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/180275/image/63f98be3bdb067542032cbfe370c288e.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/180275/image/63f98be3bdb067542032cbfe370c288e.png
+meta description: Realistic rain generator for Blender based on Geometry Nodes
+meta og:url: https://superhivemarket.com/products/rain-generator
+meta og:title: Baga Rain Generator
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Realistic rain generator for Blender based on Geometry Nodes
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Baga Rain Generator
+meta twitter:description: Realistic rain generator for Blender based on Geometry Nodes
+meta twitter:domain: https://superhivemarket.com/products/rain-generator
+meta og:image: https://assets.superhivemarket.com/store/product/180275/image/63f98be3bdb067542032cbfe370c288e.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/180275/image/63f98be3bdb067542032cbfe370c288e.png
+Baga Rain Generator - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Baga Rain Generator
+antoine bagattini (/creators/antoine-bagattini)
+in Presets (/categories/presets)
+https://assets.superhivemarket.com/store/product/180275/image/63f98be3bdb067542032cbfe370c288e.png
+https://www.youtube.com/embed/0JhYO-OLpIQ?start=0
+https://assets.superhivemarket.com/store/productimage/335041/image/fde688ce77553a26251a890a401634ab.jpg
+https://assets.superhivemarket.com/store/productimage/335113/image/2736bc3b1152a777f0e96f386ee7c03c.jpg
+https://assets.superhivemarket.com/store/productimage/335137/image/7e44c970b52212556a99ca957122640f.jpg
+https://assets.superhivemarket.com/store/productimage/335138/image/a8b9dd296ee2c0813cc6e8b778c05dca.jpg
+About (/products/rain-generator)
+FAQ (/products/rain-generator/faq)
+Documentation (/products/rain-generator/docs)
+Ratings (/products/rain-generator/ratings)
+https://blendermarket.com/products/bagapack-addon-bundle?ref=1209 https://blendermarket.com/products/bagapie-assets?ref=1209 https://blendermarket.com/products/bagaivy?ref=1209 https://blendermarket.com/products/rain-generator?ref=1209 https://blendermarket.com/products/bagastreet?ref=1209 https://blendermarket.com/products/bagabatch?ref=1209 https://blendermarket.com/products/baga-grove-evermotion?ref=1209 https://blendermarket.com/products/bagariver?ref=1209
+Only surfaces exposed to the rain are affected. Two rain distribution methods are available, one for smaller scenes (rain distribution based on the total surface area of the project =, more accurate), and the other for larger scenes (rain distribution is calculated per object =, faster).
+○ You can easily add rain to any material with our easy-to-use procedural rain shader generator.
+○ This add-on creates rain using geometry nodes; the previous version (which was not an add-on) is still available.
+○ The splashes, uses points, which Cycles can render in large quantities.
+○ You can add a rain shader to any material, and the add-on will apply it as an overlay to your existing material.
+○ By default, a shader is assigned to droplets and splashes, allowing you to partially simulate motion blur.
+○ Addon compatible with Blender 3.3 / 3.4 / 3.5 / 3.6 / 4.0
+This generator is designed to generate a large number of points with high performance. However, keep in mind that depending on your system, the assigned area, and the number of points, the generator may or may not be viewable in real time.
+○ Animation | Settings aren't physically accurate – they only provide good-looking rain.
+○ Motion Blur | The calculation time for motion blur will grow exponentially as the number of particles increases. You will not be able to render motion blur with rain. The vector pass may not be available.
+○ EEVEE | Point rendering is not supported by EEVEE (no splashes).
+○ Loops | Loop manage speed differently, so. creating short, slow-motion loops will be challenging. (this because the droplet must go through a full cycle (fall + impact) to complete a loop.)
+Made by
+Antoine Bagattini Instagram (https://www.instagram.com/antoinebagattini/) Twitter (https://twitter.com/BagattiniAntoi1)
+Laura Mercadal Instagram (https://www.instagram.com/mercadal_laura/?hl=en)
+You might also like
+BagaPie (https://blendermarket.com/products/bagapie-assets?ref=1209)
+BagaIvy Generator (https://blendermarket.com/products/bagaivy?ref=1209)
+Rain Generator (https://blendermarket.com/products/rain-generator?ref=1209)
+Support & contact
+Documentation (https://www.f12studio.fr/ivy-generator)
+Blender Artist (https://blenderartists.org/t/baga-ivy-generator-addon/1418418)
+Discord (https://discord.com/invite/YtagqdPW6G) https://blenderartists.org/t/baga-ivy-generator-addon/1418418
+Back to top
+Discover more products like this
+realistic (/tags/realistic) Water (/tags/water) rain generator (/tags/rain-generator) bcfm24 (/tags/bcfm24) storm (/tags/storm) Shader (/tags/shader) shower (/tags/shower) bfcm23 (/tags/bfcm23) summer24 (/tags/summer24) physics (/tags/physics) simulation (/tags/simulation) winter24 (/tags/winter24) drop (/tags/drop) droplet (/tags/droplet) bfcm22 (/tags/bfcm22) bcon22 (/tags/bcon22) procedural (/tags/procedural) rain (/tags/rain) summer23 (/tags/summer23) Generator (/tags/generator) geometry nodes (/tags/geometry-nodes) spring24 (/tags/spring24) loveblender (/tags/loveblender) wavefall (/tags/wavefall) splash (/tags/splash) nodes (/tags/nodes) Fluid (/tags/fluid) wave (/tags/wave) spring23 (/tags/spring23)
+Seats:
+&minus;
++
+$12
+Have questions about this product?
+Login to message (/login)
+Details
+Sales
+5800+
+Rating
+24 ratings (/products/rain-generator/ratings)
+Dev Fund Contributor
+Published
+about 4 years ago
+Blender Version
+3.2 - 5.2
+Render Engine Used
+Cycles
+License
+GPL (/page/gpl-license)
+antoine bagattini
+Visit Website (https://www.f12studio.fr/bagapie) See all items by this creator (/creators/antoine-bagattini)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#d0a3a5a0a0bfa2a490a3a5a0b5a2b8b9a6b5bdb1a2bbb5a4feb3bfbd)
+Made by the humans of Autotroph (https://autotroph.com)

@@ -1,0 +1,161 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/measurix","name":"Measurix — CAD-Grade Measurement \u0026 Technical Drawing for Blender","image":["https://assets.superhivemarket.com/store/product/259585/image/xlarge-8a1c84857ea8a9478eb9d42f2327e42f.png"],"description":"CAD-grade measurements, live dimensions, GD\u0026T annotations, and technical drawing exports directly inside Blender.","mpn":"259585","brand":{"@type":"Thing","name":"Dynos"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"20.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Dynos"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Measurix — CAD-Grade Measurement \u0026 Technical Drawing for Blender","item":"https://superhivemarket.com/products/measurix"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/259585/image/xlarge-8a1c84857ea8a9478eb9d42f2327e42f.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/259585/image/xlarge-8a1c84857ea8a9478eb9d42f2327e42f.png
+meta description: CAD-grade measurements, live dimensions, GD&T annotations, and technical drawing exports directly inside Blender.
+meta og:url: https://superhivemarket.com/products/measurix
+meta og:title: Measurix — CAD-Grade Measurement & Technical Drawing for Blender
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: CAD-grade measurements, live dimensions, GD&T annotations, and technical drawing exports directly inside Blender.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Measurix — CAD-Grade Measurement & Technical Drawing for Blender
+meta twitter:description: CAD-grade measurements, live dimensions, GD&T annotations, and technical drawing exports directly inside Blender.
+meta twitter:domain: https://superhivemarket.com/products/measurix
+meta og:image: https://assets.superhivemarket.com/store/product/259585/image/xlarge-8a1c84857ea8a9478eb9d42f2327e42f.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/259585/image/xlarge-8a1c84857ea8a9478eb9d42f2327e42f.png
+Measurix — CAD-Grade Measurement & Technical Drawing for Blender - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Measurix — CAD-Grade Measurement & Technical Drawing for Blender
+Dynos (/creators/dynos)
+in Modeling (/categories/modeling)
+https://assets.superhivemarket.com/store/product/259585/image/xlarge_og-70a5d3ef5efbc0931c56a1e25f4277b9.png
+https://assets.superhivemarket.com/store/productimage/1390093/image/xlarge_og-714bb9cf240957f1aa96129aad24f548.png
+https://assets.superhivemarket.com/store/productimage/1390095/image/xlarge_og-7a9761a4206e6092d28f37c641694f3f.png
+https://assets.superhivemarket.com/store/productimage/1390097/image/xlarge_og-8dd10486f46f0bccd870b71eaf944537.png
+https://assets.superhivemarket.com/store/productimage/1390099/image/xlarge_og-e69cc5d28a43abd36d7f81e16bebd1cd.png
+https://assets.superhivemarket.com/store/productimage/1390101/image/xlarge_og-25c67d6d07f4883398eeb413027d09bb.png
+About (/products/measurix)
+FAQ (/products/measurix/faq)
+Documentation (/products/measurix/docs)
+Ratings (/products/measurix/ratings)
+MEASURIX 1.3.0 | BLENDER 4.2+
+Measure and document your models in Blender
+Create dimensions and annotations in the 3D Viewport, then export drawing sheets and tabular reports from your scene.
+Measurix adds a technical measurement and drawing workflow to Blender. Create dimensions from selected mesh elements or objects, organize their appearance, add callouts, and prepare camera-based drawing sheets without moving your model to another application.
+When a measurement is created from supported mesh vertices or faces, Measurix can retain references to that geometry so the measurement can update as the source geometry changes. Results depend on the measurement type and the source selection; review important dimensions after substantial topology edits.
+Measurement tools
+Linear: straight-line distance between points; in Edit Mode, selected edges can each produce a dimension.
+Axial: distance components along X, Y, and Z.
+Angular: angle from a three-vertex selection, two selected edges, or two selected faces.
+Radial: radius or diameter from supported circular edge selections.
+Arc length: length along a selected edge chain.
+Area and perimeter: measurements of selected mesh faces.
+Volume: volume measurement for a closed mesh object.
+Centerline / midpoint: midpoint annotations and related dimension tools.
+Auto Measure: chooses a measurement operation based on the current selection.
+Additional workflows include continuous and baseline measurement, ordinate dimensions from the 3D Cursor, object XYZ bounds, bolt-circle callouts, dimension chains, and delta/tolerance-stack analysis.
+Units, styles, and annotations
+Metric and imperial units, optional dual-unit display, and adjustable decimal precision.
+Symmetric and deviation tolerance fields, nominal values, reference dimensions, and dimension locking.
+Dimension styles for line and text appearance, arrowheads, offsets, and related drawing settings.
+Notes, leaders, datum markers, GD&T frames, surface-finish symbols, weld symbols, and BOM balloons.
+Snapping is enabled by default. Snap options are available in the collapsed Advanced section of the Measurix panel.
+Drawing sheets and reports
+Export camera-based drawing sheets as SVG, PDF, or JPG . A sheet can include shaded and line-drawing views, dimensions, a title block, and—when configured—a section view with hatch. Use one sheet per camera or arrange cameras in a grid. Batch export is available for scene cameras.
+Measurix also exports CSV dimension/QC reports , BOM CSV , and hole or feature coordinate tables . Drawing Readiness checks report setup items to review before drawing export; they do not modify the scene.
+Quick start
+Install the Measurix ZIP from Blender Preferences using Install from Disk , then enable the add-on.
+In the 3D Viewport, press N and open the Measurix tab.
+Set the scene units and precision. In Edit Mode, select the vertices, edges, or faces required for the chosen measurement and click its button.
+For a drawing-sheet export, add and frame a camera, set the sheet options, and choose SVG, PDF, or JPG in the Export section.
+Compatibility and license
+Requires Blender 4.2 or newer. Measurix is distributed under GPL-3.0-or-later and includes its readable Python source. File access is used to write exports to a location you choose. No separate service or license server is required.
+Note: Measurix creates measurement and drawing aids inside Blender; it is not a substitute for independent inspection, certified metrology equipment, or engineering review. Verify critical values and exported documents for your intended use.
+Back to top
+Discover more products like this
+measure (/tags/measure) engineering (/tags/engineering) precision (/tags/precision) gd&t (/tags/gdt) industrial design (/tags/industrial-design) architectural visualization (/tags/architectural-visualization) drafting (/tags/drafting) measurement (/tags/measurement) cad (/tags/cad) manufacturing (/tags/manufacturing)
+Single Seat
+A commercial-use license for one user. Ideal for freelancers, independent artists, and individual professionals.
+$20
+$25
+10 Seats
+A commercial-use license for up to 10 users within one team or organization. Ideal for small studios and collaborative teams.
+$79.20
+$99
+Seats:
+&minus;
++
+$20
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Published
+16 days ago
+Blender Version
+4.4 - 5.2
+Extension Type
+Add-on
+Render Engine Used
+Cycles, Eevee
+License
+GPL (/page/gpl-license)
+Dynos
+See all items by this creator (/creators/dynos)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#23505653534c51576350565346514b4a55464e42514846570d404c4e)
+Made by the humans of Autotroph (https://autotroph.com)

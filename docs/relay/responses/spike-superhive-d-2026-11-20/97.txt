@@ -1,0 +1,285 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/physics-dropper","name":"Physics Dropper","image":["https://assets.superhivemarket.com/store/product/173735/image/b11f83e34577a76337c2bd39560bdf77.jpg"],"description":"Drop all selected objects for placement simply thanks to blenders physic engine to place objects chaotically.","mpn":"173735","brand":{"@type":"Thing","name":"Elin"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"4.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Elin Höhler"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"43"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Physics Dropper","item":"https://superhivemarket.com/products/physics-dropper"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/173735/image/b11f83e34577a76337c2bd39560bdf77.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/173735/image/b11f83e34577a76337c2bd39560bdf77.jpg
+meta description: Drop all selected objects for placement simply thanks to blenders physic engine to place objects chaotically.
+meta og:url: https://superhivemarket.com/products/physics-dropper
+meta og:title: Physics Dropper
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Drop all selected objects for placement simply thanks to blenders physic engine to place objects chaotically.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Physics Dropper
+meta twitter:description: Drop all selected objects for placement simply thanks to blenders physic engine to place objects chaotically.
+meta twitter:domain: https://superhivemarket.com/products/physics-dropper
+meta og:image: https://assets.superhivemarket.com/store/product/173735/image/b11f83e34577a76337c2bd39560bdf77.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/173735/image/b11f83e34577a76337c2bd39560bdf77.jpg
+Physics Dropper - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Physics Dropper
+Elin (/creators/elin)
+in Modeling (/categories/modeling)
+https://assets.superhivemarket.com/store/product/173735/image/b11f83e34577a76337c2bd39560bdf77.jpg
+About (/products/physics-dropper)
+FAQ (/products/physics-dropper/faq)
+Documentation (/products/physics-dropper/docs)
+Ratings (/products/physics-dropper/ratings)
+═════════════════════════════════════════════════════════════════════
+PHYSICS DROPPER - Easy Rigidbody & Cloth Physics Simulation for Blender
+═════════════════════════════════════════════════════════════════════
+Transform
+complex physics simulations into simple one-click operations. Physics
+Dropper makes professional-quality rigid body and cloth simulations
+accessible to everyone - from beginners to advanced users.
+Stop wrestling with Blender's physics settings. Physics Dropper gives you:
+✓ ONE-CLICK PHYSICS SETUP - Just select, press V, and watch it work
+✓ MATERIAL PRESETS - Cotton, Denim, Leather, Rubber, Silk - perfectly tuned
+✓ INTERACTIVE FORCE FIELDS - Place forces in real-time with mouse and scroll wheel
+✓ HIGH-POLY OPTIMIZATION - Automatic proxy creation for heavy meshes
+✓ EARTHQUAKE EFFECTS - Add procedural shake to any simulation
+✓ SMART BAKING - Convert physics to keyframes with one click
+✓ COLLECTION SUPPORT - Apply physics to entire collections instantly
+You can grab the full version HERE (https://github.com/Ladypoly/physics_dropper/releases/download/v1.3.2/physics_dropper_1.3.2.zip) https://github.com/Ladypoly/Serpens-Bledner-Addons/blob/main/PhysicsDropper/physics_dropper_1.1.3_free.zip?raw=true for free.
+But if you are in a donation mood, and you like to support me and the Blender development fund, then you can buy the addon. 😊
+═════════════════════════════════════════════════════════════════════
+KEY FEATURES
+═════════════════════════════════════════════════════════════════════
+🎯 RIGID BODY PHYSICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Quick Setup: Apply active or passive physics with a single click
+• 8 Collision Shapes: Convex Hull, Mesh, Box, Sphere, Capsule, Cylinder, Cone, Compound
+• Fine-Tuned Control: Mass, friction, bounciness, damping, collision margins
+• Proxy System: Automatic voxel remeshing or decimation for high-poly objects
+• Performance: Optimized for both real-time preview and final rendering
+🌍 EARTHQUAKE SYSTEM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Procedural World Shake: Dynamic motion for all active physics objects
+• Per-Axis Control: Enable/disable X, Y, Z independently
+• Adjustable Intensity: 0-100% for subtle vibrations to extreme chaos
+• Non-Destructive: Uses F-curve modifiers - easily editable
+• Bake-Ready: Preserves in final keyframe baking
+🧵 CLOTH SIMULATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Material Presets: Pre-configured settings for realistic fabric behavior
+- Cotton: General purpose, natural drape
+- Denim: Stiff, heavy fabric
+- Leather: Thick, resistant material
+- Rubber: Stretchy, elastic behavior
+- Silk: Light, flowing, luxurious
+• Advanced Controls:
+- Stiffness: Tension, compression, shear, and bending
+- Internal Springs: Soft body-like volume preservation
+- Pressure: Perfect for inflatable objects (balloons, cushions)
+- Self-Collision: Prevents cloth from passing through itself
+- Air Viscosity: Natural air resistance
+- Collision Fatten: Automatic thickness for collision objects
+⚡ INTERACTIVE FORCE FIELDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Modal Force Mode (F key): Revolutionary real-time force placement
+- Move mouse to position in 3D space
+- Scroll wheel to adjust force radius
+- Ctrl+Click for precision surface snapping
+- Visual sphere shows force area
+💾 SMART BAKING SYSTEM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Intelligent Range: Only bakes up to current timeline position
+• Preserves Effects: Keeps earthquake and force field results
+• Auto Cleanup: Removes physics modifiers, keeps keyframes
+• Workflow: Play → Pause → Bake → Done
+🎛️ COLLECTION INSTANCE SUPPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Apply physics to entire collections at once
+• Perfect for scattered objects, particle replacements, geometry nodes
+• Maintains hierarchy and organization
+• Mix active and passive objects intelligently
+═════════════════════════════════════════════════════════════════════
+KEYBOARD SHORTCUTS
+═════════════════════════════════════════════════════════════════════
+V → Apply physics to selection
+Shift+V → Finalize and bake simulation
+F → Enter interactive force field mode
+All shortcuts are fully customizable in Blender Preferences.
+═════════════════════════════════════════════════════════════════════
+TIPS & BEST PRACTICES
+═════════════════════════════════════════════════════════════════════
+PERFORMANCE:
+✓ Enable proxy for meshes over 10,000 polygons
+✓ Start with low substeps (3-5) for preview
+✓ Increase quality only for final render
+✓ Bake long simulations to keyframes
+STABILITY:
+✓ Use Split Impulse to reduce jittering
+✓ Increase Solver Iterations if objects pass through
+✓ Add more Substeps for fast-moving objects
+✓ Start with low force values, increase gradually
+CLOTH TIPS:
+✓ Always have collision objects (floor, body, etc.)
+✓ Enable Self Collision for complex folds
+✓ Use Pin Group (vertex group) to anchor cloth edges
+✓ Increase Collision Quality if penetration occurs
+═════════════════════════════════════════════════════════════════════
+INSTALLATION
+═════════════════════════════════════════════════════════════════════
+1. Download physics_dropper.zip
+2. Open Blender → Edit → Preferences → Extensions
+3. Click "Install from Disk"
+4. Select downloaded ZIP file
+5. Enable "Physics Dropper"
+6. Access from 3D Viewport sidebar (press N) → PhyDrop tab
+Done! Start simulating in seconds.
+═════════════════════════════════════════════════════════════════════
+FINAL NOTES
+═════════════════════════════════════════════════════════════════════
+Physics Dropper is designed with one goal: place those fricking assets quickly!
+But at the end it developed into so much more.
+Whether you're dropping a thousand objects (if you PC can handle that), draping silk over furniture, Physics Dropper handles it with ease.
+Stop fighting with physics settings. Start creating.
+Made with ❤️ for the Blender community.
+═════════════════════════════════════════════════════════════════════
+Questions? Feature requests? Found a bug?
+Just send me a message or write an email at [email protected] (/cdn-cgi/l/email-protection)
+═════════════════════════════════════════════════════════════════════
+VERSION HISTORY
+═════════════════════════════════════════════════════════════════════
+Version 1.4.1 (Current)
+• Rigid bodies already on your objects are saved, removed for a clean setup, and
+restored exactly on Apply or Reset
+• Drops survive a save, a reload, an undo or a crash - nothing is left welded to
+your objects, and a file saved mid-simulation reopens ready to Apply
+• Generated colliders no longer inherit stray settings from the meshes they were
+built from, which could produce a collider that collided with nothing
+• New "Clear All Rigid Bodies" option in World Settings
+• Exit Drop Mode now cleans up instead of leaving the collider behind
+• Scenes that do not start at frame 1 keep their frame range
+• A failed Drop rolls the scene back instead of leaving it stuck in drop mode
+• Cloth: rigid bodies in the scene no longer keep falling during a cloth drop -
+they are saved, frozen and restored just like in a rigidbody drop
+• Cloth: collision already on the collider sources no longer silently overrides
+your World Collision Settings
+• The Colliders selector now sits directly above the Drop button in both modes
+• Fixed: the Remove Simple Force button never appeared
+• Blender 4.2 - 5.2 compatibility
+Version 1.4.0
+• Added a Colliders selector (Auto / List / None)
+• Collider list with Add Selected / Add Collection / Remove / Select / Clear
+• Hidden objects and objects in excluded collections usable as colliders,
+without ever being unhidden
+• Current collider mode shown above the Drop button
+• Drop warns when no collider will be generated and nothing is collidable
+Version 1.3.0
+• Migrated to Blender 4.5+ extension format
+• Added collection instance support for physics
+• Enhanced force mode with Ctrl+Click surface snapping
+• Improved keyframe baking system
+• Fixed proxy setting bug for cloth collisions
+• Performance optimizations
+• Blender 4.5 - 5.0 compatibility
+• Various bug fixes
+1.1.9
+- Replace bake all to with bake current to cache
+- optimizations
+1.1.8
+- Added support for baking
+- Added forcefield
+1.1.0
+- Added Cloth dropping
+- Added Earthquake mode
+- Added Highpoly Proxy generation system
+1.0.4
+- Added rigid body World Settings
+1.0.3
+- Added Shortkey Setting in Preferences
+Known issues:
+- Custom Shortkeys are not saved between sessions.
+Back to top
+Discover more products like this
+dump (/tags/dump) gravity (/tags/gravity) place (/tags/place) gravity collider physics (/tags/gravity-collider-physics) physical (/tags/physical) dumping (/tags/dumping) position (/tags/position) stack (/tags/stack) fall (/tags/fall) physic (/tags/physic) stacking (/tags/stacking) drop (/tags/drop)
+Seats:
+&minus;
++
+$4
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Sales
+3300+
+Rating
+43 ratings (/products/physics-dropper/ratings)
+Dev Fund Contributor
+Published
+almost 5 years ago
+Blender Version
+4.2 - 5.2
+Extension Type
+Add-on
+License
+GPL (/page/gpl-license)
+Elin
+Visit Website (https://sketchfab.com/ElinHohler) See all items by this creator (/creators/elin)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#a6d5d3d6d6c9d4d2e6d5d3d6c3d4cecfd0c3cbc7d4cdc3d288c5c9cb)
+Made by the humans of Autotroph (https://autotroph.com)

@@ -1,0 +1,152 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/round-inset","name":"Round Inset","image":["https://assets.superhivemarket.com/store/product/179029/image/348eb817ea3052e596ade4c3e1ecca5f.jpg"],"description":"Round Inset is a handy tool for Inset face with 100% original round corners. ","mpn":"179029","brand":{"@type":"Thing","name":"KushiroCG"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"8.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Kushiro"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4","reviewCount":"15"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Round Inset","item":"https://superhivemarket.com/products/round-inset"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/179029/image/348eb817ea3052e596ade4c3e1ecca5f.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/179029/image/348eb817ea3052e596ade4c3e1ecca5f.jpg
+meta description: Round Inset is a handy tool for Inset face with 100% original round corners.
+meta og:url: https://superhivemarket.com/products/round-inset
+meta og:title: Round Inset
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Round Inset is a handy tool for Inset face with 100% original round corners.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Round Inset
+meta twitter:description: Round Inset is a handy tool for Inset face with 100% original round corners.
+meta twitter:domain: https://superhivemarket.com/products/round-inset
+meta og:image: https://assets.superhivemarket.com/store/product/179029/image/348eb817ea3052e596ade4c3e1ecca5f.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/179029/image/348eb817ea3052e596ade4c3e1ecca5f.jpg
+Round Inset - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Round Inset
+KushiroCG (/creators/kushirocg)
+in Modeling (/categories/modeling)
+https://assets.superhivemarket.com/store/product/179029/image/348eb817ea3052e596ade4c3e1ecca5f.jpg
+https://assets.superhivemarket.com/store/productimage/322246/image/7948314ed21dbd9c689f51ba03d8f537.jpg
+About (/products/round-inset)
+FAQ (/products/round-inset/faq)
+Documentation (/products/round-inset/docs)
+Ratings (/products/round-inset/ratings)
+Round Inset is a handy tool for Inset face with 100% original round corners.
+Blender's built-in Inset tool:
+Round Inset result:
+You can bevel it nicely after inset.
+Round Inset work nicely with strange shape too
+You can define the corners to be kept by setting a threshold value (on the Left-bottom menu). The tool will inset the face with original corner shapes.
+You can also use the Scaling setting to fine-tune the result. It can then use bevel to create nice round surface.
+Prevent Overlapping
+Another important ability of this tool is creating inset without corners overlapping. It works for any faces. For faces without round corners, just use the tool and set the "Threshold" parameter to zero.
+Current limitation : Works for individual face, not connected region yet.
+Update
+Version 2.1.1
+Fixed a mistake for installation
+Version 2.1.0
+Added the Merge option for merging collapsed vertices
+Version 2.0.0, 2.0.1
+Added "Prevent overlap" option! It will try to protect the corners from overlapping.
+This feature works for "normal" face too (faces without any "round corner").
+Version 1.1.0
+Added scaling option for corners. Now you can change the shape of corners easily.
+Usage
+To use the tool, please switch to Blender's Edit mode, select a face, then right-click in the 3D view port.
+Choose "Round Inset" at the bottom of the pop-up context menu.
+The tool will inset the selected face, then you can change the settings in the Left-Bottom menu on the screen.
+Inset Size : The amount to inset
+Size Threshold : This is important. It defines the "corners" and "long edges".
+The tool will keep the size of all corners and shrink the long edges. For larger mesh, please increase the threshold to "cover" the corners.
+Scale of corners : It scale the corners
+Merge Vertices : Auto merge the collapsed vertices into one
+Merge Distance : The distance for merging. You can increase the distance for some special results (eg: merging nearby corners together)
+Hope that you enjoy the tool : )
+You can find me on twitter or email.
+https://www.kushirocg.com (http://kushirocg.com/)
+Back to top
+Discover more products like this
+topology (/tags/topology) bevel (/tags/bevel) bfcm24 (/tags/bfcm24) spring24 (/tags/spring24) inset (/tags/inset) summer24 (/tags/summer24) addon (/tags/addon) loveblender (/tags/loveblender) winter24 (/tags/winter24)
+Seats:
+&minus;
++
+$8
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Sales
+2600+
+Rating
+15 ratings (/products/round-inset/ratings)
+Dev Fund Contributor
+Published
+over 4 years ago
+Blender Version
+2.83 - 5.2
+Extension Type
+Add-on
+License
+GPL (/page/gpl-license)
+KushiroCG
+Visit Website (https://www.kushirocg.com) See all items by this creator (/creators/kushirocg)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#5f2c2a2f2f302d2b1f2c2a2f3a2d3736293a323e2d343a2b713c3032)
+Made by the humans of Autotroph (https://autotroph.com)

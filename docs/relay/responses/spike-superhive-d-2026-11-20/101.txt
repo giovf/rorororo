@@ -1,0 +1,164 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/pivot-transform","name":"Pivot Transform 5 + Gizmo/Save 3D Cursor","image":["https://assets.superhivemarket.com/store/product/155403/image/xlarge-db2da46563ae0b5abc45cb7f8f9f4916.png"],"description":"Change the pivot (origin) position of the object and the 3D cursor.","mpn":"155403","brand":{"@type":"Thing","name":"Max Derksen"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"15.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Max Derksen"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4","reviewCount":"38"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Pivot Transform 5 + Gizmo/Save 3D Cursor","item":"https://superhivemarket.com/products/pivot-transform"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/155403/image/xlarge-db2da46563ae0b5abc45cb7f8f9f4916.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/155403/image/xlarge-db2da46563ae0b5abc45cb7f8f9f4916.png
+meta description: Change the pivot (origin) position of the object and the 3D cursor.
+meta og:url: https://superhivemarket.com/products/pivot-transform
+meta og:title: Pivot Transform 5 + Gizmo/Save 3D Cursor
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Change the pivot (origin) position of the object and the 3D cursor.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Pivot Transform 5 + Gizmo/Save 3D Cursor
+meta twitter:description: Change the pivot (origin) position of the object and the 3D cursor.
+meta twitter:domain: https://superhivemarket.com/products/pivot-transform
+meta og:image: https://assets.superhivemarket.com/store/product/155403/image/xlarge-db2da46563ae0b5abc45cb7f8f9f4916.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/155403/image/xlarge-db2da46563ae0b5abc45cb7f8f9f4916.png
+Pivot Transform 5 + Gizmo/Save 3D Cursor - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Pivot Transform 5 + Gizmo/Save 3D Cursor
+Max Derksen (/creators/derksen)
+in Animation (/categories/animation-scripts-and-addons)
+https://assets.superhivemarket.com/store/product/155403/image/xlarge_og-7748687db2f8f7d0681e4294567ba627.png
+https://www.youtube.com/embed/cgtuB3SAMbw?start=0
+https://assets.superhivemarket.com/store/productimage/120578/image/original-ce7c9abc29c516c556c59fd2b47afd41.png
+https://assets.superhivemarket.com/store/productimage/120592/image/original-20b60cdc1c8b2bc6d2a07831d83e01a7.png
+https://assets.superhivemarket.com/store/productimage/120583/image/original-8319fa888c54428e82232e64d4b8d495.png
+https://assets.superhivemarket.com/store/productimage/120834/image/original-c4fe68ccec934dc72e65b01aeb4900ba.png
+https://assets.superhivemarket.com/store/productimage/120882/image/original-0f15f7cf89943aa2d783522ec2bb3a67.png
+About (/products/pivot-transform)
+FAQ (/products/pivot-transform/faq)
+Documentation (/products/pivot-transform/docs)
+Ratings (/products/pivot-transform/ratings)
+This addon helps you change the position of the pivot point as needed. You can align it to the normals of the desired polygon, rotate and move it, or place it in the center of the object and the 3d cursor. You can use BBox to align to the extreme positions. Save position and rotation in a separate panel. The addon brings all the necessary features to the fore, for your convenience.
+How often have you had to change the position of your object relative to another, change the amount of opening the lid, door, and so on? Now you can do it in a couple of clicks. The addon is fully integrated into the blender ecosystem and follows all the basic principles of the environment.
+Documentation on GitBook (https://max-derksen.gitbook.io/pivot-transform/)
+Functions:
+- Transform
+- Pivot Drop
+- Pivot Flow
+- Mesh To Pivot(standard)
+- Pivot To Bottom
+- BBox
+- Pivot To Select
+- Pivot Apply(Panel)
+- Pivot Save(Panel)
+- Pivot To 3D Cursor(standard)
+- Pivot To Center Of Mesh
+- Pivot To Active (With align from axis)
+Transform:
+This function allows you to improve the use of the standard transformation function.
+Pivot Flow:
+A function that implements a similar approach to working with a pivot to Maya.
+Pivot Drop:
+Fast, the function of moving the pivot aligned to the selected items.
+Pivot To Bottom:
+Move the pivot to the bottom of the object.
+BBox:
+Moving the pivot to BBox points. You can use this function to find the endpoints of selected objects.
+Pivot To Select:
+Move the pivot through the selected elements, with the ability to align with the normals.
+Pivot Apply(Panel):
+Applying a pivot with the ability to use it from edit mode.
+Pivot Save(Panel):
+Save the position and rotation of the pivot in the panel, with the possibility of applying a separate rotation or position. Thanks Blenderboi (https://blendermarket.com/creators/blenderboi) for help in implementation.
+3D Cursor Save(Panel):
+Back to top
+Discover more products like this
+transformation (/tags/transformation) loveblender (/tags/loveblender) pivot (/tags/pivot) hard surface (/tags/hard-surface) surfacing (/tags/surfacing) maya (/tags/maya) pie (/tags/pie) pie menu (/tags/pie-menu) transform (/tags/transform) translate (/tags/translate) rotation (/tags/rotation) move (/tags/move) origin (/tags/origin)
+Studio
+License for a studio of up to 10 people
+$100
+Standard
+Individual License
+$14.99
+Seats:
+&minus;
++
+$100
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Sales
+2600+
+Rating
+38 ratings (/products/pivot-transform/ratings)
+Published
+over 7 years ago
+Blender Version
+3.0 - 5.2
+Extension Type
+Add-on
+Render Engine Used
+Arnold, Blender-Internal, Blender-Game-Engine, Cycles, Eevee, Freestyle, Luxrender, Mental-Ray, Octane, Vray, Yafaray
+License
+GPL (/page/gpl-license)
+Max Derksen
+Visit Website (https://www.artstation.com/derksen) See all items by this creator (/creators/derksen)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#30434540405f4244704345405542585946555d51425b55441e535f5d)
+Made by the humans of Autotroph (https://autotroph.com)

@@ -1,0 +1,158 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/auto-rig-pro-quick-rig","name":"Auto-Rig Pro: Quick Rig","image":["https://assets.superhivemarket.com/store/product/161882/image/6cd57bacdf890691c81904aa7fe63256.jpg"],"description":"Auto rigging character tool for Blender","mpn":"161882","brand":{"@type":"Thing","name":"Artell"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"12.50","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Artell"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"32"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Auto-Rig Pro: Quick Rig","item":"https://superhivemarket.com/products/auto-rig-pro-quick-rig"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/161882/image/6cd57bacdf890691c81904aa7fe63256.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/161882/image/6cd57bacdf890691c81904aa7fe63256.jpg
+meta description: Auto rigging character tool for Blender
+meta og:url: https://superhivemarket.com/products/auto-rig-pro-quick-rig
+meta og:title: Auto-Rig Pro: Quick Rig
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Auto rigging character tool for Blender
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Auto-Rig Pro: Quick Rig
+meta twitter:description: Auto rigging character tool for Blender
+meta twitter:domain: https://superhivemarket.com/products/auto-rig-pro-quick-rig
+meta og:image: https://assets.superhivemarket.com/store/product/161882/image/6cd57bacdf890691c81904aa7fe63256.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/161882/image/6cd57bacdf890691c81904aa7fe63256.jpg
+Auto-Rig Pro: Quick Rig - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Auto-Rig Pro: Quick Rig
+Artell (/creators/artell)
+in Addons (/categories/addons)
+https://assets.superhivemarket.com/store/product/161882/image/6cd57bacdf890691c81904aa7fe63256.jpg
+https://www.youtube.com/embed/3EPnO6rO9hc?start=0
+https://assets.superhivemarket.com/store/productimage/141735/image/original-f7f72cdf5c5668b57708bead28ac81e9.png
+https://assets.superhivemarket.com/store/productimage/141734/image/original-435d40b2f040ba5a7b5cbb17a03ee95b.png
+https://assets.superhivemarket.com/store/productimage/1338448/image/xlarge_og-3c13e570a68476845a38f4236018a92e.jpg
+https://assets.superhivemarket.com/store/productimage/1338450/image/xlarge_og-c1be6d0ddece12c53464b198fc6e238e.jpg
+About (/products/auto-rig-pro-quick-rig)
+FAQ (/products/auto-rig-pro-quick-rig/faq)
+Documentation (/products/auto-rig-pro-quick-rig/docs)
+Ratings (/products/auto-rig-pro-quick-rig/ratings)
+Version History (/products/auto-rig-pro-quick-rig/versions)
+What is Quick Rig?
+⚠️ WARNING ⚠️Quick Rig is an extension for the Auto-Rig Pro addon (https://blendermarket.com/products/auto-rig-pro?ref=46) , it means Auto-Rig Pro must be purchased and installed first.
+Don't waste your time re-rigging already rigged characters anymore!
+Quick Rig turns rapidly any skeleton + mesh into a full Auto-Rig Pro armature with controllers ready for animation, including weights preservation, IK-FK generation, animation support.
+Built to support the vast majority of character skeletons, even non-standard bones axes.
+How it works:
+See the video demo (https://youtu.be/3EPnO6rO9hc) .
+Add limbs: select the first bone of a limb (e.g. the shoulder for the arm), then click the + button to add a limb
+Ensure the limbs settings are correct: blanks are filled with correct bones, and bones axes are properly set. These settings are automatically set when adding the limb, but depending on the skeleton complexity they may be incorrect sometimes.
+Choose Preserve or Convert mode. Preserve keeps the existing armature untouched while binding it to the rig controllers only, while Convert will generate a full Auto-Rig Pro armature compliant with all Auto-Rig Pro editing and exporting tools
+Click Quick Rig! to generate the final rig
+To try other settings, click Revert to go back to the base skeleton
+Features:
+Preserve and Convert mode, to preserve the base skeleton as it is or convert it to a complete Auto-Rig Pro armature for more advanced editing tools.
+Constraints retargetting (some limitations apply)
+Shape keys drivers retargetting
+Auto-detection of the selected bone type for quick limb setup
+Animation support, the skeleton animation is baked to the control rig in option
+Import and export custom mapping preset files
+Built-in mapping presets: Realillusion Character Creator, DAZ, Human Generator (https://blendermarket.com/products/humgen3d?ref=46) , Mixamo, Unreal Mannequin, VRoid...
+Supports the following limbs:
+Spine: from 2 to 6 spine bones
+Head: neck (optional), head bone. Up to 10 neck bones. Facial, bones and shape keys
+Leg: thigh, calf, foot, toes bone. With optional twist bones and "3 bones leg" settings for extra thigh bones, for quadrupedal creatures
+Arm: shoulder (optional), arm, forearm, hand and finger bones (optional). With optional twist bones. 3 or 4 phalanges per finger (with or without metacarps).
+Orphan bones support: even bones that are not part of the standard limbs definition (facial bones, unusual twist and tweak bones, bones for clothes and props...) are inserted in the rig hierarchy automatically, to ensure *all* bones are included in the final rig properly.
+Custom shape drawing options for orphan bones.
+Automatic leg and arm angle correction if bones are perfectly straight, to avoid IK direction issues
+Neck with optional automatic twist rotation
+Weight Overrides: If the skeleton is special, use weight overrides to ensure to set correct skinning weight matches, by manually setting the correct bone weight for a given bone.
+Limitations:
+Although the tool is quite complete, some limitations apply that may be lifted in future versions:
+Multiple heads or multiple spines not yet supported
+Updates:
+Latest Log (https://www.lucky3d.fr/quick-rig/00_LOG.txt)
+Back to top
+Discover more products like this
+rig (/tags/rig) Automatic (/tags/automatic) characterize (/tags/characterize) control-rig (/tags/control-rig) bones (/tags/bones) preserve (/tags/preserve) conversion (/tags/conversion) convert (/tags/convert) Skin (/tags/skin) Skeleton (/tags/skeleton) rigging (/tags/rigging) controllers (/tags/controllers)
+Seats:
+&minus;
++
+$12.50
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Sales
+10100+
+Rating
+32 ratings (/products/auto-rig-pro-quick-rig/ratings)
+Published
+about 6 years ago
+Blender Version
+2.93 - 5.2
+Extension Type
+Add-on
+License
+GPL (/page/gpl-license)
+Artell
+Visit Website (http://www.lucky3d.fr) See all items by this creator (/creators/artell)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#6a191f1a1a05181e2a191f1a0f1802031c0f070b18010f1e44090507)
+Made by the humans of Autotroph (https://autotroph.com)

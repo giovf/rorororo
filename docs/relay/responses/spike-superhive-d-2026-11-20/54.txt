@@ -1,0 +1,158 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/drop-to-bed","name":"Drop to Bed","image":["https://assets.superhivemarket.com/store/product/268608/image/xlarge-d4c43764a1af0b7671966a3ec6b69f30.webp"],"description":"Put your models exactly on the build plate in one click, centred and with the origin at the bottom, lay them on their biggest flat side, and adjust it all afterwards with F9.","mpn":"268608","brand":{"@type":"Thing","name":"Sonneblom Digitaal"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"0.75","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Hanru Croucamp"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Drop to Bed","item":"https://superhivemarket.com/products/drop-to-bed"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/268608/image/xlarge-d4c43764a1af0b7671966a3ec6b69f30.webp
+meta twitter:image: https://assets.superhivemarket.com/store/product/268608/image/xlarge-d4c43764a1af0b7671966a3ec6b69f30.webp
+meta description: Put your models exactly on the build plate in one click, centred and with the origin at the bottom, lay them on their biggest flat side, and adjust it all afterwards with F9.
+meta og:url: https://superhivemarket.com/products/drop-to-bed
+meta og:title: Drop to Bed
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Put your models exactly on the build plate in one click, centred and with the origin at the bottom, lay them on their biggest flat side, and adjust it all afterwards with F9.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Drop to Bed
+meta twitter:description: Put your models exactly on the build plate in one click, centred and with the origin at the bottom, lay them on their biggest flat side, and adjust it all afterwards with F9.
+meta twitter:domain: https://superhivemarket.com/products/drop-to-bed
+meta og:image: https://assets.superhivemarket.com/store/product/268608/image/xlarge-d4c43764a1af0b7671966a3ec6b69f30.webp
+meta twitter:image: https://assets.superhivemarket.com/store/product/268608/image/xlarge-d4c43764a1af0b7671966a3ec6b69f30.webp
+Drop to Bed - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Drop to Bed
+Sonneblom Digitaal (/creators/sonneblomdigitaal)
+in Modeling (/categories/modeling)
+https://assets.superhivemarket.com/store/product/268608/image/xlarge_og-652ad2ecbdaea744370dd6d49eb23a2f.webp
+https://assets.superhivemarket.com/store/productimage/1397113/image/xlarge_og-6401fa1f834441ac11d025ce88d6984b.webp
+https://assets.superhivemarket.com/store/productimage/1397112/image/xlarge_og-876139c48ab1be574f67037b19e454df.webp
+https://assets.superhivemarket.com/store/productimage/1397115/image/xlarge_og-253c38dba2d81a5550029ea162676947.webp
+https://assets.superhivemarket.com/store/productimage/1397114/image/xlarge_og-4683caae542c14697985b95f5e79f71d.webp
+https://assets.superhivemarket.com/store/productimage/1397116/image/xlarge_og-2153ee58cc4cc1c33c07dd757b69f746.webp
+https://assets.superhivemarket.com/store/productimage/1397117/image/xlarge_og-bf5147756c582f383b5e86544b67482d.webp
+About (/products/drop-to-bed)
+FAQ (/products/drop-to-bed/faq)
+Documentation (/products/drop-to-bed/docs)
+Ratings (/products/drop-to-bed/ratings)
+Version History (/products/drop-to-bed/versions)
+What it does
+Drop to Bed puts your models exactly on the build plate before you export them to the slicer. One click moves the selected objects so their lowest point sits on Z = 0. It measures the real, final shape: rotation, scale (applied or not), parents and modifiers such as Array, Solidify or Subdivision Surface are all included, so nothing floats above the bed and nothing sinks into it.
+Lay Flat handles the other fiddly job. Lay Flat: Auto turns the object onto its biggest flat side in one click, or pick the face yourself in Edit Mode. The object turns so that side points straight down and lands on the bed. No more rotating by eye and nudging the Z value.
+New in 1.1: change your mind after the click. Open Adjust Last Operation (F9) and switch Centre, Origin, bed size or Move: the drop is redone with the new values, no undo and start over. Printer bed presets, and the units now default to 1 mm, the unit of STL files.
+Who it's for
+Anyone who prints from Blender: people who download or import STL, OBJ and 3MF files, people who model parts and want them flat on the plate, and anyone who exports many parts at once and wants them all at Z = 0 with a clean origin.
+Key features
+Drop to Bed: lowest point of each selected object to Z = 0, measured on the evaluated mesh in world space (modifiers, rotation, scale and parents included). Works on meshes, curves, surfaces and text.
+Each object or Together: drop every object on its own, or move the selection as one block so the parts keep their spacing.
+Centre: keep X / Y, centre on the world origin (X 0, Y 0), or centre on the middle of your bed. Bed size in mm (default 220 x 220) or pick your printer: Ender-3, K1, Prusa MK4 / MINI / XL, Bambu Lab X1 / P1 / A1 / A1 mini, Neptune 4, Voron 350. The bounding-box centre is used, not the origin.
+Origin to bottom centre: optionally put the origin at the bottom centre of the object without moving the geometry. Children stay where they are.
+Lay Flat: Auto: one click in Object Mode turns each selected object onto the biggest flat side of its outline (its convex hull) and drops it on the bed. Wrong side? Press F9 and raise Side to try the next biggest flat side.
+Adjust after the click (F9): Drop to Bed, Lay Flat and Lay Flat: Auto all have their settings in the Adjust Last Operation panel, so you can change Centre, Origin, bed size, Move or Side and see the result straight away.
+Lay Flat on Selected Face: pick one face (or several faces on one side) in Edit Mode; the object turns so that face points down and is dropped onto it. If another part reaches lower, the report tells you how high the face is above the bed.
+Units: 1 Blender unit = 1 mm by default (STL, 3MF and OBJ files from printing sites are in mm). Or choose Auto (follows Scene > Units), 1 cm, 1 m or 1 inch. If the selected model looks far too big or too small for the setting, the panel says so in red. The report gives every move in mm.
+Full undo (Ctrl+Z), clear reports, a sidebar panel in the Print tab, a tooltip on every setting.
+How to use
+Install the zip and press N in the 3D Viewport, open the Print tab.
+Pick Move, Centre and Origin (units are 1 mm by default, right for STL files).
+Select your objects and click Drop to Bed .
+Not happy with the result? Press F9 and change any setting; the drop is redone.
+To lay it flat: click Lay Flat: Auto , or press Tab for Edit Mode, select the face that should touch the bed and click Lay Flat on Selected Face .
+Compatibility
+Blender 4.2 LTS or newer, tested on 4.2 LTS and 5.2 LTS. It installs as a Blender extension (Get Extensions > Install from Disk), and a legacy add-on zip is included.
+Good to know
+It only moves, rotates and (for the origin option) shifts mesh data. It never cuts, remeshes or repairs your model.
+Lay Flat: Auto picks the biggest flat side of the outline. It does not look at overhangs or supports; it is not a print-orientation optimiser.
+Lay Flat uses the faces of the base mesh (what you see in Edit Mode). With modifiers that change the shape, the object still rests on the lowest point of the final shape.
+Objects with keyframes on their location jump back when the frame changes; key the new position or remove the keys.
+Instances made by Geometry Nodes or collection instances are not measured. Empties, cameras and lights are skipped and the report says so.
+The origin option works on meshes that are not shared with other objects; for shared meshes and curves the origin is left as it is and the report says why.
+Support
+Questions or a bug? Use the Superhive product page messages and we reply within a day.
+More tools from Sonneblom Digitaal
+On the bed and ready to export? Printability Check is our separate add-on that tells you if the mesh will slice: holes, open or shared edges, inside-out faces and more, with a Select button for each problem. Printability Check (https://superhivemarket.com/products/printability-check)
+Save with a bundle
+This add-on is also included in the Bed Prep & Export Kit (https://superhivemarket.com/products/bed-prep-export-kit) (5 bed-prep & export add-ons in one purchase, about 42% less than buying them one by one).
+Compatibility: Blender 4.2 - 5.2 LTS (tested on 4.2.9 and 5.2.2). Updated Nov 2026.
+Back to top
+Discover more products like this
+drop to floor (/tags/drop-to-floor) 3d printing (/tags/3d-printing) lay flat (/tags/lay-flat) transform (/tags/transform) print prep (/tags/print-prep) STL (/tags/stl) origin (/tags/origin)
+Seats:
+&minus;
++
+$1 $0.75
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Published
+13 days ago
+Blender Version
+4.2 - 5.2
+Extension Type
+Add-on
+License
+GPL (/page/gpl-license)
+Sonneblom Digitaal
+Visit Website (https://sonneblomdigitaal.gumroad.com) See all items by this creator (/creators/sonneblomdigitaal)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#06757376766974724675737663746e6f70636b67746d63722865696b)
+Made by the humans of Autotroph (https://autotroph.com)

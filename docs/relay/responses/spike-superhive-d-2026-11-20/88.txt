@@ -1,0 +1,188 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/simple-bend","name":"Simple Bend","image":["https://assets.superhivemarket.com/store/product/182395/image/8bfa74bd680a7348fa0d9fd4f95a55e1.jpg"],"description":"Simple Bend is a handy tool for bending mesh. ","mpn":"182395","brand":{"@type":"Thing","name":"KushiroCG"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"8.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Kushiro"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"44"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Simple Bend","item":"https://superhivemarket.com/products/simple-bend"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/182395/image/8bfa74bd680a7348fa0d9fd4f95a55e1.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/182395/image/8bfa74bd680a7348fa0d9fd4f95a55e1.jpg
+meta description: Simple Bend is a handy tool for bending mesh.
+meta og:url: https://superhivemarket.com/products/simple-bend
+meta og:title: Simple Bend
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Simple Bend is a handy tool for bending mesh.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Simple Bend
+meta twitter:description: Simple Bend is a handy tool for bending mesh.
+meta twitter:domain: https://superhivemarket.com/products/simple-bend
+meta og:image: https://assets.superhivemarket.com/store/product/182395/image/8bfa74bd680a7348fa0d9fd4f95a55e1.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/182395/image/8bfa74bd680a7348fa0d9fd4f95a55e1.jpg
+Simple Bend - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Simple Bend
+KushiroCG (/creators/kushirocg)
+in Modeling (/categories/modeling)
+https://assets.superhivemarket.com/store/product/182395/image/8bfa74bd680a7348fa0d9fd4f95a55e1.jpg
+About (/products/simple-bend)
+FAQ (/products/simple-bend/faq)
+Documentation (/products/simple-bend/docs)
+Ratings (/products/simple-bend/ratings)
+(Note : This Simple Bend is the old version. There is another new product called "Simple Bend Ex" )
+Simple Bend is a handy tool for bending sub-divided mesh.
+You add the edge-loops or sub-divide your mesh
+Select the faces for bending (it can be all faces of just the middle parts)
+Run the tool, Drag on the yellow axis to bend.
+You can bend the selected mesh easily by dragging on the on-screen axis.
+Also you can bend the select part only, and let the connected geometries to follow. (Press C key to choose the part)
+Edge Axis mode
+This is the advanced mode for Simple Bend. It is very useful for bending at any self-defined angle.
+It works as follow :
+The tool read your "last-selected edges" for its bending axis and direction. It needs two edges, and they mush not be co-linear (same direction).
+In order to use this mode, you have to switch to Blender's Edge mode, select the part, hold the Shift key, then un-select the "2 edges", then re-select the "2 edges" (this procedure will make those edges to become the last selection in blender), then run the tool.
+You may watch the follow gif for simple understanding :
+Please note that, from the above gif, when you select the last two edge, the selection order is important :
+First edge : Mesh direction.
+Second edge : Bending direction.
+They have the following meaning :
+(When you run the tool, you can also press the W key to swap the axis. )
+Usage
+=== Please watch this tutorial :
+Blender Edit mode > Switch to Face mode or Edge mode.
+( Note : Some users reszied their object in Object mode before using the tool, the result will become strange. Please resize the mesh in Edit mode)
+There are two modes for the tool :
+For Basic mode : Use Face mode to run the tool
+For Edge axis mode : Use Edge mode to run the tool
+Right click on the 3D viewport, then select "Simple Bend" at the bottom of the pop-up menu (blender's context menu).
+On Screen Key
+S key : Only modify the selected vertices. it can be useful when you only select the surface of a mesh, and you want to bend the surface manually.
+W key : Swap the bending Axis. It will change the bending direction.
+C key : Bend only one side instead of bending both side. Press C key repeatedly to switch between different part.
+Q key : Confirm the bending
+Shift key : You can hold Shift key to snap the bending amount to 5 degree unit.
+After bending the mesh, press Q key to confirm.
+Common Problems
+Please read the below guidelines before install
+Do not unzip the addon zip file when you install it, otherwise blender will not install it correctly and cause errors.
+If you installed the unzipped files, you should now uninstall the addon and remove them. Re-install it again (select the zip file during install)
+When you are modeling in Blender, do not Scale object in "Object mode", otherwise it will confuse blender's mesh data for the addons. Please Scale things in "Edit mode" only. (select all then S key)
+Update
+Version 2.3.1
+Updated to work for Blender 4.0.0 (fixed a problem for blender API change)
+Version 2.3.0
+Updated to work for Blender 4.0.0
+Version 2.2.0
+Since Blender 3.5.0, the use of OpenGL is deprecated and show warning about it. This update switch to blender's new GPU function. (however the function has problem for line smoothing)
+Version 2.1.8
+Improved the support for different mesh size (it will auto scale the Axis)
+Version 2.1.7
+Fixed a bug for empty faces selection
+Version 2.1.6
+Improved the on-screen Axis for small mesh / thin surface, now it has a minimum length
+W key now only works on Edge-Axis mode (avoid confusion)
+S key (select-only) status will not be prevered now.
+Version 2.0.0 - 2.1.5
+This is the major update ! The tool is re-designed with on-screen axis control. Now you can drag on the on-screen axis to bend. It doesn't use the viewing angle anymore.
+You can still switch to Edge mode for advanced bending.
+Version 1.2.1
+Now W key can swap Axis for all modes. You can use it anytime when you want to change bending direction !
+Version 1.2.0
+Now W key can swap between 3 axis direction. It is useful for Edge Axis mode.
+Version 1.1.0
+Changed the unit of "Bend amount" to degree. Now you can enter degree directly, such as 90, 180.
+Now when using the tool, you can hold Shift key to snap the bending amount to 5 degree unit.
+Now you can bend more than 180 degree !
+Version 1.0.0
+Inital release
+Support
+Hope that you enjoy it ! It was my experimental project, but I found that it is very useful for modeling. : )
+https://twitter.com/kushirosea
+https://www.kushirocg.com/
+Back to top
+Discover more products like this
+spring24 (/tags/spring24) summer24 (/tags/summer24) bfcm24 (/tags/bfcm24) blender addon (/tags/blender-addon) bending (/tags/bending) topology (/tags/topology) winter24 (/tags/winter24) loveblender (/tags/loveblender) quad-topology (/tags/quad-topology) retopology (/tags/retopology) modeling (/tags/modeling)
+Seats:
+&minus;
++
+$8
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Sales
+5200+
+Rating
+44 ratings (/products/simple-bend/ratings)
+Dev Fund Contributor
+Published
+about 4 years ago
+Blender Version
+2.83 - 5.2
+Extension Type
+Add-on
+License
+GPL (/page/gpl-license)
+KushiroCG
+Visit Website (https://www.kushirocg.com) See all items by this creator (/creators/kushirocg)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#a4d7d1d4d4cbd6d0e4d7d1d4c1d6cccdd2c1c9c5d6cfc1d08ac7cbc9)
+Made by the humans of Autotroph (https://autotroph.com)

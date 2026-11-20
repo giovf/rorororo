@@ -1,0 +1,154 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/drag-n-drop-import","name":"Drag \u0026 Drop Import ","image":["https://assets.superhivemarket.com/store/product/187300/image/ef8806ba67b28858307a276bc667989a.jpg"],"description":"Drag Drop Import: The easiest way to import any file into Blender. Just drag and drop it into the Blender's interface and you’re done. No extra steps required. To change import settings, drag with right-click or hold ctrl while dragging!","mpn":"187300","brand":{"@type":"Thing","name":"Andrej Tetkic"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"15.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Andrej Tetkic"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4","reviewCount":"38"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Drag \u0026 Drop Import ","item":"https://superhivemarket.com/products/drag-n-drop-import"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/187300/image/ef8806ba67b28858307a276bc667989a.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/187300/image/ef8806ba67b28858307a276bc667989a.jpg
+meta description: Drag Drop Import: The easiest way to import any file into Blender. Just drag and drop it into the Blender's interface and you’re done. No extra steps required. To change import settings, drag with right-click or hold ctrl while dragging!
+meta og:url: https://superhivemarket.com/products/drag-n-drop-import
+meta og:title: Drag & Drop Import
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Drag Drop Import: The easiest way to import any file into Blender. Just drag and drop it into the Blender's interface and you’re done. No extra steps required. To change import settings, drag with right-click or hold ctrl while dragging!
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Drag & Drop Import
+meta twitter:description: Drag Drop Import: The easiest way to import any file into Blender. Just drag and drop it into the Blender's interface and you’re done. No extra steps required. To change import settings, drag with right-click or hold ctrl while dragging!
+meta twitter:domain: https://superhivemarket.com/products/drag-n-drop-import
+meta og:image: https://assets.superhivemarket.com/store/product/187300/image/ef8806ba67b28858307a276bc667989a.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/187300/image/ef8806ba67b28858307a276bc667989a.jpg
+Drag & Drop Import - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Drag & Drop Import
+Andrej Tetkic (/creators/andrejtetkic)
+in Interface (/categories/interface)
+https://assets.superhivemarket.com/store/product/187300/image/ef8806ba67b28858307a276bc667989a.jpg
+https://www.youtube.com/embed/t2vdC9kHY1k?start=0
+About (/products/drag-n-drop-import)
+FAQ (/products/drag-n-drop-import/faq)
+Documentation (/products/drag-n-drop-import/docs)
+Ratings (/products/drag-n-drop-import/ratings)
+Drag & Drop Import
+Optimize your workflow with Drag and Drop Import for Blender. Quickly and easily import files by dragging them from your file explorer and dropping them into Blender’s 3D Viewport or Outliner. No more navigating through menus or dialogs - just a seamless and efficient process!
+This project is no longer maintained, as the functionality was added in Blender natively
+*The current version works with Blender 4.0 except for dropping images directly onto the Principled BSDF Shader node as the API is not yet updated for the new look of the node. This is soon coming out together with the version for MACs with an M chip!*
+Windows and MacOS Intel (Beta)
+The MacOS version is under development and is now only available for download on machines with an Intel CPU. The version for Apple Silicon has presented some difficulties as M chips are newer and not fully supported by all program libraries.
+Supported Types
+Currently, Drag & Drop Import supports:
+FBX, GLB, GLTF, OBJ, MTL, X3D, WRL, ABC, PLY, STL, BVH, SVG, PNG, JPG, JPEG, TIFF, VDB, USD, USDC, USDA, DAE, BLEND , MP4, MOV, BPM, PY, DXF, HDR, EXR, PSD, SKP
+Basic Drag & Drop
+When you drag a file using only the left-click button, the file will be imported with the default settings for that particular file type.
+Change Settings
+If you want to change the Import Options, you can either drag the file using the right-click button or hold down the Ctrl key while dragging the file using the left-click button.
+Image Importing
+When you drop images, a menu will appear asking how you would like to import the image - as a Plane, as a Reference Image, or as a Background Image. To change the import settings, drag with the right-click or hold Ctrl while dragging.
+You can also drag and drop images directly from a website or search engines without having to download the image. A small delay can happen while the image gets downloaded, typically less than a second. When dragging small previews from a search engine images section, the original high-quality image will be imported. Everything above still applies.
+In addition, it is now possible to drag multiple images at once in the Shader Editor. You can now also drag an image to a desired node socket and it will automatically connect. This works for the images dropped from the web as well.
+Multiple Files
+You can also select multiple files and drag them all at once. This will import all the selected files with the default settings for their respective file types. However, if all the files are of the same file type, you will be able to change the import settings before importing them.
+Whole Folders
+If you drag a folder, all of its contents will be imported. If all the files inside the folder are of the same file type, you will be able to change the import settings before importing them. Otherwise, the files will be imported with their default settings for their respective file types.
+Folder Trees
+If the dragged folder contains other folders, all of their contents will also be imported. The imported files will be organized by Collections.
+Additional Features
+VDB sequences can be imported by dragging a sequence of VDB files or a tree of folders containing multiple VDBs.
+By dragging HDR or EXR files, they will automatically be set up as a scene's HDRI.
+Contribute
+Report a Bug (https://docs.google.com/forms/d/e/1FAIpQLSePSv6rvwnDAt1C8cY2JoCNOODxTOxUNWlNPKdi27Ux2rxBNw/viewform?usp=sf_link)
+Suggest File Types (https://docs.google.com/forms/d/e/1FAIpQLSdznF0_1j3Zem0ZGHzwwu95XFmZeUAJbTd0BKsTLH-6ODO88w/viewform?usp=sf_link)
+Feel free to contact me at [email protected] (/cdn-cgi/l/email-protection#bddcd3d9cfd8d7fdc9d8c9d6d4de93ded2d0)
+Release log
+v1.0.0 - First Release - Supports 31 different filetypes: FBX, GLB, GLTF, OBJ, MTL, X3D, WRL, ABC, PLY, STL, BVH, SVG, PNG, JPG, JPEG, TIFF, VDB, USD, USDC, USDA, DAE, BLEND , MP4, MOV, BPM, PY, DXF, HDR, EXR, PSD
+v1.0.1 - Support multiple monitors with different resolutions
+v1.0.2 - added SketchUp (SKP) File Support; "must run with blender-launcher.exe" issue is fixed; the Big circle appearing in some themes is gone; Blender 3.0.0 support.
+v1.0.3 - Blender crashing when locking Windows is now fixed; Drag and Dropping Images from the web; Drop multiple images in Shader Editor; Drop images into node sockets to automatically connect to them
+v1.0.4 - PLY import updated for Blender 4.0; Improved Web import; Multiple open shader editors bug fixed; Blender staying inactive after drop in Blender 4.0 issue fixed
+v1.0.5 - Fixed all Image Importing for Blender 4.2
+Back to top
+Discover more products like this
+easy (/tags/easy) Obj (/tags/obj) import (/tags/import) png (/tags/png) 3Dmodel (/tags/3dmodel) files (/tags/files) glb (/tags/glb) drag (/tags/drag) gltf (/tags/gltf) jpg (/tags/jpg) Fast (/tags/fast) bfcm24 (/tags/bfcm24) winter24 (/tags/winter24) spring24 (/tags/spring24) drop (/tags/drop) summer24 (/tags/summer24) fbx (/tags/fbx) blend (/tags/blend) jpeg (/tags/jpeg)
+Seats:
+&minus;
++
+$15
+Have questions about this product?
+Login to message (/login)
+Details
+Sales
+2300+
+Rating
+38 ratings (/products/drag-n-drop-import/ratings)
+Dev Fund Contributor
+Published
+over 3 years ago
+Blender Version
+4.0, 3.6, 3.5, 3.4, 3.3, 3.2, 3.1, 3.0, 2.93
+Extension Type
+N/A
+License
+GPL (/page/gpl-license)
+Andrej Tetkic
+Visit Website (https://tetkic.com) See all items by this creator (/creators/andrejtetkic)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#2c5f595c5c435e586c5f595c495e44455a49414d5e474958024f4341)
+Made by the humans of Autotroph (https://autotroph.com)

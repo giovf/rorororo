@@ -1,0 +1,252 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/baketool","name":"BakeTool","image":["https://assets.superhivemarket.com/store/product/13751/image/xlarge-bb225741ff95c09645d247332aef86d5.png"],"description":"Baketool is the ultimate bake solution for Blender. Bake any scene in just three passes.","mpn":"13751","brand":{"@type":"Thing","name":"Cogumelo Softworks"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"14.95","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Cogumelo Softworks"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4","reviewCount":"51"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"BakeTool","item":"https://superhivemarket.com/products/baketool"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/13751/image/xlarge-bb225741ff95c09645d247332aef86d5.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/13751/image/xlarge-bb225741ff95c09645d247332aef86d5.png
+meta description: Baketool is the ultimate bake solution for Blender. Bake any scene in just three passes.
+meta og:url: https://superhivemarket.com/products/baketool
+meta og:title: BakeTool
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Baketool is the ultimate bake solution for Blender. Bake any scene in just three passes.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: BakeTool
+meta twitter:description: Baketool is the ultimate bake solution for Blender. Bake any scene in just three passes.
+meta twitter:domain: https://superhivemarket.com/products/baketool
+meta og:image: https://assets.superhivemarket.com/store/product/13751/image/xlarge-bb225741ff95c09645d247332aef86d5.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/13751/image/xlarge-bb225741ff95c09645d247332aef86d5.png
+BakeTool - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+BakeTool
+Cogumelo Softworks (/creators/cogumelo-softworks)
+in Addons (/categories/addons)
+https://assets.superhivemarket.com/store/product/13751/image/original-19ccab867016d32bee2fa5b9481bebbc.png
+https://www.youtube.com/embed/KWOkXy0DHSw?start=0
+https://assets.superhivemarket.com/store/productimage/3571/image/original-cb9995bd0ccfe8bc013b334a32563d10.jpg
+https://assets.superhivemarket.com/store/productimage/3554/image/original-66d44f536d338212a9fb053008654f92.jpg
+https://assets.superhivemarket.com/store/productimage/3579/image/original-721535859c5c779150ae6673fae44b28.jpg
+https://assets.superhivemarket.com/store/productimage/3612/image/original-b4b6f8b5be902a5c3f689185edd26796.jpg
+https://assets.superhivemarket.com/store/productimage/3542/image/original-a91a7b777e34c0fe650e0e56bb69b5b9.jpg
+About (/products/baketool)
+FAQ (/products/baketool/faq)
+Documentation (/products/baketool/docs)
+Ratings (/products/baketool/ratings)
+The Ultimate Bake Solution
+BakeTool is the In-House solution developed by Cogumelo Softworks for Bake Rendering with Cycles . For those that work with Interactive Ambient, Arch Viz, and Games... and need a Blender Baking Solution for your Assets, Full scenes, High Poly to Low Poly Normal Maps, and others, Bake Tool is just what you need.
+What is the BakeTool?
+BakeTool is an add-on for Blender that redesigns the way that Blender Bake works with a more coherent and easier workflow.
+Do I Need It?
+The way that Cycles and BI Bake workflow works today is too slow and complicated to handle large scenes and for daily usage. If you need to bake assets or scenes in an easier, faster, and safer way then BakeTool is just what you need.
+What Features BakeTool Have?
+BakeTool was designed for an In House solution, so it has everything that a studio needs to bake your scenes such as:
+Cycles Denoise. Support in Combined Pass using the "Expert" mode.
+Non-Blocking Viewport Report: See the progress in the viewport with our custom interactive report system while you keep using Blender!
+PBR Bake! Bake standard PBR maps included channels not available in Blender's bake system such as Metallic and ID Map.
+Anti-Aliasing: Super Sampling Anti-aliasing is now available for Bake!
+Safe & Easy: BakeTool doesn't mess up your materials, scene, or objects. Just configure it as if for a render and Bake!
+Multi Job & Multi-Pass: Configure many jobs and passes you want setting objects, devices, sizes, and samples, and bake it all once!
+Assets or Full Scenes: Just add the objects that you want to Bake to the List with the "Selected to List" button.
+Individual or Atlas Mode: You can bake objects as Individual Textures per pass or Join everything in a single Atlas per pass.
+Bake to Target: Do you want to Bake High to Low Poly models or just Bake to a single Object? Just use Bake to Target!
+[NEW] Auto Save Externally and Load in your Scene: Don't mess up your texture library, totally safe internal and external save.
+Auto Config Image Format: Just select the format, and we change all parameters for you to give you the best File Size/Quality.
+Per pass Color Space and Automatic Color Correction: PBR and Normal maps have specific requirements about color space per engine. Now you can set up those per texture!
+Automatic UV Unwrap For Objects and Atlas: Automatically create and unwrap non-overlapped uvs for your objects and your atlas. Speed up your workflow a lot!
+More Coming! See more news, videos, and tutorials on our Youtube Channel (https://www.youtube.com/user/cogumelosoftworks)
+Why should I buy it?
+We are a small studio from Brazil, and we have already done some great things for Blender such as Graph Theme and BoolTool add-on . We have been developing Baketool for the last 10 Years with Free Updates for all our users! It's to be noticed also that it's one of the first and most successful commercial add-ons for Blender!
+Also, we want to support BF with blender development as well, so we’re assigning part of all sales to the BF Development Fund . That’s our way of saying thanks to BF for all the good stuff that they have done. On top of it, BakeTool is the Best solution for Blender Baking on the Market , so if you just want a tool to work with Baking, BakeTool is what you need!
+Release Log
+Ver 2.6
+[NEW] Exclusive Support to Blender 4.x versions
+[NEW] New Embedded Progress Panel replacing the floating one
+[NEW] Support to all Color Space options including the new Agx
+Supersampler AA was temporarily disabled.
+All the progress reports on the console were reworked to be much more informative and organized
+Many bug fixes and huge code cleanup
+Add a link to online docs in the user preferences
+Ver 2.5
+Add support to Blender 3.0 and Cycles X
+Added per pass Denoise support (Expert Mode and Combined Pass Only)
+Profiles were renamed to “Easy” and “Expert” modes.
+Ver 2.41 - Hotfix
+Fix bug with multiple passes when the first is not active. Patch by “ Samuele ”
+Ver 2.4
+Added Support to Blender 2.91
+Starting in 2.4 newest versions will not support 2.83LTS anymore due to Blender's API changes. 2.3 version is yet available for those cases.
+Ver 2.3
+Fixed and Improved Custom Outputs/AOVs
+Show Message when Cycles is not the current Render Engine
+Added Enable/Disable setting Per Pass
+Speedup and Fix reports when baking with disabled jobs
+Ver 2.2
+Fix bugs and add Support to Blender 2.83
+Ver 2.1
+New Advanced Bake Map: IDMap. It uses the Material “Pass Index” value as a reference.
+Added a new AA option for baking.
+Added Support to a relative path
+Margin Pass Option is exposed in the Baketool profile
+Fixed bugs in Enable/Disabled Jobs in Atlas and Individual modes (Thanks vinc3r)
+Fixed bug using Advanced Bake Maps in Atlas mode with more than one object
+Many other minor fixes and improvements
+Ver 2.0 Final
+New Error Report System. Shows info messages about problems in Baketool setup or objects.
+Initial Advanced Bake Maps implemented. First is the Metallic bake. Baketool is a standard PBR bake solution.
+Automatically apply the current active UVMap node as input for Image Textures when not already used. Automatically fix many problems caused by the lack of those.
+Fixed bugs with UV assign during Bake in Atlas mode
+Image names now are defined by Job Name not Job Type
+Added Per Job Enable/Disable toggle
+UvUnwrap angle default value works better with hard angles
+Create Eevee Scene is yet experimental and now is False by default
+Fixed Bug in MacOS system file (If you have any problem in MacOS please let us know)
+Ver 2.0 Preview 1 What's New? (https://www.youtube.com/watch?v=KWOkXy0DHSw)
+New Core System and UI Redesign for Blender 2.8x
+BI render was removed since It’s only for Blender 2.8x
+“Generate Object UV” will generated non overlapped UVs for all objects in the list. If you want to use a custom UV you need to overwrite it (There’s a field for it)
+New Pass System Modes. Baketool Pass are simplified settings, PBR ready and other custom passes. Blender Pass are vanilla blender build-in passes and settings.
+Render Device is now per Job instead per pass
+New Per Pass Color Space options. Automatic Color Management Handler fix many bugs in Baking with Color corrections.
+New experimental “Create Eevee Scene” (Individual Mode Only for now). Automatically create a new collection with object list elements and Eevee materials applied with the result of the bake process
+New experimental “Preview Channel” per pass to easyly check results when using the “Create Eevee Scene”
+Ver 1.43 HotFix
+Add support to "Unclamped" EXR float images
+Ver 1.42 HotFix
+Fixed bugs in the Automatic UV Unwrap
+Ver 1.41 HotFix
+Suported version now is Blender 2.78b.
+Ver 1.40 What's New Video (https://www.youtube.com/watch?v=J6YPshI8vJA)
+New Automatic UV Unwrap System!
+Support to new Cycles Pass Selector Combine
+Enable/Disable per pass in Cycles and BI
+New Object Manager List
+Remove Limit of Bake Size
+Bug fixes in BI reports and more.
+Ver 1.32
+Added Bias Parameter to Target Render
+Better UI for AO Settings in BI Mode
+Fixed bug in AO Normalization in BI Mode
+Fixed bug in register/unregister
+Fixed crash when "bake multires" is enable in BI
+Ver 1.31
+Support to Renderstreet render farm system ( Read More (http://blog.render.st/texture-baking-in-blender-cycles-and-internal-now-supported-on-renderstreet/) )
+New support to TARGA (TGA) export save
+Fix problems with BI Bake + Render Target
+Ver 1.3 - What's New Video (https://www.youtube.com/watch?v=6FbEaRDgrpg&feature=youtu.be)
+New Job System
+New Report/Progress System
+Support to Custom Output Nodes
+Core Redesign
+UI Redesign
+Many Bug fixes for all areas.
+Ver 1.21 - What's New Video (https://www.youtube.com/watch?v=7xlwP7Qx3aw)
+Cleanup and bug fix version
+Atlas name Prefix are not saved externally in Cycles
+Changed Max resolution in 4K to 4096
+Now Baked image have alpha Channel
+Cage Render was not working right, fixed now
+Card Reference Updated with new colors
+Ver 1.2
+Added Blender Internal Render Support!
+UI and worklfow improvements with eyedrop object selectors
+New Error Catch system with more than 20 error handlers with Info Reports.
+Ver 1.1
+New Auto Pack UV inside the Bake process for Atlas Mode (Video) (https://www.youtube.com/watch?v=yKzC-QLTir4)
+Fix : In some computers CUDA disappear if Bake Tool was set as Default On in User Preferences
+Change UI about per pass device config:
+If you don't have a GPU Device enabled in User Preferences it don't show the device selector per pass anymore, it show a message informing that it will use CPU instead.
+If you have a GPU Device enable in User Preferences it keep as previous version
+Ver 1.0
+UI and Panels
+Multi Pass Support
+Individual and Atlas Mode Support
+Bake to Target
+Auto Save Externally and Pack in .Blend
+Auto Config Image Format
+Pack UV Space Function
+Back to top
+Discover more products like this
+bcon22 (/tags/bcon22) free (/tags/free) bake (/tags/bake) spring22 (/tags/spring22) spring18 (/tags/spring18) cyber16 (/tags/cyber16) Bake PBR (/tags/bake-pbr) spring20 (/tags/spring20) summer23 (/tags/summer23) uv (/tags/uv) bfcm18 (/tags/bfcm18) bfcm20 (/tags/bfcm20) anniversary (/tags/anniversary) bcon19 (/tags/bcon19) Cycles Bake (/tags/cycles-bake) loveblender (/tags/loveblender) tree (/tags/tree) spring24 (/tags/spring24) UVUnwrap (/tags/uvunwrap) dev-fund (/tags/dev-fund) winter24 (/tags/winter24) spring21 (/tags/spring21) summer21 (/tags/summer21) Blender Add-on (/tags/blender-add-on) grass (/tags/grass) bfcm22 (/tags/bfcm22) PBR (/tags/pbr) PBR Bake (/tags/pbr-bake) spring19 (/tags/spring19) bfcm21 (/tags/bfcm21) Cycles (/tags/cycles) scripts (/tags/scripts) bfcm19 (/tags/bfcm19) fall18 (/tags/fall18) summer20 (/tags/summer20) bfcm17 (/tags/bfcm17) summer22 (/tags/summer22)
+Seats:
+&minus;
++
+$14.95
+Have questions about this product?
+Login to message (/login)
+Details
+Sales
+3800+
+Rating
+51 ratings (/products/baketool/ratings)
+Dev Fund Contributor
+Published
+over 12 years ago
+Blender Version
+4.3 - 5.0
+License
+GPL (/page/gpl-license)
+Cogumelo Softworks
+Visit Website (http://cogumelosoftworks.com) See all items by this creator (/creators/cogumelo-softworks)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#c4b7b1b4b4abb6b084b7b1b4a1b6acadb2a1a9a5b6afa1b0eaa7aba9)
+Made by the humans of Autotroph (https://autotroph.com)

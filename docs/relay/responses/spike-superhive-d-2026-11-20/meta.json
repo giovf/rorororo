@@ -1,0 +1,1810 @@
+{
+  "request": "spike-superhive-d-2026-11-20",
+  "fetched_at": "2026-11-20T17:41:03.091Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/aura-matrix",
+      "fetched_at": "2026-11-20T17:36:03.204Z",
+      "status": 200,
+      "elapsed_ms": 241,
+      "final_url": "https://superhivemarket.com/products/aura-matrix",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 11740,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 50532
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/vision-canvas",
+      "fetched_at": "2026-11-20T17:36:03.958Z",
+      "status": 200,
+      "elapsed_ms": 210,
+      "final_url": "https://superhivemarket.com/products/vision-canvas",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 13617,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 73620
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/shmexy-relief-canvas",
+      "fetched_at": "2026-11-20T17:36:04.680Z",
+      "status": 200,
+      "elapsed_ms": 115,
+      "final_url": "https://superhivemarket.com/products/shmexy-relief-canvas",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 9482,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44708
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/ikforge",
+      "fetched_at": "2026-11-20T17:36:05.300Z",
+      "status": 200,
+      "elapsed_ms": 118,
+      "final_url": "https://superhivemarket.com/products/ikforge",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 10522,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44872
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/japanese-village-builder",
+      "fetched_at": "2026-11-20T17:36:05.921Z",
+      "status": 200,
+      "elapsed_ms": 120,
+      "final_url": "https://superhivemarket.com/products/japanese-village-builder",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 9792,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 51384
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/nexfoliage",
+      "fetched_at": "2026-11-20T17:36:06.549Z",
+      "status": 200,
+      "elapsed_ms": 121,
+      "final_url": "https://superhivemarket.com/products/nexfoliage",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 11189,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 63990
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/christmas-bauble-generator",
+      "fetched_at": "2026-11-20T17:36:07.179Z",
+      "status": 200,
+      "elapsed_ms": 107,
+      "final_url": "https://superhivemarket.com/products/christmas-bauble-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 9458,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46112
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/ninjacut",
+      "fetched_at": "2026-11-20T17:36:07.793Z",
+      "status": 200,
+      "elapsed_ms": 124,
+      "final_url": "https://superhivemarket.com/products/ninjacut",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 13374,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 62061
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/luggage-generator",
+      "fetched_at": "2026-11-20T17:36:08.425Z",
+      "status": 200,
+      "elapsed_ms": 126,
+      "final_url": "https://superhivemarket.com/products/luggage-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 11264,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 56425
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/mirror-generator",
+      "fetched_at": "2026-11-20T17:36:09.060Z",
+      "status": 200,
+      "elapsed_ms": 130,
+      "final_url": "https://superhivemarket.com/products/mirror-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 10842,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 55216
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/lepido-butterfly-generator-for-blender",
+      "fetched_at": "2026-11-20T17:36:09.696Z",
+      "status": 200,
+      "elapsed_ms": 119,
+      "final_url": "https://superhivemarket.com/products/lepido-butterfly-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 10893,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52516
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/acreage-crop-field-vineyard-generator-for-blender",
+      "fetched_at": "2026-11-20T17:36:10.321Z",
+      "status": 200,
+      "elapsed_ms": 120,
+      "final_url": "https://superhivemarket.com/products/acreage-crop-field-vineyard-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 11225,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53667
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/ugclift",
+      "fetched_at": "2026-11-20T17:36:10.948Z",
+      "status": 200,
+      "elapsed_ms": 115,
+      "final_url": "https://superhivemarket.com/products/ugclift",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 17220,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 87330
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/earthmover-excavator-generator-for-blender",
+      "fetched_at": "2026-11-20T17:36:11.573Z",
+      "status": 200,
+      "elapsed_ms": 187,
+      "final_url": "https://superhivemarket.com/products/earthmover-excavator-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.txt",
+      "bytes": 11090,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53494
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/bins-mailboxes-generator",
+      "fetched_at": "2026-11-20T17:36:12.267Z",
+      "status": 200,
+      "elapsed_ms": 169,
+      "final_url": "https://superhivemarket.com/products/bins-mailboxes-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.txt",
+      "bytes": 11292,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54198
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/lighthouse-generator",
+      "fetched_at": "2026-11-20T17:36:12.940Z",
+      "status": 200,
+      "elapsed_ms": 124,
+      "final_url": "https://superhivemarket.com/products/lighthouse-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 11160,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53287
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/fountain-generator",
+      "fetched_at": "2026-11-20T17:36:13.574Z",
+      "status": 200,
+      "elapsed_ms": 121,
+      "final_url": "https://superhivemarket.com/products/fountain-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.txt",
+      "bytes": 11840,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54745
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/glass-generator",
+      "fetched_at": "2026-11-20T17:36:14.205Z",
+      "status": 200,
+      "elapsed_ms": 154,
+      "final_url": "https://superhivemarket.com/products/glass-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.txt",
+      "bytes": 10993,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54627
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/sunfield-solar-farm-generator-for-blender",
+      "fetched_at": "2026-11-20T17:36:14.862Z",
+      "status": 200,
+      "elapsed_ms": 127,
+      "final_url": "https://superhivemarket.com/products/sunfield-solar-farm-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.txt",
+      "bytes": 11055,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52455
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/bandstand-musical-instrument-generator-for-blender",
+      "fetched_at": "2026-11-20T17:36:15.491Z",
+      "status": 200,
+      "elapsed_ms": 125,
+      "final_url": "https://superhivemarket.com/products/bandstand-musical-instrument-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.txt",
+      "bytes": 11035,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54243
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/bug-lab-insect-generator-for-blender",
+      "fetched_at": "2026-11-20T17:36:16.128Z",
+      "retries": 3,
+      "status": 429,
+      "elapsed_ms": 7046,
+      "final_url": "https://superhivemarket.com/products/bug-lab-insect-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "5832"
+      },
+      "file": "21.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5832
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/tidy-tabs",
+      "fetched_at": "2026-11-20T17:36:23.675Z",
+      "retries": 3,
+      "status": 429,
+      "elapsed_ms": 7036,
+      "final_url": "https://superhivemarket.com/products/tidy-tabs",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "5708"
+      },
+      "file": "22.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5708
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/swimming-pool-generator",
+      "fetched_at": "2026-11-20T17:36:31.214Z",
+      "retries": 3,
+      "status": 429,
+      "elapsed_ms": 7035,
+      "final_url": "https://superhivemarket.com/products/swimming-pool-generator",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "5772"
+      },
+      "file": "23.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5772
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/agritech-vertical-farm-smart-farm-generator-for-blender",
+      "fetched_at": "2026-11-20T17:36:38.750Z",
+      "retries": 3,
+      "status": 429,
+      "elapsed_ms": 7042,
+      "final_url": "https://superhivemarket.com/products/agritech-vertical-farm-smart-farm-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "5910"
+      },
+      "file": "24.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5910
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/landfall-island-generator-for-blender",
+      "fetched_at": "2026-11-20T17:36:46.294Z",
+      "retries": 3,
+      "status": 429,
+      "elapsed_ms": 7043,
+      "final_url": "https://superhivemarket.com/products/landfall-island-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "5835"
+      },
+      "file": "25.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5835
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/batch-render-queue-pro",
+      "fetched_at": "2026-11-20T17:36:53.838Z",
+      "retries": 3,
+      "status": 429,
+      "elapsed_ms": 7034,
+      "final_url": "https://superhivemarket.com/products/batch-render-queue-pro",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "5769"
+      },
+      "file": "26.txt",
+      "bytes": 17,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 5769
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/labcraft-lab-glassware-generator-for-blender",
+      "fetched_at": "2026-11-20T17:37:01.373Z",
+      "status": 200,
+      "elapsed_ms": 119,
+      "final_url": "https://superhivemarket.com/products/labcraft-lab-glassware-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "27.txt",
+      "bytes": 11573,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 55554
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/shipping-container-generator",
+      "fetched_at": "2026-11-20T17:37:01.998Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3135,
+      "final_url": "https://superhivemarket.com/products/shipping-container-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "28.txt",
+      "bytes": 11464,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53630
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/parametric-slicer",
+      "fetched_at": "2026-11-20T17:37:05.643Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3156,
+      "final_url": "https://superhivemarket.com/products/parametric-slicer",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "29.txt",
+      "bytes": 13542,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 66038
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/posefill-ai",
+      "fetched_at": "2026-11-20T17:37:09.308Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1111,
+      "final_url": "https://superhivemarket.com/products/posefill-ai",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "30.txt",
+      "bytes": 12300,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 55871
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/loobox-portable-toilet-generator-for-blender",
+      "fetched_at": "2026-11-20T17:37:10.923Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3149,
+      "final_url": "https://superhivemarket.com/products/loobox-portable-toilet-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "31.txt",
+      "bytes": 11105,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54501
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/knurl-knob-maker",
+      "fetched_at": "2026-11-20T17:37:14.577Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3263,
+      "final_url": "https://superhivemarket.com/products/knurl-knob-maker",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "32.txt",
+      "bytes": 12160,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 47324
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/mini-base-maker",
+      "fetched_at": "2026-11-20T17:37:18.345Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1128,
+      "final_url": "https://superhivemarket.com/products/mini-base-maker",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "33.txt",
+      "bytes": 11135,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45460
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/color-layer-splitter",
+      "fetched_at": "2026-11-20T17:37:19.976Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3137,
+      "final_url": "https://superhivemarket.com/products/color-layer-splitter",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "34.txt",
+      "bytes": 12127,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 47452
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/terrain-seam-blend",
+      "fetched_at": "2026-11-20T17:37:23.623Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3137,
+      "final_url": "https://superhivemarket.com/products/terrain-seam-blend",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "35.txt",
+      "bytes": 14351,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54955
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/stl-cad-cleaner",
+      "fetched_at": "2026-11-20T17:37:27.268Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1164,
+      "final_url": "https://superhivemarket.com/products/stl-cad-cleaner",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "36.txt",
+      "bytes": 13700,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53705
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/project-box-maker",
+      "fetched_at": "2026-11-20T17:37:28.940Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3141,
+      "final_url": "https://superhivemarket.com/products/project-box-maker",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "37.txt",
+      "bytes": 13990,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52221
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/physforge",
+      "fetched_at": "2026-11-20T17:37:32.589Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3139,
+      "final_url": "https://superhivemarket.com/products/physforge",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "38.txt",
+      "bytes": 12379,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46533
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/svg-to-print",
+      "fetched_at": "2026-11-20T17:37:36.237Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1121,
+      "final_url": "https://superhivemarket.com/products/svg-to-print",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "39.txt",
+      "bytes": 11733,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45693
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/uzima-blender-modern-ui",
+      "fetched_at": "2026-11-20T17:37:37.863Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3140,
+      "final_url": "https://superhivemarket.com/products/uzima-blender-modern-ui",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "40.txt",
+      "bytes": 13052,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 76631
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/scaffwright-scaffolding-generator-for-blender",
+      "fetched_at": "2026-11-20T17:37:41.514Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3146,
+      "final_url": "https://superhivemarket.com/products/scaffwright-scaffolding-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "41.txt",
+      "bytes": 11322,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53741
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/hot-spring-jacuzzi-hot-tub-generator-for-blender",
+      "fetched_at": "2026-11-20T17:37:45.165Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1162,
+      "final_url": "https://superhivemarket.com/products/hot-spring-jacuzzi-hot-tub-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "42.txt",
+      "bytes": 10980,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52667
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/la-candelaria-pro",
+      "fetched_at": "2026-11-20T17:37:46.837Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3161,
+      "final_url": "https://superhivemarket.com/products/la-candelaria-pro",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "43.txt",
+      "bytes": 12811,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52667
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/grainforge-proceduralwood-material-generator",
+      "fetched_at": "2026-11-20T17:37:50.501Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3129,
+      "final_url": "https://superhivemarket.com/products/grainforge-proceduralwood-material-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "44.txt",
+      "bytes": 11526,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 48012
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/sunken",
+      "fetched_at": "2026-11-20T17:37:54.136Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1128,
+      "final_url": "https://superhivemarket.com/products/sunken",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "45.txt",
+      "bytes": 11326,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45880
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/drip",
+      "fetched_at": "2026-11-20T17:37:55.774Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3121,
+      "final_url": "https://superhivemarket.com/products/drip",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "46.txt",
+      "bytes": 11309,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45975
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/crystalline",
+      "fetched_at": "2026-11-20T17:37:59.399Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3170,
+      "final_url": "https://superhivemarket.com/products/crystalline",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "47.txt",
+      "bytes": 11556,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46250
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/soaked",
+      "fetched_at": "2026-11-20T17:38:03.073Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1154,
+      "final_url": "https://superhivemarket.com/products/soaked",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "48.txt",
+      "bytes": 11357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45891
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/anime-ocean",
+      "fetched_at": "2026-11-20T17:38:04.731Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3170,
+      "final_url": "https://superhivemarket.com/products/anime-ocean",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "49.txt",
+      "bytes": 13009,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 51857
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/grounded-smart-scatter-for-blender",
+      "fetched_at": "2026-11-20T17:38:08.407Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3163,
+      "final_url": "https://superhivemarket.com/products/grounded-smart-scatter-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "50.txt",
+      "bytes": 22262,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 115163
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/3d-print-suite-bundle",
+      "fetched_at": "2026-11-20T17:38:12.080Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1123,
+      "final_url": "https://superhivemarket.com/products/3d-print-suite-bundle",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "51.txt",
+      "bytes": 9587,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45166
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/easy-terrain-onion365",
+      "fetched_at": "2026-11-20T17:38:13.709Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3131,
+      "final_url": "https://superhivemarket.com/products/easy-terrain-onion365",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "52.txt",
+      "bytes": 11704,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 51839
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/mm-caliper",
+      "fetched_at": "2026-11-20T17:38:17.346Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3136,
+      "final_url": "https://superhivemarket.com/products/mm-caliper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "53.txt",
+      "bytes": 14137,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54140
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/drop-to-bed",
+      "fetched_at": "2026-11-20T17:38:20.989Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1116,
+      "final_url": "https://superhivemarket.com/products/drop-to-bed",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "54.txt",
+      "bytes": 12400,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 48185
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/measurix",
+      "fetched_at": "2026-11-20T17:38:22.613Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3148,
+      "final_url": "https://superhivemarket.com/products/measurix",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "55.txt",
+      "bytes": 10983,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 50910
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/dieline-studio",
+      "fetched_at": "2026-11-20T17:38:26.266Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3147,
+      "final_url": "https://superhivemarket.com/products/dieline-studio",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "56.txt",
+      "bytes": 14854,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53248
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/bathwright-bathroom-generator-for-blender",
+      "fetched_at": "2026-11-20T17:38:29.918Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3131,
+      "final_url": "https://superhivemarket.com/products/bathwright-bathroom-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "57.txt",
+      "bytes": 11266,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53657
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/tool-generator",
+      "fetched_at": "2026-11-20T17:38:33.554Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1138,
+      "final_url": "https://superhivemarket.com/products/tool-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "58.txt",
+      "bytes": 11352,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 56051
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/procedural-tree-generator-addon-for-blender",
+      "fetched_at": "2026-11-20T17:38:35.195Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3125,
+      "final_url": "https://superhivemarket.com/products/procedural-tree-generator-addon-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "59.txt",
+      "bytes": 16467,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 59833
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/procedural-spaceship-generator-addon-for-blender",
+      "fetched_at": "2026-11-20T17:38:38.829Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3130,
+      "final_url": "https://superhivemarket.com/products/procedural-spaceship-generator-addon-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "60.txt",
+      "bytes": 16589,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 60122
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/stairwright-staircase-generator-for-blender",
+      "fetched_at": "2026-11-20T17:38:42.468Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1125,
+      "final_url": "https://superhivemarket.com/products/stairwright-staircase-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "61.txt",
+      "bytes": 11122,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52752
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/mirewood-swamp-marsh-generator-for-blender",
+      "fetched_at": "2026-11-20T17:38:44.099Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3147,
+      "final_url": "https://superhivemarket.com/products/mirewood-swamp-marsh-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "62.txt",
+      "bytes": 10805,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52311
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/boat-generator",
+      "fetched_at": "2026-11-20T17:38:47.755Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3152,
+      "final_url": "https://superhivemarket.com/products/boat-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "63.txt",
+      "bytes": 11233,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53523
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/autofocus-for-blender",
+      "fetched_at": "2026-11-20T17:38:51.409Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1146,
+      "final_url": "https://superhivemarket.com/products/autofocus-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "64.txt",
+      "bytes": 11243,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 59487
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/kitchen-cabinet-generator",
+      "fetched_at": "2026-11-20T17:38:53.064Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3136,
+      "final_url": "https://superhivemarket.com/products/kitchen-cabinet-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "65.txt",
+      "bytes": 11378,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 55159
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/rocket-launch-pad-generator",
+      "fetched_at": "2026-11-20T17:38:56.706Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3136,
+      "final_url": "https://superhivemarket.com/products/rocket-launch-pad-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "66.txt",
+      "bytes": 11694,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54100
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/motorcycle-generator",
+      "fetched_at": "2026-11-20T17:39:00.351Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1170,
+      "final_url": "https://superhivemarket.com/products/motorcycle-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "67.txt",
+      "bytes": 11239,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52591
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/character-creator-rigged-character-generator-for-blender",
+      "fetched_at": "2026-11-20T17:39:02.025Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3133,
+      "final_url": "https://superhivemarket.com/products/character-creator-rigged-character-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "68.txt",
+      "bytes": 11361,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53164
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/helicopter-generator",
+      "fetched_at": "2026-11-20T17:39:05.666Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3142,
+      "final_url": "https://superhivemarket.com/products/helicopter-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "69.txt",
+      "bytes": 12465,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 55362
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/big-rig-truck-generator-for-blender",
+      "fetched_at": "2026-11-20T17:39:09.311Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1122,
+      "final_url": "https://superhivemarket.com/products/big-rig-truck-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "70.txt",
+      "bytes": 11324,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54466
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/washday-laundry-room-generator-for-blender",
+      "fetched_at": "2026-11-20T17:39:10.942Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3131,
+      "final_url": "https://superhivemarket.com/products/washday-laundry-room-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "71.txt",
+      "bytes": 11213,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53617
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/splat-stage",
+      "fetched_at": "2026-11-20T17:39:14.582Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3151,
+      "final_url": "https://superhivemarket.com/products/splat-stage",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "72.txt",
+      "bytes": 17829,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 58681
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/inkit",
+      "fetched_at": "2026-11-20T17:39:18.238Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1115,
+      "final_url": "https://superhivemarket.com/products/inkit",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "73.txt",
+      "bytes": 8417,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 47261
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/easy-dress-onion365",
+      "fetched_at": "2026-11-20T17:39:19.856Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3141,
+      "final_url": "https://superhivemarket.com/products/easy-dress-onion365",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "74.txt",
+      "bytes": 9404,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46349
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/stylized-texture-generator-tool",
+      "fetched_at": "2026-11-20T17:39:23.503Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3138,
+      "final_url": "https://superhivemarket.com/products/stylized-texture-generator-tool",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "75.txt",
+      "bytes": 10341,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 58506
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/balloon-blimp-generator",
+      "fetched_at": "2026-11-20T17:39:27.148Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1135,
+      "final_url": "https://superhivemarket.com/products/balloon-blimp-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "76.txt",
+      "bytes": 11160,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54310
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/fizzwright-bottle-can-generator-for-blender",
+      "fetched_at": "2026-11-20T17:39:28.792Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3137,
+      "final_url": "https://superhivemarket.com/products/fizzwright-bottle-can-generator-for-blender",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "77.txt",
+      "bytes": 11017,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53704
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/cbl",
+      "fetched_at": "2026-11-20T17:39:32.436Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3130,
+      "final_url": "https://superhivemarket.com/products/cbl",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "78.txt",
+      "bytes": 9215,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 51918
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/random-flow",
+      "fetched_at": "2026-11-20T17:39:36.073Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1180,
+      "final_url": "https://superhivemarket.com/products/random-flow",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "79.txt",
+      "bytes": 10754,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 55313
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/auto-rig-pro-quick-rig",
+      "fetched_at": "2026-11-20T17:39:37.756Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3123,
+      "final_url": "https://superhivemarket.com/products/auto-rig-pro-quick-rig",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "80.txt",
+      "bytes": 10013,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46799
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/speedretopo",
+      "fetched_at": "2026-11-20T17:39:41.383Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3121,
+      "final_url": "https://superhivemarket.com/products/speedretopo",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "81.txt",
+      "bytes": 7083,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 45850
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/construction-lines",
+      "fetched_at": "2026-11-20T17:39:45.009Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1129,
+      "final_url": "https://superhivemarket.com/products/construction-lines",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "82.txt",
+      "bytes": 44844,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 105056
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/fluid-painter",
+      "fetched_at": "2026-11-20T17:39:46.646Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3136,
+      "final_url": "https://superhivemarket.com/products/fluid-painter",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "83.txt",
+      "bytes": 12188,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 58218
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/bonedynamics",
+      "fetched_at": "2026-11-20T17:39:50.290Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3125,
+      "final_url": "https://superhivemarket.com/products/bonedynamics",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "84.txt",
+      "bytes": 9037,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 62697
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/tracegenius-pro",
+      "fetched_at": "2026-11-20T17:39:53.923Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3173,
+      "final_url": "https://superhivemarket.com/products/tracegenius-pro",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "85.txt",
+      "bytes": 15812,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 69363
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/rain-generator",
+      "fetched_at": "2026-11-20T17:39:57.600Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1113,
+      "final_url": "https://superhivemarket.com/products/rain-generator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "86.txt",
+      "bytes": 9962,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 58231
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/alt-tab-easy-fog",
+      "fetched_at": "2026-11-20T17:39:59.223Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3144,
+      "final_url": "https://superhivemarket.com/products/alt-tab-easy-fog",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "87.txt",
+      "bytes": 8605,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53497
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/simple-bend",
+      "fetched_at": "2026-11-20T17:40:02.874Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3111,
+      "final_url": "https://superhivemarket.com/products/simple-bend",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "88.txt",
+      "bytes": 10616,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44964
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/instantclean",
+      "fetched_at": "2026-11-20T17:40:06.493Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1118,
+      "final_url": "https://superhivemarket.com/products/instantclean",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "89.txt",
+      "bytes": 10697,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46415
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/auto-highlight-in-outliner",
+      "fetched_at": "2026-11-20T17:40:08.115Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3136,
+      "final_url": "https://superhivemarket.com/products/auto-highlight-in-outliner",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "90.txt",
+      "bytes": 10989,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 50474
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/bqr-boolean-quad-ready",
+      "fetched_at": "2026-11-20T17:40:11.755Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3130,
+      "final_url": "https://superhivemarket.com/products/bqr-boolean-quad-ready",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "91.txt",
+      "bytes": 7075,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 47319
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/grungit",
+      "fetched_at": "2026-11-20T17:40:15.390Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1130,
+      "final_url": "https://superhivemarket.com/products/grungit",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "92.txt",
+      "bytes": 14803,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 69447
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/quicksnap",
+      "fetched_at": "2026-11-20T17:40:17.027Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3124,
+      "final_url": "https://superhivemarket.com/products/quicksnap",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "93.txt",
+      "bytes": 11669,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 50446
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/baketool",
+      "fetched_at": "2026-11-20T17:40:20.658Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3141,
+      "final_url": "https://superhivemarket.com/products/baketool",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "94.txt",
+      "bytes": 16295,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 56190
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/tesselator",
+      "fetched_at": "2026-11-20T17:40:24.306Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1116,
+      "final_url": "https://superhivemarket.com/products/tesselator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "95.txt",
+      "bytes": 8048,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44860
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/extra-lights",
+      "fetched_at": "2026-11-20T17:40:25.930Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3143,
+      "final_url": "https://superhivemarket.com/products/extra-lights",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "96.txt",
+      "bytes": 18774,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 63836
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/physics-dropper",
+      "fetched_at": "2026-11-20T17:40:29.582Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3132,
+      "final_url": "https://superhivemarket.com/products/physics-dropper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "97.txt",
+      "bytes": 18172,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 51624
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/powersave",
+      "fetched_at": "2026-11-20T17:40:33.218Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1122,
+      "final_url": "https://superhivemarket.com/products/powersave",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "98.txt",
+      "bytes": 9198,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 43659
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/clean-panels",
+      "fetched_at": "2026-11-20T17:40:34.847Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3167,
+      "final_url": "https://superhivemarket.com/products/clean-panels",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "99.txt",
+      "bytes": 11370,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 56885
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/rizomuv-bridge",
+      "fetched_at": "2026-11-20T17:40:38.517Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3113,
+      "final_url": "https://superhivemarket.com/products/rizomuv-bridge",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "100.txt",
+      "bytes": 7464,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 41842
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/pivot-transform",
+      "fetched_at": "2026-11-20T17:40:42.137Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1116,
+      "final_url": "https://superhivemarket.com/products/pivot-transform",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "101.txt",
+      "bytes": 9211,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 49867
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/round-inset",
+      "fetched_at": "2026-11-20T17:40:43.761Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3113,
+      "final_url": "https://superhivemarket.com/products/round-inset",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "102.txt",
+      "bytes": 8305,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44451
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/pro-lens-2",
+      "fetched_at": "2026-11-20T17:40:47.381Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3132,
+      "final_url": "https://superhivemarket.com/products/pro-lens-2",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "103.txt",
+      "bytes": 9127,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 47220
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/rantools",
+      "fetched_at": "2026-11-20T17:40:51.017Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1170,
+      "final_url": "https://superhivemarket.com/products/rantools",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "104.txt",
+      "bytes": 13864,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 82120
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/layerpainter",
+      "fetched_at": "2026-11-20T17:40:52.698Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3126,
+      "final_url": "https://superhivemarket.com/products/layerpainter",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "105.txt",
+      "bytes": 12090,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 48563
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/symmetrize-uv-util",
+      "fetched_at": "2026-11-20T17:40:56.329Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3119,
+      "final_url": "https://superhivemarket.com/products/symmetrize-uv-util",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "106.txt",
+      "bytes": 7825,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 42617
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/drag-n-drop-import",
+      "fetched_at": "2026-11-20T17:40:59.956Z",
+      "retries": 2,
+      "status": 200,
+      "elapsed_ms": 3126,
+      "final_url": "https://superhivemarket.com/products/drag-n-drop-import",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "107.txt",
+      "bytes": 11675,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 49875
+    }
+  ]
+}

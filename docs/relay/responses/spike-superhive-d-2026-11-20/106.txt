@@ -1,0 +1,129 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/symmetrize-uv-util","name":"Symmetrize UV Util","image":["https://assets.superhivemarket.com/store/product/159448/image/24923e9987f5406b0f6c83a5916c0e51.png"],"description":"Symmetrize UV Util is an add-on that lets you symmetrize your UV map along a specified axis.","mpn":"159448","brand":{"@type":"Thing","name":"akaneyu"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"6.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"akaneyu"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"24"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Symmetrize UV Util","item":"https://superhivemarket.com/products/symmetrize-uv-util"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/159448/image/24923e9987f5406b0f6c83a5916c0e51.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/159448/image/24923e9987f5406b0f6c83a5916c0e51.png
+meta description: Symmetrize UV Util is an add-on that lets you symmetrize your UV map along a specified axis.
+meta og:url: https://superhivemarket.com/products/symmetrize-uv-util
+meta og:title: Symmetrize UV Util
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Symmetrize UV Util is an add-on that lets you symmetrize your UV map along a specified axis.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Symmetrize UV Util
+meta twitter:description: Symmetrize UV Util is an add-on that lets you symmetrize your UV map along a specified axis.
+meta twitter:domain: https://superhivemarket.com/products/symmetrize-uv-util
+meta og:image: https://assets.superhivemarket.com/store/product/159448/image/24923e9987f5406b0f6c83a5916c0e51.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/159448/image/24923e9987f5406b0f6c83a5916c0e51.png
+Symmetrize UV Util - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Symmetrize UV Util
+akaneyu (/creators/akaneyu)
+in Addons (/categories/addons)
+https://assets.superhivemarket.com/store/product/159448/image/24923e9987f5406b0f6c83a5916c0e51.png
+https://assets.superhivemarket.com/store/productimage/533724/image/edd0232ab49b6412bdcdec809ce09336.gif
+https://assets.superhivemarket.com/store/productimage/533725/image/531a01cd2dc4d517b8dd520465319a4b.gif
+https://assets.superhivemarket.com/store/productimage/533879/image/d13ad76990f5d1c85ce1b81ceedc37e4.png
+https://assets.superhivemarket.com/store/productimage/533726/image/2cf356a8b4b0ac648725f93318a79f23.png
+https://assets.superhivemarket.com/store/productimage/534053/image/94921297a78d5f3ac7f7755909931b1e.png
+About (/products/symmetrize-uv-util)
+FAQ (/products/symmetrize-uv-util/faq)
+Documentation (/products/symmetrize-uv-util/docs)
+Ratings (/products/symmetrize-uv-util/ratings)
+Version History (/products/symmetrize-uv-util/versions)
+If you're working with a symmetric model, keeping its UV map and texture symmetric is a good idea. This add-on can detect the structure of your mesh and adjust each UV vertex automatically.
+🪄 Symmetrize your UV map
+If your UV map should be fully symmetrical, just use the Symmetrize function. This function makes the UV map symmetry across the specified axis on the panel.
+You can use a brush ("Start Brush") if your mesh has some asymmetrical parts. When you trace some parts with the special brush, the only traced parts are symmetrized. The size of the brush can be changed by pressing the "F" key.
+🪄 Expand mode
+The Expand mode is a feature that creates a double-sided UV map from a single-sided UV map. You can also use a brush if needed.
+🪄 Position the axis anywhere
+The axis of symmetry can be placed anywhere by using the 2D cursor as a pivot point. You can specify one from Center, Start, End or 2D Cursor in the "Axis Position" option.
+🪄 UDIM tiles supported
+Symmetrizing is performed based on the UDIM tile boundaries when working with UDIM texture (if "Use Tile Boundary" is turned on). You can now efficiently symmetrize UV maps on each UDIM tile.
+Back to top
+Discover more products like this
+mirror (/tags/mirror) symmetirize (/tags/symmetirize) uv (/tags/uv)
+Seats:
+&minus;
++
+$6
+Have questions about this product?
+Login to message (/login)
+Details
+Sales
+2300+
+Rating
+24 ratings (/products/symmetrize-uv-util/ratings)
+Published
+over 6 years ago
+Blender Version
+4.2 - 5.2
+License
+GPL (/page/gpl-license)
+akaneyu
+Visit Website (https://pasteldots.lilys4u.com/blender-add-ons/) See all items by this creator (/creators/akaneyu)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#a5d6d0d5d5cad7d1e5d6d0d5c0d7cdccd3c0c8c4d7cec0d18bc6cac8)
+Made by the humans of Autotroph (https://autotroph.com)

@@ -1,0 +1,135 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/inkit","name":"INKit","image":["https://assets.superhivemarket.com/store/product/266079/image/xlarge-c9b50f8e24daef8dcbbfad07b06413eb.jpeg"],"description":"","mpn":"266079","brand":{"@type":"Thing","name":"MACHIN3"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"99.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"MACHIN3"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"5"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"INKit","item":"https://superhivemarket.com/products/inkit"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/266079/image/xlarge-c9b50f8e24daef8dcbbfad07b06413eb.jpeg
+meta twitter:image: https://assets.superhivemarket.com/store/product/266079/image/xlarge-c9b50f8e24daef8dcbbfad07b06413eb.jpeg
+meta description: A Unique Market for Creators that love Blender
+meta og:url: https://superhivemarket.com/products/inkit
+meta og:title: INKit
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: A Unique Market for Creators that love Blender
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: INKit
+meta twitter:description: A Unique Market for Creators that love Blender
+meta twitter:domain: https://superhivemarket.com/products/inkit
+meta og:image: https://assets.superhivemarket.com/store/product/266079/image/xlarge-c9b50f8e24daef8dcbbfad07b06413eb.jpeg
+meta twitter:image: https://assets.superhivemarket.com/store/product/266079/image/xlarge-c9b50f8e24daef8dcbbfad07b06413eb.jpeg
+INKit - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+INKit
+MACHIN3 (/creators/machin3)
+in Rendering (/categories/rendering-scripts-and-addons)
+https://assets.superhivemarket.com/store/product/266079/image/xlarge_og-d621bb653d71622b6aa9ada87cf3c794.jpeg
+https://www.youtube.com/embed/Ntln-qPSnGY?start=0
+https://assets.superhivemarket.com/store/productimage/1388979/image/xlarge_og-612b97369db59ef8aa59477e01eb3c84.png
+https://assets.superhivemarket.com/store/productimage/1388977/image/xlarge_og-dd1706e92364c6ee59be2f550f30e491.png
+https://assets.superhivemarket.com/store/productimage/1388980/image/xlarge_og-6a417c2ba4f2c52b44bf149f1d127b3c.png
+https://assets.superhivemarket.com/store/productimage/1388978/image/xlarge_og-18e3fce16925a944269ab3fd93fcedf8.png
+About (/products/inkit)
+FAQ (/products/inkit/faq)
+Documentation (/products/inkit/docs)
+Ratings (/products/inkit/ratings)
+INKit lets you annotate or paint on a 3D View in Blender from an iPad with Apple Pencil, or from an Android tablet with an active stylus.
+Do you ever feel like you are "going 3D blind"? I use this term to refer to the times you get stuck, orbiting the model endlessly and getting nowhere. You struggle to make decisions. You have a hard time evaluating your past choices and envisioning what to do next. Switching the medium to 2D is a great way to get unstuck. Trying out ideas in 2D forces you to think differently, gives you different tools, and is much faster.
+Review past choices. Plan ahead. Leave notes for yourself or others. Explore ideas, compare variations, and iterate in 2D. Paint block-outs. No screenshots, no file transfers. Create text annotations from the tablet's keyboard. Pick colors from anywhere on the canvas. Your ink is saved, and it stays in Blender.
+INKit stores 3D views as canvases, each with its own shading, so the notes keep the context they were drawn in even when the model changes. The Hyper Pencil tool is how you pick, create, duplicate, and remove those canvases. Ink shows up on its own, only when and where you need it. No hiding, no layers. Just the view and the canvases.
+The tablet and Blender have to be on the same Wi-Fi. You don't need to install anything on the tablet, and the connection stays on your local network. Several tablets, or a regular browser, can be connected at the same time, which is useful for design reviews and presentations.
+A tablet with an active stylus is required, such as an iPad with Apple Pencil or a Samsung Galaxy Tab S with its S Pen. A capacitive stylus fakes a finger and will not work. Graphics tablet support inside Blender is coming in 1.1.
+The Annotation Workflow you always wanted.
+Back to top
+Discover more products like this
+drawing (/tags/drawing) paint (/tags/paint) tablet (/tags/tablet) stylus (/tags/stylus) ink it (/tags/ink-it) canvas (/tags/canvas) INKit (/tags/inkit) annotation (/tags/annotation) ipad (/tags/ipad) sketch (/tags/sketch) android (/tags/android) block-out (/tags/block-out)
+Hobbyist/Indie/Freelancer
+$14.99
+Studio, up to 10
+$119.99
+Studio, up to 20
+$199.99
+Seats:
+&minus;
++
+$14.99
+Have questions about this product?
+Login to message (/login)
+Details
+Sales
+20+
+Rating
+5 ratings (/products/inkit/ratings)
+Published
+16 days ago
+Blender Version
+5.0 - 5.2
+Extension Type
+N/A
+Render Engine Used
+Arnold, Blender-Internal, Blender-Game-Engine, Cycles, Eevee, Freestyle, Luxrender, Mental-Ray, Octane, Vray, Yafaray
+License
+GPL (/page/gpl-license)
+MACHIN3
+Visit Website (https://machin3.io) See all items by this creator (/creators/machin3)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#cdbeb8bdbda2bfb98dbeb8bda8bfa5a4bba8a0acbfa6a8b9e3aea2a0)
+Made by the humans of Autotroph (https://autotroph.com)

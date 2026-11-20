@@ -1,0 +1,201 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/bonedynamics","name":"BoneDynamics Pro","image":["https://assets.superhivemarket.com/store/product/167577/image/1f526917afc72b39d7e6c1ad5d6c9653.jpg"],"description":"BoneDynamics Pro is a blender addon that allows you to add jiggle and collision physics to bones.","mpn":"167577","brand":{"@type":"Thing","name":"morelewd"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"15.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Morecode"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4","reviewCount":"49"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"BoneDynamics Pro","item":"https://superhivemarket.com/products/bonedynamics"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/167577/image/1f526917afc72b39d7e6c1ad5d6c9653.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/167577/image/1f526917afc72b39d7e6c1ad5d6c9653.jpg
+meta description: BoneDynamics Pro is a blender addon that allows you to add jiggle and collision physics to bones.
+meta og:url: https://superhivemarket.com/products/bonedynamics
+meta og:title: BoneDynamics Pro
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: BoneDynamics Pro is a blender addon that allows you to add jiggle and collision physics to bones.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: BoneDynamics Pro
+meta twitter:description: BoneDynamics Pro is a blender addon that allows you to add jiggle and collision physics to bones.
+meta twitter:domain: https://superhivemarket.com/products/bonedynamics
+meta og:image: https://assets.superhivemarket.com/store/product/167577/image/1f526917afc72b39d7e6c1ad5d6c9653.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/167577/image/1f526917afc72b39d7e6c1ad5d6c9653.jpg
+BoneDynamics Pro - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+BoneDynamics Pro
+morelewd (/creators/morelewd)
+in Rigging (/categories/rigging-scripts-and-addons)
+https://assets.superhivemarket.com/store/product/167577/image/1f526917afc72b39d7e6c1ad5d6c9653.jpg
+https://www.youtube.com/embed/gCAzSX6KV28?start=0
+https://assets.superhivemarket.com/store/productimage/208455/image/1f3f3a440a6c8aa17606c745be037250.jpg
+About (/products/bonedynamics)
+FAQ (/products/bonedynamics/faq)
+Documentation (/products/bonedynamics/docs)
+Ratings (/products/bonedynamics/ratings)
+Version History (/products/bonedynamics/versions)
+BoneDynamics 2.0 is a blender addon that allows you to add physics to bones.
+Check my youtube page for instructions on how to use this properly :
+https://www.youtube.com/watch?v=WhvJYyeoykw
+There's also an official discord server where you can get tips and some help :
+https://discord.gg/JaeVteJFZT
+Check out my new lighting addon Superlight (https://superhivemarket.com/products/superlight)
+Features:
+Tweak one or multiple bones physics parameters on the fly (Pro)
+collision on the entire bone
+Bones react to movement and collision.
+Super easy to setup.
+Ability to stretch bones.
+Ability to make a bone chain.
+Easy to tweak
+Upcoming updates for free.
+Enhanced baking system
+Dynamic Parenting
+Displacement
+CHANGELOG:
+0.1.0:
+-Initial release.
+0.1.1:
+-Added the ability to pick the size of the object controlling the bone.
+0.1.5:
+- Better errors handling.
+- Naming collision bug fixed.
+- Reactive UI values based on selection.
+- Playback performance improvements.
+0.1.6:
+- Fix bad spawn position
+0.1.7:
+- Fixed Foreign language Error.
+- Instant updates when you tweak parameters.
+- New Presets manager feature.
+- Performance improvements.
+- Better UI
+1.0.4:
+- Fixed Foreign language Error.
+- New chain mode and cloth Mode (tutorial soon)
+1.0.6:
+- Fixed bone layers consistency bug.
+- No need to select the active bone anymore
+1.0.8:
+- Minor bug fixes.
+- Chain mode tweak
+1.2.1:
+- Major bug fixes.
+- Ability to use it with linked armatures (library overrides).
+1.2.5:
+- Dynamic Bone list with shortcuts, ON / OFF , selection.
+- Tweakable frame step when you bake the animation.
+1.3.5:
+- FIxed the crash when you undo
+- New displacement mode
+1.4.0:
+- FIxed baking resolution not working
+- New dynamic parent mode
+- Ability to keyframe dynamic bones
+1.4.5:
+- Multiple Bug fixes
+- New Transfer animation feature
+- Ability to keyframe dynamic bones
+Version 2.0 Features:
+Rebuilt on cloth modifier (soft body removed)
+Fully driver-driven – keyframe any parameter
+Displacement: control both ends of the bone
+Hook system for chain pinning and control
+Keyframe dynamic bones: Shift+R / Shift+T
+New transfer animation engine
+Copy/paste bone parameters instantly
+Per-bone collision distance control
+Full video tutorial: Watch here (https://www.youtube.com/watch?v=WhvJYyeoykw)
+Back to top
+Discover more products like this
+physic (/tags/physic) 3d animation (/tags/3d-animation) basic physics (/tags/basic-physics) spring23 (/tags/spring23) loveblender (/tags/loveblender) summer23 (/tags/summer23) armature (/tags/armature) bones (/tags/bones) bfcm23 (/tags/bfcm23) easy physics (/tags/easy-physics) spring24 (/tags/spring24) jiggle (/tags/jiggle)
+BoneDynamics Pro
+For Freelancers and Personal Use only
+$15
+BoneDynamics Pro Studio
+This version is for Professional studios only. Teams that are more than 3 people etc...
+$50
+Seats:
+&minus;
++
+$15
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Sales
+6100+
+Downloads
+16800+
+Rating
+49 ratings (/products/bonedynamics/ratings)
+Dev Fund Contributor
+Published
+over 5 years ago
+Blender Version
+4.2 - 5.3
+Extension Type
+Add-on
+License
+GPL (/page/gpl-license)
+morelewd
+Visit Website (https://morelewd.gumroad.com/) See all items by this creator (/creators/morelewd)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#b6c5c3c6c6d9c4c2f6c5c3c6d3c4dedfc0d3dbd7c4ddd3c298d5d9db)
+Made by the humans of Autotroph (https://autotroph.com)

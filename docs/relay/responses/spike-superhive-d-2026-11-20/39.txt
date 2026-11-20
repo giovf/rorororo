@@ -1,0 +1,151 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/svg-to-print","name":"SVG to Print","image":["https://assets.superhivemarket.com/store/product/268665/image/xlarge-4454c739f2bace6888c8042c77e90631.webp"],"description":"Turn SVG logos and signs into clean, watertight 3D-print bodies: letter holes kept, overlaps merged, exact height in mm, optional base plate and one body per colour.","mpn":"268665","brand":{"@type":"Thing","name":"Sonneblom Digitaal"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"9.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Hanru Croucamp"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"SVG to Print","item":"https://superhivemarket.com/products/svg-to-print"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/268665/image/xlarge-4454c739f2bace6888c8042c77e90631.webp
+meta twitter:image: https://assets.superhivemarket.com/store/product/268665/image/xlarge-4454c739f2bace6888c8042c77e90631.webp
+meta description: Turn SVG logos and signs into clean, watertight 3D-print bodies: letter holes kept, overlaps merged, exact height in mm, optional base plate and one body per colour.
+meta og:url: https://superhivemarket.com/products/svg-to-print
+meta og:title: SVG to Print
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Turn SVG logos and signs into clean, watertight 3D-print bodies: letter holes kept, overlaps merged, exact height in mm, optional base plate and one body per colour.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: SVG to Print
+meta twitter:description: Turn SVG logos and signs into clean, watertight 3D-print bodies: letter holes kept, overlaps merged, exact height in mm, optional base plate and one body per colour.
+meta twitter:domain: https://superhivemarket.com/products/svg-to-print
+meta og:image: https://assets.superhivemarket.com/store/product/268665/image/xlarge-4454c739f2bace6888c8042c77e90631.webp
+meta twitter:image: https://assets.superhivemarket.com/store/product/268665/image/xlarge-4454c739f2bace6888c8042c77e90631.webp
+SVG to Print - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+SVG to Print
+Sonneblom Digitaal (/creators/sonneblomdigitaal)
+in Import & Export (/categories/import-export)
+https://assets.superhivemarket.com/store/product/268665/image/xlarge_og-bf74e8242a556e978b2d1eb9cb3b0929.webp
+https://assets.superhivemarket.com/store/productimage/1393899/image/xlarge_og-d906547dd47f34577cc0f43264573d73.webp
+https://assets.superhivemarket.com/store/productimage/1393900/image/xlarge_og-6deb919ae1114f406716fe34270ee943.webp
+https://assets.superhivemarket.com/store/productimage/1393902/image/xlarge_og-644410d723a18775c69aa8e37d04ee1e.webp
+https://assets.superhivemarket.com/store/productimage/1393901/image/xlarge_og-e94c4fa6e1a22492cd8bafbfa19208c9.webp
+About (/products/svg-to-print)
+FAQ (/products/svg-to-print/faq)
+Documentation (/products/svg-to-print/docs)
+Ratings (/products/svg-to-print/ratings)
+Version History (/products/svg-to-print/versions)
+What it does
+SVG to Print turns a logo, sign or badge drawn as an SVG into clean, watertight solid bodies that are ready for your slicer. It reads the SVG itself (or the curves you already imported with Blender's own SVG importer), works out what is solid and what is a hole, merges shapes that overlap, extrudes everything to an exact height in millimetres , and can add a rounded base plate . Every fill colour becomes its own body, so multi-colour printers get one clean part per colour, and where one colour is painted over another the lower colour is cut away so the bodies never overlap.
+Who it's for
+Makers who print logos, signs, badges, keychains, coasters, cookie-cutter outlines and wall art, and anyone who has imported an SVG into Blender and got overlapping fills, flickering faces, filled-in letter holes or meshes that the slicer complains about. No modelling skills needed: pick the file, set the size and height, click one button.
+Key features
+Holes stay holes: follows the SVG fill rules (non-zero and even-odd) like a browser does, plus a Nested = hole switch for logos whose letter counters come out filled.
+Overlaps merged: shapes of the same colour are united into one solid, and self-crossing outlines (stars, figure eights, crossing sub-paths) are resolved.
+Any curve direction: clockwise or counter-clockwise outlines all give outward-facing normals.
+Exact size: height in millimetres, and the artwork fitted to an exact width or height in millimetres (or kept at the size the SVG declares).
+One body per colour with a matching material, or one single merged body. Later colours cover earlier ones, like the picture you see.
+Optional base plate: separate body with your thickness, margin and rounded corners; the artwork sits on top of it.
+Colour heights: all the same, stepped (each colour a set amount taller than the one before), or a height per colour : the colours appear in a list after the first build, and a height you type there resizes the built body straight away.
+Adjust Last Operation (F9): change size, height, plate, holes or any other build setting right after the click and Blender rebuilds. Build again replaces the previous result instead of piling up copies.
+Understands real SVG files: all path commands including arcs, rectangles with rounded corners, circles, ellipses, polygons, transforms, groups, CSS classes, style attributes, , mm / cm / in / pt / px units, and compressed .svgz files.
+Clean-up: curve detail in millimetres and removal of tiny specks and pinholes from traced artwork.
+Checked result: after every build each body's edges are counted; a body that is not watertight (two outlines touching in one point) is selected and the report, in red, says what to do. Check Bodies does the same for any selected mesh and reports size in mm and volume. A built-in sample badge lets you try everything in one click.
+Units default to 1 mm , what slicers expect; Auto (scene units), 1 cm, 1 m and 1 inch are there too, with a red warning when 1 unit is not 1 mm. Each build is one undo step.
+How to use
+Press N in the 3D Viewport and open the SVG tab.
+Choose your SVG file (or switch Source to Selected curves).
+Set the size in millimetres, the height and, if you like, the base plate.
+Click Build Print Model . The report shows the bodies, the size and whether everything is watertight.
+Select the bodies and export them as STL or 3MF for your slicer.
+Compatibility
+Blender 4.2 LTS or newer, tested on 4.2 LTS and 5.2 LTS. Works offline, no extra software needed. Both an extension zip and a legacy add-on zip are included.
+Good to know
+Only filled shapes are printed. Outline-only (stroke) artwork and text are skipped with a message: convert them to paths first (in Inkscape: Path > Stroke to Path, Path > Object to Path).
+Gradients are printed in their first colour; clip paths, masks, patterns, filters and embedded images are ignored.
+Colours share a body only when they are exactly the same colour; two slightly different blues become two bodies.
+Outlines that touch at a single point (a bow tie, or two overlapping shapes combined with the even-odd rule) cannot form one perfect solid. The add-on still builds them, selects the affected body and says in the report what to do, instead of hiding it.
+Complex logos with many overlapping colours do many Boolean operations: about 120 overlapping shapes took roughly 20 seconds in our tests.
+Bodies are flat extrusions without bevels or chamfers, and there is no mirror option (mirror the SVG in your vector editor for stamps). "Replace previous result" deletes the earlier objects of the same name when you build again.
+Support
+Questions or a bug? Use the Superhive product page messages and we reply within a day.
+Compatibility: Blender 4.2 - 5.2 LTS (tested on 4.2.9 and 5.2.2). Updated Nov 2026.
+Back to top
+Discover more products like this
+base plate (/tags/base-plate) SVG (/tags/svg) logo (/tags/logo) multicolor (/tags/multicolor) 3d printing (/tags/3d-printing) extrude (/tags/extrude) signs (/tags/signs) watertight (/tags/watertight)
+Seats:
+&minus;
++
+$12 $9
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Published
+13 days ago
+Blender Version
+4.2 - 5.2
+License
+GPL (/page/gpl-license)
+Sonneblom Digitaal
+Visit Website (https://sonneblomdigitaal.gumroad.com) See all items by this creator (/creators/sonneblomdigitaal)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#7f0c0a0f0f100d0b3f0c0a0f1a0d1716091a121e0d141a0b511c1012)
+Made by the humans of Autotroph (https://autotroph.com)

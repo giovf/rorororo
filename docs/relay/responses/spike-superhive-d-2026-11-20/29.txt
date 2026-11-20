@@ -1,0 +1,209 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/parametric-slicer","name":"Parametric Slicer","image":["https://assets.superhivemarket.com/store/product/268389/image/xlarge-315896a145ba14457257d4f5637df8d9.jpg"],"description":"Slices a closed mesh into plywood-style planks, drills them for rods and washers, then gives every part its own material and UV map while the preview updates live.","mpn":"268389","brand":{"@type":"Thing","name":"3DArtbox"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"15.00","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"Ali Ghorban"}}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Parametric Slicer","item":"https://superhivemarket.com/products/parametric-slicer"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/268389/image/xlarge-315896a145ba14457257d4f5637df8d9.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/268389/image/xlarge-315896a145ba14457257d4f5637df8d9.jpg
+meta description: Slices a closed mesh into plywood-style planks, drills them for rods and washers, then gives every part its own material and UV map while the preview updates live.
+meta og:url: https://superhivemarket.com/products/parametric-slicer
+meta og:title: Parametric Slicer
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Slices a closed mesh into plywood-style planks, drills them for rods and washers, then gives every part its own material and UV map while the preview updates live.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Parametric Slicer
+meta twitter:description: Slices a closed mesh into plywood-style planks, drills them for rods and washers, then gives every part its own material and UV map while the preview updates live.
+meta twitter:domain: https://superhivemarket.com/products/parametric-slicer
+meta og:image: https://assets.superhivemarket.com/store/product/268389/image/xlarge-315896a145ba14457257d4f5637df8d9.jpg
+meta twitter:image: https://assets.superhivemarket.com/store/product/268389/image/xlarge-315896a145ba14457257d4f5637df8d9.jpg
+Parametric Slicer - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Parametric Slicer
+3DArtbox (/creators/3dartbox)
+in Modeling (/categories/modeling)
+https://assets.superhivemarket.com/store/product/268389/image/xlarge_og-1b703ae24eedec0a461ec96afd4697e9.jpg
+https://assets.superhivemarket.com/store/productimage/1390913/image/xlarge_og-177c4cec46e81ecf48c2809f2cbb2da9.jpg
+https://assets.superhivemarket.com/store/productimage/1390914/image/xlarge_og-d02efff75a5ba721f2188501a0b1e26c.jpg
+https://assets.superhivemarket.com/store/productimage/1390915/image/xlarge_og-c4591f6ef719f650e2ea51f5af39361a.jpg
+https://assets.superhivemarket.com/store/productimage/1390916/image/xlarge_og-ca1886125fd5f4c90b088c704fec3fb8.jpg
+https://assets.superhivemarket.com/store/productimage/1390917/image/xlarge_og-2f5cd90ee9960418597a6661cb9bd08e.jpg
+About (/products/parametric-slicer)
+FAQ (/products/parametric-slicer/faq)
+Documentation (/products/parametric-slicer/docs)
+Ratings (/products/parametric-slicer/ratings)
+[Slice a mesh into planks: one chair at 17, 34 and 102 planks]
+3DARTBOX ADD-ON
+AB Parametric Slicer
+Turns a closed mesh into a stack of flat planks, the kind of furniture that's cut from plywood and then glued or bolted back together. Pick an object, switch on one or more directions, set how thick the planks are, and every plank comes out as its own clean object.
+Doing this by hand means a boolean per plank, and all of it again the moment the thickness or the spacing changes. Here every setting stays live: the preview rebuilds as you change a number, and Slice builds the real result once you're happy with it.
+It's made for anyone designing or presenting sliced furniture, sculptures and installations, from archviz and product shots to game props.
+X, Y, Z or Custom By Gap or By Count Profile, Boolean or Carve Rods and washers Bevel Materials by role UV unwrap Live preview
+VIDEO
+Every tab, then four more examples
+A walk through the tabs in order, then a round chair, a lamp on a custom axis, a plastic chair and a big bench.
+PLANKS
+Set the thickness, the count follows
+By Gap fits as many planks as the model holds at your Thickness and Gap. By Count spreads a set number of planks over the model instead. The live preview rebuilds with every change, so you can try a few before you Slice.
+[One chair resliced at 34, 102 and 17 planks as Thickness and Gap change]
+One chair at three settings: 34, 102 and 17 planks
+Align, Offset and Shrink place each stack, and Shrink is what keeps crossing stacks out of each other's way.
+Profile builds each plank fresh from the model's outline, with flat caps and a tidy side.
+Boolean keeps the model's own topology on the sides.
+Carve slices with a plane on each side of the plank and fills the cut.
+DIRECTIONS
+Slice along X, Y, Z or your own axis
+Turn on more than one direction and every stack keeps its own Thickness, Gap and Shrink. Custom slices along the local Z of a helper, so a rotated empty gives you any angle.
+[A round chair sliced along X and Z into 139 planks]
+X + Z · 139 planks
+[A lamp sliced along X and along a custom axis taken from a rotated empty]
+X + Custom
+HARDWARE
+Rods, washers and end caps
+A guide marks where a rod runs, usually an empty dropped at the 3D cursor. The planks are drilled for it, and the rod, the washers and the end pieces are built with the stack.
+[Planks pulled out along the rods, with the washers between them]
+Planks pulled out along the rods to show the washers between them
+[Rod Span switching from Whole to Inside Only on a chaise]
+Rod Span: Whole, then Inside Only
+The holes have a clearance so the rod slides through, and Drill Square bores straight through even when a rod is tilted.
+A washer goes in every gap, and a washer or a solid cap closes the outside of the first and last plank.
+Rod Span decides what a rod does in empty space: Whole runs it straight across, Inside Only stops it wherever the model is empty.
+Bevel Hardware rounds the rods, washers and end pieces.
+DETAIL
+A material for every part
+Replace gives sides, hole walls, caps, rods, washers and end caps a material each. Pick one from the file, or type a new name and it's made with a default color the first time you slice.
+[The sliced chaise with a walnut material on its planks]
+Your materials
+[Default colors by role: red sides, green caps and a teal end cap]
+Default color per role
+Respace the outline by segment count or by segment length, keep the sharp corners where they are, and thin out the straight runs.
+Bevel the plank edges. Fit Width holds one width for the whole run, so a thin stack never gets a bevel wider than its planks.
+Smooth shading with sharp edges by angle or at the rims, plus Weighted Normals to clean up the bevel.
+UV
+A UV map on every part
+Caps keep their true shape and every side opens into a straight strip along U. Real World puts one scale on everything, so a wood texture runs the same way down the whole stack.
+[A wood texture running the same way down the stack with Real World UVs]
+Real World · 1 tile = 1 m
+[The UV layout of the planks in the UV editor]
+UV editor
+Hole walls open into strips too, and the seams follow the materials.
+Pack UV puts the planks in one tile and the hardware in the next.
+Straighten, Split Long Strips and Overlap Copies tidy the layout, and caps and loops each get their own turn and stretch.
+OUTPUT
+Preview as you work, then Slice
+The live preview runs in Draft, which leaves the finishing work out and stays quick, or in Full, which is exactly what Slice will build.
+Slice builds a few parts at a time behind a progress bar, so the viewport keeps turning while it runs, and Esc stops it.
+Every result lands in its own numbered collection. Join Parts merges a result into one object, and Triangulate Ngons splits faces with more than four corners for other programs.
+Everything sits on a card in the 3D Viewport sidebar, and most controls show a tip with a small animation of that very setting. If you'd rather have Blender's own panels, the classic panel offers the same settings and buttons.
+AT A GLANCE
+DIRECTIONS
+X, Y, Z and Custom, each with its own settings
+SPACING
+By Gap or By Count
+CUTTING
+Profile, Boolean or Carve
+HARDWARE
+Rods, washers and end caps, with Rod Span
+MATERIALS
+Side, Hole Wall, Cap, Rod, Washer and End Cap
+UV
+Pack UV and Real World scale
+PREVIEW
+Draft or Full, rebuilt as you work
+OUTPUT
+Numbered collections, Join Parts, Triangulate Ngons
+COMPATIBILITY
+Blender 4.2 to 5.2 Installs as an extension Tested on Windows No other add-ons or Python packages No internet connection needed
+Included: AB_Parametric_Slicer.zip, the add-on. Install the zip as it is, without unzipping it. The README and the GPL license are inside.
+GOOD TO KNOW
+The planks are 3D objects in your scene. The add-on doesn't export cutting files such as SVG or DXF, and it doesn't lay the planks out flat on a sheet for a laser or a CNC.
+Crossing stacks aren't notched into each other. Shrink pulls each stack in so they keep apart.
+It slices one source object at a time, in the open .blend file.
+Boolean needs a properly closed mesh. Profile, the default, usually copes with gaps in the surface.
+The Bevel and Outline options work with Profile only.
+A heavy model can take minutes to slice. Leave the preview on Draft, lower Preview Limit, or switch Live preview off and just Slice.
+Every tab and setting is explained step by step in the Documentation tab.
+Back to top
+Discover more products like this
+furniture (/tags/furniture) automatic uv unwrap (/tags/automatic-uv-unwrap) slicer (/tags/slicer) planks (/tags/planks) bevel (/tags/bevel) sliced (/tags/sliced) parametric (/tags/parametric) 3D parametric (/tags/3d-parametric) rods (/tags/rods) parametric-furniture (/tags/parametric-furniture) slicing (/tags/slicing) plywood (/tags/plywood)
+Seats:
+&minus;
++
+$15
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Published
+10 days ago
+Blender Version
+4.2 - 5.2
+Extension Type
+Add-on
+License
+GPL (/page/gpl-license)
+3DArtbox
+Visit Website (https://www.artstation.com/a/29882707) See all items by this creator (/creators/3dartbox)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#4a393f3a3a25383e0a393f3a2f3822233c2f272b38212f3e64292527)
+Made by the humans of Autotroph (https://autotroph.com)
