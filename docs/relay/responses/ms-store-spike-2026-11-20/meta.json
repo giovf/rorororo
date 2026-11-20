@@ -1,0 +1,303 @@
+{
+  "request": "ms-store-spike-2026-11-20",
+  "fetched_at": "2026-11-20T17:12:11.942Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/toc.json",
+      "fetched_at": "2026-11-20T17:11:49.052Z",
+      "status": 200,
+      "elapsed_ms": 1020,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/toc.json",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "3772",
+        "last-modified": "Tue, 10 Nov 2026 19:05:16 GMT",
+        "etag": "\"N14y84P/vXBPC2kTAUI6tclKrRM=\""
+      },
+      "file": "1.json",
+      "bytes": 19766,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/why-distribute-through-store",
+      "fetched_at": "2026-11-20T17:11:50.577Z",
+      "status": 200,
+      "elapsed_ms": 447,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/why-distribute-through-store",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 16:52:39 GMT",
+        "etag": "\"0F2y5WsuCwlr+JaSNpMIm/9/6OE=\""
+      },
+      "file": "2.txt",
+      "bytes": 9617,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 57586
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/reserve-your-apps-name",
+      "fetched_at": "2026-11-20T17:11:51.563Z",
+      "status": 200,
+      "elapsed_ms": 574,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/reserve-your-apps-name",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 16:52:39 GMT",
+        "etag": "\"LXNOrKz+UolIUCeM8YHT6O9X5WY=\""
+      },
+      "file": "3.txt",
+      "bytes": 7008,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54971
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/price-and-availability",
+      "fetched_at": "2026-11-20T17:11:52.650Z",
+      "status": 200,
+      "elapsed_ms": 108,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/price-and-availability",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 16:52:39 GMT",
+        "etag": "\"ewlQYVzbu2+/fsmuq0t7gY59M8E=\""
+      },
+      "file": "4.txt",
+      "bytes": 8910,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 57640
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/legal/windows/agreements/app-developer-agreement",
+      "fetched_at": "2026-11-20T17:11:53.272Z",
+      "status": 200,
+      "elapsed_ms": 1010,
+      "final_url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/store/documents/legal/ada/fy26/MS.Store.ADAv8.11.US.EN.pdf",
+      "headers": {
+        "content-type": "application/pdf",
+        "content-length": "413601",
+        "last-modified": "Tue, 17 Mar 2026 04:10:20 GMT"
+      },
+      "file": "5.bin",
+      "bytes": 413601,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/account-types-locations-and-fees",
+      "fetched_at": "2026-11-20T17:11:54.845Z",
+      "status": 200,
+      "elapsed_ms": 287,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/open-a-developer-account",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 16:52:38 GMT",
+        "etag": "\"nsLIUNZfT2AXKLD4/mlTY5t34to=\""
+      },
+      "file": "6.txt",
+      "bytes": 16532,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 69628
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/payment-thresholds-methods-and-timeframes",
+      "fetched_at": "2026-11-20T17:11:55.647Z",
+      "status": 404,
+      "elapsed_ms": 98,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/payment-thresholds-methods-and-timeframes",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "17972"
+      },
+      "file": "7.txt",
+      "bytes": 1732,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 17972
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/getting-paid-apps",
+      "fetched_at": "2026-11-20T17:11:56.251Z",
+      "status": 404,
+      "elapsed_ms": 132,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/getting-paid-apps",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "17972"
+      },
+      "file": "8.txt",
+      "bytes": 1732,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 17972
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/store-policies",
+      "fetched_at": "2026-11-20T17:11:56.887Z",
+      "status": 200,
+      "elapsed_ms": 179,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/store-policies",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 16:52:38 GMT",
+        "etag": "\"cLoGIt27A/wvBYQyPTDr5J5g888=\""
+      },
+      "file": "9.txt",
+      "bytes": 56292,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 112333
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/how-to/microsoft-store",
+      "fetched_at": "2026-11-20T17:11:57.588Z",
+      "status": 200,
+      "elapsed_ms": 255,
+      "final_url": "https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/how-to/microsoft-store",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 02 Sep 2026 08:15:51 GMT",
+        "etag": "\"8HH38P465CI1S4LR0FCgbAc33CQ=\""
+      },
+      "file": "10.txt",
+      "bytes": 14182,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 63377
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/how-to/digital-goods-api",
+      "fetched_at": "2026-11-20T17:11:58.352Z",
+      "status": 200,
+      "elapsed_ms": 280,
+      "final_url": "https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps/how-to/digital-goods-api",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Tue, 25 Aug 2026 15:01:39 GMT",
+        "etag": "\"qdahIh3+8t2bWZbObXLz4CFgPT0=\""
+      },
+      "file": "11.txt",
+      "bytes": 15739,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 65419
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/faq/get-started-with-the-microsoft-store",
+      "fetched_at": "2026-11-20T17:11:59.141Z",
+      "status": 200,
+      "elapsed_ms": 224,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/get-started?tabs=individual%2Cmsix-pwa-getting-started",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 02 Nov 2026 16:52:38 GMT",
+        "etag": "\"UX3kXMViZJRQopMr4bZsNU9pk40=\""
+      },
+      "file": "12.txt",
+      "bytes": 32286,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 90422
+    },
+    {
+      "method": "GET",
+      "url": "https://apps.microsoft.com/robots.txt",
+      "fetched_at": "2026-11-20T17:11:59.378Z",
+      "status": 200,
+      "elapsed_ms": 252,
+      "final_url": "https://apps.microsoft.com/robots.txt",
+      "headers": {
+        "content-type": "text/plain",
+        "last-modified": "Mon, 02 Nov 2026 20:50:38 GMT",
+        "etag": "\"1dd6b0bd0a0e32b\""
+      },
+      "file": "13.txt",
+      "bytes": 43,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apps.microsoft.com/api/products/search?query=mileage&mediaType=apps&age=all&price=all&category=all&subscription=all&gl=GB&hl=en-GB",
+      "fetched_at": "2026-11-20T17:12:00.131Z",
+      "status": 200,
+      "elapsed_ms": 1401,
+      "final_url": "https://apps.microsoft.com/api/products/search?query=mileage&mediaType=apps&age=all&price=all&category=all&subscription=all&gl=GB&hl=en-GB",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "14.json",
+      "bytes": 124141,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apps.microsoft.com/api/products/search?query=self%20assessment&mediaType=apps&age=all&price=all&category=all&subscription=all&gl=GB&hl=en-GB",
+      "fetched_at": "2026-11-20T17:12:02.034Z",
+      "status": 200,
+      "elapsed_ms": 2353,
+      "final_url": "https://apps.microsoft.com/api/products/search?query=self%20assessment&mediaType=apps&age=all&price=all&category=all&subscription=all&gl=GB&hl=en-GB",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "15.json",
+      "bytes": 106887,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apps.microsoft.com/api/products/search?query=invoice&mediaType=apps&age=all&price=all&category=all&subscription=all&gl=GB&hl=en-GB",
+      "fetched_at": "2026-11-20T17:12:04.890Z",
+      "status": 200,
+      "elapsed_ms": 1937,
+      "final_url": "https://apps.microsoft.com/api/products/search?query=invoice&mediaType=apps&age=all&price=all&category=all&subscription=all&gl=GB&hl=en-GB",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "16.json",
+      "bytes": 126981,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apps.microsoft.com/api/products/search?query=tax%20calculator&mediaType=apps&age=all&price=all&category=all&subscription=all&gl=GB&hl=en-GB",
+      "fetched_at": "2026-11-20T17:12:07.331Z",
+      "status": 200,
+      "elapsed_ms": 1769,
+      "final_url": "https://apps.microsoft.com/api/products/search?query=tax%20calculator&mediaType=apps&age=all&price=all&category=all&subscription=all&gl=GB&hl=en-GB",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "17.json",
+      "bytes": 114785,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apps.microsoft.com/api/products/search?query=sole%20trader&mediaType=apps&age=all&price=all&category=all&subscription=all&gl=GB&hl=en-GB",
+      "fetched_at": "2026-11-20T17:12:09.603Z",
+      "status": 200,
+      "elapsed_ms": 2337,
+      "final_url": "https://apps.microsoft.com/api/products/search?query=sole%20trader&mediaType=apps&age=all&price=all&category=all&subscription=all&gl=GB&hl=en-GB",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "18.json",
+      "bytes": 124067,
+      "truncated": false
+    }
+  ]
+}

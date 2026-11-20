@@ -986,6 +986,14 @@
       "status": "parked",
       "added": "2026-11-20",
       "updated": "2026-11-20"
+    },
+    {
+      "id": "microsoft-store-pwa-shelf",
+      "title": "The Microsoft Store as a shelf for a packaged web app — the free UK sole-trader tax estimate page as an installable Windows app, the workbook sold through our own checkout",
+      "status": "parked",
+      "why": "Spike 2026-11-20 (build, docs/exchange/spikes/microsoft-store-pwa-shelf.md; relay rounds `ms-store-spike-2026-11-20` and `-b`: the App Developer Agreement v8.11, thirteen Microsoft Learn pages, five GB searches through the Store's own listing call, 89 distinct apps). Parked on the account and on demand, not on the build. Agreement §2: 'If your intended distribution of Apps or In-App Products through the Microsoft Store is in relation to your business, trade, or profession, your Store Account must be a Company account type' — and the Company account, though free, verifies the business by D-U-N-S number or an official document (incorporation, government registration, registry record, tax filings) plus a work-domain email, 3–5 business days by manual review; the owner is a sole trader with none of those yet. The shelf: 'mileage', 'self assessment', 'tax calculator' and 'sole trader' return one relevant paid app between them (Metre2 Mileage Tracker, £3.99, released 2026-08, no rating) and otherwise mail clients and general calculators; 'invoice' is ten free apps led by Zoho at 524 ratings. In its favour: non-game apps may sell through 'a secure third-party commerce engine' at no Store fee (agreement §5(d)–(e), policy 10.8) where Play bars every outside checkout; Store billing is 15 %; a web app is packaged from its URL by PWA Builder with no Windows machine and updates without resubmission; payout floor US$50, UK by bank or PayPal. Score ≈ 1.5 (evidence 1 × reach 3 ÷ 2 days with the verification); STRATEGY §3 asks ≥ 10 for a new business verification, so no request is raised.",
+      "trigger": "Any one of: the owner holds a document the Company account accepts (a D-U-N-S number, or an HMRC Self Assessment registration once income passes £1,000) for another reason; a product of ours shows 50+ weekly Windows desktop users on the page that would be the app, or a buyer asks for a desktop app; Microsoft's account-types page lets a sole trader sell on the Individual account. Shape then: the tax estimate page packaged with PWA Builder, free, the workbook sold through our own checkout (0 % Store fee) — one day, no payment code.",
+      "added": "2026-11-20"
     }
   ]
 }

@@ -1,0 +1,105 @@
+meta description: Reserve your PWA app's name in the Microsoft Store
+meta twitter:card: summary_large_image
+meta twitter:site: @MicrosoftLearn
+meta og:type: website
+meta og:image:alt: Microsoft Learn
+meta og:image: https://learn.microsoft.com/en-us/media/open-graph-image.png
+meta og:title: Reserve your PWA's app name - Windows apps
+meta og:url: https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/reserve-your-apps-name
+meta og:description: Reserve your PWA app's name in the Microsoft Store
+Reserve your PWA's app name - Windows apps | Microsoft Learn
+Skip to main content (#main)
+Skip to Ask Learn chat experience
+This browser is no longer supported.
+Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+Download Microsoft Edge (https://go.microsoft.com/fwlink/p/?LinkID=2092881)
+More info about Internet Explorer and Microsoft Edge (https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge)
+Table of contents
+Exit editor mode
+Ask Learn
+Ask Learn
+Reading mode
+Table of contents
+Read in English
+Add
+Add to Plans
+Edit (https://github.com/MicrosoftDocs/windows-dev-docs/blob/main/hub/apps/publish/publish-your-app/pwa/reserve-your-apps-name.md)
+Copy Markdown
+Print
+Note
+Access to this page requires authorization. You can try signing in or changing directories .
+Access to this page requires authorization. You can try changing directories .
+Reserve your app name for PWAs
+Feedback
+Summarize this article for me
+In this article
+All apps on the Microsoft Store must have a unique name. The first step toward publishing your app on the store is to reserve the name you'd like to use. You can reserve your app's name up to three months before you are ready to publish, even if you have not started to write your app yet. We recommend reserving your name as soon as possible to ensure it will be available when you're ready to publish. Reserved names not used within three months will have the reservation removed.
+If you are not sure what you want your app's name to be, you can reserve multiple names. You'll be able to choose the final name when you're ready to publish.
+Follow the following steps to reserve your app's name:
+Navigate to the Partner Center apps and games page (https://aka.ms/submitwindowsapp) .
+Click New product .
+Click on MSIX or PWA app . If you want to submit MSIX or PWA game, click on Game .
+../msix/images/msix-new-product.png#lightbox
+Enter the name you'd like to use and click Check availability . If the name is available, you'll see a green check mark. If the name is already in use, you'll see a message indicating so.
+../msix/images/msix-app-name-reservation.png#lightbox
+Once you've selected an available name that you'd like to reserve, click Reserve product name .
+Note
+You might find that you cannot reserve a name, even though you do not see any apps listed by that name in the Microsoft Store. This is usually because another developer has reserved the name for their app but has not submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Microsoft Store using that name, contact Microsoft (https://www.microsoft.com/info/cpyrtInfrg.html) .
+Frequently asked questions
+How do I reserve an app name, and why is it important?
+Every app in the Microsoft Store must have a unique name. Reserving an app name ensures that the name you want to use for your app is locked down for you, so no one else can claim it while you finish developing your app. You can reserve a name even before your app is ready – up to three months in advance of publishing.
+To reserve a name:
+Go to your Apps & games section in Partner Center and select “New product.”
+Choose the type of app (MSIX or PWA).
+Enter the app title and click Check availability .
+If available, click Reserve product name to hold the name for 3 months.
+Reserving the name helps protect your chosen Store name while you finish developing your app.
+How do I choose a great app name for the Microsoft Store?
+Choosing a compelling name is crucial to attracting customers and making your app easily discoverable. Here are some best practices:
+Keep it short . Although your app's name can have up to 256 characters, display space is limited, and longer names may be truncated depending on the user's screen and settings. Shorter names are more memorable and easier to display clearly.
+Tip
+Windows uses variable-width fonts. This means the number of visible characters depends on their width (e.g., 30 'i' characters fit in the same space as 10 'w' characters). Test your app name across different devices and languages to ensure it's always clearly visible.
+Be original . Choose a distinctive name that clearly differentiates your app from others. An original name reduces confusion and enhances your brand identity.
+Do not use trademarked names . Ensure you have the rights to use the app name. Using a trademarked name could lead to your app being removed from the Store, forcing you to rename and re-submit your app.
+Avoid trailing differentiators . Don't include differentiating information (such as version numbers or dates) at the end of your app's title. Such details may be cut off in some views, causing confusion. If necessary, differentiate your apps using distinct logos or images.
+Avoid emojis and special characters . The Microsoft Store does not allow emojis or other unsupported special characters in app names.
+Collaborate with us on GitHub
+The source for this content can be found on GitHub, where you can also create and review issues and pull requests. For more information, see our contributor guide (https://learn.microsoft.com/contribute/content/how-to-write-quick-edits) .
+Windows developer
+Open a documentation issue
+Provide product feedback (https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb)
+Feedback
+Was this page helpful?
+Yes
+No
+No
+Need help with this topic?
+Want to try using Ask Learn to clarify or guide you through this topic?
+Ask Learn
+Ask Learn
+Suggest a fix?
+Additional resources
+Last updated on
+2026-08-24
+In this article
+Was this page helpful?
+Need help with this topic?
+Want to try using Ask Learn to clarify or guide you through this topic?
+Ask Learn
+Ask Learn
+Suggest a fix?
+en-us
+Your Privacy Choices (https://aka.ms/yourcaliforniaprivacychoices)
+Theme
+Light
+Dark
+High contrast
+AI Disclaimer (https://learn.microsoft.com/en-us/principles-for-ai-generated-content)
+Previous Versions (https://learn.microsoft.com/en-us/previous-versions/)
+Blog (https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog)
+Contribute (https://learn.microsoft.com/en-us/contribute)
+Privacy (https://go.microsoft.com/fwlink/?LinkId=521839)
+Consumer Health Privacy (https://go.microsoft.com/fwlink/?linkid=2259814)
+Terms of Use (https://learn.microsoft.com/en-us/legal/termsofuse)
+Trademarks (https://www.microsoft.com/legal/intellectualproperty/Trademarks/)
+© Microsoft 2026
