@@ -1,0 +1,65 @@
+{"@context":"https://schema.org","@type":"WebSite","url":"https://support.superhivemarket.com","potentialAction":{"@type":"SearchAction","target":"https://support.superhivemarket.com/search?query={query}","query-input":"required name=query"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Superhive Documentation","item":"https://support.superhivemarket.com"},{"@type":"ListItem","position":2,"name":"Creators","item":"https://support.superhivemarket.com/collection/1-creators"},{"@type":"ListItem","position":3,"name":"Can I Be Paid as a Creator on Superhive?","item":"https://support.superhivemarket.com/article/273-can-i-be-paid-as-a-creator-on-blender-market"}]}
+meta description: You want to get paid for your work and we would love nothing more than to be able to facilitate that.  Some regions have restrictions that don’t allow us to sen
+meta twitter:card: summary
+meta twitter:title: Can I Be Paid as a Creator on Superhive?
+meta twitter:description: You want to get paid for your work and we would love nothing more than to be able to facilitate that.  Some regions have restrictions that don’t allow us to sen
+Can I Be Paid as a Creator on Superhive? - Superhive Documentation
+https://superhivemarket.com
+Toggle Navigation
+Home (/)
+Customers (/collection/6-customers)
+Creators (/collection/1-creators)
+Affiliates (/collection/147-affiliates)
+Contact
+Contact
+Can I Be Paid as a Creator on Superhive?
+You want to get paid for your work and we would love nothing more than to be able to facilitate that. Some regions have restrictions that don’t allow us to send payouts to creators in those areas, so we have gathered information from Stripe and PayPal to help you locate your region and understand the allowances, restrictions and requirements that may apply to you.
+When you set up an account for your payout, your country of residence should accurately reflect your permanent residence. If you move to another country, be sure to update your location on your profile. It is your responsibility to comply with regulations and tax laws in your region, so make sure you keep everything up to date and accurate.
+Countries where we can't open shops
+We can't send payouts to creators in some sanctioned countries, so we can't set up shops for creators based there.
+If you choose a country we can't open shops in when you create your shop, the form shows We can't set up shops for creators based in … and no shop is created. If the country on your account or on your Stripe account is one we can't send payouts to, your payouts are put on hold and your Payouts page explains why. Your earnings stay on your account, but you can't submit products for review while the hold is in place, and it stays until our team has reviewed your account, even if you change your country. If you think the country is wrong, or you've moved, contact [email protected] (/cdn-cgi/l/email-protection#b8cbcdc8c8d7caccf8cbcdc8ddcad0d1ceddd5d9cad3ddcc96dbd7d5) .
+Stripe
+If you are in one of these countries (https://docs.stripe.com/connect/cross-border-payouts/recipient-tos) , you should choose Stripe for your payouts. Stripe tends to be simpler and have lower fees for creators, resulting in consistent payouts for higher amounts. Stripe assesses a 1% Currency Conversion Fee, whereas PayPal imposes a 4% rate .
+Superhive utilizes Stripe Connect in conjunction with Stripe Express accounts to facilitate paying you. Once you've created your shop, you'll follow the Stripe Connect onboarding via the Payout Method section on your Account page (https://superhivemarket.com/account) (your creator dashboard's Set up Payouts step will remind you). This will lead you through creating an Express account and connecting the bank account you wish to receive funds to. When completing the Stripe Connect process, please ensure your IP address corresponds with your actual location, as the location cannot be edited manually. You'll need to finish this, or add a PayPal email, before you can submit a product for review.
+PayPal
+We are actively working on adding other payout providers, but currently you must be able to accept payouts via PayPal. Lots of people assume that if they have made a purchase using PayPal, they can also receive payouts. Actually, that is not always the case. PayPal has two different rule sets for using PayPal which vary depending on your country/region:
+1). Those that can send and receive.
+2). Those that can only send money, but cannot receive payouts.
+PayPal offers these lists (https://developer.paypal.com/docs/payouts/standard/reference/country-feature/) of countries/regions broken down into the two categories. If, you will find your region and the Feature Available is NOT stated as "send only", you’re good to set up a PayPal account for your Superhive (formerly Blender Market) payouts!
+Some countries will allow you to set up an automatic transfer list that includes automatic transfer (https://www.paypal.com/us/cshelp/article/can-i-have-my-balance-automatically-transferred-to-my-bank-account-help398) . If you're able to and decide you'd like to use this functionality, there is more you will need to do to be able to retrieve your funds from your PayPal account. You will need to also link a US bank account or Visa credit card to your PayPal account. If you do not add one of these or later you decide to unlink them, you will have not access to your funds in PayPal and PayPal will ultimately revoke your ability to receive payments on your account.
+In addition, you should know that even with the linked account, PayPal will hold these funds and they won’t be available to transfer for 30 days, which will delay access to your funds.
+The full transfer agreement including a breakdown of PayPal fees can be found here (https://www.paypal.com/al/webapps/mpp/ua/recpymt-full?locale.x=en_AL) . We encourage you to read over the whole thing. So, if you find your country on this list, it’s not impossible to receive payouts via PayPal, it’s just a little trickier.
+WISE
+If Stripe and PayPal do not provide service to your country, we do have a limited number of countries (//support.superhivemarket.com/article/298-available-commission-payout-methods) we can send funds to via WISE (previously TransferWise). The WISE onboarding process requires action from us, so be certain to check the guidance on what needs to be completed after you have created your shop. Doing so can help avoid a delay in receiving your earnings.
+WISE payouts are only available on the monthly payout schedule and are not available to be paid semi-monthly.
+What do I do if my region can’t receive payouts?
+If your region is not serviced for payouts via Stripe, PayPal or WISE, we’re sorry, but we will not be able to pay you as a creator at this time. We don’t want you to put in all the work to set up your shop, and sell your products successfully only to find out that we can’t get you the money you have earned. Because you need a working payout method before you can submit a product for review, please check your region before you start building your products.
+We hope it all works out for you. If your region is too restrictive right now, trust us, we’re frustrated too. We are constantly working to increase our payout options to be able to pay creators around the world for their work. If you find that you aren’t able to receive payment in your area or have any questions, please send a message to [email protected] (/cdn-cgi/l/email-protection) so we can look into this with you and confirm whether you are in a region that can accept payouts. If you are not, we will put you on our list and contact you as soon as we find a way to pay creators in your area.
+Still need help?
+Contact Us
+Contact Us
+Last updated on November 10, 2026
+Related Articles
+How and When Creators Are Paid (/article/46-how-and-when-creators-get-paid)
+Forfeiting Earnings (/article/282-forfeiting-earnings)
+Toggle Search
+Categories
+Affiliates (/category/159-affiliates)
+Asset Libraries (/category/360-asset-libraries)
+Developers (/category/349-developers)
+Analytics and Data (/category/178-analytics-and-data)
+Blender Market Basics (/category/165-blender-market-basics)
+Growing Your Business (/category/169-growing-your-business)
+Legal (/category/166-legal)
+Privacy and Security (/category/181-privacy-and-security)
+Supporting Your Customers (/category/175-supporting-your-customers)
+Licenses (/category/132-licenses)
+Products (/category/141-product-management)
+Revenue and Earnings (/category/140-revenue-and-earnings)
+Support and Marketing (/category/142-support-and-marketing)
+Taxes (/category/14-taxes)
+No results found
+©
+Autotroph (https://superhivemarket.com)
+2026. Powered by Help Scout (https://www.helpscout.com/docs-refer/?co=Autotroph&utm_source=docs&utm_medium=footerlink&utm_campaign=Docs+Branding)

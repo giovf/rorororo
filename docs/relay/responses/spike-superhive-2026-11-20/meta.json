@@ -1,0 +1,229 @@
+{
+  "request": "spike-superhive-2026-11-20",
+  "fetched_at": "2026-11-20T17:32:58.991Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/robots.txt",
+      "fetched_at": "2026-11-20T17:32:47.021Z",
+      "status": 200,
+      "elapsed_ms": 246,
+      "final_url": "https://superhivemarket.com/robots.txt",
+      "headers": {
+        "content-type": "text/plain",
+        "last-modified": "Thu, 19 Nov 2026 20:42:18 GMT"
+      },
+      "file": "1.txt",
+      "bytes": 64,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/policies/terms-of-service",
+      "fetched_at": "2026-11-20T17:32:47.774Z",
+      "status": 200,
+      "elapsed_ms": 156,
+      "final_url": "https://superhivemarket.com/policies/terms-of-service",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 22689,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 84061
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/44-terms-of-use-creator",
+      "fetched_at": "2026-11-20T17:32:47.989Z",
+      "status": 200,
+      "elapsed_ms": 199,
+      "final_url": "https://support.superhivemarket.com/article/44-terms-of-use-creator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 12575,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 25200
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/55-who-can-sell-products-on-blender-market",
+      "fetched_at": "2026-11-20T17:32:48.690Z",
+      "status": 200,
+      "elapsed_ms": 76,
+      "final_url": "https://support.superhivemarket.com/article/55-who-can-sell-products-on-blender-market",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 5766,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 18502
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/273-can-i-be-paid-as-a-creator-on-blender-market",
+      "fetched_at": "2026-11-20T17:32:49.269Z",
+      "status": 200,
+      "elapsed_ms": 82,
+      "final_url": "https://support.superhivemarket.com/article/273-can-i-be-paid-as-a-creator-on-blender-market",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 8894,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 22219
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/298-available-commission-payout-methods",
+      "fetched_at": "2026-11-20T17:32:49.853Z",
+      "status": 200,
+      "elapsed_ms": 257,
+      "final_url": "https://support.superhivemarket.com/article/298-available-commission-payout-methods",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 4781,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 17856
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/284-minimum-payout-thresholds",
+      "fetched_at": "2026-11-20T17:32:50.614Z",
+      "status": 200,
+      "elapsed_ms": 68,
+      "final_url": "https://support.superhivemarket.com/article/284-minimum-payout-thresholds",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 3754,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 16174
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/46-how-and-when-creators-get-paid",
+      "fetched_at": "2026-11-20T17:32:51.186Z",
+      "status": 200,
+      "elapsed_ms": 72,
+      "final_url": "https://support.superhivemarket.com/article/46-how-and-when-creators-get-paid",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 9249,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 23841
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/article/387-getting-started-as-a-creator",
+      "fetched_at": "2026-11-20T17:32:51.761Z",
+      "status": 200,
+      "elapsed_ms": 215,
+      "final_url": "https://support.superhivemarket.com/article/387-getting-started-as-a-creator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 9667,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 23294
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/category/14-taxes",
+      "fetched_at": "2026-11-20T17:32:52.479Z",
+      "status": 200,
+      "elapsed_ms": 76,
+      "final_url": "https://support.superhivemarket.com/category/14-taxes",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 2156,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 13902
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/category/166-legal",
+      "fetched_at": "2026-11-20T17:32:53.057Z",
+      "status": 200,
+      "elapsed_ms": 232,
+      "final_url": "https://support.superhivemarket.com/category/166-legal",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 2182,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 14160
+    },
+    {
+      "method": "GET",
+      "url": "https://support.superhivemarket.com/category/349-developers",
+      "fetched_at": "2026-11-20T17:32:53.791Z",
+      "status": 200,
+      "elapsed_ms": 200,
+      "final_url": "https://support.superhivemarket.com/category/349-developers",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 2201,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 14080
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/market-stats",
+      "fetched_at": "2026-11-20T17:32:53.992Z",
+      "status": 200,
+      "elapsed_ms": 4379,
+      "final_url": "https://superhivemarket.com/market-stats",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 4874,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 28834
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/become-a-creator",
+      "fetched_at": "2026-11-20T17:32:58.874Z",
+      "status": 200,
+      "elapsed_ms": 91,
+      "final_url": "https://superhivemarket.com/become-a-creator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.txt",
+      "bytes": 6172,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 31221
+    }
+  ]
+}
