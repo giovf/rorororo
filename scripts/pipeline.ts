@@ -80,6 +80,7 @@ if (process.argv[2] === 'cold') {
     preResearchSpent,
     researchClaimActive,
   } = await import('./pipeline-cold.ts');
+  const { parsePaused, pausedNow } = await import('./paused.ts');
   type ColdItem = { status: string; not_before?: string; doing_since?: string; added: string };
   type ColdQueue = {
     venture: string;
@@ -176,7 +177,14 @@ if (process.argv[2] === 'cold') {
   // research or build (2026-10-24, foundry `exchange-missed-slot-fallback`): the gate prints that
   // reason first for `--routine=build`. Commit subjects since the slot come from git when the clone
   // can answer (the build routine unshallows first; a failure reads as no commit, the run log decides).
-  if (routine === 'build') {
+  // Not while the owner has paused the exchange on the ops page (2026-11-20, scripts/paused.ts).
+  const pausedFile = path.resolve(dir, '..', 'ops', 'PAUSED.json');
+  const exchangePaused =
+    pausedNow(
+      parsePaused(existsSync(pausedFile) ? readFileSync(pausedFile, 'utf8') : undefined),
+      'exchange',
+    ) !== undefined;
+  if (routine === 'build' && !exchangePaused) {
     let subjects: string;
     try {
       subjects = execFileSync(

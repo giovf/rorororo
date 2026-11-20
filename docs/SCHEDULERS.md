@@ -167,5 +167,16 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   `docs/routines/<name>.md`, may create the trigger disabled so the id exists, and files a
   `handoff:` for the interactive session to attach the repo and enable it. The owner can pause or
   delete any routine at https://claude.ai/code/routines.
+- **Pause switch on the ops page** (owner 2026-11-20, to save Claude usage): apps.gankdat.com/ops?view=schedules
+  pauses or resumes each cloud routine (or all of them). The switch is KV on the landing Worker
+  (`packages/landing/src/schedules.ts`); the owner-notes poll inside `notify owner` (and `owner notes` when
+  dispatched) copies it into `docs/ops/PAUSED.json`, and every file in `docs/routines/` starts with
+  `scripts/paused.ts <routine>`, which ends a paused run before `npm ci`. The fallback also stops while the
+  build is paused; a paused exchange is not taken over by the Thursday–Saturday build slot; the run watchdog
+  writes `paced: … paused from the ops page` for a paused slot, never `missed … usage limit?`. Lag: the next
+  poll (≤ ~2 h), or minutes when the optional `OPS_DISPATCH_TOKEN` repository secret (Actions: write on this
+  repo) is set — the landing deploy stores it as the Worker's `GITHUB_DISPATCH_TOKEN` and a toggle dispatches
+  `owner notes`. A paused routine still wakes and reads its prompt; only the claude.ai switch stops the wake-up.
+  GitHub Actions and Cloudflare crons use no Claude usage and are not on the switch.
 - **The ops retro closes the loop on this file**: every Saturday it audits each slot listed here,
   so a scheduler change that is not recorded here shows up as a defect in the next retro.

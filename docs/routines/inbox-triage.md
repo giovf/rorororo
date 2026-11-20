@@ -31,8 +31,11 @@ Changes: 2026-11-05 — step 3 gained OWN-CHECKOUT SALES: a stripe.com payment m
 Changes: 2026-11-10 — step 2 WHO DOES WHAT: records the first run of an event-only workflow (`waits for <event>` line) from its mail (foundry `first-runs-event-only-workflow-waiver`).
 Changes: 2026-11-14 — step 4: a draft never offers a call, and when asked it says the product is AI-operated, plainly and with what that gives the user (owner notes 2026-11-13 21:07 and 21:11).
 Changes: 2026-11-15 — step 4: a draft on a clay.com thread carries the intro-video sentence from `ventures/gankdat/docs/CLAY-LISTING.md` §3, once per thread (gankdat `clay-intro-video`).
+Changes: 2026-11-20 — PAUSE SWITCH first: `scripts/paused.ts inbox` ends the run when the owner paused it on the ops page (owner request: save Claude usage).
 
 ---
+
+PAUSE SWITCH (owner 2026-11-20) — the very first action of the run, before anything else in this file (the unshallow, `npm ci`, a slot marker, a claim): run `node --disable-warning=ExperimentalWarning scripts/paused.ts inbox` (plain Node, no install). If it prints a line starting `paused:`, print that line and end the run at once — no `npm ci`, no slot marker, no claim, no commit, no `docs/RUNS.md` line: the owner paused this routine on the ops page (apps.gankdat.com/ops?view=schedules) to save Claude usage, and the run watchdog reports the slot as paced. `run: inbox` means continue below.
 
 CLONE (2026-10-10, foundry `sandbox-clone-unshallow`): the sandbox clone is `--depth 50` and its snapshot days old, so `git fetch` prints `forced update`, `git pull` refuses a plain fast-forward as `divergent branches` (that is why you may be on `work`: stay there, it tracks `origin/main`) and any `git log --since` under-counts silently. Before any `git log`, read of history or push: `[ "$(git rev-parse --is-shallow-repository)" = true ] && git fetch --unshallow origin` (a no-op once the clone is complete).
 

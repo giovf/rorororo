@@ -12,7 +12,10 @@ Changes: 2026-10-14 — section 5: the Monday report's `Slots` table is the 70�
 Changes: 2026-11-15 — ONE COMMIT: the co-author line names Fable 5.2, the model the routines were moved to on 2026-11-12 (review W46).
 Changes: 2026-11-17 — decisions are read from and logged in `docs/decisions/current.md` (`merge=union`), not STRATEGY §8 (foundry `decision-log-union-merge`).
 Changes: 2026-11-17 — ONE COMMIT: the trailer is the session's own attribution lines, no model name in this file (foundry `routine-attribution-from-session`).
+Changes: 2026-11-20 — PAUSE SWITCH first: `scripts/paused.ts review` ends the run when the owner paused it on the ops page (owner request: save Claude usage).
 ---
+
+PAUSE SWITCH (owner 2026-11-20) — the very first action of the run, before anything else in this file (the unshallow, `npm ci`, a slot marker, a claim): run `node --disable-warning=ExperimentalWarning scripts/paused.ts review` (plain Node, no install). If it prints a line starting `paused:`, print that line and end the run at once — no `npm ci`, no slot marker, no claim, no commit, no `docs/RUNS.md` line: the owner paused this routine on the ops page (apps.gankdat.com/ops?view=schedules) to save Claude usage, and the run watchdog reports the slot as paced. `run: review` means continue below.
 
 CLONE (2026-10-10, foundry `sandbox-clone-unshallow`): the sandbox clone is `--depth 50` and its snapshot days old, so `git fetch` prints `forced update`, `git pull` refuses a plain fast-forward as `divergent branches` (that is why you may be on `work`: stay there, it tracks `origin/main`) and any `git log --since` under-counts silently. Before any `git log`, read of history or push: `[ "$(git rev-parse --is-shallow-repository)" = true ] && git fetch --unshallow origin` (a no-op once the clone is complete).
 

@@ -127,6 +127,19 @@ describe('missedSlots', () => {
     expect(missed.map((s) => slotKey(s.routine, s.at))).toEqual(['build@2026-09-25 17:00']);
   });
 
+  it('reports a slot the owner paused on the ops page as paced, not missed', () => {
+    const pausedText = JSON.stringify({
+      paused: { build: '2026-09-25T16:30:00.000Z' },
+      history: [],
+      updated: '2026-09-25T16:30:00.000Z',
+    });
+    const missed = missedSlots({ now, runsText: '# Run log\n', commitsText: '', pausedText });
+    expect(missed.map((s) => [slotKey(s.routine, s.at), s.paced])).toEqual([
+      ['build@2026-09-25 17:00', 'paused from the ops page'],
+    ]);
+    expect(missedLine(missed[0]!, now)).toContain('paced: build slot 2026-09-25 17:00 UTC');
+  });
+
   it('distinguishes the 07:00 metrics routine from the CI metrics job', () => {
     const later = at('2026-09-26T11:30:00Z');
     // 2026-09-26 is a Saturday, so the ops retro's 07:59 slot is due too; give it its trace.

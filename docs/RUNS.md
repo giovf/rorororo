@@ -3312,3 +3312,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-20 17:51 | burn-down | Stopping: 1 item done (Superhive spike, parked); night cap reached, the mileage log book spike is next
 - 2026-11-20 19:07 | triage | notify owner dispatched: last run started 16:06 UTC, 3 h ago
 - 2026-11-20 22:06 | triage | notify owner not dispatched: no GitHub MCP in this routine
+- 2026-11-20 22:53 | interactive | ops page Schedules view: pause/resume each Claude routine; gate scripts/paused.ts tops every routine

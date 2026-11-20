@@ -18,8 +18,11 @@ Changes: 2026-11-11 — SOURCE TERMS BEFORE SCORING: a spike's sources get a ter
 Changes: 2026-11-17 — push step: a queue-file conflict after `git pull --no-rebase` is resolved with `npm run pipeline resolve`, not by hand (foundry `queue-merge-by-item-id`).
 Changes: 2026-11-17 — the decision is logged in `docs/decisions/current.md` (`merge=union`), not STRATEGY §8; the week's decisions are read there (foundry `decision-log-union-merge`).
 Changes: 2026-11-17 — ONE COMMIT: the trailer is the session's own attribution lines, no model name in this file (foundry `routine-attribution-from-session`).
+Changes: 2026-11-20 — PAUSE SWITCH first: `scripts/paused.ts exchange` ends the run when the owner paused it on the ops page (owner request: save Claude usage).
 
 ---
+
+PAUSE SWITCH (owner 2026-11-20) — the very first action of the run, before anything else in this file (the unshallow, `npm ci`, a slot marker, a claim): run `node --disable-warning=ExperimentalWarning scripts/paused.ts exchange` (plain Node, no install). If it prints a line starting `paused:`, print that line and end the run at once — no `npm ci`, no slot marker, no claim, no commit, no `docs/RUNS.md` line: the owner paused this routine on the ops page (apps.gankdat.com/ops?view=schedules) to save Claude usage, and the run watchdog reports the slot as paced. `run: exchange` means continue below.
 
 CLONE (2026-10-10, foundry `sandbox-clone-unshallow`): the sandbox clone is `--depth 50` and its snapshot days old, so `git fetch` prints `forced update`, `git pull` refuses a plain fast-forward as `divergent branches` (that is why you may be on `work`: stay there, it tracks `origin/main`) and any `git log --since` under-counts silently. Before any `git log`, read of history or push: `[ "$(git rev-parse --is-shallow-repository)" = true ] && git fetch --unshallow origin` (a no-op once the clone is complete).
 

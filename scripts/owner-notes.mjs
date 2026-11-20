@@ -51,6 +51,35 @@ if (opsToken) {
     console.error(`ideas: ${e.message}`);
   }
 }
+// 2b. Routine pause switch (owner 2026-11-20, dashboard Schedules view): copy it into docs/ops/PAUSED.json,
+// which every routine's first step reads (scripts/paused.ts), then tell the Worker it landed. The file is
+// committed by the workflow's commit step; the ack happens before the push, so a failed push leaves the
+// page saying "synced" for at most one poll — the next run rewrites the same file. Never blocks the notes.
+if (opsToken) {
+  try {
+    const r = await fetch(`${opsBase}/ops/api/paused`, {
+      headers: { authorization: `Bearer ${opsToken}` },
+    });
+    const doc = r.ok ? await r.json() : undefined;
+    if (!r.ok) console.error(`paused: HTTP ${r.status}`);
+    if (doc && typeof doc.updated === 'string') {
+      const pausedFile = 'docs/ops/PAUSED.json';
+      const text = `${JSON.stringify(doc, null, 2)}\n`;
+      if (!existsSync(pausedFile) || readFileSync(pausedFile, 'utf8') !== text) {
+        writeFileSync(pausedFile, text);
+        console.log(`paused: ${Object.keys(doc.paused ?? {}).join(', ') || 'none'} written`);
+      }
+      await fetch(`${opsBase}/ops/api/paused/ack`, {
+        method: 'POST',
+        headers: { authorization: `Bearer ${opsToken}`, 'content-type': 'application/json' },
+        body: JSON.stringify({ updated: doc.updated }),
+      });
+    }
+  } catch (e) {
+    console.error(`paused: ${e.message}`);
+  }
+}
+
 for (const i of ideas)
   lines.push(
     `- ${stamp(i.created)} | [dashboard idea] ${String(i.text).replace(/\r?\n/g, ' ').trim()}`,

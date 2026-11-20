@@ -22,7 +22,10 @@ Changes: 2026-10-14 — section 7 **Slots**: paste `npm run slots` (the third re
 Changes: 2026-10-25 — section 2: the tax-workbook line counts the `Sale` and `Refund` rows of its RESEARCH.md §7 table and the `revenue` rows of the ledger (tax-workbook `etsy-sale-mail-reading`).
 Changes: 2026-11-01 — section 4: `npm run handoffs` prints a `shelf-ask:` sentence in the last Monday's week of each month (first 2026-11-30); it rides the digest line like the usage ask (tax-workbook `shelf-stats-owner-note`).
 Changes: 2026-11-15 — section 4: the shelf ask is Kindle only (`kindle 2 sold` from KDP Reports); the Etsy shop closed 2026-11-09 (tax-workbook `shelf-ask-kindle-only`).
+Changes: 2026-11-20 — PAUSE SWITCH first: `scripts/paused.ts report` ends the run when the owner paused it on the ops page (owner request: save Claude usage).
 ---
+
+PAUSE SWITCH (owner 2026-11-20) — the very first action of the run, before anything else in this file (the unshallow, `npm ci`, a slot marker, a claim): run `node --disable-warning=ExperimentalWarning scripts/paused.ts report` (plain Node, no install). If it prints a line starting `paused:`, print that line and end the run at once — no `npm ci`, no slot marker, no claim, no commit, no `docs/RUNS.md` line: the owner paused this routine on the ops page (apps.gankdat.com/ops?view=schedules) to save Claude usage, and the run watchdog reports the slot as paced. `run: report` means continue below.
 
 CLONE (2026-10-10, foundry `sandbox-clone-unshallow`): the sandbox clone is `--depth 50` and its snapshot days old, so `git fetch` prints `forced update`, `git pull` refuses a plain fast-forward as `divergent branches` (that is why you may be on `work`: stay there, it tracks `origin/main`) and any `git log --since` under-counts silently. Before any `git log`, read of history or push: `[ "$(git rev-parse --is-shallow-repository)" = true ] && git fetch --unshallow origin` (a no-op once the clone is complete).
 

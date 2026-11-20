@@ -13,7 +13,10 @@ Changes: 2026-10-05 — RELAY: a dead relay run (cancelled unstarted) is re-fire
 Changes: 2026-10-10 — CLONE: unshallow the depth-50 sandbox clone before any `git log --since` or push (foundry `sandbox-clone-unshallow`).
 Changes: 2026-11-17 — the decision entry is appended to `docs/decisions/current.md` (`merge=union`), not STRATEGY §8; the read is that file's tail (foundry `decision-log-union-merge`).
 Changes: 2026-11-17 — ONE COMMIT: the trailer is the session's own attribution lines, no model name in this file (foundry `routine-attribution-from-session`).
+Changes: 2026-11-20 — PAUSE SWITCH first: `scripts/paused.ts fallback` ends the run when the owner paused it on the ops page (owner request: save Claude usage).
 ---
+
+PAUSE SWITCH (owner 2026-11-20) — the very first action of the run, before anything else in this file (the unshallow, `npm ci`, a slot marker, a claim): run `node --disable-warning=ExperimentalWarning scripts/paused.ts fallback` (plain Node, no install). If it prints a line starting `paused:`, print that line and end the run at once — no `npm ci`, no slot marker, no claim, no commit, no `docs/RUNS.md` line: the owner paused this routine on the ops page (apps.gankdat.com/ops?view=schedules) to save Claude usage, and the run watchdog reports the slot as paced. `run: fallback` means continue below.
 
 CLONE (2026-10-10, foundry `sandbox-clone-unshallow`): the sandbox clone is `--depth 50` and its snapshot days old, so `git fetch` prints `forced update`, `git pull` refuses a plain fast-forward as `divergent branches` (that is why you may be on `work`: stay there, it tracks `origin/main`) and any `git log --since` under-counts silently. Before any `git log`, read of history or push: `[ "$(git rev-parse --is-shallow-repository)" = true ] && git fetch --unshallow origin` (a no-op once the clone is complete).
 

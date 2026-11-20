@@ -97,19 +97,23 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # dashboard ideas and the routine pause switch (apps.gankdat.com/ops; the switch 2026-11-20)
+          OPS_INTERNAL_TOKEN: ${{ secrets.OPS_INTERNAL_TOKEN }}
       - name: Commit the cursor (and any owner notes)
         if: success()
         run: |
           git config user.name "foundry-notify[bot]"
           git config user.email "info@gankdat.com"
           # ventures/tax-workbook/RESEARCH.md: the §7 rows a shelf-readings note yields (scripts/shelf-note.ts, 2026-11-01)
-          git add docs/ops/NOTIFIED.md docs/OWNER-NOTES.md ventures/tax-workbook/RESEARCH.md
+          # docs/ops/PAUSED.json: the dashboard's routine pause switch (scripts/paused.ts, 2026-11-20)
+          git add docs/ops/NOTIFIED.md docs/OWNER-NOTES.md ventures/tax-workbook/RESEARCH.md docs/ops/PAUSED.json
           if git diff --cached --quiet; then
             echo "cursor unchanged, no new notes"
           else
             msg="notify: cursor $(git rev-parse --short HEAD) sent"
             if git diff --cached --quiet -- docs/ops/NOTIFIED.md; then msg="notes: owner notes from Telegram"
             elif ! git diff --cached --quiet -- docs/OWNER-NOTES.md; then msg="$msg + owner notes"; fi
+            git diff --cached --quiet -- docs/ops/PAUSED.json || msg="$msg + routine pause switch"
             git commit -m "$msg [skip ci]"
           fi
           [ "$(git rev-list --count origin/main..HEAD)" = 0 ] && { echo "nothing to push"; exit 0; }

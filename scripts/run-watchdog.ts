@@ -27,6 +27,7 @@ import { ALERTS_FILE, HANDOFF_DIGEST_MARK, handoffDigestLine, ledger } from './h
 import { claimMarkerRoutine } from './pipeline-claim.ts';
 import { PACED_ROUTINE, type WeekBudget, lineStamp, pacedStop } from './pipeline-cold.ts';
 import { SLOTS_FILE, parseStarted, startMarkerRoutine } from './slot.ts';
+import { PAUSED_FILE, parsePaused, pausedAt } from './paused.ts';
 
 export interface RoutineSlot {
   /** Tag the routine writes in docs/RUNS.md (`| build |`) and the name used in the missed line. */
@@ -449,6 +450,8 @@ export interface WatchInput {
   dispatchRuns?: DispatchRun[];
   /** docs/ops/BURN.json as text — the burn-down's gate, replayed before a silent burn-down slot is called missed. */
   burnText?: string | undefined;
+  /** docs/ops/PAUSED.json as text — a slot inside an owner's pause (ops page, 2026-11-20) is paced, never missed. */
+  pausedText?: string | undefined;
   defs?: RoutineSlot[];
   since?: number;
   lookbackHours?: number;
@@ -466,6 +469,7 @@ export function missedSlots(input: WatchInput): MissedSlot[] {
   const traces = [...parseRuns(input.runsText), ...parseCommits(input.commitsText)];
   const reported = reportedSlots(input.runsText);
   const slotsText = input.slotsText ?? '';
+  const pausedDoc = parsePaused(input.pausedText);
   return slotsDue(input.defs ?? ROUTINES, input.now, input.since, input.lookbackHours)
     .filter(
       (slot) =>
@@ -477,6 +481,8 @@ export function missedSlots(input: WatchInput): MissedSlot[] {
     .map((slot): MissedSlot => {
       const started = startedAt(slot, slotsText);
       if (started) return { ...slot, startedAt: started };
+      if (pausedAt(pausedDoc, slot.routine, slot.at))
+        return { ...slot, paced: 'paused from the ops page' };
       const paced =
         slot.routine === PACED_ROUTINE
           ? pacedReason(slot.at, input.runsText, slotsText, input.burnText)
@@ -549,7 +555,17 @@ async function main(): Promise<void> {
   );
   const burnPath = path.join(root, 'docs', 'ops', 'BURN.json');
   const burnText = existsSync(burnPath) ? readFileSync(burnPath, 'utf8') : undefined;
-  const missed = missedSlots({ now, runsText, commitsText, slotsText, dispatchRuns, burnText });
+  const pausedPath = path.join(root, PAUSED_FILE);
+  const pausedText = existsSync(pausedPath) ? readFileSync(pausedPath, 'utf8') : undefined;
+  const missed = missedSlots({
+    now,
+    runsText,
+    commitsText,
+    slotsText,
+    dispatchRuns,
+    burnText,
+    pausedText,
+  });
   if (missed.length === 0) {
     console.log(`watchdog: every slot due before ${now.toISOString()} left a trace`);
   }

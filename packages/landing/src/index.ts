@@ -10,6 +10,7 @@ import { getCookie, setCookie, deleteCookie } from 'hono/cookie';
 import raw from './ops-data.json' with { type: 'json' };
 import { diligence } from './diligence';
 import { payhip } from './payhip';
+import { readDoc, schedulesApi, schedulesView } from './schedules';
 
 type Bindings = {
   ASSETS: Fetcher;
@@ -23,6 +24,8 @@ type Bindings = {
   DILIGENCE_BASE_URL?: string;
   DILIGENCE_MODEL?: string;
   PAYHIP_API_KEY?: string;
+  /** Optional (2026-11-20): Actions: write on the repo, so a schedules toggle dispatches the notes sync at once. */
+  GITHUB_DISPATCH_TOKEN?: string;
 };
 type Ctx = Context<{ Bindings: Bindings }>;
 
@@ -105,6 +108,10 @@ app.get('/ops', async (c) => {
   const email = await session(c);
   if (!email) return c.html(page('Sign in', loginForm()));
   const view = c.req.query('view') ?? 'overview';
+  if (view === 'schedules') {
+    const { doc, synced } = await readDoc(c.env.OPS_KV);
+    return c.html(page('Schedules', dashboard(view, [], schedulesView(doc, synced, Boolean(c.env.GITHUB_DISPATCH_TOKEN)))));
+  }
   return c.html(page(view.charAt(0).toUpperCase() + view.slice(1), dashboard(view, await ideas(c.env))));
 });
 
@@ -206,6 +213,11 @@ app.post('/ops/api/ideas/ack', async (c) => {
   }
   return c.json({ acknowledged: n });
 });
+
+// ------------------------------------------------------------------ schedules: pause a routine to save usage
+// src/schedules.ts (owner 2026-11-20): POST /ops/schedules, GET /ops/api/paused, POST /ops/api/paused/ack.
+
+app.route('/ops', schedulesApi());
 
 // ------------------------------------------------------------------ /diligence: the Meta hackathon demo
 // The counterparty-check page and its event stream (src/diligence.ts, hackathons
@@ -349,14 +361,14 @@ const priceText = (p: Venture['pricing']): string =>
 const queueName = (v: string): string => (v === 'foundry' ? 'the operation itself' : v);
 
 function nav(view: string): string {
-  const tabs: [string, string][] = [['overview', 'Overview'], ['ventures', 'Ventures'], ['pipeline', 'Pipeline'], ['new', 'New ventures'], ['owner', 'Owner']];
+  const tabs: [string, string][] = [['overview', 'Overview'], ['ventures', 'Ventures'], ['pipeline', 'Pipeline'], ['new', 'New ventures'], ['owner', 'Owner'], ['schedules', 'Schedules']];
   return `<nav>${tabs.map(([k, l]) => `<a href="/ops?view=${k}" class="${view === k ? 'on' : ''}">${l}</a>`).join('')}</nav>`;
 }
 
-function dashboard(view: string, kvIdeas: KvIdea[]): string {
+function dashboard(view: string, kvIdeas: KvIdea[], rendered?: string): string {
   const generated = data.generated_at.slice(0, 16).replace('T', ' ');
   const head = `<header><div><h1>Foundry Ops</h1><small>data as of ${esc(generated)} UTC · commit ${esc(data.commit)}</small></div>${nav(view)}<form method="post" action="/ops/logout"><button class="ghost" type="submit">Sign out</button></form></header>`;
-  const body = view === 'ventures' ? venturesView() : view === 'pipeline' ? pipelineView() : view === 'new' ? newVenturesView() : view === 'owner' ? ownerView(kvIdeas) : overview(kvIdeas);
+  const body = rendered !== undefined ? rendered : view === 'ventures' ? venturesView() : view === 'pipeline' ? pipelineView() : view === 'new' ? newVenturesView() : view === 'owner' ? ownerView(kvIdeas) : overview(kvIdeas);
   return head + body;
 }
 

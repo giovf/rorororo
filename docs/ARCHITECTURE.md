@@ -37,6 +37,8 @@ packages/landing         Cloudflare Worker at https://apps.gankdat.com/: public 
                          plus /diligence (2026-10-26): the Meta hackathon's public counterparty-check page — Muse Spark on
                          Meta Model API over gankdat's registers via MCP (`src/diligence-core.ts`, shared with the CLI);
                          a report with no company number pinned is relabelled `UNCONFIRMED — name match only`, never HIGH (2026-10-29)
+                         plus /ops?view=schedules (2026-11-20): the owner pauses/resumes each Claude routine to save usage —
+                         KV → docs/ops/PAUSED.json via the owner-notes poll → `scripts/paused.ts` gate at the top of every routine
                          plus /hooks/payhip (2026-10-29): the Payhip sale webhook for the tax workbook's twin listing — signed posts into
                          per-day KV counts, keyless /summary read by gankdat's Daily numbers (`src/payhip.ts`)
 packages/telemetry       opt-in funnel event counting (planned, V2)

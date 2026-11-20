@@ -45,6 +45,11 @@ routine has produced) because no sandbox can read a stored prompt. Before swappi
 the interactive session diffs it against the stored text at claude.ai/code/routines and carries into
 the file any sentence the stored prompt has that the file lacks — then the swap.
 
+Pause switch (owner 2026-11-20): every file's first paragraph below the `---` runs `scripts/paused.ts <key>`
+and ends a run the owner paused on apps.gankdat.com/ops?view=schedules (keys: build, fallback, burn-down, exchange,
+review, metrics, inbox, report, retro — `docs/ops/PAUSED.json`, see `docs/SCHEDULERS.md`). A new routine gets the
+same paragraph, its key in `scripts/paused.ts` `PAUSABLE` and in `packages/landing/src/schedules.ts` `ROUTINES`.
+
 Rules for editing a file here:
 - Change the text below the `---` and the `Changes:` line in the header in the same commit as the
   work that needs it (a queue item, a retro proposal); quote the sentence in `docs/RUNS.md`.

@@ -43,9 +43,12 @@ jobs:
           git config user.name "foundry-notes[bot]"
           git config user.email "info@gankdat.com"
           # ventures/tax-workbook/RESEARCH.md: the §7 rows a shelf-readings note yields (scripts/shelf-note.ts, 2026-11-01)
-          git add docs/OWNER-NOTES.md ventures/tax-workbook/RESEARCH.md
+          # docs/ops/PAUSED.json: the dashboard's routine pause switch (scripts/paused.ts, 2026-11-20)
+          git add docs/OWNER-NOTES.md ventures/tax-workbook/RESEARCH.md docs/ops/PAUSED.json
           git diff --cached --quiet && { echo "no change"; exit 0; }
-          git commit -m "notes: owner notes from Telegram"
+          msg="notes: owner notes from Telegram"
+          git diff --cached --quiet -- docs/ops/PAUSED.json || msg="notes: owner notes + routine pause switch"
+          git commit -m "$msg"
           # Retried: a routine's push in the same second rejected the one-shot push (relay run 143, 2026-10-22;
           # foundry workflow-push-retry-everywhere) and the commit was lost with the runner.
           for i in 1 2 3; do

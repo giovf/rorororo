@@ -27,6 +27,8 @@ jobs:
       META_MODEL_API_KEY: ${{ secrets.META_MODEL_API_KEY }}
       # Same pattern for the Payhip sale webhook (tax-workbook payhip-twin-listing, 2026-10-29); empty until action 033.
       PAYHIP_API_KEY: ${{ secrets.PAYHIP_API_KEY }}
+      # Optional (2026-11-20): lets a Schedules toggle on /ops dispatch the owner-notes sync at once.
+      OPS_DISPATCH_TOKEN: ${{ secrets.OPS_DISPATCH_TOKEN }}
     defaults:
       run:
         working-directory: packages/landing
@@ -72,5 +74,16 @@ jobs:
         run: printf '%s' "$PAYHIP_API_KEY" | npx wrangler secret put PAYHIP_API_KEY
         env:
           PAYHIP_API_KEY: ${{ secrets.PAYHIP_API_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 37e56f3ce4dfe49919e85d4380467f44
+      - name: Dispatch token for the /ops Schedules switch (2026-11-20)
+        # A fine-grained token with Actions: write on this repository only, saved as the OPS_DISPATCH_TOKEN
+        # repository secret. With it, pausing or resuming a routine on apps.gankdat.com/ops?view=schedules
+        # starts the owner-notes workflow, so docs/ops/PAUSED.json changes within minutes instead of at the
+        # next 2-hourly poll. Absent, the step is skipped. Never printed: piped straight into wrangler.
+        if: env.OPS_DISPATCH_TOKEN != ''
+        run: printf '%s' "$OPS_DISPATCH_TOKEN" | npx wrangler secret put GITHUB_DISPATCH_TOKEN
+        env:
+          OPS_DISPATCH_TOKEN: ${{ secrets.OPS_DISPATCH_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 37e56f3ce4dfe49919e85d4380467f44
