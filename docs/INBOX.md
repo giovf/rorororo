@@ -341,3 +341,4 @@
 - 2026-11-19 14:25 | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Catch-up for Tasks 195-218 (90fd861) | other repo's PR ci, frontend job not successful | logged
 - 2026-11-19 14:56 | notification | github.com | [giovf/text-to-audio] Run failed: ci - develop (d18dc37) | other repo's ci run, backend job not successful; not a Foundry workflow | logged
 - 2026-11-19 15:23 (backlog) | notification | github.com | [giovf/text-to-audio] PR run failed: ci - Task 222 steps 2-3 (2f1d014) | other repo's PR ci, backend job failed; not a Foundry workflow | logged
+- 2026-11-20 02:19 | notification | e.recall.ai | New tutorials for the Meeting Agents API | vendor newsletter | logged
