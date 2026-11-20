@@ -1,0 +1,12 @@
+GET https://learn.microsoft.com/en-us/windows/apps/get-started/sign-up
+GET https://blogs.windows.com/windowsdeveloper/2025/09/10/free-developer-registration-for-individual-developers-on-microsoft-store/
+GET https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app/pwa/overview
+GET https://learn.microsoft.com/en-us/windows/apps/publish/faq/getting-paid-apps
+GET https://superhivemarket.com/pricing
+GET https://superhivemarket.com/categories/scripts-and-addons
+GET https://support.superhivemarket.com/article/182-how-to-apply-to-become-a-creator
+GET https://support.superhivemarket.com/category/140-revenue-and-earnings
+GET https://kdp.amazon.com/en_US/help/topic/G200672390
+GET https://www.amazon.co.uk/s?k=mileage+log+book+hmrc+self+employed&i=stripbooks
+RENDER https://apps.microsoft.com/search?query=mileage+log&hl=en-GB&gl=GB
+RENDER https://apps.microsoft.com/search?query=self+assessment+tax&hl=en-GB&gl=GB
