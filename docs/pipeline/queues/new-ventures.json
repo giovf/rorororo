@@ -701,8 +701,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/microsoft-store-pwa-shelf.md with the account-type and fee quotes, the table of at least 40 GB-store apps across the five searches and a promote / park call; a promote adds the tax-workbook item with its day count, a park adds the idea to docs/pipeline/exchange.json with its trigger",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-20"
+      "status": "doing",
+      "added": "2026-11-20",
+      "doing_since": "2026-11-20"
     },
     {
       "id": "spike-superhive-blender-addons",
