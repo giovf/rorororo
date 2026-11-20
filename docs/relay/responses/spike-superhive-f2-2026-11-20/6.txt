@@ -1,0 +1,164 @@
+{"@context":"http://schema.org","@type":"OnlineStore","name":"Superhive","alternateName":"Blender Market","logo":"https://assets.superhivemarket.com/site_assets/icon.png","url":"https://superhivemarket.com/","description":"Superhive (formerly Blender Market) is the best place to buy and sell tools for Blender. Explore thousands hand-crafted, high quality Blender add-ons, shaders, models and more from independent creators.","potentialAction":{"@type":"SearchAction","target":"/search?q={search_term_string}","query-input":"required name=search_term_string"},"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@superhivemarket.com"},"sameAs":["https://twitter.com/superhivemarket","https://facebook.com/superhivemarket","https://instagram.com/superhivemarket","https://www.youtube.com/@superhivemarket"]}
+{"@context":"http://schema.org/","@type":"Product","url":"https://superhivemarket.com/products/shake-node-to-disconnect","name":"Shake Node to Disconnect","image":["https://assets.superhivemarket.com/store/product/265747/image/xlarge-c43c5cff06d3c4c53ce5ddf61ece91bd.png"],"description":"Give a node a quick shake and every link plugged into it is cut. Works in every node editor, keeps your selection wired together and closes the chain behind it.","mpn":"265747","brand":{"@type":"Thing","name":"MNC Development"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"2.50","availability":"http://schema.org/InStock","seller":{"@type":"Person","name":"MNC Development"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"1"}}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Products","item":"https://superhivemarket.com/products"},{"@type":"ListItem","position":2,"name":"Shake Node to Disconnect","item":"https://superhivemarket.com/products/shake-node-to-disconnect"}]}
+meta og:image: https://assets.superhivemarket.com/store/product/265747/image/xlarge-c43c5cff06d3c4c53ce5ddf61ece91bd.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/265747/image/xlarge-c43c5cff06d3c4c53ce5ddf61ece91bd.png
+meta description: Give a node a quick shake and every link plugged into it is cut. Works in every node editor, keeps your selection wired together and closes the chain behind it.
+meta og:url: https://superhivemarket.com/products/shake-node-to-disconnect
+meta og:title: Shake Node to Disconnect
+meta og:site_name: Superhive (formerly Blender Market)
+meta og:description: Give a node a quick shake and every link plugged into it is cut. Works in every node editor, keeps your selection wired together and closes the chain behind it.
+meta og:type: product
+meta twitter:card: product
+meta twitter:creator: @blendermarket
+meta twitter:site: @blendermarket
+meta twitter:title: Shake Node to Disconnect
+meta twitter:description: Give a node a quick shake and every link plugged into it is cut. Works in every node editor, keeps your selection wired together and closes the chain behind it.
+meta twitter:domain: https://superhivemarket.com/products/shake-node-to-disconnect
+meta og:image: https://assets.superhivemarket.com/store/product/265747/image/xlarge-c43c5cff06d3c4c53ce5ddf61ece91bd.png
+meta twitter:image: https://assets.superhivemarket.com/store/product/265747/image/xlarge-c43c5cff06d3c4c53ce5ddf61ece91bd.png
+Shake Node to Disconnect - Superhive (formerly Blender Market)
+/
+Start selling (/become-a-creator)
+Login (/login)
+or
+Signup (/sign_up)
+0 (/cart)
+Explore Marketplace
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+All Categories
+Addons
+Models
+Surfacing
+Modifier Setups
+Render Setups
+Training
+New! Search and Discover thousands of Blender-ready assets Browse Assets (/assets)
+Browse by category
+Addons (/categories/addons) Models (/categories/models) Surfacing (/categories/surfacing) Modifier Setups (/categories/modifier-setups) Render Setups (/categories/render-setups) Training (/categories/training)
+Free (/products?sort_price=asc)
+View All Products (/products)
+For You (/for-you)
+Popular Items (/products?sort_sales=desc)
+New Arrivals (/products?sort_date=desc)
+Deals (/deals)
+Coupons (/coupons)
+Bundles (/bundles)
+SALE Items (/products?on_sale=true)
+X
+Shake Node to Disconnect
+MNC Development (/creators/mnc-development)
+in Materials and Shading (/categories/materials-and-shading-addons)
+https://assets.superhivemarket.com/store/product/265747/image/xlarge_og-e660219aede325e384cf1dca2dd954e3.png
+https://assets.superhivemarket.com/store/productimage/1357410/image/xlarge_og-5a83d39ab1a5bb7276797c32001decf4.png
+https://assets.superhivemarket.com/store/productimage/1357412/image/xlarge_og-a9d3f31e20da2b09fdbb3d1b600265cc.png
+About (/products/shake-node-to-disconnect)
+FAQ (/products/shake-node-to-disconnect/faq)
+Documentation (/products/shake-node-to-disconnect/docs)
+Ratings (/products/shake-node-to-disconnect/ratings)
+Shake it loose.
+Give a quick shake to a node, and every link plugged into it lets go.
+A GESTURE, NOT A SHORTCUT
+Taking a node out of a tree usually means tracking down every link plugged into it and cutting them one by one — zoom in, aim, slice, repeat, and only then get back to what you were doing.
+Shake Node to Disconnect turns all of that into a single gesture. Pick the node up — click-drag, G, however you normally move it — and shake it back and forth a few times. Its links are cut on the spot, and the node stays under your cursor , free, ready to be dropped wherever it belongs.
+There is no mode to enter and no key to remember. If you can move a node, you already know how to use it.
+WHEREVER THERE ARE NODES
+One gesture, and it works the same everywhere.
+The add-on watches every node editor you have open, in every window, whatever tree it happens to show. Same gesture, same settings , wherever you are:
+Shader Editor	Materials and worlds
+Geometry Nodes	Modifiers and node tools
+Compositor	Compositing trees
+Node groups	Any group you Tab into, at any depth
+Nothing to set up per editor, nothing to switch on per file. Open a node tree, shake a node, carry on.
+THE SELECTION LEAVES AS ONE
+Shake several nodes at once and they come out of the tree together — without coming apart.
+Shake Node to Disconnect treats your selection as a single block . A link between two selected nodes belongs to that block, so it stays exactly where it is. Only the links reaching outside the selection are cut.
+Inside the selection	Kept — the block stays wired together
+Into the selection	Cut — inputs coming from the rest of the tree
+Out of the selection	Cut — outputs feeding the rest of the tree
+Lift a whole branch out of a tree — a texture setup, a chain of geometry operations, a stack of color corrections — and it comes out still wired, ready to be plugged in somewhere else.
+THE CHAIN CLOSES BEHIND IT
+Pull a node out of the middle of a chain, and the chain doesn't break — it closes up behind it.
+As the links are cut, Reconnect Neighbors joins the first link coming into the selection straight to every link that was going out of it. Whatever fed the node now feeds whatever the node was feeding, and the rest of the tree keeps flowing as if the node had never been there.
+It is the effect of Blender's Delete with Reconnect, without the delete: the node simply steps out of the chain and stays in your hand. It is on by default — turn it off in the preferences if you would rather leave the gap open.
+IT KNOWS A SHAKE FROM A DRAG
+A shake is a shake. Moving a node across the tree is not.
+Only sharp changes of direction count — the node doubling back on itself — and only when enough of them land within a short window. Repositioning a node, sweeping it along a wide curve or nudging it into place never triggers anything, and tiny jitters are filtered out before anything is measured.
+How hard you need to shake is up to you, in the add-on preferences:
+Sensitivity	Direction changes needed to trigger — 4 by default
+Time Window	How quickly they must happen — 0.6 s by default
+Minimum Movement	Distance under which a movement is ignored
+Inputs / Outputs	Cut the inputs, the outputs, or both
+Reconnect Neighbors	Close the chain after cutting — on by default
+THE DIFFERENCE
+BY HAND
+WITH A SHAKE
+Zoom in, aim at each link and slice them off one by one	One shake, and every link lets go
+Stop moving the node, cut its links, then pick it up again	Unplug it and place it in a single movement
+Free a group of nodes, then rewire what you cut by mistake	Links inside the selection stay, only the outside ones go
+Pull a node out of a chain, then reconnect both ends yourself	The chain closes up behind the node on its own
+In a crowded tree, a slice that catches the wrong link	Nothing to aim at: only the links of the nodes you shake are cut
+Some links are meant to be broken.
+Back to top
+Discover more products like this
+compositor (/tags/compositor) shader editor (/tags/shader-editor) Workflow (/tags/workflow) Node-Based Workflow (/tags/node-based-workflow) Node (/tags/node) geometry nodes (/tags/geometry-nodes) Node Workflow (/tags/node-workflow)
+Seats:
+&minus;
++
+$2.50
+Have questions about this product?
+Login to message (/login)
+Details
+Blender Extension Compatible
+Yes
+Sales
+10+
+Rating
+1 ratings (/products/shake-node-to-disconnect/ratings)
+Published
+about 2 months ago
+Blender Version
+5.1 - 5.2
+Extension Type
+Add-on
+Render Engine Used
+Cycles
+License
+GPL (/page/gpl-license)
+MNC Development
+See all items by this creator (/creators/mnc-development)
+[vertical stripes design]
+© 2026 Superhive, LLC All rights reserved
+Terms of Use (/policies/terms-of-service) | Privacy Policy (/policies/privacy-policy)
+[bee icon]
+[trihex icon]
+[hexglobe icon]
+[superbutton icon]
+[wing icon]
+v3.14.2
+Follow Us
+Twitter (https://twitter.com/superhivemarket)
+Facebook (https://www.facebook.com/superhivemarket/)
+Instagram (https://www.instagram.com/superhivemarket/)
+YouTube (https://www.youtube.com/@superhivemarket)
+Company
+About Us (/page/about)
+Affiliate Program (https://support.superhivemarket.com/article/154-becoming-an-affiliate)
+Enterprise (https://superhivemarket.com/page/enterprise)
+Market Stats (/market-stats)
+Resources
+Help Desk (https://support.superhivemarket.com)
+Creator Help (https://support.superhivemarket.com/collection/1-selling)
+Blog (/posts)
+Contact Us (/cdn-cgi/l/email-protection#0a797f7a7a65787e4a797f7a6f7862637c6f676b78616f7e24696567)
+Made by the humans of Autotroph (https://autotroph.com)

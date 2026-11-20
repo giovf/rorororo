@@ -1,0 +1,326 @@
+{
+  "request": "spike-superhive-f2-2026-11-20",
+  "fetched_at": "2026-11-20T17:43:54.987Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/easy-add-bone-onion365",
+      "fetched_at": "2026-11-20T17:43:41.709Z",
+      "status": 200,
+      "elapsed_ms": 314,
+      "final_url": "https://superhivemarket.com/products/easy-add-bone-onion365",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 10337,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 46629
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/human-skin-animated-effects",
+      "fetched_at": "2026-11-20T17:43:42.547Z",
+      "status": 200,
+      "elapsed_ms": 198,
+      "final_url": "https://superhivemarket.com/products/human-skin-animated-effects",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 13054,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 55537
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/oh-my-bake",
+      "fetched_at": "2026-11-20T17:43:43.293Z",
+      "status": 200,
+      "elapsed_ms": 127,
+      "final_url": "https://superhivemarket.com/products/oh-my-bake",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 10837,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54011
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/glintlock",
+      "fetched_at": "2026-11-20T17:43:43.965Z",
+      "status": 200,
+      "elapsed_ms": 168,
+      "final_url": "https://superhivemarket.com/products/glintlock",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 13322,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 54211
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/spaceship-realism-toolkit-pro",
+      "fetched_at": "2026-11-20T17:43:44.652Z",
+      "status": 200,
+      "elapsed_ms": 135,
+      "final_url": "https://superhivemarket.com/products/spaceship-realism-toolkit-pro",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 11138,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 51246
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/shake-node-to-disconnect",
+      "fetched_at": "2026-11-20T17:43:45.318Z",
+      "status": 200,
+      "elapsed_ms": 136,
+      "final_url": "https://superhivemarket.com/products/shake-node-to-disconnect",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 10886,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53005
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/compositor-fx",
+      "fetched_at": "2026-11-20T17:43:45.984Z",
+      "status": 200,
+      "elapsed_ms": 140,
+      "final_url": "https://superhivemarket.com/products/compositor-fx",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 16527,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 60547
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/stylizer-vfx",
+      "fetched_at": "2026-11-20T17:43:46.650Z",
+      "status": 200,
+      "elapsed_ms": 130,
+      "final_url": "https://superhivemarket.com/products/stylizer-vfx",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 10549,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 58435
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/glass-studio",
+      "fetched_at": "2026-11-20T17:43:47.309Z",
+      "status": 200,
+      "elapsed_ms": 130,
+      "final_url": "https://superhivemarket.com/products/glass-studio",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 9790,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 57932
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/ugamepro",
+      "fetched_at": "2026-11-20T17:43:47.968Z",
+      "status": 200,
+      "elapsed_ms": 172,
+      "final_url": "https://superhivemarket.com/products/ugamepro",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.txt",
+      "bytes": 11249,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 59460
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/reference-remapper",
+      "fetched_at": "2026-11-20T17:43:48.676Z",
+      "status": 200,
+      "elapsed_ms": 133,
+      "final_url": "https://superhivemarket.com/products/reference-remapper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.txt",
+      "bytes": 12736,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 50233
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/lod-builder--blender-addon-for-game-asset-lod-generation",
+      "fetched_at": "2026-11-20T17:43:49.331Z",
+      "status": 200,
+      "elapsed_ms": 152,
+      "final_url": "https://superhivemarket.com/products/lod-builder--blender-addon-for-game-asset-lod-generation",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.txt",
+      "bytes": 13848,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 58786
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/arkafurnishing",
+      "fetched_at": "2026-11-20T17:43:50.017Z",
+      "status": 200,
+      "elapsed_ms": 169,
+      "final_url": "https://superhivemarket.com/products/arkafurnishing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.txt",
+      "bytes": 7458,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 41140
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/smart-cut-and-bevel",
+      "fetched_at": "2026-11-20T17:43:50.709Z",
+      "status": 200,
+      "elapsed_ms": 146,
+      "final_url": "https://superhivemarket.com/products/smart-cut-and-bevel",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.txt",
+      "bytes": 14068,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 53602
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/vfx-export-studio-realtime-vfx-textures",
+      "fetched_at": "2026-11-20T17:43:51.375Z",
+      "status": 200,
+      "elapsed_ms": 177,
+      "final_url": "https://superhivemarket.com/products/vfx-export-studio-realtime-vfx-textures",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.txt",
+      "bytes": 9603,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 44261
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/node-quick-spawn",
+      "fetched_at": "2026-11-20T17:43:52.084Z",
+      "status": 200,
+      "elapsed_ms": 163,
+      "final_url": "https://superhivemarket.com/products/node-quick-spawn",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.txt",
+      "bytes": 10198,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 58579
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/cinematic-product-studio",
+      "fetched_at": "2026-11-20T17:43:52.782Z",
+      "status": 200,
+      "elapsed_ms": 139,
+      "final_url": "https://superhivemarket.com/products/cinematic-product-studio",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.txt",
+      "bytes": 10259,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52986
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/selective-mirror",
+      "fetched_at": "2026-11-20T17:43:53.453Z",
+      "status": 200,
+      "elapsed_ms": 143,
+      "final_url": "https://superhivemarket.com/products/selective-mirror",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.txt",
+      "bytes": 14732,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 55215
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/radfit--fit-any-outfit-to-any-body",
+      "fetched_at": "2026-11-20T17:43:54.122Z",
+      "status": 200,
+      "elapsed_ms": 167,
+      "final_url": "https://superhivemarket.com/products/radfit--fit-any-outfit-to-any-body",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.txt",
+      "bytes": 13832,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 71248
+    },
+    {
+      "method": "GET",
+      "url": "https://superhivemarket.com/products/rbf-nodes",
+      "fetched_at": "2026-11-20T17:43:54.822Z",
+      "status": 200,
+      "elapsed_ms": 120,
+      "final_url": "https://superhivemarket.com/products/rbf-nodes",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.txt",
+      "bytes": 13439,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 52785
+    }
+  ]
+}
