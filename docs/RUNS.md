@@ -3323,3 +3323,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-21 09:30 | fallback | Best Sellers Rank unread: amazon.co.uk walls product pages from the relay runner (20 of 20)
 - 2026-11-21 09:30 | fallback | Idea parked in the exchange; trigger is the first tax-workbook sale; new-ventures needs research
 - 2026-11-21 11:06 | triage | notify owner dispatched: last run started 03:24 UTC, 7 h ago
+- 2026-11-21 11:06 | watchdog | paced: retro slot 2026-11-21 07:59 UTC stopped by the gate — paused from the ops page
+- 2026-11-21 11:06 | watchdog | paced: build slot 2026-11-21 09:00 UTC stopped by the gate — paused from the ops page
