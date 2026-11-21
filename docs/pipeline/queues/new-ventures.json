@@ -725,8 +725,9 @@
       "effort_days": 0.2,
       "proof": "docs/exchange/spikes/kdp-uk-mileage-logbook.md with the table of at least 24 titles (BSR, ratings, date, price), the Low-Content Books quotes, the royalty sum and a promote / park call; a promote adds the tax-workbook item with its day count, a park adds the idea to docs/pipeline/exchange.json with its trigger",
       "score": 3,
-      "status": "todo",
-      "added": "2026-11-20"
+      "status": "doing",
+      "added": "2026-11-20",
+      "doing_since": "2026-11-21"
     }
   ]
 }
