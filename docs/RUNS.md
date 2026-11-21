@@ -1447,7 +1447,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-21 09:25 | fallback | Watchdog stall/miss lines shortened to fit the 120-char cap for every routine; main green
 - 2026-10-21 12:16 | watchdog | missed: exchange slot 2026-10-21 08:00 UTC left no commit or run line by 10:00; usage limit? claude.ai/code/routines
 - 2026-10-21 12:16 | watchdog | missed: build slot 2026-10-21 09:00 UTC left no commit or run line by 11:00; usage limit? claude.ai/code/routines
-- 2026-10-21 17:27 | fallback | Filled the 17:00 build slot (no trace by 17:20); main green
+- 2026-10-21 17:27 | fallback | Filled the 09:00 build slot (no trace by 17:20); main green
 - 2026-10-21 17:27 | fallback | Variables Toolkit day 30: 15 views, 0 installs, 0 sales; kept at £0, verdict due 2026-12-20
 - 2026-10-21 21:56 | watchdog | missed: build slot 2026-10-21 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
 - 2026-10-21 21:56 | watchdog | missed: burn-down slot 2026-10-21 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
@@ -3316,3 +3316,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-21 00:05 | triage | notify owner not dispatched: no GitHub MCP in this routine
 - 2026-11-21 01:07 | triage | notify owner dispatched: last run started 21:56 UTC, 3 h ago
 - 2026-11-21 01:07 | watchdog | ci-minutes: 426 billed min/7d (~1826/mo; public, no cap) top: notify owner 90, gankdat 61, gankdat metrics 59
+- 2026-11-21 09:30 | fallback | Filled the 09:00 build slot: it left no marker, RUNS line or build commit; main green
+- 2026-11-21 09:30 | fallback | Spike kdp-uk-mileage-logbook done: parked — no tax-line sale yet, the 11-15 review rule holds
+- 2026-11-21 09:30 | fallback | Nine 2026 UK/HMRC log books on Amazon hold a median of 0 ratings; one is this exact shape
+- 2026-11-21 09:30 | fallback | Sum: £0.57–0.98 net a copy at the shelf's £5.99–6.99 once VAT and £1.93 print are taken
+- 2026-11-21 09:30 | fallback | Best Sellers Rank unread: amazon.co.uk walls product pages from the relay runner (20 of 20)
+- 2026-11-21 09:30 | fallback | Idea parked in the exchange; trigger is the first tax-workbook sale; new-ventures needs research

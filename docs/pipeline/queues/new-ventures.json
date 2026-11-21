@@ -1,8 +1,8 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": false,
-  "updated": "2026-11-20",
+  "needs_research": true,
+  "updated": "2026-11-21",
   "researched": "2026-11-20T09:16Z",
   "weight": 2,
   "items": [
@@ -721,13 +721,14 @@
     {
       "id": "spike-kdp-uk-mileage-logbook",
       "title": "Research spike: a printed UK business mileage log book on the owner's existing KDP account — the interior a PDF built from TypeScript beside the tax workbook (journey rows with postcode fields, a running total against the 10,000-mile band, monthly and 5 April year-end summaries, the 2026/27 rates page from `rates.ts`). Read through the relay (`www.amazon.co.uk` and `kdp.amazon.com` are allowed): (1) whether anything on this shelf sells — the 11-20 search 'mileage log book hmrc self employed' returned 593 results and its first 14 were mostly 2026 titles with no rating or one (one of them already this exact shape: postcode journey log, running 10,000-mile total, 6 April tax year), against two older generic books at 526 and 50 ratings: open the product pages of those 14 and of the first 10 for 'mileage log book uk' and 'vehicle mileage log book', and record Best Sellers Rank in Books, rating count, publication date, price in GBP, pages and trim — the call rests on the BSR of the 2026 HMRC-specific titles, not on the incumbents; (2) KDP's Low-Content Books help page (topic GGE5T76TWKA85DJM) in its own words — no free ISBN, what is switched off, any limit on titles — and the content guideline read on 11-20: an interior laid out by code is 'AI-generated' only if an AI tool created the content, so decide and write down what the upload must declare; (3) the sum — KDP print cost and royalty for 110 pages at £5.99–£6.99 from the paperback spike's table (£1.93 fixed up to 110 pages, 60 % at £7.99 and above, 50 % below; notebooks carry standard-rate VAT); (4) write docs/exchange/spikes/kdp-uk-mileage-logbook.md with the rival table, the quotes, the royalty sum and a promote / park call. Promote shape: one tax-workbook item ≤ 1 day (interior PDF, cover, listing copy) and one owner step riding the next KDP sitting (the upload, ≤ 15 min, no new account or identity check). Park if the median 2026 HMRC-specific title ranks worse than 300,000 in Books (about one sale a month or fewer), or if the review rule 'nothing new for the tax line before a first sale' (review W46) still holds on the day — with the trigger named.",
-      "why": "Research 2026-11-20 (build; twelve web searches, then relay round `new-ventures-2026-11-20` (12 lines, responses pruned after 7 days)). The only candidate of the pass that needs no new account: the owner's KDP account exists (Kindle guide live 10-31, paperback step pending) and Amazon bills, prints and ships. The buyer is the tax line's own — a sole trader keeping the mileage record HMRC asks for — but in a form the line does not sell (paper in the glovebox), on a search with real spend: the shelf's incumbents show 526 and 50 ratings. Read live on 11-20 and against it: eight or more HMRC-specific log books were published in 2026 and show no rating or one, so the shelf may be thin where it is new, exactly as Google Play was; ratings are a weak proxy, and the product pages' Best Sellers Rank decides. KDP's content guideline (line 9 of the round) requires AI-generated text and images to be declared at upload and allows them. Score 3 = evidence 2 (paying incumbents; new entrants unproven) × reach 2 (amazon.co.uk search) ÷ (0.2 day + 15 owner min at promote).",
+      "why": "Research 2026-11-20 (build; twelve web searches, then relay round `new-ventures-2026-11-20` (12 lines, responses pruned after 7 days)). The only candidate of the pass that needs no new account: the owner's KDP account exists (Kindle guide live 10-31, paperback step pending) and Amazon bills, prints and ships. The buyer is the tax line's own — a sole trader keeping the mileage record HMRC asks for — but in a form the line does not sell (paper in the glovebox), on a search with real spend: the shelf's incumbents show 526 and 50 ratings. Read live on 11-20 and against it: eight or more HMRC-specific log books were published in 2026 and show no rating or one, so the shelf may be thin where it is new, exactly as Google Play was; ratings are a weak proxy, and the product pages' Best Sellers Rank decides. KDP's content guideline (line 9 of the round) requires AI-generated text and images to be declared at upload and allows them. Score 3 = evidence 2 (paying incumbents; new entrants unproven) × reach 2 (amazon.co.uk search) ÷ (0.2 day + 15 owner min at promote). Done 2026-11-21 (fallback): parked — the 11-15 review rule (nothing new for the tax line before a first sale) holds with 0 sales; nine 2026 UK/HMRC log books hold a median of 0 ratings, one of this exact shape; £0.57–0.98 net a copy at the shelf's £5.99–6.99; BSR unreadable (amazon.co.uk walls product pages from the relay runner).",
       "effort_days": 0.2,
       "proof": "docs/exchange/spikes/kdp-uk-mileage-logbook.md with the table of at least 24 titles (BSR, ratings, date, price), the Low-Content Books quotes, the royalty sum and a promote / park call; a promote adds the tax-workbook item with its day count, a park adds the idea to docs/pipeline/exchange.json with its trigger",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-11-20",
-      "doing_since": "2026-11-21"
+      "doing_since": "2026-11-21",
+      "done_at": "2026-11-21"
     }
   ]
 }
