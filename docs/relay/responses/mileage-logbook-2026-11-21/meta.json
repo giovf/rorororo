@@ -1,0 +1,378 @@
+{
+  "request": "mileage-logbook-2026-11-21",
+  "fetched_at": "2026-11-21T09:26:57.965Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B08SPQZM61",
+      "fetched_at": "2026-11-21T09:26:43.806Z",
+      "status": 200,
+      "elapsed_ms": 345,
+      "final_url": "https://www.amazon.co.uk/dp/B08SPQZM61",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1345"
+      },
+      "file": "1.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B09M1GVFS7",
+      "fetched_at": "2026-11-21T09:26:44.664Z",
+      "status": 200,
+      "elapsed_ms": 253,
+      "final_url": "https://www.amazon.co.uk/dp/B09M1GVFS7",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1342"
+      },
+      "file": "2.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0BH98211K",
+      "fetched_at": "2026-11-21T09:26:45.419Z",
+      "status": 200,
+      "elapsed_ms": 121,
+      "final_url": "https://www.amazon.co.uk/dp/B0BH98211K",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1346"
+      },
+      "file": "3.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0BS8CDV4C",
+      "fetched_at": "2026-11-21T09:26:46.042Z",
+      "status": 200,
+      "elapsed_ms": 138,
+      "final_url": "https://www.amazon.co.uk/dp/B0BS8CDV4C",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1343"
+      },
+      "file": "4.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0CHRBXCFC",
+      "fetched_at": "2026-11-21T09:26:46.682Z",
+      "status": 200,
+      "elapsed_ms": 203,
+      "final_url": "https://www.amazon.co.uk/dp/B0CHRBXCFC",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1346"
+      },
+      "file": "5.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0CKKYH4HB",
+      "fetched_at": "2026-11-21T09:26:47.388Z",
+      "status": 200,
+      "elapsed_ms": 118,
+      "final_url": "https://www.amazon.co.uk/dp/B0CKKYH4HB",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1344"
+      },
+      "file": "6.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0D8YW17V2",
+      "fetched_at": "2026-11-21T09:26:48.008Z",
+      "status": 200,
+      "elapsed_ms": 213,
+      "final_url": "https://www.amazon.co.uk/dp/B0D8YW17V2",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1345"
+      },
+      "file": "7.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0GLNQG5YT",
+      "fetched_at": "2026-11-21T09:26:48.723Z",
+      "status": 200,
+      "elapsed_ms": 121,
+      "final_url": "https://www.amazon.co.uk/dp/B0GLNQG5YT",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1347"
+      },
+      "file": "8.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0H1HJ72T5",
+      "fetched_at": "2026-11-21T09:26:49.345Z",
+      "status": 200,
+      "elapsed_ms": 150,
+      "final_url": "https://www.amazon.co.uk/dp/B0H1HJ72T5",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1345"
+      },
+      "file": "9.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0H4F85GTB",
+      "fetched_at": "2026-11-21T09:26:49.997Z",
+      "status": 200,
+      "elapsed_ms": 126,
+      "final_url": "https://www.amazon.co.uk/dp/B0H4F85GTB",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1343"
+      },
+      "file": "10.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0H514CC3W",
+      "fetched_at": "2026-11-21T09:26:50.626Z",
+      "status": 200,
+      "elapsed_ms": 122,
+      "final_url": "https://www.amazon.co.uk/dp/B0H514CC3W",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1345"
+      },
+      "file": "11.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0H6KX9PGL",
+      "fetched_at": "2026-11-21T09:26:51.250Z",
+      "status": 200,
+      "elapsed_ms": 143,
+      "final_url": "https://www.amazon.co.uk/dp/B0H6KX9PGL",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1345"
+      },
+      "file": "12.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0HMM51LG2",
+      "fetched_at": "2026-11-21T09:26:51.894Z",
+      "status": 200,
+      "elapsed_ms": 123,
+      "final_url": "https://www.amazon.co.uk/dp/B0HMM51LG2",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1347"
+      },
+      "file": "13.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0HP49VCB4",
+      "fetched_at": "2026-11-21T09:26:52.520Z",
+      "status": 200,
+      "elapsed_ms": 118,
+      "final_url": "https://www.amazon.co.uk/dp/B0HP49VCB4",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1344"
+      },
+      "file": "14.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0HP92SXNK",
+      "fetched_at": "2026-11-21T09:26:53.140Z",
+      "status": 200,
+      "elapsed_ms": 176,
+      "final_url": "https://www.amazon.co.uk/dp/B0HP92SXNK",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1343"
+      },
+      "file": "15.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0HQBGY7X3",
+      "fetched_at": "2026-11-21T09:26:53.818Z",
+      "status": 200,
+      "elapsed_ms": 119,
+      "final_url": "https://www.amazon.co.uk/dp/B0HQBGY7X3",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1341"
+      },
+      "file": "16.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0HQWYXPX1",
+      "fetched_at": "2026-11-21T09:26:54.439Z",
+      "status": 200,
+      "elapsed_ms": 134,
+      "final_url": "https://www.amazon.co.uk/dp/B0HQWYXPX1",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1345"
+      },
+      "file": "17.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0HR5SVZ69",
+      "fetched_at": "2026-11-21T09:26:55.076Z",
+      "status": 200,
+      "elapsed_ms": 129,
+      "final_url": "https://www.amazon.co.uk/dp/B0HR5SVZ69",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1347"
+      },
+      "file": "18.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/s?k=mileage+log+book+uk&i=stripbooks",
+      "fetched_at": "2026-11-21T09:26:55.707Z",
+      "status": 200,
+      "elapsed_ms": 229,
+      "final_url": "https://www.amazon.co.uk/s?k=mileage+log+book+uk&i=stripbooks",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1402"
+      },
+      "file": "19.txt",
+      "bytes": 0,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 2345
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/s?k=vehicle+mileage+log+book&i=stripbooks",
+      "fetched_at": "2026-11-21T09:26:56.437Z",
+      "status": 200,
+      "elapsed_ms": 140,
+      "final_url": "https://www.amazon.co.uk/s?k=vehicle+mileage+log+book&i=stripbooks",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1418"
+      },
+      "file": "20.txt",
+      "bytes": 0,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 2364
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/GGE5T76TWKA85DJM",
+      "fetched_at": "2026-11-21T09:26:56.578Z",
+      "status": 200,
+      "elapsed_ms": 224,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/GGE5T76TWKA85DJM",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "21.txt",
+      "bytes": 27008,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 189106
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G200672390",
+      "fetched_at": "2026-11-21T09:26:57.313Z",
+      "status": 200,
+      "elapsed_ms": 645,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G200672390",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "22.txt",
+      "bytes": 26885,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 188404
+    }
+  ]
+}
