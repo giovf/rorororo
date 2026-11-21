@@ -1,0 +1,107 @@
+{
+  "request": "mileage-logbook-2026-11-21-b",
+  "fetched_at": "2026-11-21T09:28:11.189Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/HMRC-Mileage-Book-Self-Employed-HMRC-Compliant/dp/B0H6KX9PGL",
+      "fetched_at": "2026-11-21T09:28:00.254Z",
+      "status": 200,
+      "elapsed_ms": 289,
+      "final_url": "https://www.amazon.co.uk/HMRC-Mileage-Book-Self-Employed-HMRC-Compliant/dp/B0H6KX9PGL",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "3805"
+      },
+      "file": "1.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3805
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/s?k=mileage+log+book+uk&i=stripbooks",
+      "fetched_at": "2026-11-21T09:28:01.049Z",
+      "status": 202,
+      "elapsed_ms": 7,
+      "final_url": "https://www.amazon.co.uk/s?k=mileage+log+book+uk&i=stripbooks",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "0"
+      },
+      "file": "2.txt",
+      "bytes": 0,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 0
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0HR5SVZ69",
+      "render": true,
+      "fetched_at": "2026-11-21T09:28:01.557Z",
+      "status": 200,
+      "final_url": "https://www.amazon.co.uk/dp/B0HR5SVZ69",
+      "title": "Amazon.co.uk",
+      "rendered": {
+        "network_idle": true,
+        "requests": 3,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "3.txt",
+      "bytes": 357,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 3519
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/s?k=vehicle+mileage+log+book&i=stripbooks",
+      "render": true,
+      "fetched_at": "2026-11-21T09:28:04.986Z",
+      "status": 202,
+      "final_url": "https://www.amazon.co.uk/s?k=vehicle+mileage+log+book&i=stripbooks",
+      "title": "Amazon.co.uk : vehicle mileage log book",
+      "rendered": {
+        "network_idle": true,
+        "requests": 139,
+        "failed": [],
+        "console_errors": [
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.txt",
+      "bytes": 69672,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 734905
+    }
+  ]
+}
