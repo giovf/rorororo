@@ -3330,3 +3330,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-21 23:07 | triage | notify owner dispatched: last run started 20:38 UTC, 2 h ago
 - 2026-11-21 23:06 | notify | 1 job for your next Claude Code session, oldest 7 days: devcontainer still installs Node…
 - 2026-11-22 03:07 | triage | notify owner dispatched: last run started 00:38 UTC, 2 h ago
+- 2026-11-22 03:06 | watchdog | ci-minutes: 398 billed min/7d (~1706/mo; public, no cap) top: notify owner 89, gankdat metrics 58, gankdat 58
