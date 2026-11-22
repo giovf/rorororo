@@ -3329,3 +3329,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-21 20:38 | watchdog | paced: burn-down slot 2026-11-21 17:00 UTC stopped by the gate — paused from the ops page
 - 2026-11-21 23:07 | triage | notify owner dispatched: last run started 20:38 UTC, 2 h ago
 - 2026-11-21 23:06 | notify | 1 job for your next Claude Code session, oldest 7 days: devcontainer still installs Node…
+- 2026-11-22 03:07 | triage | notify owner dispatched: last run started 00:38 UTC, 2 h ago
