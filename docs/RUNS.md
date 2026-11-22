@@ -3334,3 +3334,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-22 06:06 | triage | notify owner not dispatched: no GitHub MCP in this routine
 - 2026-11-22 13:06 | triage | notify owner dispatched: last run started 07:24 UTC, 5 h ago
 - 2026-11-22 13:06 | watchdog | paced: review slot 2026-11-22 08:00 UTC stopped by the gate — paused from the ops page
+- 2026-11-22 21:58 | watchdog | paced: build slot 2026-11-22 17:00 UTC stopped by the gate — paused from the ops page
+- 2026-11-22 21:58 | watchdog | paced: burn-down slot 2026-11-22 17:00 UTC stopped by the gate — paused from the ops page
