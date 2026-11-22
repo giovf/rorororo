@@ -3332,3 +3332,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-22 03:07 | triage | notify owner dispatched: last run started 00:38 UTC, 2 h ago
 - 2026-11-22 03:06 | watchdog | ci-minutes: 398 billed min/7d (~1706/mo; public, no cap) top: notify owner 89, gankdat metrics 58, gankdat 58
 - 2026-11-22 06:06 | triage | notify owner not dispatched: no GitHub MCP in this routine
+- 2026-11-22 13:06 | triage | notify owner dispatched: last run started 07:24 UTC, 5 h ago
