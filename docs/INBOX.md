@@ -344,3 +344,4 @@
 - 2026-11-20 02:19 | notification | e.recall.ai | New tutorials for the Meeting Agents API | vendor newsletter | logged
 - 2026-11-20 05:49 | store | notify.cloudflare.com | [Notice] Cloudflare Observability pricing changes starting December 1, 2026 | volume-based pricing for logs/traces from Dec 1; no figure billed to us | logged
 - 2026-11-20 18:04 | store | email.figma.com | Your week on Figma Community | weekly stats Nov 13-19: Variables Toolkit 3 views, 0 usages, 22 saves; no listing-state change | logged
+- 2026-11-22 20:07 | notification | devpost.com | HACKATHONS just for you, gio | Devpost marketing newsletter | logged
