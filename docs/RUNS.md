@@ -3346,3 +3346,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-23 07:45 | report | next step: spend nothing new; owner publishes the Leanpub handbook and answers Clay
 - 2026-11-23 07:45 | notify | 6 asks waiting on you, oldest 18 days: Leanpub handbook. Usage note please: usage 62%
 - 2026-11-23 14:06 | triage | notify owner dispatched: last run started 07:06 UTC, 7 h ago
+- 2026-11-23 14:07 | watchdog | paced: build slot 2026-11-23 09:00 UTC stopped by the gate — paused from the ops page
