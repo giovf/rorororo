@@ -3344,4 +3344,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-23 07:45 | report | tax-workbook: Etsy closed, 0 sales; Payhip and own checkout no sale yet
 - 2026-11-23 07:45 | report | open owner asks: Leanpub 038, GitHub app, Apify 2FA, Clay reply, 001
 - 2026-11-23 07:45 | report | next step: spend nothing new; owner publishes the Leanpub handbook and answers Clay
-- 2026-11-23 07:45 | notify | 6 requests waiting on you, oldest 18 days: Claude Code handbook ready for Leanpub. Usage note please: reply "usage 62% fable 71%"
+- 2026-11-23 07:45 | notify | 6 asks waiting on you, oldest 18 days: Leanpub handbook. Usage note please: usage 62%
