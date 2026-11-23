@@ -45,6 +45,12 @@ routine has produced) because no sandbox can read a stored prompt. Before swappi
 the interactive session diffs it against the stored text at claude.ai/code/routines and carries into
 the file any sentence the stored prompt has that the file lacks — then the swap.
 
+Pause switch, stored-prompt half (2026-11-23): runs on stale sandbox clones read these files from the clone's old
+`main` after a refused `git pull` and so never saw the gate below — the inbox triage, metrics, weekly report and
+fallback kept running for three days with everything paused. Every stored prompt now starts with `PAUSE SWITCH FIRST:`
+`git fetch -q origin && git show origin/main:docs/ops/PAUSED.json | node -e '…'` printing PAUSED or RUN for its key
+(the fallback's also checks `build`), and reads its file with `git show origin/main:docs/routines/<file>.md`.
+
 Pause switch (owner 2026-11-20): every file's first paragraph below the `---` runs `scripts/paused.ts <key>`
 and ends a run the owner paused on apps.gankdat.com/ops?view=schedules (keys: build, fallback, burn-down, exchange,
 review, metrics, inbox, report, retro — `docs/ops/PAUSED.json`, see `docs/SCHEDULERS.md`). A new routine gets the

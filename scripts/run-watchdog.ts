@@ -27,7 +27,7 @@ import { ALERTS_FILE, HANDOFF_DIGEST_MARK, handoffDigestLine, ledger } from './h
 import { claimMarkerRoutine } from './pipeline-claim.ts';
 import { PACED_ROUTINE, type WeekBudget, lineStamp, pacedStop } from './pipeline-cold.ts';
 import { SLOTS_FILE, parseStarted, startMarkerRoutine } from './slot.ts';
-import { PAUSED_FILE, parsePaused, pausedAt } from './paused.ts';
+import { PAUSABLE, PAUSED_FILE, parsePaused, pausedAt, pausedNow } from './paused.ts';
 
 export interface RoutineSlot {
   /** Tag the routine writes in docs/RUNS.md (`| build |`) and the name used in the missed line. */
@@ -571,9 +571,14 @@ async function main(): Promise<void> {
   }
   const lines = missed.map((slot) => missedLine(slot, now));
   const alertsPath = path.join(root, ALERTS_FILE);
-  const handoffs = existsSync(alertsPath)
-    ? handoffNotifyLine(readFileSync(alertsPath, 'utf8'), runsText, now)
-    : undefined;
+  // Everything paused on the ops page (owner 2026-11-23: "still getting telegram notifications"): the weekly
+  // reminder of jobs for the next Claude Code session is noise while no routine runs, so it waits for a resume.
+  const pausedDoc = parsePaused(pausedText);
+  const allPaused = PAUSABLE.every((k) => pausedNow(pausedDoc, k) !== undefined);
+  const handoffs =
+    !allPaused && existsSync(alertsPath)
+      ? handoffNotifyLine(readFileSync(alertsPath, 'utf8'), runsText, now)
+      : undefined;
   if (handoffs) lines.push(handoffs);
   if (lines.length === 0) return;
   appendFileSync(runsPath, `${runsText.endsWith('\n') ? '' : '\n'}${lines.join('\n')}\n`);
