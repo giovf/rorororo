@@ -3348,3 +3348,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-23 14:06 | triage | notify owner dispatched: last run started 07:06 UTC, 7 h ago
 - 2026-11-23 14:07 | watchdog | paced: build slot 2026-11-23 09:00 UTC stopped by the gate — paused from the ops page
 - 2026-11-23 14:12 | interactive | pause switch moved into all 10 stored prompts (stale clones skipped the file gate); test fire stopped
+- 2026-11-24 03:00 | watchdog | paced: build slot 2026-11-23 17:00 UTC stopped by the gate — paused from the ops page
+- 2026-11-24 03:00 | watchdog | paced: burn-down slot 2026-11-23 17:00 UTC stopped by the gate — paused from the ops page
