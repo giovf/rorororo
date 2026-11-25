@@ -3357,3 +3357,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-25 11:39 | watchdog | paced: metrics slot 2026-11-25 07:00 UTC stopped by the gate — paused from the ops page
 - 2026-11-25 11:39 | watchdog | paced: exchange slot 2026-11-25 08:00 UTC stopped by the gate — paused from the ops page
 - 2026-11-25 11:39 | watchdog | paced: build slot 2026-11-25 09:00 UTC stopped by the gate — paused from the ops page
+- 2026-11-25 21:56 | watchdog | paced: build slot 2026-11-25 17:00 UTC stopped by the gate — paused from the ops page
+- 2026-11-25 21:56 | watchdog | paced: burn-down slot 2026-11-25 17:00 UTC stopped by the gate — paused from the ops page
